@@ -34,6 +34,10 @@ data.files = data
 data.path = /usr/share/$${TARGET}
 INSTALLS += data
 
+# defines
+DEFINES += APP_VERSION=\\\"$$VERSION\\\"
+DEFINES += IS_SAILFISH_OS
+
 SOURCES += src/osmscout-server.cpp \
     src/dbmaster.cpp \
     src/main.cpp \
