@@ -15,11 +15,24 @@ TARGET = osmscout-server
 QT += core gui network
 
 CONFIG += c++11
-CONFIG += sailfishapp
+CONFIG += sailfishapp sailfishapp_no_deploy_qml
+
+# to disable building translations every time, comment out the
+# following CONFIG line
+CONFIG += sailfishapp_i18n
+
+# installs
+qml.files = qml
+qml.path = /usr/share/$${TARGET}
+INSTALLS += qml
 
 stylesheets.files = stylesheets
 stylesheets.path = /usr/share/$${TARGET}
 INSTALLS += stylesheets
+
+data.files = data
+data.path = /usr/share/$${TARGET}
+INSTALLS += data
 
 SOURCES += src/osmscout-server.cpp \
     src/dbmaster.cpp \
@@ -36,8 +49,6 @@ OTHER_FILES += qml/osmscout-server.qml \
     translations/*.ts \
     osmscout-server.desktop
 
-OTHER_FILES += stylesheets/*
-
 include(src/httpserver/httpserver.pri)
 
 LIBS += -losmscout_map_qt -losmscout_map -losmscout
@@ -48,9 +59,6 @@ HEADERS += \
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
-# to disable building translations every time, comment out the
-# following CONFIG line
-CONFIG += sailfishapp_i18n
 
 # German translation is enabled as an example. If you aren't
 # planning to localize your app, remember to comment out the
