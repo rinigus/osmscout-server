@@ -1,4 +1,5 @@
 #include "dbmaster.h"
+#include "appsettings.h"
 
 #include <osmscout/MapPainterQt.h>
 
@@ -7,8 +8,22 @@
 #include <QPainter>
 #include <QBuffer>
 
-DBMaster::DBMaster(const std::string &map, const std::string &style)
+#ifdef IS_SAILFISH_OS
+#define DATA_PREFIX "/usr/share/osmscout-server/"
+#endif
+
+#ifdef IS_CONSOLE_QT
+#define DATA_PREFIX ""
+#endif
+
+
+DBMaster::DBMaster()
 {
+    AppSettings settings;
+
+    std::string map = settings.value(OSM_SETTINGS "map", "map").toString().toStdString();
+    std::string style  = settings.value(OSM_SETTINGS "style", DATA_PREFIX "stylesheets/standard.oss").toString().toStdString();
+
     database = osmscout::DatabaseRef(new osmscout::Database(databaseParameter));
     mapService = osmscout::MapServiceRef(new osmscout::MapService(database));
 
@@ -24,6 +39,8 @@ DBMaster::DBMaster(const std::string &map, const std::string &style)
     {
         std::cerr << "Cannot open style" << std::endl;
     }
+
+    m_icons_dir = settings.value(OSM_SETTINGS "style", DATA_PREFIX "data/icons/14x14/standard/").toString().toStdString();
 }
 
 
@@ -42,7 +59,7 @@ bool DBMaster::renderMap(double dpi, int zoom_level, int width, int height, doub
     magnification.SetLevel(zoom_level);
 
     std::list<std::string> paths;
-    paths.push_back("data/icons/14x14/standard/");
+    paths.push_back(m_icons_dir);
 
     drawParameter.SetIconPaths(paths);
     drawParameter.SetDebugData(false);

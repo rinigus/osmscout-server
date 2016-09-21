@@ -1,50 +1,73 @@
-/**
-  @file
-  @author Stefan Frings
+/*
+  Copyright (C) 2016 rinigus <rinigus.git@gmail.com>
+  License: LGPL
 */
 
+#ifdef IS_CONSOLE_QT
 #include <QGuiApplication>
-#include <QDir>
+#endif
 
-// QtWebApp header
+#ifdef IS_SAILFISH_OS
+#include <sailfishapp.h>
+#include <QtQuick>
+#endif
+
+#include "appsettings.h"
+
+// QtWebApp headers
 #include "httplistener.h"
 #include "requestmapper.h"
 
+// LIB OSM Scout interface
 #include "dbmaster.h"
+
+#include <iostream>
 
 DBMaster *osmScoutMaster = NULL;
 
 int main(int argc, char *argv[])
-{
-    QGuiApplication app(argc,argv);
+{    
+#ifdef IS_CONSOLE_QT
+    QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
+#endif
+
+#ifdef IS_SAILFISH_OS
+    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+#endif
+
+    app->setApplicationName("osmscout-server");
+    app->setOrganizationName("osmscout-server");
+
+    AppSettings settings;
+    settings.initDefaults();
+
+#ifdef IS_SAILFISH_OS
+    QScopedPointer<QQuickView> v(SailfishApp::createView());
+    QQmlContext *rootContext = v->rootContext();
+
+    rootContext->setContextProperty("programName", "SystemDataScope");
+    rootContext->setContextProperty("programVersion", APP_VERSION);
+    rootContext->setContextProperty("settings", &settings);
+#endif
 
     // setup OSM Scout
-    osmScoutMaster = new DBMaster("map",
-                                  "stylesheets/standard.oss");
+    osmScoutMaster = new DBMaster();
 
-    app.setApplicationName("osmscout-server");
-    app.setOrganizationName("osmscout-server");
+    if (osmScoutMaster == nullptr)
+    {
+        std::cerr << "Failed to allocate DBMaster" << std::endl;
+        return -1;
+    }
 
-    // Configure and start the TCP listener
-    QSettings* settings=new QSettings;
+    settings.beginGroup("http-listener");
+    new HttpListener(&settings,new RequestMapper(app.data()),app.data());
+    settings.endGroup();
 
-    settings->beginGroup("http-listener");
+#ifdef IS_SAILFISH_OS
 
-    // check and init defaults if settings are absent
-    if (!settings->contains("port"))
-        settings->setValue("port", 8080);
+    v->setSource(SailfishApp::pathTo("qml/main.qml"));
+    v->show();
 
-    if (!settings->contains("maxThreads"))
-        settings->setValue("maxThreads", QThread::idealThreadCount() + 2);
-
-    new HttpListener(settings,new RequestMapper(&app),&app);
-    settings->endGroup();
-
-    qWarning("Application has started");
-
-    app.exec();
-
-    qWarning("Application has stopped");
-
-    return 0;
+#endif
+    return app->exec();
 }

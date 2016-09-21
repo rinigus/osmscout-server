@@ -7,13 +7,15 @@
 #include <QMutex>
 #include <QByteArray>
 
+#define OSM_SETTINGS "libosmscout/"
+
 /// \brief Access to all OSM Scout functionality
 ///
 /// This is a thread safe object used to render maps, search for locations, and calculate routing.
 class DBMaster
 {    
 public:
-    DBMaster(const std::string &map, const std::string &style);
+    DBMaster();
     ~DBMaster();
 
     bool renderMap(double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
@@ -23,6 +25,7 @@ public:
 protected:
     QMutex m_mutex;
     bool m_error_flag=false;
+    std::string m_icons_dir;
 
     osmscout::DatabaseParameter databaseParameter;
     osmscout::DatabaseRef database;
