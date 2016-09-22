@@ -7,8 +7,6 @@
 #include <QMutex>
 #include <QByteArray>
 
-#define OSM_SETTINGS "libosmscout/"
-
 /// \brief Access to all OSM Scout functionality
 ///
 /// This is a thread safe object used to render maps, search for locations, and calculate routing.
@@ -22,15 +20,24 @@ public:
 
     operator bool() const { return !m_error_flag; }
 
-protected:
-    QMutex m_mutex;
-    bool m_error_flag=false;
-    std::string m_icons_dir;
+    void loadSettings();
 
-    osmscout::DatabaseParameter databaseParameter;
-    osmscout::DatabaseRef database;
-    osmscout::MapServiceRef mapService;
-    osmscout::StyleConfigRef styleConfig;
+protected:
+    QMutex m_mutex_settings;
+    QMutex m_mutex_database;
+
+    bool m_error_flag=false;
+
+    std::string m_icons_dir;
+    std::string m_style_name;
+    bool m_render_sea = true;
+    bool m_draw_background = true;
+    float m_font_size = 3.0;
+
+    osmscout::DatabaseParameter m_database_parameter;
+    osmscout::DatabaseRef m_database;
+    osmscout::MapServiceRef m_map_service;
+    osmscout::StyleConfigRef m_style_config;
 };
 
 #endif // DBMASTER_H

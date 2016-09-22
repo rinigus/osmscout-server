@@ -45,5 +45,6 @@ LIBS += -losmscout_map_qt -losmscout_map -losmscout
 HEADERS += \
     src/dbmaster.h \
     src/requestmapper.h \
-    src/appsettings.h
+    src/appsettings.h \
+    src/config.h
 

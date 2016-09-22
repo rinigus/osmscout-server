@@ -15,10 +15,11 @@ public:
     Q_INVOKABLE void setValue(const QString &key, const QVariant &value)
     { QSettings::setValue(key, value); }
 
-    Q_INVOKABLE inline QVariant value(const QString &key, const QVariant &defaultValue = QVariant()) const
-    { return QSettings::value(key, defaultValue); }
+    Q_INVOKABLE int valueInt(const QString &key);
+    Q_INVOKABLE int valueFloat(const QString &key);
+    Q_INVOKABLE QString valueString(const QString &key);
 
-    void initDefaults(); ///< Used to initialize settings for some parameters on the first start
+    void initDefaults(); ///< Initialize settings for configurable parameters on the first start
 };
 
 #endif // APPSETTINGS_H
