@@ -16,11 +16,18 @@ public:
     DBMaster();
     ~DBMaster();
 
-    bool renderMap(double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
+    bool renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
 
+    /// \brief checks if DBMaster object is ready for operation
+    ///
     operator bool() const { return !m_error_flag; }
 
     void loadSettings();
+
+protected:
+
+    bool loadStyle(bool daylight);
+
 
 protected:
     QMutex m_mutex_settings;
@@ -33,6 +40,7 @@ protected:
     bool m_render_sea = true;
     bool m_draw_background = true;
     float m_font_size = 3.0;
+    bool m_daylight = true;
 
     osmscout::DatabaseParameter m_database_parameter;
     osmscout::DatabaseRef m_database;

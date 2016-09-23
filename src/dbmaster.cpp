@@ -44,27 +44,60 @@ void DBMaster::loadSettings()
             std::cerr << "Cannot open database: "  << map << std::endl;
             return;
         }
-
-        m_style_config = osmscout::StyleConfigRef(new osmscout::StyleConfig(m_database->GetTypeConfig()));
-    }
-
-    std::string style = settings.valueString(OSM_SETTINGS "style").toStdString();
-    if ( style != m_style_name )
-    {
-        if (!m_style_config->Load(style))
-            std::cerr << "Cannot open style: " << style << std::endl;
-
-        m_style_name = style;
     }
 
     m_icons_dir = settings.valueString(OSM_SETTINGS "icons").toStdString();
     m_render_sea = ( settings.valueInt(OSM_SETTINGS "renderSea") > 0 );
     m_draw_background = ( settings.valueInt(OSM_SETTINGS "drawBackground") > 0 );
     m_font_size = settings.valueFloat(OSM_SETTINGS "fontSize");
+
+    std::string style = settings.valueString(OSM_SETTINGS "style").toStdString();
+    if (m_style_name != style)
+    {
+        m_style_name = style;
+        loadStyle(m_daylight);
+    }
 }
 
 
-bool DBMaster::renderMap(double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result)
+bool DBMaster::loadStyle(bool daylight)
+{
+    if ( m_error_flag ||
+         !m_database->IsOpen() )
+        return false;
+
+    // check if its the same as before
+    if ( m_style_config != nullptr &&
+         daylight == m_daylight )
+        return true; // nothing to do, all is loaded
+
+    // something changed, have to reload style
+    osmscout::TypeConfigRef typeConfig=m_database->GetTypeConfig();
+    if (!typeConfig) return false;
+
+    m_style_config = osmscout::StyleConfigRef(new osmscout::StyleConfig(typeConfig));
+
+    if (m_style_config == nullptr)
+    {
+        std::cerr << "Cannot allocate Style config" << std::endl;
+        return false;
+    }
+
+    m_style_config->AddFlag("daylight", daylight);
+
+    if (!m_style_config->Load(m_style_name))
+    {
+        std::cerr << "Cannot open style: " << m_style_name << std::endl;
+        return false;
+    }
+
+    m_daylight = daylight;
+
+    return true;
+}
+
+
+bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result)
 {
     if (m_error_flag) return false;
 
@@ -75,12 +108,13 @@ bool DBMaster::renderMap(double dpi, int zoom_level, int width, int height, doub
     bool drawBackground = m_draw_background;
     float fontSize = m_font_size;
 
-    std::cout << "RRR: " << renderSea << " " << drawBackground << " " << fontSize << std::endl;
-
-    osmscout::MapPainterQt        mapPainter(m_style_config);
-
     std::list<std::string> paths;
     paths.push_back(m_icons_dir);
+
+    if ( !loadStyle(daylight) )
+        return false;
+
+    osmscout::MapPainterQt mapPainter(m_style_config);
 
     m_mutex_settings.unlock();
     // settings read in - mutex protected area ends
