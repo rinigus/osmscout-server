@@ -28,10 +28,10 @@ Page {
                 title: qsTr("OSMScout Server")
             }
 
-            SectionHeader {
-                text: qsTr("Statistics")
-                font.pixelSize: Theme.fontSizeLarge
-            }
+//            SectionHeader {
+//                text: qsTr("Statistics")
+//                font.pixelSize: Theme.fontSizeLarge
+//            }
 
             SectionHeader {
                 text: qsTr("Settings")
