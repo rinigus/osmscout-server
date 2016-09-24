@@ -26,10 +26,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Statistics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Map and style</source>
         <translation type="unfinished"></translation>
     </message>
