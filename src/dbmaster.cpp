@@ -25,6 +25,9 @@ DBMaster::DBMaster()
     loadSettings();
 }
 
+DBMaster::~DBMaster()
+{
+}
 
 void DBMaster::loadSettings()
 {
@@ -59,6 +62,11 @@ void DBMaster::loadSettings()
     }
 }
 
+
+void DBMaster::onSettingsChanged()
+{
+    loadSettings();
+}
 
 bool DBMaster::loadStyle(bool daylight)
 {

@@ -72,5 +72,9 @@ int main(int argc, char *argv[])
     v->show();
 
 #endif
+
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      osmScoutMaster, &DBMaster::onSettingsChanged );
+
     return app->exec();
 }

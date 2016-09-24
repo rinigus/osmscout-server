@@ -6,15 +6,18 @@
 
 #include <QMutex>
 #include <QByteArray>
+#include <QObject>
 
 /// \brief Access to all OSM Scout functionality
 ///
 /// This is a thread safe object used to render maps, search for locations, and calculate routing.
-class DBMaster
-{    
+class DBMaster: public QObject
+{
+    Q_OBJECT
+
 public:
     DBMaster();
-    ~DBMaster();
+    virtual ~DBMaster();
 
     bool renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
 
@@ -23,6 +26,9 @@ public:
     operator bool() const { return !m_error_flag; }
 
     void loadSettings();
+
+public slots:
+    void onSettingsChanged();
 
 protected:
 

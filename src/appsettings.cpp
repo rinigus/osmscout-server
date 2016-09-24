@@ -3,6 +3,7 @@
 
 #include <QThread>
 #include <QStandardPaths>
+#include <QDebug>
 
 #ifdef IS_SAILFISH_OS
 #define DATA_PREFIX "/usr/share/osmscout-server/"
@@ -17,7 +18,7 @@ AppSettings::AppSettings():
 {
 }
 
-#define CHECK(s, d) if (!contains(s)) setValue(s, d);
+#define CHECK(s, d) if (!contains(s)) QSettings::setValue(s, d);
 void AppSettings::initDefaults()
 {
     // defaults for server
@@ -41,6 +42,15 @@ void AppSettings::initDefaults()
     CHECK(OSM_SETTINGS "renderSea", 1);
     CHECK(OSM_SETTINGS "drawBackground", 1);
 }
+
+void AppSettings::setValue(const QString &key, const QVariant &value)
+{
+    QSettings::setValue(key, value);
+
+    if (key.contains(OSM_SETTINGS))
+        emit osmScoutSettingsChanged();
+}
+
 
 int AppSettings::valueInt(const QString &key)
 {

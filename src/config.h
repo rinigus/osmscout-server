@@ -5,5 +5,4 @@
 
 #define OSM_SETTINGS "libosmscout/"
 
-
 #endif // CONFIG_H
