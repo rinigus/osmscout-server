@@ -29,8 +29,7 @@ INSTALLS += data
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += IS_CONSOLE_QT
 
-SOURCES += src/osmscout-server.cpp \
-    src/dbmaster.cpp \
+SOURCES += src/dbmaster.cpp \
     src/main.cpp \
     src/requestmapper.cpp \
     src/appsettings.cpp
