@@ -46,8 +46,6 @@ SOURCES += \
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/osmscout-server.changes.in \
     rpm/osmscout-server.spec \
     rpm/osmscout-server.yaml \
@@ -60,7 +58,9 @@ LIBS += -losmscout_map_qt -losmscout_map -losmscout
 
 HEADERS += \
     src/dbmaster.h \
-    src/requestmapper.h
+    src/requestmapper.h \
+    src/appsettings.h \
+    src/config.h
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
@@ -70,4 +70,8 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/osmscout-server-de.ts
+
+DISTFILES += \
+    qml/pages/StartPage.qml \
+    qml/pages/AboutPage.qml
 
