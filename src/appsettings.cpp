@@ -2,6 +2,7 @@
 #include "config.h"
 
 #include <QThread>
+#include <QStandardPaths>
 
 #ifdef IS_SAILFISH_OS
 #define DATA_PREFIX "/usr/share/osmscout-server/"

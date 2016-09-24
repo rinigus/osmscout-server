@@ -3,6 +3,9 @@
   License: LGPL
 */
 
+#include "appsettings.h"
+#include "config.h"
+
 #ifdef IS_CONSOLE_QT
 #include <QGuiApplication>
 #endif
@@ -11,8 +14,6 @@
 #include <sailfishapp.h>
 #include <QtQuick>
 #endif
-
-#include "appsettings.h"
 
 // QtWebApp headers
 #include "httplistener.h"
@@ -26,7 +27,7 @@
 DBMaster *osmScoutMaster = NULL;
 
 int main(int argc, char *argv[])
-{    
+{
 #ifdef IS_CONSOLE_QT
     QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
 #endif
@@ -45,8 +46,10 @@ int main(int argc, char *argv[])
     QScopedPointer<QQuickView> v(SailfishApp::createView());
     QQmlContext *rootContext = v->rootContext();
 
-    rootContext->setContextProperty("programName", "SystemDataScope");
+    rootContext->setContextProperty("programName", "OSMScout Server");
     rootContext->setContextProperty("programVersion", APP_VERSION);
+    rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
+
     rootContext->setContextProperty("settings", &settings);
 #endif
 
