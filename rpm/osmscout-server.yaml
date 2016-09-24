@@ -17,6 +17,8 @@ Configure: none
 # The qtc5 builder inserts macros to allow QtCreator to have fine
 # control over qmake/make execution
 Builder: qtc5
+QMakeOptions:
+- VERSION='%{version}-%{release}'
 
 # This section specifies build dependencies that are resolved using pkgconfig.
 # This is the preferred way of specifying build dependencies for your package.
@@ -32,7 +34,7 @@ PkgConfigBR:
 
 # Runtime dependencies which are not automatically detected
 Requires:
-  - sailfishsilica-qt5 >= 0.10.9 
+  - sailfishsilica-qt5 >= 0.10.9
   - libosmscout-qt
 
 # All installed files
