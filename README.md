@@ -18,7 +18,7 @@ osmscout-server_silica.pro.
 
 ## Maps
 
-Maps provided by OpenSteetsMaps have to be converted to the format used by libosmscout library. See http://libosmscout.sourceforge.net/tutorials/Importing/ for instructions. At this stage, you would have to compile the library on your PC and run the import program, as explained in the tutorial.
+Maps provided by OpenStreetMaps have to be converted to the format used by libosmscout library. See http://libosmscout.sourceforge.net/tutorials/Importing/ for instructions. At this stage, you would have to compile the library on your PC and run the import program, as explained in the tutorial.
 
 ## Settings
 
