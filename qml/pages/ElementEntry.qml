@@ -37,6 +37,7 @@ Column {
         width: parent.width-2*x
         wrapMode: Text.WordWrap
         font.pixelSize: Theme.fontSizeSmall
+        color: Theme.secondaryHighlightColor
 
         Component.onCompleted: { visible = (parent.secondaryLabel.length > 0) }
     }
