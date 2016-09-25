@@ -28,10 +28,28 @@ Column {
         EnterKey.enabled: text.length > 0
         EnterKey.onClicked: {
             settings.setValue(settingsOsmPrefix + parent.key, parent.value)
+            focus = false
+        }
+
+        onFocusChanged: {
+            if (!focus)
+            {
+                if (settings.valueString(settingsOsmPrefix + parent.key) !== text)
+                {
+                    secLabel.text = "<b>Setting not applied.</b> " + parent.secondaryLabel
+                    secLabel.visible = true
+                }
+                else
+                {
+                    secLabel.text = parent.secondaryLabel
+                    secLabel.visible = (parent.secondaryLabel.length > 0)
+                }
+            }
         }
     }
 
     Label {
+        id: secLabel
         text: parent.secondaryLabel
         x: Theme.horizontalPageMargin
         width: parent.width-2*x
