@@ -16,6 +16,9 @@ Sailfish application. For console version, use
 osmscout-server_console.pro as a project. For Sailfish, use
 osmscout-server_silica.pro.
 
+## Maps
+
+Maps provided by OpenSteetsMaps have to be converted to the format used by libosmscout library. See http://libosmscout.sourceforge.net/tutorials/Importing/ for instructions. At this stage, you would have to compile the library on your PC and run the import program, as explained in the tutorial.
 
 ## Settings
 
