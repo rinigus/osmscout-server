@@ -8,11 +8,13 @@
 
 #ifdef IS_CONSOLE_QT
 #include <QGuiApplication>
+#define APP_PREFIX ""
 #endif
 
 #ifdef IS_SAILFISH_OS
 #include <sailfishapp.h>
 #include <QtQuick>
+#define APP_PREFIX "harbour-"
 #endif
 
 // QtWebApp headers
@@ -36,8 +38,8 @@ int main(int argc, char *argv[])
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
 #endif
 
-    app->setApplicationName("osmscout-server");
-    app->setOrganizationName("osmscout-server");
+    app->setApplicationName(APP_PREFIX "osmscout-server");
+    app->setOrganizationName(APP_PREFIX "osmscout-server");
 
     AppSettings settings;
     settings.initDefaults();

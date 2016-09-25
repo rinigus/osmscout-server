@@ -5,7 +5,7 @@ CoverBackground {
 
     Image {
         id: icon
-        source: "/usr/share/icons/hicolor/256x256/apps/osmscout-server.png"
+        source: "/usr/share/icons/hicolor/256x256/apps/harbour-osmscout-server.png"
         anchors.centerIn: parent
         fillMode: Image.PreserveAspectFit
         width: parent.width/2

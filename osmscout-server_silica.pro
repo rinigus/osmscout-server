@@ -10,7 +10,7 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = osmscout-server
+TARGET = harbour-osmscout-server
 
 QT += core gui network
 
@@ -46,11 +46,8 @@ SOURCES += \
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
-    rpm/osmscout-server.changes.in \
     rpm/osmscout-server.spec \
-    rpm/osmscout-server.yaml \
-    translations/*.ts \
-    osmscout-server.desktop
+    translations/*.ts
 
 include(src/httpserver/httpserver.pri)
 
@@ -73,5 +70,8 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
 DISTFILES += \
     qml/pages/StartPage.qml \
-    qml/pages/AboutPage.qml
+    qml/pages/AboutPage.qml \
+    harbour-osmscout-server.desktop \
+    rpm/harbour-osmscout-server.yaml \
+    rpm/harbour-osmscout-server.changes.in
 

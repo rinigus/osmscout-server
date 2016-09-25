@@ -6,7 +6,7 @@
 #include <QDebug>
 
 #ifdef IS_SAILFISH_OS
-#define DATA_PREFIX "/usr/share/osmscout-server/"
+#define DATA_PREFIX "/usr/share/harbour-osmscout-server/"
 #endif
 
 #ifdef IS_CONSOLE_QT
