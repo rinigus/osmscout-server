@@ -199,6 +199,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
         return false;
 
     QPainter* painter=new QPainter(pixmap);
+
     painter->setRenderHint(QPainter::Antialiasing);
     painter->setRenderHint(QPainter::TextAntialiasing);
     painter->setRenderHint(QPainter::SmoothPixmapTransform);
