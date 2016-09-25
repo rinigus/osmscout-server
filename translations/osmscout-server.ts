@@ -11,7 +11,7 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
+        <source>OSMScout Server</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
