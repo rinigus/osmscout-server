@@ -25,7 +25,7 @@ RequestMapper::~RequestMapper()
 // Helper function checking if sep is in path. If it is, it parses the section after
 // sep from path by splitting it using '/' as a separator. Example:
 //    path = "http://localhost:8553/v1/tile/1/2/3
-//    sep = "/tile/"
+//    sep = "/v1/tile/"
 //    return true and fill command with "1", "2", "3"
 static bool contains(const QString &path, const QString &sep, QStringList &command)
 {
