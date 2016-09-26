@@ -12,7 +12,8 @@ Page {
                               "License: LGPL<br><br>" +
                               "<b>Acknowledgments:</b><br><br>" +
                               "libosmscout: http://libosmscout.sourceforge.net/<br>" +
-                              "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>"
+                              "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>" +
+                              "QtWebApp HTTP Webserver: http://stefanfrings.de/qtwebapp/index-en.html<br>"
 
 
     SilicaFlickable {
