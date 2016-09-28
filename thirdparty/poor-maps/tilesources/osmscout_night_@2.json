@@ -1,9 +1,0 @@
-{
-    "attribution": "Data © OpenStreetMap contributors",
-    "extension": ".png",
-    "format": "slippy",
-    "name": "OSM scout night @2x",
-    "scale": 2,
-    "source": "osmscout",
-    "url": "http://localhost:8553/v1/tile/0/0/2/{z}/{x}/{y}.png"
-}
