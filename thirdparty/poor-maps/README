@@ -1,4 +1,8 @@
 To add support for OSMScout Server by Poor Maps, copy files in
-tilesources to ~/.local/share/harbour-poor-maps/tilesources . See
-https://github.com/otsaloma/poor-maps/blob/master/tilesources/README.md for
-details of the format.
+
+* tilesources to ~/.local/share/harbour-poor-maps/tilesources . See
+  https://github.com/otsaloma/poor-maps/blob/master/tilesources/README.md
+  for details of the format.
+
+* geocoders to ~/.local/share/harbour-poor-maps/geocoders . Details at
+  https://github.com/otsaloma/poor-maps/blob/master/geocoders/README.md
