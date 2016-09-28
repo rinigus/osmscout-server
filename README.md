@@ -4,8 +4,9 @@ Server based on libosmscout. This server is envisioned to be a drop-in
 replacement for online map services providing map tiles, search, and
 routing. As a result, an offline operation is possible if the device
 has a server and map client programs installed and running. At
-present, the server can be used to provide map tiles for other
-applications.
+present, the server can be used to provide:
+* map tiles for other applications;
+* search for locations.
 
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps and modRana are
@@ -18,7 +19,11 @@ osmscout-server_silica.pro.
 
 ## Maps
 
-Maps provided by OpenStreetMaps have to be converted to the format used by libosmscout library. See http://libosmscout.sourceforge.net/tutorials/Importing/ for instructions. At this stage, you would have to compile the library on your PC and run the import program, as explained in the tutorial.
+Maps provided by OpenStreetMaps have to be converted to the format
+used by libosmscout library. See
+http://libosmscout.sourceforge.net/tutorials/Importing/ for
+instructions. At this stage, you would have to compile the library on
+your PC and run the import program, as explained in the tutorial.
 
 ## Settings
 
@@ -65,6 +70,22 @@ where
 Addition of {scale} and {shift} allows to experiment with different
 tile sizes to optimize for performance and human-map interaction. See
 Poor Maps settings for example.
+
+
+## Location search
+
+The location search is accessed by the following URL:
+
+http://localhost:8553/v1/search/{limit}/{query}
+
+where
+
+{limit} - maximal number of search results
+
+{query} - location search
+
+Results are returned in JSON format. See Poor Maps geocoder
+implementation for details of the format.
 
 
 ## Acknowledgments
