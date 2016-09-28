@@ -33,7 +33,7 @@ void DBMaster::loadSettings()
 {
     if (m_error_flag) return;
 
-    QMutexLocker lk(&m_mutex_settings);
+    QMutexLocker lk(&m_mutex);
     AppSettings settings;
 
     std::string map = settings.valueString(OSM_SETTINGS "map").toStdString();
@@ -110,7 +110,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     if (m_error_flag) return false;
 
     // reading in settings - area protected by mutex
-    m_mutex_settings.lock();
+    m_mutex.lock();
 
     bool renderSea = m_render_sea;
     bool drawBackground = m_draw_background;
@@ -124,7 +124,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
     osmscout::MapPainterQt mapPainter(m_style_config);
 
-    m_mutex_settings.unlock();
+    m_mutex.unlock();
     // settings read in - mutex protected area ends
 
     osmscout::MercatorProjection  projection;
@@ -182,7 +182,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     projection.SetLinearInterpolationUsage(zoom_level >= 10);
 
     {
-        QMutexLocker lk(&m_mutex_database);
+        QMutexLocker lk(&m_mutex);
 
         std::list<osmscout::TileRef> tiles;
 
@@ -222,3 +222,5 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
     return success;
 }
+
+

@@ -62,7 +62,7 @@ double tiley2lat(int y, int z)
 void returnError(HttpResponse &response)
 {
     response.setStatus(500, "unknown command");
-    response.write("Please read the source for command syntax", true);
+    response.write("There was either error in server configuration or error in given URL", true);
 }
 
 void RequestMapper::service(HttpRequest& request, HttpResponse& response)
@@ -104,6 +104,31 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         }
 
         response.setHeader("Content-Type", "image/png");
+        response.write(bytes, true);
+    }
+
+    else if (contains(path, "/v1/search/", command))
+    {
+        if (command.length() < 2)
+        {
+            returnError(response);
+            return;
+        }
+
+        size_t limit = command[0].toUInt();
+
+        QString search;
+        for (int i=1; i < command.length(); ++i)
+            search += command[i] + " ";
+
+        QByteArray bytes;
+        if ( !osmScoutMaster->search(search, bytes, limit) )
+        {
+            returnError(response);
+            return;
+        }
+
+        response.setHeader("Content-Type", "text/plain; charset=UTF-8");
         response.write(bytes, true);
     }
 

@@ -21,6 +21,8 @@ public:
 
     bool renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
 
+    bool search(QString search, QByteArray &result, size_t limit);
+
     /// \brief checks if DBMaster object is ready for operation
     ///
     operator bool() const { return !m_error_flag; }
@@ -36,8 +38,7 @@ protected:
 
 
 protected:
-    QMutex m_mutex_settings;
-    QMutex m_mutex_database;
+    QMutex m_mutex;
 
     bool m_error_flag=false;
 
