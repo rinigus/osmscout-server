@@ -42,7 +42,8 @@ SOURCES += \
     src/dbmaster.cpp \
     src/main.cpp \
     src/requestmapper.cpp \
-    src/appsettings.cpp
+    src/appsettings.cpp \
+    src/dbmaster_search.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
