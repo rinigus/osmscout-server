@@ -16,6 +16,8 @@ QT += core gui network
 
 CONFIG += c++11
 
+CONFIG += use_map_qt
+
 # installs
 stylesheets.files = stylesheets
 stylesheets.path = /usr/share/$${TARGET}
@@ -33,14 +35,15 @@ SOURCES += src/dbmaster.cpp \
     src/main.cpp \
     src/requestmapper.cpp \
     src/appsettings.cpp \
-    src/dbmaster_search.cpp
+    src/dbmaster_search.cpp \
+    src/dbmaster_map_qt.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
 
 include(src/httpserver/httpserver.pri)
 
-LIBS += -losmscout_map_qt -losmscout_map -losmscout
+LIBS += -losmscout_map -losmscout
 
 HEADERS += \
     src/dbmaster.h \
@@ -48,3 +51,7 @@ HEADERS += \
     src/appsettings.h \
     src/config.h
 
+use_map_qt {
+    DEFINES += USE_OSMSCOUT_MAP_QT
+    LIBS += -losmscout_map_qt
+}

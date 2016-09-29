@@ -17,6 +17,8 @@ QT += core gui network
 CONFIG += c++11
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
 
+CONFIG += use_map_qt
+
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
@@ -43,7 +45,8 @@ SOURCES += \
     src/main.cpp \
     src/requestmapper.cpp \
     src/appsettings.cpp \
-    src/dbmaster_search.cpp
+    src/dbmaster_search.cpp \
+    src/dbmaster_map_qt.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -52,13 +55,18 @@ OTHER_FILES += qml/osmscout-server.qml \
 
 include(src/httpserver/httpserver.pri)
 
-LIBS += -losmscout_map_qt -losmscout_map -losmscout
+LIBS += -losmscout_map -losmscout
 
 HEADERS += \
     src/dbmaster.h \
     src/requestmapper.h \
     src/appsettings.h \
     src/config.h
+
+use_map_qt {
+    DEFINES += USE_OSMSCOUT_MAP_QT
+    LIBS += -losmscout_map_qt
+}
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
