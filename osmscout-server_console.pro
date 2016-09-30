@@ -38,7 +38,7 @@ SOURCES += src/dbmaster.cpp \
     src/appsettings.cpp \
     src/dbmaster_search.cpp \
     src/dbmaster_map_qt.cpp \
-    src/dbmaster_map_cairo.cpp
+    src/osmscout-server_console.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop

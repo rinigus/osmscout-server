@@ -1,16 +1,42 @@
-#ifdef USE_OSMSCOUT_MAP_QT
-
 #include "dbmaster.h"
 #include "appsettings.h"
 #include "config.h"
 
-#include <osmscout/MapPainterQt.h>
-
 #include <QMutexLocker>
+
+#ifdef USE_OSMSCOUT_MAP_QT
+
+#include <osmscout/MapPainterQt.h>
 #include <QPixmap>
 #include <QImage>
 #include <QPainter>
 #include <QBuffer>
+
+#endif // MAP QT
+
+
+#ifdef USE_OSMSCOUT_MAP_CAIRO
+
+#include <osmscout/MapPainterCairo.h>
+
+#include <QMutexLocker>
+#include <QBuffer>
+#include <QDataStream>
+
+// helper function used to write data to memory buffer by cairo
+cairo_status_t cairo_write_to_buffer(void *closure,
+                                     const unsigned char *data,
+                                     unsigned int length)
+{
+    QDataStream* b = (QDataStream*)closure;
+    qint64 l = length;
+    if ( l != b->writeRawData((const char*)data, l) )
+        return CAIRO_STATUS_WRITE_ERROR;
+    return CAIRO_STATUS_SUCCESS;
+}
+
+#endif // MAP CAIRO
+
 
 bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result)
 {
@@ -101,6 +127,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
             m_map_service->GetGroundTiles(projection, data.groundTiles);
     }
 
+#ifdef USE_OSMSCOUT_MAP_QT
     //    QPixmap *pixmap=new QPixmap(width,height);
     //    if (pixmap == NULL)
     //        return false;
@@ -114,23 +141,68 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     painter->setRenderHint(QPainter::TextAntialiasing);
     painter->setRenderHint(QPainter::SmoothPixmapTransform);
 
+    osmscout::MapPainterQt mapPainter(m_style_config);
+#endif
+
+#ifdef USE_OSMSCOUT_MAP_CAIRO
+    cairo_surface_t *surface;
+    cairo_t         *cairo;
+
+    surface=cairo_image_surface_create(CAIRO_FORMAT_RGB24,width,height);
+
+    if (surface==NULL || (cairo=cairo_create(surface))==NULL)
+    {
+        std::cerr << "Error allocating cairo" << std::endl;
+        if (surface != NULL)
+            cairo_surface_destroy(surface);
+        return false;
+    }
+
+    osmscout::MapPainterCairo mapPainter(m_style_config);
+#endif
+
     bool success = false;
 
-    osmscout::MapPainterQt mapPainter(m_style_config);
     if (mapPainter.DrawMap(projection,
                            drawParameter,
                            data,
-                           painter))
+                       #ifdef USE_OSMSCOUT_MAP_QT
+                           painter
+                       #endif
+                       #ifdef USE_OSMSCOUT_MAP_CAIRO
+                           cairo
+                       #endif
+                           )
+            )
     {
+#ifdef USE_OSMSCOUT_MAP_QT
         QBuffer buffer(&result);
         buffer.open(QIODevice::WriteOnly);
         image.save(&buffer, "PNG");
         success = true;
+#endif
+
+#ifdef USE_OSMSCOUT_MAP_CAIRO
+        QDataStream datastream(&result, QIODevice::WriteOnly);
+        if ( cairo_surface_write_to_png_stream (surface,
+                                                cairo_write_to_buffer,
+                                                &datastream) == CAIRO_STATUS_SUCCESS )
+            success = true;
+        else
+        {
+            std::cerr << "Error while writing cairo stream\n";
+        }
+#endif
+
     }
 
+#ifdef USE_OSMSCOUT_MAP_QT
     delete painter;
+#endif
+#ifdef USE_OSMSCOUT_MAP_CAIRO
+    cairo_destroy(cairo);
+    cairo_surface_destroy(surface);
+#endif
 
     return success;
 }
-
-#endif
