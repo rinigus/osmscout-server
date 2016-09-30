@@ -17,8 +17,8 @@ QT += core gui network
 CONFIG += c++11
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
 
-#CONFIG += use_map_qt
-CONFIG += use_map_cairo
+CONFIG += use_map_qt
+#CONFIG += use_map_cairo
 
 # to disable building translations every time, comment out the
 # following CONFIG line
