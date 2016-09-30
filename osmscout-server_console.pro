@@ -12,12 +12,12 @@
 # The name of your application
 TARGET = osmscout-server
 
-QT += core gui network
+QT = core network
 
 CONFIG += c++11
 
-#CONFIG += use_map_qt
-CONFIG += use_map_cairo
+CONFIG += use_map_qt
+#CONFIG += use_map_cairo
 
 # installs
 stylesheets.files = stylesheets
@@ -55,6 +55,7 @@ HEADERS += \
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
+    QT += gui
     LIBS += -losmscout_map_qt
 }
 

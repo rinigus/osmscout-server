@@ -4,6 +4,13 @@
 
 #include <QMutexLocker>
 
+// check for sanity
+#ifdef USE_OSMSCOUT_MAP_QT
+#ifdef USE_OSMSCOUT_MAP_CAIRO
+#error "Please select the backend: you cannot use two backends at once"
+#endif
+#endif
+
 #ifdef USE_OSMSCOUT_MAP_QT
 
 #include <osmscout/MapPainterQt.h>

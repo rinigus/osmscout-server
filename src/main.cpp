@@ -7,7 +7,14 @@
 #include "config.h"
 
 #ifdef IS_CONSOLE_QT
+
+#ifdef USE_OSMSCOUT_MAP_CAIRO
+#include <QCoreApplication>
+#endif
+#ifdef USE_OSMSCOUT_MAP_QT
 #include <QGuiApplication>
+#endif
+
 #define APP_PREFIX ""
 #endif
 
@@ -31,7 +38,12 @@ DBMaster *osmScoutMaster = NULL;
 int main(int argc, char *argv[])
 {
 #ifdef IS_CONSOLE_QT
+#ifdef USE_OSMSCOUT_MAP_CAIRO
+    QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
+#endif
+#ifdef USE_OSMSCOUT_MAP_QT
     QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
+#endif
 #endif
 
 #ifdef IS_SAILFISH_OS
