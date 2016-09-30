@@ -91,12 +91,14 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     drawParameter.SetRenderSeaLand(renderSea);
 
     // To get accurate label drawing at tile borders, we take into account labels
-    // of other than the current tile, too.
+    // of other than the current tile, too. Usually, its done only for smaller zoom levels.
     if (zoom_level >= 14)
-        // but not for high zoom levels, it is too expensive
         drawParameter.SetDropNotVisiblePointLabels(true);
     else
         drawParameter.SetDropNotVisiblePointLabels(false);
+
+//    // Enable more accurate label drawing at all levels
+//    drawParameter.SetDropNotVisiblePointLabels(false);
 
     // https://github.com/Framstag/libosmscout/blob/master/Documentation/RenderTuning.txt
     //searchParameter.SetBreaker(dataLoadingBreaker);
@@ -116,8 +118,6 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
                    dpi,
                    width,
                    height);
-
-    std::cout << "rm: " << dpi << " " << " " << zoom_level << " " << width << "x" << height << " " << lat << " " << lon << "\n";
 
     projection.SetLinearInterpolationUsage(zoom_level >= 10);
 

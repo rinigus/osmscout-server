@@ -154,7 +154,6 @@ QString GetAdminRegionHierachie(const osmscout::LocationService& locationService
 }
 
 
-
 bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
 {
     if (m_error_flag) return false;
