@@ -48,7 +48,8 @@ SOURCES += \
     src/appsettings.cpp \
     src/dbmaster_search.cpp \
     src/dbmaster_map_qt.cpp \
-    src/dbmaster_map_cairo.cpp
+    src/dbmaster_map_cairo.cpp \
+    src/osmscout-server_silica.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -73,6 +74,8 @@ use_map_qt {
 use_map_cairo {
     DEFINES += USE_OSMSCOUT_MAP_CAIRO
     LIBS += -losmscout_map_cairo
+    # those disappear if we use PKGCONFIG
+    LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
     CONFIG += link_pkgconfig
     PKGCONFIG += pango cairo
 }
