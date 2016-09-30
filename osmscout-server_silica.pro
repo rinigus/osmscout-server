@@ -47,8 +47,7 @@ SOURCES += \
     src/requestmapper.cpp \
     src/appsettings.cpp \
     src/dbmaster_search.cpp \
-    src/dbmaster_map_qt.cpp \
-    src/dbmaster_map_cairo.cpp \
+    src/dbmaster_map.cpp \
     src/osmscout-server_silica.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
