@@ -31,15 +31,15 @@ void DBMaster::loadSettings()
     QMutexLocker lk(&m_mutex);
     AppSettings settings;
 
-    std::string map = settings.valueString(OSM_SETTINGS "map").toStdString();
-    if ( !m_database->IsOpen() || map != m_database->GetPath() )
+    m_map_dir = settings.valueString(OSM_SETTINGS "map").toStdString();
+    if ( !m_database->IsOpen() || m_map_dir != m_database->GetPath() )
     {
         if ( m_database->IsOpen() )
             m_database->Close();
 
-        if (!m_database->Open(map))
+        if (!m_database->Open(m_map_dir))
         {
-            std::cerr << "Cannot open database: "  << map << std::endl;
+            std::cerr << "Cannot open database: "  << m_map_dir << std::endl;
             return;
         }
     }

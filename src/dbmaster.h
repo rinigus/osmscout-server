@@ -8,6 +8,8 @@
 #include <QByteArray>
 #include <QObject>
 
+#include <string>
+
 /// \brief Access to all OSM Scout functionality
 ///
 /// This is a thread safe object used to render maps, search for locations, and calculate routing.
@@ -42,8 +44,10 @@ protected:
 
     bool m_error_flag=false;
 
+    std::string m_map_dir;
     std::string m_icons_dir;
     std::string m_style_name;
+
     bool m_render_sea = true;
     bool m_draw_background = true;
     float m_font_size = 3.0;

@@ -121,6 +121,8 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         for (int i=1; i < command.length(); ++i)
             search += command[i] + " ";
 
+        search = search.simplified();
+
         QByteArray bytes;
         if ( !osmScoutMaster->search(search, bytes, limit) )
         {

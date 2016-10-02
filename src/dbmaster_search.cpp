@@ -3,9 +3,12 @@
 #include "config.h"
 
 #include <osmscout/LocationService.h>
+#include <osmscout/TextSearchIndex.h>
 
 #include <QString>
 #include <QTextStream>
+#include <QVector>
+#include <QMap>
 
 bool GetAdminRegionHierachie(const osmscout::LocationService& locationService,
                              const osmscout::AdminRegionRef& adminRegion,
@@ -13,7 +16,7 @@ bool GetAdminRegionHierachie(const osmscout::LocationService& locationService,
                              std::string& path)
 {
     if (!locationService.ResolveAdminRegionHierachie(adminRegion,
-                                                      adminRegionMap)) {
+                                                     adminRegionMap)) {
         return false;
     }
 
@@ -154,6 +157,60 @@ QString GetAdminRegionHierachie(const osmscout::LocationService& locationService
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////
+/// \brief storeAsJson: stores input in result as a JSON array
+/// \param input vector of JSON objects
+/// \param result output data array
+///
+void storeAsJson(const QVector< QMap<QString, QString> > &input, QByteArray &result)
+{
+    QTextStream output(&result, QIODevice::WriteOnly);
+
+    output << "[\n";
+
+    bool first = true;
+    for (QVector< QMap<QString, QString> >::const_iterator iterVec = input.constBegin();
+         iterVec != input.constEnd(); ++iterVec)
+    {
+        if (!first) output << ",\n";
+        first = false;
+
+        output << "{\n";
+        for (QMap<QString,QString>::const_iterator iterObj = iterVec->constBegin();
+             iterObj != iterVec->constEnd(); ++iterObj)
+        {
+            if (iterObj != iterVec->constBegin()) output << ",\n";
+            output << "\"" << iterObj.key() << "\": " << iterObj.value();
+        }
+        output << "\n}";
+    }
+
+    output << "\n]";
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+/// Series of functions used to either decorate the value passed to JSON map or not
+static QString J(QString v)
+{
+    return "\"" + v + "\"";
+}
+
+static QString J(std::string v)
+{
+    return J(QString::fromStdString(v));
+}
+
+static QString J(double v)
+{
+    return QString::number(v, 'f');
+}
+
+//static QString J(int v)
+//{
+//    return QString::number(v);
+//}
+
+//////////////////////////////////////////////////////////////////////////////
 bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
 {
     if (m_error_flag) return false;
@@ -162,6 +219,10 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
 
     if (!m_database->IsOpen())
         return false;
+
+    ///////////////////////////////////////////////////////////
+    /// Search by location
+    ///////////////////////////////////////////////////////////
 
     osmscout::LocationService locationService(m_database);
     osmscout::LocationSearch search;
@@ -184,85 +245,77 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
         return false;
     }
 
-    QTextStream output(&result, QIODevice::WriteOnly);
 
-    output << "[\n";
-
-    bool first = true;
+    QVector< QMap<QString, QString> > all_results;
     for (const osmscout::LocationSearchResult::Entry &entry : searchResult.results)
     {
         osmscout::GeoCoord coordinates;
-
-        if (!first) output << ",\n";
-        if (entry.adminRegion) first = false;
 
         if (entry.adminRegion &&
                 entry.location &&
                 entry.address)
         {
+            QMap<QString, QString> curr_result;
+
             QString name;
             GetObjectNameCoor(m_database, entry.address->object, name, coordinates);
 
-            output << "{\n";
-            output << "\"title\": \"" << GetLocation(entry) << " " << GetAddress(entry) << ", " << GetAdminRegion(entry)
-                   << "\",\n";
-            output << "\"type\": \"" << name << "\",\n";
-            output << "\"admin_region\": \""
-                   << GetAdminRegionHierachie(locationService,
-                                              adminRegionMap,
-                                              entry) << "\",\n";
-            output << "\"object_id\": \"" << GetObjectId(entry.address->object) << "\",\n";
-            output << "\"lng\": " << coordinates.GetLon() << ",\n";
-            output << "\"lat\": " << coordinates.GetLat() << "\n";
-            output << "}\n";
+            curr_result["title"] = J(GetLocation(entry) + " " + GetAddress(entry) + ", " + GetAdminRegion(entry));
+            curr_result["type"] = J(name);
+            curr_result["admin_region"] = J(GetAdminRegionHierachie(locationService,
+                                                                    adminRegionMap,
+                                                                    entry));
+            curr_result["object_id"] =  J(GetObjectId(entry.address->object));
+            curr_result["lng"] = J(coordinates.GetLon());
+            curr_result["lat"] = J(coordinates.GetLat());
+
+            all_results.push_back(curr_result);
         }
         else if (entry.adminRegion &&
                  entry.location)
         {
-            bool first = true;
             for (const auto &object : entry.location->objects)
             {
-                if (!first) output << ",\n";
-                first = false;
+                QMap<QString, QString> curr_result;
 
                 QString name;
                 GetObjectNameCoor(m_database, object, name, coordinates);
 
-                output << "{\n";
-                output << "\"title\": \"" << GetLocation(entry) << ", " << GetAdminRegion(entry)
-                       << "\",\n";
-                output << "\"type\": \"" << name << "\",\n";
-                output << "\"admin_region\": \""
-                       << GetAdminRegionHierachie(locationService,
-                                                  adminRegionMap,
-                                                  entry) << "\",\n";
-                output << "\"object_id\": \"" << GetObjectId(object) << "\",\n";
-                output << "\"lng\": " << coordinates.GetLon() << ",\n";
-                output << "\"lat\": " << coordinates.GetLat() << "\n";
-                output << "}\n";
+                curr_result["title"] = J(GetLocation(entry) + ", " + GetAdminRegion(entry));
+                curr_result["type"] = J(name);
+                curr_result["admin_region"] = J(GetAdminRegionHierachie(locationService,
+                                                                        adminRegionMap,
+                                                                        entry));
+                curr_result["object_id"] =  J(GetObjectId(object));
+                curr_result["lng"] = J(coordinates.GetLon());
+                curr_result["lat"] = J(coordinates.GetLat());
+
+                all_results.push_back(curr_result);
             }
         }
         else if (entry.adminRegion &&
                  entry.poi)
         {
+            QMap<QString, QString> curr_result;
+
             QString name;
             GetObjectNameCoor(m_database, entry.poi->object, name, coordinates);
 
-            output << "{\n";
-            output << "\"title\": \"" << GetPOI(entry) << ", " << GetAdminRegion(entry)
-                   << "\",\n";
-            output << "\"type\": \"" << name << "\",\n";
-            output << "\"admin_region\": \""
-                   << GetAdminRegionHierachie(locationService,
-                                              adminRegionMap,
-                                              entry) << "\",\n";
-            output << "\"object_id\": \"" << GetObjectId(entry.poi->object) << "\",\n";
-            output << "\"lng\": " << coordinates.GetLon() << ",\n";
-            output << "\"lat\": " << coordinates.GetLat() << "\n";
-            output << "}\n";
+            curr_result["title"] = J(GetPOI(entry) + ", " + GetAdminRegion(entry));
+            curr_result["type"] = J(name);
+            curr_result["admin_region"] = J(GetAdminRegionHierachie(locationService,
+                                                                    adminRegionMap,
+                                                                    entry));
+            curr_result["object_id"] =  J(GetObjectId(entry.poi->object));
+            curr_result["lng"] = J(coordinates.GetLon());
+            curr_result["lat"] = J(coordinates.GetLat());
+
+            all_results.push_back(curr_result);
         }
         else if (entry.adminRegion)
         {
+            QMap<QString, QString> curr_result;
+
             QString name, id;
             if (entry.adminRegion->aliasObject.Valid())
             {
@@ -275,22 +328,63 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
                 id = GetObjectId(entry.adminRegion->object);
             }
 
-            output << "{\n";
-            output << "\"title\": \"" << GetAdminRegion(entry)
-                   << "\",\n";
-            output << "\"type\": \"" << name << "\",\n";
-            output << "\"admin_region\": \""
-                   << GetAdminRegionHierachie(locationService,
-                                              adminRegionMap,
-                                              entry) << "\",\n";
-            output << "\"object_id\": \"" << id << "\",\n";
-            output << "\"lng\": " << coordinates.GetLon() << ",\n";
-            output << "\"lat\": " << coordinates.GetLat() << "\n";
-            output << "}\n";
+            curr_result["title"] = J(GetAdminRegion(entry));
+            curr_result["type"] = J(name);
+            curr_result["admin_region"] = J(GetAdminRegionHierachie(locationService,
+                                                                    adminRegionMap,
+                                                                    entry));
+            curr_result["object_id"] =  J(id);
+            curr_result["lng"] = J(coordinates.GetLon());
+            curr_result["lat"] = J(coordinates.GetLat());
+
+            all_results.push_back(curr_result);
         }
     }
 
-    output << "]\n";
+    ///////////////////////////////////////////////////////////
+    /// Search using free text
+    ///////////////////////////////////////////////////////////
+
+    osmscout::TextSearchIndex textSearch;
+    if(!textSearch.Load(m_map_dir))
+    {
+        std::cout << "ERROR: Failed to load text files!"
+                     "(are you sure you passed the right path?)"
+                  << std::endl;
+        return false;
+    }
+
+    osmscout::TextSearchIndex::ResultsMap resultsTxt;
+    textSearch.Search(searchPattern.toStdString(), true, true, true, true, resultsTxt);
+
+    osmscout::TextSearchIndex::ResultsMap::iterator it;
+    size_t count = 0;
+    for(it=resultsTxt.begin(); it != resultsTxt.end() && count < limit; ++it, ++count)
+    {
+        std::vector<osmscout::ObjectFileRef> &refs=it->second;
+        std::size_t maxPrintedOffsets=5;
+        std::size_t minRefCount=std::min(refs.size(),maxPrintedOffsets);
+
+        for(size_t r=0; r < minRefCount; r++)
+        {
+            QMap<QString, QString> curr_result;
+
+            QString name;
+            osmscout::GeoCoord coordinates;
+            GetObjectNameCoor(m_database, refs[r], name, coordinates);
+
+            curr_result["title"] = J(it->first);
+            curr_result["type"] = J(name);
+            curr_result["object_id"] =  J(GetObjectId(refs[r]));
+            curr_result["lng"] = J(coordinates.GetLon());
+            curr_result["lat"] = J(coordinates.GetLat());
+
+            all_results.push_back(curr_result);
+        }
+    }
+
+    ////////////////////////////////////////////////////////////
+    storeAsJson(all_results, result);
 
     return true;
 }
