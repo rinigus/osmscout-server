@@ -9,6 +9,9 @@
 #include <QTextStream>
 #include <QVector>
 #include <QMap>
+#include <QSet>
+
+#include <QDebug>
 
 bool GetAdminRegionHierachie(const osmscout::LocationService& locationService,
                              const osmscout::AdminRegionRef& adminRegion,
@@ -210,6 +213,41 @@ static QString J(double v)
 //    return QString::number(v);
 //}
 
+///////////////////////////////////////////////////////////////////////////////////////
+/// \brief The helper class to keep SearchResults
+///
+class SearchResults
+{
+public:
+    bool contains(osmscout::FileOffset id) const
+    {
+        return m_elements.contains(id);
+    }
+
+    bool contains(const osmscout::ObjectFileRef &object) const
+    {
+        return contains(object.GetFileOffset());
+    }
+
+    void add(osmscout::FileOffset id, QMap<QString, QString> &curr_result)
+    {
+        m_results.push_back(curr_result);
+        m_elements.insert(id);
+    }
+
+    void add(const osmscout::ObjectFileRef &object, QMap<QString, QString> &curr_result)
+    {
+        add( object.GetFileOffset(), curr_result);
+    }
+
+    QVector< QMap<QString, QString> >& results() { return m_results; }
+
+protected:
+    QSet<osmscout::FileOffset> m_elements;
+    QVector< QMap<QString, QString> > m_results;
+};
+
+
 //////////////////////////////////////////////////////////////////////////////
 bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
 {
@@ -246,7 +284,7 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
     }
 
 
-    QVector< QMap<QString, QString> > all_results;
+    SearchResults all_results;
     for (const osmscout::LocationSearchResult::Entry &entry : searchResult.results)
     {
         osmscout::GeoCoord coordinates;
@@ -255,6 +293,9 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
                 entry.location &&
                 entry.address)
         {
+            if ( all_results.contains( entry.address->object ) )
+                continue;
+
             QMap<QString, QString> curr_result;
 
             QString name;
@@ -269,13 +310,16 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
             curr_result["lng"] = J(coordinates.GetLon());
             curr_result["lat"] = J(coordinates.GetLat());
 
-            all_results.push_back(curr_result);
+            all_results.add(entry.address->object, curr_result);
         }
         else if (entry.adminRegion &&
                  entry.location)
         {
             for (const auto &object : entry.location->objects)
             {
+                if ( all_results.contains( object ) )
+                    continue;
+
                 QMap<QString, QString> curr_result;
 
                 QString name;
@@ -290,12 +334,15 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
                 curr_result["lng"] = J(coordinates.GetLon());
                 curr_result["lat"] = J(coordinates.GetLat());
 
-                all_results.push_back(curr_result);
+                all_results.add(object, curr_result);
             }
         }
         else if (entry.adminRegion &&
                  entry.poi)
         {
+            if ( all_results.contains( entry.poi->object ) )
+                continue;
+
             QMap<QString, QString> curr_result;
 
             QString name;
@@ -310,23 +357,29 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
             curr_result["lng"] = J(coordinates.GetLon());
             curr_result["lat"] = J(coordinates.GetLat());
 
-            all_results.push_back(curr_result);
+            all_results.add(entry.poi->object, curr_result);
         }
         else if (entry.adminRegion)
         {
             QMap<QString, QString> curr_result;
 
             QString name, id;
+            osmscout::FileOffset objid;
             if (entry.adminRegion->aliasObject.Valid())
             {
                 GetObjectNameCoor(m_database, entry.adminRegion->aliasObject, name, coordinates);
                 id = GetObjectId(entry.adminRegion->aliasObject);
+                objid = entry.adminRegion->aliasObject.GetFileOffset();
             }
             else
             {
                 GetObjectNameCoor(m_database, entry.adminRegion->object, name, coordinates);
                 id = GetObjectId(entry.adminRegion->object);
+                objid = entry.adminRegion->object.GetFileOffset();
             }
+
+            if (all_results.contains(objid))
+                continue;
 
             curr_result["title"] = J(GetAdminRegion(entry));
             curr_result["type"] = J(name);
@@ -337,7 +390,7 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
             curr_result["lng"] = J(coordinates.GetLon());
             curr_result["lat"] = J(coordinates.GetLat());
 
-            all_results.push_back(curr_result);
+            all_results.add(objid, curr_result);
         }
     }
 
@@ -362,29 +415,63 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
     for(it=resultsTxt.begin(); it != resultsTxt.end() && count < limit; ++it, ++count)
     {
         std::vector<osmscout::ObjectFileRef> &refs=it->second;
+
+//        std::list<osmscout::LocationService::ReverseLookupResult> result;
+//        for (const osmscout::ObjectFileRef &object: refs)
+//        {
+//            std::list<osmscout::ObjectFileRef> objects;
+//            objects.push_back(object);
+//            if (locationService.ReverseLookupObjects(objects,
+//                                                     result))
+//                for (const osmscout::LocationService::ReverseLookupResult& entry : result)
+//                {
+//                    QMap<QString, QString> curr_result;
+
+//                    QString name;
+//                    osmscout::GeoCoord coordinates;
+//                    GetObjectNameCoor(m_database, object, name, coordinates);
+
+//                    curr_result["title"] = J(entry.object.GetName());
+//                    curr_result["type"] = J(name);
+//                    curr_result["object_id"] =  J(GetObjectId(object));
+//                    curr_result["lng"] = J(coordinates.GetLon());
+//                    curr_result["lat"] = J(coordinates.GetLat());
+
+//                    qDebug() << curr_result;
+
+//                    add_if_new(curr_result,all_results);
+//                }
+//            //add_search_entry(locationService, adminRegionMap, entry, all_results);
+//        }
+
         std::size_t maxPrintedOffsets=5;
         std::size_t minRefCount=std::min(refs.size(),maxPrintedOffsets);
 
         for(size_t r=0; r < minRefCount; r++)
         {
+            osmscout::ObjectFileRef fref = refs[r];
+
+            if (all_results.contains(fref))
+                continue;
+
             QMap<QString, QString> curr_result;
 
             QString name;
             osmscout::GeoCoord coordinates;
-            GetObjectNameCoor(m_database, refs[r], name, coordinates);
+            GetObjectNameCoor(m_database, fref, name, coordinates);
 
             curr_result["title"] = J(it->first);
             curr_result["type"] = J(name);
-            curr_result["object_id"] =  J(GetObjectId(refs[r]));
+            curr_result["object_id"] =  J(GetObjectId(fref));
             curr_result["lng"] = J(coordinates.GetLon());
             curr_result["lat"] = J(coordinates.GetLat());
 
-            all_results.push_back(curr_result);
+            all_results.add(fref, curr_result);
         }
     }
 
     ////////////////////////////////////////////////////////////
-    storeAsJson(all_results, result);
+    storeAsJson(all_results.results(), result);
 
     return true;
 }

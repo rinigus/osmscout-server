@@ -7,6 +7,9 @@
 #include <QMutex>
 #include <QByteArray>
 #include <QObject>
+#include <QVector>
+#include <QMap>
+#include <QString>
 
 #include <string>
 
@@ -37,7 +40,6 @@ public slots:
 protected:
 
     bool loadStyle(bool daylight);
-
 
 protected:
     QMutex m_mutex;

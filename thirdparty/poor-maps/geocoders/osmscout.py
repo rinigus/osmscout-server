@@ -50,6 +50,9 @@ def geocode(query, params):
 
 def parse_description(result):
     """Parse description from geocoding result."""
-    description = result["type"] + "; " + result["admin_region"] + "; " + result["object_id"]
-    return description
+    description = ""
+    for i in ["type", "admin_region", "object_id"]:
+        if i in result:
+            description += result[i] + "; "
+    return description.strip()
 
