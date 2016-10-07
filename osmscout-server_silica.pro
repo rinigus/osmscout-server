@@ -81,6 +81,9 @@ use_map_cairo {
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
+CONFIG(release, debug|release) {
+    DEFINES += QT_NO_WARNING_OUTPUT QT_NO_DEBUG_OUTPUT
+}
 
 # German translation is enabled as an example. If you aren't
 # planning to localize your app, remember to comment out the
