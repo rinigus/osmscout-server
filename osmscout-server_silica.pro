@@ -48,7 +48,8 @@ SOURCES += \
     src/appsettings.cpp \
     src/dbmaster_search.cpp \
     src/dbmaster_map.cpp \
-    src/osmscout-server_silica.cpp
+    src/osmscout-server_silica.cpp \
+    src/searchresults.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -63,7 +64,8 @@ HEADERS += \
     src/dbmaster.h \
     src/requestmapper.h \
     src/appsettings.h \
-    src/config.h
+    src/config.h \
+    src/searchresults.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT

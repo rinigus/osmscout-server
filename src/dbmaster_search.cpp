@@ -213,43 +213,9 @@ static QString J(double v)
 //    return QString::number(v);
 //}
 
-///////////////////////////////////////////////////////////////////////////////////////
-/// \brief The helper class to keep SearchResults
-///
-class SearchResults
-{
-public:
-    bool contains(osmscout::FileOffset id) const
-    {
-        return m_elements.contains(id);
-    }
-
-    bool contains(const osmscout::ObjectFileRef &object) const
-    {
-        return contains(object.GetFileOffset());
-    }
-
-    void add(osmscout::FileOffset id, QMap<QString, QString> &curr_result)
-    {
-        m_results.push_back(curr_result);
-        m_elements.insert(id);
-    }
-
-    void add(const osmscout::ObjectFileRef &object, QMap<QString, QString> &curr_result)
-    {
-        add( object.GetFileOffset(), curr_result);
-    }
-
-    QVector< QMap<QString, QString> >& results() { return m_results; }
-
-protected:
-    QSet<osmscout::FileOffset> m_elements;
-    QVector< QMap<QString, QString> > m_results;
-};
-
 
 //////////////////////////////////////////////////////////////////////////////
-bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
+bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, size_t limit)
 {
     if (m_error_flag) return false;
 
@@ -284,7 +250,6 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
     }
 
 
-    SearchResults all_results;
     for (const osmscout::LocationSearchResult::Entry &entry : searchResult.results)
     {
         osmscout::GeoCoord coordinates;
@@ -470,8 +435,25 @@ bool DBMaster::search(QString searchPattern, QByteArray &result, size_t limit)
         }
     }
 
-    ////////////////////////////////////////////////////////////
+    return true;
+}
+
+
+bool DBMaster::search(const QString &searchPattern, QByteArray &result, size_t limit)
+{
+    SearchResults all_results;
+    if ( !search(searchPattern, all_results, limit) )
+        return false;
+
     storeAsJson(all_results.results(), result);
 
     return true;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+/// Search POI
+bool DBMaster::guide(const QString &poitype, double lat, double lon, double radius, QByteArray &result, size_t limit)
+{
+
 }

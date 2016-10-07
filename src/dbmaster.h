@@ -4,6 +4,8 @@
 #include <osmscout/Database.h>
 #include <osmscout/MapService.h>
 
+#include "searchresults.h"
+
 #include <QMutex>
 #include <QByteArray>
 #include <QObject>
@@ -26,7 +28,11 @@ public:
 
     bool renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
 
-    bool search(QString search, QByteArray &result, size_t limit);
+    bool search(const QString &search, QByteArray &result, size_t limit);
+
+    bool guide(const QString &poitype, QString &search, double radius, QByteArray &result, size_t limit);
+
+    bool guide(const QString &poitype, double lat, double lon, double radius, QByteArray &result, size_t limit);
 
     /// \brief checks if DBMaster object is ready for operation
     ///
@@ -40,6 +46,8 @@ public slots:
 protected:
 
     bool loadStyle(bool daylight);
+
+    bool search(const QString &search, SearchResults &result, size_t limit);
 
 protected:
     QMutex m_mutex;
