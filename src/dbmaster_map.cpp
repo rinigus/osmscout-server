@@ -18,6 +18,7 @@
 #include <QImage>
 #include <QPainter>
 #include <QBuffer>
+#include <QDebug>
 
 #endif // MAP QT
 
@@ -47,6 +48,15 @@ cairo_status_t cairo_write_to_buffer(void *closure,
 
 bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result)
 {
+//    qDebug() << "Map rendering: day=" << daylight << " "
+//             << " dpi=" << dpi
+//             << " zoom=" << zoom_level
+//             << " width=" << width
+//             << " height=" << height
+//             << " lat=" << lat
+//             << " lon=" << lon;
+
+
     if (m_error_flag) return false;
 
     // reading in settings - area protected by mutex
