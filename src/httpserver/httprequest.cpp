@@ -207,7 +207,13 @@ void HttpRequest::decodeRequestParams()
     #endif
     // Get URL parameters
     QByteArray rawParameters;
-    int questionMark=path.indexOf('?');
+
+    //////////////////////////////////////////
+    //// URL is decoded separately. For that, instead
+    /// of search, just -1 is set
+    int questionMark=-1; //path.indexOf('?');
+    //////////////////////////////////////////
+
     if (questionMark>=0)
     {
         rawParameters=path.mid(questionMark+1);

@@ -50,12 +50,19 @@ Default port is 8553 TCP and the server binds to 127.0.0.1 providing
 services to local apps only.
 
 
+## URL scheme
+
+Access to functionality is provided via path and query parts of
+URL. The path determines the module that is accessed with the query
+specifying arguments. Here, order of query elements is not important.
+
+
 ## Tile server
 
 The server component for providing tiles operates using OSM convention
 with small extensions. URL is
 
-http://localhost:8553/v1/tile/{dlight}/{shift}/{scale}/{z}/{x}/{y}.png
+http://localhost:8553/v1/tile?daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}
 
 where
 
@@ -76,13 +83,13 @@ Poor Maps settings for example.
 
 The location search is accessed by the following URL:
 
-http://localhost:8553/v1/search/{limit}/{query}
+http://localhost:8553/v1/search?limit={limit}?search={query}
 
 where
 
 {limit} - maximal number of search results
 
-{query} - location search
+{query} - location and free text search
 
 Results are returned in JSON format. See Poor Maps geocoder
 implementation for details of the format.

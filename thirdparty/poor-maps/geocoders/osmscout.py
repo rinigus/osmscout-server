@@ -24,9 +24,9 @@ import poor
 import re
 import urllib.parse
 
-URL = ("http://localhost:8553/v1/search/"
-       "{limit}/"
-       "{query}" )
+URL = ("http://localhost:8553/v1/search?"
+       "limit={limit}&"
+       "search={query}" )
 
 cache = {}
 

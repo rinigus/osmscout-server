@@ -5,5 +5,5 @@
     "name": "OSM scout night @2x",
     "scale": 2,
     "source": "osmscout",
-    "url": "http://localhost:8553/v1/tile/0/0/2/{z}/{x}/{y}.png"
+    "url": "http://localhost:8553/v1/tile?daylight=0&shift=0&scale=2&z={z}&x={x}&y={y}"
 }
