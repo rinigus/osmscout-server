@@ -229,7 +229,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
     else if (path == "/v1/poi_types")
     {
         QByteArray bytes;
-        if (!osmScoutMaster->poi_types(bytes))
+        if (!osmScoutMaster->poiTypes(bytes))
         {
             returnError(response);
             return;

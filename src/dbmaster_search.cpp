@@ -643,7 +643,7 @@ bool DBMaster::guide(const QString &poitype, const QString &searchPattern, doubl
     return guide(poitype, lat, lon, radius, limit, result);
 }
 
-bool DBMaster::poi_types(QByteArray &result)
+bool DBMaster::poiTypes(QByteArray &result)
 {
     if (m_error_flag) return false;
 

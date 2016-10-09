@@ -34,7 +34,7 @@ public:
 
     bool guide(const QString &poitype, double lat, double lon, double radius, size_t limit, QByteArray &result);
 
-    bool poi_types(QByteArray &result); ///< Fill results with list of supported POI types
+    bool poiTypes(QByteArray &result); ///< Fill results with list of supported POI types
 
     /// \brief checks if DBMaster object is ready for operation
     ///
