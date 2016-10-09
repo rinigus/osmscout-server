@@ -138,6 +138,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         int x = q2value<int>("x", 0, query, ok);
         int y = q2value<int>("y", 0, query, ok);
         int z = q2value<int>("z", 0, query, ok);
+
         if (!ok)
         {
             returnError(response);
@@ -167,8 +168,66 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
 
         search = search.simplified();
 
+        if (!ok || search.length() < 1)
+        {
+            returnError(response);
+            return;
+        }
+
         QByteArray bytes;
         if ( !osmScoutMaster->search(search, bytes, limit) )
+        {
+            returnError(response);
+            return;
+        }
+
+        response.setHeader("Content-Type", "text/plain; charset=UTF-8");
+        response.write(bytes, true);
+    }
+
+    else if (path == "/v1/guide")
+    {
+        bool ok = true;
+        double radius = q2value<double>("radius", 1.0, query, ok);
+        size_t limit = q2value<size_t>("limit", 50, query, ok);
+        QString poitype = q2value<QString>("poitype", "", query, ok);
+        QString search = q2value<QString>("search", "", query, ok);
+        double lon = q2value<double>("lon", 0, query, ok);
+        double lat = q2value<double>("lat", 0, query, ok);
+
+        if (!ok)
+        {
+            returnError(response);
+            return;
+        }
+
+        search = search.simplified();
+
+        QByteArray bytes;
+        bool res = false;
+        if ( query.hasQueryItem("search") && search.length() > 0 )
+        {
+            res = osmScoutMaster->guide(poitype, search, radius, limit, bytes);
+        }
+        else if ( query.hasQueryItem("lon") && query.hasQueryItem("lat") )
+        {
+            res = osmScoutMaster->guide(poitype, lat, lon, radius, limit, bytes);
+        }
+
+        if (!res)
+        {
+            returnError(response);
+            return;
+        }
+
+        response.setHeader("Content-Type", "text/plain; charset=UTF-8");
+        response.write(bytes, true);
+    }
+
+    else if (path == "/v1/poi_types")
+    {
+        QByteArray bytes;
+        if (!osmScoutMaster->poi_types(bytes))
         {
             returnError(response);
             return;

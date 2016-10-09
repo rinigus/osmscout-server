@@ -28,11 +28,13 @@ public:
 
     bool renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
 
-    bool search(const QString &search, QByteArray &result, size_t limit);
+    bool search(const QString &searchPattern, QByteArray &result, size_t limit);
 
-    bool guide(const QString &poitype, QString &search, double radius, QByteArray &result, size_t limit);
+    bool guide(const QString &poitype, const QString &searchPattern, double radius, size_t limit, QByteArray &result);
 
-    bool guide(const QString &poitype, double lat, double lon, double radius, QByteArray &result, size_t limit);
+    bool guide(const QString &poitype, double lat, double lon, double radius, size_t limit, QByteArray &result);
+
+    bool poi_types(QByteArray &result); ///< Fill results with list of supported POI types
 
     /// \brief checks if DBMaster object is ready for operation
     ///

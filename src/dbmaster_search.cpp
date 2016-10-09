@@ -4,6 +4,7 @@
 
 #include <osmscout/LocationService.h>
 #include <osmscout/TextSearchIndex.h>
+#include <osmscout/POIService.h>
 
 #include <QString>
 #include <QTextStream>
@@ -139,6 +140,18 @@ QString GetObjectId(const osmscout::ObjectFileRef& object)
     label=object.GetTypeName();
     label+=" ";
     label+=osmscout::NumberToString(object.GetFileOffset());
+
+    return QString::fromStdString(label);
+}
+
+template <typename T>
+QString GetObjectIdRef(const T& ref)
+{
+    std::string label;
+
+    label=ref->GetTypeName();
+    label+=" ";
+    label+=osmscout::NumberToString(ref->GetFileOffset());
 
     return QString::fromStdString(label);
 }
@@ -381,33 +394,33 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
     {
         std::vector<osmscout::ObjectFileRef> &refs=it->second;
 
-//        std::list<osmscout::LocationService::ReverseLookupResult> result;
-//        for (const osmscout::ObjectFileRef &object: refs)
-//        {
-//            std::list<osmscout::ObjectFileRef> objects;
-//            objects.push_back(object);
-//            if (locationService.ReverseLookupObjects(objects,
-//                                                     result))
-//                for (const osmscout::LocationService::ReverseLookupResult& entry : result)
-//                {
-//                    QMap<QString, QString> curr_result;
+        //        std::list<osmscout::LocationService::ReverseLookupResult> result;
+        //        for (const osmscout::ObjectFileRef &object: refs)
+        //        {
+        //            std::list<osmscout::ObjectFileRef> objects;
+        //            objects.push_back(object);
+        //            if (locationService.ReverseLookupObjects(objects,
+        //                                                     result))
+        //                for (const osmscout::LocationService::ReverseLookupResult& entry : result)
+        //                {
+        //                    QMap<QString, QString> curr_result;
 
-//                    QString name;
-//                    osmscout::GeoCoord coordinates;
-//                    GetObjectNameCoor(m_database, object, name, coordinates);
+        //                    QString name;
+        //                    osmscout::GeoCoord coordinates;
+        //                    GetObjectNameCoor(m_database, object, name, coordinates);
 
-//                    curr_result["title"] = J(entry.object.GetName());
-//                    curr_result["type"] = J(name);
-//                    curr_result["object_id"] =  J(GetObjectId(object));
-//                    curr_result["lng"] = J(coordinates.GetLon());
-//                    curr_result["lat"] = J(coordinates.GetLat());
+        //                    curr_result["title"] = J(entry.object.GetName());
+        //                    curr_result["type"] = J(name);
+        //                    curr_result["object_id"] =  J(GetObjectId(object));
+        //                    curr_result["lng"] = J(coordinates.GetLon());
+        //                    curr_result["lat"] = J(coordinates.GetLat());
 
-//                    qDebug() << curr_result;
+        //                    qDebug() << curr_result;
 
-//                    add_if_new(curr_result,all_results);
-//                }
-//            //add_search_entry(locationService, adminRegionMap, entry, all_results);
-//        }
+        //                    add_if_new(curr_result,all_results);
+        //                }
+        //            //add_search_entry(locationService, adminRegionMap, entry, all_results);
+        //        }
 
         std::size_t maxPrintedOffsets=5;
         std::size_t minRefCount=std::min(refs.size(),maxPrintedOffsets);
@@ -453,7 +466,193 @@ bool DBMaster::search(const QString &searchPattern, QByteArray &result, size_t l
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /// Search POI
-bool DBMaster::guide(const QString &poitype, double lat, double lon, double radius, QByteArray &result, size_t limit)
-{
+bool DBMaster::guide(const QString &poitype, double lat, double lon, double radius, size_t limit, QByteArray &result)
+{    
+    if (m_error_flag) return false;
 
+    QMutexLocker lk(&m_mutex);
+
+    if (!m_database->IsOpen())
+        return false;
+
+    qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
+
+    osmscout::GeoCoord center_coordinate(lat, lon);
+    osmscout::GeoBox region_box( osmscout::GeoBox::BoxByCenterAndRadius(center_coordinate, radius*1e3) );
+
+    qDebug() << "region: lat: " << region_box.GetMinLat() << "-" << region_box.GetMaxLat()
+             << " lon: " << region_box.GetMinLon() << "-" << region_box.GetMaxLon();
+
+    osmscout::TypeConfigRef typeConfig(m_database->GetTypeConfig());
+    osmscout::TypeInfoSet nodeTypes(*typeConfig);
+    osmscout::TypeInfoSet wayTypes(*typeConfig);
+    osmscout::TypeInfoSet areaTypes(*typeConfig);
+    osmscout::NameFeatureLabelReader nameLabelReader(*typeConfig);
+
+    for (const osmscout::TypeInfoRef &r: typeConfig->GetNodeTypes())
+    {
+        QString name = QString::fromStdString(r->GetName());
+        if (name.contains(poitype, Qt::CaseInsensitive))
+        {
+            nodeTypes.Set(r);
+            qDebug() << "types: N " << name;
+        }
+    }
+
+    for (const osmscout::TypeInfoRef &r: typeConfig->GetWayTypes())
+    {
+        QString name = QString::fromStdString(r->GetName());
+        if (name.contains(poitype, Qt::CaseInsensitive))
+        {
+            wayTypes.Set(r);
+            qDebug() << "types: W " << name;
+        }
+    }
+
+    for (const osmscout::TypeInfoRef &r: typeConfig->GetAreaTypes())
+    {
+        QString name = QString::fromStdString(r->GetName());
+        if (name.contains(poitype, Qt::CaseInsensitive))
+        {
+            areaTypes.Set(r);
+            qDebug() << "types: A " << name;
+        }
+    }
+
+    osmscout::POIService poiService(m_database);
+    std::vector<osmscout::NodeRef> nodes;
+    std::vector<osmscout::WayRef>  ways;
+    std::vector<osmscout::AreaRef> areas;
+
+    if (!poiService.GetPOIsInArea(region_box,
+                                   nodeTypes,
+                                   nodes,
+                                   wayTypes,
+                                   ways,
+                                   areaTypes,
+                                   areas))
+    {
+      std::cerr << "Cannot load data from database" << std::endl;
+      return false;
+    }
+
+    SearchResults all_results;
+
+    for (const osmscout::NodeRef &node: nodes)
+    {
+        if (all_results.length()>=limit)
+            break;
+
+        osmscout::FileOffset fref = node->GetFileOffset();
+
+        if (all_results.contains(fref))
+            continue;
+
+        QMap<QString, QString> curr_result;
+
+        osmscout::GeoCoord coordinates = node->GetCoords();
+
+        curr_result["title"] = J(nameLabelReader.GetLabel((node->GetFeatureValueBuffer())));
+        curr_result["type"] = J(node->GetType()->GetName());
+        curr_result["object_id"] =  J("Node " + osmscout::NumberToString(fref));
+        curr_result["lng"] = J(coordinates.GetLon());
+        curr_result["lat"] = J(coordinates.GetLat());
+
+        all_results.add(fref, curr_result);
+    }
+
+    for (const osmscout::WayRef &way: ways)
+    {
+        if (all_results.length()>=limit)
+            break;
+
+        osmscout::FileOffset fref = way->GetFileOffset();
+
+        if (all_results.contains(fref))
+            continue;
+
+        QMap<QString, QString> curr_result;
+
+        osmscout::GeoCoord coordinates; way->GetCenter(coordinates);
+
+        curr_result["title"] = J(nameLabelReader.GetLabel((way->GetFeatureValueBuffer())));
+        curr_result["type"] = J(way->GetType()->GetName());
+        curr_result["object_id"] =  J("Way " + osmscout::NumberToString(fref));
+        curr_result["lng"] = J(coordinates.GetLon());
+        curr_result["lat"] = J(coordinates.GetLat());
+
+        all_results.add(fref, curr_result);
+    }
+
+    for (const osmscout::AreaRef &area: areas)
+    {
+        if (all_results.length()>=limit)
+            break;
+
+        osmscout::FileOffset fref = area->GetFileOffset();
+
+        if (all_results.contains(fref))
+            continue;
+
+        QMap<QString, QString> curr_result;
+
+        osmscout::GeoCoord coordinates; area->GetCenter(coordinates);
+
+        curr_result["title"] = J(nameLabelReader.GetLabel((area->GetFeatureValueBuffer())));
+        curr_result["type"] = J(area->GetType()->GetName());
+        curr_result["object_id"] =  J("Area " + osmscout::NumberToString(fref));
+        curr_result["lng"] = J(coordinates.GetLon());
+        curr_result["lat"] = J(coordinates.GetLat());
+
+        all_results.add(fref, curr_result);
+    }
+
+    ////////////////////////////////////////////
+    /// Write the results
+    storeAsJson(all_results.results(), result);
+
+    return true;
+}
+
+bool DBMaster::guide(const QString &poitype, const QString &searchPattern, double radius, size_t limit, QByteArray &result)
+{
+    SearchResults all_results;
+    if ( !search(searchPattern, all_results, 1) )
+        return false;
+
+    if (all_results.length() == 0)
+    {
+        QVector< QMap<QString, QString> > i;
+        storeAsJson(i, result);
+        return true;
+    }
+
+    qDebug() << all_results.results().at(0);
+
+    double lat = all_results.results().at(0)["lat"].toDouble();
+    double lon = all_results.results().at(0)["lng"].toDouble();
+
+    return guide(poitype, lat, lon, radius, limit, result);
+}
+
+bool DBMaster::poi_types(QByteArray &result)
+{
+    if (m_error_flag) return false;
+
+    QMutexLocker lk(&m_mutex);
+
+    if (!m_database->IsOpen())
+        return false;
+
+    QTextStream output(&result, QIODevice::WriteOnly);
+
+    osmscout::TypeConfigRef typeConfig(m_database->GetTypeConfig());
+
+    for (const osmscout::TypeInfoRef &r: typeConfig->GetTypes())
+    {
+        QString name = QString::fromStdString(r->GetName());
+        output << name << "\n";
+    }
+
+    return true;
 }

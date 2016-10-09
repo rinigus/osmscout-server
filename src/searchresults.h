@@ -37,6 +37,8 @@ public:
 
     QVector< QMap<QString, QString> >& results() { return m_results; }
 
+    size_t length() const { return m_results.length(); }
+
 protected:
     QSet<osmscout::FileOffset> m_elements;
     QVector< QMap<QString, QString> > m_results;
