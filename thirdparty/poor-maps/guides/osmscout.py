@@ -50,12 +50,13 @@ def nearby(query, near, radius, params):
         x, y = near[0], near[1]
         url = URLxy.format(**locals())
     else:
-        search = near
+        search = urllib.parse.quote_plus(near)
         url = URLs.format(**locals())
         
     with poor.util.silent(KeyError):
         return copy.deepcopy(cache[url])
-    
+
+    print(url)
     results = poor.http.request_json(url)
 
     x, y = results["origin"]["lng"], results["origin"]["lat"]
@@ -66,7 +67,9 @@ def nearby(query, near, radius, params):
                     ) for result in results["results"]]
 
     if results and results[0]:
+        results = poor.util.sorted_by_distance(results, x, y)
         cache[url] = copy.deepcopy(results)
+
     return x, y, results
 
 def parse_description(result):
