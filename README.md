@@ -95,6 +95,48 @@ Results are returned in JSON format. See Poor Maps geocoder
 implementation for details of the format.
 
 
+## List of available POI types
+
+List of available POI types is available via 
+
+http://localhost:8553/v1/poi_types
+
+
+## POI search near a reference position
+
+To find POIs within a given radius from a specified reference
+position, server can be accessed via `/v1/guide` path:
+
+http://localhost:8553/v1/guide?radius={radius}&limit={limit}&poitype={poitype}&search={search}&lng={lng}&lat={lat}
+
+where
+
+{limit} - maximal number of search results
+
+{radius} - distance from the reference in meters
+
+{poitype} - POI type name substring (checked against POI type name in case-insensitive manner)
+
+{search} - a query that is run to find a reference point, the first result is used
+
+{lng}, {lat} - longitude and latidude, respectively.
+
+As mentioned above, given POI type is considered as a substring that
+is looked for in all available POI types without taking into account
+the case of letters. For example, "Cafe" would match
+amenity_cafe_building and amenity_cafe. However, "Café" would miss
+them.
+
+The reference point can be given either as a query ("Paris") or as a
+location coordinates. If the both forms are given in URL, location
+coordinates are preferred.
+
+The result is given in JSON format. It returns a JSON object with two
+keys: "origin" (coordinates of the reference point used in the search)
+and "results" (array with the POIs). See Poor Maps implementation on
+how to process the results.
+
+
 ## Acknowledgments
 
 libosmscout: http://libosmscout.sourceforge.net
