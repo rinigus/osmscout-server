@@ -119,15 +119,15 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
 
     qDebug() << "Request: " << url.toString();
 
-//    qDebug() << "host: " << url.host() << " port: " << url.port()
-//             << " path: " << url.path()
-//             << " file: " << url.fileName()
-//             << " q? " << url.hasQuery();
+    //    qDebug() << "host: " << url.host() << " port: " << url.port()
+    //             << " path: " << url.path()
+    //             << " file: " << url.fileName()
+    //             << " q? " << url.hasQuery();
 
-//    foreach (auto q, query.queryItems())
-//    {
-//        qDebug() << q;
-//    }
+    //    foreach (auto q, query.queryItems())
+    //    {
+    //        qDebug() << q;
+    //    }
 
     if (path == "/v1/tile") // Tile
     {
@@ -188,7 +188,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
     else if (path == "/v1/guide")
     {
         bool ok = true;
-        double radius = q2value<double>("radius", 1.0, query, ok);
+        double radius = q2value<double>("radius", 1000.0, query, ok);
         size_t limit = q2value<size_t>("limit", 50, query, ok);
         QString poitype = q2value<QString>("poitype", "", query, ok);
         QString search = q2value<QString>("search", "", query, ok);
@@ -205,13 +205,15 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
 
         QByteArray bytes;
         bool res = false;
-        if ( query.hasQueryItem("search") && search.length() > 0 )
-        {
-            res = osmScoutMaster->guide(poitype, search, radius, limit, bytes);
-        }
-        else if ( query.hasQueryItem("lng") && query.hasQueryItem("lat") )
+
+        if ( query.hasQueryItem("lng") && query.hasQueryItem("lat") )
         {
             res = osmScoutMaster->guide(poitype, lat, lon, radius, limit, bytes);
+        }
+
+        else if ( query.hasQueryItem("search") && search.length() > 0 )
+        {
+            res = osmScoutMaster->guide(poitype, search, radius, limit, bytes);
         }
 
         if (!res)
