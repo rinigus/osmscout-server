@@ -192,7 +192,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         size_t limit = q2value<size_t>("limit", 50, query, ok);
         QString poitype = q2value<QString>("poitype", "", query, ok);
         QString search = q2value<QString>("search", "", query, ok);
-        double lon = q2value<double>("lon", 0, query, ok);
+        double lon = q2value<double>("lng", 0, query, ok);
         double lat = q2value<double>("lat", 0, query, ok);
 
         if (!ok)
@@ -209,7 +209,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         {
             res = osmScoutMaster->guide(poitype, search, radius, limit, bytes);
         }
-        else if ( query.hasQueryItem("lon") && query.hasQueryItem("lat") )
+        else if ( query.hasQueryItem("lng") && query.hasQueryItem("lat") )
         {
             res = osmScoutMaster->guide(poitype, lat, lon, radius, limit, bytes);
         }

@@ -176,12 +176,10 @@ QString GetAdminRegionHierachie(const osmscout::LocationService& locationService
 ///////////////////////////////////////////////////////////////////////////////////
 /// \brief storeAsJson: stores input in result as a JSON array
 /// \param input vector of JSON objects
-/// \param result output data array
+/// \param result output stream
 ///
-void storeAsJson(const QVector< QMap<QString, QString> > &input, QByteArray &result)
+void storeAsJson(const QVector< QMap<QString, QString> > &input, QTextStream &output)
 {
-    QTextStream output(&result, QIODevice::WriteOnly);
-
     output << "[\n";
 
     bool first = true;
@@ -458,7 +456,8 @@ bool DBMaster::search(const QString &searchPattern, QByteArray &result, size_t l
     if ( !search(searchPattern, all_results, limit) )
         return false;
 
-    storeAsJson(all_results.results(), result);
+    QTextStream output(&result, QIODevice::WriteOnly);
+    storeAsJson(all_results.results(), output);
 
     return true;
 }
@@ -467,7 +466,7 @@ bool DBMaster::search(const QString &searchPattern, QByteArray &result, size_t l
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /// Search POI
 bool DBMaster::guide(const QString &poitype, double lat, double lon, double radius, size_t limit, QByteArray &result)
-{    
+{
     if (m_error_flag) return false;
 
     QMutexLocker lk(&m_mutex);
@@ -478,7 +477,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
     qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
 
     osmscout::GeoCoord center_coordinate(lat, lon);
-    osmscout::GeoBox region_box( osmscout::GeoBox::BoxByCenterAndRadius(center_coordinate, radius*1e3) );
+    osmscout::GeoBox region_box( osmscout::GeoBox::BoxByCenterAndRadius(center_coordinate, radius) );
 
     qDebug() << "region: lat: " << region_box.GetMinLat() << "-" << region_box.GetMaxLat()
              << " lon: " << region_box.GetMinLon() << "-" << region_box.GetMaxLon();
@@ -525,15 +524,15 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
     std::vector<osmscout::AreaRef> areas;
 
     if (!poiService.GetPOIsInArea(region_box,
-                                   nodeTypes,
-                                   nodes,
-                                   wayTypes,
-                                   ways,
-                                   areaTypes,
-                                   areas))
+                                  nodeTypes,
+                                  nodes,
+                                  wayTypes,
+                                  ways,
+                                  areaTypes,
+                                  areas))
     {
-      std::cerr << "Cannot load data from database" << std::endl;
-      return false;
+        std::cerr << "Cannot load data from database" << std::endl;
+        return false;
     }
 
     SearchResults all_results;
@@ -609,7 +608,16 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
 
     ////////////////////////////////////////////
     /// Write the results
-    storeAsJson(all_results.results(), result);
+
+    QTextStream output(&result, QIODevice::WriteOnly);
+    output.setRealNumberPrecision(8);
+    output << "{\n"
+           << "\"origin\": { \"lng\": " << lon << ", \"lat\": " << lat << "},\n"
+           << "\"results\": ";
+
+    storeAsJson(all_results.results(), output);
+
+    output << "\n}\n";
 
     return true;
 }
@@ -622,8 +630,8 @@ bool DBMaster::guide(const QString &poitype, const QString &searchPattern, doubl
 
     if (all_results.length() == 0)
     {
-        QVector< QMap<QString, QString> > i;
-        storeAsJson(i, result);
+        QTextStream output(&result, QIODevice::WriteOnly);
+        output << "{ }";
         return true;
     }
 
