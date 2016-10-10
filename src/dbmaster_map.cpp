@@ -1,6 +1,7 @@
 #include "dbmaster.h"
 #include "appsettings.h"
 #include "config.h"
+#include "infohub.h"
 
 #include <QMutexLocker>
 
@@ -207,7 +208,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
             success = true;
         else
         {
-            std::cerr << "Error while writing cairo stream\n";
+            InfoHub::logError("Error while writing cairo stream");
         }
 #endif
 

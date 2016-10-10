@@ -16,7 +16,9 @@
 #endif
 
 #define APP_PREFIX ""
-#endif
+
+#include "consolelogger.h"
+#endif // of IS_CONSOLE_QT
 
 #ifdef IS_SAILFISH_OS
 #include <sailfishapp.h>
@@ -31,13 +33,21 @@
 // LIB OSM Scout interface
 #include "dbmaster.h"
 
+#include "infohub.h"
+
 #include <iostream>
 
 DBMaster *osmScoutMaster = NULL;
 
+// global variable keeping the Hub
+extern InfoHub infoHub;
+
+
 int main(int argc, char *argv[])
 {
 #ifdef IS_CONSOLE_QT
+    ConsoleLogger _logger;
+
 #ifdef USE_OSMSCOUT_MAP_CAIRO
     QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
 #endif

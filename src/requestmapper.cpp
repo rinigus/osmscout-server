@@ -5,6 +5,7 @@
 
 #include "requestmapper.h"
 #include "dbmaster.h"
+#include "infohub.h"
 
 #include <QUrl>
 #include <QUrlQuery>
@@ -117,17 +118,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
     QString path(url.path());
     QUrlQuery query(url.query());
 
-    qDebug() << "Request: " << url.toString();
-
-    //    qDebug() << "host: " << url.host() << " port: " << url.port()
-    //             << " path: " << url.path()
-    //             << " file: " << url.fileName()
-    //             << " q? " << url.hasQuery();
-
-    //    foreach (auto q, query.queryItems())
-    //    {
-    //        qDebug() << q;
-    //    }
+    InfoHub::logInfo("Request: " + url.toString());
 
     if (path == "/v1/tile") // Tile
     {

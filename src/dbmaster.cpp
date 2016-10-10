@@ -1,6 +1,7 @@
 #include "dbmaster.h"
 #include "appsettings.h"
 #include "config.h"
+#include "infohub.h"
 
 #include <QMutexLocker>
 
@@ -11,7 +12,9 @@ DBMaster::DBMaster()
 
     if (m_database == nullptr)
     {
-        std::cerr << "Cannot create database object" << std::endl;
+        InfoHub::logError("Cannot create database object");
+        InfoHub::setError(true);
+
         m_error_flag = true;
 
         return;
@@ -26,8 +29,6 @@ DBMaster::~DBMaster()
 
 void DBMaster::loadSettings()
 {
-    if (m_error_flag) return;
-
     QMutexLocker lk(&m_mutex);
     AppSettings settings;
 
@@ -39,9 +40,12 @@ void DBMaster::loadSettings()
 
         if (!m_database->Open(m_map_dir))
         {
-            std::cerr << "Cannot open database: "  << m_map_dir << std::endl;
+            InfoHub::logError("Cannot open database: " + QString::fromStdString(m_map_dir));
             return;
         }
+
+        // clear error state
+        InfoHub::logInfo("Opened database " + QString::fromStdString(m_map_dir));
     }
 
     m_icons_dir = settings.valueString(OSM_SETTINGS "icons").toStdString();
@@ -82,7 +86,7 @@ bool DBMaster::loadStyle(bool daylight)
 
     if (m_style_config == nullptr)
     {
-        std::cerr << "Cannot allocate Style config" << std::endl;
+        InfoHub::logError("Cannot allocate Style config");
         return false;
     }
 
@@ -90,7 +94,7 @@ bool DBMaster::loadStyle(bool daylight)
 
     if (!m_style_config->Load(m_style_name))
     {
-        std::cerr << "Cannot open style: " << m_style_name << std::endl;
+        InfoHub::logError("Cannot open style: " + QString::fromStdString(m_style_name));
         return false;
     }
 
