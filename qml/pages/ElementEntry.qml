@@ -2,6 +2,8 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Column {
+    id: aaa
+
     property string key
     property string mainLabel
     property string secondaryLabel
@@ -14,6 +16,11 @@ Column {
     anchors.margins: Theme.horizontalPageMargin
     spacing: Theme.paddingSmall
 
+    function apply()
+    {
+        settings.setValue(settingsOsmPrefix + key, value)
+    }
+
     TextField {
         id: textInput
         width: parent.width
@@ -25,27 +32,27 @@ Column {
             text = settings.valueString(settingsOsmPrefix + parent.key)
         }
 
-        EnterKey.enabled: text.length > 0
-        EnterKey.onClicked: {
-            settings.setValue(settingsOsmPrefix + parent.key, parent.value)
-            focus = false
-        }
+//        EnterKey.enabled: text.length > 0
+//        EnterKey.onClicked: {
+//            settings.setValue(settingsOsmPrefix + parent.key, parent.value)
+//            focus = false
+//        }
 
-        onFocusChanged: {
-            if (!focus)
-            {
-                if (settings.valueString(settingsOsmPrefix + parent.key) !== text)
-                {
-                    secLabel.text = "<b>Setting not applied.</b> " + parent.secondaryLabel
-                    secLabel.visible = true
-                }
-                else
-                {
-                    secLabel.text = parent.secondaryLabel
-                    secLabel.visible = (parent.secondaryLabel.length > 0)
-                }
-            }
-        }
+//        onFocusChanged: {
+//            if (!focus)
+//            {
+//                if (settings.valueString(settingsOsmPrefix + parent.key) !== text)
+//                {
+//                    secLabel.text = "<b>Setting not applied.</b> " + parent.secondaryLabel
+//                    secLabel.visible = true
+//                }
+//                else
+//                {
+//                    secLabel.text = parent.secondaryLabel
+//                    secLabel.visible = (parent.secondaryLabel.length > 0)
+//                }
+//            }
+//        }
     }
 
     Label {

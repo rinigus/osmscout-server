@@ -11,6 +11,13 @@ Column {
     anchors.margins: Theme.horizontalPageMargin
     spacing: Theme.paddingSmall
 
+    function apply()
+    {
+        var ret = 0;
+        if (textInput.checked) ret = 1;
+        settings.setValue(settingsOsmPrefix + parent.key, ret)
+    }
+
     TextSwitch {
         id: textInput
         width: parent.width
@@ -20,11 +27,11 @@ Column {
             checked = (settings.valueInt(settingsOsmPrefix + parent.key) > 0)
         }
 
-        onCheckedChanged: {
-            var ret = 0;
-            if (checked) ret = 1;
-            settings.setValue(settingsOsmPrefix + parent.key, ret)
-        }
+//        onCheckedChanged: {
+//            var ret = 0;
+//            if (checked) ret = 1;
+//            settings.setValue(settingsOsmPrefix + parent.key, ret)
+//        }
     }
 
     Label {

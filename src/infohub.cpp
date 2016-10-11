@@ -34,7 +34,7 @@ bool InfoHub::error()
 
 static QString tstamp(const QString &txt)
 {
-    return QDateTime::currentDateTime().toString(Qt::ISODate) + " " + txt;
+    return QDateTime::currentDateTime().toString("HH:mm:ss") + " " + txt;
 }
 
 void InfoHub::logError(const QString &txt)

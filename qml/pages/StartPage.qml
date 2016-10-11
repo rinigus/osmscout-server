@@ -13,6 +13,11 @@ Page {
                 text: qsTr("About")
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
+
+            MenuItem {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+            }
         }
 
         contentHeight: column.height + Theme.paddingLarge
@@ -20,67 +25,69 @@ Page {
         Column {
             id: column
 
-            width: page.width
+            width: page.width-Theme.horizontalPageMargin
+            x: Theme.horizontalPageMargin
             spacing: Theme.paddingLarge
-            anchors.margins: Theme.horizontalPageMargin
 
             PageHeader {
                 title: qsTr("OSMScout Server")
             }
 
-//            SectionHeader {
-//                text: qsTr("Statistics")
-//                font.pixelSize: Theme.fontSizeLarge
-//            }
-
             SectionHeader {
-                text: qsTr("Settings")
+                text: qsTr("Database")
                 font.pixelSize: Theme.fontSizeLarge
             }
 
+            Label {
+                id: database
+                width: parent.width
+                wrapMode: Text.WordWrap
+                color: Theme.highlightColor
+                text: ""
+
+                function setText() {
+                    text = settings.valueString(settingsOsmPrefix + "map")
+                }
+
+                Component.onCompleted: { setText() }
+                Connections { target: settings; onOsmScoutSettingsChanged: database.setText() }
+            }
+
+//            Label {
+//                id: status
+//                width: parent.width
+//                color: Theme.highlightColor
+//                text: ""
+
+//                function setText() {
+//                    if (infohub.error) text = qsTr("Status: Error")
+//                    else text = qsTr("Status: Running")
+//                }
+
+//                Component.onCompleted: { setText() }
+//                Connections { target: infohub; onErrorChanged: status.setText() }
+//            }
+
             SectionHeader {
-                text: qsTr("Map and style")
+                text: qsTr("Last Events")
                 font.pixelSize: Theme.fontSizeMedium
             }
 
-            ElementEntry {
-                key: "map"
-                mainLabel: qsTr("Folder containing Maps")
-                secondaryLabel: qsTr("This folder should contain maps imported by libosmscout Import utility")
-            }
+            Label {
+                id: log
+                width: parent.width
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeTiny
+                wrapMode: Text.WordWrap
 
-            ElementEntry {
-                key: "style"
-                mainLabel: qsTr("Style sheet")
-                secondaryLabel: qsTr("Style sheet used to render the map tiles")
-            }
+                text: ""
 
-            ElementEntry {
-                key: "icons"
-                mainLabel: qsTr("Folder with icons")
-                secondaryLabel: qsTr("Icons used to mark features on the map")
-            }
+                function setText() {
+                    text = logger.log
+                }
 
-            SectionHeader {
-                text: qsTr("Rendering")
-                font.pixelSize: Theme.fontSizeMedium
-            }
-
-            ElementEntry {
-                key: "fontSize"
-                mainLabel: qsTr("Font size")
-                validator: DoubleValidator { bottom: 0; decimals: 2; }
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
-            }
-
-            ElementSwitch {
-                key: "renderSea"
-                mainLabel: qsTr("Render sea")
-            }
-
-            ElementSwitch {
-                key: "drawBackground"
-                mainLabel: qsTr("Draw background")
+                Component.onCompleted: { setText() }
+                Connections { target: logger; onLogChanged: log.setText() }
             }
         }
 

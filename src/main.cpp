@@ -24,7 +24,9 @@
 #include <sailfishapp.h>
 #include <QtQuick>
 #define APP_PREFIX "harbour-"
-#endif
+
+#include "rollinglogger.h"
+#endif // of IS_SAILFISH_OS
 
 // QtWebApp headers
 #include "httplistener.h"
@@ -57,6 +59,8 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef IS_SAILFISH_OS
+    RollingLogger rolling_logger;
+
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
 #endif
 
@@ -75,6 +79,8 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
 
     rootContext->setContextProperty("settings", &settings);
+    rootContext->setContextProperty("infohub", &infoHub);
+    rootContext->setContextProperty("logger", &rolling_logger);
 #endif
 
     // setup OSM Scout

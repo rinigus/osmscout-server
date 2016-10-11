@@ -50,7 +50,8 @@ SOURCES += \
     src/dbmaster_map.cpp \
     src/osmscout-server_silica.cpp \
     src/searchresults.cpp \
-    src/infohub.cpp
+    src/infohub.cpp \
+    src/rollinglogger.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -67,7 +68,8 @@ HEADERS += \
     src/appsettings.h \
     src/config.h \
     src/searchresults.h \
-    src/infohub.h
+    src/infohub.h \
+    src/rollinglogger.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
