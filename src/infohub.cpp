@@ -1,5 +1,6 @@
 #include "infohub.h"
 #include <QMutexLocker>
+#include <QDateTime>
 
 InfoHub infoHub;
 
@@ -31,19 +32,24 @@ bool InfoHub::error()
     return m_error;
 }
 
+static QString tstamp(const QString &txt)
+{
+    return QDateTime::currentDateTime().toString(Qt::ISODate) + " " + txt;
+}
+
 void InfoHub::logError(const QString &txt)
 {
-    infoHub.impLogError(txt);
+    infoHub.impLogError(tstamp(txt));
 }
 
 void InfoHub::logWarning(const QString &txt)
 {
-    infoHub.impLogWarning(txt);
+    infoHub.impLogWarning(tstamp(txt));
 }
 
 void InfoHub::logInfo(const QString &txt)
 {
-    infoHub.impLogInfo(txt);
+    infoHub.impLogInfo(tstamp(txt));
 }
 
 void InfoHub::impLogError(const QString &txt)
