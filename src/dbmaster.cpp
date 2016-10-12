@@ -45,7 +45,7 @@ void DBMaster::loadSettings()
         }
 
         // clear error state
-        InfoHub::logInfo("Opened database " + QString::fromStdString(m_map_dir));
+        InfoHub::logInfo("Opened database " + QString::fromStdString(m_map_dir), true);
     }
 
     m_icons_dir = settings.valueString(OSM_SETTINGS "icons").toStdString();
