@@ -18,7 +18,8 @@ Column {
 
     function apply()
     {
-        settings.setValue(settingsOsmPrefix + key, value)
+        if (textInput.acceptableInput)
+            settings.setValue(settingsOsmPrefix + key, value)
     }
 
     TextField {

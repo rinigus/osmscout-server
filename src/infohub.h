@@ -21,7 +21,7 @@ public:
     static void setError(bool e);
     bool error();
 
-    static void logInfo(const QString &txt);
+    static void logInfo(const QString &txt, bool force=false);
     static void logWarning(const QString &txt);
     static void logError(const QString &txt);
 
@@ -34,16 +34,18 @@ signals:
     void error(QString);
 
 public slots:
+    void onSettingsChanged();
 
 protected:
     void impSetError(bool e);
-    void impLogInfo(const QString &txt);
+    void impLogInfo(const QString &txt, bool force=false);
     void impLogWarning(const QString &txt);
     void impLogError(const QString &txt);
 
 protected:
     QMutex m_mutex;
     bool m_error = false;
+    bool m_log_info = true;
 };
 
 #endif // INFOHUB_H

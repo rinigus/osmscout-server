@@ -1,5 +1,7 @@
 #include "rollinglogger.h"
 #include "infohub.h"
+#include "appsettings.h"
+#include "config.h"
 
 extern InfoHub infoHub;
 
@@ -9,9 +11,19 @@ RollingLogger::RollingLogger(QObject *parent) : QObject(parent)
              this, &RollingLogger::logEntry );
 }
 
+void RollingLogger::onSettingsChanged()
+{
+    AppSettings settings;
+
+    m_size_max = settings.valueInt(OSM_SETTINGS "rollingLoggerSize");
+
+    while (m_log.size() >= m_size_max)
+        m_log.dequeue();
+}
+
 void RollingLogger::logEntry(const QString &txt)
 {
-    if (m_log.size() >= m_size_max)
+    while (m_log.size() >= m_size_max)
         m_log.dequeue();
 
     m_log.enqueue(txt);

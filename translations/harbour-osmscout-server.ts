@@ -20,17 +20,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../src/infohub.cpp" line="58"/>
+        <location filename="../src/infohub.cpp" line="68"/>
         <source>ERROR: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="64"/>
+        <location filename="../src/infohub.cpp" line="74"/>
         <source>WARNING: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="70"/>
+        <location filename="../src/infohub.cpp" line="83"/>
         <source>INFO: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -97,6 +97,31 @@
         <source>Draw background</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
+        <source>Miscellaneous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="84"/>
+        <source>Log info messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="92"/>
+        <source>Events log size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
+        <source>Number of events shown in the main page</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>StartPage</name>
@@ -111,18 +136,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="33"/>
+        <location filename="../qml/pages/StartPage.qml" line="32"/>
         <source>OSMScout Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="37"/>
+        <location filename="../qml/pages/StartPage.qml" line="36"/>
         <source>Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="72"/>
-        <source>Last Events</source>
+        <location filename="../qml/pages/StartPage.qml" line="64"/>
+        <source>Events</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

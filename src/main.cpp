@@ -105,6 +105,12 @@ int main(int argc, char *argv[])
 
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       osmScoutMaster, &DBMaster::onSettingsChanged );
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      &infoHub, &InfoHub::onSettingsChanged );
+#ifdef IS_SAILFISH_OS
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      &rolling_logger, &RollingLogger::onSettingsChanged );
+#endif
 
     return app->exec();
 }

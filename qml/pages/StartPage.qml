@@ -25,8 +25,7 @@ Page {
         Column {
             id: column
 
-            width: page.width-Theme.horizontalPageMargin
-            x: Theme.horizontalPageMargin
+            width: page.width
             spacing: Theme.paddingLarge
 
             PageHeader {
@@ -38,46 +37,40 @@ Page {
                 font.pixelSize: Theme.fontSizeLarge
             }
 
-            Label {
-                id: database
-                width: parent.width
-                wrapMode: Text.WordWrap
-                color: Theme.highlightColor
-                text: ""
+            ListItem {
+                id: listItem
+                contentHeight: Theme.itemSizeSmall
 
-                function setText() {
-                    text = settings.valueString(settingsOsmPrefix + "map")
+                Label {
+                    id: database
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*Theme.horizontalPageMargin
+                    wrapMode: Text.WordWrap
+                    color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    text: ""
+
+                    function setText() {
+                        text = settings.valueString(settingsOsmPrefix + "map")
+                    }
+
+                    Component.onCompleted: { setText() }
+                    Connections { target: settings; onOsmScoutSettingsChanged: database.setText() }
                 }
 
-                Component.onCompleted: { setText() }
-                Connections { target: settings; onOsmScoutSettingsChanged: database.setText() }
+                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
 
-//            Label {
-//                id: status
-//                width: parent.width
-//                color: Theme.highlightColor
-//                text: ""
-
-//                function setText() {
-//                    if (infohub.error) text = qsTr("Status: Error")
-//                    else text = qsTr("Status: Running")
-//                }
-
-//                Component.onCompleted: { setText() }
-//                Connections { target: infohub; onErrorChanged: status.setText() }
-//            }
-
             SectionHeader {
-                text: qsTr("Last Events")
+                text: qsTr("Events")
                 font.pixelSize: Theme.fontSizeMedium
             }
 
             Label {
                 id: log
-                width: parent.width
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*Theme.horizontalPageMargin
                 color: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeTiny
+                font.pixelSize: Theme.fontSizeSmall
                 wrapMode: Text.WordWrap
 
                 text: ""
@@ -94,5 +87,3 @@ Page {
         VerticalScrollDecorator {}
     }
 }
-
-

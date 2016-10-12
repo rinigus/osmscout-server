@@ -22,12 +22,14 @@ signals:
     void logChanged(QString);
 
 public slots:
+    void onSettingsChanged();
 
 protected:
     void logEntry(const QString &txt);
 
 protected:
     int m_size_max = 20;
+
     QQueue<QString> m_log;
     QString m_log_txt;
 };

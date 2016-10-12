@@ -1,4 +1,7 @@
 #include "infohub.h"
+#include "config.h"
+#include "appsettings.h"
+
 #include <QMutexLocker>
 #include <QDateTime>
 
@@ -6,7 +9,14 @@ InfoHub infoHub;
 
 InfoHub::InfoHub(QObject *parent) : QObject(parent)
 {
+    onSettingsChanged();
+}
 
+void InfoHub::onSettingsChanged()
+{
+    AppSettings settings;
+
+    m_log_info = (settings.valueInt(OSM_SETTINGS "logInfo") > 0);
 }
 
 void InfoHub::setError(bool e)
@@ -47,9 +57,9 @@ void InfoHub::logWarning(const QString &txt)
     infoHub.impLogWarning(tstamp(txt));
 }
 
-void InfoHub::logInfo(const QString &txt)
+void InfoHub::logInfo(const QString &txt, bool force)
 {
-    infoHub.impLogInfo(tstamp(txt));
+    infoHub.impLogInfo(tstamp(txt), force);
 }
 
 void InfoHub::impLogError(const QString &txt)
@@ -64,8 +74,11 @@ void InfoHub::impLogWarning(const QString &txt)
     emit log(tr("WARNING: ") + txt);
 }
 
-void InfoHub::impLogInfo(const QString &txt)
+void InfoHub::impLogInfo(const QString &txt, bool force)
 {
-    emit warning(txt);
+    if (!force && !m_log_info)
+        return;
+
+    emit info(txt);
     emit log(tr("INFO: ") + txt);
 }

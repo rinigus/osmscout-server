@@ -72,12 +72,36 @@ Dialog {
                 key: "drawBackground"
                 mainLabel: qsTr("Draw background")
             }
+
+            SectionHeader {
+                text: qsTr("Miscellaneous")
+                font.pixelSize: Theme.fontSizeMedium
+            }
+
+            ElementSwitch {
+                id: eLogInfo
+                key: "logInfo"
+                mainLabel: qsTr("Log info messages")
+                secondaryLabel: qsTr( "When disabled, INFO messages will not be logged in Events log. " +
+                                      "Exception is loading of the database which is shown always" )
+            }
+
+            ElementEntry {
+                id: eRollSize
+                key: "rollingLoggerSize"
+                mainLabel: qsTr("Events log size")
+                secondaryLabel: qsTr("Number of events shown in the main page")
+                validator: IntValidator { bottom: 3; top: 25; }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            }
         }
 
         VerticalScrollDecorator {}
     }
 
     onAccepted: {
+        eLogInfo.apply()
+        eRollSize.apply()
         eMap.apply()
         eStyle.apply()
         eIcons.apply()

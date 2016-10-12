@@ -41,6 +41,9 @@ void AppSettings::initDefaults()
     CHECK(OSM_SETTINGS "fontSize", 4.0);
     CHECK(OSM_SETTINGS "renderSea", 1);
     CHECK(OSM_SETTINGS "drawBackground", 1);
+
+    CHECK(OSM_SETTINGS "rollingLoggerSize", 20);
+    CHECK(OSM_SETTINGS "logInfo", 1);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
