@@ -9,7 +9,6 @@ InfoHub infoHub;
 
 InfoHub::InfoHub(QObject *parent) : QObject(parent)
 {
-    onSettingsChanged();
 }
 
 void InfoHub::onSettingsChanged()

@@ -47,6 +47,11 @@ extern InfoHub infoHub;
 
 int main(int argc, char *argv[])
 {
+    AppSettings settings;
+    settings.initDefaults();
+
+    infoHub.onSettingsChanged();
+
 #ifdef IS_CONSOLE_QT
     ConsoleLogger _logger;
 
@@ -66,9 +71,6 @@ int main(int argc, char *argv[])
 
     app->setApplicationName(APP_PREFIX "osmscout-server");
     app->setOrganizationName(APP_PREFIX "osmscout-server");
-
-    AppSettings settings;
-    settings.initDefaults();
 
 #ifdef IS_SAILFISH_OS
     QScopedPointer<QQuickView> v(SailfishApp::createView());
