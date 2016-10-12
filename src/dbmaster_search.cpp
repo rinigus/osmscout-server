@@ -51,7 +51,7 @@ bool GetAdminRegionHierachie(const osmscout::LocationService& locationService,
         osmscout::AdminRegionRef parentRegion=entry->second;
 
         if (!path.empty()) {
-            path.append("/");
+            path.append(", ");
         }
 
         path.append(parentRegion->name);
@@ -170,7 +170,7 @@ QString GetAdminRegionHierachie(const osmscout::LocationService& locationService
         return "";
     }
 
-    return QString::fromStdString(path);
+    return QString::fromStdString(path).trimmed();
 }
 
 
