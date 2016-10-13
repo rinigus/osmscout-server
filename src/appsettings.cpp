@@ -37,12 +37,12 @@ void AppSettings::initDefaults()
 #endif
 
     CHECK(OSM_SETTINGS "style", DATA_PREFIX "stylesheets/standard.oss");
-    CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/14x14/standard/");
-    CHECK(OSM_SETTINGS "fontSize", 4.0);
+    CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/28x28/standard/");
+    CHECK(OSM_SETTINGS "fontSize", 5.0);
     CHECK(OSM_SETTINGS "renderSea", 1);
     CHECK(OSM_SETTINGS "drawBackground", 1);
 
-    CHECK(OSM_SETTINGS "rollingLoggerSize", 20);
+    CHECK(OSM_SETTINGS "rollingLoggerSize", 10);
     CHECK(OSM_SETTINGS "logInfo", 1);
 }
 
