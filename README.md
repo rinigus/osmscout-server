@@ -1,4 +1,4 @@
-# osmscout-server
+# OSM Scout Server
 
 Server based on libosmscout. This server is envisioned to be a drop-in
 replacement for online map services providing map tiles, search, and
@@ -6,16 +6,23 @@ routing. As a result, an offline operation is possible if the device
 has a server and map client programs installed and running. At
 present, the server can be used to provide:
 * map tiles for other applications;
-* search for locations.
+* search for locations and free text search;
+* search for POIs next to a reference area.
 
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps and modRana are
-provided under "thirdparty" folder.
+provided under "thirdparty" folder. At present, Poor Maps plugins
+cover functionality of the server fully. modRana can use the server to
+show the map with the other functionality expected in near future.
 
 The server is written using Qt. The server can be used as a console or
 Sailfish application. For console version, use
 osmscout-server_console.pro as a project. For Sailfish, use
-osmscout-server_silica.pro.
+osmscout-server_silica.pro. For drawing, its possible to use Qt or
+Cairo backends, determined during compilation. While default
+configuration uses Qt for drawing, it maybe advantageous to use Cairo
+in server environment when compiled as a console application.
+
 
 ## Maps
 
@@ -23,7 +30,24 @@ Maps provided by OpenStreetMaps have to be converted to the format
 used by libosmscout library. See
 http://libosmscout.sourceforge.net/tutorials/Importing/ for
 instructions. At this stage, you would have to compile the library on
-your PC and run the import program, as explained in the tutorial.
+your PC and run the import program, as explained in the linked
+tutorial. Please install MARISA as a dependency to be able to generate
+index files for free-text search of the map data.
+
+Note that since it is planned to extend the server to provide routing
+as well, the server can at any given time provide data from a single
+map. If you need to cover an area from multiple countries, I suggest
+to make a joined map using osmconvert
+(https://wiki.openstreetmap.org/wiki/Osmconvert) as described in
+https://wiki.openstreetmap.org/wiki/Osmconvert#Parallel_Processing
+
+Finally, regarding the maps: present Import program keeps several
+debug and temporary files. On device, these files are not needed and
+you need only the resulting files listed in the end of the
+import. (see issue https://github.com/Framstag/libosmscout/issues/133
+for information regarding it). Expect that the size of map would be
+similar to the map file in PBF format.
+
 
 ## Settings
 
