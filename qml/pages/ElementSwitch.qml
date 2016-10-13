@@ -15,7 +15,7 @@ Column {
     {
         var ret = 0;
         if (textInput.checked) ret = 1;
-        settings.setValue(settingsOsmPrefix + parent.key, ret)
+        settings.setValue(settingsOsmPrefix + key, ret)
     }
 
     TextSwitch {
