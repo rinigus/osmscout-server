@@ -264,6 +264,9 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
 
     for (const osmscout::LocationSearchResult::Entry &entry : searchResult.results)
     {
+        if (all_results.length()>=limit)
+            break;
+
         osmscout::GeoCoord coordinates;
 
         if (entry.adminRegion &&
@@ -391,39 +394,14 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
     {
         std::vector<osmscout::ObjectFileRef> &refs=it->second;
 
-        //        std::list<osmscout::LocationService::ReverseLookupResult> result;
-        //        for (const osmscout::ObjectFileRef &object: refs)
-        //        {
-        //            std::list<osmscout::ObjectFileRef> objects;
-        //            objects.push_back(object);
-        //            if (locationService.ReverseLookupObjects(objects,
-        //                                                     result))
-        //                for (const osmscout::LocationService::ReverseLookupResult& entry : result)
-        //                {
-        //                    QMap<QString, QString> curr_result;
-
-        //                    QString name;
-        //                    osmscout::GeoCoord coordinates;
-        //                    GetObjectNameCoor(m_database, object, name, coordinates);
-
-        //                    curr_result["title"] = J(entry.object.GetName());
-        //                    curr_result["type"] = J(name);
-        //                    curr_result["object_id"] =  J(GetObjectId(object));
-        //                    curr_result["lng"] = J(coordinates.GetLon());
-        //                    curr_result["lat"] = J(coordinates.GetLat());
-
-        //                    qDebug() << curr_result;
-
-        //                    add_if_new(curr_result,all_results);
-        //                }
-        //            //add_search_entry(locationService, adminRegionMap, entry, all_results);
-        //        }
-
         std::size_t maxPrintedOffsets=5;
         std::size_t minRefCount=std::min(refs.size(),maxPrintedOffsets);
 
         for(size_t r=0; r < minRefCount; r++)
         {
+            if (all_results.length()>=limit)
+                break;
+
             osmscout::ObjectFileRef fref = refs[r];
 
             if (all_results.contains(fref))
