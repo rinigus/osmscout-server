@@ -74,10 +74,12 @@ int main(int argc, char *argv[])
     infoHub.onSettingsChanged();
 
 #ifdef IS_SAILFISH_OS
+    rolling_logger.onSettingsChanged();
+
     QScopedPointer<QQuickView> v(SailfishApp::createView());
     QQmlContext *rootContext = v->rootContext();
 
-    rootContext->setContextProperty("programName", "OSMScout Server");
+    rootContext->setContextProperty("programName", "OSM Scout Server");
     rootContext->setContextProperty("programVersion", APP_VERSION);
     rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
 

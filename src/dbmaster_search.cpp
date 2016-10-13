@@ -27,14 +27,14 @@ bool GetAdminRegionHierachie(const osmscout::LocationService& locationService,
 
     if (!adminRegion->aliasName.empty()) {
         if (!path.empty()) {
-            path.append("/");
+            path.append(", ");
         }
 
         path.append(adminRegion->aliasName);
     }
 
     if (!path.empty()) {
-        path.append("/");
+        path.append(", ");
     }
 
     path.append(adminRegion->name);
