@@ -102,5 +102,5 @@ DISTFILES += \
     qml/pages/AboutPage.qml \
     harbour-osmscout-server.desktop \
     rpm/harbour-osmscout-server.yaml \
-    rpm/harbour-osmscout-server.changes.in
+    rpm/harbour-osmscout-server.changes
 
