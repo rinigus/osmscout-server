@@ -3,8 +3,9 @@
 Server based on libosmscout. This server is envisioned to be a drop-in
 replacement for online map services providing map tiles, search, and
 routing. As a result, an offline operation is possible if the device
-has a server and map client programs installed and running. At
-present, the server can be used to provide:
+has a server and map client programs installed and running.
+
+At present, the server can be used to provide:
 * map tiles for other applications;
 * search for locations and free text search;
 * search for POIs next to a reference area.
