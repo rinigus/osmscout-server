@@ -17,13 +17,13 @@ void RollingLogger::onSettingsChanged()
 
     m_size_max = settings.valueInt(OSM_SETTINGS "rollingLoggerSize");
 
-    while (m_log.size() >= m_size_max)
+    while (m_log.size() > m_size_max && m_log.size() > 1)
         m_log.dequeue();
 }
 
 void RollingLogger::logEntry(const QString &txt)
 {
-    while (m_log.size() >= m_size_max)
+    while (m_log.size() >= m_size_max && m_log.size() > 1)
         m_log.dequeue();
 
     m_log.enqueue(txt);
