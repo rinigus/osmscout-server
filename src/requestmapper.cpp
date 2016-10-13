@@ -133,6 +133,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         if (!ok)
         {
             returnError(response);
+            InfoHub::logWarning("Error in HTTP query");
             return;
         }
 
@@ -162,6 +163,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         if (!ok || search.length() < 1)
         {
             returnError(response);
+            InfoHub::logWarning("Error in HTTP query");
             return;
         }
 
@@ -189,6 +191,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         if (!ok)
         {
             returnError(response);
+            InfoHub::logWarning("Error in HTTP query");
             return;
         }
 
@@ -233,6 +236,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
     else // command unidentified. return help string
     {
         returnError(response);
+        InfoHub::logWarning("Uknown URL path");
         return;
     }
 }

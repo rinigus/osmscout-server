@@ -234,7 +234,10 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
     QMutexLocker lk(&m_mutex);
 
     if (!m_database->IsOpen())
+    {
+        InfoHub::logWarning("Database is not open, cannot search");
         return false;
+    }
 
     ///////////////////////////////////////////////////////////
     /// Search by location
@@ -381,8 +384,8 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
     osmscout::TextSearchIndex textSearch;
     if(!textSearch.Load(m_map_dir))
     {
-        InfoHub::logError("ERROR: Failed to load text index files!");
-        return false;
+        InfoHub::logError("ERROR: Failed to load text index files, search was for locations only");
+        return true; // since we were able to search for location
     }
 
     osmscout::TextSearchIndex::ResultsMap resultsTxt;
@@ -449,7 +452,10 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
     QMutexLocker lk(&m_mutex);
 
     if (!m_database->IsOpen())
+    {
+        InfoHub::logWarning("Database is not open, cannot search for POI");
         return false;
+    }
 
 //    qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
 
@@ -508,7 +514,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
                                   areaTypes,
                                   areas))
     {
-        std::cerr << "Cannot load data from database" << std::endl;
+        InfoHub::logError("Cannot load data from database");
         return false;
     }
 
@@ -603,7 +609,10 @@ bool DBMaster::guide(const QString &poitype, const QString &searchPattern, doubl
 {
     SearchResults all_results;
     if ( !search(searchPattern, all_results, 1) )
+    {
+        InfoHub::logWarning("Search for reference point failed");
         return false;
+    }
 
     if (all_results.length() == 0)
     {
@@ -620,6 +629,7 @@ bool DBMaster::guide(const QString &poitype, const QString &searchPattern, doubl
     return guide(poitype, lat, lon, radius, limit, result);
 }
 
+
 bool DBMaster::poiTypes(QByteArray &result)
 {
     if (m_error_flag) return false;
@@ -627,7 +637,10 @@ bool DBMaster::poiTypes(QByteArray &result)
     QMutexLocker lk(&m_mutex);
 
     if (!m_database->IsOpen())
+    {
+        InfoHub::logWarning("Database is not open, cannot list POI types");
         return false;
+    }
 
     QTextStream output(&result, QIODevice::WriteOnly);
 

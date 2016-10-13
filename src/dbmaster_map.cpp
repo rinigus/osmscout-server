@@ -57,24 +57,30 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 //             << " lat=" << lat
 //             << " lon=" << lon;
 
-
     if (m_error_flag) return false;
 
-    // reading in settings - area protected by mutex
-    m_mutex.lock();
-
-    bool renderSea = m_render_sea;
-    bool drawBackground = m_draw_background;
-    float fontSize = m_font_size;
-
+    // initialize local variables with current settings
+    bool renderSea;
+    bool drawBackground;
+    float fontSize;
     std::list<std::string> paths;
-    paths.push_back(m_icons_dir);
+    {
+        QMutexLocker lk(&m_mutex);
 
-    if ( !loadStyle(daylight) )
-        return false;
+        if (!m_database->IsOpen())
+        {
+            InfoHub::logWarning("Database is not open, cannot render a tile");
+            return false;
+        }
 
-    m_mutex.unlock();
-    // settings read in - mutex protected area ends
+        renderSea = m_render_sea;
+        drawBackground = m_draw_background;
+        fontSize = m_font_size;
+        paths.push_back(m_icons_dir);
+
+        if ( !loadStyle(daylight) )
+            return false;
+    }
 
     osmscout::MercatorProjection  projection;
     osmscout::MapParameter        drawParameter;
@@ -153,7 +159,10 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
     QPainter* painter=new QPainter(&image);
     if (painter == nullptr)
+    {
+        InfoHub::logError("Cannot allocate QPainter");
         return false;
+    }
 
     painter->setRenderHint(QPainter::Antialiasing);
     painter->setRenderHint(QPainter::TextAntialiasing);
@@ -170,7 +179,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
     if (surface==NULL || (cairo=cairo_create(surface))==NULL)
     {
-        std::cerr << "Error allocating cairo" << std::endl;
+        InfoHub::logError("Cannot allocate cairo");
         if (surface != NULL)
             cairo_surface_destroy(surface);
         return false;
