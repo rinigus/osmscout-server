@@ -20,17 +20,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../src/infohub.cpp" line="70"/>
+        <location filename="../src/infohub.cpp" line="67"/>
         <source>ERROR: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="76"/>
+        <location filename="../src/infohub.cpp" line="73"/>
         <source>WARNING: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="85"/>
+        <location filename="../src/infohub.cpp" line="82"/>
         <source>INFO: </source>
         <translation type="unfinished"></translation>
     </message>
