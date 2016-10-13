@@ -14,7 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Geocoding using OSMScout Server Geocoder.
+Guide using OSM Scout Server.
 
 https://github.com/rinigus/osmscout-server
 """

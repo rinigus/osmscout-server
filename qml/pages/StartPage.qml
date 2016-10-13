@@ -29,7 +29,7 @@ Page {
             spacing: Theme.paddingLarge
 
             PageHeader {
-                title: qsTr("OSMScout Server")
+                title: qsTr("OSM Scout Server")
             }
 
             SectionHeader {

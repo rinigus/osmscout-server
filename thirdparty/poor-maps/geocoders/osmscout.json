@@ -1,6 +1,6 @@
 {
-    "attribution": "Data © OpenStreetMap",
+    "attribution": "Data OpenStreetMap",
     "description": "Geocoding based on open data sources",
-    "name": "OSMScout",
+    "name": "OSM Scout",
     "source": "libosmscout.sourceforge.net"
 }

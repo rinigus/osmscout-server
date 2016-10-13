@@ -3,7 +3,7 @@ Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=harbour-osmscout-server
 Exec=harbour-osmscout-server
-Name=OSMScout Server
+Name=OSM Scout Server
 
 # translation example:
 # your app name in German locale (de)

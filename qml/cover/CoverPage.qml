@@ -16,7 +16,7 @@ CoverBackground {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.margins: Theme.paddingLarge
-        text: qsTr("OSMScout Server")
+        text: qsTr("OSM Scout Server")
     }
 
 

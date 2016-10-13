@@ -13,7 +13,7 @@
     <name>CoverPage</name>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="19"/>
-        <source>OSMScout Server</source>
+        <source>OSM Scout Server</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -137,7 +137,7 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="32"/>
-        <source>OSMScout Server</source>
+        <source>OSM Scout Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
