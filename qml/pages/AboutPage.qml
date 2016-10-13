@@ -3,8 +3,8 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
-    property string mainText: "<p>" + programName + " is a server providing offline map services. " +
-                              "It has to be used with the client program that is able to display maps, query for searches and " +
+    property string mainText: "<p>" +
+                              "The server has to be used with the client program that is able to display maps, query for searches and " +
                               "display selected routes. The server is a thin layer exposing functionality of <i>libosmscout</i> through http. " +
                               "This server can be used as a drop-in replacement for " +
                               "online services providing maps.</p><br>" +
@@ -39,7 +39,7 @@ Page {
             }
 
             Label {
-                text: "<center>" + programName + " is a server that provides offline map tiles</center>"
+                text: "<center>" + programName + " is a server that provides offline map services</center>"
                 wrapMode: Text.WordWrap
                 width: column.width
                 textFormat: Text.RichText
