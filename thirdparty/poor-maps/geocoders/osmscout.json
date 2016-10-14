@@ -1,6 +1,7 @@
 {
-    "attribution": "Data OpenStreetMap",
-    "description": "Geocoding based on open data sources",
+    "attribution": "Data © OpenStreetMap",
+    "description": "Geocoding based on OpenStreetMap data",
     "name": "OSM Scout",
-    "source": "libosmscout.sourceforge.net"
+    "requires": ["harbour-osmscout-server"],
+    "source": "OSM Scout offline server"
 }
