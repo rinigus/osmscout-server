@@ -63,6 +63,8 @@ protected:
     bool m_render_sea = true;
     bool m_draw_background = true;
     float m_font_size = 3.0;
+    float m_data_lookup_area = 1.5;
+    int m_tile_borders_zoom_cutoff = 20;
     bool m_daylight = true;
 
     osmscout::DatabaseParameter m_database_parameter;

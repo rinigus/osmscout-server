@@ -57,7 +57,7 @@ Dialog {
                 id: eFontSize
                 key: "fontSize"
                 mainLabel: qsTr("Font size")
-                validator: DoubleValidator { bottom: 0; decimals: 2; }
+                validator: DoubleValidator { bottom: 0; decimals: 1; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
 
@@ -71,6 +71,37 @@ Dialog {
                 id: eDrawBackground
                 key: "drawBackground"
                 mainLabel: qsTr("Draw background")
+            }
+
+            SectionHeader {
+                text: qsTr("Advanced rendering settings")
+                font.pixelSize: Theme.fontSizeMedium
+            }
+
+            ElementEntry {
+                id: eDataLookupArea
+                key: "dataLookupArea"
+                mainLabel: qsTr("Loaded area factor")
+                secondaryLabel: qsTr("By increasing the size of the area which is used to load the data while rendering a tile, " +
+                                     "the renderer can improve label rendering by taking into account data from neighboring tiles. " +
+                                     "Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. " +
+                                     "The large value of the factor would decrease the rendering speed and increase RAM footprint " +
+                                     "of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 " +
+                                     "it may lead to filling up RAM of the device.")
+                validator: DoubleValidator { bottom: 1.0; decimals: 1; }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            }
+
+            ElementEntry {
+                id: eTileBordersZoomCutoff
+                key: "tileBordersZoomCutoff"
+                mainLabel: qsTr("Cutoff zoom level")
+                secondaryLabel: qsTr("At the specified zoom level, the map rendering algorithm will stop checking " +
+                                     "for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. " +
+                                     "By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. " +
+                                     "Note that the label rendering could significantly slow down the map rendering.")
+                validator: IntValidator { bottom: 1;  }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
 
             SectionHeader {
@@ -108,6 +139,8 @@ Dialog {
         eFontSize.apply()
         eRenderSea.apply()
         eDrawBackground.apply()
+        eDataLookupArea.apply()
+        eTileBordersZoomCutoff.apply()
     }
 }
 

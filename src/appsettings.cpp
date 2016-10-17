@@ -41,6 +41,8 @@ void AppSettings::initDefaults()
     CHECK(OSM_SETTINGS "fontSize", 5.0);
     CHECK(OSM_SETTINGS "renderSea", 1);
     CHECK(OSM_SETTINGS "drawBackground", 1);
+    CHECK(OSM_SETTINGS "dataLookupArea", 1.25);
+    CHECK(OSM_SETTINGS "tileBordersZoomCutoff", 16);
 
     CHECK(OSM_SETTINGS "rollingLoggerSize", 10);
     CHECK(OSM_SETTINGS "logInfo", 1);
@@ -60,7 +62,7 @@ int AppSettings::valueInt(const QString &key)
     return value(key, 0).toInt();
 }
 
-int AppSettings::valueFloat(const QString &key)
+double AppSettings::valueFloat(const QString &key)
 {
     return value(key, 0).toFloat();
 }

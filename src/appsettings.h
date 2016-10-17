@@ -16,7 +16,7 @@ public:
     Q_INVOKABLE void setValue(const QString &key, const QVariant &value);
 
     Q_INVOKABLE int valueInt(const QString &key);
-    Q_INVOKABLE int valueFloat(const QString &key);
+    Q_INVOKABLE double valueFloat(const QString &key);
     Q_INVOKABLE QString valueString(const QString &key);
 
     void initDefaults(); ///< Initialize settings for configurable parameters on the first start

@@ -52,6 +52,8 @@ void DBMaster::loadSettings()
     m_render_sea = ( settings.valueInt(OSM_SETTINGS "renderSea") > 0 );
     m_draw_background = ( settings.valueInt(OSM_SETTINGS "drawBackground") > 0 );
     m_font_size = settings.valueFloat(OSM_SETTINGS "fontSize");
+    m_data_lookup_area = std::max(1.0, settings.valueFloat(OSM_SETTINGS "dataLookupArea"));
+    m_tile_borders_zoom_cutoff = settings.valueFloat(OSM_SETTINGS "tileBordersZoomCutoff");
 
     std::string style = settings.valueString(OSM_SETTINGS "style").toStdString();
     if (m_style_name != style)

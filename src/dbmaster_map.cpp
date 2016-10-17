@@ -108,15 +108,12 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     drawParameter.SetRenderBackground(drawBackground || renderSea);
     drawParameter.SetRenderSeaLand(renderSea);
 
-//    // To get accurate label drawing at tile borders, we take into account labels
-//    // of other than the current tile, too. Usually, its done only for smaller zoom levels.
-//    if (zoom_level >= 14)
-//        drawParameter.SetDropNotVisiblePointLabels(true);
-//    else
-//        drawParameter.SetDropNotVisiblePointLabels(false);
-
-    // Enable more accurate label drawing at all levels
-    drawParameter.SetDropNotVisiblePointLabels(false);
+    // To get accurate label drawing at tile borders, we take into account labels
+    // of other than the current tile, too. Usually, its done only for smaller zoom levels.
+    if (zoom_level >= m_tile_borders_zoom_cutoff)
+        drawParameter.SetDropNotVisiblePointLabels(true);
+    else
+        drawParameter.SetDropNotVisiblePointLabels(false);
 
     // https://github.com/Framstag/libosmscout/blob/master/Documentation/RenderTuning.txt
     //searchParameter.SetBreaker(dataLoadingBreaker);
@@ -143,8 +140,8 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
                    0,
                    magnification,
                    dpi,
-                   width * 2,
-                   height * 2);
+                   width * m_data_lookup_area,
+                   height * m_data_lookup_area);
 
     {
         QMutexLocker lk(&m_mutex);
