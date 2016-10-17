@@ -83,6 +83,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     }
 
     osmscout::MercatorProjection  projection;
+    osmscout::MercatorProjection  searchProjection;
     osmscout::MapParameter        drawParameter;
     osmscout::AreaSearchParameter searchParameter;
     osmscout::MapData             data;
@@ -138,17 +139,24 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
     projection.SetLinearInterpolationUsage(zoom_level >= 10);
 
+    searchProjection.Set(osmscout::GeoCoord(lat,lon),
+                   0,
+                   magnification,
+                   dpi,
+                   width * 2,
+                   height * 2);
+
     {
         QMutexLocker lk(&m_mutex);
 
         std::list<osmscout::TileRef> tiles;
 
-        m_map_service->LookupTiles(projection,tiles);
+        m_map_service->LookupTiles(searchProjection,tiles);
         m_map_service->LoadMissingTileData(searchParameter,*m_style_config,tiles);
         m_map_service->ConvertTilesToMapData(tiles,data);
 
         if (drawParameter.GetRenderSeaLand())
-            m_map_service->GetGroundTiles(projection, data.groundTiles);
+            m_map_service->GetGroundTiles(searchProjection, data.groundTiles);
     }
 
 #ifdef USE_OSMSCOUT_MAP_QT
