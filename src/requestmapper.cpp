@@ -233,6 +233,16 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         response.write(bytes, true);
     }
 
+    else if (path == "/v1/route")
+    {
+        for (QPair<QString,QString> q: query.queryItems())
+        {
+            qDebug() << q.first << " --> " << q.second;
+        }
+        returnError(response);
+        return;
+    }
+
     else // command unidentified. return help string
     {
         returnError(response);
