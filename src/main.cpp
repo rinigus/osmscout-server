@@ -48,8 +48,6 @@ extern InfoHub infoHub;
 int main(int argc, char *argv[])
 {
 #ifdef IS_CONSOLE_QT
-    ConsoleLogger _logger;
-
 #ifdef USE_OSMSCOUT_MAP_CAIRO
     QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
 #endif
@@ -72,6 +70,10 @@ int main(int argc, char *argv[])
     settings.initDefaults();
 
     infoHub.onSettingsChanged();
+
+#ifdef IS_CONSOLE_QT
+    ConsoleLogger _logger;
+#endif
 
 #ifdef IS_SAILFISH_OS
     rolling_logger.onSettingsChanged();
