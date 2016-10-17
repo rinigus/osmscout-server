@@ -174,6 +174,22 @@ QString GetAdminRegionHierachie(const osmscout::LocationService& locationService
 }
 
 
+QString GetAdminRegionHierachie(const osmscout::LocationService& locationService,
+                                std::map<osmscout::FileOffset,osmscout::AdminRegionRef>& adminRegionMap,
+                                const osmscout::AdminRegionRef& adminRegion)
+{
+    std::string path;
+
+    if (!GetAdminRegionHierachie(locationService,
+                                 adminRegion,
+                                 adminRegionMap,
+                                 path)) {
+        return "";
+    }
+
+    return QString::fromStdString(path).trimmed();
+}
+
 ///////////////////////////////////////////////////////////////////////////////////
 /// \brief storeAsJson: stores input in result as a JSON array
 /// \param input vector of JSON objects
@@ -422,6 +438,19 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
             curr_result["lng"] = J(coordinates.GetLon());
             curr_result["lat"] = J(coordinates.GetLat());
 
+//            // This is very slow for some areas.
+//            std::list<osmscout::LocationService::ReverseLookupResult> result;
+//            if (locationService.ReverseLookupObject(fref,
+//                                                    result))
+//                for (const osmscout::LocationService::ReverseLookupResult& entry : result)
+//                    if (entry.adminRegion)
+//                    {
+//                        curr_result["admin_region"] = J( GetAdminRegionHierachie(locationService,
+//                                                                                 adminRegionMap,
+//                                                                                 entry.adminRegion) );
+//                        break;
+//                    }
+
             all_results.add(fref, curr_result);
         }
     }
@@ -457,13 +486,13 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
         return false;
     }
 
-//    qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
+    //    qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
 
     osmscout::GeoCoord center_coordinate(lat, lon);
     osmscout::GeoBox region_box( osmscout::GeoBox::BoxByCenterAndRadius(center_coordinate, radius) );
 
-//    qDebug() << "region: lat: " << region_box.GetMinLat() << "-" << region_box.GetMaxLat()
-//             << " lon: " << region_box.GetMinLon() << "-" << region_box.GetMaxLon();
+    //    qDebug() << "region: lat: " << region_box.GetMinLat() << "-" << region_box.GetMaxLat()
+    //             << " lon: " << region_box.GetMinLon() << "-" << region_box.GetMaxLon();
 
     osmscout::TypeConfigRef typeConfig(m_database->GetTypeConfig());
     osmscout::TypeInfoSet nodeTypes(*typeConfig);
@@ -477,7 +506,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
         if (name.contains(poitype, Qt::CaseInsensitive))
         {
             nodeTypes.Set(r);
-//            qDebug() << "types: N " << name;
+            //            qDebug() << "types: N " << name;
         }
     }
 
@@ -487,7 +516,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
         if (name.contains(poitype, Qt::CaseInsensitive))
         {
             wayTypes.Set(r);
-//            qDebug() << "types: W " << name;
+            //            qDebug() << "types: W " << name;
         }
     }
 
@@ -497,7 +526,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
         if (name.contains(poitype, Qt::CaseInsensitive))
         {
             areaTypes.Set(r);
-//            qDebug() << "types: A " << name;
+            //            qDebug() << "types: A " << name;
         }
     }
 
@@ -621,7 +650,7 @@ bool DBMaster::guide(const QString &poitype, const QString &searchPattern, doubl
         return true;
     }
 
-//    qDebug() << all_results.results().at(0);
+    //    qDebug() << all_results.results().at(0);
 
     double lat = all_results.results().at(0)["lat"].toDouble();
     double lon = all_results.results().at(0)["lng"].toDouble();
