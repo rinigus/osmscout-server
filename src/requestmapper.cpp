@@ -111,7 +111,16 @@ static void returnError(HttpResponse &response)
     response.write("There was either error in server configuration or error in given URL", true);
 }
 
+static void makeEmptyJson(QByteArray &result)
+{
+    QTextStream output(&result, QIODevice::WriteOnly);
+    output << "{ }";
+}
 
+
+/////////////////////////////////////////////////////////////////////////////
+/// Request mapper main service function
+/////////////////////////////////////////////////////////////////////////////
 void RequestMapper::service(HttpRequest& request, HttpResponse& response)
 {
     QUrl url(request.getPath());
@@ -207,7 +216,13 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
 
         else if ( query.hasQueryItem("search") && search.length() > 0 )
         {
-            res = osmScoutMaster->guide(poitype, search, radius, limit, bytes);
+            if (osmScoutMaster->search(search, lat, lon))
+                res = osmScoutMaster->guide(poitype, lat, lon, radius, limit, bytes);
+            else
+            {
+                res = true;
+                makeEmptyJson(bytes);
+            }
         }
 
         if (!res)

@@ -30,7 +30,17 @@ public:
 
     bool search(const QString &searchPattern, QByteArray &result, size_t limit);
 
-    bool guide(const QString &poitype, const QString &searchPattern, double radius, size_t limit, QByteArray &result);
+    /////////////////////////////////////////////////////////////
+    /// \brief Search for a pattern and return the coordinates of the first found object
+    ///
+    /// Can be used for finding coordinates of the reference points
+    ///
+    /// \param searchPattern
+    /// \param lat this is a return value, latitude of the reference point
+    /// \param lon this is a return value, longitude of the reference point
+    /// \return true if a reference point was found
+    ///
+    bool search(const QString &searchPattern, double &lat, double &lon);
 
     bool guide(const QString &poitype, double lat, double lon, double radius, size_t limit, QByteArray &result);
 

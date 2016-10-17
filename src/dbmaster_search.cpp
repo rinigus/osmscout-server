@@ -472,6 +472,25 @@ bool DBMaster::search(const QString &searchPattern, QByteArray &result, size_t l
 }
 
 
+bool DBMaster::search(const QString &searchPattern, double &lat, double &lon)
+{
+    SearchResults all_results;
+    if ( !search(searchPattern, all_results, 1) )
+    {
+        InfoHub::logWarning("Search for reference point failed");
+        return false;
+    }
+
+    if (all_results.length() == 0)
+        return false;
+
+    lat = all_results.results().at(0)["lat"].toDouble();
+    lon = all_results.results().at(0)["lng"].toDouble();
+
+    return true;
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /// Search POI
 bool DBMaster::guide(const QString &poitype, double lat, double lon, double radius, size_t limit, QByteArray &result)
@@ -486,7 +505,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
         return false;
     }
 
-    //    qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
+    qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
 
     osmscout::GeoCoord center_coordinate(lat, lon);
     osmscout::GeoBox region_box( osmscout::GeoBox::BoxByCenterAndRadius(center_coordinate, radius) );
@@ -632,30 +651,6 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
     output << "\n}\n";
 
     return true;
-}
-
-bool DBMaster::guide(const QString &poitype, const QString &searchPattern, double radius, size_t limit, QByteArray &result)
-{
-    SearchResults all_results;
-    if ( !search(searchPattern, all_results, 1) )
-    {
-        InfoHub::logWarning("Search for reference point failed");
-        return false;
-    }
-
-    if (all_results.length() == 0)
-    {
-        QTextStream output(&result, QIODevice::WriteOnly);
-        output << "{ }";
-        return true;
-    }
-
-    //    qDebug() << all_results.results().at(0);
-
-    double lat = all_results.results().at(0)["lat"].toDouble();
-    double lon = all_results.results().at(0)["lng"].toDouble();
-
-    return guide(poitype, lat, lon, radius, limit, result);
 }
 
 
