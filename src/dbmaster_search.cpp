@@ -505,7 +505,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
         return false;
     }
 
-    qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
+    // qDebug() << "guide: " << poitype << " lat=" << lat << " lon=" << lon << " radius=" << radius;
 
     osmscout::GeoCoord center_coordinate(lat, lon);
     osmscout::GeoBox region_box( osmscout::GeoBox::BoxByCenterAndRadius(center_coordinate, radius) );
