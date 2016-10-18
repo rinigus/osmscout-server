@@ -482,7 +482,10 @@ bool DBMaster::search(const QString &searchPattern, double &lat, double &lon)
     }
 
     if (all_results.length() == 0)
+    {
+        InfoHub::logWarning("Search for reference point failed: cannot find " + searchPattern);
         return false;
+    }
 
     lat = all_results.results().at(0)["lat"].toDouble();
     lon = all_results.results().at(0)["lng"].toDouble();
