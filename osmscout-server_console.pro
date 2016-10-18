@@ -41,7 +41,8 @@ SOURCES += src/dbmaster.cpp \
     src/osmscout-server_console.cpp \
     src/searchresults.cpp \
     src/infohub.cpp \
-    src/consolelogger.cpp
+    src/consolelogger.cpp \
+    src/dbmaster_route.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop

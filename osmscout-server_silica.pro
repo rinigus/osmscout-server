@@ -46,6 +46,7 @@ SOURCES += \
     src/main.cpp \
     src/requestmapper.cpp \
     src/appsettings.cpp \
+    src/dbmaster_route.cpp \
     src/dbmaster_search.cpp \
     src/dbmaster_map.cpp \
     src/osmscout-server_silica.cpp \

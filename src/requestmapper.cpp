@@ -129,7 +129,9 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
 
     InfoHub::logInfo("Request: " + url.toString());
 
-    if (path == "/v1/tile") // Tile
+    //////////////////////////////////////////////////////////////////////
+    /// TILES
+    if (path == "/v1/tile")
     {
         bool ok = true;
         bool daylight = q2value<bool>("daylight", true, query, ok);
@@ -161,6 +163,8 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         response.write(bytes, true);
     }
 
+    //////////////////////////////////////////////////////////////////////
+    /// SEARCH
     else if (path == "/v1/search")
     {
         bool ok = true;
@@ -187,6 +191,8 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         response.write(bytes, true);
     }
 
+    //////////////////////////////////////////////////////////////////////
+    /// GUIDE: LOOKUP POIs NEAR REFERENCE POINT
     else if (path == "/v1/guide")
     {
         bool ok = true;
@@ -235,6 +241,8 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         response.write(bytes, true);
     }
 
+    //////////////////////////////////////////////////////////////////////
+    /// LIST AVAILABLE POI TYPES
     else if (path == "/v1/poi_types")
     {
         QByteArray bytes;
@@ -248,14 +256,83 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         response.write(bytes, true);
     }
 
+    //////////////////////////////////////////////////////////////////////
+    /// ROUTING
     else if (path == "/v1/route")
     {
-        for (QPair<QString,QString> q: query.queryItems())
+        bool ok = true;
+        QString type = q2value<QString>("type", "car", query, ok);
+        double radius = q2value<double>("radius", 1000.0, query, ok);
+
+        std::vector<osmscout::GeoCoord> points;
+
+        bool points_done = false;
+        for (int i=0; !points_done && ok; ++i)
         {
-            qDebug() << q.first << " --> " << q.second;
+            QString prefix = "p[" + QString::number(i) + "]";
+            if ( query.hasQueryItem(prefix + "[lng]") && query.hasQueryItem(prefix + "[lat]") )
+            {
+                double lon = q2value<double>(prefix + "[lng]", 0, query, ok);
+                double lat = q2value<double>(prefix + "[lat]", 0, query, ok);
+                osmscout::GeoCoord c(lat,lon);
+                points.push_back(c);
+            }
+
+            else if ( query.hasQueryItem(prefix + "[search]") )
+            {
+                QString search = q2value<QString>(prefix + "[search]", "", query, ok);
+                search = search.simplified();
+                if (search.length()<1)
+                {
+                    returnError(response);
+                    return;
+                }
+
+                double lat, lon;
+                if (osmScoutMaster->search(search, lat, lon))
+                {
+                    osmscout::GeoCoord c(lat,lon);
+                    points.push_back(c);
+                }
+                else
+                    ok = false;
+            }
+
+            else points_done = true;
         }
-        returnError(response);
-        return;
+
+        if (!ok || points.size() < 2)
+        {
+            returnError(response);
+            InfoHub::logWarning("Error in HTTP query");
+            return;
+        }
+
+        osmscout::Vehicle vehicle;
+        if (type == "car") vehicle = osmscout::vehicleCar;
+        else if (type == "bicycle") vehicle = osmscout::vehicleBicycle;
+        else if (type == "foot") vehicle = osmscout::vehicleFoot;
+        else
+        {
+            returnError(response);
+            InfoHub::logWarning("Error in HTTP query: unknown vehicle");
+            return;
+        }
+
+        for (auto i: points)
+            std::cout << i.GetLat() << " " << i.GetLon() << "\n";
+
+        QByteArray bytes;
+        bool res = osmScoutMaster->route(vehicle, points, radius, bytes);
+
+        if (!res)
+        {
+            returnError(response);
+            return;
+        }
+
+        response.setHeader("Content-Type", "text/plain; charset=UTF-8");
+        response.write(bytes, true);
     }
 
     else // command unidentified. return help string
