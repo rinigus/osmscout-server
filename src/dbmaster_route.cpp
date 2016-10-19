@@ -7,6 +7,10 @@
 #include <osmscout/RoutePostprocessor.h>
 
 #include <QTextStream>
+#include <QJsonDocument>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonValue>
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /// Helper functions
@@ -114,43 +118,121 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     }
 
     /// Route points
-    std::list<osmscout::Point> points;
+    std::list<osmscout::Point> route_points;
     if (!router->TransformRouteDataToPoints(data,
-                                            points))
+                                            route_points))
     {
       InfoHub::logWarning("Error during route conversion to points");
+      router->Close();
       return false;
     }
 
-    QTextStream output(&result, QIODevice::WriteOnly);
-    output.setRealNumberPrecision(8);
+    router->TransformRouteDataToRouteDescription(data,
+                                                 description);
 
-    output << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>" << "\n";
-    output << "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\" creator=\"bin2gpx\" version=\"1.1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">" << "\n";
+    std::list<osmscout::RoutePostprocessor::PostprocessorRef> postprocessors;
 
-    output << "\t<wpt lat=\""<< via[0].GetLat() << "\" lon=\""<< via[0].GetLon() << "\">" << "\n";
-    output << "\t\t<name>Start</name>" << "\n";
-    output << "\t\t<fix>2d</fix>" << "\n";
-    output << "\t</wpt>" << "\n";
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::DistanceAndTimePostprocessor>());
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::StartPostprocessor>("Start"));
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::TargetPostprocessor>("Target"));
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::WayNamePostprocessor>());
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::CrossingWaysPostprocessor>());
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::DirectionPostprocessor>());
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::MotorwayJunctionPostprocessor>());
 
-    output << "\t<wpt lat=\""<< via[via.size()-1].GetLat() << "\" lon=\""<< via[via.size()-1].GetLon() << "\">" << "\n";
-    output << "\t\t<name>Target</name>" << "\n";
-    output << "\t\t<fix>2d</fix>" << "\n";
-    output << "\t</wpt>" << "\n";
+    osmscout::RoutePostprocessor::InstructionPostprocessorRef instructionProcessor=std::make_shared<osmscout::RoutePostprocessor::InstructionPostprocessor>();
 
-    output << "\t<trk>" << "\n";
-    output << "\t\t<name>Route</name>" << "\n";
-    output << "\t\t<trkseg>" << "\n";
-    for (const auto &point : points)
+    instructionProcessor->AddMotorwayType(typeConfig->GetTypeInfo("highway_motorway"));
+    instructionProcessor->AddMotorwayLinkType(typeConfig->GetTypeInfo("highway_motorway_link"));
+    instructionProcessor->AddMotorwayType(typeConfig->GetTypeInfo("highway_motorway_trunk"));
+    instructionProcessor->AddMotorwayType(typeConfig->GetTypeInfo("highway_motorway_primary"));
+    instructionProcessor->AddMotorwayType(typeConfig->GetTypeInfo("highway_trunk"));
+    instructionProcessor->AddMotorwayLinkType(typeConfig->GetTypeInfo("highway_trunk_link"));
+    postprocessors.push_back(instructionProcessor);
+
+    osmscout::RoutePostprocessor postprocessor;
+    size_t                       roundaboutCrossingCounter=0;
+
+    if (!postprocessor.PostprocessRouteDescription(description,
+                                                   routingProfile,
+                                                   *m_database,
+                                                   postprocessors))
     {
-      output << "\t\t\t<trkpt lat=\""<< point.GetLat() << "\" lon=\""<< point.GetLon() <<"\">" << "\n";
-      output << "\t\t\t\t<fix>2d</fix>" << "\n";
-      output << "\t\t\t</trkpt>" << "\n";
+        InfoHub::logWarning("Error during post-processing route description");
+        router->Close();
+        return false;
     }
-    output << "\t\t</trkseg>" << "\n";
-    output << "\t</trk>" << "\n";
-    output << "</gpx>" << "\n";
+
+    ////////////////////////////////////////////////////////////////////////
+    /// Store results
+
+    QJsonObject rootObj; /// result JSON
+    {   /// points used to calculate the route
+        QJsonArray main_points;
+        for (const osmscout::GeoCoord &p: via)
+        {
+            QJsonObject po;
+            po.insert("lat", p.GetLat());
+            po.insert("lng", p.GetLon());
+            main_points.append(po);
+        }
+
+        rootObj.insert("points", main_points);
+    }
+
+    {   /// route in coordinates
+        QJsonArray lat;
+        QJsonArray lon;
+
+        for (const osmscout::Point &p : route_points)
+        {
+            lat.push_back(p.GetLat());
+            lon.push_back(p.GetLon());
+        }
+
+        rootObj.insert("lat", lat);
+        rootObj.insert("lng", lon);
+    }
+
+
+
+    QJsonDocument document(rootObj);
+    result = document.toJson();
 
     router->Close();
     return true;
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+    /// AS GPX
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+//    QTextStream output(&result, QIODevice::WriteOnly);
+//    output.setRealNumberPrecision(8);
+
+//    output << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>" << "\n";
+//    output << "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\" creator=\"bin2gpx\" version=\"1.1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">" << "\n";
+
+//    output << "\t<wpt lat=\""<< via[0].GetLat() << "\" lon=\""<< via[0].GetLon() << "\">" << "\n";
+//    output << "\t\t<name>Start</name>" << "\n";
+//    output << "\t\t<fix>2d</fix>" << "\n";
+//    output << "\t</wpt>" << "\n";
+
+//    output << "\t<wpt lat=\""<< via[via.size()-1].GetLat() << "\" lon=\""<< via[via.size()-1].GetLon() << "\">" << "\n";
+//    output << "\t\t<name>Target</name>" << "\n";
+//    output << "\t\t<fix>2d</fix>" << "\n";
+//    output << "\t</wpt>" << "\n";
+
+//    output << "\t<trk>" << "\n";
+//    output << "\t\t<name>Route</name>" << "\n";
+//    output << "\t\t<trkseg>" << "\n";
+//    for (const auto &point : points)
+//    {
+//      output << "\t\t\t<trkpt lat=\""<< point.GetLat() << "\" lon=\""<< point.GetLon() <<"\">" << "\n";
+//      output << "\t\t\t\t<fix>2d</fix>" << "\n";
+//      output << "\t\t\t</trkpt>" << "\n";
+//    }
+//    output << "\t\t</trkseg>" << "\n";
+//    output << "\t</trk>" << "\n";
+//    output << "</gpx>" << "\n";
+//    router->Close();
+//    return true;
 }
