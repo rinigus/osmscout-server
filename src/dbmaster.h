@@ -71,6 +71,7 @@ protected:
     std::string m_map_dir;
     std::string m_icons_dir;
     std::string m_style_name;
+    std::string m_style_name_loaded;
 
     bool m_render_sea = true;
     bool m_draw_background = true;

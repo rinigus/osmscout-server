@@ -77,6 +77,7 @@ bool DBMaster::loadStyle(bool daylight)
 
     // check if its the same as before
     if ( m_style_config != nullptr &&
+         m_style_name_loaded == m_style_name &&
          daylight == m_daylight )
         return true; // nothing to do, all is loaded
 
@@ -101,6 +102,8 @@ bool DBMaster::loadStyle(bool daylight)
     }
 
     m_daylight = daylight;
+    m_style_name_loaded = m_style_name;
+    InfoHub::logInfo("Loaded style: " + QString::fromStdString(m_style_name));
 
     return true;
 }
