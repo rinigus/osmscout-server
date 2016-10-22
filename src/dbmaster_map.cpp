@@ -160,7 +160,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     //    QPixmap *pixmap=new QPixmap(width,height);
     //    if (pixmap == NULL)
     //        return false;
-    QImage image(width,height,QImage::Format_RGB32);
+    QImage image(width,height,QImage::Format_RGB16);
 
     QPainter* painter=new QPainter(&image);
     if (painter == nullptr)
