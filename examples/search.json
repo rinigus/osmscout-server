@@ -1,0 +1,76 @@
+[
+{
+"admin_region": "Tallinn, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
+"lat": 59.437215,
+"lng": 24.745370,
+"object_id": "Node 621858",
+"title": "Tallinn",
+"type": "place_bigcity"
+},
+{
+"admin_region": "Tallinn, Harju maakond, Eesti",
+"lat": 59.471692,
+"lng": 24.738226,
+"object_id": "Area 3670172",
+"title": "Tallinn",
+"type": "place_city"
+},
+{
+"admin_region": "Põhja-Tallinna linnaosa, Tallinna linn, Harju maakond, Eesti",
+"lat": 59.458016,
+"lng": 24.700561,
+"object_id": "Area 2781156",
+"title": "Põhja-Tallinna linnaosa",
+"type": "boundary_administrative"
+},
+{
+"admin_region": "Tallinna linn, Harju maakond, Eesti",
+"lat": 59.471692,
+"lng": 24.738226,
+"object_id": "Area 3807628",
+"title": "Tallinna linn",
+"type": "boundary_administrative"
+},
+{
+"lat": 58.935346,
+"lng": 23.541046,
+"object_id": "Area 12937752",
+"title": "Tallinna Ülikooli Haapsalu Kolledž",
+"type": "amenity_building"
+},
+{
+"lat": 59.439193,
+"lng": 24.771240,
+"object_id": "Area 2548815",
+"title": "Tallinna Ülikool "Ursa"",
+"type": "amenity_building"
+},
+{
+"lat": 59.439193,
+"lng": 24.772931,
+"object_id": "Area 2549420",
+"title": "Tallinna Ülikool "Silva"",
+"type": "amenity_building"
+},
+{
+"lat": 59.439510,
+"lng": 24.772840,
+"object_id": "Area 2549117",
+"title": "Tallinna Ülikool "Mare"",
+"type": "amenity_building"
+},
+{
+"lat": 59.474789,
+"lng": 25.077316,
+"object_id": "Area 3538188",
+"title": "Tallinna prügila",
+"type": "landuse_landfill"
+},
+{
+"lat": 59.427894,
+"lng": 24.805606,
+"object_id": "Area 3247572",
+"title": "Tallinna liitsihi ülemine tuletorn",
+"type": "building"
+}
+]

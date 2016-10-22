@@ -1,0 +1,75 @@
+{
+"origin": { "lng": 24.740464, "lat": 59.436128},
+"results": [
+{
+"lat": 59.414084,
+"lng": 24.634914,
+"object_id": "Node 565800",
+"title": "Sõprus kohvik",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.415436,
+"lng": 24.658807,
+"object_id": "Node 566577",
+"title": "Lyon",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.414357,
+"lng": 24.660097,
+"object_id": "Node 566666",
+"title": "Tenter Kohvik",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.424636,
+"lng": 24.750064,
+"object_id": "Node 571833",
+"title": "Kuus Hernest",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.416366,
+"lng": 24.800149,
+"object_id": "Node 572304",
+"title": "",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.421542,
+"lng": 24.792233,
+"object_id": "Node 573374",
+"title": "Boost juice bar",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.422070,
+"lng": 24.793599,
+"object_id": "Node 575549",
+"title": "Coffee In",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.422018,
+"lng": 24.793757,
+"object_id": "Node 575615",
+"title": "Chopsticks",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.422494,
+"lng": 24.793746,
+"object_id": "Node 576652",
+"title": "Coffeeline",
+"type": "amenity_cafe"
+},
+{
+"lat": 59.422802,
+"lng": 24.796225,
+"object_id": "Node 577493",
+"title": "",
+"type": "amenity_cafe"
+}
+]
+}
