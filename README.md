@@ -227,6 +227,9 @@ several keys:
 See included example under Examples and Poor Maps implementation on
 how to process the results.
 
+At present, the car speeds on different roads are inserted in the
+code. This will improve in future.
+
 
 ## Acknowledgments
 
