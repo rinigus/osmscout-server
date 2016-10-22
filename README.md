@@ -93,7 +93,7 @@ See `examples` folder for results of the example queries.
 The server component for providing tiles operates using OSM convention
 with small extensions. URL is
 
-http://localhost:8553/v1/tile?daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}
+`http://localhost:8553/v1/tile?daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}`
 
 where
 
@@ -114,7 +114,7 @@ Poor Maps settings for example.
 
 The location search is accessed by the following URL:
 
-http://localhost:8553/v1/search?limit={limit}&search={query}
+`http://localhost:8553/v1/search?limit={limit}&search={query}`
 
 where
 
@@ -130,7 +130,7 @@ implementation for details of the format.
 
 List of available POI types is available via 
 
-http://localhost:8553/v1/poi_types
+`http://localhost:8553/v1/poi_types`
 
 
 ## POI search near a reference position
@@ -138,7 +138,7 @@ http://localhost:8553/v1/poi_types
 To find POIs within a given radius from a specified reference
 position, server can be accessed via `/v1/guide` path:
 
-http://localhost:8553/v1/guide?radius={radius}&blimit={limit}&poitype={poitype}&search={search}&lng={lng}&lat={lat}
+`http://localhost:8553/v1/guide?radius={radius}&blimit={limit}&poitype={poitype}&search={search}&lng={lng}&lat={lat}`
 
 where
 
@@ -173,7 +173,7 @@ how to process the results.
 The routing component allows to calculate routes between given
 points. Server can be accessed via `/v1/route` path:
 
-http://localhost:8553/v1/route?radius={radius}&type={type}&p[0][search]={search}&p[0][lng]={lng}&p[0][lat]={lat}& ... &p[n-1][search]={search}&p[n-1][lng]={lng}&p[n-1][lat]={lat}
+`http://localhost:8553/v1/route?radius={radius}&type={type}&p[0][search]={search}&p[0][lng]={lng}&p[0][lat]={lat}& ... &p[n-1][search]={search}&p[n-1][lng]={lng}&p[n-1][lat]={lat}`
 
 where each point along the route can be given either by `{search}` or
 longitude and latitude with precise coordinates preferred if the both
@@ -201,7 +201,7 @@ point is searched for (1000 meters by default);
 For example, the following request finds the route between two cities
 given by names:
 
-http://localhost:8553/v1/route?p[0][search]=Tallinn&p[1][search]=Tartu
+`http://localhost:8553/v1/route?p[0][search]=Tallinn&p[1][search]=Tartu`
 
 
 The result is given in JSON format. It returns a JSON object with
