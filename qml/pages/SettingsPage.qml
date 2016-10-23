@@ -29,21 +29,21 @@ Dialog {
 
             ElementEntry {
                 id: eMap
-                key: "map"
+                key: settingsOsmPrefix + "map"
                 mainLabel: qsTr("Folder containing Maps")
                 secondaryLabel: qsTr("This folder should contain maps imported by libosmscout Import utility")
             }
 
             ElementEntry {
                 id: eStyle
-                key: "style"
+                key: settingsOsmPrefix + "style"
                 mainLabel: qsTr("Style sheet")
                 secondaryLabel: qsTr("Style sheet used to render the map tiles")
             }
 
             ElementEntry {
                 id: eIcons
-                key: "icons"
+                key: settingsOsmPrefix + "icons"
                 mainLabel: qsTr("Folder with icons")
                 secondaryLabel: qsTr("Icons used to mark features on the map")
             }
@@ -55,7 +55,7 @@ Dialog {
 
             ElementEntry {
                 id: eFontSize
-                key: "fontSize"
+                key: settingsOsmPrefix + "fontSize"
                 mainLabel: qsTr("Font size")
                 validator: DoubleValidator { bottom: 0; decimals: 1; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -63,13 +63,13 @@ Dialog {
 
             ElementSwitch {
                 id: eRenderSea
-                key: "renderSea"
+                key: settingsOsmPrefix + "renderSea"
                 mainLabel: qsTr("Render sea")
             }
 
             ElementSwitch {
                 id: eDrawBackground
-                key: "drawBackground"
+                key: settingsOsmPrefix + "drawBackground"
                 mainLabel: qsTr("Draw background")
             }
 
@@ -80,7 +80,7 @@ Dialog {
 
             ElementEntry {
                 id: eDataLookupArea
-                key: "dataLookupArea"
+                key: settingsOsmPrefix + "dataLookupArea"
                 mainLabel: qsTr("Loaded area factor")
                 secondaryLabel: qsTr("By increasing the size of the area which is used to load the data while rendering a tile, " +
                                      "the renderer can improve label rendering by taking into account data from neighboring tiles. " +
@@ -94,7 +94,7 @@ Dialog {
 
             ElementEntry {
                 id: eTileBordersZoomCutoff
-                key: "tileBordersZoomCutoff"
+                key: settingsOsmPrefix + "tileBordersZoomCutoff"
                 mainLabel: qsTr("Cutoff zoom level")
                 secondaryLabel: qsTr("At the specified zoom level, the map rendering algorithm will stop checking " +
                                      "for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. " +
@@ -111,7 +111,7 @@ Dialog {
 
             ElementSwitch {
                 id: eLogInfo
-                key: "logInfo"
+                key: settingsOsmPrefix + "logInfo"
                 mainLabel: qsTr("Log info messages")
                 secondaryLabel: qsTr( "When disabled, INFO messages will not be logged in Events log. " +
                                       "Exception is loading of the database which is shown always" )
@@ -119,7 +119,7 @@ Dialog {
 
             ElementEntry {
                 id: eRollSize
-                key: "rollingLoggerSize"
+                key: settingsOsmPrefix + "rollingLoggerSize"
                 mainLabel: qsTr("Events log size")
                 secondaryLabel: qsTr("Number of events shown in the main page")
                 validator: IntValidator { bottom: 3; top: 25; }

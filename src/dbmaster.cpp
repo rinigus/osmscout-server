@@ -4,6 +4,7 @@
 #include "infohub.h"
 
 #include <QMutexLocker>
+#include <QDebug>
 
 DBMaster::DBMaster()
 {
@@ -60,6 +61,26 @@ void DBMaster::loadSettings()
     {
         m_style_name = style;
         loadStyle(m_daylight);
+    }
+
+    // load speed table
+    m_routing_speeds.clear();
+    QStringList keys = settings.allKeys().filter(ROUTING_SPEED_SETTINGS);
+    for (const QString &k: keys)
+    {
+        QString n = k;
+        n.remove(0, strlen(ROUTING_SPEED_SETTINGS));
+        m_routing_speeds[n.toStdString()] = settings.valueFloat(k);
+
+//        QString id = k; id.replace('/', '_').replace('-', '_');
+//        QString nhuman = n; nhuman.replace("highway_", "").replace('_', ' ');
+////        qDebug() << "ElementEntry { \n"
+////                 << "id: " << id.toStdString().c_str() << "\n"
+////                 << "key: " << "settingsSpeedPrefix + " << n << "\n"
+////                 << "mainLabel: qsTr(" << nhuman + ", km/h" << ")" << "\n"
+////                 << "validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }\n"
+////                 << "inputMethodHints: Qt.ImhFormattedNumbersOnly\n}\n";
+////        qDebug() << (id + ".apply()").toStdString().c_str() << ";";
     }
 }
 

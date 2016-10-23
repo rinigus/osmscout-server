@@ -15,6 +15,11 @@ Page {
             }
 
             MenuItem {
+                text: qsTr("Routing speeds")
+                onClicked: pageStack.push(Qt.resolvedUrl("SpeedPage.qml"))
+            }
+
+            MenuItem {
                 text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }

@@ -15,7 +15,7 @@ Column {
     {
         var ret = 0;
         if (textInput.checked) ret = 1;
-        settings.setValue(settingsOsmPrefix + key, ret)
+        settings.setValue(key, ret)
     }
 
     TextSwitch {
@@ -24,13 +24,13 @@ Column {
         text: parent.mainLabel
 
         Component.onCompleted: {
-            checked = (settings.valueInt(settingsOsmPrefix + parent.key) > 0)
+            checked = (settings.valueInt(parent.key) > 0)
         }
 
 //        onCheckedChanged: {
 //            var ret = 0;
 //            if (checked) ret = 1;
-//            settings.setValue(settingsOsmPrefix + parent.key, ret)
+//            settings.setValue(parent.key, ret)
 //        }
     }
 

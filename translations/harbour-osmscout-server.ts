@@ -149,6 +149,139 @@
     </message>
 </context>
 <context>
+    <name>SpeedPage</name>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="22"/>
+        <source>Routing speeds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="26"/>
+        <source> Modes of transportation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="33"/>
+        <source>Maximal car speed, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="34"/>
+        <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="42"/>
+        <source>Expected speed of a bicycle, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="50"/>
+        <source>Expected speed while walking, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="56"/>
+        <source>Car speed on different roads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="63"/>
+        <source>living street, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="71"/>
+        <source>motorway, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="79"/>
+        <source>motorway junction, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="87"/>
+        <source>motorway link, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="95"/>
+        <source>motorway primary, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="103"/>
+        <source>motorway trunk, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="111"/>
+        <source>primary, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="119"/>
+        <source>primary link, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="127"/>
+        <source>residential, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="135"/>
+        <source>road, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="143"/>
+        <source>roundabout, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="151"/>
+        <source>secondary, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="159"/>
+        <source>secondary link, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="167"/>
+        <source>service, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="175"/>
+        <source>tertiary, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="183"/>
+        <source>tertiary link, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="191"/>
+        <source>trunk, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="199"/>
+        <source>trunk link, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="207"/>
+        <source>unclassified, km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>StartPage</name>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="13"/>
@@ -157,21 +290,26 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="18"/>
+        <source>Routing speeds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="23"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="32"/>
+        <location filename="../qml/pages/StartPage.qml" line="37"/>
         <source>OSM Scout Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="36"/>
+        <location filename="../qml/pages/StartPage.qml" line="41"/>
         <source>Database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="64"/>
+        <location filename="../qml/pages/StartPage.qml" line="69"/>
         <source>Events</source>
         <translation type="unfinished"></translation>
     </message>

@@ -14,6 +14,7 @@
 #include <QString>
 
 #include <string>
+#include <map>
 
 /// \brief Access to all OSM Scout functionality
 ///
@@ -79,6 +80,8 @@ protected:
     float m_data_lookup_area = 1.5;
     int m_tile_borders_zoom_cutoff = 20;
     bool m_daylight = true;
+
+    std::map< std::string, double > m_routing_speeds;
 
     osmscout::DatabaseParameter m_database_parameter;
     osmscout::DatabaseRef m_database;

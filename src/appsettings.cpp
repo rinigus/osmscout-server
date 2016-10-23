@@ -19,6 +19,7 @@ AppSettings::AppSettings():
 }
 
 #define CHECK(s, d) if (!contains(s)) QSettings::setValue(s, d);
+#define CHECKF(s, d) if (!contains(s)) QSettings::setValue(s, (double)d);
 void AppSettings::initDefaults()
 {
     // defaults for server
@@ -46,6 +47,29 @@ void AppSettings::initDefaults()
 
     CHECK(OSM_SETTINGS "rollingLoggerSize", 10);
     CHECK(OSM_SETTINGS "logInfo", 1);
+
+    CHECK(ROUTING_SPEED_SETTINGS "highway_living_street", 10);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_motorway", 110);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_motorway_junction", 60);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_motorway_link", 60);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_motorway_primary", 70);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_motorway_trunk", 100);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_primary", 70);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_primary_link", 60);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_residential", 40);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_road", 50);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_roundabout", 40);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_secondary", 60);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_secondary_link", 50);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_service", 30);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_tertiary", 55);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_tertiary_link", 55);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_trunk", 100);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_trunk_link", 60);
+    CHECK(ROUTING_SPEED_SETTINGS "highway_unclassified", 50);
+    CHECK(ROUTING_SPEED_SETTINGS "Bicycle", 20);
+    CHECK(ROUTING_SPEED_SETTINGS "Foot", 5);
+    CHECK(ROUTING_SPEED_SETTINGS "Car", 160);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -71,3 +95,4 @@ QString AppSettings::valueString(const QString &key)
 {
     return value(key, QString()).toString();
 }
+

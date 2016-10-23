@@ -19,28 +19,31 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 /// Helper functions
 
-static void GetCarSpeedTable(std::map<std::string,double>& map)
-{
-    map["highway_motorway"]=110.0;
-    map["highway_motorway_trunk"]=100.0;
-    map["highway_motorway_primary"]=70.0;
-    map["highway_motorway_link"]=60.0;
-    map["highway_motorway_junction"]=60.0;
-    map["highway_trunk"]=100.0;
-    map["highway_trunk_link"]=60.0;
-    map["highway_primary"]=70.0;
-    map["highway_primary_link"]=60.0;
-    map["highway_secondary"]=60.0;
-    map["highway_secondary_link"]=50.0;
-    map["highway_tertiary_link"]=55.0;
-    map["highway_tertiary"]=55.0;
-    map["highway_unclassified"]=50.0;
-    map["highway_road"]=50.0;
-    map["highway_residential"]=40.0;
-    map["highway_roundabout"]=40.0;
-    map["highway_living_street"]=10.0;
-    map["highway_service"]=30.0;
-}
+//static void GetCarSpeedTable(std::map<std::string,double>& map)
+//{
+//    map["highway_motorway"]=110.0;
+//    map["highway_motorway_trunk"]=100.0;
+//    map["highway_motorway_primary"]=70.0;
+//    map["highway_motorway_link"]=60.0;
+//    map["highway_motorway_junction"]=60.0;
+//    map["highway_trunk"]=100.0;
+//    map["highway_trunk_link"]=60.0;
+//    map["highway_primary"]=70.0;
+//    map["highway_primary_link"]=60.0;
+//    map["highway_secondary"]=60.0;
+//    map["highway_secondary_link"]=50.0;
+//    map["highway_tertiary_link"]=55.0;
+//    map["highway_tertiary"]=55.0;
+//    map["highway_unclassified"]=50.0;
+//    map["highway_road"]=50.0;
+//    map["highway_residential"]=40.0;
+//    map["highway_roundabout"]=40.0;
+//    map["highway_living_street"]=10.0;
+//    map["highway_service"]=30.0;
+
+//    for (auto i: map)
+//        std::cout << "CHECK(OSM_SETTINGS ROUTING_SPEED_SETTINGS \"" << i.first << "\", " << i.second << ");\n";
+//}
 
 static bool HasRelevantDescriptions(const osmscout::RouteDescription::Node& node)
 {
@@ -431,23 +434,25 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     osmscout::TypeConfigRef             typeConfig=m_database->GetTypeConfig();
     osmscout::RouteData                 data;
     osmscout::RouteDescription          description;
-    std::map<std::string,double>        carSpeedTable;
+
+    double speed_car = std::max(1.0, m_routing_speeds["Car"]);
+    double speed_foot = std::max(0.01, m_routing_speeds["Foot"]);
+    double speed_bicycle = std::max(0.1, m_routing_speeds["Bicycle"]);
 
     switch (vehicle)
     {
     case osmscout::vehicleFoot:
         routingProfile.ParametrizeForFoot(*typeConfig,
-                                          5.0);
+                                          speed_foot);
         break;
     case osmscout::vehicleBicycle:
         routingProfile.ParametrizeForBicycle(*typeConfig,
-                                             20.0);
+                                             speed_bicycle);
         break;
     case osmscout::vehicleCar:
-        GetCarSpeedTable(carSpeedTable);
         routingProfile.ParametrizeForCar(*typeConfig,
-                                         carSpeedTable,
-                                         160.0);
+                                         m_routing_speeds,
+                                         speed_car);
         break;
     }
 

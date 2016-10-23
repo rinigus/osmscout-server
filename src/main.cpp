@@ -84,6 +84,7 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("programName", "OSM Scout Server");
     rootContext->setContextProperty("programVersion", APP_VERSION);
     rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
+    rootContext->setContextProperty("settingsSpeedPrefix", ROUTING_SPEED_SETTINGS);
 
     rootContext->setContextProperty("settings", &settings);
     rootContext->setContextProperty("infohub", &infoHub);

@@ -2,8 +2,6 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Column {
-    id: aaa
-
     property string key
     property string mainLabel
     property string secondaryLabel
@@ -19,7 +17,7 @@ Column {
     function apply()
     {
         if (textInput.acceptableInput)
-            settings.setValue(settingsOsmPrefix + key, value)
+            settings.setValue(key, value)
     }
 
     TextField {
@@ -30,19 +28,19 @@ Column {
         placeholderText: parent.mainLabel
 
         Component.onCompleted: {
-            text = settings.valueString(settingsOsmPrefix + parent.key)
+            text = settings.valueString(parent.key)
         }
 
 //        EnterKey.enabled: text.length > 0
 //        EnterKey.onClicked: {
-//            settings.setValue(settingsOsmPrefix + parent.key, parent.value)
+//            settings.setValue(parent.key, parent.value)
 //            focus = false
 //        }
 
 //        onFocusChanged: {
 //            if (!focus)
 //            {
-//                if (settings.valueString(settingsOsmPrefix + parent.key) !== text)
+//                if (settings.valueString(parent.key) !== text)
 //                {
 //                    secLabel.text = "<b>Setting not applied.</b> " + parent.secondaryLabel
 //                    secLabel.visible = true
