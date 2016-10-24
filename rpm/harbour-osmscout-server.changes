@@ -5,6 +5,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Oct 24 2016 rinigus <rinigus.git@gmail.com> 0.2.0-1
+- Support for route calculation
+- Add settings for transport speed properties
+- Add ability to increase area processed for tile drawing
+- Small enhancements and bug fixes
+
 * Thu Oct 13 2016 rinigus <rinigus.git@gmail.com> 0.1.0-1
 - Initial release
 - Support for map tiles
