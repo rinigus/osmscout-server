@@ -3,6 +3,8 @@
 
 #include <QThread>
 #include <QStandardPaths>
+#include <QTimer>
+
 #include <QDebug>
 
 #ifdef IS_SAILFISH_OS
@@ -76,8 +78,23 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
 {
     QSettings::setValue(key, value);
 
-    if (key.contains(OSM_SETTINGS))
-        emit osmScoutSettingsChanged();
+    if (key.contains(OSM_SETTINGS) || key.contains(ROUTING_SPEED_SETTINGS))
+    {
+        // this delayed signal execution prevents fireing signals together
+        // if there are many changes in settings
+        if (!m_signal_osm_scout_changed_waiting)
+        {
+            m_signal_osm_scout_changed_waiting = true;
+            QTimer::singleShot(200, this, SLOT(fireOsmScoutSettingsChanged()));
+        }
+    }
+}
+
+void AppSettings::fireOsmScoutSettingsChanged()
+{
+    emit osmScoutSettingsChanged();
+    m_signal_osm_scout_changed_waiting = false;
+    qDebug() << "Signal fired";
 }
 
 

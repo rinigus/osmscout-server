@@ -23,6 +23,12 @@ public:
 
 signals:
     void osmScoutSettingsChanged();
+
+public slots:
+    void fireOsmScoutSettingsChanged();
+
+protected:
+    bool m_signal_osm_scout_changed_waiting = false;
 };
 
 #endif // APPSETTINGS_H
