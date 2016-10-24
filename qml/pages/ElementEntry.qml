@@ -31,11 +31,12 @@ Column {
             text = settings.valueString(parent.key)
         }
 
-//        EnterKey.enabled: text.length > 0
-//        EnterKey.onClicked: {
-//            settings.setValue(parent.key, parent.value)
-//            focus = false
-//        }
+        EnterKey.enabled: text.length > 0
+        EnterKey.onClicked: {
+            /// commented out since we apply settings separately
+            // settings.setValue(parent.key, parent.value)
+            focus = false
+        }
 
 //        onFocusChanged: {
 //            if (!focus)
