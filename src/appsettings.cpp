@@ -94,7 +94,7 @@ void AppSettings::fireOsmScoutSettingsChanged()
 {
     emit osmScoutSettingsChanged();
     m_signal_osm_scout_changed_waiting = false;
-    qDebug() << "Signal fired";
+    //qDebug() << "Signal fired";
 }
 
 
