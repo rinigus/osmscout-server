@@ -43,12 +43,16 @@ to make a joined map using osmconvert
 (https://wiki.openstreetmap.org/wiki/Osmconvert) as described in
 https://wiki.openstreetmap.org/wiki/Osmconvert#Parallel_Processing
 
-Finally, regarding the maps: present Import program keeps several
-debug and temporary files. On device, these files are not needed and
-you need only the resulting files listed in the end of the
-import. (see issue https://github.com/Framstag/libosmscout/issues/133
-for information regarding it). Expect that the size of map would be
-similar to the map file in PBF format.
+Finally, to keep minimal number of required map database files, use
+the same options as in following import command example:
+
+```
+Import --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --typefile libosmscout/stylesheets/map.ost --destinationDirectory mymap mymap.osm.pbf
+```
+
+This would keep the number of produced files to minimum needed on the
+device. Expect that the size of map would be similar to the map file in
+PBF format.
 
 
 ## Settings
