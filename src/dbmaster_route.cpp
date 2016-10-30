@@ -128,7 +128,7 @@ static std::string CrossingWaysDescriptionToString(const osmscout::RouteDescript
             if (name!=names.begin()) {
                 stream << ", ";
             }
-            stream << "'" << *name << "'";
+            stream << "" << *name << "";
         }
 
         return stream.str();
@@ -168,11 +168,11 @@ static void DumpStartDescription(QJsonObject& action,
                                  const osmscout::RouteDescription::StartDescriptionRef& startDescription,
                                  const osmscout::RouteDescription::NameDescriptionRef& nameDescription)
 {
-    QString txt = "Start at '" + QString::fromStdString(startDescription->GetDescription()) + "'";
+    QString txt = "Start at " + QString::fromStdString(startDescription->GetDescription()) + "";
 
     if (nameDescription &&
             nameDescription->HasName()) {
-        QString post = "Drive along '" + QString::fromStdString(nameDescription->GetDescription()) + "'";
+        QString post = "Drive along " + QString::fromStdString(nameDescription->GetDescription()) + "";
         action.insert("verbal_post_transition_instruction", post);
         txt += ". " + post;
     }
@@ -185,7 +185,7 @@ static void DumpStartDescription(QJsonObject& action,
 static void DumpTargetDescription(QJsonObject& action,
                                   const osmscout::RouteDescription::TargetDescriptionRef& targetDescription)
 {
-    action.insert("instruction", "Target reached '" + QString::fromStdString(targetDescription->GetDescription()) + "'");
+    action.insert("instruction", "Target reached: " + QString::fromStdString(targetDescription->GetDescription()) + "");
     action.insert("type", QString("destination"));
 }
 
@@ -218,7 +218,7 @@ static void DumpTurnDescription(QJsonObject& action,
 
     if (nameDescription &&
             nameDescription->HasName()) {
-        comm += " into '" + nameDescription->GetDescription() + "'";
+        comm += " into " + nameDescription->GetDescription() + "";
     }
 
     action.insert("instruction", QString::fromStdString(comm));
@@ -256,7 +256,7 @@ static void DumpRoundaboutLeaveDescription(QJsonObject& action,
 
     if (nameDescription &&
             nameDescription->HasName()) {
-        ss << " into street '" << nameDescription->GetDescription() << "'";
+        ss << " into street " << nameDescription->GetDescription() << "";
     }
 
     action.insert("instruction", QString::fromStdString(ss.str()));
@@ -284,7 +284,7 @@ static void DumpMotorwayEnterDescription(QJsonObject& action,
 
     if (motorwayEnterDescription->GetToDescription() &&
             motorwayEnterDescription->GetToDescription()->HasName()) {
-        comm += " '" + motorwayEnterDescription->GetToDescription()->GetDescription() + "'";
+        comm += " " + motorwayEnterDescription->GetToDescription()->GetDescription() + "";
     }
 
     action.insert("instruction", QString::fromStdString(comm));
@@ -304,7 +304,7 @@ static void DumpMotorwayChangeDescription(QJsonObject& action,
         pre = "At";
 
         if (!motorwayJunctionDescription->GetJunctionDescription()->GetName().empty()) {
-            pre += " '" + motorwayJunctionDescription->GetJunctionDescription()->GetName() + "'";
+            pre += " " + motorwayJunctionDescription->GetJunctionDescription()->GetName() + "";
 
             if (!motorwayJunctionDescription->GetJunctionDescription()->GetRef().empty()) {
                 pre += " (exit " + motorwayJunctionDescription->GetJunctionDescription()->GetRef() + ")";
@@ -316,12 +316,12 @@ static void DumpMotorwayChangeDescription(QJsonObject& action,
 
     if (motorwayChangeDescription->GetFromDescription() &&
             motorwayChangeDescription->GetFromDescription()->HasName()) {
-        comm += " from '" + motorwayChangeDescription->GetFromDescription()->GetDescription() + "'";
+        comm += " from " + motorwayChangeDescription->GetFromDescription()->GetDescription() + "";
     }
 
     if (motorwayChangeDescription->GetToDescription() &&
             motorwayChangeDescription->GetToDescription()->HasName()) {
-        comm += " to '" + motorwayChangeDescription->GetToDescription()->GetDescription() + "'";
+        comm += " to " + motorwayChangeDescription->GetToDescription()->GetDescription() + "";
     }
 
     action.insert("instruction", QString::fromStdString(comm));
@@ -345,7 +345,7 @@ static void DumpMotorwayLeaveDescription(QJsonObject& action,
         pre = "At";
 
         if (!motorwayJunctionDescription->GetJunctionDescription()->GetName().empty()) {
-            pre += " '" + motorwayJunctionDescription->GetJunctionDescription()->GetName() + "'";
+            pre += " " + motorwayJunctionDescription->GetJunctionDescription()->GetName() + "";
 
             if (!motorwayJunctionDescription->GetJunctionDescription()->GetRef().empty()) {
                 pre += " (exit " + motorwayJunctionDescription->GetJunctionDescription()->GetRef() + ")";
@@ -357,7 +357,7 @@ static void DumpMotorwayLeaveDescription(QJsonObject& action,
 
     if (motorwayLeaveDescription->GetFromDescription() &&
             motorwayLeaveDescription->GetFromDescription()->HasName()) {
-        comm += " '" + motorwayLeaveDescription->GetFromDescription()->GetDescription() + "'";
+        comm += " " + motorwayLeaveDescription->GetFromDescription()->GetDescription() + "";
     }
 
     if (directionDescription &&
@@ -370,7 +370,7 @@ static void DumpMotorwayLeaveDescription(QJsonObject& action,
 
     if (nameDescription &&
             nameDescription->HasName()) {
-        comm += " into '" + nameDescription->GetDescription() + "'";
+        comm += " into " + nameDescription->GetDescription() + "";
     }
 
     action.insert("instruction", QString::fromStdString(comm));
@@ -386,10 +386,10 @@ static void DumpNameChangedDescription(QJsonObject& action,
     comm = "Way changes name";
     if (nameChangedDescription->GetOriginDesccription()) {
         comm += " from ";
-        comm += "'" + nameChangedDescription->GetOriginDesccription()->GetDescription() + "'";
+        comm += "" + nameChangedDescription->GetOriginDesccription()->GetDescription() + "";
     }
 
-    comm += " to '" + nameChangedDescription->GetTargetDesccription()->GetDescription() + "'";
+    comm += " to " + nameChangedDescription->GetTargetDesccription()->GetDescription() + "";
     action.insert("instruction", QString::fromStdString(comm));
     action.insert("type", QString("straight"));
 }
