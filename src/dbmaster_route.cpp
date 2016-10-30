@@ -736,9 +736,11 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
             route_points.size() > 0)
     {
         // correct coordinates to correspond to the last point
+        // this should not be needed after fixing https://github.com/rinigus/osmscout-server/issues/30
         const osmscout::Point &p = route_points.back();
         action_previous.insert("lat", p.GetLat());
         action_previous.insert("lng", p.GetLon());
+
         action_previous.insert("time", 0.0);
         action_previous.insert("length", 0.0);
     }
