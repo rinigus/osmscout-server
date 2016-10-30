@@ -47,7 +47,7 @@ public:
 
     bool poiTypes(QByteArray &result); ///< Fill results with list of supported POI types
 
-    bool route(osmscout::Vehicle &vehicle, std::vector< osmscout::GeoCoord > &coordinates, double radius, QByteArray &result);
+    bool route(osmscout::Vehicle &vehicle, std::vector< osmscout::GeoCoord > &coordinates, double radius, bool gpx, QByteArray &result);
 
     /// \brief checks if DBMaster object is ready for operation
     ///

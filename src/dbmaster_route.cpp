@@ -11,6 +11,8 @@
 #include <QJsonArray>
 #include <QJsonObject>
 #include <QJsonValue>
+#include <QDebug>
+#include <QString>
 
 #include <sstream>
 
@@ -396,7 +398,7 @@ static void DumpNameChangedDescription(QJsonObject& action,
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /// Main routing function
-bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord> &via, double radius, QByteArray &result)
+bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord> &via, double radius, bool gpx, QByteArray &result)
 {
     ///////////////////////////////////////////////////////////
     /// Check if everything is OK and lock the mutex
@@ -482,6 +484,43 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
         InfoHub::logWarning("Error during route conversion to points");
         router->Close();
         return false;
+    }
+
+    if ( gpx )
+    {
+        ////////////////////////////////////////////////////
+        /// AS GPX
+        ////////////////////////////////////////////////////
+        QTextStream output(&result, QIODevice::WriteOnly);
+        output.setRealNumberPrecision(8);
+
+        output << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>" << "\n";
+        output << "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\" creator=\"bin2gpx\" version=\"1.1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">" << "\n";
+
+        output << "\t<wpt lat=\""<< via[0].GetLat() << "\" lon=\""<< via[0].GetLon() << "\">" << "\n";
+        output << "\t\t<name>Start</name>" << "\n";
+        output << "\t\t<fix>2d</fix>" << "\n";
+        output << "\t</wpt>" << "\n";
+
+        output << "\t<wpt lat=\""<< via[via.size()-1].GetLat() << "\" lon=\""<< via[via.size()-1].GetLon() << "\">" << "\n";
+        output << "\t\t<name>Target</name>" << "\n";
+        output << "\t\t<fix>2d</fix>" << "\n";
+        output << "\t</wpt>" << "\n";
+
+        output << "\t<trk>" << "\n";
+        output << "\t\t<name>Route</name>" << "\n";
+        output << "\t\t<trkseg>" << "\n";
+        for (const auto &point : route_points)
+        {
+            output << "\t\t\t<trkpt lat=\""<< point.GetLat() << "\" lon=\""<< point.GetLon() <<"\">" << "\n";
+            output << "\t\t\t\t<fix>2d</fix>" << "\n";
+            output << "\t\t\t</trkpt>" << "\n";
+        }
+        output << "\t\t</trkseg>" << "\n";
+        output << "\t</trk>" << "\n";
+        output << "</gpx>" << "\n";
+        router->Close();
+        return true;
     }
 
     router->TransformRouteDataToRouteDescription(data,
@@ -765,38 +804,4 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     result = document.toJson();
 
     return true;
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-    /// AS GPX
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-    //    QTextStream output(&result, QIODevice::WriteOnly);
-    //    output.setRealNumberPrecision(8);
-
-    //    output << "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>" << "\n";
-    //    output << "<gpx xmlns=\"http://www.topografix.com/GPX/1/1\" creator=\"bin2gpx\" version=\"1.1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">" << "\n";
-
-    //    output << "\t<wpt lat=\""<< via[0].GetLat() << "\" lon=\""<< via[0].GetLon() << "\">" << "\n";
-    //    output << "\t\t<name>Start</name>" << "\n";
-    //    output << "\t\t<fix>2d</fix>" << "\n";
-    //    output << "\t</wpt>" << "\n";
-
-    //    output << "\t<wpt lat=\""<< via[via.size()-1].GetLat() << "\" lon=\""<< via[via.size()-1].GetLon() << "\">" << "\n";
-    //    output << "\t\t<name>Target</name>" << "\n";
-    //    output << "\t\t<fix>2d</fix>" << "\n";
-    //    output << "\t</wpt>" << "\n";
-
-    //    output << "\t<trk>" << "\n";
-    //    output << "\t\t<name>Route</name>" << "\n";
-    //    output << "\t\t<trkseg>" << "\n";
-    //    for (const auto &point : points)
-    //    {
-    //      output << "\t\t\t<trkpt lat=\""<< point.GetLat() << "\" lon=\""<< point.GetLon() <<"\">" << "\n";
-    //      output << "\t\t\t\t<fix>2d</fix>" << "\n";
-    //      output << "\t\t\t</trkpt>" << "\n";
-    //    }
-    //    output << "\t\t</trkseg>" << "\n";
-    //    output << "\t</trk>" << "\n";
-    //    output << "</gpx>" << "\n";
-    //    router->Close();
-    //    return true;
 }

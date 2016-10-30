@@ -263,6 +263,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
         bool ok = true;
         QString type = q2value<QString>("type", "car", query, ok);
         double radius = q2value<double>("radius", 1000.0, query, ok);
+        bool gpx = q2value<int>("gpx", 0, query, ok);
 
         std::vector<osmscout::GeoCoord> points;
 
@@ -323,7 +324,7 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
             std::cout << i.GetLat() << " " << i.GetLon() << "\n";
 
         QByteArray bytes;
-        bool res = osmScoutMaster->route(vehicle, points, radius, bytes);
+        bool res = osmScoutMaster->route(vehicle, points, radius, gpx, bytes);
 
         if (!res)
         {
@@ -331,7 +332,8 @@ void RequestMapper::service(HttpRequest& request, HttpResponse& response)
             return;
         }
 
-        response.setHeader("Content-Type", "text/plain; charset=UTF-8");
+        if (!gpx) response.setHeader("Content-Type", "text/plain; charset=UTF-8");
+        else response.setHeader("Content-Type", "text/xml; charset=UTF-8");
         response.write(bytes, true);
     }
 

@@ -177,7 +177,7 @@ how to process the results.
 The routing component allows to calculate routes between given
 points. Server can be accessed via `/v1/route` path:
 
-`http://localhost:8553/v1/route?radius={radius}&type={type}&p[0][search]={search}&p[0][lng]={lng}&p[0][lat]={lat}& ... &p[n-1][search]={search}&p[n-1][lng]={lng}&p[n-1][lat]={lat}`
+`http://localhost:8553/v1/route?radius={radius}&type={type}&gpx={gpx}&p[0][search]={search}&p[0][lng]={lng}&p[0][lat]={lat}& ... &p[n-1][search]={search}&p[n-1][lng]={lng}&p[n-1][lat]={lat}`
 
 where each point along the route can be given either by `{search}` or
 longitude and latitude with precise coordinates preferred if the both
@@ -197,7 +197,11 @@ supported (`car` is default);
 `{radius}` - distance from the points in meters where closest routing
 point is searched for (1000 meters by default);
 
-`{search}` - a query that is run to find a reference point, the first result is used
+`{gpx}` - when 1 or larger integer, GPX trace of the route will be
+given in the response of the server instead of JSON reply;
+
+`{search}` - a query that is run to find a reference point, the first
+result is used;
 
 `{lng}`, `{lat}` - longitude and latidude, respectively.
 
