@@ -4,6 +4,7 @@
 #include <QObject>
 #include <QMutex>
 #include <QString>
+#include <QFile>
 
 class InfoHub : public QObject
 {
@@ -41,11 +42,15 @@ protected:
     void impLogInfo(const QString &txt, bool force=false);
     void impLogWarning(const QString &txt);
     void impLogError(const QString &txt);
+    void sessionLog(const QString &txt);
 
 protected:
     QMutex m_mutex;
     bool m_error = false;
     bool m_log_info = true;
+    bool m_log_session = false;
+
+    QFile m_log_file;
 };
 
 #endif // INFOHUB_H

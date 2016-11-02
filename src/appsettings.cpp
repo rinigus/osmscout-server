@@ -49,6 +49,7 @@ void AppSettings::initDefaults()
 
     CHECK(OSM_SETTINGS "rollingLoggerSize", 10);
     CHECK(OSM_SETTINGS "logInfo", 1);
+    CHECK(OSM_SETTINGS "logSession", 0);
 
     CHECK(ROUTING_SPEED_SETTINGS "highway_living_street", 10);
     CHECK(ROUTING_SPEED_SETTINGS "highway_motorway", 110);

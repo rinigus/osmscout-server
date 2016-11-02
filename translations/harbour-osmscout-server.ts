@@ -20,17 +20,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../src/infohub.cpp" line="67"/>
+        <location filename="../src/infohub.cpp" line="74"/>
         <source>ERROR: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="73"/>
+        <location filename="../src/infohub.cpp" line="80"/>
         <source>WARNING: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="82"/>
+        <location filename="../src/infohub.cpp" line="89"/>
         <source>INFO: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -145,6 +145,16 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="124"/>
         <source>Number of events shown in the main page</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="132"/>
+        <source>Log messages into session log file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

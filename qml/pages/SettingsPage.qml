@@ -114,7 +114,7 @@ Dialog {
                 key: settingsOsmPrefix + "logInfo"
                 mainLabel: qsTr("Log info messages")
                 secondaryLabel: qsTr( "When disabled, INFO messages will not be logged in Events log. " +
-                                      "Exception is loading of the database which is shown always" )
+                                     "Exception is loading of the database which is shown always" )
             }
 
             ElementEntry {
@@ -125,6 +125,18 @@ Dialog {
                 validator: IntValidator { bottom: 3; top: 25; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
+
+            ElementSwitch {
+                id: eLogSession
+                key: settingsOsmPrefix + "logSession"
+                mainLabel: qsTr("Log messages into session log file")
+                secondaryLabel: qsTr("When enabled, the messages are logged into a session log file." +
+                                     "The log file is at .cache/harbour-osmscout-server directory. " +
+                                     "Use this setting only for debugging purposes. With this setting enabled, " +
+                                     "info messages will be logged and shown on events irrespective to the " +
+                                     "settings above. This allows you to temporary enable full logging and disable it " +
+                                     "when the required session log file was produced." )
+            }
         }
 
         VerticalScrollDecorator {}
@@ -133,6 +145,7 @@ Dialog {
     onAccepted: {
         eLogInfo.apply()
         eRollSize.apply()
+        eLogSession.apply()
         eMap.apply()
         eStyle.apply()
         eIcons.apply()
