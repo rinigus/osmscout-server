@@ -28,7 +28,7 @@ void AppSettings::initDefaults()
     beginGroup("http-listener");
     CHECK("host", "127.0.0.1");
     CHECK("port", 8553);
-    CHECK("maxThreads", QThread::idealThreadCount() + 2);
+    //CHECK("maxThreads", QThread::idealThreadCount() + 2);
     endGroup();
 
     // defaults for libosmscout

@@ -15,6 +15,8 @@
 #include <QUrl>
 #include <QRunnable>
 #include <QThreadPool>
+#include <QDir>
+
 #include <QDebug>
 
 #include <functional>
@@ -24,7 +26,20 @@ extern DBMaster *osmScoutMaster;
 
 RequestMapper::RequestMapper()
 {
-    m_pool.setMaxThreadCount(2);
+#ifdef IS_SAILFISH_OS
+    // In Sailfish, CPUs could be switched off one by one. As a result,
+    // "ideal thread count" set by Qt could be off.
+    // In other systems, this procedure is not needed and the defaults can be used
+    //
+    int cpus = 0;
+    QDir dir;
+    while ( dir.exists(QString("/sys/devices/system/cpu/cpu") + QString::number(cpus)) )
+        ++cpus;
+
+    m_pool.setMaxThreadCount(cpus);
+#endif
+
+    qDebug() << "Number of threads used to render tiles: " << m_pool.maxThreadCount();
 }
 
 
