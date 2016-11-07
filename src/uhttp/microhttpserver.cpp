@@ -61,7 +61,7 @@ static long int content_reader_callback (void *cls, uint64_t pos, char *buf, siz
 
 static int answer_to_connection (void *cls, struct MHD_Connection *connection,
                                  const char *url, const char *method,
-                                 const char *version, const char */*upload_data*/,
+                                 const char */*version*/, const char */*upload_data*/,
                                  size_t */*upload_data_size*/, void **/*con_cls*/)
 {
     //qDebug() << "answer:" << url << " / " << method << " / version " << version ;
@@ -96,10 +96,11 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
     return ret;
 }
 
-void * uri_logger(void * cls, const char * uri, struct MHD_Connection */*con*/)
+void* uri_logger(void * cls, const char * uri, struct MHD_Connection */*con*/)
 {
     MicroHTTP::Server *server = (MicroHTTP::Server*)cls;
     server->service()->loguri(uri);
+    return NULL;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

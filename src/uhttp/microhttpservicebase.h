@@ -11,7 +11,7 @@ class ServiceBase
 {
 public:
     virtual unsigned int service(const char *url, MHD_Connection *, MHD_Response *, MicroHTTP::Connection::keytype connection_id) = 0;
-    virtual void loguri(const char *uri) {}
+    virtual void loguri(const char *) {}
 
 protected:
     ServiceBase();
