@@ -23,7 +23,7 @@ static void content_reader_free_callback(void *cls)
     MicroHTTP::Connection::keytype key = (MicroHTTP::Connection::keytype)cls;
     MicroHTTP::ConnectionStore::serverDone(key);
 
-    qDebug() << "Finished: " << (size_t)key;
+    //qDebug() << "Finished: " << (size_t)key;
 }
 
 static long int content_reader_callback (void *cls, uint64_t pos, char *buf, size_t max)
@@ -34,7 +34,7 @@ static long int content_reader_callback (void *cls, uint64_t pos, char *buf, siz
 
     MicroHTTP::Connection::State state = MicroHTTP::ConnectionStore::state(key, server, connection);
 
-    qDebug() << "Content reader: " << (size_t)key << " " << state;
+    //qDebug() << "Content reader: " << (size_t)key << " " << state;
 
     if (server == NULL || state == MicroHTTP::Connection::NoInstance)
         return MHD_CONTENT_READER_END_WITH_ERROR;
@@ -64,11 +64,11 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
                                  const char *version, const char */*upload_data*/,
                                  size_t */*upload_data_size*/, void **/*con_cls*/)
 {
-    qDebug() << "answer:" << url << " / " << method << " / version " << version ;
+    //qDebug() << "answer:" << url << " / " << method << " / version " << version ;
 
     if (strcmp("GET", method))
     {
-        qDebug() << method << " -> not GET";
+        //qDebug() << method << " -> not GET";
         return MHD_NO;
     }
 
@@ -91,7 +91,7 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
     ret = MHD_queue_response (connection, status_code, response);
     MHD_destroy_response (response);
 
-    qDebug() << "Started: " << (size_t)connection_id;
+    //qDebug() << "Started: " << (size_t)connection_id;
 
     return ret;
 }
