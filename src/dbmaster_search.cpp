@@ -459,7 +459,7 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
 }
 
 
-bool DBMaster::search(const QString &searchPattern, QByteArray &result, size_t limit)
+bool DBMaster::searchExposed(const QString &searchPattern, QByteArray &result, size_t limit)
 {
     SearchResults all_results;
     if ( !search(searchPattern, all_results, limit) )

@@ -112,9 +112,9 @@ template <> QString qstring2value(const QString &s, bool &ok)
 }
 
 template <typename T>
-T q2value(const char *key, T default_value, MHD_Connection *q, bool &ok)
+T q2value(const QString &key, T default_value, MHD_Connection *q, bool &ok)
 {
-    const char *vstr = MHD_lookup_connection_value(q, MHD_GET_ARGUMENT_KIND, key);
+    const char *vstr = MHD_lookup_connection_value(q, MHD_GET_ARGUMENT_KIND, key.toStdString().c_str());
     if (vstr == NULL)
         return default_value;
 
@@ -126,11 +126,23 @@ T q2value(const char *key, T default_value, MHD_Connection *q, bool &ok)
     return v;
 }
 
+static bool has(const char *key, MHD_Connection *q)
+{
+    return ( MHD_lookup_connection_value(q, MHD_GET_ARGUMENT_KIND, key)!=nullptr );
+}
+
+static bool has(const QString &key, MHD_Connection *q)
+{
+    return has(key.toStdString().c_str(), q);
+}
+
 //////////////////////////////////////////////////////////////////////
 /// Default error function
 //////////////////////////////////////////////////////////////////////
 static void errorText(MHD_Response *response, MicroHTTP::Connection::keytype connection_id, const char *txt)
 {
+    InfoHub::logWarning(txt);
+
     QByteArray data;
     {
         QTextStream output(&data, QIODevice::WriteOnly);
@@ -193,13 +205,6 @@ protected:
     QString m_error_message;
 };
 
-//class TaskTile:
-//{
-//public:
-//    TaskTile(MicroHTTP::Connection::keytype key,)
-
-//};
-
 /////////////////////////////////////////////////////////////////////////////
 /// Request mapper main service function
 /////////////////////////////////////////////////////////////////////////////
@@ -224,7 +229,6 @@ unsigned int RequestMapper::service(const char *url_c,
 
         if (!ok)
         {
-            InfoHub::logWarning("Error in HTTP query");
             errorText(response, connection_id, "Error while reading tile query parameters");
             return MHD_HTTP_BAD_REQUEST;
         }
@@ -232,11 +236,11 @@ unsigned int RequestMapper::service(const char *url_c,
         int ntiles = 1 << shift;
 
         Task *task = new Task(connection_id,
-                  std::bind(&DBMaster::renderMap, osmScoutMaster,
-                            daylight, 96*scale/ntiles, z + shift, 256*scale, 256*scale,
-                            (tiley2lat(y, z) + tiley2lat(y+1, z))/2.0,
-                            (tilex2long(x, z) + tilex2long(x+1, z))/2.0, std::placeholders::_1),
-                  "Error while rendering a tile" );
+                              std::bind(&DBMaster::renderMap, osmScoutMaster,
+                                        daylight, 96*scale/ntiles, z + shift, 256*scale, 256*scale,
+                                        (tiley2lat(y, z) + tiley2lat(y+1, z))/2.0,
+                                        (tilex2long(x, z) + tilex2long(x+1, z))/2.0, std::placeholders::_1),
+                              "Error while rendering a tile" );
 
         m_pool.start(task);
 
@@ -244,184 +248,184 @@ unsigned int RequestMapper::service(const char *url_c,
         return MHD_HTTP_OK;
     }
 
-    //    //////////////////////////////////////////////////////////////////////
-    //    /// SEARCH
-    //    else if (path == "/v1/search")
-    //    {
-    //        bool ok = true;
-    //        size_t limit = q2value<size_t>("limit", 25, connection, ok);
-    //        QString search = q2value<QString>("search", "", connection, ok);
+    //////////////////////////////////////////////////////////////////////
+    /// SEARCH
+    else if (path == "/v1/search")
+    {
+        bool ok = true;
+        size_t limit = q2value<size_t>("limit", 25, connection, ok);
+        QString search = q2value<QString>("search", "", connection, ok);
 
-    //        search = search.simplified();
+        search = search.simplified();
 
-    //        if (!ok || search.length() < 1)
-    //        {
-    //            returnError(response);
-    //            InfoHub::logWarning("Error in HTTP query");
-    //            return;
-    //        }
+        if (!ok || search.length() < 1)
+        {
+            errorText(response, connection_id, "Error while reading search query parameters");
+            return MHD_HTTP_BAD_REQUEST;
+        }
 
-    //        QByteArray bytes;
-    //        if ( !osmScoutMaster->search(search, bytes, limit) )
-    //        {
-    //            returnError(response);
-    //            return;
-    //        }
+        Task *task = new Task(connection_id,
+                              std::bind( &DBMaster::searchExposed, osmScoutMaster,
+                                         search, std::placeholders::_1, limit),
+                              "Error while searching");
+        m_pool.start(task);
 
-    //        response.setHeader("Content-Type", "text/plain; charset=UTF-8");
-    //        response.write(bytes, true);
-    //    }
+        MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
+        return MHD_HTTP_OK;
+    }
 
-    //    //////////////////////////////////////////////////////////////////////
-    //    /// GUIDE: LOOKUP POIs NEAR REFERENCE POINT
-    //    else if (path == "/v1/guide")
-    //    {
-    //        bool ok = true;
-    //        double radius = q2value<double>("radius", 1000.0, connection, ok);
-    //        size_t limit = q2value<size_t>("limit", 50, connection, ok);
-    //        QString poitype = q2value<QString>("poitype", "", connection, ok);
-    //        QString search = q2value<QString>("search", "", connection, ok);
-    //        double lon = q2value<double>("lng", 0, connection, ok);
-    //        double lat = q2value<double>("lat", 0, connection, ok);
+    //////////////////////////////////////////////////////////////////////
+    /// GUIDE: LOOKUP POIs NEAR REFERENCE POINT
+    else if (path == "/v1/guide")
+    {
+        bool ok = true;
+        double radius = q2value<double>("radius", 1000.0, connection, ok);
+        size_t limit = q2value<size_t>("limit", 50, connection, ok);
+        QString poitype = q2value<QString>("poitype", "", connection, ok);
+        QString search = q2value<QString>("search", "", connection, ok);
+        double lon = q2value<double>("lng", 0, connection, ok);
+        double lat = q2value<double>("lat", 0, connection, ok);
 
-    //        if (!ok)
-    //        {
-    //            returnError(response);
-    //            InfoHub::logWarning("Error in HTTP query");
-    //            return;
-    //        }
+        if (!ok)
+        {
+            errorText(response, connection_id, "Error while reading guide query parameters");
+            return MHD_HTTP_BAD_REQUEST;
+        }
 
-    //        search = search.simplified();
+        search = search.simplified();
 
-    //        QByteArray bytes;
-    //        bool res = false;
+        if ( has("lng", connection) && has("lat", connection) )
+        {
+            Task *task = new Task(connection_id,
+                                  std::bind(&DBMaster::guide, osmScoutMaster,
+                                            poitype, lat, lon, radius, limit, std::placeholders::_1),
+                                  "Error while looking for POIs in guide");
+            m_pool.start(task);
+        }
 
-    //        if ( query.hasQueryItem("lng") && query.hasQueryItem("lat") )
-    //        {
-    //            res = osmScoutMaster->guide(poitype, lat, lon, radius, limit, bytes);
-    //        }
+        else if ( has("search", connection) && search.length() > 0 )
+        {
+            if (osmScoutMaster->search(search, lat, lon))
+            {
+                Task *task = new Task(connection_id,
+                                      std::bind(&DBMaster::guide, osmScoutMaster,
+                                                poitype, lat, lon, radius, limit, std::placeholders::_1),
+                                      "Error while looking for POIs in guide");
+                m_pool.start(task);
+            }
+            else
+            {
+                QByteArray bytes;
+                makeEmptyJson(bytes);
+                MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+            }
+        }
 
-    //        else if ( query.hasQueryItem("search") && search.length() > 0 )
-    //        {
-    //            if (osmScoutMaster->search(search, lat, lon))
-    //                res = osmScoutMaster->guide(poitype, lat, lon, radius, limit, bytes);
-    //            else
-    //            {
-    //                res = true;
-    //                makeEmptyJson(bytes);
-    //            }
-    //        }
+        else
+        {
+            errorText(response, connection_id, "Error in guide query parameters");
+            return MHD_HTTP_BAD_REQUEST;
+        }
 
-    //        if (!res)
-    //        {
-    //            returnError(response);
-    //            return;
-    //        }
+        MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
+        return MHD_HTTP_OK;
+    }
 
-    //        response.setHeader("Content-Type", "text/plain; charset=UTF-8");
-    //        response.write(bytes, true);
-    //    }
+    //////////////////////////////////////////////////////////////////////
+    /// LIST AVAILABLE POI TYPES
+    else if (path == "/v1/poi_types")
+    {
+        QByteArray bytes;
+        if (!osmScoutMaster->poiTypes(bytes))
+        {
+            errorText(response, connection_id, "Error while listing available POI types");
+            return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
 
-    //    //////////////////////////////////////////////////////////////////////
-    //    /// LIST AVAILABLE POI TYPES
-    //    else if (path == "/v1/poi_types")
-    //    {
-    //        QByteArray bytes;
-    //        if (!osmScoutMaster->poiTypes(bytes))
-    //        {
-    //            returnError(response);
-    //            return;
-    //        }
+        MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+        MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
+        return MHD_HTTP_OK;
+    }
 
-    //        response.setHeader("Content-Type", "text/plain; charset=UTF-8");
-    //        response.write(bytes, true);
-    //    }
+    //////////////////////////////////////////////////////////////////////
+    /// ROUTING
+    else if (path == "/v1/route")
+    {
+        bool ok = true;
+        QString type = q2value<QString>("type", "car", connection, ok);
+        double radius = q2value<double>("radius", 1000.0, connection, ok);
+        bool gpx = q2value<int>("gpx", 0, connection, ok);
 
-    //    //////////////////////////////////////////////////////////////////////
-    //    /// ROUTING
-    //    else if (path == "/v1/route")
-    //    {
-    //        bool ok = true;
-    //        QString type = q2value<QString>("type", "car", connection, ok);
-    //        double radius = q2value<double>("radius", 1000.0, connection, ok);
-    //        bool gpx = q2value<int>("gpx", 0, connection, ok);
+        std::vector<osmscout::GeoCoord> points;
 
-    //        std::vector<osmscout::GeoCoord> points;
+        bool points_done = false;
+        for (int i=0; !points_done && ok; ++i)
+        {
+            QString prefix = "p[" + QString::number(i) + "]";
+            if ( has(prefix + "[lng]", connection) && has(prefix + "[lat]", connection) )
+            {
+                double lon = q2value<double>(prefix + "[lng]", 0, connection, ok);
+                double lat = q2value<double>(prefix + "[lat]", 0, connection, ok);
+                osmscout::GeoCoord c(lat,lon);
+                points.push_back(c);
+            }
 
-    //        bool points_done = false;
-    //        for (int i=0; !points_done && ok; ++i)
-    //        {
-    //            QString prefix = "p[" + QString::number(i) + "]";
-    //            if ( query.hasQueryItem(prefix + "[lng]") && query.hasQueryItem(prefix + "[lat]") )
-    //            {
-    //                double lon = q2value<double>(prefix + "[lng]", 0, connection, ok);
-    //                double lat = q2value<double>(prefix + "[lat]", 0, connection, ok);
-    //                osmscout::GeoCoord c(lat,lon);
-    //                points.push_back(c);
-    //            }
+            else if ( has(prefix + "[search]", connection) )
+            {
+                QString search = q2value<QString>(prefix + "[search]", "", connection, ok);
+                search = search.simplified();
+                if (search.length()<1)
+                {
+                    errorText(response, connection_id, "Error in routing parameters: search term is missing" );
+                    return MHD_HTTP_BAD_REQUEST;
+                }
 
-    //            else if ( query.hasQueryItem(prefix + "[search]") )
-    //            {
-    //                QString search = q2value<QString>(prefix + "[search]", "", connection, ok);
-    //                search = search.simplified();
-    //                if (search.length()<1)
-    //                {
-    //                    returnError(response);
-    //                    return;
-    //                }
+                double lat, lon;
+                if (osmScoutMaster->search(search, lat, lon))
+                {
+                    osmscout::GeoCoord c(lat,lon);
+                    points.push_back(c);
+                }
+                else
+                    ok = false;
+            }
 
-    //                double lat, lon;
-    //                if (osmScoutMaster->search(search, lat, lon))
-    //                {
-    //                    osmscout::GeoCoord c(lat,lon);
-    //                    points.push_back(c);
-    //                }
-    //                else
-    //                    ok = false;
-    //            }
+            else points_done = true;
+        }
 
-    //            else points_done = true;
-    //        }
+        if (!ok || points.size() < 2)
+        {
+            errorText(response, connection_id, "Error in routing parameters: too few routing points" );
+            return MHD_HTTP_BAD_REQUEST;
+        }
 
-    //        if (!ok || points.size() < 2)
-    //        {
-    //            returnError(response);
-    //            InfoHub::logWarning("Error in HTTP query");
-    //            return;
-    //        }
+        osmscout::Vehicle vehicle;
+        if (type == "car") vehicle = osmscout::vehicleCar;
+        else if (type == "bicycle") vehicle = osmscout::vehicleBicycle;
+        else if (type == "foot") vehicle = osmscout::vehicleFoot;
+        else
+        {
+            errorText(response, connection_id, "Error in routing parameters: unknown vehicle" );
+            return MHD_HTTP_BAD_REQUEST;
+        }
 
-    //        osmscout::Vehicle vehicle;
-    //        if (type == "car") vehicle = osmscout::vehicleCar;
-    //        else if (type == "bicycle") vehicle = osmscout::vehicleBicycle;
-    //        else if (type == "foot") vehicle = osmscout::vehicleFoot;
-    //        else
-    //        {
-    //            returnError(response);
-    //            InfoHub::logWarning("Error in HTTP query: unknown vehicle");
-    //            return;
-    //        }
+        for (auto i: points)
+            qDebug() << "Points: " << i.GetLat() << " " << i.GetLon();
 
-    //        for (auto i: points)
-    //            std::cout << i.GetLat() << " " << i.GetLon() << "\n";
+        Task *task = new Task(connection_id,
+                              std::bind(&DBMaster::route, osmScoutMaster,
+                                        vehicle, points, radius, gpx, std::placeholders::_1),
+                              "Error while looking for route");
+        m_pool.start(task);
 
-    //        QByteArray bytes;
-    //        bool res = osmScoutMaster->route(vehicle, points, radius, gpx, bytes);
-
-    //        if (!res)
-    //        {
-    //            returnError(response);
-    //            return;
-    //        }
-
-    //        if (!gpx) response.setHeader("Content-Type", "text/plain; charset=UTF-8");
-    //        else response.setHeader("Content-Type", "text/xml; charset=UTF-8");
-    //        response.write(bytes, true);
-    //    }
+        if (!gpx) MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
+        else MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/xml; charset=UTF-8");
+        return MHD_HTTP_OK;
+    }
 
     else // command unidentified. return help string
     {
-        InfoHub::logWarning("Unknown URL path");
-        errorText(response, connection_id, "Unknow URL path");
+        errorText(response, connection_id, "Unknown URL path");
         return MHD_HTTP_BAD_REQUEST;
     }
 }

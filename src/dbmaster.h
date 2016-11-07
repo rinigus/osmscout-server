@@ -29,7 +29,8 @@ public:
 
     bool renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
 
-    bool search(const QString &searchPattern, QByteArray &result, size_t limit);
+    // Has to have a different name allowing to bind it
+    bool searchExposed(const QString &searchPattern, QByteArray &result, size_t limit);
 
     /////////////////////////////////////////////////////////////
     /// \brief Search for a pattern and return the coordinates of the first found object
