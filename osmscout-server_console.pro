@@ -49,8 +49,6 @@ OTHER_FILES += \
 
 include(src/httpserver/httpserver.pri)
 
-LIBS += -losmscout_map -losmscout
-
 HEADERS += \
     src/dbmaster.h \
     src/requestmapper.h \
@@ -72,6 +70,11 @@ use_map_cairo {
     CONFIG += link_pkgconfig
     PKGCONFIG += pango cairo
 }
+
+LIBS += -losmscout_map -losmscout -lmarisa
+
+QMAKE_CXXFLAGS += -fopenmp
+LIBS += -fopenmp
 
 CONFIG(release, debug|release) {
     DEFINES += QT_NO_WARNING_OUTPUT QT_NO_DEBUG_OUTPUT
