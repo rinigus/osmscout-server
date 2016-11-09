@@ -59,7 +59,7 @@ OTHER_FILES += qml/osmscout-server.qml \
     rpm/osmscout-server.spec \
     translations/*.ts
 
-include(src/httpserver/httpserver.pri)
+include(src/uhttp/uhttp.pri)
 
 LIBS += -losmscout_map -losmscout
 

@@ -47,7 +47,6 @@ SOURCES += src/dbmaster.cpp \
 OTHER_FILES += \
     osmscout-server.desktop
 
-include(src/httpserver/httpserver.pri)
 include(src/uhttp/uhttp.pri)
 
 LIBS += -losmscout_map -losmscout

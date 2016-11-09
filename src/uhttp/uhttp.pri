@@ -5,8 +5,8 @@ SOURCES += \
     $$PWD/microhttpserver.cpp \
     $$PWD/microhttpconnectionstore.cpp \
     $$PWD/microhttpconnection.cpp \
-    $$PWD/microhttpservicebase.cpp 
-    
+    $$PWD/microhttpservicebase.cpp
+
 HEADERS += \
     $$PWD/microhttpserver.h \
     $$PWD/microhttpconnectionstore.h \

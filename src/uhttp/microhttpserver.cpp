@@ -26,7 +26,7 @@ static void content_reader_free_callback(void *cls)
     //qDebug() << "Finished: " << (size_t)key;
 }
 
-static long int content_reader_callback (void *cls, uint64_t pos, char *buf, size_t max)
+static ssize_t content_reader_callback (void *cls, uint64_t pos, char *buf, size_t max)
 {
     MicroHTTP::Connection::keytype key = (MicroHTTP::Connection::keytype)cls;
     MicroHTTP::Server *server;
@@ -52,7 +52,8 @@ static long int content_reader_callback (void *cls, uint64_t pos, char *buf, siz
     if (pos >= (size_t)data.size())
         return MHD_CONTENT_READER_END_OF_STREAM;
 
-    size_t tosend = std::min(max, data.size() - pos);
+    size_t p = (size_t)pos;
+    size_t tosend = std::min(max, data.size() - p);
 
     memcpy(buf, data.constData() + pos, tosend);
 
