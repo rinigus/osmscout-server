@@ -61,8 +61,6 @@ OTHER_FILES += qml/osmscout-server.qml \
 
 include(src/uhttp/uhttp.pri)
 
-LIBS += -losmscout_map -losmscout
-
 HEADERS += \
     src/dbmaster.h \
     src/requestmapper.h \
@@ -86,6 +84,11 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
+LIBS += -losmscout_map -losmscout -lmarisa
+
+QMAKE_CXXFLAGS += -fopenmp
+LIBS += -fopenmp
+
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
 CONFIG(release, debug|release) {
@@ -103,5 +106,6 @@ DISTFILES += \
     qml/pages/AboutPage.qml \
     harbour-osmscout-server.desktop \
     rpm/harbour-osmscout-server.yaml \
-    rpm/harbour-osmscout-server.changes
+    rpm/harbour-osmscout-server.changes \
+    rpm/harbour-osmscout-server.spec
 
