@@ -178,9 +178,14 @@ public:
         m_key(key),
         m_caller(caller),
         m_error_message(error_message)
-    {}
+    {
+        InfoHub::logInfo("Runnable created: " + QString::number((size_t)m_key));
+    }
 
-    virtual ~Task() {}
+    virtual ~Task()
+    {
+        InfoHub::logInfo("Runnable destroyed: " + QString::number((size_t)m_key));
+    }
 
     virtual void run()
     {
@@ -193,9 +198,12 @@ public:
                 output << m_error_message;
             }
 
+            InfoHub::logInfo("Runnable submitting error: " + QString::number((size_t)m_key));
             MicroHTTP::ConnectionStore::setData(m_key, err, false);
+            return;
         }
 
+        InfoHub::logInfo("Runnable submitting data: " + QString::number((size_t)m_key));
         MicroHTTP::ConnectionStore::setData(m_key, data, false);
     }
 
