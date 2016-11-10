@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QSet>
+#include <QMutex>
 
 namespace MicroHTTP {
 
@@ -44,6 +45,8 @@ protected:
     virtual void timerEvent(QTimerEvent *event);
 
 protected:
+    QMutex m_mutex;
+
     struct MHD_Daemon *m_daemon;
     ServiceBase *m_service;
     bool m_state = true;
