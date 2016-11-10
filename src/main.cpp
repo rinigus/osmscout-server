@@ -17,8 +17,9 @@
 
 #define APP_PREFIX ""
 
-#include "consolelogger.h"
 #endif // of IS_CONSOLE_QT
+
+#include "consolelogger.h"
 
 #ifdef IS_SAILFISH_OS
 #include <sailfishapp.h>
@@ -76,6 +77,8 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef IS_SAILFISH_OS
+    ConsoleLogger _logger_console;
+
     rolling_logger.onSettingsChanged();
 
     QScopedPointer<QQuickView> v(SailfishApp::createView());

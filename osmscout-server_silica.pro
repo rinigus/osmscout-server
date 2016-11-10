@@ -52,7 +52,8 @@ SOURCES += \
     src/osmscout-server_silica.cpp \
     src/searchresults.cpp \
     src/infohub.cpp \
-    src/rollinglogger.cpp
+    src/rollinglogger.cpp \
+    src/consolelogger.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -68,7 +69,8 @@ HEADERS += \
     src/config.h \
     src/searchresults.h \
     src/infohub.h \
-    src/rollinglogger.h
+    src/rollinglogger.h \
+    src/consolelogger.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
