@@ -24,7 +24,9 @@ static void content_reader_free_callback(void *cls)
     MicroHTTP::Connection::keytype key = (MicroHTTP::Connection::keytype)cls;
     MicroHTTP::ConnectionStore::serverDone(key);
 
+#ifdef DEBUG_CONNECTIONS
     qDebug() << "Finished: " << (size_t)key;
+#endif
 }
 
 static ssize_t content_reader_callback (void *cls, uint64_t pos, char *buf, size_t max)
@@ -35,7 +37,9 @@ static ssize_t content_reader_callback (void *cls, uint64_t pos, char *buf, size
 
     MicroHTTP::Connection::State state = MicroHTTP::ConnectionStore::state(key, server, connection);
 
+#ifdef DEBUG_CONNECTIONS
     qDebug() << "Content reader: " << (size_t)key << " " << state;
+#endif
 
     if (server == NULL || state == MicroHTTP::Connection::NoInstance || !(*server))
         return MHD_CONTENT_READER_END_WITH_ERROR;
@@ -93,7 +97,9 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
     ret = MHD_queue_response (connection, status_code, response);
     MHD_destroy_response (response);
 
+#ifdef DEBUG_CONNECTIONS
     qDebug() << "Started: " << (size_t)connection_id;
+#endif
 
     return ret;
 }
@@ -170,7 +176,9 @@ void MicroHTTP::Server::timerEvent(QTimerEvent */*event*/)
     for (MHD_Connection *conn: m_connections_sleeping)
     {
         MHD_resume_connection(conn);
+#ifdef DEBUG_CONNECTIONS
         qDebug() << "Resume by timer: " << (size_t)conn;
+#endif
     }
     m_connections_sleeping.clear();
 }
@@ -182,20 +190,28 @@ void MicroHTTP::Server::suspend(MHD_Connection *conn)
     if (!m_state) return;
 
     MHD_suspend_connection(conn);
-    qDebug() << "Suspend: " << (size_t)conn;
     m_connections_sleeping.insert(conn);
+
+#ifdef DEBUG_CONNECTIONS
+    qDebug() << "Suspend: " << (size_t)conn;
+#endif
 }
 
 void MicroHTTP::Server::resume(MHD_Connection *conn)
 {
     QMutexLocker _lk(&m_mutex);
 
+#ifdef DEBUG_CONNECTIONS
     qDebug() << "Called to resume: " << (size_t)conn;
+#endif
 
     if (!m_state || !m_connections_sleeping.contains(conn)) return;
 
     MHD_resume_connection(conn);
+
+#ifdef DEBUG_CONNECTIONS
     qDebug() << "Resumed: " << (size_t)conn;
+#endif
 
     m_connections_sleeping.remove(conn);
 }
