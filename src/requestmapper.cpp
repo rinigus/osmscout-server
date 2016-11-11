@@ -37,6 +37,8 @@ RequestMapper::RequestMapper()
         ++cpus;
 
     m_pool.setMaxThreadCount(cpus);
+
+    InfoHub::logInfo("Number of parallel worker threads: " + QString::number(cpus))
 #endif
 
     qDebug() << "Number of threads used to render tiles: " << m_pool.maxThreadCount();
@@ -418,7 +420,7 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
         for (auto i: points)
-            qDebug() << "Points: " << i.GetLat() << " " << i.GetLon();
+            qDebug() << "Points: " << QString::number(i.GetLat(),'f',8) + " " + QString::number(i.GetLon(),'f',8);
 
         Task *task = new Task(connection_id,
                               std::bind(&DBMaster::route, osmScoutMaster,
