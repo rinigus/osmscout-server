@@ -13,7 +13,7 @@ Page {
                               "<b>Acknowledgments:</b><br><br>" +
                               "libosmscout: http://libosmscout.sourceforge.net/<br>" +
                               "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>" +
-                              "QtWebApp HTTP Webserver: http://stefanfrings.de/qtwebapp/index-en.html<br>"
+                              "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br>"
 
 
     SilicaFlickable {
