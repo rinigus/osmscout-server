@@ -459,7 +459,6 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     }
 
     if (!router->CalculateRoute(routingProfile,
-                                vehicle,
                                 radius,
                                 via,
                                 data))
