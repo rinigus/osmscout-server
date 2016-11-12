@@ -5,13 +5,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Thu Nov 10 2016 rinigus <rinigus.git@gmail.com> 0.3.0-1
+* Thu Nov 12 2016 rinigus <rinigus.git@gmail.com> 0.3.0-1
 - Decoupling number of parallel processing threads and number of requests
 - Adding GPX output for router
 - Adding ability to log events into session log file
 - Using libmicrohttpd as a http server engine
-- Static linking of libosmscout, marisa, and libmicrohttpd
 - Bugfixes in routing
+- Static linking of libosmscout, marisa, and libmicrohttpd
 
 * Sun Oct 30 2016 rinigus <rinigus.git@gmail.com> 0.2.1-1
 - Bugfixes in routing
