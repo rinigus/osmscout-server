@@ -13,12 +13,14 @@ At present, the server can be used to provide:
 
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps and modRana are
-provided under "thirdparty" folder. At present, Poor Maps plugins
-cover functionality of the server fully. modRana can use the server to
-show the map with the other functionality expected in near future.
+provided under "thirdparty" folder. At present, Poor Maps includes
+plugins already in the upstream and no additional configuration is
+needed. Poor Maps plugins cover functionality of the server
+fully. modRana can use the server to show the map with the other
+functionality expected in near future.
 
 The server is written using Qt. The server can be used as a console or
-Sailfish application. For console version, use
+a Sailfish application. For console version, use
 osmscout-server_console.pro as a project. For Sailfish, use
 osmscout-server_silica.pro. For drawing, its possible to use Qt or
 Cairo backends, determined during compilation. While default
@@ -36,9 +38,9 @@ your PC and run the import program, as explained in the linked
 tutorial. Please install MARISA as a dependency to be able to generate
 index files for free-text search of the map data.
 
-Note that since it is planned to extend the server to provide routing
-as well, the server can at any given time provide data from a single
-map. If you need to cover an area from multiple countries, I suggest
+While smaller maps lead to faster rendering, if you need to use the
+server to calculate the routes between countries, it maybe
+advantageous to generate a map covering multiple countries. I suggest
 to make a joined map using osmconvert
 (https://wiki.openstreetmap.org/wiki/Osmconvert) as described in
 https://wiki.openstreetmap.org/wiki/Osmconvert#Parallel_Processing
@@ -67,9 +69,12 @@ interface. In addition, map directory with several rendering options
 are configured. In Sailfish, map rendering options are possible to
 specify through GUI.
 
-Server supports limited number of connections (usually number of CPU
-cores plus 2). It is able to render several tiles in parallel, if the
-client application supports it. Exceeding the number of supported
+Starting from version 0.3.0, server supports up to 100
+connections. The requests are processed in parallel, as much as
+possible, with the number of parallel threads the same as the number
+of CPUs. In practice, while tiles are rendered in parallel, a long
+routing calculation would block other operations until its finished
+due to the locking of a database.  Exceeding the number of supported
 connections would lead to dropping the connections exceeding the
 limit.
 
@@ -245,4 +250,4 @@ libosmscout: http://libosmscout.sourceforge.net
 
 osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 
-QtWebApp HTTP Webserver: http://stefanfrings.de/qtwebapp/index-en.html
+GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
