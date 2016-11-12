@@ -2,19 +2,19 @@
 #include "microhttpconnectionstore.h"
 #include "microhttpservicebase.h"
 
-#include <QString>
-#include <QDebug>
-#include <QFile>
-#include <QMutexLocker>
+#include <QByteArray>
 
 #include <algorithm>
 #include <functional>
+#include <iostream>
 
 #include <string.h>
 #include <arpa/inet.h>
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
+
+//#define DEBUG_CONNECTIONS
 
 ///////////////////////////////////////////////////////////////////////////////////
 /// Helper functions
@@ -25,7 +25,7 @@ static void content_reader_free_callback(void *cls)
     MicroHTTP::ConnectionStore::serverDone(key);
 
 #ifdef DEBUG_CONNECTIONS
-    qDebug() << "Finished: " << (size_t)key;
+    std::cout << "Finished: " << (size_t)key << std::endl;
 #endif
 }
 
@@ -38,7 +38,7 @@ static ssize_t content_reader_callback (void *cls, uint64_t pos, char *buf, size
     MicroHTTP::Connection::State state = MicroHTTP::ConnectionStore::state(key, server, connection);
 
 #ifdef DEBUG_CONNECTIONS
-    qDebug() << "Content reader: " << (size_t)key << " " << state;
+    std::cout << "Content reader: " << (size_t)key << " " << state << std::endl;
 #endif
 
     if (server == NULL || state == MicroHTTP::Connection::NoInstance || !(*server))
@@ -70,11 +70,11 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
                                  const char */*version*/, const char */*upload_data*/,
                                  size_t */*upload_data_size*/, void **/*con_cls*/)
 {
-    //qDebug() << "answer:" << url << " / " << method << " / version " << version ;
+    //std::cout << "answer:" << url << " / " << method << " / version " << version  << std::endl;
 
     if (strcmp("GET", method))
     {
-        //qDebug() << method << " -> not GET";
+        //std::cout << method << " -> not GET" << std::endl;
         return MHD_NO;
     }
 
@@ -98,7 +98,7 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
     MHD_destroy_response (response);
 
 #ifdef DEBUG_CONNECTIONS
-    qDebug() << "Started: " << (size_t)connection_id;
+    std::cout << "Started: " << (size_t)connection_id << std::endl;
 #endif
 
     return ret;
@@ -116,8 +116,8 @@ void* uri_logger(void * cls, const char * uri, struct MHD_Connection */*con*/)
 ///
 
 MicroHTTP::Server::Server(ServiceBase *service,
-                          unsigned int port, const char *addrstring, QObject *parent) :
-    QObject(parent),
+                          unsigned int port, const char *addrstring) :
+    QObject(),
     m_service(service)
 {
     // Listen on specified address only
@@ -132,7 +132,7 @@ MicroHTTP::Server::Server(ServiceBase *service,
     {
         if ( inet_aton(addrstring, &server_address.sin_addr ) == 0 )
         {
-            qDebug() << "Wrong interface address: " << addrstring;
+            std::cerr << "Wrong interface address: " << addrstring << std::endl;
             m_state = false;
             return;
         }
@@ -154,12 +154,12 @@ MicroHTTP::Server::Server(ServiceBase *service,
         return;
     }
 
-    startTimer(1000);
+    startTimer(15000);
 }
 
 MicroHTTP::Server::~Server()
 {
-    QMutexLocker _lk(&m_mutex);
+    std::lock_guard<std::mutex> _lk(m_mutex);
 
     m_state = false; // indicates that we are going to shutdown
     for (MHD_Connection *conn: m_connections_sleeping)
@@ -169,23 +169,30 @@ MicroHTTP::Server::~Server()
     MHD_stop_daemon (m_daemon);
 }
 
-void MicroHTTP::Server::timerEvent(QTimerEvent */*event*/)
+void MicroHTTP::Server::cleanup()
 {
-    QMutexLocker _lk(&m_mutex);
+    std::lock_guard<std::mutex> _lk(m_mutex);
+
+    if (!m_state) return;
 
     for (MHD_Connection *conn: m_connections_sleeping)
     {
         MHD_resume_connection(conn);
 #ifdef DEBUG_CONNECTIONS
-        qDebug() << "Resume by timer: " << (size_t)conn;
+        std::cout << "Resume by timer: " << (size_t)conn << std::endl;
 #endif
     }
     m_connections_sleeping.clear();
 }
 
+void MicroHTTP::Server::timerEvent(QTimerEvent */*event*/)
+{
+    cleanup();
+}
+
 void MicroHTTP::Server::suspend(MHD_Connection *conn)
 {
-    QMutexLocker _lk(&m_mutex);
+    std::lock_guard<std::mutex> _lk(m_mutex);
 
     if (!m_state) return;
 
@@ -193,25 +200,25 @@ void MicroHTTP::Server::suspend(MHD_Connection *conn)
     m_connections_sleeping.insert(conn);
 
 #ifdef DEBUG_CONNECTIONS
-    qDebug() << "Suspend: " << (size_t)conn;
+    std::cout << "Suspend: " << (size_t)conn << std::endl;
 #endif
 }
 
 void MicroHTTP::Server::resume(MHD_Connection *conn)
 {
-    QMutexLocker _lk(&m_mutex);
+    std::lock_guard<std::mutex> _lk(m_mutex);
 
 #ifdef DEBUG_CONNECTIONS
-    qDebug() << "Called to resume: " << (size_t)conn;
+    std::cout << "Called to resume: " << (size_t)conn << std::endl;
 #endif
 
-    if (!m_state || !m_connections_sleeping.contains(conn)) return;
+    if (!m_state || m_connections_sleeping.count(conn) == 0) return;
 
     MHD_resume_connection(conn);
 
 #ifdef DEBUG_CONNECTIONS
-    qDebug() << "Resumed: " << (size_t)conn;
+    std::cout << "Resumed: " << (size_t)conn << std::endl;
 #endif
 
-    m_connections_sleeping.remove(conn);
+    m_connections_sleeping.erase(conn);
 }

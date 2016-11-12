@@ -2,22 +2,18 @@
 #define MICROHTTPSERVER_H
 
 #include <microhttpd.h>
+#include <mutex>
+#include <set>
 
-#include <QObject>
-#include <QSet>
-#include <QMutex>
+#include <QObject> // to provide timers access
 
 namespace MicroHTTP {
 
 class ServiceBase;
 
-class Server : public QObject
+class Server: public QObject
 {
     Q_OBJECT
-
-signals:
-
-public slots:
 
 public:
 
@@ -30,8 +26,7 @@ public:
     ///
     explicit Server(ServiceBase *service,
                     unsigned int port,
-                    const char *address,
-                    QObject *parent = 0);
+                    const char *address);
     virtual ~Server();
 
     operator bool() const { return m_state; }
@@ -40,18 +35,19 @@ public:
 
     void suspend(MHD_Connection *conn); ///< Puts connection to sleep
     void resume(MHD_Connection *conn);  ///< Resumes connection
+    void cleanup();                     ///< Call periodically to check on available connections
 
 protected:
-    virtual void timerEvent(QTimerEvent *event);
+    virtual void timerEvent(QTimerEvent *event); ///< Calls cleanup() internally
 
 protected:
-    QMutex m_mutex;
+    std::mutex m_mutex;
 
     struct MHD_Daemon *m_daemon;
     ServiceBase *m_service;
     bool m_state = true;
 
-    QSet<MHD_Connection*> m_connections_sleeping;
+    std::set<MHD_Connection*> m_connections_sleeping;
 };
 
 }
