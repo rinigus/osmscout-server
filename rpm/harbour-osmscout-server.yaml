@@ -29,13 +29,14 @@ PkgConfigBR:
   - Qt5Quick
 
 # Build dependencies without a pkgconfig setup can be listed here
-# PkgBR:
-#   - package-needed-to-build
+PkgBR:
+  - libmarisa-devel
+  - libmicrohttpd-devel
+  - libosmscout-qt-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:
   - sailfishsilica-qt5 >= 0.10.9
-  - libosmscout-qt
 
 # All installed files
 Files:
@@ -46,4 +47,3 @@ Files:
 
 # For more information about yaml and what's supported in Sailfish OS
 # build system, please see https://wiki.merproject.org/wiki/Spectacle
-

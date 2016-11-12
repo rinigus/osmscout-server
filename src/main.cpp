@@ -17,8 +17,9 @@
 
 #define APP_PREFIX ""
 
-#include "consolelogger.h"
 #endif // of IS_CONSOLE_QT
+
+#include "consolelogger.h"
 
 #ifdef IS_SAILFISH_OS
 #include <sailfishapp.h>
@@ -28,8 +29,8 @@
 #include "rollinglogger.h"
 #endif // of IS_SAILFISH_OS
 
-// QtWebApp headers
-#include "httplistener.h"
+// HTTP server
+#include "microhttpserver.h"
 #include "requestmapper.h"
 
 // LIB OSM Scout interface
@@ -76,6 +77,8 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef IS_SAILFISH_OS
+    //ConsoleLogger _logger_console;
+
     rolling_logger.onSettingsChanged();
 
     QScopedPointer<QQuickView> v(SailfishApp::createView());
@@ -100,9 +103,20 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    // setup HTTP server
     settings.beginGroup("http-listener");
-    new HttpListener(&settings,new RequestMapper(app.data()),app.data());
+    int port = settings.valueInt("port");
+    QString host = settings.valueString("host");
     settings.endGroup();
+
+    RequestMapper requests;
+    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str() );
+
+    if ( !http_server )
+    {
+        std::cerr << "Failed to start HTTP server" << std::endl;
+        return -2;
+    }
 
 #ifdef IS_SAILFISH_OS
 

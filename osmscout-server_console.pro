@@ -47,7 +47,7 @@ SOURCES += src/dbmaster.cpp \
 OTHER_FILES += \
     osmscout-server.desktop
 
-include(src/httpserver/httpserver.pri)
+include(src/uhttp/uhttp.pri)
 
 HEADERS += \
     src/dbmaster.h \

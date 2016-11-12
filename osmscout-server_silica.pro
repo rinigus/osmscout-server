@@ -52,16 +52,15 @@ SOURCES += \
     src/osmscout-server_silica.cpp \
     src/searchresults.cpp \
     src/infohub.cpp \
-    src/rollinglogger.cpp
+    src/rollinglogger.cpp \
+    src/consolelogger.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
     rpm/osmscout-server.spec \
     translations/*.ts
 
-include(src/httpserver/httpserver.pri)
-
-LIBS += -losmscout_map -losmscout
+include(src/uhttp/uhttp.pri)
 
 HEADERS += \
     src/dbmaster.h \
@@ -70,7 +69,8 @@ HEADERS += \
     src/config.h \
     src/searchresults.h \
     src/infohub.h \
-    src/rollinglogger.h
+    src/rollinglogger.h \
+    src/consolelogger.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -85,6 +85,11 @@ use_map_cairo {
     CONFIG += link_pkgconfig
     PKGCONFIG += pango cairo
 }
+
+LIBS += -losmscout_map -losmscout -lmarisa
+
+QMAKE_CXXFLAGS += -fopenmp
+LIBS += -fopenmp
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
@@ -103,5 +108,6 @@ DISTFILES += \
     qml/pages/AboutPage.qml \
     harbour-osmscout-server.desktop \
     rpm/harbour-osmscout-server.yaml \
-    rpm/harbour-osmscout-server.changes
+    rpm/harbour-osmscout-server.changes \
+    rpm/harbour-osmscout-server.spec
 
