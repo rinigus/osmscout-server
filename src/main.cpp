@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef IS_SAILFISH_OS
-    ConsoleLogger _logger_console;
+    //ConsoleLogger _logger_console;
 
     rolling_logger.onSettingsChanged();
 

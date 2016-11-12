@@ -38,10 +38,9 @@ RequestMapper::RequestMapper()
 
     m_pool.setMaxThreadCount(cpus);
 
-    InfoHub::logInfo("Number of parallel worker threads: " + QString::number(cpus))
 #endif
 
-    qDebug() << "Number of threads used to render tiles: " << m_pool.maxThreadCount();
+    InfoHub::logInfo("Number of parallel worker threads: " + QString::number(cpus));
 }
 
 
