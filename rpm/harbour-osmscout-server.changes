@@ -10,6 +10,7 @@
 - Adding GPX output for router
 - Adding ability to log events into session log file
 - Using libmicrohttpd as a http server engine
+- Static linking of libosmscout, marisa, and libmicrohttpd
 - Bugfixes in routing
 
 * Sun Oct 30 2016 rinigus <rinigus.git@gmail.com> 0.2.1-1
