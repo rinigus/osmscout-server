@@ -40,7 +40,7 @@ RequestMapper::RequestMapper()
 
 #endif
 
-    InfoHub::logInfo("Number of parallel worker threads: " + QString::number(cpus));
+    InfoHub::logInfo("Number of parallel worker threads: " + QString::number(m_pool.maxThreadCount()));
 }
 
 
