@@ -17,6 +17,21 @@ CoverBackground {
         anchors.bottom: parent.bottom
         anchors.margins: Theme.paddingLarge
         text: qsTr("OSM Scout Server")
+
+        function setText(q) {
+            if (q > 0) text = "Jobs in a queue: " + q
+            else text = "Idle"
+        }
+
+        Connections {
+            target: infohub;
+            onQueueChanged: {
+                label.setText(queue)
+            }
+        }
+
+        Component.onCompleted: label.setText(infohub.queue)
+
     }
 
 

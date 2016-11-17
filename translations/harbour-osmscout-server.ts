@@ -20,17 +20,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../src/infohub.cpp" line="74"/>
+        <location filename="../src/infohub.cpp" line="101"/>
         <source>ERROR: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="80"/>
+        <location filename="../src/infohub.cpp" line="107"/>
         <source>WARNING: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="89"/>
+        <location filename="../src/infohub.cpp" line="116"/>
         <source>INFO: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -320,6 +320,11 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="69"/>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="98"/>
         <source>Events</source>
         <translation type="unfinished"></translation>
     </message>

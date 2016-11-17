@@ -66,6 +66,35 @@ Page {
             }
 
             SectionHeader {
+                text: qsTr("Status")
+                font.pixelSize: Theme.fontSizeMedium
+            }
+
+            Label {
+                id: queueLength
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*Theme.horizontalPageMargin
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeSmall
+
+                text: ""
+
+                function setText(q) {
+                    if (q > 0) text = "Jobs in a queue: " + q
+                    else text = "Idle"
+                }
+
+                Connections {
+                    target: infohub;
+                    onQueueChanged: {
+                        queueLength.setText(queue)
+                    }
+                }
+
+                Component.onCompleted: queueLength.setText(infohub.queue)
+            }
+
+            SectionHeader {
                 text: qsTr("Events")
                 font.pixelSize: Theme.fontSizeMedium
             }
