@@ -183,6 +183,7 @@ public:
 #ifdef DEBUG_CONNECTIONS
         InfoHub::logInfo("Runnable created: " + QString::number((size_t)m_key));
 #endif
+        InfoHub::addJobToQueue();
     }
 
     virtual ~Task()
@@ -190,6 +191,7 @@ public:
 #ifdef DEBUG_CONNECTIONS
         InfoHub::logInfo("Runnable destroyed: " + QString::number((size_t)m_key));
 #endif
+        InfoHub::removeJobFromQueue();
     }
 
     virtual void run()

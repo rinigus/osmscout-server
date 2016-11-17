@@ -45,7 +45,6 @@ DBMaster *osmScoutMaster = NULL;
 // global variable keeping the Hub
 extern InfoHub infoHub;
 
-
 int main(int argc, char *argv[])
 {
 #ifdef IS_CONSOLE_QT
@@ -129,6 +128,7 @@ int main(int argc, char *argv[])
                       osmScoutMaster, &DBMaster::onSettingsChanged );
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &infoHub, &InfoHub::onSettingsChanged );
+
 #ifdef IS_SAILFISH_OS
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &rolling_logger, &RollingLogger::onSettingsChanged );

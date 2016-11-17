@@ -8,6 +8,8 @@
 #include <QDir>
 #include <QTextStream>
 
+#include <QDebug>
+
 #include <iostream>
 
 InfoHub infoHub;
@@ -46,6 +48,31 @@ bool InfoHub::error()
 {
     QMutexLocker lk(&m_mutex);
     return m_error;
+}
+
+void InfoHub::addJobToQueue()
+{
+    infoHub.implChangeQueue(+1);
+}
+
+void InfoHub::removeJobFromQueue()
+{
+    infoHub.implChangeQueue(-1);
+}
+
+void InfoHub::implChangeQueue(int delta)
+{
+    {
+        QMutexLocker lk(&m_mutex);
+        m_queue += delta;
+    }
+    emit queueChanged(m_queue);
+}
+
+int InfoHub::queue()
+{
+    QMutexLocker lk(&m_mutex);
+    return m_queue;
 }
 
 static QString tstamp(const QString &txt)

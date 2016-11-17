@@ -16,6 +16,10 @@ class InfoHub : public QObject
     /// database is missing
     Q_PROPERTY(bool error READ error NOTIFY errorChanged)
 
+    /////////////////////////////////////////////////////////
+    /// number of jobs in running queue (running and waiting)
+    Q_PROPERTY(int queue READ queue NOTIFY queueChanged)
+
 public:
     explicit InfoHub(QObject *parent = 0);
 
@@ -26,8 +30,14 @@ public:
     static void logWarning(const QString &txt);
     static void logError(const QString &txt);
 
+    static void addJobToQueue();
+    static void removeJobFromQueue();
+
+    int queue();
+
 signals:
     void errorChanged(bool);
+    void queueChanged(int);
 
     void log(QString);
     void info(QString);
@@ -44,11 +54,14 @@ protected:
     void impLogError(const QString &txt);
     void sessionLog(const QString &txt);
 
+    void implChangeQueue(int delta);
+
 protected:
     QMutex m_mutex;
     bool m_error = false;
     bool m_log_info = true;
     bool m_log_session = false;
+    int m_queue = 0;
 
     QFile m_log_file;
 };
