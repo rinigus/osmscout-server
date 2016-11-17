@@ -5,15 +5,24 @@
 #include <mutex>
 #include <set>
 
+//#define HAS_MICRO_HTTP_CLEANUP_TIMER
+
+#ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
 #include <QObject> // to provide timers access
+#endif
 
 namespace MicroHTTP {
 
 class ServiceBase;
 
-class Server: public QObject
+class Server
+        #ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
+        : public QObject
+        #endif
 {
+#ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
     Q_OBJECT
+#endif
 
 public:
 
@@ -38,7 +47,9 @@ public:
     void cleanup();                     ///< Call periodically to check on available connections
 
 protected:
+#ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
     virtual void timerEvent(QTimerEvent *event); ///< Calls cleanup() internally
+#endif
 
 protected:
     std::mutex m_mutex;

@@ -117,7 +117,9 @@ void* uri_logger(void * cls, const char * uri, struct MHD_Connection */*con*/)
 
 MicroHTTP::Server::Server(ServiceBase *service,
                           unsigned int port, const char *addrstring) :
+    #ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
     QObject(),
+    #endif
     m_service(service)
 {
     // Listen on specified address only
@@ -154,7 +156,9 @@ MicroHTTP::Server::Server(ServiceBase *service,
         return;
     }
 
+#ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
     startTimer(15000);
+#endif
 }
 
 MicroHTTP::Server::~Server()
@@ -185,10 +189,14 @@ void MicroHTTP::Server::cleanup()
     m_connections_sleeping.clear();
 }
 
+
+#ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
 void MicroHTTP::Server::timerEvent(QTimerEvent */*event*/)
 {
     cleanup();
 }
+#endif
+
 
 void MicroHTTP::Server::suspend(MHD_Connection *conn)
 {
@@ -207,6 +215,7 @@ void MicroHTTP::Server::suspend(MHD_Connection *conn)
 void MicroHTTP::Server::resume(MHD_Connection *conn)
 {
     std::lock_guard<std::mutex> _lk(m_mutex);
+
 
 #ifdef DEBUG_CONNECTIONS
     std::cout << "Called to resume: " << (size_t)conn << std::endl;

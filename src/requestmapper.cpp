@@ -21,6 +21,8 @@
 
 #include <functional>
 
+//#define DEBUG_CONNECTIONS
+
 
 extern DBMaster *osmScoutMaster;
 
@@ -196,6 +198,10 @@ public:
 
     virtual void run()
     {
+#ifdef DEBUG_CONNECTIONS
+        InfoHub::logInfo("Runnable running: " + QString::number((size_t)m_key));
+#endif
+
         QByteArray data;
         if ( !m_caller(data) )
         {
