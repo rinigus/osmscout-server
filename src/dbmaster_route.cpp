@@ -458,6 +458,9 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
         break;
     }
 
+    routingProfile.SetCostLimitDistance(m_routing_cost_distance);
+    routingProfile.SetCostLimitFactor(m_routing_cost_factor);
+
     if (!router->CalculateRoute(routingProfile,
                                 radius,
                                 via,

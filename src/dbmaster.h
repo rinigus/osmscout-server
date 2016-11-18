@@ -82,6 +82,9 @@ protected:
     int m_tile_borders_zoom_cutoff = 20;
     bool m_daylight = true;
 
+    double m_routing_cost_distance = 50.0;
+    double m_routing_cost_factor = 5.0;
+
     std::map< std::string, double > m_routing_speeds;
 
     osmscout::DatabaseParameter m_database_parameter;

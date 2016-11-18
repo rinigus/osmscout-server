@@ -51,6 +51,9 @@ void AppSettings::initDefaults()
     CHECK(OSM_SETTINGS "logInfo", 1);
     CHECK(OSM_SETTINGS "logSession", 0);
 
+    CHECK(OSM_SETTINGS "routingCostLimitDistance", 50.0);
+    CHECK(OSM_SETTINGS "routingCostLimitFactor", 5.0);
+
     CHECK(ROUTING_SPEED_SETTINGS "highway_living_street", 10);
     CHECK(ROUTING_SPEED_SETTINGS "highway_motorway", 110);
     CHECK(ROUTING_SPEED_SETTINGS "highway_motorway_junction", 60);

@@ -55,6 +55,8 @@ void DBMaster::loadSettings()
     m_font_size = settings.valueFloat(OSM_SETTINGS "fontSize");
     m_data_lookup_area = std::max(1.0, settings.valueFloat(OSM_SETTINGS "dataLookupArea"));
     m_tile_borders_zoom_cutoff = settings.valueFloat(OSM_SETTINGS "tileBordersZoomCutoff");
+    m_routing_cost_distance = settings.valueFloat(OSM_SETTINGS "routingCostLimitDistance");
+    m_routing_cost_factor = settings.valueFloat(OSM_SETTINGS "routingCostLimitFactor");
 
     std::string style = settings.valueString(OSM_SETTINGS "style").toStdString();
     if (m_style_name != style)
