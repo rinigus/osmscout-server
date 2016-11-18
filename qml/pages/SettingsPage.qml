@@ -74,6 +74,32 @@ Dialog {
             }
 
             SectionHeader {
+                text: qsTr("Routing")
+                font.pixelSize: Theme.fontSizeMedium
+            }
+
+            ElementEntry {
+                id: eRoutingCostFactor
+                key: settingsOsmPrefix + "routingCostLimitFactor"
+                mainLabel: qsTr("Cost factor")
+                secondaryLabel: qsTr("Routing is calculated among the possible routes that comply with the cost limitation. " +
+                                     "Cost factor is a component of a cost limit that is proportional to the geodesic distance " +
+                                     "between the route origin and the target.")
+                validator: DoubleValidator { bottom: 1.0; decimals: 1; }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            }
+
+            ElementEntry {
+                id: eRoutingCostDistance
+                key: settingsOsmPrefix + "routingCostLimitDistance"
+                mainLabel: qsTr("Cost distance, km")
+                secondaryLabel: qsTr("Routing is calculated among the possible routes that comply with the cost limitation. " +
+                                     "Cost distance is an offset of a cost limit.")
+                validator: DoubleValidator { bottom: 1.0; decimals: 0; }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            }
+
+            SectionHeader {
                 text: qsTr("Advanced rendering settings")
                 font.pixelSize: Theme.fontSizeMedium
             }
@@ -154,6 +180,8 @@ Dialog {
         eDrawBackground.apply()
         eDataLookupArea.apply()
         eTileBordersZoomCutoff.apply()
+        eRoutingCostFactor.apply()
+        eRoutingCostDistance.apply()
     }
 }
 
