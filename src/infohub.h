@@ -36,13 +36,13 @@ public:
     int queue();
 
 signals:
-    void errorChanged(bool);
-    void queueChanged(int);
+    void errorChanged(bool error);
+    void queueChanged(int queue);
 
-    void log(QString);
-    void info(QString);
-    void warning(QString);
-    void error(QString);
+    void log(QString log);
+    void info(QString info);
+    void warning(QString warning);
+    void error(QString error);
 
 public slots:
     void onSettingsChanged();
