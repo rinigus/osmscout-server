@@ -88,9 +88,6 @@ use_map_cairo {
 
 LIBS += -losmscout_map -losmscout -lmarisa
 
-QMAKE_CXXFLAGS += -fopenmp
-LIBS += -fopenmp
-
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
 CONFIG(release, debug|release) {
