@@ -38,6 +38,8 @@
 
 #include "infohub.h"
 
+#include <QTranslator>
+
 #include <iostream>
 
 DBMaster *osmScoutMaster = NULL;
@@ -64,6 +66,18 @@ int main(int argc, char *argv[])
 
     app->setApplicationName(APP_PREFIX "osmscout-server");
     app->setOrganizationName(APP_PREFIX "osmscout-server");
+
+#ifdef IS_SAILFISH_OS
+    QString locale = QLocale::system().name();
+    QTranslator *translator = new QTranslator();
+
+    if ( !translator->load(QLocale(), APP_PREFIX "osmscout-server", "-",
+                           SailfishApp::pathTo(QString("translations")).toLocalFile()) )
+        qWarning() << "Failed to load translation for " << locale
+                   << " " << SailfishApp::pathTo(QString("translations")).toLocalFile();
+
+    app->installTranslator(translator);
+#endif
 
     // can use after the app name is defined
     AppSettings settings;
