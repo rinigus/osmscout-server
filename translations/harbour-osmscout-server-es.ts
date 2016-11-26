@@ -4,9 +4,19 @@
 <context>
     <name>AboutPage</name>
     <message>
+        <location filename="../qml/pages/AboutPage.qml" line="7"/>
+        <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="35"/>
+        <source>About</source>
+        <translation type="unfinished">Acerca de</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/AboutPage.qml" line="39"/>
-        <source>version: </source>
-        <translation>versión:</translation>
+        <source>version</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="44"/>
@@ -20,6 +30,114 @@
         <location filename="../qml/cover/CoverPage.qml" line="19"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="22"/>
+        <source>Jobs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/cover/CoverPage.qml" line="23"/>
+        <source>Idle</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DBMaster</name>
+    <message>
+        <location filename="../src/dbmaster.cpp" line="16"/>
+        <source>Cannot create database object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster.cpp" line="44"/>
+        <source>Cannot open database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster.cpp" line="49"/>
+        <source>Opened database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster.cpp" line="115"/>
+        <source>Cannot allocate Style config</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster.cpp" line="123"/>
+        <source>Cannot open style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster.cpp" line="129"/>
+        <source>Loaded style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_map.cpp" line="72"/>
+        <source>Database is not open, cannot render a tile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_route.cpp" line="416"/>
+        <source>Database is not open, cannot route</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_route.cpp" line="436"/>
+        <source>Cannot open routing database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_route.cpp" line="473"/>
+        <source>There was an error while calculating the route!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_route.cpp" line="480"/>
+        <source>No Route found!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_route.cpp" line="490"/>
+        <source>Error during route conversion to points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_search.cpp" line="254"/>
+        <source>Database is not open, cannot search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_search.cpp" line="272"/>
+        <source>Error while parsing search string</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_search.cpp" line="279"/>
+        <source>Error while searching for location</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_search.cpp" line="486"/>
+        <source>Search for reference point failed: cannot find</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_search.cpp" line="507"/>
+        <source>Database is not open, cannot search for POI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_search.cpp" line="568"/>
+        <source>Cannot load data from database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_search.cpp" line="668"/>
+        <source>Database is not open, cannot list POI types</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -197,7 +315,7 @@
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="26"/>
-        <source> Modes of transportation</source>
+        <source>Modes of transportation</source>
         <translation>Modos de transporte</translation>
     </message>
     <message>
@@ -352,6 +470,16 @@
         <location filename="../qml/pages/StartPage.qml" line="69"/>
         <source>Status</source>
         <translation>Estado</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="83"/>
+        <source>Jobs in a queue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="84"/>
+        <source>Idle</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="98"/>
