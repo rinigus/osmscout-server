@@ -10,6 +10,8 @@ Page {
                               "online services providing maps.</p><br>" +
                               "<p>Copyright: 2016 <br>rinigus https://github.com/rinigus<br></p>" +
                               "License: LGPL<br><br>" +
+                              "<b>Translations:</b><br><br>" +
+                              "Carmen F. B. @carmenfdezb: Spanish<br><br>" +
                               "<b>Acknowledgments:</b><br><br>" +
                               "libosmscout: http://libosmscout.sourceforge.net/<br>" +
                               "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>" +
@@ -39,7 +41,7 @@ Page {
             }
 
             Label {
-                text: "<center>" + programName + " is a server that provides offline map services</center>"
+                text: "<center>" + programName + " " + qsTr("is a server that provides offline map services") + "</center>"
                 wrapMode: Text.WordWrap
                 width: column.width
                 textFormat: Text.RichText
