@@ -211,6 +211,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/routingforhuman.cpp" line="154"/>
+        <source>At crossing (%crossingway%), %turncommand%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/routingforhuman.cpp" line="223"/>
         <source>Enter motorway %motorway%</source>
         <translation type="unfinished"></translation>
@@ -316,11 +321,6 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="149"/>
         <source>%turncommand% into %where%</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/routingforhuman.cpp" line="154"/>
-        <source>At crossing %crossingway%, %turncommand%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
