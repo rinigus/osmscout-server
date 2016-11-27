@@ -80,27 +80,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="416"/>
+        <location filename="../src/dbmaster_route.cpp" line="79"/>
         <source>Database is not open, cannot route</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="436"/>
+        <location filename="../src/dbmaster_route.cpp" line="99"/>
         <source>Cannot open routing database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="473"/>
+        <location filename="../src/dbmaster_route.cpp" line="136"/>
         <source>There was an error while calculating the route!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="480"/>
+        <location filename="../src/dbmaster_route.cpp" line="143"/>
         <source>No Route found!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="490"/>
+        <location filename="../src/dbmaster_route.cpp" line="153"/>
         <source>Error during route conversion to points</source>
         <translation type="unfinished"></translation>
     </message>
@@ -156,6 +156,202 @@
         <location filename="../src/infohub.cpp" line="116"/>
         <source>INFO: </source>
         <translation>INFO: </translation>
+    </message>
+</context>
+<context>
+    <name>RoutingForHuman</name>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="71"/>
+        <source>Turn sharp left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="73"/>
+        <source>Turn left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="75"/>
+        <source>Turn slightly left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="77"/>
+        <source>Straight on</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="79"/>
+        <source>Turn slightly right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="81"/>
+        <source>Turn right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="83"/>
+        <source>Turn sharp right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="98"/>
+        <source>Drive along %along%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="99"/>
+        <source>Start at %start%. Drive along %along%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="106"/>
+        <source>Start at %start%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="223"/>
+        <source>Enter motorway %motorway%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="227"/>
+        <source>At crossing %crossing%, enter motorway %motorway%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="266"/>
+        <source>Change motorway to %to%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="269"/>
+        <source>Change motorway from %from%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="272"/>
+        <source>Change motorway from %from% to %to%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="277"/>
+        <location filename="../src/routingforhuman.cpp" line="363"/>
+        <source>At %motoName% (exit %motoRef%), %command%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="283"/>
+        <location filename="../src/routingforhuman.cpp" line="369"/>
+        <source>At %motoName%, %command%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="335"/>
+        <source>Leave motorway into %into%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="338"/>
+        <source>Leave motorway. %move%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="341"/>
+        <location filename="../src/routingforhuman.cpp" line="348"/>
+        <source>Leave motorway %from%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="344"/>
+        <source>Leave motorway. %move% into %into%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="352"/>
+        <source>Leave motorway %from%. %move%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="356"/>
+        <source>Leave motorway %from%. %move% into %into%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="384"/>
+        <source>Way changes name from %from% to %to%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="388"/>
+        <source>Way changes name to %to%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="146"/>
+        <source>Turn</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="192"/>
+        <source>Leave roundabout (%num% exit) into street %street%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="196"/>
+        <source>Leave roundabout (%num% exit)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="167"/>
+        <source>Enter roundabout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="118"/>
+        <source>Target reached: %target%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="149"/>
+        <source>%turncommand% into %where%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="154"/>
+        <source>At crossing %crossingway%, %turncommand%</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="171"/>
+        <source>At crossing %crossway%, enter roundabout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="188"/>
+        <source>Leave roundabout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="188"/>
+        <source>exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="221"/>
+        <source>Enter motorway</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="264"/>
+        <source>Change motorway</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/routingforhuman.cpp" line="333"/>
+        <source>Leave motorway</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -2,6 +2,7 @@
 #include "appsettings.h"
 #include "config.h"
 #include "infohub.h"
+#include "routingforhuman.h"
 
 #include <osmscout/RoutingService.h>
 #include <osmscout/RoutePostprocessor.h>
@@ -19,37 +20,6 @@
 
 #define H2S(x) ((x)*60.0*60.0) // hours -> seconds
 
-#define trAS(s) qApp->translate("DBMasterRoute", s).toStdString()
-#define trAQ(s) qApp->translate("DBMasterRoute", s)
-
-/////////////////////////////////////////////////////////////////////////////////////////
-/// Helper functions
-
-//static void GetCarSpeedTable(std::map<std::string,double>& map)
-//{
-//    map["highway_motorway"]=110.0;
-//    map["highway_motorway_trunk"]=100.0;
-//    map["highway_motorway_primary"]=70.0;
-//    map["highway_motorway_link"]=60.0;
-//    map["highway_motorway_junction"]=60.0;
-//    map["highway_trunk"]=100.0;
-//    map["highway_trunk_link"]=60.0;
-//    map["highway_primary"]=70.0;
-//    map["highway_primary_link"]=60.0;
-//    map["highway_secondary"]=60.0;
-//    map["highway_secondary_link"]=50.0;
-//    map["highway_tertiary_link"]=55.0;
-//    map["highway_tertiary"]=55.0;
-//    map["highway_unclassified"]=50.0;
-//    map["highway_road"]=50.0;
-//    map["highway_residential"]=40.0;
-//    map["highway_roundabout"]=40.0;
-//    map["highway_living_street"]=10.0;
-//    map["highway_service"]=30.0;
-
-//    for (auto i: map)
-//        std::cout << "CHECK(OSM_SETTINGS ROUTING_SPEED_SETTINGS \"" << i.first << "\", " << i.second << ");\n";
-//}
 
 static bool HasRelevantDescriptions(const osmscout::RouteDescription::Node& node)
 {
@@ -92,313 +62,6 @@ static bool HasRelevantDescriptions(const osmscout::RouteDescription::Node& node
     return false;
 }
 
-
-static std::string CrossingWaysDescriptionToString(const osmscout::RouteDescription::CrossingWaysDescription& crossingWaysDescription)
-{
-    std::set<std::string>                          names;
-    osmscout::RouteDescription::NameDescriptionRef originDescription=crossingWaysDescription.GetOriginDesccription();
-    osmscout::RouteDescription::NameDescriptionRef targetDescription=crossingWaysDescription.GetTargetDesccription();
-
-    if (originDescription) {
-        std::string nameString=originDescription->GetDescription();
-
-        if (!nameString.empty()) {
-            names.insert(nameString);
-        }
-    }
-
-    if (targetDescription) {
-        std::string nameString=targetDescription->GetDescription();
-
-        if (!nameString.empty()) {
-            names.insert(nameString);
-        }
-    }
-
-    for (std::list<osmscout::RouteDescription::NameDescriptionRef>::const_iterator name=crossingWaysDescription.GetDescriptions().begin();
-         name!=crossingWaysDescription.GetDescriptions().end();
-         ++name) {
-        std::string nameString=(*name)->GetDescription();
-
-        if (!nameString.empty()) {
-            names.insert(nameString);
-        }
-    }
-
-    if (names.size()>0) {
-        std::ostringstream stream;
-
-        for (std::set<std::string>::const_iterator name=names.begin();
-             name!=names.end();
-             ++name) {
-            if (name!=names.begin()) {
-                stream << ", ";
-            }
-            stream << "" << *name << "";
-        }
-
-        return stream.str();
-    }
-    else {
-        return "";
-    }
-}
-
-
-static void MoveToTurnCommand(osmscout::RouteDescription::DirectionDescription::Move move,
-                              std::string &txt,
-                              std::string &type)
-{
-    switch (move) {
-    case osmscout::RouteDescription::DirectionDescription::sharpLeft:
-        txt = trAS("Turn sharp left"); type = "turn-sharp-left"; return;
-    case osmscout::RouteDescription::DirectionDescription::left:
-        txt = trAS("Turn left"); type = "turn-left"; return;
-    case osmscout::RouteDescription::DirectionDescription::slightlyLeft:
-        txt = trAS("Turn slightly left"); type = "turn-slight-left"; return;
-    case osmscout::RouteDescription::DirectionDescription::straightOn:
-        txt = trAS("Straight on"); type = "straight"; return;
-    case osmscout::RouteDescription::DirectionDescription::slightlyRight:
-        txt = trAS("Turn slightly right"); type = "turn-slight-right"; return;
-    case osmscout::RouteDescription::DirectionDescription::right:
-        txt = trAS("Turn right"); type = "turn-right"; return;
-    case osmscout::RouteDescription::DirectionDescription::sharpRight:
-        txt = trAS("Turn sharp right"); type = "turn-sharp-right"; return;
-    }
-
-    assert(false);
-}
-
-
-static void DumpStartDescription(QJsonObject& action,
-                                 const osmscout::RouteDescription::StartDescriptionRef& startDescription,
-                                 const osmscout::RouteDescription::NameDescriptionRef& nameDescription)
-{
-    QString txt = trAQ("Start at") + " " + QString::fromStdString(startDescription->GetDescription()) + "";
-
-    if (nameDescription &&
-            nameDescription->HasName()) {
-        QString post = trAQ("Drive along") + " " + QString::fromStdString(nameDescription->GetDescription()) + "";
-        action.insert("verbal_post_transition_instruction", post);
-        txt += ". " + post;
-    }
-
-    action.insert("instruction", txt);
-    action.insert("type", QString("start"));
-}
-
-
-static void DumpTargetDescription(QJsonObject& action,
-                                  const osmscout::RouteDescription::TargetDescriptionRef& targetDescription)
-{
-    action.insert("instruction", trAQ("Target reached") + ": " + QString::fromStdString(targetDescription->GetDescription()) + "");
-    action.insert("type", QString("destination"));
-}
-
-
-static void DumpTurnDescription(QJsonObject& action,
-                                const osmscout::RouteDescription::TurnDescriptionRef& /*turnDescription*/,
-                                const osmscout::RouteDescription::CrossingWaysDescriptionRef& crossingWaysDescription,
-                                const osmscout::RouteDescription::DirectionDescriptionRef& directionDescription,
-                                const osmscout::RouteDescription::NameDescriptionRef& nameDescription)
-{
-    std::string crossingWaysString;
-    std::string pre;
-    std::string comm;
-    std::string type;
-
-    if (crossingWaysDescription) {
-        crossingWaysString=CrossingWaysDescriptionToString(*crossingWaysDescription);
-    }
-
-    if (!crossingWaysString.empty()) {
-        pre = trAS("At crossing") + " " + crossingWaysString;
-    }
-
-    if (directionDescription) {
-        MoveToTurnCommand(directionDescription->GetCurve(), comm, type);
-    }
-    else {
-        comm = trAS("Turn");
-    }
-
-    if (nameDescription &&
-            nameDescription->HasName()) {
-        comm += " " + trAS("into") + " " + nameDescription->GetDescription() + "";
-    }
-
-    action.insert("instruction", QString::fromStdString(comm));
-    action.insert("type", QString::fromStdString(type));
-    if (!pre.empty()) action.insert("verbal_pre_transition_instruction", QString::fromStdString(pre + "\n" + comm));
-}
-
-static void DumpRoundaboutEnterDescription(QJsonObject& action,
-                                           const osmscout::RouteDescription::RoundaboutEnterDescriptionRef& /*roundaboutEnterDescription*/,
-                                           const osmscout::RouteDescription::CrossingWaysDescriptionRef& crossingWaysDescription)
-{
-    std::string crossingWaysString;
-    std::string comm;
-
-    if (crossingWaysDescription) {
-        crossingWaysString=CrossingWaysDescriptionToString(*crossingWaysDescription);
-    }
-
-    if (!crossingWaysString.empty()) {
-        comm = trAS("At crossing") + " " + crossingWaysString + ", ";
-    }
-
-    action.insert("instruction", QString::fromStdString("Enter roundabout"));
-    action.insert("type", QString("roundabout-enter"));
-}
-
-static void DumpRoundaboutLeaveDescription(QJsonObject& action,
-                                           const osmscout::RouteDescription::RoundaboutLeaveDescriptionRef& roundaboutLeaveDescription,
-                                           const osmscout::RouteDescription::NameDescriptionRef& nameDescription)
-{
-    int count = roundaboutLeaveDescription->GetExitCount();
-    std::ostringstream ss;
-
-    ss << trAS("Leave roundabout") + " (" << roundaboutLeaveDescription->GetExitCount() << ". " + trAS("exit") + ")";
-
-    if (nameDescription &&
-            nameDescription->HasName()) {
-        ss << " " + trAS("into street") + " " << nameDescription->GetDescription() << "";
-    }
-
-    action.insert("instruction", QString::fromStdString(ss.str()));
-    action.insert("type", QString("roundabout-exit"));
-    action.insert("roundabout_exit_count", count);
-}
-
-static void DumpMotorwayEnterDescription(QJsonObject& action,
-                                         const osmscout::RouteDescription::MotorwayEnterDescriptionRef& motorwayEnterDescription,
-                                         const osmscout::RouteDescription::CrossingWaysDescriptionRef& crossingWaysDescription)
-{
-    std::string crossingWaysString;
-    std::string comm;
-    std::string pre;
-
-    if (crossingWaysDescription) {
-        crossingWaysString=CrossingWaysDescriptionToString(*crossingWaysDescription);
-    }
-
-    if (!crossingWaysString.empty()) {
-        pre = trAS("At crossing") + " " + crossingWaysString;
-    }
-
-    comm = trAS("Enter motorway");
-
-    if (motorwayEnterDescription->GetToDescription() &&
-            motorwayEnterDescription->GetToDescription()->HasName()) {
-        comm += " " + motorwayEnterDescription->GetToDescription()->GetDescription() + "";
-    }
-
-    action.insert("instruction", QString::fromStdString(comm));
-    action.insert("type", QString("merge"));
-    if (!pre.empty()) action.insert("verbal_pre_transition_instruction", QString::fromStdString(pre + "\n" + comm));
-}
-
-static void DumpMotorwayChangeDescription(QJsonObject& action,
-                                          const osmscout::RouteDescription::MotorwayChangeDescriptionRef& motorwayChangeDescription,
-                                          const osmscout::RouteDescription::MotorwayJunctionDescriptionRef& motorwayJunctionDescription)
-{
-    std::string comm;
-    std::string pre;
-
-    if (motorwayJunctionDescription &&
-            motorwayJunctionDescription->GetJunctionDescription()) {
-        pre = trAS("At");
-
-        if (!motorwayJunctionDescription->GetJunctionDescription()->GetName().empty()) {
-            pre += " " + motorwayJunctionDescription->GetJunctionDescription()->GetName() + "";
-
-            if (!motorwayJunctionDescription->GetJunctionDescription()->GetRef().empty()) {
-                pre += " (" + trAS("exit") + " " + motorwayJunctionDescription->GetJunctionDescription()->GetRef() + ")";
-            }
-        }
-    }
-
-    comm = trAS("Change motorway");
-
-    if (motorwayChangeDescription->GetFromDescription() &&
-            motorwayChangeDescription->GetFromDescription()->HasName()) {
-        comm += " " + trAS("from") + " " + motorwayChangeDescription->GetFromDescription()->GetDescription() + "";
-    }
-
-    if (motorwayChangeDescription->GetToDescription() &&
-            motorwayChangeDescription->GetToDescription()->HasName()) {
-        comm += " " + trAS("to") + " " + motorwayChangeDescription->GetToDescription()->GetDescription() + "";
-    }
-
-    action.insert("instruction", QString::fromStdString(comm));
-    action.insert("type", QString("motorway-change"));
-    if (!pre.empty()) action.insert("verbal_pre_transition_instruction", QString::fromStdString(pre + "\n" + comm));
-}
-
-static void DumpMotorwayLeaveDescription(QJsonObject& action,
-                                         const osmscout::RouteDescription::MotorwayLeaveDescriptionRef& motorwayLeaveDescription,
-                                         const osmscout::RouteDescription::MotorwayJunctionDescriptionRef& motorwayJunctionDescription,
-                                         const osmscout::RouteDescription::DirectionDescriptionRef& directionDescription,
-                                         const osmscout::RouteDescription::NameDescriptionRef& nameDescription)
-{
-    std::string comm;
-    std::string pre;
-    std::string move;
-    std::string type = "motorway-leave";
-
-    if (motorwayJunctionDescription &&
-            motorwayJunctionDescription->GetJunctionDescription()) {
-        pre = trAS("At");
-
-        if (!motorwayJunctionDescription->GetJunctionDescription()->GetName().empty()) {
-            pre += " " + motorwayJunctionDescription->GetJunctionDescription()->GetName() + "";
-
-            if (!motorwayJunctionDescription->GetJunctionDescription()->GetRef().empty()) {
-                pre += " (" + trAS("exit") + " " + motorwayJunctionDescription->GetJunctionDescription()->GetRef() + ")";
-            }
-        }
-    }
-
-    comm = trAS("Leave motorway");
-
-    if (motorwayLeaveDescription->GetFromDescription() &&
-            motorwayLeaveDescription->GetFromDescription()->HasName()) {
-        comm += " " + motorwayLeaveDescription->GetFromDescription()->GetDescription() + "";
-    }
-
-    if (directionDescription &&
-            directionDescription->GetCurve()!=osmscout::RouteDescription::DirectionDescription::slightlyLeft &&
-            directionDescription->GetCurve()!=osmscout::RouteDescription::DirectionDescription::straightOn &&
-            directionDescription->GetCurve()!=osmscout::RouteDescription::DirectionDescription::slightlyRight) {
-        MoveToTurnCommand(directionDescription->GetCurve(), move, type);
-        comm += ". " + move;
-    }
-
-    if (nameDescription &&
-            nameDescription->HasName()) {
-        comm += " " + trAS("into") + " " + nameDescription->GetDescription() + "";
-    }
-
-    action.insert("instruction", QString::fromStdString(comm));
-    action.insert("type", QString::fromStdString(type));
-    if (!pre.empty()) action.insert("verbal_pre_transition_instruction", QString::fromStdString(pre + "\n" + comm));
-}
-
-static void DumpNameChangedDescription(QJsonObject& action,
-                                       const osmscout::RouteDescription::NameChangedDescriptionRef& nameChangedDescription)
-{
-    std::string comm;
-
-    comm = trAS("Way changes name");
-    if (nameChangedDescription->GetOriginDesccription()) {
-        comm += " " + trAS("from") + " ";
-        comm += "" + nameChangedDescription->GetOriginDesccription()->GetDescription() + "";
-    }
-
-    comm += " " + trAS("to") + " " + nameChangedDescription->GetTargetDesccription()->GetDescription() + "";
-    action.insert("instruction", QString::fromStdString(comm));
-    action.insert("type", QString("straight"));
-}
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /// Main routing function
@@ -605,6 +268,7 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     ////////////////////////////////////////////////////////////////////////
     /// Route description in maneuvers
     std::list<osmscout::RouteDescription::Node>::const_iterator prevNode=description.Nodes().end();
+    RoutingForHuman rh;
 
     double totalDistance = 0;
     double totalTime = 0;
@@ -723,54 +387,54 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
         }
 
         if (startDescription) {
-            DumpStartDescription(action,
-                                 startDescription,
-                                 nameDescription);
+            rh.DumpStartDescription(action,
+                                    startDescription,
+                                    nameDescription);
         }
         else if (targetDescription) {
-            DumpTargetDescription(action,targetDescription);
+            rh.DumpTargetDescription(action,targetDescription);
         }
         else if (turnDescription) {
-            DumpTurnDescription(action,
-                                turnDescription,
-                                crossingWaysDescription,
-                                directionDescription,
-                                nameDescription);
+            rh.DumpTurnDescription(action,
+                                   turnDescription,
+                                   crossingWaysDescription,
+                                   directionDescription,
+                                   nameDescription);
         }
         else if (roundaboutEnterDescription) {
-            DumpRoundaboutEnterDescription(action,
-                                           roundaboutEnterDescription,
-                                           crossingWaysDescription);
+            rh.DumpRoundaboutEnterDescription(action,
+                                              roundaboutEnterDescription,
+                                              crossingWaysDescription);
 
             roundaboutCrossingCounter=1;
         }
         else if (roundaboutLeaveDescription) {
-            DumpRoundaboutLeaveDescription(action,
-                                           roundaboutLeaveDescription,
-                                           nameDescription);
+            rh.DumpRoundaboutLeaveDescription(action,
+                                              roundaboutLeaveDescription,
+                                              nameDescription);
 
             roundaboutCrossingCounter=0;
         }
         else if (motorwayEnterDescription) {
-            DumpMotorwayEnterDescription(action,
-                                         motorwayEnterDescription,
-                                         crossingWaysDescription);
+            rh.DumpMotorwayEnterDescription(action,
+                                            motorwayEnterDescription,
+                                            crossingWaysDescription);
         }
         else if (motorwayChangeDescription) {
-            DumpMotorwayChangeDescription(action,
-                                          motorwayChangeDescription,
-                                          motorwayJunctionDescription);
+            rh.DumpMotorwayChangeDescription(action,
+                                             motorwayChangeDescription,
+                                             motorwayJunctionDescription);
         }
         else if (motorwayLeaveDescription) {
-            DumpMotorwayLeaveDescription(action,
-                                         motorwayLeaveDescription,
-                                         motorwayJunctionDescription,
-                                         directionDescription,
-                                         nameDescription);
+            rh.DumpMotorwayLeaveDescription(action,
+                                            motorwayLeaveDescription,
+                                            motorwayJunctionDescription,
+                                            directionDescription,
+                                            nameDescription);
         }
         else if (nameChangedDescription) {
-            DumpNameChangedDescription(action,
-                                       nameChangedDescription);
+            rh.DumpNameChangedDescription(action,
+                                          nameChangedDescription);
         }
 
         prevNode=node;
