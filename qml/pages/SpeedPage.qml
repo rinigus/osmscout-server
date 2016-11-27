@@ -23,7 +23,7 @@ Dialog {
             }
 
             SectionHeader {
-                text: qsTr(" Modes of transportation")
+                text: qsTr("Modes of transportation")
                 font.pixelSize: Theme.fontSizeMedium
             }
 

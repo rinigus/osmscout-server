@@ -69,7 +69,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
         if (!m_database->IsOpen())
         {
-            InfoHub::logWarning("Database is not open, cannot render a tile");
+            InfoHub::logWarning(tr("Database is not open, cannot render a tile"));
             return false;
         }
 
@@ -165,7 +165,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     QPainter* painter=new QPainter(&image);
     if (painter == nullptr)
     {
-        InfoHub::logError("Cannot allocate QPainter");
+        InfoHub::logError("Cannot allocate QPainter"); // technical message, no translation needed
         return false;
     }
 

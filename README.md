@@ -244,6 +244,13 @@ At present, the car speeds on different roads are inserted in the
 code. This will improve in future.
 
 
+## Translations
+
+The translations were contributed by
+
+Carmen F. B. @carmenfdezb: Spanish
+
+
 ## Acknowledgments
 
 libosmscout: http://libosmscout.sourceforge.net

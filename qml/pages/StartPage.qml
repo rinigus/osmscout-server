@@ -80,8 +80,8 @@ Page {
                 text: ""
 
                 function setText(q) {
-                    if (q > 0) text = "Jobs in a queue: " + q
-                    else text = "Idle"
+                    if (q > 0) text = qsTr("Jobs in a queue") + ": " + q
+                    else text = qsTr("Idle")
                 }
 
                 Connections {

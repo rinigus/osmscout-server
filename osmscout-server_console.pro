@@ -42,7 +42,8 @@ SOURCES += src/dbmaster.cpp \
     src/searchresults.cpp \
     src/infohub.cpp \
     src/consolelogger.cpp \
-    src/dbmaster_route.cpp
+    src/dbmaster_route.cpp \
+    src/routingforhuman.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
@@ -56,7 +57,8 @@ HEADERS += \
     src/config.h \
     src/searchresults.h \
     src/infohub.h \
-    src/consolelogger.h
+    src/consolelogger.h \
+    src/routingforhuman.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT

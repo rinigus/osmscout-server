@@ -13,10 +13,10 @@ Name:       harbour-osmscout-server
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server
-Version:    0.3.0
+Version:    0.4.0
 Release:    1
 Group:      Qt/Qt
-License:    LICENSE
+License:    LGPL
 URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-osmscout-server.yaml
@@ -71,5 +71,6 @@ desktop-file-install --delete-original       \
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/%{name}/translations
 # >> files
 # << files

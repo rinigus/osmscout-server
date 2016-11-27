@@ -13,7 +13,7 @@ DBMaster::DBMaster()
 
     if (m_database == nullptr)
     {
-        InfoHub::logError("Cannot create database object");
+        InfoHub::logError(tr("Cannot create database object"));
         InfoHub::setError(true);
 
         m_error_flag = true;
@@ -41,12 +41,12 @@ void DBMaster::loadSettings()
 
         if (!m_database->Open(m_map_dir))
         {
-            InfoHub::logError("Cannot open database: " + QString::fromStdString(m_map_dir));
+            InfoHub::logError(tr("Cannot open database") + ": " + QString::fromStdString(m_map_dir));
             return;
         }
 
         // clear error state
-        InfoHub::logInfo("Opened database " + QString::fromStdString(m_map_dir), true);
+        InfoHub::logInfo(tr("Opened database") + " " + QString::fromStdString(m_map_dir), true);
     }
 
     m_icons_dir = settings.valueString(OSM_SETTINGS "icons").toStdString();
@@ -112,7 +112,7 @@ bool DBMaster::loadStyle(bool daylight)
 
     if (m_style_config == nullptr)
     {
-        InfoHub::logError("Cannot allocate Style config");
+        InfoHub::logError(tr("Cannot allocate Style config"));
         return false;
     }
 
@@ -120,13 +120,13 @@ bool DBMaster::loadStyle(bool daylight)
 
     if (!m_style_config->Load(m_style_name))
     {
-        InfoHub::logError("Cannot open style: " + QString::fromStdString(m_style_name));
+        InfoHub::logError(tr("Cannot open style") + ": " + QString::fromStdString(m_style_name));
         return false;
     }
 
     m_daylight = daylight;
     m_style_name_loaded = m_style_name;
-    InfoHub::logInfo("Loaded style: " + QString::fromStdString(m_style_name));
+    InfoHub::logInfo(tr("Loaded style") + ": " + QString::fromStdString(m_style_name));
 
     return true;
 }
