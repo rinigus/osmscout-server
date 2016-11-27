@@ -5,6 +5,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Nov 27 2016 rinigus <rinigus.git@gmail.com> 0.4.0-1
+- Changes for better localization support
+- Spanish translation
+- GUI shows number of jobs in queue
+- Support for routing cost limits
+- Bugfixes in routing (libosmscout library)
+
 * Thu Nov 12 2016 rinigus <rinigus.git@gmail.com> 0.3.0-1
 - Decoupling number of parallel processing threads and number of requests
 - Adding GPX output for router

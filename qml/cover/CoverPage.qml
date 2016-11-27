@@ -19,8 +19,8 @@ CoverBackground {
         text: qsTr("OSM Scout Server")
 
         function setText(q) {
-            if (q > 0) text = "Jobs: " + q
-            else text = "Idle"
+            if (q > 0) text = qsTr("Jobs") + ": " + q
+            else text = qsTr("Idle")
         }
 
         Connections {

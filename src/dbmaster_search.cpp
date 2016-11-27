@@ -251,7 +251,7 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
 
     if (!m_database->IsOpen())
     {
-        InfoHub::logWarning("Database is not open, cannot search");
+        InfoHub::logWarning(tr("Database is not open, cannot search"));
         return false;
     }
 
@@ -269,14 +269,14 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
     if (!locationService.InitializeLocationSearchEntries(searchPattern.toStdString(),
                                                          search))
     {
-        InfoHub::logWarning("Error while parsing search string");
+        InfoHub::logWarning(tr("Error while parsing search string"));
         return false;
     }
 
     if (!locationService.SearchForLocations(search,
                                             searchResult))
     {
-        InfoHub::logError("Error while searching for location");
+        InfoHub::logError(tr("Error while searching for location"));
         return false;
     }
 
@@ -483,7 +483,7 @@ bool DBMaster::search(const QString &searchPattern, double &lat, double &lon)
 
     if (all_results.length() == 0)
     {
-        InfoHub::logWarning("Search for reference point failed: cannot find " + searchPattern);
+        InfoHub::logWarning(tr("Search for reference point failed: cannot find") + " " + searchPattern);
         return false;
     }
 
@@ -504,7 +504,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
 
     if (!m_database->IsOpen())
     {
-        InfoHub::logWarning("Database is not open, cannot search for POI");
+        InfoHub::logWarning(tr("Database is not open, cannot search for POI"));
         return false;
     }
 
@@ -565,7 +565,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
                                   areaTypes,
                                   areas))
     {
-        InfoHub::logError("Cannot load data from database");
+        InfoHub::logError(tr("Cannot load data from database"));
         return false;
     }
 
@@ -665,7 +665,7 @@ bool DBMaster::poiTypes(QByteArray &result)
 
     if (!m_database->IsOpen())
     {
-        InfoHub::logWarning("Database is not open, cannot list POI types");
+        InfoHub::logWarning(tr("Database is not open, cannot list POI types"));
         return false;
     }
 

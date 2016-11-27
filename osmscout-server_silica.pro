@@ -53,7 +53,8 @@ SOURCES += \
     src/searchresults.cpp \
     src/infohub.cpp \
     src/rollinglogger.cpp \
-    src/consolelogger.cpp
+    src/consolelogger.cpp \
+    src/routingforhuman.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -70,7 +71,8 @@ HEADERS += \
     src/searchresults.h \
     src/infohub.h \
     src/rollinglogger.h \
-    src/consolelogger.h
+    src/consolelogger.h \
+    src/routingforhuman.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -98,7 +100,7 @@ CONFIG(release, debug|release) {
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-# TRANSLATIONS += translations/osmscout-server-de.ts
+TRANSLATIONS += translations/harbour-osmscout-server-es.ts
 
 DISTFILES += \
     qml/pages/StartPage.qml \
