@@ -6,22 +6,22 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="7"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>El servidor debe utilizarse junto al programa cliente capaz de mostrar los mapas, hacer las búsquedas y mostrar las rutas seleccionadas. El servidor es una capa fina que presenta la funcionalidad de &lt;i&gt; libosmscout &lt;/i&gt; a través de http. Este servidor se puede utilizar en lugar de los servicios de mapas en línea.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="35"/>
         <source>About</source>
-        <translation type="unfinished">Acerca de</translation>
+        <translation>Acerca de</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="39"/>
         <source>version</source>
-        <translation type="unfinished"></translation>
+        <translation>versión</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="44"/>
         <source>is a server that provides offline map services</source>
-        <translation type="unfinished"></translation>
+        <translation>es un servidor que proporciona un servicio de mapas offline</translation>
     </message>
 </context>
 <context>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="22"/>
         <source>Jobs</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabajos</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="23"/>
         <source>Idle</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactivo</translation>
     </message>
 </context>
 <context>
@@ -47,97 +47,97 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="16"/>
         <source>Cannot create database object</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible crear objeto de la base de datos</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="44"/>
         <source>Cannot open database</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible abrir la base de datos</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="49"/>
         <source>Opened database</source>
-        <translation type="unfinished"></translation>
+        <translation>Base de datos abierta</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="115"/>
         <source>Cannot allocate Style config</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible asignar la configuración del estilo</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="123"/>
         <source>Cannot open style</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible abrir estilo</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="129"/>
         <source>Loaded style</source>
-        <translation type="unfinished"></translation>
+        <translation>Estilo cargado</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_map.cpp" line="72"/>
         <source>Database is not open, cannot render a tile</source>
-        <translation type="unfinished"></translation>
+        <translation>La base de datos no está abierta, no es posible renderizar un tile</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="79"/>
         <source>Database is not open, cannot route</source>
-        <translation type="unfinished"></translation>
+        <translation>La base de datos no está abierta, no es posible crear la ruta</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="99"/>
         <source>Cannot open routing database</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible abrir la base de datos de rutas</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="136"/>
         <source>There was an error while calculating the route!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡Se produjo un error al calcular la ruta!</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="143"/>
         <source>No Route found!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡No se encontró la ruta!</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="153"/>
         <source>Error during route conversion to points</source>
-        <translation type="unfinished"></translation>
+        <translation>Error durante la conversión de la ruta a puntos</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
-        <translation type="unfinished"></translation>
+        <translation>La base de datos no está abierta, no es posible hacer la búsqueda</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="272"/>
         <source>Error while parsing search string</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al analizar la cadena de búsqueda</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="279"/>
         <source>Error while searching for location</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al buscar la ubicación</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="486"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation type="unfinished"></translation>
+        <translation>La busqueda del punto de referencia ha fallado: no se pudo encontrar</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="507"/>
         <source>Database is not open, cannot search for POI</source>
-        <translation type="unfinished"></translation>
+        <translation>La base de datos no está abierta; no se pudo buscar POI</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="568"/>
         <source>Cannot load data from database</source>
-        <translation type="unfinished"></translation>
+        <translation>No se pudo cargar datos de la base de datos</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="668"/>
         <source>Database is not open, cannot list POI types</source>
-        <translation type="unfinished"></translation>
+        <translation>La base de datos no está abierta, no se pudo listar tipos de POI</translation>
     </message>
 </context>
 <context>
@@ -163,195 +163,195 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="71"/>
         <source>Turn sharp left</source>
-        <translation type="unfinished"></translation>
+        <translation>Gira fuertemente a la izquierda</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="73"/>
         <source>Turn left</source>
-        <translation type="unfinished"></translation>
+        <translation>Gira a la izquierda</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="75"/>
         <source>Turn slightly left</source>
-        <translation type="unfinished"></translation>
+        <translation>Gira ligeramente a la izquierda</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="77"/>
         <source>Straight on</source>
-        <translation type="unfinished"></translation>
+        <translation>Sigue recto</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="79"/>
         <source>Turn slightly right</source>
-        <translation type="unfinished"></translation>
+        <translation>Gira ligeramente a la derecha</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="81"/>
         <source>Turn right</source>
-        <translation type="unfinished"></translation>
+        <translation>Gira a la derecha</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="83"/>
         <source>Turn sharp right</source>
-        <translation type="unfinished"></translation>
+        <translation>Gira fuertemente a la derecha</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="98"/>
         <source>Drive along %along%</source>
-        <translation type="unfinished"></translation>
+        <translation>Continua por la %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="99"/>
         <source>Start at %start%. Drive along %along%</source>
-        <translation type="unfinished"></translation>
+        <translation>Comienza en %start%. Continua por la %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="106"/>
         <source>Start at %start%</source>
-        <translation type="unfinished"></translation>
+        <translation>Comienza en %start%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="154"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
-        <translation type="unfinished"></translation>
+        <translation>Al cruzar (%crossingway%), %turncommand%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="223"/>
         <source>Enter motorway %motorway%</source>
-        <translation type="unfinished"></translation>
+        <translation>Incorpórate a la autovía %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="227"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
-        <translation type="unfinished"></translation>
+        <translation>Al cruzar la %crossing%, incorpórate a la autovía %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway to %to%</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia la autovía a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="269"/>
         <source>Change motorway from %from%</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia la autovía desde %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="272"/>
         <source>Change motorway from %from% to %to%</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia la autovía desde %from% a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="277"/>
         <location filename="../src/routingforhuman.cpp" line="363"/>
         <source>At %motoName% (exit %motoRef%), %command%</source>
-        <translation type="unfinished"></translation>
+        <translation>En %motoName% (salida %motoRef%), %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="283"/>
         <location filename="../src/routingforhuman.cpp" line="369"/>
         <source>At %motoName%, %command%</source>
-        <translation type="unfinished"></translation>
+        <translation>En %motoName%, %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway into %into%</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la autovía hacia %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="338"/>
         <source>Leave motorway. %move%</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la autovía. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="341"/>
         <location filename="../src/routingforhuman.cpp" line="348"/>
         <source>Leave motorway %from%</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la autovía %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="344"/>
         <source>Leave motorway. %move% into %into%</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la autovía. %move% hacia %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="352"/>
         <source>Leave motorway %from%. %move%</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la autovía %from%. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="356"/>
         <source>Leave motorway %from%. %move% into %into%</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la autovía %from%. %move% hacia %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia el nombre de la vía de %from% a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="388"/>
         <source>Way changes name to %to%</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia el nombre de la vía a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="146"/>
         <source>Turn</source>
-        <translation type="unfinished"></translation>
+        <translation>Gira</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="192"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la rotonda (salida %num%) hacia la calle %street%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="196"/>
         <source>Leave roundabout (%num% exit)</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la rotonda (salida %num%)</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="167"/>
         <source>Enter roundabout</source>
-        <translation type="unfinished"></translation>
+        <translation>Entra en la rotonda</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="118"/>
         <source>Target reached: %target%</source>
-        <translation type="unfinished"></translation>
+        <translation>Has llegado a tu destino: %target%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="149"/>
         <source>%turncommand% into %where%</source>
-        <translation type="unfinished"></translation>
+        <translation>%turncommand% hacia %where%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="171"/>
         <source>At crossing %crossway%, enter roundabout</source>
-        <translation type="unfinished"></translation>
+        <translation>Al cruzar la %crossing%, entra en la rotonda</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>Leave roundabout</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la rotonda</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>exit</source>
-        <translation type="unfinished"></translation>
+        <translation>salida</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="221"/>
         <source>Enter motorway</source>
-        <translation type="unfinished"></translation>
+        <translation>Entra en la autovía</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="264"/>
         <source>Change motorway</source>
-        <translation type="unfinished"></translation>
+        <translation>Cambia la autovía</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="333"/>
         <source>Leave motorway</source>
-        <translation type="unfinished"></translation>
+        <translation>Deja la autovía</translation>
     </message>
 </context>
 <context>
@@ -670,12 +670,12 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="83"/>
         <source>Jobs in a queue</source>
-        <translation type="unfinished"></translation>
+        <translation>Trabajos en cola</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="84"/>
         <source>Idle</source>
-        <translation type="unfinished"></translation>
+        <translation>Inactivo</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="98"/>
