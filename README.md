@@ -278,3 +278,6 @@ libosmscout: http://libosmscout.sourceforge.net
 osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 
 GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
+
+
+[![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)
