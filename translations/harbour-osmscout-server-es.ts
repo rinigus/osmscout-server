@@ -286,12 +286,12 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation>Cambia el nombre de la vía de %from% a %to%</translation>
+        <translation>El nombre de la vía cambia de %from% a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="388"/>
         <source>Way changes name to %to%</source>
-        <translation>Cambia el nombre de la vía a %to%</translation>
+        <translation>El nombre de la vía cambia a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="146"/>
