@@ -53,7 +53,7 @@ Server releases, the following import tools are available:
 
 OSM Scout Server | libosmscout Sailfish
 --- | ---
-0.4.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
+0.4.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
 0.3.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
 
 
@@ -184,7 +184,7 @@ where
 As mentioned above, given POI type is considered as a substring that
 is looked for in all available POI types without taking into account
 the case of letters. For example, "Cafe" would match
-amenity_cafe_building and amenity_cafe. However, "Café" would miss
+amenity_cafe_building and amenity_cafe. However, "CafÃ©" would miss
 them.
 
 The reference point can be given either as a query ("Paris") or as a
