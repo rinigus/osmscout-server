@@ -101,7 +101,6 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     }
 
     osmscout::TypeConfigRef             typeConfig=m_database->GetTypeConfig();
-    osmscout::RouteData                 data;
     osmscout::RouteDescription          description;
 
     double speed_car = std::max(1.0, m_routing_speeds["Car"]);
@@ -128,26 +127,20 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     routingProfile.SetCostLimitDistance(m_routing_cost_distance);
     routingProfile.SetCostLimitFactor(m_routing_cost_factor);
 
-    if (!router->CalculateRoute(routingProfile,
-                                radius,
-                                via,
-                                data))
+    osmscout::RoutingParameter parameter;
+    osmscout::RoutingResult routingResult = router->CalculateRoute(routingProfile,
+                                                                   via, radius,
+                                                                   parameter);
+    if (!routingResult.Success())
     {
         InfoHub::logWarning(tr("There was an error while calculating the route!"));
         router->Close();
         return false;
     }
 
-    if (data.IsEmpty())
-    {
-        InfoHub::logWarning(tr("No Route found!"));
-        router->Close();
-        return false;
-    }
-
     /// Route points
     std::list<osmscout::Point> route_points;
-    if (!router->TransformRouteDataToPoints(data,
+    if (!router->TransformRouteDataToPoints(routingResult.GetRoute(),
                                             route_points))
     {
         InfoHub::logWarning(tr("Error during route conversion to points"));
@@ -192,7 +185,7 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
         return true;
     }
 
-    router->TransformRouteDataToRouteDescription(data,
+    router->TransformRouteDataToRouteDescription(routingResult.GetRoute(),
                                                  description);
 
     std::list<osmscout::RoutePostprocessor::PostprocessorRef> postprocessors;
