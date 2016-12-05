@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Nov 29 2016 rinigus <rinigus.git@gmail.com> 0.4.1-1
+- Updated spanish translation
+
 * Sun Nov 27 2016 rinigus <rinigus.git@gmail.com> 0.4.0-1
 - Changes for better localization support
 - Spanish translation

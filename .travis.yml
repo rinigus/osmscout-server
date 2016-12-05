@@ -1,0 +1,29 @@
+language: cpp
+
+cache:
+  - apt
+  
+branches:
+  only:
+    - master
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
+      compiler: gcc
+
+before_install:
+  - $TRAVIS_BUILD_DIR/ci/travis/install.sh
+
+script:
+  - $TRAVIS_BUILD_DIR/ci/travis/build.sh
+
+notifications:
+  email:
+    recipients:
+      - rinigus.git@gmail.com
+    on_success: never
+    on_failure: never
+
