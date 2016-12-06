@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     RollingLogger rolling_logger;
 
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
-    qmlRegisterType<FileModel>("FileManager", 1, 0, "FileModel");
+    qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
 #endif
 
     app->setApplicationName(APP_PREFIX "osmscout-server");

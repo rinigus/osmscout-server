@@ -5,7 +5,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import FileManager 1.0
+import harbour.osmscout.server.FileManager 1.0
 
 Page {
     id: page
