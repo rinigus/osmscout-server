@@ -27,25 +27,29 @@ Dialog {
                 font.pixelSize: Theme.fontSizeMedium
             }
 
-            ElementEntry {
+            ElementSelector {
                 id: eMap
                 key: settingsOsmPrefix + "map"
                 mainLabel: qsTr("Folder containing Maps")
                 secondaryLabel: qsTr("This folder should contain maps imported by libosmscout Import utility")
+                directory: true
+                directory_file: "types.dat"
             }
 
-            ElementEntry {
+            ElementSelector {
                 id: eStyle
                 key: settingsOsmPrefix + "style"
                 mainLabel: qsTr("Style sheet")
                 secondaryLabel: qsTr("Style sheet used to render the map tiles")
             }
 
-            ElementEntry {
+            ElementSelector {
                 id: eIcons
                 key: settingsOsmPrefix + "icons"
                 mainLabel: qsTr("Folder with icons")
                 secondaryLabel: qsTr("Icons used to mark features on the map")
+                directory: true
+                directory_file: "parking.png"
             }
 
             SectionHeader {

@@ -44,22 +44,46 @@ Page {
 
             ListItem {
                 id: listItem
-                contentHeight: Theme.itemSizeSmall
+                //contentHeight: Theme.itemSizeSmall
 
-                Label {
-                    id: database
-                    x: Theme.horizontalPageMargin
-                    width: parent.width-2*Theme.horizontalPageMargin
-                    wrapMode: Text.WordWrap
-                    color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                    text: ""
+                Column {
+                    width: parent.width
+                    height: database.height + database_full.height + Theme.paddingSmall
+                    spacing: Theme.paddingSmall
 
-                    function setText() {
-                        text = settings.valueString(settingsOsmPrefix + "map")
+                    Label {
+                        id: database
+                        x: Theme.horizontalPageMargin
+                        width: parent.width-2*Theme.horizontalPageMargin
+                        wrapMode: Text.WordWrap
+                        color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                        text: ""
+
+                        function setText() {
+                            text = settings.valueString(settingsOsmPrefix + "map").split("/").pop()
+                        }
+
+                        Component.onCompleted: { setText() }
+                        Connections { target: settings; onOsmScoutSettingsChanged: database.setText() }
                     }
 
-                    Component.onCompleted: { setText() }
-                    Connections { target: settings; onOsmScoutSettingsChanged: database.setText() }
+                    Label {
+                        id: database_full
+                        x: Theme.horizontalPageMargin
+                        width: parent.width-2*Theme.horizontalPageMargin
+                        wrapMode: Text.WordWrap
+                        color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                        text: ""
+                        font.pixelSize: Theme.fontSizeTiny
+                        truncationMode: TruncationMode.Fade
+
+                        function setText() {
+                            text = settings.valueString(settingsOsmPrefix + "map")
+                        }
+
+                        Component.onCompleted: { setText() }
+                        Connections { target: settings; onOsmScoutSettingsChanged: database_full.setText() }
+                    }
                 }
 
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
@@ -105,7 +129,7 @@ Page {
                 width: parent.width-2*Theme.horizontalPageMargin
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeSmall
-                wrapMode: Text.WordWrap
+                wrapMode: Text.Wrap
 
                 text: ""
 

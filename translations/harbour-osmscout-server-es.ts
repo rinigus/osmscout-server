@@ -95,12 +95,7 @@
         <translation>¡Se produjo un error al calcular la ruta!</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="143"/>
-        <source>No Route found!</source>
-        <translation>¡No se encontró la ruta!</translation>
-    </message>
-    <message>
-        <location filename="../src/dbmaster_route.cpp" line="153"/>
+        <location filename="../src/dbmaster_route.cpp" line="146"/>
         <source>Error during route conversion to points</source>
         <translation>Error durante la conversión de la ruta a puntos</translation>
     </message>
@@ -138,6 +133,20 @@
         <location filename="../src/dbmaster_search.cpp" line="668"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>La base de datos no está abierta, no se pudo listar tipos de POI</translation>
+    </message>
+</context>
+<context>
+    <name>FileSelector</name>
+    <message>
+        <location filename="../qml/pages/FileSelector.qml" line="163"/>
+        <source>%1, %2</source>
+        <extracomment>Shows size and modification date, e.g. &quot;15.5MB, 02/03/2016&quot;</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FileSelector.qml" line="191"/>
+        <source>Empty directory</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -377,127 +386,127 @@
         <translation>Esta carpeta debería contener los mapas importados con la utilidad &apos;Import&apos; de libosmscout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="40"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="42"/>
         <source>Style sheet</source>
         <translation>Hoja de estilos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="41"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="43"/>
         <source>Style sheet used to render the map tiles</source>
         <translation>Hoja de estilos usado para el renderizado de mapas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="47"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="49"/>
         <source>Folder with icons</source>
         <translation>Carpeta con iconos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="48"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="50"/>
         <source>Icons used to mark features on the map</source>
         <translation>Iconos usados para marcar elementos en el mapa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="52"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
         <source>Rendering</source>
         <translation>Renderización</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="59"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="63"/>
         <source>Font size</source>
         <translation>Tamaño de la fuente</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="71"/>
         <source>Render sea</source>
         <translation>Renderizado del mar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="73"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Draw background</source>
         <translation>Dibujar fondo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="81"/>
         <source>Routing</source>
         <translation>Ruta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="84"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="88"/>
         <source>Cost factor</source>
         <translation>Factor de coste</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation. Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target.</source>
         <translation>La asignación de la ruta se calcula entre las posibles rutas que cumplen con la limitación del coste. El factor de coste es un componente del límite de coste proporcional a la distancia geodésica entre el origen de la ruta y el destino.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="95"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Cost distance, km</source>
         <translation>Distancia de coste, km</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="96"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation. Cost distance is an offset of a cost limit.</source>
         <translation>La asignación de la ruta se calcula entre las posibles rutas que cumplen con la limitación del coste. La distancia de coste es una compensación del limite de coste.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="103"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="107"/>
         <source>Advanced rendering settings</source>
         <translation>Ajustes avanzados del renderizado</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="110"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="114"/>
         <source>Loaded area factor</source>
         <translation>Factor del área cargada</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="111"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
         <translation>Al aumentar el tamaño del área usado para cargar los datos durante el renderizado de un tile, el visualizador puede mejorar el renderizado de etiquetas al tener en cuenta los datos de los tiles colindantes. El valor de factor 1.0 corresponde a los datos de carga originados únicamente para el tile renderizado. Un valor alto del factor disminuiría la velocidad de renderizado y aumentaría la RAM del servidor. Debido al impacto sobre la memoria RAM, dependiendo del tamaño del tile, factores tan pequeños como 2 pueden conducir a llenar la memoria RAM del dispositivo.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>Cutoff zoom level</source>
         <translation>Nivel mínimo de zoom</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="125"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="129"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
         <translation>En el nivel de zoom especificado, el algoritmo de renderizado del mapa detendrá la comprobación de etiquetas en los tiles colindantes. Normalmente se utiliza 14 como nivel mínimo de zoom. Con un valor más alto se podría conseguir un renderizado de etiquetas más preciso con niveles mayores de zoom. Ten en cuenta que el renderizado de etiquetas podría ralentizar considerablemente el renderizado de mapas.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="138"/>
         <source>Miscellaneous</source>
         <translation>Otros</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="141"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="145"/>
         <source>Log info messages</source>
         <translation>Registro de mensajes info</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="142"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="146"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always</source>
         <translation>Cuando está desactivado, los mensajes INFO no se registrarán en Eventos. Únicamente se mostrarán los mensajes de carga de bases de datos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="149"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="153"/>
         <source>Events log size</source>
         <translation>Tamaño del registro de Eventos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="154"/>
         <source>Number of events shown in the main page</source>
         <translation>Número de eventos mostrados en la página principal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="162"/>
         <source>Log messages into session log file</source>
         <translation>Mensajes de registro dentro del fichero de registro de sesión</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="163"/>
         <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Cuando está activado, los mensajes se registran en un archivo de registro de sesión. El archivo de registro está en el directorio .cache/harbour-osmscout-server. Utiliza esta configuración sólo para fines de depuración. Con esta opción activada, los mensajes de información serán registrados y mostrados en eventos independientemente de los ajustes anteriores. Esto te permite activar temporalmente el registro completo y desactivarlo cuando el archivo de registro de sesión requerido se haya creado.</translation>
     </message>
@@ -663,22 +672,22 @@
         <translation>Base de datos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="69"/>
+        <location filename="../qml/pages/StartPage.qml" line="93"/>
         <source>Status</source>
         <translation>Estado</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="83"/>
+        <location filename="../qml/pages/StartPage.qml" line="107"/>
         <source>Jobs in a queue</source>
         <translation>Trabajos en cola</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="84"/>
+        <location filename="../qml/pages/StartPage.qml" line="108"/>
         <source>Idle</source>
         <translation>Inactivo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="98"/>
+        <location filename="../qml/pages/StartPage.qml" line="122"/>
         <source>Events</source>
         <translation>Eventos</translation>
     </message>
