@@ -40,7 +40,7 @@ void AppSettings::initDefaults()
 #endif
 
     CHECK(OSM_SETTINGS "style", DATA_PREFIX "stylesheets/standard.oss");
-    CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/28x28/standard/");
+    CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/28x28/standard");
     CHECK(OSM_SETTINGS "fontSize", 5.0);
     CHECK(OSM_SETTINGS "renderSea", 1);
     CHECK(OSM_SETTINGS "drawBackground", 1);
@@ -76,6 +76,16 @@ void AppSettings::initDefaults()
     CHECK(ROUTING_SPEED_SETTINGS "Bicycle", 20);
     CHECK(ROUTING_SPEED_SETTINGS "Foot", 5);
     CHECK(ROUTING_SPEED_SETTINGS "Car", 160);
+
+    // Fix icons dir setting if coming from earlier versions.
+    QString icons = valueString(OSM_SETTINGS "icons");
+    if (icons.size() > 1 && icons.at(icons.size()-1) == '/')
+    {
+        qDebug() << "Looks like icons path has trailing /: " << icons;
+        icons.chop(1);
+        qDebug() << "New icons path: " << icons;
+        setValue(OSM_SETTINGS "icons", icons);
+    }
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
