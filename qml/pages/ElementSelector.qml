@@ -86,41 +86,6 @@ Column {
         onClicked: select()
     }
 
-//    Label {
-//        id: textInput
-//        text: ""
-//        x: Theme.horizontalPageMargin
-//        width: parent.width-2*x
-
-//        Component.onCompleted: {
-//            parent.value = settings.valueString(parent.key)
-//            setPath(parent.value)
-//        }
-//        MouseArea {
-//            anchors.fill: parent
-//            acceptedButtons: Qt.LeftButton | Qt.RightButton
-//            onClicked: {
-//                select()
-//            }
-//        }
-//    }
-
-//    Label {
-//        id: fullPath
-//        text: ""
-//        x: Theme.horizontalPageMargin
-//        width: parent.width-2*x
-//        font.pixelSize: Theme.fontSizeTiny
-//        truncationMode: TruncationMode.Fade
-//        MouseArea {
-//            anchors.fill: parent
-//            acceptedButtons: Qt.LeftButton | Qt.RightButton
-//            onClicked: {
-//                select()
-//            }
-//        }
-//    }
-
     Label {
         id: secLabel
         text: parent.secondaryLabel

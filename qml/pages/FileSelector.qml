@@ -9,7 +9,7 @@ import harbour.osmscout.server.FileManager 1.0
 
 Page {
     id: page
-    allowedOrientations: Orientation.Portrait
+    allowedOrientations : Orientation.All
 
     property alias path: fileModel.path
     property string homePath
@@ -191,5 +191,10 @@ Page {
             text: qsTr("Empty directory")
         }
         VerticalScrollDecorator {}
+    }
+
+    Component.onCompleted: {
+        if (directory && fileModel.hasFile(directory_file))
+            fileModel.path = fileModel.appendPath("..")
     }
 }
