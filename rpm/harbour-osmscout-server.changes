@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Dec 7 2016 rinigus <rinigus.git@gmail.com> 0.5.0-1
+- Added file and directory selection dialog
+
 * Tue Nov 29 2016 rinigus <rinigus.git@gmail.com> 0.4.1-1
 - Updated spanish translation
 
