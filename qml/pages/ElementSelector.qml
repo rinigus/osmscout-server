@@ -46,17 +46,16 @@ Column {
                        })
     }
 
-    SectionHeader {
-        text: parent.mainLabel
-        font.pixelSize: Theme.fontSizeSmall
-    }
+//    SectionHeader {
+//        text: parent.mainLabel
+//        font.pixelSize: Theme.fontSizeSmall
+//    }
 
     ListItem {
         id: listItem
 
         Column {
             width: parent.width
-            height: textInput.height + fullPath.height + Theme.paddingSmall
             spacing: Theme.paddingSmall
 
             Label {
@@ -84,6 +83,15 @@ Column {
         }
 
         onClicked: select()
+    }
+
+    Label {
+        text: parent.mainLabel
+        x: Theme.horizontalPageMargin
+        width: parent.width-2*x
+        wrapMode: Text.WordWrap
+        font.pixelSize: Theme.fontSizeMedium
+        color: Theme.highlightColor
     }
 
     Label {
