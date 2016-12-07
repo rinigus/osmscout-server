@@ -22,18 +22,53 @@ Dialog {
                 title: qsTr("Settings")
             }
 
-            SectionHeader {
-                text: qsTr("Map and style")
-                font.pixelSize: Theme.fontSizeMedium
-            }
-
             ElementSelector {
                 id: eMap
                 key: settingsOsmPrefix + "map"
-                mainLabel: qsTr("Folder containing Maps")
+                mainLabel: qsTr("Folder containing maps")
                 secondaryLabel: qsTr("This folder should contain maps imported by libosmscout Import utility")
                 directory: true
                 directory_file: "types.dat"
+            }
+
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                ComboBox {
+                    id: unitsBox
+                    label: qsTr("Units")
+                    menu: ContextMenu {
+                        MenuItem { text: qsTr("Metric") }
+                        MenuItem { text: qsTr("Imperial") }
+                    }
+                    Component.onCompleted: {
+                        unitsBox.currentIndex = settings.unitIndex();
+                    }
+                }
+                Label {
+                    text: qsTr("Units used in the server graphical user interface only. The units will change only after you apply the settings.")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
+
+            SectionHeader {
+                text: qsTr("Rendering")
+                font.pixelSize: Theme.fontSizeMedium
+            }
+
+            ElementEntry {
+                id: eFontSize
+                key: settingsOsmPrefix + "fontSize"
+                mainLabel: qsTr("Font size")
+                validator: DoubleValidator { bottom: 0; decimals: 1; }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
 
             ElementSelector {
@@ -50,19 +85,6 @@ Dialog {
                 secondaryLabel: qsTr("Icons used to mark features on the map")
                 directory: true
                 directory_file: "parking.png"
-            }
-
-            SectionHeader {
-                text: qsTr("Rendering")
-                font.pixelSize: Theme.fontSizeMedium
-            }
-
-            ElementEntry {
-                id: eFontSize
-                key: settingsOsmPrefix + "fontSize"
-                mainLabel: qsTr("Font size")
-                validator: DoubleValidator { bottom: 0; decimals: 1; }
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
 
             ElementSwitch {
@@ -186,6 +208,9 @@ Dialog {
         eTileBordersZoomCutoff.apply()
         eRoutingCostFactor.apply()
         eRoutingCostDistance.apply()
+
+        /// units are done by combo box, have to apply manually
+        settings.setValue(settingsOsmPrefix + "units", unitsBox.currentIndex)
     }
 }
 

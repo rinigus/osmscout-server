@@ -31,6 +31,8 @@ void AppSettings::initDefaults()
     //CHECK("maxThreads", QThread::idealThreadCount() + 2);
     endGroup();
 
+    CHECK(OSM_SETTINGS "units", 0);
+
     // defaults for libosmscout
 #ifdef IS_SAILFISH_OS
     QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
@@ -127,3 +129,28 @@ QString AppSettings::valueString(const QString &key)
     return value(key, QString()).toString();
 }
 
+///////////////////////////////////////////////////////
+/// NB! Units have to be in sync here with the QML Settings
+///////////////////////////////////////////////////////
+int AppSettings::unitIndex() const
+{
+    return value(OSM_SETTINGS "units", 0).toInt();
+}
+
+QString AppSettings::unitName(bool speed) const
+{
+    int i = unitIndex();
+
+    if (i==1) return (speed ? tr("mph") : tr("mi."));
+
+    return (speed ? tr("km/h") : tr("km")); /// default
+}
+
+double AppSettings::unitFactor() const
+{
+    int i = unitIndex();
+
+    if (i==1) return 1.0 / 1.609344;
+
+    return 1.0; /// default
+}
