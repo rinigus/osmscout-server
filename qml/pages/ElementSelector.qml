@@ -51,6 +51,15 @@ Column {
 //        font.pixelSize: Theme.fontSizeSmall
 //    }
 
+    Label {
+        text: parent.mainLabel
+        x: Theme.horizontalPageMargin
+        width: parent.width-2*x
+        wrapMode: Text.WordWrap
+        font.pixelSize: Theme.fontSizeMedium
+        color: Theme.highlightColor
+    }
+
     ListItem {
         id: listItem
 
@@ -86,15 +95,6 @@ Column {
     }
 
     Label {
-        text: parent.mainLabel
-        x: Theme.horizontalPageMargin
-        width: parent.width-2*x
-        wrapMode: Text.WordWrap
-        font.pixelSize: Theme.fontSizeMedium
-        color: Theme.highlightColor
-    }
-
-    Label {
         id: secLabel
         text: parent.secondaryLabel
         x: Theme.horizontalPageMargin
@@ -104,6 +104,12 @@ Column {
         color: Theme.highlightColor
 
         Component.onCompleted: { visible = (parent.secondaryLabel.length > 0) }
+    }
+
+    Rectangle {
+        height: Theme.paddingMedium
+        width: parent.width
+        color: "transparent"
     }
 }
 

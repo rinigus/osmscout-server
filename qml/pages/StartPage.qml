@@ -38,7 +38,7 @@ Page {
             }
 
             SectionHeader {
-                text: qsTr("Database")
+                text: qsTr("Map")
                 font.pixelSize: Theme.fontSizeLarge
             }
 

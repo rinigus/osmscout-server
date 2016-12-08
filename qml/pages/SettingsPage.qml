@@ -25,8 +25,8 @@ Dialog {
             ElementSelector {
                 id: eMap
                 key: settingsOsmPrefix + "map"
-                mainLabel: qsTr("Folder containing maps")
-                secondaryLabel: qsTr("This folder should contain maps imported by libosmscout Import utility")
+                mainLabel: qsTr("Map")
+                secondaryLabel: qsTr("Location of the folder with a map imported by libosmscout Import utility")
                 directory: true
                 directory_file: "types.dat"
             }
@@ -48,7 +48,7 @@ Dialog {
                     }
                 }
                 Label {
-                    text: qsTr("Units used in the server graphical user interface only. The units will change only after you apply the settings.")
+                    text: qsTr("Units used in the graphical user interface of the server. The units will change only after you apply the settings.")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -74,14 +74,14 @@ Dialog {
             ElementSelector {
                 id: eStyle
                 key: settingsOsmPrefix + "style"
-                mainLabel: qsTr("Style sheet")
+                mainLabel: qsTr("Style Sheet")
                 secondaryLabel: qsTr("Style sheet used to render the map tiles")
             }
 
             ElementSelector {
                 id: eIcons
                 key: settingsOsmPrefix + "icons"
-                mainLabel: qsTr("Folder with icons")
+                mainLabel: qsTr("Icons")
                 secondaryLabel: qsTr("Icons used to mark features on the map")
                 directory: true
                 directory_file: "parking.png"
@@ -104,13 +104,21 @@ Dialog {
                 font.pixelSize: Theme.fontSizeMedium
             }
 
+            Label {
+                text: qsTr("Routing is calculated among the possible routes that comply with the cost limitation")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
             ElementEntry {
                 id: eRoutingCostFactor
                 key: settingsOsmPrefix + "routingCostLimitFactor"
                 mainLabel: qsTr("Cost factor")
-                secondaryLabel: qsTr("Routing is calculated among the possible routes that comply with the cost limitation. " +
-                                     "Cost factor is a component of a cost limit that is proportional to the geodesic distance " +
-                                     "between the route origin and the target.")
+                secondaryLabel: qsTr("Cost factor is a component of a cost limit that is proportional to the geodesic distance " +
+                                     "between the route origin and the target")
                 validator: DoubleValidator { bottom: 1.0; decimals: 1; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -119,8 +127,7 @@ Dialog {
                 id: eRoutingCostDistance
                 key: settingsOsmPrefix + "routingCostLimitDistance"
                 mainLabel: qsTr("Cost distance, km")
-                secondaryLabel: qsTr("Routing is calculated among the possible routes that comply with the cost limitation. " +
-                                     "Cost distance is an offset of a cost limit.")
+                secondaryLabel: qsTr("Cost distance is an offset of a cost limit")
                 validator: DoubleValidator { bottom: 1.0; decimals: 0; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
