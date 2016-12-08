@@ -2,9 +2,13 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Column {
+    id: main
+
     property string key
     property string mainLabel
     property string secondaryLabel
+    property double displayFactor: 1.0
+    property bool numericFactor: false
 
     property alias value: textInput.text
     property alias validator: textInput.validator
@@ -17,7 +21,13 @@ Column {
     function apply()
     {
         if (textInput.acceptableInput)
-            settings.setValue(key, value)
+        {
+            var rep = value
+            if (main.numericFactor)
+                rep = parseFloat(value) / main.displayFactor
+
+            settings.setValue(key, rep)
+        }
     }
 
     TextField {
@@ -29,6 +39,8 @@ Column {
 
         Component.onCompleted: {
             text = settings.valueString(parent.key)
+            if (main.numericFactor)
+                text = parseFloat(text) * main.displayFactor
         }
 
         EnterKey.enabled: text.length > 0

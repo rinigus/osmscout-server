@@ -126,10 +126,12 @@ Dialog {
             ElementEntry {
                 id: eRoutingCostDistance
                 key: settingsOsmPrefix + "routingCostLimitDistance"
-                mainLabel: qsTr("Cost distance, km")
+                mainLabel: qsTr("Cost distance, ") + settings.unitName(false)
                 secondaryLabel: qsTr("Cost distance is an offset of a cost limit")
                 validator: DoubleValidator { bottom: 1.0; decimals: 0; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
+                numericFactor: true
+                displayFactor: settings.unitFactor()
             }
 
             SectionHeader {
