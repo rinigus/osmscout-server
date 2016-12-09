@@ -126,12 +126,10 @@ Dialog {
             ElementEntry {
                 id: eRoutingCostDistance
                 key: settingsOsmPrefix + "routingCostLimitDistance"
-                mainLabel: qsTr("Cost distance, ") + settings.unitName(false)
+                mainLabel: qsTr("Cost distance")
                 secondaryLabel: qsTr("Cost distance is an offset of a cost limit")
-                validator: DoubleValidator { bottom: 1.0; decimals: 0; }
+                validator: DoubleValidator { bottom: 1.0; decimals: 0 }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
-                numericFactor: true
-                displayFactor: settings.unitFactor()
             }
 
             SectionHeader {
@@ -219,6 +217,7 @@ Dialog {
         eRoutingCostDistance.apply()
 
         /// units are done by combo box, have to apply manually
+        /// units are changed the last
         settings.setValue(settingsOsmPrefix + "units", unitsBox.currentIndex)
     }
 }

@@ -7,8 +7,8 @@ Column {
     property string key
     property string mainLabel
     property string secondaryLabel
+    property bool hasUnits: false
     property double displayFactor: 1.0
-    property bool numericFactor: false
 
     property alias value: textInput.text
     property alias validator: textInput.validator
@@ -23,7 +23,7 @@ Column {
         if (textInput.acceptableInput)
         {
             var rep = value
-            if (main.numericFactor)
+            if (main.hasUnits)
                 rep = parseFloat(value) / main.displayFactor
 
             settings.setValue(key, rep)
@@ -38,9 +38,18 @@ Column {
         placeholderText: parent.mainLabel
 
         Component.onCompleted: {
-            text = settings.valueString(parent.key)
-            if (main.numericFactor)
-                text = parseFloat(text) * main.displayFactor
+            text = settings.valueString(main.key)
+            main.hasUnits = settings.hasUnits(main.key)
+            if (main.hasUnits)
+            {
+                main.displayFactor = settings.unitFactor();
+                validator.decimals = settings.unitDisplayDecimals()
+
+                var v = parseFloat(text) * main.displayFactor
+                text = v.toFixed(settings.unitDisplayDecimals())
+
+                label = label + ", " + settings.unitName(main.key)
+            }
         }
 
         EnterKey.enabled: text.length > 0

@@ -92,6 +92,8 @@ void AppSettings::initDefaults()
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
 {
+    qDebug() << "Setting: " << key << " " << value;
+
     QSettings::setValue(key, value);
 
     if (key.contains(OSM_SETTINGS) || key.contains(ROUTING_SPEED_SETTINGS))
@@ -137,6 +139,23 @@ int AppSettings::unitIndex() const
     return value(OSM_SETTINGS "units", 0).toInt();
 }
 
+int AppSettings::unitDisplayDecimals() const
+{
+    int i = unitIndex();
+
+    if (i==1) return 1;
+
+    return 0; /// default
+}
+
+bool AppSettings::hasUnits(const QString &key) const
+{
+    if (key == OSM_SETTINGS "routingCostLimitDistance" ||
+            key.indexOf(ROUTING_SPEED_SETTINGS) == 0)
+        return true;
+    return false;
+}
+
 QString AppSettings::unitName(bool speed) const
 {
     int i = unitIndex();
@@ -144,6 +163,17 @@ QString AppSettings::unitName(bool speed) const
     if (i==1) return (speed ? tr("mph") : tr("mi."));
 
     return (speed ? tr("km/h") : tr("km")); /// default
+}
+
+QString AppSettings::unitName(const QString &key) const
+{
+    if (key == OSM_SETTINGS "routingCostLimitDistance")
+        return unitName(false);
+
+    if (key.indexOf(ROUTING_SPEED_SETTINGS) == 0)
+        return unitName(true);
+
+    return QString();
 }
 
 double AppSettings::unitFactor() const
