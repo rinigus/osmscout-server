@@ -92,8 +92,6 @@ void AppSettings::initDefaults()
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
 {
-    qDebug() << "Setting: " << key << " " << value;
-
     QSettings::setValue(key, value);
 
     if (key.contains(OSM_SETTINGS) || key.contains(ROUTING_SPEED_SETTINGS))

@@ -27,22 +27,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="163"/>
+        <location filename="../src/appsettings.cpp" line="161"/>
         <source>mph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="163"/>
+        <location filename="../src/appsettings.cpp" line="161"/>
         <source>mi.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="165"/>
+        <location filename="../src/appsettings.cpp" line="163"/>
         <source>km/h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="165"/>
+        <location filename="../src/appsettings.cpp" line="163"/>
         <source>km</source>
         <translation type="unfinished"></translation>
     </message>
