@@ -53,9 +53,11 @@ Server releases, the following import tools are available:
 
 OSM Scout Server | libosmscout Sailfish
 --- | ---
+0.5.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161207
 0.4.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161128.2
 0.3.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
 
+Note that the maps format is not changing between all the versions. It will be specified in OSM Scout Server and libosmscout release changelog if the change in the format or significant import bug has been fixed. For example, you could use the server 0.5.x releases with the maps imported by the importer corresponding to 0.3.0.  
 
 ### Compiling Import tool
 
