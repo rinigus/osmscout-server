@@ -22,31 +22,41 @@ Dialog {
                 title: qsTr("Settings")
             }
 
-            SectionHeader {
-                text: qsTr("Map and style")
-                font.pixelSize: Theme.fontSizeMedium
-            }
-
-            ElementEntry {
+            ElementSelector {
                 id: eMap
                 key: settingsOsmPrefix + "map"
-                mainLabel: qsTr("Folder containing Maps")
-                secondaryLabel: qsTr("This folder should contain maps imported by libosmscout Import utility")
+                mainLabel: qsTr("Map")
+                secondaryLabel: qsTr("Location of the folder with a map imported by libosmscout Import utility")
+                directory: true
+                directory_file: "types.dat"
             }
 
-            ElementEntry {
-                id: eStyle
-                key: settingsOsmPrefix + "style"
-                mainLabel: qsTr("Style sheet")
-                secondaryLabel: qsTr("Style sheet used to render the map tiles")
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                ComboBox {
+                    id: unitsBox
+                    label: qsTr("Units")
+                    menu: ContextMenu {
+                        MenuItem { text: qsTr("Metric") }
+                        MenuItem { text: qsTr("Imperial") }
+                    }
+                    Component.onCompleted: {
+                        unitsBox.currentIndex = settings.unitIndex();
+                    }
+                }
+                Label {
+                    text: qsTr("Units used in the graphical user interface of the server. The units will change only after you apply the settings.")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
             }
 
-            ElementEntry {
-                id: eIcons
-                key: settingsOsmPrefix + "icons"
-                mainLabel: qsTr("Folder with icons")
-                secondaryLabel: qsTr("Icons used to mark features on the map")
-            }
 
             SectionHeader {
                 text: qsTr("Rendering")
@@ -59,6 +69,22 @@ Dialog {
                 mainLabel: qsTr("Font size")
                 validator: DoubleValidator { bottom: 0; decimals: 1; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
+            }
+
+            ElementSelector {
+                id: eStyle
+                key: settingsOsmPrefix + "style"
+                mainLabel: qsTr("Style Sheet")
+                secondaryLabel: qsTr("Style sheet used to render the map tiles")
+            }
+
+            ElementSelector {
+                id: eIcons
+                key: settingsOsmPrefix + "icons"
+                mainLabel: qsTr("Icons")
+                secondaryLabel: qsTr("Icons used to mark features on the map")
+                directory: true
+                directory_file: "parking.png"
             }
 
             ElementSwitch {
@@ -78,13 +104,21 @@ Dialog {
                 font.pixelSize: Theme.fontSizeMedium
             }
 
+            Label {
+                text: qsTr("Routing is calculated among the possible routes that comply with the cost limitation")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
             ElementEntry {
                 id: eRoutingCostFactor
                 key: settingsOsmPrefix + "routingCostLimitFactor"
                 mainLabel: qsTr("Cost factor")
-                secondaryLabel: qsTr("Routing is calculated among the possible routes that comply with the cost limitation. " +
-                                     "Cost factor is a component of a cost limit that is proportional to the geodesic distance " +
-                                     "between the route origin and the target.")
+                secondaryLabel: qsTr("Cost factor is a component of a cost limit that is proportional to the geodesic distance " +
+                                     "between the route origin and the target")
                 validator: DoubleValidator { bottom: 1.0; decimals: 1; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -92,10 +126,9 @@ Dialog {
             ElementEntry {
                 id: eRoutingCostDistance
                 key: settingsOsmPrefix + "routingCostLimitDistance"
-                mainLabel: qsTr("Cost distance, km")
-                secondaryLabel: qsTr("Routing is calculated among the possible routes that comply with the cost limitation. " +
-                                     "Cost distance is an offset of a cost limit.")
-                validator: DoubleValidator { bottom: 1.0; decimals: 0; }
+                mainLabel: qsTr("Cost distance")
+                secondaryLabel: qsTr("Cost distance is an offset of a cost limit")
+                validator: DoubleValidator { bottom: 1.0; decimals: 0 }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
 
@@ -182,6 +215,10 @@ Dialog {
         eTileBordersZoomCutoff.apply()
         eRoutingCostFactor.apply()
         eRoutingCostDistance.apply()
+
+        /// units are done by combo box, have to apply manually
+        /// units are changed the last
+        settings.setValue(settingsOsmPrefix + "units", unitsBox.currentIndex)
     }
 }
 

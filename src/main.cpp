@@ -24,9 +24,11 @@
 #ifdef IS_SAILFISH_OS
 #include <sailfishapp.h>
 #include <QtQuick>
+#include <QtQml>
 #define APP_PREFIX "harbour-"
 
 #include "rollinglogger.h"
+#include "filemodel.h"
 #endif // of IS_SAILFISH_OS
 
 // HTTP server
@@ -63,6 +65,7 @@ int main(int argc, char *argv[])
     RollingLogger rolling_logger;
 
     QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+    qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
 #endif
 
     app->setApplicationName(APP_PREFIX "osmscout-server");

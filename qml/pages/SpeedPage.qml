@@ -30,7 +30,7 @@ Dialog {
             ElementEntry {
                 id:  libosmscout_speed_Car
                 key: settingsSpeedPrefix + "Car"
-                mainLabel: qsTr("Maximal car speed, km/h")
+                mainLabel: qsTr("Maximal car speed")
                 secondaryLabel: qsTr("This is a speed that is assumed to be never exceeded during calculations of the route")
                 validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -39,7 +39,7 @@ Dialog {
             ElementEntry {
                 id:  libosmscout_speed_Bicycle
                 key: settingsSpeedPrefix + "Bicycle"
-                mainLabel: qsTr("Expected speed of a bicycle, km/h")
+                mainLabel: qsTr("Expected speed of a bicycle")
                 validator: DoubleValidator { bottom: 0.1; top: 1.079e+9; decimals: 0; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -47,7 +47,7 @@ Dialog {
             ElementEntry {
                 id:  libosmscout_speed_Foot
                 key: settingsSpeedPrefix + "Foot"
-                mainLabel: qsTr("Expected speed while walking, km/h")
+                mainLabel: qsTr("Expected speed while walking")
                 validator: DoubleValidator { bottom: 0.1; top: 1.079e+9; decimals: 0; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -60,7 +60,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_living_street
              key:  settingsSpeedPrefix +  "highway_living_street"
-             mainLabel: qsTr( "living street, km/h" )
+             mainLabel: qsTr( "living street" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -68,7 +68,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_motorway
              key:  settingsSpeedPrefix +  "highway_motorway"
-             mainLabel: qsTr( "motorway, km/h" )
+             mainLabel: qsTr( "motorway" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -76,7 +76,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_motorway_junction
              key:  settingsSpeedPrefix +  "highway_motorway_junction"
-             mainLabel: qsTr( "motorway junction, km/h" )
+             mainLabel: qsTr( "motorway junction" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -84,7 +84,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_motorway_link
              key:  settingsSpeedPrefix +  "highway_motorway_link"
-             mainLabel: qsTr( "motorway link, km/h" )
+             mainLabel: qsTr( "motorway link" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -92,7 +92,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_motorway_primary
              key:  settingsSpeedPrefix +  "highway_motorway_primary"
-             mainLabel: qsTr( "motorway primary, km/h" )
+             mainLabel: qsTr( "motorway primary" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -100,7 +100,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_motorway_trunk
              key:  settingsSpeedPrefix +  "highway_motorway_trunk"
-             mainLabel: qsTr( "motorway trunk, km/h" )
+             mainLabel: qsTr( "motorway trunk" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -108,7 +108,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_primary
              key:  settingsSpeedPrefix +  "highway_primary"
-             mainLabel: qsTr( "primary, km/h" )
+             mainLabel: qsTr( "primary" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -116,7 +116,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_primary_link
              key:  settingsSpeedPrefix +  "highway_primary_link"
-             mainLabel: qsTr( "primary link, km/h" )
+             mainLabel: qsTr( "primary link" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -124,7 +124,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_residential
              key:  settingsSpeedPrefix +  "highway_residential"
-             mainLabel: qsTr( "residential, km/h" )
+             mainLabel: qsTr( "residential" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -132,7 +132,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_road
              key:  settingsSpeedPrefix +  "highway_road"
-             mainLabel: qsTr( "road, km/h" )
+             mainLabel: qsTr( "road" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -140,7 +140,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_roundabout
              key:  settingsSpeedPrefix +  "highway_roundabout"
-             mainLabel: qsTr( "roundabout, km/h" )
+             mainLabel: qsTr( "roundabout" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -148,7 +148,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_secondary
              key:  settingsSpeedPrefix +  "highway_secondary"
-             mainLabel: qsTr( "secondary, km/h" )
+             mainLabel: qsTr( "secondary" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -156,7 +156,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_secondary_link
              key:  settingsSpeedPrefix +  "highway_secondary_link"
-             mainLabel: qsTr( "secondary link, km/h" )
+             mainLabel: qsTr( "secondary link" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -164,7 +164,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_service
              key:  settingsSpeedPrefix +  "highway_service"
-             mainLabel: qsTr( "service, km/h" )
+             mainLabel: qsTr( "service" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -172,7 +172,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_tertiary
              key:  settingsSpeedPrefix +  "highway_tertiary"
-             mainLabel: qsTr( "tertiary, km/h" )
+             mainLabel: qsTr( "tertiary" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -180,7 +180,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_tertiary_link
              key:  settingsSpeedPrefix +  "highway_tertiary_link"
-             mainLabel: qsTr( "tertiary link, km/h" )
+             mainLabel: qsTr( "tertiary link" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -188,7 +188,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_trunk
              key:  settingsSpeedPrefix +  "highway_trunk"
-             mainLabel: qsTr( "trunk, km/h" )
+             mainLabel: qsTr( "trunk" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -196,7 +196,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_trunk_link
              key:  settingsSpeedPrefix +  "highway_trunk_link"
-             mainLabel: qsTr( "trunk link, km/h" )
+             mainLabel: qsTr( "trunk link" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
@@ -204,7 +204,7 @@ Dialog {
             ElementEntry {
              id:  libosmscout_speed_highway_unclassified
              key:  settingsSpeedPrefix +  "highway_unclassified"
-             mainLabel: qsTr( "unclassified, km/h" )
+             mainLabel: qsTr( "unclassified" )
              validator: DoubleValidator { bottom: 1; top: 1.079e+9; decimals: 0; }
              inputMethodHints: Qt.ImhFormattedNumbersOnly
             }

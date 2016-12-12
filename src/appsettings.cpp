@@ -31,6 +31,8 @@ void AppSettings::initDefaults()
     //CHECK("maxThreads", QThread::idealThreadCount() + 2);
     endGroup();
 
+    CHECK(OSM_SETTINGS "units", 0);
+
     // defaults for libosmscout
 #ifdef IS_SAILFISH_OS
     QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
@@ -40,7 +42,7 @@ void AppSettings::initDefaults()
 #endif
 
     CHECK(OSM_SETTINGS "style", DATA_PREFIX "stylesheets/standard.oss");
-    CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/28x28/standard/");
+    CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/28x28/standard");
     CHECK(OSM_SETTINGS "fontSize", 5.0);
     CHECK(OSM_SETTINGS "renderSea", 1);
     CHECK(OSM_SETTINGS "drawBackground", 1);
@@ -76,6 +78,16 @@ void AppSettings::initDefaults()
     CHECK(ROUTING_SPEED_SETTINGS "Bicycle", 20);
     CHECK(ROUTING_SPEED_SETTINGS "Foot", 5);
     CHECK(ROUTING_SPEED_SETTINGS "Car", 160);
+
+    // Fix icons dir setting if coming from earlier versions.
+    QString icons = valueString(OSM_SETTINGS "icons");
+    if (icons.size() > 1 && icons.at(icons.size()-1) == '/')
+    {
+        qDebug() << "Looks like icons path has trailing /: " << icons;
+        icons.chop(1);
+        qDebug() << "New icons path: " << icons;
+        setValue(OSM_SETTINGS "icons", icons);
+    }
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -117,3 +129,56 @@ QString AppSettings::valueString(const QString &key)
     return value(key, QString()).toString();
 }
 
+///////////////////////////////////////////////////////
+/// NB! Units have to be in sync here with the QML Settings
+///////////////////////////////////////////////////////
+int AppSettings::unitIndex() const
+{
+    return value(OSM_SETTINGS "units", 0).toInt();
+}
+
+int AppSettings::unitDisplayDecimals() const
+{
+    int i = unitIndex();
+
+    if (i==1) return 1;
+
+    return 0; /// default
+}
+
+bool AppSettings::hasUnits(const QString &key) const
+{
+    if (key == OSM_SETTINGS "routingCostLimitDistance" ||
+            key.indexOf(ROUTING_SPEED_SETTINGS) == 0)
+        return true;
+    return false;
+}
+
+QString AppSettings::unitName(bool speed) const
+{
+    int i = unitIndex();
+
+    if (i==1) return (speed ? tr("mph") : tr("mi."));
+
+    return (speed ? tr("km/h") : tr("km")); /// default
+}
+
+QString AppSettings::unitName(const QString &key) const
+{
+    if (key == OSM_SETTINGS "routingCostLimitDistance")
+        return unitName(false);
+
+    if (key.indexOf(ROUTING_SPEED_SETTINGS) == 0)
+        return unitName(true);
+
+    return QString();
+}
+
+double AppSettings::unitFactor() const
+{
+    int i = unitIndex();
+
+    if (i==1) return 1.0 / 1.609344;
+
+    return 1.0; /// default
+}

@@ -62,6 +62,7 @@ OTHER_FILES += qml/osmscout-server.qml \
     translations/*.ts
 
 include(src/uhttp/uhttp.pri)
+include(src/fileselector/fileselector.pri)
 
 HEADERS += \
     src/dbmaster.h \

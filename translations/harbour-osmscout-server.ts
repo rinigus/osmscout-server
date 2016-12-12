@@ -25,6 +25,29 @@
     </message>
 </context>
 <context>
+    <name>AppSettings</name>
+    <message>
+        <location filename="../src/appsettings.cpp" line="161"/>
+        <source>mph</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="161"/>
+        <source>mi.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="163"/>
+        <source>km/h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="163"/>
+        <source>km</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="19"/>
@@ -95,12 +118,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="143"/>
-        <source>No Route found!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/dbmaster_route.cpp" line="153"/>
+        <location filename="../src/dbmaster_route.cpp" line="146"/>
         <source>Error during route conversion to points</source>
         <translation type="unfinished"></translation>
     </message>
@@ -137,6 +155,20 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="668"/>
         <source>Database is not open, cannot list POI types</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FileSelector</name>
+    <message>
+        <location filename="../qml/pages/FileSelector.qml" line="163"/>
+        <source>%1, %2</source>
+        <extracomment>Shows size and modification date, e.g. &quot;15.5MB, 02/03/2016&quot;</extracomment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FileSelector.qml" line="191"/>
+        <source>Empty directory</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -362,142 +394,162 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="26"/>
-        <source>Map and style</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="28"/>
+        <source>Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="33"/>
-        <source>Folder containing Maps</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="34"/>
-        <source>This folder should contain maps imported by libosmscout Import utility</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="40"/>
-        <source>Style sheet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="41"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="78"/>
         <source>Style sheet used to render the map tiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="47"/>
-        <source>Folder with icons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="48"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
         <source>Icons used to mark features on the map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="52"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="62"/>
         <source>Rendering</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="59"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="29"/>
+        <source>Location of the folder with a map imported by libosmscout Import utility</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="41"/>
+        <source>Units</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="43"/>
+        <source>Metric</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="44"/>
+        <source>Imperial</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="51"/>
+        <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="69"/>
         <source>Font size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="67"/>
-        <source>Render sea</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="73"/>
-        <source>Draw background</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
-        <source>Routing</source>
+        <source>Style Sheet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="84"/>
-        <source>Cost factor</source>
+        <source>Icons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
-        <source>Routing is calculated among the possible routes that comply with the cost limitation. Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target.</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
+        <source>Render sea</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="95"/>
-        <source>Cost distance, km</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="96"/>
-        <source>Routing is calculated among the possible routes that comply with the cost limitation. Cost distance is an offset of a cost limit.</source>
+        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
+        <source>Draw background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="103"/>
+        <source>Routing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="119"/>
+        <source>Cost factor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="108"/>
+        <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="120"/>
+        <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="129"/>
+        <source>Cost distance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="130"/>
+        <source>Cost distance is an offset of a cost limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
         <source>Advanced rendering settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="110"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="143"/>
         <source>Loaded area factor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="111"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="144"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="157"/>
         <source>Cutoff zoom level</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="125"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="167"/>
         <source>Miscellaneous</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="141"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="174"/>
         <source>Log info messages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="142"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="175"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="149"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="182"/>
         <source>Events log size</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="183"/>
         <source>Number of events shown in the main page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="191"/>
         <source>Log messages into session log file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="192"/>
         <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -516,7 +568,112 @@
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="33"/>
-        <source>Maximal car speed, km/h</source>
+        <source>Maximal car speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="42"/>
+        <source>Expected speed of a bicycle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="50"/>
+        <source>Expected speed while walking</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="63"/>
+        <source>living street</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="71"/>
+        <source>motorway</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="79"/>
+        <source>motorway junction</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="87"/>
+        <source>motorway link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="95"/>
+        <source>motorway primary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="103"/>
+        <source>motorway trunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="111"/>
+        <source>primary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="119"/>
+        <source>primary link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="127"/>
+        <source>residential</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="135"/>
+        <source>road</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="143"/>
+        <source>roundabout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="151"/>
+        <source>secondary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="159"/>
+        <source>secondary link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="167"/>
+        <source>service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="175"/>
+        <source>tertiary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="183"/>
+        <source>tertiary link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="191"/>
+        <source>trunk</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="199"/>
+        <source>trunk link</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="207"/>
+        <source>unclassified</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -525,113 +682,8 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="42"/>
-        <source>Expected speed of a bicycle, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="50"/>
-        <source>Expected speed while walking, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SpeedPage.qml" line="56"/>
         <source>Car speed on different roads</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="63"/>
-        <source>living street, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="71"/>
-        <source>motorway, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="79"/>
-        <source>motorway junction, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="87"/>
-        <source>motorway link, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="95"/>
-        <source>motorway primary, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="103"/>
-        <source>motorway trunk, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="111"/>
-        <source>primary, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="119"/>
-        <source>primary link, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="127"/>
-        <source>residential, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="135"/>
-        <source>road, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="143"/>
-        <source>roundabout, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="151"/>
-        <source>secondary, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="159"/>
-        <source>secondary link, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="167"/>
-        <source>service, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="175"/>
-        <source>tertiary, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="183"/>
-        <source>tertiary link, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="191"/>
-        <source>trunk, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="199"/>
-        <source>trunk link, km/h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="207"/>
-        <source>unclassified, km/h</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -659,26 +711,26 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="41"/>
-        <source>Database</source>
+        <source>Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="69"/>
+        <location filename="../qml/pages/StartPage.qml" line="93"/>
         <source>Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="83"/>
+        <location filename="../qml/pages/StartPage.qml" line="107"/>
         <source>Jobs in a queue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="84"/>
+        <location filename="../qml/pages/StartPage.qml" line="108"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="98"/>
+        <location filename="../qml/pages/StartPage.qml" line="122"/>
         <source>Events</source>
         <translation type="unfinished"></translation>
     </message>

@@ -76,7 +76,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
         renderSea = m_render_sea;
         drawBackground = m_draw_background;
         fontSize = m_font_size;
-        paths.push_back(m_icons_dir);
+        paths.push_back(m_icons_dir + "/");
 
         if ( !loadStyle(daylight) )
             return false;
