@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<TS version="2.0" language="es_ES">
 <context>
     <name>AboutPage</name>
     <message>
@@ -29,22 +29,22 @@
     <message>
         <location filename="../src/appsettings.cpp" line="161"/>
         <source>mph</source>
-        <translation type="unfinished"></translation>
+        <translation>mph</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="161"/>
         <source>mi.</source>
-        <translation type="unfinished"></translation>
+        <translation>mi.</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="163"/>
         <source>km/h</source>
-        <translation type="unfinished"></translation>
+        <translation>km/h</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="163"/>
         <source>km</source>
-        <translation type="unfinished"></translation>
+        <translation>km</translation>
     </message>
 </context>
 <context>
@@ -164,12 +164,12 @@
         <location filename="../qml/pages/FileSelector.qml" line="163"/>
         <source>%1, %2</source>
         <extracomment>Shows size and modification date, e.g. &quot;15.5MB, 02/03/2016&quot;</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1, %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="191"/>
         <source>Empty directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio vacío</translation>
     </message>
 </context>
 <context>
@@ -396,7 +396,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="28"/>
         <source>Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="78"/>
@@ -416,27 +416,27 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="29"/>
         <source>Location of the folder with a map imported by libosmscout Import utility</source>
-        <translation type="unfinished"></translation>
+        <translation>Ubicación de la carpeta donde se encuentra el mapa importado con la herramienta &apos;Import&apos; de libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="41"/>
         <source>Units</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema de unidades</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="43"/>
         <source>Metric</source>
-        <translation type="unfinished"></translation>
+        <translation>Métrico</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="44"/>
         <source>Imperial</source>
-        <translation type="unfinished"></translation>
+        <translation>Imperial</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="51"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistema de unidades usado en la interfaz gráfica de usuario del servidor. El sistema de unidades cambiará sólo después de aplicar los ajustes.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="69"/>
@@ -446,12 +446,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Style Sheet</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoja de estilos</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="84"/>
         <source>Icons</source>
-        <translation type="unfinished"></translation>
+        <translation>Iconos</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="93"/>
@@ -712,7 +712,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="41"/>
         <source>Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="93"/>
