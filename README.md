@@ -31,21 +31,41 @@ in server environment when compiled as a console application.
 ## Maps
 
 Maps provided by OpenStreetMaps have to be converted to the format
-used by libosmscout library. See
-http://libosmscout.sourceforge.net/tutorials/Importing/ for
-instructions. At this stage, you would have to compile the library on
-your PC and run the import program, as explained in the linked
-tutorial. Please install MARISA as a dependency to be able to generate
-index files for free-text search of the map data.
+used by libosmscout library. 
 
-While smaller maps lead to faster rendering, if you need to use the
-server to calculate the routes between countries, it maybe
-advantageous to generate a map covering multiple countries. I suggest
-to make a joined map using osmconvert
+The maps are imported from PBF or OSM file formats, as provided by
+OpenStreetMap download servers.  While smaller maps lead to faster
+rendering, if you need to use the server to calculate the routes
+between countries, it maybe advantageous to generate a map covering
+multiple countries. I suggest to make a joined map using osmconvert
 (https://wiki.openstreetmap.org/wiki/Osmconvert) as described in
 https://wiki.openstreetmap.org/wiki/Osmconvert#Parallel_Processing
 
-Finally, to keep minimal number of required map database files, use
+For importing, you could either use pre-compiled released import tool
+or compile the import tool from source.
+
+
+### Using compiled Import tool
+
+Get the Import tool corresponding to the release of libosmscout
+library that is used in your server build. For Sailfish OSM Scout
+Server releases, the following import tools are available:
+
+OSM Scout Server | libosmscout Sailfish
+--- | ---
+0.4.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
+0.3.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
+
+
+### Compiling Import tool
+
+See http://libosmscout.sourceforge.net/tutorials/Importing/ for
+instructions. You would have to compile the library on your PC and run
+the import program, as explained in the linked tutorial. Please
+install MARISA as a dependency to be able to generate index files for
+free-text search of the map data.
+
+To keep minimal number of required map database files, use
 the same options as in following import command example:
 
 ```
