@@ -604,32 +604,32 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="95"/>
         <source>motorway primary</source>
-        <translation>silnice první třídy</translation>
+        <translation>silnice první třídy (zákaz cyklistů)</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
-        <translation>silnice pro motorová vozidla</translation>
+        <translation>silnice pro motorová vozidla  (zákaz cyklistů)</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="111"/>
         <source>primary</source>
-        <translation>mimo obec (primary)</translation>
+        <translation>silnice první třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="119"/>
         <source>primary link</source>
-        <translation>připojovací pruh (primary link)</translation>
+        <translation>připojovací pruh na silnici první třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="127"/>
         <source>residential</source>
-        <translation>v obci (residential)</translation>
+        <translation>v obci</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="135"/>
         <source>road</source>
-        <translation>cesta (road)</translation>
+        <translation>silnice (neznámá klasifikace)</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="143"/>
@@ -639,42 +639,42 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="151"/>
         <source>secondary</source>
-        <translation>vedlejší silnice (secondary)</translation>
+        <translation>silnice 2. třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="159"/>
         <source>secondary link</source>
-        <translation>nájezd na vedlejší silnici (secondary link)</translation>
+        <translation>nájezd na silnici 2. třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="167"/>
         <source>service</source>
-        <translation>příjezdová cesta (service)</translation>
+        <translation>příjezdová cesta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="175"/>
         <source>tertiary</source>
-        <translation>místní (tertiary)</translation>
+        <translation>silnice 3. třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="183"/>
         <source>tertiary link</source>
-        <translation>nájezd na místí cestu (tertiary link)</translation>
+        <translation>nájezd silnici 3. třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="191"/>
         <source>trunk</source>
-        <translation>hlavní silnice (trunk)</translation>
+        <translation>silnice pro motorová vozidla</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="199"/>
         <source>trunk link</source>
-        <translation>nájezd na hlavní silnici (trunk link)</translation>
+        <translation>nájezd na silnici pro motorová vozidla</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="207"/>
         <source>unclassified</source>
-        <translation>neklasifikovaná</translation>
+        <translation>neklasifikovaná silnice</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="34"/>
