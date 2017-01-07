@@ -11,8 +11,9 @@ Page {
                               "<p>Copyright: 2016 <br>rinigus https://github.com/rinigus<br></p>" +
                               "License: LGPL<br><br>" +
                               "<b>Translations:</b><br><br>" +
-                              "Carmen F. B. @carmenfdezb: Spanish<br><br>" +
-                              "<b>Acknowledgments:</b><br><br>" +
+                              "Carmen F. B. @carmenfdezb: Spanish<br>" +
+                              "Lukáš Karas @Karry: Czech<br>" +
+                              "<br><b>Acknowledgments:</b><br><br>" +
                               "libosmscout: http://libosmscout.sourceforge.net/<br>" +
                               "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>" +
                               "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br>"
