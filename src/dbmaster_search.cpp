@@ -126,7 +126,7 @@ void GetObjectNameCoor( const osmscout::DatabaseRef& database,
         if (database->GetWayByOffset(object.GetFileOffset(),
                                      way)) {
             label+=way->GetType()->GetName();
-            way->GetCenter(coordinates);
+            coordinates = way->GetCoord(way->nodes.size()/2);
         }
     }
 
@@ -606,7 +606,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
 
         QMap<QString, QString> curr_result;
 
-        osmscout::GeoCoord coordinates; way->GetCenter(coordinates);
+        osmscout::GeoCoord coordinates = way->GetCoord(way->nodes.size()/2);
 
         curr_result["title"] = J(nameLabelReader.GetLabel((way->GetFeatureValueBuffer())));
         curr_result["type"] = J(way->GetType()->GetName());
