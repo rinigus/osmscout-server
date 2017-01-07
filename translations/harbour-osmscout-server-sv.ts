@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="sv">
+<TS version="2.1" language="sv">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="7"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Servern skall användas ihop med ett klientprogram som kan visa kartor, útföra sökningar och visa markerade rutter. Servern är ett tunt lager som visar funktioner i &lt;i&gt;libosmscout&lt;/i&gt; genom http. Servern kan använda som ersättning för internetbaserade karttjänster.</translation>
+        <translation>Servern skall användas ihop med ett klientprogram som kan visa kartor, genomföra sökningar och visa valda rutter. Servern är ett tunt lager av funktionalitet från &lt;i&gt;libosmscout&lt;/i&gt;, över http. Denna server kan användas som ersättning för karttjänster online.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="35"/>
+        <location filename="../qml/pages/AboutPage.qml" line="37"/>
         <source>About</source>
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="39"/>
+        <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="44"/>
+        <location filename="../qml/pages/AboutPage.qml" line="46"/>
         <source>is a server that provides offline map services</source>
-        <translation>är en server som tillhandahåller karttjänster offline</translation>
+        <translation>är en server som tillhandahåller karttjänster offline.</translation>
     </message>
 </context>
 <context>
@@ -637,7 +637,7 @@
         <location filename="../qml/pages/SpeedPage.qml" line="135"/>
         <source>road</source>
         <translatorcomment>OSM highway=road</translatorcomment>
-        <translation>väg</translation>
+        <translation>gata</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="143"/>
