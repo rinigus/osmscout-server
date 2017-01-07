@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Jan 7 2017 rinigus <rinigus.git@gmail.com> 0.5.2-1
+- Czech translation
+- Way coordinates returned as a search result are on a way
+
 * Mon Dec 12 2016 rinigus <rinigus.git@gmail.com> 0.5.1-1
 - Updated Spanish translation
 
