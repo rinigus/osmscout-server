@@ -9,17 +9,17 @@
         <translation>Server je určen k použití s jinými aplikacemi schopnými zobrazit mapu, vyhledávat místa a zobrazit trasy. Server poskytuje funkčnost knihovny &lt;i&gt;libosmscout&lt;/i&gt; přes http protokol, může tak být použit jako plnohodnotná náhrada za online mapové služby.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="35"/>
+        <location filename="../qml/pages/AboutPage.qml" line="36"/>
         <source>About</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="39"/>
+        <location filename="../qml/pages/AboutPage.qml" line="40"/>
         <source>version</source>
         <translation>verze</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="44"/>
+        <location filename="../qml/pages/AboutPage.qml" line="45"/>
         <source>is a server that provides offline map services</source>
         <translation>je server poskytující offline mapové služby</translation>
     </message>
