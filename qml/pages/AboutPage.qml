@@ -13,6 +13,7 @@ Page {
                               "<b>Translations:</b><br><br>" +
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +
                               "Lukáš Karas @Karry: Czech<br>" +
+                              "Åke Engelbrektson @eson57: Swedish<br>" +
                               "<br><b>Acknowledgments:</b><br><br>" +
                               "libosmscout: http://libosmscout.sourceforge.net/<br>" +
                               "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>" +

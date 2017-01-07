@@ -6,22 +6,22 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="7"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Server je určen k použití s jinými aplikacemi schopnými zobrazit mapu, vyhledávat místa a zobrazit trasy. Server poskytuje funkčnost knihovny &lt;i&gt;libosmscout&lt;/i&gt; přes http protokol, může tak být použit jako plnohodnotná náhrada za online mapové služby.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="36"/>
+        <location filename="../qml/pages/AboutPage.qml" line="37"/>
         <source>About</source>
-        <translation>O programu</translation>
+        <translation type="unfinished">O programu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="40"/>
+        <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>version</source>
-        <translation>verze</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="45"/>
+        <location filename="../qml/pages/AboutPage.qml" line="46"/>
         <source>is a server that provides offline map services</source>
-        <translation>je server poskytující offline mapové služby</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
