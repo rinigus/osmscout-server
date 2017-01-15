@@ -230,47 +230,47 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="98"/>
         <source>Drive along %along%</source>
-        <translation>Conducir a lo largo%a lo largo%</translation>
+        <translation>Conducir a lo largo%along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="99"/>
         <source>Start at %start%. Drive along %along%</source>
-        <translation>Comenzar desde %aquí%. Conducir a lo largo%a lo largo%</translation>
+        <translation>Comenzar desde %start%. Conducir a lo largo%along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="106"/>
         <source>Start at %start%</source>
-        <translation>Comenzar desde %aquí%</translation>
+        <translation>Comenzar desde aquí %start%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="154"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
-        <translation>Al cruzar (%camino de cruce%), %comando de giro%</translation>
+        <translation>Al cruzar (%crossingway%), %turncommand%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="223"/>
         <source>Enter motorway %motorway%</source>
-        <translation>Incorpórate a la autovía %autovía%</translation>
+        <translation>Incorpórate a la autovía %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="227"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
-        <translation>Al cruzar %cruce%, incorpórate a la autovía %autovía%</translation>
+        <translation>Al cruzar %crossing%, incorpórate a la autovía %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway to %to%</source>
-        <translation>Cambiar la autovía por %por%</translation>
+        <translation>Cambiar la autovía por %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="269"/>
         <source>Change motorway from %from%</source>
-        <translation>Cambiar la autovía desde %desde%</translation>
+        <translation>Cambiar la autovía desde %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="272"/>
         <source>Change motorway from %from% to %to%</source>
-        <translation>Cambiar la autovía desde %desde% a %por%</translation>
+        <translation>Cambiar la autovía desde %from% a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="277"/>
@@ -287,43 +287,43 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway into %into%</source>
-        <translation>Deja la autovía hacia %hacia%</translation>
+        <translation>Deja la autovía hacia %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="338"/>
         <source>Leave motorway. %move%</source>
-        <translation>Deja la autovía. %mover%</translation>
+        <translation>Deja la autovía. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="341"/>
         <location filename="../src/routingforhuman.cpp" line="348"/>
         <source>Leave motorway %from%</source>
-        <translation>Deja la autovía %desde%</translation>
+        <translation>Deja la autovía %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="344"/>
         <source>Leave motorway. %move% into %into%</source>
-        <translation>Deja la autovía. %mover% hacia %hacia%</translation>
+        <translation>Deja la autovía. %move% hacia %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="352"/>
         <source>Leave motorway %from%. %move%</source>
-        <translation>Deja la autovía %desde%. %mover%</translation>
+        <translation>Deja la autovía %from%. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="356"/>
         <source>Leave motorway %from%. %move% into %into%</source>
-        <translation>Deja la autovía %desde%. %mover% hacia %hacia%</translation>
+        <translation>Deja la autovía %from%. %move% hacia %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation>El nombre de la vía cambia de %de% a %para%</translation>
+        <translation>El nombre de la vía cambia de %from% a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="388"/>
         <source>Way changes name to %to%</source>
-        <translation>El nombre de la vía cambia a %a%</translation>
+        <translation>El nombre de la vía cambia a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="146"/>
@@ -333,7 +333,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="192"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
-        <translation>Deja la rotonda (salida %num%) hacia la calle %calle%</translation>
+        <translation>Deja la rotonda (salida %num%) hacia la calle %street%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="196"/>
@@ -348,17 +348,17 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="118"/>
         <source>Target reached: %target%</source>
-        <translation>Haz llegado a tu %destino%</translation>
+        <translation>Objetivo alcanzado: %target%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="149"/>
         <source>%turncommand% into %where%</source>
-        <translation>%Comando de giro% hacia %donde%</translation>
+        <translation>%turncommand% hacia %where%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="171"/>
         <source>At crossing %crossway%, enter roundabout</source>
-        <translation>Al cruzar el %cruce%, entra en la rotonda</translation>
+        <translation>Al cruzar el %crossway%, entra en la rotonda</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
@@ -446,7 +446,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Style Sheet</source>
-        <translation>Hoja de estilos</translation>
+        <translation>Estilo de hoja</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="84"/>
@@ -491,7 +491,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="130"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation>La distancia de coste es una compensación del limite de coste</translation>
+        <translation>La distancia de coste es una compensación del límite de coste</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="136"/>
@@ -559,7 +559,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="22"/>
         <source>Routing speeds</source>
-        <translation>Velocidades de ruta</translation>
+        <translation>Velocidades de enrutamiento</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="26"/>
@@ -569,7 +569,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="33"/>
         <source>Maximal car speed</source>
-        <translation>Velocidad máxima del automovil</translation>
+        <translation>Velocidad máxima del automóvil</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="34"/>
@@ -594,7 +594,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="63"/>
         <source>living street</source>
-        <translation>calle residencial</translation>
+        <translation>calle en residencia</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="71"/>
