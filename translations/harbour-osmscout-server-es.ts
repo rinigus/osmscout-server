@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="46"/>
         <source>is a server that provides offline map services</source>
-        <translation>es un servidor que proporciona un servicio de mapas offline</translation>
+        <translation>es un servidor que proporciona un servicio de mapas sin conexión</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="19"/>
         <source>OSM Scout Server</source>
-        <translation>OSM Scout Server</translation>
+        <translation>Servidor OSM Scout</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="22"/>
@@ -70,7 +70,7 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="16"/>
         <source>Cannot create database object</source>
-        <translation>No es posible crear objeto de la base de datos</translation>
+        <translation>No es posible crear objeto en la base de datos</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="44"/>
@@ -491,7 +491,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="130"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation>La distancia de coste es una compensación del limite de coste</translation>
+        <translation>La distancia de coste es una compensación del límite de coste</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="136"/>
@@ -707,7 +707,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="37"/>
         <source>OSM Scout Server</source>
-        <translation>OSM Scout Server</translation>
+        <translation>Servidor OSM Scout</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="41"/>
