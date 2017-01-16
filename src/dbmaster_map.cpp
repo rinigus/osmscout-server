@@ -150,7 +150,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
         m_map_service->LookupTiles(searchProjection,tiles);
         m_map_service->LoadMissingTileData(searchParameter,*m_style_config,tiles);
-        m_map_service->ConvertTilesToMapData(tiles,data);
+        m_map_service->AddTileDataToMapData(tiles,data);
 
         if (drawParameter.GetRenderSeaLand())
             m_map_service->GetGroundTiles(searchProjection, data.groundTiles);
