@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="46"/>
         <source>is a server that provides offline map services</source>
-        <translation>es un servidor que proporciona un servicio de mapas offline</translation>
+        <translation>Es un servidor que provee un servicio de mapas sin conexión</translation>
     </message>
 </context>
 <context>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="19"/>
         <source>OSM Scout Server</source>
-        <translation>OSM Scout Server</translation>
+        <translation>Servidor OSM Scout </translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="22"/>
@@ -70,12 +70,12 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="16"/>
         <source>Cannot create database object</source>
-        <translation>No es posible crear objeto de la base de datos</translation>
+        <translation>No es posible crear objeto en base de datos</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="44"/>
         <source>Cannot open database</source>
-        <translation>No es posible abrir la base de datos</translation>
+        <translation>No es posible abrir base de datos</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="49"/>
@@ -100,17 +100,17 @@
     <message>
         <location filename="../src/dbmaster_map.cpp" line="72"/>
         <source>Database is not open, cannot render a tile</source>
-        <translation>La base de datos no está abierta, no es posible renderizar un tile</translation>
+        <translation>Base de datos no está  abierta, no es posible renderizar un título</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="79"/>
         <source>Database is not open, cannot route</source>
-        <translation>La base de datos no está abierta, no es posible crear la ruta</translation>
+        <translation>Base de datos no está abierta, no es posible crear la ruta</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="99"/>
         <source>Cannot open routing database</source>
-        <translation>No es posible abrir la base de datos de rutas</translation>
+        <translation>No se puede abrir base de datos de enrutamiento</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="136"/>
@@ -125,7 +125,7 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
-        <translation>La base de datos no está abierta, no es posible hacer la búsqueda</translation>
+        <translation>Base de datos no está abierta, no es posible hacer la búsqueda</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="272"/>
@@ -145,7 +145,7 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="507"/>
         <source>Database is not open, cannot search for POI</source>
-        <translation>La base de datos no está abierta; no se pudo buscar POI</translation>
+        <translation>La base de datos no está abierta; no se pudo buscar por POI</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="568"/>
@@ -230,17 +230,17 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="98"/>
         <source>Drive along %along%</source>
-        <translation>Continua por la %along%</translation>
+        <translation>Conducir a lo largo%along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="99"/>
         <source>Start at %start%. Drive along %along%</source>
-        <translation>Comienza en %start%. Continua por la %along%</translation>
+        <translation>Comenzar desde %start%. Conducir a lo largo%along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="106"/>
         <source>Start at %start%</source>
-        <translation>Comienza en %start%</translation>
+        <translation>Comenzar desde aquí %start%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="154"/>
@@ -255,22 +255,22 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="227"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
-        <translation>Al cruzar la %crossing%, incorpórate a la autovía %motorway%</translation>
+        <translation>Al cruzar %crossing%, incorpórate a la autovía %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway to %to%</source>
-        <translation>Cambia la autovía a %to%</translation>
+        <translation>Cambiar la autovía por %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="269"/>
         <source>Change motorway from %from%</source>
-        <translation>Cambia la autovía desde %from%</translation>
+        <translation>Cambiar la autovía desde %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="272"/>
         <source>Change motorway from %from% to %to%</source>
-        <translation>Cambia la autovía desde %from% a %to%</translation>
+        <translation>Cambiar la autovía desde %from% a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="277"/>
@@ -348,7 +348,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="118"/>
         <source>Target reached: %target%</source>
-        <translation>Has llegado a tu destino: %target%</translation>
+        <translation>Objetivo alcanzado: %target%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="149"/>
@@ -358,7 +358,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="171"/>
         <source>At crossing %crossway%, enter roundabout</source>
-        <translation>Al cruzar la %crossing%, entra en la rotonda</translation>
+        <translation>Al cruzar el %crossway%, entra en la rotonda</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
@@ -416,12 +416,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="29"/>
         <source>Location of the folder with a map imported by libosmscout Import utility</source>
-        <translation>Ubicación de la carpeta donde se encuentra el mapa importado con la herramienta &apos;Import&apos; de libosmscout</translation>
+        <translation>Ubicación de la carpeta con un mapa importado por libosmscout Utilidad de importación</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="41"/>
         <source>Units</source>
-        <translation>Sistema de unidades</translation>
+        <translation>unidades</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="43"/>
@@ -441,12 +441,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="69"/>
         <source>Font size</source>
-        <translation>Tamaño de la fuente</translation>
+        <translation>Tamaño de fuente</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Style Sheet</source>
-        <translation>Hoja de estilos</translation>
+        <translation>Estilo de hoja</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="84"/>
@@ -466,7 +466,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="103"/>
         <source>Routing</source>
-        <translation>Ruta</translation>
+        <translation>Enrutamiento</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="119"/>
@@ -491,7 +491,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="130"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation>La distancia de coste es una compensación del limite de coste</translation>
+        <translation>La distancia de coste es una compensación del límite de coste</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="136"/>
@@ -559,7 +559,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="22"/>
         <source>Routing speeds</source>
-        <translation>Velocidades de ruta</translation>
+        <translation>Velocidades de enrutamiento</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="26"/>
@@ -569,7 +569,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="33"/>
         <source>Maximal car speed</source>
-        <translation>Velocidad máxima del coche</translation>
+        <translation>Velocidad máxima del automóvil</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="34"/>
@@ -589,12 +589,12 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="56"/>
         <source>Car speed on different roads</source>
-        <translation>Velocidad del coche en diferentes carreteras</translation>
+        <translation>Velocidad del automovil en diferentes carreteras</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="63"/>
         <source>living street</source>
-        <translation>calle residencial</translation>
+        <translation>calle en residencia</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="71"/>
@@ -604,7 +604,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="79"/>
         <source>motorway junction</source>
-        <translation>salida de autovía</translation>
+        <translation>Cruce de la autovía</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="87"/>
@@ -634,7 +634,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="127"/>
         <source>residential</source>
-        <translation>travesía</translation>
+        <translation>Recidencial</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="135"/>
@@ -649,17 +649,17 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="151"/>
         <source>secondary</source>
-        <translation>carretera comarcal</translation>
+        <translation>Secundario</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="159"/>
         <source>secondary link</source>
-        <translation>enlace a carretera comarcal</translation>
+        <translation>Enlace secundario</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="167"/>
         <source>service</source>
-        <translation>camino</translation>
+        <translation>Servicio</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="175"/>
@@ -697,7 +697,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="18"/>
         <source>Routing speeds</source>
-        <translation>Velocidades de ruta</translation>
+        <translation>Velocidades de enrutamiento</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="23"/>
@@ -707,7 +707,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="37"/>
         <source>OSM Scout Server</source>
-        <translation>OSM Scout Server</translation>
+        <translation>Servidor OSM Scout </translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="41"/>
