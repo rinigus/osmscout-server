@@ -49,6 +49,7 @@ OTHER_FILES += \
     osmscout-server.desktop
 
 include(src/uhttp/uhttp.pri)
+include(src/geocoder-nlp/geocoder-nlp.pri)
 
 HEADERS += \
     src/dbmaster.h \
