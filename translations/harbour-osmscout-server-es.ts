@@ -707,7 +707,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="37"/>
         <source>OSM Scout Server</source>
-        <translation>OSM Scout Server</translation>
+        <translation>Servidor OSM Scout</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="41"/>
