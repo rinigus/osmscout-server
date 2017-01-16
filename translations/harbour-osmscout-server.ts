@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="en" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -9,17 +9,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="35"/>
+        <location filename="../qml/pages/AboutPage.qml" line="37"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="39"/>
+        <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="44"/>
+        <location filename="../qml/pages/AboutPage.qml" line="46"/>
         <source>is a server that provides offline map services</source>
         <translation type="unfinished"></translation>
     </message>
@@ -589,6 +589,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="71"/>
         <source>motorway</source>
+        <translatorcomment>OSM highway=motorway</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -599,81 +600,97 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="87"/>
         <source>motorway link</source>
+        <translatorcomment>OSM highway=motorway_link</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="95"/>
         <source>motorway primary</source>
+        <translatorcomment>OSM highway=primary &amp;&amp; motorroad</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
+        <translatorcomment>OSM highway=trunk &amp;&amp; motorroad</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="111"/>
         <source>primary</source>
+        <translatorcomment>OSM highway=primary</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="119"/>
         <source>primary link</source>
+        <translatorcomment>OSM highway=primary_link</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="127"/>
         <source>residential</source>
+        <translatorcomment>OSM highway=residential</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="135"/>
         <source>road</source>
+        <translatorcomment>OSM highway=road</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="143"/>
         <source>roundabout</source>
+        <translatorcomment>OSM highway=roundabout</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="151"/>
         <source>secondary</source>
+        <translatorcomment>OSM highway=secondary</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="159"/>
         <source>secondary link</source>
+        <translatorcomment>OSM highway=secondary_link</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="167"/>
         <source>service</source>
+        <translatorcomment>OSM highway=service</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="175"/>
         <source>tertiary</source>
+        <translatorcomment>OSM highway=tertiary</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="183"/>
         <source>tertiary link</source>
+        <translatorcomment>OSM highway=link</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="191"/>
         <source>trunk</source>
+        <translatorcomment>OSM highway=trunk</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="199"/>
         <source>trunk link</source>
+        <translatorcomment>OSM highway=trunk_link</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="207"/>
         <source>unclassified</source>
+        <translatorcomment>OSM highway=unclassified</translatorcomment>
         <translation type="unfinished"></translation>
     </message>
     <message>

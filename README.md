@@ -270,7 +270,9 @@ code. This will improve in future.
 
 The translations were contributed by
 
-Carmen F. B. @carmenfdezb: Spanish
+- Carmen F. B. @carmenfdezb: Spanish
+- Lukáš Karas @Karry: Czech
+- Åke Engelbrektson @eson57: Swedish
 
 
 ## Acknowledgments
