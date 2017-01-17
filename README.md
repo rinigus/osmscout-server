@@ -194,7 +194,7 @@ The location search is accessed by the following URL:
 where meaning of the query parameters is the same as for the version
 one. However, the result includes parsing feedback when geocoder-nlp
 is used. For example,
-`http://localhost:8553/v2/search?limit=3&search=tartu mnt 1, tallinn":
+`http://localhost:8553/v2/search?limit=3&search=tartu mnt 1, tallinn`:
 
 ```
 {
