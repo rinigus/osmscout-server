@@ -88,13 +88,22 @@ void AppSettings::initDefaults()
         qDebug() << "New icons path: " << icons;
         setValue(OSM_SETTINGS "icons", icons);
     }
+
+    CHECK(GEOMASTER_SETTINGS "initialize_every_call", 0);
+    CHECK(GEOMASTER_SETTINGS "postal-main-dir", "");
+    CHECK(GEOMASTER_SETTINGS "postal-country-dir", "");
+    CHECK(GEOMASTER_SETTINGS "use_primitive", 1);
+    CHECK(GEOMASTER_SETTINGS "geocoder-path", "location.sqlite");
+    CHECK(GEOMASTER_SETTINGS "max_queries_per_hierarchy", 30);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
 {
     QSettings::setValue(key, value);
 
-    if (key.contains(OSM_SETTINGS) || key.contains(ROUTING_SPEED_SETTINGS))
+    if (key.contains(OSM_SETTINGS) ||
+            key.contains(ROUTING_SPEED_SETTINGS) ||
+            key.contains(GEOMASTER_SETTINGS))
     {
         // this delayed signal execution prevents fireing signals together
         // if there are many changes in settings

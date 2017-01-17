@@ -38,6 +38,9 @@
 // LIB OSM Scout interface
 #include "dbmaster.h"
 
+// Geocoder-NLP interface
+#include "geomaster.h"
+
 #include "infohub.h"
 
 #include <QTranslator>
@@ -45,10 +48,17 @@
 
 #include <iostream>
 
+////////////////////////////////////////////////
+/// GLOBAL VARIABLES
+///
+
 DBMaster *osmScoutMaster = NULL;
 
-// global variable keeping the Hub
+GeoMaster *geoMaster = NULL;
+
 extern InfoHub infoHub;
+
+////////////////////////////////////////////////
 
 int main(int argc, char *argv[])
 {
@@ -128,6 +138,15 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+    // setup Geocoder-NLP
+    geoMaster = new GeoMaster();
+
+    if (geoMaster == nullptr)
+    {
+        std::cerr << "Failed to allocate GeoMaster" << std::endl;
+        return -2;
+    }
+
     // setup HTTP server
     settings.beginGroup("http-listener");
     int port = settings.valueInt("port");
@@ -152,6 +171,8 @@ int main(int argc, char *argv[])
 
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       osmScoutMaster, &DBMaster::onSettingsChanged );
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      geoMaster, &GeoMaster::onSettingsChanged );
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &infoHub, &InfoHub::onSettingsChanged );
 

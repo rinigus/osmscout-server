@@ -5,6 +5,7 @@
 
 #include "requestmapper.h"
 #include "dbmaster.h"
+#include "geomaster.h"
 #include "infohub.h"
 
 #include "microhttpconnectionstore.h"
@@ -23,8 +24,8 @@
 
 //#define DEBUG_CONNECTIONS
 
-
 extern DBMaster *osmScoutMaster;
+extern GeoMaster *geoMaster;
 
 RequestMapper::RequestMapper()
 {
@@ -289,10 +290,19 @@ unsigned int RequestMapper::service(const char *url_c,
             return MHD_HTTP_BAD_REQUEST;
         }
 
-        Task *task = new Task(connection_id,
+        Task *task;
+
+        if ( 0 )
+            task = new Task(connection_id,
                               std::bind( &DBMaster::searchExposed, osmScoutMaster,
                                          search, std::placeholders::_1, limit),
                               "Error while searching");
+        else
+            task = new Task(connection_id,
+                            std::bind( &GeoMaster::searchExposed, geoMaster,
+                                       search, std::placeholders::_1, limit, false),
+                            "Error while searching");
+
         m_pool.start(task);
 
         MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
