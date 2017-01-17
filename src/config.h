@@ -8,4 +8,14 @@
 
 #define GEOMASTER_SETTINGS "geocoder-nlp/"
 
+//////////////////////////////////////////////
+/// global variables
+
+#include "dbmaster.h"
+#include "geomaster.h"
+
+extern DBMaster *osmScoutMaster;
+
+extern GeoMaster *geoMaster;
+
 #endif // CONFIG_H

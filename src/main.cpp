@@ -48,14 +48,7 @@
 
 #include <iostream>
 
-////////////////////////////////////////////////
-/// GLOBAL VARIABLES
-///
-
-DBMaster *osmScoutMaster = NULL;
-
-GeoMaster *geoMaster = NULL;
-
+// this is needed for connection with signals. Otherwise, access via static members
 extern InfoHub infoHub;
 
 ////////////////////////////////////////////////

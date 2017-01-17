@@ -7,6 +7,7 @@
 #include "dbmaster.h"
 #include "geomaster.h"
 #include "infohub.h"
+#include "config.h"
 
 #include "microhttpconnectionstore.h"
 
@@ -23,9 +24,6 @@
 #include <functional>
 
 //#define DEBUG_CONNECTIONS
-
-extern DBMaster *osmScoutMaster;
-extern GeoMaster *geoMaster;
 
 RequestMapper::RequestMapper()
 {

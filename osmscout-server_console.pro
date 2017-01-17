@@ -44,7 +44,8 @@ SOURCES += src/dbmaster.cpp \
     src/consolelogger.cpp \
     src/dbmaster_route.cpp \
     src/routingforhuman.cpp \
-    src/geomaster.cpp
+    src/geomaster.cpp \
+    src/config.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
