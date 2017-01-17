@@ -291,7 +291,7 @@ unsigned int RequestMapper::service(const char *url_c,
         Task *task;
         bool extended_reply = (path == "/v2/search");
 
-        if ( 0 )
+        if ( !useGeocoderNLP )
             task = new Task(connection_id,
                               std::bind( &DBMaster::searchExposed, osmScoutMaster,
                                          search, std::placeholders::_1, limit),
@@ -416,7 +416,9 @@ unsigned int RequestMapper::service(const char *url_c,
                 }
 
                 double lat, lon;
-                if (osmScoutMaster->search(search, lat, lon))
+                bool unlp = useGeocoderNLP;
+                if ( (unlp && geoMaster->search(search, lat, lon)) ||
+                     (!unlp && osmScoutMaster->search(search, lat, lon)) )
                 {
                     osmscout::GeoCoord c(lat,lon);
                     points.push_back(c);

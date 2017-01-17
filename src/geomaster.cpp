@@ -39,6 +39,8 @@ void GeoMaster::onSettingsChanged()
     InfoHub::logInfo(tr("Opened geocoding database") + " " + geopath, true);
 
     m_geocoder.set_max_queries_per_hierarchy(settings.valueInt(GEOMASTER_SETTINGS "max_queries_per_hierarchy"));
+
+    useGeocoderNLP = (settings.valueInt(GEOMASTER_SETTINGS "use-geocoder-nlp") > 0);
 }
 
 

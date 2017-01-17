@@ -95,6 +95,8 @@ void AppSettings::initDefaults()
     CHECK(GEOMASTER_SETTINGS "use_primitive", 1);
     CHECK(GEOMASTER_SETTINGS "geocoder-path", "location.sqlite");
     CHECK(GEOMASTER_SETTINGS "max_queries_per_hierarchy", 30);
+
+    CHECK(GEOMASTER_SETTINGS "use-geocoder-nlp", 0);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
