@@ -276,7 +276,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
     //////////////////////////////////////////////////////////////////////
     /// SEARCH
-    else if (path == "/v1/search")
+    else if (path == "/v1/search" || path == "/v2/search")
     {
         bool ok = true;
         size_t limit = q2value<size_t>("limit", 25, connection, ok);
@@ -291,6 +291,7 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
         Task *task;
+        bool extended_reply = (path == "/v2/search");
 
         if ( 0 )
             task = new Task(connection_id,
@@ -300,7 +301,8 @@ unsigned int RequestMapper::service(const char *url_c,
         else
             task = new Task(connection_id,
                             std::bind( &GeoMaster::searchExposed, geoMaster,
-                                       search, std::placeholders::_1, limit, false),
+                                       search, std::placeholders::_1, limit,
+                                       extended_reply),
                             "Error while searching");
 
         m_pool.start(task);
