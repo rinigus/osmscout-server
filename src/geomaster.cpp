@@ -40,6 +40,21 @@ void GeoMaster::onSettingsChanged()
 
     m_geocoder.set_max_queries_per_hierarchy(settings.valueInt(GEOMASTER_SETTINGS "max_queries_per_hierarchy"));
 
+    QString lang = settings.valueString(GEOMASTER_SETTINGS "languages");
+
+    if (lang.length() > 0)
+    {
+        QStringList lngs = lang.split(',', QString::SkipEmptyParts);
+        for (QString l: lngs)
+        {
+            l = l.simplified();
+            m_postal.add_language(l.toStdString());
+            InfoHub::logInfo(tr("libpostal using language") + ": " + l);
+        }
+    }
+    else
+        InfoHub::logInfo(tr("libpostal will use all covered languages"));
+
     useGeocoderNLP = (settings.valueInt(GEOMASTER_SETTINGS "use-geocoder-nlp") > 0);
 }
 
@@ -88,9 +103,16 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
         for (const GeoNLP::Postal::ParseResult &pr: parsed_query)
         {
             QJsonObject r;
+            QString info;
             for (auto a: pr)
+            {
                 r.insert(QString::fromStdString(a.first), QString::fromStdString(a.second));
+                info += QString::fromStdString(a.first) + ": " + QString::fromStdString(a.second) + "; ";
+            }
+
             arr.push_back(r);
+
+            InfoHub::logInfo("Parsed query: " + info);
         }
         result.insert("parsed_normalized", arr);
     }
