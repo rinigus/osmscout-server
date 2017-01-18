@@ -54,7 +54,9 @@ SOURCES += \
     src/infohub.cpp \
     src/rollinglogger.cpp \
     src/consolelogger.cpp \
-    src/routingforhuman.cpp
+    src/routingforhuman.cpp \
+    src/geomaster.cpp \
+    src/config.cpp
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -63,6 +65,7 @@ OTHER_FILES += qml/osmscout-server.qml \
 
 include(src/uhttp/uhttp.pri)
 include(src/fileselector/fileselector.pri)
+include(src/geocoder-nlp/geocoder-nlp.pri)
 
 HEADERS += \
     src/dbmaster.h \
@@ -73,7 +76,8 @@ HEADERS += \
     src/infohub.h \
     src/rollinglogger.h \
     src/consolelogger.h \
-    src/routingforhuman.h
+    src/routingforhuman.h \
+    src/geomaster.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
