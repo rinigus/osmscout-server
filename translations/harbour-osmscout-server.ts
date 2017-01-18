@@ -212,6 +212,94 @@
     </message>
 </context>
 <context>
+    <name>GeocoderPage</name>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
+        <source>Geocoder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
+        <source>Geocoder is responsible for responding to search requests. For that, it parses the search string and finds the corresponoding objects on a map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="38"/>
+        <source>Use Geocoder-NLP with libpostal as a geocoder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="39"/>
+        <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding. The additional storage and RAM requirements could be significant, depending on selected languages and country.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="46"/>
+        <source>Geocoder-NLP and libpostal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="53"/>
+        <source>Libpostal language parser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="54"/>
+        <source>Location of the folder with a language parser databases of libpostal, such as language_classifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="62"/>
+        <source>Country-specific database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="63"/>
+        <source>Location of the folder with a country-specific databases of libpostal, such as address_parser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="71"/>
+        <source>Geocoder database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="72"/>
+        <source>Location of the SQLite geocoder-nlp database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="78"/>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="79"/>
+        <source>Comma-separated list of two-letter language codes (ISO 639-1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="85"/>
+        <source>Use primitive parser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="86"/>
+        <source>In addition to libpostal, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue. Example: house_number, street, town.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="95"/>
+        <source>Load libpostal on every call</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="96"/>
+        <source>When selected, libpostal databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>InfoHub</name>
     <message>
         <location filename="../src/infohub.cpp" line="101"/>
@@ -757,36 +845,41 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="23"/>
+        <source>Geocoder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="28"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="37"/>
+        <location filename="../qml/pages/StartPage.qml" line="42"/>
         <source>OSM Scout Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="41"/>
+        <location filename="../qml/pages/StartPage.qml" line="46"/>
         <source>Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="93"/>
+        <location filename="../qml/pages/StartPage.qml" line="98"/>
         <source>Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="107"/>
+        <location filename="../qml/pages/StartPage.qml" line="112"/>
         <source>Jobs in a queue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="108"/>
+        <location filename="../qml/pages/StartPage.qml" line="113"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="122"/>
+        <location filename="../qml/pages/StartPage.qml" line="127"/>
         <source>Events</source>
         <translation type="unfinished"></translation>
     </message>
