@@ -21,6 +21,7 @@ void GeoMaster::onSettingsChanged()
 
     // prepare for new settings
     m_geocoder.drop();
+    m_postal.drop();
     m_postal.clear_languages();
 
     // apply new settings
