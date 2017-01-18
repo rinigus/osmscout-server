@@ -27,22 +27,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="161"/>
+        <location filename="../src/appsettings.cpp" line="173"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="161"/>
+        <location filename="../src/appsettings.cpp" line="173"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="163"/>
+        <location filename="../src/appsettings.cpp" line="175"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="163"/>
+        <location filename="../src/appsettings.cpp" line="175"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -170,6 +170,45 @@
         <location filename="../qml/pages/FileSelector.qml" line="191"/>
         <source>Empty directory</source>
         <translation>Tom mapp</translation>
+    </message>
+</context>
+<context>
+    <name>GeoMaster</name>
+    <message>
+        <location filename="../src/geomaster.cpp" line="35"/>
+        <location filename="../src/geomaster.cpp" line="67"/>
+        <source>Cannot open geocoding database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="39"/>
+        <source>Opened geocoding database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="52"/>
+        <source>libpostal using language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="56"/>
+        <source>libpostal will use all covered languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="78"/>
+        <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="87"/>
+        <source>Error while searching with geocoder-nlp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="163"/>
+        <source>Search for reference point failed: cannot find</source>
+        <translation type="unfinished">Sökning efter referenspunkt misslyckades. Hittades inte</translation>
     </message>
 </context>
 <context>
