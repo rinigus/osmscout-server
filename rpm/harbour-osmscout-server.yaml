@@ -33,6 +33,8 @@ PkgBR:
   - libmarisa-devel
   - libmicrohttpd-devel
   - libosmscout-qt-devel
+  - libpostal-devel
+  - snappy-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:
