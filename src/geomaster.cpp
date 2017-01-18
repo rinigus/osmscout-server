@@ -25,11 +25,11 @@ void GeoMaster::onSettingsChanged()
 
     // apply new settings
     m_postal.set_initialize_every_call(settings.valueInt(GEOMASTER_SETTINGS "initialize_every_call") > 0);
-    m_postal.set_postal_datadir(settings.valueString(GEOMASTER_SETTINGS "postal-main-dir").toStdString(),
-                                settings.valueString(GEOMASTER_SETTINGS "postal-country-dir").toStdString());
+    m_postal.set_postal_datadir(settings.valueString(GEOMASTER_SETTINGS "postal_main_dir").toStdString(),
+                                settings.valueString(GEOMASTER_SETTINGS "postal_country_dir").toStdString());
     m_postal.set_use_primitive(settings.valueInt(GEOMASTER_SETTINGS "use_primitive") > 0);
 
-    QString geopath = settings.valueString(GEOMASTER_SETTINGS "geocoder-path");
+    QString geopath = settings.valueString(GEOMASTER_SETTINGS "geocoder_path");
     if (!m_geocoder.load(geopath.toStdString()))
     {
         InfoHub::logError(tr("Cannot open geocoding database") + ": " + geopath);
@@ -55,7 +55,7 @@ void GeoMaster::onSettingsChanged()
     else
         InfoHub::logInfo(tr("libpostal will use all covered languages"));
 
-    useGeocoderNLP = (settings.valueInt(GEOMASTER_SETTINGS "use-geocoder-nlp") > 0);
+    useGeocoderNLP = (settings.valueInt(GEOMASTER_SETTINGS "use_geocoder_nlp") > 0);
 }
 
 
