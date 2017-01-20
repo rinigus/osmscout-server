@@ -9,17 +9,17 @@
         <translation>Server je určen k použití s jinými aplikacemi schopnými zobrazit mapu, vyhledávat místa a zobrazit trasy. Server poskytuje funkčnost knihovny &lt;i&gt;libosmscout&lt;/i&gt; přes http protokol, může tak být použit jako plnohodnotná náhrada za online mapové služby.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="37"/>
+        <location filename="../qml/pages/AboutPage.qml" line="39"/>
         <source>About</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="41"/>
+        <location filename="../qml/pages/AboutPage.qml" line="43"/>
         <source>version</source>
         <translation>verze</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="46"/>
+        <location filename="../qml/pages/AboutPage.qml" line="48"/>
         <source>is a server that provides offline map services</source>
         <translation>je server poskytující offline mapové služby</translation>
     </message>
@@ -159,6 +159,22 @@
     </message>
 </context>
 <context>
+    <name>ElementLanguageSelector</name>
+    <message>
+        <location filename="../qml/pages/ElementLanguageSelector.qml" line="27"/>
+        <source>All supported languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ElementSelector</name>
+    <message>
+        <location filename="../qml/pages/ElementSelector.qml" line="30"/>
+        <source>&lt;Not selected&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FileSelector</name>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="163"/>
@@ -224,23 +240,23 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="38"/>
-        <source>Use Geocoder-NLP with libpostal as a geocoder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="39"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding. The additional storage and RAM requirements could be significant, depending on selected languages and country.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="38"/>
+        <source>Use geocoder-nlp with libpostal as a geocoder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="46"/>
-        <source>Geocoder-NLP and libpostal</source>
+        <source>geocoder-nlp and libpostal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="53"/>
-        <source>Libpostal language parser</source>
+        <source>libpostal language parser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -275,26 +291,26 @@
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="79"/>
-        <source>Comma-separated list of two-letter language codes (ISO 639-1)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="85"/>
-        <source>Use primitive parser</source>
+        <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="86"/>
+        <source>Use primitive parser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="87"/>
         <source>In addition to libpostal, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue. Example: house_number, street, town.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="95"/>
+        <location filename="../qml/pages/GeocoderPage.qml" line="96"/>
         <source>Load libpostal on every call</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="96"/>
+        <location filename="../qml/pages/GeocoderPage.qml" line="97"/>
         <source>When selected, libpostal databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
         <translation type="unfinished"></translation>
     </message>
