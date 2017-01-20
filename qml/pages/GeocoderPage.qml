@@ -35,7 +35,7 @@ Dialog {
             ElementSwitch {
                 id: eGeocoderNLP
                 key: settingsGeomasterPrefix + "use_geocoder_nlp"
-                mainLabel: qsTr("Use Geocoder-NLP with libpostal as a geocoder")
+                mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
                 secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
                                      "Note that it requires additional databases for language, user input parsing, and geocoding. " +
                                      "The additional storage and RAM requirements could be significant, depending on selected " +
@@ -43,14 +43,14 @@ Dialog {
             }
 
             SectionHeader {
-                text: qsTr("Geocoder-NLP and libpostal")
+                text: qsTr("geocoder-nlp and libpostal")
                 font.pixelSize: Theme.fontSizeMedium
             }
 
             ElementSelector {
                 id: ePostalGeneral
                 key: settingsGeomasterPrefix + "postal_main_dir"
-                mainLabel: qsTr("Libpostal language parser")
+                mainLabel: qsTr("libpostal language parser")
                 secondaryLabel: qsTr("Location of the folder with a language parser databases of libpostal, such as language_classifier")
                 directory: true
                 directory_file: "language_classifier"
