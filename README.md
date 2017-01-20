@@ -373,9 +373,12 @@ The translations were contributed by
 
 libosmscout: http://libosmscout.sourceforge.net
 
+libpostal: https://github.com/openvenues/libpostal
+
 osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 
 GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
 
+langcodes: https://github.com/LuminosoInsight/langcodes
 
 [![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)

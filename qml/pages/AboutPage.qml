@@ -8,7 +8,7 @@ Page {
                               "display selected routes. The server is a thin layer exposing functionality of <i>libosmscout</i> through http. " +
                               "This server can be used as a drop-in replacement for " +
                               "online services providing maps.") + "</p><br>" +
-                              "<p>Copyright: 2016 <br>rinigus https://github.com/rinigus<br></p>" +
+                              "<p>Copyright: 2016, 2017 <br>rinigus https://github.com/rinigus<br></p>" +
                               "License: LGPL<br><br>" +
                               "<b>Translations:</b><br><br>" +
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +
@@ -16,8 +16,10 @@ Page {
                               "Åke Engelbrektson @eson57: Swedish<br>" +
                               "<br><b>Acknowledgments:</b><br><br>" +
                               "libosmscout: http://libosmscout.sourceforge.net/<br>" +
+                              "libpostal: https://github.com/openvenues/libpostal<br>" +
                               "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>" +
-                              "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br>"
+                              "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br>" +
+                              "langcodes: https://github.com/LuminosoInsight/langcodes<br>"
 
 
     SilicaFlickable {
