@@ -72,11 +72,12 @@ Dialog {
                 secondaryLabel: qsTr("Location of the SQLite geocoder-nlp database")
             }
 
-            ElementEntry {
+            ElementLanguageSelector {
                 id: eGeoLanguages
                 key: settingsGeomasterPrefix + "languages"
                 mainLabel: qsTr("Languages")
-                secondaryLabel: qsTr("Comma-separated list of two-letter language codes (ISO 639-1)")
+                secondaryLabel: qsTr("List of languages used for parsing addresses. " +
+                                     "Note that when all supported languages are used, RAM requirements could be large")
             }
 
             ElementSwitch {
