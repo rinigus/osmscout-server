@@ -35,6 +35,7 @@ PkgBR:
   - libosmscout-qt-devel
   - libpostal-devel
   - snappy-devel
+  - sqlite-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:

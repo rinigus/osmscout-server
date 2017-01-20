@@ -28,6 +28,9 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  libmarisa-devel
 BuildRequires:  libmicrohttpd-devel
 BuildRequires:  libosmscout-qt-devel
+BuildRequires:  libpostal-devel
+BuildRequires:  snappy-devel
+BuildRequires:  sqlite-devel
 BuildRequires:  desktop-file-utils
 
 %description
