@@ -37,9 +37,16 @@ Dialog {
                 key: settingsGeomasterPrefix + "use_geocoder_nlp"
                 mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
                 secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
-                                     "Note that it requires additional databases for language, user input parsing, and geocoding. " +
-                                     "The additional storage and RAM requirements could be significant, depending on selected " +
-                                     "languages and country.")
+                                     "Note that it requires additional databases for language, user input parsing, and geocoding.")
+            }
+
+            Label {
+                text: qsTr("Disclaimer: Please see About regarding reporting of the issues with the address parsing.")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
             }
 
             SectionHeader {

@@ -31,7 +31,9 @@ in server environment when compiled as a console application.
 ## Maps
 
 Maps provided by OpenStreetMaps have to be converted to the format
-used by libosmscout library. 
+used by libosmscout library. When using libpostal-based geocoder-nlp
+for searches, a separate databases are required. The importing
+procedure below concerns only libosmscout part.
 
 The maps are imported from PBF or OSM file formats, as provided by
 OpenStreetMap download servers.  While smaller maps lead to faster
@@ -45,7 +47,7 @@ For importing, you could either use pre-compiled released import tool
 or compile the import tool from source.
 
 
-### Using compiled Import tool
+### Using compiled Import tool 
 
 Get the Import tool corresponding to the release of libosmscout
 library that is used in your server build. For Sailfish OSM Scout
@@ -57,7 +59,11 @@ OSM Scout Server | libosmscout Sailfish
 0.4.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161128.2
 0.3.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
 
-Note that the maps format is not changing between all the versions. It will be specified in OSM Scout Server and libosmscout release changelog if the change in the format or significant import bug has been fixed. For example, you could use the server 0.5.x releases with the maps imported by the importer corresponding to 0.3.0.  
+Note that the maps format is not changing between all the versions. It
+will be specified in OSM Scout Server and libosmscout release
+changelog if the change in the format or significant import bug has
+been fixed. For example, you could use the server 0.5.x releases with
+the maps imported by the importer corresponding to 0.3.0.
 
 ### Compiling Import tool
 
@@ -367,6 +373,16 @@ The translations were contributed by
 - Carmen F. B. @carmenfdezb: Spanish
 - Lukáš Karas @Karry: Czech
 - Åke Engelbrektson @eson57: Swedish
+
+
+## Libpostal
+
+Please note that libpostal is developed to be used with the fine tuned
+model covering the World. The country-based models were developed to
+use libpostal in mobile devices and have not been specifically
+tuned. Please submit the issues with libpostal performance on
+country-based models to OSM Scout Server or geocoder-nlp github
+projects.
 
 
 ## Acknowledgments
