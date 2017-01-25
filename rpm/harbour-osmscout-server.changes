@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Jan 25 2017 rinigus <rinigus.git@gmail.com> 0.6.0-1
+- Adding libpostal-based geocoder
+- Update to the latest libosmscout version
+- Updated Spanish and Swedish translation
+
 * Sat Jan 7 2017 rinigus <rinigus.git@gmail.com> 0.5.3-1
 - Swedish translation
 

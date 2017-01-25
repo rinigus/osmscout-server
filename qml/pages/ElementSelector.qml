@@ -26,6 +26,8 @@ Column {
     function display()
     {
         display_value = value.split("/").pop()
+        if (value.length < 1)
+            display_value = qsTr("<Not selected>")
     }
 
     function setPath(path)
