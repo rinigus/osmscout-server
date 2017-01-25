@@ -23,6 +23,11 @@ void GeoMaster::onSettingsChanged()
     m_geocoder.drop();
     m_postal.clear_languages();
 
+    useGeocoderNLP = (settings.valueInt(GEOMASTER_SETTINGS "use_geocoder_nlp") > 0);
+
+    if (!useGeocoderNLP)
+        return; // no need to load anything
+
     // apply new settings
     m_postal.set_initialize_every_call(settings.valueInt(GEOMASTER_SETTINGS "initialize_every_call") > 0);
     m_postal.set_postal_datadir(settings.valueString(GEOMASTER_SETTINGS "postal_main_dir").toStdString(),
@@ -32,11 +37,11 @@ void GeoMaster::onSettingsChanged()
     QString geopath = settings.valueString(GEOMASTER_SETTINGS "geocoder_path");
     if (!m_geocoder.load(geopath.toStdString()))
     {
-        InfoHub::logError(tr("Cannot open geocoding database") + ": " + geopath);
+        InfoHub::logError(tr("Cannot open geocoder database") + ": " + geopath);
         return;
     }
 
-    InfoHub::logInfo(tr("Opened geocoding database") + " " + geopath, true);
+    InfoHub::logInfo(tr("Opened geocoder database") + " " + geopath, true);
 
     m_geocoder.set_max_queries_per_hierarchy(settings.valueInt(GEOMASTER_SETTINGS "max_queries_per_hierarchy"));
 
@@ -54,8 +59,6 @@ void GeoMaster::onSettingsChanged()
     }
     else
         InfoHub::logInfo(tr("libpostal will use all covered languages"));
-
-    useGeocoderNLP = (settings.valueInt(GEOMASTER_SETTINGS "use_geocoder_nlp") > 0);
 }
 
 

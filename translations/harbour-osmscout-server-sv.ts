@@ -221,38 +221,42 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="35"/>
-        <location filename="../src/geomaster.cpp" line="67"/>
+        <location filename="../src/geomaster.cpp" line="70"/>
         <source>Cannot open geocoding database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="39"/>
-        <source>Opened geocoding database</source>
+        <location filename="../src/geomaster.cpp" line="40"/>
+        <source>Cannot open geocoder database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="52"/>
+        <location filename="../src/geomaster.cpp" line="44"/>
+        <source>Opened geocoder database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="57"/>
         <source>libpostal using language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="56"/>
+        <location filename="../src/geomaster.cpp" line="61"/>
         <source>libpostal will use all covered languages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="78"/>
+        <location filename="../src/geomaster.cpp" line="81"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="87"/>
+        <location filename="../src/geomaster.cpp" line="90"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="163"/>
+        <location filename="../src/geomaster.cpp" line="166"/>
         <source>Search for reference point failed: cannot find</source>
         <translation type="unfinished">Sökning efter referenspunkt misslyckades. Hittades inte</translation>
     </message>
