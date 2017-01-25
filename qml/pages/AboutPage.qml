@@ -22,9 +22,9 @@ Page {
                               "<p>" +
                               qsTr("Please note that <i>libpostal</i> is developed to be used with the fine tuned " +
                                    "model covering the World. The country-based models were developed to use " +
-                                   "<i>libpostal</i> in mobile devices and have not been specifically tuned. Please submit the issues " +
-                                   "with libpostal performance on country-based models to <i>" + programName +
-                                   "</i> or <i>geocoder-nlp</i> github projects.") +
+                                   "<i>libpostal</i> on mobile devices and have not been specifically tuned. Please submit the issues " +
+                                   "with libpostal performance on country-based models to <i>OSM Scout Server</i> or " +
+                                   "<i>geocoder-nlp</i> github projects.") +
                               "</p>" +
 
                               "<br><b>" + qsTr("Acknowledgments") + "</b><br><br>" +

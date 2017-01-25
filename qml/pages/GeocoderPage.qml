@@ -23,7 +23,7 @@ Dialog {
             }
 
             Label {
-                text: qsTr("Geocoder is responsible for responding to search requests. " +
+                text: qsTr("Geocoder is responsible for resolving search requests. " +
                            "For that, it parses the search string and finds the corresponoding objects on a map.")
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
