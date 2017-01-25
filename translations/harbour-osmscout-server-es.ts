@@ -153,6 +153,16 @@
         <translation>Error durante la conversión de la ruta a puntos</translation>
     </message>
     <message>
+        <location filename="../src/dbmaster_route.cpp" line="194"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_route.cpp" line="195"/>
+        <source>Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
         <translation>La base de datos no está abierta, no es posible hacer la búsqueda</translation>
