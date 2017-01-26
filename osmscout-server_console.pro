@@ -77,7 +77,7 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa
+LIBS += -losmscout_map -losmscout -lmarisa -lsqlite3
 
 QMAKE_CXXFLAGS += -fopenmp
 LIBS += -fopenmp
