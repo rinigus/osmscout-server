@@ -55,6 +55,7 @@ Server releases, the following import tools are available:
 
 OSM Scout Server | libosmscout Sailfish
 --- | ---
+0.6.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20170126
 0.5.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161207
 0.4.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161128.2
 0.3.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
