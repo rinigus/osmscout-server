@@ -4,22 +4,52 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="7"/>
-        <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Server je určen k použití s jinými aplikacemi schopnými zobrazit mapu, vyhledávat místa a zobrazit trasy. Server poskytuje funkčnost knihovny &lt;i&gt;libosmscout&lt;/i&gt; přes http protokol, může tak být použit jako plnohodnotná náhrada za online mapové služby.</translation>
+        <location filename="../qml/pages/AboutPage.qml" line="8"/>
+        <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="37"/>
+        <location filename="../qml/pages/AboutPage.qml" line="13"/>
+        <source>Copyright:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="14"/>
+        <source>License: LGPL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="16"/>
+        <source>Translations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="21"/>
+        <source>Libpostal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="23"/>
+        <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="30"/>
+        <source>Acknowledgments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="52"/>
         <source>About</source>
         <translation>O programu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="41"/>
+        <location filename="../qml/pages/AboutPage.qml" line="56"/>
         <source>version</source>
         <translation>verze</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="46"/>
+        <location filename="../qml/pages/AboutPage.qml" line="61"/>
         <source>is a server that provides offline map services</source>
         <translation>je server poskytující offline mapové služby</translation>
     </message>
@@ -27,22 +57,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="161"/>
+        <location filename="../src/appsettings.cpp" line="173"/>
         <source>mph</source>
         <translation>mi/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="161"/>
+        <location filename="../src/appsettings.cpp" line="173"/>
         <source>mi.</source>
         <translation>mi</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="163"/>
+        <location filename="../src/appsettings.cpp" line="175"/>
         <source>km/h</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="163"/>
+        <location filename="../src/appsettings.cpp" line="175"/>
         <source>km</source>
         <translation></translation>
     </message>
@@ -123,6 +153,16 @@
         <translation>Nastala chyba během převodu trasy na body na mapě</translation>
     </message>
     <message>
+        <location filename="../src/dbmaster_route.cpp" line="194"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/dbmaster_route.cpp" line="195"/>
+        <source>Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
         <translation>Databáze není otevřena, nemohu vyhledávat</translation>
@@ -159,6 +199,22 @@
     </message>
 </context>
 <context>
+    <name>ElementLanguageSelector</name>
+    <message>
+        <location filename="../qml/pages/ElementLanguageSelector.qml" line="27"/>
+        <source>All supported languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ElementSelector</name>
+    <message>
+        <location filename="../qml/pages/ElementSelector.qml" line="30"/>
+        <source>&lt;Not selected&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FileSelector</name>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="163"/>
@@ -170,6 +226,142 @@
         <location filename="../qml/pages/FileSelector.qml" line="191"/>
         <source>Empty directory</source>
         <translation>Prázdná složka</translation>
+    </message>
+</context>
+<context>
+    <name>GeoMaster</name>
+    <message>
+        <location filename="../src/geomaster.cpp" line="70"/>
+        <source>Cannot open geocoding database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="40"/>
+        <source>Cannot open geocoder database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="44"/>
+        <source>Opened geocoder database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="57"/>
+        <source>libpostal using language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="61"/>
+        <source>libpostal will use all covered languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="81"/>
+        <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="90"/>
+        <source>Error while searching with geocoder-nlp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="166"/>
+        <source>Search for reference point failed: cannot find</source>
+        <translation type="unfinished">Chyba během hledání referenčního místa</translation>
+    </message>
+</context>
+<context>
+    <name>GeocoderPage</name>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
+        <source>Geocoder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="38"/>
+        <source>Use geocoder-nlp with libpostal as a geocoder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="39"/>
+        <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="53"/>
+        <source>geocoder-nlp and libpostal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="44"/>
+        <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponoding objects on a map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="60"/>
+        <source>libpostal language parser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="61"/>
+        <source>Location of the folder with a language parser databases of libpostal, such as language_classifier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="69"/>
+        <source>Country-specific database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="70"/>
+        <source>Location of the folder with a country-specific databases of libpostal, such as address_parser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="78"/>
+        <source>Geocoder database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="79"/>
+        <source>Location of the SQLite geocoder-nlp database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="85"/>
+        <source>Languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="86"/>
+        <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="93"/>
+        <source>Use primitive parser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="94"/>
+        <source>In addition to libpostal, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue. Example: house_number, street, town.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="103"/>
+        <source>Load libpostal on every call</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="104"/>
+        <source>When selected, libpostal databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -701,36 +893,41 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="23"/>
+        <source>Geocoder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="28"/>
         <source>Settings</source>
         <translation>Nastavení</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="37"/>
+        <location filename="../qml/pages/StartPage.qml" line="42"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="41"/>
+        <location filename="../qml/pages/StartPage.qml" line="46"/>
         <source>Map</source>
         <translation>Mapa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="93"/>
+        <location filename="../qml/pages/StartPage.qml" line="98"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="107"/>
+        <location filename="../qml/pages/StartPage.qml" line="112"/>
         <source>Jobs in a queue</source>
         <translation>Úloh ve frontě</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="108"/>
+        <location filename="../qml/pages/StartPage.qml" line="113"/>
         <source>Idle</source>
         <translation>Nečinný</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="122"/>
+        <location filename="../qml/pages/StartPage.qml" line="127"/>
         <source>Events</source>
         <translation>Události</translation>
     </message>

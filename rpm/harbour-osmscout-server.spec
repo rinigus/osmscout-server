@@ -13,7 +13,7 @@ Name:       harbour-osmscout-server
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server
-Version:    0.5.3
+Version:    0.6.0
 Release:    1
 Group:      Qt/Qt
 License:    LGPL
@@ -28,6 +28,9 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  libmarisa-devel
 BuildRequires:  libmicrohttpd-devel
 BuildRequires:  libosmscout-qt-devel
+BuildRequires:  libpostal-devel
+BuildRequires:  snappy-devel
+BuildRequires:  sqlite-devel
 BuildRequires:  desktop-file-utils
 
 %description

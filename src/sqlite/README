@@ -1,0 +1,7 @@
+Since SFOS SDK does not allow to link to sqlite3, sqlite3 sources have
+to be unziped in this directory. At present,
+
+sqlite-amalgamation-3160200
+
+is used. Its available at
+https://sqlite.org/2017/sqlite-amalgamation-3160200.zip

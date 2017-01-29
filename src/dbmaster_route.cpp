@@ -191,8 +191,8 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     std::list<osmscout::RoutePostprocessor::PostprocessorRef> postprocessors;
 
     postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::DistanceAndTimePostprocessor>());
-    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::StartPostprocessor>("Start"));
-    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::TargetPostprocessor>("Target"));
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::StartPostprocessor>(tr("Start").toStdString()));
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::TargetPostprocessor>(tr("Target").toStdString()));
     postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::WayNamePostprocessor>());
     postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::CrossingWaysPostprocessor>());
     postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::DirectionPostprocessor>());

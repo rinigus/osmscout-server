@@ -5,7 +5,9 @@
 
 #include "requestmapper.h"
 #include "dbmaster.h"
+#include "geomaster.h"
 #include "infohub.h"
+#include "config.h"
 
 #include "microhttpconnectionstore.h"
 
@@ -22,9 +24,6 @@
 #include <functional>
 
 //#define DEBUG_CONNECTIONS
-
-
-extern DBMaster *osmScoutMaster;
 
 RequestMapper::RequestMapper()
 {
@@ -275,7 +274,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
     //////////////////////////////////////////////////////////////////////
     /// SEARCH
-    else if (path == "/v1/search")
+    else if (path == "/v1/search" || path == "/v2/search")
     {
         bool ok = true;
         size_t limit = q2value<size_t>("limit", 25, connection, ok);
@@ -289,10 +288,21 @@ unsigned int RequestMapper::service(const char *url_c,
             return MHD_HTTP_BAD_REQUEST;
         }
 
-        Task *task = new Task(connection_id,
+        Task *task;
+        bool extended_reply = (path == "/v2/search");
+
+        if ( !useGeocoderNLP )
+            task = new Task(connection_id,
                               std::bind( &DBMaster::searchExposed, osmScoutMaster,
                                          search, std::placeholders::_1, limit),
                               "Error while searching");
+        else
+            task = new Task(connection_id,
+                            std::bind( &GeoMaster::searchExposed, geoMaster,
+                                       search, std::placeholders::_1, limit,
+                                       extended_reply),
+                            "Error while searching");
+
         m_pool.start(task);
 
         MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
@@ -406,7 +416,9 @@ unsigned int RequestMapper::service(const char *url_c,
                 }
 
                 double lat, lon;
-                if (osmScoutMaster->search(search, lat, lon))
+                bool unlp = useGeocoderNLP;
+                if ( (unlp && geoMaster->search(search, lat, lon)) ||
+                     (!unlp && osmScoutMaster->search(search, lat, lon)) )
                 {
                     osmscout::GeoCoord c(lat,lon);
                     points.push_back(c);

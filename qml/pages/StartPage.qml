@@ -20,6 +20,11 @@ Page {
             }
 
             MenuItem {
+                text: qsTr("Geocoder")
+                onClicked: pageStack.push(Qt.resolvedUrl("GeocoderPage.qml"))
+            }
+
+            MenuItem {
                 text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }

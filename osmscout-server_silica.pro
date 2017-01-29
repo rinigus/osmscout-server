@@ -54,7 +54,10 @@ SOURCES += \
     src/infohub.cpp \
     src/rollinglogger.cpp \
     src/consolelogger.cpp \
-    src/routingforhuman.cpp
+    src/routingforhuman.cpp \
+    src/geomaster.cpp \
+    src/config.cpp \
+    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -63,6 +66,7 @@ OTHER_FILES += qml/osmscout-server.qml \
 
 include(src/uhttp/uhttp.pri)
 include(src/fileselector/fileselector.pri)
+include(src/geocoder-nlp/geocoder-nlp.pri)
 
 HEADERS += \
     src/dbmaster.h \
@@ -73,7 +77,10 @@ HEADERS += \
     src/infohub.h \
     src/rollinglogger.h \
     src/consolelogger.h \
-    src/routingforhuman.h
+    src/routingforhuman.h \
+    src/geomaster.h \
+    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
+    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -89,7 +96,7 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa
+LIBS += -losmscout_map -losmscout -lmarisa -ldl
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
