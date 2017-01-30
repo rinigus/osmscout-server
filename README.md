@@ -31,7 +31,9 @@ in server environment when compiled as a console application.
 ## Maps
 
 Maps provided by OpenStreetMaps have to be converted to the format
-used by libosmscout library. 
+used by libosmscout library. When using libpostal-based geocoder-nlp
+for searches, a separate databases are required. The importing
+procedure below concerns only libosmscout part.
 
 The maps are imported from PBF or OSM file formats, as provided by
 OpenStreetMap download servers.  While smaller maps lead to faster
@@ -45,7 +47,7 @@ For importing, you could either use pre-compiled released import tool
 or compile the import tool from source.
 
 
-### Using compiled Import tool
+### Using compiled Import tool 
 
 Get the Import tool corresponding to the release of libosmscout
 library that is used in your server build. For Sailfish OSM Scout
@@ -53,11 +55,16 @@ Server releases, the following import tools are available:
 
 OSM Scout Server | libosmscout Sailfish
 --- | ---
+0.6.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20170126
 0.5.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161207
 0.4.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161128.2
 0.3.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
 
-Note that the maps format is not changing between all the versions. It will be specified in OSM Scout Server and libosmscout release changelog if the change in the format or significant import bug has been fixed. For example, you could use the server 0.5.x releases with the maps imported by the importer corresponding to 0.3.0.  
+Note that the maps format is not changing between all the versions. It
+will be specified in OSM Scout Server and libosmscout release
+changelog if the change in the format or significant import bug has
+been fixed. For example, you could use the server 0.5.x releases with
+the maps imported by the importer corresponding to 0.3.0.
 
 ### Compiling Import tool
 
@@ -143,6 +150,13 @@ Poor Maps settings for example.
 
 ## Location search
 
+There are two versions of the location search query results. The only
+difference is in returned JSON format with the second version, in
+addition to returning the results, giving feedback on query parsing to
+the user.
+
+### Location search: version 1
+
 The location search is accessed by the following URL:
 
 `http://localhost:8553/v1/search?limit={limit}&search={query}`
@@ -153,8 +167,95 @@ where
 
 `{query}` - location and free text search
 
-Results are returned in JSON format. See Poor Maps geocoder
-implementation for details of the format.
+Results are returned in JSON format. Example query:
+`http://localhost:8553/v1/search?limit=10&search=tartu mnt 1, tallinn`
+
+```
+[
+{
+"admin_region": "Tallinn, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
+"lat": 59.434895,
+"lng": 24.758684,
+"object_id": "Node 631817",
+"title": "Tartu mnt 1, Tallinn",
+"type": "address"
+},
+{
+"admin_region": "Tallinn, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
+"lat": 59.404687,
+"lng": 24.810360,
+"object_id": "Way 9670330",
+"title": "Tartu mnt, Tallinn",
+"type": "highway_trunk"
+},
+...
+]
+```
+
+### Location search: version 2
+
+The location search is accessed by the following URL:
+
+`http://localhost:8553/v2/search?limit={limit}&search={query}`
+
+where meaning of the query parameters is the same as for the version
+one. However, the result includes parsing feedback when geocoder-nlp
+is used. For example,
+`http://localhost:8553/v2/search?limit=3&search=tartu mnt 1, tallinn`:
+
+```
+{
+    "parsed": {
+        "city": "tallinn",
+        "house_number": "1",
+        "road": "tartu mnt"
+    },
+    "parsed_normalized": [
+        {
+            "city": "tallinn",
+            "house_number": "1",
+            "road": "tartu maantee"
+        },
+        {
+            "h-0": "tallinn",
+            "h-1": "tartu maantee 1"
+        }
+    ],
+    "query": "tartu mnt 1, tallinn",
+    "result": [
+        {
+            "admin_region": "1, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
+            "lat": 59.434894989690889,
+            "levels_resolved": 3,
+            "lng": 24.758684372594075,
+            "object_id": 31299,
+            "title": "1, Tartu mnt",
+            "type": ""
+        },
+        {
+            "admin_region": "13, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
+            "lat": 59.434417556482686,
+            "levels_resolved": 3,
+            "lng": 24.761235153386252,
+            "object_id": 31312,
+            "title": "13, Tartu mnt",
+            "type": ""
+        },
+        {
+            "admin_region": "14, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
+            "lat": 59.433896537377663,
+            "levels_resolved": 3,
+            "lng": 24.761358535001861,
+            "object_id": 31314,
+            "title": "14, Tartu mnt",
+            "type": ""
+        }
+    ]
+}
+```
+
+Note that at the time of writing, type keyword is not supported by
+geocoder-nlp yet.
 
 
 ## List of available POI types
@@ -270,16 +371,31 @@ code. This will improve in future.
 
 The translations were contributed by
 
-Carmen F. B. @carmenfdezb: Spanish
+- Carmen F. B. @carmenfdezb: Spanish
+- Lukáš Karas @Karry: Czech
+- Åke Engelbrektson @eson57: Swedish
+
+
+## Libpostal
+
+Please note that libpostal is developed to be used with the fine tuned
+model covering the World. The country-based models were developed to
+use libpostal in mobile devices and have not been specifically
+tuned. Please submit the issues with libpostal performance on
+country-based models to OSM Scout Server or geocoder-nlp github
+projects.
 
 
 ## Acknowledgments
 
 libosmscout: http://libosmscout.sourceforge.net
 
+libpostal: https://github.com/openvenues/libpostal
+
 osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 
 GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
 
+langcodes: https://github.com/LuminosoInsight/langcodes
 
 [![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)

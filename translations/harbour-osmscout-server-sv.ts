@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<TS version="2.1" language="sv">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>El servidor debe utilizarse junto al programa cliente capaz de mostrar los mapas, hacer las búsquedas y mostrar las rutas seleccionadas. El servidor es una capa fina que presenta la funcionalidad de &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; y &lt;i&gt;geocoder-nlp&lt;/i&gt; a través de http. Este servidor se puede utilizar en lugar de los servicios de mapas en línea.</translation>
+        <translation>Servern skall användas ihop med ett klientprogram som kan visa kartor, söka och visa markerade rutter. Servern är ett tunt lager med funktioner för &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; och &lt;i&gt;geocoder-nlp&lt;/i&gt; genom http. Denna server kan användas som ersättning för karttjänster online.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
         <source>Copyright:</source>
-        <translation>Derechos de autor:</translation>
+        <translation>Copyright:</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>License: LGPL</source>
-        <translation>Licencia: LGPL</translation>
+        <translation>Licens: LGPL</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation>Traducciones</translation>
+        <translation>Översättningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="21"/>
@@ -31,27 +31,27 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="23"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Por favor, ten en cuenta que &lt;i&gt;libpostal&lt;/i&gt; se ha desarrollado para ajustarse bien en el modelo que cubre todo el mundo. Los modelos basados ​​en países fueron desarrollados para usar &lt;i&gt;libpostal&lt;/i&gt; en dispositivos móviles pero éste no se ajusta especificamente a estos modelos. Por favor, informa de las incidencias sobre el rendimiento de libpostal en los modelos basados ​​en países a través de github, en los proyectos &lt;i&gt;OSM Scout Server&lt;/i&gt; o &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation>Notera att &lt;i&gt;libpostal&lt;/i&gt; utvecklats för att användas med den finavstämda modell som täcker hela världen. De landbaserade modellerna, utvecklades för att användas på mobila enheter och har inte trimmats speciellt. Posta frågor angående libpostal-prestanda på landbaserade modeller hos GitHub-projekten för &lt;i&gt;OSM Scout Server&lt;/i&gt; eller &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>Acknowledgments</source>
-        <translation>Agradecimientos</translation>
+        <translation>Erkännanden</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="52"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="56"/>
         <source>version</source>
-        <translation>versión</translation>
+        <translation>version</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="61"/>
         <source>is a server that provides offline map services</source>
-        <translation>es un servidor que proporciona un servicio de mapas sin conexión</translation>
+        <translation>är en server som tillhandahåller karttjänster offline.</translation>
     </message>
 </context>
 <context>
@@ -82,17 +82,17 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="19"/>
         <source>OSM Scout Server</source>
-        <translation>Servidor OSM Scout</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="22"/>
         <source>Jobs</source>
-        <translation>Trabajos</translation>
+        <translation>Jobb</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="23"/>
         <source>Idle</source>
-        <translation>Inactivo</translation>
+        <translation>Vänteläge</translation>
     </message>
 </context>
 <context>
@@ -100,102 +100,102 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="16"/>
         <source>Cannot create database object</source>
-        <translation>No es posible crear objeto en la base de datos</translation>
+        <translation>Kan inte skapa databasobjekt</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="44"/>
         <source>Cannot open database</source>
-        <translation>No es posible abrir la base de datos</translation>
+        <translation>Kan inte öppna databasen</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="49"/>
         <source>Opened database</source>
-        <translation>Base de datos abierta</translation>
+        <translation>Öppnade databas</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="115"/>
         <source>Cannot allocate Style config</source>
-        <translation>No es posible asignar la configuración del estilo</translation>
+        <translation>Kan inte allokera stilkonfiguration</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="123"/>
         <source>Cannot open style</source>
-        <translation>No es posible abrir estilo</translation>
+        <translation>Kan inte öppna stil</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="129"/>
         <source>Loaded style</source>
-        <translation>Estilo cargado</translation>
+        <translation>Inläst stil</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_map.cpp" line="72"/>
         <source>Database is not open, cannot render a tile</source>
-        <translation>La base de datos no está abierta, no es posible renderizar un tile</translation>
+        <translation>Databasen är inte öppen, kan inte rendera en kartbild</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="79"/>
         <source>Database is not open, cannot route</source>
-        <translation>La base de datos no está abierta, no es posible crear la ruta</translation>
+        <translation>Databasen är inte öppet, kan inte beräkna rutt</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="99"/>
         <source>Cannot open routing database</source>
-        <translation>No es posible abrir la base de datos de rutas</translation>
+        <translation>Kan inte öppna ruttdatabasen</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="136"/>
         <source>There was an error while calculating the route!</source>
-        <translation>¡Se produjo un error al calcular la ruta!</translation>
+        <translation>Ett fel inträffade vid beräkning av rutten!</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="146"/>
         <source>Error during route conversion to points</source>
-        <translation>Error durante la conversión de la ruta a puntos</translation>
+        <translation>Fel vid ruttens konvertering till punkter</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="194"/>
         <source>Start</source>
-        <translation>Inicio</translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="195"/>
         <source>Target</source>
-        <translation>Meta</translation>
+        <translation>Mål</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
-        <translation>La base de datos no está abierta, no es posible hacer la búsqueda</translation>
+        <translation>Databasen är inte öppen, kan inte söka</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="272"/>
         <source>Error while parsing search string</source>
-        <translation>Error al analizar la cadena de búsqueda</translation>
+        <translation>Fel vid tolkning av söksträngen</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="279"/>
         <source>Error while searching for location</source>
-        <translation>Error al buscar la ubicación</translation>
+        <translation>Fel vid sökning efter plats</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="486"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>La busqueda del punto de referencia ha fallado: no se pudo encontrar</translation>
+        <translation>Sökning efter referenspunkt misslyckades. Hittades inte</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="507"/>
         <source>Database is not open, cannot search for POI</source>
-        <translation>La base de datos no está abierta; no se pudo buscar POI</translation>
+        <translation>Databasen är inte öppen, kan inte söka efter POI</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="568"/>
         <source>Cannot load data from database</source>
-        <translation>No es posible cargar los datos de la base de datos</translation>
+        <translation>Kan inte läsa in data från databasen</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="668"/>
         <source>Database is not open, cannot list POI types</source>
-        <translation>La base de datos no está abierta, no se pudo listar tipos de POI</translation>
+        <translation>Databasen är inte öppen, kan inte lista POI-typer</translation>
     </message>
 </context>
 <context>
@@ -203,7 +203,7 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="27"/>
         <source>All supported languages</source>
-        <translation>Todos los idiomas soportados</translation>
+        <translation>Alla språk som stöds</translation>
     </message>
 </context>
 <context>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../qml/pages/ElementSelector.qml" line="30"/>
         <source>&lt;Not selected&gt;</source>
-        <translation>&lt;No seleccionado&gt;</translation>
+        <translation>&lt;Ej vald&gt;</translation>
     </message>
 </context>
 <context>
@@ -225,7 +225,7 @@
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="191"/>
         <source>Empty directory</source>
-        <translation>Directorio vacío</translation>
+        <translation>Tom mapp</translation>
     </message>
 </context>
 <context>
@@ -233,42 +233,42 @@
     <message>
         <location filename="../src/geomaster.cpp" line="70"/>
         <source>Cannot open geocoding database</source>
-        <translation>No es posible abrir la base de datos de geocodificación</translation>
+        <translation>Kan inte öppna geokodningsdatabasen</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="40"/>
         <source>Cannot open geocoder database</source>
-        <translation>No es posible abrir la base de datos del geocodificador</translation>
+        <translation>Kan inte öppna geokodningsdatabasen</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="44"/>
         <source>Opened geocoder database</source>
-        <translation>Base de datos del geocodificador abierta</translation>
+        <translation>Öppnade geokodningsdatabasen</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="57"/>
         <source>libpostal using language</source>
-        <translation>idioma usado en libpostal</translation>
+        <translation>libpostal använder språket</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="61"/>
         <source>libpostal will use all covered languages</source>
-        <translation>libpostal usará todos los idiomas cubiertos</translation>
+        <translation>libpostal använder alla språk som stöds</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="81"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
-        <translation>Error de análisis de libpostal, quizás la base de datos de libpostal no está disponible</translation>
+        <translation>Fel vid tolkning av libpostal. libpostal-databaserna kanske inte är tillgängliga</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="90"/>
         <source>Error while searching with geocoder-nlp</source>
-        <translation>Error al buscar con geocoder-nlp</translation>
+        <translation>Fel vid sökning med geocoder-nlp</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="166"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>La búsqueda del punto de referencia ha fallado: no se pudo encontrar</translation>
+        <translation>Sökning efter referenspunkt misslyckades. kan inte hitta</translation>
     </message>
 </context>
 <context>
@@ -276,92 +276,92 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
         <source>Geocoder</source>
-        <translation>Geocodificador</translation>
+        <translation>Geocoder</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="38"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
-        <translation>Usar geocoder-nlp con libpostal como un geocodificador</translation>
+        <translation>Använd geocoder-nlp med libpostal som en geokodare</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="39"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.</source>
-        <translation>Cuando se activa, se usará un geodificador basado en libpostal para resolver todas las búsquedas solicitadas. Ten en cuenta que necesitas de bases de datos adicionales para el idioma, análisis de entrada de usuario, y geocodificación.</translation>
+        <translation>Vid aktivering, kommer en libpostal-baserad geokodare att användas för att lösa alla sökförfrågningar. Notera att det krävs ytterligare databaser för språk, tolkning av användarens indata och geokodning.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="53"/>
         <source>geocoder-nlp and libpostal</source>
-        <translation>geocoder-nlp y libpostal</translation>
+        <translation>geocoder-nlp och libpostal</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="44"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation>Aviso legal: Por favor, consulta &apos;Acerca de&apos; para el envío de incidencias sobre el análisis de direcciones postales.</translation>
+        <translation>OBS! Se &quot;Om&quot;, angående rapportering kring frågor om adresstolkning.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponoding objects on a map.</source>
-        <translation>Geocodificador es el responsable de resolver las búsquedas solicitadas. Para ello, analiza las cadenas de búsqueda y encuentra los objetos correspondientes en un mapa.</translation>
+        <translation>Geocoder ansvarar för att lösa sökförfrågningar. För det, tolkar den söksträngen och identifierar motsvarande objekt på en karta.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="60"/>
         <source>libpostal language parser</source>
-        <translation>Analizador de idioma de libpostal</translation>
+        <translation>libpostal språktolk</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="61"/>
         <source>Location of the folder with a language parser databases of libpostal, such as language_classifier</source>
-        <translation>Ubicación de la carpeta donde se encuentra un analizador de idioma de las bases de datos de libpostal, como laguage_classifier</translation>
+        <translation>Plats för mappen med en språktolks databaser för libpostal, såsom language_classifier</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="69"/>
         <source>Country-specific database</source>
-        <translation>Base de datos específica del país</translation>
+        <translation>Landspecifik databas.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="70"/>
         <source>Location of the folder with a country-specific databases of libpostal, such as address_parser</source>
-        <translation>Ubicación de la carpeta donde se encuentran las bases de datos de libpostal específicas de un país, como address_parser</translation>
+        <translation>Plats för mappen med en landspecifik databas för libpostal, såsom address_parser.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="78"/>
         <source>Geocoder database</source>
-        <translation>Base de datos del geocodificador</translation>
+        <translation>Geocoder-databas</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="79"/>
         <source>Location of the SQLite geocoder-nlp database</source>
-        <translation>Ubicación de la base de datos SQLite de geocoder-nlp</translation>
+        <translation>Plats för SQLite geocoder-nlp-databasen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="85"/>
         <source>Languages</source>
-        <translation>Idiomas</translation>
+        <translation>Språk</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="86"/>
         <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
-        <translation>Lista de idiomas usados para el análisis de direcciones postales. Ten en cuenta que cuando se utilizan todos los idiomas soportados, el uso de RAM podría ser considerable</translation>
+        <translation>Lista över språk som används för att tolka adresser. Notera att när &quot;Alla språk som stöds&quot; används, kan RAM-användningen bli stor.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="93"/>
         <source>Use primitive parser</source>
-        <translation>Usar analizador primitivo</translation>
+        <translation>Använd primitiv tolk</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="94"/>
         <source>In addition to libpostal, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue. Example: house_number, street, town.</source>
-        <translation>Además de libpostal, el analizador primitivo te permite especificar la jerarquía administrativa en la búsqueda de un objeto mediante la separación de los componentes por comas. A veces, cuando libpostal falla al analizar correctamente una solicitud, es posible solucionar la incidencia con este analizador. Ejemplo: número de la vivienda, calle, ciudad.</translation>
+        <translation>Som tillägg till libpostal, kan du med primitiv tolk specificera administrativ hierarki för sökobjektet, genom att separera komponenter med kommatecken. Ibland, om libpostal inte kan tolka förfrågan korrekt, låter tolken dig överbrygga det problemet. Exempel: husnummer, gata, stad</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="103"/>
         <source>Load libpostal on every call</source>
-        <translation>Cargar libpostal en cada llamada</translation>
+        <translation>Läs in libpostal vid varje anrop</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="104"/>
         <source>When selected, libpostal databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation>Cuando se activa, las bases de datos de libpostal se cargarán en la memoria sólo durante el análisis de la solicitud. Como resultado, la sobrecarga de memoria de libpostal es baja durante la inactividad mientras que el proceso de búsqueda tardaría más tiempo.</translation>
+        <translation>Vid aktivering, kommer libpostal-databaser att läsas in i minnet, endast vid tolkning av förfrågan. Som ett resultat kommer minneskravet för libpostal att vara lågt i vänteläge, men sökningar kommer att ta något längre tid.</translation>
     </message>
 </context>
 <context>
@@ -369,12 +369,12 @@
     <message>
         <location filename="../src/infohub.cpp" line="101"/>
         <source>ERROR: </source>
-        <translation>ERROR: </translation>
+        <translation>FEL: </translation>
     </message>
     <message>
         <location filename="../src/infohub.cpp" line="107"/>
         <source>WARNING: </source>
-        <translation>AVISO: </translation>
+        <translation>VARNING: </translation>
     </message>
     <message>
         <location filename="../src/infohub.cpp" line="116"/>
@@ -387,195 +387,195 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="71"/>
         <source>Turn sharp left</source>
-        <translation>Gira fuertemente a la izquierda</translation>
+        <translation>Sväng skarpt vänster</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="73"/>
         <source>Turn left</source>
-        <translation>Gira a la izquierda</translation>
+        <translation>Sväng vänster</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="75"/>
         <source>Turn slightly left</source>
-        <translation>Gira ligeramente a la izquierda</translation>
+        <translation>Sväng svagt vänster</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="77"/>
         <source>Straight on</source>
-        <translation>Sigue recto</translation>
+        <translation>Rakt fram</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="79"/>
         <source>Turn slightly right</source>
-        <translation>Gira ligeramente a la derecha</translation>
+        <translation>Sväng svagt höger</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="81"/>
         <source>Turn right</source>
-        <translation>Gira a la derecha</translation>
+        <translation>Sväng höger</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="83"/>
         <source>Turn sharp right</source>
-        <translation>Gira fuertemente a la derecha</translation>
+        <translation>Sväng skarpt höger</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="98"/>
         <source>Drive along %along%</source>
-        <translation>Continua por la %along%</translation>
+        <translation>Kör vidare %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="99"/>
         <source>Start at %start%. Drive along %along%</source>
-        <translation>Comienza en %start%. Continua por la %along%</translation>
+        <translation>Starta vid %start%. Kör vidare %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="106"/>
         <source>Start at %start%</source>
-        <translation>Comienza en %start%</translation>
+        <translation>Starta vid %start%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="154"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
-        <translation>Al cruzar (%crossingway%), %turncommand%</translation>
+        <translation>Vid korsningen (%crossingway%), %turncommand%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="223"/>
         <source>Enter motorway %motorway%</source>
-        <translation>Incorpórate a la autovía %motorway%</translation>
+        <translation>Kör ut på motorväg %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="227"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
-        <translation>Al cruzar la %crossing%, incorpórate a la autovía %motorway%</translation>
+        <translation>Vid korsningen %crossing%, kör ut på motorväg %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway to %to%</source>
-        <translation>Cambia la autovía a %to%</translation>
+        <translation>Byt motorväg till %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="269"/>
         <source>Change motorway from %from%</source>
-        <translation>Cambia la autovía desde %from%</translation>
+        <translation>Byt motorväg från %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="272"/>
         <source>Change motorway from %from% to %to%</source>
-        <translation>Cambia la autovía desde %from% a %to%</translation>
+        <translation>Byt motorväg från %from% to %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="277"/>
         <location filename="../src/routingforhuman.cpp" line="363"/>
         <source>At %motoName% (exit %motoRef%), %command%</source>
-        <translation>En %motoName% (salida %motoRef%), %command%</translation>
+        <translation>På %motoName% (lämna %motoRef%), %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="283"/>
         <location filename="../src/routingforhuman.cpp" line="369"/>
         <source>At %motoName%, %command%</source>
-        <translation>En %motoName%, %command%</translation>
+        <translation>På %motoName%, %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway into %into%</source>
-        <translation>Deja la autovía hacia %into%</translation>
+        <translation>Kör av motorvägen till %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="338"/>
         <source>Leave motorway. %move%</source>
-        <translation>Deja la autovía. %move%</translation>
+        <translation>Kör av motorvägen. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="341"/>
         <location filename="../src/routingforhuman.cpp" line="348"/>
         <source>Leave motorway %from%</source>
-        <translation>Deja la autovía %from%</translation>
+        <translation>Kör av motorvägen %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="344"/>
         <source>Leave motorway. %move% into %into%</source>
-        <translation>Deja la autovía. %move% hacia %into%</translation>
+        <translation>Kör av motorvägen. %move% till %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="352"/>
         <source>Leave motorway %from%. %move%</source>
-        <translation>Deja la autovía %from%. %move%</translation>
+        <translation>Kör av motorvägen %from%. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="356"/>
         <source>Leave motorway %from%. %move% into %into%</source>
-        <translation>Deja la autovía %from%. %move% hacia %into%</translation>
+        <translation>Kör av motorvägen %from%. %move% till %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation>El nombre de la vía cambia de %from% a %to%</translation>
+        <translation>Vägen byter namn från %from% till %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="388"/>
         <source>Way changes name to %to%</source>
-        <translation>El nombre de la vía cambia a %to%</translation>
+        <translation>Vägen byter namn till %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="146"/>
         <source>Turn</source>
-        <translation>Gira</translation>
+        <translation>Sväng</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="192"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
-        <translation>Deja la rotonda (salida %num%) hacia la calle %street%</translation>
+        <translation>Kör ut från rondellen (utgång %num%) in på %street%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="196"/>
         <source>Leave roundabout (%num% exit)</source>
-        <translation>Deja la rotonda (salida %num%)</translation>
+        <translation>Kör ut från rondellen (utgång %num%)</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="167"/>
         <source>Enter roundabout</source>
-        <translation>Entra en la rotonda</translation>
+        <translation>Kör in i rondellen</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="118"/>
         <source>Target reached: %target%</source>
-        <translation>Has llegado a tu destino: %target%</translation>
+        <translation>Du är framme: %target%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="149"/>
         <source>%turncommand% into %where%</source>
-        <translation>%turncommand% hacia %where%</translation>
+        <translation>%turncommand% till %where%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="171"/>
         <source>At crossing %crossway%, enter roundabout</source>
-        <translation>Al cruzar la %crossing%, entra en la rotonda</translation>
+        <translation>Kör in i rondellen vid korsningen %crossway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>Leave roundabout</source>
-        <translation>Deja la rotonda</translation>
+        <translation>Lämna rondellen</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>exit</source>
-        <translation>salida</translation>
+        <translation>lämna</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="221"/>
         <source>Enter motorway</source>
-        <translation>Entra en la autovía</translation>
+        <translation>Kör ut på motorvägen</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="264"/>
         <source>Change motorway</source>
-        <translation>Cambia la autovía</translation>
+        <translation>Byt motorväg</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="333"/>
         <source>Leave motorway</source>
-        <translation>Deja la autovía</translation>
+        <translation>Lämna motorvägen</translation>
     </message>
 </context>
 <context>
@@ -583,42 +583,42 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="22"/>
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="28"/>
         <source>Map</source>
-        <translation>Mapa</translation>
+        <translation>Karta</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="78"/>
         <source>Style sheet used to render the map tiles</source>
-        <translation>Hoja de estilos usado para el renderizado de mapas</translation>
+        <translation>Stilmall för att återge kartor.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
         <source>Icons used to mark features on the map</source>
-        <translation>Iconos usados para marcar elementos en el mapa</translation>
+        <translation>Ikoner för att märka funktioner på kartan.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="62"/>
         <source>Rendering</source>
-        <translation>Renderización</translation>
+        <translation>Rendering</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="29"/>
         <source>Location of the folder with a map imported by libosmscout Import utility</source>
-        <translation>Ubicación de la carpeta donde se encuentra el mapa importado con la herramienta &apos;Import&apos; de libosmscout</translation>
+        <translation>Lagringslats för mappen, med en karta importerad av libosmscout importverktyg.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="41"/>
         <source>Units</source>
-        <translation>Sistema de unidades</translation>
+        <translation>Enheter</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="43"/>
         <source>Metric</source>
-        <translation>Métrico</translation>
+        <translation>Metrisk</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="44"/>
@@ -628,122 +628,122 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="51"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
-        <translation>Sistema de unidades usado en la interfaz gráfica de usuario del servidor. El sistema de unidades cambiará sólo después de aplicar los ajustes.</translation>
+        <translation>Enheter som används i det grafiska gränsnittet på servern. Enheterna ändras först efter att du verkställer inställningarna.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="69"/>
         <source>Font size</source>
-        <translation>Tamaño de la fuente</translation>
+        <translation>Teckenstorlek</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
         <source>Style Sheet</source>
-        <translation>Hoja de estilos</translation>
+        <translation>Stilmall</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="84"/>
         <source>Icons</source>
-        <translation>Iconos</translation>
+        <translation>Ikoner</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="93"/>
         <source>Render sea</source>
-        <translation>Renderizado del mar</translation>
+        <translation>Återge sjö</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Draw background</source>
-        <translation>Dibujar fondo</translation>
+        <translation>Rita bakgrund</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="103"/>
         <source>Routing</source>
-        <translation>Ruta</translation>
+        <translation>Ruttberäkning</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="119"/>
         <source>Cost factor</source>
-        <translation>Factor de coste</translation>
+        <translation>Kostnadsfaktor</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="108"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
-        <translation>La asignación de la ruta se calcula entre las posibles rutas que cumplen con la limitación del coste</translation>
+        <translation>Ruttberäkning sker mellan de möjliga rutter som stämmer med kostnadsbegränsningen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation>El factor de coste es un componente del límite de coste proporcional a la distancia geodésica entre el origen de la ruta y el destino</translation>
+        <translation>Kostnadsfaktorn är en komponent i kostnadsgränsen som är proportionell mot det geodetiska avståndet mellan ruttens startpunkt och målet</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="129"/>
         <source>Cost distance</source>
-        <translation>Distancia de coste</translation>
+        <translation>Kostnadsavstånd</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="130"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation>La distancia de coste es una compensación del límite de coste</translation>
+        <translation>Kostnadsavståndet är en förskjutning av kostnadsgränsen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="136"/>
         <source>Advanced rendering settings</source>
-        <translation>Ajustes avanzados del renderizado</translation>
+        <translation>Avancerade renderingsinställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="143"/>
         <source>Loaded area factor</source>
-        <translation>Factor del área cargada</translation>
+        <translation>Inläst områdesfaktor</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="144"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation>Al aumentar el tamaño del área usado para cargar los datos durante el renderizado de un tile, el visualizador puede mejorar el renderizado de etiquetas al tener en cuenta los datos de los tiles colindantes. El valor de factor 1.0 corresponde a los datos de carga originados únicamente para el tile renderizado. Un valor alto del factor disminuiría la velocidad de renderizado y aumentaría la RAM del servidor. Debido al impacto sobre la memoria RAM, dependiendo del tamaño del tile, factores tan pequeños como 2 pueden conducir a llenar la memoria RAM del dispositivo.</translation>
+        <translation>Genom att öka storleken på området som används för att läsa in data vid kartåtergivning, kan renderingstillägget förbättra återgivningen genom att ta hänsyn till uppgifter från närliggande kartrutor. Faktorvärdet 1,0 motsvarar inläsning av data som hämtas endast från återgiven ruta. Ett högre faktorvärde minskar renderingshastigheten och ökar RAM-användningen för servern. På grund av denna inverkan på RAM, beroende på rutstorlek, kan en faktor så liten som 2, leda till att fylla upp enhetens RAM.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="157"/>
         <source>Cutoff zoom level</source>
-        <translation>Nivel mínimo de zoom</translation>
+        <translation>Zoomnivåstopp</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation>En el nivel de zoom especificado, el algoritmo de renderizado del mapa detendrá la comprobación de etiquetas en los tiles colindantes. Normalmente se utiliza 14 como nivel mínimo de zoom. Con un valor más alto se podría conseguir un renderizado de etiquetas más preciso con niveles mayores de zoom. Ten en cuenta que el renderizado de etiquetas podría ralentizar considerablemente el renderizado de mapas.</translation>
+        <translation>Vid specificerad zoomnivå, kommer kartrenderingsalgoritmen att sluta söka efter etiketter i angränsande kartrutor. 14 används ofta som stoppzoomnivå. Genom att ange ett högre värde, kan du få en mer korrekt återgivning på högre zoomnivåer. Observera att etikettrendering kan fördröja kartåtergivningen avsevärt.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="167"/>
         <source>Miscellaneous</source>
-        <translation>Otros</translation>
+        <translation>Diverse</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="174"/>
         <source>Log info messages</source>
-        <translation>Registro de mensajes info</translation>
+        <translation>Logga infomeddelanden</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="175"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always</source>
-        <translation>Cuando está desactivado, los mensajes INFO no se registrarán en Eventos. Únicamente se mostrarán los mensajes de carga de bases de datos</translation>
+        <translation>Vid inaktivering, kommer infomeddelanden inte att loggas i händelseloggen. Undantaget är inläsning av databasen som alltid visas.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="182"/>
         <source>Events log size</source>
-        <translation>Tamaño del registro de Eventos</translation>
+        <translation>Händelseloggens storlek</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="183"/>
         <source>Number of events shown in the main page</source>
-        <translation>Número de eventos mostrados en la página principal</translation>
+        <translation>Antal händelser som visas i på huvudsidan</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="191"/>
         <source>Log messages into session log file</source>
-        <translation>Mensajes de registro dentro del fichero de registro de sesión</translation>
+        <translation>Logga meddelanden i sessionsloggfilen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="192"/>
         <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
-        <translation>Cuando está activado, los mensajes se registran en un archivo de registro de sesión. El archivo de registro está en el directorio .cache/harbour-osmscout-server. Utiliza esta configuración sólo para fines de depuración. Con esta opción activada, los mensajes de información serán registrados y mostrados en eventos independientemente de los ajustes anteriores. Esto te permite activar temporalmente el registro completo y desactivarlo cuando el archivo de registro de sesión requerido se haya creado.</translation>
+        <translation>Vid aktivering, loggas meddelanden i en sessionsloggfil. Loggfilen finns i .cache/harbour-osmscout-server. Använd den här inställningen endast för felsökning. Med denna inställning aktiverad, kommer infomeddelanden att loggas och visas i händelser oavsett ovanstående inställningar. Detta låter dig aktivera fullständig loggning tillfälligt, och inaktivera det när den eftersökta sessionsloggfilen producerats.</translation>
     </message>
 </context>
 <context>
@@ -751,132 +751,149 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="22"/>
         <source>Routing speeds</source>
-        <translation>Velocidades de ruta</translation>
+        <translation>Färdhastigheter</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="26"/>
         <source>Modes of transportation</source>
-        <translation>Modos de transporte</translation>
+        <translation>Transportlägen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="33"/>
         <source>Maximal car speed</source>
-        <translation>Velocidad máxima del coche</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="34"/>
-        <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
-        <translation>Esta es la velocidad que se supone que nunca se excederá en los cálculos de la ruta</translation>
+        <translation>Max bilhastighet</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="42"/>
         <source>Expected speed of a bicycle</source>
-        <translation>Velocidad prevista de una bicicleta</translation>
+        <translation>Förväntad cykelhastighet</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="50"/>
         <source>Expected speed while walking</source>
-        <translation>Velocidad prevista cuando caminas</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="56"/>
-        <source>Car speed on different roads</source>
-        <translation>Velocidad del coche en diferentes carreteras</translation>
+        <translation>Förväntad gånghastighet</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="63"/>
         <source>living street</source>
-        <translation>calle residencial</translation>
+        <translation>bostadsområde</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="71"/>
         <source>motorway</source>
-        <translation>autovía</translation>
+        <translatorcomment>OSM highway=motorway</translatorcomment>
+        <translation>motorväg</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="79"/>
         <source>motorway junction</source>
-        <translation>salida de autovía</translation>
+        <translation>motorvägsavfart</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="87"/>
         <source>motorway link</source>
-        <translation>enlace a autovía</translation>
+        <translatorcomment>OSM highway=motorway_link</translatorcomment>
+        <translation>motorvägspåfart</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="95"/>
         <source>motorway primary</source>
-        <translation>autovía principal</translation>
+        <translatorcomment>OSM highway=primary &amp;&amp; motorroad</translatorcomment>
+        <translation>primär motorväg</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
-        <translation>autovía troncal</translation>
+        <translatorcomment>OSM highway=trunk &amp;&amp; motorroad</translatorcomment>
+        <translation>motortrafikled</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="111"/>
         <source>primary</source>
-        <translation>carretera autonómica, km/n</translation>
+        <translatorcomment>OSM highway=primary</translatorcomment>
+        <translation>primär</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="119"/>
         <source>primary link</source>
-        <translation>enlace a carretera autonómica</translation>
+        <translatorcomment>OSM highway=primary_link</translatorcomment>
+        <translation>primär på-/avfart</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="127"/>
         <source>residential</source>
-        <translation>travesía</translation>
+        <translatorcomment>OSM highway=residential</translatorcomment>
+        <translation>tillfartsgata</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="135"/>
         <source>road</source>
-        <translation>carretera</translation>
+        <translatorcomment>OSM highway=road</translatorcomment>
+        <translation>gata</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="143"/>
         <source>roundabout</source>
-        <translation>rotonda</translation>
+        <translatorcomment>OSM highway=roundabout</translatorcomment>
+        <translation>rondell</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="151"/>
         <source>secondary</source>
-        <translation>carretera comarcal</translation>
+        <translatorcomment>OSM highway=secondary</translatorcomment>
+        <translation>sekundär</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="159"/>
         <source>secondary link</source>
-        <translation>enlace a carretera comarcal</translation>
+        <translatorcomment>OSM highway=secondary_link</translatorcomment>
+        <translation>sekundär på-/avfart</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="167"/>
         <source>service</source>
-        <translation>camino</translation>
+        <translatorcomment>OSM highway=service</translatorcomment>
+        <translation>serviceväg</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="175"/>
         <source>tertiary</source>
-        <translation>carretera local</translation>
+        <translatorcomment>OSM highway=tertiary</translatorcomment>
+        <translation>tertiär</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="183"/>
         <source>tertiary link</source>
-        <translation>enlace a carretera local</translation>
+        <translatorcomment>OSM highway=link</translatorcomment>
+        <translation>tertiär på-/avfart</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="191"/>
         <source>trunk</source>
-        <translation>carretera nacional</translation>
+        <translatorcomment>OSM highway=trunk</translatorcomment>
+        <translation>riksväg</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="199"/>
         <source>trunk link</source>
-        <translation>enlace a carretera nacional</translation>
+        <translatorcomment>OSM highway=trunk_link</translatorcomment>
+        <translation>motortrafikled på-/avfart</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="207"/>
         <source>unclassified</source>
-        <translation>sin clasificar</translation>
+        <translatorcomment>OSM highway=unclassified</translatorcomment>
+        <translation>oklassificerad</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="34"/>
+        <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
+        <translation>Denna hastighet förväntas aldrig överskridas under ruttberäkning.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="56"/>
+        <source>Car speed on different roads</source>
+        <translation>Bilhastighet på olika vägar</translation>
     </message>
 </context>
 <context>
@@ -884,52 +901,52 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="13"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation>Om</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="18"/>
         <source>Routing speeds</source>
-        <translation>Velocidades de ruta</translation>
+        <translation>Färdhastigheter</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="23"/>
         <source>Geocoder</source>
-        <translation>Geocodificador</translation>
+        <translation>Geokodare</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="28"/>
         <source>Settings</source>
-        <translation>Ajustes</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="42"/>
         <source>OSM Scout Server</source>
-        <translation>Servidor OSM Scout</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="46"/>
         <source>Map</source>
-        <translation>Mapa</translation>
+        <translation>Karta</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="98"/>
         <source>Status</source>
-        <translation>Estado</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="112"/>
         <source>Jobs in a queue</source>
-        <translation>Trabajos en cola</translation>
+        <translation>Jobb i kö</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="113"/>
         <source>Idle</source>
-        <translation>Inactivo</translation>
+        <translation>Väntar</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="127"/>
         <source>Events</source>
-        <translation>Eventos</translation>
+        <translation>Händelser</translation>
     </message>
 </context>
 </TS>

@@ -1,0 +1,6 @@
+[submodule "src/geocoder-nlp"]
+	path = src/geocoder-nlp
+	url = https://github.com/rinigus/geocoder-nlp.git
+[submodule "scripts/languages/thirdparty/langcodes"]
+	path = scripts/languages/thirdparty/langcodes
+	url = https://github.com/LuminosoInsight/langcodes.git

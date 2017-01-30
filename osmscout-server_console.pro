@@ -43,12 +43,15 @@ SOURCES += src/dbmaster.cpp \
     src/infohub.cpp \
     src/consolelogger.cpp \
     src/dbmaster_route.cpp \
-    src/routingforhuman.cpp
+    src/routingforhuman.cpp \
+    src/geomaster.cpp \
+    src/config.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
 
 include(src/uhttp/uhttp.pri)
+include(src/geocoder-nlp/geocoder-nlp.pri)
 
 HEADERS += \
     src/dbmaster.h \
@@ -58,7 +61,8 @@ HEADERS += \
     src/searchresults.h \
     src/infohub.h \
     src/consolelogger.h \
-    src/routingforhuman.h
+    src/routingforhuman.h \
+    src/geomaster.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -73,7 +77,7 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa
+LIBS += -losmscout_map -losmscout -lmarisa -lsqlite3
 
 QMAKE_CXXFLAGS += -fopenmp
 LIBS += -fopenmp

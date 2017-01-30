@@ -14,3 +14,7 @@ Leave roundabout (%num% exit) into street %street%
 keep %num% and %street% untranslated. These macros should be placed in
 the sentence where they are expected to be replaced by the exit number
 (%num%) and the street name %street%. 
+
+For road types, as requested in routing speed table, you may find it
+useful to see http://wiki.openstreetmap.org/wiki/Map_Features#Highway
+(link found by @eson57).
