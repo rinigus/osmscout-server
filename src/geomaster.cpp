@@ -63,7 +63,7 @@ void GeoMaster::onSettingsChanged()
 
 
 bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t limit,
-                       double &lat, double &lon, size_t &number_of_results)
+                       double &lat, double &lon, std::string &name, size_t &number_of_results)
 {
     if (!m_geocoder && !m_geocoder.load())
     {
@@ -144,17 +144,18 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
     {
         lat = search_result[0].latitude;
         lon = search_result[0].longitude;
+        name = search_result[0].address;
     }
 
     return true;
 }
 
-bool GeoMaster::search(const QString &searchPattern, double &lat, double &lon)
+bool GeoMaster::search(const QString &searchPattern, double &lat, double &lon, std::string &name)
 {
     QJsonObject obj;
     size_t number_of_results;
 
-    if ( !search(searchPattern, obj, 1, lat, lon, number_of_results ) )
+    if ( !search(searchPattern, obj, 1, lat, lon, name, number_of_results ) )
     {
         InfoHub::logWarning("Search for reference point failed");
         return false;
@@ -171,9 +172,10 @@ bool GeoMaster::searchExposed(const QString &searchPattern, QByteArray &result, 
 {
     QJsonObject sres;
     double lat, lon;
+    std::string name;
     size_t number_of_results;
 
-    if ( !search(searchPattern, sres, limit, lat, lon, number_of_results ) )
+    if ( !search(searchPattern, sres, limit, lat, lon, name, number_of_results ) )
         return false;
 
     if (!full_result)

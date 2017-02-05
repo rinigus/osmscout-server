@@ -340,7 +340,8 @@ unsigned int RequestMapper::service(const char *url_c,
 
         else if ( has("search", connection) && search.length() > 0 )
         {
-            if (osmScoutMaster->search(search, lat, lon))
+            std::string name;
+            if (osmScoutMaster->search(search, lat, lon, name))
             {
                 Task *task = new Task(connection_id,
                                       std::bind(&DBMaster::guide, osmScoutMaster,
@@ -392,6 +393,7 @@ unsigned int RequestMapper::service(const char *url_c,
         bool gpx = q2value<int>("gpx", 0, connection, ok);
 
         std::vector<osmscout::GeoCoord> points;
+        std::vector< std::string > names;
 
         bool points_done = false;
         for (int i=0; !points_done && ok; ++i)
@@ -403,11 +405,12 @@ unsigned int RequestMapper::service(const char *url_c,
                 double lat = q2value<double>(prefix + "[lat]", 0, connection, ok);
                 osmscout::GeoCoord c(lat,lon);
                 points.push_back(c);
+                names.push_back(std::string());
             }
 
             else if ( has(prefix + "[search]", connection) )
             {
-                QString search = q2value<QString>(prefix + "[search]", "", connection, ok);
+                QString search = q2value<QString>(prefix + "[search]", "", connection, ok);                
                 search = search.simplified();
                 if (search.length()<1)
                 {
@@ -416,12 +419,14 @@ unsigned int RequestMapper::service(const char *url_c,
                 }
 
                 double lat, lon;
+                std::string name;
                 bool unlp = useGeocoderNLP;
-                if ( (unlp && geoMaster->search(search, lat, lon)) ||
-                     (!unlp && osmScoutMaster->search(search, lat, lon)) )
+                if ( (unlp && geoMaster->search(search, lat, lon, name)) ||
+                     (!unlp && osmScoutMaster->search(search, lat, lon, name)) )
                 {
                     osmscout::GeoCoord c(lat,lon);
                     points.push_back(c);
+                    names.push_back(name);
                 }
                 else
                     ok = false;
@@ -451,7 +456,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
         Task *task = new Task(connection_id,
                               std::bind(&DBMaster::route, osmScoutMaster,
-                                        vehicle, points, radius, gpx, std::placeholders::_1),
+                                        vehicle, points, radius, names, gpx, std::placeholders::_1),
                               "Error while looking for route");
         m_pool.start(task);
 

@@ -133,32 +133,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="79"/>
+        <location filename="../src/dbmaster_route.cpp" line="80"/>
         <source>Database is not open, cannot route</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="99"/>
+        <location filename="../src/dbmaster_route.cpp" line="100"/>
         <source>Cannot open routing database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="136"/>
+        <location filename="../src/dbmaster_route.cpp" line="137"/>
         <source>There was an error while calculating the route!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="146"/>
+        <location filename="../src/dbmaster_route.cpp" line="147"/>
         <source>Error during route conversion to points</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="194"/>
+        <location filename="../src/dbmaster_route.cpp" line="196"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="195"/>
+        <location filename="../src/dbmaster_route.cpp" line="197"/>
         <source>Target</source>
         <translation type="unfinished"></translation>
     </message>
@@ -183,17 +183,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="507"/>
+        <location filename="../src/dbmaster_search.cpp" line="511"/>
         <source>Database is not open, cannot search for POI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="568"/>
+        <location filename="../src/dbmaster_search.cpp" line="572"/>
         <source>Cannot load data from database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="668"/>
+        <location filename="../src/dbmaster_search.cpp" line="672"/>
         <source>Database is not open, cannot list POI types</source>
         <translation type="unfinished"></translation>
     </message>
@@ -266,7 +266,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="166"/>
+        <location filename="../src/geomaster.cpp" line="167"/>
         <source>Search for reference point failed: cannot find</source>
         <translation type="unfinished"></translation>
     </message>

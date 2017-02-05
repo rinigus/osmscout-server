@@ -133,32 +133,32 @@
         <translation>Databasen är inte öppen, kan inte rendera en kartbild</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="79"/>
+        <location filename="../src/dbmaster_route.cpp" line="80"/>
         <source>Database is not open, cannot route</source>
         <translation>Databasen är inte öppet, kan inte beräkna rutt</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="99"/>
+        <location filename="../src/dbmaster_route.cpp" line="100"/>
         <source>Cannot open routing database</source>
         <translation>Kan inte öppna ruttdatabasen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="136"/>
+        <location filename="../src/dbmaster_route.cpp" line="137"/>
         <source>There was an error while calculating the route!</source>
         <translation>Ett fel inträffade vid beräkning av rutten!</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="146"/>
+        <location filename="../src/dbmaster_route.cpp" line="147"/>
         <source>Error during route conversion to points</source>
         <translation>Fel vid ruttens konvertering till punkter</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="194"/>
+        <location filename="../src/dbmaster_route.cpp" line="196"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="195"/>
+        <location filename="../src/dbmaster_route.cpp" line="197"/>
         <source>Target</source>
         <translation>Mål</translation>
     </message>
@@ -183,17 +183,17 @@
         <translation>Sökning efter referenspunkt misslyckades. Hittades inte</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="507"/>
+        <location filename="../src/dbmaster_search.cpp" line="511"/>
         <source>Database is not open, cannot search for POI</source>
         <translation>Databasen är inte öppen, kan inte söka efter POI</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="568"/>
+        <location filename="../src/dbmaster_search.cpp" line="572"/>
         <source>Cannot load data from database</source>
         <translation>Kan inte läsa in data från databasen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="668"/>
+        <location filename="../src/dbmaster_search.cpp" line="672"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>Databasen är inte öppen, kan inte lista POI-typer</translation>
     </message>
@@ -266,7 +266,7 @@
         <translation>Fel vid sökning med geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="166"/>
+        <location filename="../src/geomaster.cpp" line="167"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Sökning efter referenspunkt misslyckades. kan inte hitta</translation>
     </message>
