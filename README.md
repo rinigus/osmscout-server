@@ -257,9 +257,6 @@ is used. For example,
 }
 ```
 
-Note that at the time of writing, type keyword is not supported by
-geocoder-nlp yet.
-
 
 ## List of available POI types
 
