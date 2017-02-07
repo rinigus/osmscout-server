@@ -109,8 +109,9 @@ CONFIG(release, debug|release) {
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += \
-    translations/harbour-osmscout-server-es.ts \
     translations/harbour-osmscout-server-cs.ts \
+    translations/harbour-osmscout-server-de.ts \
+    translations/harbour-osmscout-server-es.ts \
     translations/harbour-osmscout-server-sv.ts
 
 DISTFILES += \
