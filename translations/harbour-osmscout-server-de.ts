@@ -816,7 +816,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="111"/>
         <source>primary</source>
-        <translation>carretera autonÃ³mica, km/n</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="119"/>
