@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Der Server muss mit dem Client-Programm verwendet werden, das Karten, Suchanfragen und ausgewählte Routen anzeigt werden können. Der Server ist sehr schlank aus der Funktionalität von & lt; i & gt; libosmscout & lt; / i & gt; libpostal & lt; / i & gt; Und & lt; i & rdquo; geocoder-nlp & lt; / i & gt; Über http. Dieser Server kann als Drop-in-Ersatz für Online-Dienste mit Karten verwendet werden.</translation>
+        <translation>Der Server muss mit dem Client-Programm verwendet werden, das Karten, Suchanfragen und ausgewÃ¤hlte Routen anzeigt werden kÃ¶nnen. Der Server ist sehr schlank aus der FunktionalitÃ¤t von &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; Und &lt;i&gt;geocoder-nlp&lt;/i&gt; Ãœber http. Dieser Server kann als Drop-in-Ersatz fÃ¼r Online-Dienste mit Karten verwendet werden.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
@@ -21,35 +21,35 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation>Übersetzungen</translation>
+        <translation>Ãœbersetzungen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="21"/>
+        <location filename="../qml/pages/AboutPage.qml" line="22"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="23"/>
+        <location filename="../qml/pages/AboutPage.qml" line="24"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Bitte beachten Sie, dass & lt; i & gt; libpostal & lt; / i & gt; entwickelt wurden um mit dem fein abgestimmten Modell für die Welt verwendet zu werden.Die landesspezifischen Modelle wurden entwickelt, um & lt; i-libpostal & lt; / i & gt; sie auf mobilen Geräten zu verwenden und wurden nicht speziell abgestimmt. Bitte senden Sie Ihre Prombleme mit der libpostal-Leistung auf Ländermodellen an & lt; i & gt; OSM Scout Server & lt; / i & gt; Oder & lt; i & rdquo; geocoder-nlp & lt; / i & gt; Github-Projekte. </translation>
+        <translation>Bitte beachten Sie, dass &lt;i&gt;libpostal&lt;/i&gt; entwickelt wurden um mit dem fein abgestimmten Modell fÃ¼r die Welt verwendet zu werden. Die landesspezifischen Modelle wurden entwickelt, um &lt;i&gt;libpostal&lt;/i&gt; sie auf mobilen GerÃ¤ten zu verwenden und wurden nicht speziell abgestimmt. Bitte senden Sie Ihre Prombleme mit der libpostal-Leistung auf LÃ¤ndermodellen an &lt;i&gt;OSM Scout Server&lt;/i&gt; Oder &lt;i&gt;geocoder-nlp&lt;/i&gt; Github-Projekte. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="30"/>
+        <location filename="../qml/pages/AboutPage.qml" line="31"/>
         <source>Acknowledgments</source>
         <translation>Danksagungen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="52"/>
+        <location filename="../qml/pages/AboutPage.qml" line="53"/>
         <source>About</source>
-        <translation>Über</translation>
+        <translation>Ãœber</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="56"/>
+        <location filename="../qml/pages/AboutPage.qml" line="57"/>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="61"/>
+        <location filename="../qml/pages/AboutPage.qml" line="62"/>
         <source>is a server that provides offline map services</source>
         <translation>Ist ein Server, der Offline-Kartendienste bereitstellt</translation>
     </message>
@@ -105,12 +105,12 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="44"/>
         <source>Cannot open database</source>
-        <translation>Datenbank kann nicht geöffnet werden</translation>
+        <translation>Datenbank kann nicht geÃ¶ffnet werden</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="49"/>
         <source>Opened database</source>
-        <translation>Geöffnete Datenbank</translation>
+        <translation>GeÃ¶ffnete Datenbank</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="115"/>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="123"/>
         <source>Cannot open style</source>
-        <translation>Kann Stil nicht öffnen</translation>
+        <translation>Kann Stil nicht Ã¶ffnen</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="129"/>
@@ -130,17 +130,17 @@
     <message>
         <location filename="../src/dbmaster_map.cpp" line="72"/>
         <source>Database is not open, cannot render a tile</source>
-        <translation>Datenbank ist nicht geöffnet, kann keine Kachel darstellen</translation>
+        <translation>Datenbank ist nicht geÃ¶ffnet, kann keine Kachel darstellen</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="80"/>
         <source>Database is not open, cannot route</source>
-        <translation>Die Datenbank ist nicht geöffnet es kann keine Route erzeugt werden</translation>
+        <translation>Die Datenbank ist nicht geÃ¶ffnet es kann keine Route erzeugt werden</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="100"/>
         <source>Cannot open routing database</source>
-        <translation>Die Routing-Datenbank kann nicht geöffnet werden</translation>
+        <translation>Die Routing-Datenbank kann nicht geÃ¶ffnet werden</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="137"/>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
-        <translation>Die Datenbank ist nicht geöffnet, die Suche kann nicht durchgeführt werden</translation>
+        <translation>Die Datenbank ist nicht geÃ¶ffnet, die Suche kann nicht durchgefÃ¼hrt werden</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="272"/>
@@ -185,7 +185,7 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="511"/>
         <source>Database is not open, cannot search for POI</source>
-        <translation>Datenbank ist nicht geöffnet, kann nicht nach POI suchen</translation>
+        <translation>Datenbank ist nicht geÃ¶ffnet, kann nicht nach POI suchen</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="572"/>
@@ -195,7 +195,7 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="672"/>
         <source>Database is not open, cannot list POI types</source>
-        <translation>Die Datenbank ist nicht geöffnet, eine Auflistung der POI-Typen nicht möglich</translation>
+        <translation>Die Datenbank ist nicht geÃ¶ffnet, eine Auflistung der POI-Typen nicht mÃ¶glich</translation>
     </message>
 </context>
 <context>
@@ -203,7 +203,7 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="27"/>
         <source>All supported languages</source>
-        <translation>Alle unterstützten Sprachen</translation>
+        <translation>Alle unterstÃ¼tzten Sprachen</translation>
     </message>
 </context>
 <context>
@@ -211,7 +211,7 @@
     <message>
         <location filename="../qml/pages/ElementSelector.qml" line="30"/>
         <source>&lt;Not selected&gt;</source>
-        <translation>&lt;Nicht ausgewählt&gt;</translation>
+        <translation>&lt;Nicht ausgewÃ¤hlt&gt;</translation>
     </message>
 </context>
 <context>
@@ -233,17 +233,17 @@
     <message>
         <location filename="../src/geomaster.cpp" line="70"/>
         <source>Cannot open geocoding database</source>
-        <translation>Die Geocodierungsdatenbank kann nicht geöffnet werden</translation>
+        <translation>Die Geocodierungsdatenbank kann nicht geÃ¶ffnet werden</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="40"/>
         <source>Cannot open geocoder database</source>
-        <translation>Geocoder-Datenbank kann nicht geöffnet werden</translation>
+        <translation>Geocoder-Datenbank kann nicht geÃ¶ffnet werden</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="44"/>
         <source>Opened geocoder database</source>
-        <translation>Geocodierer-Datenbank geöffnet</translation>
+        <translation>Geocodierer-Datenbank geÃ¶ffnet</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="57"/>
@@ -253,12 +253,12 @@
     <message>
         <location filename="../src/geomaster.cpp" line="61"/>
         <source>libpostal will use all covered languages</source>
-        <translation>libpostal nutzt alle möglichen Sprachen</translation>
+        <translation>libpostal nutzt alle mÃ¶glichen Sprachen</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="81"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
-        <translation>Fehler beim Analysieren von libpostal, vielleicht sind libpostal-Datenbanken nicht verfügbar</translation>
+        <translation>Fehler beim Analysieren von libpostal, vielleicht sind libpostal-Datenbanken nicht verfÃ¼gbar</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="90"/>
@@ -286,7 +286,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="39"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.</source>
-        <translation>Wenn ausgewählt, wird ein libpostalbasierter Geocoder verwendet, um alle Suchanforderungen aufzulösen. Beachten Sie, dass es zusätzliche Datenbanken für Sprache, Benutzer-Eingaben-Syntaxanalyse und Geocoding benötigt.</translation>
+        <translation>Wenn ausgewÃ¤hlt, wird ein libpostalbasierter Geocoder verwendet, um alle Suchanforderungen aufzulÃ¶sen. Beachten Sie, dass es zusÃ¤tzliche Datenbanken fÃ¼r Sprache, Benutzer-Eingaben-Syntaxanalyse und Geocoding benÃ¶tigt.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="53"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponoding objects on a map.</source>
-        <translation>Geocoder ist verantwortlich für das Lösen von Suchanfragen. Dafür analysiert er den Suchstring und findet die Korrespondenzobjekte auf einer Karte.</translation>
+        <translation>Geocoder ist verantwortlich fÃ¼r das LÃ¶sen von Suchanfragen. DafÃ¼r analysiert er den Suchstring und findet die Korrespondenzobjekte auf einer Karte.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="60"/>
@@ -316,12 +316,12 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="69"/>
         <source>Country-specific database</source>
-        <translation>Länderspezifiischen Datenbank</translation>
+        <translation>LÃ¤nderspezifiischen Datenbank</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="70"/>
         <source>Location of the folder with a country-specific databases of libpostal, such as address_parser</source>
-        <translation>Standort des Ordners mit einer Länderspezifiischen Datenbank von libpostal, wie zum Beispiel address_parser</translation>
+        <translation>Standort des Ordners mit einer LÃ¤nderspezifiischen Datenbank von libpostal, wie zum Beispiel address_parser</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="78"/>
@@ -341,7 +341,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="86"/>
         <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
-        <translation>Liste der verwendeten Sprachen für die Adressensuche. Beachten Sie, wenn alle unterstützten Sprachen verwendet werden, wird der Arbeitsspeicher sehr belastet</translation>
+        <translation>Liste der verwendeten Sprachen fÃ¼r die Adressensuche. Beachten Sie, wenn alle unterstÃ¼tzten Sprachen verwendet werden, wird der Arbeitsspeicher sehr belastet</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="93"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="94"/>
         <source>In addition to libpostal, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue. Example: house_number, street, town.</source>
-        <translation>Zusätzlich zu libpostal, mit dem primitiven Parser können Sie die administrative Hierarchie eines gesuchten Objekts festlegen, indem Sie die Komponenten mit einem Komma trennen. Wenn libpostal die Anforderung nicht korrekt analysiert, erlaubt dieser Parser Ihnen, das Problem zu beheben. Beispiel: Hausnummer, Straße, Stadt.</translation>
+        <translation>ZusÃ¤tzlich zu libpostal, mit dem primitiven Parser kÃ¶nnen Sie die administrative Hierarchie eines gesuchten Objekts festlegen, indem Sie die Komponenten mit einem Komma trennen. Wenn libpostal die Anforderung nicht korrekt analysiert, erlaubt dieser Parser Ihnen, das Problem zu beheben. Beispiel: Hausnummer, StraÃŸe, Stadt.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="103"/>
@@ -361,7 +361,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="104"/>
         <source>When selected, libpostal databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation>Wenn diese Option ausgewählt ist, werden libpostale Datenbanken nur beim Analysieren der Anfrage in den Speicher geladen. Infolgedessen, während die Suche länger dauern würde, ist der Speicherüberlauf libpostal klein im Leerlauf.</translation>
+        <translation>Wenn diese Option ausgewÃ¤hlt ist, werden libpostale Datenbanken nur beim Analysieren der Anfrage in den Speicher geladen. Infolgedessen, wÃ¤hrend die Suche lÃ¤nger dauern wÃ¼rde, ist der SpeicherÃ¼berlauf libpostal klein im Leerlauf.</translation>
     </message>
 </context>
 <context>
@@ -422,12 +422,12 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="98"/>
         <source>Drive along %along%</source>
-        <translation>Folgen Sie der Straße für %along%</translation>
+        <translation>Folgen Sie der StraÃŸe fÃ¼r %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="99"/>
         <source>Start at %start%. Drive along %along%</source>
-        <translation>Starten Sie %start%. Folgen Sie der Straße für %along%</translation>
+        <translation>Starten Sie %start%. Folgen Sie der StraÃŸe fÃ¼r %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="106"/>
@@ -452,7 +452,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway to %to%</source>
-        <translation>Cambia la autovÃ­a a %to%</translation>
+        <translation>Cambia la autovÃƒÂ­a a %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="269"/>
@@ -479,7 +479,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway into %into%</source>
-        <translation>Deja la autovÃ­a hacia %into%</translation>
+        <translation>Deja la autovÃƒÂ­a hacia %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="338"/>
@@ -510,12 +510,12 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation>Wechseln Sie die Straße %from% in %to%</translation>
+        <translation>Wechseln Sie die StraÃŸe %from% in %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="388"/>
         <source>Way changes name to %to%</source>
-        <translation>Wechseln Sie die Straße %to%</translation>
+        <translation>Wechseln Sie die StraÃŸe %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="146"/>
@@ -525,7 +525,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="192"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
-        <translation>Verlassen Sie den Kreisverkehr (%num% Ausfahrt) in die Straße %street%</translation>
+        <translation>Verlassen Sie den Kreisverkehr (%num% Ausfahrt) in die StraÃŸe %street%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="196"/>
@@ -628,12 +628,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="51"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
-        <translation>Einheiten, die in der grafischen Benutzeroberfläche des Servers verwendet werden. Die Einheiten ändern sich erst, nachdem Sie die Einstellungen übernommen haben.</translation>
+        <translation>Einheiten, die in der grafischen BenutzeroberflÃ¤che des Servers verwendet werden. Die Einheiten Ã¤ndern sich erst, nachdem Sie die Einstellungen Ã¼bernommen haben.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="69"/>
         <source>Font size</source>
-        <translation>Schriftgröße</translation>
+        <translation>SchriftgrÃ¶ÃŸe</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="77"/>
@@ -648,7 +648,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="93"/>
         <source>Render sea</source>
-        <translation>Rendern von Wasserflächen</translation>
+        <translation>Rendern von WasserflÃ¤chen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="99"/>
@@ -668,12 +668,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="108"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
-        <translation>Das Routing wird unter den möglichen Routen berechnet, die der Kostenbegrenzung entsprechen</translation>
+        <translation>Das Routing wird unter den mÃ¶glichen Routen berechnet, die der Kostenbegrenzung entsprechen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="120"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation>Der Kostenfaktor ist Bestandteil einer Kostengrenze, die proportional zum geodätischen Abstand zwischen dem Routenursprung und dem Ziel ist</translation>
+        <translation>Der Kostenfaktor ist Bestandteil einer Kostengrenze, die proportional zum geodÃ¤tischen Abstand zwischen dem Routenursprung und dem Ziel ist</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="129"/>
@@ -693,12 +693,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="143"/>
         <source>Loaded area factor</source>
-        <translation>Geladener Flächenfaktor</translation>
+        <translation>Geladener FlÃ¤chenfaktor</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="144"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation>Durch Erhöhen der Größe des Bereichs, der zum Laden der Daten beim Rendern einer Kachel verwendet wird, kann der Renderer das Etiketten-Rendering verbessern, indem Daten von benachbarten Kacheln berücksichtigt werden. Der Faktorwert von 1.0 entspricht dem Laden von Daten, die nur aus der gerenderten Fliese stammen. Der große Wert des Faktors würde die Rendering-Geschwindigkeit verringern und die RAM-Speicherfläche des Servers erhöhen. Aufgrund seiner Auswirkungen auf RAM, abhängig von Ihrer Kachelgröße, Faktoren, die so klein wie 2 kann es zum überfüllen des Arbeitsspeichers des Gerätes führen.</translation>
+        <translation>Durch ErhÃ¶hen der GrÃ¶ÃŸe des Bereichs, der zum Laden der Daten beim Rendern einer Kachel verwendet wird, kann der Renderer das Etiketten-Rendering verbessern, indem Daten von benachbarten Kacheln berÃ¼cksichtigt werden. Der Faktorwert von 1.0 entspricht dem Laden von Daten, die nur aus der gerenderten Fliese stammen. Der groÃŸe Wert des Faktors wÃ¼rde die Rendering-Geschwindigkeit verringern und die RAM-SpeicherflÃ¤che des Servers erhÃ¶hen. Aufgrund seiner Auswirkungen auf RAM, abhÃ¤ngig von Ihrer KachelgrÃ¶ÃŸe, Faktoren, die so klein wie 2 kann es zum Ã¼berfÃ¼llen des Arbeitsspeichers des GerÃ¤tes fÃ¼hren.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="157"/>
@@ -708,7 +708,8 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation>Bei der angegebenen Zoomstufe wird der Map-Rendering-Algorithmus die Überprüfung auf Etiketten in den benachbarten Kacheln beenden. Häufig wird 14 als Cutoff-Zoomstufe verwendet. Durch die Einstellung auf einen größeren Wert, könnte man genauere Etikett-Rendering bei größeren Zoom-Stufen erreichen. Beachten Sie, dass das Label-Rendering das Karten-Rendering erheblich verlangsamen kann.</translate>
+        <translation>Bei der angegebenen Zoomstufe wird der Map-Rendering-Algorithmus die ÃœberprÃ¼fung auf Etiketten in den benachbarten Kacheln beenden. HÃ¤ufig wird 14 als Cutoff-Zoomstufe verwendet. Durch die Einstellung auf einen grÃ¶ÃŸeren Wert, kÃ¶nnte man genauere Etikett-Rendering bei grÃ¶ÃŸeren Zoom-Stufen erreichen. Beachten Sie, dass das Label-Rendering das Karten-Rendering erheblich verlangsamen kann.</translation>
+    </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="167"/>
         <source>Miscellaneous</source>
@@ -727,7 +728,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="182"/>
         <source>Events log size</source>
-        <translation>Ereignisprotokollgröße</translation>
+        <translation>EreignisprotokollgrÃ¶ÃŸe</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="183"/>
@@ -742,7 +743,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="192"/>
         <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
-        <translation>Wenn diese Option aktiviert ist, werden die Nachrichten in einer Sitzungsprotokolldatei protokolliert. Die Protokolldatei befindet sich im Verzeichnis .cache / harbor-osmscout-server. Verwenden Sie diese Einstellung nur für Debugging-Zwecke. Mit dieser Einstellung werden Info-Meldungen protokolliert und bei Ereignissen angezeigt, unabhängig von den Einstellungen oben. Auf diese Weise können Sie die vollständige Protokollierung vorübergehend aktivieren und deaktivieren, wenn die erforderliche Sitzungsprotokolldatei erstellt wurde.</translation>
+        <translation>Wenn diese Option aktiviert ist, werden die Nachrichten in einer Sitzungsprotokolldatei protokolliert. Die Protokolldatei befindet sich im Verzeichnis .cache / harbor-osmscout-server. Verwenden Sie diese Einstellung nur fÃ¼r Debugging-Zwecke. Mit dieser Einstellung werden Info-Meldungen protokolliert und bei Ereignissen angezeigt, unabhÃ¤ngig von den Einstellungen oben. Auf diese Weise kÃ¶nnen Sie die vollstÃ¤ndige Protokollierung vorÃ¼bergehend aktivieren und deaktivieren, wenn die erforderliche Sitzungsprotokolldatei erstellt wurde.</translation>
     </message>
 </context>
 <context>
@@ -765,7 +766,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="34"/>
         <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
-        <translation>Dies ist die Geschwindigkeit, die bei Berechnungen der Route als nie überschritten angenommen wird</translation>
+        <translation>Dies ist die Geschwindigkeit, die bei Berechnungen der Route als nie Ã¼berschritten angenommen wird</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="42"/>
@@ -780,7 +781,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="56"/>
         <source>Car speed on different roads</source>
-        <translation>PKW Geschwindigkeit auf verschiedenen Straßen</translation>
+        <translation>PKW Geschwindigkeit auf verschiedenen StraÃŸen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="63"/>
@@ -805,7 +806,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="95"/>
         <source>motorway primary</source>
-        <translation>Autobahn primär</translation>
+        <translation>Autobahn primÃ¤r</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="103"/>
@@ -815,12 +816,12 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="111"/>
         <source>primary</source>
-        <translation>carretera autonÃ³mica, km/n</translation>
+        <translation>carretera autonÃƒÂ³mica, km/n</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="119"/>
         <source>primary link</source>
-        <translation>Hauptstraße</translation>
+        <translation>HauptstraÃŸe</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="127"/>
@@ -830,7 +831,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="135"/>
         <source>road</source>
-        <translation>Straße</translation>
+        <translation>StraÃŸe</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="143"/>
@@ -840,12 +841,12 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="151"/>
         <source>secondary</source>
-        <translation>Landstraße</translation>
+        <translation>LandstraÃŸe</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="159"/>
         <source>secondary link</source>
-        <translation>Link zu lokalen Straße</translation>
+        <translation>Link zu lokalen StraÃŸe</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="167"/>
@@ -855,22 +856,22 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="175"/>
         <source>tertiary</source>
-        <translation>Ortsstraße</translation>
+        <translation>OrtsstraÃŸe</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="183"/>
         <source>tertiary link</source>
-        <translation>lokale Straßenverbindung</translation>
+        <translation>lokale StraÃŸenverbindung</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="191"/>
         <source>trunk</source>
-        <translation>Bundesstraße</translation>
+        <translation>BundesstraÃŸe</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="199"/>
         <source>trunk link</source>
-        <translation>Bundenstraßenverbindung</translation>
+        <translation>BundenstraÃŸenverbindung</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="207"/>
@@ -883,7 +884,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="13"/>
         <source>About</source>
-        <translation>Über</translation>
+        <translation>Ãœber</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="18"/>
