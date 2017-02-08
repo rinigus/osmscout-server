@@ -376,6 +376,8 @@ The translations were contributed by
 - Åke Engelbrektson @eson57: Swedish
 - Ricardo Breitkopf @monkeyisland: German
 
+For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README
+
 
 ## Libpostal
 
