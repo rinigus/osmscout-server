@@ -1,0 +1,9 @@
+[main]
+host = https://www.transifex.com
+
+[osm-scout-server.ts]
+file_filter = translations/harbour-osmscout-server-<lang>.ts
+source_file = translations/harbour-osmscout-server.ts
+source_lang = en
+type = QT
+
