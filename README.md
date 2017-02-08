@@ -374,7 +374,7 @@ The translations were contributed by
 - Carmen F. B. @carmenfdezb: Spanish
 - Lukáš Karas @Karry: Czech
 - Åke Engelbrektson @eson57: Swedish
-- @monkeyisland1992: German
+- Ricardo Breitkopf @monkeyisland: German
 
 
 ## Libpostal

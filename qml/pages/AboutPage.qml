@@ -17,7 +17,7 @@ Page {
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +
                               "Lukáš Karas @Karry: Czech<br>" +
                               "Åke Engelbrektson @eson57: Swedish<br>" +
-                              "@monkeyisland1992: German<br>" +
+                              "Ricardo Breitkopf @monkeyisland: German<br>" +
 
                               "<br><b>" + qsTr("Libpostal") + "</b><br>" +
                               "<p>" +
