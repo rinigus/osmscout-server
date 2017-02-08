@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="de" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -367,7 +369,7 @@
     <message>
         <location filename="../src/infohub.cpp" line="101"/>
         <source>ERROR: </source>
-        <translation>ERROR: </translation>
+        <translation>FEHLER:</translation>
     </message>
     <message>
         <location filename="../src/infohub.cpp" line="107"/>
@@ -450,7 +452,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway to %to%</source>
-        <translation>Cambia la autovÃ­a a %to%</translation>
+        <translation>Wechseln Sie auf die Autobahn %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="269"/>
@@ -477,7 +479,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway into %into%</source>
-        <translation>Deja la autovÃ­a hacia %into%</translation>
+        <translation>Verlassen Sie die Autobahn %move% in %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="338"/>
@@ -774,7 +776,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="63"/>
         <source>living street</source>
-        <translation>Stadtverkehr</translation>
+        <translation>Verkehrsberuhigter Bereich</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="71"/>
@@ -791,25 +793,25 @@
         <location filename="../qml/pages/SpeedPage.qml" line="87"/>
         <source>motorway link</source>
         <translatorcomment>OSM highway=motorway_link</translatorcomment>
-        <translation>Autobahnverbindung</translation>
+        <translation>Autobahnanschlussstelle</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="95"/>
         <source>motorway primary</source>
         <translatorcomment>OSM highway=primary &amp;&amp; motorroad</translatorcomment>
-        <translation>Autobahn primär</translation>
+        <translation>Bundesstraße</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
         <translatorcomment>OSM highway=trunk &amp;&amp; motorroad</translatorcomment>
-        <translation>Stammautobahn</translation>
+        <translation>Kraftfahrstraße</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="111"/>
         <source>primary</source>
         <translatorcomment>OSM highway=primary</translatorcomment>
-        <translation type="unfinished"/>
+        <translation>Bundesstraße</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="119"/>
@@ -821,7 +823,7 @@
         <location filename="../qml/pages/SpeedPage.qml" line="127"/>
         <source>residential</source>
         <translatorcomment>OSM highway=residential</translatorcomment>
-        <translation>Wohngegend</translation>
+        <translation>Straße an und in Wohngebieten</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="135"/>
@@ -845,13 +847,13 @@
         <location filename="../qml/pages/SpeedPage.qml" line="159"/>
         <source>secondary link</source>
         <translatorcomment>OSM highway=secondary_link</translatorcomment>
-        <translation>Link zu lokalen Straße</translation>
+        <translation>Auffahrt zur Landstraße</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="167"/>
         <source>service</source>
         <translatorcomment>OSM highway=service</translatorcomment>
-        <translation>Pfad</translation>
+        <translation>Erschließungsweg</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="175"/>
@@ -863,19 +865,19 @@
         <location filename="../qml/pages/SpeedPage.qml" line="183"/>
         <source>tertiary link</source>
         <translatorcomment>OSM highway=link</translatorcomment>
-        <translation>lokale Straßenverbindung</translation>
+        <translation>Auffahrt zur Kreisstraße</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="191"/>
         <source>trunk</source>
         <translatorcomment>OSM highway=trunk</translatorcomment>
-        <translation>Bundesstraße</translation>
+        <translation>Kraftfahrstraße</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="199"/>
         <source>trunk link</source>
         <translatorcomment>OSM highway=trunk_link</translatorcomment>
-        <translation>Bundenstraßenverbindung</translation>
+        <translation>Anschlußstelle</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="207"/>
