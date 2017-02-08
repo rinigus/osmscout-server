@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es_ES">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -764,11 +762,6 @@
         <translation>Velocidad máxima del coche</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="34"/>
-        <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
-        <translation>Esta es la velocidad que se supone que nunca se excederá en los cálculos de la ruta</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SpeedPage.qml" line="42"/>
         <source>Expected speed of a bicycle</source>
         <translation>Velocidad prevista de una bicicleta</translation>
@@ -779,11 +772,6 @@
         <translation>Velocidad prevista cuando caminas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="56"/>
-        <source>Car speed on different roads</source>
-        <translation>Velocidad del coche en diferentes carreteras</translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SpeedPage.qml" line="63"/>
         <source>living street</source>
         <translation>calle residencial</translation>
@@ -791,6 +779,7 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="71"/>
         <source>motorway</source>
+        <translatorcomment>OSM highway=motorway</translatorcomment>
         <translation>autovía</translation>
     </message>
     <message>
@@ -801,82 +790,108 @@
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="87"/>
         <source>motorway link</source>
+        <translatorcomment>OSM highway=motorway_link</translatorcomment>
         <translation>enlace a autovía</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="95"/>
         <source>motorway primary</source>
+        <translatorcomment>OSM highway=primary &amp;&amp; motorroad</translatorcomment>
         <translation>autovía principal</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
+        <translatorcomment>OSM highway=trunk &amp;&amp; motorroad</translatorcomment>
         <translation>autovía troncal</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="111"/>
         <source>primary</source>
+        <translatorcomment>OSM highway=primary</translatorcomment>
         <translation>carretera autonómica, km/n</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="119"/>
         <source>primary link</source>
+        <translatorcomment>OSM highway=primary_link</translatorcomment>
         <translation>enlace a carretera autonómica</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="127"/>
         <source>residential</source>
+        <translatorcomment>OSM highway=residential</translatorcomment>
         <translation>travesía</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="135"/>
         <source>road</source>
+        <translatorcomment>OSM highway=road</translatorcomment>
         <translation>carretera</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="143"/>
         <source>roundabout</source>
+        <translatorcomment>OSM highway=roundabout</translatorcomment>
         <translation>rotonda</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="151"/>
         <source>secondary</source>
+        <translatorcomment>OSM highway=secondary</translatorcomment>
         <translation>carretera comarcal</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="159"/>
         <source>secondary link</source>
+        <translatorcomment>OSM highway=secondary_link</translatorcomment>
         <translation>enlace a carretera comarcal</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="167"/>
         <source>service</source>
+        <translatorcomment>OSM highway=service</translatorcomment>
         <translation>camino</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="175"/>
         <source>tertiary</source>
+        <translatorcomment>OSM highway=tertiary</translatorcomment>
         <translation>carretera local</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="183"/>
         <source>tertiary link</source>
+        <translatorcomment>OSM highway=link</translatorcomment>
         <translation>enlace a carretera local</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="191"/>
         <source>trunk</source>
+        <translatorcomment>OSM highway=trunk</translatorcomment>
         <translation>carretera nacional</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="199"/>
         <source>trunk link</source>
+        <translatorcomment>OSM highway=trunk_link</translatorcomment>
         <translation>enlace a carretera nacional</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="207"/>
         <source>unclassified</source>
+        <translatorcomment>OSM highway=unclassified</translatorcomment>
         <translation>sin clasificar</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="34"/>
+        <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
+        <translation>Esta es la velocidad que se supone que nunca se excederá en los cálculos de la ruta</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SpeedPage.qml" line="56"/>
+        <source>Car speed on different roads</source>
+        <translation>Velocidad del coche en diferentes carreteras</translation>
     </message>
 </context>
 <context>

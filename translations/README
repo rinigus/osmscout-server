@@ -1,6 +1,10 @@
 Thank you for looking into translating OSM Scout Server. In Sailfish,
 only harbour-osmscout-server.ts version is used and it should contain
-all required strings. 
+all required strings.
+
+To simplify translations, there is a project registered at
+https://www.transifex.com/rinigus/osm-scout-server . Please use it for
+working on translations.
 
 Some of the strings would contain macros in the form %macro%. These
 macros mark the positions in the phrase that would be filled in with
