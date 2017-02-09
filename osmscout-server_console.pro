@@ -45,7 +45,8 @@ SOURCES += src/dbmaster.cpp \
     src/dbmaster_route.cpp \
     src/routingforhuman.cpp \
     src/geomaster.cpp \
-    src/config.cpp
+    src/config.cpp \
+    src/mapmanager.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
@@ -62,7 +63,8 @@ HEADERS += \
     src/infohub.h \
     src/consolelogger.h \
     src/routingforhuman.h \
-    src/geomaster.h
+    src/geomaster.h \
+    src/mapmanager.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
