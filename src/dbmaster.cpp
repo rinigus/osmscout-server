@@ -131,4 +131,9 @@ bool DBMaster::loadStyle(bool daylight)
     return true;
 }
 
-
+void DBMaster::onDatabasesChanged(QStringList directories)
+{
+  InfoHub::logInfo("Loading databases");
+  for (auto a: directories)
+    InfoHub::logInfo("Loading: " + a);
+}

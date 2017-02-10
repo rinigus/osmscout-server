@@ -12,6 +12,7 @@
 #include <QVector>
 #include <QMap>
 #include <QString>
+#include <QStringList>
 
 #include <string>
 #include <map>
@@ -60,6 +61,7 @@ public:
 
 public slots:
     void onSettingsChanged();
+    void onDatabasesChanged(QStringList directories);
 
 protected:
 

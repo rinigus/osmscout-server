@@ -13,24 +13,28 @@
 /// them
 class MapManager : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
 public:
-    explicit MapManager(QObject *parent = 0);
-    virtual ~MapManager();
+  explicit MapManager(QObject *parent = 0);
+  virtual ~MapManager();
 
-    void loadSettings();
+  void loadSettings();
 
 signals:
+    void databaseOsmScoutChanged(QStringList databaseDirectories);
 
 public slots:
+  void onSettingsChanged();
 
 protected:
-    void scanDirectories();
+  void scanDirectories();
 
 protected:
-    QMutex m_mutex;
+  QMutex m_mutex;
 
-    QStringList m_osmscout_dirs;
+  QString m_root_dir;
+
+  QStringList m_osmscout_dirs;
 };
 
 #endif // MAPMANAGER_H

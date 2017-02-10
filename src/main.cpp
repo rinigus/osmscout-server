@@ -41,6 +41,7 @@
 // Geocoder-NLP interface
 #include "geomaster.h"
 
+#include "mapmanager.h"
 #include "infohub.h"
 
 #include <QTranslator>
@@ -157,6 +158,9 @@ int main(int argc, char *argv[])
         return -2;
     }
 
+    // setup Map Manager
+    MapManager manager;
+
 #ifdef IS_SAILFISH_OS
 
     v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
@@ -170,11 +174,19 @@ int main(int argc, char *argv[])
                       geoMaster, &GeoMaster::onSettingsChanged );
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &infoHub, &InfoHub::onSettingsChanged );
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      &manager, &MapManager::onSettingsChanged );
+
+    QObject::connect( &manager, &MapManager::databaseOsmScoutChanged,
+                       osmScoutMaster, &DBMaster::onDatabasesChanged );
 
 #ifdef IS_SAILFISH_OS
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &rolling_logger, &RollingLogger::onSettingsChanged );
 #endif
+
+    // load databases
+    manager.onSettingsChanged();
 
     return app->exec();
 }
