@@ -375,6 +375,7 @@ The translations were contributed by
 - Lukáš Karas @Karry: Czech
 - Åke Engelbrektson @eson57: Swedish
 - Ricardo Breitkopf @monkeyisland: German
+- Nathan Follens @pljmn: Dutch
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README
 

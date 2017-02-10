@@ -18,6 +18,7 @@ Page {
                               "Lukáš Karas @Karry: Czech<br>" +
                               "Åke Engelbrektson @eson57: Swedish<br>" +
                               "Ricardo Breitkopf @monkeyisland: German<br>" +
+                              "Nathan Follens @pljmn: Dutch<br>" +
 
                               "<br><b>" + qsTr("Libpostal") + "</b><br>" +
                               "<p>" +

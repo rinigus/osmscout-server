@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Der Server muss mit dem Client-Programm verwendet werden, das Karten, Suchanfragen und ausgewählte Routen anzeigt werden können. Der Server ist sehr schlank aus der Funktionalität von &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; Und &lt;i&gt;geocoder-nlp&lt;/i&gt; Über http. Dieser Server kann als Drop-in-Ersatz für Online-Dienste mit Karten verwendet werden.</translation>
+        <translation>Der Server muss mit dem Client-Programm verwendet werden, das Karten, Suchanfragen und ausgewählte Routen anzeigt werden können. Der Server ist sehr schlank aus der Funktionalität von &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; und &lt;i&gt;geocoder-nlp&lt;/i&gt; über http. Dieser Server kann als Drop-in-Ersatz für Online-Dienste mit Karten verwendet werden.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
@@ -24,34 +24,34 @@
         <translation>Übersetzungen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="22"/>
+        <location filename="../qml/pages/AboutPage.qml" line="23"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="24"/>
+        <location filename="../qml/pages/AboutPage.qml" line="25"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Bitte beachten Sie, dass &lt;i&gt;libpostal&lt;/i&gt; entwickelt wurden um mit dem fein abgestimmten Modell für die Welt verwendet zu werden. Die landesspezifischen Modelle wurden entwickelt, um &lt;i&gt;libpostal&lt;/i&gt; sie auf mobilen Geräten zu verwenden und wurden nicht speziell abgestimmt. Bitte senden Sie Ihre Prombleme mit der libpostal-Leistung auf Ländermodellen an &lt;i&gt;OSM Scout Server&lt;/i&gt; Oder &lt;i&gt;geocoder-nlp&lt;/i&gt; Github-Projekte. </translation>
+        <translation>Bitte beachten Sie, dass &lt;i&gt;libpostal&lt;/i&gt; entwickelt wurde um mit dem fein abgestimmten Modell für die Welt verwendet zu werden. Die landesspezifischen Modelle wurden entwickelt, um &lt;i&gt;libpostal&lt;/i&gt; auf mobilen Geräten zu verwenden sie wurden nicht speziell abgestimmt. Bitte senden Sie Ihre Probleme mit der libpostal-Leistung auf Ländermodellen an &lt;i&gt;OSM Scout Server&lt;/i&gt; oder &lt;i&gt;geocoder-nlp&lt;/i&gt; Github-Projekte. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="31"/>
+        <location filename="../qml/pages/AboutPage.qml" line="32"/>
         <source>Acknowledgments</source>
         <translation>Danksagungen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="53"/>
+        <location filename="../qml/pages/AboutPage.qml" line="54"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="57"/>
+        <location filename="../qml/pages/AboutPage.qml" line="58"/>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="62"/>
+        <location filename="../qml/pages/AboutPage.qml" line="63"/>
         <source>is a server that provides offline map services</source>
-        <translation>Ist ein Server, der Offline-Kartendienste bereitstellt</translation>
+        <translation>ist ein Server, der Offline-Kartendienste bereitstellt</translation>
     </message>
 </context>
 <context>
@@ -130,7 +130,7 @@
     <message>
         <location filename="../src/dbmaster_map.cpp" line="72"/>
         <source>Database is not open, cannot render a tile</source>
-        <translation>Datenbank ist nicht geöffnet, kann keine Kachel darstellen</translation>
+        <translation>Die Datenbank ist nicht geöffnet, kann keine Kachel darstellen</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="80"/>
@@ -233,17 +233,17 @@
     <message>
         <location filename="../src/geomaster.cpp" line="70"/>
         <source>Cannot open geocoding database</source>
-        <translation>Die Geocodierungsdatenbank kann nicht geöffnet werden</translation>
+        <translation>Geocoding Datenbank kann nicht geöffnet werden</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="40"/>
         <source>Cannot open geocoder database</source>
-        <translation>Geocoder-Datenbank kann nicht geöffnet werden</translation>
+        <translation>Geocoder Datenbank kann nicht geöffnet werden</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="44"/>
         <source>Opened geocoder database</source>
-        <translation>Geocodierer-Datenbank geöffnet</translation>
+        <translation>Geöffente Geocoder Datenbank</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="57"/>
@@ -258,7 +258,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="81"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
-        <translation>Fehler beim Analysieren von libpostal, vielleicht sind libpostal-Datenbanken nicht verfügbar</translation>
+        <translation>Fehler beim Analysieren von libpostal, vielleicht sind libpostal Datenbanken nicht verfügbar</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="90"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
         <source>Geocoder</source>
-        <translation>Geocodierer</translation>
+        <translation>Geocoder</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="38"/>
@@ -286,7 +286,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="39"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.</source>
-        <translation>Wenn ausgewählt, wird ein libpostalbasierter Geocoder verwendet, um alle Suchanforderungen aufzulösen. Beachten Sie, dass es zusätzliche Datenbanken für Sprache, Benutzer-Eingaben-Syntaxanalyse und Geocoding benötigt.</translation>
+        <translation>Wenn ausgewählt, wird ein libpostal-basierter Geocoder verwendet, um alle Suchanforderungen aufzulösen. Beachten Sie, dass hierfür zusätzliche Datenbanken für Sprache, Benutzer-Eingaben-Syntaxanalyse und Geocoding benötigt wird.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="53"/>
@@ -311,27 +311,27 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="61"/>
         <source>Location of the folder with a language parser databases of libpostal, such as language_classifier</source>
-        <translation>Standort des Ordners mit einer Sprachanalysen-Datenbank von libpostal, wie zum Beispiel language_classifier</translation>
+        <translation>Standort des Ordners mit einer Sprachanalysen Datenbank von libpostal, wie zum Beispiel language_classifier</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="69"/>
         <source>Country-specific database</source>
-        <translation>Länderspezifiischen Datenbank</translation>
+        <translation>Länderspezifiische Datenbank</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="70"/>
         <source>Location of the folder with a country-specific databases of libpostal, such as address_parser</source>
-        <translation>Standort des Ordners mit einer Länderspezifiischen Datenbank von libpostal, wie zum Beispiel address_parser</translation>
+        <translation>Standort des Ordners mit einer länderspezifiischen Datenbank von libpostal, wie zum Beispiel address_parser</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="78"/>
         <source>Geocoder database</source>
-        <translation>Geocoder-Datenbank</translation>
+        <translation>Geocoder Datenbank</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="79"/>
         <source>Location of the SQLite geocoder-nlp database</source>
-        <translation>Speicherpfad der SQLite de geocoder-nlp</translation>
+        <translation>Speicherpfad der SQLite geocoder-nlp Datenbank</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="85"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="94"/>
         <source>In addition to libpostal, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue. Example: house_number, street, town.</source>
-        <translation>Zusätzlich zu libpostal, mit dem primitiven Parser können Sie die administrative Hierarchie eines gesuchten Objekts festlegen, indem Sie die Komponenten mit einem Komma trennen. Wenn libpostal die Anforderung nicht korrekt analysiert, erlaubt dieser Parser Ihnen, das Problem zu beheben. Beispiel: Hausnummer, Straße, Stadt.</translation>
+        <translation>Mit dem primitiven Parser können Sie zusätzlich zu libpostal die administrative Hierarchie eines gesuchten Objekts festlegen, indem Sie die Komponenten mit einem Komma trennen. Wenn libpostal die Anforderung nicht korrekt analysiert, erlaubt dieser Parser Ihnen, das Problem zu beheben. Beispiel: Hausnummer, Straße, Stadt.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="103"/>
@@ -361,7 +361,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="104"/>
         <source>When selected, libpostal databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation>Wenn diese Option ausgewählt ist, werden libpostale Datenbanken nur beim Analysieren der Anfrage in den Speicher geladen. Infolgedessen, während die Suche länger dauern würde, ist der Speicherüberlauf libpostal klein im Leerlauf.</translation>
+        <translation>Wenn diese Option ausgewählt ist werden libpostale Datenbanken nur beim Analysieren der Anfrage in den Speicher geladen, daher kann die Suche länger dauern, allerdings ist der Speicherüberlauf von libpostal klein im Leerlauf.</translation>
     </message>
 </context>
 <context>
@@ -608,7 +608,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="29"/>
         <source>Location of the folder with a map imported by libosmscout Import utility</source>
-        <translation>Speicherort des Ordners mit einer Karte, die von libosmscout importiert wird</translation>
+        <translation>Speicherort des Ordners mit einer Karte die von libosmscout importiert wurde</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="41"/>
@@ -698,7 +698,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="144"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation>Durch Erhöhen der Größe des Bereichs, der zum Laden der Daten beim Rendern einer Kachel verwendet wird, kann der Renderer das Etiketten-Rendering verbessern, indem Daten von benachbarten Kacheln berücksichtigt werden. Der Faktorwert von 1.0 entspricht dem Laden von Daten, die nur aus der gerenderten Fliese stammen. Der große Wert des Faktors würde die Rendering-Geschwindigkeit verringern und die RAM-Speicherfläche des Servers erhöhen. Aufgrund seiner Auswirkungen auf RAM, abhängig von Ihrer Kachelgröße, Faktoren, die so klein wie 2 kann es zum überfüllen des Arbeitsspeichers des Gerätes führen.</translation>
+        <translation>Durch Erhöhen der Größe des Bereichs, der zum Laden der Daten beim Rendern einer Kachel verwendet wird, kann der Renderer das Etiketten-Rendering verbessern, indem Daten von benachbarten Kacheln berücksichtigt werden. Der Faktorwert von 1.0 entspricht dem Laden von Daten, die nur aus der gerenderten Kachel stammen. Ein höherer Wert des Faktors würde die Rendering-Geschwindigkeit verringern und den Arbeitsspeicherbedarf des Servers erhöhen. Aufgrund seiner Auswirkungen auf den Arbeitsspeicher, mann ein Faktor Wert ab 2 abhängig von Ihrer gewählten Kachelgröße zum Überfüllen des Arbeitsspeichers des Gerätes führen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="157"/>
@@ -723,7 +723,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="175"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always</source>
-        <translation>Wenn deaktiviert, werden die INFO-Nachrichten nicht im Ereignisprotokoll protokolliert. Ausnahme ist das Laden der Datenbank, die immer angezeigt wird</translation>
+        <translation>Wenn deaktiviert, werden die INFO-Nachrichten nicht im Ereignisprotokoll protokolliert. Ausnahme ist das Laden der Datenbank, die immer angezeigt wird.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="182"/>
@@ -877,7 +877,7 @@
         <location filename="../qml/pages/SpeedPage.qml" line="199"/>
         <source>trunk link</source>
         <translatorcomment>OSM highway=trunk_link</translatorcomment>
-        <translation>Anschlußstelle</translation>
+        <translation>Anschlussstelle</translation>
     </message>
     <message>
         <location filename="../qml/pages/SpeedPage.qml" line="207"/>
