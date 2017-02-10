@@ -61,8 +61,7 @@ SOURCES += \
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
-    rpm/osmscout-server.spec \
-    translations/*.ts
+    rpm/osmscout-server.spec
 
 include(src/uhttp/uhttp.pri)
 include(src/fileselector/fileselector.pri)
@@ -112,7 +111,8 @@ TRANSLATIONS += \
     translations/harbour-osmscout-server-cs.ts \
     translations/harbour-osmscout-server-de.ts \
     translations/harbour-osmscout-server-es.ts \
-    translations/harbour-osmscout-server-sv.ts
+    translations/harbour-osmscout-server-sv.ts \
+    translations/harbour-osmscout-server-nl.ts
 
 DISTFILES += \
     qml/pages/StartPage.qml \
