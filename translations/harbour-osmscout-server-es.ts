@@ -24,32 +24,32 @@
         <translation>Traducciones</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="22"/>
+        <location filename="../qml/pages/AboutPage.qml" line="23"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="24"/>
+        <location filename="../qml/pages/AboutPage.qml" line="25"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Por favor, ten en cuenta que &lt;i&gt;libpostal&lt;/i&gt; se ha desarrollado para ajustarse bien en el modelo que cubre todo el mundo. Los modelos basados ​​en países fueron desarrollados para usar &lt;i&gt;libpostal&lt;/i&gt; en dispositivos móviles pero éste no se ajusta especificamente a estos modelos. Por favor, informa de las incidencias sobre el rendimiento de libpostal en los modelos basados ​​en países a través de github, en los proyectos &lt;i&gt;OSM Scout Server&lt;/i&gt; o &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="31"/>
+        <location filename="../qml/pages/AboutPage.qml" line="32"/>
         <source>Acknowledgments</source>
         <translation>Agradecimientos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="53"/>
+        <location filename="../qml/pages/AboutPage.qml" line="54"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="57"/>
+        <location filename="../qml/pages/AboutPage.qml" line="58"/>
         <source>version</source>
         <translation>versión</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="62"/>
+        <location filename="../qml/pages/AboutPage.qml" line="63"/>
         <source>is a server that provides offline map services</source>
         <translation>es un servidor que proporciona un servicio de mapas sin conexión</translation>
     </message>
