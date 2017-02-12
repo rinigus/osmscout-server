@@ -26,8 +26,6 @@ public:
   explicit MapManager(QObject *parent = 0);
   virtual ~MapManager();
 
-  void loadSettings();
-
   Q_INVOKABLE void getCountriesList(bool list_available, QStringList &countries, QStringList &ids);
 
 //  QString masterMap() const { return m_master_map; }
@@ -46,6 +44,8 @@ public slots:
   void onSettingsChanged();
 
 protected:
+  void loadSettings();
+
   void scanDirectories();
   void nothingAvailable(); ///< Helper function called when there are no maps available
 

@@ -33,42 +33,36 @@ MapManager::~MapManager()
 
 void MapManager::onSettingsChanged()
 {
+  QMutexLocker lk(&m_mutex);
   loadSettings();
 }
 
 void MapManager::loadSettings()
 {
-  {
-    QMutexLocker lk(&m_mutex);
-    AppSettings settings;
+  AppSettings settings;
 
-    m_root_dir.setPath(settings.valueString(MAPMANAGER_SETTINGS "root"));
-    m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
+  m_root_dir.setPath(settings.valueString(MAPMANAGER_SETTINGS "root"));
+  m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
 
-    m_feature_osmscout = settings.valueBool(MAPMANAGER_SETTINGS "osmscout");
-    m_feature_geocoder_nlp = settings.valueBool(MAPMANAGER_SETTINGS "geocoder_nlp");
-    m_feature_postal_country = settings.valueBool(MAPMANAGER_SETTINGS "postal_country");
-  }
+  m_feature_osmscout = settings.valueBool(MAPMANAGER_SETTINGS "osmscout");
+  m_feature_geocoder_nlp = settings.valueBool(MAPMANAGER_SETTINGS "geocoder_nlp");
+  m_feature_postal_country = settings.valueBool(MAPMANAGER_SETTINGS "postal_country");
 
   scanDirectories();
 }
 
 void MapManager::nothingAvailable()
 {
-  bool send_signals = (!m_maps_available.empty() || m_map_selected.length()>0);
   m_maps_available.clear();
   m_map_selected.clear();
 
-  if (send_signals)
-    {
-      emit databaseOsmScoutChanged("");
-    }
+  updateOsmScout();
+  updateGeocoderNLP();
+  updatePostal();
 }
 
 void MapManager::scanDirectories()
 {
-  QMutexLocker lk(&m_mutex);
-
   if (!m_root_dir.exists())
     {
       InfoHub::logWarning(tr("Maps directory does not exist: ") + m_root_dir.absolutePath());
@@ -140,9 +134,6 @@ void MapManager::scanDirectories()
       if (!m_maps_available.contains(m_map_selected))
         m_map_selected.clear();
 
-      // release the lock to avoid issues with getCountriesList (its locking as well)
-      lk.unlock();
-
       QStringList countries, ids;
       getCountriesList(true, countries, ids);
 
@@ -183,6 +174,7 @@ void MapManager::getCountriesList(bool list_available, QStringList &countries, Q
 
 QString MapManager::fullPath(QString path) const
 {
+  if (path.length() < 1) return QString();
   QDir dir(m_root_dir.filePath(path));
   return dir.canonicalPath();
 }
@@ -197,6 +189,7 @@ const static QStringList osmscout_files{
 
 QString MapManager::getOsmScoutPath(const QString &name) const
 {
+  if (name.length() < 1) return QString();
   return const_dirname_osmscout + "/" + name;
 }
 
@@ -210,11 +203,9 @@ bool MapManager::hasAvailableOsmScout(const QString &name) const
 
 void MapManager::updateOsmScout()
 {
-  QMutexLocker lk(&m_mutex);
   AppSettings settings;
 
   QString path = fullPath( getOsmScoutPath( m_maps_available.value(m_map_selected).osmscout ) );
-
   if (settings.valueString(OSM_SETTINGS "map") != path)
     {
       settings.setValue(OSM_SETTINGS "map", path);
@@ -227,6 +218,7 @@ void MapManager::updateOsmScout()
 
 QString MapManager::getGeocoderNLPPath(const QString &name) const
 {
+  if (name.length() < 1) return QString();
   return const_dirname_geocoder_nlp + "/" + name;
 }
 
@@ -237,7 +229,6 @@ bool MapManager::hasAvailableGeocoderNLP(const QString &name) const
 
 void MapManager::updateGeocoderNLP()
 {
-  QMutexLocker lk(&m_mutex);
   AppSettings settings;
 
   QString path = fullPath( getGeocoderNLPPath( m_maps_available.value(m_map_selected).geocoder_nlp ) );
@@ -272,6 +263,7 @@ bool MapManager::hasAvailablePostalGlobal() const
 
 QString MapManager::getPostalCountryPath(const QString &name) const
 {
+  if (name.length() < 1) return QString();
   return const_dirname_postal_country + "/" + name;
 }
 
@@ -285,7 +277,6 @@ bool MapManager::hasAvailablePostalCountry(const QString &name) const
 
 void MapManager::updatePostal()
 {
-  QMutexLocker lk(&m_mutex);
   AppSettings settings;
 
   QString path_global = fullPath( const_dirname_postal_global );
