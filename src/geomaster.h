@@ -45,6 +45,8 @@ public:
 
 public slots:
     void onSettingsChanged();
+    void onGeocoderNLPChanged(QString dirname);
+    void onPostalChanged(QString global, QString country);
 
 protected:
     bool search(const QString &searchPattern, QJsonObject &result, size_t limit,

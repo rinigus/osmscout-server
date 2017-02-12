@@ -61,7 +61,7 @@ public:
 
 public slots:
     void onSettingsChanged();
-    void onDatabasesChanged(QStringList directories);
+    void onDatabaseChanged(QString directory);
 
 protected:
 

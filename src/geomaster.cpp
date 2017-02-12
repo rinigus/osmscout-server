@@ -61,6 +61,15 @@ void GeoMaster::onSettingsChanged()
         InfoHub::logInfo(tr("libpostal will use all covered languages"));
 }
 
+void GeoMaster::onGeocoderNLPChanged(QString dirname)
+{
+  onSettingsChanged();
+}
+
+void GeoMaster::onPostalChanged(QString global, QString country)
+{
+  onSettingsChanged();
+}
 
 bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t limit,
                        double &lat, double &lon, std::string &name, size_t &number_of_results)

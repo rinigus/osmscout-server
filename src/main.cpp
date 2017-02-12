@@ -125,6 +125,9 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("logger", &rolling_logger);
 #endif
 
+    // setup Map Manager
+    MapManager manager;
+
     // setup OSM Scout
     osmScoutMaster = new DBMaster();
 
@@ -158,9 +161,6 @@ int main(int argc, char *argv[])
         return -2;
     }
 
-    // setup Map Manager
-    MapManager manager;
-
 #ifdef IS_SAILFISH_OS
 
     v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
@@ -178,15 +178,17 @@ int main(int argc, char *argv[])
                       &manager, &MapManager::onSettingsChanged );
 
     QObject::connect( &manager, &MapManager::databaseOsmScoutChanged,
-                       osmScoutMaster, &DBMaster::onDatabasesChanged );
+                      osmScoutMaster, &DBMaster::onDatabaseChanged );
+
+    QObject::connect( &manager, &MapManager::databaseGeocoderNLPChanged,
+                      geoMaster, &GeoMaster::onGeocoderNLPChanged);
+    QObject::connect( &manager, &MapManager::databasePostalChanged,
+                      geoMaster, &GeoMaster::onPostalChanged);
 
 #ifdef IS_SAILFISH_OS
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &rolling_logger, &RollingLogger::onSettingsChanged );
 #endif
-
-    // load databases
-    manager.onSettingsChanged();
 
     return app->exec();
 }

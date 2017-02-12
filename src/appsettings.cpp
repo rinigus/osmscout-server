@@ -41,6 +41,15 @@ void AppSettings::initDefaults()
     CHECK(MAPMANAGER_SETTINGS "root", "Maps");
 #endif
 
+    CHECK(MAPMANAGER_SETTINGS "map_selected", "");
+    CHECK(MAPMANAGER_SETTINGS "osmscout", 1);
+    CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
+    CHECK(MAPMANAGER_SETTINGS "postal_country", 0);
+
+    /// used internally by MapManager to set the path - will be modified when support
+    /// for multi-map handling is be ready
+    CHECK(OSM_SETTINGS "map", "");
+
     CHECK(OSM_SETTINGS "style", DATA_PREFIX "stylesheets/standard.oss");
     CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/28x28/standard");
     CHECK(OSM_SETTINGS "fontSize", 5.0);
@@ -129,6 +138,11 @@ void AppSettings::fireOsmScoutSettingsChanged()
 int AppSettings::valueInt(const QString &key)
 {
     return value(key, 0).toInt();
+}
+
+bool AppSettings::valueBool(const QString &key)
+{
+    return (value(key, 0).toInt() > 0);
 }
 
 double AppSettings::valueFloat(const QString &key)
