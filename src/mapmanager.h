@@ -26,7 +26,14 @@ public:
   explicit MapManager(QObject *parent = 0);
   virtual ~MapManager();
 
+  /// \brief Composes a list of countries in alphabetical order
+  ///
+  /// Thread-safe wrapper to makeCountriesList
   Q_INVOKABLE void getCountriesList(bool list_available, QStringList &countries, QStringList &ids);
+
+  /// \brief Add country to the list of requested countries
+  ///
+  Q_INVOKABLE void addCountry(QString id);
 
 //  QString masterMap() const { return m_master_map; }
 //  void setMasterMap(QString masterMap);
@@ -47,7 +54,14 @@ protected:
   void loadSettings();
 
   void scanDirectories();
-  void nothingAvailable(); ///< Helper function called when there are no maps available
+  void nothingAvailable(); ///< Helper method called when there are no maps available
+
+  /// \brief Composes a list of countries in alphabetical order
+  ///
+  /// This is a method that creates a list. Its called by other methods to retrieve the list.
+  /// Note that its not locking a mutex and its assumed that the calling method provides
+  /// thread-safety
+  void makeCountriesList(bool list_available, QStringList &countries, QStringList &ids);
 
   QString fullPath(QString path) const; ///< Transform relative path to the full path
 

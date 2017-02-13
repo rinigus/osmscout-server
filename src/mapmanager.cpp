@@ -61,6 +61,13 @@ void MapManager::nothingAvailable()
   updatePostal();
 }
 
+static QJsonArray loadJson(QString fname)
+{
+  QFile freq(fname);
+  if (!freq.open(QIODevice::ReadOnly | QIODevice::Text)) return QJsonArray();
+  return QJsonDocument::fromJson(freq.readAll()).array();
+}
+
 void MapManager::scanDirectories()
 {
   if (!m_root_dir.exists())
@@ -86,10 +93,7 @@ void MapManager::scanDirectories()
       return;
     }
 
-  QFile freq(m_root_dir.absoluteFilePath(const_fname_countries_requested));
-  freq.open(QIODevice::ReadOnly | QIODevice::Text);
-  QJsonArray req_countries = QJsonDocument::fromJson(freq.readAll()).array();
-  freq.close();
+  QJsonArray req_countries = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
 
   // check whether we have all needed datasets for required countries
   QHash<QString, MapCountry> available;
@@ -134,8 +138,14 @@ void MapManager::scanDirectories()
       if (!m_maps_available.contains(m_map_selected))
         m_map_selected.clear();
 
+      if (m_maps_available.count() == 1) // there is only one map, let's select it as well
+        {
+          auto i = m_maps_available.begin();
+          m_map_selected = i->id;
+        }
+
       QStringList countries, ids;
-      getCountriesList(true, countries, ids);
+      makeCountriesList(true, countries, ids);
 
       // print all loaded countries
       for (const auto &c: countries)
@@ -150,7 +160,11 @@ void MapManager::scanDirectories()
 void MapManager::getCountriesList(bool list_available, QStringList &countries, QStringList &ids)
 {
   QMutexLocker lk(&m_mutex);
+  makeCountriesList(list_available, countries, ids);
+}
 
+void MapManager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids)
+{
   QList< QPair<QString, QString> > available;
 
   QHashIterator<QString, MapCountry> i(m_maps_available);
@@ -169,6 +183,37 @@ void MapManager::getCountriesList(bool list_available, QStringList &countries, Q
     {
       countries.append(i.first);
       ids.append(i.second);
+    }
+}
+
+void MapManager::addCountry(QString id)
+{
+  QMutexLocker lk(&m_mutex);
+
+  if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_available))
+    {
+      QJsonArray possible = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_available));
+      QJsonArray requested = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+
+      for (QJsonArray::const_iterator iter = possible.constBegin();
+           iter != possible.constEnd(); ++iter)
+        {
+          const QJsonObject request = iter->toObject();
+          if (request.empty()) continue;
+
+          // check if we have all keys defined
+          if (request.contains("id") && request.value("id").toString() == id)
+            {
+              requested.append(request);
+              QJsonDocument doc(requested);
+              QFile file(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+              file.open(QIODevice::WriteOnly | QIODevice::Text);
+              file.write( doc.toJson() );
+              break;
+            }
+        }
+
+      scanDirectories();
     }
 }
 
