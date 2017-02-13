@@ -35,7 +35,7 @@ void GeoMaster::onSettingsChanged()
     m_postal.set_use_primitive(settings.valueInt(GEOMASTER_SETTINGS "use_primitive") > 0);
 
     QString geopath = settings.valueString(GEOMASTER_SETTINGS "geocoder_path");
-    if (!m_geocoder.load(geopath.toStdString()))
+    if (geopath.length() < 1 || !m_geocoder.load(geopath.toStdString()))
     {
         InfoHub::logError(tr("Cannot open geocoder database") + ": " + geopath);
         return;
