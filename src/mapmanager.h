@@ -6,7 +6,7 @@
 #include <QDir>
 #include <QString>
 #include <QStringList>
-#include <QHash>
+#include <QJsonObject>
 
 /// \brief Map Manager
 ///
@@ -74,27 +74,12 @@ protected:
   void updateGeocoderNLP();
   void updatePostal();
 
-protected:
+  /// helper functions to deal with JSON representation of the features
+  QJsonObject loadJson(QString fname) const;
+  QString getPath(const QJsonObject &obj, const QString &feature) const;
+  QString getId(const QJsonObject &obj) const;
+  QString getPretty(const QJsonObject &obj) const;
 
-  /// \brief Keeps list of available maps and how different map components depend on each other
-  struct MapCountry {
-    QString id;
-    QString name;
-    QString continent;
-
-    // path components
-    QString osmscout;
-    QString postal_country;
-    QString geocoder_nlp;
-
-    QString pretty() const { return continent + "/" + name; }
-    bool operator ==(const MapCountry &other) const {
-      return (id==other.id && name==other.name && continent==other.continent &&
-              osmscout==other.osmscout &&
-              postal_country==other.postal_country &&
-              geocoder_nlp==other.geocoder_nlp );
-    }
-  };
 
 protected:
   QMutex m_mutex;
@@ -106,7 +91,8 @@ protected:
   bool m_feature_postal_country{false};
 
   // available maps
-  QHash< QString, MapCountry > m_maps_available;
+  QJsonObject m_maps_available;
+  //QHash< QString, MapCountry > m_maps_available;
   QString m_map_selected;
 
   QString m_postal_global_path;
@@ -114,7 +100,12 @@ protected:
   const QString const_fname_countries_provided{"countries_provided.json"};
   const QString const_fname_countries_requested{"countries_requested.json"};
 
-  const QString const_feature_name_postal_global{"postal/global"};
+  const QString const_feature_id_postal_global{"postal/global"};
+
+  const QString const_feature_name_postal_global{"postal_global"};
+  const QString const_feature_name_postal_country{"postal_country"};
+  const QString const_feature_name_osmscout{"osmscout"};
+  const QString const_feature_name_geocoder_nlp{"geocoder_nlp"};
 };
 
 #endif // MAPMANAGER_H

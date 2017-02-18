@@ -53,7 +53,7 @@ void MapManager::loadSettings()
 
 void MapManager::nothingAvailable()
 {
-  m_maps_available.clear();
+  m_maps_available = QJsonObject();
   m_map_selected.clear();
 
   updateOsmScout();
@@ -61,36 +61,29 @@ void MapManager::nothingAvailable()
   updatePostal();
 }
 
-////////////////////////////////////////////////////////
-/// helper functions to deal with JSON
-static QJsonObject loadJson(QString fname)
+QJsonObject MapManager::loadJson(QString fname) const
 {
   QFile freq(fname);
   if (!freq.open(QIODevice::ReadOnly | QIODevice::Text)) return QJsonObject();
   return QJsonDocument::fromJson(freq.readAll()).object();
 }
 
-static bool getFeatureData(const QJsonObject &obj, const QString &feature, QString &path, int &size, int &size_compressed)
+QString MapManager::getPath(const QJsonObject &obj, const QString &feature) const
 {
-  if (obj.contains(feature))
-    {
-      const QJsonObject &fo = obj.value(feature).toObject();
-      path = fo.value("path").toString();
-      size = fo.value("size").toInt();
-      size_compressed = fo.value("size-compressed").toInt();
-      return true;
-    }
-  path = QString();
-  size = size_compressed = 0;
-  return false;
+  return obj.value(feature).toObject().value("path").toString();
 }
 
-static QString getPath(const QJsonObject &obj, const QString &feature)
+QString MapManager::getId(const QJsonObject &obj) const
 {
-  QString path;
-  int sz, szc;
-  getFeatureData(obj, feature, path, sz, szc);
-  return path;
+  return obj.value("id").toString();
+}
+
+QString MapManager::getPretty(const QJsonObject &obj) const
+{
+  if (obj.value("id").toString() == const_feature_id_postal_global)
+    return tr("Address parsing language support");
+
+  return obj.value("continent").toString() + " / " + obj.value("name").toString();
 }
 
 /// helper functions to deal with JSON: done
@@ -117,11 +110,12 @@ void MapManager::scanDirectories()
   QJsonObject req_countries = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
 
   // with postal countries requested, check if we have postal global part
+  QJsonObject available;
   if (m_feature_postal_country)
     {
-      int sz, sz_compressed;
-      if ( !getFeatureData( req_countries.value(const_feature_name_postal_global).toObject(),
-                            "postal_global", m_postal_global_path, sz, sz_compressed) )
+      m_postal_global_path = getPath( req_countries.value(const_feature_id_postal_global).toObject(),
+                                      const_feature_name_postal_global );
+      if ( m_postal_global_path.isEmpty() )
         {
           InfoHub::logWarning(tr("No maps loaded: libpostal language support is not requested"));
           nothingAvailable();
@@ -134,10 +128,12 @@ void MapManager::scanDirectories()
           nothingAvailable();
           return;
         }
+
+      // add postal global to requested
+      available.insert(const_feature_id_postal_global, req_countries.value(const_feature_id_postal_global).toObject());
     }
 
   // check whether we have all needed datasets for required countries
-  QHash<QString, MapCountry> available;
   for (QJsonObject::const_iterator request_iter = req_countries.constBegin();
        request_iter != req_countries.constEnd(); ++request_iter)
     {
@@ -148,27 +144,24 @@ void MapManager::scanDirectories()
       if (request.contains("id") &&
           request.contains("name") &&
           request.contains("continent") &&
-          (!m_feature_geocoder_nlp || request.contains("geocoder_nlp")) &&
-          (!m_feature_osmscout || request.contains("osmscout")) &&
-          (!m_feature_postal_country || request.contains("postal_country"))
+          (!m_feature_geocoder_nlp || request.contains(const_feature_name_geocoder_nlp)) &&
+          (!m_feature_osmscout || request.contains(const_feature_name_osmscout)) &&
+          (!m_feature_postal_country || request.contains(const_feature_name_postal_country))
           )
         {
-          MapCountry country;
-          country.id = request.value("id").toString();
-          country.name = request.value("name").toString();
-          country.continent = request.value("continent").toString();
-          country.geocoder_nlp = getPath(request, "geocoder_nlp");
-          country.osmscout = getPath(request, "osmscout");
-          country.postal_country = getPath(request, "postal_country");
+          QString id = getId(request);
+          QString geocoder_nlp = getPath(request, const_feature_name_geocoder_nlp);
+          QString osmscout = getPath(request, const_feature_name_osmscout);
+          QString postal_country = getPath(request, const_feature_name_postal_country);
 
-          if (m_feature_geocoder_nlp && !hasAvailableGeocoderNLP(country.geocoder_nlp))
-            InfoHub::logWarning(tr("Missing dataset for geocoder-nlp: ") + country.geocoder_nlp);
-          else if (m_feature_osmscout && !hasAvailableOsmScout(country.osmscout))
-            InfoHub::logWarning(tr("Missing dataset for libosmscout: ") + country.osmscout);
-          else if (m_feature_postal_country && !hasAvailablePostalCountry(country.postal_country))
-            InfoHub::logWarning(tr("Missing country-specific dataset for libpostal: ") + country.postal_country);
+          if (m_feature_geocoder_nlp && !hasAvailableGeocoderNLP(geocoder_nlp))
+            InfoHub::logWarning(tr("Missing dataset for geocoder-nlp: ") + geocoder_nlp);
+          else if (m_feature_osmscout && !hasAvailableOsmScout(osmscout))
+            InfoHub::logWarning(tr("Missing dataset for libosmscout: ") + osmscout);
+          else if (m_feature_postal_country && !hasAvailablePostalCountry(postal_country))
+            InfoHub::logWarning(tr("Missing country-specific dataset for libpostal: ") + postal_country);
           else
-            available[country.id] = country;
+            available.insert(id, request);
         }
     }
 
@@ -179,10 +172,17 @@ void MapManager::scanDirectories()
       if (!m_maps_available.contains(m_map_selected))
         m_map_selected.clear();
 
-      if (m_maps_available.count() == 1) // there is only one map, let's select it as well
+      bool has_postal_global = m_maps_available.contains(const_feature_id_postal_global);
+      if ( (m_maps_available.count() == 1 && !has_postal_global) ||
+           (m_maps_available.count() == 2 && has_postal_global) ) // there is only one map, let's select it as well
         {
-          auto i = m_maps_available.begin();
-          m_map_selected = i->id;
+          for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+               i != m_maps_available.constEnd(); ++i)
+            if (i.key() != const_feature_id_postal_global)
+              {
+                m_map_selected = i.key();
+                break;
+              }
         }
 
       QStringList countries, ids;
@@ -196,6 +196,7 @@ void MapManager::scanDirectories()
       updateGeocoderNLP();
       updatePostal();
     }
+  else qDebug() << "Same config as before";
 }
 
 void MapManager::getCountriesList(bool list_available, QStringList &countries, QStringList &ids)
@@ -208,13 +209,13 @@ void MapManager::makeCountriesList(bool list_available, QStringList &countries, 
 {
   QList< QPair<QString, QString> > available;
 
-  QHashIterator<QString, MapCountry> i(m_maps_available);
-  for (QHashIterator<QString, MapCountry> i(m_maps_available);
-       i.hasNext(); )
-    {
-      i.next();
-      available.append(qMakePair(i.value().pretty(), i.value().id));
-    }
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
+    if (i.key() != const_feature_id_postal_global)
+      {
+        QJsonObject c = i->toObject();
+        available.append(qMakePair(getPretty(c), getId(c)));
+      }
 
   std::sort(available.begin(), available.end());
 
@@ -277,7 +278,8 @@ void MapManager::updateOsmScout()
 {
   AppSettings settings;
 
-  QString path = fullPath( m_maps_available.value(m_map_selected).osmscout );
+  QString path = fullPath( getPath(m_maps_available.value(m_map_selected).toObject(),
+                                   const_feature_name_osmscout) );
   if (settings.valueString(OSM_SETTINGS "map") != path)
     {
       settings.setValue(OSM_SETTINGS "map", path);
@@ -303,7 +305,8 @@ void MapManager::updateGeocoderNLP()
   AppSettings settings;
 
   // version of the geocoder where all data is in a single file
-  QString path = fullPath( m_maps_available.value(m_map_selected).geocoder_nlp + "/" +  geocodernlp_files[0] );
+  QString path = fullPath( getPath( m_maps_available.value(m_map_selected).toObject(),
+                                    const_feature_name_geocoder_nlp ) + "/" +  geocodernlp_files[0] );
 
   if (settings.valueString(GEOMASTER_SETTINGS "geocoder_path") != path)
     {
@@ -346,7 +349,8 @@ void MapManager::updatePostal()
   AppSettings settings;
 
   QString path_global = fullPath( m_postal_global_path );
-  QString path_country = fullPath( m_maps_available.value(m_map_selected).postal_country );
+  QString path_country = fullPath( getPath( m_maps_available.value(m_map_selected).toObject(),
+                                            const_feature_name_postal_country ) );
 
   if (settings.valueString(GEOMASTER_SETTINGS "postal_main_dir") != path_global ||
       settings.valueString(GEOMASTER_SETTINGS "postal_country_dir") != path_country )
