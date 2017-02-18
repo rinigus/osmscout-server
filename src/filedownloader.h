@@ -7,6 +7,7 @@
 #include <QNetworkReply>
 #include <QFile>
 #include <QUrl>
+#include <QProcess>
 
 /// \brief Downloads a file specified by URL
 ///
@@ -36,11 +37,21 @@ public slots:
   void onNetworkError(QNetworkReply::NetworkError code);
 
 protected:
+  void onProcessStarted();
+  void onProcessStopped(int exitCode, QProcess::ExitStatus exitStatus); ///< Called on error while starting or when process has stopped
+  void onProcessStateChanged(QProcess::ProcessState newState); ///< Called when state of the process has changed
+  void onProcessRead();
+  void onProcessReadError();
+
+protected:
   QNetworkAccessManager *m_manager;
   QUrl m_url;
   QString m_path;
 
   QNetworkReply *m_reply{nullptr};
+
+  QProcess *m_process{nullptr};
+  bool m_process_started{false};
 
   QFile m_file;
 

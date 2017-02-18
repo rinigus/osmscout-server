@@ -4,6 +4,8 @@
 #include <QDir>
 #include <QFileInfo>
 
+#include <iostream> // for a rarely expected error message
+
 FileDownloader::FileDownloader(QNetworkAccessManager *manager,
                                QString url, QString path,
                                const QString mode,
@@ -34,6 +36,48 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
       return;
     }
 
+  // start data processor if requested
+  QString command;
+  QStringList arguments;
+  if (mode == "BZ2")
+    {
+      command = "bunzip2";
+      arguments << "-c";
+    }
+  else if (mode.isEmpty())
+    {
+      // nothing to do
+    }
+  else
+    {
+      std::cerr << "FileDownloader: unknown mode: " << mode.toStdString() << std::endl;
+      m_isok = false;
+      return;
+    }
+
+  if (!command.isEmpty())
+    {
+      m_pipe_to_process = true;
+      m_process = new QProcess(this);
+
+      connect( m_process, &QProcess::started,
+               this, &FileDownloader::onProcessStarted );
+
+      connect( m_process, static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
+               this, &FileDownloader::onProcessStopped );
+
+      connect( m_process, &QProcess::stateChanged,
+               this, &FileDownloader::onProcessStateChanged );
+
+      connect( m_process, &QProcess::readyReadStandardOutput,
+               this, &FileDownloader::onProcessRead );
+
+      connect( m_process, &QProcess::readyReadStandardError,
+               this, &FileDownloader::onProcessReadError );
+
+      m_process->start(command, arguments);
+    }
+
   // start download
   QNetworkRequest request(m_url);
   request.setHeader(QNetworkRequest::UserAgentHeader,
@@ -52,17 +96,21 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
 FileDownloader::~FileDownloader()
 {
   if (m_reply) m_reply->deleteLater();
+  if (m_process) m_process->deleteLater();
 }
 
 void FileDownloader::onNetworkReadyRead()
 {
-  if (!m_reply) return;
+  if (!m_reply ||
+      (m_pipe_to_process && !m_process_started) ) // too early, haven't started yet
+    return;
+
   QByteArray data = m_reply->readAll();
   m_downloaded += data.size();
 
   if (m_pipe_to_process)
     {
-
+      m_process->write(data);
       emit downloadedBytes(m_downloaded);
     }
   else
@@ -74,7 +122,12 @@ void FileDownloader::onNetworkReadyRead()
 
 void FileDownloader::onDownloaded()
 {
+  if (m_pipe_to_process && !m_process_started)
+    return;
+
   onNetworkReadyRead(); // update all data if needed
+  if (m_pipe_to_process)
+    m_process->closeWriteChannel();
 
   if (m_reply) m_reply->deleteLater();
   m_reply = nullptr;
@@ -90,4 +143,63 @@ void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 
   m_isok = false;
   emit error(err);
+}
+
+void FileDownloader::onProcessStarted()
+{
+  m_process_started = true;
+  onNetworkReadyRead(); // pipe all data in that has been collected already
+}
+
+void FileDownloader::onProcessRead()
+{
+  if (!m_process) return;
+
+  QByteArray data = m_process->readAllStandardOutput();
+  m_file.write(data);
+  m_written += data.size();
+  emit writtenBytes(m_written);
+}
+
+void FileDownloader::onProcessStopped(int exitCode, QProcess::ExitStatus /*exitStatus*/)
+{
+  if (exitCode != 0)
+    {
+      QString err = tr("Error in processing downloaded data");
+      m_isok = false;
+      emit error(err);
+      return;
+    }
+
+  if (!m_process) return;
+
+  onProcessRead();
+
+  m_process->deleteLater();
+  m_process = nullptr;
+
+  emit finished(m_path);
+}
+
+void FileDownloader::onProcessReadError()
+{
+  if (!m_process) return;
+
+  QByteArray data = m_process->readAllStandardError();
+  if (data.size() > 0)
+    {
+      QString
+          err = tr("Error in processing downloaded data") + ": " +
+          QString::fromStdString(data.toStdString());
+      emit error(err);
+    }
+}
+
+void FileDownloader::onProcessStateChanged(QProcess::ProcessState state)
+{
+  if ( !m_process_started && state == QProcess::NotRunning )
+    {
+          QString err = tr("Error in processing downloaded data: could not start the program") + " " + m_process->program();
+          emit error(err);
+    }
 }
