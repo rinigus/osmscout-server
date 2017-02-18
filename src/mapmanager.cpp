@@ -42,6 +42,7 @@ void MapManager::loadSettings()
 
   m_root_dir.setPath(settings.valueString(MAPMANAGER_SETTINGS "root"));
   m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
+  m_provided_url = settings.valueString(MAPMANAGER_SETTINGS "provided_url");
 
   m_feature_osmscout = settings.valueBool(MAPMANAGER_SETTINGS "osmscout");
   m_feature_geocoder_nlp = settings.valueBool(MAPMANAGER_SETTINGS "geocoder_nlp");
@@ -95,9 +96,6 @@ QString MapManager::getPretty(const QJsonObject &obj) const
 
   return obj.value("continent").toString() + " / " + obj.value("name").toString();
 }
-
-/// helper functions to deal with JSON: done
-////////////////////////////////////////////////////////
 
 
 void MapManager::scanDirectories()
@@ -366,6 +364,83 @@ void MapManager::checkMissingFiles(const QJsonObject &request,
       missing.todownload += getSizeCompressed(request, feature);
       missing.tostore  += getSize(request, feature);
     }
+}
+
+////////////////////////////////////////////////////////////
+/// support for downloads
+bool MapManager::updateProvided()
+{
+  QMutexLocker lk(&m_mutex);
+  return startDownload(m_provided_url,
+                       m_root_dir.absoluteFilePath(const_fname_countries_provided),
+                       QString());
+}
+
+bool MapManager::startDownload(const QString &url, const QString &path, const QString &mode)
+{
+  // check if someone is downloading already
+  if ( m_file_downloader ) return false;
+
+  m_file_downloader = new FileDownloader(&m_network_manager, url, path, mode, this);
+  if (!m_file_downloader)
+    {
+      InfoHub::logError("Failed to allocate FileDownloader"); // technical message, no need to translate
+      return false;
+    }
+
+  if ( !bool(*m_file_downloader) )
+    {
+      InfoHub::logWarning(tr("Error starting the download of") + " " + path);
+      return false;
+    }
+
+  connect(m_file_downloader, &FileDownloader::finished, this, &MapManager::onDownloadFinished);
+  connect(m_file_downloader, &FileDownloader::error, this, &MapManager::onDownloadError);
+  connect(m_file_downloader, &FileDownloader::downloadedBytes, this, &MapManager::onDownloadedBytes);
+  connect(m_file_downloader, &FileDownloader::writtenBytes, this, &MapManager::onWrittenBytes);
+
+  return true;
+}
+
+void MapManager::onDownloadFinished(QString path)
+{
+  QMutexLocker lk(&m_mutex);
+
+  qDebug() << "HERE SHOULD BE HANDLING OF path AND CALLING scanners to see if something is available now and new download started if needed";
+
+  InfoHub::logInfo(tr("File downloaded:") + " " + path);
+  cleanupDownload();
+}
+
+void MapManager::onDownloadError(QString err)
+{
+  QMutexLocker lk(&m_mutex);
+
+  InfoHub::logWarning(err);
+  cleanupDownload();
+
+  InfoHub::logWarning(tr("Dropping all downloads"));
+  m_missing_data.clear();
+}
+
+void MapManager::cleanupDownload()
+{
+  if (m_file_downloader)
+    {
+      m_file_downloader->disconnect();
+      m_file_downloader->deleteLater();
+      m_file_downloader = QPointer<FileDownloader>();
+    }
+}
+
+void MapManager::onDownloadedBytes(size_t sz)
+{
+  qDebug() << "D: " << sz;
+}
+
+void MapManager::onWrittenBytes(size_t sz)
+{
+  qDebug() << "W: " << sz;
 }
 
 ////////////////////////////////////////////////////////////

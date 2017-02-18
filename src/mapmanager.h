@@ -1,6 +1,8 @@
 #ifndef MAPMANAGER_H
 #define MAPMANAGER_H
 
+#include "filedownloader.h"
+
 #include <QObject>
 #include <QMutex>
 #include <QDir>
@@ -8,6 +10,7 @@
 #include <QStringList>
 #include <QJsonObject>
 #include <QList>
+#include <QPointer>
 
 /// \brief Map Manager
 ///
@@ -35,6 +38,10 @@ public:
   /// \brief Add country to the list of requested countries
   ///
   Q_INVOKABLE void addCountry(QString id);
+
+  /// \brief Update a list of provided countries and features
+  ///
+  Q_INVOKABLE bool updateProvided();
 
 //  QString masterMap() const { return m_master_map; }
 //  void setMasterMap(QString masterMap);
@@ -110,6 +117,15 @@ protected:
                          const QStringList &files,
                          FilesToDownload &missing) const;
 
+  // handling of downloads
+  void onDownloadFinished(QString path);
+  void onDownloadError(QString err);
+  void onDownloadedBytes(size_t sz);
+  void onWrittenBytes(size_t sz);
+
+  bool startDownload(const QString &url, const QString &path, const QString &mode);
+  void cleanupDownload();
+
 protected:
   QMutex m_mutex;
 
@@ -118,6 +134,7 @@ protected:
   bool m_feature_osmscout{false};
   bool m_feature_geocoder_nlp{false};
   bool m_feature_postal_country{false};
+  QString m_provided_url;
 
   // available maps
   QJsonObject m_maps_available;
@@ -127,6 +144,8 @@ protected:
   QString m_postal_global_path;
 
   QList< FilesToDownload > m_missing_data;
+  QNetworkAccessManager m_network_manager;
+  QPointer<FileDownloader> m_file_downloader;
 
   /// const values used to access data
   const QString const_fname_countries_provided{"countries_provided.json"};
