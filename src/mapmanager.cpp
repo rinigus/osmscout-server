@@ -61,12 +61,41 @@ void MapManager::nothingAvailable()
   updatePostal();
 }
 
-static QJsonArray loadJson(QString fname)
+////////////////////////////////////////////////////////
+/// helper functions to deal with JSON
+static QJsonObject loadJson(QString fname)
 {
   QFile freq(fname);
-  if (!freq.open(QIODevice::ReadOnly | QIODevice::Text)) return QJsonArray();
-  return QJsonDocument::fromJson(freq.readAll()).array();
+  if (!freq.open(QIODevice::ReadOnly | QIODevice::Text)) return QJsonObject();
+  return QJsonDocument::fromJson(freq.readAll()).object();
 }
+
+static bool getFeatureData(const QJsonObject &obj, const QString &feature, QString &path, int &size, int &size_compressed)
+{
+  if (obj.contains(feature))
+    {
+      const QJsonObject &fo = obj.value(feature).toObject();
+      path = fo.value("path").toString();
+      size = fo.value("size").toInt();
+      size_compressed = fo.value("size-compressed").toInt();
+      return true;
+    }
+  path = QString();
+  size = size_compressed = 0;
+  return false;
+}
+
+static QString getPath(const QJsonObject &obj, const QString &feature)
+{
+  QString path;
+  int sz, szc;
+  getFeatureData(obj, feature, path, sz, szc);
+  return path;
+}
+
+/// helper functions to deal with JSON: done
+////////////////////////////////////////////////////////
+
 
 void MapManager::scanDirectories()
 {
@@ -77,15 +106,7 @@ void MapManager::scanDirectories()
       return;
     }
 
-  // with postal countries requested, check if we have postal global part
-  if (m_feature_postal_country && !hasAvailablePostalGlobal())
-    {
-      InfoHub::logWarning(tr("No maps loaded: libpostal language support unavailable"));
-      nothingAvailable();
-      return;
-    }
-
-  // load list of requested countries
+  // load list of requested countries and features
   if (!m_root_dir.exists(const_fname_countries_requested))
     {
       InfoHub::logWarning(tr("No maps were requested"));
@@ -93,11 +114,31 @@ void MapManager::scanDirectories()
       return;
     }
 
-  QJsonArray req_countries = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+  QJsonObject req_countries = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+
+  // with postal countries requested, check if we have postal global part
+  if (m_feature_postal_country)
+    {
+      int sz, sz_compressed;
+      if ( !getFeatureData( req_countries.value(const_feature_name_postal_global).toObject(),
+                            "postal_global", m_postal_global_path, sz, sz_compressed) )
+        {
+          InfoHub::logWarning(tr("No maps loaded: libpostal language support is not requested"));
+          nothingAvailable();
+          return;
+        }
+
+      if (!hasAvailablePostalGlobal() )
+        {
+          InfoHub::logWarning(tr("No maps loaded: libpostal language support unavailable"));
+          nothingAvailable();
+          return;
+        }
+    }
 
   // check whether we have all needed datasets for required countries
   QHash<QString, MapCountry> available;
-  for (QJsonArray::const_iterator request_iter = req_countries.constBegin();
+  for (QJsonObject::const_iterator request_iter = req_countries.constBegin();
        request_iter != req_countries.constEnd(); ++request_iter)
     {
       const QJsonObject request = request_iter->toObject();
@@ -116,9 +157,9 @@ void MapManager::scanDirectories()
           country.id = request.value("id").toString();
           country.name = request.value("name").toString();
           country.continent = request.value("continent").toString();
-          country.geocoder_nlp = request.value("geocoder_nlp").toString();
-          country.osmscout = request.value("osmscout").toString();
-          country.postal_country = request.value("postal_country").toString();
+          country.geocoder_nlp = getPath(request, "geocoder_nlp");
+          country.osmscout = getPath(request, "osmscout");
+          country.postal_country = getPath(request, "postal_country");
 
           if (m_feature_geocoder_nlp && !hasAvailableGeocoderNLP(country.geocoder_nlp))
             InfoHub::logWarning(tr("Missing dataset for geocoder-nlp: ") + country.geocoder_nlp);
@@ -190,27 +231,19 @@ void MapManager::addCountry(QString id)
 {
   QMutexLocker lk(&m_mutex);
 
-  if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_available))
+  if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_provided))
     {
-      QJsonArray possible = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_available));
-      QJsonArray requested = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+      QJsonObject possible = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_provided));
+      QJsonObject requested = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
 
-      for (QJsonArray::const_iterator iter = possible.constBegin();
-           iter != possible.constEnd(); ++iter)
+      if (possible.contains(id) && possible.value(id).toObject().value("id") == id)
         {
-          const QJsonObject request = iter->toObject();
-          if (request.empty()) continue;
+          requested.insert(id, possible.value(id).toObject());
 
-          // check if we have all keys defined
-          if (request.contains("id") && request.value("id").toString() == id)
-            {
-              requested.append(request);
-              QJsonDocument doc(requested);
-              QFile file(m_root_dir.absoluteFilePath(const_fname_countries_requested));
-              file.open(QIODevice::WriteOnly | QIODevice::Text);
-              file.write( doc.toJson() );
-              break;
-            }
+          QJsonDocument doc(requested);
+          QFile file(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+          file.open(QIODevice::WriteOnly | QIODevice::Text);
+          file.write( doc.toJson() );
         }
 
       scanDirectories();
@@ -232,16 +265,10 @@ const static QStringList osmscout_files{
   "router.idx", "textloc.dat", "textother.dat", "textpoi.dat", "textregion.dat", "types.dat",
   "water.idx", "ways.dat", "waysopt.dat"};
 
-QString MapManager::getOsmScoutPath(const QString &name) const
-{
-  if (name.length() < 1) return QString();
-  return const_dirname_osmscout + "/" + name;
-}
-
-bool MapManager::hasAvailableOsmScout(const QString &name) const
+bool MapManager::hasAvailableOsmScout(const QString &path) const
 {
   for (const auto &f: osmscout_files)
-    if (!m_root_dir.exists(getOsmScoutPath(name) + "/" + f))
+    if (!m_root_dir.exists(path + "/" + f))
       return false;
   return true;
 }
@@ -250,7 +277,7 @@ void MapManager::updateOsmScout()
 {
   AppSettings settings;
 
-  QString path = fullPath( getOsmScoutPath( m_maps_available.value(m_map_selected).osmscout ) );
+  QString path = fullPath( m_maps_available.value(m_map_selected).osmscout );
   if (settings.valueString(OSM_SETTINGS "map") != path)
     {
       settings.setValue(OSM_SETTINGS "map", path);
@@ -260,23 +287,23 @@ void MapManager::updateOsmScout()
 
 ////////////////////////////////////////////////////////////
 /// Geocoder NLP support
+const static QStringList geocodernlp_files{
+  "location.sqlite"};
 
-QString MapManager::getGeocoderNLPPath(const QString &name) const
+bool MapManager::hasAvailableGeocoderNLP(const QString &path) const
 {
-  if (name.length() < 1) return QString();
-  return const_dirname_geocoder_nlp + "/" + name;
-}
-
-bool MapManager::hasAvailableGeocoderNLP(const QString &name) const
-{
-  return m_root_dir.exists(getGeocoderNLPPath(name));
+  for (const auto &f: geocodernlp_files)
+    if (!m_root_dir.exists(path + "/" + f))
+      return false;
+  return true;
 }
 
 void MapManager::updateGeocoderNLP()
 {
   AppSettings settings;
 
-  QString path = fullPath( getGeocoderNLPPath( m_maps_available.value(m_map_selected).geocoder_nlp ) );
+  // version of the geocoder where all data is in a single file
+  QString path = fullPath( m_maps_available.value(m_map_selected).geocoder_nlp + "/" +  geocodernlp_files[0] );
 
   if (settings.valueString(GEOMASTER_SETTINGS "geocoder_path") != path)
     {
@@ -301,21 +328,15 @@ const static QStringList postal_country_files{
 bool MapManager::hasAvailablePostalGlobal() const
 {
   for (const auto &f: postal_global_files)
-    if (!m_root_dir.exists(const_dirname_postal_global + "/" + f))
+    if (!m_root_dir.exists(m_postal_global_path + "/" + f))
       return false;
   return true;
 }
 
-QString MapManager::getPostalCountryPath(const QString &name) const
-{
-  if (name.length() < 1) return QString();
-  return const_dirname_postal_country + "/" + name;
-}
-
-bool MapManager::hasAvailablePostalCountry(const QString &name) const
+bool MapManager::hasAvailablePostalCountry(const QString &path) const
 {
   for (const auto &f: postal_country_files)
-    if (!m_root_dir.exists(getPostalCountryPath(name) + "/" + f))
+    if (!m_root_dir.exists(path + "/" + f))
       return false;
   return true;
 }
@@ -324,8 +345,8 @@ void MapManager::updatePostal()
 {
   AppSettings settings;
 
-  QString path_global = fullPath( const_dirname_postal_global );
-  QString path_country = fullPath( getPostalCountryPath( m_maps_available.value(m_map_selected).postal_country ) );
+  QString path_global = fullPath( m_postal_global_path );
+  QString path_country = fullPath( m_maps_available.value(m_map_selected).postal_country );
 
   if (settings.valueString(GEOMASTER_SETTINGS "postal_main_dir") != path_global ||
       settings.valueString(GEOMASTER_SETTINGS "postal_country_dir") != path_country )

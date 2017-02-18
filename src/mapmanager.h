@@ -65,13 +65,9 @@ protected:
 
   QString fullPath(QString path) const; ///< Transform relative path to the full path
 
-  QString getOsmScoutPath(const QString &name) const;
-  QString getGeocoderNLPPath(const QString &name) const;
-  QString getPostalCountryPath(const QString &name) const;
-
-  bool hasAvailableOsmScout(const QString &name) const;
-  bool hasAvailableGeocoderNLP(const QString &name) const;
-  bool hasAvailablePostalCountry(const QString &name) const;
+  bool hasAvailableOsmScout(const QString &path) const;
+  bool hasAvailableGeocoderNLP(const QString &path) const;
+  bool hasAvailablePostalCountry(const QString &path) const;
   bool hasAvailablePostalGlobal() const;
 
   void updateOsmScout();
@@ -85,6 +81,8 @@ protected:
     QString id;
     QString name;
     QString continent;
+
+    // path components
     QString osmscout;
     QString postal_country;
     QString geocoder_nlp;
@@ -111,14 +109,12 @@ protected:
   QHash< QString, MapCountry > m_maps_available;
   QString m_map_selected;
 
-  const QString const_fname_countries_available{"countries_available.json"};
+  QString m_postal_global_path;
+
+  const QString const_fname_countries_provided{"countries_provided.json"};
   const QString const_fname_countries_requested{"countries_requested.json"};
 
-  const QString const_dirname_osmscout{"osmscout"};
-  const QString const_dirname_geocoder_nlp{"geocoder-nlp"};
-  const QString const_dirname_postal_country{"postal/countries"};
-  const QString const_dirname_postal_global{"postal/global"};
-
+  const QString const_feature_name_postal_global{"postal/global"};
 };
 
 #endif // MAPMANAGER_H
