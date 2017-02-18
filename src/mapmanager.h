@@ -7,6 +7,7 @@
 #include <QString>
 #include <QStringList>
 #include <QJsonObject>
+#include <QList>
 
 /// \brief Map Manager
 ///
@@ -51,10 +52,26 @@ public slots:
   void onSettingsChanged();
 
 protected:
+  struct FileTask {
+    QString url;
+    QString path;
+  };
+
+  struct FilesToDownload {
+    QString id;
+    QString pretty;
+    size_t tostore{0};
+    size_t todownload{0};
+    QList< FileTask > files;
+  };
+
+protected:
   void loadSettings();
 
   void scanDirectories();
   void nothingAvailable(); ///< Helper method called when there are no maps available
+
+  void missingData();
 
   /// \brief Composes a list of countries in alphabetical order
   ///
@@ -70,16 +87,28 @@ protected:
   bool hasAvailablePostalCountry(const QString &path) const;
   bool hasAvailablePostalGlobal() const;
 
+  void checkMissingOsmScout(const QJsonObject &request, const QString &url, FilesToDownload &missing) const;
+  void checkMissingGeocoderNLP(const QJsonObject &request, const QString &url, FilesToDownload &missing) const;
+  void checkMissingPostalCountry(const QJsonObject &request, const QString &url, FilesToDownload &missing) const;
+  void checkMissingPostalGlobal(const QJsonObject &request, const QString &url, FilesToDownload &missing) const;
+
   void updateOsmScout();
   void updateGeocoderNLP();
   void updatePostal();
 
   /// helper functions to deal with JSON representation of the features
   QJsonObject loadJson(QString fname) const;
-  QString getPath(const QJsonObject &obj, const QString &feature) const;
   QString getId(const QJsonObject &obj) const;
   QString getPretty(const QJsonObject &obj) const;
+  QString getPath(const QJsonObject &obj, const QString &feature) const;
+  size_t getSize(const QJsonObject &obj, const QString &feature) const;
+  size_t getSizeCompressed(const QJsonObject &obj, const QString &feature) const;
 
+  void checkMissingFiles(const QJsonObject &request,
+                         const QString &feature,
+                         const QString &url,
+                         const QStringList &files,
+                         FilesToDownload &missing) const;
 
 protected:
   QMutex m_mutex;
@@ -97,6 +126,9 @@ protected:
 
   QString m_postal_global_path;
 
+  QList< FilesToDownload > m_missing_data;
+
+  /// const values used to access data
   const QString const_fname_countries_provided{"countries_provided.json"};
   const QString const_fname_countries_requested{"countries_requested.json"};
 
