@@ -21,6 +21,9 @@ class MapManager : public QObject
 {
   Q_OBJECT
 
+  /// \brief true when download is active
+  Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
+
 //  Q_PROPERTY(QString masterMap READ masterMap WRITE setMasterMap NOTIFY masterMapChanged)
 //  Q_PROPERTY(QStringList masterMapList READ masterMapList NOTIFY masterMapListChanged)
 
@@ -30,14 +33,19 @@ public:
   explicit MapManager(QObject *parent = 0);
   virtual ~MapManager();
 
-  /// \brief Composes a list of countries in alphabetical order
-  ///
-  /// Thread-safe wrapper to makeCountriesList
-  Q_INVOKABLE void getCountriesList(bool list_available, QStringList &countries, QStringList &ids);
+  /// \brief Composes a list of countries on device in alphabetical order
+  Q_INVOKABLE void getInstalledCountriesList(QStringList &countries, QStringList &ids);
+
+  /// \brief Composes a list of countries provided for download in alphabetical order
+  Q_INVOKABLE void getProvidedCountriesList(QStringList &countries, QStringList &ids);
 
   /// \brief Add country to the list of requested countries
   ///
   Q_INVOKABLE void addCountry(QString id);
+
+  /// \brief Remove country from the list of requested countries
+  ///
+  Q_INVOKABLE void rmCountry(QString id);
 
   /// \brief Update a list of provided countries and features
   ///
@@ -46,6 +54,13 @@ public:
   /// \brief Download or update missing data files
   ///
   Q_INVOKABLE bool getCountries();
+
+//  /// \brief Delete all non-required files
+//  ///
+//  Q_INVOKABLE bool cleanup();
+
+  /// Properties exposed to QML
+  bool downloading();
 
 //  QString masterMap() const { return m_master_map; }
 //  void setMasterMap(QString masterMap);
@@ -58,6 +73,8 @@ signals:
   void databaseOsmScoutChanged(QString database);
   void databaseGeocoderNLPChanged(QString database);
   void databasePostalChanged(QString global, QString country);
+
+  void downloadingChanged(bool state);
 
 public slots:
   void onSettingsChanged();
@@ -157,6 +174,7 @@ protected:
   const QString const_fname_countries_requested{"countries_requested.json"};
 
   const QString const_feature_id_postal_global{"postal/global"};
+  const QString const_feature_id_url{"url"};
 
   const QString const_feature_name_postal_global{"postal_global"};
   const QString const_feature_name_postal_country{"postal_country"};

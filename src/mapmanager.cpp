@@ -115,7 +115,7 @@ void MapManager::scanDirectories()
       return;
     }
 
-  QJsonObject req_countries = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+  QJsonObject req_countries = loadJson(fullPath(const_fname_countries_requested));
 
   // with postal countries requested, check if we have postal global part
   QJsonObject available;
@@ -206,19 +206,30 @@ void MapManager::scanDirectories()
     }
 }
 
-void MapManager::getCountriesList(bool list_available, QStringList &countries, QStringList &ids)
+void MapManager::getInstalledCountriesList(QStringList &countries, QStringList &ids)
 {
   QMutexLocker lk(&m_mutex);
-  makeCountriesList(list_available, countries, ids);
+  makeCountriesList(true, countries, ids);
+}
+
+void MapManager::getProvidedCountriesList(QStringList &countries, QStringList &ids)
+{
+  QMutexLocker lk(&m_mutex);
+  makeCountriesList(false, countries, ids);
 }
 
 void MapManager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids)
 {
   QList< QPair<QString, QString> > available;
 
-  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
-       i != m_maps_available.constEnd(); ++i )
-    if (i.key() != const_feature_id_postal_global)
+  QJsonObject objlist;
+
+  if (list_available) objlist = m_maps_available;
+  else objlist = loadJson(fullPath(const_fname_countries_provided));
+
+  for (QJsonObject::const_iterator i = objlist.constBegin();
+       i != objlist.constEnd(); ++i )
+    if (i.key() != const_feature_id_postal_global && i.key() != const_feature_id_url)
       {
         QJsonObject c = i.value().toObject();
         available.append(qMakePair(getPretty(c), getId(c)));
@@ -241,15 +252,40 @@ void MapManager::addCountry(QString id)
 
   if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_provided))
     {
-      QJsonObject possible = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_provided));
-      QJsonObject requested = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+      QJsonObject possible = loadJson(fullPath(const_fname_countries_provided));
+      QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
 
       if (possible.contains(id) && possible.value(id).toObject().value("id") == id)
         {
           requested.insert(id, possible.value(id).toObject());
 
           QJsonDocument doc(requested);
-          QFile file(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+          QFile file(fullPath(const_fname_countries_requested));
+          file.open(QIODevice::WriteOnly | QIODevice::Text);
+          file.write( doc.toJson() );
+        }
+
+      scanDirectories();
+      missingData();
+    }
+}
+
+void MapManager::rmCountry(QString id)
+{
+  QMutexLocker lk(&m_mutex);
+
+  if (m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_provided))
+    {
+      QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
+
+      if (requested.contains(id))
+        {
+          InfoHub::logInfo(tr("Removing country from requested list: ") + getPretty(requested.value(id).toObject()));
+
+          requested.remove(id);
+
+          QJsonDocument doc(requested);
+          QFile file(fullPath(const_fname_countries_requested));
           file.open(QIODevice::WriteOnly | QIODevice::Text);
           file.write( doc.toJson() );
         }
@@ -275,14 +311,14 @@ void MapManager::missingData()
       return;
     }
 
-  QJsonObject req_countries = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_requested));
+  QJsonObject req_countries = loadJson(fullPath(const_fname_countries_requested));
 
   // get URLs
-  QJsonObject provided = loadJson(m_root_dir.absoluteFilePath(const_fname_countries_provided));
+  QJsonObject provided = loadJson(fullPath(const_fname_countries_provided));
   QHash<QString, QString> url;
-  if (provided.contains("url"))
+  if (provided.contains(const_feature_id_url))
     {
-      const QJsonObject o = provided.value("url").toObject();
+      const QJsonObject o = provided.value(const_feature_id_url).toObject();
       QString base = o.value("base").toString();
       for (QJsonObject::const_iterator i=o.constBegin(); i!=o.end(); ++i)
         if (i.key()!="base")
@@ -372,7 +408,7 @@ bool MapManager::updateProvided()
 {
   QMutexLocker lk(&m_mutex);
   return startDownload(m_provided_url,
-                       m_root_dir.absoluteFilePath(const_fname_countries_provided),
+                       fullPath(const_fname_countries_provided),
                        QString());
 }
 
@@ -392,6 +428,12 @@ bool MapManager::getCountries()
 
   if (started) m_downloading_countries = true;
   return started;
+}
+
+bool MapManager::downloading()
+{
+  QMutexLocker lk(&m_mutex);
+  return m_file_downloader;
 }
 
 bool MapManager::startDownload(const QString &url, const QString &path, const QString &mode)
@@ -484,12 +526,16 @@ void MapManager::onWrittenBytes(size_t sz)
 }
 
 ////////////////////////////////////////////////////////////
+/// SUPPORT FOR BACKENDS
+////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
 /// libosmscout support
 const static QStringList osmscout_files{
   "areaarea.idx", "areanode.idx", "areas.dat", "areasopt.dat", "areaway.idx", "bounding.dat",
   "intersections.dat", "intersections.idx", "location.idx", "nodes.dat", "router2.dat", "router.dat",
-  "router.idx", "textloc.dat", "textother.dat", "textpoi.dat", "textregion.dat", "types.dat",
-  "water.idx", "ways.dat", "waysopt.dat"};
+  "router.idx", "textloc.dat", "textother.dat", "textpoi.dat", "textregion.dat",
+  "water.idx", "ways.dat", "waysopt.dat", "types.dat"};
 
 bool MapManager::hasAvailableOsmScout(const QString &path) const
 {
