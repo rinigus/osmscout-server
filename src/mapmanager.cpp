@@ -526,6 +526,21 @@ void MapManager::onWrittenBytes(size_t sz)
 }
 
 ////////////////////////////////////////////////////////////
+/// support for cleanup
+
+bool MapManager::getNonNeededFilesList(QStringList &files)
+{
+  // this is mutex protected as well
+  if (downloading()) return false;
+
+  {
+    QMutexLocker lk(&m_mutex);
+  }
+
+  return true;
+}
+
+////////////////////////////////////////////////////////////
 /// SUPPORT FOR BACKENDS
 ////////////////////////////////////////////////////////////
 

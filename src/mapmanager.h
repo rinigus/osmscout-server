@@ -55,6 +55,13 @@ public:
   ///
   Q_INVOKABLE bool getCountries();
 
+  /// \brief Create a list of non-required files
+  ///
+  /// Makes a list of non-requiered files to show to the user. This
+  /// method will fail (return false) if there are active downloads.
+  /// Otherwise, we could delete partially downloaded files
+  Q_INVOKABLE bool getNonNeededFilesList(QStringList &files);
+
 //  /// \brief Delete all non-required files
 //  ///
 //  Q_INVOKABLE bool cleanup();
