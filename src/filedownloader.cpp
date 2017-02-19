@@ -99,6 +99,46 @@ FileDownloader::~FileDownloader()
   if (m_process) m_process->deleteLater();
 }
 
+void FileDownloader::onFinished()
+{
+  m_file.close();
+
+  if (m_process)
+    {
+      m_process->deleteLater();
+      m_process = nullptr;
+    }
+
+  if (m_reply)
+    {
+      m_reply->deleteLater();
+      m_reply = nullptr;
+    }
+
+  emit finished(m_path);
+}
+
+void FileDownloader::onError(const QString &err)
+{
+  m_file.close();
+  m_file.remove();
+
+  if (m_process)
+    {
+      m_process->deleteLater();
+      m_process = nullptr;
+    }
+
+  if (m_reply)
+    {
+      m_reply->deleteLater();
+      m_reply = nullptr;
+    }
+
+  m_isok = false;
+  emit error(err);
+}
+
 void FileDownloader::onNetworkReadyRead()
 {
   if (!m_reply ||
@@ -114,10 +154,10 @@ void FileDownloader::onNetworkReadyRead()
       emit downloadedBytes(m_downloaded);
     }
   else
-  {
+    {
       m_file.write(data);
       emit writtenBytes(m_downloaded);
-  }
+    }
 }
 
 void FileDownloader::onDownloaded()
@@ -132,17 +172,14 @@ void FileDownloader::onDownloaded()
   if (m_reply) m_reply->deleteLater();
   m_reply = nullptr;
 
-  if (!m_pipe_to_process)
-    emit finished(m_path);
+  if (!m_pipe_to_process) onFinished();
 }
 
 void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 {
   QString err = tr("Failed to download") + ": " + m_path +
       " [" + m_reply->error() + "]";
-
-  m_isok = false;
-  emit error(err);
+  onError(err);
 }
 
 void FileDownloader::onProcessStarted()
@@ -174,11 +211,7 @@ void FileDownloader::onProcessStopped(int exitCode, QProcess::ExitStatus /*exitS
   if (!m_process) return;
 
   onProcessRead();
-
-  m_process->deleteLater();
-  m_process = nullptr;
-
-  emit finished(m_path);
+  onFinished();
 }
 
 void FileDownloader::onProcessReadError()
@@ -191,7 +224,7 @@ void FileDownloader::onProcessReadError()
       QString
           err = tr("Error in processing downloaded data") + ": " +
           QString::fromStdString(data.toStdString());
-      emit error(err);
+      onError(err);
     }
 }
 
@@ -199,7 +232,7 @@ void FileDownloader::onProcessStateChanged(QProcess::ProcessState state)
 {
   if ( !m_process_started && state == QProcess::NotRunning )
     {
-          QString err = tr("Error in processing downloaded data: could not start the program") + " " + m_process->program();
-          emit error(err);
+      QString err = tr("Error in processing downloaded data: could not start the program") + " " + m_process->program();
+      onError(err);
     }
 }

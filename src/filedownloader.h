@@ -43,6 +43,9 @@ protected:
   void onProcessRead();
   void onProcessReadError();
 
+  void onFinished();
+  void onError(const QString &err);
+
 protected:
   QNetworkAccessManager *m_manager;
   QUrl m_url;
