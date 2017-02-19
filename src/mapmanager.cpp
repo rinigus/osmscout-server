@@ -644,8 +644,11 @@ void MapManager::updateOsmScout()
 {
   AppSettings settings;
 
-  QString path = fullPath( getPath(m_maps_available.value(m_map_selected).toObject(),
-                                   const_feature_name_osmscout) );
+  QString path;
+  if (m_feature_osmscout)
+    path = fullPath( getPath(m_maps_available.value(m_map_selected).toObject(),
+                             const_feature_name_osmscout) );
+
   if (settings.valueString(OSM_SETTINGS "map") != path)
     {
       settings.setValue(OSM_SETTINGS "map", path);
@@ -680,9 +683,12 @@ void MapManager::updateGeocoderNLP()
 {
   AppSettings settings;
 
+  QString path;
+
   // version of the geocoder where all data is in a single file
-  QString path = fullPath( getPath( m_maps_available.value(m_map_selected).toObject(),
-                                    const_feature_name_geocoder_nlp ) + "/" +  geocodernlp_files[0] );
+  if (m_feature_geocoder_nlp)
+    path = fullPath( getPath( m_maps_available.value(m_map_selected).toObject(),
+                              const_feature_name_geocoder_nlp ) + "/" +  geocodernlp_files[0] );
 
   if (settings.valueString(GEOMASTER_SETTINGS "geocoder_path") != path)
     {
@@ -734,9 +740,15 @@ void MapManager::updatePostal()
 {
   AppSettings settings;
 
-  QString path_global = fullPath( m_postal_global_path );
-  QString path_country = fullPath( getPath( m_maps_available.value(m_map_selected).toObject(),
+  QString path_global;
+  QString path_country;
+
+  if (m_feature_postal_country)
+    {
+      path_global = fullPath( m_postal_global_path );
+      path_country = fullPath( getPath( m_maps_available.value(m_map_selected).toObject(),
                                             const_feature_name_postal_country ) );
+    }
 
   if (settings.valueString(GEOMASTER_SETTINGS "postal_main_dir") != path_global ||
       settings.valueString(GEOMASTER_SETTINGS "postal_country_dir") != path_country )
