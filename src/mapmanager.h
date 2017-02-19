@@ -10,6 +10,7 @@
 #include <QStringList>
 #include <QJsonObject>
 #include <QList>
+#include <QSet>
 #include <QPointer>
 
 /// \brief Map Manager
@@ -24,10 +25,10 @@ class MapManager : public QObject
   /// \brief true when download is active
   Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
 
-//  Q_PROPERTY(QString masterMap READ masterMap WRITE setMasterMap NOTIFY masterMapChanged)
-//  Q_PROPERTY(QStringList masterMapList READ masterMapList NOTIFY masterMapListChanged)
+  //  Q_PROPERTY(QString masterMap READ masterMap WRITE setMasterMap NOTIFY masterMapChanged)
+  //  Q_PROPERTY(QStringList masterMapList READ masterMapList NOTIFY masterMapListChanged)
 
-//  Q_PROPERTY(QString databaseOsmScout READ databaseOsmScout NOTIFY databaseOsmScoutChanged)
+  //  Q_PROPERTY(QString databaseOsmScout READ databaseOsmScout NOTIFY databaseOsmScoutChanged)
 
 public:
   explicit MapManager(QObject *parent = 0);
@@ -58,23 +59,30 @@ public:
   /// \brief Create a list of non-required files
   ///
   /// Makes a list of non-requiered files to show to the user. This
-  /// method will fail (return false) if there are active downloads.
-  /// Otherwise, we could delete partially downloaded files
-  Q_INVOKABLE bool getNonNeededFilesList(QStringList &files);
+  /// method will fail (return -1) if there are active downloads.
+  /// Otherwise, we could delete partially downloaded files. If the list is
+  /// found, the returned value would correspond to the size occupied
+  /// by the files.
+  Q_INVOKABLE qint64 getNonNeededFilesList(QStringList &files);
 
-//  /// \brief Delete all non-required files
-//  ///
-//  Q_INVOKABLE bool cleanup();
+  /// \brief Delete non-required files
+  ///
+  /// Deletes files found by the getNonNeededFilesList earlier. It
+  /// is required to call getNonNeededFilesList first, after that, call
+  /// deleteNonNeededFiles with the same list as found by getNonNeededFilesList.
+  /// If the lists don't match, the files will not get deleted. Returns true if
+  /// files were deleted successfully.
+  Q_INVOKABLE bool deleteNonNeededFiles(const QStringList &files);
 
   /// Properties exposed to QML
   bool downloading();
 
-//  QString masterMap() const { return m_master_map; }
-//  void setMasterMap(QString masterMap);
+  //  QString masterMap() const { return m_master_map; }
+  //  void setMasterMap(QString masterMap);
 
-//  QStringList masterMapList() const { return m_master_map_list; }
+  //  QStringList masterMapList() const { return m_master_map_list; }
 
-//  QString databaseOsmScout() const { return m_osmscout_dirs; }
+  //  QString databaseOsmScout() const { return m_osmscout_dirs; }
 
 signals:
   void databaseOsmScoutChanged(QString database);
@@ -127,6 +135,11 @@ protected:
   void checkMissingPostalCountry(const QJsonObject &request, const QString &url, FilesToDownload &missing) const;
   void checkMissingPostalGlobal(const QJsonObject &request, const QString &url, FilesToDownload &missing) const;
 
+  void fillWantedOsmScout(const QJsonObject &request, QSet<QString> &wanted) const;
+  void fillWantedGeocoderNLP(const QJsonObject &request, QSet<QString> &wanted) const;
+  void fillWantedPostalCountry(const QJsonObject &request, QSet<QString> &wanted) const;
+  void fillWantedPostalGlobal(const QJsonObject &request, QSet<QString> &wanted) const;
+
   void updateOsmScout();
   void updateGeocoderNLP();
   void updatePostal();
@@ -144,6 +157,11 @@ protected:
                          const QString &url,
                          const QStringList &files,
                          FilesToDownload &missing) const;
+
+  void fillWantedFiles(const QJsonObject &request,
+                       const QString &feature,
+                       const QStringList &files,
+                       QSet<QString> &wanted) const;
 
   // handling of downloads
   void onDownloadFinished(QString path);
@@ -175,6 +193,8 @@ protected:
   QNetworkAccessManager m_network_manager;
   QPointer<FileDownloader> m_file_downloader;
   bool m_downloading_countries{false};
+
+  QStringList m_not_needed_files;
 
   /// const values used to access data
   const QString const_fname_countries_provided{"countries_provided.json"};
