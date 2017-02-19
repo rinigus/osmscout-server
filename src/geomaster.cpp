@@ -61,12 +61,12 @@ void GeoMaster::onSettingsChanged()
         InfoHub::logInfo(tr("libpostal will use all covered languages"));
 }
 
-void GeoMaster::onGeocoderNLPChanged(QString dirname)
+void GeoMaster::onGeocoderNLPChanged(QString /*dirname*/)
 {
   onSettingsChanged();
 }
 
-void GeoMaster::onPostalChanged(QString global, QString country)
+void GeoMaster::onPostalChanged(QString /*global*/, QString /*country*/)
 {
   onSettingsChanged();
 }

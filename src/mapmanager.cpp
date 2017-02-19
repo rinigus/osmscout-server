@@ -145,7 +145,7 @@ void MapManager::scanDirectories()
   for (QJsonObject::const_iterator request_iter = req_countries.constBegin();
        request_iter != req_countries.constEnd(); ++request_iter)
     {
-      const QJsonObject request = request_iter->toObject();
+      const QJsonObject request = request_iter.value().toObject();
       if (request.empty()) continue;
 
       // check if we have all keys defined
@@ -220,7 +220,7 @@ void MapManager::makeCountriesList(bool list_available, QStringList &countries, 
        i != m_maps_available.constEnd(); ++i )
     if (i.key() != const_feature_id_postal_global)
       {
-        QJsonObject c = i->toObject();
+        QJsonObject c = i.value().toObject();
         available.append(qMakePair(getPretty(c), getId(c)));
       }
 
@@ -297,7 +297,7 @@ void MapManager::missingData()
     {
       FilesToDownload missing;
 
-      const QJsonObject request = request_iter->toObject();
+      const QJsonObject request = request_iter.value().toObject();
       if (request.empty()) continue;
 
       if (m_feature_osmscout && request.contains(const_feature_name_osmscout))
@@ -412,10 +412,10 @@ bool MapManager::startDownload(const QString &url, const QString &path, const QS
       return false;
     }
 
-  connect(m_file_downloader, &FileDownloader::finished, this, &MapManager::onDownloadFinished);
-  connect(m_file_downloader, &FileDownloader::error, this, &MapManager::onDownloadError);
-  connect(m_file_downloader, &FileDownloader::downloadedBytes, this, &MapManager::onDownloadedBytes);
-  connect(m_file_downloader, &FileDownloader::writtenBytes, this, &MapManager::onWrittenBytes);
+  connect(m_file_downloader.data(), &FileDownloader::finished, this, &MapManager::onDownloadFinished);
+  connect(m_file_downloader.data(), &FileDownloader::error, this, &MapManager::onDownloadError);
+  connect(m_file_downloader.data(), &FileDownloader::downloadedBytes, this, &MapManager::onDownloadedBytes);
+  connect(m_file_downloader.data(), &FileDownloader::writtenBytes, this, &MapManager::onWrittenBytes);
 
   return true;
 }

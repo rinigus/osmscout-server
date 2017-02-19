@@ -224,7 +224,7 @@ void FileDownloader::onProcessReadError()
     {
       QString
           err = tr("Error in processing downloaded data") + ": " +
-          QString::fromStdString(data.toStdString());
+          QString(data.data());
       onError(err);
     }
 }

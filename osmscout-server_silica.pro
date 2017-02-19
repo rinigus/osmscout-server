@@ -57,6 +57,8 @@ SOURCES += \
     src/routingforhuman.cpp \
     src/geomaster.cpp \
     src/config.cpp \
+    src/mapmanager.cpp \
+    src/filedownloader.cpp \
     src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += qml/osmscout-server.qml \
@@ -78,6 +80,8 @@ HEADERS += \
     src/consolelogger.h \
     src/routingforhuman.h \
     src/geomaster.h \
+    src/mapmanager.h \
+    src/filedownloader.h \
     src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
     src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 

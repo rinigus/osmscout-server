@@ -125,7 +125,7 @@ bool DBMaster::loadStyle(bool daylight)
   return true;
 }
 
-void DBMaster::onDatabaseChanged(QString directory)
+void DBMaster::onDatabaseChanged(QString /*directory*/)
 {
   loadSettings();
 }
