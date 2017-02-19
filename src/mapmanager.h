@@ -43,6 +43,10 @@ public:
   ///
   Q_INVOKABLE bool updateProvided();
 
+  /// \brief Download or update missing data files
+  ///
+  Q_INVOKABLE bool getCountries();
+
 //  QString masterMap() const { return m_master_map; }
 //  void setMasterMap(QString masterMap);
 
@@ -146,6 +150,7 @@ protected:
   QList< FilesToDownload > m_missing_data;
   QNetworkAccessManager m_network_manager;
   QPointer<FileDownloader> m_file_downloader;
+  bool m_downloading_countries{false};
 
   /// const values used to access data
   const QString const_fname_countries_provided{"countries_provided.json"};

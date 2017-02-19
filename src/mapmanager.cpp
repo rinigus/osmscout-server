@@ -334,8 +334,8 @@ void MapManager::missingData()
 QString MapManager::fullPath(QString path) const
 {
   if (path.isEmpty()) return QString();
-  QDir dir(m_root_dir.filePath(path));
-  return dir.canonicalPath();
+  QDir dir(m_root_dir.absolutePath());
+  return dir.filePath(path);
 }
 
 void MapManager::checkMissingFiles(const QJsonObject &request,
@@ -352,7 +352,7 @@ void MapManager::checkMissingFiles(const QJsonObject &request,
       {
         added = true;
         FileTask t;
-        t.path = path + "/" + f;
+        t.path = fullPath(path + "/" + f);
         t.url = url + "/" + path + "/" + f;
         missing.files.append(t);
       }
@@ -374,6 +374,24 @@ bool MapManager::updateProvided()
   return startDownload(m_provided_url,
                        m_root_dir.absoluteFilePath(const_fname_countries_provided),
                        QString());
+}
+
+bool MapManager::getCountries()
+{
+  QMutexLocker lk(&m_mutex);
+
+  if (m_missing_data.length() < 1) return true; // all has been downloaded already
+  if (m_missing_data[0].files.length() < 1)
+    {
+      InfoHub::logError("Internal error: missing data has no files");
+      return false;
+    }
+
+  bool started = startDownload( m_missing_data[0].files[0].url + ".bz2",
+      m_missing_data[0].files[0].path, "BZ2" );
+
+  if (started) m_downloading_countries = true;
+  return started;
 }
 
 bool MapManager::startDownload(const QString &url, const QString &path, const QString &mode)
@@ -406,10 +424,31 @@ void MapManager::onDownloadFinished(QString path)
 {
   QMutexLocker lk(&m_mutex);
 
-  qDebug() << "HERE SHOULD BE HANDLING OF path AND CALLING scanners to see if something is available now and new download started if needed";
-
   InfoHub::logInfo(tr("File downloaded:") + " " + path);
   cleanupDownload();
+
+  if (m_downloading_countries)
+    {
+      if (m_missing_data.length() < 1 ||
+          m_missing_data[0].files.length() < 1 ||
+          m_missing_data[0].files[0].path != path)
+        {
+          lk.unlock();
+          InfoHub::logError("Internal error: missing data has no files while one was downloaded or an unexpected file was downloaded");
+          onDownloadError("Internal error: processing via error handling methods");
+          return;
+        }
+
+      m_missing_data[0].files.pop_front();
+      if (m_missing_data[0].files.length() == 0)
+        {
+          m_missing_data.pop_front();
+          scanDirectories();
+        }
+
+      lk.unlock();
+      getCountries();
+    }
 }
 
 void MapManager::onDownloadError(QString err)
@@ -421,6 +460,7 @@ void MapManager::onDownloadError(QString err)
 
   InfoHub::logWarning(tr("Dropping all downloads"));
   m_missing_data.clear();
+  m_downloading_countries = false;
 }
 
 void MapManager::cleanupDownload()

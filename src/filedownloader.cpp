@@ -29,7 +29,7 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
       return;
     }
 
-  m_file.setFileName(m_path);
+  m_file.setFileName(m_path + ".download");
   if (!m_file.open(QIODevice::WriteOnly))
     {
       m_isok = false;
@@ -102,6 +102,7 @@ FileDownloader::~FileDownloader()
 void FileDownloader::onFinished()
 {
   m_file.close();
+  m_file.rename(m_path);
 
   if (m_process)
     {
@@ -166,7 +167,7 @@ void FileDownloader::onDownloaded()
     return;
 
   onNetworkReadyRead(); // update all data if needed
-  if (m_pipe_to_process)
+  if (m_pipe_to_process && m_process)
     m_process->closeWriteChannel();
 
   if (m_reply) m_reply->deleteLater();
