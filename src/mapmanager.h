@@ -26,11 +26,6 @@ class MapManager : public QObject
   /// \brief true when download is active
   Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
 
-  //  Q_PROPERTY(QString masterMap READ masterMap WRITE setMasterMap NOTIFY masterMapChanged)
-  //  Q_PROPERTY(QStringList masterMapList READ masterMapList NOTIFY masterMapListChanged)
-
-  //  Q_PROPERTY(QString databaseOsmScout READ databaseOsmScout NOTIFY databaseOsmScoutChanged)
-
 public:
   explicit MapManager(QObject *parent = 0);
   virtual ~MapManager();
@@ -51,7 +46,14 @@ public:
 
   /// \brief Update a list of provided countries and features
   ///
+  /// When the list is retrieved, the installed countries and features
+  /// are checked for updates. All found updates are send via signal
+  /// updatesFound as a JSON argument. The last found updates are also
+  /// available via updatesFound() method
   Q_INVOKABLE bool updateProvided();
+
+  /// \brief List of updates found when fetching the list of provided countries and features
+  Q_INVOKABLE QString updatesFound();
 
   /// \brief Download or update missing data files
   ///
@@ -75,17 +77,8 @@ public:
   /// files were deleted successfully.
   Q_INVOKABLE bool deleteNonNeededFiles(const QStringList &files);
 
-
-
   /// Properties exposed to QML
   bool downloading();
-
-  //  QString masterMap() const { return m_master_map; }
-  //  void setMasterMap(QString masterMap);
-
-  //  QStringList masterMapList() const { return m_master_map_list; }
-
-  //  QString databaseOsmScout() const { return m_osmscout_dirs; }
 
 signals:
   void databaseOsmScoutChanged(QString database);
@@ -93,6 +86,8 @@ signals:
   void databasePostalChanged(QString global, QString country);
 
   void downloadingChanged(bool state);
+
+  void updatesFound(QString info);
 
 public slots:
   void onSettingsChanged();
@@ -191,7 +186,6 @@ protected:
 
   // available maps
   QJsonObject m_maps_available;
-  //QHash< QString, MapCountry > m_maps_available;
   QString m_map_selected;
 
   QString m_postal_global_path;
@@ -199,9 +193,14 @@ protected:
   QList< FilesToDownload > m_missing_data;
   QNetworkAccessManager m_network_manager;
   QPointer<FileDownloader> m_file_downloader;
-  bool m_downloading_countries{false};
+
+  enum DownloadType { NotKnown, Countries, ProvidedList };
+  DownloadType m_download_type{NotKnown};
 
   QStringList m_not_needed_files;
+
+  QStringList m_last_found_updates_ids;
+  QString m_last_found_updates_description;
 
   /// const values used to access data
   const QString const_fname_countries_provided{"countries_provided.json"};

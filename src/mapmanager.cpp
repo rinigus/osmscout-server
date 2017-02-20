@@ -440,9 +440,9 @@ void MapManager::checkMissingFiles(const QJsonObject &request,
 }
 
 void MapManager::fillWantedFiles(const QJsonObject &request,
-                                   const QString &feature,
-                                   const QStringList &files,
-                                   QSet<QString> &wanted) const
+                                 const QString &feature,
+                                 const QStringList &files,
+                                 QSet<QString> &wanted) const
 {
   QString path = getPath(request, feature);
   for (const auto &f: files)
@@ -454,9 +454,11 @@ void MapManager::fillWantedFiles(const QJsonObject &request,
 bool MapManager::updateProvided()
 {
   QMutexLocker lk(&m_mutex);
-  return startDownload(m_provided_url,
-                       fullPath(const_fname_countries_provided),
-                       QString());
+  bool started = startDownload(m_provided_url,
+                               fullPath(const_fname_countries_provided),
+                               QString());
+  if (started) m_download_type = ProvidedList;
+  return started;
 }
 
 bool MapManager::getCountries()
@@ -473,7 +475,7 @@ bool MapManager::getCountries()
   bool started = startDownload( m_missing_data[0].files[0].url + ".bz2",
       m_missing_data[0].files[0].path, "BZ2" );
 
-  if (started) m_downloading_countries = true;
+  if (started) m_download_type = Countries;
   return started;
 }
 
@@ -516,7 +518,7 @@ void MapManager::onDownloadFinished(QString path)
   InfoHub::logInfo(tr("File downloaded:") + " " + path);
   cleanupDownload();
 
-  if (m_downloading_countries)
+  if (m_download_type == Countries)
     {
       if (m_missing_data.length() < 1 ||
           m_missing_data[0].files.length() < 1 ||
@@ -535,9 +537,12 @@ void MapManager::onDownloadFinished(QString path)
           scanDirectories();
         }
 
+      m_download_type = NotKnown;
       lk.unlock();
       getCountries();
     }
+  else
+    m_download_type = NotKnown;
 }
 
 void MapManager::onDownloadError(QString err)
@@ -549,7 +554,7 @@ void MapManager::onDownloadError(QString err)
 
   InfoHub::logWarning(tr("Dropping all downloads"));
   m_missing_data.clear();
-  m_downloading_countries = false;
+  m_download_type = NotKnown;
 }
 
 void MapManager::cleanupDownload()
@@ -634,6 +639,7 @@ qint64 MapManager::getNonNeededFilesList(QStringList &files)
 
 bool MapManager::deleteNonNeededFiles(const QStringList &files)
 {
+  QMutexLocker lk(&m_mutex);
   if ( files != m_not_needed_files )
     {
       InfoHub::logError("Internal error: list of files given to delete does not matched with an expected one");
@@ -656,6 +662,15 @@ bool MapManager::deleteNonNeededFiles(const QStringList &files)
 
   m_not_needed_files.clear();
   return true;
+}
+
+////////////////////////////////////////////////////////////
+/// support for updates
+
+QString MapManager::updatesFound()
+{
+  QMutexLocker lk(&m_mutex);
+  return m_last_found_updates_description;
 }
 
 ////////////////////////////////////////////////////////////
@@ -785,7 +800,7 @@ void MapManager::updatePostal()
     {
       path_global = fullPath( m_postal_global_path );
       path_country = fullPath( getPath( m_maps_available.value(m_map_selected).toObject(),
-                                            const_feature_name_postal_country ) );
+                                        const_feature_name_postal_country ) );
     }
 
   if (settings.valueString(GEOMASTER_SETTINGS "postal_main_dir") != path_global ||
