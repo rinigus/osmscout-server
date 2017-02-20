@@ -102,6 +102,13 @@ FileDownloader::~FileDownloader()
 void FileDownloader::onFinished()
 {
   m_file.close();
+
+  { // delete the file if it exists already to update it
+    // with a new copy
+    QFile ftmp(m_path);
+    ftmp.remove();
+  }
+
   m_file.rename(m_path);
 
   if (m_process)

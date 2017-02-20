@@ -196,6 +196,8 @@ protected:
 
   enum DownloadType { NotKnown, Countries, ProvidedList };
   DownloadType m_download_type{NotKnown};
+  size_t m_last_reported_downloaded;
+  size_t m_last_reported_written;
 
   QStringList m_not_needed_files;
 

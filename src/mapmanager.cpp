@@ -531,6 +531,8 @@ void MapManager::onDownloadFinished(QString path)
         }
 
       m_missing_data[0].files.pop_front();
+      m_missing_data[0].todownload -= m_last_reported_downloaded;
+      m_missing_data[0].tostore -= m_last_reported_written;
       if (m_missing_data[0].files.length() == 0)
         {
           m_missing_data.pop_front();
@@ -569,12 +571,46 @@ void MapManager::cleanupDownload()
 
 void MapManager::onDownloadedBytes(size_t sz)
 {
-  qDebug() << "D: " << sz;
+  QString txt;
+  if ( m_download_type == ProvidedList )
+    txt = QString(tr("Downloading list of provided countries and features: %L1 bytes")).arg(sz);
+
+  else if (m_download_type == Countries )
+    {
+      if (m_missing_data.length() > 0)
+        {
+          m_last_reported_downloaded = sz;
+          txt = QString(tr("Downloading %1: %L2 bytes remain")).
+              arg(m_missing_data[0].pretty).
+              arg(m_missing_data[0].todownload - sz);
+        }
+    }
+  else
+    txt = QString("I have no clue what I am downloading. Downloaded already: %L1").arg(sz);
+
+  qDebug() << txt;
 }
 
 void MapManager::onWrittenBytes(size_t sz)
 {
-  qDebug() << "W: " << sz;
+  QString txt;
+  if ( m_download_type == ProvidedList )
+    txt = QString(tr("Writing list of provided countries and features: %L1 bytes")).arg(sz);
+
+  else if (m_download_type == Countries )
+    {
+      if (m_missing_data.length() > 0)
+        {
+          m_last_reported_written = sz;
+          txt = QString(tr("Writing %1: %L2 bytes remain")).
+              arg(m_missing_data[0].pretty).
+              arg(m_missing_data[0].tostore - sz);
+        }
+    }
+  else
+    txt = QString("No idea what is downloaded. Downloaded already: %L1").arg(sz);
+
+  qDebug() << txt;
 }
 
 ////////////////////////////////////////////////////////////
