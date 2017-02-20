@@ -12,6 +12,7 @@
 #include <QList>
 #include <QSet>
 #include <QPointer>
+#include <QDateTime>
 
 /// \brief Map Manager
 ///
@@ -34,11 +35,11 @@ public:
   explicit MapManager(QObject *parent = 0);
   virtual ~MapManager();
 
-  /// \brief Composes a list of countries on device in alphabetical order
-  Q_INVOKABLE void getInstalledCountriesList(QStringList &countries, QStringList &ids);
+  /// \brief Composes a list of countries on device in alphabetical order and returns as JSON array
+  Q_INVOKABLE QString getInstalledCountries();
 
-  /// \brief Composes a list of countries provided for download in alphabetical order
-  Q_INVOKABLE void getProvidedCountriesList(QStringList &countries, QStringList &ids);
+  /// \brief Composes a list of countries provided for download in alphabetical order as JSON array
+  Q_INVOKABLE QString getProvidedCountries();
 
   /// \brief Add country to the list of requested countries
   ///
@@ -73,6 +74,8 @@ public:
   /// If the lists don't match, the files will not get deleted. Returns true if
   /// files were deleted successfully.
   Q_INVOKABLE bool deleteNonNeededFiles(const QStringList &files);
+
+
 
   /// Properties exposed to QML
   bool downloading();
@@ -121,7 +124,10 @@ protected:
   /// This is a method that creates a list. Its called by other methods to retrieve the list.
   /// Note that its not locking a mutex and its assumed that the calling method provides
   /// thread-safety
-  void makeCountriesList(bool list_available, QStringList &countries, QStringList &ids);
+  void makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<qint64> &sz);
+
+  /// \brief Wrapper around makeCountriesList transforming the results to JSON
+  QString makeCountriesListAsJSON(bool list_available);
 
   QString fullPath(QString path) const; ///< Transform relative path to the full path
 
@@ -151,6 +157,7 @@ protected:
   QString getPath(const QJsonObject &obj, const QString &feature) const;
   size_t getSize(const QJsonObject &obj, const QString &feature) const;
   size_t getSizeCompressed(const QJsonObject &obj, const QString &feature) const;
+  QDateTime getDateTime(const QJsonObject &obj, const QString &feature) const;
 
   void checkMissingFiles(const QJsonObject &request,
                          const QString &feature,

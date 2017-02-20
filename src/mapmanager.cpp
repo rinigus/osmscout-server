@@ -196,7 +196,8 @@ void MapManager::scanDirectories()
         }
 
       QStringList countries, ids;
-      makeCountriesList(true, countries, ids);
+      QList<qint64> szs;
+      makeCountriesList(true, countries, ids, szs);
 
       // print all loaded countries
       for (const auto &c: countries)
@@ -208,23 +209,24 @@ void MapManager::scanDirectories()
     }
 }
 
-void MapManager::getInstalledCountriesList(QStringList &countries, QStringList &ids)
+QString MapManager::getInstalledCountries()
 {
   QMutexLocker lk(&m_mutex);
-  makeCountriesList(true, countries, ids);
+  return makeCountriesListAsJSON(true);
 }
 
-void MapManager::getProvidedCountriesList(QStringList &countries, QStringList &ids)
+QString MapManager::getProvidedCountries()
 {
   QMutexLocker lk(&m_mutex);
-  makeCountriesList(false, countries, ids);
+  return makeCountriesListAsJSON(false);
 }
 
-void MapManager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids)
+void MapManager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<qint64> &sz)
 {
   QList< QPair<QString, QString> > available;
 
   QJsonObject objlist;
+  QHash<QString, size_t> sizes;
 
   if (list_available) objlist = m_maps_available;
   else objlist = loadJson(fullPath(const_fname_countries_provided));
@@ -234,18 +236,54 @@ void MapManager::makeCountriesList(bool list_available, QStringList &countries, 
     if (i.key() != const_feature_id_postal_global && i.key() != const_feature_id_url)
       {
         QJsonObject c = i.value().toObject();
-        available.append(qMakePair(getPretty(c), getId(c)));
+        QString id = getId(c);
+
+        available.append(qMakePair(getPretty(c), id));
+
+        size_t s = 0;
+        if (m_feature_osmscout && c.contains(const_feature_name_osmscout))
+          s += getSize(c,const_feature_name_osmscout);
+        if (m_feature_geocoder_nlp && c.contains(const_feature_name_geocoder_nlp))
+          s += getSize(c,const_feature_name_geocoder_nlp);
+        if (m_feature_postal_country && c.contains(const_feature_name_postal_country))
+          s += getSize(c,const_feature_name_postal_country);
+
+        sizes[id] = s;
       }
 
   std::sort(available.begin(), available.end());
 
   countries.clear();
   ids.clear();
+  sz.clear();
   for (const auto &i: available)
     {
       countries.append(i.first);
       ids.append(i.second);
+      sz.append(sizes[i.second]);
     }
+}
+
+QString MapManager::makeCountriesListAsJSON(bool list_available)
+{
+  QStringList countries;
+  QStringList ids;
+  QList<qint64> sz;
+
+  makeCountriesList(list_available, countries, ids, sz);
+
+  QJsonArray arr;
+  for (int i = 0; i < ids.size(); ++i)
+    {
+      QJsonObject obj;
+      obj.insert("name", countries[i]);
+      obj.insert("id", ids[i]);
+      obj.insert("size", sz[i]);
+      arr.append(obj);
+    }
+
+  QJsonDocument doc(arr);
+  return doc.toJson();
 }
 
 void MapManager::addCountry(QString id)
