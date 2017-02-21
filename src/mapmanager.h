@@ -44,6 +44,10 @@ public:
   ///
   Q_INVOKABLE void rmCountry(QString id);
 
+  /// \brief Download or update missing data files
+  ///
+  Q_INVOKABLE bool getCountries();
+
   /// \brief Update a list of provided countries and features
   ///
   /// When the list is retrieved, the installed countries and features
@@ -55,13 +59,12 @@ public:
   /// \brief List of updates found when fetching the list of provided countries and features
   Q_INVOKABLE QString updatesFound();
 
-  /// \brief Download or update missing data files
-  ///
-  Q_INVOKABLE bool getCountries();
+  /// \brief Gets missing countries and the found updates
+  Q_INVOKABLE void getUpdates();
 
   /// \brief Create a list of non-required files
   ///
-  /// Makes a list of non-requiered files to show to the user. This
+  /// Makes a list of non-required files to show to the user. This
   /// method will fail (return -1) if there are active downloads.
   /// Otherwise, we could delete partially downloaded files. If the list is
   /// found, the returned value would correspond to the size occupied
@@ -89,6 +92,7 @@ signals:
   void downloadProgress(QString message);
 
   void updatesFound(QString info);
+
 
 public slots:
   void onSettingsChanged();
@@ -127,10 +131,10 @@ protected:
 
   QString fullPath(QString path) const; ///< Transform relative path to the full path
 
-  bool hasAvailableOsmScout(const QString &path) const;
-  bool hasAvailableGeocoderNLP(const QString &path) const;
-  bool hasAvailablePostalCountry(const QString &path) const;
-  bool hasAvailablePostalGlobal() const;
+  bool hasAvailableOsmScout(const QJsonObject &request) const;
+  bool hasAvailableGeocoderNLP(const QJsonObject &request) const;
+  bool hasAvailablePostalCountry(const QJsonObject &request) const;
+  bool hasAvailablePostalGlobal(const QJsonObject &request) const;
 
   void checkMissingOsmScout(const QJsonObject &request, const QString &url, FilesToDownload &missing) const;
   void checkMissingGeocoderNLP(const QJsonObject &request, const QString &url, FilesToDownload &missing) const;
@@ -141,6 +145,11 @@ protected:
   void fillWantedGeocoderNLP(const QJsonObject &request, QSet<QString> &wanted) const;
   void fillWantedPostalCountry(const QJsonObject &request, QSet<QString> &wanted) const;
   void fillWantedPostalGlobal(const QJsonObject &request, QSet<QString> &wanted) const;
+
+  void deleteFilesOsmScout(const QJsonObject &request);
+  void deleteFilesGeocoderNLP(const QJsonObject &request);
+  void deleteFilesPostalGlobal(const QJsonObject &request);
+  void deleteFilesPostalCountry(const QJsonObject &request);
 
   void updateOsmScout();
   void updateGeocoderNLP();
@@ -155,6 +164,10 @@ protected:
   size_t getSizeCompressed(const QJsonObject &obj, const QString &feature) const;
   QDateTime getDateTime(const QJsonObject &obj, const QString &feature) const;
 
+  bool hasAvailable(const QJsonObject &request,
+                    const QString &feature,
+                    const QStringList &files) const;
+
   void checkMissingFiles(const QJsonObject &request,
                          const QString &feature,
                          const QString &url,
@@ -165,6 +178,12 @@ protected:
                        const QString &feature,
                        const QStringList &files,
                        QSet<QString> &wanted) const;
+
+  void deleteFiles(const QJsonObject &request,
+                   const QString &feature,
+                   const QStringList &files);
+
+  void checkUpdates();
 
   // handling of downloads
   void onDownloadFinished(QString path);
@@ -203,8 +222,7 @@ protected:
 
   QStringList m_not_needed_files;
 
-  QStringList m_last_found_updates_ids;
-  QString m_last_found_updates_description;
+  QJsonObject m_last_found_updates;
 
   /// const values used to access data
   const QString const_fname_countries_provided{"countries_provided.json"};

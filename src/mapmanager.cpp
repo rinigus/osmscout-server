@@ -52,6 +52,7 @@ void MapManager::loadSettings()
 
   scanDirectories();
   missingData();
+  checkUpdates();
 }
 
 void MapManager::nothingAvailable()
@@ -99,6 +100,12 @@ QString MapManager::getPretty(const QJsonObject &obj) const
   return obj.value("continent").toString() + " / " + obj.value("name").toString();
 }
 
+QDateTime MapManager::getDateTime(const QJsonObject &obj, const QString &feature) const
+{
+  QString t = obj.value(feature).toObject().value("timestamp").toString();
+  if (t.isEmpty()) return QDateTime();
+  return QDateTime::fromString(t, "yyyy-MM-dd_hh:mm");
+}
 
 void MapManager::scanDirectories()
 {
@@ -123,7 +130,8 @@ void MapManager::scanDirectories()
   QJsonObject available;
   if (m_feature_postal_country)
     {
-      m_postal_global_path = getPath( req_countries.value(const_feature_id_postal_global).toObject(),
+      const QJsonObject request = req_countries.value(const_feature_id_postal_global).toObject();
+      m_postal_global_path = getPath( request,
                                       const_feature_name_postal_global );
       if ( m_postal_global_path.isEmpty() )
         {
@@ -132,7 +140,7 @@ void MapManager::scanDirectories()
           return;
         }
 
-      if (!hasAvailablePostalGlobal() )
+      if (!hasAvailablePostalGlobal(request) )
         {
           InfoHub::logWarning(tr("No maps loaded: libpostal language support unavailable"));
           nothingAvailable();
@@ -160,16 +168,13 @@ void MapManager::scanDirectories()
           )
         {
           QString id = getId(request);
-          QString geocoder_nlp = getPath(request, const_feature_name_geocoder_nlp);
-          QString osmscout = getPath(request, const_feature_name_osmscout);
-          QString postal_country = getPath(request, const_feature_name_postal_country);
 
-          if (m_feature_geocoder_nlp && !hasAvailableGeocoderNLP(geocoder_nlp))
-            InfoHub::logWarning(tr("Missing dataset for geocoder-nlp: ") + geocoder_nlp);
-          else if (m_feature_osmscout && !hasAvailableOsmScout(osmscout))
-            InfoHub::logWarning(tr("Missing dataset for libosmscout: ") + osmscout);
-          else if (m_feature_postal_country && !hasAvailablePostalCountry(postal_country))
-            InfoHub::logWarning(tr("Missing country-specific dataset for libpostal: ") + postal_country);
+          if (m_feature_geocoder_nlp && !hasAvailableGeocoderNLP(request))
+            InfoHub::logWarning(tr("Missing dataset for geocoder-nlp: ") + getPretty(request));
+          else if (m_feature_osmscout && !hasAvailableOsmScout(request))
+            InfoHub::logWarning(tr("Missing dataset for libosmscout: ") + getPretty(request));
+          else if (m_feature_postal_country && !hasAvailablePostalCountry(request))
+            InfoHub::logWarning(tr("Missing country-specific dataset for libpostal: ") + getPretty(request));
           else
             available.insert(id, request);
         }
@@ -403,7 +408,6 @@ void MapManager::missingData()
     }
 }
 
-
 QString MapManager::fullPath(QString path) const
 {
   if (path.isEmpty()) return QString();
@@ -411,55 +415,9 @@ QString MapManager::fullPath(QString path) const
   return dir.filePath(path);
 }
 
-void MapManager::checkMissingFiles(const QJsonObject &request,
-                                   const QString &feature,
-                                   const QString &url,
-                                   const QStringList &files,
-                                   FilesToDownload &missing) const
-{
-  QString path = getPath(request, feature);
-  bool added = false;
-
-  for (const auto &f: files)
-    if (!m_root_dir.exists(path + "/" + f))
-      {
-        added = true;
-        FileTask t;
-        t.path = fullPath(path + "/" + f);
-        t.url = url + "/" + path + "/" + f;
-        missing.files.append(t);
-      }
-
-  if (added)
-    {
-      // this is an upper limit of the sizes. its smaller in reality if
-      // the feature is downloaded partially already
-      missing.todownload += getSizeCompressed(request, feature);
-      missing.tostore  += getSize(request, feature);
-    }
-}
-
-void MapManager::fillWantedFiles(const QJsonObject &request,
-                                 const QString &feature,
-                                 const QStringList &files,
-                                 QSet<QString> &wanted) const
-{
-  QString path = getPath(request, feature);
-  for (const auto &f: files)
-    wanted.insert( fullPath(path + "/" + f) );
-}
 
 ////////////////////////////////////////////////////////////
 /// support for downloads
-bool MapManager::updateProvided()
-{
-  QMutexLocker lk(&m_mutex);
-  bool started = startDownload(m_provided_url,
-                               fullPath(const_fname_countries_provided),
-                               QString());
-  if (started) m_download_type = ProvidedList;
-  return started;
-}
 
 bool MapManager::getCountries()
 {
@@ -545,6 +503,11 @@ void MapManager::onDownloadFinished(QString path)
       m_download_type = NotKnown;
       lk.unlock();
       getCountries();
+    }
+  else if (m_download_type == ProvidedList)
+    {
+      m_download_type = NotKnown;
+      checkUpdates();
     }
   else
     m_download_type = NotKnown;
@@ -709,15 +672,205 @@ bool MapManager::deleteNonNeededFiles(const QStringList &files)
 ////////////////////////////////////////////////////////////
 /// support for updates
 
+bool MapManager::updateProvided()
+{
+  QMutexLocker lk(&m_mutex);
+  bool started = startDownload(m_provided_url,
+                               fullPath(const_fname_countries_provided),
+                               QString());
+  if (started) m_download_type = ProvidedList;
+  return started;
+}
+
+void MapManager::checkUpdates()
+{
+  m_last_found_updates = QJsonObject();
+
+  if ( m_root_dir.exists() &&
+       m_root_dir.exists(const_fname_countries_requested) &&
+       m_root_dir.exists(const_fname_countries_provided) )
+    {
+      QJsonObject possible_list = loadJson(fullPath(const_fname_countries_provided));
+      QJsonObject requested_list = loadJson(fullPath(const_fname_countries_requested));
+
+      for (QJsonObject::const_iterator request_iter = requested_list.constBegin();
+           request_iter != requested_list.constEnd(); ++request_iter)
+        {
+          QJsonObject update;
+
+          const QJsonObject request = request_iter.value().toObject();
+          if (request.empty()) continue;
+
+          const QJsonObject possible = possible_list.value(request_iter.key()).toObject();
+          if (possible.empty()) continue;
+
+#define COMP_DATETIME(feature) \
+  if (m_feature_##feature && \
+  request.contains(const_feature_name_##feature) && \
+  possible.contains(const_feature_name_##feature) && \
+  getDateTime(request, const_feature_name_##feature) < getDateTime(possible, const_feature_name_##feature)) \
+  update.insert(const_feature_name_##feature, possible.value(const_feature_name_##feature).toObject());
+
+          COMP_DATETIME(osmscout);
+          COMP_DATETIME(geocoder_nlp);
+          COMP_DATETIME(postal_country);
+
+          if (m_feature_postal_country &&
+              request.contains(const_feature_name_postal_global) &&
+              possible.contains(const_feature_name_postal_global) &&
+              getDateTime(request, const_feature_name_postal_global) < getDateTime(possible, const_feature_name_postal_global))
+            update.insert(const_feature_name_postal_global, possible.value(const_feature_name_postal_global).toObject());
+
+
+          if (!update.empty())
+            {
+              update.insert("id", request_iter.key());
+              update.insert("pretty", getPretty(possible) );
+
+              m_last_found_updates.insert(request_iter.key(), update);
+            }
+        }
+    }
+  else
+    InfoHub::logWarning(tr("Cannot check for updates due to missing directory or files"));
+
+  QJsonDocument doc(m_last_found_updates);
+  emit updatesFound(doc.toJson());
+  qDebug() << doc.toJson().constData();
+}
+
 QString MapManager::updatesFound()
 {
   QMutexLocker lk(&m_mutex);
-  return m_last_found_updates_description;
+  return QJsonDocument(m_last_found_updates).toJson();
+}
+
+void MapManager::getUpdates()
+{
+  QMutexLocker lk(&m_mutex);
+
+  QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
+
+  for (QJsonObject::const_iterator iter = m_last_found_updates.constBegin();
+       iter != m_last_found_updates.constEnd(); ++iter)
+    {
+      if (!requested.contains(iter.key())) continue;
+
+      const QJsonObject update = iter.value().toObject();
+      QJsonObject requpdated = requested.value(iter.key()).toObject();
+
+      if ( m_feature_osmscout &&
+           update.contains(const_feature_name_osmscout) )
+        {
+          deleteFilesOsmScout(update);
+          requpdated.insert(const_feature_name_osmscout, update.value(const_feature_name_osmscout).toObject());
+        }
+      if ( m_feature_geocoder_nlp &&
+           update.contains(const_feature_name_geocoder_nlp) )
+        {
+          deleteFilesGeocoderNLP(update);
+          requpdated.insert(const_feature_name_geocoder_nlp, update.value(const_feature_name_geocoder_nlp).toObject());
+        }
+      if ( m_feature_postal_country &&
+           update.contains(const_feature_name_postal_global) )
+        {
+          deleteFilesPostalGlobal(update);
+          requpdated.insert(const_feature_name_postal_global, update.value(const_feature_name_postal_global).toObject());
+        }
+      if ( m_feature_postal_country &&
+           update.contains(const_feature_name_postal_country) )
+        {
+          deleteFilesPostalCountry(update);
+          requpdated.insert(const_feature_name_postal_country, update.value(const_feature_name_postal_country).toObject());
+        }
+
+      requested.insert(iter.key(), requpdated);
+    }
+
+  { // write updated requested json to a file
+    QJsonDocument doc(requested);
+    QFile file(fullPath(const_fname_countries_requested));
+    file.open(QIODevice::WriteOnly | QIODevice::Text);
+    file.write( doc.toJson() );
+  }
+
+  scanDirectories();
+  missingData();
+
+  lk.unlock();
+  getCountries();
 }
 
 ////////////////////////////////////////////////////////////
 /// SUPPORT FOR BACKENDS
 ////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////
+/// backend general
+
+bool MapManager::hasAvailable(const QJsonObject &request,
+                              const QString &feature,
+                              const QStringList &files) const
+{
+  QString path = getPath(request, feature);
+  for (const auto &f: files)
+    if (!m_root_dir.exists(path + "/" + f))
+      return false;
+  return true;
+}
+
+void MapManager::checkMissingFiles(const QJsonObject &request,
+                                   const QString &feature,
+                                   const QString &url,
+                                   const QStringList &files,
+                                   FilesToDownload &missing) const
+{
+  QString path = getPath(request, feature);
+  bool added = false;
+
+  for (const auto &f: files)
+    if (!m_root_dir.exists(path + "/" + f))
+      {
+        added = true;
+        FileTask t;
+        t.path = fullPath(path + "/" + f);
+        t.url = url + "/" + path + "/" + f;
+        missing.files.append(t);
+      }
+
+  if (added)
+    {
+      // this is an upper limit of the sizes. its smaller in reality if
+      // the feature is downloaded partially already
+      missing.todownload += getSizeCompressed(request, feature);
+      missing.tostore  += getSize(request, feature);
+    }
+}
+
+void MapManager::fillWantedFiles(const QJsonObject &request,
+                                 const QString &feature,
+                                 const QStringList &files,
+                                 QSet<QString> &wanted) const
+{
+  QString path = getPath(request, feature);
+  for (const auto &f: files)
+    wanted.insert( fullPath(path + "/" + f) );
+}
+
+void MapManager::deleteFiles(const QJsonObject &request,
+                             const QString &feature,
+                             const QStringList &files)
+{
+  QString path = getPath(request, feature);
+  for (const auto &f: files)
+    {
+      QString fp = path + "/" + f;
+      if (m_root_dir.remove(fp))
+        InfoHub::logInfo(tr("Removed file: %1").arg(fp));
+      else
+        InfoHub::logInfo(tr("Failed to remove file: %1").arg(fp));
+    }
+}
 
 ////////////////////////////////////////////////////////////
 /// libosmscout support
@@ -727,12 +880,9 @@ const static QStringList osmscout_files{
   "router.idx", "textloc.dat", "textother.dat", "textpoi.dat", "textregion.dat",
   "water.idx", "ways.dat", "waysopt.dat", "types.dat"};
 
-bool MapManager::hasAvailableOsmScout(const QString &path) const
+bool MapManager::hasAvailableOsmScout(const QJsonObject &request) const
 {
-  for (const auto &f: osmscout_files)
-    if (!m_root_dir.exists(path + "/" + f))
-      return false;
-  return true;
+  return hasAvailable(request, const_feature_name_osmscout, osmscout_files);
 }
 
 void MapManager::updateOsmScout()
@@ -761,17 +911,19 @@ void MapManager::fillWantedOsmScout(const QJsonObject &request, QSet<QString> &w
   fillWantedFiles(request, const_feature_name_osmscout, osmscout_files, wanted);
 }
 
+void MapManager::deleteFilesOsmScout(const QJsonObject &request)
+{
+  deleteFiles(request, const_feature_name_osmscout, osmscout_files);
+}
+
 ////////////////////////////////////////////////////////////
 /// Geocoder NLP support
 const static QStringList geocodernlp_files{
   "location.sqlite"};
 
-bool MapManager::hasAvailableGeocoderNLP(const QString &path) const
+bool MapManager::hasAvailableGeocoderNLP(const QJsonObject &request) const
 {
-  for (const auto &f: geocodernlp_files)
-    if (!m_root_dir.exists(path + "/" + f))
-      return false;
-  return true;
+  return hasAvailable(request, const_feature_name_geocoder_nlp, geocodernlp_files);
 }
 
 void MapManager::updateGeocoderNLP()
@@ -802,6 +954,11 @@ void MapManager::fillWantedGeocoderNLP(const QJsonObject &request, QSet<QString>
   fillWantedFiles(request, const_feature_name_geocoder_nlp, geocodernlp_files, wanted);
 }
 
+void MapManager::deleteFilesGeocoderNLP(const QJsonObject &request)
+{
+  deleteFiles(request, const_feature_name_geocoder_nlp, geocodernlp_files);
+}
+
 ////////////////////////////////////////////////////////////
 /// libpostal support
 
@@ -815,20 +972,14 @@ const static QStringList postal_country_files{
   "geodb/geodb_features.trie", "geodb/geodb_names.trie", "geodb/geodb_postal_codes.dat",
   "geodb/geodb.spi", "geodb/geodb.spl" };
 
-bool MapManager::hasAvailablePostalGlobal() const
+bool MapManager::hasAvailablePostalGlobal(const QJsonObject &request) const
 {
-  for (const auto &f: postal_global_files)
-    if (!m_root_dir.exists(m_postal_global_path + "/" + f))
-      return false;
-  return true;
+  return hasAvailable(request, const_feature_name_postal_global, postal_global_files);
 }
 
-bool MapManager::hasAvailablePostalCountry(const QString &path) const
+bool MapManager::hasAvailablePostalCountry(const QJsonObject &request) const
 {
-  for (const auto &f: postal_country_files)
-    if (!m_root_dir.exists(path + "/" + f))
-      return false;
-  return true;
+  return hasAvailable(request, const_feature_name_postal_country, postal_country_files);
 }
 
 void MapManager::updatePostal()
@@ -874,3 +1025,12 @@ void MapManager::fillWantedPostalGlobal(const QJsonObject &request, QSet<QString
   fillWantedFiles(request, const_feature_name_postal_global, postal_global_files, wanted);
 }
 
+void MapManager::deleteFilesPostalGlobal(const QJsonObject &request)
+{
+  deleteFiles(request, const_feature_name_postal_global, postal_global_files);
+}
+
+void MapManager::deleteFilesPostalCountry(const QJsonObject &request)
+{
+  deleteFiles(request, const_feature_name_postal_country, postal_country_files);
+}
