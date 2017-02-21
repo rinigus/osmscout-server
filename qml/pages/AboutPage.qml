@@ -20,6 +20,12 @@ Page {
                               "Ricardo Breitkopf @monkeyisland: German<br>" +
                               "Nathan Follens @pljmn: Dutch<br>" +
 
+                              "<br><b>" + qsTr("Maps") + "</b><br>" +
+                              "<p>" +
+                              qsTr("Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format " +
+                                   "from downloaded extracts as provided by Geofabrik GmbH.") +
+                              "</p>" +
+
                               "<br><b>" + qsTr("Libpostal") + "</b><br>" +
                               "<p>" +
                               qsTr("Please note that <i>libpostal</i> is developed to be used with the fine tuned " +
