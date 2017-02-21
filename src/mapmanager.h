@@ -86,6 +86,7 @@ signals:
   void databasePostalChanged(QString global, QString country);
 
   void downloadingChanged(bool state);
+  void downloadProgress(QString message);
 
   void updatesFound(QString info);
 
@@ -170,6 +171,7 @@ protected:
   void onDownloadError(QString err);
   void onDownloadedBytes(size_t sz);
   void onWrittenBytes(size_t sz);
+  void onDownloadUpdate();
 
   bool startDownload(const QString &url, const QString &path, const QString &mode);
   void cleanupDownload();

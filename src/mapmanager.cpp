@@ -490,6 +490,9 @@ bool MapManager::startDownload(const QString &url, const QString &path, const QS
   // check if someone is downloading already
   if ( m_file_downloader ) return false;
 
+  m_last_reported_downloaded = 0;
+  m_last_reported_written = 0;
+
   m_file_downloader = new FileDownloader(&m_network_manager, url, path, mode, this);
   if (!m_file_downloader)
     {
@@ -569,48 +572,51 @@ void MapManager::cleanupDownload()
     }
 }
 
-void MapManager::onDownloadedBytes(size_t sz)
+void MapManager::onDownloadUpdate()
 {
+  static QString last_message;
+
   QString txt;
+
   if ( m_download_type == ProvidedList )
-    txt = QString(tr("Downloading list of provided countries and features: %L1 bytes")).arg(sz);
+    txt = QString(tr("List of provided countries and features: %L1 (D) / %L2 (W) MB")).
+        arg(m_last_reported_downloaded/1024/1024).
+        arg(m_last_reported_written/1024/1024);
 
   else if (m_download_type == Countries )
     {
       if (m_missing_data.length() > 0)
         {
-          m_last_reported_downloaded = sz;
-          txt = QString(tr("Downloading %1: %L2 bytes remain")).
+          txt = QString(tr("%1: %L2 (D) / %L3 (W) MB")).
               arg(m_missing_data[0].pretty).
-              arg(m_missing_data[0].todownload - sz);
+              arg((m_missing_data[0].todownload - m_last_reported_downloaded)/1024/1024).
+              arg((m_missing_data[0].tostore - m_last_reported_written)/1024/1024);
         }
     }
   else
-    txt = QString("I have no clue what I am downloading. Downloaded already: %L1").arg(sz);
+    txt = QString("Unknown: %L1 (D) %L2 (W) MB").
+        arg(m_last_reported_downloaded/1024/1024).
+        arg(m_last_reported_written/1024/1024);
 
-  qDebug() << txt;
+  if (txt != last_message )
+    {
+      last_message = txt;
+      emit downloadProgress(txt);
+
+      qDebug() << txt;
+    }
+}
+
+void MapManager::onDownloadedBytes(size_t sz)
+{
+  m_last_reported_downloaded = sz;
+  onDownloadUpdate();
 }
 
 void MapManager::onWrittenBytes(size_t sz)
 {
-  QString txt;
-  if ( m_download_type == ProvidedList )
-    txt = QString(tr("Writing list of provided countries and features: %L1 bytes")).arg(sz);
-
-  else if (m_download_type == Countries )
-    {
-      if (m_missing_data.length() > 0)
-        {
-          m_last_reported_written = sz;
-          txt = QString(tr("Writing %1: %L2 bytes remain")).
-              arg(m_missing_data[0].pretty).
-              arg(m_missing_data[0].tostore - sz);
-        }
-    }
-  else
-    txt = QString("No idea what is downloaded. Downloaded already: %L1").arg(sz);
-
-  qDebug() << txt;
+  m_last_reported_written = sz;
+  onDownloadUpdate();
 }
 
 ////////////////////////////////////////////////////////////
