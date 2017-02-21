@@ -572,7 +572,7 @@ void MapManager::cleanupDownload()
     }
 }
 
-void MapManager::onDownloadUpdate()
+void MapManager::onDownloadProgress()
 {
   static QString last_message;
 
@@ -610,13 +610,13 @@ void MapManager::onDownloadUpdate()
 void MapManager::onDownloadedBytes(size_t sz)
 {
   m_last_reported_downloaded = sz;
-  onDownloadUpdate();
+  onDownloadProgress();
 }
 
 void MapManager::onWrittenBytes(size_t sz)
 {
   m_last_reported_written = sz;
-  onDownloadUpdate();
+  onDownloadProgress();
 }
 
 ////////////////////////////////////////////////////////////

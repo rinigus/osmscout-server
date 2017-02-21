@@ -171,7 +171,7 @@ protected:
   void onDownloadError(QString err);
   void onDownloadedBytes(size_t sz);
   void onWrittenBytes(size_t sz);
-  void onDownloadUpdate();
+  void onDownloadProgress();
 
   bool startDownload(const QString &url, const QString &path, const QString &mode);
   void cleanupDownload();
