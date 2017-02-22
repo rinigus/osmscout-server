@@ -188,10 +188,13 @@ void Manager::scanDirectories()
     {
       m_maps_available = available;
 
+      AppSettings settings;
+      m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
+
       if (!m_maps_available.contains(m_map_selected))
         m_map_selected.clear();
 
-      if ( countries_added == 1 ) // there is only one map, let's select it as well
+      if ( countries_added == 1 || m_map_selected.isEmpty() ) // there is only one map or nothing is selected, let's select one
         {
           for (QJsonObject::const_iterator i = m_maps_available.constBegin();
                i != m_maps_available.constEnd(); ++i)

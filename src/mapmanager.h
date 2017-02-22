@@ -33,10 +33,10 @@ namespace MapManager {
     explicit Manager(QObject *parent = 0);
     virtual ~Manager();
 
-    /// \brief Composes a list of countries on device in alphabetical order and returns as JSON array
+    /// \brief Composes a list of countries on device in alphabetical order and returns as an JSON array
     Q_INVOKABLE QString getInstalledCountries();
 
-    /// \brief Composes a list of countries provided for download in alphabetical order as JSON array
+    /// \brief Composes a list of countries provided for download in alphabetical order as an JSON array
     Q_INVOKABLE QString getProvidedCountries();
 
     /// \brief Add country to the list of requested countries
