@@ -69,6 +69,7 @@ Page {
 
             width: ListView.view.width
             contentHeight: Theme.itemSizeMedium
+
             Row {
                 anchors.fill: parent
                 spacing: Theme.paddingLarge
@@ -171,7 +172,7 @@ Page {
 
             onClicked: {
                 if (!model.isDir ||
-                        (page.directory && fileModel.hasFile(model.fileName + "/" + page.directory_file) ) )
+                        (page.directory && page.directory_file.length > 0 && fileModel.hasFile(model.fileName + "/" + page.directory_file) ) )
                 {
                     var filePath = fileModel.appendPath(model.fileName)
                     if (typeof callback == "function")
@@ -185,11 +186,27 @@ Page {
                     fileModel.path = fileModel.appendPath(model.fileName)
                 }
             }
+
+            menu: ContextMenu {
+                MenuItem {
+                    text: qsTr("Select")
+                    onClicked: {
+                        var filePath = fileModel.appendPath(model.fileName)
+                        if (typeof callback == "function")
+                        {
+                            callback(filePath);
+                            pageStack.pop()
+                        }
+                    }
+                }
+            }
         }
+
         ViewPlaceholder {
             enabled: fileModel.count === 0
             text: qsTr("Empty directory")
         }
+
         VerticalScrollDecorator {}
     }
 
