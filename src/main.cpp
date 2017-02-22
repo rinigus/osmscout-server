@@ -126,7 +126,7 @@ int main(int argc, char *argv[])
 #endif
 
     // setup Map Manager
-    MapManager manager;
+    MapManager::Manager manager;
 
     // setup OSM Scout
     osmScoutMaster = new DBMaster();
@@ -175,14 +175,14 @@ int main(int argc, char *argv[])
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &infoHub, &InfoHub::onSettingsChanged );
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                      &manager, &MapManager::onSettingsChanged );
+                      &manager, &MapManager::Manager::onSettingsChanged );
 
-    QObject::connect( &manager, &MapManager::databaseOsmScoutChanged,
+    QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,
                       osmScoutMaster, &DBMaster::onDatabaseChanged );
 
-    QObject::connect( &manager, &MapManager::databaseGeocoderNLPChanged,
+    QObject::connect( &manager, &MapManager::Manager::databaseGeocoderNLPChanged,
                       geoMaster, &GeoMaster::onGeocoderNLPChanged);
-    QObject::connect( &manager, &MapManager::databasePostalChanged,
+    QObject::connect( &manager, &MapManager::Manager::databasePostalChanged,
                       geoMaster, &GeoMaster::onPostalChanged);
 
 #ifdef IS_SAILFISH_OS
