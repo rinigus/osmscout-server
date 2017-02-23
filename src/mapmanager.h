@@ -96,6 +96,8 @@ namespace MapManager {
 
     void updatesFound(QString info);
 
+    void errorMessage(QString info);
+
 
   public slots:
     void onSettingsChanged();

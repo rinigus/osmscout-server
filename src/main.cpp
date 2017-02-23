@@ -101,6 +101,9 @@ int main(int argc, char *argv[])
 
     infoHub.onSettingsChanged();
 
+    // setup Map Manager
+    MapManager::Manager manager;
+
 #ifdef IS_CONSOLE_QT
     ConsoleLogger _logger;
 #endif
@@ -123,10 +126,8 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("settings", &settings);
     rootContext->setContextProperty("infohub", &infoHub);
     rootContext->setContextProperty("logger", &rolling_logger);
+    rootContext->setContextProperty("manager", &manager);
 #endif
-
-    // setup Map Manager
-    MapManager::Manager manager;
 
     // setup OSM Scout
     osmScoutMaster = new DBMaster();

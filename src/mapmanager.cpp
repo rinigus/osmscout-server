@@ -720,7 +720,6 @@ void Manager::checkUpdates()
 
   QJsonDocument doc(m_last_found_updates);
   emit updatesFound(doc.toJson());
-  qDebug() << doc.toJson().constData();
 }
 
 QString Manager::updatesFound()
