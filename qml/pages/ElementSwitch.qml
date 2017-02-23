@@ -3,9 +3,14 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 Column {
+    id: root
+
     property string key
     property string mainLabel
     property string secondaryLabel
+    property bool autoApply: false
+
+    signal switchChanged(bool checked)
 
     width: parent.width
     anchors.margins: Theme.horizontalPageMargin
@@ -27,11 +32,13 @@ Column {
             checked = (settings.valueInt(parent.key) > 0)
         }
 
-//        onCheckedChanged: {
-//            var ret = 0;
-//            if (checked) ret = 1;
-//            settings.setValue(parent.key, ret)
-//        }
+        onCheckedChanged: {
+            if ( checked != (settings.valueInt(parent.key) > 0) )
+            {
+                if (autoApply) apply()
+                root.switchChanged(checked)
+            }
+        }
     }
 
     Label {

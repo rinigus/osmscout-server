@@ -198,7 +198,7 @@ Page {
                             pageStack.pop()
                         }
                     }
-                    enabled: (page.directory && model.isDir) || (!page.directory && !model.isDir)
+                    enabled: (page.directory && model.isDir && model.fileName!==".." ) || (!page.directory && !model.isDir)
                 }
             }
         }
@@ -212,7 +212,7 @@ Page {
     }
 
     Component.onCompleted: {
-        if (directory && fileModel.hasFile(directory_file))
+        if (directory && (fileModel.hasFile(directory_file) || directory_file.length<1))
             fileModel.path = fileModel.appendPath("..")
     }
 }

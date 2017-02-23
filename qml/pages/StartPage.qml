@@ -15,6 +15,11 @@ Page {
             }
 
             MenuItem {
+                text: qsTr("Map Manager")
+                onClicked: pageStack.push(Qt.resolvedUrl("MapManagerPage.qml"))
+            }
+
+            MenuItem {
                 text: qsTr("Settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }

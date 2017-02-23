@@ -115,7 +115,7 @@ void Manager::scanDirectories()
 {
   if (!m_root_dir.exists())
     {
-      InfoHub::logWarning(tr("Maps directory does not exist: ") + m_root_dir.absolutePath());
+      InfoHub::logWarning(tr("Maps storage folder does not exist: ") + m_root_dir.absolutePath());
       nothingAvailable();
       return;
     }
@@ -358,7 +358,7 @@ void Manager::missingData()
 {
   if (!m_root_dir.exists())
     {
-      InfoHub::logWarning(tr("Maps directory does not exist: ") + m_root_dir.absolutePath());
+      InfoHub::logWarning(tr("Maps storage folder does not exist: ") + m_root_dir.absolutePath());
       return;
     }
 
@@ -446,6 +446,12 @@ bool Manager::downloading()
 
 bool Manager::startDownload(const QString &url, const QString &path, const QString &mode)
 {
+  if (!m_root_dir.exists())
+    {
+      InfoHub::logWarning(tr("Maps storage folder does not exist: ") + m_root_dir.absolutePath());
+      return false;
+    }
+
   // check if someone is downloading already
   if ( m_file_downloader ) return false;
 
@@ -470,6 +476,7 @@ bool Manager::startDownload(const QString &url, const QString &path, const QStri
   connect(m_file_downloader.data(), &FileDownloader::downloadedBytes, this, &Manager::onDownloadedBytes);
   connect(m_file_downloader.data(), &FileDownloader::writtenBytes, this, &Manager::onWrittenBytes);
 
+  emit downloadingChanged(true);
   return true;
 }
 
@@ -533,6 +540,8 @@ void Manager::cleanupDownload()
       m_file_downloader->disconnect();
       m_file_downloader->deleteLater();
       m_file_downloader = QPointer<FileDownloader>();
+
+      emit downloadingChanged(false);
     }
 }
 
@@ -716,7 +725,14 @@ void Manager::checkUpdates()
         }
     }
   else
-    InfoHub::logWarning(tr("Cannot check for updates due to missing directory or files"));
+    {
+      if (!m_root_dir.exists())
+        InfoHub::logWarning(tr("Cannot check for updates due to missing maps storage folder"));
+      else if (!m_root_dir.exists(const_fname_countries_requested))
+        InfoHub::logWarning(tr("Cannot check for updates due to missing list of requested countries. Select countries before checking for updates."));
+      else
+        InfoHub::logWarning(tr("Cannot check for updates due to missing list of provided features. Download the list before checking for updates."));
+    }
 
   QJsonDocument doc(m_last_found_updates);
   emit updatesFound(doc.toJson());

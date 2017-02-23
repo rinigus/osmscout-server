@@ -48,6 +48,18 @@ Dialog {
                 }
             }
 
+            ElementSelector {
+                id: eMapsRoot
+                key: settingsMapManagerPrefix + "root"
+                mainLabel: qsTr("Maps storage")
+                secondaryLabel: qsTr("Folder to store maps.<br><b>NB!</b> This folder will be fully managed by OSM Scout Server. " +
+                                     "Please <b>allocate separate, empty folder</b> that OSM Scout Server could use. " +
+                                     "This includes deleting all files within that folder when requested by you during cleanup or " +
+                                     "map updates.<br>" +
+                                     "<i>Example:</i> /home/nemo/Maps")
+                directory: true
+            }
+
             SectionHeader {
                 text: qsTr("Geocoder")
                 font.pixelSize: Theme.fontSizeMedium
@@ -175,6 +187,7 @@ Dialog {
         /// units are changed the last
         settings.setValue(settingsOsmPrefix + "units", unitsBox.currentIndex)
 
+        eMapsRoot.apply()
         eGeocoderNLP.apply()
     }
 }
