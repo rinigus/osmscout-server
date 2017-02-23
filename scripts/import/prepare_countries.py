@@ -340,12 +340,15 @@ def namecode(continent, country):
             pretty_name = c.name
     return code, pretty_continent, pretty_name
 
+def spath(name):
+    return name.replace('/','-')
+
 ########### Main loop #############
 provided_countries = {}
 
-for continent in Countries.keys():
-    fmake.write("$(BASE_DIR)/geocoder-nlp/" + continent + "/.directory:\n\tmkdir -p $(BASE_DIR)/geocoder-nlp/" + continent + "\n\ttouch $(BASE_DIR)/geocoder-nlp/" + continent + "/.directory\n\n")
+fmake.write("$(BASE_DIR)/geocoder-nlp/.directory:\n\tmkdir -p $(BASE_DIR)/geocoder-nlp/\n\ttouch $(BASE_DIR)/geocoder-nlp/.directory\n\n")
 
+for continent in Countries.keys():
     for country in Countries[continent]:
 
         code2, pretty_continent, pretty_country = namecode(continent, country)
@@ -355,16 +358,16 @@ for continent in Countries.keys():
                                                             "continent": pretty_continent,
                                                             "name": pretty_country,
                                                             "postal_country": { "path": "postal/countries/" + code2 },
-                                                            "osmscout": { "path": "osmscout/" + continent + "/" + country },
-                                                            "geocoder_nlp": { "path": "geocoder-nlp/" + os.path.join(continent, country) } }
+                                                            "osmscout": { "path": "osmscout/" + spath(continent + "/" + country) },
+                                                            "geocoder_nlp": { "path": "geocoder-nlp/" + spath(os.path.join(continent, country)) } }
         
         print continent, country, code2, pretty_continent, pretty_country #, (code2.lower() in postal_countries)
 
-        sql = "$(BASE_DIR)/geocoder-nlp/" + os.path.join(continent, country + "/location.sqlite.bz2")
+        country_target = "$(BASE_DIR)/geocoder-nlp/" + spath(os.path.join(continent, country)) + ".timestamp"
         pbf = "$(DOWNLOADS_DIR)/" + pbfname(continent, country)
-        all_countries += sql + " "
+        all_countries += country_target + " "
         all_downloads += pbf + " "
-        fmake.write(sql + ": $(BASE_DIR)/geocoder-nlp/" + continent + "/.directory " + pbf +
+        fmake.write(country_target + ": $(BASE_DIR)/geocoder-nlp/.directory " + pbf +
                     "\n\t$(BUILDER) $(DOWNLOADS_DIR)/" + pbfname(continent, country) + " $(BASE_DIR) " + continent + " " + country + " " + code2 + "\n\n")
         fmake.write(pbf + ":$(DOWNLOADS_DIR)/.directory\n\twget %s -O$(DOWNLOADS_DIR)/%s || (rm -f $(DOWNLOADS_DIR)/%s && exit 1)\n\ttouch $(DOWNLOADS_DIR)/%s\n" %
                     (pbfurl(continent, country), pbfname(continent, country),
