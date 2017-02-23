@@ -4,7 +4,7 @@ set -e
 
 VERSION=1
 PG=distribution/postal/global
-PC=distribution/postal/country
+PC=distribution/postal/countries
 BNDINSTALL=`pwd`/backends-install
 POSCOUNTRY=postal-country
 
