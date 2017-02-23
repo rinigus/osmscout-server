@@ -22,15 +22,6 @@ Dialog {
                 title: qsTr("Settings")
             }
 
-            ElementSelector {
-                id: eMap
-                key: settingsOsmPrefix + "map"
-                mainLabel: qsTr("Map")
-                secondaryLabel: qsTr("Location of the folder with a map imported by libosmscout Import utility")
-                directory: true
-                directory_file: "types.dat"
-            }
-
             Column {
                 width: parent.width
                 spacing: Theme.paddingMedium
@@ -57,55 +48,16 @@ Dialog {
                 }
             }
 
-
             SectionHeader {
-                text: qsTr("Rendering")
-                font.pixelSize: Theme.fontSizeMedium
-            }
-
-            ElementEntry {
-                id: eFontSize
-                key: settingsOsmPrefix + "fontSize"
-                mainLabel: qsTr("Font size")
-                validator: DoubleValidator { bottom: 0; decimals: 1; }
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
-            }
-
-            ElementSelector {
-                id: eStyle
-                key: settingsOsmPrefix + "style"
-                mainLabel: qsTr("Style Sheet")
-                secondaryLabel: qsTr("Style sheet used to render the map tiles")
-            }
-
-            ElementSelector {
-                id: eIcons
-                key: settingsOsmPrefix + "icons"
-                mainLabel: qsTr("Icons")
-                secondaryLabel: qsTr("Icons used to mark features on the map")
-                directory: true
-                directory_file: "parking.png"
-            }
-
-            ElementSwitch {
-                id: eRenderSea
-                key: settingsOsmPrefix + "renderSea"
-                mainLabel: qsTr("Render sea")
-            }
-
-            ElementSwitch {
-                id: eDrawBackground
-                key: settingsOsmPrefix + "drawBackground"
-                mainLabel: qsTr("Draw background")
-            }
-
-            SectionHeader {
-                text: qsTr("Routing")
+                text: qsTr("Geocoder")
                 font.pixelSize: Theme.fontSizeMedium
             }
 
             Label {
-                text: qsTr("Routing is calculated among the possible routes that comply with the cost limitation")
+                text: qsTr("Geocoder is responsible for resolving search requests. " +
+                           "For that, it parses the search string and finds the corresponoding objects on a map." +
+                           "This server allows you to select between two geocoder backends: <i>geocoder-nlp</i> and " +
+                           "<i>libosmscout</i>. ")
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
@@ -113,54 +65,67 @@ Dialog {
                 color: Theme.highlightColor
             }
 
-            ElementEntry {
-                id: eRoutingCostFactor
-                key: settingsOsmPrefix + "routingCostLimitFactor"
-                mainLabel: qsTr("Cost factor")
-                secondaryLabel: qsTr("Cost factor is a component of a cost limit that is proportional to the geodesic distance " +
-                                     "between the route origin and the target")
-                validator: DoubleValidator { bottom: 1.0; decimals: 1; }
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
-            }
-
-            ElementEntry {
-                id: eRoutingCostDistance
-                key: settingsOsmPrefix + "routingCostLimitDistance"
-                mainLabel: qsTr("Cost distance")
-                secondaryLabel: qsTr("Cost distance is an offset of a cost limit")
-                validator: DoubleValidator { bottom: 1.0; decimals: 0 }
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            ElementSwitch {
+                id: eGeocoderNLP
+                key: settingsGeomasterPrefix + "use_geocoder_nlp"
+                mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
+                secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
+                                     "Note that it requires additional databases for language, user input parsing, and geocoding.")
             }
 
             SectionHeader {
-                text: qsTr("Advanced rendering settings")
+                text: qsTr("Backend settings")
                 font.pixelSize: Theme.fontSizeMedium
             }
 
-            ElementEntry {
-                id: eDataLookupArea
-                key: settingsOsmPrefix + "dataLookupArea"
-                mainLabel: qsTr("Loaded area factor")
-                secondaryLabel: qsTr("By increasing the size of the area which is used to load the data while rendering a tile, " +
-                                     "the renderer can improve label rendering by taking into account data from neighboring tiles. " +
-                                     "Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. " +
-                                     "The large value of the factor would decrease the rendering speed and increase RAM footprint " +
-                                     "of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 " +
-                                     "it may lead to filling up RAM of the device.")
-                validator: DoubleValidator { bottom: 1.0; decimals: 1; }
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Button {
+                    text: qsTr("OSM Scout backend")
+                    onClicked: pageStack.push(Qt.resolvedUrl("OSMScoutPage.qml"))
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Label {
+                    text: qsTr("OSM Scout library (<i>libosmscout</i>) settings. The library is used for drawing maps, search, and routing.")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
             }
 
-            ElementEntry {
-                id: eTileBordersZoomCutoff
-                key: settingsOsmPrefix + "tileBordersZoomCutoff"
-                mainLabel: qsTr("Cutoff zoom level")
-                secondaryLabel: qsTr("At the specified zoom level, the map rendering algorithm will stop checking " +
-                                     "for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. " +
-                                     "By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. " +
-                                     "Note that the label rendering could significantly slow down the map rendering.")
-                validator: IntValidator { bottom: 1;  }
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Rectangle {
+                    width: parent.width
+                    height: Theme.paddingLarge
+                    color: "transparent"
+                }
+
+                Button {
+                    text: qsTr("Geocoder-NLP backend")
+                    onClicked: pageStack.push(Qt.resolvedUrl("GeocoderPage.qml"))
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Label {
+                    text: qsTr("Selection of languages used for address parsing and other settings of <i>geocoder-nlp</i> backend")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
             }
 
             SectionHeader {
@@ -173,7 +138,7 @@ Dialog {
                 key: settingsOsmPrefix + "logInfo"
                 mainLabel: qsTr("Log info messages")
                 secondaryLabel: qsTr( "When disabled, INFO messages will not be logged in Events log. " +
-                                     "Exception is loading of the database which is shown always" )
+                                     "Exception is loading of the database which is shown always." )
             }
 
             ElementEntry {
@@ -205,21 +170,11 @@ Dialog {
         eLogInfo.apply()
         eRollSize.apply()
         eLogSession.apply()
-        eMap.apply()
-        eStyle.apply()
-        eIcons.apply()
-        eFontSize.apply()
-        eRenderSea.apply()
-        eDrawBackground.apply()
-        eDataLookupArea.apply()
-        eTileBordersZoomCutoff.apply()
-        eRoutingCostFactor.apply()
-        eRoutingCostDistance.apply()
 
         /// units are done by combo box, have to apply manually
         /// units are changed the last
         settings.setValue(settingsOsmPrefix + "units", unitsBox.currentIndex)
+
+        eGeocoderNLP.apply()
     }
 }
-
-
