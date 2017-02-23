@@ -161,7 +161,7 @@ Page {
                         text: model.isDir ? dateString
                                             //: Shows size and modification date, e.g. "15.5MB, 02/03/2016"
                                             //% "%1, %2"
-                                          : qsTr("%1, %2").arg(Format.formatFileSize(model.size)).arg(dateString)
+                                          : "%1, %2".arg(Format.formatFileSize(model.size)).arg(dateString)
                         width: parent.width
                         truncationMode: TruncationMode.Fade
                         font.pixelSize: Theme.fontSizeSmall
@@ -198,6 +198,7 @@ Page {
                             pageStack.pop()
                         }
                     }
+                    enabled: (page.directory && model.isDir) || (!page.directory && !model.isDir)
                 }
             }
         }
