@@ -117,6 +117,37 @@ Page {
             }
 
 
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Rectangle {
+                    width: parent.width
+                    height: Theme.paddingLarge
+                    color: "transparent"
+                }
+
+                Button {
+                    text: qsTr("Subscribe")
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: {
+                        var clist = JSON.parse( manager.getProvidedCountries() )
+                        pageStack.push(Qt.resolvedUrl("DownloadCountriesPage.qml"),
+                                       { "countries": clist } )
+                    }
+                }
+
+                Label {
+                    text: qsTr("Select the countries for download")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
         }
 
         VerticalScrollDecorator {}

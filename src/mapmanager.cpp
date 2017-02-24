@@ -19,6 +19,7 @@
 #include <QJsonObject>
 
 #include <algorithm>
+#include <cmath>
 
 #include <QDebug>
 
@@ -208,7 +209,7 @@ void Manager::scanDirectories()
         }
 
       QStringList countries, ids;
-      QList<qint64> szs;
+      QList<uint64_t> szs;
       makeCountriesList(true, countries, ids, szs);
 
       // print all loaded countries
@@ -233,7 +234,7 @@ QString Manager::getProvidedCountries()
   return makeCountriesListAsJSON(false);
 }
 
-void Manager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<qint64> &sz)
+void Manager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz)
 {
   QList< QPair<QString, QString> > available;
 
@@ -278,7 +279,7 @@ QString Manager::makeCountriesListAsJSON(bool list_available)
 {
   QStringList countries;
   QStringList ids;
-  QList<qint64> sz;
+  QList<uint64_t> sz;
 
   makeCountriesList(list_available, countries, ids, sz);
 
@@ -288,7 +289,7 @@ QString Manager::makeCountriesListAsJSON(bool list_available)
       QJsonObject obj;
       obj.insert("name", countries[i]);
       obj.insert("id", ids[i]);
-      obj.insert("size", sz[i]);
+      obj.insert("size", QString("%L1").arg( (int)round(sz[i]/1024./1024.) ) );
       arr.append(obj);
     }
 
@@ -559,7 +560,7 @@ void Manager::onDownloadProgress()
   const DownloadType dtype = m_download_type.load();
 
   if ( dtype == ProvidedList )
-    txt = QString(tr("List of provided countries and features: %L1 (D) / %L2 (W) MB")).
+    txt = QString(tr("List of countries: %L1 (D) / %L2 (W) MB")).
         arg(m_last_reported_downloaded/1024/1024).
         arg(m_last_reported_written/1024/1024);
 
@@ -690,7 +691,7 @@ bool Manager::updateProvided()
                        fullPath(const_fname_countries_provided),
                        QString()) )
     {
-      emit downloadProgress(tr("Downloading the list of provided countries"));
+      emit downloadProgress(tr("Downloading the list of countries"));
       return true;
     }
 
@@ -742,7 +743,7 @@ void Manager::checkUpdates()
       else if (!m_root_dir.exists(const_fname_countries_requested))
         InfoHub::logWarning(tr("Cannot check for updates due to missing list of requested countries. Select countries before checking for updates."));
       else
-        InfoHub::logWarning(tr("Cannot check for updates due to missing list of provided features. Download the list before checking for updates."));
+        InfoHub::logWarning(tr("Cannot check for updates due to missing list of provided countries. Download the list before checking for updates."));
     }
 
   QJsonDocument doc(m_last_found_updates);

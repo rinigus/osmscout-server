@@ -45,7 +45,8 @@ void AppSettings::initDefaults()
   CHECK(MAPMANAGER_SETTINGS "osmscout", 1);
   CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
   CHECK(MAPMANAGER_SETTINGS "postal_country", 0);
-  CHECK(MAPMANAGER_SETTINGS "provided_url", "https://raw.githubusercontent.com/rinigus/osmscout-server/master/README.md");
+  CHECK(MAPMANAGER_SETTINGS "provided_url",
+        "https://raw.githubusercontent.com/rinigus/osmscout-server/mapmanager/scripts/import/provided/countries_provided.json");
 
   /// used internally by MapManager to set the path - will be modified when support
   /// for multi-map handling is be ready
