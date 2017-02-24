@@ -11,19 +11,18 @@ GEOCODER_IMPORTER=$BNDINSTALL/bin/geocoder-importer
 
 export LD_LIBRARY_PATH=$BNDINSTALL/lib
 
-if [ $# -lt 5 ] ; then
-	echo "Usage: $0 mapfile_pbf base_dir continent country country_2_letter_code"
+if [ $# -lt 4 ] ; then
+	echo "Usage: $0 mapfile_pbf base_dir continent_country country_2_letter_code"
 	exit 1
 fi
 
 PBF=$1
 BASE_DIR=$2
-CONTINENT=$3
-COUNTRY=$4
-COUNTRY_CODE=$5
+CONTINENT_COUNTRY=$3
+COUNTRY_CODE=$4
 
-IMPDIR="$BASE_DIR/osmscout/$CONTINENT-$COUNTRY"
-SQLDIR="$BASE_DIR/geocoder-nlp/$CONTINENT-$COUNTRY"
+IMPDIR="$BASE_DIR/osmscout/$CONTINENT_COUNTRY"
+SQLDIR="$BASE_DIR/geocoder-nlp/$CONTINENT_COUNTRY"
 SQL="$SQLDIR/location.sqlite"
 
 rm -rf "$IMPDIR" "$SQLDIR"
@@ -34,6 +33,7 @@ mkdir -p "$SQLDIR"
 
 "$GEOCODER_IMPORTER" "$IMPDIR" "$SQL" "$COUNTRY_CODE"
 
-./pack.sh "$IMPDIR" 10
-./pack.sh "$SQLDIR" 1
+# determined from libosmscout/include/osmscout/TypeConfig.h:  static const uint32_t FILE_FORMAT_VERSION=11
+./pack.sh "$IMPDIR" 11
 
+./pack.sh "$SQLDIR" 1

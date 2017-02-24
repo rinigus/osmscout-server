@@ -60,7 +60,7 @@ for d in dist:
 
 
 # save provided countries
-fjson = open("countries_provided.json", "w")
+fjson = open("provided/countries_provided.json", "w")
 fjson.write( json.dumps( dist, sort_keys=True, indent=4, separators=(',', ': ')) )
 
 # save uploader script
