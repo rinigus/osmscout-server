@@ -14,6 +14,7 @@
 #include <QSet>
 #include <QPointer>
 #include <QDateTime>
+#include <QAtomicInt>
 
 namespace MapManager {
 
@@ -92,7 +93,7 @@ namespace MapManager {
     void databasePostalChanged(QString global, QString country);
 
     void downloadingChanged(bool state);
-    void downloadProgress(QString message);
+    void downloadProgress(QString info);
 
     void updatesFound(QString info);
 
@@ -101,6 +102,13 @@ namespace MapManager {
 
   public slots:
     void onSettingsChanged();
+
+  protected:
+    //enum DownloadType { NoDownload=0, Countries=1, ProvidedList=2 };
+    typedef int DownloadType;
+    const int NoDownload{0};
+    const int Countries{1};
+    const int ProvidedList{2};
 
   protected:
     void loadSettings();
@@ -144,7 +152,7 @@ namespace MapManager {
     void onWrittenBytes(size_t sz);
     void onDownloadProgress();
 
-    bool startDownload(const QString &url, const QString &path, const QString &mode);
+    bool startDownload(DownloadType type, const QString &url, const QString &path, const QString &mode);
     void cleanupDownload();
 
   protected:
@@ -165,8 +173,7 @@ namespace MapManager {
     QNetworkAccessManager m_network_manager;
     QPointer<FileDownloader> m_file_downloader;
 
-    enum DownloadType { NotKnown, Countries, ProvidedList };
-    DownloadType m_download_type{NotKnown};
+    QAtomicInt m_download_type{NoDownload};
     size_t m_last_reported_downloaded;
     size_t m_last_reported_written;
 

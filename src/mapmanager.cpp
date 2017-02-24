@@ -24,6 +24,8 @@
 
 using namespace MapManager;
 
+#pragma message "When Qt will be changed to 5.6 on stable SFOS, start using DownloadType as enum and QAtomicInteger"
+
 Manager::Manager(QObject *parent) : QObject(parent)
 {
   m_features.append(new FeatureOsmScout(this));
@@ -431,20 +433,16 @@ bool Manager::getCountries()
       return false;
     }
 
-  bool started = startDownload( m_missing_data[0].files[0].url + ".bz2",
-      m_missing_data[0].files[0].path, "BZ2" );
-
-  if (started) m_download_type = Countries;
-  return started;
+  return
+      startDownload( Countries, m_missing_data[0].files[0].url + ".bz2", m_missing_data[0].files[0].path, "BZ2" );
 }
 
 bool Manager::downloading()
 {
-  QMutexLocker lk(&m_mutex);
-  return m_file_downloader;
+  return (m_download_type.load() != NoDownload);
 }
 
-bool Manager::startDownload(const QString &url, const QString &path, const QString &mode)
+bool Manager::startDownload(DownloadType type, const QString &url, const QString &path, const QString &mode)
 {
   if (!m_root_dir.exists())
     {
@@ -476,7 +474,9 @@ bool Manager::startDownload(const QString &url, const QString &path, const QStri
   connect(m_file_downloader.data(), &FileDownloader::downloadedBytes, this, &Manager::onDownloadedBytes);
   connect(m_file_downloader.data(), &FileDownloader::writtenBytes, this, &Manager::onWrittenBytes);
 
+  m_download_type = type;
   emit downloadingChanged(true);
+
   return true;
 }
 
@@ -487,7 +487,9 @@ void Manager::onDownloadFinished(QString path)
   InfoHub::logInfo(tr("File downloaded:") + " " + path);
   cleanupDownload();
 
-  if (m_download_type == Countries)
+  const DownloadType dtype = m_download_type.load();
+
+  if (dtype == Countries)
     {
       if (m_missing_data.length() < 1 ||
           m_missing_data[0].files.length() < 1 ||
@@ -508,17 +510,21 @@ void Manager::onDownloadFinished(QString path)
           scanDirectories();
         }
 
-      m_download_type = NotKnown;
+      m_download_type = NoDownload;
       lk.unlock();
       getCountries();
     }
-  else if (m_download_type == ProvidedList)
+  else if (dtype == ProvidedList)
     {
-      m_download_type = NotKnown;
+      m_download_type = NoDownload;
       checkUpdates();
     }
   else
-    m_download_type = NotKnown;
+    m_download_type = NoDownload;
+
+  // check if we set it to NoDownload
+  if (m_download_type.load() == NoDownload)
+    emit downloadingChanged(false);
 }
 
 void Manager::onDownloadError(QString err)
@@ -530,7 +536,9 @@ void Manager::onDownloadError(QString err)
 
   InfoHub::logWarning(tr("Dropping all downloads"));
   m_missing_data.clear();
-  m_download_type = NotKnown;
+
+  m_download_type = NoDownload;
+  emit downloadingChanged(false);
 }
 
 void Manager::cleanupDownload()
@@ -540,8 +548,6 @@ void Manager::cleanupDownload()
       m_file_downloader->disconnect();
       m_file_downloader->deleteLater();
       m_file_downloader = QPointer<FileDownloader>();
-
-      emit downloadingChanged(false);
     }
 }
 
@@ -550,26 +556,27 @@ void Manager::onDownloadProgress()
   static QString last_message;
 
   QString txt;
+  const DownloadType dtype = m_download_type.load();
 
-  if ( m_download_type == ProvidedList )
+  if ( dtype == ProvidedList )
     txt = QString(tr("List of provided countries and features: %L1 (D) / %L2 (W) MB")).
         arg(m_last_reported_downloaded/1024/1024).
         arg(m_last_reported_written/1024/1024);
 
-  else if (m_download_type == Countries )
+  else if (dtype == Countries )
     {
       if (m_missing_data.length() > 0)
         {
           txt = QString(tr("%1: %L2 (D) / %L3 (W) MB")).
               arg(m_missing_data[0].pretty).
-              arg((m_missing_data[0].todownload - m_last_reported_downloaded)/1024/1024).
-              arg((m_missing_data[0].tostore - m_last_reported_written)/1024/1024);
+              arg((m_missing_data[0].todownload - m_last_reported_downloaded)/1024.0/1024.0, 0, 'f', 1).
+              arg((m_missing_data[0].tostore - m_last_reported_written)/1024.0/1024.0, 0, 'f', 1);
         }
     }
   else
     txt = QString("Unknown: %L1 (D) %L2 (W) MB").
-        arg(m_last_reported_downloaded/1024/1024).
-        arg(m_last_reported_written/1024/1024);
+        arg(m_last_reported_downloaded/1024.0/1024.0, 0, 'f', 1).
+        arg(m_last_reported_written/1024.0/1024.0, 0, 'f', 1);
 
   if (txt != last_message )
     {
@@ -679,11 +686,15 @@ bool Manager::deleteNonNeededFiles(const QStringList &files)
 bool Manager::updateProvided()
 {
   QMutexLocker lk(&m_mutex);
-  bool started = startDownload(m_provided_url,
-                               fullPath(const_fname_countries_provided),
-                               QString());
-  if (started) m_download_type = ProvidedList;
-  return started;
+  if ( startDownload(ProvidedList, m_provided_url,
+                       fullPath(const_fname_countries_provided),
+                       QString()) )
+    {
+      emit downloadProgress(tr("Downloading the list of provided countries"));
+      return true;
+    }
+
+  return false;
 }
 
 void Manager::checkUpdates()

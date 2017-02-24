@@ -118,6 +118,9 @@ Page {
                 Component.onCompleted: queueLength.setText(infohub.queue)
             }
 
+            ElementDownloads {
+            }
+
             SectionHeader {
                 text: qsTr("Events")
                 font.pixelSize: Theme.fontSizeMedium
