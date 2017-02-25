@@ -8,6 +8,7 @@ Page {
     property string title: ""
     property string path: ""
     property int nCountries: 1
+    property bool root: false
 
     allowedOrientations : Orientation.All
 
@@ -85,8 +86,13 @@ Page {
                 if (c.type === "dir")
                 {
                     var newpath = ""
-                    if (page.path.length > 0)
-                        newpath = page.path + " / " + c.name
+                    if (!page.root)
+                    {
+                        if (page.path.length > 0)
+                            newpath = page.path + " / " + c.name
+                        else
+                            newpath = page.title + " / " + c.name
+                    }
                     pageStack.push(Qt.resolvedUrl("DownloadCountriesPage.qml"),
                                    { "countries": c, "path": newpath, "title": c.name } )
                 }
@@ -103,7 +109,11 @@ Page {
         nCountries = countries.children.length
 
         if (page.title.length < 1)
+        {
             page.title = qsTr("Select country or territory")
+            page.root = true
+        }
+
         if (page.path.length < 1)
             fullpath.visible = false
     }

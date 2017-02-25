@@ -47,7 +47,7 @@ Page {
             //anchors.margins: Theme.horizontalPageMargin
 
             Column {
-                height: pageHead.height + fullName.height + Theme.paddingSmall + Theme.paddingLarge
+                //height: pageHead.height + fullName.height + Theme.paddingSmall + Theme.paddingLarge
                 width: parent.width
                 //spacing: Theme.paddingSmall
 
@@ -138,17 +138,19 @@ Page {
 
             ListView {
                 width: parent.width
-                height: nFeatures * (Theme.fontSizeExtraSmall +  Theme.paddingMedium)
+                height: contentHeight // nFeatures * (Theme.fontSizeExtraSmall +  Theme.paddingMedium)
                 model: nFeatures
                 delegate: Row {
-                    spacing: Theme.paddingLarge
-                    height: Theme.fontSizeExtraSmall +  Theme.paddingMedium
+                    spacing: Theme.paddingMedium
+                    //height: Theme.fontSizeExtraSmall +  Theme.paddingMedium
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
 
+                    property double split_prop: 0.6
+
                     Label {
                         text: features[index].name
-                        width: parent.width*2/3 - Theme.paddingLarge/2
+                        width: parent.width*split_prop - Theme.paddingMedium/2
                         font.pixelSize: Theme.fontSizeExtraSmall
                         color: Theme.secondaryHighlightColor
                         wrapMode: Text.WordWrap
@@ -156,7 +158,7 @@ Page {
 
                     Label {
                         id: feature_size
-                        width: parent.width*1/3 - Theme.paddingLarge/2
+                        width: parent.width*(1-split_prop) - Theme.paddingMedium/2
                         font.pixelSize: Theme.fontSizeExtraSmall
                         horizontalAlignment: Text.AlignRight
                         color: Theme.secondaryHighlightColor

@@ -111,7 +111,9 @@ QString Manager::getPretty(const QJsonObject &obj) const
   if (obj.value("id").toString() == const_feature_id_postal_global)
     return tr("Address parsing language support");
 
-  return obj.value("continent").toString() + const_pretty_separator + obj.value("name").toString();
+  QString name = obj.value("name").toString();
+  name.replace("/", const_pretty_separator);
+  return name;
 }
 
 void Manager::scanDirectories()
@@ -166,8 +168,7 @@ void Manager::scanDirectories()
       // check if we have all keys defined
       if (getType(request) == const_feature_type_country &&
           request.contains("id") &&
-          request.contains("name") &&
-          request.contains("continent") )
+          request.contains("name") )
         {
           bool add = true;
           for (const Feature *f: m_features)
