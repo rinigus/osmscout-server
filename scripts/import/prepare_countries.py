@@ -37,6 +37,7 @@ Name2Code = {
 }
 
 Name2Pretty = {
+    "canary-islands": "Canary Islands",
     "ireland-and-northern-ireland": "Ireland and Northern Ireland",
     "kosovo": "Kosovo",
     "lesotho": "Lesotho",
@@ -356,8 +357,7 @@ for continent in Countries.keys():
 
         provided_countries[ continent + "/" + country ] = { "id": continent + "/" + country,
                                                             "type": "territory",
-                                                            "continent": pretty_continent,
-                                                            "name": pretty_country,
+                                                            "name": pretty_continent + "/" + pretty_country,
                                                             "postal_country": { "path": "postal/countries/" + code2 },
                                                             "osmscout": { "path": "osmscout/" + spath(continent + "/" + country) },
                                                             "geocoder_nlp": { "path": "geocoder-nlp/" + spath(os.path.join(continent, country)) } }

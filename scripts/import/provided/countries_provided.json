@@ -1,6 +1,5 @@
 {
     "africa/algeria": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-algeria",
             "size": "12488707",
@@ -9,7 +8,7 @@
             "version": "1"
         },
         "id": "africa/algeria",
-        "name": "Algeria",
+        "name": "Africa/Algeria",
         "osmscout": {
             "path": "osmscout/africa-algeria",
             "size": "123592453",
@@ -27,7 +26,6 @@
         "type": "territory"
     },
     "africa/angola": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-angola",
             "size": "1454083",
@@ -36,7 +34,7 @@
             "version": "1"
         },
         "id": "africa/angola",
-        "name": "Angola",
+        "name": "Africa/Angola",
         "osmscout": {
             "path": "osmscout/africa-angola",
             "size": "32870463",
@@ -54,7 +52,6 @@
         "type": "territory"
     },
     "africa/benin": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-benin",
             "size": "819203",
@@ -63,7 +60,7 @@
             "version": "1"
         },
         "id": "africa/benin",
-        "name": "Benin",
+        "name": "Africa/Benin",
         "osmscout": {
             "path": "osmscout/africa-benin",
             "size": "21034966",
@@ -81,7 +78,6 @@
         "type": "territory"
     },
     "africa/botswana": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-botswana",
             "size": "819203",
@@ -90,7 +86,7 @@
             "version": "1"
         },
         "id": "africa/botswana",
-        "name": "Botswana",
+        "name": "Africa/Botswana",
         "osmscout": {
             "path": "osmscout/africa-botswana",
             "size": "39689926",
@@ -108,7 +104,6 @@
         "type": "territory"
     },
     "africa/burkina-faso": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-burkina-faso",
             "size": "1118211",
@@ -117,7 +112,7 @@
             "version": "1"
         },
         "id": "africa/burkina-faso",
-        "name": "Burkina Faso",
+        "name": "Africa/Burkina Faso",
         "osmscout": {
             "path": "osmscout/africa-burkina-faso",
             "size": "37088653",
@@ -135,7 +130,6 @@
         "type": "territory"
     },
     "africa/cameroon": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-cameroon",
             "size": "4009987",
@@ -144,7 +138,7 @@
             "version": "1"
         },
         "id": "africa/cameroon",
-        "name": "Cameroon",
+        "name": "Africa/Cameroon",
         "osmscout": {
             "path": "osmscout/africa-cameroon",
             "size": "98900057",
@@ -162,7 +156,6 @@
         "type": "territory"
     },
     "africa/canary-islands": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-canary-islands",
             "size": "12701699",
@@ -171,7 +164,7 @@
             "version": "1"
         },
         "id": "africa/canary-islands",
-        "name": "Canary Islands",
+        "name": "Africa/Canary Islands",
         "osmscout": {
             "path": "osmscout/africa-canary-islands",
             "size": "39549935",
@@ -189,7 +182,6 @@
         "type": "territory"
     },
     "africa/cape-verde": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-cape-verde",
             "size": "397315",
@@ -198,7 +190,7 @@
             "version": "1"
         },
         "id": "africa/cape-verde",
-        "name": "Cabo Verde",
+        "name": "Africa/Cabo Verde",
         "osmscout": {
             "path": "osmscout/africa-cape-verde",
             "size": "4390896",
@@ -216,7 +208,6 @@
         "type": "territory"
     },
     "africa/central-african-republic": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-central-african-republic",
             "size": "557059",
@@ -225,7 +216,7 @@
             "version": "1"
         },
         "id": "africa/central-african-republic",
-        "name": "Central African Republic",
+        "name": "Africa/Central African Republic",
         "osmscout": {
             "path": "osmscout/africa-central-african-republic",
             "size": "25963048",
@@ -243,7 +234,6 @@
         "type": "territory"
     },
     "africa/chad": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-chad",
             "size": "499715",
@@ -252,7 +242,7 @@
             "version": "1"
         },
         "id": "africa/chad",
-        "name": "Chad",
+        "name": "Africa/Chad",
         "osmscout": {
             "path": "osmscout/africa-chad",
             "size": "32788877",
@@ -270,7 +260,6 @@
         "type": "territory"
     },
     "africa/comores": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-comores",
             "size": "163843",
@@ -279,7 +268,7 @@
             "version": "1"
         },
         "id": "africa/comores",
-        "name": "Comoros",
+        "name": "Africa/Comoros",
         "osmscout": {
             "path": "osmscout/africa-comores",
             "size": "1548129",
@@ -297,7 +286,6 @@
         "type": "territory"
     },
     "africa/congo-brazzaville": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-congo-brazzaville",
             "size": "430083",
@@ -306,7 +294,7 @@
             "version": "1"
         },
         "id": "africa/congo-brazzaville",
-        "name": "Congo",
+        "name": "Africa/Congo",
         "osmscout": {
             "path": "osmscout/africa-congo-brazzaville",
             "size": "15033132",
@@ -324,7 +312,6 @@
         "type": "territory"
     },
     "africa/congo-democratic-republic": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-congo-democratic-republic",
             "size": "2334723",
@@ -333,7 +320,7 @@
             "version": "1"
         },
         "id": "africa/congo-democratic-republic",
-        "name": "Congo, The Democratic Republic of the",
+        "name": "Africa/Congo, The Democratic Republic of the",
         "osmscout": {
             "path": "osmscout/africa-congo-democratic-republic",
             "size": "95308729",
@@ -351,7 +338,6 @@
         "type": "territory"
     },
     "africa/djibouti": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-djibouti",
             "size": "139267",
@@ -360,7 +346,7 @@
             "version": "1"
         },
         "id": "africa/djibouti",
-        "name": "Djibouti",
+        "name": "Africa/Djibouti",
         "osmscout": {
             "path": "osmscout/africa-djibouti",
             "size": "14121179",
@@ -378,7 +364,6 @@
         "type": "territory"
     },
     "africa/egypt": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-egypt",
             "size": "7213059",
@@ -387,7 +372,7 @@
             "version": "1"
         },
         "id": "africa/egypt",
-        "name": "Egypt",
+        "name": "Africa/Egypt",
         "osmscout": {
             "path": "osmscout/africa-egypt",
             "size": "131019522",
@@ -405,7 +390,6 @@
         "type": "territory"
     },
     "africa/equatorial-guinea": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-equatorial-guinea",
             "size": "90115",
@@ -414,7 +398,7 @@
             "version": "1"
         },
         "id": "africa/equatorial-guinea",
-        "name": "Equatorial Guinea",
+        "name": "Africa/Equatorial Guinea",
         "osmscout": {
             "path": "osmscout/africa-equatorial-guinea",
             "size": "1918382",
@@ -432,7 +416,6 @@
         "type": "territory"
     },
     "africa/eritrea": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-eritrea",
             "size": "139267",
@@ -441,7 +424,7 @@
             "version": "1"
         },
         "id": "africa/eritrea",
-        "name": "Eritrea",
+        "name": "Africa/Eritrea",
         "osmscout": {
             "path": "osmscout/africa-eritrea",
             "size": "22570965",
@@ -459,7 +442,6 @@
         "type": "territory"
     },
     "africa/ethiopia": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-ethiopia",
             "size": "2985987",
@@ -468,7 +450,7 @@
             "version": "1"
         },
         "id": "africa/ethiopia",
-        "name": "Ethiopia",
+        "name": "Africa/Ethiopia",
         "osmscout": {
             "path": "osmscout/africa-ethiopia",
             "size": "41496674",
@@ -486,7 +468,6 @@
         "type": "territory"
     },
     "africa/gabon": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-gabon",
             "size": "225283",
@@ -495,7 +476,7 @@
             "version": "1"
         },
         "id": "africa/gabon",
-        "name": "Gabon",
+        "name": "Africa/Gabon",
         "osmscout": {
             "path": "osmscout/africa-gabon",
             "size": "6515432",
@@ -513,7 +494,6 @@
         "type": "territory"
     },
     "africa/ghana": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-ghana",
             "size": "1757187",
@@ -522,7 +502,7 @@
             "version": "1"
         },
         "id": "africa/ghana",
-        "name": "Ghana",
+        "name": "Africa/Ghana",
         "osmscout": {
             "path": "osmscout/africa-ghana",
             "size": "18111546",
@@ -540,7 +520,6 @@
         "type": "territory"
     },
     "africa/guinea": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-guinea",
             "size": "712707",
@@ -549,7 +528,7 @@
             "version": "1"
         },
         "id": "africa/guinea",
-        "name": "Guinea",
+        "name": "Africa/Guinea",
         "osmscout": {
             "path": "osmscout/africa-guinea",
             "size": "51496470",
@@ -567,7 +546,6 @@
         "type": "territory"
     },
     "africa/guinea-bissau": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-guinea-bissau",
             "size": "86019",
@@ -576,7 +554,7 @@
             "version": "1"
         },
         "id": "africa/guinea-bissau",
-        "name": "Guinea-Bissau",
+        "name": "Africa/Guinea-Bissau",
         "osmscout": {
             "path": "osmscout/africa-guinea-bissau",
             "size": "5245350",
@@ -594,7 +572,6 @@
         "type": "territory"
     },
     "africa/ivory-coast": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-ivory-coast",
             "size": "2170883",
@@ -603,7 +580,7 @@
             "version": "1"
         },
         "id": "africa/ivory-coast",
-        "name": "C\u00f4te d'Ivoire",
+        "name": "Africa/C\u00f4te d'Ivoire",
         "osmscout": {
             "path": "osmscout/africa-ivory-coast",
             "size": "24564564",
@@ -621,7 +598,6 @@
         "type": "territory"
     },
     "africa/kenya": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-kenya",
             "size": "3170307",
@@ -630,7 +606,7 @@
             "version": "1"
         },
         "id": "africa/kenya",
-        "name": "Kenya",
+        "name": "Africa/Kenya",
         "osmscout": {
             "path": "osmscout/africa-kenya",
             "size": "43398298",
@@ -648,7 +624,6 @@
         "type": "territory"
     },
     "africa/lesotho": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-lesotho",
             "size": "700419",
@@ -657,7 +632,7 @@
             "version": "1"
         },
         "id": "africa/lesotho",
-        "name": "Lesotho",
+        "name": "Africa/Lesotho",
         "osmscout": {
             "path": "osmscout/africa-lesotho",
             "size": "70422235",
@@ -675,7 +650,6 @@
         "type": "territory"
     },
     "africa/liberia": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-liberia",
             "size": "335875",
@@ -684,7 +658,7 @@
             "version": "1"
         },
         "id": "africa/liberia",
-        "name": "Liberia",
+        "name": "Africa/Liberia",
         "osmscout": {
             "path": "osmscout/africa-liberia",
             "size": "22440644",
@@ -702,7 +676,6 @@
         "type": "territory"
     },
     "africa/libya": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-libya",
             "size": "5906435",
@@ -711,7 +684,7 @@
             "version": "1"
         },
         "id": "africa/libya",
-        "name": "Libya",
+        "name": "Africa/Libya",
         "osmscout": {
             "path": "osmscout/africa-libya",
             "size": "32936075",
@@ -729,7 +702,6 @@
         "type": "territory"
     },
     "africa/madagascar": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-madagascar",
             "size": "1437699",
@@ -738,7 +710,7 @@
             "version": "1"
         },
         "id": "africa/madagascar",
-        "name": "Madagascar",
+        "name": "Africa/Madagascar",
         "osmscout": {
             "path": "osmscout/africa-madagascar",
             "size": "45916536",
@@ -756,7 +728,6 @@
         "type": "territory"
     },
     "africa/malawi": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-malawi",
             "size": "1011715",
@@ -765,7 +736,7 @@
             "version": "1"
         },
         "id": "africa/malawi",
-        "name": "Malawi",
+        "name": "Africa/Malawi",
         "osmscout": {
             "path": "osmscout/africa-malawi",
             "size": "47700879",
@@ -783,7 +754,6 @@
         "type": "territory"
     },
     "africa/mali": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-mali",
             "size": "4820995",
@@ -792,7 +762,7 @@
             "version": "1"
         },
         "id": "africa/mali",
-        "name": "Mali",
+        "name": "Africa/Mali",
         "osmscout": {
             "path": "osmscout/africa-mali",
             "size": "54858441",
@@ -810,7 +780,6 @@
         "type": "territory"
     },
     "africa/mauritania": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-mauritania",
             "size": "331779",
@@ -819,7 +788,7 @@
             "version": "1"
         },
         "id": "africa/mauritania",
-        "name": "Mauritania",
+        "name": "Africa/Mauritania",
         "osmscout": {
             "path": "osmscout/africa-mauritania",
             "size": "19510565",
@@ -837,7 +806,6 @@
         "type": "territory"
     },
     "africa/mauritius": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-mauritius",
             "size": "679939",
@@ -846,7 +814,7 @@
             "version": "1"
         },
         "id": "africa/mauritius",
-        "name": "Mauritius",
+        "name": "Africa/Mauritius",
         "osmscout": {
             "path": "osmscout/africa-mauritius",
             "size": "5388409",
@@ -864,7 +832,6 @@
         "type": "territory"
     },
     "africa/morocco": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-morocco",
             "size": "8785923",
@@ -873,7 +840,7 @@
             "version": "1"
         },
         "id": "africa/morocco",
-        "name": "Morocco",
+        "name": "Africa/Morocco",
         "osmscout": {
             "path": "osmscout/africa-morocco",
             "size": "111996618",
@@ -891,7 +858,6 @@
         "type": "territory"
     },
     "africa/mozambique": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-mozambique",
             "size": "1323011",
@@ -900,7 +866,7 @@
             "version": "1"
         },
         "id": "africa/mozambique",
-        "name": "Mozambique",
+        "name": "Africa/Mozambique",
         "osmscout": {
             "path": "osmscout/africa-mozambique",
             "size": "108874351",
@@ -918,7 +884,6 @@
         "type": "territory"
     },
     "africa/namibia": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-namibia",
             "size": "1761283",
@@ -927,7 +892,7 @@
             "version": "1"
         },
         "id": "africa/namibia",
-        "name": "Namibia",
+        "name": "Africa/Namibia",
         "osmscout": {
             "path": "osmscout/africa-namibia",
             "size": "40991038",
@@ -945,7 +910,6 @@
         "type": "territory"
     },
     "africa/niger": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-niger",
             "size": "716803",
@@ -954,7 +918,7 @@
             "version": "1"
         },
         "id": "africa/niger",
-        "name": "Niger",
+        "name": "Africa/Niger",
         "osmscout": {
             "path": "osmscout/africa-niger",
             "size": "23468155",
@@ -972,7 +936,6 @@
         "type": "territory"
     },
     "africa/nigeria": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-nigeria",
             "size": "3506179",
@@ -981,7 +944,7 @@
             "version": "1"
         },
         "id": "africa/nigeria",
-        "name": "Nigeria",
+        "name": "Africa/Nigeria",
         "osmscout": {
             "path": "osmscout/africa-nigeria",
             "size": "96446053",
@@ -999,7 +962,6 @@
         "type": "territory"
     },
     "africa/rwanda": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-rwanda",
             "size": "937987",
@@ -1008,7 +970,7 @@
             "version": "1"
         },
         "id": "africa/rwanda",
-        "name": "Rwanda",
+        "name": "Africa/Rwanda",
         "osmscout": {
             "path": "osmscout/africa-rwanda",
             "size": "9014403",
@@ -1026,7 +988,6 @@
         "type": "territory"
     },
     "africa/saint-helena-ascension-and-tristan-da-cunha": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-saint-helena-ascension-and-tristan-da-cunha",
             "size": "65539",
@@ -1035,7 +996,7 @@
             "version": "1"
         },
         "id": "africa/saint-helena-ascension-and-tristan-da-cunha",
-        "name": "Saint Helena, Ascension and Tristan da Cunha",
+        "name": "Africa/Saint Helena, Ascension and Tristan da Cunha",
         "osmscout": {
             "path": "osmscout/africa-saint-helena-ascension-and-tristan-da-cunha",
             "size": "12794198",
@@ -1053,7 +1014,6 @@
         "type": "territory"
     },
     "africa/sao-tome-and-principe": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-sao-tome-and-principe",
             "size": "110595",
@@ -1062,7 +1022,7 @@
             "version": "1"
         },
         "id": "africa/sao-tome-and-principe",
-        "name": "Sao Tome and Principe",
+        "name": "Africa/Sao Tome and Principe",
         "osmscout": {
             "path": "osmscout/africa-sao-tome-and-principe",
             "size": "630374",
@@ -1080,7 +1040,6 @@
         "type": "territory"
     },
     "africa/senegal-and-gambia": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-senegal-and-gambia",
             "size": "1994755",
@@ -1089,7 +1048,7 @@
             "version": "1"
         },
         "id": "africa/senegal-and-gambia",
-        "name": "Senegal and Gambia",
+        "name": "Africa/Senegal and Gambia",
         "osmscout": {
             "path": "osmscout/africa-senegal-and-gambia",
             "size": "44943490",
@@ -1107,7 +1066,6 @@
         "type": "territory"
     },
     "africa/seychelles": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-seychelles",
             "size": "241667",
@@ -1116,7 +1074,7 @@
             "version": "1"
         },
         "id": "africa/seychelles",
-        "name": "Seychelles",
+        "name": "Africa/Seychelles",
         "osmscout": {
             "path": "osmscout/africa-seychelles",
             "size": "2351689",
@@ -1134,7 +1092,6 @@
         "type": "territory"
     },
     "africa/sierra-leone": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-sierra-leone",
             "size": "1208323",
@@ -1143,7 +1100,7 @@
             "version": "1"
         },
         "id": "africa/sierra-leone",
-        "name": "Sierra Leone",
+        "name": "Africa/Sierra Leone",
         "osmscout": {
             "path": "osmscout/africa-sierra-leone",
             "size": "29346511",
@@ -1161,7 +1118,6 @@
         "type": "territory"
     },
     "africa/somalia": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-somalia",
             "size": "212995",
@@ -1170,7 +1126,7 @@
             "version": "1"
         },
         "id": "africa/somalia",
-        "name": "Somalia",
+        "name": "Africa/Somalia",
         "osmscout": {
             "path": "osmscout/africa-somalia",
             "size": "28523609",
@@ -1188,7 +1144,6 @@
         "type": "territory"
     },
     "africa/south-africa": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-south-africa",
             "size": "27410435",
@@ -1197,7 +1152,7 @@
             "version": "1"
         },
         "id": "africa/south-africa",
-        "name": "South Africa",
+        "name": "Africa/South Africa",
         "osmscout": {
             "path": "osmscout/africa-south-africa",
             "size": "211602121",
@@ -1215,7 +1170,6 @@
         "type": "territory"
     },
     "africa/south-sudan": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-south-sudan",
             "size": "454659",
@@ -1224,7 +1178,7 @@
             "version": "1"
         },
         "id": "africa/south-sudan",
-        "name": "South Sudan",
+        "name": "Africa/South Sudan",
         "osmscout": {
             "path": "osmscout/africa-south-sudan",
             "size": "42976718",
@@ -1242,7 +1196,6 @@
         "type": "territory"
     },
     "africa/sudan": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-sudan",
             "size": "860163",
@@ -1251,7 +1204,7 @@
             "version": "1"
         },
         "id": "africa/sudan",
-        "name": "Sudan",
+        "name": "Africa/Sudan",
         "osmscout": {
             "path": "osmscout/africa-sudan",
             "size": "81332773",
@@ -1269,7 +1222,6 @@
         "type": "territory"
     },
     "africa/swaziland": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-swaziland",
             "size": "155651",
@@ -1278,7 +1230,7 @@
             "version": "1"
         },
         "id": "africa/swaziland",
-        "name": "Swaziland",
+        "name": "Africa/Swaziland",
         "osmscout": {
             "path": "osmscout/africa-swaziland",
             "size": "17785154",
@@ -1296,7 +1248,6 @@
         "type": "territory"
     },
     "africa/tanzania": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-tanzania",
             "size": "8327171",
@@ -1305,7 +1256,7 @@
             "version": "1"
         },
         "id": "africa/tanzania",
-        "name": "Tanzania, United Republic of",
+        "name": "Africa/Tanzania, United Republic of",
         "osmscout": {
             "path": "osmscout/africa-tanzania",
             "size": "131703942",
@@ -1323,7 +1274,6 @@
         "type": "territory"
     },
     "africa/togo": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-togo",
             "size": "1269763",
@@ -1332,7 +1282,7 @@
             "version": "1"
         },
         "id": "africa/togo",
-        "name": "Togo",
+        "name": "Africa/Togo",
         "osmscout": {
             "path": "osmscout/africa-togo",
             "size": "25994768",
@@ -1350,7 +1300,6 @@
         "type": "territory"
     },
     "africa/tunisia": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-tunisia",
             "size": "3985411",
@@ -1359,7 +1308,7 @@
             "version": "1"
         },
         "id": "africa/tunisia",
-        "name": "Tunisia",
+        "name": "Africa/Tunisia",
         "osmscout": {
             "path": "osmscout/africa-tunisia",
             "size": "45294890",
@@ -1377,7 +1326,6 @@
         "type": "territory"
     },
     "africa/uganda": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-uganda",
             "size": "11071491",
@@ -1386,7 +1334,7 @@
             "version": "1"
         },
         "id": "africa/uganda",
-        "name": "Uganda",
+        "name": "Africa/Uganda",
         "osmscout": {
             "path": "osmscout/africa-uganda",
             "size": "35105904",
@@ -1404,7 +1352,6 @@
         "type": "territory"
     },
     "africa/zambia": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-zambia",
             "size": "536579",
@@ -1413,7 +1360,7 @@
             "version": "1"
         },
         "id": "africa/zambia",
-        "name": "Zambia",
+        "name": "Africa/Zambia",
         "osmscout": {
             "path": "osmscout/africa-zambia",
             "size": "34181984",
@@ -1431,7 +1378,6 @@
         "type": "territory"
     },
     "africa/zimbabwe": {
-        "continent": "Africa",
         "geocoder_nlp": {
             "path": "geocoder-nlp/africa-zimbabwe",
             "size": "1638403",
@@ -1440,7 +1386,7 @@
             "version": "1"
         },
         "id": "africa/zimbabwe",
-        "name": "Zimbabwe",
+        "name": "Africa/Zimbabwe",
         "osmscout": {
             "path": "osmscout/africa-zimbabwe",
             "size": "32161882",
@@ -1458,7 +1404,6 @@
         "type": "territory"
     },
     "asia/afghanistan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-afghanistan",
             "size": "700419",
@@ -1467,7 +1412,7 @@
             "version": "1"
         },
         "id": "asia/afghanistan",
-        "name": "Afghanistan",
+        "name": "Asia/Afghanistan",
         "osmscout": {
             "path": "osmscout/asia-afghanistan",
             "size": "32182288",
@@ -1485,7 +1430,6 @@
         "type": "territory"
     },
     "asia/azerbaijan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-azerbaijan",
             "size": "3211267",
@@ -1494,7 +1438,7 @@
             "version": "1"
         },
         "id": "asia/azerbaijan",
-        "name": "Azerbaijan",
+        "name": "Asia/Azerbaijan",
         "osmscout": {
             "path": "osmscout/asia-azerbaijan",
             "size": "27213164",
@@ -1512,7 +1456,6 @@
         "type": "territory"
     },
     "asia/bangladesh": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-bangladesh",
             "size": "5746691",
@@ -1521,7 +1464,7 @@
             "version": "1"
         },
         "id": "asia/bangladesh",
-        "name": "Bangladesh",
+        "name": "Asia/Bangladesh",
         "osmscout": {
             "path": "osmscout/asia-bangladesh",
             "size": "34072683",
@@ -1539,7 +1482,6 @@
         "type": "territory"
     },
     "asia/cambodia": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-cambodia",
             "size": "1404931",
@@ -1548,7 +1490,7 @@
             "version": "1"
         },
         "id": "asia/cambodia",
-        "name": "Cambodia",
+        "name": "Asia/Cambodia",
         "osmscout": {
             "path": "osmscout/asia-cambodia",
             "size": "18135152",
@@ -1566,7 +1508,6 @@
         "type": "territory"
     },
     "asia/china": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-china",
             "size": "59109379",
@@ -1575,7 +1516,7 @@
             "version": "1"
         },
         "id": "asia/china",
-        "name": "China",
+        "name": "Asia/China",
         "osmscout": {
             "path": "osmscout/asia-china",
             "size": "555312492",
@@ -1593,7 +1534,6 @@
         "type": "territory"
     },
     "asia/gcc-states": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-gcc-states",
             "size": "20623363",
@@ -1602,7 +1542,7 @@
             "version": "1"
         },
         "id": "asia/gcc-states",
-        "name": "GCC States",
+        "name": "Asia/GCC States",
         "osmscout": {
             "path": "osmscout/asia-gcc-states",
             "size": "144103801",
@@ -1620,7 +1560,6 @@
         "type": "territory"
     },
     "asia/india": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-india",
             "size": "34074627",
@@ -1629,7 +1568,7 @@
             "version": "1"
         },
         "id": "asia/india",
-        "name": "India",
+        "name": "Asia/India",
         "osmscout": {
             "path": "osmscout/asia-india",
             "size": "618562554",
@@ -1647,7 +1586,6 @@
         "type": "territory"
     },
     "asia/indonesia": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-indonesia",
             "size": "45899779",
@@ -1656,7 +1594,7 @@
             "version": "1"
         },
         "id": "asia/indonesia",
-        "name": "Indonesia",
+        "name": "Asia/Indonesia",
         "osmscout": {
             "path": "osmscout/asia-indonesia",
             "size": "309080491",
@@ -1674,7 +1612,6 @@
         "type": "territory"
     },
     "asia/iran": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-iran",
             "size": "56856579",
@@ -1683,7 +1620,7 @@
             "version": "1"
         },
         "id": "asia/iran",
-        "name": "Iran, Islamic Republic of",
+        "name": "Asia/Iran, Islamic Republic of",
         "osmscout": {
             "path": "osmscout/asia-iran",
             "size": "162528153",
@@ -1701,7 +1638,6 @@
         "type": "territory"
     },
     "asia/iraq": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-iraq",
             "size": "14938115",
@@ -1710,7 +1646,7 @@
             "version": "1"
         },
         "id": "asia/iraq",
-        "name": "Iraq",
+        "name": "Asia/Iraq",
         "osmscout": {
             "path": "osmscout/asia-iraq",
             "size": "65051401",
@@ -1728,7 +1664,6 @@
         "type": "territory"
     },
     "asia/israel-and-palestine": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-israel-and-palestine",
             "size": "38629379",
@@ -1737,7 +1672,7 @@
             "version": "1"
         },
         "id": "asia/israel-and-palestine",
-        "name": "Israel and Palestine",
+        "name": "Asia/Israel and Palestine",
         "osmscout": {
             "path": "osmscout/asia-israel-and-palestine",
             "size": "67290044",
@@ -1755,7 +1690,6 @@
         "type": "territory"
     },
     "asia/japan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-japan",
             "size": "132108291",
@@ -1764,7 +1698,7 @@
             "version": "1"
         },
         "id": "asia/japan",
-        "name": "Japan",
+        "name": "Asia/Japan",
         "osmscout": {
             "path": "osmscout/asia-japan",
             "size": "1364994025",
@@ -1782,7 +1716,6 @@
         "type": "territory"
     },
     "asia/jordan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-jordan",
             "size": "3129347",
@@ -1791,7 +1724,7 @@
             "version": "1"
         },
         "id": "asia/jordan",
-        "name": "Jordan",
+        "name": "Asia/Jordan",
         "osmscout": {
             "path": "osmscout/asia-jordan",
             "size": "27382009",
@@ -1809,7 +1742,6 @@
         "type": "territory"
     },
     "asia/kazakhstan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-kazakhstan",
             "size": "41283587",
@@ -1818,7 +1750,7 @@
             "version": "1"
         },
         "id": "asia/kazakhstan",
-        "name": "Kazakhstan",
+        "name": "Asia/Kazakhstan",
         "osmscout": {
             "path": "osmscout/asia-kazakhstan",
             "size": "104348478",
@@ -1836,7 +1768,6 @@
         "type": "territory"
     },
     "asia/kyrgyzstan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-kyrgyzstan",
             "size": "10313731",
@@ -1845,7 +1776,7 @@
             "version": "1"
         },
         "id": "asia/kyrgyzstan",
-        "name": "Kyrgyzstan",
+        "name": "Asia/Kyrgyzstan",
         "osmscout": {
             "path": "osmscout/asia-kyrgyzstan",
             "size": "25475451",
@@ -1863,7 +1794,6 @@
         "type": "territory"
     },
     "asia/lebanon": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-lebanon",
             "size": "1650691",
@@ -1872,7 +1802,7 @@
             "version": "1"
         },
         "id": "asia/lebanon",
-        "name": "Lebanon",
+        "name": "Asia/Lebanon",
         "osmscout": {
             "path": "osmscout/asia-lebanon",
             "size": "9748295",
@@ -1890,7 +1820,6 @@
         "type": "territory"
     },
     "asia/malaysia-singapore-brunei": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-malaysia-singapore-brunei",
             "size": "22290435",
@@ -1899,7 +1828,7 @@
             "version": "1"
         },
         "id": "asia/malaysia-singapore-brunei",
-        "name": "Malaysia, Singapore, and Brunei",
+        "name": "Asia/Malaysia, Singapore, and Brunei",
         "osmscout": {
             "path": "osmscout/asia-malaysia-singapore-brunei",
             "size": "105565789",
@@ -1917,7 +1846,6 @@
         "type": "territory"
     },
     "asia/maldives": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-maldives",
             "size": "303107",
@@ -1926,7 +1854,7 @@
             "version": "1"
         },
         "id": "asia/maldives",
-        "name": "Maldives",
+        "name": "Asia/Maldives",
         "osmscout": {
             "path": "osmscout/asia-maldives",
             "size": "1838074",
@@ -1944,7 +1872,6 @@
         "type": "territory"
     },
     "asia/mongolia": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-mongolia",
             "size": "6094851",
@@ -1953,7 +1880,7 @@
             "version": "1"
         },
         "id": "asia/mongolia",
-        "name": "Mongolia",
+        "name": "Asia/Mongolia",
         "osmscout": {
             "path": "osmscout/asia-mongolia",
             "size": "22408357",
@@ -1971,7 +1898,6 @@
         "type": "territory"
     },
     "asia/nepal": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-nepal",
             "size": "6000643",
@@ -1980,7 +1906,7 @@
             "version": "1"
         },
         "id": "asia/nepal",
-        "name": "Nepal",
+        "name": "Asia/Nepal",
         "osmscout": {
             "path": "osmscout/asia-nepal",
             "size": "132451218",
@@ -1998,7 +1924,6 @@
         "type": "territory"
     },
     "asia/north-korea": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-north-korea",
             "size": "569347",
@@ -2007,7 +1932,7 @@
             "version": "1"
         },
         "id": "asia/north-korea",
-        "name": "Korea, Democratic People's Republic of",
+        "name": "Asia/Korea, Democratic People's Republic of",
         "osmscout": {
             "path": "osmscout/asia-north-korea",
             "size": "23695683",
@@ -2025,7 +1950,6 @@
         "type": "territory"
     },
     "asia/pakistan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-pakistan",
             "size": "1478659",
@@ -2034,7 +1958,7 @@
             "version": "1"
         },
         "id": "asia/pakistan",
-        "name": "Pakistan",
+        "name": "Asia/Pakistan",
         "osmscout": {
             "path": "osmscout/asia-pakistan",
             "size": "74634283",
@@ -2052,7 +1976,6 @@
         "type": "territory"
     },
     "asia/philippines": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-philippines",
             "size": "38572035",
@@ -2061,7 +1984,7 @@
             "version": "1"
         },
         "id": "asia/philippines",
-        "name": "Philippines",
+        "name": "Asia/Philippines",
         "osmscout": {
             "path": "osmscout/asia-philippines",
             "size": "222356618",
@@ -2079,7 +2002,6 @@
         "type": "territory"
     },
     "asia/south-korea": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-south-korea",
             "size": "148819971",
@@ -2088,7 +2010,7 @@
             "version": "1"
         },
         "id": "asia/south-korea",
-        "name": "Korea, Republic of",
+        "name": "Asia/Korea, Republic of",
         "osmscout": {
             "path": "osmscout/asia-south-korea",
             "size": "131555988",
@@ -2106,7 +2028,6 @@
         "type": "territory"
     },
     "asia/sri-lanka": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-sri-lanka",
             "size": "6119427",
@@ -2115,7 +2036,7 @@
             "version": "1"
         },
         "id": "asia/sri-lanka",
-        "name": "Sri Lanka",
+        "name": "Asia/Sri Lanka",
         "osmscout": {
             "path": "osmscout/asia-sri-lanka",
             "size": "54239991",
@@ -2133,7 +2054,6 @@
         "type": "territory"
     },
     "asia/syria": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-syria",
             "size": "3969027",
@@ -2142,7 +2062,7 @@
             "version": "1"
         },
         "id": "asia/syria",
-        "name": "Syrian Arab Republic",
+        "name": "Asia/Syrian Arab Republic",
         "osmscout": {
             "path": "osmscout/asia-syria",
             "size": "41585969",
@@ -2160,7 +2080,6 @@
         "type": "territory"
     },
     "asia/taiwan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-taiwan",
             "size": "34488323",
@@ -2169,7 +2088,7 @@
             "version": "1"
         },
         "id": "asia/taiwan",
-        "name": "Taiwan, Province of China",
+        "name": "Asia/Taiwan, Province of China",
         "osmscout": {
             "path": "osmscout/asia-taiwan",
             "size": "90265468",
@@ -2187,7 +2106,6 @@
         "type": "territory"
     },
     "asia/tajikistan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-tajikistan",
             "size": "1855491",
@@ -2196,7 +2114,7 @@
             "version": "1"
         },
         "id": "asia/tajikistan",
-        "name": "Tajikistan",
+        "name": "Asia/Tajikistan",
         "osmscout": {
             "path": "osmscout/asia-tajikistan",
             "size": "13177411",
@@ -2214,7 +2132,6 @@
         "type": "territory"
     },
     "asia/thailand": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-thailand",
             "size": "15482883",
@@ -2223,7 +2140,7 @@
             "version": "1"
         },
         "id": "asia/thailand",
-        "name": "Thailand",
+        "name": "Asia/Thailand",
         "osmscout": {
             "path": "osmscout/asia-thailand",
             "size": "135818507",
@@ -2241,7 +2158,6 @@
         "type": "territory"
     },
     "asia/turkmenistan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-turkmenistan",
             "size": "1187843",
@@ -2250,7 +2166,7 @@
             "version": "1"
         },
         "id": "asia/turkmenistan",
-        "name": "Turkmenistan",
+        "name": "Asia/Turkmenistan",
         "osmscout": {
             "path": "osmscout/asia-turkmenistan",
             "size": "14214120",
@@ -2268,7 +2184,6 @@
         "type": "territory"
     },
     "asia/uzbekistan": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-uzbekistan",
             "size": "9957379",
@@ -2277,7 +2192,7 @@
             "version": "1"
         },
         "id": "asia/uzbekistan",
-        "name": "Uzbekistan",
+        "name": "Asia/Uzbekistan",
         "osmscout": {
             "path": "osmscout/asia-uzbekistan",
             "size": "47222118",
@@ -2295,7 +2210,6 @@
         "type": "territory"
     },
     "asia/vietnam": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-vietnam",
             "size": "8019971",
@@ -2304,7 +2218,7 @@
             "version": "1"
         },
         "id": "asia/vietnam",
-        "name": "Viet Nam",
+        "name": "Asia/Viet Nam",
         "osmscout": {
             "path": "osmscout/asia-vietnam",
             "size": "56501645",
@@ -2322,7 +2236,6 @@
         "type": "territory"
     },
     "asia/yemen": {
-        "continent": "Asia",
         "geocoder_nlp": {
             "path": "geocoder-nlp/asia-yemen",
             "size": "5525507",
@@ -2331,7 +2244,7 @@
             "version": "1"
         },
         "id": "asia/yemen",
-        "name": "Yemen",
+        "name": "Asia/Yemen",
         "osmscout": {
             "path": "osmscout/asia-yemen",
             "size": "35090937",
@@ -2349,7 +2262,6 @@
         "type": "territory"
     },
     "australia-oceania/australia": {
-        "continent": "Australia and Oceania",
         "geocoder_nlp": {
             "path": "geocoder-nlp/australia-oceania-australia",
             "size": "111316995",
@@ -2358,7 +2270,7 @@
             "version": "1"
         },
         "id": "australia-oceania/australia",
-        "name": "Australia",
+        "name": "Australia and Oceania/Australia",
         "osmscout": {
             "path": "osmscout/australia-oceania-australia",
             "size": "447621123",
@@ -2376,7 +2288,6 @@
         "type": "territory"
     },
     "australia-oceania/fiji": {
-        "continent": "Australia and Oceania",
         "geocoder_nlp": {
             "path": "geocoder-nlp/australia-oceania-fiji",
             "size": "1036291",
@@ -2385,7 +2296,7 @@
             "version": "1"
         },
         "id": "australia-oceania/fiji",
-        "name": "Fiji",
+        "name": "Australia and Oceania/Fiji",
         "osmscout": {
             "path": "osmscout/australia-oceania-fiji",
             "size": "6387537",
@@ -2403,7 +2314,6 @@
         "type": "territory"
     },
     "australia-oceania/new-caledonia": {
-        "continent": "Australia and Oceania",
         "geocoder_nlp": {
             "path": "geocoder-nlp/australia-oceania-new-caledonia",
             "size": "2748419",
@@ -2412,7 +2322,7 @@
             "version": "1"
         },
         "id": "australia-oceania/new-caledonia",
-        "name": "New Caledonia",
+        "name": "Australia and Oceania/New Caledonia",
         "osmscout": {
             "path": "osmscout/australia-oceania-new-caledonia",
             "size": "11605963",
@@ -2430,7 +2340,6 @@
         "type": "territory"
     },
     "australia-oceania/new-zealand": {
-        "continent": "Australia and Oceania",
         "geocoder_nlp": {
             "path": "geocoder-nlp/australia-oceania-new-zealand",
             "size": "18862083",
@@ -2439,7 +2348,7 @@
             "version": "1"
         },
         "id": "australia-oceania/new-zealand",
-        "name": "New Zealand",
+        "name": "Australia and Oceania/New Zealand",
         "osmscout": {
             "path": "osmscout/australia-oceania-new-zealand",
             "size": "159614141",
@@ -2457,7 +2366,6 @@
         "type": "territory"
     },
     "central-america/belize": {
-        "continent": "Central America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/central-america-belize",
             "size": "610307",
@@ -2466,7 +2374,7 @@
             "version": "1"
         },
         "id": "central-america/belize",
-        "name": "Belize",
+        "name": "Central America/Belize",
         "osmscout": {
             "path": "osmscout/central-america-belize",
             "size": "6058333",
@@ -2484,7 +2392,6 @@
         "type": "territory"
     },
     "central-america/cuba": {
-        "continent": "Central America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/central-america-cuba",
             "size": "4710403",
@@ -2493,7 +2400,7 @@
             "version": "1"
         },
         "id": "central-america/cuba",
-        "name": "Cuba",
+        "name": "Central America/Cuba",
         "osmscout": {
             "path": "osmscout/central-america-cuba",
             "size": "38024325",
@@ -2511,7 +2418,6 @@
         "type": "territory"
     },
     "central-america/guatemala": {
-        "continent": "Central America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/central-america-guatemala",
             "size": "5824515",
@@ -2520,7 +2426,7 @@
             "version": "1"
         },
         "id": "central-america/guatemala",
-        "name": "Guatemala",
+        "name": "Central America/Guatemala",
         "osmscout": {
             "path": "osmscout/central-america-guatemala",
             "size": "32557545",
@@ -2538,7 +2444,6 @@
         "type": "territory"
     },
     "central-america/haiti-and-domrep": {
-        "continent": "Central America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/central-america-haiti-and-domrep",
             "size": "13860867",
@@ -2547,7 +2452,7 @@
             "version": "1"
         },
         "id": "central-america/haiti-and-domrep",
-        "name": "Haiti and Dominican Republic",
+        "name": "Central America/Haiti and Dominican Republic",
         "osmscout": {
             "path": "osmscout/central-america-haiti-and-domrep",
             "size": "59365477",
@@ -2565,7 +2470,6 @@
         "type": "territory"
     },
     "central-america/nicaragua": {
-        "continent": "Central America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/central-america-nicaragua",
             "size": "3567619",
@@ -2574,7 +2478,7 @@
             "version": "1"
         },
         "id": "central-america/nicaragua",
-        "name": "Nicaragua",
+        "name": "Central America/Nicaragua",
         "osmscout": {
             "path": "osmscout/central-america-nicaragua",
             "size": "19651186",
@@ -2592,7 +2496,6 @@
         "type": "territory"
     },
     "europe/albania": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-albania",
             "size": "1572867",
@@ -2601,7 +2504,7 @@
             "version": "1"
         },
         "id": "europe/albania",
-        "name": "Albania",
+        "name": "Europe/Albania",
         "osmscout": {
             "path": "osmscout/europe-albania",
             "size": "25647117",
@@ -2619,7 +2522,6 @@
         "type": "territory"
     },
     "europe/andorra": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-andorra",
             "size": "307203",
@@ -2628,7 +2530,7 @@
             "version": "1"
         },
         "id": "europe/andorra",
-        "name": "Andorra",
+        "name": "Europe/Andorra",
         "osmscout": {
             "path": "osmscout/europe-andorra",
             "size": "3967960",
@@ -2646,7 +2548,6 @@
         "type": "territory"
     },
     "europe/austria": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-austria",
             "size": "152555523",
@@ -2655,7 +2556,7 @@
             "version": "1"
         },
         "id": "europe/austria",
-        "name": "Austria",
+        "name": "Europe/Austria",
         "osmscout": {
             "path": "osmscout/europe-austria",
             "size": "450887552",
@@ -2673,7 +2574,6 @@
         "type": "territory"
     },
     "europe/azores": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-azores",
             "size": "1445891",
@@ -2682,7 +2582,7 @@
             "version": "1"
         },
         "id": "europe/azores",
-        "name": "Azores",
+        "name": "Europe/Azores",
         "osmscout": {
             "path": "osmscout/europe-azores",
             "size": "7349048",
@@ -2700,7 +2600,6 @@
         "type": "territory"
     },
     "europe/belarus": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-belarus",
             "size": "100077571",
@@ -2709,7 +2608,7 @@
             "version": "1"
         },
         "id": "europe/belarus",
-        "name": "Belarus",
+        "name": "Europe/Belarus",
         "osmscout": {
             "path": "osmscout/europe-belarus",
             "size": "165407722",
@@ -2727,7 +2626,6 @@
         "type": "territory"
     },
     "europe/belgium": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-belgium",
             "size": "164249603",
@@ -2736,7 +2634,7 @@
             "version": "1"
         },
         "id": "europe/belgium",
-        "name": "Belgium",
+        "name": "Europe/Belgium",
         "osmscout": {
             "path": "osmscout/europe-belgium",
             "size": "267950603",
@@ -2754,7 +2652,6 @@
         "type": "territory"
     },
     "europe/bosnia-herzegovina": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-bosnia-herzegovina",
             "size": "5222403",
@@ -2763,7 +2660,7 @@
             "version": "1"
         },
         "id": "europe/bosnia-herzegovina",
-        "name": "Bosnia and Herzegovina",
+        "name": "Europe/Bosnia and Herzegovina",
         "osmscout": {
             "path": "osmscout/europe-bosnia-herzegovina",
             "size": "62210493",
@@ -2781,7 +2678,6 @@
         "type": "territory"
     },
     "europe/bulgaria": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-bulgaria",
             "size": "25944067",
@@ -2790,7 +2686,7 @@
             "version": "1"
         },
         "id": "europe/bulgaria",
-        "name": "Bulgaria",
+        "name": "Europe/Bulgaria",
         "osmscout": {
             "path": "osmscout/europe-bulgaria",
             "size": "98182007",
@@ -2808,7 +2704,6 @@
         "type": "territory"
     },
     "europe/croatia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-croatia",
             "size": "12984323",
@@ -2817,7 +2712,7 @@
             "version": "1"
         },
         "id": "europe/croatia",
-        "name": "Croatia",
+        "name": "Europe/Croatia",
         "osmscout": {
             "path": "osmscout/europe-croatia",
             "size": "94790573",
@@ -2835,7 +2730,6 @@
         "type": "territory"
     },
     "europe/cyprus": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-cyprus",
             "size": "3018755",
@@ -2844,7 +2738,7 @@
             "version": "1"
         },
         "id": "europe/cyprus",
-        "name": "Cyprus",
+        "name": "Europe/Cyprus",
         "osmscout": {
             "path": "osmscout/europe-cyprus",
             "size": "14707444",
@@ -2862,7 +2756,6 @@
         "type": "territory"
     },
     "europe/czech-republic": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-czech-republic",
             "size": "301387779",
@@ -2871,7 +2764,7 @@
             "version": "1"
         },
         "id": "europe/czech-republic",
-        "name": "Czech Republic",
+        "name": "Europe/Czech Republic",
         "osmscout": {
             "path": "osmscout/europe-czech-republic",
             "size": "598528427",
@@ -2889,7 +2782,6 @@
         "type": "territory"
     },
     "europe/denmark": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-denmark",
             "size": "206237699",
@@ -2898,7 +2790,7 @@
             "version": "1"
         },
         "id": "europe/denmark",
-        "name": "Denmark",
+        "name": "Europe/Denmark",
         "osmscout": {
             "path": "osmscout/europe-denmark",
             "size": "261655167",
@@ -2916,7 +2808,6 @@
         "type": "territory"
     },
     "europe/estonia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-estonia",
             "size": "19746819",
@@ -2925,7 +2816,7 @@
             "version": "1"
         },
         "id": "europe/estonia",
-        "name": "Estonia",
+        "name": "Europe/Estonia",
         "osmscout": {
             "path": "osmscout/europe-estonia",
             "size": "75850249",
@@ -2943,7 +2834,6 @@
         "type": "territory"
     },
     "europe/faroe-islands": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-faroe-islands",
             "size": "1908739",
@@ -2952,7 +2842,7 @@
             "version": "1"
         },
         "id": "europe/faroe-islands",
-        "name": "Faroe Islands",
+        "name": "Europe/Faroe Islands",
         "osmscout": {
             "path": "osmscout/europe-faroe-islands",
             "size": "4842323",
@@ -2970,7 +2860,6 @@
         "type": "territory"
     },
     "europe/finland": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-finland",
             "size": "57249795",
@@ -2979,7 +2868,7 @@
             "version": "1"
         },
         "id": "europe/finland",
-        "name": "Finland",
+        "name": "Europe/Finland",
         "osmscout": {
             "path": "osmscout/europe-finland",
             "size": "296372541",
@@ -2997,7 +2886,6 @@
         "type": "territory"
     },
     "europe/france": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-france",
             "size": "661037059",
@@ -3006,7 +2894,7 @@
             "version": "1"
         },
         "id": "europe/france",
-        "name": "France",
+        "name": "Europe/France",
         "osmscout": {
             "path": "osmscout/europe-france",
             "size": "2654139736",
@@ -3024,7 +2912,6 @@
         "type": "territory"
     },
     "europe/georgia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-georgia",
             "size": "12333059",
@@ -3033,7 +2920,7 @@
             "version": "1"
         },
         "id": "europe/georgia",
-        "name": "Georgia",
+        "name": "Europe/Georgia",
         "osmscout": {
             "path": "osmscout/europe-georgia",
             "size": "45550077",
@@ -3051,7 +2938,6 @@
         "type": "territory"
     },
     "europe/germany": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-germany",
             "size": "1568428035",
@@ -3060,7 +2946,7 @@
             "version": "1"
         },
         "id": "europe/germany",
-        "name": "Germany",
+        "name": "Europe/Germany",
         "osmscout": {
             "path": "osmscout/europe-germany",
             "size": "2970724787",
@@ -3078,7 +2964,6 @@
         "type": "territory"
     },
     "europe/great-britain": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-great-britain",
             "size": "369729539",
@@ -3087,7 +2972,7 @@
             "version": "1"
         },
         "id": "europe/great-britain",
-        "name": "United Kingdom",
+        "name": "Europe/United Kingdom",
         "osmscout": {
             "path": "osmscout/europe-great-britain",
             "size": "1004441418",
@@ -3105,7 +2990,6 @@
         "type": "territory"
     },
     "europe/greece": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-greece",
             "size": "39993347",
@@ -3114,7 +2998,7 @@
             "version": "1"
         },
         "id": "europe/greece",
-        "name": "Greece",
+        "name": "Europe/Greece",
         "osmscout": {
             "path": "osmscout/europe-greece",
             "size": "178472704",
@@ -3132,7 +3016,6 @@
         "type": "territory"
     },
     "europe/hungary": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-hungary",
             "size": "51621891",
@@ -3141,7 +3024,7 @@
             "version": "1"
         },
         "id": "europe/hungary",
-        "name": "Hungary",
+        "name": "Europe/Hungary",
         "osmscout": {
             "path": "osmscout/europe-hungary",
             "size": "153477522",
@@ -3159,7 +3042,6 @@
         "type": "territory"
     },
     "europe/iceland": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-iceland",
             "size": "3047427",
@@ -3168,7 +3050,7 @@
             "version": "1"
         },
         "id": "europe/iceland",
-        "name": "Iceland",
+        "name": "Europe/Iceland",
         "osmscout": {
             "path": "osmscout/europe-iceland",
             "size": "31741449",
@@ -3186,7 +3068,6 @@
         "type": "territory"
     },
     "europe/ireland-and-northern-ireland": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-ireland-and-northern-ireland",
             "size": "37588995",
@@ -3195,7 +3076,7 @@
             "version": "1"
         },
         "id": "europe/ireland-and-northern-ireland",
-        "name": "Ireland and Northern Ireland",
+        "name": "Europe/Ireland and Northern Ireland",
         "osmscout": {
             "path": "osmscout/europe-ireland-and-northern-ireland",
             "size": "175401271",
@@ -3213,7 +3094,6 @@
         "type": "territory"
     },
     "europe/isle-of-man": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-isle-of-man",
             "size": "712707",
@@ -3222,7 +3102,7 @@
             "version": "1"
         },
         "id": "europe/isle-of-man",
-        "name": "Isle of Man",
+        "name": "Europe/Isle of Man",
         "osmscout": {
             "path": "osmscout/europe-isle-of-man",
             "size": "3806473",
@@ -3240,7 +3120,6 @@
         "type": "territory"
     },
     "europe/italy": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-italy",
             "size": "409337859",
@@ -3249,7 +3128,7 @@
             "version": "1"
         },
         "id": "europe/italy",
-        "name": "Italy",
+        "name": "Europe/Italy",
         "osmscout": {
             "path": "osmscout/europe-italy",
             "size": "1223106998",
@@ -3267,7 +3146,6 @@
         "type": "territory"
     },
     "europe/kosovo": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-kosovo",
             "size": "1376259",
@@ -3276,7 +3154,7 @@
             "version": "1"
         },
         "id": "europe/kosovo",
-        "name": "Kosovo",
+        "name": "Europe/Kosovo",
         "osmscout": {
             "path": "osmscout/europe-kosovo",
             "size": "10824405",
@@ -3294,7 +3172,6 @@
         "type": "territory"
     },
     "europe/latvia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-latvia",
             "size": "7905283",
@@ -3303,7 +3180,7 @@
             "version": "1"
         },
         "id": "europe/latvia",
-        "name": "Latvia",
+        "name": "Europe/Latvia",
         "osmscout": {
             "path": "osmscout/europe-latvia",
             "size": "54262050",
@@ -3321,7 +3198,6 @@
         "type": "territory"
     },
     "europe/liechtenstein": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-liechtenstein",
             "size": "430083",
@@ -3330,7 +3206,7 @@
             "version": "1"
         },
         "id": "europe/liechtenstein",
-        "name": "Liechtenstein",
+        "name": "Europe/Liechtenstein",
         "osmscout": {
             "path": "osmscout/europe-liechtenstein",
             "size": "2304386",
@@ -3348,7 +3224,6 @@
         "type": "territory"
     },
     "europe/lithuania": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-lithuania",
             "size": "24350723",
@@ -3357,7 +3232,7 @@
             "version": "1"
         },
         "id": "europe/lithuania",
-        "name": "Lithuania",
+        "name": "Europe/Lithuania",
         "osmscout": {
             "path": "osmscout/europe-lithuania",
             "size": "97563676",
@@ -3375,7 +3250,6 @@
         "type": "territory"
     },
     "europe/luxembourg": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-luxembourg",
             "size": "5984259",
@@ -3384,7 +3258,7 @@
             "version": "1"
         },
         "id": "europe/luxembourg",
-        "name": "Luxembourg",
+        "name": "Europe/Luxembourg",
         "osmscout": {
             "path": "osmscout/europe-luxembourg",
             "size": "19165577",
@@ -3402,7 +3276,6 @@
         "type": "territory"
     },
     "europe/macedonia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-macedonia",
             "size": "3543043",
@@ -3411,7 +3284,7 @@
             "version": "1"
         },
         "id": "europe/macedonia",
-        "name": "Macedonia, Republic of",
+        "name": "Europe/Macedonia, Republic of",
         "osmscout": {
             "path": "osmscout/europe-macedonia",
             "size": "17270782",
@@ -3429,7 +3302,6 @@
         "type": "territory"
     },
     "europe/malta": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-malta",
             "size": "3162115",
@@ -3438,7 +3310,7 @@
             "version": "1"
         },
         "id": "europe/malta",
-        "name": "Malta",
+        "name": "Europe/Malta",
         "osmscout": {
             "path": "osmscout/europe-malta",
             "size": "4660807",
@@ -3456,7 +3328,6 @@
         "type": "territory"
     },
     "europe/moldova": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-moldova",
             "size": "7188483",
@@ -3465,7 +3336,7 @@
             "version": "1"
         },
         "id": "europe/moldova",
-        "name": "Moldova, Republic of",
+        "name": "Europe/Moldova, Republic of",
         "osmscout": {
             "path": "osmscout/europe-moldova",
             "size": "30967662",
@@ -3483,7 +3354,6 @@
         "type": "territory"
     },
     "europe/monaco": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-monaco",
             "size": "176131",
@@ -3492,7 +3362,7 @@
             "version": "1"
         },
         "id": "europe/monaco",
-        "name": "Monaco",
+        "name": "Europe/Monaco",
         "osmscout": {
             "path": "osmscout/europe-monaco",
             "size": "331746",
@@ -3510,7 +3380,6 @@
         "type": "territory"
     },
     "europe/montenegro": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-montenegro",
             "size": "1081347",
@@ -3519,7 +3388,7 @@
             "version": "1"
         },
         "id": "europe/montenegro",
-        "name": "Montenegro",
+        "name": "Europe/Montenegro",
         "osmscout": {
             "path": "osmscout/europe-montenegro",
             "size": "18882204",
@@ -3537,7 +3406,6 @@
         "type": "territory"
     },
     "europe/netherlands": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-netherlands",
             "size": "754847747",
@@ -3546,7 +3414,7 @@
             "version": "1"
         },
         "id": "europe/netherlands",
-        "name": "Netherlands",
+        "name": "Europe/Netherlands",
         "osmscout": {
             "path": "osmscout/europe-netherlands",
             "size": "984318764",
@@ -3564,7 +3432,6 @@
         "type": "territory"
     },
     "europe/norway": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-norway",
             "size": "141320195",
@@ -3573,7 +3440,7 @@
             "version": "1"
         },
         "id": "europe/norway",
-        "name": "Norway",
+        "name": "Europe/Norway",
         "osmscout": {
             "path": "osmscout/europe-norway",
             "size": "481975460",
@@ -3591,7 +3458,6 @@
         "type": "territory"
     },
     "europe/poland": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-poland",
             "size": "634306563",
@@ -3600,7 +3466,7 @@
             "version": "1"
         },
         "id": "europe/poland",
-        "name": "Poland",
+        "name": "Europe/Poland",
         "osmscout": {
             "path": "osmscout/europe-poland",
             "size": "1034150966",
@@ -3618,7 +3484,6 @@
         "type": "territory"
     },
     "europe/portugal": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-portugal",
             "size": "45973507",
@@ -3627,7 +3492,7 @@
             "version": "1"
         },
         "id": "europe/portugal",
-        "name": "Portugal",
+        "name": "Europe/Portugal",
         "osmscout": {
             "path": "osmscout/europe-portugal",
             "size": "207500262",
@@ -3645,7 +3510,6 @@
         "type": "territory"
     },
     "europe/romania": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-romania",
             "size": "43769859",
@@ -3654,7 +3518,7 @@
             "version": "1"
         },
         "id": "europe/romania",
-        "name": "Romania",
+        "name": "Europe/Romania",
         "osmscout": {
             "path": "osmscout/europe-romania",
             "size": "199508979",
@@ -3672,7 +3536,6 @@
         "type": "territory"
     },
     "europe/russia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-russia",
             "size": "828776451",
@@ -3681,7 +3544,7 @@
             "version": "1"
         },
         "id": "europe/russia",
-        "name": "Russian Federation",
+        "name": "Europe/Russian Federation",
         "osmscout": {
             "path": "osmscout/europe-russia",
             "size": "2737791734",
@@ -3699,7 +3562,6 @@
         "type": "territory"
     },
     "europe/serbia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-serbia",
             "size": "17690627",
@@ -3708,7 +3570,7 @@
             "version": "1"
         },
         "id": "europe/serbia",
-        "name": "Serbia",
+        "name": "Europe/Serbia",
         "osmscout": {
             "path": "osmscout/europe-serbia",
             "size": "58633491",
@@ -3726,7 +3588,6 @@
         "type": "territory"
     },
     "europe/slovakia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-slovakia",
             "size": "82460675",
@@ -3735,7 +3596,7 @@
             "version": "1"
         },
         "id": "europe/slovakia",
-        "name": "Slovakia",
+        "name": "Europe/Slovakia",
         "osmscout": {
             "path": "osmscout/europe-slovakia",
             "size": "157645231",
@@ -3753,7 +3614,6 @@
         "type": "territory"
     },
     "europe/slovenia": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-slovenia",
             "size": "11534339",
@@ -3762,7 +3622,7 @@
             "version": "1"
         },
         "id": "europe/slovenia",
-        "name": "Slovenia",
+        "name": "Europe/Slovenia",
         "osmscout": {
             "path": "osmscout/europe-slovenia",
             "size": "146755885",
@@ -3780,7 +3640,6 @@
         "type": "territory"
     },
     "europe/spain": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-spain",
             "size": "294834179",
@@ -3789,7 +3648,7 @@
             "version": "1"
         },
         "id": "europe/spain",
-        "name": "Spain",
+        "name": "Europe/Spain",
         "osmscout": {
             "path": "osmscout/europe-spain",
             "size": "775826386",
@@ -3807,7 +3666,6 @@
         "type": "territory"
     },
     "europe/sweden": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-sweden",
             "size": "82391043",
@@ -3816,7 +3674,7 @@
             "version": "1"
         },
         "id": "europe/sweden",
-        "name": "Sweden",
+        "name": "Europe/Sweden",
         "osmscout": {
             "path": "osmscout/europe-sweden",
             "size": "343851457",
@@ -3834,7 +3692,6 @@
         "type": "territory"
     },
     "europe/switzerland": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-switzerland",
             "size": "108400643",
@@ -3843,7 +3700,7 @@
             "version": "1"
         },
         "id": "europe/switzerland",
-        "name": "Switzerland",
+        "name": "Europe/Switzerland",
         "osmscout": {
             "path": "osmscout/europe-switzerland",
             "size": "273200415",
@@ -3861,7 +3718,6 @@
         "type": "territory"
     },
     "europe/turkey": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-turkey",
             "size": "29007875",
@@ -3870,7 +3726,7 @@
             "version": "1"
         },
         "id": "europe/turkey",
-        "name": "Turkey",
+        "name": "Europe/Turkey",
         "osmscout": {
             "path": "osmscout/europe-turkey",
             "size": "299850242",
@@ -3888,7 +3744,6 @@
         "type": "territory"
     },
     "europe/ukraine": {
-        "continent": "Europe",
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-ukraine",
             "size": "153927683",
@@ -3897,7 +3752,7 @@
             "version": "1"
         },
         "id": "europe/ukraine",
-        "name": "Ukraine",
+        "name": "Europe/Ukraine",
         "osmscout": {
             "path": "osmscout/europe-ukraine",
             "size": "452800079",
@@ -3915,7 +3770,6 @@
         "type": "territory"
     },
     "north-america/canada": {
-        "continent": "North America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-canada",
             "size": "365047811",
@@ -3924,7 +3778,7 @@
             "version": "1"
         },
         "id": "north-america/canada",
-        "name": "Canada",
+        "name": "North America/Canada",
         "osmscout": {
             "path": "osmscout/north-america-canada",
             "size": "2218928553",
@@ -3942,7 +3796,6 @@
         "type": "territory"
     },
     "north-america/greenland": {
-        "continent": "North America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-greenland",
             "size": "319491",
@@ -3951,7 +3804,7 @@
             "version": "1"
         },
         "id": "north-america/greenland",
-        "name": "Greenland",
+        "name": "North America/Greenland",
         "osmscout": {
             "path": "osmscout/north-america-greenland",
             "size": "58620756",
@@ -3969,7 +3822,6 @@
         "type": "territory"
     },
     "north-america/mexico": {
-        "continent": "North America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-mexico",
             "size": "62144515",
@@ -3978,7 +3830,7 @@
             "version": "1"
         },
         "id": "north-america/mexico",
-        "name": "Mexico",
+        "name": "North America/Mexico",
         "osmscout": {
             "path": "osmscout/north-america-mexico",
             "size": "349998482",
@@ -3996,7 +3848,6 @@
         "type": "territory"
     },
     "north-america/us-midwest": {
-        "continent": "North America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-midwest",
             "size": "388440067",
@@ -4005,7 +3856,7 @@
             "version": "1"
         },
         "id": "north-america/us-midwest",
-        "name": "Us Midwest",
+        "name": "North America/Us Midwest",
         "osmscout": {
             "path": "osmscout/north-america-us-midwest",
             "size": "1315030828",
@@ -4023,7 +3874,6 @@
         "type": "territory"
     },
     "north-america/us-northeast": {
-        "continent": "North America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-northeast",
             "size": "318435331",
@@ -4032,7 +3882,7 @@
             "version": "1"
         },
         "id": "north-america/us-northeast",
-        "name": "Us Northeast",
+        "name": "North America/Us Northeast",
         "osmscout": {
             "path": "osmscout/north-america-us-northeast",
             "size": "736269308",
@@ -4050,7 +3900,6 @@
         "type": "territory"
     },
     "north-america/us-pacific": {
-        "continent": "North America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-pacific",
             "size": "8060931",
@@ -4059,7 +3908,7 @@
             "version": "1"
         },
         "id": "north-america/us-pacific",
-        "name": "Us Pacific",
+        "name": "North America/Us Pacific",
         "osmscout": {
             "path": "osmscout/north-america-us-pacific",
             "size": "118940093",
@@ -4077,7 +3926,6 @@
         "type": "territory"
     },
     "north-america/us-south": {
-        "continent": "North America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-south",
             "size": "859955203",
@@ -4086,7 +3934,7 @@
             "version": "1"
         },
         "id": "north-america/us-south",
-        "name": "Us South",
+        "name": "North America/Us South",
         "osmscout": {
             "path": "osmscout/north-america-us-south",
             "size": "2107515427",
@@ -4104,7 +3952,6 @@
         "type": "territory"
     },
     "north-america/us-west": {
-        "continent": "North America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-west",
             "size": "445616131",
@@ -4113,7 +3960,7 @@
             "version": "1"
         },
         "id": "north-america/us-west",
-        "name": "Us West",
+        "name": "North America/Us West",
         "osmscout": {
             "path": "osmscout/north-america-us-west",
             "size": "1486708036",
@@ -4131,7 +3978,6 @@
         "type": "territory"
     },
     "north-america/us/alabama": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-alabama",
             "size": "35291139",
@@ -4140,7 +3986,7 @@
             "version": "1"
         },
         "id": "north-america/us/alabama",
-        "name": "Alabama",
+        "name": "North America/US/Alabama",
         "osmscout": {
             "path": "osmscout/north-america-us-alabama",
             "size": "88371000",
@@ -4158,7 +4004,6 @@
         "type": "territory"
     },
     "north-america/us/alaska": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-alaska",
             "size": "4771843",
@@ -4167,7 +4012,7 @@
             "version": "1"
         },
         "id": "north-america/us/alaska",
-        "name": "Alaska",
+        "name": "North America/US/Alaska",
         "osmscout": {
             "path": "osmscout/north-america-us-alaska",
             "size": "69730610",
@@ -4185,7 +4030,6 @@
         "type": "territory"
     },
     "north-america/us/arizona": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-arizona",
             "size": "25346051",
@@ -4194,7 +4038,7 @@
             "version": "1"
         },
         "id": "north-america/us/arizona",
-        "name": "Arizona",
+        "name": "North America/US/Arizona",
         "osmscout": {
             "path": "osmscout/north-america-us-arizona",
             "size": "121718976",
@@ -4212,7 +4056,6 @@
         "type": "territory"
     },
     "north-america/us/arkansas": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-arkansas",
             "size": "38158339",
@@ -4221,7 +4064,7 @@
             "version": "1"
         },
         "id": "north-america/us/arkansas",
-        "name": "Arkansas",
+        "name": "North America/US/Arkansas",
         "osmscout": {
             "path": "osmscout/north-america-us-arkansas",
             "size": "61187458",
@@ -4239,7 +4082,6 @@
         "type": "territory"
     },
     "north-america/us/california": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-california",
             "size": "186310659",
@@ -4248,7 +4090,7 @@
             "version": "1"
         },
         "id": "north-america/us/california",
-        "name": "California",
+        "name": "North America/US/California",
         "osmscout": {
             "path": "osmscout/north-america-us-california",
             "size": "595083823",
@@ -4266,7 +4108,6 @@
         "type": "territory"
     },
     "north-america/us/colorado": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-colorado",
             "size": "30986243",
@@ -4275,7 +4116,7 @@
             "version": "1"
         },
         "id": "north-america/us/colorado",
-        "name": "Colorado",
+        "name": "North America/US/Colorado",
         "osmscout": {
             "path": "osmscout/north-america-us-colorado",
             "size": "155090413",
@@ -4293,7 +4134,6 @@
         "type": "territory"
     },
     "north-america/us/connecticut": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-connecticut",
             "size": "11706371",
@@ -4302,7 +4142,7 @@
             "version": "1"
         },
         "id": "north-america/us/connecticut",
-        "name": "Connecticut",
+        "name": "North America/US/Connecticut",
         "osmscout": {
             "path": "osmscout/north-america-us-connecticut",
             "size": "30852112",
@@ -4320,7 +4160,6 @@
         "type": "territory"
     },
     "north-america/us/delaware": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-delaware",
             "size": "3788803",
@@ -4329,7 +4168,7 @@
             "version": "1"
         },
         "id": "north-america/us/delaware",
-        "name": "Delaware",
+        "name": "North America/US/Delaware",
         "osmscout": {
             "path": "osmscout/north-america-us-delaware",
             "size": "11515091",
@@ -4347,7 +4186,6 @@
         "type": "territory"
     },
     "north-america/us/district-of-columbia": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-district-of-columbia",
             "size": "12722179",
@@ -4356,7 +4194,7 @@
             "version": "1"
         },
         "id": "north-america/us/district-of-columbia",
-        "name": "District Of Columbia",
+        "name": "North America/US/District Of Columbia",
         "osmscout": {
             "path": "osmscout/north-america-us-district-of-columbia",
             "size": "11455534",
@@ -4374,7 +4212,6 @@
         "type": "territory"
     },
     "north-america/us/florida": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-florida",
             "size": "99131395",
@@ -4383,7 +4220,7 @@
             "version": "1"
         },
         "id": "north-america/us/florida",
-        "name": "Florida",
+        "name": "North America/US/Florida",
         "osmscout": {
             "path": "osmscout/north-america-us-florida",
             "size": "211028299",
@@ -4401,7 +4238,6 @@
         "type": "territory"
     },
     "north-america/us/georgia": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-georgia",
             "size": "63291395",
@@ -4410,7 +4246,7 @@
             "version": "1"
         },
         "id": "north-america/us/georgia",
-        "name": "Georgia",
+        "name": "North America/US/Georgia",
         "osmscout": {
             "path": "osmscout/north-america-us-georgia",
             "size": "171577461",
@@ -4428,7 +4264,6 @@
         "type": "territory"
     },
     "north-america/us/hawaii": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-hawaii",
             "size": "3149827",
@@ -4437,7 +4272,7 @@
             "version": "1"
         },
         "id": "north-america/us/hawaii",
-        "name": "Hawaii",
+        "name": "North America/US/Hawaii",
         "osmscout": {
             "path": "osmscout/north-america-us-hawaii",
             "size": "18671780",
@@ -4455,7 +4290,6 @@
         "type": "territory"
     },
     "north-america/us/idaho": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-idaho",
             "size": "10076163",
@@ -4464,7 +4298,7 @@
             "version": "1"
         },
         "id": "north-america/us/idaho",
-        "name": "Idaho",
+        "name": "North America/US/Idaho",
         "osmscout": {
             "path": "osmscout/north-america-us-idaho",
             "size": "60469067",
@@ -4482,7 +4316,6 @@
         "type": "territory"
     },
     "north-america/us/illinois": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-illinois",
             "size": "89583619",
@@ -4491,7 +4324,7 @@
             "version": "1"
         },
         "id": "north-america/us/illinois",
-        "name": "Illinois",
+        "name": "North America/US/Illinois",
         "osmscout": {
             "path": "osmscout/north-america-us-illinois",
             "size": "179117818",
@@ -4509,7 +4342,6 @@
         "type": "territory"
     },
     "north-america/us/indiana": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-indiana",
             "size": "32968707",
@@ -4518,7 +4350,7 @@
             "version": "1"
         },
         "id": "north-america/us/indiana",
-        "name": "Indiana",
+        "name": "North America/US/Indiana",
         "osmscout": {
             "path": "osmscout/north-america-us-indiana",
             "size": "90754397",
@@ -4536,7 +4368,6 @@
         "type": "territory"
     },
     "north-america/us/iowa": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-iowa",
             "size": "20471811",
@@ -4545,7 +4376,7 @@
             "version": "1"
         },
         "id": "north-america/us/iowa",
-        "name": "Iowa",
+        "name": "North America/US/Iowa",
         "osmscout": {
             "path": "osmscout/north-america-us-iowa",
             "size": "101291996",
@@ -4563,7 +4394,6 @@
         "type": "territory"
     },
     "north-america/us/kansas": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-kansas",
             "size": "23195651",
@@ -4572,7 +4402,7 @@
             "version": "1"
         },
         "id": "north-america/us/kansas",
-        "name": "Kansas",
+        "name": "North America/US/Kansas",
         "osmscout": {
             "path": "osmscout/north-america-us-kansas",
             "size": "76647814",
@@ -4590,7 +4420,6 @@
         "type": "territory"
     },
     "north-america/us/kentucky": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-kentucky",
             "size": "66781187",
@@ -4599,7 +4428,7 @@
             "version": "1"
         },
         "id": "north-america/us/kentucky",
-        "name": "Kentucky",
+        "name": "North America/US/Kentucky",
         "osmscout": {
             "path": "osmscout/north-america-us-kentucky",
             "size": "99786879",
@@ -4617,7 +4446,6 @@
         "type": "territory"
     },
     "north-america/us/louisiana": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-louisiana",
             "size": "32960515",
@@ -4626,7 +4454,7 @@
             "version": "1"
         },
         "id": "north-america/us/louisiana",
-        "name": "Louisiana",
+        "name": "North America/US/Louisiana",
         "osmscout": {
             "path": "osmscout/north-america-us-louisiana",
             "size": "98907745",
@@ -4644,7 +4472,6 @@
         "type": "territory"
     },
     "north-america/us/maine": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-maine",
             "size": "10276867",
@@ -4653,7 +4480,7 @@
             "version": "1"
         },
         "id": "north-america/us/maine",
-        "name": "Maine",
+        "name": "North America/US/Maine",
         "osmscout": {
             "path": "osmscout/north-america-us-maine",
             "size": "41960764",
@@ -4671,7 +4498,6 @@
         "type": "territory"
     },
     "north-america/us/maryland": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-maryland",
             "size": "65024003",
@@ -4680,7 +4506,7 @@
             "version": "1"
         },
         "id": "north-america/us/maryland",
-        "name": "Maryland",
+        "name": "North America/US/Maryland",
         "osmscout": {
             "path": "osmscout/north-america-us-maryland",
             "size": "114294662",
@@ -4698,7 +4524,6 @@
         "type": "territory"
     },
     "north-america/us/massachusetts": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-massachusetts",
             "size": "35053571",
@@ -4707,7 +4532,7 @@
             "version": "1"
         },
         "id": "north-america/us/massachusetts",
-        "name": "Massachusetts",
+        "name": "North America/US/Massachusetts",
         "osmscout": {
             "path": "osmscout/north-america-us-massachusetts",
             "size": "149828835",
@@ -4725,7 +4550,6 @@
         "type": "territory"
     },
     "north-america/us/michigan": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-michigan",
             "size": "41857027",
@@ -4734,7 +4558,7 @@
             "version": "1"
         },
         "id": "north-america/us/michigan",
-        "name": "Michigan",
+        "name": "North America/US/Michigan",
         "osmscout": {
             "path": "osmscout/north-america-us-michigan",
             "size": "142576226",
@@ -4752,7 +4576,6 @@
         "type": "territory"
     },
     "north-america/us/minnesota": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-minnesota",
             "size": "34631683",
@@ -4761,7 +4584,7 @@
             "version": "1"
         },
         "id": "north-america/us/minnesota",
-        "name": "Minnesota",
+        "name": "North America/US/Minnesota",
         "osmscout": {
             "path": "osmscout/north-america-us-minnesota",
             "size": "161287826",
@@ -4779,7 +4602,6 @@
         "type": "territory"
     },
     "north-america/us/mississippi": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-mississippi",
             "size": "28135427",
@@ -4788,7 +4610,7 @@
             "version": "1"
         },
         "id": "north-america/us/mississippi",
-        "name": "Mississippi",
+        "name": "North America/US/Mississippi",
         "osmscout": {
             "path": "osmscout/north-america-us-mississippi",
             "size": "66256890",
@@ -4806,7 +4628,6 @@
         "type": "territory"
     },
     "north-america/us/missouri": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-missouri",
             "size": "35913731",
@@ -4815,7 +4636,7 @@
             "version": "1"
         },
         "id": "north-america/us/missouri",
-        "name": "Missouri",
+        "name": "North America/US/Missouri",
         "osmscout": {
             "path": "osmscout/north-america-us-missouri",
             "size": "114201139",
@@ -4833,7 +4654,6 @@
         "type": "territory"
     },
     "north-america/us/montana": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-montana",
             "size": "8990723",
@@ -4842,7 +4662,7 @@
             "version": "1"
         },
         "id": "north-america/us/montana",
-        "name": "Montana",
+        "name": "North America/US/Montana",
         "osmscout": {
             "path": "osmscout/north-america-us-montana",
             "size": "61733918",
@@ -4860,7 +4680,6 @@
         "type": "territory"
     },
     "north-america/us/nebraska": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-nebraska",
             "size": "11272195",
@@ -4869,7 +4688,7 @@
             "version": "1"
         },
         "id": "north-america/us/nebraska",
-        "name": "Nebraska",
+        "name": "North America/US/Nebraska",
         "osmscout": {
             "path": "osmscout/north-america-us-nebraska",
             "size": "67323474",
@@ -4887,7 +4706,6 @@
         "type": "territory"
     },
     "north-america/us/nevada": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-nevada",
             "size": "11354115",
@@ -4896,7 +4714,7 @@
             "version": "1"
         },
         "id": "north-america/us/nevada",
-        "name": "Nevada",
+        "name": "North America/US/Nevada",
         "osmscout": {
             "path": "osmscout/north-america-us-nevada",
             "size": "46669266",
@@ -4914,7 +4732,6 @@
         "type": "territory"
     },
     "north-america/us/new-hampshire": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-new-hampshire",
             "size": "12271619",
@@ -4923,7 +4740,7 @@
             "version": "1"
         },
         "id": "north-america/us/new-hampshire",
-        "name": "New Hampshire",
+        "name": "North America/US/New Hampshire",
         "osmscout": {
             "path": "osmscout/north-america-us-new-hampshire",
             "size": "34182462",
@@ -4941,7 +4758,6 @@
         "type": "territory"
     },
     "north-america/us/new-jersey": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-new-jersey",
             "size": "25243651",
@@ -4950,7 +4766,7 @@
             "version": "1"
         },
         "id": "north-america/us/new-jersey",
-        "name": "New Jersey",
+        "name": "North America/US/New Jersey",
         "osmscout": {
             "path": "osmscout/north-america-us-new-jersey",
             "size": "89593346",
@@ -4968,7 +4784,6 @@
         "type": "territory"
     },
     "north-america/us/new-mexico": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-new-mexico",
             "size": "15560707",
@@ -4977,7 +4792,7 @@
             "version": "1"
         },
         "id": "north-america/us/new-mexico",
-        "name": "New Mexico",
+        "name": "North America/US/New Mexico",
         "osmscout": {
             "path": "osmscout/north-america-us-new-mexico",
             "size": "70462199",
@@ -4995,7 +4810,6 @@
         "type": "territory"
     },
     "north-america/us/new-york": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-new-york",
             "size": "148160515",
@@ -5004,7 +4818,7 @@
             "version": "1"
         },
         "id": "north-america/us/new-york",
-        "name": "New York",
+        "name": "North America/US/New York",
         "osmscout": {
             "path": "osmscout/north-america-us-new-york",
             "size": "203942820",
@@ -5022,7 +4836,6 @@
         "type": "territory"
     },
     "north-america/us/north-carolina": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-north-carolina",
             "size": "64147459",
@@ -5031,7 +4844,7 @@
             "version": "1"
         },
         "id": "north-america/us/north-carolina",
-        "name": "North Carolina",
+        "name": "North America/US/North Carolina",
         "osmscout": {
             "path": "osmscout/north-america-us-north-carolina",
             "size": "204425276",
@@ -5049,7 +4862,6 @@
         "type": "territory"
     },
     "north-america/us/north-dakota": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-north-dakota",
             "size": "5042179",
@@ -5058,7 +4870,7 @@
             "version": "1"
         },
         "id": "north-america/us/north-dakota",
-        "name": "North Dakota",
+        "name": "North America/US/North Dakota",
         "osmscout": {
             "path": "osmscout/north-america-us-north-dakota",
             "size": "82022635",
@@ -5076,7 +4888,6 @@
         "type": "territory"
     },
     "north-america/us/ohio": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-ohio",
             "size": "47804419",
@@ -5085,7 +4896,7 @@
             "version": "1"
         },
         "id": "north-america/us/ohio",
-        "name": "Ohio",
+        "name": "North America/US/Ohio",
         "osmscout": {
             "path": "osmscout/north-america-us-ohio",
             "size": "129013011",
@@ -5103,7 +4914,6 @@
         "type": "territory"
     },
     "north-america/us/oklahoma": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-oklahoma",
             "size": "21319683",
@@ -5112,7 +4922,7 @@
             "version": "1"
         },
         "id": "north-america/us/oklahoma",
-        "name": "Oklahoma",
+        "name": "North America/US/Oklahoma",
         "osmscout": {
             "path": "osmscout/north-america-us-oklahoma",
             "size": "116170627",
@@ -5130,7 +4940,6 @@
         "type": "territory"
     },
     "north-america/us/oregon": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-oregon",
             "size": "61968387",
@@ -5139,7 +4948,7 @@
             "version": "1"
         },
         "id": "north-america/us/oregon",
-        "name": "Oregon",
+        "name": "North America/US/Oregon",
         "osmscout": {
             "path": "osmscout/north-america-us-oregon",
             "size": "126386467",
@@ -5157,7 +4966,6 @@
         "type": "territory"
     },
     "north-america/us/pennsylvania": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-pennsylvania",
             "size": "58245123",
@@ -5166,7 +4974,7 @@
             "version": "1"
         },
         "id": "north-america/us/pennsylvania",
-        "name": "Pennsylvania",
+        "name": "North America/US/Pennsylvania",
         "osmscout": {
             "path": "osmscout/north-america-us-pennsylvania",
             "size": "162920683",
@@ -5184,7 +4992,6 @@
         "type": "territory"
     },
     "north-america/us/rhode-island": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-rhode-island",
             "size": "3571715",
@@ -5193,7 +5000,7 @@
             "version": "1"
         },
         "id": "north-america/us/rhode-island",
-        "name": "Rhode Island",
+        "name": "North America/US/Rhode Island",
         "osmscout": {
             "path": "osmscout/north-america-us-rhode-island",
             "size": "14378794",
@@ -5211,7 +5018,6 @@
         "type": "territory"
     },
     "north-america/us/south-carolina": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-south-carolina",
             "size": "31600643",
@@ -5220,7 +5026,7 @@
             "version": "1"
         },
         "id": "north-america/us/south-carolina",
-        "name": "South Carolina",
+        "name": "North America/US/South Carolina",
         "osmscout": {
             "path": "osmscout/north-america-us-south-carolina",
             "size": "94125291",
@@ -5238,7 +5044,6 @@
         "type": "territory"
     },
     "north-america/us/south-dakota": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-south-dakota",
             "size": "6692867",
@@ -5247,7 +5052,7 @@
             "version": "1"
         },
         "id": "north-america/us/south-dakota",
-        "name": "South Dakota",
+        "name": "North America/US/South Dakota",
         "osmscout": {
             "path": "osmscout/north-america-us-south-dakota",
             "size": "33975455",
@@ -5265,7 +5070,6 @@
         "type": "territory"
     },
     "north-america/us/tennessee": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-tennessee",
             "size": "37216259",
@@ -5274,7 +5078,7 @@
             "version": "1"
         },
         "id": "north-america/us/tennessee",
-        "name": "Tennessee",
+        "name": "North America/US/Tennessee",
         "osmscout": {
             "path": "osmscout/north-america-us-tennessee",
             "size": "87475701",
@@ -5292,7 +5096,6 @@
         "type": "territory"
     },
     "north-america/us/texas": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-texas",
             "size": "145506307",
@@ -5301,7 +5104,7 @@
             "version": "1"
         },
         "id": "north-america/us/texas",
-        "name": "Texas",
+        "name": "North America/US/Texas",
         "osmscout": {
             "path": "osmscout/north-america-us-texas",
             "size": "387839981",
@@ -5319,7 +5122,6 @@
         "type": "territory"
     },
     "north-america/us/utah": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-utah",
             "size": "16646147",
@@ -5328,7 +5130,7 @@
             "version": "1"
         },
         "id": "north-america/us/utah",
-        "name": "Utah",
+        "name": "North America/US/Utah",
         "osmscout": {
             "path": "osmscout/north-america-us-utah",
             "size": "59438191",
@@ -5346,7 +5148,6 @@
         "type": "territory"
     },
     "north-america/us/vermont": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-vermont",
             "size": "5668867",
@@ -5355,7 +5156,7 @@
             "version": "1"
         },
         "id": "north-america/us/vermont",
-        "name": "Vermont",
+        "name": "North America/US/Vermont",
         "osmscout": {
             "path": "osmscout/north-america-us-vermont",
             "size": "18628027",
@@ -5373,7 +5174,6 @@
         "type": "territory"
     },
     "north-america/us/virginia": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-virginia",
             "size": "75784195",
@@ -5382,7 +5182,7 @@
             "version": "1"
         },
         "id": "north-america/us/virginia",
-        "name": "Virginia",
+        "name": "North America/US/Virginia",
         "osmscout": {
             "path": "osmscout/north-america-us-virginia",
             "size": "226782891",
@@ -5400,7 +5200,6 @@
         "type": "territory"
     },
     "north-america/us/washington": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-washington",
             "size": "65052675",
@@ -5409,7 +5208,7 @@
             "version": "1"
         },
         "id": "north-america/us/washington",
-        "name": "Washington",
+        "name": "North America/US/Washington",
         "osmscout": {
             "path": "osmscout/north-america-us-washington",
             "size": "134132571",
@@ -5427,7 +5226,6 @@
         "type": "territory"
     },
     "north-america/us/west-virginia": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-west-virginia",
             "size": "13373443",
@@ -5436,7 +5234,7 @@
             "version": "1"
         },
         "id": "north-america/us/west-virginia",
-        "name": "West Virginia",
+        "name": "North America/US/West Virginia",
         "osmscout": {
             "path": "osmscout/north-america-us-west-virginia",
             "size": "37639836",
@@ -5454,7 +5252,6 @@
         "type": "territory"
     },
     "north-america/us/wisconsin": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-wisconsin",
             "size": "31154179",
@@ -5463,7 +5260,7 @@
             "version": "1"
         },
         "id": "north-america/us/wisconsin",
-        "name": "Wisconsin",
+        "name": "North America/US/Wisconsin",
         "osmscout": {
             "path": "osmscout/north-america-us-wisconsin",
             "size": "129372188",
@@ -5481,7 +5278,6 @@
         "type": "territory"
     },
     "north-america/us/wyoming": {
-        "continent": "North America/US",
         "geocoder_nlp": {
             "path": "geocoder-nlp/north-america-us-wyoming",
             "size": "4100099",
@@ -5490,7 +5286,7 @@
             "version": "1"
         },
         "id": "north-america/us/wyoming",
-        "name": "Wyoming",
+        "name": "North America/US/Wyoming",
         "osmscout": {
             "path": "osmscout/north-america-us-wyoming",
             "size": "42184874",
@@ -5519,7 +5315,6 @@
         "type": "postal/global"
     },
     "south-america/argentina": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-argentina",
             "size": "89722883",
@@ -5528,7 +5323,7 @@
             "version": "1"
         },
         "id": "south-america/argentina",
-        "name": "Argentina",
+        "name": "South America/Argentina",
         "osmscout": {
             "path": "osmscout/south-america-argentina",
             "size": "271420463",
@@ -5546,7 +5341,6 @@
         "type": "territory"
     },
     "south-america/bolivia": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-bolivia",
             "size": "8060931",
@@ -5555,7 +5349,7 @@
             "version": "1"
         },
         "id": "south-america/bolivia",
-        "name": "Bolivia, Plurinational State of",
+        "name": "South America/Bolivia, Plurinational State of",
         "osmscout": {
             "path": "osmscout/south-america-bolivia",
             "size": "84973995",
@@ -5573,7 +5367,6 @@
         "type": "territory"
     },
     "south-america/brazil": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-brazil",
             "size": "253853699",
@@ -5582,7 +5375,7 @@
             "version": "1"
         },
         "id": "south-america/brazil",
-        "name": "Brazil",
+        "name": "South America/Brazil",
         "osmscout": {
             "path": "osmscout/south-america-brazil",
             "size": "884518648",
@@ -5600,7 +5393,6 @@
         "type": "territory"
     },
     "south-america/chile": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-chile",
             "size": "47390723",
@@ -5609,7 +5401,7 @@
             "version": "1"
         },
         "id": "south-america/chile",
-        "name": "Chile",
+        "name": "South America/Chile",
         "osmscout": {
             "path": "osmscout/south-america-chile",
             "size": "210468698",
@@ -5627,7 +5419,6 @@
         "type": "territory"
     },
     "south-america/colombia": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-colombia",
             "size": "24489987",
@@ -5636,7 +5427,7 @@
             "version": "1"
         },
         "id": "south-america/colombia",
-        "name": "Colombia",
+        "name": "South America/Colombia",
         "osmscout": {
             "path": "osmscout/south-america-colombia",
             "size": "136827271",
@@ -5654,7 +5445,6 @@
         "type": "territory"
     },
     "south-america/ecuador": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-ecuador",
             "size": "19808259",
@@ -5663,7 +5453,7 @@
             "version": "1"
         },
         "id": "south-america/ecuador",
-        "name": "Ecuador",
+        "name": "South America/Ecuador",
         "osmscout": {
             "path": "osmscout/south-america-ecuador",
             "size": "94517117",
@@ -5681,7 +5471,6 @@
         "type": "territory"
     },
     "south-america/paraguay": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-paraguay",
             "size": "6209539",
@@ -5690,7 +5479,7 @@
             "version": "1"
         },
         "id": "south-america/paraguay",
-        "name": "Paraguay",
+        "name": "South America/Paraguay",
         "osmscout": {
             "path": "osmscout/south-america-paraguay",
             "size": "38437407",
@@ -5708,7 +5497,6 @@
         "type": "territory"
     },
     "south-america/peru": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-peru",
             "size": "14991363",
@@ -5717,7 +5505,7 @@
             "version": "1"
         },
         "id": "south-america/peru",
-        "name": "Peru",
+        "name": "South America/Peru",
         "osmscout": {
             "path": "osmscout/south-america-peru",
             "size": "133417433",
@@ -5735,7 +5523,6 @@
         "type": "territory"
     },
     "south-america/suriname": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-suriname",
             "size": "1232899",
@@ -5744,7 +5531,7 @@
             "version": "1"
         },
         "id": "south-america/suriname",
-        "name": "Suriname",
+        "name": "South America/Suriname",
         "osmscout": {
             "path": "osmscout/south-america-suriname",
             "size": "5924938",
@@ -5762,7 +5549,6 @@
         "type": "territory"
     },
     "south-america/uruguay": {
-        "continent": "South America",
         "geocoder_nlp": {
             "path": "geocoder-nlp/south-america-uruguay",
             "size": "31997955",
@@ -5771,7 +5557,7 @@
             "version": "1"
         },
         "id": "south-america/uruguay",
-        "name": "Uruguay",
+        "name": "South America/Uruguay",
         "osmscout": {
             "path": "osmscout/south-america-uruguay",
             "size": "30728499",
