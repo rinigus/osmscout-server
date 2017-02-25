@@ -111,7 +111,7 @@ QString Manager::getPretty(const QJsonObject &obj) const
   if (obj.value("id").toString() == const_feature_id_postal_global)
     return tr("Address parsing language support");
 
-  return obj.value("continent").toString() + " / " + obj.value("name").toString();
+  return obj.value("continent").toString() + const_pretty_separator + obj.value("name").toString();
 }
 
 void Manager::scanDirectories()
@@ -131,12 +131,12 @@ void Manager::scanDirectories()
       return;
     }
 
-  QJsonObject req_countries = loadJson(fullPath(const_fname_countries_requested));
+  m_maps_requested = loadJson(fullPath(const_fname_countries_requested));
   QJsonObject available;
 
   // check for global features that are required
-  for (QJsonObject::const_iterator request_iter = req_countries.constBegin();
-       request_iter != req_countries.constEnd(); ++request_iter)
+  for (QJsonObject::const_iterator request_iter = m_maps_requested.constBegin();
+       request_iter != m_maps_requested.constEnd(); ++request_iter)
     {
       const QJsonObject request = request_iter.value().toObject();
       if (request.empty()) continue;
@@ -157,8 +157,8 @@ void Manager::scanDirectories()
 
   // check for available countries
   size_t countries_added = 0;
-  for (QJsonObject::const_iterator request_iter = req_countries.constBegin();
-       request_iter != req_countries.constEnd(); ++request_iter)
+  for (QJsonObject::const_iterator request_iter = m_maps_requested.constBegin();
+       request_iter != m_maps_requested.constEnd(); ++request_iter)
     {
       const QJsonObject request = request_iter.value().toObject();
       if (request.empty()) continue;
@@ -225,13 +225,13 @@ void Manager::scanDirectories()
 QString Manager::getInstalledCountries()
 {
   QMutexLocker lk(&m_mutex);
-  return makeCountriesListAsJSON(true);
+  return makeCountriesListAsJSON(true, false);
 }
 
 QString Manager::getProvidedCountries()
 {
   QMutexLocker lk(&m_mutex);
-  return makeCountriesListAsJSON(false);
+  return makeCountriesListAsJSON(false, true);
 }
 
 void Manager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz)
@@ -241,7 +241,7 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
   QJsonObject objlist;
   QHash<QString, uint64_t> sizes;
 
-  if (list_available) objlist = m_maps_available;
+  if (list_available) objlist = loadJson(fullPath(const_fname_countries_requested));
   else objlist = loadJson(fullPath(const_fname_countries_provided));
 
   for (QJsonObject::const_iterator i = objlist.constBegin();
@@ -275,7 +275,75 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
     }
 }
 
-QString Manager::makeCountriesListAsJSON(bool list_available)
+///////////////////////////////////////////////////////
+/// support for composing hierarchy of countries
+struct CountryBranch {
+  QString name;
+  bool isDir{false};
+  QList< CountryBranch > dir;
+  QJsonObject country;
+};
+
+static void insertCountry(const QJsonObject &country,
+                          const QString &name,
+                          QStringList path,
+                          CountryBranch &target)
+{
+  if (path.isEmpty())
+    {
+      CountryBranch c;
+      c.name = name;
+      c.country = country;
+      target.dir.append(c);
+    }
+  else
+    {
+      QString clevel = path.takeFirst();
+
+      QString lname; if (!target.dir.isEmpty()) lname = target.dir.last().name;
+
+      if (lname == clevel && !target.dir.last().isDir) // have to make new subdir and move country to it
+        {
+          CountryBranch cmove = target.dir.takeLast();
+          CountryBranch c;
+          c.name = clevel;
+          c.isDir = true;
+          c.dir.append(cmove);
+          insertCountry(country, name, path, c);
+          target.dir.push_back(c);
+        }
+      else if (lname == clevel) // have dir ready and can directly insert
+        insertCountry (country, name, path, target.dir.last() );
+      else
+        {
+          CountryBranch c;
+          c.name = clevel;
+          c.isDir = true;
+          insertCountry(country, name, path, c);
+          target.dir.push_back(c);
+        }
+    }
+}
+
+static QJsonObject makeList(const CountryBranch branch)
+{
+  QJsonObject dir;
+  dir.insert("type", QString("dir"));
+  dir.insert("name", branch.name);
+
+  QJsonArray arr;
+  for (const CountryBranch &i: branch.dir)
+    {
+      if (i.isDir)
+        arr.append( makeList(i) );
+      else
+        arr.append( i.country );
+    }
+  dir.insert("children", arr);
+  return dir;
+}
+
+QString Manager::makeCountriesListAsJSON(bool list_available, bool tree)
 {
   QStringList countries;
   QStringList ids;
@@ -283,17 +351,31 @@ QString Manager::makeCountriesListAsJSON(bool list_available)
 
   makeCountriesList(list_available, countries, ids, sz);
 
-  QJsonArray arr;
+  CountryBranch root;
+  root.isDir = true;
+  root.name = tr("World");
   for (int i = 0; i < ids.size(); ++i)
     {
       QJsonObject obj;
-      obj.insert("name", countries[i]);
+      QString name;
+      QStringList path;
+
+      if (tree)
+        {
+          path = countries[i].split(const_pretty_separator);
+          name = path.takeLast();
+        }
+      else
+        name = countries[i];
+
+      obj.insert("name", name);
       obj.insert("id", ids[i]);
       obj.insert("size", QString("%L1").arg( (int)round(sz[i]/1024./1024.) ) );
-      arr.append(obj);
+      obj.insert("type", QString("country"));
+      insertCountry(obj, name, path, root);
     }
 
-  QJsonDocument doc(arr);
+  QJsonDocument doc(makeList(root));
   return doc.toJson();
 }
 
@@ -355,6 +437,62 @@ void Manager::rmCountryNoLock(QString id)
       scanDirectories();
       missingData();
     }
+}
+
+QString Manager::getCountryDetails(QString id)
+{
+  QMutexLocker lk(&m_mutex);
+
+  QJsonObject country = loadJson(fullPath(const_fname_countries_provided)).value(id).toObject();
+
+  QJsonObject reply;
+
+  if (country.empty())
+    reply.insert("error", QString("Cannot find country with id " + id));
+  else
+    {
+      QString name = getPretty(country);
+      reply.insert("name_full", name);
+      reply.insert("name", name.split(const_pretty_separator).last());
+      uint64_t sz = 0;
+      uint64_t sz_tot = 0;
+
+      QJsonArray features;
+      for (const Feature *f: m_features)
+        {
+          u_int64_t s = f->getSize(country, true);
+          sz_tot += s;
+          if (f->enabled()) sz += s;
+
+          if (s > 0)
+            {
+              QJsonObject feature;
+              feature.insert("name", f->pretty());
+              feature.insert("enabled", f->enabled());
+              feature.insert("size", QString("%L1").arg( (int)round(s/1024./1024.) ));
+              features.append(feature);
+            }
+        }
+
+      reply.insert("size", QString("%L1").arg( (int)round(sz/1024./1024.) ));
+      reply.insert("size_total", QString("%L1").arg( (int)round(sz_tot/1024./1024.) ));
+      reply.insert("features", features);
+    }
+
+  QJsonDocument doc(reply);
+  return doc.toJson();
+}
+
+bool Manager::isCountryRequested(QString id)
+{
+  QMutexLocker lk(&m_mutex);
+  return m_maps_requested.contains(id);
+}
+
+bool Manager::isCountryAvailable(QString id)
+{
+  QMutexLocker lk(&m_mutex);
+  return m_maps_available.contains(id);
 }
 
 void Manager::missingData()
@@ -688,8 +826,8 @@ bool Manager::updateProvided()
 {
   QMutexLocker lk(&m_mutex);
   if ( startDownload(ProvidedList, m_provided_url,
-                       fullPath(const_fname_countries_provided),
-                       QString()) )
+                     fullPath(const_fname_countries_provided),
+                     QString()) )
     {
       emit downloadProgress(tr("Downloading the list of countries"));
       return true;

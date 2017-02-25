@@ -13,10 +13,12 @@ using namespace MapManager;
 Feature::Feature(const PathProvider *path,
                  const QString &feature_type,
                  const QString &feature_name,
+                 const QString &feature_pretty_name,
                  const QStringList &feature_files):
   m_path_provider(path),
   m_type(feature_type),
   m_name(feature_name),
+  m_pretty(feature_pretty_name),
   m_files(feature_files)
 {
 }
@@ -44,9 +46,9 @@ QString Feature::getPath(const QJsonObject &obj) const
   return obj.value(m_name).toObject().value("path").toString();
 }
 
-uint64_t Feature::getSize(const QJsonObject &obj) const
+uint64_t Feature::getSize(const QJsonObject &obj, bool force) const
 {
-  if (!m_enabled) return 0;
+  if (!m_enabled && !force) return 0;
   return obj.value(m_name).toObject().value("size").toString().toULong();
 }
 
@@ -150,7 +152,9 @@ const static QStringList osmscout_files{
   "water.idx", "ways.dat", "waysopt.dat", "types.dat"};
 
 FeatureOsmScout::FeatureOsmScout(const PathProvider *path):
-  Feature(path, "territory", "osmscout", osmscout_files)
+  Feature(path, "territory", "osmscout",
+          QCoreApplication::translate("MapManagerFeature", "OSM Scout library"),
+          osmscout_files)
 {
 }
 
@@ -166,7 +170,9 @@ const static QStringList geocodernlp_files{
   "location.sqlite"};
 
 FeatureGeocoderNLP::FeatureGeocoderNLP(const PathProvider *path):
-  Feature(path, "territory", "geocoder_nlp", geocodernlp_files)
+  Feature(path, "territory", "geocoder_nlp",
+          QCoreApplication::translate("MapManagerFeature", "Geocoder-NLP"),
+          geocodernlp_files)
 {
 }
 
@@ -188,7 +194,9 @@ const static QStringList postal_country_files{
   "geodb/geodb.spi", "geodb/geodb.spl" };
 
 FeaturePostalGlobal::FeaturePostalGlobal(const PathProvider *path):
-  Feature(path, "postal/global", "postal_global", postal_global_files)
+  Feature(path, "postal/global", "postal_global",
+          QCoreApplication::translate("MapManagerFeature", "Address parsing language support"),
+          postal_global_files)
 {
 }
 
@@ -204,7 +212,9 @@ void FeaturePostalGlobal::loadSettings()
 }
 
 FeaturePostalCountry::FeaturePostalCountry(const PathProvider *path):
-  Feature(path, "territory", "postal_country", postal_country_files)
+  Feature(path, "territory", "postal_country",
+          QCoreApplication::translate("MapManagerFeature", "Address parsing country-specific support"),
+          postal_country_files)
 {
 }
 

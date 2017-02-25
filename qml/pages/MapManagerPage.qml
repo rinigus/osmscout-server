@@ -101,8 +101,6 @@ Page {
                         if (!manager.updateProvided())
                             console.log("Could not start the download. Perhaps you are downloading something already. " +
                                         "Please wait till the current download is finished")
-                        else
-                            busy.running = true
                     }
                 }
 
@@ -140,7 +138,7 @@ Page {
                 }
 
                 Label {
-                    text: qsTr("Select the countries for download")
+                    text: qsTr("Select the countries or territories that you want to keep on device")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap

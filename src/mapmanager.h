@@ -49,6 +49,21 @@ namespace MapManager {
     ///
     Q_INVOKABLE void rmCountry(QString id);
 
+    /// \brief Get country details in JSON format
+    ///
+    Q_INVOKABLE QString getCountryDetails(QString id);
+
+    /// \brief Check whether the country is subscribed to
+    ///
+    /// Checks whether the country was marked as "requested" by
+    /// user
+    Q_INVOKABLE bool isCountryRequested(QString id);
+
+    /// \brief Check whether the country is available to
+    ///
+    /// Checks whether the country is available
+    Q_INVOKABLE bool isCountryAvailable(QString id);
+
     /// \brief Download or update missing data files
     ///
     Q_INVOKABLE bool getCountries();
@@ -130,7 +145,7 @@ namespace MapManager {
     void makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz);
 
     /// \brief Wrapper around makeCountriesList transforming the results to JSON
-    QString makeCountriesListAsJSON(bool list_available);
+    QString makeCountriesListAsJSON(bool list_available, bool tree);
 
     virtual QString fullPath(const QString &path) const; ///< Transform relative path to the full path
 
@@ -166,6 +181,7 @@ namespace MapManager {
 
     // available maps
     QJsonObject m_maps_available;
+    QJsonObject m_maps_requested;
     QString m_map_selected;
 
     QString m_postal_global_path;
@@ -188,6 +204,8 @@ namespace MapManager {
 
     const QString const_feature_id_postal_global{"postal/global"};
     const QString const_feature_type_country{"territory"};
+
+    const QString const_pretty_separator{" / "};
   };
 
 }

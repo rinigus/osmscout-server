@@ -42,12 +42,14 @@ namespace MapManager {
     explicit Feature(const PathProvider *path,
                      const QString &feature_type,
                      const QString &feature_name,
+                     const QString &feature_pretty_name,
                      const QStringList &feature_files);
 
   public:
     virtual ~Feature() {}
 
     const QString& name() const { return m_name; }
+    const QString& pretty() const { return m_pretty; }
 
     virtual void loadSettings();
     virtual QString errorMissing() const = 0;
@@ -58,7 +60,7 @@ namespace MapManager {
     void setUrl(const QJsonObject &obj);
 
     QString getPath(const QJsonObject &obj) const;
-    uint64_t getSize(const QJsonObject &obj) const;
+    uint64_t getSize(const QJsonObject &obj, bool force = false) const;
     uint64_t getSizeCompressed(const QJsonObject &obj) const;
     QDateTime getDateTime(const QJsonObject &obj) const;
 
@@ -78,6 +80,7 @@ namespace MapManager {
     const PathProvider *m_path_provider;
     const QString m_type;
     const QString m_name;
+    const QString m_pretty;
     const QStringList m_files;
 
     bool m_enabled{false};

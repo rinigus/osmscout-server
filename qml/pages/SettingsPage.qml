@@ -56,7 +56,7 @@ Dialog {
                                      "Please <b>allocate separate, empty folder</b> that OSM Scout Server could use. " +
                                      "This includes deleting all files within that folder when requested by you during cleanup or " +
                                      "map updates.<br>" +
-                                     "<i>Example:</i> /home/nemo/Maps")
+                                     "<i>Example:</i> Maps under <i>~nemo</i>")
                 directory: true
             }
 
@@ -96,7 +96,7 @@ Dialog {
                 anchors.margins: Theme.horizontalPageMargin
 
                 Button {
-                    text: qsTr("OSM Scout backend")
+                    text: qsTr("OSM Scout library")
                     onClicked: pageStack.push(Qt.resolvedUrl("OSMScoutPage.qml"))
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -124,7 +124,7 @@ Dialog {
                 }
 
                 Button {
-                    text: qsTr("Geocoder-NLP backend")
+                    text: qsTr("Geocoder-NLP")
                     onClicked: pageStack.push(Qt.resolvedUrl("GeocoderPage.qml"))
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter

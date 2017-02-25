@@ -48,8 +48,7 @@ Page {
                 id: head
                 title: page.title
                 wrapMode: Text.WordWrap
-                x: Theme.horizontalPageMargin
-                width: page.width-2*x
+                width: page.width
             }
 
             Label {
