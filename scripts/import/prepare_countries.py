@@ -48,6 +48,11 @@ Name2Pretty = {
     "gcc-states": "GCC States",
     "israel-and-palestine": "Israel and Palestine",
     "malaysia-singapore-brunei": "Malaysia, Singapore, and Brunei",    
+    "us-midwest": "US Region/Midwest",
+    "us-northeast": "US Region/Northeast",
+    "us-pacific": "US Region/Pacific",
+    "us-south": "US Region/South",
+    "us-west": "US Region/West",
 }
 
 NameCapitalize = [
