@@ -6,6 +6,7 @@
 #include <QList>
 #include <QJsonObject>
 #include <QDateTime>
+#include <cstdint>
 
 namespace MapManager {
 
@@ -27,8 +28,8 @@ namespace MapManager {
   struct FilesToDownload {
     QString id;
     QString pretty;
-    size_t tostore{0};
-    size_t todownload{0};
+    uint64_t tostore{0};
+    uint64_t todownload{0};
     QList< FileTask > files;
   };
 
@@ -57,8 +58,8 @@ namespace MapManager {
     void setUrl(const QJsonObject &obj);
 
     QString getPath(const QJsonObject &obj) const;
-    size_t getSize(const QJsonObject &obj) const;
-    size_t getSizeCompressed(const QJsonObject &obj) const;
+    uint64_t getSize(const QJsonObject &obj) const;
+    uint64_t getSizeCompressed(const QJsonObject &obj) const;
     QDateTime getDateTime(const QJsonObject &obj) const;
 
     bool isMyType(const QJsonObject &request) const;

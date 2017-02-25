@@ -149,8 +149,8 @@ namespace MapManager {
     // handling of downloads
     void onDownloadFinished(QString path);
     void onDownloadError(QString err);
-    void onDownloadedBytes(size_t sz);
-    void onWrittenBytes(size_t sz);
+    void onDownloadedBytes(uint64_t sz);
+    void onWrittenBytes(uint64_t sz);
     void onDownloadProgress();
 
     bool startDownload(DownloadType type, const QString &url, const QString &path, const QString &mode);
@@ -175,8 +175,8 @@ namespace MapManager {
     QPointer<FileDownloader> m_file_downloader;
 
     QAtomicInt m_download_type{NoDownload};
-    size_t m_last_reported_downloaded;
-    size_t m_last_reported_written;
+    uint64_t m_last_reported_downloaded;
+    uint64_t m_last_reported_written;
 
     QStringList m_not_needed_files;
 

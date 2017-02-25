@@ -239,7 +239,7 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
   QList< QPair<QString, QString> > available;
 
   QJsonObject objlist;
-  QHash<QString, size_t> sizes;
+  QHash<QString, uint64_t> sizes;
 
   if (list_available) objlist = m_maps_available;
   else objlist = loadJson(fullPath(const_fname_countries_provided));
@@ -254,7 +254,7 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
 
           available.append(qMakePair(getPretty(c), id));
 
-          size_t s = 0;
+          uint64_t s = 0;
           for (const Feature *f: m_features)
             s += f->getSize(c);
 
@@ -588,13 +588,13 @@ void Manager::onDownloadProgress()
     }
 }
 
-void Manager::onDownloadedBytes(size_t sz)
+void Manager::onDownloadedBytes(uint64_t sz)
 {
   m_last_reported_downloaded = sz;
   onDownloadProgress();
 }
 
-void Manager::onWrittenBytes(size_t sz)
+void Manager::onWrittenBytes(uint64_t sz)
 {
   m_last_reported_written = sz;
   onDownloadProgress();

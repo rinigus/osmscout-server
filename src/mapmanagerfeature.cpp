@@ -44,13 +44,15 @@ QString Feature::getPath(const QJsonObject &obj) const
   return obj.value(m_name).toObject().value("path").toString();
 }
 
-size_t Feature::getSize(const QJsonObject &obj) const
+uint64_t Feature::getSize(const QJsonObject &obj) const
 {
+  if (!m_enabled) return 0;
   return obj.value(m_name).toObject().value("size").toString().toULong();
 }
 
-size_t Feature::getSizeCompressed(const QJsonObject &obj) const
+uint64_t Feature::getSizeCompressed(const QJsonObject &obj) const
 {
+  if (!m_enabled) return 0;
   return obj.value(m_name).toObject().value("size-compressed").toString().toULong();
 }
 
