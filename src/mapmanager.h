@@ -5,7 +5,6 @@
 #include "mapmanagerfeature.h"
 
 #include <QObject>
-#include <QMutex>
 #include <QDir>
 #include <QString>
 #include <QStringList>
@@ -15,6 +14,7 @@
 #include <QPointer>
 #include <QDateTime>
 #include <QAtomicInt>
+
 #include <cstdint>
 
 namespace MapManager {
@@ -133,15 +133,8 @@ namespace MapManager {
   public slots:
     void onSettingsChanged();
 
-    void emitSubscriptionChanged() { emit subscriptionChanged(); }
-    void emitAvailibilityChanged() { emit availibilityChanged(); }
-
   protected:
-    //enum DownloadType { NoDownload=0, Countries=1, ProvidedList=2 };
-    typedef int DownloadType;
-    const int NoDownload{0};
-    const int Countries{1};
-    const int ProvidedList{2};
+    enum DownloadType { NoDownload=0, Countries=1, ProvidedList=2 };
 
   protected:
     void loadSettings();
@@ -151,14 +144,9 @@ namespace MapManager {
 
     void missingData();
 
-    void addCountryNoLock(QString id);
-    void rmCountryNoLock(QString id);
-
     /// \brief Composes a list of countries in alphabetical order
     ///
     /// This is a method that creates a list. Its called by other methods to retrieve the list.
-    /// Note that its not locking a mutex and its assumed that the calling method provides
-    /// thread-safety
     void makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz);
 
     /// \brief Wrapper around makeCountriesList transforming the results to JSON
@@ -189,7 +177,6 @@ namespace MapManager {
     void cleanupDownload();
 
   protected:
-    QMutex m_mutex;
 
     // settings
     QDir m_root_dir;
@@ -203,13 +190,13 @@ namespace MapManager {
 
     QString m_postal_global_path;
 
-    QAtomicInt m_missing{0};
+    bool m_missing;
     QString m_missing_info;
     QList< FilesToDownload > m_missing_data;
     QNetworkAccessManager m_network_manager;
     QPointer<FileDownloader> m_file_downloader;
 
-    QAtomicInt m_download_type{NoDownload};
+    DownloadType m_download_type{NoDownload};
     uint64_t m_last_reported_downloaded;
     uint64_t m_last_reported_written;
 

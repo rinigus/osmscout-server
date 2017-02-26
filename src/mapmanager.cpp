@@ -4,8 +4,6 @@
 #include "config.h"
 #include "infohub.h"
 
-#include <QMutexLocker>
-
 #include <QDirIterator>
 #include <QDir>
 #include <QFileInfo>
@@ -13,8 +11,6 @@
 #include <QFile>
 #include <QBitArray>
 #include <QPair>
-
-#include <QTimer>
 
 #include <QJsonDocument>
 #include <QJsonArray>
@@ -28,8 +24,6 @@
 #define DELAY_BEFORE_SIGNAL 500
 
 using namespace MapManager;
-
-#pragma message "When Qt will be changed to 5.6 on stable SFOS, start using DownloadType as enum and QAtomicInteger"
 
 Manager::Manager(QObject *parent) : QObject(parent)
 {
@@ -59,7 +53,6 @@ Manager::~Manager()
 
 void Manager::onSettingsChanged()
 {
-  QMutexLocker lk(&m_mutex);
   loadSettings();
 }
 
@@ -74,9 +67,9 @@ void Manager::loadSettings()
   for (Feature *p: m_features) p->loadSettings();
 
   if (settings.valueBool(MAPMANAGER_SETTINGS "postal_country"))
-    addCountryNoLock(const_feature_id_postal_global);
+    addCountry(const_feature_id_postal_global);
   else
-    rmCountryNoLock(const_feature_id_postal_global);
+    rmCountry(const_feature_id_postal_global);
 
   scanDirectories();
   missingData();
@@ -225,19 +218,17 @@ void Manager::scanDirectories()
       updateGeocoderNLP();
       updatePostal();
 
-      QTimer::singleShot(DELAY_BEFORE_SIGNAL, this, SLOT(emitAvailibilityChanged()));
+      emit availibilityChanged();
     }
 }
 
 QString Manager::getRequestedCountries()
 {
-  QMutexLocker lk(&m_mutex);
   return makeCountriesListAsJSON(true, false);
 }
 
 QString Manager::getProvidedCountries()
 {
-  QMutexLocker lk(&m_mutex);
   return makeCountriesListAsJSON(false, true);
 }
 
@@ -388,14 +379,8 @@ QString Manager::makeCountriesListAsJSON(bool list_available, bool tree)
 
 void Manager::addCountry(QString id)
 {
-  QMutexLocker lk(&m_mutex);
   if (downloading()) return;
-  addCountryNoLock(id);
-  QTimer::singleShot(DELAY_BEFORE_SIGNAL, this, SLOT(emitSubscriptionChanged()));
-}
 
-void Manager::addCountryNoLock(QString id)
-{
   if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_provided))
     {
       QJsonObject possible = loadJson(fullPath(const_fname_countries_provided));
@@ -416,18 +401,14 @@ void Manager::addCountryNoLock(QString id)
       scanDirectories();
       missingData();
     }
+
+  emit subscriptionChanged();
 }
 
 void Manager::rmCountry(QString id)
 {
-  QMutexLocker lk(&m_mutex);
   if (downloading()) return;
-  rmCountryNoLock(id);
-  QTimer::singleShot(DELAY_BEFORE_SIGNAL, this, SLOT(emitSubscriptionChanged()));
-}
 
-void Manager::rmCountryNoLock(QString id)
-{
   if ( (m_maps_available.contains(id) || m_maps_available.empty()) &&
        m_root_dir.exists() && m_root_dir.exists(const_fname_countries_requested) )
     {
@@ -448,12 +429,12 @@ void Manager::rmCountryNoLock(QString id)
       scanDirectories();
       missingData();
     }
+
+  emit subscriptionChanged();
 }
 
 QString Manager::getCountryDetails(QString id)
 {
-  QMutexLocker lk(&m_mutex);
-
   QJsonObject country = loadJson(fullPath(const_fname_countries_provided)).value(id).toObject();
 
   QJsonObject reply;
@@ -496,24 +477,21 @@ QString Manager::getCountryDetails(QString id)
 
 bool Manager::isCountryRequested(QString id)
 {
-  QMutexLocker lk(&m_mutex);
   return m_maps_requested.contains(id);
 }
 
 bool Manager::isCountryAvailable(QString id)
 {
-  QMutexLocker lk(&m_mutex);
   return m_maps_available.contains(id);
 }
 
 bool Manager::missing()
 {
-  return (m_missing.load() > 0);
+  return m_missing;
 }
 
 QString Manager::missingInfo()
 {
-  QMutexLocker lk(&m_mutex);
   return m_missing_info;
 }
 
@@ -582,7 +560,7 @@ void Manager::missingData()
       emit missingInfoChanged(info);
     }
 
-  if ( (m_missing_data.length()>0) != (m_missing.load()>0) )
+  if ( (m_missing_data.length()>0) != (m_missing>0) )
     {
       m_missing = (m_missing_data.length()>0);
       emit missingChanged( (m_missing_data.length()>0) );
@@ -602,7 +580,6 @@ QString Manager::fullPath(const QString &path) const
 
 bool Manager::getCountries()
 {
-  QMutexLocker lk(&m_mutex);
   if (downloading()) return false;
 
   if (m_missing_data.length() < 1) return true; // all has been downloaded already
@@ -618,7 +595,7 @@ bool Manager::getCountries()
 
 bool Manager::downloading()
 {
-  return (m_download_type.load() != NoDownload);
+  return (m_download_type != NoDownload);
 }
 
 bool Manager::startDownload(DownloadType type, const QString &url, const QString &path, const QString &mode)
@@ -661,12 +638,10 @@ bool Manager::startDownload(DownloadType type, const QString &url, const QString
 
 void Manager::onDownloadFinished(QString path)
 {
-  QMutexLocker lk(&m_mutex);
-
   InfoHub::logInfo(tr("File downloaded:") + " " + path);
   cleanupDownload();
 
-  const DownloadType dtype = m_download_type.load();
+  const DownloadType dtype = m_download_type;
 
   if (dtype == Countries)
     {
@@ -674,7 +649,6 @@ void Manager::onDownloadFinished(QString path)
           m_missing_data[0].files.length() < 1 ||
           m_missing_data[0].files[0].path != path)
         {
-          lk.unlock();
           InfoHub::logError("Internal error: missing data has no files while one was downloaded or an unexpected file was downloaded");
           onDownloadError("Internal error: processing via error handling methods");
           return;
@@ -691,7 +665,6 @@ void Manager::onDownloadFinished(QString path)
         }
 
       m_download_type = NoDownload;
-      lk.unlock();
       getCountries();
     }
   else if (dtype == ProvidedList)
@@ -703,14 +676,12 @@ void Manager::onDownloadFinished(QString path)
     m_download_type = NoDownload;
 
   // check if we set it to NoDownload
-  if (m_download_type.load() == NoDownload)
+  if (m_download_type == NoDownload)
     emit downloadingChanged(false);
 }
 
 void Manager::onDownloadError(QString err)
 {
-  QMutexLocker lk(&m_mutex);
-
   InfoHub::logWarning(err);
   cleanupDownload();
 
@@ -736,7 +707,7 @@ void Manager::onDownloadProgress()
   static QString last_message;
 
   QString txt;
-  const DownloadType dtype = m_download_type.load();
+  const DownloadType dtype = m_download_type;
 
   if ( dtype == ProvidedList )
     txt = QString(tr("List of countries: %L1 (D) / %L2 (W) MB")).
@@ -784,13 +755,12 @@ void Manager::onWrittenBytes(uint64_t sz)
 
 qint64 Manager::getNonNeededFilesList(QStringList &files)
 {
-  QMutexLocker lk(&m_mutex);
+  if (downloading()) return false;
+
   qint64 notNeededSize = 0;
 
   m_not_needed_files.clear();
   files.clear();
-
-  if (downloading()) return false;
 
   // fill up needed files
   QSet<QString> wanted;
@@ -832,7 +802,6 @@ qint64 Manager::getNonNeededFilesList(QStringList &files)
 
 bool Manager::deleteNonNeededFiles(const QStringList &files)
 {
-  QMutexLocker lk(&m_mutex);
   if (downloading()) return false;
 
   if ( files != m_not_needed_files )
@@ -864,7 +833,8 @@ bool Manager::deleteNonNeededFiles(const QStringList &files)
 
 bool Manager::updateProvided()
 {
-  QMutexLocker lk(&m_mutex);
+  if (downloading()) return false;
+
   if ( startDownload(ProvidedList, m_provided_url,
                      fullPath(const_fname_countries_provided),
                      QString()) )
@@ -930,13 +900,11 @@ void Manager::checkUpdates()
 
 QString Manager::updatesFound()
 {
-  QMutexLocker lk(&m_mutex);
   return QJsonDocument(m_last_found_updates).toJson();
 }
 
 void Manager::getUpdates()
 {
-  QMutexLocker lk(&m_mutex);
   if (downloading()) return;
 
   QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
@@ -969,7 +937,6 @@ void Manager::getUpdates()
   scanDirectories();
   missingData();
 
-  lk.unlock();
   getCountries();
 }
 

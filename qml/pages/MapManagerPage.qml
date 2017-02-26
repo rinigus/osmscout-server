@@ -64,17 +64,32 @@ Page {
 
             Column {
                 id: subscolumn
+
                 property int ncountries: 0
                 property var countries: []
+
+                signal updateData();
+
                 width: parent.width
                 spacing: Theme.paddingMedium
+
                 Repeater {
                     width: parent.width
                     model: subscolumn.ncountries
                     delegate: ListItem {
                         id: listItem
                         contentHeight: clist.height + Theme.paddingLarge
-                        width: parent.width
+                        width: page.width
+
+                        function updateData()
+                        {
+                            if (index < subscolumn.ncountries)
+                            {
+                                var c = subscolumn.countries.children[index]
+                                main.text = c.name
+                                prop.text = qsTr("Size: %1 MB").arg( c.size )
+                            }
+                        }
 
                         Column {
                             id: clist
@@ -83,11 +98,10 @@ Page {
                             anchors.margins: Theme.horizontalPageMargin
 
                             Label {
-                                id: label
+                                id: main
                                 x: Theme.horizontalPageMargin
                                 width: parent.width-2*x
                                 wrapMode: Text.WordWrap
-                                text: subscolumn.countries.children[index].name
                                 color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
                             }
 
@@ -99,12 +113,13 @@ Page {
                                 wrapMode: Text.WordWrap
                                 font.pixelSize: Theme.fontSizeSmall
                                 color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
-
-                                Component.onCompleted: {
-                                    var c = subscolumn.countries.children[index]
-                                    prop.text = qsTr("Size: %1 MB").arg( c.size )
-                                }
                             }
+                        }
+
+                        Component.onCompleted: updateData()
+                        Connections {
+                            target: subscolumn
+                            onUpdateData: updateData()
                         }
 
                         onClicked: {
@@ -118,6 +133,15 @@ Page {
                 Component.onCompleted: {
                     subscolumn.countries = JSON.parse(manager.getRequestedCountries())
                     subscolumn.ncountries = subscolumn.countries.children.length
+                }
+
+                Connections {
+                    target: manager
+                    onSubscriptionChanged: {
+                        subscolumn.countries = JSON.parse(manager.getRequestedCountries())
+                        subscolumn.ncountries = subscolumn.countries.children.length
+                        subscolumn.updateData()
+                    }
                 }
             }
 
