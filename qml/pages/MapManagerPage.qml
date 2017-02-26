@@ -36,7 +36,6 @@ Page {
 
             SectionHeader {
                 text: qsTr("Storage settings")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             ElementSwitch {
@@ -59,7 +58,6 @@ Page {
 
             SectionHeader {
                 text: qsTr("Subscribed")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Column {
@@ -106,7 +104,6 @@ Page {
 
             SectionHeader {
                 text: qsTr("Downloads")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             ElementDownloads {
@@ -151,7 +148,6 @@ Page {
 
             SectionHeader {
                 text: qsTr("Provided maps")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Column {
