@@ -226,6 +226,8 @@ Page {
             page.activeState = !manager.downloading
             checkSubs()
         }
-    }
 
+        onSubscriptionChanged: checkSubs()
+        onAvailibilityChanged: checkSubs()
+    }
 }

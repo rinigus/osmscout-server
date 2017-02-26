@@ -76,58 +76,72 @@ Page {
                 Repeater {
                     width: parent.width
                     model: subscolumn.ncountries
-                    delegate: ListItem {
-                        id: listItem
-                        contentHeight: clist.height + Theme.paddingLarge
-                        width: page.width
+                    delegate: ElementCountryListItem {
+                        country: subscolumn.countries.children[index]
 
-                        function updateData()
-                        {
-                            if (index < subscolumn.ncountries)
-                            {
-                                var c = subscolumn.countries.children[index]
-                                main.text = c.name
-                                prop.text = qsTr("Size: %1 MB").arg( c.size )
-                            }
-                        }
-
-                        Column {
-                            id: clist
-                            width: parent.width
-                            spacing: Theme.paddingSmall
-                            anchors.margins: Theme.horizontalPageMargin
-
-                            Label {
-                                id: main
-                                x: Theme.horizontalPageMargin
-                                width: parent.width-2*x
-                                wrapMode: Text.WordWrap
-                                color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                            }
-
-                            Label {
-                                id: prop
-                                text: ""
-                                x: Theme.horizontalPageMargin * 2
-                                width: parent.width-3*x
-                                wrapMode: Text.WordWrap
-                                font.pixelSize: Theme.fontSizeSmall
-                                color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
-                            }
-                        }
-
-                        Component.onCompleted: updateData()
                         Connections {
                             target: subscolumn
-                            onUpdateData: updateData()
-                        }
-
-                        onClicked: {
-                            var c = subscolumn.countries.children[index]
-                            pageStack.push(Qt.resolvedUrl("CountryDetailsPage.qml"),
-                                           { "countryId": c.id } )
+                            onUpdateData: {
+                                if (index < subscolumn.countries.children)
+                                    country = subscolumn.countries.children[index]
+                            }
                         }
                     }
+
+
+
+                    //                        ListItem {
+                    //                        id: listItem
+                    //                        contentHeight: clist.height + Theme.paddingLarge
+                    //                        width: page.width
+
+                    //                        function updateData()
+                    //                        {
+                    //                            if (index < subscolumn.ncountries)
+                    //                            {
+                    //                                var c = subscolumn.countries.children[index]
+                    //                                main.text = c.name
+                    //                                prop.text = qsTr("Size: %1 MB").arg( c.size )
+                    //                            }
+                    //                        }
+
+                    //                        Column {
+                    //                            id: clist
+                    //                            width: parent.width
+                    //                            spacing: Theme.paddingSmall
+                    //                            anchors.margins: Theme.horizontalPageMargin
+
+                    //                            Label {
+                    //                                id: main
+                    //                                x: Theme.horizontalPageMargin
+                    //                                width: parent.width-2*x
+                    //                                wrapMode: Text.WordWrap
+                    //                                color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    //                            }
+
+                    //                            Label {
+                    //                                id: prop
+                    //                                text: ""
+                    //                                x: Theme.horizontalPageMargin * 2
+                    //                                width: parent.width-3*x
+                    //                                wrapMode: Text.WordWrap
+                    //                                font.pixelSize: Theme.fontSizeSmall
+                    //                                color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
+                    //                            }
+                    //                        }
+
+                    //                        Component.onCompleted: updateData()
+                    //                        Connections {
+                    //                            target: subscolumn
+                    //                            onUpdateData: updateData()
+                    //                        }
+
+                    //                        onClicked: {
+                    //                            var c = subscolumn.countries.children[index]
+                    //                            pageStack.push(Qt.resolvedUrl("CountryDetailsPage.qml"),
+                    //                                           { "countryId": c.id } )
+                    //                        }
+                    //                    }
                 }
 
                 Component.onCompleted: {

@@ -9,6 +9,7 @@ Page {
     property string path: ""
     property int nCountries: 1
     property bool root: false
+    property bool fullpath_visible: true
 
     allowedOrientations : Orientation.All
 
@@ -19,7 +20,7 @@ Page {
         header: Column {
             width: parent.width
             //height: head.height + fullpath.height + Theme.paddingSmall + Theme.paddingLarge
-            spacing: Theme.paddingSmall
+            //spacing: Theme.paddingSmall
 
             PageHeader {
                 id: head
@@ -37,69 +38,14 @@ Page {
                 truncationMode: TruncationMode.Elide
                 font.pixelSize: Theme.fontSizeTiny
                 color: Theme.highlightColor
+                visible: page.fullpath_visible
             }
         }
 
         model: nCountries
 
-        delegate: ListItem {
-            id: listItem
-            contentHeight: clist.height + Theme.paddingLarge
-            width: parent.width
-
-            Column {
-                id: clist
-                width: parent.width
-                spacing: Theme.paddingSmall
-                anchors.margins: Theme.horizontalPageMargin
-
-                Label {
-                    id: label
-                    x: Theme.horizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
-                    text: countries.children[index].name
-                    color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                }
-
-                Label {
-                    id: prop
-                    text: ""
-                    x: Theme.horizontalPageMargin * 2
-                    width: parent.width-3*x
-                    wrapMode: Text.WordWrap
-                    font.pixelSize: Theme.fontSizeSmall
-                    color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
-
-                    Component.onCompleted: {
-                        var c = countries.children[index]
-                        if (c.type === "dir")
-                            prop.text = qsTr("%1 territories").arg(c.children.length)
-                        else
-                            prop.text = qsTr("Size: %1 MB").arg( c.size )
-                    }
-                }
-            }
-
-            onClicked: {
-                var c = countries.children[index]
-                if (c.type === "dir")
-                {
-                    var newpath = ""
-                    if (!page.root)
-                    {
-                        if (page.path.length > 0)
-                            newpath = page.path + " / " + c.name
-                        else
-                            newpath = page.title + " / " + c.name
-                    }
-                    pageStack.push(Qt.resolvedUrl("DownloadCountriesPage.qml"),
-                                   { "countries": c, "path": newpath, "title": c.name } )
-                }
-                else
-                    pageStack.push(Qt.resolvedUrl("CountryDetailsPage.qml"),
-                                   { "countryId": c.id } )
-            }
+        delegate: ElementCountryListItem {
+            country: countries.children[index]
         }
     }
 
@@ -115,6 +61,6 @@ Page {
         }
 
         if (page.path.length < 1)
-            fullpath.visible = false
+            page.fullpath_visible = false
     }
 }

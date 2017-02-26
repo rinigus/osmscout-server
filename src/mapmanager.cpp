@@ -409,8 +409,7 @@ void Manager::rmCountry(QString id)
 {
   if (downloading()) return;
 
-  if ( (m_maps_available.contains(id) || m_maps_available.empty()) &&
-       m_root_dir.exists() && m_root_dir.exists(const_fname_countries_requested) )
+  if ( m_root_dir.exists() && m_root_dir.exists(const_fname_countries_requested) )
     {
       QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
 
