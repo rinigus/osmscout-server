@@ -31,12 +31,15 @@ namespace MapManager {
     /// \brief true when download is active
     Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
 
+    /// \brief true when some data is missing
+    Q_PROPERTY(bool missing READ missing NOTIFY missingChanged)
+
   public:
     explicit Manager(QObject *parent = 0);
     virtual ~Manager();
 
     /// \brief Composes a list of countries on device in alphabetical order and returns as an JSON array
-    Q_INVOKABLE QString getInstalledCountries();
+    Q_INVOKABLE QString getRequestedCountries();
 
     /// \brief Composes a list of countries provided for download in alphabetical order as an JSON array
     Q_INVOKABLE QString getProvidedCountries();
@@ -67,6 +70,10 @@ namespace MapManager {
     /// \brief Download or update missing data files
     ///
     Q_INVOKABLE bool getCountries();
+
+    /// \brief Get missing data
+    ///
+    Q_INVOKABLE QString missingInfo();
 
     /// \brief Update a list of provided countries and features
     ///
@@ -102,6 +109,7 @@ namespace MapManager {
 
     /// Properties exposed to QML
     bool downloading();
+    bool missing();
 
   signals:
     void databaseOsmScoutChanged(QString database);
@@ -111,6 +119,12 @@ namespace MapManager {
     void downloadingChanged(bool state);
     void downloadProgress(QString info);
 
+    void missingChanged(bool missing);
+    void missingInfoChanged(QString info);
+
+    void subscriptionChanged();
+    void availibilityChanged();
+
     void updatesFound(QString info);
 
     void errorMessage(QString info);
@@ -118,6 +132,9 @@ namespace MapManager {
 
   public slots:
     void onSettingsChanged();
+
+    void emitSubscriptionChanged() { emit subscriptionChanged(); }
+    void emitAvailibilityChanged() { emit availibilityChanged(); }
 
   protected:
     //enum DownloadType { NoDownload=0, Countries=1, ProvidedList=2 };
@@ -186,6 +203,8 @@ namespace MapManager {
 
     QString m_postal_global_path;
 
+    QAtomicInt m_missing{0};
+    QString m_missing_info;
     QList< FilesToDownload > m_missing_data;
     QNetworkAccessManager m_network_manager;
     QPointer<FileDownloader> m_file_downloader;

@@ -5,20 +5,7 @@ Page {
 
     id: page
     allowedOrientations : Orientation.All
-
-    //    BusyIndicator {
-    //        id: busy
-    //        size: BusyIndicatorSize.Large
-    //        anchors.centerIn: parent
-    //        running: false
-
-    //        Connections {
-    //            target: manager
-    //            onDownloadingChanged: {
-    //                if (!state) busy.running = false;
-    //            }
-    //        }
-    //    }
+    property bool activeState: false
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
@@ -54,6 +41,7 @@ Page {
 
             ElementSwitch {
                 id: eManagerGeocoderNLP
+                enabled: page.activeState
                 key: settingsMapManagerPrefix + "geocoder_nlp"
                 autoApply: true
                 mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
@@ -70,11 +58,112 @@ Page {
             }
 
             SectionHeader {
+                text: qsTr("Subscribed")
+                font.pixelSize: Theme.fontSizeMedium
+            }
+
+            Column {
+                id: subscolumn
+                property int ncountries: 0
+                property var countries: []
+                width: parent.width
+                spacing: Theme.paddingMedium
+                Repeater {
+                    width: parent.width
+                    model: subscolumn.ncountries
+                    delegate: ListItem {
+                        id: listItem
+                        contentHeight: clist.height + Theme.paddingLarge
+                        width: parent.width
+
+                        Column {
+                            id: clist
+                            width: parent.width
+                            spacing: Theme.paddingSmall
+                            anchors.margins: Theme.horizontalPageMargin
+
+                            Label {
+                                id: label
+                                x: Theme.horizontalPageMargin
+                                width: parent.width-2*x
+                                wrapMode: Text.WordWrap
+                                text: subscolumn.countries.children[index].name
+                                color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                            }
+
+                            Label {
+                                id: prop
+                                text: ""
+                                x: Theme.horizontalPageMargin * 2
+                                width: parent.width-3*x
+                                wrapMode: Text.WordWrap
+                                font.pixelSize: Theme.fontSizeSmall
+                                color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
+
+                                Component.onCompleted: {
+                                    var c = subscolumn.countries.children[index]
+                                    prop.text = qsTr("Size: %1 MB").arg( c.size )
+                                }
+                            }
+                        }
+
+                        onClicked: {
+                            var c = subscolumn.countries.children[index]
+                            pageStack.push(Qt.resolvedUrl("CountryDetailsPage.qml"),
+                                           { "countryId": c.id } )
+                        }
+                    }
+                }
+
+                Component.onCompleted: {
+                    subscolumn.countries = JSON.parse(manager.getRequestedCountries())
+                    subscolumn.ncountries = subscolumn.countries.children.length
+                }
+            }
+
+            SectionHeader {
                 text: qsTr("Downloads")
                 font.pixelSize: Theme.fontSizeMedium
             }
 
             ElementDownloads {
+            }
+
+            Label {
+                id: missingInfo
+
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+                visible: manager.missing
+
+                function updateText(info) {
+                    text = qsTr("Missing data:<br>") + info
+                }
+
+                Component.onCompleted: {
+                    updateText(manager.missingInfo())
+                }
+
+                Connections {
+                    target: manager
+                    onMissingInfoChanged: {
+                        missingInfo.updateText(info)
+                    }
+                }
+            }
+
+            Button {
+                text: qsTr("Start download")
+                enabled: page.activeState
+                preferredWidth: Theme.buttonWidthLarge
+                anchors.horizontalCenter: parent.horizontalCenter
+                visible: manager.missing
+                onClicked: {
+                    manager.getCountries()
+                }
             }
 
             SectionHeader {
@@ -87,14 +176,15 @@ Page {
                 spacing: Theme.paddingMedium
                 anchors.margins: Theme.horizontalPageMargin
 
-                Rectangle {
-                    width: parent.width
-                    height: Theme.paddingLarge
-                    color: "transparent"
-                }
+                //                Rectangle {
+                //                    width: parent.width
+                //                    height: Theme.paddingLarge
+                //                    color: "transparent"
+                //                }
 
                 Button {
                     text: qsTr("Update list")
+                    enabled: page.activeState
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter
                     onClicked: {
@@ -128,6 +218,7 @@ Page {
 
                 Button {
                     text: qsTr("Subscribe")
+                    enabled: page.activeState
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter
                     onClicked: {
@@ -149,5 +240,14 @@ Page {
         }
 
         VerticalScrollDecorator {}
+    }
+
+    Component.onCompleted: {
+        page.activeState = !manager.downloading
+    }
+
+    Connections {
+        target: manager
+        onDownloadingChanged: page.activeState = !manager.downloading
     }
 }
