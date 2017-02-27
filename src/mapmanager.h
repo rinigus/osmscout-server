@@ -5,7 +5,6 @@
 #include "mapmanagerfeature.h"
 
 #include <QObject>
-#include <QMutex>
 #include <QDir>
 #include <QString>
 #include <QStringList>
@@ -15,6 +14,7 @@
 #include <QPointer>
 #include <QDateTime>
 #include <QAtomicInt>
+
 #include <cstdint>
 
 namespace MapManager {
@@ -31,12 +31,15 @@ namespace MapManager {
     /// \brief true when download is active
     Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
 
+    /// \brief true when some data is missing
+    Q_PROPERTY(bool missing READ missing NOTIFY missingChanged)
+
   public:
     explicit Manager(QObject *parent = 0);
     virtual ~Manager();
 
     /// \brief Composes a list of countries on device in alphabetical order and returns as an JSON array
-    Q_INVOKABLE QString getInstalledCountries();
+    Q_INVOKABLE QString getRequestedCountries();
 
     /// \brief Composes a list of countries provided for download in alphabetical order as an JSON array
     Q_INVOKABLE QString getProvidedCountries();
@@ -67,6 +70,10 @@ namespace MapManager {
     /// \brief Download or update missing data files
     ///
     Q_INVOKABLE bool getCountries();
+
+    /// \brief Get missing data
+    ///
+    Q_INVOKABLE QString missingInfo();
 
     /// \brief Update a list of provided countries and features
     ///
@@ -102,6 +109,7 @@ namespace MapManager {
 
     /// Properties exposed to QML
     bool downloading();
+    bool missing();
 
   signals:
     void databaseOsmScoutChanged(QString database);
@@ -110,6 +118,12 @@ namespace MapManager {
 
     void downloadingChanged(bool state);
     void downloadProgress(QString info);
+
+    void missingChanged(bool missing);
+    void missingInfoChanged(QString info);
+
+    void subscriptionChanged();
+    void availibilityChanged();
 
     void updatesFound(QString info);
 
@@ -120,11 +134,7 @@ namespace MapManager {
     void onSettingsChanged();
 
   protected:
-    //enum DownloadType { NoDownload=0, Countries=1, ProvidedList=2 };
-    typedef int DownloadType;
-    const int NoDownload{0};
-    const int Countries{1};
-    const int ProvidedList{2};
+    enum DownloadType { NoDownload=0, Countries=1, ProvidedList=2 };
 
   protected:
     void loadSettings();
@@ -134,14 +144,9 @@ namespace MapManager {
 
     void missingData();
 
-    void addCountryNoLock(QString id);
-    void rmCountryNoLock(QString id);
-
     /// \brief Composes a list of countries in alphabetical order
     ///
     /// This is a method that creates a list. Its called by other methods to retrieve the list.
-    /// Note that its not locking a mutex and its assumed that the calling method provides
-    /// thread-safety
     void makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz);
 
     /// \brief Wrapper around makeCountriesList transforming the results to JSON
@@ -172,7 +177,6 @@ namespace MapManager {
     void cleanupDownload();
 
   protected:
-    QMutex m_mutex;
 
     // settings
     QDir m_root_dir;
@@ -186,11 +190,13 @@ namespace MapManager {
 
     QString m_postal_global_path;
 
+    bool m_missing;
+    QString m_missing_info;
     QList< FilesToDownload > m_missing_data;
     QNetworkAccessManager m_network_manager;
     QPointer<FileDownloader> m_file_downloader;
 
-    QAtomicInt m_download_type{NoDownload};
+    DownloadType m_download_type{NoDownload};
     uint64_t m_last_reported_downloaded;
     uint64_t m_last_reported_written;
 

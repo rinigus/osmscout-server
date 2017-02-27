@@ -39,7 +39,7 @@ Page {
 
             SectionHeader {
                 text: qsTr("Map")
-                font.pixelSize: Theme.fontSizeLarge
+                font.pixelSize: Theme.fontSizeMedium
             }
 
             ListItem {
@@ -91,7 +91,6 @@ Page {
 
             SectionHeader {
                 text: qsTr("Status")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Label {
@@ -123,7 +122,6 @@ Page {
 
             SectionHeader {
                 text: qsTr("Events")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Label {

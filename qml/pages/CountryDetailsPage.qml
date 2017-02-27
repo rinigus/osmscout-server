@@ -7,6 +7,7 @@ Page {
     property var countryId: ""
     property int nFeatures: 0
     property var features: []
+    property bool activeState: false
 
     allowedOrientations : Orientation.All
 
@@ -15,7 +16,7 @@ Page {
         if (manager.isCountryRequested(countryId))
         {
             subscribe.enabled = false
-            unsubscribe.enabled = true
+            unsubscribe.enabled = (true && page.activeState)
             subscribed.text = qsTr("Subscribed")
             available.visible = true
 
@@ -26,7 +27,7 @@ Page {
         }
         else
         {
-            subscribe.enabled = true
+            subscribe.enabled = (true && page.activeState)
             unsubscribe.enabled = false
             subscribed.text = qsTr("No subscription")
 
@@ -136,74 +137,44 @@ Page {
                 }
             }
 
-            ListView {
+            Column {
                 width: parent.width
-                height: contentHeight // nFeatures * (Theme.fontSizeExtraSmall +  Theme.paddingMedium)
-                model: nFeatures
-                delegate: Row {
-                    spacing: Theme.paddingMedium
-                    //height: Theme.fontSizeExtraSmall +  Theme.paddingMedium
-                    x: Theme.horizontalPageMargin
-                    width: parent.width-2*x
+                spacing: Theme.paddingMedium
+                Repeater {
+                    width: parent.width
+                    model: nFeatures
+                    delegate: Row {
+                        spacing: Theme.paddingMedium
+                        x: Theme.horizontalPageMargin
+                        width: parent.width-2*x
 
-                    property double split_prop: 0.6
+                        property double split_prop: 0.6
 
-                    Label {
-                        text: features[index].name
-                        width: parent.width*split_prop - Theme.paddingMedium/2
-                        font.pixelSize: Theme.fontSizeExtraSmall
-                        color: Theme.secondaryHighlightColor
-                        wrapMode: Text.WordWrap
-                    }
+                        Label {
+                            text: features[index].name
+                            width: parent.width*split_prop - Theme.paddingMedium/2
+                            font.pixelSize: Theme.fontSizeExtraSmall
+                            color: Theme.secondaryHighlightColor
+                            wrapMode: Text.WordWrap
+                        }
 
-                    Label {
-                        id: feature_size
-                        width: parent.width*(1-split_prop) - Theme.paddingMedium/2
-                        font.pixelSize: Theme.fontSizeExtraSmall
-                        horizontalAlignment: Text.AlignRight
-                        color: Theme.secondaryHighlightColor
-                        wrapMode: Text.WordWrap
-                        Component.onCompleted: {
-                            var txt = features[index].size + " " + qsTr("MB")
-                            if (!features[index].enabled)
-                                txt = txt + " [" + qsTr("disabled") + "]"
-                            feature_size.text = txt
+                        Label {
+                            id: feature_size
+                            width: parent.width*(1-split_prop) - Theme.paddingMedium/2
+                            font.pixelSize: Theme.fontSizeExtraSmall
+                            horizontalAlignment: Text.AlignRight
+                            color: Theme.secondaryHighlightColor
+                            wrapMode: Text.WordWrap
+                            Component.onCompleted: {
+                                var txt = features[index].size + " " + qsTr("MB")
+                                if (!features[index].enabled)
+                                    txt = txt + " [" + qsTr("disabled") + "]"
+                                feature_size.text = txt
+                            }
                         }
                     }
                 }
             }
-//            ListView {
-//                width: parent.width
-//                height: nFeatures * (2*(Theme.fontSizeExtraSmall +  Theme.paddingSmall) +  Theme.paddingMedium)
-//                model: nFeatures
-//                delegate: Column {
-//                    spacing: Theme.paddingSmall
-//                    height: 2*(Theme.fontSizeExtraSmall +  Theme.paddingSmall) +  Theme.paddingMedium
-//                    width: parent.width
-
-//                    Label {
-//                        x: Theme.horizontalPageMargin
-//                        width: parent.width-2*x
-//                        font.pixelSize: Theme.fontSizeExtraSmall
-//                        color: Theme.secondaryHighlightColor
-//                        text: features[index].name
-//                    }
-//                    Label {
-//                        id: feature_size
-//                        x: Theme.horizontalPageMargin
-//                        width: parent.width-2*x
-//                        font.pixelSize: Theme.fontSizeExtraSmall
-//                        horizontalAlignment: Text.AlignRight
-//                        color: Theme.secondaryHighlightColor
-//                        Component.onCompleted: {
-//                            var txt = features[index].size + " " + qsTr("MB")
-//                            if (!features[index].enabled)
-//                                txt = txt + " [" + qsTr("disabled") + "]"
-//                            feature_size.text = txt
-//                        }
-//                    }
-//                }
-//            }
 
             SectionHeader {
                 text: qsTr("Subscription")
@@ -238,6 +209,7 @@ Page {
     Component.onCompleted: {
         var c = JSON.parse(manager.getCountryDetails(countryId))
         pageHead.title = c.name
+        page.activeState = !manager.downloading
         fullName.text = c.name_full
         size.text = qsTr("%1 MB").arg(c.size)
         size_full.text = qsTr("%1 MB").arg(c.size_total)
@@ -246,5 +218,16 @@ Page {
         nFeatures = c.features.length
 
         checkSubs()
+    }
+
+    Connections {
+        target: manager
+        onDownloadingChanged: {
+            page.activeState = !manager.downloading
+            checkSubs()
+        }
+
+        onSubscriptionChanged: checkSubs()
+        onAvailibilityChanged: checkSubs()
     }
 }
