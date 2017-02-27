@@ -33,7 +33,6 @@ Dialog {
 
             SectionHeader {
                 text: qsTr("Rendering")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             ElementEntry {
@@ -74,7 +73,6 @@ Dialog {
 
             SectionHeader {
                 text: qsTr("Routing")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Label {
@@ -136,7 +134,6 @@ Dialog {
 
             SectionHeader {
                 text: qsTr("Advanced rendering settings")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             ElementEntry {
