@@ -5575,7 +5575,7 @@
         "type": "territory"
     },
     "url": {
-        "base": "http://some_provider/bucket",
+        "base": "https://f001.backblazeb2.com/file/pLMZBnUTiiMMzwUcLT4z",
         "geocoder_nlp": "geocoder-nlp-1",
         "osmscout": "osmscout-1",
         "postal_country": "postal-country-1",
