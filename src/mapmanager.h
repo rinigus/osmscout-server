@@ -39,6 +39,9 @@ namespace MapManager {
     virtual ~Manager();
 
     /// \brief Composes a list of countries on device in alphabetical order and returns as an JSON array
+    Q_INVOKABLE QString getAvailableCountries();
+
+    /// \brief Composes a list of requested countries in alphabetical order and returns as an JSON array
     Q_INVOKABLE QString getRequestedCountries();
 
     /// \brief Composes a list of countries provided for download in alphabetical order as an JSON array
@@ -139,7 +142,7 @@ namespace MapManager {
   protected:
     void loadSettings();
 
-    void scanDirectories();
+    void scanDirectories(bool force_update = false);
     void nothingAvailable(); ///< Helper method called when there are no maps available
 
     void missingData();

@@ -19,7 +19,11 @@ ListItem {
         }
         else {
             var info = ""
-            if (manager.isCountryAvailable(c.id)) {
+            if (manager.isCountryAvailable(c.id) && c.id==="postal/global") {
+                iconSource = "image://theme/icon-m-chat"
+                info = qsTr("Available") + "; "
+            }
+            else if (manager.isCountryAvailable(c.id)) {
                 iconSource = "image://theme/icon-m-location"
                 info = qsTr("Available") + "; "
             }
@@ -38,6 +42,7 @@ ListItem {
         spacing: Theme.paddingLarge
         x: Theme.horizontalPageMargin
         width: parent.width-2*x
+        anchors.verticalCenter: parent.verticalCenter
 
         Rectangle {
             width: Theme.iconSizeMedium

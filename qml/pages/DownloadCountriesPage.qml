@@ -19,8 +19,6 @@ Page {
 
         header: Column {
             width: parent.width
-            //height: head.height + fullpath.height + Theme.paddingSmall + Theme.paddingLarge
-            //spacing: Theme.paddingSmall
 
             PageHeader {
                 id: head

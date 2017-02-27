@@ -36,6 +36,13 @@ Page {
         }
     }
 
+    function canBeActive()
+    {
+        if (countryId === "postal/global")
+            return false;
+        return true;
+    }
+
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: column.height + Theme.paddingLarge
@@ -48,9 +55,7 @@ Page {
             //anchors.margins: Theme.horizontalPageMargin
 
             Column {
-                //height: pageHead.height + fullName.height + Theme.paddingSmall + Theme.paddingLarge
                 width: parent.width
-                //spacing: Theme.paddingSmall
 
                 PageHeader {
                     id: pageHead
@@ -209,8 +214,10 @@ Page {
     Component.onCompleted: {
         var c = JSON.parse(manager.getCountryDetails(countryId))
         pageHead.title = c.name
-        page.activeState = !manager.downloading
         fullName.text = c.name_full
+        if (c.name === c.name_full) fullName.visible = false
+
+        page.activeState = (!manager.downloading && canBeActive())
         size.text = qsTr("%1 MB").arg(c.size)
         size_full.text = qsTr("%1 MB").arg(c.size_total)
 
@@ -223,7 +230,7 @@ Page {
     Connections {
         target: manager
         onDownloadingChanged: {
-            page.activeState = !manager.downloading
+            page.activeState = (!manager.downloading && canBeActive())
             checkSubs()
         }
 

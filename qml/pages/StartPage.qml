@@ -37,57 +37,44 @@ Page {
                 title: qsTr("OSM Scout Server")
             }
 
-            SectionHeader {
-                text: qsTr("Map")
-                font.pixelSize: Theme.fontSizeMedium
-            }
+            ComboBox {
+                id: mapSelection
+                label: qsTr("Map")
 
-            ListItem {
-                id: listItem
-                //contentHeight: Theme.itemSizeSmall
+                property int ncountries: 0
+                property var countries: []
 
-                Column {
-                    width: parent.width
-                    height: database.height + database_full.height + Theme.paddingSmall
-                    spacing: Theme.paddingSmall
+                function updateData()
+                {
+                    var ret = JSON.parse(manager.getAvailableCountries())
+                    mapSelection.countries = ret.countries
+                    mapSelection.ncountries = mapSelection.countries.length
+                    mapSelection.currentIndex = ret.current
 
-                    Label {
-                        id: database
-                        x: Theme.horizontalPageMargin
-                        width: parent.width-2*Theme.horizontalPageMargin
-                        wrapMode: Text.WordWrap
-                        color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                        text: ""
+                    if (mapSelection.ncountries < 1)
+                        mapSelection.visible = false
+                    else
+                        mapSelection.visible = true
+                }
 
-                        function setText() {
-                            text = settings.valueString(settingsOsmPrefix + "map").split("/").pop()
+                menu: ContextMenu {
+                    Repeater {
+                        model: mapSelection.ncountries
+                        delegate: MenuItem {
+                            text: index < mapSelection.ncountries ? mapSelection.countries[index].name : ""
+                            onClicked: settings.setValue(settingsMapManagerPrefix + "map_selected", mapSelection.countries[index].id)
                         }
-
-                        Component.onCompleted: { setText() }
-                        Connections { target: settings; onOsmScoutSettingsChanged: database.setText() }
-                    }
-
-                    Label {
-                        id: database_full
-                        x: Theme.horizontalPageMargin
-                        width: parent.width-2*Theme.horizontalPageMargin
-                        wrapMode: Text.WordWrap
-                        color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                        text: ""
-                        font.pixelSize: Theme.fontSizeTiny
-                        truncationMode: TruncationMode.Fade
-
-                        function setText() {
-                            text = settings.valueString(settingsOsmPrefix + "map")
-                        }
-
-                        Component.onCompleted: { setText() }
-                        Connections { target: settings; onOsmScoutSettingsChanged: database_full.setText() }
                     }
                 }
 
-                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+                Component.onCompleted: updateData()
+
+                Connections {
+                    target: manager
+                    onAvailibilityChanged: mapSelection.updateData()
+                }
             }
+
 
             SectionHeader {
                 text: qsTr("Status")

@@ -60,6 +60,8 @@ void Manager::loadSettings()
 {
   AppSettings settings;
 
+  QString old_selection = m_map_selected;
+
   m_root_dir.setPath(settings.valueString(MAPMANAGER_SETTINGS "root"));
   m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
   m_provided_url = settings.valueString(MAPMANAGER_SETTINGS "provided_url");
@@ -71,7 +73,7 @@ void Manager::loadSettings()
   else
     rmCountry(const_feature_id_postal_global);
 
-  scanDirectories();
+  scanDirectories(old_selection != m_map_selected);
   missingData();
   checkUpdates();
 }
@@ -84,6 +86,8 @@ void Manager::nothingAvailable()
   updateOsmScout();
   updateGeocoderNLP();
   updatePostal();
+
+  emit availibilityChanged();
 }
 
 QJsonObject Manager::loadJson(QString fname) const
@@ -113,7 +117,7 @@ QString Manager::getPretty(const QJsonObject &obj) const
   return name;
 }
 
-void Manager::scanDirectories()
+void Manager::scanDirectories(bool force_update)
 {
   if (!m_root_dir.exists())
     {
@@ -185,8 +189,9 @@ void Manager::scanDirectories()
         }
     }
 
-  if ( available != m_maps_available )
+  if ( available != m_maps_available || force_update )
     {
+      bool chatty_update = (available != m_maps_available);
       m_maps_available = available;
 
       AppSettings settings;
@@ -211,8 +216,9 @@ void Manager::scanDirectories()
       makeCountriesList(true, countries, ids, szs);
 
       // print all loaded countries
-      for (const auto &c: countries)
-        InfoHub::logInfo(tr("Available country or territory: ") + c);
+      if (chatty_update)
+        for (const auto &c: countries)
+          InfoHub::logInfo(tr("Available country or territory: ") + c);
 
       updateOsmScout();
       updateGeocoderNLP();
@@ -220,6 +226,41 @@ void Manager::scanDirectories()
 
       emit availibilityChanged();
     }
+}
+
+QString Manager::getAvailableCountries()
+{
+  QList< QPair<QString, QString> > available;
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
+    {
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        available.append(qMakePair(getPretty(c), id));
+    }
+
+  std::sort(available.begin(), available.end());
+  QJsonArray list;
+  int currentIndex = -1;
+  int counter = 0;
+  for (const auto &i: available)
+    {
+      QJsonObject c;
+      c.insert("name", i.first);
+      c.insert("id", i.second);
+      list.append(c);
+
+      if (i.second == m_map_selected) currentIndex = counter;
+      ++counter;
+    }
+
+  QJsonObject ret;
+  ret.insert("countries", list);
+  ret.insert("current", currentIndex);
+  QJsonDocument doc(ret);
+  return doc.toJson();
 }
 
 QString Manager::getRequestedCountries()
@@ -234,6 +275,7 @@ QString Manager::getProvidedCountries()
 
 void Manager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz)
 {
+  QList< QPair<QString, QString> > available_global;
   QList< QPair<QString, QString> > available;
 
   QJsonObject objlist;
@@ -246,25 +288,34 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
        i != objlist.constEnd(); ++i )
     {
       const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
       if ( getType(c) == const_feature_type_country )
-        {
-          QString id = getId(c);
+        available.append(qMakePair(getPretty(c), id));
+      else if (list_available)
+        available_global.append(qMakePair(getPretty(c), id));
 
-          available.append(qMakePair(getPretty(c), id));
+      uint64_t s = 0;
+      for (const Feature *f: m_features)
+        s += f->getSize(c);
 
-          uint64_t s = 0;
-          for (const Feature *f: m_features)
-            s += f->getSize(c);
-
-          sizes[id] = s;
-        }
+      sizes[id] = s;
     }
 
   std::sort(available.begin(), available.end());
+  std::sort(available_global.begin(), available_global.end());
 
   countries.clear();
   ids.clear();
   sz.clear();
+
+  for (const auto &i: available_global)
+    {
+      countries.append(i.first);
+      ids.append(i.second);
+      sz.append(sizes[i.second]);
+    }
+
   for (const auto &i: available)
     {
       countries.append(i.first);
@@ -369,7 +420,7 @@ QString Manager::makeCountriesListAsJSON(bool list_available, bool tree)
       obj.insert("name", name);
       obj.insert("id", ids[i]);
       obj.insert("size", QString("%L1").arg( (int)round(sz[i]/1024./1024.) ) );
-      obj.insert("type", QString("country"));
+      obj.insert("type", QString("non-dir"));
       insertCountry(obj, name, path, root);
     }
 
@@ -732,8 +783,6 @@ void Manager::onDownloadProgress()
     {
       last_message = txt;
       emit downloadProgress(txt);
-
-      qDebug() << txt;
     }
 }
 

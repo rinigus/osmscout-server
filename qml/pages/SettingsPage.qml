@@ -62,7 +62,6 @@ Dialog {
 
             SectionHeader {
                 text: qsTr("Geocoder")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Label {
@@ -87,7 +86,6 @@ Dialog {
 
             SectionHeader {
                 text: qsTr("Backend settings")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Column {
@@ -142,7 +140,6 @@ Dialog {
 
             SectionHeader {
                 text: qsTr("Miscellaneous")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             ElementSwitch {

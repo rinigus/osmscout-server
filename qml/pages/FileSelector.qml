@@ -42,10 +42,6 @@ Page {
         model: fileModel
 
         header: Column {
-//            height: ( head.height + fullpath.height + Theme.paddingSmall + Theme.paddingLarge +
-//                      helpText.visible ? (helpText.height+Theme.paddingSmall) : 0 )
-            spacing: Theme.paddingSmall
-
             PageHeader {
                 id: head
                 title: page.title
