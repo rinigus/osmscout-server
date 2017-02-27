@@ -34,6 +34,7 @@ Page {
             console.log("Error ###", fileName, error)
         }
     }
+
     SilicaListView {
         id: fileList
 
@@ -41,7 +42,8 @@ Page {
         model: fileModel
 
         header: Column {
-            height: head.height + fullpath.height + Theme.paddingSmall + Theme.paddingLarge
+//            height: ( head.height + fullpath.height + Theme.paddingSmall + Theme.paddingLarge +
+//                      helpText.visible ? (helpText.height+Theme.paddingSmall) : 0 )
             spacing: Theme.paddingSmall
 
             PageHeader {
@@ -60,6 +62,17 @@ Page {
                 truncationMode: TruncationMode.Elide
                 font.pixelSize: Theme.fontSizeTiny
                 color: Theme.highlightColor
+            }
+
+            Label {
+                id: helpText
+                text: qsTr("To select a folder, press and hold the folder and choose 'Select' in the context menu")
+                x: Theme.horizontalPageMargin
+                width: page.width-2*x
+                visible: page.directory && page.directory_file.length < 1
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+                wrapMode: Text.WordWrap
             }
         }
 
