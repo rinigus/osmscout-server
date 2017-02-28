@@ -66,7 +66,7 @@ Dialog {
 
             Label {
                 text: qsTr("Geocoder is responsible for resolving search requests. " +
-                           "For that, it parses the search string and finds the corresponoding objects on a map." +
+                           "For that, it parses the search string and finds the corresponding objects on a map." +
                            "This server allows you to select between two geocoder backends: <i>geocoder-nlp</i> and " +
                            "<i>libosmscout</i>. ")
                 x: Theme.horizontalPageMargin
@@ -81,7 +81,9 @@ Dialog {
                 key: settingsGeomasterPrefix + "use_geocoder_nlp"
                 mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
                 secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
-                                     "Note that it requires additional databases for language, user input parsing, and geocoding.")
+                                     "Note that it requires additional databases for language, user input parsing, and geocoding.<br>" +
+                                     "NB! If you select <i>geocoder-nlp</i>, please specify languages that should be used for " +
+                                     "address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.")
             }
 
             SectionHeader {

@@ -28,6 +28,9 @@ namespace MapManager {
   {
     Q_OBJECT
 
+    /// \brief true when Map's storage dir is available
+    Q_PROPERTY(bool storageAvailable READ storageAvailable NOTIFY storageAvailableChanged)
+
     /// \brief true when download is active
     Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
 
@@ -37,6 +40,9 @@ namespace MapManager {
   public:
     explicit Manager(QObject *parent = 0);
     virtual ~Manager();
+
+    /// \brief Check if the storage directory is available
+    Q_INVOKABLE void checkStorageAvailable();
 
     /// \brief Composes a list of countries on device in alphabetical order and returns as an JSON array
     Q_INVOKABLE QString getAvailableCountries();
@@ -111,8 +117,9 @@ namespace MapManager {
     Q_INVOKABLE bool deleteNonNeededFiles(const QStringList &files);
 
     /// Properties exposed to QML
+    bool storageAvailable();
     bool downloading();
-    bool missing();
+    bool missing();    
 
   signals:
     void databaseOsmScoutChanged(QString database);
@@ -132,6 +139,7 @@ namespace MapManager {
 
     void errorMessage(QString info);
 
+    void storageAvailableChanged(bool available);
 
   public slots:
     void onSettingsChanged();

@@ -220,7 +220,11 @@ Page {
     }
 
     Component.onCompleted: {
-        if (directory && (fileModel.hasFile(directory_file) || directory_file.length<1))
-            fileModel.path = fileModel.appendPath("..")
+        if (directory)
+        {
+            if ( (directory_file.length<1 && fileModel.hasFile(".") && fileModel.path === homePath) ||
+                    (directory_file.length>=1 && fileModel.hasFile(directory_file)) )
+                fileModel.path = fileModel.appendPath("..")
+        }
     }
 }

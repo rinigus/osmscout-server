@@ -36,7 +36,7 @@ void AppSettings::initDefaults()
   // defaults for libosmscout
 #ifdef IS_SAILFISH_OS
   QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
-  CHECK(MAPMANAGER_SETTINGS "root", documents + "/Maps");
+  CHECK(MAPMANAGER_SETTINGS "root", documents + "/Maps.OSMScoutServer");
 #else
   CHECK(MAPMANAGER_SETTINGS "root", "Maps");
 #endif

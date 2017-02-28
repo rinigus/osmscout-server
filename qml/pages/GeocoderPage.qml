@@ -56,7 +56,7 @@ Dialog {
                 secondaryLabel: qsTr("In addition to <i>libpostal</i>, primitive parser allows you to specify " +
                                      "administrative hierarchy of a searched object by separating components with a comma. " +
                                      "Sometimes, when libpostal fails to parse the request correctly, this parser allows " +
-                                     "you to overcome the issue. Example: house_number, street, town.")
+                                     "you to overcome the issue.<br>Example: house_number, street, town.")
             }
 
             ElementSwitch {
@@ -78,5 +78,3 @@ Dialog {
         eGeoLanguages.apply()
     }
 }
-
-
