@@ -14,12 +14,14 @@ Feature::Feature(const PathProvider *path,
                  const QString &feature_type,
                  const QString &feature_name,
                  const QString &feature_pretty_name,
-                 const QStringList &feature_files):
+                 const QStringList &feature_files,
+                 const int version):
   m_path_provider(path),
   m_type(feature_type),
   m_name(feature_name),
   m_pretty(feature_pretty_name),
-  m_files(feature_files)
+  m_files(feature_files),
+  m_version(version)
 {
 }
 
@@ -70,9 +72,15 @@ bool Feature::isMyType(const QJsonObject &request) const
   return (m_type == request.value("type").toString());
 }
 
+bool Feature::isCompatible(const QJsonObject &request) const
+{
+  return (m_version == request.value(m_name).toObject().value("version").toString().toInt());
+}
+
 bool Feature::isAvailable(const QJsonObject &request) const
 {
   if (!m_enabled || !isMyType(request)) return true;
+  if (!isCompatible(request)) return false;
 
   QString path = getPath(request);
   QDir dir(m_path_provider->fullPath("."));
@@ -92,7 +100,7 @@ bool Feature::hasFeatureDefined(const QJsonObject &request) const
 void Feature::checkMissingFiles(const QJsonObject &request,
                                 FilesToDownload &missing) const
 {
-  if (!m_enabled || !isMyType(request)) return;
+  if (!m_enabled || !isMyType(request) || !isCompatible(request)) return;
 
   QString path = getPath(request);
   QDir dir(m_path_provider->fullPath("."));
@@ -154,7 +162,8 @@ const static QStringList osmscout_files{
 FeatureOsmScout::FeatureOsmScout(const PathProvider *path):
   Feature(path, "territory", "osmscout",
           QCoreApplication::translate("MapManagerFeature", "OSM Scout library"),
-          osmscout_files)
+          osmscout_files,
+          11)
 {
 }
 
@@ -172,7 +181,8 @@ const static QStringList geocodernlp_files{
 FeatureGeocoderNLP::FeatureGeocoderNLP(const PathProvider *path):
   Feature(path, "territory", "geocoder_nlp",
           QCoreApplication::translate("MapManagerFeature", "Geocoder-NLP"),
-          geocodernlp_files)
+          geocodernlp_files,
+          1)
 {
 }
 
@@ -196,7 +206,8 @@ const static QStringList postal_country_files{
 FeaturePostalGlobal::FeaturePostalGlobal(const PathProvider *path):
   Feature(path, "postal/global", "postal_global",
           QCoreApplication::translate("MapManagerFeature", "Address parsing language support"),
-          postal_global_files)
+          postal_global_files,
+          1)
 {
 }
 
@@ -214,7 +225,8 @@ void FeaturePostalGlobal::loadSettings()
 FeaturePostalCountry::FeaturePostalCountry(const PathProvider *path):
   Feature(path, "territory", "postal_country",
           QCoreApplication::translate("MapManagerFeature", "Address parsing country-specific support"),
-          postal_country_files)
+          postal_country_files,
+          1)
 {
 }
 

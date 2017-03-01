@@ -43,7 +43,8 @@ namespace MapManager {
                      const QString &feature_type,
                      const QString &feature_name,
                      const QString &feature_pretty_name,
-                     const QStringList &feature_files);
+                     const QStringList &feature_files,
+                     const int version);
 
   public:
     virtual ~Feature() {}
@@ -66,6 +67,8 @@ namespace MapManager {
 
     bool isMyType(const QJsonObject &request) const;
 
+    bool isCompatible(const QJsonObject &request) const;
+
     bool isAvailable(const QJsonObject &request) const;
 
     void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing) const;
@@ -82,6 +85,7 @@ namespace MapManager {
     const QString m_name;
     const QString m_pretty;
     const QStringList m_files;
+    const int m_version;
 
     bool m_enabled{false};
     QString m_url;
