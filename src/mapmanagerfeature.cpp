@@ -74,6 +74,7 @@ bool Feature::isMyType(const QJsonObject &request) const
 
 bool Feature::isCompatible(const QJsonObject &request) const
 {
+  if (!request.contains(m_name)) return true;
   return (m_version == request.value(m_name).toObject().value("version").toString().toInt());
 }
 
