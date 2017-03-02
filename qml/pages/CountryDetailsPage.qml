@@ -9,7 +9,9 @@ Page {
     property var features: []
     property bool activeState: false
 
-    allowedOrientations : Orientation.All
+    signal dataChanged
+
+    allowedOrientations : Orientation.All    
 
     function checkSubs()
     {
@@ -23,7 +25,7 @@ Page {
             if (manager.isCountryAvailable(countryId))
                 available.text = qsTr("All datasets covering selected features are available")
             else
-                available.text = qsTr("Some datasets are missing, you would have to start downloads to get them")
+                available.text = qsTr("Some datasets are missing or of incompatible version. You would have to start downloads to get them.")
         }
         else
         {
@@ -34,6 +36,23 @@ Page {
             available.text = ""
             available.visible = false
         }
+    }
+
+    function fillData()
+    {
+        var c = JSON.parse(manager.getCountryDetails(countryId))
+        pageHead.title = c.name
+        fullName.text = c.name_full
+        if (c.name === c.name_full) fullName.visible = false
+
+        page.activeState = (!manager.downloading && canBeActive())
+        size.text = qsTr("%1 MB").arg(c.size)
+        size_full.text = qsTr("%1 MB").arg(c.size_total)
+
+        features = c.features
+        nFeatures = c.features.length
+
+        dataChanged()
     }
 
     function canBeActive()
@@ -156,11 +175,24 @@ Page {
                         property double split_prop: 0.6
 
                         Label {
-                            text: features[index].name
+                            id: feature_name
                             width: parent.width*split_prop - Theme.paddingMedium/2
                             font.pixelSize: Theme.fontSizeExtraSmall
                             color: Theme.secondaryHighlightColor
                             wrapMode: Text.WordWrap
+
+                            function updateData() {
+                                var txt = features[index].name + "<br>" + features[index].date
+                                if (features[index].compatible == 0)
+                                    txt = txt + "<br><b>" + qsTr("incompatible version") + "</b>"
+                                text = txt
+                            }
+
+                            Component.onCompleted: updateData()
+                            Connections {
+                                target: page
+                                onDataChanged: feature_name.updateData()
+                            }
                         }
 
                         Label {
@@ -170,11 +202,18 @@ Page {
                             horizontalAlignment: Text.AlignRight
                             color: Theme.secondaryHighlightColor
                             wrapMode: Text.WordWrap
-                            Component.onCompleted: {
+
+                            function updateData() {
                                 var txt = features[index].size + " " + qsTr("MB")
                                 if (!features[index].enabled)
-                                    txt = txt + " [" + qsTr("disabled") + "]"
+                                    txt = txt + "<br>" + qsTr("disabled")
                                 feature_size.text = txt
+                            }
+
+                            Component.onCompleted: updateData()
+                            Connections {
+                                target: page
+                                onDataChanged: feature_name.updateData()
                             }
                         }
                     }
@@ -212,18 +251,7 @@ Page {
     }
 
     Component.onCompleted: {
-        var c = JSON.parse(manager.getCountryDetails(countryId))
-        pageHead.title = c.name
-        fullName.text = c.name_full
-        if (c.name === c.name_full) fullName.visible = false
-
-        page.activeState = (!manager.downloading && canBeActive())
-        size.text = qsTr("%1 MB").arg(c.size)
-        size_full.text = qsTr("%1 MB").arg(c.size_total)
-
-        features = c.features
-        nFeatures = c.features.length
-
+        fillData()
         checkSubs()
     }
 
@@ -234,7 +262,13 @@ Page {
             checkSubs()
         }
 
-        onSubscriptionChanged: checkSubs()
-        onAvailibilityChanged: checkSubs()
+        onSubscriptionChanged: {
+            fillData()
+            checkSubs()
+        }
+        onAvailibilityChanged: {
+            fillData()
+            checkSubs()
+        }
     }
 }

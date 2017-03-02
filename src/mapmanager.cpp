@@ -16,6 +16,8 @@
 #include <QJsonArray>
 #include <QJsonObject>
 
+#include <QLocale>
+
 #include <algorithm>
 #include <cmath>
 
@@ -506,7 +508,12 @@ void Manager::rmCountry(QString id)
 
 QString Manager::getCountryDetails(QString id)
 {
-  QJsonObject country = loadJson(fullPath(const_fname_countries_provided)).value(id).toObject();
+  QJsonObject provided = loadJson(fullPath(const_fname_countries_provided)).value(id).toObject();
+  QJsonObject requested = loadJson(fullPath(const_fname_countries_requested)).value(id).toObject();
+
+  QJsonObject country;
+  if (requested.empty()) country = provided;
+  else country = requested;
 
   QJsonObject reply;
 
@@ -533,6 +540,8 @@ QString Manager::getCountryDetails(QString id)
               feature.insert("name", f->pretty());
               feature.insert("enabled", f->enabled());
               feature.insert("size", QString("%L1").arg( (int)round(s/1024./1024.) ));
+              feature.insert("date", QLocale::system().toString( f->getDateTime(country).date(), QLocale::ShortFormat ));
+              feature.insert("compatible", QString::number( f->isCompatible(country) ? 1 : 0 ));
               features.append(feature);
             }
         }
