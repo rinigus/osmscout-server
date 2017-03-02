@@ -186,7 +186,7 @@ void FileDownloader::onDownloaded()
 void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 {
   QString err = tr("Failed to download") + ": " + m_path +
-      " [" + m_reply->error() + "]";
+      " [" + QString::number(m_reply->error()) + "]";
   onError(err);
 }
 

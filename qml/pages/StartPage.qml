@@ -244,14 +244,11 @@ Page {
 
     Connections {
         target: manager
-        onStorageAvailableChanged: {
-            if (!available)
-            {
-                console.log("Busy: ")
-                console.log(pageStack.busy)
-                pageStack.completeAnimation()
-                pageStack.push(Qt.resolvedUrl("SetupChooseStorageDir.qml"))
-            }
+
+        onErrorMessage: {
+            pageStack.completeAnimation()
+            pageStack.push( Qt.resolvedUrl("MessagePage.qml"),
+                           {"header": qsTr("Error"), "message": info} )
         }
     }
 

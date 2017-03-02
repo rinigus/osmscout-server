@@ -767,10 +767,11 @@ void Manager::onDownloadFinished(QString path)
 void Manager::onDownloadError(QString err)
 {
   InfoHub::logWarning(err);
+  emit errorMessage(err);
+
   cleanupDownload();
 
   InfoHub::logWarning(tr("Dropping all downloads"));
-  m_missing_data.clear();
 
   m_download_type = NoDownload;
   emit downloadingChanged(false);
