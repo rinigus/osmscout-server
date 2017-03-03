@@ -788,12 +788,10 @@ void Manager::onDownloadFinished(QString path)
 
 void Manager::onDownloadError(QString err)
 {
-  InfoHub::logWarning(err);
+  InfoHub::logWarning(tr("Download failed, dropping all downloads"));
   emit errorMessage(err);
 
   cleanupDownload();
-
-  InfoHub::logWarning(tr("Dropping all downloads"));
 
   m_download_type = NoDownload;
   emit downloadingChanged(false);
