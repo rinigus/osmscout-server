@@ -28,7 +28,8 @@ Page {
                 available.text = qsTr("Some datasets are missing. You would have to start downloads to get them.")
             else
                 available.text = qsTr("Some or all datasets are incompatible with this version. " +
-                                      "You would have to update the software, list of provided maps, or the maps.")
+                                      "You would have to update list of provided maps, the maps, and/or install " +
+                                      "the latest release of OSM Scout Server.")
         }
         else
         {
