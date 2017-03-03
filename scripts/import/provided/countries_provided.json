@@ -2989,6 +2989,396 @@
         },
         "type": "territory"
     },
+    "europe/germany/bayern": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-bayern",
+            "size": "213766147",
+            "size-compressed": "91238626",
+            "timestamp": "2017-03-03_17:02",
+            "version": "1"
+        },
+        "id": "europe/germany/bayern",
+        "name": "Europe/Germany/Bayern",
+        "osmscout": {
+            "path": "osmscout/europe-germany-bayern",
+            "size": "513362819",
+            "size-compressed": "312480221",
+            "timestamp": "2017-03-03_17:01",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/berlin": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-berlin",
+            "size": "42328067",
+            "size-compressed": "17965084",
+            "timestamp": "2017-03-03_16:46",
+            "version": "1"
+        },
+        "id": "europe/germany/berlin",
+        "name": "Europe/Germany/Berlin",
+        "osmscout": {
+            "path": "osmscout/europe-germany-berlin",
+            "size": "49095495",
+            "size-compressed": "26721119",
+            "timestamp": "2017-03-03_16:46",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/brandenburg": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-brandenburg",
+            "size": "82014211",
+            "size-compressed": "34978823",
+            "timestamp": "2017-03-03_16:49",
+            "version": "1"
+        },
+        "id": "europe/germany/brandenburg",
+        "name": "Europe/Germany/Brandenburg",
+        "osmscout": {
+            "path": "osmscout/europe-germany-brandenburg",
+            "size": "149652468",
+            "size-compressed": "88633435",
+            "timestamp": "2017-03-03_16:49",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/bremen": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-bremen",
+            "size": "11448323",
+            "size-compressed": "5013655",
+            "timestamp": "2017-03-03_16:45",
+            "version": "1"
+        },
+        "id": "europe/germany/bremen",
+        "name": "Europe/Germany/Bremen",
+        "osmscout": {
+            "path": "osmscout/europe-germany-bremen",
+            "size": "15033694",
+            "size-compressed": "8941673",
+            "timestamp": "2017-03-03_16:45",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/hamburg": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-hamburg",
+            "size": "23867395",
+            "size-compressed": "10655058",
+            "timestamp": "2017-03-03_16:45",
+            "version": "1"
+        },
+        "id": "europe/germany/hamburg",
+        "name": "Europe/Germany/Hamburg",
+        "osmscout": {
+            "path": "osmscout/europe-germany-hamburg",
+            "size": "28627091",
+            "size-compressed": "16916083",
+            "timestamp": "2017-03-03_16:45",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/hessen": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-hessen",
+            "size": "95776771",
+            "size-compressed": "41168139",
+            "timestamp": "2017-03-03_16:51",
+            "version": "1"
+        },
+        "id": "europe/germany/hessen",
+        "name": "Europe/Germany/Hessen",
+        "osmscout": {
+            "path": "osmscout/europe-germany-hessen",
+            "size": "198178009",
+            "size-compressed": "121211533",
+            "timestamp": "2017-03-03_16:51",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/mecklenburg-vorpommern": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-mecklenburg-vorpommern",
+            "size": "32006147",
+            "size-compressed": "14341592",
+            "timestamp": "2017-03-03_16:47",
+            "version": "1"
+        },
+        "id": "europe/germany/mecklenburg-vorpommern",
+        "name": "Europe/Germany/Mecklenburg-Vorpommern",
+        "osmscout": {
+            "path": "osmscout/europe-germany-mecklenburg-vorpommern",
+            "size": "80088044",
+            "size-compressed": "48251444",
+            "timestamp": "2017-03-03_16:47",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/niedersachsen": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-niedersachsen",
+            "size": "151093251",
+            "size-compressed": "65468288",
+            "timestamp": "2017-03-03_16:54",
+            "version": "1"
+        },
+        "id": "europe/germany/niedersachsen",
+        "name": "Europe/Germany/Niedersachsen",
+        "osmscout": {
+            "path": "osmscout/europe-germany-niedersachsen",
+            "size": "286047101",
+            "size-compressed": "176296949",
+            "timestamp": "2017-03-03_16:54",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/nordrhein-westfalen": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-nordrhein-westfalen",
+            "size": "402776067",
+            "size-compressed": "174281970",
+            "timestamp": "2017-03-03_17:05",
+            "version": "1"
+        },
+        "id": "europe/germany/nordrhein-westfalen",
+        "name": "Europe/Germany/Nordrhein-Westfalen",
+        "osmscout": {
+            "path": "osmscout/europe-germany-nordrhein-westfalen",
+            "size": "543974256",
+            "size-compressed": "334990326",
+            "timestamp": "2017-03-03_17:04",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/rheinland-pfalz": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-rheinland-pfalz",
+            "size": "62320643",
+            "size-compressed": "26485886",
+            "timestamp": "2017-03-03_16:49",
+            "version": "1"
+        },
+        "id": "europe/germany/rheinland-pfalz",
+        "name": "Europe/Germany/Rheinland-Pfalz",
+        "osmscout": {
+            "path": "osmscout/europe-germany-rheinland-pfalz",
+            "size": "142566415",
+            "size-compressed": "87753118",
+            "timestamp": "2017-03-03_16:49",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/saarland": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-saarland",
+            "size": "15220739",
+            "size-compressed": "6608506",
+            "timestamp": "2017-03-03_16:47",
+            "version": "1"
+        },
+        "id": "europe/germany/saarland",
+        "name": "Europe/Germany/Saarland",
+        "osmscout": {
+            "path": "osmscout/europe-germany-saarland",
+            "size": "29701608",
+            "size-compressed": "18589367",
+            "timestamp": "2017-03-03_16:47",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/sachsen": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-sachsen",
+            "size": "65253379",
+            "size-compressed": "27908963",
+            "timestamp": "2017-03-03_16:51",
+            "version": "1"
+        },
+        "id": "europe/germany/sachsen",
+        "name": "Europe/Germany/Sachsen",
+        "osmscout": {
+            "path": "osmscout/europe-germany-sachsen",
+            "size": "147343249",
+            "size-compressed": "90100766",
+            "timestamp": "2017-03-03_16:51",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/sachsen-anhalt": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-sachsen-anhalt",
+            "size": "33091587",
+            "size-compressed": "14201542",
+            "timestamp": "2017-03-03_16:50",
+            "version": "1"
+        },
+        "id": "europe/germany/sachsen-anhalt",
+        "name": "Europe/Germany/Sachsen-Anhalt",
+        "osmscout": {
+            "path": "osmscout/europe-germany-sachsen-anhalt",
+            "size": "84702078",
+            "size-compressed": "53123439",
+            "timestamp": "2017-03-03_16:50",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/schleswig-holstein": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-schleswig-holstein",
+            "size": "50520067",
+            "size-compressed": "22421378",
+            "timestamp": "2017-03-03_16:52",
+            "version": "1"
+        },
+        "id": "europe/germany/schleswig-holstein",
+        "name": "Europe/Germany/Schleswig-Holstein",
+        "osmscout": {
+            "path": "osmscout/europe-germany-schleswig-holstein",
+            "size": "100778387",
+            "size-compressed": "60275170",
+            "timestamp": "2017-03-03_16:52",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/germany/thueringen": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-thueringen",
+            "size": "33288195",
+            "size-compressed": "14319478",
+            "timestamp": "2017-03-03_16:52",
+            "version": "1"
+        },
+        "id": "europe/germany/thueringen",
+        "name": "Europe/Germany/Th\u00fcringen",
+        "osmscout": {
+            "path": "osmscout/europe-germany-thueringen",
+            "size": "88750280",
+            "size-compressed": "55043534",
+            "timestamp": "2017-03-03_16:52",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
     "europe/great-britain": {
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-great-britain",

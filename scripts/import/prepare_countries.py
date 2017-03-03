@@ -60,12 +60,21 @@ Name2Pretty = {
 
     "europe/germany": "Europe/Germany",
     "baden-wuerttemberg": "Baden-Württemberg",
-    
+    "mecklenburg-vorpommern": "Mecklenburg-Vorpommern",
+    "nordrhein-westfalen": "Nordrhein-Westfalen",
+    "rheinland-pfalz": "Rheinland-Pfalz",
+    "sachsen-anhalt": "Sachsen-Anhalt",
+    "schleswig-holstein": "Schleswig-Holstein",
+    "thueringen": "Thüringen",
 }
 
 NameCapitalize = [
     "azores",
     "north-america/us",
+    "bayern", "berlin", "brandenburg", "bremen",
+    "hamburg", "hessen",
+    "niedersachsen", "saarland", "sachsen", 
+    
 ]
 
 SpecialURL = {
@@ -126,8 +135,22 @@ Countries = {
 
     "europe/germany": [
         "baden-wuerttemberg",
-        
-        ],
+        "bayern",
+        "berlin",
+        "brandenburg",
+        "bremen",
+        "hamburg",
+        "hessen",
+        "mecklenburg-vorpommern",
+        "niedersachsen",
+        "nordrhein-westfalen",
+        "rheinland-pfalz",
+        "saarland",
+        "sachsen",
+        "sachsen-anhalt",
+        "schleswig-holstein",
+        "thueringen",
+    ],
 
     "africa": [ "algeria",
                 "angola",
