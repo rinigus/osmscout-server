@@ -53,12 +53,12 @@ Page {
 
                 Label {
                     text: qsTr("<i>OSM Scout Server</i> is expected to be used with the " +
-                               "downloaded maps. To manage the maps, the Server requires a use of a separate " +
-                               "folder with the files within that folder managed by the Server only. " +
-                               "For that, please <b>allocate separate, empty folder</b> that OSM Scout Server could use. " +
+                               "downloaded maps. To manage the maps, the Server requires a separate " +
+                               "folder. The files within that folder should be managed by the Server only. " +
                                "This includes deleting all files within that folder when requested by you during cleanup or " +
                                "map updates.<br><br>" +
-                               "Please, create a new folder in a file manager or using command line and then select this folder " +
+                               "Please <b>allocate separate, empty folder</b> for OSM Scout Server. " +
+                               "For that, create a new folder in a file manager or using command line and then select this folder " +
                                "in <i>Settings</i> (pulley menu).")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
@@ -94,7 +94,8 @@ Page {
                 }
 
                 function checkVisible() {
-                    noSubscriptions.visible = (JSON.parse(manager.getRequestedCountries()).children.length == 0)
+                    noSubscriptions.visible = (manager.storageAvailable &&
+                                               JSON.parse(manager.getRequestedCountries()).children.length == 0)
                 }
 
                 Component.onCompleted: noSubscriptions.checkVisible()

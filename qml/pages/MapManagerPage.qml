@@ -155,12 +155,6 @@ Page {
                 spacing: Theme.paddingMedium
                 anchors.margins: Theme.horizontalPageMargin
 
-                Rectangle {
-                    width: parent.width
-                    height: Theme.paddingLarge
-                    color: "transparent"
-                }
-
                 Button {
                     text: qsTr("Subscribe")
                     enabled: page.activeState
@@ -187,6 +181,12 @@ Page {
                 width: parent.width
                 spacing: Theme.paddingMedium
                 anchors.margins: Theme.horizontalPageMargin
+
+                Rectangle {
+                    width: parent.width
+                    height: Theme.paddingLarge
+                    color: "transparent"
+                }
 
                 Button {
                     text: qsTr("Update list")

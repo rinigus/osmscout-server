@@ -122,7 +122,7 @@ namespace MapManager {
     /// Properties exposed to QML
     bool storageAvailable();
     bool downloading();
-    bool missing();    
+    bool missing();
 
   signals:
     void databaseOsmScoutChanged(QString database);
@@ -194,6 +194,7 @@ namespace MapManager {
 
     // settings
     QDir m_root_dir;
+    bool m_dir_existed{false};
     QList< Feature* > m_features;
     QString m_provided_url;
 
@@ -204,7 +205,7 @@ namespace MapManager {
 
     QString m_postal_global_path;
 
-    bool m_missing;
+    bool m_missing{false};
     QString m_missing_info;
     QList< FilesToDownload > m_missing_data;
     QNetworkAccessManager m_network_manager;

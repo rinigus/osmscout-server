@@ -63,7 +63,6 @@ void Manager::loadSettings()
   AppSettings settings;
 
   QString old_selection = m_map_selected;
-  bool oldExists = m_root_dir.exists();
 
   m_root_dir.setPath(settings.valueString(MAPMANAGER_SETTINGS "root"));
   m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
@@ -76,24 +75,28 @@ void Manager::loadSettings()
   else
     rmCountry(const_feature_id_postal_global);
 
-  if (oldExists != m_root_dir.exists())
+  if (m_dir_existed != m_root_dir.exists())
     emit storageAvailableChanged(m_root_dir.exists());
 
   scanDirectories(old_selection != m_map_selected);
   missingData();
   checkUpdates();
+
+  m_dir_existed = m_root_dir.exists();
 }
 
 void Manager::nothingAvailable()
 {
   m_maps_available = QJsonObject();
   m_map_selected.clear();
+  m_missing = false;
 
   updateOsmScout();
   updateGeocoderNLP();
   updatePostal();
 
   emit availibilityChanged();
+  emit missingChanged(m_missing);
 }
 
 QJsonObject Manager::loadJson(QString fname) const
