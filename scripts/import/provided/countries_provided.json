@@ -2963,6 +2963,32 @@
         },
         "type": "territory"
     },
+    "europe/germany/baden-wuerttemberg": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-germany-baden-wuerttemberg",
+            "size": "234311683",
+            "size-compressed": "101569910",
+            "timestamp": "2017-03-03_13:45",
+            "version": "1"
+        },
+        "id": "europe/germany/baden-wuerttemberg",
+        "name": "Europe/Germany/Baden-W\u00fcrttemberg",
+        "osmscout": {
+            "path": "osmscout/europe-germany-baden-wuerttemberg",
+            "size": "391846755",
+            "size-compressed": "237944323",
+            "timestamp": "2017-03-03_13:45",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/DE",
+            "size": "213224539",
+            "size-compressed": "96485177",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
     "europe/great-britain": {
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-great-britain",
@@ -3856,7 +3882,7 @@
             "version": "1"
         },
         "id": "north-america/us-midwest",
-        "name": "North America/US Region/Midwest",
+        "name": "North America/US/Region/Midwest",
         "osmscout": {
             "path": "osmscout/north-america-us-midwest",
             "size": "1315030828",
@@ -3882,7 +3908,7 @@
             "version": "1"
         },
         "id": "north-america/us-northeast",
-        "name": "North America/US Region/Northeast",
+        "name": "North America/US/Region/Northeast",
         "osmscout": {
             "path": "osmscout/north-america-us-northeast",
             "size": "736269308",
@@ -3908,7 +3934,7 @@
             "version": "1"
         },
         "id": "north-america/us-pacific",
-        "name": "North America/US Region/Pacific",
+        "name": "North America/US/Region/Pacific",
         "osmscout": {
             "path": "osmscout/north-america-us-pacific",
             "size": "118940093",
@@ -3934,7 +3960,7 @@
             "version": "1"
         },
         "id": "north-america/us-south",
-        "name": "North America/US Region/South",
+        "name": "North America/US/Region/South",
         "osmscout": {
             "path": "osmscout/north-america-us-south",
             "size": "2107515427",
@@ -3960,7 +3986,7 @@
             "version": "1"
         },
         "id": "north-america/us-west",
-        "name": "North America/US Region/West",
+        "name": "North America/US/Region/West",
         "osmscout": {
             "path": "osmscout/north-america-us-west",
             "size": "1486708036",

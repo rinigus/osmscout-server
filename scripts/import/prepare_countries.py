@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # This script generates Makefile that can be used to import countries
 # into libosmscout and generate geocoder-nlp database
@@ -34,6 +35,8 @@ Name2Code = {
     "south-korea": "KR",
     "syria": "SY",
     "vietnam": "VN",
+
+    "europe/germany": "DE"
 }
 
 Name2Pretty = {
@@ -48,11 +51,16 @@ Name2Pretty = {
     "gcc-states": "GCC States",
     "israel-and-palestine": "Israel and Palestine",
     "malaysia-singapore-brunei": "Malaysia, Singapore, and Brunei",    
-    "us-midwest": "US Region/Midwest",
-    "us-northeast": "US Region/Northeast",
-    "us-pacific": "US Region/Pacific",
-    "us-south": "US Region/South",
-    "us-west": "US Region/West",
+
+    "us-midwest": "US/Region/Midwest",
+    "us-northeast": "US/Region/Northeast",
+    "us-pacific": "US/Region/Pacific",
+    "us-south": "US/Region/South",
+    "us-west": "US/Region/West",
+
+    "europe/germany": "Europe/Germany",
+    "baden-wuerttemberg": "Baden-Württemberg",
+    
 }
 
 NameCapitalize = [
@@ -115,6 +123,11 @@ Countries = {
                 "turkey",
                 "ukraine"
     ],
+
+    "europe/germany": [
+        "baden-wuerttemberg",
+        
+        ],
 
     "africa": [ "algeria",
                 "angola",
@@ -294,7 +307,8 @@ Countries = {
 #     "europe": [ "albania",
 #                 "andorra",
 #                 "estonia",
-#                     ],
+#                 "spain",
+#     ],
 # }
 
 fmake = open("Makefile", "w")
