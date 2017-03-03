@@ -184,7 +184,7 @@ namespace MapManager {
     void onWrittenBytes(uint64_t sz);
     void onDownloadProgress();
 
-    bool startDownload(DownloadType type, const QString &url, const QString &path, const QString &mode);
+    bool startDownload(DownloadType type, const QString &url, const QString &path, const FileDownloader::Type mode);
     void cleanupDownload();
 
   protected:

@@ -29,6 +29,7 @@ Page {
                 wrapMode: Text.WordWrap
                 width: column.width
                 color: Theme.highlightColor
+                textFormat: Text.RichText
             }
         }
     }

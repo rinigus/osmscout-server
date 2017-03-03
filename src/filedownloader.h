@@ -18,8 +18,12 @@
 class FileDownloader : public QObject
 {
   Q_OBJECT
+
 public:
-  explicit FileDownloader(QNetworkAccessManager *manager, QString url, QString path, const QString mode = QString(), QObject *parent = 0);
+  enum Type { Plain=0, BZ2=1 };
+
+public:
+  explicit FileDownloader(QNetworkAccessManager *manager, QString url, QString path, const Type mode = Plain, QObject *parent = 0);
   ~FileDownloader();
 
   operator bool() const { return m_isok; }

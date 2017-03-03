@@ -674,7 +674,7 @@ bool Manager::getCountries()
     }
 
   return
-      startDownload( Countries, m_missing_data[0].files[0].url + ".bz2", m_missing_data[0].files[0].path, "BZ2" );
+      startDownload( Countries, m_missing_data[0].files[0].url + ".bz2", m_missing_data[0].files[0].path, FileDownloader::BZ2 );
 }
 
 bool Manager::downloading()
@@ -682,7 +682,7 @@ bool Manager::downloading()
   return (m_download_type != NoDownload);
 }
 
-bool Manager::startDownload(DownloadType type, const QString &url, const QString &path, const QString &mode)
+bool Manager::startDownload(DownloadType type, const QString &url, const QString &path, const FileDownloader::Type mode)
 {
   if (!m_root_dir.exists())
     {
@@ -920,7 +920,7 @@ bool Manager::updateProvided()
 
   if ( startDownload(ProvidedList, m_provided_url,
                      fullPath(const_fname_countries_provided),
-                     QString()) )
+                     FileDownloader::Plain) )
     {
       emit downloadProgress(tr("Downloading the list of countries"));
       return true;

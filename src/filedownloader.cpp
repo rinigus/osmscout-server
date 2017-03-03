@@ -8,7 +8,7 @@
 
 FileDownloader::FileDownloader(QNetworkAccessManager *manager,
                                QString url, QString path,
-                               const QString mode,
+                               const Type mode,
                                QObject *parent):
   QObject(parent),
   m_manager(manager),
@@ -39,18 +39,18 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
   // start data processor if requested
   QString command;
   QStringList arguments;
-  if (mode == "BZ2")
+  if (mode == BZ2)
     {
       command = "bunzip2";
       arguments << "-c";
     }
-  else if (mode.isEmpty())
+  else if (mode == Plain)
     {
       // nothing to do
     }
   else
     {
-      std::cerr << "FileDownloader: unknown mode: " << mode.toStdString() << std::endl;
+      std::cerr << "FileDownloader: unknown mode: " << mode << std::endl;
       m_isok = false;
       return;
     }
@@ -185,8 +185,10 @@ void FileDownloader::onDownloaded()
 
 void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 {
-  QString err = tr("Failed to download") + ": " + m_path +
-      " [" + QString::number(m_reply->error()) + "]";
+  QString err = tr("Failed to download") + "<br>" + m_path +
+      "<br><br>" +tr("Error code: %1").arg(QString::number(m_reply->error())) + "<br><blockquote><small>" +
+      m_reply->errorString() +
+      "</small></blockquote>";
   onError(err);
 }
 
