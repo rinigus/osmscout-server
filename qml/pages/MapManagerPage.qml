@@ -155,34 +155,6 @@ Page {
                 spacing: Theme.paddingMedium
                 anchors.margins: Theme.horizontalPageMargin
 
-                Button {
-                    text: qsTr("Update list")
-                    enabled: page.activeState
-                    preferredWidth: Theme.buttonWidthLarge
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    onClicked: {
-                        if (!manager.updateProvided())
-                            console.log("Could not start the download. Perhaps you are downloading something already. " +
-                                        "Please wait till the current download is finished")
-                    }
-                }
-
-                Label {
-                    text: qsTr("List of currently available maps and datasets")
-                    x: Theme.horizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
-                    font.pixelSize: Theme.fontSizeSmall
-                    color: Theme.highlightColor
-                }
-            }
-
-
-            Column {
-                width: parent.width
-                spacing: Theme.paddingMedium
-                anchors.margins: Theme.horizontalPageMargin
-
                 Rectangle {
                     width: parent.width
                     height: Theme.paddingLarge
@@ -210,6 +182,33 @@ Page {
                     color: Theme.highlightColor
                 }
             }
+
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Button {
+                    text: qsTr("Update list")
+                    enabled: page.activeState
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: {
+                        if (!manager.updateProvided())
+                            console.log("Could not start the download. Perhaps you are downloading something already. " +
+                                        "Please wait till the current download is finished")
+                    }
+                }
+
+                Label {
+                    text: qsTr("List of currently available maps and datasets")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
         }
 
         VerticalScrollDecorator {}
@@ -217,6 +216,8 @@ Page {
 
     Component.onCompleted: {
         page.activeState = !manager.downloading
+        if (!manager.downloading && !manager.checkProvidedAvailable())
+            manager.updateProvided()
     }
 
     Connections {

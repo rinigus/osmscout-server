@@ -44,6 +44,9 @@ namespace MapManager {
     /// \brief Check if the storage directory is available
     Q_INVOKABLE void checkStorageAvailable();
 
+    /// \brief Check if there is a list of provided countries
+    Q_INVOKABLE bool checkProvidedAvailable();
+
     /// \brief Composes a list of countries on device in alphabetical order and returns as an JSON array
     Q_INVOKABLE QString getAvailableCountries();
 

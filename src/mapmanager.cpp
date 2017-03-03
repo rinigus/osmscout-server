@@ -347,6 +347,12 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
     }
 }
 
+bool Manager::checkProvidedAvailable()
+{
+  QJsonObject objlist = loadJson(fullPath(const_fname_countries_provided));
+  return !objlist.empty();
+}
+
 ///////////////////////////////////////////////////////
 /// support for composing hierarchy of countries
 struct CountryBranch {
