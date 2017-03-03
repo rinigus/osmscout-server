@@ -27,6 +27,11 @@ ListItem {
                 iconSource = "image://theme/icon-m-location"
                 info = qsTr("Available") + "; "
             }
+            else if (manager.isCountryRequested(c.id) &&
+                     !manager.isCountryCompatible(c.id)) {
+                iconSource = "image://theme/icon-m-sync"
+                info = qsTr("Incompatible version") + "; "
+            }
             else if (manager.isCountryRequested(c.id)) {
                 iconSource = "image://theme/icon-m-cloud-download"
                 info = qsTr("Subscribed") + "; "

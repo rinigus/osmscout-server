@@ -74,10 +74,11 @@ namespace MapManager {
     /// user
     Q_INVOKABLE bool isCountryRequested(QString id);
 
-    /// \brief Check whether the country is available to
-    ///
-    /// Checks whether the country is available
+    /// \brief Check whether the country is available
     Q_INVOKABLE bool isCountryAvailable(QString id);
+
+    /// \brief Check whether the country datasets are compatible with the current version
+    Q_INVOKABLE bool isCountryCompatible(QString id);
 
     /// \brief Download or update missing data files
     ///

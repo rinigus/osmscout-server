@@ -24,8 +24,11 @@ Page {
 
             if (manager.isCountryAvailable(countryId))
                 available.text = qsTr("All datasets covering selected features are available")
+            else if (manager.isCountryCompatible(countryId))
+                available.text = qsTr("Some datasets are missing. You would have to start downloads to get them.")
             else
-                available.text = qsTr("Some datasets are missing or of incompatible version. You would have to start downloads to get them.")
+                available.text = qsTr("Some or all datasets are incompatible with this version. " +
+                                      "You would have to update the software, list of provided maps, or the maps.")
         }
         else
         {

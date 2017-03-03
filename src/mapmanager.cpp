@@ -307,7 +307,7 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
   QJsonObject objlist;
   QHash<QString, uint64_t> sizes;
 
-  if (list_available) objlist = loadJson(fullPath(const_fname_countries_requested));
+  if (list_available) objlist = m_maps_requested;
   else objlist = loadJson(fullPath(const_fname_countries_provided));
 
   for (QJsonObject::const_iterator i = objlist.constBegin();
@@ -467,7 +467,7 @@ void Manager::addCountry(QString id)
   if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_provided))
     {
       QJsonObject possible = loadJson(fullPath(const_fname_countries_provided));
-      QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
+      QJsonObject requested = m_maps_requested;
 
       if (possible.contains(id) && possible.value(id).toObject().value("id") == id)
         {
@@ -494,7 +494,7 @@ void Manager::rmCountry(QString id)
 
   if ( m_root_dir.exists() && m_root_dir.exists(const_fname_countries_requested) )
     {
-      QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
+      QJsonObject requested = m_maps_requested;
 
       if (requested.contains(id))
         {
@@ -518,7 +518,7 @@ void Manager::rmCountry(QString id)
 QString Manager::getCountryDetails(QString id)
 {
   QJsonObject provided = loadJson(fullPath(const_fname_countries_provided)).value(id).toObject();
-  QJsonObject requested = loadJson(fullPath(const_fname_countries_requested)).value(id).toObject();
+  QJsonObject requested = m_maps_requested.value(id).toObject();
 
   QJsonObject country;
   if (requested.empty()) country = provided;
@@ -574,6 +574,19 @@ bool Manager::isCountryAvailable(QString id)
   return m_maps_available.contains(id);
 }
 
+bool Manager::isCountryCompatible(QString id)
+{
+  if (isCountryAvailable(id)) return true;
+  QJsonObject c = m_maps_requested.value(id).toObject();
+  if (c.empty()) return true;
+
+  for (const Feature *f: m_features)
+    if (!f->isCompatible(c))
+      return false;
+
+  return true;
+}
+
 bool Manager::missing()
 {
   return m_missing;
@@ -600,7 +613,7 @@ void Manager::missingData()
       return;
     }
 
-  QJsonObject req_countries = loadJson(fullPath(const_fname_countries_requested));
+  QJsonObject req_countries = m_maps_requested;
 
   // get URLs
   QJsonObject provided = loadJson(fullPath(const_fname_countries_provided));
@@ -859,7 +872,7 @@ qint64 Manager::getNonNeededFilesList(QStringList &files)
   wanted.insert(fullPath(const_fname_countries_requested));
   wanted.insert(fullPath(const_fname_countries_provided));
 
-  QJsonObject req_countries = loadJson(fullPath(const_fname_countries_requested));
+  QJsonObject req_countries = m_maps_requested;
   for (QJsonObject::const_iterator request_iter = req_countries.constBegin();
        request_iter != req_countries.constEnd(); ++request_iter)
     {
@@ -947,7 +960,7 @@ void Manager::checkUpdates()
        m_root_dir.exists(const_fname_countries_provided) )
     {
       QJsonObject possible_list = loadJson(fullPath(const_fname_countries_provided));
-      QJsonObject requested_list = loadJson(fullPath(const_fname_countries_requested));
+      QJsonObject requested_list = m_maps_requested;
 
       for (QJsonObject::const_iterator request_iter = requested_list.constBegin();
            request_iter != requested_list.constEnd(); ++request_iter)
@@ -999,7 +1012,7 @@ void Manager::getUpdates()
 {
   if (downloading()) return;
 
-  QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
+  QJsonObject requested = m_maps_requested;
 
   for (QJsonObject::const_iterator iter = m_last_found_updates.constBegin();
        iter != m_last_found_updates.constEnd(); ++iter)
