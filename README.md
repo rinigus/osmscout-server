@@ -55,7 +55,7 @@ on Sailfish OS and there is no need to provide Linux CLI at this time.
 If tinkering is required, it is still possible to import the maps
 manually. However, in this case, the user is expected to incorporate
 the manually imported maps into configuration JSON file describing
-that map.
+that map and update SQLite database with the map files.
 
 Maps provided by OpenStreetMaps have to be converted to the format
 used by libosmscout library. The importing procedure below concerns
