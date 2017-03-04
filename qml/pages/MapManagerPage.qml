@@ -40,7 +40,7 @@ Page {
 
             ElementSwitch {
                 id: eManagerGeocoderNLP
-                enabled: page.activeState
+                visible: page.activeState
                 key: settingsMapManagerPrefix + "geocoder_nlp"
                 autoApply: true
                 mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
