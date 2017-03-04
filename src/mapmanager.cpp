@@ -467,7 +467,7 @@ void Manager::addCountry(QString id)
   if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_provided))
     {
       QJsonObject possible = loadJson(fullPath(const_fname_countries_provided));
-      QJsonObject requested = m_maps_requested;
+      QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
 
       if (possible.contains(id) && possible.value(id).toObject().value("id") == id)
         {
@@ -494,7 +494,7 @@ void Manager::rmCountry(QString id)
 
   if ( m_root_dir.exists() && m_root_dir.exists(const_fname_countries_requested) )
     {
-      QJsonObject requested = m_maps_requested;
+      QJsonObject requested = loadJson(fullPath(const_fname_countries_requested));
 
       if (requested.contains(id))
         {
