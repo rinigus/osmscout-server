@@ -10,7 +10,7 @@
 
 using namespace MapManager;
 
-Feature::Feature(const PathProvider *path,
+Feature::Feature(PathProvider *path,
                  const QString &feature_type,
                  const QString &feature_name,
                  const QString &feature_pretty_name,
@@ -60,11 +60,20 @@ uint64_t Feature::getSizeCompressed(const QJsonObject &obj) const
   return obj.value(m_name).toObject().value("size-compressed").toString().toULong();
 }
 
-QDateTime Feature::getDateTime(const QJsonObject &obj) const
+static QDateTime toDT(const QString &t)
 {
-  QString t = obj.value(m_name).toObject().value("timestamp").toString();
   if (t.isEmpty()) return QDateTime();
   return QDateTime::fromString(t, "yyyy-MM-dd_hh:mm");
+}
+
+QString Feature::getDateTimeAsString(const QJsonObject &obj) const
+{
+  return obj.value(m_name).toObject().value("timestamp").toString();
+}
+
+QDateTime Feature::getDateTime(const QJsonObject &obj) const
+{
+  return toDT(getDateTimeAsString(obj));
 }
 
 bool Feature::isMyType(const QJsonObject &request) const
@@ -85,9 +94,15 @@ bool Feature::isAvailable(const QJsonObject &request) const
 
   QString path = getPath(request);
   QDir dir(m_path_provider->fullPath("."));
+  QString version;
+  QString datetime;
+  QString req_version = request.value(m_name).toObject().value("version").toString();
+  QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
 
   for (const auto &f: m_files)
-    if (!dir.exists(m_path_provider->fullPath(path + "/" + f)))
+    if (!m_path_provider->isRegistered(path + "/" + f, version, datetime) ||
+        version != req_version || datetime != req_datetime ||
+        !dir.exists(m_path_provider->fullPath(path + "/" + f)))
       return false;
   return true;
 }
@@ -105,15 +120,24 @@ void Feature::checkMissingFiles(const QJsonObject &request,
 
   QString path = getPath(request);
   QDir dir(m_path_provider->fullPath("."));
+  QString version;
+  QString datetime;
+  QString req_version = request.value(m_name).toObject().value("version").toString();
+  QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
   bool added = false;
 
   for (const auto &f: m_files)
-    if (!dir.exists(m_path_provider->fullPath(path + "/" + f)))
+    if (!m_path_provider->isRegistered(path + "/" + f, version, datetime) ||
+        version != req_version || datetime != req_datetime ||
+        !dir.exists(m_path_provider->fullPath(path + "/" + f)))
       {
         added = true;
         FileTask t;
         t.path = m_path_provider->fullPath(path + "/" + f);
         t.url = m_url + "/" + path + "/" + f;
+        t.relpath = path + "/" + f;
+        t.version = req_version;
+        t.datetime = req_datetime;
         missing.files.append(t);
       }
 
@@ -160,7 +184,7 @@ const static QStringList osmscout_files{
   "router.idx", "textloc.dat", "textother.dat", "textpoi.dat", "textregion.dat",
   "water.idx", "ways.dat", "waysopt.dat", "types.dat"};
 
-FeatureOsmScout::FeatureOsmScout(const PathProvider *path):
+FeatureOsmScout::FeatureOsmScout(PathProvider *path):
   Feature(path, "territory", "osmscout",
           QCoreApplication::translate("MapManagerFeature", "OSM Scout library"),
           osmscout_files,
@@ -179,7 +203,7 @@ QString FeatureOsmScout::errorMissing() const
 const static QStringList geocodernlp_files{
   "location.sqlite"};
 
-FeatureGeocoderNLP::FeatureGeocoderNLP(const PathProvider *path):
+FeatureGeocoderNLP::FeatureGeocoderNLP(PathProvider *path):
   Feature(path, "territory", "geocoder_nlp",
           QCoreApplication::translate("MapManagerFeature", "Geocoder-NLP"),
           geocodernlp_files,
@@ -204,7 +228,7 @@ const static QStringList postal_country_files{
   "geodb/geodb_features.trie", "geodb/geodb_names.trie", "geodb/geodb_postal_codes.dat",
   "geodb/geodb.spi", "geodb/geodb.spl" };
 
-FeaturePostalGlobal::FeaturePostalGlobal(const PathProvider *path):
+FeaturePostalGlobal::FeaturePostalGlobal(PathProvider *path):
   Feature(path, "postal/global", "postal_global",
           QCoreApplication::translate("MapManagerFeature", "Address parsing language support"),
           postal_global_files,
@@ -223,7 +247,7 @@ void FeaturePostalGlobal::loadSettings()
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "postal_country");
 }
 
-FeaturePostalCountry::FeaturePostalCountry(const PathProvider *path):
+FeaturePostalCountry::FeaturePostalCountry(PathProvider *path):
   Feature(path, "territory", "postal_country",
           QCoreApplication::translate("MapManagerFeature", "Address parsing country-specific support"),
           postal_country_files,

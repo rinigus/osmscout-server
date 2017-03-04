@@ -78,6 +78,35 @@ void Manager::loadSettings()
   if (m_dir_existed != m_root_dir.exists())
     emit storageAvailableChanged(m_root_dir.exists());
 
+  if ( m_root_dir.exists() &&
+       (!m_db_files.isOpen() || m_db_files.databaseName() != fullPath(const_fname_db_files) ) )
+    {
+      m_query_files_available.clear();
+      m_query_files_insert.clear();
+
+      m_db_files.close();
+      QSqlDatabase::removeDatabase(const_db_connection);
+
+      // open new connection and prepare database
+      m_db_files = QSqlDatabase::addDatabase("QSQLITE", const_db_connection);
+      m_db_files.setDatabaseName(fullPath(const_fname_db_files));
+      if (!m_db_files.open())
+        {
+          InfoHub::logWarning(tr("Failed to open the database for tracking downloaded files"));
+          emit errorMessage("Failed to open the database for tracking downloaded files<br><br>Map Manager functionality would be disturbed");
+        }
+     else // all is fine, prepare queries and tables
+        {
+          m_db_files.exec("CREATE TABLE IF NOT EXISTS files (name TEXT PRIMARY KEY, version TEXT, datetime TEXT)");
+          m_query_files_available = QSqlQuery(m_db_files);
+          m_query_files_available.setForwardOnly(true);
+          m_query_files_insert = QSqlQuery(m_db_files);
+
+          m_query_files_available.prepare("SELECT name, version, datetime FROM files WHERE (name=:name)");
+          m_query_files_insert.prepare("INSERT OR REPLACE INTO files (name, version, datetime) VALUES(:name, :version, :datetime)");
+        }
+    }
+
   scanDirectories(old_selection != m_map_selected);
   missingData();
   checkUpdates();
@@ -704,6 +733,26 @@ bool Manager::downloading()
   return (m_download_type != NoDownload);
 }
 
+bool Manager::isRegistered(const QString &path, QString &version, QString &datetime)
+{
+  if (!m_db_files.isOpen()) return false;
+
+  m_query_files_available.bindValue(":name", path);
+  if (!m_query_files_available.exec())
+    return false;
+
+  while (m_query_files_available.next())
+    {
+      // since name is unique it should be one response only
+      QString name = m_query_files_available.value(0).toString();
+      version = m_query_files_available.value(1).toString();
+      datetime = m_query_files_available.value(2).toString();
+      return true;
+    }
+
+  return false;
+}
+
 bool Manager::startDownload(DownloadType type, const QString &url, const QString &path, const FileDownloader::Type mode)
 {
   if (!m_root_dir.exists())
@@ -757,6 +806,23 @@ void Manager::onDownloadFinished(QString path)
         {
           InfoHub::logError("Internal error: missing data has no files while one was downloaded or an unexpected file was downloaded");
           onDownloadError("Internal error: processing via error handling methods");
+          return;
+        }
+
+      // register download in database
+      bool registration_ok = false;
+      if (m_db_files.isOpen())
+        {
+          m_query_files_insert.bindValue(":name", m_missing_data[0].files[0].relpath);
+          m_query_files_insert.bindValue(":version", m_missing_data[0].files[0].version);
+          m_query_files_insert.bindValue(":datetime", m_missing_data[0].files[0].datetime);
+          registration_ok = m_query_files_insert.exec();
+        }
+
+      if (!registration_ok)
+        {
+          onDownloadError(tr("Could not register downloaded file in the tracking database"));
+          InfoHub::logWarning(tr("File registration error") + ": " + m_query_files_insert.lastError().databaseText());
           return;
         }
 
@@ -869,6 +935,7 @@ qint64 Manager::getNonNeededFilesList(QStringList &files)
   QSet<QString> wanted;
   wanted.insert(fullPath(const_fname_countries_requested));
   wanted.insert(fullPath(const_fname_countries_provided));
+  wanted.insert(fullPath(const_fname_db_files));
 
   QJsonObject req_countries = m_maps_requested;
   for (QJsonObject::const_iterator request_iter = req_countries.constBegin();

@@ -13,7 +13,7 @@
 #include <QSet>
 #include <QPointer>
 #include <QDateTime>
-#include <QAtomicInt>
+#include <QtSql>
 
 #include <cstdint>
 
@@ -125,6 +125,10 @@ namespace MapManager {
     bool downloading();
     bool missing();
 
+    virtual QString fullPath(const QString &path) const; ///< Transform relative path to the full path
+
+    virtual bool isRegistered(const QString &path, QString &version, QString &datetime);
+
   signals:
     void databaseOsmScoutChanged(QString database);
     void databaseGeocoderNLPChanged(QString database);
@@ -166,8 +170,6 @@ namespace MapManager {
 
     /// \brief Wrapper around makeCountriesList transforming the results to JSON
     QString makeCountriesListAsJSON(bool list_available, bool tree);
-
-    virtual QString fullPath(const QString &path) const; ///< Transform relative path to the full path
 
     void updateOsmScout();
     void updateGeocoderNLP();
@@ -220,9 +222,18 @@ namespace MapManager {
 
     QJsonObject m_last_found_updates;
 
+    // tracking downloaded files and their versions
+    QSqlDatabase m_db_files;
+    QSqlQuery m_query_files_available;
+    QSqlQuery m_query_files_insert;
+
     /// const values used to access data
     const QString const_fname_countries_provided{"countries_provided.json"};
     const QString const_fname_countries_requested{"countries_requested.json"};
+    const QString const_fname_db_files{"files.sqlite"};
+
+    const QString const_db_connection{"MapManager"};
+
 
     const QString const_feature_id_postal_global{"postal/global"};
     const QString const_feature_type_country{"territory"};

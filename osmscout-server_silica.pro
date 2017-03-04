@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = harbour-osmscout-server
 
-QT += core gui network
+QT += core gui network sql
 
 CONFIG += c++11
 CONFIG += sailfishapp sailfishapp_no_deploy_qml

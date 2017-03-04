@@ -16,6 +16,7 @@ namespace MapManager {
   {
   public:
     virtual QString fullPath(const QString &path) const = 0;
+    virtual bool isRegistered(const QString &path, QString &version, QString &datetime) = 0;
   };
 
   ////////////////////////////////////////////////////////
@@ -23,6 +24,9 @@ namespace MapManager {
   struct FileTask {
     QString url;
     QString path;
+    QString relpath;
+    QString version;
+    QString datetime;
   };
 
   struct FilesToDownload {
@@ -39,7 +43,7 @@ namespace MapManager {
   class Feature
   {
   protected:
-    explicit Feature(const PathProvider *path,
+    explicit Feature(PathProvider *path,
                      const QString &feature_type,
                      const QString &feature_name,
                      const QString &feature_pretty_name,
@@ -80,7 +84,10 @@ namespace MapManager {
     bool hasFeatureDefined(const QJsonObject &request) const;
 
   protected:
-    const PathProvider *m_path_provider;
+    QString getDateTimeAsString(const QJsonObject &obj) const;
+
+  protected:
+    PathProvider *m_path_provider;
     const QString m_type;
     const QString m_name;
     const QString m_pretty;
@@ -100,7 +107,7 @@ namespace MapManager {
   class FeatureOsmScout: public Feature
   {
   public:
-    FeatureOsmScout(const PathProvider *path);
+    FeatureOsmScout(PathProvider *path);
     virtual ~FeatureOsmScout() {}
     virtual QString errorMissing() const;
   };
@@ -108,7 +115,7 @@ namespace MapManager {
   class FeatureGeocoderNLP: public Feature
   {
   public:
-    FeatureGeocoderNLP(const PathProvider *path);
+    FeatureGeocoderNLP(PathProvider *path);
     virtual ~FeatureGeocoderNLP() {}
     virtual QString errorMissing() const;
   };
@@ -116,7 +123,7 @@ namespace MapManager {
   class FeaturePostalGlobal: public Feature
   {
   public:
-    FeaturePostalGlobal(const PathProvider *path);
+    FeaturePostalGlobal(PathProvider *path);
     virtual ~FeaturePostalGlobal() {}
     virtual void loadSettings();
     virtual QString errorMissing() const;
@@ -125,7 +132,7 @@ namespace MapManager {
   class FeaturePostalCountry: public Feature
   {
   public:
-    FeaturePostalCountry(const PathProvider *path);
+    FeaturePostalCountry(PathProvider *path);
     virtual ~FeaturePostalCountry() {}
     virtual QString errorMissing() const;
   };
