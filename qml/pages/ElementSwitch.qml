@@ -9,6 +9,7 @@ Column {
     property string mainLabel
     property string secondaryLabel
     property bool autoApply: false
+    property bool activeState: true
 
     signal switchChanged(bool checked)
 
@@ -27,6 +28,7 @@ Column {
         id: textInput
         width: parent.width
         text: parent.mainLabel
+        enabled: root.activeState
 
         Component.onCompleted: {
             checked = (settings.valueInt(parent.key) > 0)
