@@ -2911,6 +2911,708 @@
         },
         "type": "territory"
     },
+    "europe/france/alsace": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-alsace",
+            "size": "25763843",
+            "size-compressed": "10838452",
+            "timestamp": "2017-03-04_14:34",
+            "version": "1"
+        },
+        "id": "europe/france/alsace",
+        "name": "Europe/France/Alsace",
+        "osmscout": {
+            "path": "osmscout/europe-france-alsace",
+            "size": "74276095",
+            "size-compressed": "47440559",
+            "timestamp": "2017-03-04_14:34",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/aquitaine": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-aquitaine",
+            "size": "29913091",
+            "size-compressed": "12165894",
+            "timestamp": "2017-03-04_14:36",
+            "version": "1"
+        },
+        "id": "europe/france/aquitaine",
+        "name": "Europe/France/Aquitaine",
+        "osmscout": {
+            "path": "osmscout/europe-france-aquitaine",
+            "size": "163023922",
+            "size-compressed": "107085215",
+            "timestamp": "2017-03-04_14:36",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/auvergne": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-auvergne",
+            "size": "15122435",
+            "size-compressed": "6030896",
+            "timestamp": "2017-03-04_14:34",
+            "version": "1"
+        },
+        "id": "europe/france/auvergne",
+        "name": "Europe/France/Auvergne",
+        "osmscout": {
+            "path": "osmscout/europe-france-auvergne",
+            "size": "92841715",
+            "size-compressed": "61036168",
+            "timestamp": "2017-03-04_14:34",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/basse-normandie": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-basse-normandie",
+            "size": "14954499",
+            "size-compressed": "6098479",
+            "timestamp": "2017-03-04_14:34",
+            "version": "1"
+        },
+        "id": "europe/france/basse-normandie",
+        "name": "Europe/France/Basse-Normandie",
+        "osmscout": {
+            "path": "osmscout/europe-france-basse-normandie",
+            "size": "80870873",
+            "size-compressed": "52764665",
+            "timestamp": "2017-03-04_14:34",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/bourgogne": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-bourgogne",
+            "size": "22867971",
+            "size-compressed": "8966399",
+            "timestamp": "2017-03-04_14:35",
+            "version": "1"
+        },
+        "id": "europe/france/bourgogne",
+        "name": "Europe/France/Bourgogne",
+        "osmscout": {
+            "path": "osmscout/europe-france-bourgogne",
+            "size": "104082330",
+            "size-compressed": "68468854",
+            "timestamp": "2017-03-04_14:35",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/bretagne": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-bretagne",
+            "size": "55324675",
+            "size-compressed": "23146498",
+            "timestamp": "2017-03-04_14:37",
+            "version": "1"
+        },
+        "id": "europe/france/bretagne",
+        "name": "Europe/France/Bretagne",
+        "osmscout": {
+            "path": "osmscout/europe-france-bretagne",
+            "size": "188462896",
+            "size-compressed": "119317158",
+            "timestamp": "2017-03-04_14:37",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/centre": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-centre",
+            "size": "30445571",
+            "size-compressed": "11514223",
+            "timestamp": "2017-03-04_14:35",
+            "version": "1"
+        },
+        "id": "europe/france/centre",
+        "name": "Europe/France/Centre",
+        "osmscout": {
+            "path": "osmscout/europe-france-centre",
+            "size": "126391368",
+            "size-compressed": "83301658",
+            "timestamp": "2017-03-04_14:35",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/champagne-ardenne": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-champagne-ardenne",
+            "size": "14036995",
+            "size-compressed": "5509289",
+            "timestamp": "2017-03-04_14:33",
+            "version": "1"
+        },
+        "id": "europe/france/champagne-ardenne",
+        "name": "Europe/France/Champagne Ardenne",
+        "osmscout": {
+            "path": "osmscout/europe-france-champagne-ardenne",
+            "size": "56299178",
+            "size-compressed": "36635084",
+            "timestamp": "2017-03-04_14:33",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/corse": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-corse",
+            "size": "1290243",
+            "size-compressed": "527324",
+            "timestamp": "2017-03-04_14:34",
+            "version": "1"
+        },
+        "id": "europe/france/corse",
+        "name": "Europe/France/Corse",
+        "osmscout": {
+            "path": "osmscout/europe-france-corse",
+            "size": "14210771",
+            "size-compressed": "8925584",
+            "timestamp": "2017-03-04_14:34",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/franche-comte": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-franche-comte",
+            "size": "14569475",
+            "size-compressed": "5875743",
+            "timestamp": "2017-03-04_14:35",
+            "version": "1"
+        },
+        "id": "europe/france/franche-comte",
+        "name": "Europe/France/Franche Comte",
+        "osmscout": {
+            "path": "osmscout/europe-france-franche-comte",
+            "size": "62179108",
+            "size-compressed": "40756825",
+            "timestamp": "2017-03-04_14:35",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/guadeloupe": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-guadeloupe",
+            "size": "1597443",
+            "size-compressed": "640977",
+            "timestamp": "2017-03-04_14:34",
+            "version": "1"
+        },
+        "id": "europe/france/guadeloupe",
+        "name": "Europe/France/Guadeloupe",
+        "osmscout": {
+            "path": "osmscout/europe-france-guadeloupe",
+            "size": "12504702",
+            "size-compressed": "7866412",
+            "timestamp": "2017-03-04_14:34",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/guyane": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-guyane",
+            "size": "1249283",
+            "size-compressed": "551043",
+            "timestamp": "2017-03-04_14:34",
+            "version": "1"
+        },
+        "id": "europe/france/guyane",
+        "name": "Europe/France/Guyane",
+        "osmscout": {
+            "path": "osmscout/europe-france-guyane",
+            "size": "16525293",
+            "size-compressed": "4602456",
+            "timestamp": "2017-03-04_14:34",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/haute-normandie": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-haute-normandie",
+            "size": "17215491",
+            "size-compressed": "7051152",
+            "timestamp": "2017-03-04_14:36",
+            "version": "1"
+        },
+        "id": "europe/france/haute-normandie",
+        "name": "Europe/France/Haute Normandie",
+        "osmscout": {
+            "path": "osmscout/europe-france-haute-normandie",
+            "size": "54382557",
+            "size-compressed": "35120396",
+            "timestamp": "2017-03-04_14:36",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/ile-de-france": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-ile-de-france",
+            "size": "64983043",
+            "size-compressed": "25778318",
+            "timestamp": "2017-03-04_14:39",
+            "version": "1"
+        },
+        "id": "europe/france/ile-de-france",
+        "name": "Europe/France/Ile De France",
+        "osmscout": {
+            "path": "osmscout/europe-france-ile-de-france",
+            "size": "163040524",
+            "size-compressed": "103216412",
+            "timestamp": "2017-03-04_14:39",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/languedoc-roussillon": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-languedoc-roussillon",
+            "size": "33017859",
+            "size-compressed": "12978149",
+            "timestamp": "2017-03-04_14:38",
+            "version": "1"
+        },
+        "id": "europe/france/languedoc-roussillon",
+        "name": "Europe/France/Languedoc Roussillon",
+        "osmscout": {
+            "path": "osmscout/europe-france-languedoc-roussillon",
+            "size": "143368725",
+            "size-compressed": "90957714",
+            "timestamp": "2017-03-04_14:38",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/limousin": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-limousin",
+            "size": "7720963",
+            "size-compressed": "3037883",
+            "timestamp": "2017-03-04_14:36",
+            "version": "1"
+        },
+        "id": "europe/france/limousin",
+        "name": "Europe/France/Limousin",
+        "osmscout": {
+            "path": "osmscout/europe-france-limousin",
+            "size": "54158626",
+            "size-compressed": "35379563",
+            "timestamp": "2017-03-04_14:36",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/lorraine": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-lorraine",
+            "size": "27512835",
+            "size-compressed": "10925244",
+            "timestamp": "2017-03-04_14:38",
+            "version": "1"
+        },
+        "id": "europe/france/lorraine",
+        "name": "Europe/France/Lorraine",
+        "osmscout": {
+            "path": "osmscout/europe-france-lorraine",
+            "size": "99620675",
+            "size-compressed": "65589400",
+            "timestamp": "2017-03-04_14:38",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/martinique": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-martinique",
+            "size": "1081347",
+            "size-compressed": "460945",
+            "timestamp": "2017-03-04_14:36",
+            "version": "1"
+        },
+        "id": "europe/france/martinique",
+        "name": "Europe/France/Martinique",
+        "osmscout": {
+            "path": "osmscout/europe-france-martinique",
+            "size": "10706550",
+            "size-compressed": "6788843",
+            "timestamp": "2017-03-04_14:36",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/mayotte": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-mayotte",
+            "size": "241667",
+            "size-compressed": "90149",
+            "timestamp": "2017-03-04_14:36",
+            "version": "1"
+        },
+        "id": "europe/france/mayotte",
+        "name": "Europe/France/Mayotte",
+        "osmscout": {
+            "path": "osmscout/europe-france-mayotte",
+            "size": "2865171",
+            "size-compressed": "1731317",
+            "timestamp": "2017-03-04_14:36",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/midi-pyrenees": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-midi-pyrenees",
+            "size": "35143683",
+            "size-compressed": "14282170",
+            "timestamp": "2017-03-04_14:41",
+            "version": "1"
+        },
+        "id": "europe/france/midi-pyrenees",
+        "name": "Europe/France/Midi Pyrenees",
+        "osmscout": {
+            "path": "osmscout/europe-france-midi-pyrenees",
+            "size": "195627025",
+            "size-compressed": "126570334",
+            "timestamp": "2017-03-04_14:41",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/nord-pas-de-calais": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-nord-pas-de-calais",
+            "size": "32002051",
+            "size-compressed": "12928281",
+            "timestamp": "2017-03-04_14:39",
+            "version": "1"
+        },
+        "id": "europe/france/nord-pas-de-calais",
+        "name": "Europe/France/Nord Pas De Calais",
+        "osmscout": {
+            "path": "osmscout/europe-france-nord-pas-de-calais",
+            "size": "117123177",
+            "size-compressed": "76695640",
+            "timestamp": "2017-03-04_14:39",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/pays-de-la-loire": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-pays-de-la-loire",
+            "size": "44023811",
+            "size-compressed": "17163789",
+            "timestamp": "2017-03-04_14:42",
+            "version": "1"
+        },
+        "id": "europe/france/pays-de-la-loire",
+        "name": "Europe/France/Pays De La Loire",
+        "osmscout": {
+            "path": "osmscout/europe-france-pays-de-la-loire",
+            "size": "197969235",
+            "size-compressed": "129571813",
+            "timestamp": "2017-03-04_14:41",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/picardie": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-picardie",
+            "size": "28848131",
+            "size-compressed": "11672359",
+            "timestamp": "2017-03-04_14:39",
+            "version": "1"
+        },
+        "id": "europe/france/picardie",
+        "name": "Europe/France/Picardie",
+        "osmscout": {
+            "path": "osmscout/europe-france-picardie",
+            "size": "84675943",
+            "size-compressed": "55975718",
+            "timestamp": "2017-03-04_14:39",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/poitou-charentes": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-poitou-charentes",
+            "size": "24592387",
+            "size-compressed": "9908147",
+            "timestamp": "2017-03-04_14:41",
+            "version": "1"
+        },
+        "id": "europe/france/poitou-charentes",
+        "name": "Europe/France/Poitou Charentes",
+        "osmscout": {
+            "path": "osmscout/europe-france-poitou-charentes",
+            "size": "126235656",
+            "size-compressed": "83375303",
+            "timestamp": "2017-03-04_14:41",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/provence-alpes-cote-d-azur": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-provence-alpes-cote-d-azur",
+            "size": "38293507",
+            "size-compressed": "15347962",
+            "timestamp": "2017-03-04_14:43",
+            "version": "1"
+        },
+        "id": "europe/france/provence-alpes-cote-d-azur",
+        "name": "Europe/France/Provence Alpes-Cote-d'Azur",
+        "osmscout": {
+            "path": "osmscout/europe-france-provence-alpes-cote-d-azur",
+            "size": "176605587",
+            "size-compressed": "112609182",
+            "timestamp": "2017-03-04_14:43",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/reunion": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-reunion",
+            "size": "4349955",
+            "size-compressed": "1907156",
+            "timestamp": "2017-03-04_14:39",
+            "version": "1"
+        },
+        "id": "europe/france/reunion",
+        "name": "Europe/France/Reunion",
+        "osmscout": {
+            "path": "osmscout/europe-france-reunion",
+            "size": "18526466",
+            "size-compressed": "11669924",
+            "timestamp": "2017-03-04_14:39",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/france/rhone-alpes": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-france-rhone-alpes",
+            "size": "65875971",
+            "size-compressed": "26474462",
+            "timestamp": "2017-03-04_14:48",
+            "version": "1"
+        },
+        "id": "europe/france/rhone-alpes",
+        "name": "Europe/France/Rhone Alpes",
+        "osmscout": {
+            "path": "osmscout/europe-france-rhone-alpes",
+            "size": "261628970",
+            "size-compressed": "167863519",
+            "timestamp": "2017-03-04_14:47",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/FR",
+            "size": "187914247",
+            "size-compressed": "81447894",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
     "europe/georgia": {
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-georgia",
@@ -3405,6 +4107,84 @@
         },
         "type": "territory"
     },
+    "europe/great-britain/england": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-great-britain-england",
+            "size": "321429507",
+            "size-compressed": "131223917",
+            "timestamp": "2017-03-04_15:05",
+            "version": "1"
+        },
+        "id": "europe/great-britain/england",
+        "name": "Europe/United Kingdom/England",
+        "osmscout": {
+            "path": "osmscout/europe-great-britain-england",
+            "size": "793314255",
+            "size-compressed": "466530383",
+            "timestamp": "2017-03-04_15:05",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/GB",
+            "size": "64946169",
+            "size-compressed": "28538239",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/great-britain/scotland": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-great-britain-scotland",
+            "size": "29806595",
+            "size-compressed": "12566733",
+            "timestamp": "2017-03-04_14:44",
+            "version": "1"
+        },
+        "id": "europe/great-britain/scotland",
+        "name": "Europe/United Kingdom/Scotland",
+        "osmscout": {
+            "path": "osmscout/europe-great-britain-scotland",
+            "size": "142019332",
+            "size-compressed": "84451033",
+            "timestamp": "2017-03-04_14:44",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/GB",
+            "size": "64946169",
+            "size-compressed": "28538239",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/great-britain/wales": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-great-britain-wales",
+            "size": "13484035",
+            "size-compressed": "5903961",
+            "timestamp": "2017-03-04_14:42",
+            "version": "1"
+        },
+        "id": "europe/great-britain/wales",
+        "name": "Europe/United Kingdom/Wales",
+        "osmscout": {
+            "path": "osmscout/europe-great-britain-wales",
+            "size": "74468955",
+            "size-compressed": "41099838",
+            "timestamp": "2017-03-04_14:42",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/GB",
+            "size": "64946169",
+            "size-compressed": "28538239",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
     "europe/greece": {
         "geocoder_nlp": {
             "path": "geocoder-nlp/europe-greece",
@@ -3550,6 +4330,136 @@
             "size": "1223106998",
             "size-compressed": "737590936",
             "timestamp": "2017-02-24_10:45",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/IT",
+            "size": "67581122",
+            "size-compressed": "29232735",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/italy/centro": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-italy-centro",
+            "size": "64315395",
+            "size-compressed": "25468682",
+            "timestamp": "2017-03-04_14:45",
+            "version": "1"
+        },
+        "id": "europe/italy/centro",
+        "name": "Europe/Italy/Centro",
+        "osmscout": {
+            "path": "osmscout/europe-italy-centro",
+            "size": "180611963",
+            "size-compressed": "108567175",
+            "timestamp": "2017-03-04_14:45",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/IT",
+            "size": "67581122",
+            "size-compressed": "29232735",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/italy/isole": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-italy-isole",
+            "size": "69189635",
+            "size-compressed": "28526355",
+            "timestamp": "2017-03-04_14:45",
+            "version": "1"
+        },
+        "id": "europe/italy/isole",
+        "name": "Europe/Italy/Isole",
+        "osmscout": {
+            "path": "osmscout/europe-italy-isole",
+            "size": "144662165",
+            "size-compressed": "80196801",
+            "timestamp": "2017-03-04_14:45",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/IT",
+            "size": "67581122",
+            "size-compressed": "29232735",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/italy/nord-est": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-italy-nord-est",
+            "size": "152322051",
+            "size-compressed": "65102483",
+            "timestamp": "2017-03-04_14:54",
+            "version": "1"
+        },
+        "id": "europe/italy/nord-est",
+        "name": "Europe/Italy/Nord Est",
+        "osmscout": {
+            "path": "osmscout/europe-italy-nord-est",
+            "size": "402381751",
+            "size-compressed": "243358069",
+            "timestamp": "2017-03-04_14:54",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/IT",
+            "size": "67581122",
+            "size-compressed": "29232735",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/italy/nord-ovest": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-italy-nord-ovest",
+            "size": "82042883",
+            "size-compressed": "33164556",
+            "timestamp": "2017-03-04_14:51",
+            "version": "1"
+        },
+        "id": "europe/italy/nord-ovest",
+        "name": "Europe/Italy/Nord Ovest",
+        "osmscout": {
+            "path": "osmscout/europe-italy-nord-ovest",
+            "size": "319540098",
+            "size-compressed": "194985585",
+            "timestamp": "2017-03-04_14:51",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/IT",
+            "size": "67581122",
+            "size-compressed": "29232735",
+            "timestamp": "2017-02-23_17:56",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/italy/sud": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-italy-sud",
+            "size": "40542211",
+            "size-compressed": "14389099",
+            "timestamp": "2017-03-04_14:48",
+            "version": "1"
+        },
+        "id": "europe/italy/sud",
+        "name": "Europe/Italy/Sud",
+        "osmscout": {
+            "path": "osmscout/europe-italy-sud",
+            "size": "195876028",
+            "size-compressed": "118539555",
+            "timestamp": "2017-03-04_14:48",
             "version": "11"
         },
         "postal_country": {
@@ -5729,6 +6639,214 @@
             "version": "1"
         },
         "type": "postal/global"
+    },
+    "russia/central-fed-district": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district",
+            "size": "234459139",
+            "size-compressed": "83656682",
+            "timestamp": "2017-03-04_14:58",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district",
+        "name": "Europe/Russian Federation/Central Fed District",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district",
+            "size": "487444577",
+            "size-compressed": "303346605",
+            "timestamp": "2017-03-04_14:58",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district",
+            "size": "35303427",
+            "size-compressed": "13763752",
+            "timestamp": "2017-03-04_14:56",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district",
+        "name": "Europe/Russian Federation/Far Eastern Fed District",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district",
+            "size": "489655805",
+            "size-compressed": "116231919",
+            "timestamp": "2017-03-04_14:56",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/north-caucasus-fed-district": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-north-caucasus-fed-district",
+            "size": "25690115",
+            "size-compressed": "9803107",
+            "timestamp": "2017-03-04_14:47",
+            "version": "1"
+        },
+        "id": "russia/north-caucasus-fed-district",
+        "name": "Europe/Russian Federation/North Caucasus Fed District",
+        "osmscout": {
+            "path": "osmscout/russia-north-caucasus-fed-district",
+            "size": "66455555",
+            "size-compressed": "35136587",
+            "timestamp": "2017-03-04_14:47",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district",
+            "size": "95408131",
+            "size-compressed": "35000722",
+            "timestamp": "2017-03-04_15:00",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district",
+        "name": "Europe/Russian Federation/Northwestern Fed District",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district",
+            "size": "419140138",
+            "size-compressed": "235004239",
+            "timestamp": "2017-03-04_14:59",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district",
+            "size": "81481731",
+            "size-compressed": "29701621",
+            "timestamp": "2017-03-04_15:06",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district",
+        "name": "Europe/Russian Federation/Siberian Fed District",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district",
+            "size": "316336309",
+            "size-compressed": "176671486",
+            "timestamp": "2017-03-04_15:06",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/south-fed-district": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district",
+            "size": "112705539",
+            "size-compressed": "44022169",
+            "timestamp": "2017-03-04_17:01",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district",
+        "name": "Europe/Russian Federation/South Fed District",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district",
+            "size": "190547672",
+            "size-compressed": "112837478",
+            "timestamp": "2017-03-04_17:01",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/ural-fed-district": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-ural-fed-district",
+            "size": "73035779",
+            "size-compressed": "26644516",
+            "timestamp": "2017-03-04_17:04",
+            "version": "1"
+        },
+        "id": "russia/ural-fed-district",
+        "name": "Europe/Russian Federation/Ural Fed District",
+        "osmscout": {
+            "path": "osmscout/russia-ural-fed-district",
+            "size": "261530167",
+            "size-compressed": "141507706",
+            "timestamp": "2017-03-04_17:04",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district",
+            "size": "140595203",
+            "size-compressed": "53054594",
+            "timestamp": "2017-03-04_17:08",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district",
+        "name": "Europe/Russian Federation/Volga Fed District",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district",
+            "size": "411428206",
+            "size-compressed": "252213914",
+            "timestamp": "2017-03-04_17:07",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
     },
     "south-america/argentina": {
         "geocoder_nlp": {

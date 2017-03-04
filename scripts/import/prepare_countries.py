@@ -36,7 +36,10 @@ Name2Code = {
     "syria": "SY",
     "vietnam": "VN",
 
-    "europe/germany": "DE"
+    "europe/germany": "DE",
+    "europe/france": "FR",
+    "europe/great-britain": "GB",
+    "europe/italy": "IT",
 }
 
 Name2Pretty = {
@@ -58,6 +61,10 @@ Name2Pretty = {
     "us-south": "US/Region/South",
     "us-west": "US/Region/West",
 
+    "europe/france": "Europe/France",
+    "basse-normandie": "Basse-Normandie",
+    "provence-alpes-cote-d-azur": "Provence Alpes-Cote-d'Azur",
+
     "europe/germany": "Europe/Germany",
     "baden-wuerttemberg": "Baden-Württemberg",
     "mecklenburg-vorpommern": "Mecklenburg-Vorpommern",
@@ -66,15 +73,39 @@ Name2Pretty = {
     "sachsen-anhalt": "Sachsen-Anhalt",
     "schleswig-holstein": "Schleswig-Holstein",
     "thueringen": "Thüringen",
+
+    "europe/great-britain": "Europe/United Kingdom",
+    "europe/italy": "Europe/Italy",
+    
+    "russia": "Europe/Russian Federation",
 }
 
 NameCapitalize = [
     "azores",
     "north-america/us",
+
+    "alsace", "aquitaine", "auvergne", "bourgogne", "bretagne",
+    "centre", "champagne-ardenne", "corse", "franche-comte", "guadeloupe",
+    "guyane", "haute-normandie", "ile-de-france", "languedoc-roussillon",
+    "limousin", "lorraine", "martinique", "mayotte", "midi-pyrenees",
+    "nord-pas-de-calais", "pays-de-la-loire", "picardie", "poitou-charentes",
+    "reunion", "rhone-alpes", 
+    
     "bayern", "berlin", "brandenburg", "bremen",
     "hamburg", "hessen",
-    "niedersachsen", "saarland", "sachsen", 
-    
+    "niedersachsen", "saarland", "sachsen",
+
+    "england", "scotland", "wales",
+
+    "centro", "isole", "nord-est", "nord-ovest", "sud",
+
+    "central-fed-district",
+    "far-eastern-fed-district",
+    "north-caucasus-fed-district",
+    "northwestern-fed-district",
+    "siberian-fed-district",
+    "south-fed-district", "ural-fed-district",
+    "volga-fed-district",
 ]
 
 SpecialURL = {
@@ -133,6 +164,16 @@ Countries = {
                 "ukraine"
     ],
 
+    "europe/france": [
+        "alsace", "aquitaine", "auvergne",
+        "basse-normandie", "bourgogne", "bretagne", "centre", "champagne-ardenne", 
+        "corse", "franche-comte", "guadeloupe", "guyane", "haute-normandie",
+        "ile-de-france", "languedoc-roussillon", "limousin", "lorraine",
+        "martinique", "mayotte", "midi-pyrenees", "nord-pas-de-calais",
+        "pays-de-la-loire", "picardie", "poitou-charentes",
+        "provence-alpes-cote-d-azur", "reunion", "rhone-alpes", 
+    ],
+
     "europe/germany": [
         "baden-wuerttemberg",
         "bayern",
@@ -152,6 +193,24 @@ Countries = {
         "thueringen",
     ],
 
+    "europe/great-britain": [
+        "england", "scotland", "wales"
+        ],
+
+    "europe/italy": [
+        "centro", "isole", "nord-est", "nord-ovest", "sud",
+        ],
+    
+    "russia": [
+        "central-fed-district",
+        "far-eastern-fed-district",
+        "north-caucasus-fed-district",
+        "northwestern-fed-district",
+        "siberian-fed-district",
+        "south-fed-district", "ural-fed-district",
+        "volga-fed-district",
+        ],
+    
     "africa": [ "algeria",
                 "angola",
                 "benin",
@@ -373,7 +432,7 @@ def namecode(continent, country):
         pretty_continent = pretty_continent.strip()
         
     if pretty_name is None:
-        if country in Name2Pretty: pretty_name = Name2Pretty[country]
+        if country!="russia" and country in Name2Pretty: pretty_name = Name2Pretty[country]
         elif country in NameCapitalize or continent in NameCapitalize or country.find("us-")==0:
             pretty_name = ""
             for c in country_spaces.split():
