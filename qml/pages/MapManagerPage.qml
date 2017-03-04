@@ -40,7 +40,7 @@ Page {
 
             ElementSwitch {
                 id: eManagerGeocoderNLP
-                visible: page.activeState
+                activeState: page.activeState
                 key: settingsMapManagerPrefix + "geocoder_nlp"
                 autoApply: true
                 mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
@@ -202,6 +202,37 @@ Page {
 
                 Label {
                     text: qsTr("List of currently available maps and datasets")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
+            SectionHeader {
+                text: qsTr("Storage")
+            }
+
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Button {
+                    text: qsTr("Start cleanup")
+                    enabled: page.activeState
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: {
+                        var clist = JSON.parse( manager.getProvidedCountries() )
+                        pageStack.push(Qt.resolvedUrl("NonNeededFiles.qml"))
+                    }
+                }
+
+                Label {
+                    text: qsTr("Check whether there are files that are not used anymore from the " +
+                               "earlier subscriptions")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap

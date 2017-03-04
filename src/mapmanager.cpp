@@ -922,14 +922,15 @@ void Manager::onWrittenBytes(uint64_t sz)
 ////////////////////////////////////////////////////////////
 /// support for cleanup
 
-qint64 Manager::getNonNeededFilesList(QStringList &files)
+QStringList Manager::getNonNeededFilesList()
 {
-  if (downloading()) return false;
+  QStringList files;
+  m_not_needed_files_size = -1;
+  if (downloading()) return files;
 
   qint64 notNeededSize = 0;
 
   m_not_needed_files.clear();
-  files.clear();
 
   // fill up needed files
   QSet<QString> wanted;
@@ -966,11 +967,17 @@ qint64 Manager::getNonNeededFilesList(QStringList &files)
     }
 
   m_not_needed_files = files;
+  m_not_needed_files_size = notNeededSize;
 
-  return notNeededSize;
+  return files;
 }
 
-bool Manager::deleteNonNeededFiles(const QStringList &files)
+qint64 Manager::getNonNeededFilesSize()
+{
+  return m_not_needed_files_size;
+}
+
+bool Manager::deleteNonNeededFiles(const QStringList files)
 {
   if (downloading()) return false;
 

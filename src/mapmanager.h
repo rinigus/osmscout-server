@@ -105,11 +105,18 @@ namespace MapManager {
     /// \brief Create a list of non-required files
     ///
     /// Makes a list of non-required files to show to the user. This
-    /// method will fail (return -1) if there are active downloads.
-    /// Otherwise, we could delete partially downloaded files. If the list is
-    /// found, the returned value would correspond to the size occupied
-    /// by the files.
-    Q_INVOKABLE qint64 getNonNeededFilesList(QStringList &files);
+    /// method will fail (return empty list) if there are active downloads.
+    /// Otherwise, we could delete partially downloaded files. To signal the
+    /// inability to find the list, the calculated size occupied by the non-needed
+    /// files will be set to negative (see getNonNeededFilesSize)
+    Q_INVOKABLE QStringList getNonNeededFilesList();
+
+    /// \brief Return space occupied by non-required files
+    ///
+    /// The space is found while composing a list by getNonNeededFilesList. This
+    /// method should be called after getNonNeededFilesList. It will be negative if
+    /// the list was not found due to active downloads
+    Q_INVOKABLE qint64 getNonNeededFilesSize();
 
     /// \brief Delete non-required files
     ///
@@ -118,7 +125,7 @@ namespace MapManager {
     /// deleteNonNeededFiles with the same list as found by getNonNeededFilesList.
     /// If the lists don't match, the files will not get deleted. Returns true if
     /// files were deleted successfully.
-    Q_INVOKABLE bool deleteNonNeededFiles(const QStringList &files);
+    Q_INVOKABLE bool deleteNonNeededFiles(const QStringList files);
 
     /// Properties exposed to QML
     bool storageAvailable();
@@ -219,6 +226,7 @@ namespace MapManager {
     uint64_t m_last_reported_written;
 
     QStringList m_not_needed_files;
+    qint64 m_not_needed_files_size{-1};
 
     QJsonObject m_last_found_updates;
 

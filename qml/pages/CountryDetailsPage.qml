@@ -11,12 +11,10 @@ Page {
 
     signal dataChanged
 
-    allowedOrientations : Orientation.All    
+    allowedOrientations : Orientation.All
 
-    function checkSubs()
-    {
-        if (manager.isCountryRequested(countryId))
-        {
+    function checkSubs() {
+        if (manager.isCountryRequested(countryId)) {
             subscribe.enabled = false
             unsubscribe.enabled = (true && page.activeState)
             subscribed.text = qsTr("Subscribed")
@@ -31,8 +29,7 @@ Page {
                                       "You would have to update list of provided maps, the maps, and/or install " +
                                       "the latest release of OSM Scout Server.")
         }
-        else
-        {
+        else {
             subscribe.enabled = (true && page.activeState)
             unsubscribe.enabled = false
             subscribed.text = qsTr("No subscription")
@@ -42,8 +39,7 @@ Page {
         }
     }
 
-    function fillData()
-    {
+    function fillData() {
         var c = JSON.parse(manager.getCountryDetails(countryId))
         pageHead.title = c.name
         fullName.text = c.name_full
@@ -59,8 +55,7 @@ Page {
         dataChanged()
     }
 
-    function canBeActive()
-    {
+    function canBeActive() {
         if (countryId === "postal/global")
             return false;
         return true;
