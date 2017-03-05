@@ -67,22 +67,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="190"/>
+        <location filename="../src/appsettings.cpp" line="192"/>
         <source>mph</source>
         <translation>mpu</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="190"/>
+        <location filename="../src/appsettings.cpp" line="192"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="192"/>
+        <location filename="../src/appsettings.cpp" line="194"/>
         <source>km/h</source>
         <translation>km/u</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="192"/>
+        <location filename="../src/appsettings.cpp" line="194"/>
         <source>km</source>
         <translation>km</translation>
     </message>
