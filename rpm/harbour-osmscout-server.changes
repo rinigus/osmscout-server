@@ -5,6 +5,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Mar 5 2017 rinigus <rinigus.git@gmail.com> 0.7.0-1
+- Maps are provided through CDN
+- Adding Map Manager to download and remove maps on the device
+- libosmscout backend changes, including rendering speedup by @Karry
+- Settings grouped by backend and available via Settings dialog
+- Small enhancements
+
 * Wed Feb 8 2017 rinigus <rinigus.git@gmail.com> 0.6.2-1
 - German translation
 - Translations handled through transifex

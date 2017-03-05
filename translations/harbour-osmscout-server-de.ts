@@ -796,42 +796,52 @@
 <context>
     <name>NonNeededFiles</name>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="27"/>
-        <source>Non-needed files</source>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="28"/>
+        <source>Unused files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="39"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
         <source>Files:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="65"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="81"/>
         <source>Delete files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="70"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="86"/>
         <source>Deleting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="80"/>
-        <source>Delete non needed files</source>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="96"/>
+        <source>Delete unused files and free the occupied space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="104"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="127"/>
+        <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
         <source>MB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="104"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="42"/>
+        <source>WARNING: While care has been taken to ensure deleting of the found unused files only, the software has not been tested by many users yet. Use at your own risk and please report if there are any problems.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
         <source>Occupied space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="108"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="125"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
         <translation type="unfinished"></translation>
     </message>
