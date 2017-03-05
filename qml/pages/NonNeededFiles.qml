@@ -5,6 +5,7 @@ Page {
     id: page
 
     property bool activeState: false
+    property bool anythingToDelete: false
     property int nFiles: 0
     property var fileNames: []
 
@@ -24,23 +25,37 @@ Page {
             spacing: Theme.paddingLarge
 
             PageHeader {
-                title: qsTr("Non-needed files")
+                title: qsTr("Unused files")
             }
 
             Label {
-                id: sizeLabel
+                id: mainLabel
                 width: parent.width
-                horizontalAlignment: Text.AlignRight
+                wrapMode: Text.WordWrap
+                color: Theme.highlightColor
+            }
+
+            Label {
+                id: warning
+                width: parent.width
+                visible: anythingToDelete
+                text: qsTr("WARNING: While care has been taken to ensure deleting of the found unused files only, " +
+                           "the software has not been tested by many users yet. Use at your own risk and please " +
+                           "report if there are any problems.")
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
             }
 
             Label {
                 width: parent.width
+                visible: anythingToDelete
                 text: qsTr("Files:")
                 color: Theme.highlightColor
             }
 
             Column {
+                visible: anythingToDelete
                 x: Theme.horizontalPageMargin
                 width: parent.width - x
                 spacing: Theme.paddingMedium
@@ -57,6 +72,7 @@ Page {
             }
 
             Column {
+                visible: anythingToDelete
                 width: parent.width
                 spacing: Theme.paddingMedium
                 anchors.margins: Theme.horizontalPageMargin
@@ -77,7 +93,7 @@ Page {
                 }
 
                 Label {
-                    text: qsTr("Delete non needed files")
+                    text: qsTr("Delete unused files and free the occupied space")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -98,17 +114,22 @@ Page {
     Component.onCompleted: {
         fileNames = manager.getNonNeededFilesList()
         var size = manager.getNonNeededFilesSize()
-        if (size >= 0) {
+        if (size > 0) {
             nFiles = fileNames.length
             var s = Math.round(size/1024/1024)
-            sizeLabel.text = qsTr("Occupied space") + ": " + s + " " + qsTr("MB")
+            mainLabel.text = qsTr("Occupied space") + ": " + s + " " + qsTr("MB")
         }
         else {
             nFiles = 0
-            sizeLabel.text = qsTr("Failed to check for non-needed files. This could be due to active downloads, for example")
+            if (size < 0)
+                mainLabel.text = qsTr("Failed to check for non-needed files. This could be due to active downloads, for example")
+            else
+                mainLabel.text = qsTr("All stored files are used by OSM Scout Server. " +
+                                      "There is nothing to delete.")
         }
 
         page.activeState = (size > 0 && !manager.downloading)
+        page.anythingToDelete = (size > 0)
 
         busy.running = false
     }
