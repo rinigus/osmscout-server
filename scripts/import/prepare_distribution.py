@@ -3,10 +3,11 @@
 # This script prepares files before uploading them for distribution
 # This has to be run after all imports are finished
 
-import json, pickle
+import json, pickle, os, stat
 
 root_dir = "distribution"
-url_base = "https://kuqrhldx.e24files.com"
+bucket = "kuqrhldx"
+url_base = "https://" + bucket + ".e24files.com"
 
 url_specs = {
     "base": url_base,
@@ -34,7 +35,8 @@ upload_commands = "#!/bin/bash\n"
 def uploader(dirname, targetname):
     global toupload, upload_commands
     toupload.append([dirname, targetname])
-    upload_commands += "./upload_command.sh " + dirname + " " + targetname + "\n"
+    upload_commands += "echo\necho " + dirname + "\n"
+    upload_commands += "s3cmd --config=.s3cfg sync " + dirname + "/ s3://" + bucket + "/" + targetname + "/ --acl-public " + "\n"
 
 def getprop(dirname):
     props = {}
@@ -66,3 +68,12 @@ fjson.write( json.dumps( dist, sort_keys=True, indent=4, separators=(',', ': '))
 # save uploader script
 fscript = open("uploader.sh", "w")
 fscript.write( upload_commands )
+fscript.write( "s3cmd --config=.s3cfg setacl s3://" + bucket + "/ --acl-public --recursive\n" )
+fscript.write( "s3cmd --config=.s3cfg setacl s3://" + bucket + "/ --acl-private\n" )
+fscript.close()
+
+st = os.stat('uploader.sh')
+os.chmod('uploader.sh', st.st_mode | stat.S_IEXEC)
+
+print "Check uploader script and run it"
+
