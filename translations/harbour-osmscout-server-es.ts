@@ -25,31 +25,41 @@
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="23"/>
+        <source>Maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="25"/>
+        <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts as provided by Geofabrik GmbH.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="29"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="25"/>
+        <location filename="../qml/pages/AboutPage.qml" line="31"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Por favor, ten en cuenta que &lt;i&gt;libpostal&lt;/i&gt; se ha desarrollado para ajustarse bien en el modelo que cubre todo el mundo. Los modelos basados ​​en países fueron desarrollados para usar &lt;i&gt;libpostal&lt;/i&gt; en dispositivos móviles pero éste no se ajusta especificamente a estos modelos. Por favor, informa de las incidencias sobre el rendimiento de libpostal en los modelos basados ​​en países a través de github, en los proyectos &lt;i&gt;OSM Scout Server&lt;/i&gt; o &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="32"/>
+        <location filename="../qml/pages/AboutPage.qml" line="38"/>
         <source>Acknowledgments</source>
         <translation>Agradecimientos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="54"/>
+        <location filename="../qml/pages/AboutPage.qml" line="60"/>
         <source>About</source>
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="58"/>
+        <location filename="../qml/pages/AboutPage.qml" line="64"/>
         <source>version</source>
         <translation>versión</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="63"/>
+        <location filename="../qml/pages/AboutPage.qml" line="70"/>
         <source>is a server that provides offline map services</source>
         <translation>es un servidor que proporciona un servicio de mapas sin conexión</translation>
     </message>
@@ -57,40 +67,124 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="173"/>
+        <location filename="../src/appsettings.cpp" line="192"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="173"/>
+        <location filename="../src/appsettings.cpp" line="192"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="175"/>
+        <location filename="../src/appsettings.cpp" line="194"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="175"/>
+        <location filename="../src/appsettings.cpp" line="194"/>
         <source>km</source>
         <translation>km</translation>
     </message>
 </context>
 <context>
+    <name>CountryDetailsPage</name>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="20"/>
+        <source>Subscribed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="24"/>
+        <source>All datasets covering selected features are available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="26"/>
+        <source>Some datasets are missing. You would have to start downloads to get them.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="28"/>
+        <source>Some or all datasets are incompatible with this version. You would have to update list of provided maps, the maps, and/or install the latest release of OSM Scout Server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="35"/>
+        <source>No subscription</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="98"/>
+        <source>Availibility on device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="118"/>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="127"/>
+        <source>Selected datasets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="147"/>
+        <source>All datasets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="186"/>
+        <source>incompatible version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="206"/>
+        <source>MB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="208"/>
+        <source>disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="223"/>
+        <source>Subscription</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="228"/>
+        <source>Subscribe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="239"/>
+        <source>Unsubscribe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="49"/>
+        <location filename="../qml/pages/CountryDetailsPage.qml" line="50"/>
+        <source>%1 MB</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="19"/>
+        <location filename="../qml/cover/CoverPage.qml" line="29"/>
         <source>OSM Scout Server</source>
         <translation>Servidor OSM Scout</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="22"/>
+        <location filename="../qml/cover/CoverPage.qml" line="32"/>
         <source>Jobs</source>
         <translation>Trabajos</translation>
     </message>
     <message>
-        <location filename="../qml/cover/CoverPage.qml" line="23"/>
+        <location filename="../qml/cover/CoverPage.qml" line="33"/>
         <source>Idle</source>
         <translation>Inactivo</translation>
     </message>
@@ -103,27 +197,27 @@
         <translation>No es posible crear objeto en la base de datos</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="44"/>
+        <location filename="../src/dbmaster.cpp" line="47"/>
         <source>Cannot open database</source>
         <translation>No es posible abrir la base de datos</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="49"/>
+        <location filename="../src/dbmaster.cpp" line="52"/>
         <source>Opened database</source>
         <translation>Base de datos abierta</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="115"/>
+        <location filename="../src/dbmaster.cpp" line="109"/>
         <source>Cannot allocate Style config</source>
         <translation>No es posible asignar la configuración del estilo</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="123"/>
+        <location filename="../src/dbmaster.cpp" line="117"/>
         <source>Cannot open style</source>
         <translation>No es posible abrir estilo</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="129"/>
+        <location filename="../src/dbmaster.cpp" line="123"/>
         <source>Loaded style</source>
         <translation>Estilo cargado</translation>
     </message>
@@ -199,6 +293,56 @@
     </message>
 </context>
 <context>
+    <name>DownloadCountriesPage</name>
+    <message>
+        <location filename="../qml/pages/DownloadCountriesPage.qml" line="57"/>
+        <source>Select country or territory</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ElementCountryListItem</name>
+    <message>
+        <location filename="../qml/pages/ElementCountryListItem.qml" line="17"/>
+        <source>%1 territories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ElementCountryListItem.qml" line="24"/>
+        <location filename="../qml/pages/ElementCountryListItem.qml" line="28"/>
+        <source>Available</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ElementCountryListItem.qml" line="33"/>
+        <source>Incompatible version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ElementCountryListItem.qml" line="37"/>
+        <source>Subscribed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ElementCountryListItem.qml" line="42"/>
+        <source>Size: %1 MB</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ElementDownloads</name>
+    <message>
+        <location filename="../qml/pages/ElementDownloads.qml" line="16"/>
+        <source>No downloads active</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ElementDownloads.qml" line="17"/>
+        <source>Download active</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ElementLanguageSelector</name>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="27"/>
@@ -215,15 +359,43 @@
     </message>
 </context>
 <context>
-    <name>FileSelector</name>
+    <name>FileDownloader</name>
     <message>
-        <location filename="../qml/pages/FileSelector.qml" line="163"/>
-        <source>%1, %2</source>
-        <extracomment>Shows size and modification date, e.g. &quot;15.5MB, 02/03/2016&quot;</extracomment>
-        <translation>%1, %2</translation>
+        <location filename="../src/filedownloader.cpp" line="188"/>
+        <source>Failed to download</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/FileSelector.qml" line="191"/>
+        <location filename="../src/filedownloader.cpp" line="189"/>
+        <source>Error code: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/filedownloader.cpp" line="215"/>
+        <location filename="../src/filedownloader.cpp" line="235"/>
+        <source>Error in processing downloaded data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/filedownloader.cpp" line="245"/>
+        <source>Error in processing downloaded data: could not start the program</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FileSelector</name>
+    <message>
+        <location filename="../qml/pages/FileSelector.qml" line="65"/>
+        <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FileSelector.qml" line="200"/>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/FileSelector.qml" line="216"/>
         <source>Empty directory</source>
         <translation>Directorio vacío</translation>
     </message>
@@ -231,7 +403,7 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="70"/>
+        <location filename="../src/geomaster.cpp" line="79"/>
         <source>Cannot open geocoding database</source>
         <translation>No es posible abrir la base de datos de geocodificación</translation>
     </message>
@@ -256,17 +428,17 @@
         <translation>libpostal usará todos los idiomas cubiertos</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="81"/>
+        <location filename="../src/geomaster.cpp" line="90"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Error de análisis de libpostal, quizás la base de datos de libpostal no está disponible</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="90"/>
+        <location filename="../src/geomaster.cpp" line="99"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Error al buscar con geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="167"/>
+        <location filename="../src/geomaster.cpp" line="176"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>La búsqueda del punto de referencia ha fallado: no se pudo encontrar</translation>
     </message>
@@ -274,29 +446,14 @@
 <context>
     <name>GeocoderPage</name>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
-        <source>Geocoder</source>
-        <translation>Geocodificador</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="38"/>
-        <source>Use geocoder-nlp with libpostal as a geocoder</source>
-        <translation>Usar geocoder-nlp con libpostal como un geocodificador</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="39"/>
-        <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.</source>
-        <translation>Cuando se activa, se usará un geodificador basado en libpostal para resolver todas las búsquedas solicitadas. Ten en cuenta que necesitas de bases de datos adicionales para el idioma, análisis de entrada de usuario, y geocodificación.</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="53"/>
-        <source>geocoder-nlp and libpostal</source>
-        <translation>geocoder-nlp y libpostal</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="44"/>
+        <location filename="../qml/pages/GeocoderPage.qml" line="36"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
         <translation>Aviso legal: Por favor, consulta &apos;Acerca de&apos; para el envío de incidencias sobre el análisis de direcciones postales.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
+        <source>Geocoder-NLP</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
@@ -304,64 +461,34 @@
         <translation>Geocodificador es el responsable de resolver las búsquedas solicitadas. Para ello, analiza las cadenas de búsqueda y encuentra los objetos correspondientes en un mapa.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="60"/>
-        <source>libpostal language parser</source>
-        <translation>Analizador de idioma de libpostal</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="61"/>
-        <source>Location of the folder with a language parser databases of libpostal, such as language_classifier</source>
-        <translation>Ubicación de la carpeta donde se encuentra un analizador de idioma de las bases de datos de libpostal, como laguage_classifier</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="69"/>
-        <source>Country-specific database</source>
-        <translation>Base de datos específica del país</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="70"/>
-        <source>Location of the folder with a country-specific databases of libpostal, such as address_parser</source>
-        <translation>Ubicación de la carpeta donde se encuentran las bases de datos de libpostal específicas de un país, como address_parser</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="78"/>
-        <source>Geocoder database</source>
-        <translation>Base de datos del geocodificador</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="79"/>
-        <source>Location of the SQLite geocoder-nlp database</source>
-        <translation>Ubicación de la base de datos SQLite de geocoder-nlp</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="85"/>
+        <location filename="../qml/pages/GeocoderPage.qml" line="47"/>
         <source>Languages</source>
         <translation>Idiomas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="86"/>
+        <location filename="../qml/pages/GeocoderPage.qml" line="48"/>
         <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
         <translation>Lista de idiomas usados para el análisis de direcciones postales. Ten en cuenta que cuando se utilizan todos los idiomas soportados, el uso de RAM podría ser considerable</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="93"/>
+        <location filename="../qml/pages/GeocoderPage.qml" line="55"/>
         <source>Use primitive parser</source>
         <translation>Usar analizador primitivo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="94"/>
-        <source>In addition to libpostal, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue. Example: house_number, street, town.</source>
-        <translation>Además de libpostal, el analizador primitivo te permite especificar la jerarquía administrativa en la búsqueda de un objeto mediante la separación de los componentes por comas. A veces, cuando libpostal falla al analizar correctamente una solicitud, es posible solucionar la incidencia con este analizador. Ejemplo: número de la vivienda, calle, ciudad.</translation>
+        <location filename="../qml/pages/GeocoderPage.qml" line="56"/>
+        <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="103"/>
-        <source>Load libpostal on every call</source>
-        <translation>Cargar libpostal en cada llamada</translation>
+        <location filename="../qml/pages/GeocoderPage.qml" line="65"/>
+        <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/GeocoderPage.qml" line="104"/>
-        <source>When selected, libpostal databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation>Cuando se activa, las bases de datos de libpostal se cargarán en la memoria sólo durante el análisis de la solicitud. Como resultado, la sobrecarga de memoria de libpostal es baja durante la inactividad mientras que el proceso de búsqueda tardaría más tiempo.</translation>
+        <location filename="../qml/pages/GeocoderPage.qml" line="66"/>
+        <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -380,6 +507,594 @@
         <location filename="../src/infohub.cpp" line="116"/>
         <source>INFO: </source>
         <translation>INFO: </translation>
+    </message>
+</context>
+<context>
+    <name>MapManager::Manager</name>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="40"/>
+        <source>Could not allocate Map Manager features</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="95"/>
+        <source>Failed to open the database for tracking downloaded files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="151"/>
+        <source>Address parsing language support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="172"/>
+        <location filename="../src/mapmanager.cpp" line="633"/>
+        <location filename="../src/mapmanager.cpp" line="760"/>
+        <source>Maps storage folder does not exist: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="180"/>
+        <location filename="../src/mapmanager.cpp" line="640"/>
+        <source>No maps were requested</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="200"/>
+        <source>No maps loaded: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="202"/>
+        <location filename="../src/mapmanager.cpp" line="233"/>
+        <location filename="../src/mapmanager.cpp" line="667"/>
+        <source>Version of dataset for %1 is not supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="229"/>
+        <source>Missing dataset for %1: %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="276"/>
+        <source>Available country or territory: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="466"/>
+        <source>World</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="530"/>
+        <source>Removing country from requested list: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="687"/>
+        <source>Missing data: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="779"/>
+        <source>Error starting the download of</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="796"/>
+        <source>File downloaded:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="824"/>
+        <source>Could not register downloaded file in the tracking database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="825"/>
+        <source>File registration error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="884"/>
+        <source>List of countries: %L1 (D) / %L2 (W) MB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1019"/>
+        <source>Downloading the list of countries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1071"/>
+        <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="892"/>
+        <source>%1: %L2 (D) / %L3 (W) MB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="503"/>
+        <source>Add country or feature to requested list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="857"/>
+        <source>Download failed, dropping all downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="995"/>
+        <source>Error while deleting file:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="996"/>
+        <source>Cancelling the removal of remaining files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1001"/>
+        <source>File removed during cleanup:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1067"/>
+        <source>Cannot check for updates due to missing maps storage folder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1069"/>
+        <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MapManagerFeature</name>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="173"/>
+        <source>Removed file: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="175"/>
+        <source>Failed to remove file: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="197"/>
+        <source>Missing libosmscout maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="208"/>
+        <source>Geocoder-NLP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="216"/>
+        <source>Missing geocoder-nlp dataset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="233"/>
+        <source>Address parsing language support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="252"/>
+        <source>Address parsing country-specific support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="241"/>
+        <source>Missing address language parsing dataset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="189"/>
+        <source>OSM Scout library</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="260"/>
+        <source>Missing country-specific address parsing dataset</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MapManagerPage</name>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="23"/>
+        <source>Map Manager</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="27"/>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="38"/>
+        <source>Storage settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="46"/>
+        <source>Store datasets for geocoder-nlp with libpostal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="47"/>
+        <source>When selected, a libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="60"/>
+        <source>Subscribed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="106"/>
+        <source>Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="123"/>
+        <source>Missing data:&lt;br&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="139"/>
+        <source>Start download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="150"/>
+        <source>Provided maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
+        <source>Update list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="204"/>
+        <source>List of currently available maps and datasets</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="214"/>
+        <source>Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="223"/>
+        <source>Start cleanup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="234"/>
+        <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="159"/>
+        <source>Subscribe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="171"/>
+        <source>Select the countries or territories that you want to keep on device</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NonNeededFiles</name>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="28"/>
+        <source>Unused files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
+        <source>Files:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="81"/>
+        <source>Delete files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="86"/>
+        <source>Deleting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="96"/>
+        <source>Delete unused files and free the occupied space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="127"/>
+        <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
+        <source>MB</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="42"/>
+        <source>WARNING: While care has been taken to ensure deleting of the found unused files only, the software has not been tested by many users yet. Use at your own risk and please report if there are any problems.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
+        <source>Occupied space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="125"/>
+        <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>OSMScoutPage</name>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="22"/>
+        <source>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="26"/>
+        <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="35"/>
+        <source>Rendering</source>
+        <translation type="unfinished">Renderización</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="41"/>
+        <source>Font size</source>
+        <translation type="unfinished">Tamaño de la fuente</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="49"/>
+        <source>Style Sheet</source>
+        <translation type="unfinished">Hoja de estilos</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="50"/>
+        <source>Style sheet used to render the map tiles</source>
+        <translation type="unfinished">Hoja de estilos usado para el renderizado de mapas</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="56"/>
+        <source>Icons</source>
+        <translation type="unfinished">Iconos</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="57"/>
+        <source>Icons used to mark features on the map</source>
+        <translation type="unfinished">Iconos usados para marcar elementos en el mapa</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="65"/>
+        <source>Render sea</source>
+        <translation type="unfinished">Renderizado del mar</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="71"/>
+        <source>Draw background</source>
+        <translation type="unfinished">Dibujar fondo</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="75"/>
+        <source>Routing</source>
+        <translation type="unfinished">Ruta</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="79"/>
+        <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
+        <translation type="unfinished">La asignación de la ruta se calcula entre las posibles rutas que cumplen con la limitación del coste</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="90"/>
+        <source>Cost factor</source>
+        <translation type="unfinished">Factor de coste</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="91"/>
+        <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
+        <translation type="unfinished">El factor de coste es un componente del límite de coste proporcional a la distancia geodésica entre el origen de la ruta y el destino</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="100"/>
+        <source>Cost distance</source>
+        <translation type="unfinished">Distancia de coste</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="101"/>
+        <source>Cost distance is an offset of a cost limit</source>
+        <translation type="unfinished">La distancia de coste es una compensación del límite de coste</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="118"/>
+        <source>Routing speeds</source>
+        <translation type="unfinished">Velocidades de ruta</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="125"/>
+        <source>Speeds for different transportation modes (car, bicycle, walk) and at different road surfaces used when finding an optimal route</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="136"/>
+        <source>Advanced rendering settings</source>
+        <translation type="unfinished">Ajustes avanzados del renderizado</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="142"/>
+        <source>Loaded area factor</source>
+        <translation type="unfinished">Factor del área cargada</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="143"/>
+        <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
+        <translation type="unfinished">Al aumentar el tamaño del área usado para cargar los datos durante el renderizado de un tile, el visualizador puede mejorar el renderizado de etiquetas al tener en cuenta los datos de los tiles colindantes. El valor de factor 1.0 corresponde a los datos de carga originados únicamente para el tile renderizado. Un valor alto del factor disminuiría la velocidad de renderizado y aumentaría la RAM del servidor. Debido al impacto sobre la memoria RAM, dependiendo del tamaño del tile, factores tan pequeños como 2 pueden conducir a llenar la memoria RAM del dispositivo.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="156"/>
+        <source>Cutoff zoom level</source>
+        <translation type="unfinished">Nivel mínimo de zoom</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMScoutPage.qml" line="157"/>
+        <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
+        <translation type="unfinished">En el nivel de zoom especificado, el algoritmo de renderizado del mapa detendrá la comprobación de etiquetas en los tiles colindantes. Normalmente se utiliza 14 como nivel mínimo de zoom. Con un valor más alto se podría conseguir un renderizado de etiquetas más preciso con niveles mayores de zoom. Ten en cuenta que el renderizado de etiquetas podría ralentizar considerablemente el renderizado de mapas.</translation>
+    </message>
+</context>
+<context>
+    <name>OSMSpeedPage</name>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="22"/>
+        <source>Routing speeds</source>
+        <translation type="unfinished">Velocidades de ruta</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
+        <source>Modes of transportation</source>
+        <translation type="unfinished">Modos de transporte</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="33"/>
+        <source>Maximal car speed</source>
+        <translation type="unfinished">Velocidad máxima del coche</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="34"/>
+        <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
+        <translation type="unfinished">Esta es la velocidad que se supone que nunca se excederá en los cálculos de la ruta</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="42"/>
+        <source>Expected speed of a bicycle</source>
+        <translation type="unfinished">Velocidad prevista de una bicicleta</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="50"/>
+        <source>Expected speed while walking</source>
+        <translation type="unfinished">Velocidad prevista cuando caminas</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="56"/>
+        <source>Car speed on different roads</source>
+        <translation type="unfinished">Velocidad del coche en diferentes carreteras</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="63"/>
+        <source>living street</source>
+        <translation type="unfinished">calle residencial</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="71"/>
+        <source>motorway</source>
+        <translation type="unfinished">autovía</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="79"/>
+        <source>motorway junction</source>
+        <translation type="unfinished">salida de autovía</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="87"/>
+        <source>motorway link</source>
+        <translation type="unfinished">enlace a autovía</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="95"/>
+        <source>motorway primary</source>
+        <translation type="unfinished">autovía principal</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="103"/>
+        <source>motorway trunk</source>
+        <translation type="unfinished">autovía troncal</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="111"/>
+        <source>primary</source>
+        <translation type="unfinished">carretera autonómica, km/n</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="119"/>
+        <source>primary link</source>
+        <translation type="unfinished">enlace a carretera autonómica</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="127"/>
+        <source>residential</source>
+        <translation type="unfinished">travesía</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="135"/>
+        <source>road</source>
+        <translation type="unfinished">carretera</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="143"/>
+        <source>roundabout</source>
+        <translation type="unfinished">rotonda</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="151"/>
+        <source>secondary</source>
+        <translation type="unfinished">carretera comarcal</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="159"/>
+        <source>secondary link</source>
+        <translation type="unfinished">enlace a carretera comarcal</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="167"/>
+        <source>service</source>
+        <translation type="unfinished">camino</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="175"/>
+        <source>tertiary</source>
+        <translation type="unfinished">carretera local</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="183"/>
+        <source>tertiary link</source>
+        <translation type="unfinished">enlace a carretera local</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="191"/>
+        <source>trunk</source>
+        <translation type="unfinished">carretera nacional</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="199"/>
+        <source>trunk link</source>
+        <translation type="unfinished">enlace a carretera nacional</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/OSMSpeedPage.qml" line="207"/>
+        <source>unclassified</source>
+        <translation type="unfinished">sin clasificar</translation>
     </message>
 </context>
 <context>
@@ -586,314 +1301,114 @@
         <translation>Ajustes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="28"/>
-        <source>Map</source>
-        <translation>Mapa</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="78"/>
-        <source>Style sheet used to render the map tiles</source>
-        <translation>Hoja de estilos usado para el renderizado de mapas</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
-        <source>Icons used to mark features on the map</source>
-        <translation>Iconos usados para marcar elementos en el mapa</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="62"/>
-        <source>Rendering</source>
-        <translation>Renderización</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="29"/>
-        <source>Location of the folder with a map imported by libosmscout Import utility</source>
-        <translation>Ubicación de la carpeta donde se encuentra el mapa importado con la herramienta &apos;Import&apos; de libosmscout</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="41"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="32"/>
         <source>Units</source>
         <translation>Sistema de unidades</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="43"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="34"/>
         <source>Metric</source>
         <translation>Métrico</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="44"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="35"/>
         <source>Imperial</source>
         <translation>Imperial</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="51"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="42"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
         <translation>Sistema de unidades usado en la interfaz gráfica de usuario del servidor. El sistema de unidades cambiará sólo después de aplicar los ajustes.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="69"/>
-        <source>Font size</source>
-        <translation>Tamaño de la fuente</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <source>Maps storage</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="77"/>
-        <source>Style Sheet</source>
-        <translation>Hoja de estilos</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="55"/>
+        <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="84"/>
-        <source>Icons</source>
-        <translation>Iconos</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
+        <source>Geocoder</source>
+        <translation type="unfinished">Geocodificador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="93"/>
-        <source>Render sea</source>
-        <translation>Renderizado del mar</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="68"/>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="82"/>
+        <source>Use geocoder-nlp with libpostal as a geocoder</source>
+        <translation type="unfinished">Usar geocoder-nlp con libpostal como un geocodificador</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
+        <source>Backend settings</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="99"/>
-        <source>Draw background</source>
-        <translation>Dibujar fondo</translation>
+        <source>OSM Scout library</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="103"/>
-        <source>Routing</source>
-        <translation>Ruta</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="127"/>
+        <source>Geocoder-NLP</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="119"/>
-        <source>Cost factor</source>
-        <translation>Factor de coste</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="106"/>
+        <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library is used for drawing maps, search, and routing.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="108"/>
-        <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
-        <translation>La asignación de la ruta se calcula entre las posibles rutas que cumplen con la limitación del coste</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="120"/>
-        <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation>El factor de coste es un componente del límite de coste proporcional a la distancia geodésica entre el origen de la ruta y el destino</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="129"/>
-        <source>Cost distance</source>
-        <translation>Distancia de coste</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="130"/>
-        <source>Cost distance is an offset of a cost limit</source>
-        <translation>La distancia de coste es una compensación del límite de coste</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
-        <source>Advanced rendering settings</source>
-        <translation>Ajustes avanzados del renderizado</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="143"/>
-        <source>Loaded area factor</source>
-        <translation>Factor del área cargada</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="144"/>
-        <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation>Al aumentar el tamaño del área usado para cargar los datos durante el renderizado de un tile, el visualizador puede mejorar el renderizado de etiquetas al tener en cuenta los datos de los tiles colindantes. El valor de factor 1.0 corresponde a los datos de carga originados únicamente para el tile renderizado. Un valor alto del factor disminuiría la velocidad de renderizado y aumentaría la RAM del servidor. Debido al impacto sobre la memoria RAM, dependiendo del tamaño del tile, factores tan pequeños como 2 pueden conducir a llenar la memoria RAM del dispositivo.</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="157"/>
-        <source>Cutoff zoom level</source>
-        <translation>Nivel mínimo de zoom</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
-        <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation>En el nivel de zoom especificado, el algoritmo de renderizado del mapa detendrá la comprobación de etiquetas en los tiles colindantes. Normalmente se utiliza 14 como nivel mínimo de zoom. Con un valor más alto se podría conseguir un renderizado de etiquetas más preciso con niveles mayores de zoom. Ten en cuenta que el renderizado de etiquetas podría ralentizar considerablemente el renderizado de mapas.</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="167"/>
         <source>Miscellaneous</source>
         <translation>Otros</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="174"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Log info messages</source>
         <translation>Registro de mensajes info</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="175"/>
-        <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always</source>
-        <translation>Cuando está desactivado, los mensajes INFO no se registrarán en Eventos. Únicamente se mostrarán los mensajes de carga de bases de datos</translation>
+        <location filename="../qml/pages/SettingsPage.qml" line="151"/>
+        <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="182"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>Events log size</source>
         <translation>Tamaño del registro de Eventos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="183"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
         <source>Number of events shown in the main page</source>
         <translation>Número de eventos mostrados en la página principal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="191"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="167"/>
         <source>Log messages into session log file</source>
         <translation>Mensajes de registro dentro del fichero de registro de sesión</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="192"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="168"/>
         <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Cuando está activado, los mensajes se registran en un archivo de registro de sesión. El archivo de registro está en el directorio .cache/harbour-osmscout-server. Utiliza esta configuración sólo para fines de depuración. Con esta opción activada, los mensajes de información serán registrados y mostrados en eventos independientemente de los ajustes anteriores. Esto te permite activar temporalmente el registro completo y desactivarlo cuando el archivo de registro de sesión requerido se haya creado.</translation>
-    </message>
-</context>
-<context>
-    <name>SpeedPage</name>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="22"/>
-        <source>Routing speeds</source>
-        <translation>Velocidades de ruta</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="26"/>
-        <source>Modes of transportation</source>
-        <translation>Modos de transporte</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="33"/>
-        <source>Maximal car speed</source>
-        <translation>Velocidad máxima del coche</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="42"/>
-        <source>Expected speed of a bicycle</source>
-        <translation>Velocidad prevista de una bicicleta</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="50"/>
-        <source>Expected speed while walking</source>
-        <translation>Velocidad prevista cuando caminas</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="63"/>
-        <source>living street</source>
-        <translation>calle residencial</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="71"/>
-        <source>motorway</source>
-        <translatorcomment>OSM highway=motorway</translatorcomment>
-        <translation>autovía</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="79"/>
-        <source>motorway junction</source>
-        <translation>salida de autovía</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="87"/>
-        <source>motorway link</source>
-        <translatorcomment>OSM highway=motorway_link</translatorcomment>
-        <translation>enlace a autovía</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="95"/>
-        <source>motorway primary</source>
-        <translatorcomment>OSM highway=primary &amp;&amp; motorroad</translatorcomment>
-        <translation>autovía principal</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="103"/>
-        <source>motorway trunk</source>
-        <translatorcomment>OSM highway=trunk &amp;&amp; motorroad</translatorcomment>
-        <translation>autovía troncal</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="111"/>
-        <source>primary</source>
-        <translatorcomment>OSM highway=primary</translatorcomment>
-        <translation>carretera autonómica, km/n</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="119"/>
-        <source>primary link</source>
-        <translatorcomment>OSM highway=primary_link</translatorcomment>
-        <translation>enlace a carretera autonómica</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="127"/>
-        <source>residential</source>
-        <translatorcomment>OSM highway=residential</translatorcomment>
-        <translation>travesía</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="135"/>
-        <source>road</source>
-        <translatorcomment>OSM highway=road</translatorcomment>
-        <translation>carretera</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="143"/>
-        <source>roundabout</source>
-        <translatorcomment>OSM highway=roundabout</translatorcomment>
-        <translation>rotonda</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="151"/>
-        <source>secondary</source>
-        <translatorcomment>OSM highway=secondary</translatorcomment>
-        <translation>carretera comarcal</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="159"/>
-        <source>secondary link</source>
-        <translatorcomment>OSM highway=secondary_link</translatorcomment>
-        <translation>enlace a carretera comarcal</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="167"/>
-        <source>service</source>
-        <translatorcomment>OSM highway=service</translatorcomment>
-        <translation>camino</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="175"/>
-        <source>tertiary</source>
-        <translatorcomment>OSM highway=tertiary</translatorcomment>
-        <translation>carretera local</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="183"/>
-        <source>tertiary link</source>
-        <translatorcomment>OSM highway=link</translatorcomment>
-        <translation>enlace a carretera local</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="191"/>
-        <source>trunk</source>
-        <translatorcomment>OSM highway=trunk</translatorcomment>
-        <translation>carretera nacional</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="199"/>
-        <source>trunk link</source>
-        <translatorcomment>OSM highway=trunk_link</translatorcomment>
-        <translation>enlace a carretera nacional</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="207"/>
-        <source>unclassified</source>
-        <translatorcomment>OSM highway=unclassified</translatorcomment>
-        <translation>sin clasificar</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="34"/>
-        <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
-        <translation>Esta es la velocidad que se supone que nunca se excederá en los cálculos de la ruta</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SpeedPage.qml" line="56"/>
-        <source>Car speed on different roads</source>
-        <translation>Velocidad del coche en diferentes carreteras</translation>
     </message>
 </context>
 <context>
@@ -904,49 +1419,71 @@
         <translation>Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="18"/>
-        <source>Routing speeds</source>
-        <translation>Velocidades de ruta</translation>
+        <location filename="../qml/pages/StartPage.qml" line="19"/>
+        <source>Map Manager</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="23"/>
-        <source>Geocoder</source>
-        <translation>Geocodificador</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StartPage.qml" line="28"/>
+        <location filename="../qml/pages/StartPage.qml" line="25"/>
         <source>Settings</source>
         <translation>Ajustes</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="42"/>
+        <location filename="../qml/pages/StartPage.qml" line="39"/>
         <source>OSM Scout Server</source>
         <translation>Servidor OSM Scout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="46"/>
+        <location filename="../qml/pages/StartPage.qml" line="51"/>
+        <location filename="../qml/pages/StartPage.qml" line="83"/>
+        <location filename="../qml/pages/StartPage.qml" line="114"/>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="55"/>
+        <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="87"/>
+        <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="118"/>
+        <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="152"/>
         <source>Map</source>
         <translation>Mapa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="98"/>
+        <location filename="../qml/pages/StartPage.qml" line="190"/>
         <source>Status</source>
         <translation>Estado</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="112"/>
+        <location filename="../qml/pages/StartPage.qml" line="203"/>
         <source>Jobs in a queue</source>
         <translation>Trabajos en cola</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="113"/>
+        <location filename="../qml/pages/StartPage.qml" line="204"/>
         <source>Idle</source>
         <translation>Inactivo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="127"/>
+        <location filename="../qml/pages/StartPage.qml" line="221"/>
         <source>Events</source>
         <translation>Eventos</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="252"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

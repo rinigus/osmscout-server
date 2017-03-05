@@ -3,6 +3,8 @@
 
 // global configuration settings
 
+#define MAPMANAGER_SETTINGS "maps/"
+
 #define OSM_SETTINGS "libosmscout/"
 #define ROUTING_SPEED_SETTINGS "libosmscout-speed/"
 

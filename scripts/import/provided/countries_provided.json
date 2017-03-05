@@ -1,0 +1,125 @@
+{
+    "europe/albania": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-albania",
+            "size": "1572867",
+            "size-compressed": "684881",
+            "timestamp": "2017-02-24_08:25",
+            "version": "1"
+        },
+        "id": "europe/albania",
+        "name": "Europe/Albania",
+        "osmscout": {
+            "path": "osmscout/europe-albania",
+            "size": "25647117",
+            "size-compressed": "14644918",
+            "timestamp": "2017-02-24_08:25",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/AL",
+            "size": "4366196",
+            "size-compressed": "1606090",
+            "timestamp": "2017-02-23_17:54",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/andorra": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-andorra",
+            "size": "307203",
+            "size-compressed": "111313",
+            "timestamp": "2017-02-24_08:25",
+            "version": "1"
+        },
+        "id": "europe/andorra",
+        "name": "Europe/Andorra",
+        "osmscout": {
+            "path": "osmscout/europe-andorra",
+            "size": "3967960",
+            "size-compressed": "1673556",
+            "timestamp": "2017-02-24_08:25",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/AD",
+            "size": "340141",
+            "size-compressed": "125351",
+            "timestamp": "2017-02-23_17:54",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/estonia": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-estonia",
+            "size": "19746819",
+            "size-compressed": "9262139",
+            "timestamp": "2017-02-24_08:29",
+            "version": "1"
+        },
+        "id": "europe/estonia",
+        "name": "Europe/Estonia",
+        "osmscout": {
+            "path": "osmscout/europe-estonia",
+            "size": "75850249",
+            "size-compressed": "47174451",
+            "timestamp": "2017-02-24_08:29",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/EE",
+            "size": "7357655",
+            "size-compressed": "2861371",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "europe/spain": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/europe-spain",
+            "size": "294834179",
+            "size-compressed": "122453627",
+            "timestamp": "2017-02-24_09:49",
+            "version": "1"
+        },
+        "id": "europe/spain",
+        "name": "Europe/Spain",
+        "osmscout": {
+            "path": "osmscout/europe-spain",
+            "size": "775826386",
+            "size-compressed": "449544091",
+            "timestamp": "2017-02-24_09:49",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/ES",
+            "size": "73759872",
+            "size-compressed": "33419886",
+            "timestamp": "2017-02-23_17:55",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "postal/global": {
+        "id": "postal/global",
+        "postal_global": {
+            "path": "postal/global",
+            "size": "739284262",
+            "size-compressed": "701267525",
+            "timestamp": "2017-02-23_17:53",
+            "version": "1"
+        },
+        "type": "postal/global"
+    },
+    "url": {
+        "base": "https://kuqrhldx.e24files.com",
+        "geocoder_nlp": "geocoder-nlp-1",
+        "osmscout": "osmscout-1",
+        "postal_country": "postal-country-1",
+        "postal_global": "postal-global-1",
+        "type": "url"
+    }
+}

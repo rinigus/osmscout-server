@@ -35,7 +35,7 @@ void GeoMaster::onSettingsChanged()
     m_postal.set_use_primitive(settings.valueInt(GEOMASTER_SETTINGS "use_primitive") > 0);
 
     QString geopath = settings.valueString(GEOMASTER_SETTINGS "geocoder_path");
-    if (!m_geocoder.load(geopath.toStdString()))
+    if (geopath.length() < 1 || !m_geocoder.load(geopath.toStdString()))
     {
         InfoHub::logError(tr("Cannot open geocoder database") + ": " + geopath);
         return;
@@ -61,6 +61,15 @@ void GeoMaster::onSettingsChanged()
         InfoHub::logInfo(tr("libpostal will use all covered languages"));
 }
 
+void GeoMaster::onGeocoderNLPChanged(QString /*dirname*/)
+{
+  onSettingsChanged();
+}
+
+void GeoMaster::onPostalChanged(QString /*global*/, QString /*country*/)
+{
+  onSettingsChanged();
+}
 
 bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t limit,
                        double &lat, double &lon, std::string &name, size_t &number_of_results)

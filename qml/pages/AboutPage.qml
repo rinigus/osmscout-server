@@ -20,6 +20,12 @@ Page {
                               "Ricardo Breitkopf @monkeyisland: German<br>" +
                               "Nathan Follens @pljmn: Dutch<br>" +
 
+                              "<br><b>" + qsTr("Maps") + "</b><br>" +
+                              "<p>" +
+                              qsTr("Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format " +
+                                   "from downloaded extracts as provided by Geofabrik GmbH.") +
+                              "</p>" +
+
                               "<br><b>" + qsTr("Libpostal") + "</b><br>" +
                               "<p>" +
                               qsTr("Please note that <i>libpostal</i> is developed to be used with the fine tuned " +
@@ -57,6 +63,7 @@ Page {
             Label {
                 text: qsTr("version") + ": " + programVersion
                 anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.highlightColor
             }
 
             Label {
@@ -64,6 +71,7 @@ Page {
                 wrapMode: Text.WordWrap
                 width: column.width
                 textFormat: Text.RichText
+                color: Theme.highlightColor
             }
 
             Label {
@@ -71,6 +79,7 @@ Page {
                 wrapMode: Text.WordWrap
                 width: column.width
                 font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
                 //textFormat: Text.RichText
             }
         }

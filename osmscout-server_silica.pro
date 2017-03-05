@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = harbour-osmscout-server
 
-QT += core gui network
+QT += core gui network sql
 
 CONFIG += c++11
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
@@ -57,6 +57,9 @@ SOURCES += \
     src/routingforhuman.cpp \
     src/geomaster.cpp \
     src/config.cpp \
+    src/mapmanager.cpp \
+    src/filedownloader.cpp \
+    src/mapmanagerfeature.cpp \
     src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += qml/osmscout-server.qml \
@@ -78,6 +81,9 @@ HEADERS += \
     src/consolelogger.h \
     src/routingforhuman.h \
     src/geomaster.h \
+    src/mapmanager.h \
+    src/filedownloader.h \
+    src/mapmanagerfeature.h \
     src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
     src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
