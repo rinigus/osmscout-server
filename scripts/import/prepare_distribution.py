@@ -6,7 +6,7 @@
 import json, pickle
 
 root_dir = "distribution"
-url_base = "https://f001.backblazeb2.com/file/pLMZBnUTiiMMzwUcLT4z"
+url_base = "https://kuqrhldx.e24files.com"
 
 url_specs = {
     "base": url_base,
