@@ -8,6 +8,7 @@
 #include <QFile>
 #include <QUrl>
 #include <QProcess>
+#include <QByteArray>
 
 /// \brief Downloads a file specified by URL
 ///
@@ -39,6 +40,7 @@ public slots:
   void onNetworkReadyRead();
   void onDownloaded();
   void onNetworkError(QNetworkReply::NetworkError code);
+  void startDownload(); ///< called internally, but has to be a slot
 
 protected:
   void onProcessStarted();
@@ -65,8 +67,19 @@ protected:
   bool m_pipe_to_process{false};
   bool m_isok{true};
 
+  QByteArray m_cache_safe;
+  QByteArray m_cache_current;
+  bool m_clear_all_caches{false};
+
   uint64_t m_downloaded{0};
   uint64_t m_written{0};
+
+  uint64_t m_downloaded_last_error{0};
+  size_t m_download_retries{0};
+
+  const size_t const_max_download_retries{5};         ///< Maximal number of download retries before cancelling download
+  const double const_download_retry_sleep_time{3.0};  ///< Time between retries in seconds
+  const int const_cache_size_before_swap{1024*1024*1};
 };
 
 #endif // FILEDOWNLOADER_H

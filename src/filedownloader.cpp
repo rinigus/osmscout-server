@@ -3,6 +3,9 @@
 #include <QUrl>
 #include <QDir>
 #include <QFileInfo>
+#include <QTimer>
+
+#include <QDebug>
 
 #include <iostream> // for a rarely expected error message
 
@@ -79,9 +82,30 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
     }
 
   // start download
+  startDownload();
+}
+
+FileDownloader::~FileDownloader()
+{
+  if (m_reply) m_reply->deleteLater();
+  if (m_process) m_process->deleteLater();
+}
+
+void FileDownloader::startDownload()
+{
+  qDebug() << "Start download";
+
+  // start download
   QNetworkRequest request(m_url);
   request.setHeader(QNetworkRequest::UserAgentHeader,
                     QString("OSM Scout Server ") + APP_VERSION);
+
+  if (m_downloaded > 0)
+    {
+      QByteArray range_header = "bytes=" + QByteArray::number(m_downloaded) + "-";
+      request.setRawHeader("Range",range_header);
+      qDebug() << "RANGE: " << range_header;
+    }
 
   m_reply = m_manager->get(request);
 
@@ -91,12 +115,7 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
           this, SLOT(onDownloaded()));
   connect(m_reply, SIGNAL(error(QNetworkReply::NetworkError)),
           this, SLOT(onNetworkError(QNetworkReply::NetworkError)));
-}
 
-FileDownloader::~FileDownloader()
-{
-  if (m_reply) m_reply->deleteLater();
-  if (m_process) m_process->deleteLater();
 }
 
 void FileDownloader::onFinished()
@@ -153,7 +172,23 @@ void FileDownloader::onNetworkReadyRead()
       (m_pipe_to_process && !m_process_started) ) // too early, haven't started yet
     return;
 
-  QByteArray data = m_reply->readAll();
+  m_cache_current.append(m_reply->readAll());
+  if (!m_clear_all_caches && m_cache_current.size() < const_cache_size_before_swap)
+    return;
+
+  QByteArray data(m_cache_safe);
+  if (m_clear_all_caches)
+    {
+      data.append(m_cache_current);
+      m_cache_current.clear();
+      m_cache_safe.clear();
+    }
+  else
+    {
+      m_cache_safe = m_cache_current;
+      m_cache_current.clear();
+    }
+
   m_downloaded += data.size();
 
   if (m_pipe_to_process)
@@ -170,10 +205,14 @@ void FileDownloader::onNetworkReadyRead()
 
 void FileDownloader::onDownloaded()
 {
+  if (!m_reply) return; // happens on error, after error cleanup and initiating retry
+
   if (m_pipe_to_process && !m_process_started)
     return;
 
+  m_clear_all_caches = true;
   onNetworkReadyRead(); // update all data if needed
+
   if (m_pipe_to_process && m_process)
     m_process->closeWriteChannel();
 
@@ -185,6 +224,29 @@ void FileDownloader::onDownloaded()
 
 void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 {
+  qDebug() << "Network error";
+
+  // check if we should retry before cancelling all with an error
+  // this check is performed only if we managed to get some data
+  if (m_downloaded_last_error != m_downloaded)
+    m_download_retries = 0;
+
+  if (m_download_retries < const_max_download_retries &&
+      m_downloaded > 0 )
+    {
+      m_cache_safe.clear();
+      m_cache_current.clear();
+      m_reply->readAll();
+      m_reply->deleteLater();
+      m_reply = nullptr;
+
+      QTimer::singleShot(const_download_retry_sleep_time * 1e3,
+                         this, SLOT(startDownload()));
+
+      m_download_retries++;
+      return;
+    }
+
   QString err = tr("Failed to download") + "<br>" + m_path +
       "<br><br>" +tr("Error code: %1").arg(QString::number(m_reply->error())) + "<br><blockquote><small>" +
       m_reply->errorString() +
