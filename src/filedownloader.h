@@ -29,9 +29,9 @@ public:
   operator bool() const { return m_isok; }
 
 signals:
-  void downloadedBytes(size_t sz);
+  void downloadedBytes(uint64_t sz);
   void downloadFinished();
-  void writtenBytes(size_t sz);
+  void writtenBytes(uint64_t sz);
   void finished(QString path);
   void error(QString error_text);
 
@@ -65,8 +65,8 @@ protected:
   bool m_pipe_to_process{false};
   bool m_isok{true};
 
-  size_t m_downloaded{0};
-  size_t m_written{0};
+  uint64_t m_downloaded{0};
+  uint64_t m_written{0};
 };
 
 #endif // FILEDOWNLOADER_H
