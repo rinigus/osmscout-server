@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = osmscout-server
 
-QT = core network
+QT = core network sql
 
 CONFIG += c++11
 
