@@ -176,7 +176,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="29"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="32"/>
@@ -361,23 +361,23 @@
 <context>
     <name>FileDownloader</name>
     <message>
-        <location filename="../src/filedownloader.cpp" line="259"/>
+        <location filename="../src/filedownloader.cpp" line="254"/>
         <source>Failed to download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="260"/>
+        <location filename="../src/filedownloader.cpp" line="255"/>
         <source>Error code: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="286"/>
-        <location filename="../src/filedownloader.cpp" line="306"/>
+        <location filename="../src/filedownloader.cpp" line="281"/>
+        <location filename="../src/filedownloader.cpp" line="301"/>
         <source>Error in processing downloaded data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="316"/>
+        <location filename="../src/filedownloader.cpp" line="311"/>
         <source>Error in processing downloaded data: could not start the program</source>
         <translation type="unfinished"></translation>
     </message>
@@ -440,7 +440,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="176"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation type="unfinished">Chyba během hledání referenčního místa</translation>
+        <translation>Chyba během hledání referenčního místa</translation>
     </message>
 </context>
 <context>
@@ -861,77 +861,77 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="35"/>
         <source>Rendering</source>
-        <translation type="unfinished">Vykreslování</translation>
+        <translation>Vykreslování</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="41"/>
         <source>Font size</source>
-        <translation type="unfinished">Velikost písma</translation>
+        <translation>Velikost písma</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="49"/>
         <source>Style Sheet</source>
-        <translation type="unfinished">Styl</translation>
+        <translation>Styl</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="50"/>
         <source>Style sheet used to render the map tiles</source>
-        <translation type="unfinished">Styl použitý k vykreslování mapových dlaždic</translation>
+        <translation>Styl použitý k vykreslování mapových dlaždic</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="56"/>
         <source>Icons</source>
-        <translation type="unfinished">Ikony</translation>
+        <translation>Ikony</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="57"/>
         <source>Icons used to mark features on the map</source>
-        <translation type="unfinished">Ikony objektů na mapě</translation>
+        <translation>Ikony objektů na mapě</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="65"/>
         <source>Render sea</source>
-        <translation type="unfinished">Vykreslovat moře</translation>
+        <translation>Vykreslovat moře</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="71"/>
         <source>Draw background</source>
-        <translation type="unfinished">Vykreslovat pozadí</translation>
+        <translation>Vykreslovat pozadí</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="75"/>
         <source>Routing</source>
-        <translation type="unfinished">Navigace</translation>
+        <translation>Navigace</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="79"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
-        <translation type="unfinished">Trasa je vypočítána ze všech možných cest které splňují omezení ceny</translation>
+        <translation>Trasa je vypočítána ze všech možných cest které splňují omezení ceny</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="90"/>
         <source>Cost factor</source>
-        <translation type="unfinished">Faktor ceny</translation>
+        <translation>Faktor ceny</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="91"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation type="unfinished">Faktor ceny je omezení na délku trasy poměrné ke vzdálenosti mezi startem a cílem</translation>
+        <translation>Faktor ceny je omezení na délku trasy poměrné ke vzdálenosti mezi startem a cílem</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="100"/>
         <source>Cost distance</source>
-        <translation type="unfinished">Posun ceny</translation>
+        <translation>Posun ceny</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="101"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation type="unfinished">Posun ceny je offset limitu ceny</translation>
+        <translation>Posun ceny je offset limitu ceny</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="118"/>
         <source>Routing speeds</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolené rychlosti</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="125"/>
@@ -941,27 +941,27 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="136"/>
         <source>Advanced rendering settings</source>
-        <translation type="unfinished">Rozšířené nastavení vykreslování</translation>
+        <translation>Rozšířené nastavení vykreslování</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="142"/>
         <source>Loaded area factor</source>
-        <translation type="unfinished">Faktor načítané oblasti</translation>
+        <translation>Faktor načítané oblasti</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="143"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation type="unfinished">Zvětšením velikosti načítané oblasti, která je použita při vykreslování dlaždice lze docílit lepšího vykreslování textů, tím že jsou použita i data ze sousedních dlaždic. Při faktoru rovném 1.0 jsou brána v úvahu pouze data vykreslované dlaždice. Větší hodnota může spomalit vykreslování a zvýšit paměťovou náročnost. V závislosti na velikosti použitých dlaždic může dojít k vyčerpání paměti zařízení již při faktoru 2.0.</translation>
+        <translation>Zvětšením velikosti načítané oblasti, která je použita při vykreslování dlaždice lze docílit lepšího vykreslování textů, tím že jsou použita i data ze sousedních dlaždic. Při faktoru rovném 1.0 jsou brána v úvahu pouze data vykreslované dlaždice. Větší hodnota může spomalit vykreslování a zvýšit paměťovou náročnost. V závislosti na velikosti použitých dlaždic může dojít k vyčerpání paměti zařízení již při faktoru 2.0.</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="156"/>
         <source>Cutoff zoom level</source>
-        <translation type="unfinished">Omezení úrovně přiblížení</translation>
+        <translation>Omezení úrovně přiblížení</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="157"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation type="unfinished">Při větších úrovních přiblížení nebudou již vykreslovány názvy objektů mimo viditelnou oblast. Často je jako toto omezení použia úroveň 14. Nastavením větší úrovně můžete docílit přesnějšího vykreslování názvů při větším přiblížení. Mějte ale na paměti že to může velice spomalit vykreslování.</translation>
+        <translation>Při větších úrovních přiblížení nebudou již vykreslovány názvy objektů mimo viditelnou oblast. Často je jako toto omezení použia úroveň 14. Nastavením větší úrovně můžete docílit přesnějšího vykreslování názvů při větším přiblížení. Mějte ale na paměti že to může velice spomalit vykreslování.</translation>
     </message>
 </context>
 <context>
@@ -969,132 +969,132 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="22"/>
         <source>Routing speeds</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolené rychlosti</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
         <source>Modes of transportation</source>
-        <translation type="unfinished">Způsob dopravy</translation>
+        <translation>Způsob dopravy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="33"/>
         <source>Maximal car speed</source>
-        <translation type="unfinished">Maximální rychlost vozidla</translation>
+        <translation>Maximální rychlost vozidla</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="34"/>
         <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
-        <translation type="unfinished">Při výpočtu trasy je očekáváno že tato rychlost nebude nikdy během jízdy překročena</translation>
+        <translation>Při výpočtu trasy je očekáváno že tato rychlost nebude nikdy během jízdy překročena</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="42"/>
         <source>Expected speed of a bicycle</source>
-        <translation type="unfinished">Předpokládaná rychlost na kole</translation>
+        <translation>Předpokládaná rychlost na kole</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="50"/>
         <source>Expected speed while walking</source>
-        <translation type="unfinished">Předpokládaná rychlost chůze</translation>
+        <translation>Předpokládaná rychlost chůze</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="56"/>
         <source>Car speed on different roads</source>
-        <translation type="unfinished">Rychlost vozidla na různých silnicích</translation>
+        <translation>Rychlost vozidla na různých silnicích</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="63"/>
         <source>living street</source>
-        <translation type="unfinished">v obci</translation>
+        <translation>v obci</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="71"/>
         <source>motorway</source>
-        <translation type="unfinished">dálníce</translation>
+        <translation>dálníce</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="79"/>
         <source>motorway junction</source>
-        <translation type="unfinished">dálníční sjezd</translation>
+        <translation>dálníční sjezd</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="87"/>
         <source>motorway link</source>
-        <translation type="unfinished">dálníční sjezd/nájezd</translation>
+        <translation>dálníční sjezd/nájezd</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="95"/>
         <source>motorway primary</source>
-        <translation type="unfinished">silnice první třídy (zákaz cyklistů)</translation>
+        <translation>silnice první třídy (zákaz cyklistů)</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
-        <translation type="unfinished">silnice pro motorová vozidla  (zákaz cyklistů)</translation>
+        <translation>silnice pro motorová vozidla  (zákaz cyklistů)</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="111"/>
         <source>primary</source>
-        <translation type="unfinished">silnice první třídy</translation>
+        <translation>silnice první třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="119"/>
         <source>primary link</source>
-        <translation type="unfinished">připojovací pruh na silnici první třídy</translation>
+        <translation>připojovací pruh na silnici první třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="127"/>
         <source>residential</source>
-        <translation type="unfinished">v obci</translation>
+        <translation>v obci</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="135"/>
         <source>road</source>
-        <translation type="unfinished">silnice (neznámá klasifikace)</translation>
+        <translation>silnice (neznámá klasifikace)</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="143"/>
         <source>roundabout</source>
-        <translation type="unfinished">kruhový objezd</translation>
+        <translation>kruhový objezd</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="151"/>
         <source>secondary</source>
-        <translation type="unfinished">silnice 2. třídy</translation>
+        <translation>silnice 2. třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="159"/>
         <source>secondary link</source>
-        <translation type="unfinished">nájezd na silnici 2. třídy</translation>
+        <translation>nájezd na silnici 2. třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="167"/>
         <source>service</source>
-        <translation type="unfinished">příjezdová cesta</translation>
+        <translation>příjezdová cesta</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="175"/>
         <source>tertiary</source>
-        <translation type="unfinished">silnice 3. třídy</translation>
+        <translation>silnice 3. třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="183"/>
         <source>tertiary link</source>
-        <translation type="unfinished">nájezd silnici 3. třídy</translation>
+        <translation>nájezd silnici 3. třídy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="191"/>
         <source>trunk</source>
-        <translation type="unfinished">silnice pro motorová vozidla</translation>
+        <translation>silnice pro motorová vozidla</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="199"/>
         <source>trunk link</source>
-        <translation type="unfinished">nájezd na silnici pro motorová vozidla</translation>
+        <translation>nájezd na silnici pro motorová vozidla</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="207"/>
         <source>unclassified</source>
-        <translation type="unfinished">neklasifikovaná silnice</translation>
+        <translation>neklasifikovaná silnice</translation>
     </message>
 </context>
 <context>

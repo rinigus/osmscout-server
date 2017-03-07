@@ -26,12 +26,12 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="23"/>
         <source>Maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaarten</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="25"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaartgegevens afkomstig van OpenStreetMap, Open Database-licentie 1.0. Kaarten worden geconverteerd naar een geschikt formaat voor gedownloade fragmenten zoals aangeboden door Geofabrik GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="29"/>
@@ -92,83 +92,83 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="20"/>
         <source>Subscribed</source>
-        <translation type="unfinished"></translation>
+        <translation>Geabonneerd</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="24"/>
         <source>All datasets covering selected features are available</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle gegevenssets die de geselecteerde functionaliteit aanbieden zijn beschikbaar</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="26"/>
         <source>Some datasets are missing. You would have to start downloads to get them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sommige gegevenssets ontbreken. Je kan ze ophalen door de downloads te starten.</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="28"/>
         <source>Some or all datasets are incompatible with this version. You would have to update list of provided maps, the maps, and/or install the latest release of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sommige of alle gegevenssets zijn incompatibel met deze versie. Je kan ze bijwerken door de lijst van aangeboden kaarten of de kaarten bij te werken, en/of de laatste versie van OSM Scout Server te installeren.</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="35"/>
         <source>No subscription</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen abonnement</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="98"/>
         <source>Availibility on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschikbaarheid op apparaat</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="118"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Grootte</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="127"/>
         <source>Selected datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Geselecteerde gegevenssets</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="147"/>
         <source>All datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle gegevenssets</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="186"/>
         <source>incompatible version</source>
-        <translation type="unfinished"></translation>
+        <translation>incompatibele versie</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="206"/>
         <source>MB</source>
-        <translation type="unfinished"></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="208"/>
         <source>disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>uitgeschakeld</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="223"/>
         <source>Subscription</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonnement</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="228"/>
         <source>Subscribe</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonneren</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="239"/>
         <source>Unsubscribe</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonnement opzeggen</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="49"/>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="50"/>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
 </context>
 <context>
@@ -297,7 +297,7 @@
     <message>
         <location filename="../qml/pages/DownloadCountriesPage.qml" line="57"/>
         <source>Select country or territory</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies land of territorium</translation>
     </message>
 </context>
 <context>
@@ -305,28 +305,28 @@
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="17"/>
         <source>%1 territories</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 territoria</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="24"/>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="28"/>
         <source>Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschikbaar</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="33"/>
         <source>Incompatible version</source>
-        <translation type="unfinished"></translation>
+        <translation>Incompatibele versie</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="37"/>
         <source>Subscribed</source>
-        <translation type="unfinished"></translation>
+        <translation>Geabonneerd</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="42"/>
         <source>Size: %1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Grootte: %1 MB</translation>
     </message>
 </context>
 <context>
@@ -334,12 +334,12 @@
     <message>
         <location filename="../qml/pages/ElementDownloads.qml" line="16"/>
         <source>No downloads active</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen actieve downloads</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementDownloads.qml" line="17"/>
         <source>Download active</source>
-        <translation type="unfinished"></translation>
+        <translation>Download actief</translation>
     </message>
 </context>
 <context>
@@ -361,25 +361,25 @@
 <context>
     <name>FileDownloader</name>
     <message>
-        <location filename="../src/filedownloader.cpp" line="259"/>
+        <location filename="../src/filedownloader.cpp" line="254"/>
         <source>Failed to download</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloaden mislukt</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="260"/>
+        <location filename="../src/filedownloader.cpp" line="255"/>
         <source>Error code: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Foutcode: %1</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="286"/>
-        <location filename="../src/filedownloader.cpp" line="306"/>
+        <location filename="../src/filedownloader.cpp" line="281"/>
+        <location filename="../src/filedownloader.cpp" line="301"/>
         <source>Error in processing downloaded data</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij verwerken van gedownloade gegevens</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="316"/>
+        <location filename="../src/filedownloader.cpp" line="311"/>
         <source>Error in processing downloaded data: could not start the program</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij verwerken van gedownloade gegevens: kon het programma niet starten</translation>
     </message>
 </context>
 <context>
@@ -387,12 +387,12 @@
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="65"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Hou ingedrukt op een map en kies &apos;Selecteren&apos; in het contextmenu om de map te selecteren.</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="200"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteren</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="216"/>
@@ -453,7 +453,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
@@ -478,17 +478,17 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="56"/>
         <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bovenop &lt;i&gt;libpostal&lt;/i&gt; laat de primitieve verwerker je toe de administratieve hiërarchie van een gezocht object te specificeren door onderdelen van elkaar te scheiden met een komma. Soms laat deze verwerker je toe het probleem te verhelpen wanneer libpostal de zoekopdracht niet correct kan verwerken.&lt;br&gt;Bijvoorbeeld: huis_nummer, straat, dorp.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="65"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
-        <translation type="unfinished"></translation>
+        <translation>Laad &lt;i&gt;libpostal&lt;/i&gt; bij elk verzoek</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="66"/>
         <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indien ingeschakeld worden &lt;i&gt;libpostal&lt;/i&gt;-databases enkel naar het geheugen geladen tijdens het verwerken van de opdracht. Hierdoor duurt zoeken langer, maar is het passief geheugengebruik van libpostal klein.</translation>
     </message>
 </context>
 <context>
@@ -514,142 +514,142 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="40"/>
         <source>Could not allocate Map Manager features</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon kaartbeheerderfunctionaliteit niet toewijzen</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="95"/>
         <source>Failed to open the database for tracking downloaded files</source>
-        <translation type="unfinished"></translation>
+        <translation>Openen van database voor het volgen van gedownloade bestanden mislukt</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="151"/>
         <source>Address parsing language support</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresverwerkingstaalondersteuning</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="172"/>
         <location filename="../src/mapmanager.cpp" line="633"/>
         <location filename="../src/mapmanager.cpp" line="760"/>
         <source>Maps storage folder does not exist: </source>
-        <translation type="unfinished"></translation>
+        <translation>Kaartopslagmap bestaat niet:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="180"/>
         <location filename="../src/mapmanager.cpp" line="640"/>
         <source>No maps were requested</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen kaarten opgevraagd</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="200"/>
         <source>No maps loaded: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen kaarten geladen: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="202"/>
         <location filename="../src/mapmanager.cpp" line="233"/>
         <location filename="../src/mapmanager.cpp" line="667"/>
         <source>Version of dataset for %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Versie van gegevensset voor %1 wordt niet ondersteund</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="229"/>
         <source>Missing dataset for %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontbrekende gegevensset voor %1: %2</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="276"/>
         <source>Available country or territory: </source>
-        <translation type="unfinished"></translation>
+        <translation>Beschikbaar land of territorium:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="466"/>
         <source>World</source>
-        <translation type="unfinished"></translation>
+        <translation>Wereld</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="530"/>
         <source>Removing country from requested list: </source>
-        <translation type="unfinished"></translation>
+        <translation>Land wordt verwijderd van opgevraagde lijst:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="687"/>
         <source>Missing data: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ontbrekende gegevens:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="779"/>
         <source>Error starting the download of</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij starten van download van</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="796"/>
         <source>File downloaded:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand gedownload:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="824"/>
         <source>Could not register downloaded file in the tracking database</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon gedownload bestand niet registreren in de volgdatabase</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="825"/>
         <source>File registration error</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestandsregistratiefout</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="884"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst van landen: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1019"/>
         <source>Downloading the list of countries</source>
-        <translation type="unfinished"></translation>
+        <translation>De lijst van landen wordt gedownload</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1071"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan niet controleren op updates omdat de lijst van aangeboden landen ontbreekt. Download deze lijst vooraleer je controleert op updates.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="892"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="503"/>
         <source>Add country or feature to requested list</source>
-        <translation type="unfinished"></translation>
+        <translation>Voeg land of functionaliteit toe aan opgevraagde lijst</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="857"/>
         <source>Download failed, dropping all downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Download mislukt, alle downloads worden geannuleerd</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="995"/>
         <source>Error while deleting file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij verwijderen van bestand:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="996"/>
         <source>Cancelling the removal of remaining files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen van resterende bestanden wordt geannuleerd.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1001"/>
         <source>File removed during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand verwijderd tijdens opruimen:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1067"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan niet controleren op updates omdat de kaartopslagmap ontbreekt</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1069"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan niet controleren op updates omdat de lijst van opgevraagde landen ontbreekt. Kies landen vooraleer je controleert op updates.</translation>
     </message>
 </context>
 <context>
@@ -657,52 +657,52 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="173"/>
         <source>Removed file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestand verwijderd: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="175"/>
         <source>Failed to remove file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijderen van bestand mislukt: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="197"/>
         <source>Missing libosmscout maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontbrekende libosmscout-kaarten</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="208"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="216"/>
         <source>Missing geocoder-nlp dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontbrekende geocoder-nlp-gegevensset</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="233"/>
         <source>Address parsing language support</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresverwerkingstaalondersteuning</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="252"/>
         <source>Address parsing country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Landspecifieke adresverwerkingsondersteuning</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="241"/>
         <source>Missing address language parsing dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontbrekende adrestaalverwerkingsgegevensset</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="189"/>
         <source>OSM Scout library</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout-bibliotheek</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="260"/>
         <source>Missing country-specific address parsing dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontbrekende landsspecifieke adresverwerkingsgegevensset</translation>
     </message>
 </context>
 <context>
@@ -710,87 +710,87 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="23"/>
         <source>Map Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaartbeheerder</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="27"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaartbeheerder beheert de opslag van offline kaarten en gerelateerde gegevenssets op het apparaat. Hier kan je de functionaliteit en landen selecteren die worden opgeslagen, bijgewerkt of verwijderd van het apparaat.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="38"/>
         <source>Storage settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslaginstellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="46"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Sla gegevenssets voor geocoder-nlp op met libpostal</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="47"/>
         <source>When selected, a libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indien ingeschakeld worden geocoder-gegevenssets gebaseerd op libpostal opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de taalverwerkingsgegevensset (ongeveer 700MB) en landspecifieke gegevenssets voor het verwerken en opzoeken van adressen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="60"/>
         <source>Subscribed</source>
-        <translation type="unfinished"></translation>
+        <translation>Geabonneerd</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="106"/>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="123"/>
         <source>Missing data:&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Ontbrekende gegevens:&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="139"/>
         <source>Start download</source>
-        <translation type="unfinished"></translation>
+        <translation>Download starten</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="150"/>
         <source>Provided maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Aangeboden kaarten</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Update list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst bijwerken</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="204"/>
         <source>List of currently available maps and datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst van momenteel beschikbare kaarten en gegevenssets</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="214"/>
         <source>Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslag</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="223"/>
         <source>Start cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Opruimen starten</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="234"/>
         <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer of er bestanden zijn uit vroegere abonnementen die niet meer in gebruik zijn</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="159"/>
         <source>Subscribe</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonneren</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="171"/>
         <source>Select the countries or territories that you want to keep on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer de landen of territoria die je op het apparaat wil houden</translation>
     </message>
 </context>
 <context>
@@ -798,52 +798,52 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="28"/>
         <source>Unused files</source>
-        <translation type="unfinished"></translation>
+        <translation>Niet-gebruikte bestanden</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
         <source>Files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestanden:</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="81"/>
         <source>Delete files</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestanden verwijderen</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="86"/>
         <source>Deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met verwijderen</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="96"/>
         <source>Delete unused files and free the occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder ongebruikte bestanden en maak bezette ruimte vrij</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="127"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle opgeslagen bestanden worden gebruikt door OSM Scout Server. Er is niets te verwijderen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
         <source>MB</source>
-        <translation type="unfinished"></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="42"/>
         <source>WARNING: While care has been taken to ensure deleting of the found unused files only, the software has not been tested by many users yet. Use at your own risk and please report if there are any problems.</source>
-        <translation type="unfinished"></translation>
+        <translation>WAARSCHUWING: hoewel er voorzorgsmaatregelen zijn genomen om het verwijderen van de gevonden ongebruikte bestanden is de software nog niet door veel gebruikers getest. Gebruik het op eigen risico en meld problemen als je er vindt.</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
         <source>Occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezette ruimte</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="125"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleren op onnodige bestanden mislukt. Dit kan bijvoorbeeld zo zijn wegens actieve downloads</translation>
     </message>
 </context>
 <context>
@@ -851,117 +851,117 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="22"/>
         <source>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="26"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout-bibliotheek (&lt;i&gt;libosmscout&lt;/i&gt;) kan gebruikt worden voor het tekenen van kaarten, zoeken en routeren</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="35"/>
         <source>Rendering</source>
-        <translation type="unfinished">Renderen</translation>
+        <translation>Renderen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="41"/>
         <source>Font size</source>
-        <translation type="unfinished">Lettergrootte</translation>
+        <translation>Lettergrootte</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="49"/>
         <source>Style Sheet</source>
-        <translation type="unfinished">Stijlblad</translation>
+        <translation>Stijlblad</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="50"/>
         <source>Style sheet used to render the map tiles</source>
-        <translation type="unfinished">Stijlblad om kaarttegels te renderen</translation>
+        <translation>Stijlblad om kaarttegels te renderen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="56"/>
         <source>Icons</source>
-        <translation type="unfinished">Pictogrammen</translation>
+        <translation>Pictogrammen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="57"/>
         <source>Icons used to mark features on the map</source>
-        <translation type="unfinished">Pictogrammen om faciliteiten op de kaart aan te duiden</translation>
+        <translation>Pictogrammen om faciliteiten op de kaart aan te duiden</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="65"/>
         <source>Render sea</source>
-        <translation type="unfinished">Zee renderen</translation>
+        <translation>Zee renderen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="71"/>
         <source>Draw background</source>
-        <translation type="unfinished">Achtergrond tekenen</translation>
+        <translation>Achtergrond tekenen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="75"/>
         <source>Routing</source>
-        <translation type="unfinished">Routering</translation>
+        <translation>Routering</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="79"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
-        <translation type="unfinished">Routering wordt berekend onder de mogelijke routes die aan de kostenbeperking voldoen</translation>
+        <translation>Routering wordt berekend onder de mogelijke routes die aan de kostenbeperking voldoen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="90"/>
         <source>Cost factor</source>
-        <translation type="unfinished">Kostenfactor</translation>
+        <translation>Kostenfactor</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="91"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation type="unfinished">Kostenfactor is een onderdeel van een kostenlimiet die proportioneel is aan de geodetische afstand tussen beginpunt en bestemming</translation>
+        <translation>Kostenfactor is een onderdeel van een kostenlimiet die proportioneel is aan de geodetische afstand tussen beginpunt en bestemming</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="100"/>
         <source>Cost distance</source>
-        <translation type="unfinished">Kostenafstand</translation>
+        <translation>Kostenafstand</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="101"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation type="unfinished">Kostenafstand is een compensatie van een kostenlimiet</translation>
+        <translation>Kostenafstand is een compensatie van een kostenlimiet</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="118"/>
         <source>Routing speeds</source>
-        <translation type="unfinished">Routeringssnelheden</translation>
+        <translation>Routeringssnelheden</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="125"/>
         <source>Speeds for different transportation modes (car, bicycle, walk) and at different road surfaces used when finding an optimal route</source>
-        <translation type="unfinished"></translation>
+        <translation>Snelheden voor verschillenden modi van transport (auto, fiets, te voet) en op verschillende wegoppervlakken gebruikt bij het berekenen van de optimale route</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="136"/>
         <source>Advanced rendering settings</source>
-        <translation type="unfinished">Geavanceerde renderinstellingen</translation>
+        <translation>Geavanceerde renderinstellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="142"/>
         <source>Loaded area factor</source>
-        <translation type="unfinished">Geladengebiedfactor</translation>
+        <translation>Geladengebiedfactor</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="143"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation type="unfinished">Door het gebied dat gebruikt wordt om de gegevens te laden bij het renderen van een tegel te vergroten kan de renderer renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Factorwaarde 1.0 komt overeen met het laden van gegevens enkel van de gerenderde tegel. De grote waarde van de factor zou leiden tot vertraagd renderen en zou het RAM-gebruik van de server verhogen. Door de impact op het RAM-geheugen kunnen, afhankelijk van je tegelgrootte, zelfs kleine factoren als 2 leiden tot het opvullen van het RAM-geheugen van het apparaat.</translation>
+        <translation>Door het gebied dat gebruikt wordt om de gegevens te laden bij het renderen van een tegel te vergroten kan de renderer renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Factorwaarde 1.0 komt overeen met het laden van gegevens enkel van de gerenderde tegel. De grote waarde van de factor zou leiden tot vertraagd renderen en zou het RAM-gebruik van de server verhogen. Door de impact op het RAM-geheugen kunnen, afhankelijk van je tegelgrootte, zelfs kleine factoren als 2 leiden tot het opvullen van het RAM-geheugen van het apparaat.</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="156"/>
         <source>Cutoff zoom level</source>
-        <translation type="unfinished">Zoomniveau-cutoff</translation>
+        <translation>Zoomniveau-cutoff</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="157"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation type="unfinished">Op het opgegeven zoomniveau zal het kaartrenderalgoritme ophouden met zoeken naar labels in de naburige tegels. 14 wordt vaak gebruikt als cutoff. Door een hogere waarde in te stellen kan je nauwkeuriger renderen op hogere zoomniveaus verkrijgen. Let op: het renderen van de labels kan een duidelijke vertraging van het renderen van de kaart veroorzaken.</translation>
+        <translation>Op het opgegeven zoomniveau zal het kaartrenderalgoritme ophouden met zoeken naar labels in de naburige tegels. 14 wordt vaak gebruikt als cutoff. Door een hogere waarde in te stellen kan je nauwkeuriger renderen op hogere zoomniveaus verkrijgen. Let op: het renderen van de labels kan een duidelijke vertraging van het renderen van de kaart veroorzaken.</translation>
     </message>
 </context>
 <context>
@@ -969,132 +969,132 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="22"/>
         <source>Routing speeds</source>
-        <translation type="unfinished">Routeringssnelheden</translation>
+        <translation>Routeringssnelheden</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
         <source>Modes of transportation</source>
-        <translation type="unfinished">Vervoermiddelen</translation>
+        <translation>Vervoermiddelen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="33"/>
         <source>Maximal car speed</source>
-        <translation type="unfinished">Maximale snelheid voor auto&apos;s</translation>
+        <translation>Maximale snelheid voor auto&apos;s</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="34"/>
         <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
-        <translation type="unfinished">Dit is een snelheid die tijdens berekening van de route verondersteld wordt nooit overschreden te worden</translation>
+        <translation>Dit is een snelheid die tijdens berekening van de route verondersteld wordt nooit overschreden te worden</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="42"/>
         <source>Expected speed of a bicycle</source>
-        <translation type="unfinished">Verwachte snelheid voor een fiets</translation>
+        <translation>Verwachte snelheid voor een fiets</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="50"/>
         <source>Expected speed while walking</source>
-        <translation type="unfinished">Verwachte snelheid voor wandelen</translation>
+        <translation>Verwachte snelheid voor wandelen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="56"/>
         <source>Car speed on different roads</source>
-        <translation type="unfinished">Autosnelheid op verschillende wegen</translation>
+        <translation>Autosnelheid op verschillende wegen</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="63"/>
         <source>living street</source>
-        <translation type="unfinished">woonstraat</translation>
+        <translation>woonstraat</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="71"/>
         <source>motorway</source>
-        <translation type="unfinished">autosnelweg</translation>
+        <translation>autosnelweg</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="79"/>
         <source>motorway junction</source>
-        <translation type="unfinished">knooppunt</translation>
+        <translation>knooppunt</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="87"/>
         <source>motorway link</source>
-        <translation type="unfinished">autosnelwegverbinding</translation>
+        <translation>autosnelwegverbinding</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="95"/>
         <source>motorway primary</source>
-        <translation type="unfinished">primaire autosnelweg</translation>
+        <translation>primaire autosnelweg</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
-        <translation type="unfinished">trunk road</translation>
+        <translation>trunk road</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="111"/>
         <source>primary</source>
-        <translation type="unfinished">primair</translation>
+        <translation>primair</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="119"/>
         <source>primary link</source>
-        <translation type="unfinished">primaire verbinding</translation>
+        <translation>primaire verbinding</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="127"/>
         <source>residential</source>
-        <translation type="unfinished">woongebied</translation>
+        <translation>woongebied</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="135"/>
         <source>road</source>
-        <translation type="unfinished">weg</translation>
+        <translation>weg</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="143"/>
         <source>roundabout</source>
-        <translation type="unfinished">rondpunt</translation>
+        <translation>rondpunt</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="151"/>
         <source>secondary</source>
-        <translation type="unfinished">secundair</translation>
+        <translation>secundair</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="159"/>
         <source>secondary link</source>
-        <translation type="unfinished">secundaire verbinding</translation>
+        <translation>secundaire verbinding</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="167"/>
         <source>service</source>
-        <translation type="unfinished">dienst</translation>
+        <translation>dienst</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="175"/>
         <source>tertiary</source>
-        <translation type="unfinished">tertiair</translation>
+        <translation>tertiair</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="183"/>
         <source>tertiary link</source>
-        <translation type="unfinished">tertiaire verbinding</translation>
+        <translation>tertiaire verbinding</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="191"/>
         <source>trunk</source>
-        <translation type="unfinished">trunk</translation>
+        <translation>trunk</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="199"/>
         <source>trunk link</source>
-        <translation type="unfinished">trunkverbinding</translation>
+        <translation>trunkverbinding</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="207"/>
         <source>unclassified</source>
-        <translation type="unfinished">niet-geclassificeerd</translation>
+        <translation>niet-geclassificeerd</translation>
     </message>
 </context>
 <context>
@@ -1323,57 +1323,57 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Maps storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaartopslag</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="55"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Map om kaarten op te slaan.&lt;br&gt;&lt;b&gt;Let op!&lt;/b&gt; Deze map wordt volledig beheerd door OSM Scout Server. &lt;b&gt;Wijs een aparte, lege map toe&lt;/b&gt; die OSM Scout Server kan gebruiken. Dit omvat het verwijderen van alle bestanden in de map wanneer daartoe gevraagd tijdens opruimen of kaartupdates.&lt;br&gt;&lt;i&gt;Bijvoorbeeld:&lt;/i&gt; Kaarten in &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>
         <source>Geocoder</source>
-        <translation type="unfinished">Geocoder</translation>
+        <translation>Geocoder</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="68"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder is verantwoordelijk voor het verwerken van zoekopdrachten. Hiervoor verwerkt het de zoekopdracht en zoekt het naar de overeenkomende objecten op een kaart. Deze server laat je toe te kiezen tussen twee verschillende geocoder-backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; en &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="82"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
-        <translation type="unfinished">Gebruik geocoder-nlp met libpostal als een geocoder</translation>
+        <translation>Gebruik geocoder-nlp met libpostal als een geocoder</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indien ingeschakeld zal een geocoder gebaseerd op libpostal worden gebruikt om alle zoekopdrachten te verwerken. Let op: dit vereist extra databases voor taal, gebruikersinvoerverwerking en geocodering.&lt;br&gt;Let op! Als je &lt;i&gt;geocoder-nlp&lt;/i&gt; selecteert, specificeer dan hieronder in de backendinstellingen de talen die gebruikt moeten worden voor het verwerken van adressen. Zoniet kan het zijn dat de server grote hoeveelheden RAM gebruikt.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>Backend settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Backendinstellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>OSM Scout library</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout-bibliotheek</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="127"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="106"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library is used for drawing maps, search, and routing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Instellingen voor OSM Scout-bibliotheek (&lt;i&gt;libosmscout&lt;/i&gt;). De bibliotheek wordt gebruikt voor het tekenen van kaarten, zoeken en routeren.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="134"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Selectie van talen voor adresverwerking en andere instellingen van de &lt;i&gt;geocoder-nlp&lt;/i&gt;-backend</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="144"/>
@@ -1388,7 +1388,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="151"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indien uitgeschakeld worden INFOberichten niet opgeslagen in het gebeurtenissenlog. Het laden van de database wordt echter altijd getoond.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="158"/>
@@ -1421,7 +1421,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="19"/>
         <source>Map Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaartbeheerder</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="25"/>
@@ -1438,22 +1438,22 @@
         <location filename="../qml/pages/StartPage.qml" line="83"/>
         <location filename="../qml/pages/StartPage.qml" line="114"/>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Welkom</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="55"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; wordt verwacht gebruikt te worden met de gedownloade kaarten. Om de kaarten te beheren vereist de server een aparte map. De bestanden in die map mogen enkel beheerd worden door de server. Dit omvat het verwijderen van alle bestanden binnen die map wanneer daartoe gevraagd tijdens opruimen of kaartupdates.&lt;br&gt;&lt;br&gt;&lt;b&gt;Wijs een aparte, lege map toe&lt;/b&gt; voor OSM Scout Server. Maak daarvoor een nieuwe map aan in een bestandsbeheerder of via de opdrachtregel en selecteer vervolgens deze map in &lt;i&gt;Instellingen&lt;/i&gt; (uittrekmenu).</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="87"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu de opslagmap geselecteerd en beschikbaar is, is de volgende stap het ophalen van kaarten. Je kan kaarten selecteren en downloaden via de &lt;i&gt;kaartbeheerder&lt;/i&gt; (uittrekmenu).</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="118"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn nog geen kaarten beschikbaar. Nadat je je op de kaarten abonneert, moet je de downloads starten. Dit kan via de &lt;i&gt;kaartbeheerder&lt;/i&gt; (uittrekmenu).</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="152"/>
@@ -1483,7 +1483,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="252"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
 </context>
 </TS>
