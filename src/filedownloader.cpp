@@ -93,8 +93,6 @@ FileDownloader::~FileDownloader()
 
 void FileDownloader::startDownload()
 {
-  qDebug() << "Start download";
-
   // start download
   QNetworkRequest request(m_url);
   request.setHeader(QNetworkRequest::UserAgentHeader,
@@ -104,7 +102,6 @@ void FileDownloader::startDownload()
     {
       QByteArray range_header = "bytes=" + QByteArray::number(m_downloaded) + "-";
       request.setRawHeader("Range",range_header);
-      qDebug() << "RANGE: " << range_header;
     }
 
   m_reply = m_manager->get(request);
@@ -172,7 +169,14 @@ void FileDownloader::onNetworkReadyRead()
       (m_pipe_to_process && !m_process_started) ) // too early, haven't started yet
     return;
 
-  m_cache_current.append(m_reply->readAll());
+  QByteArray data_current = m_reply->readAll();
+  m_cache_current.append(data_current);
+  m_downloaded_gui += data_current.size();
+
+  emit downloadedBytes(m_downloaded_gui);
+
+  // check if caches are full or whether they have to be
+  // filled before writing to file/process
   if (!m_clear_all_caches && m_cache_current.size() < const_cache_size_before_swap)
     return;
 
@@ -194,7 +198,6 @@ void FileDownloader::onNetworkReadyRead()
   if (m_pipe_to_process)
     {
       m_process->write(data);
-      emit downloadedBytes(m_downloaded);
     }
   else
     {
@@ -206,6 +209,9 @@ void FileDownloader::onNetworkReadyRead()
 void FileDownloader::onDownloaded()
 {
   if (!m_reply) return; // happens on error, after error cleanup and initiating retry
+
+  if (m_reply->error() != QNetworkReply::NoError)
+    return;
 
   if (m_pipe_to_process && !m_process_started)
     return;
@@ -224,8 +230,6 @@ void FileDownloader::onDownloaded()
 
 void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 {
-  qDebug() << "Network error";
-
   // check if we should retry before cancelling all with an error
   // this check is performed only if we managed to get some data
   if (m_downloaded_last_error != m_downloaded)
@@ -236,7 +240,6 @@ void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
     {
       m_cache_safe.clear();
       m_cache_current.clear();
-      m_reply->readAll();
       m_reply->deleteLater();
       m_reply = nullptr;
 
@@ -244,6 +247,7 @@ void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
                          this, SLOT(startDownload()));
 
       m_download_retries++;
+      m_downloaded_gui = m_downloaded;
       return;
     }
 

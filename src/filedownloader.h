@@ -73,6 +73,7 @@ protected:
 
   uint64_t m_downloaded{0};
   uint64_t m_written{0};
+  uint64_t m_downloaded_gui{0};
 
   uint64_t m_downloaded_last_error{0};
   size_t m_download_retries{0};
