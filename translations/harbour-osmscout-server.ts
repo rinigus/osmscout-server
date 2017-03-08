@@ -361,23 +361,29 @@
 <context>
     <name>FileDownloader</name>
     <message>
-        <location filename="../src/filedownloader.cpp" line="254"/>
+        <location filename="../src/filedownloader.cpp" line="279"/>
+        <location filename="../src/filedownloader.cpp" line="295"/>
         <source>Failed to download</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="255"/>
+        <location filename="../src/filedownloader.cpp" line="280"/>
         <source>Error code: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="281"/>
-        <location filename="../src/filedownloader.cpp" line="301"/>
+        <location filename="../src/filedownloader.cpp" line="296"/>
+        <source>Timeout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/filedownloader.cpp" line="322"/>
+        <location filename="../src/filedownloader.cpp" line="342"/>
         <source>Error in processing downloaded data</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="311"/>
+        <location filename="../src/filedownloader.cpp" line="352"/>
         <source>Error in processing downloaded data: could not start the program</source>
         <translation type="unfinished"></translation>
     </message>
