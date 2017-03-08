@@ -81,8 +81,11 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
       m_process->start(command, arguments);
     }
 
+  m_download_last_read_time.start();
+
   // start download
   startDownload();
+  startTimer(const_download_timeout*1000);
 }
 
 FileDownloader::~FileDownloader()
@@ -113,6 +116,7 @@ void FileDownloader::startDownload()
   connect(m_reply, SIGNAL(error(QNetworkReply::NetworkError)),
           this, SLOT(onNetworkError(QNetworkReply::NetworkError)));
 
+  m_download_last_read_time.restart();
 }
 
 void FileDownloader::onFinished()
@@ -174,6 +178,7 @@ void FileDownloader::onNetworkReadyRead()
   m_downloaded_gui += data_current.size();
 
   emit downloadedBytes(m_downloaded_gui);
+  m_download_last_read_time.restart();
 
   // check if caches are full or whether they have to be
   // filled before writing to file/process
@@ -228,14 +233,15 @@ void FileDownloader::onDownloaded()
   if (!m_pipe_to_process) onFinished();
 }
 
-void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
+bool FileDownloader::restartDownload()
 {
   // check if we should retry before cancelling all with an error
   // this check is performed only if we managed to get some data
   if (m_downloaded_last_error != m_downloaded)
     m_download_retries = 0;
 
-  if (m_download_retries < const_max_download_retries &&
+  if (m_reply &&
+      m_download_retries < const_max_download_retries &&
       m_downloaded > 0 )
     {
       m_cache_safe.clear();
@@ -248,14 +254,37 @@ void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 
       m_download_retries++;
       m_downloaded_gui = m_downloaded;
-      return;
+      m_downloaded_last_error = m_downloaded;
+
+      return true;
     }
+
+  return false;
+}
+
+void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
+{
+  if (restartDownload()) return;
 
   QString err = tr("Failed to download") + "<br>" + m_path +
       "<br><br>" +tr("Error code: %1").arg(QString::number(m_reply->error())) + "<br><blockquote><small>" +
       m_reply->errorString() +
       "</small></blockquote>";
+
   onError(err);
+}
+
+void FileDownloader::timerEvent(QTimerEvent * /*event*/)
+{
+  if (m_download_last_read_time.elapsed()*1e-3 > const_download_timeout)
+    {
+      if (restartDownload()) return;
+
+      QString err = tr("Failed to download") + "<br>" + m_path +
+          "<br><br>" +tr("Timeout");
+
+      onError(err);
+    }
 }
 
 void FileDownloader::onProcessStarted()

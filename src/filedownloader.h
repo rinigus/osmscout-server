@@ -9,6 +9,7 @@
 #include <QUrl>
 #include <QProcess>
 #include <QByteArray>
+#include <QTime>
 
 /// \brief Downloads a file specified by URL
 ///
@@ -52,6 +53,10 @@ protected:
   void onFinished();
   void onError(const QString &err);
 
+  bool restartDownload(); ///< Restart download if download retries are not used up
+
+  virtual void timerEvent(QTimerEvent *event);
+
 protected:
   QNetworkAccessManager *m_manager;
   QUrl m_url;
@@ -77,10 +82,12 @@ protected:
 
   uint64_t m_downloaded_last_error{0};
   size_t m_download_retries{0};
+  QTime m_download_last_read_time;
 
   const size_t const_max_download_retries{5};         ///< Maximal number of download retries before cancelling download
   const double const_download_retry_sleep_time{3.0};  ///< Time between retries in seconds
   const int const_cache_size_before_swap{1024*1024*1};
+  const int const_download_timeout{60};                ///< Download timeout in seconds
 };
 
 #endif // FILEDOWNLOADER_H
