@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Mar 9 2017 rinigus <rinigus.git@gmail.com> 0.7.1-1
+- Updated transalations
+- Improved hadling of some network errors during download
+
 * Sun Mar 5 2017 rinigus <rinigus.git@gmail.com> 0.7.0-1
 - Maps are provided through CDN
 - Adding Map Manager to download and remove maps on the device
