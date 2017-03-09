@@ -361,29 +361,29 @@
 <context>
     <name>FileDownloader</name>
     <message>
-        <location filename="../src/filedownloader.cpp" line="279"/>
-        <location filename="../src/filedownloader.cpp" line="295"/>
+        <location filename="../src/filedownloader.cpp" line="269"/>
+        <location filename="../src/filedownloader.cpp" line="283"/>
         <source>Failed to download</source>
         <translation>Kunde inte ladda ner</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="280"/>
+        <location filename="../src/filedownloader.cpp" line="270"/>
         <source>Error code: %1</source>
         <translation>Felkod: %1</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="296"/>
+        <location filename="../src/filedownloader.cpp" line="284"/>
         <source>Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidsgräns</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="322"/>
-        <location filename="../src/filedownloader.cpp" line="342"/>
+        <location filename="../src/filedownloader.cpp" line="310"/>
+        <location filename="../src/filedownloader.cpp" line="330"/>
         <source>Error in processing downloaded data</source>
         <translation>Fel vid bearbetning av nerladdad data</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="352"/>
+        <location filename="../src/filedownloader.cpp" line="340"/>
         <source>Error in processing downloaded data: could not start the program</source>
         <translation>Fel vid bearbetning av nerladdad data: Kunde inte starta programmet</translation>
     </message>
