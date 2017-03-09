@@ -103,7 +103,7 @@ void FileDownloader::startDownload()
 
   if (m_downloaded > 0)
     {
-      QByteArray range_header = "bytes=" + QByteArray::number(m_downloaded) + "-";
+      QByteArray range_header = "bytes=" + QByteArray::number((qulonglong)m_downloaded) + "-";
       request.setRawHeader("Range",range_header);
     }
 
