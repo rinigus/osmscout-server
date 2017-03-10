@@ -50,6 +50,8 @@ protected:
   void onProcessRead();
   void onProcessReadError();
 
+  void onBytesWritten(qint64);
+
   void onFinished();
   void onError(const QString &err);
 
@@ -75,6 +77,7 @@ protected:
   QByteArray m_cache_safe;
   QByteArray m_cache_current;
   bool m_clear_all_caches{false};
+  bool m_pause_network_io{false};
 
   uint64_t m_downloaded{0};
   uint64_t m_written{0};
@@ -86,7 +89,10 @@ protected:
 
   const size_t const_max_download_retries{5};         ///< Maximal number of download retries before cancelling download
   const double const_download_retry_sleep_time{3.0};  ///< Time between retries in seconds
-  const int const_cache_size_before_swap{1024*1024*1};
+
+  const qint64 const_cache_size_before_swap{1024*1024*1}; ///< Size at which cache is promoted from network to file/process
+  const qint64 const_buffer_size_io{1024*1024*3};         ///< Size of the buffers that should not be significantly exceeded
+
   const int const_download_timeout{60};                ///< Download timeout in seconds
 };
 

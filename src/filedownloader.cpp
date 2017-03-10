@@ -39,6 +39,9 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
       return;
     }
 
+  connect( &m_file, &QFile::bytesWritten,
+           this, &FileDownloader::onBytesWritten );
+
   // start data processor if requested
   QString command;
   QStringList arguments;
@@ -78,6 +81,9 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
       connect( m_process, &QProcess::readyReadStandardError,
                this, &FileDownloader::onProcessReadError );
 
+      connect( m_process, &QProcess::bytesWritten,
+               this, &FileDownloader::onBytesWritten );
+
       m_process->start(command, arguments);
     }
 
@@ -108,6 +114,7 @@ void FileDownloader::startDownload()
     }
 
   m_reply = m_manager->get(request);
+  m_reply->setReadBufferSize(const_buffer_size_io);
 
   connect(m_reply, SIGNAL(readyRead()),
           this, SLOT(onNetworkReadyRead()));
@@ -169,16 +176,35 @@ void FileDownloader::onError(const QString &err)
 
 void FileDownloader::onNetworkReadyRead()
 {
+  m_download_last_read_time.restart();
+
   if (!m_reply ||
       (m_pipe_to_process && !m_process_started) ) // too early, haven't started yet
     return;
 
-  QByteArray data_current = m_reply->readAll();
+  // check if the network has to be throttled due to excessive
+  // non-writen buffers. check is skipped on the last read called
+  // with m_clear_all_caches
+  if (!m_clear_all_caches)
+    {
+      if ( (m_pipe_to_process && m_process->bytesToWrite() > const_buffer_size_io) ||
+           (m_file.bytesToWrite() > const_buffer_size_io) )
+        {
+          m_pause_network_io = true;
+          return;
+        }
+    }
+
+  m_pause_network_io = false;
+
+  QByteArray data_current;
+  if (m_clear_all_caches) data_current = m_reply->readAll();
+  else data_current = m_reply->read(const_cache_size_before_swap);
+
   m_cache_current.append(data_current);
   m_downloaded_gui += data_current.size();
 
   emit downloadedBytes(m_downloaded_gui);
-  m_download_last_read_time.restart();
 
   // check if caches are full or whether they have to be
   // filled before writing to file/process
@@ -287,6 +313,12 @@ void FileDownloader::timerEvent(QTimerEvent * /*event*/)
     }
 }
 
+void FileDownloader::onBytesWritten(qint64)
+{
+  if (m_pause_network_io)
+    onNetworkReadyRead();
+}
+
 void FileDownloader::onProcessStarted()
 {
   m_process_started = true;
@@ -295,6 +327,8 @@ void FileDownloader::onProcessStarted()
 
 void FileDownloader::onProcessRead()
 {
+  m_download_last_read_time.restart();
+
   if (!m_process) return;
 
   QByteArray data = m_process->readAllStandardOutput();
