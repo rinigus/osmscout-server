@@ -326,6 +326,7 @@ bool FileDownloader::restartDownload(bool force)
       m_download_retries++;
       m_downloaded_gui = m_downloaded;
       m_downloaded_last_error = m_downloaded;
+      m_download_last_read_time.restart();
 
       return true;
     }
