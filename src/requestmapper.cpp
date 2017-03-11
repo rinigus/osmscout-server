@@ -451,9 +451,6 @@ unsigned int RequestMapper::service(const char *url_c,
             return MHD_HTTP_BAD_REQUEST;
         }
 
-        for (auto i: points)
-            qDebug() << "Points: " << QString::number(i.GetLat(),'f',8) + " " + QString::number(i.GetLon(),'f',8);
-
         Task *task = new Task(connection_id,
                               std::bind(&DBMaster::route, osmScoutMaster,
                                         vehicle, points, radius, names, gpx, std::placeholders::_1),

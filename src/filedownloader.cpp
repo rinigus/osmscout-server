@@ -109,7 +109,7 @@ FileDownloader::~FileDownloader()
 
 void FileDownloader::startDownload()
 {
-  qDebug() << "Start or ReStart: " << m_url;
+  // qDebug() << "Start or ReStart: " << m_url;
 
   // start download
   QNetworkRequest request(m_url);
@@ -196,13 +196,13 @@ void FileDownloader::onNetworkReadyRead()
   double speed = m_download_throttle_bytes /
       (m_download_throttle_time_start.elapsed() * 1e-3) / 1024.0;
 
-  qDebug() << "Buffers: "
-           << m_reply->bytesAvailable() << " [network] / "
-           << m_reply->readBufferSize() << " [network max] / "
-           << (m_pipe_to_process ? m_process->bytesToWrite() : -1)
-           << " [process] / " << m_file.bytesToWrite() << " [file]; "
-           << "speed [kb/s]: " << speed
-           << " / clear: " << m_clear_all_caches;
+//  qDebug() << "Buffers: "
+//           << m_reply->bytesAvailable() << " [network] / "
+//           << m_reply->readBufferSize() << " [network max] / "
+//           << (m_pipe_to_process ? m_process->bytesToWrite() : -1)
+//           << " [process] / " << m_file.bytesToWrite() << " [file]; "
+//           << "speed [kb/s]: " << speed
+//           << " / clear: " << m_clear_all_caches;
 
   // check if the network has to be throttled due to excessive
   // non-writen buffers. check is skipped on the last read called
@@ -230,7 +230,7 @@ void FileDownloader::onNetworkReadyRead()
         {
           if (speed > m_download_throttle_max_speed)
             {
-              qDebug() << "Going too fast: " << speed;
+//              qDebug() << "Going too fast: " << speed;
               m_pause_network_io = true;
               return;
             }
@@ -313,7 +313,7 @@ bool FileDownloader::restartDownload(bool force)
       m_download_retries < const_max_download_retries &&
       (m_downloaded > 0 || force) )
     {
-      qDebug() << "Calling restart: " << m_url;
+//      qDebug() << "Calling restart: " << m_url;
 
       m_cache_safe.clear();
       m_cache_current.clear();
