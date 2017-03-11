@@ -32,8 +32,8 @@ def md5(fname):
     return hash_md5.hexdigest()
 
 # retrieve a file and return true if it satisfies given md5 hash. to
-# skip md5 checking, set md5expected to None. create required
-# directories if needed
+# skip md5 checking, set md5expected to None. this function would
+# create required directories if needed
 def get(path_relative, md5expected, path_relative_new = None, retry = 0):
     if path_relative_new is None:
         path_relative_new = path_relative
@@ -66,7 +66,7 @@ def get(path_relative, md5expected, path_relative_new = None, retry = 0):
     print "Download failed:", url
     return False
 
-# load digest into a list. this is done to preserve the order
+# load digest into a list
 def load_digest(dname):
     digest = []
     try:
@@ -76,11 +76,13 @@ def load_digest(dname):
     except: pass
     return digest
 
+# convert digest into dictionary format to speedup comparisons
 def digest2dict(digest):
     do = {}
     for i in digest: do[ i["name"] ] = i
     return do
 
+# find new files
 def files_to_get(digest_old, digest_new):
     do = digest2dict(digest_old)
     f = []
@@ -126,7 +128,7 @@ for f in updated_files:
     if not get(f, digest_new_dict[f]["md5"]):
         sys.exit(-1)
     counter += 1
-    print "ToDo:", len(updated_files) - counter, " / downloaded:", f
+    print "Left:", len(updated_files) - counter, " / downloaded:", f
 
 # all is fine and we are up to date. have to move digests to get ready
 # for the next run
