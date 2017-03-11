@@ -1,4 +1,6 @@
 #include "filedownloader.h"
+#include "appsettings.h"
+#include "config.h"
 
 #include <QUrl>
 #include <QDir>
@@ -7,6 +9,7 @@
 
 #include <QDebug>
 
+#include <algorithm>
 #include <iostream> // for a rarely expected error message
 
 FileDownloader::FileDownloader(QNetworkAccessManager *manager,
@@ -88,10 +91,14 @@ FileDownloader::FileDownloader(QNetworkAccessManager *manager,
     }
 
   m_download_last_read_time.start();
+  m_download_throttle_time_start.start();
+
+  AppSettings settings;
+  m_download_throttle_max_speed = settings.valueFloat(MAPMANAGER_SETTINGS "max_download_speed_in_kbps");
 
   // start download
   startDownload();
-  startTimer(const_download_timeout*1000);
+  startTimer(1000); // used to check for timeouts and in throttling network speed
 }
 
 FileDownloader::~FileDownloader()
@@ -102,6 +109,8 @@ FileDownloader::~FileDownloader()
 
 void FileDownloader::startDownload()
 {
+  qDebug() << "Start or ReStart: " << m_url;
+
   // start download
   QNetworkRequest request(m_url);
   request.setHeader(QNetworkRequest::UserAgentHeader,
@@ -114,7 +123,7 @@ void FileDownloader::startDownload()
     }
 
   m_reply = m_manager->get(request);
-  m_reply->setReadBufferSize(const_buffer_size_io);
+  m_reply->setReadBufferSize(const_buffer_network);
 
   connect(m_reply, SIGNAL(readyRead()),
           this, SLOT(onNetworkReadyRead()));
@@ -124,6 +133,8 @@ void FileDownloader::startDownload()
           this, SLOT(onNetworkError(QNetworkReply::NetworkError)));
 
   m_download_last_read_time.restart();
+  m_download_throttle_time_start.restart();
+  m_download_throttle_bytes = 0;
 }
 
 void FileDownloader::onFinished()
@@ -182,16 +193,47 @@ void FileDownloader::onNetworkReadyRead()
       (m_pipe_to_process && !m_process_started) ) // too early, haven't started yet
     return;
 
+  double speed = m_download_throttle_bytes /
+      (m_download_throttle_time_start.elapsed() * 1e-3) / 1024.0;
+
+  qDebug() << "Buffers: "
+           << m_reply->bytesAvailable() << " [network] / "
+           << m_reply->readBufferSize() << " [network max] / "
+           << (m_pipe_to_process ? m_process->bytesToWrite() : -1)
+           << " [process] / " << m_file.bytesToWrite() << " [file]; "
+           << "speed [kb/s]: " << speed
+           << " / clear: " << m_clear_all_caches;
+
   // check if the network has to be throttled due to excessive
   // non-writen buffers. check is skipped on the last read called
   // with m_clear_all_caches
   if (!m_clear_all_caches)
     {
+      /// It seems that sometimes Qt heavily overshoots the requested network buffer size. In
+      /// particular it has been usual for the first download from start of the server. On the second try,
+      /// it's usually OK (seen on SFOS 2.0 series)
+      if ( m_reply->bytesAvailable() > const_buffer_network_max_factor_before_cancel*const_buffer_network )
+        {
+          restartDownload(true);
+          return;
+        }
+
       if ( (m_pipe_to_process && m_process->bytesToWrite() > const_buffer_size_io) ||
            (m_file.bytesToWrite() > const_buffer_size_io) )
         {
           m_pause_network_io = true;
           return;
+        }
+
+      // check if requested speed has been exceeded
+      if (m_download_throttle_max_speed > 0)
+        {
+          if (speed > m_download_throttle_max_speed)
+            {
+              qDebug() << "Going too fast: " << speed;
+              m_pause_network_io = true;
+              return;
+            }
         }
     }
 
@@ -199,10 +241,11 @@ void FileDownloader::onNetworkReadyRead()
 
   QByteArray data_current;
   if (m_clear_all_caches) data_current = m_reply->readAll();
-  else data_current = m_reply->read(const_cache_size_before_swap);
+  else data_current = m_reply->read( std::min(const_cache_size_before_swap, const_buffer_network) );
 
   m_cache_current.append(data_current);
   m_downloaded_gui += data_current.size();
+  m_download_throttle_bytes += data_current.size();
 
   emit downloadedBytes(m_downloaded_gui);
 
@@ -259,7 +302,7 @@ void FileDownloader::onDownloaded()
   if (!m_pipe_to_process) onFinished();
 }
 
-bool FileDownloader::restartDownload()
+bool FileDownloader::restartDownload(bool force)
 {
   // check if we should retry before cancelling all with an error
   // this check is performed only if we managed to get some data
@@ -268,8 +311,10 @@ bool FileDownloader::restartDownload()
 
   if (m_reply &&
       m_download_retries < const_max_download_retries &&
-      m_downloaded > 0 )
+      (m_downloaded > 0 || force) )
     {
+      qDebug() << "Calling restart: " << m_url;
+
       m_cache_safe.clear();
       m_cache_current.clear();
       m_reply->deleteLater();
@@ -302,6 +347,9 @@ void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 
 void FileDownloader::timerEvent(QTimerEvent * /*event*/)
 {
+  if (m_pause_network_io)
+    onNetworkReadyRead();
+
   if (m_download_last_read_time.elapsed()*1e-3 > const_download_timeout)
     {
       if (restartDownload()) return;

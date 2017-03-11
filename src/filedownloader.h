@@ -55,7 +55,7 @@ protected:
   void onFinished();
   void onError(const QString &err);
 
-  bool restartDownload(); ///< Restart download if download retries are not used up
+  bool restartDownload(bool force = false); ///< Restart download if download retries are not used up
 
   virtual void timerEvent(QTimerEvent *event);
 
@@ -83,6 +83,10 @@ protected:
   uint64_t m_written{0};
   uint64_t m_downloaded_gui{0};
 
+  uint64_t m_download_throttle_bytes{0};
+  QTime m_download_throttle_time_start;
+  double m_download_throttle_max_speed{0};
+
   uint64_t m_downloaded_last_error{0};
   size_t m_download_retries{0};
   QTime m_download_last_read_time;
@@ -92,6 +96,10 @@ protected:
 
   const qint64 const_cache_size_before_swap{1024*1024*1}; ///< Size at which cache is promoted from network to file/process
   const qint64 const_buffer_size_io{1024*1024*3};         ///< Size of the buffers that should not be significantly exceeded
+  const qint64 const_buffer_network{1024*1024*1};         ///< Size of network ring buffer
+
+  /// \brief Factor determining whether cancel download when network buffer is too large
+  const qint64 const_buffer_network_max_factor_before_cancel{10};
 
   const int const_download_timeout{60};                ///< Download timeout in seconds
 };
