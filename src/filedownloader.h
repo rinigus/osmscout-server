@@ -91,8 +91,8 @@ protected:
   size_t m_download_retries{0};
   QTime m_download_last_read_time;
 
-  const size_t const_max_download_retries{5};         ///< Maximal number of download retries before cancelling download
-  const double const_download_retry_sleep_time{3.0};  ///< Time between retries in seconds
+  const size_t const_max_download_retries{5};          ///< Maximal number of download retries before cancelling download
+  const double const_download_retry_sleep_time{30.0};  ///< Time between retries in seconds
 
   const qint64 const_cache_size_before_swap{1024*1024*1}; ///< Size at which cache is promoted from network to file/process
   const qint64 const_buffer_size_io{1024*1024*3};         ///< Size of the buffers that should not be significantly exceeded
