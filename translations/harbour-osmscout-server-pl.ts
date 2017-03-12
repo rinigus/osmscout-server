@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cs" sourcelanguage="en">
+<TS version="2.1" language="pl" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ten serwer musi być użyty z programem klienckim zdolnym do wyświetlania map, zapytań do wyszukiwania i wyświetlania wybranych tras. Ten serwer jest warstwą wykorzystującą funkcjonalność &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; i &lt;i&gt;geocoder-nlp&lt;/i&gt; za pomocą protokołu http. Ten serwer może być użyty jako zamienni dla map online.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
         <source>Copyright:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prawa autorskie:</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>License: LGPL</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencja: LGPL</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tłumaczenia</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="28"/>
         <source>Maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapy</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dane map z OpenStreetMap, licencja Open Database 1.0. Mapy są konwertowane to odpowiedniego formatu z pobranych fragmentów dostarczonych przez Geofabric GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="34"/>
         <source>Libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Libpostal</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="36"/>
@@ -46,22 +46,22 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="43"/>
         <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
+        <translation>Podziękowania</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="65"/>
         <source>About</source>
-        <translation>O programu</translation>
+        <translation>O OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="69"/>
         <source>version</source>
-        <translation>verze</translation>
+        <translation>wersja</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="75"/>
         <source>is a server that provides offline map services</source>
-        <translation>je server poskytující offline mapové služby</translation>
+        <translation>jest serwerem dostarczającym serwisu map offline</translation>
     </message>
 </context>
 <context>
@@ -69,7 +69,7 @@
     <message>
         <location filename="../src/appsettings.cpp" line="193"/>
         <source>mph</source>
-        <translation>mi/h</translation>
+        <translation>mph</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="193"/>
@@ -79,12 +79,12 @@
     <message>
         <location filename="../src/appsettings.cpp" line="195"/>
         <source>km/h</source>
-        <translation type="unfinished"></translation>
+        <translation>km/h</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="195"/>
         <source>km</source>
-        <translation type="unfinished"></translation>
+        <translation>km</translation>
     </message>
 </context>
 <context>
@@ -97,12 +97,12 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="24"/>
         <source>All datasets covering selected features are available</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie zestawy danych obejmujących wybrane funkcje są dostępne</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="26"/>
         <source>Some datasets are missing. You would have to start downloads to get them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Niektórych zestawów danych brakuje. Trzeba je pobrać aby się do nich dostać.</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="28"/>
@@ -117,37 +117,37 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="98"/>
         <source>Availibility on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostępność w urządzeniu</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="118"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="127"/>
         <source>Selected datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybrane zbiory danych</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="147"/>
         <source>All datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie zbiory danych</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="186"/>
         <source>incompatible version</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersja niekompatybilna</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="206"/>
         <source>MB</source>
-        <translation type="unfinished"></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="208"/>
         <source>disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>wyłączone</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="223"/>
@@ -168,7 +168,7 @@
         <location filename="../qml/pages/CountryDetailsPage.qml" line="49"/>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="50"/>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
 </context>
 <context>
@@ -181,12 +181,12 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="32"/>
         <source>Jobs</source>
-        <translation>Úlohy</translation>
+        <translation>Zadania</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="33"/>
         <source>Idle</source>
-        <translation>Nečinný</translation>
+        <translation>Bezczynność</translation>
     </message>
 </context>
 <context>
@@ -194,102 +194,102 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="16"/>
         <source>Cannot create database object</source>
-        <translation>Nemohu vytvořit objekt databáze</translation>
+        <translation>Nie można utworzyć obiektu bazy danych</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="47"/>
         <source>Cannot open database</source>
-        <translation>Nemohu otevřít databázi</translation>
+        <translation>Nie można otworzyć bazy danych</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="52"/>
         <source>Opened database</source>
-        <translation>Otevřena databáze</translation>
+        <translation>Otworzona baza danych</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="109"/>
         <source>Cannot allocate Style config</source>
-        <translation>Nemohu načíst styl</translation>
+        <translation>Nie można przydzielić konfiguracji stylu</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="117"/>
         <source>Cannot open style</source>
-        <translation>Nemohu otevřít styl</translation>
+        <translation>Nie można otworzyć stylu</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="123"/>
         <source>Loaded style</source>
-        <translation>Načten styl</translation>
+        <translation>Załadowany styl</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_map.cpp" line="72"/>
         <source>Database is not open, cannot render a tile</source>
-        <translation>Databáze není otevřena, nemohu vykreslit dlaždici</translation>
+        <translation>Baza danych nie jest otwarta, nie można wyrenderować kafelka</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="80"/>
         <source>Database is not open, cannot route</source>
-        <translation>Databáze není otevřena, nemohu najít trasu</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="100"/>
         <source>Cannot open routing database</source>
-        <translation>Nemohu otevřít routovací databázi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="137"/>
         <source>There was an error while calculating the route!</source>
-        <translation>Nastala chyba při hledání trasy!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="147"/>
         <source>Error during route conversion to points</source>
-        <translation>Nastala chyba během převodu trasy na body na mapě</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="196"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="197"/>
         <source>Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
-        <translation>Databáze není otevřena, nemohu vyhledávat</translation>
+        <translation>Baza danych nie jest otwarta, nie można wyszukać</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="272"/>
         <source>Error while parsing search string</source>
-        <translation>Chyba během parsování dotazu vyhledávání</translation>
+        <translation>Błąd podczas parsowania szukanego stringu</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="279"/>
         <source>Error while searching for location</source>
-        <translation>Chyba během hledání místa</translation>
+        <translation>Błąd podczas szukania miejsca</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="486"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>Chyba během hledání referenčního místa</translation>
+        <translation>Szukanie punktu odniesienia nie powiodło się: nie można znaleźć</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="511"/>
         <source>Database is not open, cannot search for POI</source>
-        <translation>Databáze není otevřena, nemohu najít bod zájmu (POI)</translation>
+        <translation>Baza danych nie jest otwarta, nie można wyszukać POI</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="572"/>
         <source>Cannot load data from database</source>
-        <translation>Nemohu načíst data z databáze</translation>
+        <translation>Nie można załadować danych z bazy danych</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="672"/>
         <source>Database is not open, cannot list POI types</source>
-        <translation>Databáze není otevřena, nemohu najít typy bodů zájmu (POI)</translation>
+        <translation>Baza danych nie jest otwarta, nie można pokazać listy typów POI</translation>
     </message>
 </context>
 <context>
@@ -297,7 +297,7 @@
     <message>
         <location filename="../qml/pages/DownloadCountriesPage.qml" line="57"/>
         <source>Select country or territory</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz państwo lub terytorium</translation>
     </message>
 </context>
 <context>
@@ -305,18 +305,18 @@
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="17"/>
         <source>%1 territories</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 terytoria</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="24"/>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="28"/>
         <source>Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostępny</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="33"/>
         <source>Incompatible version</source>
-        <translation type="unfinished"></translation>
+        <translation>Niekompatybilna wersja</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="37"/>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="42"/>
         <source>Size: %1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar: %1 MB</translation>
     </message>
 </context>
 <context>
@@ -334,12 +334,12 @@
     <message>
         <location filename="../qml/pages/ElementDownloads.qml" line="16"/>
         <source>No downloads active</source>
-        <translation type="unfinished"></translation>
+        <translation>Nic nie jest pobierane</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementDownloads.qml" line="17"/>
         <source>Download active</source>
-        <translation type="unfinished"></translation>
+        <translation>Pobieranie aktywne</translation>
     </message>
 </context>
 <context>
@@ -347,7 +347,7 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="27"/>
         <source>All supported languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie wspierane języki</translation>
     </message>
 </context>
 <context>
@@ -355,7 +355,7 @@
     <message>
         <location filename="../qml/pages/ElementSelector.qml" line="30"/>
         <source>&lt;Not selected&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Not selected&gt;</translation>
     </message>
 </context>
 <context>
@@ -364,28 +364,28 @@
         <location filename="../src/filedownloader.cpp" line="344"/>
         <location filename="../src/filedownloader.cpp" line="361"/>
         <source>Failed to download</source>
-        <translation type="unfinished"></translation>
+        <translation>Pobieranie zakończone niepowodzeniem</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="345"/>
         <source>Error code: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kod błędu: %1</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="362"/>
         <source>Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Upłynął czas</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="396"/>
         <location filename="../src/filedownloader.cpp" line="416"/>
         <source>Error in processing downloaded data</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd przetwarzania pobranych danych</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="426"/>
         <source>Error in processing downloaded data: could not start the program</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd przetwarzania pobranych danych: nie można uruchomić programu</translation>
     </message>
 </context>
 <context>
@@ -393,17 +393,17 @@
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="65"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation type="unfinished"></translation>
+        <translation>W celu wybrania katalogu, naciśnij i przytrzymaj katalog, i wybierz &apos;Wybierz&apos; z meny kontekstowego</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="200"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="216"/>
         <source>Empty directory</source>
-        <translation>Prázdná složka</translation>
+        <translation>Pusty katalog</translation>
     </message>
 </context>
 <context>
@@ -411,42 +411,42 @@
     <message>
         <location filename="../src/geomaster.cpp" line="79"/>
         <source>Cannot open geocoding database</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można otworzyć bazy danych geokodowania</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="40"/>
         <source>Cannot open geocoder database</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można otworzyć bazy danych geokodowania</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="44"/>
         <source>Opened geocoder database</source>
-        <translation type="unfinished"></translation>
+        <translation>Otworzono bazę danych geokodowania</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="57"/>
         <source>libpostal using language</source>
-        <translation type="unfinished"></translation>
+        <translation>libpostal używa języka</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="61"/>
         <source>libpostal will use all covered languages</source>
-        <translation type="unfinished"></translation>
+        <translation>libpostal użyje wszystkich wspieranych językach</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="90"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd parsowania przez libpostal, możliwe że baza danych libpostal jest niedostępna</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="99"/>
         <source>Error while searching with geocoder-nlp</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd podczas wyszukiwania za pomocą geocoder-nlp</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="176"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>Chyba během hledání referenčního místa</translation>
+        <translation>Szukanie punktu odniesienia nie powiodło się: nie można znaleźć</translation>
     </message>
 </context>
 <context>
@@ -454,22 +454,22 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="36"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uwaga: Proszę zapoznać się z &apos;O OSM Scout Server&apos; odnośnie zgłaszania problemów z parsowania adresu.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponoding objects on a map.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder jest odpowiedzialny za rozwiązywanie żądań wyszukiwania. W tym celu analizuje string wyszukiwania i wyszukuje odpowiadające obiekty na mapie.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="47"/>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Języki</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="48"/>
@@ -479,7 +479,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="55"/>
         <source>Use primitive parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj prymitywnego parsera</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="56"/>
@@ -489,7 +489,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="65"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
-        <translation type="unfinished"></translation>
+        <translation>Załaduj &lt;i&gt;libpostal&lt;/i&gt; na każde wezwanie</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="66"/>
@@ -502,17 +502,17 @@
     <message>
         <location filename="../src/infohub.cpp" line="101"/>
         <source>ERROR: </source>
-        <translation>CHYBA: </translation>
+        <translation>BŁĄD:</translation>
     </message>
     <message>
         <location filename="../src/infohub.cpp" line="107"/>
         <source>WARNING: </source>
-        <translation>VAROVÁNÍ: </translation>
+        <translation>OSTRZEŻENIE:</translation>
     </message>
     <message>
         <location filename="../src/infohub.cpp" line="116"/>
         <source>INFO: </source>
-        <translation>INFO: </translation>
+        <translation>INFO:</translation>
     </message>
 </context>
 <context>
@@ -530,14 +530,14 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="151"/>
         <source>Address parsing language support</source>
-        <translation type="unfinished"></translation>
+        <translation>Wsparcie parsowanie adresu języka</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="172"/>
         <location filename="../src/mapmanager.cpp" line="633"/>
         <location filename="../src/mapmanager.cpp" line="760"/>
         <source>Maps storage folder does not exist: </source>
-        <translation type="unfinished"></translation>
+        <translation>Katalog z mapami nie istnieje</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="180"/>
@@ -548,14 +548,14 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="200"/>
         <source>No maps loaded: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Brak załadowanych map: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="202"/>
         <location filename="../src/mapmanager.cpp" line="233"/>
         <location filename="../src/mapmanager.cpp" line="667"/>
         <source>Version of dataset for %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Wersja zbioru danych dla %1 jest niewspierana</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="229"/>
@@ -565,22 +565,22 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="276"/>
         <source>Available country or territory: </source>
-        <translation type="unfinished"></translation>
+        <translation>Dostępne państwa lub terytoria:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="466"/>
         <source>World</source>
-        <translation type="unfinished"></translation>
+        <translation>Świat</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="530"/>
         <source>Removing country from requested list: </source>
-        <translation type="unfinished"></translation>
+        <translation>Usuwanie państwa z listy żądanych:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="687"/>
         <source>Missing data: </source>
-        <translation type="unfinished"></translation>
+        <translation>Brakujące dane:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="779"/>
@@ -590,27 +590,27 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="796"/>
         <source>File downloaded:</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik pobrany:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="824"/>
         <source>Could not register downloaded file in the tracking database</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można zarejestrować pobranego pliku w bazie danych śledzenia</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="825"/>
         <source>File registration error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd rejestracji pliku</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="884"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista państw: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1019"/>
         <source>Downloading the list of countries</source>
-        <translation type="unfinished"></translation>
+        <translation>Pobieranie listy państw</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1071"/>
@@ -620,7 +620,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="892"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="503"/>
@@ -630,27 +630,27 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="857"/>
         <source>Download failed, dropping all downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Pobieranie zakończone niepowodzeniem, przerywanie pobierania wszystkich plików</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="995"/>
         <source>Error while deleting file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd podczas kasowania pliku:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="996"/>
         <source>Cancelling the removal of remaining files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Anulowanie usuwania pozostałych plików.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1001"/>
         <source>File removed during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik usunięty podczas czyszczenia:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1067"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można sprawdzić dostępności aktualizacji z powodu brakującego folderu przechowywania map</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1069"/>
@@ -663,22 +663,22 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="173"/>
         <source>Removed file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Usunięto plik: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="175"/>
         <source>Failed to remove file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Niepowodzenie przy usuwanie pliku: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="197"/>
         <source>Missing libosmscout maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Brakujące mapy libosmscout</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="208"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="216"/>
@@ -688,7 +688,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="233"/>
         <source>Address parsing language support</source>
-        <translation type="unfinished"></translation>
+        <translation>Wsparcie parsowanie adresu języka</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="252"/>
@@ -703,7 +703,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="189"/>
         <source>OSM Scout library</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblioteka OSM Scout</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="260"/>
@@ -716,7 +716,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="23"/>
         <source>Map Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Manager Map</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="27"/>
@@ -726,7 +726,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="38"/>
         <source>Storage settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia przechowywania</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="46"/>
@@ -746,7 +746,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="106"/>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Pobrane pliki</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="123"/>
@@ -756,32 +756,32 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="139"/>
         <source>Start download</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozpocznij pobieranie</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="150"/>
         <source>Provided maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostarczone mapy</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Update list</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaktualizuj listę</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="204"/>
         <source>List of currently available maps and datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista aktualnie dostępnych map i zestawów danych</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="214"/>
         <source>Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalog przechowywania</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="223"/>
         <source>Start cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Start czyszczenia</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="234"/>
@@ -796,7 +796,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="171"/>
         <source>Select the countries or territories that you want to keep on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz państwa lub terytoria, które chcesz trzymać w urządzeniu</translation>
     </message>
 </context>
 <context>
@@ -804,37 +804,37 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="28"/>
         <source>Unused files</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieużywane pliki</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
         <source>Files:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pliki:</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="81"/>
         <source>Delete files</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń pliki</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="86"/>
         <source>Deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuwanie</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="96"/>
         <source>Delete unused files and free the occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Skasuj nieużywane pliki i zwolnij zajęte miejsce</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="127"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wszystkie przechowywane pliki są używane przez serwer OSM Scout. Nie ma nic do usunięcia.</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
         <source>MB</source>
-        <translation type="unfinished"></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="42"/>
@@ -844,12 +844,12 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
         <source>Occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Zajęta przestrzeń</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="125"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się sprawdzić niepotrzebnych plików. Może to być spowodowane np aktywnym pobieraniem</translation>
     </message>
 </context>
 <context>
@@ -857,32 +857,32 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="22"/>
         <source>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="26"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblioteka OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) może być użyta do rysowania map, wyszukiwania i wyznaczania trasy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="35"/>
         <source>Rendering</source>
-        <translation>Vykreslování</translation>
+        <translation>Renderowanie</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="41"/>
         <source>Font size</source>
-        <translation>Velikost písma</translation>
+        <translation>Rozmiar czcionki</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="49"/>
         <source>Style Sheet</source>
-        <translation>Styl</translation>
+        <translation>Arkusz stylu</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="50"/>
         <source>Style sheet used to render the map tiles</source>
-        <translation>Styl použitý k vykreslování mapových dlaždic</translation>
+        <translation>Arkusz stylu użyty do renderowania kafelków map</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="56"/>
@@ -892,82 +892,82 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="57"/>
         <source>Icons used to mark features on the map</source>
-        <translation>Ikony objektů na mapě</translation>
+        <translation>Ikony używane do oznaczania cech na mapie</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="65"/>
         <source>Render sea</source>
-        <translation>Vykreslovat moře</translation>
+        <translation>Renderuj morze</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="71"/>
         <source>Draw background</source>
-        <translation>Vykreslovat pozadí</translation>
+        <translation>Rysuj tło</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="75"/>
         <source>Routing</source>
-        <translation>Navigace</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="79"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
-        <translation>Trasa je vypočítána ze všech možných cest které splňují omezení ceny</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="90"/>
         <source>Cost factor</source>
-        <translation>Faktor ceny</translation>
+        <translation>Czynnik kosztów</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="91"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation>Faktor ceny je omezení na délku trasy poměrné ke vzdálenosti mezi startem a cílem</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="100"/>
         <source>Cost distance</source>
-        <translation>Posun ceny</translation>
+        <translation>Koszt dystansu</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="101"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation>Posun ceny je offset limitu ceny</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="118"/>
         <source>Routing speeds</source>
-        <translation>Povolené rychlosti</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="125"/>
         <source>Speeds for different transportation modes (car, bicycle, walk) and at different road surfaces used when finding an optimal route</source>
-        <translation type="unfinished"></translation>
+        <translation>Prędkości dla różnego rodzaju środków transportu (samochód, rower, pieszo) i różnych nawierzchni drogi użytych podczas wyszukiwania optymalnej trasy</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="136"/>
         <source>Advanced rendering settings</source>
-        <translation>Rozšířené nastavení vykreslování</translation>
+        <translation>Zaawansowane ustawienie renderingu</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="142"/>
         <source>Loaded area factor</source>
-        <translation>Faktor načítané oblasti</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="143"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation>Zvětšením velikosti načítané oblasti, která je použita při vykreslování dlaždice lze docílit lepšího vykreslování textů, tím že jsou použita i data ze sousedních dlaždic. Při faktoru rovném 1.0 jsou brána v úvahu pouze data vykreslované dlaždice. Větší hodnota může spomalit vykreslování a zvýšit paměťovou náročnost. V závislosti na velikosti použitých dlaždic může dojít k vyčerpání paměti zařízení již při faktoru 2.0.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="156"/>
         <source>Cutoff zoom level</source>
-        <translation>Omezení úrovně přiblížení</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="157"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation>Při větších úrovních přiblížení nebudou již vykreslovány názvy objektů mimo viditelnou oblast. Často je jako toto omezení použia úroveň 14. Nastavením větší úrovně můžete docílit přesnějšího vykreslování názvů při větším přiblížení. Mějte ale na paměti že to může velice spomalit vykreslování.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -975,132 +975,132 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="22"/>
         <source>Routing speeds</source>
-        <translation>Povolené rychlosti</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
         <source>Modes of transportation</source>
-        <translation>Způsob dopravy</translation>
+        <translation>Rodzaje transportu</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="33"/>
         <source>Maximal car speed</source>
-        <translation>Maximální rychlost vozidla</translation>
+        <translation>Maksymalna prędkość samochodu</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="34"/>
         <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
-        <translation>Při výpočtu trasy je očekáváno že tato rychlost nebude nikdy během jízdy překročena</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="42"/>
         <source>Expected speed of a bicycle</source>
-        <translation>Předpokládaná rychlost na kole</translation>
+        <translation>Oczekiwane prędkość roweru</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="50"/>
         <source>Expected speed while walking</source>
-        <translation>Předpokládaná rychlost chůze</translation>
+        <translation>Oczekiwana prędkość w trakcie spaceru</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="56"/>
         <source>Car speed on different roads</source>
-        <translation>Rychlost vozidla na různých silnicích</translation>
+        <translation>Prędkość samochodu na różnych drogach</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="63"/>
         <source>living street</source>
-        <translation>v obci</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="71"/>
         <source>motorway</source>
-        <translation>dálníce</translation>
+        <translation>autostrada</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="79"/>
         <source>motorway junction</source>
-        <translation>dálníční sjezd</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="87"/>
         <source>motorway link</source>
-        <translation>dálníční sjezd/nájezd</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="95"/>
         <source>motorway primary</source>
-        <translation>silnice první třídy (zákaz cyklistů)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
-        <translation>silnice pro motorová vozidla  (zákaz cyklistů)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="111"/>
         <source>primary</source>
-        <translation>silnice první třídy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="119"/>
         <source>primary link</source>
-        <translation>připojovací pruh na silnici první třídy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="127"/>
         <source>residential</source>
-        <translation>v obci</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="135"/>
         <source>road</source>
-        <translation>silnice (neznámá klasifikace)</translation>
+        <translation>droga</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="143"/>
         <source>roundabout</source>
-        <translation>kruhový objezd</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="151"/>
         <source>secondary</source>
-        <translation>silnice 2. třídy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="159"/>
         <source>secondary link</source>
-        <translation>nájezd na silnici 2. třídy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="167"/>
         <source>service</source>
-        <translation>příjezdová cesta</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="175"/>
         <source>tertiary</source>
-        <translation>silnice 3. třídy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="183"/>
         <source>tertiary link</source>
-        <translation>nájezd silnici 3. třídy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="191"/>
         <source>trunk</source>
-        <translation>silnice pro motorová vozidla</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="199"/>
         <source>trunk link</source>
-        <translation>nájezd na silnici pro motorová vozidla</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="207"/>
         <source>unclassified</source>
-        <translation>neklasifikovaná silnice</translation>
+        <translation>niesklasyfikowana</translation>
     </message>
 </context>
 <context>
@@ -1108,88 +1108,88 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="71"/>
         <source>Turn sharp left</source>
-        <translation>Zatočte ostře vlevo</translation>
+        <translation>Skręć ostro w lewo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="73"/>
         <source>Turn left</source>
-        <translation>Zatočte vlevo</translation>
+        <translation>Skręć w lewo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="75"/>
         <source>Turn slightly left</source>
-        <translation>Zatočte mírně vlevo</translation>
+        <translation>Skręć lekko w lewo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="77"/>
         <source>Straight on</source>
-        <translation>Poračujte rovně</translation>
+        <translation>Na wprost</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="79"/>
         <source>Turn slightly right</source>
-        <translation>Zatočte mírně vpravo</translation>
+        <translation>Skręć lekko w prawo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="81"/>
         <source>Turn right</source>
-        <translation>Zatočte vpravo</translation>
+        <translation>Skręć w prawo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="83"/>
         <source>Turn sharp right</source>
-        <translation>Zatočte ostře vpravo</translation>
+        <translation>Skręć ostro w prawo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="98"/>
         <source>Drive along %along%</source>
-        <translation>Jeďte po %along%</translation>
+        <translation>Jedź wzdłuż %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="99"/>
         <source>Start at %start%. Drive along %along%</source>
-        <translation>Vyražte z %start%. Jeďte po %along%</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="106"/>
         <source>Start at %start%</source>
-        <translation>Vyražte z %start%</translation>
+        <translation>Początek w %start%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="154"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
-        <translation>Na křižovatce s %crossingway%, %turncommand%</translation>
+        <translation>Na skrzyzowaniu (%crossingway%), %turncommand%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="223"/>
         <source>Enter motorway %motorway%</source>
-        <translation>Vjeďte na %motorway%</translation>
+        <translation>Wjedź na autostradę %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="227"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
-        <translation>Na křižovatce %crossing%, vjeďte na %motorway%</translation>
+        <translation>Na skrzyżowaniu %crossingway%, wjedź na autostradę %motorway%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway to %to%</source>
-        <translation>Změna cesty na %to%</translation>
+        <translation>Zmień autostradę do %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="269"/>
         <source>Change motorway from %from%</source>
-        <translation>Změna cety z %from%</translation>
+        <translation>Zmień autostradę z %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="272"/>
         <source>Change motorway from %from% to %to%</source>
-        <translation>Změna cesty z %from% na %to%</translation>
+        <translation>Zmień autostradę z %from% do %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="277"/>
         <location filename="../src/routingforhuman.cpp" line="363"/>
         <source>At %motoName% (exit %motoRef%), %command%</source>
-        <translation>Na %motoName% (sjezd %motoRef%), %command%</translation>
+        <translation>Na %motoName% (exit %motoRef%), %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="283"/>
@@ -1200,103 +1200,103 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway into %into%</source>
-        <translation>Sjeďte na %into%</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="338"/>
         <source>Leave motorway. %move%</source>
-        <translation>Sjeďte. %move%</translation>
+        <translation>Opuść autostradę %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="341"/>
         <location filename="../src/routingforhuman.cpp" line="348"/>
         <source>Leave motorway %from%</source>
-        <translation>Sjeďte z %from%</translation>
+        <translation>Opuść autostradę %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="344"/>
         <source>Leave motorway. %move% into %into%</source>
-        <translation>Sjeďte. %move% na %into%</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="352"/>
         <source>Leave motorway %from%. %move%</source>
-        <translation>Sjeďte z %from%. %move%</translation>
+        <translation>Opuść autostradę %from%. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="356"/>
         <source>Leave motorway %from%. %move% into %into%</source>
-        <translation>Sjeďte z %from%. %move% na %into%</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation>Cesta se mění z %from% na %to%</translation>
+        <translation>Droga zmienia nazwę z %from% na %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="388"/>
         <source>Way changes name to %to%</source>
-        <translation>Cesta se mění na %to%</translation>
+        <translation>Droga zmienia nazwę na %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="146"/>
         <source>Turn</source>
-        <translation>Zahněte</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="192"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
-        <translation>Sjeďte z hruhového objezdu (%num% sjezd) na ulici %street%</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="196"/>
         <source>Leave roundabout (%num% exit)</source>
-        <translation>Sjeďte z hruhového objezdu (%num% sjezd)</translation>
+        <translation>Opuść rondo (%num% exit)</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="167"/>
         <source>Enter roundabout</source>
-        <translation>Vjeďte na kruhový objezd</translation>
+        <translation>Wjedź na rondo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="118"/>
         <source>Target reached: %target%</source>
-        <translation>Jste v cíli: %target%</translation>
+        <translation>Cel osiągnięty: %target%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="149"/>
         <source>%turncommand% into %where%</source>
-        <translation>%turncommand% na %where%</translation>
+        <translation>%turncommand% do %where%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="171"/>
         <source>At crossing %crossway%, enter roundabout</source>
-        <translation>Na křižovatce %crossway%, vjeďte na kruhový objezd</translation>
+        <translation>Na skrzyżowaniu %crossingway%, wjedź na rondo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>Leave roundabout</source>
-        <translation>Sjeďte z kruhového objezdu</translation>
+        <translation>Opuść rondo</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>exit</source>
-        <translation>sjezdu</translation>
+        <translation>wyjazd</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="221"/>
         <source>Enter motorway</source>
-        <translation>Vjeďte na silnici</translation>
+        <translation>Wjedź na autostradę</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="264"/>
         <source>Change motorway</source>
-        <translation>Změňte silnici</translation>
+        <translation>Zmień autostradę</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="333"/>
         <source>Leave motorway</source>
-        <translation>Sjeďte ze silnice</translation>
+        <translation>Opuść autostradę</translation>
     </message>
 </context>
 <context>
@@ -1304,32 +1304,32 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="22"/>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="32"/>
         <source>Units</source>
-        <translation>Jednotky</translation>
+        <translation>Jednostki</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="34"/>
         <source>Metric</source>
-        <translation>Metrické</translation>
+        <translation>Metryczne</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="35"/>
         <source>Imperial</source>
-        <translation>Imperiální</translation>
+        <translation>Imperialne</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="42"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
-        <translation>Jednotky používané v grafickém rozhraní seerveru. Jednotky se změní až po aplikování nastavení.</translation>
+        <translation>Jednostki stosowane w graficznym interfejsie użytkownika serwera. Jednostki zmienią się dopiero po zastosowaniu ustawień.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Maps storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Przechowywanie map</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="55"/>
@@ -1364,17 +1364,17 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>OSM Scout library</source>
-        <translation type="unfinished"></translation>
+        <translation>Biblioteka OSM Scout</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="127"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="106"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library is used for drawing maps, search, and routing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia biblioteka OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). Biblioteka ta używana jest do rysowania map, wyszukiwania i wyznaczania trasy.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="134"/>
@@ -1384,12 +1384,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="144"/>
         <source>Miscellaneous</source>
-        <translation>Různé</translation>
+        <translation>Różne</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Log info messages</source>
-        <translation>Logovat informační zprávy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="151"/>
@@ -1399,22 +1399,22 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>Events log size</source>
-        <translation>Velikost logu</translation>
+        <translation>Rozmiar logów zdarzeń</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="159"/>
         <source>Number of events shown in the main page</source>
-        <translation>Počet událostí viditelných na hlavní stránce</translation>
+        <translation>Liczba zdarzeń pokazywana na stronie głównej</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="167"/>
         <source>Log messages into session log file</source>
-        <translation>Logovat zprávy do logu sezení</translation>
+        <translation>Zapisuj logi do pliku logów sesji</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="168"/>
         <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
-        <translation>Pokud je povoleno, zprávy jsou logovány do logu sezení. Log se nachází ve složce &quot;.cache/harbour-osmscout-server&quot;. Používejte toto nastavení pouze pro ladění. S tímto nastavením budou logovány i informativní zprávy nezávisle na nastavení výše. To umožňuje dočasně zapnout plné logování a vypnout jej v okamžiku kdy je potřebný log vygenerován.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1422,17 +1422,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="13"/>
         <source>About</source>
-        <translation>O programu</translation>
+        <translation>O OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="19"/>
         <source>Map Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Manager Map</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="25"/>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation>Ustawienia</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="39"/>
@@ -1444,7 +1444,7 @@
         <location filename="../qml/pages/StartPage.qml" line="83"/>
         <location filename="../qml/pages/StartPage.qml" line="114"/>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Witaj</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="55"/>
@@ -1474,22 +1474,22 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="203"/>
         <source>Jobs in a queue</source>
-        <translation>Úloh ve frontě</translation>
+        <translation>Zadania w kolejce</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="204"/>
         <source>Idle</source>
-        <translation>Nečinný</translation>
+        <translation>Bezczynność</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="221"/>
         <source>Events</source>
-        <translation>Události</translation>
+        <translation>Zdarzenia</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="252"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd</translation>
     </message>
 </context>
 </TS>

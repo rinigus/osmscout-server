@@ -24,42 +24,42 @@
         <translation>Vertalingen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="23"/>
+        <location filename="../qml/pages/AboutPage.qml" line="28"/>
         <source>Maps</source>
         <translation>Kaarten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="25"/>
+        <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts as provided by Geofabrik GmbH.</source>
         <translation>Kaartgegevens afkomstig van OpenStreetMap, Open Database-licentie 1.0. Kaarten worden geconverteerd naar een geschikt formaat voor gedownloade fragmenten zoals aangeboden door Geofabrik GmbH.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="29"/>
+        <location filename="../qml/pages/AboutPage.qml" line="34"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="31"/>
+        <location filename="../qml/pages/AboutPage.qml" line="36"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Let op: &lt;i&gt;libpostal&lt;/i&gt; is ontwikkeld om gebruikt te worden met het verfijnd model dat de wereld omvat. De landspecifieke modellen zijn ontwikkeld voor het gebruik van &lt;i&gt;libpostal&lt;/i&gt; op mobiele apparaten en zijn niet specifiek afgestemd. Meld problemen met prestaties van libpostal mbt landspecifieke modellen op de GitHub-pagina&apos;s van &lt;i&gt;OSM Scout Server&lt;/i&gt; of &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="38"/>
+        <location filename="../qml/pages/AboutPage.qml" line="43"/>
         <source>Acknowledgments</source>
         <translation>Met dank aan</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="60"/>
+        <location filename="../qml/pages/AboutPage.qml" line="65"/>
         <source>About</source>
         <translation>Over</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="64"/>
+        <location filename="../qml/pages/AboutPage.qml" line="69"/>
         <source>version</source>
         <translation>versie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="70"/>
+        <location filename="../qml/pages/AboutPage.qml" line="75"/>
         <source>is a server that provides offline map services</source>
         <translation>is een server die mapdiensten offline aanbiedt</translation>
     </message>
@@ -67,22 +67,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="192"/>
+        <location filename="../src/appsettings.cpp" line="193"/>
         <source>mph</source>
         <translation>mpu</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="192"/>
+        <location filename="../src/appsettings.cpp" line="193"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="194"/>
+        <location filename="../src/appsettings.cpp" line="195"/>
         <source>km/h</source>
         <translation>km/u</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="194"/>
+        <location filename="../src/appsettings.cpp" line="195"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -361,29 +361,29 @@
 <context>
     <name>FileDownloader</name>
     <message>
-        <location filename="../src/filedownloader.cpp" line="269"/>
-        <location filename="../src/filedownloader.cpp" line="283"/>
+        <location filename="../src/filedownloader.cpp" line="344"/>
+        <location filename="../src/filedownloader.cpp" line="361"/>
         <source>Failed to download</source>
         <translation>Downloaden mislukt</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="270"/>
+        <location filename="../src/filedownloader.cpp" line="345"/>
         <source>Error code: %1</source>
         <translation>Foutcode: %1</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="284"/>
+        <location filename="../src/filedownloader.cpp" line="362"/>
         <source>Timeout</source>
         <translation>Time-out</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="310"/>
-        <location filename="../src/filedownloader.cpp" line="330"/>
+        <location filename="../src/filedownloader.cpp" line="396"/>
+        <location filename="../src/filedownloader.cpp" line="416"/>
         <source>Error in processing downloaded data</source>
         <translation>Fout bij verwerken van gedownloade gegevens</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="340"/>
+        <location filename="../src/filedownloader.cpp" line="426"/>
         <source>Error in processing downloaded data: could not start the program</source>
         <translation>Fout bij verwerken van gedownloade gegevens: kon het programma niet starten</translation>
     </message>

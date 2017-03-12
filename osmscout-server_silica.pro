@@ -117,8 +117,12 @@ TRANSLATIONS += \
     translations/harbour-osmscout-server-cs.ts \
     translations/harbour-osmscout-server-de.ts \
     translations/harbour-osmscout-server-es.ts \
-    translations/harbour-osmscout-server-sv.ts \
-    translations/harbour-osmscout-server-nl.ts
+    translations/harbour-osmscout-server-fr.ts \
+    translations/harbour-osmscout-server-nl.ts \
+    translations/harbour-osmscout-server-no.ts \
+    translations/harbour-osmscout-server-pl.ts \
+    translations/harbour-osmscout-server-ru.ts \
+    translations/harbour-osmscout-server-sv.ts
 
 DISTFILES += \
     qml/pages/StartPage.qml \
