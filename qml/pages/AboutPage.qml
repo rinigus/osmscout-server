@@ -19,6 +19,11 @@ Page {
                               "Åke Engelbrektson @eson57: Swedish<br>" +
                               "Ricardo Breitkopf @monkeyisland: German<br>" +
                               "Nathan Follens @pljmn: Dutch<br>" +
+                              "@Sagittarii: French<br>" +
+                              "Oleg Artobolevsky @XOleg: Russian<br>" +
+                              "A @atlochowski: Polish<br>" +
+                              "Peer-Atle Motland @Pam: Norwegian<br>" +
+
 
                               "<br><b>" + qsTr("Maps") + "</b><br>" +
                               "<p>" +

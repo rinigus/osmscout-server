@@ -402,6 +402,11 @@ The translations were contributed by
 - Åke Engelbrektson @eson57: Swedish
 - Ricardo Breitkopf @monkeyisland: German
 - Nathan Follens @pljmn: Dutch
+- @Sagittarii: French
+- Oleg Artobolevsky @XOleg: Russian
+- A @atlochowski: Polish
+- Peer-Atle Motland @Pam: Norwegian
+
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README
 
