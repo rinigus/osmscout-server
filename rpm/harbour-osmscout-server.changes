@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Mar 12 2017 rinigus <rinigus.git@gmail.com> 0.7.2-1
+- New transalations completed: French, Russian
+- New translations started: Polish, Norwegian
+- Fix buffer overflow during fast download and slow writing
+
 * Thu Mar 9 2017 rinigus <rinigus.git@gmail.com> 0.7.1-1
 - Updated transalations
 - Improved hadling of some network errors during download
