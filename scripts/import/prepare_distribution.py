@@ -31,7 +31,7 @@ dist["url"] = url_specs
 # could make it smarter in future to check whether the files have
 # changed since the last upload
 toupload = []
-upload_commands = "#!/bin/bash\nrm digest.md5\n"
+upload_commands = "#!/bin/bash\nset -e\nrm -f digest.md5\n"
 def uploader(dirname, targetname, extra="/"):
     global toupload, upload_commands
     toupload.append([dirname, targetname])
@@ -72,7 +72,6 @@ fjson.close()
 uploader("provided/countries_provided.json", "countries_provided.json", extra = "")
 
 upload_commands += "bzip2 -f digest.md5\n"
-upload_commands += "rm digest.md5\n"
 uploader("digest.md5.bz2", "digest.md5.bz2", extra = "")
 upload_commands += "mv digest.md5 digest.md5.bz2.md5\n"
 uploader("digest.md5.bz2.md5", "digest.md5.bz2.md5", extra = "")
