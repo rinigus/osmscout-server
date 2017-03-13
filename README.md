@@ -57,6 +57,21 @@ manually. However, in this case, the user is expected to incorporate
 the manually imported maps into configuration JSON file describing
 that map and update SQLite database with the map files.
 
+
+### Maps distribution and data
+
+Maps are hosted by Natural Language Processing Centre
+(https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
+University, Brno, Czech Republic) through modRana (http://modrana.org)
+data repository.
+
+Map data from OpenStreetMap, Open Database License 1.0. Maps are
+converted to a suitable format from downloaded extracts and/or using
+polygons as provided by Geofabrik GmbH.
+
+
+### Maps import
+
 Maps provided by OpenStreetMaps have to be converted to the format
 used by libosmscout library. The importing procedure below concerns
 only libosmscout backend. When using libpostal-based geocoder-nlp for
@@ -432,5 +447,10 @@ osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
 
 langcodes: https://github.com/LuminosoInsight/langcodes
+
+Hosting of maps: Natural Language Processing Centre
+(https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
+University, Brno, Czech Republic) through modRana
+(http://modrana.org).
 
 [![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)

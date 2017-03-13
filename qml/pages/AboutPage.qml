@@ -24,11 +24,15 @@ Page {
                               "A @atlochowski: Polish<br>" +
                               "Peer-Atle Motland @Pam: Norwegian<br>" +
 
-
                               "<br><b>" + qsTr("Maps") + "</b><br>" +
                               "<p>" +
+                              qsTr("Maps are hosted by " +
+                                   "Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) " +
+                                   "through modRana.org data repository.") +
+                              "</p><br>" +
+                              "<p>" +
                               qsTr("Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format " +
-                                   "from downloaded extracts as provided by Geofabrik GmbH.") +
+                                   "from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.") +
                               "</p>" +
 
                               "<br><b>" + qsTr("Libpostal") + "</b><br>" +
@@ -41,11 +45,13 @@ Page {
                               "</p>" +
 
                               "<br><b>" + qsTr("Acknowledgments") + "</b><br><br>" +
-                              "libosmscout: http://libosmscout.sourceforge.net/<br>" +
-                              "libpostal: https://github.com/openvenues/libpostal<br>" +
-                              "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>" +
-                              "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br>" +
-                              "langcodes: https://github.com/LuminosoInsight/langcodes<br>"
+                              "libosmscout: http://libosmscout.sourceforge.net/<br><br>" +
+                              "libpostal: https://github.com/openvenues/libpostal<br><br>" +
+                              "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br><br>" +
+                              "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br><br>" +
+                              "langcodes: https://github.com/LuminosoInsight/langcodes<br><br>" +
+                              "Hosting of maps: Natural Language Processing Centre (Faculty of Informatics, " +
+                              "Masaryk University, Brno, Czech Republic) through modRana.org<br>"
 
 
     SilicaFlickable {
