@@ -1,8 +1,11 @@
 #!/usr/bin/env python2.7
 
 # settings are read from the files mirror_url and mirror_path. These
-# files should just contain url and path, respectively, without anything
-# else
+# files should just contain url and path, respectively, without
+# anything else.
+# #### IMPORTANT NOTE ####
+# In mirror_url and mirror_path, please provide URL and path without
+# trailing slashes!
 
 import hashlib, requests, os, sys, time
 

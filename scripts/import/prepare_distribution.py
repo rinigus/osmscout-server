@@ -7,7 +7,7 @@ import json, pickle, os, stat
 
 root_dir = "distribution"
 bucket = open("bucket_name", "r").read().strip()
-url_base = "https://kuqrhldx.e24files.com"
+url_base = "http://data.modrana.org/osm_scout_server"
 
 url_specs = {
     "base": url_base,
