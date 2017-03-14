@@ -41,6 +41,7 @@
 // Geocoder-NLP interface
 #include "geomaster.h"
 
+#include "mapmanager.h"
 #include "infohub.h"
 
 #include <QTranslator>
@@ -100,6 +101,9 @@ int main(int argc, char *argv[])
 
     infoHub.onSettingsChanged();
 
+    // setup Map Manager
+    MapManager::Manager manager;
+
 #ifdef IS_CONSOLE_QT
     ConsoleLogger _logger;
 #endif
@@ -114,6 +118,7 @@ int main(int argc, char *argv[])
 
     rootContext->setContextProperty("programName", "OSM Scout Server");
     rootContext->setContextProperty("programVersion", APP_VERSION);
+    rootContext->setContextProperty("settingsMapManagerPrefix", MAPMANAGER_SETTINGS);
     rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
     rootContext->setContextProperty("settingsSpeedPrefix", ROUTING_SPEED_SETTINGS);
     rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
@@ -121,6 +126,7 @@ int main(int argc, char *argv[])
     rootContext->setContextProperty("settings", &settings);
     rootContext->setContextProperty("infohub", &infoHub);
     rootContext->setContextProperty("logger", &rolling_logger);
+    rootContext->setContextProperty("manager", &manager);
 #endif
 
     // setup OSM Scout
@@ -169,6 +175,16 @@ int main(int argc, char *argv[])
                       geoMaster, &GeoMaster::onSettingsChanged );
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &infoHub, &InfoHub::onSettingsChanged );
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      &manager, &MapManager::Manager::onSettingsChanged );
+
+    QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,
+                      osmScoutMaster, &DBMaster::onDatabaseChanged );
+
+    QObject::connect( &manager, &MapManager::Manager::databaseGeocoderNLPChanged,
+                      geoMaster, &GeoMaster::onGeocoderNLPChanged);
+    QObject::connect( &manager, &MapManager::Manager::databasePostalChanged,
+                      geoMaster, &GeoMaster::onPostalChanged);
 
 #ifdef IS_SAILFISH_OS
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,

@@ -1,9 +1,9 @@
 # OSM Scout Server
 
-Server based on libosmscout. This server is envisioned to be a drop-in
-replacement for online map services providing map tiles, search, and
-routing. As a result, an offline operation is possible if the device
-has a server and map client programs installed and running.
+OSM Scout server can be used as a drop-in replacement for online map
+services providing map tiles, search, and routing. As a result, an
+offline operation is possible if the device has a server and map
+client programs installed and running.
 
 At present, the server can be used to provide:
 * map tiles for other applications;
@@ -11,7 +11,14 @@ At present, the server can be used to provide:
 * search for POIs next to a reference area;
 * calculating routes between given sequence of points.
 
-Starting from version 0.6.0, the server has a support for a geocoder (search engine) that is based on libpostal (https://github.com/openvenues/libpostal). This new geocoder (https://github.com/rinigus/geocoder-nlp) is expected to improve the search results significantly and allow to use natural address queries by user.
+Server is a wrapper around libosmscout exposing its functionality.
+
+Starting from version 0.6.0, the server has a support for a geocoder
+(search engine) that is based on libpostal
+(https://github.com/openvenues/libpostal). This new geocoder
+(https://github.com/rinigus/geocoder-nlp) is expected to improve the
+search results significantly and allow to use natural address queries
+by user.
 
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps and modRana are
@@ -32,11 +39,44 @@ in server environment when compiled as a console application.
 
 ## Maps
 
+Starting from version 0.7, the server uses maps distributed via online
+distribution network. It is expected that the users would download,
+update, and, when needed, remove maps via server's GUI. This
+distribution model allows users to specify which components are
+required (libosmscout, geocoder-nlp, for example) and download only
+the required components.
+
+At present, maps downloads and managing is supported on Sailfish OS
+GUI only. If you want this functionality to be exposed to Linux CLI,
+open an issue to request it. Since I have not received any feedback
+from possible Linux users, it seems to me that the server is used only
+on Sailfish OS and there is no need to provide Linux CLI at this time.
+
+If tinkering is required, it is still possible to import the maps
+manually. However, in this case, the user is expected to incorporate
+the manually imported maps into configuration JSON file describing
+that map and update SQLite database with the map files.
+
+
+### Maps distribution and data
+
+Maps are hosted by Natural Language Processing Centre
+(https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
+University, Brno, Czech Republic) through modRana (http://modrana.org)
+data repository.
+
+Map data from OpenStreetMap, Open Database License 1.0. Maps are
+converted to a suitable format from downloaded extracts and/or using
+polygons as provided by Geofabrik GmbH.
+
+
+### Maps import
+
 Maps provided by OpenStreetMaps have to be converted to the format
-used by libosmscout library. When using libpostal-based geocoder-nlp
-for searches, a separate databases are required 
-(see https://github.com/rinigus/geocoder-nlp/blob/master/README.md). 
-The importing procedure below concerns only libosmscout part.
+used by libosmscout library. The importing procedure below concerns
+only libosmscout backend. When using libpostal-based geocoder-nlp for
+searches, a separate databases are required (see
+https://github.com/rinigus/geocoder-nlp/blob/master/README.md).
 
 The maps are imported from PBF or OSM file formats, as provided by
 OpenStreetMap download servers.  While smaller maps lead to faster
@@ -58,6 +98,7 @@ Server releases, the following import tools are available:
 
 OSM Scout Server | libosmscout Sailfish
 --- | ---
+0.7.x | please use distributed maps
 0.6.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20170126
 0.5.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161207
 0.4.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161128.2
@@ -257,9 +298,6 @@ is used. For example,
 }
 ```
 
-Note that at the time of writing, type keyword is not supported by
-geocoder-nlp yet.
-
 
 ## List of available POI types
 
@@ -377,6 +415,15 @@ The translations were contributed by
 - Carmen F. B. @carmenfdezb: Spanish
 - Lukáš Karas @Karry: Czech
 - Åke Engelbrektson @eson57: Swedish
+- Ricardo Breitkopf @monkeyisland: German
+- Nathan Follens @pljmn: Dutch
+- @Sagittarii: French
+- Oleg Artobolevsky @XOleg: Russian
+- A @atlochowski: Polish
+- Peer-Atle Motland @Pam: Norwegian
+
+
+For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README
 
 
 ## Libpostal
@@ -400,5 +447,10 @@ osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
 
 langcodes: https://github.com/LuminosoInsight/langcodes
+
+Hosting of maps: Natural Language Processing Centre
+(https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
+University, Brno, Czech Republic) through modRana
+(http://modrana.org).
 
 [![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)

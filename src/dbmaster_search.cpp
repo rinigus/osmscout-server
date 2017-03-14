@@ -472,7 +472,7 @@ bool DBMaster::searchExposed(const QString &searchPattern, QByteArray &result, s
 }
 
 
-bool DBMaster::search(const QString &searchPattern, double &lat, double &lon)
+bool DBMaster::search(const QString &searchPattern, double &lat, double &lon, std::string &name)
 {
     SearchResults all_results;
     if ( !search(searchPattern, all_results, 1) )
@@ -489,6 +489,10 @@ bool DBMaster::search(const QString &searchPattern, double &lat, double &lon)
 
     lat = all_results.results().at(0)["lat"].toDouble();
     lon = all_results.results().at(0)["lng"].toDouble();
+    if ( all_results.results().at(0).contains("admin_region") )
+        name = all_results.results().at(0)["admin_region"].toStdString();
+    else
+        name = all_results.results().at(0)["title"].toStdString();
 
     return true;
 }

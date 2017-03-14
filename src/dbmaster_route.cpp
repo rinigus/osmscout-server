@@ -65,7 +65,8 @@ static bool HasRelevantDescriptions(const osmscout::RouteDescription::Node& node
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /// Main routing function
-bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord> &via, double radius, bool gpx, QByteArray &result)
+bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord> &via, double radius,
+                     const std::vector< std::string > &names, bool gpx, QByteArray &result)
 {
     ///////////////////////////////////////////////////////////
     /// Check if everything is OK and lock the mutex
@@ -191,8 +192,20 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     std::list<osmscout::RoutePostprocessor::PostprocessorRef> postprocessors;
 
     postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::DistanceAndTimePostprocessor>());
-    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::StartPostprocessor>(tr("Start").toStdString()));
-    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::TargetPostprocessor>(tr("Target").toStdString()));
+
+    std::string name_start = tr("Start").toStdString();
+    std::string name_target = tr("Target").toStdString();
+
+    if (names.size() > 0)
+    {
+        if (!names[0].empty()) name_start = names[0];
+        if (names.size() == via.size() && !names[via.size()-1].empty())
+            name_target = names[via.size()-1];
+    }
+
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::StartPostprocessor>(name_start));
+    postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::TargetPostprocessor>(name_target));
+
     postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::WayNamePostprocessor>());
     postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::CrossingWaysPostprocessor>());
     postprocessors.push_back(std::make_shared<osmscout::RoutePostprocessor::DirectionPostprocessor>());

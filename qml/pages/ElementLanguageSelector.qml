@@ -37,7 +37,7 @@ Column {
     {
         pageStack.push(Qt.resolvedUrl("LanguageSelector.qml"), {
                            value: value,
-                           title: "Select " + mainLabel,
+                           title: mainLabel,
                            callback: setValue,
                            comment: secondaryLabel
                        })

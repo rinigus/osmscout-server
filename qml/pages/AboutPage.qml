@@ -17,6 +17,23 @@ Page {
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +
                               "Lukáš Karas @Karry: Czech<br>" +
                               "Åke Engelbrektson @eson57: Swedish<br>" +
+                              "Ricardo Breitkopf @monkeyisland: German<br>" +
+                              "Nathan Follens @pljmn: Dutch<br>" +
+                              "@Sagittarii: French<br>" +
+                              "Oleg Artobolevsky @XOleg: Russian<br>" +
+                              "A @atlochowski: Polish<br>" +
+                              "Peer-Atle Motland @Pam: Norwegian<br>" +
+
+                              "<br><b>" + qsTr("Maps") + "</b><br>" +
+                              "<p>" +
+                              qsTr("Maps are hosted by " +
+                                   "Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) " +
+                                   "through modRana.org data repository.") +
+                              "</p><br>" +
+                              "<p>" +
+                              qsTr("Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format " +
+                                   "from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.") +
+                              "</p>" +
 
                               "<br><b>" + qsTr("Libpostal") + "</b><br>" +
                               "<p>" +
@@ -28,11 +45,13 @@ Page {
                               "</p>" +
 
                               "<br><b>" + qsTr("Acknowledgments") + "</b><br><br>" +
-                              "libosmscout: http://libosmscout.sourceforge.net/<br>" +
-                              "libpostal: https://github.com/openvenues/libpostal<br>" +
-                              "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br>" +
-                              "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br>" +
-                              "langcodes: https://github.com/LuminosoInsight/langcodes<br>"
+                              "libosmscout: http://libosmscout.sourceforge.net/<br><br>" +
+                              "libpostal: https://github.com/openvenues/libpostal<br><br>" +
+                              "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br><br>" +
+                              "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br><br>" +
+                              "langcodes: https://github.com/LuminosoInsight/langcodes<br><br>" +
+                              "Hosting of maps: Natural Language Processing Centre (Faculty of Informatics, " +
+                              "Masaryk University, Brno, Czech Republic) through modRana.org<br>"
 
 
     SilicaFlickable {
@@ -55,6 +74,7 @@ Page {
             Label {
                 text: qsTr("version") + ": " + programVersion
                 anchors.horizontalCenter: parent.horizontalCenter
+                color: Theme.highlightColor
             }
 
             Label {
@@ -62,6 +82,7 @@ Page {
                 wrapMode: Text.WordWrap
                 width: column.width
                 textFormat: Text.RichText
+                color: Theme.highlightColor
             }
 
             Label {
@@ -69,6 +90,7 @@ Page {
                 wrapMode: Text.WordWrap
                 width: column.width
                 font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
                 //textFormat: Text.RichText
             }
         }

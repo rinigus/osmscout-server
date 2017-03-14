@@ -38,16 +38,19 @@ public:
     /// \param searchPattern
     /// \param lat this is a return value, latitude of the reference point
     /// \param lon this is a return value, longitude of the reference point
+    /// \param name this is a return value, description of the found reference point
     /// \return true if a reference point was found
     ///
-    bool search(const QString &searchPattern, double &lat, double &lon);
+    bool search(const QString &searchPattern, double &lat, double &lon, std::string &name);
 
 public slots:
     void onSettingsChanged();
+    void onGeocoderNLPChanged(QString dirname);
+    void onPostalChanged(QString global, QString country);
 
 protected:
     bool search(const QString &searchPattern, QJsonObject &result, size_t limit,
-                double &lat, double &lon, size_t &number_of_results);
+                double &lat, double &lon, std::string &name, size_t &number_of_results);
 
 
 protected:

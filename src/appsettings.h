@@ -3,7 +3,6 @@
 
 #include <QSettings>
 #include <QString>
-#include <QStringList>
 
 /// \brief A wrapper around QSettings allowing to expose it to QML
 ///
@@ -18,6 +17,7 @@ public:
     Q_INVOKABLE void setValue(const QString &key, const QVariant &value);
 
     Q_INVOKABLE int valueInt(const QString &key);
+    Q_INVOKABLE bool valueBool(const QString &key);
     Q_INVOKABLE double valueFloat(const QString &key);
     Q_INVOKABLE QString valueString(const QString &key);
 

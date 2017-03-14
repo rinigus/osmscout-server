@@ -34,6 +34,7 @@ Page {
             console.log("Error ###", fileName, error)
         }
     }
+
     SilicaListView {
         id: fileList
 
@@ -41,15 +42,11 @@ Page {
         model: fileModel
 
         header: Column {
-            height: head.height + fullpath.height + Theme.paddingSmall + Theme.paddingLarge
-            spacing: Theme.paddingSmall
-
             PageHeader {
                 id: head
                 title: page.title
                 wrapMode: Text.WordWrap
-                x: Theme.horizontalPageMargin
-                width: page.width-2*x
+                width: page.width
             }
 
             Label {
@@ -62,6 +59,17 @@ Page {
                 font.pixelSize: Theme.fontSizeTiny
                 color: Theme.highlightColor
             }
+
+            Label {
+                id: helpText
+                text: qsTr("To select a folder, press and hold the folder and choose 'Select' in the context menu")
+                x: Theme.horizontalPageMargin
+                width: page.width-2*x
+                visible: page.directory && page.directory_file.length < 1
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+                wrapMode: Text.WordWrap
+            }
         }
 
         delegate: ListItem {
@@ -69,6 +77,7 @@ Page {
 
             width: ListView.view.width
             contentHeight: Theme.itemSizeMedium
+
             Row {
                 anchors.fill: parent
                 spacing: Theme.paddingLarge
@@ -160,7 +169,7 @@ Page {
                         text: model.isDir ? dateString
                                             //: Shows size and modification date, e.g. "15.5MB, 02/03/2016"
                                             //% "%1, %2"
-                                          : qsTr("%1, %2").arg(Format.formatFileSize(model.size)).arg(dateString)
+                                          : "%1, %2".arg(Format.formatFileSize(model.size)).arg(dateString)
                         width: parent.width
                         truncationMode: TruncationMode.Fade
                         font.pixelSize: Theme.fontSizeSmall
@@ -171,7 +180,7 @@ Page {
 
             onClicked: {
                 if (!model.isDir ||
-                        (page.directory && fileModel.hasFile(model.fileName + "/" + page.directory_file) ) )
+                        (page.directory && page.directory_file.length > 0 && fileModel.hasFile(model.fileName + "/" + page.directory_file) ) )
                 {
                     var filePath = fileModel.appendPath(model.fileName)
                     if (typeof callback == "function")
@@ -185,16 +194,37 @@ Page {
                     fileModel.path = fileModel.appendPath(model.fileName)
                 }
             }
+
+            menu: ContextMenu {
+                MenuItem {
+                    text: qsTr("Select")
+                    onClicked: {
+                        var filePath = fileModel.appendPath(model.fileName)
+                        if (typeof callback == "function")
+                        {
+                            callback(filePath);
+                            pageStack.pop()
+                        }
+                    }
+                    enabled: (page.directory && model.isDir && model.fileName!==".." ) || (!page.directory && !model.isDir)
+                }
+            }
         }
+
         ViewPlaceholder {
             enabled: fileModel.count === 0
             text: qsTr("Empty directory")
         }
+
         VerticalScrollDecorator {}
     }
 
     Component.onCompleted: {
-        if (directory && fileModel.hasFile(directory_file))
-            fileModel.path = fileModel.appendPath("..")
+        if (directory)
+        {
+            if ( (directory_file.length<1 && fileModel.hasFile(".") && fileModel.path === homePath) ||
+                    (directory_file.length>=1 && fileModel.hasFile(directory_file)) )
+                fileModel.path = fileModel.appendPath("..")
+        }
     }
 }

@@ -5,6 +5,30 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Mar 12 2017 rinigus <rinigus.git@gmail.com> 0.7.2-1
+- New transalations completed: French, Russian
+- New translations started: Polish, Norwegian
+- Fix buffer overflow during fast download and slow writing
+
+* Thu Mar 9 2017 rinigus <rinigus.git@gmail.com> 0.7.1-1
+- Updated transalations
+- Improved hadling of some network errors during download
+
+* Sun Mar 5 2017 rinigus <rinigus.git@gmail.com> 0.7.0-1
+- Maps are provided through CDN
+- Adding Map Manager to download and remove maps on the device
+- libosmscout backend changes, including rendering speedup by @Karry
+- Settings grouped by backend and available via Settings dialog
+- Small enhancements
+
+* Wed Feb 8 2017 rinigus <rinigus.git@gmail.com> 0.6.2-1
+- German translation
+- Translations handled through transifex
+- Description of start and a target added when available
+
+* Sat Feb 4 2017 rinigus <rinigus.git@gmail.com> 0.6.1-1
+- Updated Spanish and Swedish translations
+
 * Sat Jan 25 2017 rinigus <rinigus.git@gmail.com> 0.6.0-1
 - Adding libpostal-based geocoder
 - Update to the latest libosmscout version

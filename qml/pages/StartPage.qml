@@ -15,13 +15,10 @@ Page {
             }
 
             MenuItem {
-                text: qsTr("Routing speeds")
-                onClicked: pageStack.push(Qt.resolvedUrl("SpeedPage.qml"))
-            }
-
-            MenuItem {
-                text: qsTr("Geocoder")
-                onClicked: pageStack.push(Qt.resolvedUrl("GeocoderPage.qml"))
+                id: mmMenu
+                text: qsTr("Map Manager")
+                enabled: manager.storageAvailable
+                onClicked: pageStack.push(Qt.resolvedUrl("MapManagerPage.qml"))
             }
 
             MenuItem {
@@ -42,61 +39,155 @@ Page {
                 title: qsTr("OSM Scout Server")
             }
 
-            SectionHeader {
-                text: qsTr("Map")
-                font.pixelSize: Theme.fontSizeLarge
+            //////////////////////////////////////////////////////////////////////////////////
+            //// Welcome messages for new users
+
+            Column {
+                id: storageNotAvailable
+                width: page.width
+                spacing: Theme.paddingLarge
+
+                SectionHeader {
+                    text: qsTr("Welcome")
+                }
+
+                Label {
+                    text: qsTr("<i>OSM Scout Server</i> is expected to be used with the " +
+                               "downloaded maps. To manage the maps, the Server requires a separate " +
+                               "folder. The files within that folder should be managed by the Server only. " +
+                               "This includes deleting all files within that folder when requested by you during cleanup or " +
+                               "map updates.<br><br>" +
+                               "Please <b>allocate separate, empty folder</b> for OSM Scout Server. " +
+                               "For that, create a new folder in a file manager or using command line and then select this folder " +
+                               "in <i>Settings</i> (pulley menu).")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+
+                Component.onCompleted: storageNotAvailable.visible = !(manager.storageAvailable)
+                Connections {
+                    target: manager
+                    onStorageAvailableChanged: storageNotAvailable.visible = !(manager.storageAvailable)
+                }
             }
 
-            ListItem {
-                id: listItem
-                //contentHeight: Theme.itemSizeSmall
+            Column {
+                id: noSubscriptions
+                width: page.width
+                spacing: Theme.paddingLarge
 
-                Column {
-                    width: parent.width
-                    height: database.height + database_full.height + Theme.paddingSmall
-                    spacing: Theme.paddingSmall
+                SectionHeader {
+                    text: qsTr("Welcome")
+                }
 
-                    Label {
-                        id: database
-                        x: Theme.horizontalPageMargin
-                        width: parent.width-2*Theme.horizontalPageMargin
-                        wrapMode: Text.WordWrap
-                        color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                        text: ""
+                Label {
+                    text: qsTr("With the storage folder selected and available, the next step is to get some maps. " +
+                               "For that, you can select and download maps using <i>Map Manager</i>  (pulley menu).")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
 
-                        function setText() {
-                            text = settings.valueString(settingsOsmPrefix + "map").split("/").pop()
+                function checkVisible() {
+                    noSubscriptions.visible = (manager.storageAvailable &&
+                                               JSON.parse(manager.getRequestedCountries()).children.length == 0)
+                }
+
+                Component.onCompleted: noSubscriptions.checkVisible()
+                Connections {
+                    target: manager
+                    onSubscriptionChanged: noSubscriptions.checkVisible()
+                }
+            }
+
+            Column {
+                id: noMapsAvailable
+                width: page.width
+                spacing: Theme.paddingLarge
+
+                SectionHeader {
+                    text: qsTr("Welcome")
+                }
+
+                Label {
+                    text: qsTr("There are no maps available yet. After subscribing them, you have to start downloads. " +
+                               "Downloads can be started using <i>Map Manager</i>  (pulley menu).")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+
+                function checkVisible() {
+                    var subs = JSON.parse(manager.getRequestedCountries())
+                    var avail = JSON.parse(manager.getAvailableCountries())
+                    if (subs.children.length != 0 &&
+                            avail.countries.length == 0 &&
+                            !manager.downloading)
+                        noMapsAvailable.visible = true
+                    else
+                        noMapsAvailable.visible = false
+                }
+
+                Component.onCompleted: noMapsAvailable.checkVisible()
+                Connections {
+                    target: manager
+                    onSubscriptionChanged: noMapsAvailable.checkVisible()
+                    onDownloadingChanged: noMapsAvailable.checkVisible()
+                    onAvailibilityChanged: noMapsAvailable.checkVisible()
+                }
+            }
+
+            //// Welcome messages: done
+            //////////////////////////////////////////////////////////////////////////////////
+
+            ComboBox {
+                id: mapSelection
+                label: qsTr("Map")
+
+                property int ncountries: 0
+                property var countries: []
+
+                function updateData()
+                {
+                    var ret = JSON.parse(manager.getAvailableCountries())
+                    mapSelection.countries = ret.countries
+                    mapSelection.ncountries = mapSelection.countries.length
+                    mapSelection.currentIndex = ret.current
+
+                    if (mapSelection.ncountries < 1)
+                        mapSelection.visible = false
+                    else
+                        mapSelection.visible = true
+                }
+
+                menu: ContextMenu {
+                    Repeater {
+                        model: mapSelection.ncountries
+                        delegate: MenuItem {
+                            text: index < mapSelection.ncountries ? mapSelection.countries[index].name : ""
+                            onClicked: settings.setValue(settingsMapManagerPrefix + "map_selected", mapSelection.countries[index].id)
                         }
-
-                        Component.onCompleted: { setText() }
-                        Connections { target: settings; onOsmScoutSettingsChanged: database.setText() }
-                    }
-
-                    Label {
-                        id: database_full
-                        x: Theme.horizontalPageMargin
-                        width: parent.width-2*Theme.horizontalPageMargin
-                        wrapMode: Text.WordWrap
-                        color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                        text: ""
-                        font.pixelSize: Theme.fontSizeTiny
-                        truncationMode: TruncationMode.Fade
-
-                        function setText() {
-                            text = settings.valueString(settingsOsmPrefix + "map")
-                        }
-
-                        Component.onCompleted: { setText() }
-                        Connections { target: settings; onOsmScoutSettingsChanged: database_full.setText() }
                     }
                 }
 
-                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+                Component.onCompleted: updateData()
+
+                Connections {
+                    target: manager
+                    onAvailibilityChanged: mapSelection.updateData()
+                }
             }
+
 
             SectionHeader {
                 text: qsTr("Status")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Label {
@@ -123,9 +214,11 @@ Page {
                 Component.onCompleted: queueLength.setText(infohub.queue)
             }
 
+            ElementDownloads {
+            }
+
             SectionHeader {
                 text: qsTr("Events")
-                font.pixelSize: Theme.fontSizeMedium
             }
 
             Label {
@@ -149,4 +242,15 @@ Page {
 
         VerticalScrollDecorator {}
     }
+
+    Connections {
+        target: manager
+
+        onErrorMessage: {
+            pageStack.completeAnimation()
+            pageStack.push( Qt.resolvedUrl("MessagePage.qml"),
+                           {"header": qsTr("Error"), "message": info} )
+        }
+    }
+
 }
