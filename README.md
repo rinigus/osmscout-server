@@ -11,6 +11,8 @@ At present, the server can be used to provide:
 * search for POIs next to a reference area;
 * calculating routes between given sequence of points.
 
+Starting from version 0.6.0, the server has a support for a geocoder (search engine) that is based on libpostal (https://github.com/openvenues/libpostal). This new geocoder (https://github.com/rinigus/geocoder-nlp) is expected to improve the search results significantly and allow to use natural address queries by user.
+
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps and modRana are
 provided under "thirdparty" folder. At present, Poor Maps includes
@@ -32,8 +34,9 @@ in server environment when compiled as a console application.
 
 Maps provided by OpenStreetMaps have to be converted to the format
 used by libosmscout library. When using libpostal-based geocoder-nlp
-for searches, a separate databases are required. The importing
-procedure below concerns only libosmscout part.
+for searches, a separate databases are required 
+(see https://github.com/rinigus/geocoder-nlp/blob/master/README.md). 
+The importing procedure below concerns only libosmscout part.
 
 The maps are imported from PBF or OSM file formats, as provided by
 OpenStreetMap download servers.  While smaller maps lead to faster
