@@ -7109,7 +7109,7 @@
         "type": "territory"
     },
     "url": {
-        "base": "https://kuqrhldx.e24files.com",
+        "base": "http://data.modrana.org/osm_scout_server",
         "geocoder_nlp": "geocoder-nlp-1",
         "osmscout": "osmscout-1",
         "postal_country": "postal-country-1",
