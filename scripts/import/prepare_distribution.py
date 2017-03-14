@@ -73,6 +73,8 @@ uploader("provided/countries_provided.json", "countries_provided.json", extra = 
 
 upload_commands += "bzip2 -f digest.md5\n"
 uploader("digest.md5.bz2", "digest.md5.bz2", extra = "")
+upload_commands += "echo\necho 'Set S3 permissions'\n"
+upload_commands += "s3cmd --config=.s3cfg setacl s3://" + bucket + "/ --acl-public --recursive\n"
 upload_commands += "mv digest.md5 digest.md5.bz2.md5\n"
 uploader("digest.md5.bz2.md5", "digest.md5.bz2.md5", extra = "")
 
