@@ -10,7 +10,7 @@ rm -rf splitted
 nice -n 19 make -f Makefile.splitter
 
 ./prepare_countries.py
-nice -n 19 make -f Makefile.import
+nice -n 19 make -f Makefile.import -j8
 
 ./prepare_distribution.py
 ./uploader.sh
