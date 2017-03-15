@@ -160,7 +160,7 @@ namespace MapManager {
     void onSettingsChanged();
 
   protected:
-    enum DownloadType { NoDownload=0, Countries=1, ProvidedList=2 };
+    enum DownloadType { NoDownload=0, Countries=1, ServerUrl=2, ProvidedList=3 };
 
   protected:
     void loadSettings();
@@ -236,6 +236,7 @@ namespace MapManager {
     QSqlQuery m_query_files_insert;
 
     /// const values used to access data
+    const QString const_fname_server_url{"url.json"};
     const QString const_fname_countries_provided{"countries_provided.json"};
     const QString const_fname_countries_requested{"countries_requested.json"};
     const QString const_fname_db_files{"files.sqlite"};

@@ -49,7 +49,7 @@ void AppSettings::initDefaults()
 
   // force URL setting
   QSettings::setValue(MAPMANAGER_SETTINGS "provided_url",
-                      "https://raw.githubusercontent.com/rinigus/osmscout-server/master/scripts/import/provided/countries_provided.json");
+                      "https://raw.githubusercontent.com/rinigus/osmscout-server/master/scripts/import/provided/url.json");
 
   /// used internally by MapManager to set the path - will be modified when support
   /// for multi-map handling is be ready

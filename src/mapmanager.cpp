@@ -95,7 +95,7 @@ void Manager::loadSettings()
           InfoHub::logWarning(tr("Failed to open the database for tracking downloaded files"));
           emit errorMessage("Failed to open the database for tracking downloaded files<br><br>Map Manager functionality would be disturbed");
         }
-     else // all is fine, prepare queries and tables
+      else // all is fine, prepare queries and tables
         {
           m_db_files.exec("CREATE TABLE IF NOT EXISTS files (name TEXT PRIMARY KEY, version TEXT, datetime TEXT)");
           m_query_files_available = QSqlQuery(m_db_files);
@@ -839,6 +839,26 @@ void Manager::onDownloadFinished(QString path)
       m_download_type = NoDownload;
       getCountries();
     }
+  else if (dtype == ServerUrl)
+    {
+      m_download_type = NoDownload;
+
+      QJsonObject url = loadJson(fullPath(const_fname_server_url));
+      QString listurl = url.value("url").toString();
+      if (listurl.isEmpty())
+        {
+          onDownloadError(tr("Could not retrieve server URL"));
+          InfoHub::logWarning(tr("Could not retrieve server URL"));
+          return;
+        }
+
+      if ( startDownload(ProvidedList, listurl,
+                         fullPath(const_fname_countries_provided),
+                         FileDownloader::Plain) )
+        {
+          emit downloadProgress(tr("Downloading the list of countries"));
+        }
+    }
   else if (dtype == ProvidedList)
     {
       m_download_type = NoDownload;
@@ -884,7 +904,10 @@ void Manager::onDownloadProgress()
     txt = QString(tr("List of countries: %L1 (D) / %L2 (W) MB")).
         arg(m_last_reported_downloaded/1024/1024).
         arg(m_last_reported_written/1024/1024);
-
+  else if ( dtype == ServerUrl )
+      txt = QString(tr("List of countries: %L1 (D) / %L2 (W)")).
+          arg(m_last_reported_downloaded/1024/1024).
+          arg(m_last_reported_written/1024/1024);
   else if (dtype == Countries )
     {
       if (m_missing_data.length() > 0)
@@ -934,6 +957,7 @@ QStringList Manager::getNonNeededFilesList()
 
   // fill up needed files
   QSet<QString> wanted;
+  wanted.insert(fullPath(const_fname_server_url));
   wanted.insert(fullPath(const_fname_countries_requested));
   wanted.insert(fullPath(const_fname_countries_provided));
   wanted.insert(fullPath(const_fname_db_files));
@@ -1012,11 +1036,11 @@ bool Manager::updateProvided()
 {
   if (downloading()) return false;
 
-  if ( startDownload(ProvidedList, m_provided_url,
-                     fullPath(const_fname_countries_provided),
+  if ( startDownload(ServerUrl, m_provided_url,
+                     fullPath(const_fname_server_url),
                      FileDownloader::Plain) )
     {
-      emit downloadProgress(tr("Downloading the list of countries"));
+      emit downloadProgress(tr("Updating the distribution server URL"));
       return true;
     }
 
