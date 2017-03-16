@@ -39,7 +39,7 @@ def uploader(dirname, targetname, extra="/"):
     sd = dirname.replace("/", "\/")
     st = targetname.replace("/", "\/")
     upload_commands += "md5deep -t -l -r " + dirname + " | sed 's/%s/%s/g' >> digest.md5\n" % (sd,st)
-    upload_commands += "s3cmd --config=.s3cfg sync " + dirname + extra + " s3://" + bucket + "/" + targetname + extra + " --acl-public " + "\n"
+    upload_commands += "s3cmd --config=.s3cfg sync " + dirname + extra + " s3://" + bucket + "/" + targetname + extra + " --acl-public --signature-v2 " + "\n"
 
 def getprop(dirname):
     props = {}
