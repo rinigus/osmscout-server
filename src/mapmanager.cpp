@@ -92,8 +92,12 @@ void Manager::loadSettings()
       m_db_files.setDatabaseName(fullPath(const_fname_db_files));
       if (!m_db_files.open())
         {
-          InfoHub::logWarning(tr("Failed to open the database for tracking downloaded files"));
-          emit errorMessage("Failed to open the database for tracking downloaded files<br><br>Map Manager functionality would be disturbed");
+          QSqlError error = m_db_files.lastError();
+          InfoHub::logWarning(tr("Failed to open the database for tracking downloaded files") + ": " +
+                              error.text());
+          emit errorMessage(tr("Failed to open the database for tracking downloaded files") + "<br><br>" +
+                            tr("Map Manager functionality would be disturbed") + "<br><br>" +
+                            error.text());
         }
       else // all is fine, prepare queries and tables
         {
