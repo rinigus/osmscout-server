@@ -164,6 +164,7 @@ namespace MapManager {
 
   protected:
     void loadSettings();
+    bool isStorageAvailable() const;
 
     void scanDirectories(bool force_update = false);
     void nothingAvailable(); ///< Helper method called when there are no maps available
@@ -204,7 +205,7 @@ namespace MapManager {
 
     // settings
     QDir m_root_dir;
-    bool m_dir_existed{false};
+    bool m_storage_available{false};
     QList< Feature* > m_features;
     QString m_provided_url;
 

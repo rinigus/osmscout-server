@@ -62,9 +62,34 @@ void Manager::loadSettings()
 {
   AppSettings settings;
 
+  bool storage_was_available = m_storage_available;
   QString old_selection = m_map_selected;
 
-  m_root_dir.setPath(settings.valueString(MAPMANAGER_SETTINGS "root"));
+  QString root_dir_path = settings.valueString(MAPMANAGER_SETTINGS "root");
+  m_root_dir.setPath(root_dir_path);
+
+  // check for errors
+  bool root_ok = false;
+  {
+    QFileInfo rinfo(m_root_dir.absolutePath());
+    if (!rinfo.exists())
+      InfoHub::logWarning(tr("Maps storage folder does not exist: %1").arg(rinfo.absoluteFilePath()));
+    else if (!rinfo.isDir())
+      {
+        QString err = tr("Maps storage folder path does not point to a directory: %1").arg(rinfo.absoluteFilePath());
+        InfoHub::logWarning(err);
+        emit errorMessage(err);
+      }
+    else if (!rinfo.isWritable())
+      {
+        QString err = tr("Maps storage folder is not writable, please adjust permissions for %1").arg(rinfo.absoluteFilePath());
+        InfoHub::logWarning(err);
+        emit errorMessage(err);
+      }
+    else
+      root_ok = true;
+  }
+
   m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
   m_provided_url = settings.valueString(MAPMANAGER_SETTINGS "provided_url");
 
@@ -75,18 +100,18 @@ void Manager::loadSettings()
   else
     rmCountry(const_feature_id_postal_global);
 
-  if (m_dir_existed != m_root_dir.exists())
-    emit storageAvailableChanged(m_root_dir.exists());
-
-  if ( m_root_dir.exists() &&
-       (!m_db_files.isOpen() || m_db_files.databaseName() != fullPath(const_fname_db_files) ) )
+  if ( m_db_files.isOpen() && m_db_files.databaseName() != fullPath(const_fname_db_files) )
     {
       m_query_files_available.clear();
       m_query_files_insert.clear();
 
       m_db_files.close();
       QSqlDatabase::removeDatabase(const_db_connection);
+    }
 
+  if ( root_ok &&
+       (!m_db_files.isOpen()) )
+    {
       // open new connection and prepare database
       m_db_files = QSqlDatabase::addDatabase("QSQLITE", const_db_connection);
       m_db_files.setDatabaseName(fullPath(const_fname_db_files));
@@ -111,11 +136,19 @@ void Manager::loadSettings()
         }
     }
 
+  m_storage_available = isStorageAvailable();
+  if (storage_was_available != m_storage_available)
+    emit storageAvailableChanged(m_storage_available);
+
   scanDirectories(old_selection != m_map_selected);
   missingData();
   checkUpdates();
+}
 
-  m_dir_existed = m_root_dir.exists();
+bool Manager::isStorageAvailable() const
+{
+  QFileInfo rinfo(m_root_dir.absolutePath());
+  return (rinfo.exists() && rinfo.isDir() && rinfo.isWritable() && m_db_files.isOpen());
 }
 
 void Manager::nothingAvailable()
@@ -161,12 +194,13 @@ QString Manager::getPretty(const QJsonObject &obj) const
 
 bool Manager::storageAvailable()
 {
-  return m_root_dir.exists();
+  return m_storage_available;
 }
 
 void Manager::checkStorageAvailable()
 {
-  emit storageAvailableChanged(m_root_dir.exists());
+  m_storage_available = isStorageAvailable();
+  emit storageAvailableChanged(m_storage_available);
 }
 
 void Manager::scanDirectories(bool force_update)
@@ -909,9 +943,9 @@ void Manager::onDownloadProgress()
         arg(m_last_reported_downloaded/1024/1024).
         arg(m_last_reported_written/1024/1024);
   else if ( dtype == ServerUrl )
-      txt = QString(tr("List of countries: %L1 (D) / %L2 (W)")).
-          arg(m_last_reported_downloaded/1024/1024).
-          arg(m_last_reported_written/1024/1024);
+    txt = QString(tr("List of countries: %L1 (D) / %L2 (W)")).
+        arg(m_last_reported_downloaded/1024/1024).
+        arg(m_last_reported_written/1024/1024);
   else if (dtype == Countries )
     {
       if (m_missing_data.length() > 0)
