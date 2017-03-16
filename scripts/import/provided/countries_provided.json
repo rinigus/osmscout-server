@@ -320,7 +320,7 @@
             "version": "1"
         },
         "id": "africa/congo-brazzaville",
-        "name": "Africa/Congo (Republic/Brazzaville)",
+        "name": "Africa/Congo (Republic, Brazzaville)",
         "osmscout": {
             "path": "osmscout/africa-congo-brazzaville",
             "size": "15043872",
@@ -346,7 +346,7 @@
             "version": "1"
         },
         "id": "africa/congo-democratic-republic",
-        "name": "Africa/Congo (Democratic Republic/Kinshasa)",
+        "name": "Africa/Congo (Democratic Republic, Kinshasa)",
         "osmscout": {
             "path": "osmscout/africa-congo-democratic-republic",
             "size": "95688902",
@@ -9249,7 +9249,7 @@
             "version": "1"
         },
         "id": "south-america/suriname",
-        "name": "South America/suriname",
+        "name": "South America/Suriname",
         "osmscout": {
             "path": "osmscout/south-america-suriname",
             "size": "5929553",
