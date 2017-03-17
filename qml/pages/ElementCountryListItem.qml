@@ -8,6 +8,7 @@ ListItem {
 
     property var country
     property string iconSource: ""
+    property bool active: true
 
     function updateData() {
         var c = country
@@ -57,7 +58,7 @@ ListItem {
             Image {
                 anchors.centerIn: parent
                 source: {
-                    return iconSource + (highlighted ? "?" + Theme.highlightColor : "")
+                    return iconSource + (highlighted || !active ? "?" + Theme.highlightColor : "")
                 }
             }
         }
@@ -72,7 +73,7 @@ ListItem {
                 width: parent.width
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeMedium
-                color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
+                color: listItem.highlighted || !listItem.active ? Theme.highlightColor : Theme.primaryColor
             }
 
             Label {
@@ -81,7 +82,7 @@ ListItem {
                 horizontalAlignment: Text.AlignRight
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
-                color: listItem.highlighted ? Theme.highlightColor : Theme.secondaryColor
+                color: listItem.highlighted || !listItem.active ? Theme.highlightColor : Theme.secondaryColor
             }
         }
     }
@@ -96,22 +97,24 @@ ListItem {
     }
 
     onClicked: {
-        var c = country
-        if (c.type === "dir")
-        {
-            var newpath = ""
-            if (!page.root)
+        if (active) {
+            var c = country
+            if (c.type === "dir")
             {
-                if (page.path.length > 0)
-                    newpath = page.path + " / " + c.name
-                else
-                    newpath = page.title + " / " + c.name
+                var newpath = ""
+                if (!page.root)
+                {
+                    if (page.path.length > 0)
+                        newpath = page.path + " / " + c.name
+                    else
+                        newpath = page.title + " / " + c.name
+                }
+                pageStack.push(Qt.resolvedUrl("DownloadCountriesPage.qml"),
+                               { "countries": c, "path": newpath, "title": c.name } )
             }
-            pageStack.push(Qt.resolvedUrl("DownloadCountriesPage.qml"),
-                           { "countries": c, "path": newpath, "title": c.name } )
+            else
+                pageStack.push(Qt.resolvedUrl("CountryDetailsPage.qml"),
+                               { "countryId": c.id } )
         }
-        else
-            pageStack.push(Qt.resolvedUrl("CountryDetailsPage.qml"),
-                           { "countryId": c.id } )
     }
 }

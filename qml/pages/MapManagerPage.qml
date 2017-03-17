@@ -189,19 +189,18 @@ Page {
                 }
 
                 Button {
-                    text: qsTr("Update list")
+                    text: qsTr("Check for updates")
                     enabled: page.activeState
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter
                     onClicked: {
-                        if (!manager.updateProvided())
-                            console.log("Could not start the download. Perhaps you are downloading something already. " +
-                                        "Please wait till the current download is finished")
+                        manager.updateProvided()
                     }
                 }
 
                 Label {
-                    text: qsTr("List of currently available maps and datasets")
+                    text: qsTr("Update the list of currently available maps and datasets and check " +
+                               "if the installed maps can be updated")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -254,5 +253,10 @@ Page {
     Connections {
         target: manager
         onDownloadingChanged: page.activeState = !manager.downloading
+        onUpdatesForDataFound: {
+            var clist = JSON.parse( info )
+            pageStack.push(Qt.resolvedUrl("UpdatesFound.qml"),
+                           {"foundUpdates": clist})
+        }
     }
 }

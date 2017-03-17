@@ -150,7 +150,7 @@ namespace MapManager {
     void subscriptionChanged();
     void availibilityChanged();
 
-    void updatesFound(QString info);
+    void updatesForDataFound(QString info);
 
     void errorMessage(QString info);
 
@@ -229,7 +229,7 @@ namespace MapManager {
     QStringList m_not_needed_files;
     qint64 m_not_needed_files_size{-1};
 
-    QJsonObject m_last_found_updates;
+    QJsonArray m_last_found_updates;
 
     // tracking downloaded files and their versions
     QSqlDatabase m_db_files;

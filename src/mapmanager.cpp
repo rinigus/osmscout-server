@@ -1087,7 +1087,7 @@ bool Manager::updateProvided()
 
 void Manager::checkUpdates()
 {
-  m_last_found_updates = QJsonObject();
+  m_last_found_updates = QJsonArray();
 
   if ( m_root_dir.exists() &&
        m_root_dir.exists(const_fname_countries_requested) &&
@@ -1107,19 +1107,24 @@ void Manager::checkUpdates()
           const QJsonObject possible = possible_list.value(request_iter.key()).toObject();
           if (possible.empty()) continue;
 
+          uint64_t s = 0;
           for (const Feature *f: m_features)
             if ( f->hasFeatureDefined(possible) &&
                  (!f->hasFeatureDefined(request) ||
                   f->getDateTime(request) < f->getDateTime(possible)) )
-              update.insert(f->name(), possible.value(f->name()).toObject());
+              {
+                update.insert(f->name(), possible.value(f->name()).toObject());
+                s += f->getSize(request);
+              }
 
           if (!update.empty())
             {
               update.insert("id", request_iter.key());
-              update.insert("pretty", getPretty(possible) );
+              update.insert("name", getPretty(possible) );
               update.insert("type", possible.value("type").toString());
+              update.insert("size", QString("%L1").arg( (int)round(s/1024./1024.) ) );
 
-              m_last_found_updates.insert(request_iter.key(), update);
+              m_last_found_updates.append(update);
             }
         }
     }
@@ -1133,8 +1138,11 @@ void Manager::checkUpdates()
         InfoHub::logWarning(tr("Cannot check for updates due to missing list of provided countries. Download the list before checking for updates."));
     }
 
-  QJsonDocument doc(m_last_found_updates);
-  emit updatesFound(doc.toJson());
+  if (!m_last_found_updates.empty())
+    {
+      QJsonDocument doc(m_last_found_updates);
+      emit updatesForDataFound(doc.toJson());
+    }
 }
 
 QString Manager::updatesFound()
@@ -1146,24 +1154,17 @@ void Manager::getUpdates()
 {
   if (downloading()) return;
 
+  QJsonObject possible_list = loadJson(fullPath(const_fname_countries_provided));
   QJsonObject requested = m_maps_requested;
 
-  for (QJsonObject::const_iterator iter = m_last_found_updates.constBegin();
+  for (QJsonArray::const_iterator iter = m_last_found_updates.constBegin();
        iter != m_last_found_updates.constEnd(); ++iter)
     {
-      if (!requested.contains(iter.key())) continue;
+      const QJsonObject update = (*iter).toObject();
+      QString key = update.value("id").toString();
+      if (!requested.contains(key) || !possible_list.contains(key)) continue;
 
-      const QJsonObject update = iter.value().toObject();
-      QJsonObject requpdated = requested.value(iter.key()).toObject();
-
-      for (Feature *f: m_features)
-        if ( f->hasFeatureDefined(update) )
-          {
-            f->deleteFiles(update);
-            requpdated.insert( f->name(), update.value(f->name()).toObject() );
-          }
-
-      requested.insert(iter.key(), requpdated);
+      requested.insert(key, possible_list.value(key).toObject());
     }
 
   { // write updated requested json to a file
