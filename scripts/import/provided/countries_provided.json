@@ -8824,21 +8824,463 @@
         },
         "type": "territory"
     },
-    "russia/crimean-fed-district": {
+    "russia/central-fed-district/belgorod": {
         "geocoder_nlp": {
-            "path": "geocoder-nlp/russia-crimean-fed-district",
-            "size": "12120067",
-            "size-compressed": "4350137",
-            "timestamp": "2017-03-15_17:00",
+            "path": "geocoder-nlp/russia-central-fed-district-belgorod",
+            "size": "10276867",
+            "size-compressed": "4060832",
+            "timestamp": "2017-03-18_17:13",
             "version": "1"
         },
-        "id": "russia/crimean-fed-district",
-        "name": "Europe/Russian Federation/Crimean Federal District",
+        "id": "russia/central-fed-district/belgorod",
+        "name": "Europe/Russian Federation/Central Federal District/Belgorod Oblast",
         "osmscout": {
-            "path": "osmscout/russia-crimean-fed-district",
-            "size": "30642396",
-            "size-compressed": "18440247",
-            "timestamp": "2017-03-15_17:00",
+            "path": "osmscout/russia-central-fed-district-belgorod",
+            "size": "27883341",
+            "size-compressed": "17442517",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/bryansk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-bryansk",
+            "size": "7077891",
+            "size-compressed": "2741630",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/bryansk",
+        "name": "Europe/Russian Federation/Central Federal District/Bryansk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-bryansk",
+            "size": "18267509",
+            "size-compressed": "11552120",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/ivanovo": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-ivanovo",
+            "size": "7979011",
+            "size-compressed": "2994160",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/ivanovo",
+        "name": "Europe/Russian Federation/Central Federal District/Ivanovo Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-ivanovo",
+            "size": "20930480",
+            "size-compressed": "13576480",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/kaluga": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-kaluga",
+            "size": "9228291",
+            "size-compressed": "3442343",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/kaluga",
+        "name": "Europe/Russian Federation/Central Federal District/Kaluga Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-kaluga",
+            "size": "31584327",
+            "size-compressed": "20358738",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/kostroma": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-kostroma",
+            "size": "3825667",
+            "size-compressed": "1447701",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/kostroma",
+        "name": "Europe/Russian Federation/Central Federal District/Kostroma Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-kostroma",
+            "size": "14670459",
+            "size-compressed": "9508113",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/kursk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-kursk",
+            "size": "13787139",
+            "size-compressed": "5388508",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/kursk",
+        "name": "Europe/Russian Federation/Central Federal District/Kursk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-kursk",
+            "size": "41036612",
+            "size-compressed": "25655888",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/lipetsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-lipetsk",
+            "size": "7106563",
+            "size-compressed": "2798131",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/lipetsk",
+        "name": "Europe/Russian Federation/Central Federal District/Lipetsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-lipetsk",
+            "size": "30459185",
+            "size-compressed": "19369636",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/moscow": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-moscow",
+            "size": "103636995",
+            "size-compressed": "36167651",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/moscow",
+        "name": "Europe/Russian Federation/Central Federal District/Moscow Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-moscow",
+            "size": "160514521",
+            "size-compressed": "96195206",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/moscow-city": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-moscow-city",
+            "size": "71786499",
+            "size-compressed": "24712623",
+            "timestamp": "2017-03-18_17:15",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/moscow-city",
+        "name": "Europe/Russian Federation/Central Federal District/Moscow",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-moscow-city",
+            "size": "65717775",
+            "size-compressed": "36275300",
+            "timestamp": "2017-03-18_17:15",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/oryol": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-oryol",
+            "size": "3497987",
+            "size-compressed": "1309442",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/oryol",
+        "name": "Europe/Russian Federation/Central Federal District/Oryol Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-oryol",
+            "size": "14957549",
+            "size-compressed": "9148400",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/ryazan": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-ryazan",
+            "size": "8372227",
+            "size-compressed": "3272092",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/ryazan",
+        "name": "Europe/Russian Federation/Central Federal District/Ryazan Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-ryazan",
+            "size": "26411619",
+            "size-compressed": "16703973",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/smolensk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-smolensk",
+            "size": "15069187",
+            "size-compressed": "5442633",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/smolensk",
+        "name": "Europe/Russian Federation/Central Federal District/Smolensk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-smolensk",
+            "size": "23581186",
+            "size-compressed": "14805480",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/tambov": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-tambov",
+            "size": "4636675",
+            "size-compressed": "1781307",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/tambov",
+        "name": "Europe/Russian Federation/Central Federal District/Tambov Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-tambov",
+            "size": "16421189",
+            "size-compressed": "10195558",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/tula": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-tula",
+            "size": "8327171",
+            "size-compressed": "3145052",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/tula",
+        "name": "Europe/Russian Federation/Central Federal District/Tula Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-tula",
+            "size": "27361717",
+            "size-compressed": "17333924",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/tver": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-tver",
+            "size": "14721027",
+            "size-compressed": "5469850",
+            "timestamp": "2017-03-18_17:14",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/tver",
+        "name": "Europe/Russian Federation/Central Federal District/Tver Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-tver",
+            "size": "39018872",
+            "size-compressed": "25659258",
+            "timestamp": "2017-03-18_17:14",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/vladimir": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-vladimir",
+            "size": "13041667",
+            "size-compressed": "4805785",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/vladimir",
+        "name": "Europe/Russian Federation/Central Federal District/Vladimir Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-vladimir",
+            "size": "48100684",
+            "size-compressed": "31028822",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/voronezh": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-voronezh",
+            "size": "19361795",
+            "size-compressed": "7111680",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/voronezh",
+        "name": "Europe/Russian Federation/Central Federal District/Voronezh Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-voronezh",
+            "size": "39744084",
+            "size-compressed": "25552318",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/central-fed-district/yaroslavl": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-central-fed-district-yaroslavl",
+            "size": "10924035",
+            "size-compressed": "4259420",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/central-fed-district/yaroslavl",
+        "name": "Europe/Russian Federation/Central Federal District/Yaroslavl Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-central-fed-district-yaroslavl",
+            "size": "33995633",
+            "size-compressed": "21962489",
+            "timestamp": "2017-03-18_17:13",
             "version": "11"
         },
         "postal_country": {
@@ -8876,6 +9318,240 @@
         },
         "type": "territory"
     },
+    "russia/far-eastern-fed-district/amur": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-amur",
+            "size": "2232323",
+            "size-compressed": "835307",
+            "timestamp": "2017-03-18_17:20",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/amur",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Amur Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-amur",
+            "size": "14663050",
+            "size-compressed": "6307076",
+            "timestamp": "2017-03-18_17:20",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district/chukotka": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-chukotka",
+            "size": "274435",
+            "size-compressed": "96545",
+            "timestamp": "2017-03-18_17:20",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/chukotka",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Chukotka Autonomous Okrug",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-chukotka",
+            "size": "115542543",
+            "size-compressed": "6035562",
+            "timestamp": "2017-03-18_17:20",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district/jewish": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-jewish",
+            "size": "3051523",
+            "size-compressed": "1236042",
+            "timestamp": "2017-03-18_17:19",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/jewish",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Jewish Autonomous Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-jewish",
+            "size": "8027954",
+            "size-compressed": "4723494",
+            "timestamp": "2017-03-18_17:19",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district/kamchatka": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-kamchatka",
+            "size": "1806339",
+            "size-compressed": "672547",
+            "timestamp": "2017-03-18_17:21",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/kamchatka",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Kamchatka Krai",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-kamchatka",
+            "size": "21752998",
+            "size-compressed": "8614980",
+            "timestamp": "2017-03-18_17:21",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district/khabarovsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-khabarovsk",
+            "size": "8028163",
+            "size-compressed": "3145558",
+            "timestamp": "2017-03-18_17:23",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/khabarovsk",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Khabarovsk Krai",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-khabarovsk",
+            "size": "64359924",
+            "size-compressed": "27422416",
+            "timestamp": "2017-03-18_17:23",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district/magadan": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-magadan",
+            "size": "675843",
+            "size-compressed": "262290",
+            "timestamp": "2017-03-18_17:21",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/magadan",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Magadan Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-magadan",
+            "size": "26479818",
+            "size-compressed": "3384442",
+            "timestamp": "2017-03-18_17:21",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district/primorsky": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-primorsky",
+            "size": "12750851",
+            "size-compressed": "5263121",
+            "timestamp": "2017-03-18_17:20",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/primorsky",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Primorsky Krai",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-primorsky",
+            "size": "29998540",
+            "size-compressed": "16329479",
+            "timestamp": "2017-03-18_17:20",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district/sakha": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-sakha",
+            "size": "5361667",
+            "size-compressed": "2179535",
+            "timestamp": "2017-03-18_17:23",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/sakha",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Sakha Republic",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-sakha",
+            "size": "101307885",
+            "size-compressed": "31858850",
+            "timestamp": "2017-03-18_17:23",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/far-eastern-fed-district/sakhalin": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-far-eastern-fed-district-sakhalin",
+            "size": "2945027",
+            "size-compressed": "1166884",
+            "timestamp": "2017-03-18_17:21",
+            "version": "1"
+        },
+        "id": "russia/far-eastern-fed-district/sakhalin",
+        "name": "Europe/Russian Federation/Far Eastern Federal District/Sakhalin Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-far-eastern-fed-district-sakhalin",
+            "size": "39732383",
+            "size-compressed": "18087144",
+            "timestamp": "2017-03-18_17:21",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
     "russia/north-caucasus-fed-district": {
         "geocoder_nlp": {
             "path": "geocoder-nlp/russia-north-caucasus-fed-district",
@@ -8891,6 +9567,188 @@
             "size": "64505120",
             "size-compressed": "34545905",
             "timestamp": "2017-03-15_17:08",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/north-caucasus-fed-district/alania": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-north-caucasus-fed-district-alania",
+            "size": "3112963",
+            "size-compressed": "1188891",
+            "timestamp": "2017-03-18_17:21",
+            "version": "1"
+        },
+        "id": "russia/north-caucasus-fed-district/alania",
+        "name": "Europe/Russian Federation/North Caucasus Federal District/Republic of North Ossetia-Alania",
+        "osmscout": {
+            "path": "osmscout/russia-north-caucasus-fed-district-alania",
+            "size": "4831067",
+            "size-compressed": "2892981",
+            "timestamp": "2017-03-18_17:21",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/north-caucasus-fed-district/chechen": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-north-caucasus-fed-district-chechen",
+            "size": "1822723",
+            "size-compressed": "570616",
+            "timestamp": "2017-03-18_17:21",
+            "version": "1"
+        },
+        "id": "russia/north-caucasus-fed-district/chechen",
+        "name": "Europe/Russian Federation/North Caucasus Federal District/Chechen Republic",
+        "osmscout": {
+            "path": "osmscout/russia-north-caucasus-fed-district-chechen",
+            "size": "6198447",
+            "size-compressed": "3796198",
+            "timestamp": "2017-03-18_17:21",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/north-caucasus-fed-district/dagestan": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-north-caucasus-fed-district-dagestan",
+            "size": "4812803",
+            "size-compressed": "1876086",
+            "timestamp": "2017-03-18_17:22",
+            "version": "1"
+        },
+        "id": "russia/north-caucasus-fed-district/dagestan",
+        "name": "Europe/Russian Federation/North Caucasus Federal District/Republic of Dagestan",
+        "osmscout": {
+            "path": "osmscout/russia-north-caucasus-fed-district-dagestan",
+            "size": "18982256",
+            "size-compressed": "6370563",
+            "timestamp": "2017-03-18_17:22",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/north-caucasus-fed-district/ingushetia": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-north-caucasus-fed-district-ingushetia",
+            "size": "2924547",
+            "size-compressed": "1120525",
+            "timestamp": "2017-03-18_17:21",
+            "version": "1"
+        },
+        "id": "russia/north-caucasus-fed-district/ingushetia",
+        "name": "Europe/Russian Federation/North Caucasus Federal District/Republic of Ingushetia",
+        "osmscout": {
+            "path": "osmscout/russia-north-caucasus-fed-district-ingushetia",
+            "size": "3692636",
+            "size-compressed": "2115210",
+            "timestamp": "2017-03-18_17:21",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/north-caucasus-fed-district/kabardino-balkar": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-north-caucasus-fed-district-kabardino-balkar",
+            "size": "4067331",
+            "size-compressed": "1609642",
+            "timestamp": "2017-03-18_17:22",
+            "version": "1"
+        },
+        "id": "russia/north-caucasus-fed-district/kabardino-balkar",
+        "name": "Europe/Russian Federation/North Caucasus Federal District/Kabardino-Balkar Republic",
+        "osmscout": {
+            "path": "osmscout/russia-north-caucasus-fed-district-kabardino-balkar",
+            "size": "9023928",
+            "size-compressed": "5512484",
+            "timestamp": "2017-03-18_17:22",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/north-caucasus-fed-district/karachay-cherkess": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-north-caucasus-fed-district-karachay-cherkess",
+            "size": "2600963",
+            "size-compressed": "953439",
+            "timestamp": "2017-03-18_17:21",
+            "version": "1"
+        },
+        "id": "russia/north-caucasus-fed-district/karachay-cherkess",
+        "name": "Europe/Russian Federation/North Caucasus Federal District/Karachay-Cherkess Republic",
+        "osmscout": {
+            "path": "osmscout/russia-north-caucasus-fed-district-karachay-cherkess",
+            "size": "13893923",
+            "size-compressed": "8231367",
+            "timestamp": "2017-03-18_17:21",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/north-caucasus-fed-district/stavropol": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-north-caucasus-fed-district-stavropol",
+            "size": "12722179",
+            "size-compressed": "5047312",
+            "timestamp": "2017-03-18_17:22",
+            "version": "1"
+        },
+        "id": "russia/north-caucasus-fed-district/stavropol",
+        "name": "Europe/Russian Federation/North Caucasus Federal District/Stavropol Krai",
+        "osmscout": {
+            "path": "osmscout/russia-north-caucasus-fed-district-stavropol",
+            "size": "24281688",
+            "size-compressed": "15213565",
+            "timestamp": "2017-03-18_17:22",
             "version": "11"
         },
         "postal_country": {
@@ -8928,6 +9786,266 @@
         },
         "type": "territory"
     },
+    "russia/northwestern-fed-district/arkhangelsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-arkhangelsk",
+            "size": "11153411",
+            "size-compressed": "4415757",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/arkhangelsk",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Arkhangelsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-arkhangelsk",
+            "size": "70062623",
+            "size-compressed": "43071249",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/kaliningrad": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-kaliningrad",
+            "size": "5664771",
+            "size-compressed": "2212609",
+            "timestamp": "2017-03-18_17:10",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/kaliningrad",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Kaliningrad Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-kaliningrad",
+            "size": "10646125",
+            "size-compressed": "6119395",
+            "timestamp": "2017-03-18_17:10",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/karelia": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-karelia",
+            "size": "4562947",
+            "size-compressed": "1797837",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/karelia",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Republic of Karelia",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-karelia",
+            "size": "62388484",
+            "size-compressed": "39144946",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/komi": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-komi",
+            "size": "5300227",
+            "size-compressed": "2159851",
+            "timestamp": "2017-03-18_17:11",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/komi",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Komi Republic",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-komi",
+            "size": "30559537",
+            "size-compressed": "18807955",
+            "timestamp": "2017-03-18_17:11",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/leningrad": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-leningrad",
+            "size": "45391875",
+            "size-compressed": "16142442",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/leningrad",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Leningrad Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-leningrad",
+            "size": "126180202",
+            "size-compressed": "68504684",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/murmansk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-murmansk",
+            "size": "5206019",
+            "size-compressed": "1938648",
+            "timestamp": "2017-03-18_17:12",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/murmansk",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Murmansk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-murmansk",
+            "size": "40187243",
+            "size-compressed": "20260184",
+            "timestamp": "2017-03-18_17:12",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/nenets": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-nenets",
+            "size": "516099",
+            "size-compressed": "208576",
+            "timestamp": "2017-03-18_17:11",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/nenets",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Nenets Autonomous Okrug",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-nenets",
+            "size": "31962531",
+            "size-compressed": "13496034",
+            "timestamp": "2017-03-18_17:11",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/novgorod": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-novgorod",
+            "size": "4984835",
+            "size-compressed": "1960200",
+            "timestamp": "2017-03-18_17:11",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/novgorod",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Novgorod Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-novgorod",
+            "size": "19675910",
+            "size-compressed": "12858670",
+            "timestamp": "2017-03-18_17:11",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/pskov": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-pskov",
+            "size": "6950915",
+            "size-compressed": "2713268",
+            "timestamp": "2017-03-18_17:11",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/pskov",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Pskov Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-pskov",
+            "size": "28424607",
+            "size-compressed": "18338989",
+            "timestamp": "2017-03-18_17:11",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/northwestern-fed-district/st-petersburg": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-northwestern-fed-district-st-petersburg",
+            "size": "31690755",
+            "size-compressed": "11067001",
+            "timestamp": "2017-03-18_17:11",
+            "version": "1"
+        },
+        "id": "russia/northwestern-fed-district/st-petersburg",
+        "name": "Europe/Russian Federation/Northwestern Federal District/Saint Petersburg",
+        "osmscout": {
+            "path": "osmscout/russia-northwestern-fed-district-st-petersburg",
+            "size": "45315083",
+            "size-compressed": "22391588",
+            "timestamp": "2017-03-18_17:11",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
     "russia/siberian-fed-district": {
         "geocoder_nlp": {
             "path": "geocoder-nlp/russia-siberian-fed-district",
@@ -8943,6 +10061,292 @@
             "size": "316588348",
             "size-compressed": "176852042",
             "timestamp": "2017-03-15_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/altai": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-altai",
+            "size": "12804099",
+            "size-compressed": "4862791",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/altai",
+        "name": "Europe/Russian Federation/Siberian Federal District/Altai Krai",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-altai",
+            "size": "36990324",
+            "size-compressed": "23483066",
+            "timestamp": "2017-03-18_17:18",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/altai-rep": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-altai-rep",
+            "size": "1167363",
+            "size-compressed": "411270",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/altai-rep",
+        "name": "Europe/Russian Federation/Siberian Federal District/Altai Republic",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-altai-rep",
+            "size": "9646044",
+            "size-compressed": "6534471",
+            "timestamp": "2017-03-18_17:18",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/buryatia": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-buryatia",
+            "size": "1974275",
+            "size-compressed": "740963",
+            "timestamp": "2017-03-18_17:17",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/buryatia",
+        "name": "Europe/Russian Federation/Siberian Federal District/Republic of Buryatia",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-buryatia",
+            "size": "13461986",
+            "size-compressed": "8059074",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/irkutsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-irkutsk",
+            "size": "7839747",
+            "size-compressed": "2933428",
+            "timestamp": "2017-03-18_17:22",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/irkutsk",
+        "name": "Europe/Russian Federation/Siberian Federal District/Irkutsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-irkutsk",
+            "size": "36887322",
+            "size-compressed": "19982981",
+            "timestamp": "2017-03-18_17:22",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/kemerovo": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-kemerovo",
+            "size": "12652547",
+            "size-compressed": "4693100",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/kemerovo",
+        "name": "Europe/Russian Federation/Siberian Federal District/Kemerovo Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-kemerovo",
+            "size": "25411050",
+            "size-compressed": "14780830",
+            "timestamp": "2017-03-18_17:18",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/khakassia": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-khakassia",
+            "size": "2998275",
+            "size-compressed": "1167408",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/khakassia",
+        "name": "Europe/Russian Federation/Siberian Federal District/Republic of Khakassia",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-khakassia",
+            "size": "10783855",
+            "size-compressed": "5572084",
+            "timestamp": "2017-03-18_17:18",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/krasnoyarsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-krasnoyarsk",
+            "size": "16228355",
+            "size-compressed": "6096543",
+            "timestamp": "2017-03-18_17:24",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/krasnoyarsk",
+        "name": "Europe/Russian Federation/Siberian Federal District/Krasnoyarsk Krai",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-krasnoyarsk",
+            "size": "103083688",
+            "size-compressed": "42797827",
+            "timestamp": "2017-03-18_17:24",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/novosibirsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-novosibirsk",
+            "size": "12115971",
+            "size-compressed": "4610760",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/novosibirsk",
+        "name": "Europe/Russian Federation/Siberian Federal District/Novosibirsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-novosibirsk",
+            "size": "44663260",
+            "size-compressed": "27758357",
+            "timestamp": "2017-03-18_17:18",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/omsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-omsk",
+            "size": "7180291",
+            "size-compressed": "2620267",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/omsk",
+        "name": "Europe/Russian Federation/Siberian Federal District/Omsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-omsk",
+            "size": "35749022",
+            "size-compressed": "21378403",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/tomsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-tomsk",
+            "size": "5963779",
+            "size-compressed": "2281047",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/tomsk",
+        "name": "Europe/Russian Federation/Siberian Federal District/Tomsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-tomsk",
+            "size": "22098231",
+            "size-compressed": "11953373",
+            "timestamp": "2017-03-18_17:18",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/siberian-fed-district/tuva": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-siberian-fed-district-tuva",
+            "size": "647171",
+            "size-compressed": "234520",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/siberian-fed-district/tuva",
+        "name": "Europe/Russian Federation/Siberian Federal District/Tuva Republic",
+        "osmscout": {
+            "path": "osmscout/russia-siberian-fed-district-tuva",
+            "size": "6676150",
+            "size-compressed": "2655736",
+            "timestamp": "2017-03-18_17:18",
             "version": "11"
         },
         "postal_country": {
@@ -8980,6 +10384,214 @@
         },
         "type": "territory"
     },
+    "russia/south-fed-district/adygea": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district-adygea",
+            "size": "13639683",
+            "size-compressed": "5870808",
+            "timestamp": "2017-03-18_17:14",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district/adygea",
+        "name": "Europe/Russian Federation/South Federal District/Republic of Adygea",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district-adygea",
+            "size": "15963535",
+            "size-compressed": "9503855",
+            "timestamp": "2017-03-18_17:14",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/south-fed-district/astrakhan": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district-astrakhan",
+            "size": "3461123",
+            "size-compressed": "1184112",
+            "timestamp": "2017-03-18_17:14",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district/astrakhan",
+        "name": "Europe/Russian Federation/South Federal District/Astrakhan Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district-astrakhan",
+            "size": "13395247",
+            "size-compressed": "7364407",
+            "timestamp": "2017-03-18_17:14",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/south-fed-district/crimea": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district-crimea",
+            "size": "290819",
+            "size-compressed": "121770",
+            "timestamp": "2017-03-18_17:14",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district/crimea",
+        "name": "Europe/Russian Federation/South Federal District/Republic of Crimea",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district-crimea",
+            "size": "3105458",
+            "size-compressed": "1223500",
+            "timestamp": "2017-03-18_17:14",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/south-fed-district/kalmykia": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district-kalmykia",
+            "size": "1638403",
+            "size-compressed": "532807",
+            "timestamp": "2017-03-18_17:14",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district/kalmykia",
+        "name": "Europe/Russian Federation/South Federal District/Republic of Kalmykia",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district-kalmykia",
+            "size": "10009873",
+            "size-compressed": "4879699",
+            "timestamp": "2017-03-18_17:14",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/south-fed-district/krasnodar": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district-krasnodar",
+            "size": "71962627",
+            "size-compressed": "29366741",
+            "timestamp": "2017-03-18_17:17",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district/krasnodar",
+        "name": "Europe/Russian Federation/South Federal District/Krasnodar Krai",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district-krasnodar",
+            "size": "98735470",
+            "size-compressed": "58607388",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/south-fed-district/rostov": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district-rostov",
+            "size": "26542083",
+            "size-compressed": "9768479",
+            "timestamp": "2017-03-18_17:15",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district/rostov",
+        "name": "Europe/Russian Federation/South Federal District/Rostov Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district-rostov",
+            "size": "46083574",
+            "size-compressed": "27455607",
+            "timestamp": "2017-03-18_17:15",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/south-fed-district/sevastopol": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district-sevastopol",
+            "size": "40963",
+            "size-compressed": "766",
+            "timestamp": "2017-03-18_17:13",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district/sevastopol",
+        "name": "Europe/Russian Federation/South Federal District/Sevastopol",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district-sevastopol",
+            "size": "2212702",
+            "size-compressed": "651347",
+            "timestamp": "2017-03-18_17:13",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/south-fed-district/volgograd": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-south-fed-district-volgograd",
+            "size": "10973187",
+            "size-compressed": "4097170",
+            "timestamp": "2017-03-18_17:14",
+            "version": "1"
+        },
+        "id": "russia/south-fed-district/volgograd",
+        "name": "Europe/Russian Federation/South Federal District/Volgograd Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-south-fed-district-volgograd",
+            "size": "35057759",
+            "size-compressed": "22079099",
+            "timestamp": "2017-03-18_17:14",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
     "russia/ural-fed-district": {
         "geocoder_nlp": {
             "path": "geocoder-nlp/russia-ural-fed-district",
@@ -9006,6 +10618,162 @@
         },
         "type": "territory"
     },
+    "russia/ural-fed-district/chelyabinsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-ural-fed-district-chelyabinsk",
+            "size": "19726339",
+            "size-compressed": "7636315",
+            "timestamp": "2017-03-18_17:19",
+            "version": "1"
+        },
+        "id": "russia/ural-fed-district/chelyabinsk",
+        "name": "Europe/Russian Federation/Ural Federal District/Chelyabinsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-ural-fed-district-chelyabinsk",
+            "size": "47514758",
+            "size-compressed": "29752817",
+            "timestamp": "2017-03-18_17:19",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/ural-fed-district/kurgan": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-ural-fed-district-kurgan",
+            "size": "4005891",
+            "size-compressed": "1552949",
+            "timestamp": "2017-03-18_17:18",
+            "version": "1"
+        },
+        "id": "russia/ural-fed-district/kurgan",
+        "name": "Europe/Russian Federation/Ural Federal District/Kurgan Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-ural-fed-district-kurgan",
+            "size": "14027608",
+            "size-compressed": "9000770",
+            "timestamp": "2017-03-18_17:18",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/ural-fed-district/sverdlovsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-ural-fed-district-sverdlovsk",
+            "size": "24866819",
+            "size-compressed": "9079771",
+            "timestamp": "2017-03-18_17:20",
+            "version": "1"
+        },
+        "id": "russia/ural-fed-district/sverdlovsk",
+        "name": "Europe/Russian Federation/Ural Federal District/Sverdlovsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-ural-fed-district-sverdlovsk",
+            "size": "68413619",
+            "size-compressed": "42626967",
+            "timestamp": "2017-03-18_17:20",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/ural-fed-district/tyumen": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-ural-fed-district-tyumen",
+            "size": "6844419",
+            "size-compressed": "2669313",
+            "timestamp": "2017-03-18_17:19",
+            "version": "1"
+        },
+        "id": "russia/ural-fed-district/tyumen",
+        "name": "Europe/Russian Federation/Ural Federal District/Tyumen Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-ural-fed-district-tyumen",
+            "size": "21646905",
+            "size-compressed": "12687741",
+            "timestamp": "2017-03-18_17:19",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/ural-fed-district/yamalo-nenets": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-ural-fed-district-yamalo-nenets",
+            "size": "2121731",
+            "size-compressed": "864966",
+            "timestamp": "2017-03-18_17:19",
+            "version": "1"
+        },
+        "id": "russia/ural-fed-district/yamalo-nenets",
+        "name": "Europe/Russian Federation/Ural Federal District/Yamalo-Nenets Autonomous Okrug",
+        "osmscout": {
+            "path": "osmscout/russia-ural-fed-district-yamalo-nenets",
+            "size": "47306140",
+            "size-compressed": "13584842",
+            "timestamp": "2017-03-18_17:19",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/ural-fed-district/yugra": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-ural-fed-district-yugra",
+            "size": "17879043",
+            "size-compressed": "6214173",
+            "timestamp": "2017-03-18_17:21",
+            "version": "1"
+        },
+        "id": "russia/ural-fed-district/yugra",
+        "name": "Europe/Russian Federation/Ural Federal District/Khanty-Mansi Autonomous Okrug (Yugra)",
+        "osmscout": {
+            "path": "osmscout/russia-ural-fed-district-yugra",
+            "size": "76306107",
+            "size-compressed": "45109449",
+            "timestamp": "2017-03-18_17:21",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
     "russia/volga-fed-district": {
         "geocoder_nlp": {
             "path": "geocoder-nlp/russia-volga-fed-district",
@@ -9021,6 +10789,370 @@
             "size": "399830836",
             "size-compressed": "252003277",
             "timestamp": "2017-03-15_17:06",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/bashkortostan": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-bashkortostan",
+            "size": "14770179",
+            "size-compressed": "5718713",
+            "timestamp": "2017-03-18_17:15",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/bashkortostan",
+        "name": "Europe/Russian Federation/Volga Federal District/Republic of Bashkortostan",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-bashkortostan",
+            "size": "42266871",
+            "size-compressed": "26801622",
+            "timestamp": "2017-03-18_17:15",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/chuvash": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-chuvash",
+            "size": "6909955",
+            "size-compressed": "2706595",
+            "timestamp": "2017-03-18_17:14",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/chuvash",
+        "name": "Europe/Russian Federation/Volga Federal District/Chuvash Republic",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-chuvash",
+            "size": "21497700",
+            "size-compressed": "13146204",
+            "timestamp": "2017-03-18_17:14",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/kirov": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-kirov",
+            "size": "9543683",
+            "size-compressed": "3837215",
+            "timestamp": "2017-03-18_17:17",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/kirov",
+        "name": "Europe/Russian Federation/Volga Federal District/Kirov Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-kirov",
+            "size": "59462352",
+            "size-compressed": "35110862",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/mari-el": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-mari-el",
+            "size": "7675907",
+            "size-compressed": "3048710",
+            "timestamp": "2017-03-18_17:15",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/mari-el",
+        "name": "Europe/Russian Federation/Volga Federal District/Mari El Republic",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-mari-el",
+            "size": "25961421",
+            "size-compressed": "16066426",
+            "timestamp": "2017-03-18_17:15",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/mordovia": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-mordovia",
+            "size": "4632579",
+            "size-compressed": "1748030",
+            "timestamp": "2017-03-18_17:17",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/mordovia",
+        "name": "Europe/Russian Federation/Volga Federal District/Republic of Mordovia",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-mordovia",
+            "size": "19348975",
+            "size-compressed": "12050095",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/n-novgorod": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-n-novgorod",
+            "size": "19054595",
+            "size-compressed": "7490458",
+            "timestamp": "2017-03-18_17:17",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/n-novgorod",
+        "name": "Europe/Russian Federation/Volga Federal District/Nizhny Novgorod Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-n-novgorod",
+            "size": "50792585",
+            "size-compressed": "30889682",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/orenburg": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-orenburg",
+            "size": "11608067",
+            "size-compressed": "4537412",
+            "timestamp": "2017-03-18_17:16",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/orenburg",
+        "name": "Europe/Russian Federation/Volga Federal District/Orenburg Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-orenburg",
+            "size": "28834915",
+            "size-compressed": "18203417",
+            "timestamp": "2017-03-18_17:16",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/penza": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-penza",
+            "size": "6606851",
+            "size-compressed": "2603235",
+            "timestamp": "2017-03-18_17:16",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/penza",
+        "name": "Europe/Russian Federation/Volga Federal District/Penza Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-penza",
+            "size": "21821856",
+            "size-compressed": "13680412",
+            "timestamp": "2017-03-18_17:16",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/perm": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-perm",
+            "size": "17014787",
+            "size-compressed": "6682473",
+            "timestamp": "2017-03-18_17:17",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/perm",
+        "name": "Europe/Russian Federation/Volga Federal District/Perm Krai",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-perm",
+            "size": "66174481",
+            "size-compressed": "42189168",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/samara": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-samara",
+            "size": "11214851",
+            "size-compressed": "4123879",
+            "timestamp": "2017-03-18_17:15",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/samara",
+        "name": "Europe/Russian Federation/Volga Federal District/Samara Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-samara",
+            "size": "31999154",
+            "size-compressed": "19891228",
+            "timestamp": "2017-03-18_17:15",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/saratov": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-saratov",
+            "size": "9101315",
+            "size-compressed": "3433047",
+            "timestamp": "2017-03-18_17:15",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/saratov",
+        "name": "Europe/Russian Federation/Volga Federal District/Saratov Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-saratov",
+            "size": "24924062",
+            "size-compressed": "15623874",
+            "timestamp": "2017-03-18_17:15",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/tatarstan": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-tatarstan",
+            "size": "21852163",
+            "size-compressed": "8498183",
+            "timestamp": "2017-03-18_17:17",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/tatarstan",
+        "name": "Europe/Russian Federation/Volga Federal District/Republic of Tatarstan",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-tatarstan",
+            "size": "47623323",
+            "size-compressed": "29084793",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/udmurt": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-udmurt",
+            "size": "11329539",
+            "size-compressed": "4501326",
+            "timestamp": "2017-03-18_17:17",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/udmurt",
+        "name": "Europe/Russian Federation/Volga Federal District/Udmurt Republic",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-udmurt",
+            "size": "31078843",
+            "size-compressed": "18979871",
+            "timestamp": "2017-03-18_17:17",
+            "version": "11"
+        },
+        "postal_country": {
+            "path": "postal/countries/RU",
+            "size": "137272328",
+            "size-compressed": "52885327",
+            "timestamp": "2017-02-23_17:58",
+            "version": "1"
+        },
+        "type": "territory"
+    },
+    "russia/volga-fed-district/ulyanovsk": {
+        "geocoder_nlp": {
+            "path": "geocoder-nlp/russia-volga-fed-district-ulyanovsk",
+            "size": "7475203",
+            "size-compressed": "2738405",
+            "timestamp": "2017-03-18_17:16",
+            "version": "1"
+        },
+        "id": "russia/volga-fed-district/ulyanovsk",
+        "name": "Europe/Russian Federation/Volga Federal District/Ulyanovsk Oblast",
+        "osmscout": {
+            "path": "osmscout/russia-volga-fed-district-ulyanovsk",
+            "size": "23004634",
+            "size-compressed": "14532149",
+            "timestamp": "2017-03-18_17:16",
             "version": "11"
         },
         "postal_country": {
