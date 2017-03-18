@@ -151,6 +151,32 @@ bool Manager::isStorageAvailable() const
   return (rinfo.exists() && rinfo.isDir() && rinfo.isWritable() && m_db_files.isOpen());
 }
 
+QString Manager::defaultStorageDirectory() const
+{
+  QString d = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+  if (!d.isEmpty())
+    {
+      QDir dir(d);
+      return dir.absoluteFilePath("Maps.OSM");
+    }
+  return d;
+}
+
+bool Manager::createDirectory(QString path)
+{
+  if (path.isEmpty())
+    {
+      emit errorMessage(tr("Cannot create directory without any name"));
+      return false;
+    }
+
+  QDir d(path);
+  bool res = d.mkpath(".");
+  if (!res)
+    emit errorMessage(tr("Error creating directory %1").arg(path));
+  return res;
+}
+
 void Manager::nothingAvailable()
 {
   m_maps_available = QJsonObject();

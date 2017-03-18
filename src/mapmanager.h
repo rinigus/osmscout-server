@@ -44,6 +44,15 @@ namespace MapManager {
     /// \brief Check if the storage directory is available
     Q_INVOKABLE void checkStorageAvailable();
 
+    /// \brief Get the default storage directory to propose to the user
+    Q_INVOKABLE QString defaultStorageDirectory() const;
+
+    /// \brief Create a directory with the given path
+    ///
+    /// Use to create a new directory that can be later assigned to be
+    /// a storage directory for maps through settings. Returns true if successful
+    Q_INVOKABLE bool createDirectory(QString path);
+
     /// \brief Check if there is a list of provided countries
     Q_INVOKABLE bool checkProvidedAvailable();
 

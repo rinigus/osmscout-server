@@ -6,6 +6,7 @@ Page {
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
+        id: mainFlickable
         anchors.fill: parent
 
         PullDownMenu {
@@ -47,19 +48,14 @@ Page {
                 width: page.width
                 spacing: Theme.paddingLarge
 
+                property string dname: ""
+
                 SectionHeader {
                     text: qsTr("Welcome")
                 }
 
                 Label {
-                    text: qsTr("<i>OSM Scout Server</i> is expected to be used with the " +
-                               "downloaded maps. To manage the maps, the Server requires a separate " +
-                               "folder. The files within that folder should be managed by the Server only. " +
-                               "This includes deleting all files within that folder when requested by you during cleanup or " +
-                               "map updates.<br><br>" +
-                               "Please <b>allocate separate, empty folder</b> for OSM Scout Server. " +
-                               "For that, create a new folder in a file manager or using command line and then select this folder " +
-                               "in <i>Settings</i> (pulley menu).")
+                    id: notAvailableText
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -67,11 +63,50 @@ Page {
                     color: Theme.highlightColor
                 }
 
-                Component.onCompleted: storageNotAvailable.visible = !(manager.storageAvailable)
                 Connections {
                     target: manager
                     onStorageAvailableChanged: storageNotAvailable.visible = !(manager.storageAvailable)
                 }
+
+                Button {
+                    text: qsTr("Create default directory")
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    onClicked: {
+                        if (manager.createDirectory(storageNotAvailable.dname)) {
+                            settings.setValue(settingsMapManagerPrefix + "root", storageNotAvailable.dname)
+                            mainFlickable.scrollToTop()
+                        }
+                    }
+                }
+
+                Label {
+                    id: notAvailableDirCreation
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+
+                Component.onCompleted: {
+                    storageNotAvailable.visible = !(manager.storageAvailable)
+                    dname = manager.defaultStorageDirectory()
+                    notAvailableDirCreation.text = qsTr("Creates directory<br>%1<br>and configures it for storing maps").arg(dname)
+                    notAvailableText.text =
+                            qsTr("<i>OSM Scout Server</i> is expected to be used with the " +
+                                 "downloaded maps. To manage the maps, the Server requires a separate " +
+                                 "folder. The files within that folder should be managed by the Server only. " +
+                                 "This includes deleting all files within that folder when requested by you during cleanup or " +
+                                 "map updates.<br><br>" +
+                                 "Please <b>allocate separate, empty folder</b> for OSM Scout Server. " +
+                                 "For that, create a new folder in a file manager or using command line and then select this folder " +
+                                 "in <i>Settings</i> (pulley menu).<br><br>" +
+                                 "Alternatively, the directory can be created and setup automatically at <br>" +
+                                 "%1<br>by pressing a button below").arg(dname)
+
+                }
+
             }
 
             Column {
@@ -102,6 +137,7 @@ Page {
                 Connections {
                     target: manager
                     onSubscriptionChanged: noSubscriptions.checkVisible()
+                    onStorageAvailableChanged: noSubscriptions.checkVisible()
                 }
             }
 
