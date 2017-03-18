@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -31,12 +29,12 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="29"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartorna tillhandahålls av Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Tjeckiska republiken) genom modRana.org dataarkiv.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="34"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartdata från OpenStreetMap, Open Database License 1.0. Kartorna konverteras till passande format från nerladdade extrakt och/eller använder polygonfiler tillhandahållna av Geofabrik GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="38"/>
@@ -530,17 +528,17 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="76"/>
         <source>Maps storage folder does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartlagringsmappen finns inte: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="79"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sökvägen för kartlagring pekar inte mot någon mapp: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="85"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartlagringsmappen är inte skrivbar, justera rättigheterna för %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="121"/>
@@ -551,7 +549,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="124"/>
         <source>Map Manager functionality would be disturbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Karthanteringsfunktioner kommer att störas</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="188"/>
@@ -632,7 +630,7 @@
         <location filename="../src/mapmanager.cpp" line="888"/>
         <location filename="../src/mapmanager.cpp" line="889"/>
         <source>Could not retrieve server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte hämta serverns URL</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="942"/>
@@ -667,7 +665,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="946"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista över länder: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1057"/>
@@ -687,7 +685,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1081"/>
         <source>Updating the distribution server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdaterar distributionsserverns URL</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1134"/>
@@ -808,12 +806,12 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök efter uppdateringar</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="202"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera listan över nu tillgängliga kartor och datauppsättningar, och kontrollera om kartorna kan uppdateras</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="213"/>
@@ -1539,22 +1537,22 @@
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="25"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdateringar</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="33"/>
         <source>Do you want to start the update?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vill du starta uppdateringen?</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="41"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Notera att när du startat uppdateringen, kommer kartorna inte att finnas tillgängliga förrän uppdateringen slutförts</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="50"/>
         <source>List of countries and features with the found updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista över länder och funktioner med funna uppdateringar</translation>
     </message>
 </context>
 </TS>
