@@ -31,12 +31,12 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="29"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les cartes sont hébergées par le Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) à l&apos;aide du dépôt de données modRana.org</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="34"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Données cartographiques fournies par OpenStreepMap. License Open Database 1.0. Les cartes sont converties en un format utilisable à partir d&apos;extraits téléchargés et/ou utilisant des polygones tels que fournis par Geofabrik GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="38"/>
@@ -530,17 +530,17 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="76"/>
         <source>Maps storage folder does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le dossier de stockage des cartes n&apos;existe pas: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="79"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le chemin du dossier de stockage des cartes ne pointe pas sur un dossier: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="85"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le dossier de stockage des cartes n&apos;est pas modifiable, merci d&apos;ajuster les permissions de %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="121"/>
@@ -551,17 +551,17 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="124"/>
         <source>Map Manager functionality would be disturbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Le fonctionnement du gestionnaire de cartes va être perturbé</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="169"/>
         <source>Cannot create directory without any name</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de créer un dossier sans nom</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="176"/>
         <source>Error creating directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de créer le dossier %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="214"/>
@@ -642,7 +642,7 @@
         <location filename="../src/mapmanager.cpp" line="914"/>
         <location filename="../src/mapmanager.cpp" line="915"/>
         <source>Could not retrieve server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de récupérer l&apos;URL du serveur</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="968"/>
@@ -677,7 +677,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="972"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste des pays : %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1083"/>
@@ -697,7 +697,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1107"/>
         <source>Updating the distribution server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Mise à jour de l&apos;URL du serveur de distribution</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1160"/>
@@ -818,12 +818,12 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Vérifier les mises à jour</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="202"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Mise à jour de la liste des cartes et jeux de données disponibles et vérification si les cartes installées peuvent être mises à jour</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="213"/>
@@ -1501,17 +1501,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
         <source>Create default directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Création répertoire par défaut</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="95"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Création répertoire&lt;br&gt;%1&lt;br&gt;et configuration pour le stockage des cartes</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="97"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; doit être utilisé avec des cartes téléchargées. Pour gérer les cartes, le serveur nécessite un dossier séparé. Ce dossier va être complètement géré par OSM Scout Server. Cela inclut supprimer tous les fichiers de ce dossier quand demandé par l&apos;utilisateur lors des nettoyages ou mises à jour des cartes. &lt;br&gt;&lt;br&gt;Merci &lt;b&gt;d&apos;allouer un dossier vide séparé&lt;/b&gt; qu&apos;OSM Scout Server puisse utiliser. Pour cela, créer un nouveau dossier dans l&apos;explorateur de fichier ou en ligne de commande et ensuite sélectionner le dans &lt;i&gt;Paramètres&lt;/i&gt; (Menu déroulant).&lt;br&gt;&lt;br&gt;Le dossier peut aussi être créé automatiquement a l&apos;adresse &lt;br&gt;%1&lt;br&gt;en appuyant sur le bouton ci dessous.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="122"/>
@@ -1559,22 +1559,22 @@
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="25"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mises à jour</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="33"/>
         <source>Do you want to start the update?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voulez vous démarrer les mises à jour ?</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="41"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Merci de noter que pendant la mise à jour, les cartes ne seront pas disponibles avant que la mise à jour soit terminée</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="50"/>
         <source>List of countries and features with the found updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste des pays et fonctions trouvées dans les mises à jour</translation>
     </message>
 </context>
 </TS>

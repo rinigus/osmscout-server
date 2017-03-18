@@ -31,12 +31,12 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="29"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation type="unfinished"></translation>
+        <translation>Карты размещены Центром Обработки Естественного Языка(факультет Информатики Масарикова Университета, Брно, Чешская Республика) в репозиториях modRana.org</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="34"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Картографические данные из OpenStreetMap,Open Database License 1.0. Карты преобразованы в необходимый формат из загруженных архивов и/или полигонов, предоставленных Geofabrik GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="38"/>
@@ -191,7 +191,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="33"/>
         <source>Idle</source>
-        <translation>Пустой</translation>
+        <translation>Неактивный</translation>
     </message>
 </context>
 <context>
@@ -525,22 +525,22 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="40"/>
         <source>Could not allocate Map Manager features</source>
-        <translation>Невозможно назначить параметры Map Manager</translation>
+        <translation>Невозможно назначить параметры Диспетчера Карт</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="76"/>
         <source>Maps storage folder does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет папки для хранения карт: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="79"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Путь папки хранения карт не указывает на каталог: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="85"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Папка хранения карт недоступна для записи. Необходимо изменить разрешения для %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="121"/>
@@ -551,17 +551,17 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="124"/>
         <source>Map Manager functionality would be disturbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Функциональность Диспетчера Карт возможно нарушена</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="169"/>
         <source>Cannot create directory without any name</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно создать каталог без имени</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="176"/>
         <source>Error creating directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка создания каталога %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="214"/>
@@ -642,7 +642,7 @@
         <location filename="../src/mapmanager.cpp" line="914"/>
         <location filename="../src/mapmanager.cpp" line="915"/>
         <source>Could not retrieve server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно получить URL сервера</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="968"/>
@@ -677,7 +677,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="972"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
-        <translation type="unfinished"></translation>
+        <translation>Список территорий: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1083"/>
@@ -697,7 +697,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1107"/>
         <source>Updating the distribution server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновление URL раздающего сервера</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1160"/>
@@ -768,12 +768,12 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="23"/>
         <source>Map Manager</source>
-        <translation>Map Manager</translation>
+        <translation>Диспетчер Карт</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="27"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation>Map Manager управляет хранением оффлайновых карт и соответствующих наборов данных на устройстве. Здесь можно выбрать параметры и страны, которые будут сохранены, обновлены или удалены с устройства</translation>
+        <translation>Диспетчер Карт управляет хранением оффлайновых карт и соответствующих наборов данных на устройстве. Здесь можно выбрать параметры и страны, которые будут сохранены, обновлены или удалены с устройства</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="38"/>
@@ -818,12 +818,12 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Проверить обновления</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="202"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить список доступных карт и наборов данных, а также проверить возможность обновления установленных карт</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="213"/>
@@ -1072,7 +1072,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="79"/>
         <source>motorway junction</source>
-        <translation>развязка</translation>
+        <translation>въезд на автомагистраль</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="87"/>
@@ -1082,22 +1082,22 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="95"/>
         <source>motorway primary</source>
-        <translation>выборы  автомагистрали</translation>
+        <translation>федеральная автомагистраль</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="103"/>
         <source>motorway trunk</source>
-        <translation>основная автомагистраль</translation>
+        <translation>региональная автомагистраль</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="111"/>
         <source>primary</source>
-        <translation>главный</translation>
+        <translation>федеральная</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="119"/>
         <source>primary link</source>
-        <translation>главный съезд</translation>
+        <translation>съезд с федеральной трассы</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="127"/>
@@ -1117,12 +1117,12 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="151"/>
         <source>secondary</source>
-        <translation>вспомогательный</translation>
+        <translation>региональная</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="159"/>
         <source>secondary link</source>
-        <translation>вспомогательный съезд</translation>
+        <translation>съезд с региональной трассы</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="167"/>
@@ -1132,22 +1132,22 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="175"/>
         <source>tertiary</source>
-        <translation>третьестепенный</translation>
+        <translation>местная</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="183"/>
         <source>tertiary link</source>
-        <translation>третьестепенный съезд</translation>
+        <translation>съезд с местной трассы</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="191"/>
         <source>trunk</source>
-        <translation>магистраль</translation>
+        <translation>региональная трасса</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="199"/>
         <source>trunk link</source>
-        <translation>магистральный съезд</translation>
+        <translation>съезд с региональной трассы</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="207"/>
@@ -1313,7 +1313,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="118"/>
         <source>Target reached: %target%</source>
-        <translation>Конечный пункт найден: %target%</translation>
+        <translation>Конечный пункт достигнут: %target%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="149"/>
@@ -1479,7 +1479,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="20"/>
         <source>Map Manager</source>
-        <translation>Map Manager</translation>
+        <translation>Диспетчер карт</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="26"/>
@@ -1501,17 +1501,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
         <source>Create default directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать каталог по умолчанию</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="95"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Создает каталог &lt;br&gt;%1&lt;br&gt; и конфигурирует его для хранения карт</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="97"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation type="unfinished"></translation>
+        <translation>предполагается, что &lt;i&gt;OSM Scout Server&lt;/i&gt; будет использоваться с загруженными картами. Для управления картами Серверу необходима отдельная папка. Файлы в папке должны управляться только Сервером. Это включает удаление всех файлов в папке по запросу при очистке или обновлении карт. &lt;br&gt;&lt;br&gt;Необходимо &lt;b&gt;предоставить отдельную пустую папку&lt;/b&gt; для OSM Scout Server. Для этого создать файл-менеджером или через командную строку новую папку и затем выбрать эту папку в &lt;i&gt;Настройках&lt;/i&gt;(pulley menu). &lt;br&gt;&lt;br&gt;Кроме того, каталог может быть создан и настроен автоматически в &lt;br&gt;%1&lt;br&gt;нажатием кнопки ниже</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="122"/>
@@ -1541,7 +1541,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="240"/>
         <source>Idle</source>
-        <translation>Пустой</translation>
+        <translation>Неактивный</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="257"/>
@@ -1559,22 +1559,22 @@
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="25"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновления</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="33"/>
         <source>Do you want to start the update?</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать обновление?</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="41"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
-        <translation type="unfinished"></translation>
+        <translation>После запуска процесса обновления карты будут недоступны до завершения процесса.</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="50"/>
         <source>List of countries and features with the found updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Список территорий и характеристик, для которых найдены обновления</translation>
     </message>
 </context>
 </TS>

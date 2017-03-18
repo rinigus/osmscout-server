@@ -556,12 +556,12 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="169"/>
         <source>Cannot create directory without any name</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan geen naamloze map aanmaken</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="176"/>
         <source>Error creating directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij aanmaken van map %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="214"/>
@@ -1501,17 +1501,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
         <source>Create default directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Standaardmap aanmaken</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="95"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Maakt map &lt;br&gt;%1&lt;br&gt; aan en configureert ze voor opslag van kaarten</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="97"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; wordt verwacht gebruikt te worden met de gedownloade kaarten. Om de kaarten te beheren vereist de server een aparte map. De bestanden in die map mogen enkel beheerd worden door de server. Dit omvat het verwijderen van alle bestanden binnen die map wanneer daartoe gevraagd tijdens opruimen of kaartupdates.&lt;br&gt;&lt;br&gt;&lt;b&gt;Wijs een aparte, lege map toe&lt;/b&gt; voor OSM Scout Server. Maak daarvoor een nieuwe map aan in een bestandsbeheerder of via de opdrachtregel en selecteer vervolgens deze map in &lt;i&gt;Instellingen&lt;/i&gt; (uittrekmenu).&lt;br&gt;&lt;br&gt;De map kan ook automatisch aangemaakt en ingesteld worden op &lt;br&gt;%1&lt;br&gt;door een knop hieronder.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="122"/>
