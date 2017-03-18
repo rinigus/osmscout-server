@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Mar 18 2017 rinigus <rinigus.git@gmail.com> 0.7.5-1
+- Expose map updates to GUI
+- Propose to create a storage folder (suggested by @Feathers McGraw)
+- Updated transalations
+
 * Sun Mar 12 2017 rinigus <rinigus.git@gmail.com> 0.7.2-1
 - New transalations completed: French, Russian
 - New translations started: Polish, Norwegian
