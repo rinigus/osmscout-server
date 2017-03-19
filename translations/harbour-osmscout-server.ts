@@ -1156,6 +1156,14 @@
     </message>
 </context>
 <context>
+    <name>RequestMapper</name>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="45"/>
+        <source>Number of parallel worker threads: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RoutingForHuman</name>
     <message>
         <location filename="../src/routingforhuman.cpp" line="71"/>

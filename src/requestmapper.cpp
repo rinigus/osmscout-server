@@ -18,6 +18,7 @@
 #include <QRunnable>
 #include <QThreadPool>
 #include <QDir>
+#include <QCoreApplication>
 
 #include <QDebug>
 
@@ -41,7 +42,8 @@ RequestMapper::RequestMapper()
 
 #endif
 
-    InfoHub::logInfo("Number of parallel worker threads: " + QString::number(m_pool.maxThreadCount()));
+    InfoHub::logInfo( QCoreApplication::translate("RequestMapper",
+                                                  "Number of parallel worker threads: %1").arg(m_pool.maxThreadCount()) );
 }
 
 
