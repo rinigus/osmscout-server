@@ -32,7 +32,6 @@ public:
 
 signals:
   void downloadedBytes(uint64_t sz);
-  void downloadFinished();
   void writtenBytes(uint64_t sz);
   void finished(QString path);
   void error(QString error_text);
