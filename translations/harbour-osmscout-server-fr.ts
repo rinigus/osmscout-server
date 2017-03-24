@@ -414,7 +414,7 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="79"/>
+        <location filename="../src/geomaster.cpp" line="91"/>
         <source>Cannot open geocoding database</source>
         <translation>Ouverture base de donnée de geocoding impossible</translation>
     </message>
@@ -439,17 +439,17 @@
         <translation>libpostal va utiliser toutes les langues</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="90"/>
+        <location filename="../src/geomaster.cpp" line="102"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Erreur de décodage par libpostal, peut être que les bases de données de libpostal ne sont pas diponibles</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="99"/>
+        <location filename="../src/geomaster.cpp" line="111"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Erreur lors de la recherche avec geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="176"/>
+        <location filename="../src/geomaster.cpp" line="188"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Échec de la recherche de point de référence: impossible de trouver</translation>
     </message>

@@ -71,6 +71,18 @@ void GeoMaster::onPostalChanged(QString /*global*/, QString /*country*/)
   onSettingsChanged();
 }
 
+static std::string v2s(const std::vector<std::string> &v)
+{
+  std::string s = "{";
+  for (auto i: v)
+    {
+      if (s.length() > 1) s += ", ";
+      s += i;
+    }
+  s += "}";
+  return s;
+}
+
 bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t limit,
                        double &lat, double &lon, std::string &name, size_t &number_of_results)
 {
@@ -106,7 +118,7 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
     {
         QJsonObject r;
         for (auto a: nonorm)
-            r.insert(QString::fromStdString(a.first), QString::fromStdString(a.second));
+            r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
         result.insert("parsed", r);
     }
 
@@ -118,8 +130,8 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
             QString info;
             for (auto a: pr)
             {
-                r.insert(QString::fromStdString(a.first), QString::fromStdString(a.second));
-                info += QString::fromStdString(a.first) + ": " + QString::fromStdString(a.second) + "; ";
+                r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
+                info += QString::fromStdString(a.first) + ": " + QString::fromStdString(v2s(a.second)) + "; ";
             }
 
             arr.push_back(r);
