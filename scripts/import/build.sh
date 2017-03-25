@@ -23,7 +23,6 @@ COUNTRY_CODE=$4
 
 IMPDIR="$BASE_DIR/osmscout/$CONTINENT_COUNTRY"
 SQLDIR="$BASE_DIR/geocoder-nlp/$CONTINENT_COUNTRY"
-SQL="$SQLDIR/location.sqlite"
 
 rm -rf "$IMPDIR" "$SQLDIR"
 mkdir -p "$IMPDIR"
@@ -31,9 +30,9 @@ mkdir -p "$SQLDIR"
 
 "$OSMSCOUT_IMPORTER" --typefile "$OSMSCOUT_MAPSTYLE" --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --destinationDirectory "$IMPDIR" "$PBF"
 
-"$GEOCODER_IMPORTER" "$IMPDIR" "$SQL" "$COUNTRY_CODE"
+"$GEOCODER_IMPORTER" "$IMPDIR" "$SQLDIR" "$COUNTRY_CODE"
 
 # determined from libosmscout/include/osmscout/TypeConfig.h:  static const uint32_t FILE_FORMAT_VERSION=11
 ./pack.sh "$IMPDIR" 11
 
-./pack.sh "$SQLDIR" 1
+./pack.sh "$SQLDIR" 2
