@@ -201,13 +201,13 @@ QString FeatureOsmScout::errorMissing() const
 ////////////////////////////////////////////////////////////
 /// Geocoder NLP support
 const static QStringList geocodernlp_files{
-  "location.sqlite"};
+  "geonlp-primary.sqlite", "geonlp-normalized.trie", "geonlp-normalized-id.kct"};
 
 FeatureGeocoderNLP::FeatureGeocoderNLP(PathProvider *path):
   Feature(path, "territory", "geocoder_nlp",
           QCoreApplication::translate("MapManagerFeature", "Geocoder-NLP"),
           geocodernlp_files,
-          1)
+          2)
 {
 }
 

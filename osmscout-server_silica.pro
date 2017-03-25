@@ -101,7 +101,7 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa -ldl
+LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -ldl
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 

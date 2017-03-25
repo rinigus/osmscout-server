@@ -1233,12 +1233,10 @@ void Manager::updateGeocoderNLP()
 
   QString path;
 
-  // version of the geocoder where all data is in a single file
-#pragma message "This would have to change when GeocoderNLP format would change to the directory-based one"
   QJsonObject obj = m_maps_available.value(m_map_selected).toObject();
   for (const Feature *f: m_features)
     if (f->enabled() && f->name() == "geocoder_nlp")
-      path = fullPath( f->getPath(obj) + "/location.sqlite" );
+      path = fullPath( f->getPath(obj) );
 
   if (settings.valueString(GEOMASTER_SETTINGS "geocoder_path") != path)
     {

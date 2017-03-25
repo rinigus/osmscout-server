@@ -36,6 +36,7 @@ PkgBR:
   - libpostal-devel
   - snappy-devel
   - sqlite-devel
+  - libkyotocabinet-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:
