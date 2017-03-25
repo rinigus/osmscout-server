@@ -201,7 +201,7 @@ QString FeatureOsmScout::errorMissing() const
 ////////////////////////////////////////////////////////////
 /// Geocoder NLP support
 const static QStringList geocodernlp_files{
-  "geonlp-primary.sqlite", "geonlp-normalized.trie", "geonlp-normalized-id.kct"};
+  "geonlp-primary.sqlite", "geonlp-normalized.trie", "geonlp-normalized-id.kch"};
 
 FeatureGeocoderNLP::FeatureGeocoderNLP(PathProvider *path):
   Feature(path, "territory", "geocoder_nlp",
