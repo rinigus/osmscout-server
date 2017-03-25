@@ -1100,8 +1100,9 @@ bool Manager::updateProvided()
 {
   if (downloading()) return false;
 
+//#pragma message "ADDED EXTRA TO KEEP URL FILE, REMOVE IT WHEN FINISHED TESTING"
   if ( startDownload(ServerUrl, m_provided_url,
-                     fullPath(const_fname_server_url),
+                     fullPath(const_fname_server_url /*+ "-EXTRA"*/),
                      FileDownloader::Plain) )
     {
       emit downloadProgress(tr("Updating the distribution server URL"));

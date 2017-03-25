@@ -655,7 +655,7 @@
         <translation>Laddar ner lista över länder</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1164"/>
+        <location filename="../src/mapmanager.cpp" line="1165"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över tillgängliga länder saknas. Ladda ner listan före uppdateringskontroll.</translation>
     </message>
@@ -695,17 +695,17 @@
         <translation>Fil borttagen under rensning:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1107"/>
+        <location filename="../src/mapmanager.cpp" line="1108"/>
         <source>Updating the distribution server URL</source>
         <translation>Uppdaterar distributionsserverns URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1160"/>
+        <location filename="../src/mapmanager.cpp" line="1161"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan inte söka efter uppdateringar, eftersom kartlagringsmapp saknas.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1162"/>
+        <location filename="../src/mapmanager.cpp" line="1163"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över efterfrågade länder saknas. Välj länder före uppdateringskontroll.</translation>
     </message>

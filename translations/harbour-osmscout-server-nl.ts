@@ -655,7 +655,7 @@
         <translation>De lijst van landen wordt gedownload</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1164"/>
+        <location filename="../src/mapmanager.cpp" line="1165"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan niet controleren op updates omdat de lijst van aangeboden landen ontbreekt. Download deze lijst vooraleer je controleert op updates.</translation>
     </message>
@@ -695,17 +695,17 @@
         <translation>Bestand verwijderd tijdens opruimen:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1107"/>
+        <location filename="../src/mapmanager.cpp" line="1108"/>
         <source>Updating the distribution server URL</source>
         <translation>Distributieserver-URL wordt bijgewerkt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1160"/>
+        <location filename="../src/mapmanager.cpp" line="1161"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan niet controleren op updates omdat de kaartopslagmap ontbreekt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1162"/>
+        <location filename="../src/mapmanager.cpp" line="1163"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan niet controleren op updates omdat de lijst van opgevraagde landen ontbreekt. Kies landen vooraleer je controleert op updates.</translation>
     </message>
