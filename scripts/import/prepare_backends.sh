@@ -24,3 +24,6 @@ mkdir -p $BNDSRC/libosmscout/build
 # geocoder-nlp
 git clone --recursive https://github.com/rinigus/geocoder-nlp.git $BNDSRC/geocoder-nlp
 (cd $BNDSRC/geocoder-nlp/importer && make LIBPOSTAL_INCLUDE=-I$BNDINSTALL/include LIBPOSTAL_LIB="-L$BNDINSTALL/lib -lpostal" && ln -s `pwd`/importer $BNDINSTALL/bin/geocoder-importer )
+
+# libosmscout version tool
+(cd libosmscout-version-tool && make INCLUDE=-I$BNDINSTALL/include LIBRARIES=-I$BNDINSTALL/lib && ln -s `pwd`/liboscmscout-version $BNDINSTALL/bin)

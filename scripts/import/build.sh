@@ -33,6 +33,6 @@ mkdir -p "$SQLDIR"
 "$GEOCODER_IMPORTER" "$IMPDIR" "$SQLDIR" "$COUNTRY_CODE"
 
 # determined from libosmscout/include/osmscout/TypeConfig.h:  static const uint32_t FILE_FORMAT_VERSION=11
-./pack.sh "$IMPDIR" 11
+./pack.sh "$IMPDIR" `backends-install/bin/liboscmscout-version`
 
 ./pack.sh "$SQLDIR" 2
