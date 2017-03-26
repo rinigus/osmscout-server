@@ -245,6 +245,8 @@ namespace MapManager {
     QSqlQuery m_query_files_available;
     QSqlQuery m_query_files_insert;
 
+    bool m_development_disable_url_update{false}; ///< allows to keep url.json while developing application
+
     /// const values used to access data
     const QString const_fname_server_url{"url.json"};
     const QString const_fname_countries_provided{"countries_provided.json"};

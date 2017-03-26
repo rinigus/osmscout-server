@@ -46,6 +46,7 @@ void AppSettings::initDefaults()
   CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
   CHECK(MAPMANAGER_SETTINGS "postal_country", 0);
   CHECK(MAPMANAGER_SETTINGS "max_download_speed_in_kbps", -1);
+  CHECK(MAPMANAGER_SETTINGS "development_disable_url_update", 0);
 
   // force URL setting
   QSettings::setValue(MAPMANAGER_SETTINGS "provided_url",

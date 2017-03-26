@@ -92,6 +92,7 @@ void Manager::loadSettings()
 
   m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
   m_provided_url = settings.valueString(MAPMANAGER_SETTINGS "provided_url");
+  m_development_disable_url_update = settings.valueBool(MAPMANAGER_SETTINGS "development_disable_url_update");
 
   for (Feature *p: m_features) p->loadSettings();
 
@@ -1101,8 +1102,10 @@ bool Manager::updateProvided()
   if (downloading()) return false;
 
 #pragma message "ADDED EXTRA TO KEEP URL FILE, REMOVE IT WHEN FINISHED TESTING"
+  QString fname = const_fname_server_url;
+  if (m_development_disable_url_update) fname += "-EXTRA";
   if ( startDownload(ServerUrl, m_provided_url,
-                     fullPath(const_fname_server_url + "-EXTRA"),
+                     fullPath(fname),
                      FileDownloader::Plain) )
     {
       emit downloadProgress(tr("Updating the distribution server URL"));
