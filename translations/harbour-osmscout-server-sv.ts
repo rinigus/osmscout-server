@@ -1590,48 +1590,48 @@
     <message>
         <location filename="../src/main.cpp" line="103"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="108"/>
         <source>Start download of the maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta nerladdning av kartorna</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="112"/>
         <source>Update list of available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera listan över tillgängliga kartor</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <source>List maps available on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista kartor, tillgängliga på enheten</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="120"/>
         <source>List subscribed maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista prenumererade kartor</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="124"/>
         <source>List maps provided for download</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista kartor, tillhandahållna för nerladdning</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="128"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Prenumerera på en &lt;country&gt; datauppsättning</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="129"/>
         <location filename="../src/main.cpp" line="134"/>
         <source>country-id</source>
-        <translation type="unfinished"></translation>
+        <translation>lands-ID</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="133"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluta prenumerera på en &lt;country&gt; datauppsättning</translation>
     </message>
 </context>
 </TS>

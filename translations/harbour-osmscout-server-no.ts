@@ -122,7 +122,7 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="98"/>
         <source>Availibility on device</source>
-        <translation>Tilgjengelighet på enheten</translation>
+        <translation>Tilgjengelig på enheten</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="118"/>
@@ -167,7 +167,7 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="239"/>
         <source>Unsubscribe</source>
-        <translation>Avslutte abonnementet</translation>
+        <translation>Avslutte abonnement på &lt;country&gt; dataset</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="49"/>
@@ -818,7 +818,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Check for updates</source>
-        <translation>Sjekk for oppdateringer</translation>
+        <translation>Se etter oppdateringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="202"/>
@@ -838,7 +838,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="233"/>
         <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
-        <translation>Sjekk om det er filer som ikke brukes lenger fra de tidligere abonnementer</translation>
+        <translation>Sjekk om det er filer som ikke brukes lenger fra tidligere abonneringer</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="159"/>
@@ -1590,48 +1590,48 @@
     <message>
         <location filename="../src/main.cpp" line="103"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="108"/>
         <source>Start download of the maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Start nedlasting av kartene</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="112"/>
         <source>Update list of available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdater liste over tilgjengelige kart</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <source>List maps available on device</source>
-        <translation type="unfinished"></translation>
+        <translation>List kart som er tilgjengelig på enheten</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="120"/>
         <source>List subscribed maps</source>
-        <translation type="unfinished"></translation>
+        <translation>List abbonerte kart</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="124"/>
         <source>List maps provided for download</source>
-        <translation type="unfinished"></translation>
+        <translation>List kart som er klare for nedlasting</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="128"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Abboner på &lt;country&gt; dataset</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="129"/>
         <location filename="../src/main.cpp" line="134"/>
         <source>country-id</source>
-        <translation type="unfinished"></translation>
+        <translation>land-id</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="133"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Avslutt abbonent på &lt;country&gt; dataset</translation>
     </message>
 </context>
 </TS>

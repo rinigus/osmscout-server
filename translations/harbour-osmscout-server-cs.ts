@@ -1590,7 +1590,7 @@
     <message>
         <location filename="../src/main.cpp" line="103"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="108"/>
