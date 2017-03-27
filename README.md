@@ -420,7 +420,7 @@ The translations were contributed by
 - @Sagittarii: French
 - Oleg Artobolevsky @XOleg: Russian
 - A @atlochowski: Polish
-- Peer-Atle Motland @Pam: Norwegian
+- Peer-Atle Motland @Pam: Norwegian Bokmål
 
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README

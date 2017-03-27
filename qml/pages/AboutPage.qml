@@ -22,7 +22,7 @@ Page {
                               "@Sagittarii: French<br>" +
                               "Oleg Artobolevsky @XOleg: Russian<br>" +
                               "A @atlochowski: Polish<br>" +
-                              "Peer-Atle Motland @Pam: Norwegian<br>" +
+                              "Peer-Atle Motland @Pam: Norwegian Bokmål<br>" +
 
                               "<br><b>" + qsTr("Maps") + "</b><br>" +
                               "<p>" +
