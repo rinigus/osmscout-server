@@ -46,7 +46,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="40"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Notera att &lt;i&gt;libpostal&lt;/i&gt; utvecklats för att användas med den finavstämda modell som täcker hela världen. De landbaserade modellerna, utvecklades för att användas på mobila enheter och har inte trimmats speciellt. Posta frågor angående libpostal-prestanda på landbaserade modeller hos GitHub-projekten för &lt;i&gt;OSM Scout Server&lt;/i&gt; eller &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation>Notera att &lt;i&gt;libpostal&lt;/i&gt; utvecklats för att användas med den finavstämda modell som täcker hela världen. De landbaserade modellerna, utvecklades för att användas på mobila enheter och har inte trimmats speciellt. Posta frågor angående libpostal-prestanda på landbaserade modeller hos GitHub-projektet för &lt;i&gt;OSM Scout Server&lt;/i&gt; eller &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="47"/>
@@ -72,22 +72,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="193"/>
+        <location filename="../src/appsettings.cpp" line="194"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="193"/>
+        <location filename="../src/appsettings.cpp" line="194"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="195"/>
+        <location filename="../src/appsettings.cpp" line="196"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="195"/>
+        <location filename="../src/appsettings.cpp" line="196"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -310,7 +310,7 @@
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="18"/>
         <source>%1 territories</source>
-        <translation>%1 område(n)</translation>
+        <translation>%1 områden</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="25"/>
@@ -449,7 +449,7 @@
         <translation>Fel vid sökning med geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="188"/>
+        <location filename="../src/geomaster.cpp" line="189"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Sökning efter referenspunkt misslyckades. kan inte hitta</translation>
     </message>
@@ -543,169 +543,169 @@
         <translation>Kartlagringsmappen är inte skrivbar, justera rättigheterna för %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="121"/>
-        <location filename="../src/mapmanager.cpp" line="123"/>
+        <location filename="../src/mapmanager.cpp" line="122"/>
+        <location filename="../src/mapmanager.cpp" line="124"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Kunde inte öppna databasen för att spåra nerladdade filer</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="124"/>
+        <location filename="../src/mapmanager.cpp" line="125"/>
         <source>Map Manager functionality would be disturbed</source>
         <translation>Karthanteringsfunktioner kommer att störas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="169"/>
+        <location filename="../src/mapmanager.cpp" line="170"/>
         <source>Cannot create directory without any name</source>
         <translation>Kan inte skapa en mapp utan namn</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="176"/>
+        <location filename="../src/mapmanager.cpp" line="177"/>
         <source>Error creating directory %1</source>
         <translation>Kunde inte skapa mappen %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="214"/>
+        <location filename="../src/mapmanager.cpp" line="215"/>
         <source>Address parsing language support</source>
         <translation>Språkstöd för adresstolkning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="236"/>
-        <location filename="../src/mapmanager.cpp" line="697"/>
-        <location filename="../src/mapmanager.cpp" line="824"/>
+        <location filename="../src/mapmanager.cpp" line="237"/>
+        <location filename="../src/mapmanager.cpp" line="698"/>
+        <location filename="../src/mapmanager.cpp" line="825"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Kartlagringsmappen finns inte: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="244"/>
-        <location filename="../src/mapmanager.cpp" line="704"/>
+        <location filename="../src/mapmanager.cpp" line="245"/>
+        <location filename="../src/mapmanager.cpp" line="705"/>
         <source>No maps were requested</source>
         <translation>Inga kartor efterfrågades</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="264"/>
+        <location filename="../src/mapmanager.cpp" line="265"/>
         <source>No maps loaded: %1</source>
         <translation>Inga kartor inlästa: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="266"/>
-        <location filename="../src/mapmanager.cpp" line="297"/>
-        <location filename="../src/mapmanager.cpp" line="731"/>
+        <location filename="../src/mapmanager.cpp" line="267"/>
+        <location filename="../src/mapmanager.cpp" line="298"/>
+        <location filename="../src/mapmanager.cpp" line="732"/>
         <source>Version of dataset for %1 is not supported</source>
         <translation>Datauppsättningsversionen för %1, stöds inte</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="293"/>
+        <location filename="../src/mapmanager.cpp" line="294"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Saknad datauppsättning för %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="340"/>
+        <location filename="../src/mapmanager.cpp" line="341"/>
         <source>Available country or territory: </source>
         <translation>Tillgängligt land eller område: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="530"/>
+        <location filename="../src/mapmanager.cpp" line="531"/>
         <source>World</source>
         <translation>Världen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="594"/>
+        <location filename="../src/mapmanager.cpp" line="595"/>
         <source>Removing country from requested list: </source>
         <translation>Tar bort land från förfrågningslitan: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="751"/>
+        <location filename="../src/mapmanager.cpp" line="752"/>
         <source>Missing data: </source>
         <translation>Saknad data: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="843"/>
+        <location filename="../src/mapmanager.cpp" line="844"/>
         <source>Error starting the download of</source>
         <translation>Kunde inte starta nerladdning av</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="860"/>
+        <location filename="../src/mapmanager.cpp" line="861"/>
         <source>File downloaded:</source>
         <translation>Nerladdad fil:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="888"/>
+        <location filename="../src/mapmanager.cpp" line="889"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Kunde inte registrera nerladdad fil i spårningsdatabasen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="889"/>
+        <location filename="../src/mapmanager.cpp" line="890"/>
         <source>File registration error</source>
         <translation>Filregistreringsfel</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="914"/>
         <location filename="../src/mapmanager.cpp" line="915"/>
+        <location filename="../src/mapmanager.cpp" line="916"/>
         <source>Could not retrieve server URL</source>
         <translation>Kunde inte hämta serverns URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="968"/>
+        <location filename="../src/mapmanager.cpp" line="969"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Lista över länder: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="923"/>
+        <location filename="../src/mapmanager.cpp" line="924"/>
         <source>Downloading the list of countries</source>
         <translation>Laddar ner lista över länder</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1165"/>
+        <location filename="../src/mapmanager.cpp" line="1167"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över tillgängliga länder saknas. Ladda ner listan före uppdateringskontroll.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="979"/>
+        <location filename="../src/mapmanager.cpp" line="980"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="567"/>
+        <location filename="../src/mapmanager.cpp" line="568"/>
         <source>Add country or feature to requested list</source>
         <translation>Lägg till land eller funktion i förfrågningslistan</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="941"/>
+        <location filename="../src/mapmanager.cpp" line="942"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Nerladdning misslyckades, släpper alla nerladdningar</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="972"/>
+        <location filename="../src/mapmanager.cpp" line="973"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Lista över länder: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1083"/>
+        <location filename="../src/mapmanager.cpp" line="1084"/>
         <source>Error while deleting file:</source>
         <translation>Fel vid borttagning av fil:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1084"/>
+        <location filename="../src/mapmanager.cpp" line="1085"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation>Avbryter borttagning av återstående filer.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1089"/>
+        <location filename="../src/mapmanager.cpp" line="1090"/>
         <source>File removed during cleanup:</source>
         <translation>Fil borttagen under rensning:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1108"/>
+        <location filename="../src/mapmanager.cpp" line="1110"/>
         <source>Updating the distribution server URL</source>
         <translation>Uppdaterar distributionsserverns URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1161"/>
+        <location filename="../src/mapmanager.cpp" line="1163"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan inte söka efter uppdateringar, eftersom kartlagringsmapp saknas.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1163"/>
+        <location filename="../src/mapmanager.cpp" line="1165"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över efterfrågade länder saknas. Välj länder före uppdateringskontroll.</translation>
     </message>
@@ -1160,7 +1160,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="45"/>
         <source>Number of parallel worker threads: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Antal parallellt arbetande trådar: %1</translation>
     </message>
 </context>
 <context>
@@ -1583,6 +1583,55 @@
         <location filename="../qml/pages/UpdatesFound.qml" line="50"/>
         <source>List of countries and features with the found updates</source>
         <translation>Lista över länder och funktioner med funna uppdateringar</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="../src/main.cpp" line="103"/>
+        <source>OSM Scout Server</source>
+        <translation type="unfinished">OSM Scout Server</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="108"/>
+        <source>Start download of the maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="112"/>
+        <source>Update list of available maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="116"/>
+        <source>List maps available on device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="120"/>
+        <source>List subscribed maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="124"/>
+        <source>List maps provided for download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="128"/>
+        <source>Subscribe to a &lt;country&gt; dataset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="129"/>
+        <location filename="../src/main.cpp" line="134"/>
+        <source>country-id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="133"/>
+        <source>Unsubscribe &lt;country&gt; dataset</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

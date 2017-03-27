@@ -31,12 +31,12 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="29"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los mapas están alojados en el Centro de Procesamiento de Lenguajes Naturales (Facultad de Informática, Universidad Masaryk, Brno, República Checa) a través del repositorio de datos de modRana.org.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="34"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los datos de mapa proceden de OpenStreetMap, Licencia Abierta de Base de Datos 1.0. Los mapas se convierten a un formato adecuado desde los extractos descargados y/o usando polígonos conforme a lo dispuesto por Geofabrik GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="38"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="40"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Por favor, ten en cuenta que &lt;i&gt;libpostal&lt;/i&gt; se ha desarrollado para ajustarse bien en el modelo que cubre todo el mundo. Los modelos basados ​​en países fueron desarrollados para usar &lt;i&gt;libpostal&lt;/i&gt; en dispositivos móviles pero éste no se ajusta especificamente a estos modelos. Por favor, informa de las incidencias sobre el rendimiento de libpostal en los modelos basados ​​en países a través de github, en los proyectos &lt;i&gt;OSM Scout Server&lt;/i&gt; o &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation>Por favor, ten en cuenta que &lt;i&gt;libpostal&lt;/i&gt; se ha desarrollado para ajustarse bien en el modelo que cubre todo el mundo. Los modelos basados ​​en países fueron desarrollados para usar &lt;i&gt;libpostal&lt;/i&gt; en dispositivos móviles pero no se ajustan especificamente a estos dispositivos. Por favor, informa de las incidencias sobre el rendimiento de libpostal en los modelos basados ​​en países a través de github, en los proyectos &lt;i&gt;OSM Scout Server&lt;/i&gt; o &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="47"/>
@@ -72,22 +72,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="193"/>
+        <location filename="../src/appsettings.cpp" line="194"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="193"/>
+        <location filename="../src/appsettings.cpp" line="194"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="195"/>
+        <location filename="../src/appsettings.cpp" line="196"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="195"/>
+        <location filename="../src/appsettings.cpp" line="196"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -379,7 +379,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="362"/>
         <source>Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de espera</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="396"/>
@@ -431,7 +431,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="57"/>
         <source>libpostal using language</source>
-        <translation>idioma usado en libpostal</translation>
+        <translation>Idioma usado en libpostal</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="61"/>
@@ -449,7 +449,7 @@
         <translation>Error al buscar con geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="188"/>
+        <location filename="../src/geomaster.cpp" line="189"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>La búsqueda del punto de referencia ha fallado: no se pudo encontrar</translation>
     </message>
@@ -530,182 +530,182 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="76"/>
         <source>Maps storage folder does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La carpeta de almacenamiento de mapas no existe: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="79"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La ruta de la carpeta de almacenamiento de mapas no apunta a un directorio: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="85"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La carpeta de almacenamiento de mapas no tiene permisos de escritura, por favor, modifica los permisos de %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="121"/>
-        <location filename="../src/mapmanager.cpp" line="123"/>
+        <location filename="../src/mapmanager.cpp" line="122"/>
+        <location filename="../src/mapmanager.cpp" line="124"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Error al abrir la base de datos para el seguimiento de los ficheros descargados</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="124"/>
+        <location filename="../src/mapmanager.cpp" line="125"/>
         <source>Map Manager functionality would be disturbed</source>
-        <translation type="unfinished"></translation>
+        <translation>La funcionalidad del Gestor de mapas se ha alterado</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="169"/>
+        <location filename="../src/mapmanager.cpp" line="170"/>
         <source>Cannot create directory without any name</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible crear un directorio sin indicar un nombre</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="176"/>
+        <location filename="../src/mapmanager.cpp" line="177"/>
         <source>Error creating directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al crear directorio %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="214"/>
+        <location filename="../src/mapmanager.cpp" line="215"/>
         <source>Address parsing language support</source>
         <translation>Soporte del idioma en el análisis de direcciones</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="236"/>
-        <location filename="../src/mapmanager.cpp" line="697"/>
-        <location filename="../src/mapmanager.cpp" line="824"/>
+        <location filename="../src/mapmanager.cpp" line="237"/>
+        <location filename="../src/mapmanager.cpp" line="698"/>
+        <location filename="../src/mapmanager.cpp" line="825"/>
         <source>Maps storage folder does not exist: </source>
         <translation>No existe la carpeta de almacenamieto de los mapas: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="244"/>
-        <location filename="../src/mapmanager.cpp" line="704"/>
+        <location filename="../src/mapmanager.cpp" line="245"/>
+        <location filename="../src/mapmanager.cpp" line="705"/>
         <source>No maps were requested</source>
         <translation>No se han solicitado mapas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="264"/>
+        <location filename="../src/mapmanager.cpp" line="265"/>
         <source>No maps loaded: %1</source>
         <translation>No hay mapas cargados: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="266"/>
-        <location filename="../src/mapmanager.cpp" line="297"/>
-        <location filename="../src/mapmanager.cpp" line="731"/>
+        <location filename="../src/mapmanager.cpp" line="267"/>
+        <location filename="../src/mapmanager.cpp" line="298"/>
+        <location filename="../src/mapmanager.cpp" line="732"/>
         <source>Version of dataset for %1 is not supported</source>
         <translation>La versión del conjunto de datos para %1 no es compatible</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="293"/>
+        <location filename="../src/mapmanager.cpp" line="294"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Falta el conjunto de datos para %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="340"/>
+        <location filename="../src/mapmanager.cpp" line="341"/>
         <source>Available country or territory: </source>
         <translation>País o territorio disponible:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="530"/>
+        <location filename="../src/mapmanager.cpp" line="531"/>
         <source>World</source>
         <translation>Mundo</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="594"/>
+        <location filename="../src/mapmanager.cpp" line="595"/>
         <source>Removing country from requested list: </source>
         <translation>Eliminando país de la lista solicitada:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="751"/>
+        <location filename="../src/mapmanager.cpp" line="752"/>
         <source>Missing data: </source>
         <translation>Faltan datos: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="843"/>
+        <location filename="../src/mapmanager.cpp" line="844"/>
         <source>Error starting the download of</source>
         <translation>Error al iniciar la descarga de</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="860"/>
+        <location filename="../src/mapmanager.cpp" line="861"/>
         <source>File downloaded:</source>
         <translation>Fichero descargado:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="888"/>
+        <location filename="../src/mapmanager.cpp" line="889"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>No se ha podido registrar el fichero descargado en la base de datos de seguimiento</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="889"/>
+        <location filename="../src/mapmanager.cpp" line="890"/>
         <source>File registration error</source>
         <translation>Error en fichero de registro</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="914"/>
         <location filename="../src/mapmanager.cpp" line="915"/>
+        <location filename="../src/mapmanager.cpp" line="916"/>
         <source>Could not retrieve server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>No se pudo recuperar URL del servidor</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="968"/>
+        <location filename="../src/mapmanager.cpp" line="969"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Lista de países: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="923"/>
+        <location filename="../src/mapmanager.cpp" line="924"/>
         <source>Downloading the list of countries</source>
         <translation>Descargando la lista de países</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1165"/>
+        <location filename="../src/mapmanager.cpp" line="1167"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>No es posible comprobar actualizaciones debido a que falta la lista de países provistos. Decarga la lista antes de comprobar actualizaciones.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="979"/>
+        <location filename="../src/mapmanager.cpp" line="980"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="567"/>
+        <location filename="../src/mapmanager.cpp" line="568"/>
         <source>Add country or feature to requested list</source>
         <translation>Añadir país o funcionalidad a la lista solicitada</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="941"/>
+        <location filename="../src/mapmanager.cpp" line="942"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Error en la descarga, cancelando todas las descargas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="972"/>
+        <location filename="../src/mapmanager.cpp" line="973"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de países: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1083"/>
+        <location filename="../src/mapmanager.cpp" line="1084"/>
         <source>Error while deleting file:</source>
         <translation>Error al borrar el fichero:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1084"/>
+        <location filename="../src/mapmanager.cpp" line="1085"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation>Cancelando la eliminación de los ficheros restantes.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1089"/>
+        <location filename="../src/mapmanager.cpp" line="1090"/>
         <source>File removed during cleanup:</source>
         <translation>Fichero eliminado al limpiar:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1108"/>
+        <location filename="../src/mapmanager.cpp" line="1110"/>
         <source>Updating the distribution server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizando URL del servidor de distribución</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1161"/>
+        <location filename="../src/mapmanager.cpp" line="1163"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>No se ha podido comprobar las actualizaciones debido a que falta la carpeta de almacenamiento de mapas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1163"/>
+        <location filename="../src/mapmanager.cpp" line="1165"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>No se ha podido comprobar actualizaciones debido a que falta la lista de países solicitados. Selecciona los países antes de comprobar actualizaciones.</translation>
     </message>
@@ -773,7 +773,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="27"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation>El Gestor de mapas gestiona el amacenamiento en el dispositivo de los mapas sin conexión y del conjunto de datos relacionados. Aquí puedes seleccionar las funcionalidades y los países que se almacenarán, actualizarán o eliminarán en el dispositivo</translation>
+        <translation>El Gestor de mapas gestiona el almacenamiento en el dispositivo de los mapas sin conexión y del conjunto de datos relacionados. Aquí puedes seleccionar las funcionalidades y los países que se almacenarán, actualizarán o eliminarán en el dispositivo</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="38"/>
@@ -818,12 +818,12 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar actualizaciones</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="202"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar la lista de mapas y conjuntos de datos disponibles actualmente y comprobar si los mapas instalados pueden actualizarse </translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="213"/>
@@ -1160,7 +1160,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="45"/>
         <source>Number of parallel worker threads: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de subprocesos de trabajo paralelo: %1</translation>
     </message>
 </context>
 <context>
@@ -1429,7 +1429,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="127"/>
         <source>Geocoder-NLP</source>
-        <translation>Geocodificador-NLP</translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="106"/>
@@ -1509,17 +1509,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
         <source>Create default directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear directorio por defecto</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="95"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Crea el directorio&lt;br&gt;%1&lt;br&gt;y lo configura para almacenar mapas</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="97"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation type="unfinished"></translation>
+        <translation>Se espera que el &lt;i&gt;Servidor OSM Scout&lt;/i&gt; sea utilizado con los mapas descargados. Para administrar los mapas, el servidor necesita una carpeta propia. Los archivos de esa carpeta solo serán administrados por el servidor. Esto incluye la eliminación de todos los archivos al solicitar la limpieza o actualización de los mapas. &lt;br&gt;&lt;br&gt;Por favor, &lt;b&gt;asigna una carpeta vacía e independiente&lt;/b&gt; para el Servidor OSM Scout. Para ello, crea una nueva carpeta usando un gestor de archivos o la línea de comandos y selecciona esa carpeta en &lt;i&gt;Ajustes&lt;/i&gt; (menú deslizante). Alternativamente, el directorio puede crearse y configurarse automáticamente en &lt;br&gt;%1&lt;br&gt; pulsando el botón de abajo</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="122"/>
@@ -1567,21 +1567,70 @@
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="25"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizaciones</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="33"/>
         <source>Do you want to start the update?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Quieres iniciar la actualización?</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="41"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, ten en cuenta que una vez que inicies la actualización, los mapas no estarán disponibles hasta que finalice la actualización.</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="50"/>
         <source>List of countries and features with the found updates</source>
+        <translation>Lista de países y funcionalidades encontrados en la actualización</translation>
+    </message>
+</context>
+<context>
+    <name>main</name>
+    <message>
+        <location filename="../src/main.cpp" line="103"/>
+        <source>OSM Scout Server</source>
+        <translation type="unfinished">Servidor OSM Scout</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="108"/>
+        <source>Start download of the maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="112"/>
+        <source>Update list of available maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="116"/>
+        <source>List maps available on device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="120"/>
+        <source>List subscribed maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="124"/>
+        <source>List maps provided for download</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="128"/>
+        <source>Subscribe to a &lt;country&gt; dataset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="129"/>
+        <location filename="../src/main.cpp" line="134"/>
+        <source>country-id</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="133"/>
+        <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
