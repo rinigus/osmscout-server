@@ -1101,7 +1101,6 @@ bool Manager::updateProvided()
 {
   if (downloading()) return false;
 
-#pragma message "ADDED EXTRA TO KEEP URL FILE, REMOVE IT WHEN FINISHED TESTING"
   QString fname = const_fname_server_url;
   if (m_development_disable_url_update) fname += "-EXTRA";
   if ( startDownload(ServerUrl, m_provided_url,
