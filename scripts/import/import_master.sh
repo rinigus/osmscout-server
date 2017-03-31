@@ -13,5 +13,5 @@ nice -n 19 make -f Makefile.splitter
 nice -n 19 make -f Makefile.import -j8
 
 ./prepare_distribution.py
-./uploader.sh
+#./uploader.sh
 
