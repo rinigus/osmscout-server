@@ -1595,43 +1595,43 @@
     <message>
         <location filename="../src/main.cpp" line="108"/>
         <source>Start download of the maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Download van kaarten starten</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="112"/>
         <source>Update list of available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst van beschikbare kaarten bijwerken</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <source>List maps available on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst van op apparaat beschikbare kaarten</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="120"/>
         <source>List subscribed maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst van kaarten waarop je bent geabonneerd</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="124"/>
         <source>List maps provided for download</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst van voor download aangeboden kaarten</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="128"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonneren op een &lt;country&gt;-gegevensset</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="129"/>
         <location filename="../src/main.cpp" line="134"/>
         <source>country-id</source>
-        <translation type="unfinished"></translation>
+        <translation>land-id</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="133"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Abonnement op &lt;country&gt;-gegevensset opzeggen</translation>
     </message>
 </context>
 </TS>

@@ -1595,43 +1595,43 @@
     <message>
         <location filename="../src/main.cpp" line="108"/>
         <source>Start download of the maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Начать загрузку карт</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="112"/>
         <source>Update list of available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить список доступных карт</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <source>List maps available on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Список доступных на устройстве карт</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="120"/>
         <source>List subscribed maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Список выбранных карт</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="124"/>
         <source>List maps provided for download</source>
-        <translation type="unfinished"></translation>
+        <translation>Список карт для загрузки</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="128"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрать набор данных для &lt;country&gt;</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="129"/>
         <location filename="../src/main.cpp" line="134"/>
         <source>country-id</source>
-        <translation type="unfinished"></translation>
+        <translation>идентификатор страны</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="133"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Отказаться от набора данных для &lt;country&gt;</translation>
     </message>
 </context>
 </TS>

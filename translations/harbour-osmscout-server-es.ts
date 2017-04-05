@@ -803,7 +803,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="123"/>
         <source>Missing data:&lt;br&gt;</source>
-        <translation>Falta dato:&lt;br&gt;</translation>
+        <translation>Datos faltantes:&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="139"/>
@@ -848,7 +848,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="171"/>
         <source>Select the countries or territories that you want to keep on device</source>
-        <translation>Seleccionar los países o territorios que quieres mantener en tu dispositivo</translation>
+        <translation>Seleccionar los países o territorios que quieres guardar en tu dispositivo</translation>
     </message>
 </context>
 <context>
@@ -1577,7 +1577,7 @@
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="41"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
-        <translation>Por favor, ten en cuenta que una vez que inicies la actualización, los mapas no estarán disponibles hasta que finalice la actualización.</translation>
+        <translation>Por favor, ten en cuenta que una vez que inicies la actualización, los mapas no estarán disponibles hasta que finalice la actualización</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="50"/>
@@ -1595,43 +1595,43 @@
     <message>
         <location filename="../src/main.cpp" line="108"/>
         <source>Start download of the maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar la descarga de mapas</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="112"/>
         <source>Update list of available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar lista de mapas disponibles</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <source>List maps available on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de mapas disponibles en el dispositivo</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="120"/>
         <source>List subscribed maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de mapas suscritos</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="124"/>
         <source>List maps provided for download</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista de mapas provistos para descargar</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="128"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Suscribirse al conjunto de datos de &lt;country&gt;</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="129"/>
         <location filename="../src/main.cpp" line="134"/>
         <source>country-id</source>
-        <translation type="unfinished"></translation>
+        <translation>id-pais</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="133"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Anular suscripción del conjunto de datos de &lt;counrty&gt;</translation>
     </message>
 </context>
 </TS>
