@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Apr 5 2017 rinigus <rinigus.git@gmail.com> 0.8.1-1
+- Updated translations
+- Fix start error on i486
+
 * Mon Mar 27 2017 rinigus <rinigus.git@gmail.com> 0.8.0-1
 - Optimization of geocoder-nlp, changes in geocoder data format
 - Updates from libosmscout upstream
