@@ -10,17 +10,24 @@
 
 #define GEOMASTER_SETTINGS "geocoder-nlp/"
 
+#define MAPNIKMASTER_SETTINGS "mapnik/"
+
 //////////////////////////////////////////////
 /// global variables
 
 #include "dbmaster.h"
 #include "geomaster.h"
+#include "mapnikmaster.h"
+
 #include <atomic>
 
 extern DBMaster *osmScoutMaster;
 
 extern GeoMaster *geoMaster;
 
+extern MapnikMaster *mapnikMaster;
+
 extern std::atomic<bool> useGeocoderNLP;
+extern std::atomic<bool> useMapnik;
 
 #endif // CONFIG_H

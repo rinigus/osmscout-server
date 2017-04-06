@@ -8,4 +8,7 @@ DBMaster *osmScoutMaster = NULL;
 
 GeoMaster *geoMaster = NULL;
 
-std::atomic<bool> useGeocoderNLP{false};
+MapnikMaster *mapnikMaster = NULL;
+
+std::atomic<bool> useGeocoderNLP;
+std::atomic<bool> useMapnik;

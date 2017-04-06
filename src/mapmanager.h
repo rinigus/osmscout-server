@@ -149,6 +149,7 @@ namespace MapManager {
     void databaseOsmScoutChanged(QString database);
     void databaseGeocoderNLPChanged(QString database);
     void databasePostalChanged(QString global, QString country);
+    void databaseMapnikChanged(QStringList files);
 
     void downloadingChanged(bool state);
     void downloadProgress(QString info);

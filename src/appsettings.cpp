@@ -113,6 +113,9 @@ void AppSettings::initDefaults()
   CHECK(GEOMASTER_SETTINGS "languages", "");
 
   CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
+
+  CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
+  CHECK(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
