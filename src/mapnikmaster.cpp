@@ -8,7 +8,8 @@
 #include <mapnik/datasource_cache.hpp>
 #include <mapnik/font_engine_freetype.hpp>
 #include <mapnik/image_util.hpp>
-
+#include <mapnik/well_known_srs.hpp>
+#include <mapnik/debug.hpp>
 #include <string>
 
 
@@ -18,8 +19,10 @@ MapnikMaster::MapnikMaster(QObject *parent) :
   m_projection_merc("+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"),
   m_projection_transform(m_projection_longlat, m_projection_merc)
 {
-  mapnik::datasource_cache::instance().register_datasources("/usr/local/lib/mapnik/input");
-  mapnik::freetype_engine::register_fonts("/usr/local/lib/mapnik/fonts");
+  mapnik::datasource_cache::instance().register_datasources(MAPNIK_INPUT_PLUGINS_DIR);
+  mapnik::freetype_engine::register_fonts(MAPNIK_FONTS_DIR);
+
+  mapnik::logger::set_severity(mapnik::logger::debug);
 
   onSettingsChanged();
 
@@ -51,7 +54,7 @@ void MapnikMaster::onMapnikChanged(QStringList /*files*/)
   if (useMapnik)
     {
       try {
-        mapnik::load_map(m_map, "map.xml");
+        mapnik::load_map(m_map, "Mapnik/map.xml");
       }
       catch ( std::exception const& ex )
       {
@@ -78,7 +81,7 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
     m_map.set_width(width);
 
 #pragma message "This has to be optimized somehow"
-    m_map.set_buffer_size(width/2*m_scale);
+    m_map.set_buffer_size(256/2*m_scale);
 
     m_map.zoom_to_box(box);
 
@@ -86,7 +89,8 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
     mapnik::agg_renderer<mapnik::image_rgba8> ren(m_map,buf,m_scale);
     ren.apply();
 
-    result = QByteArray::fromStdString(mapnik::save_to_string(buf,"png"));
+    std::string res = mapnik::save_to_string(buf,"png");
+    result.append(res.data(), res.size());
 
     return true;
   }

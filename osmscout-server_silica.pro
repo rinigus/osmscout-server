@@ -20,6 +20,8 @@ CONFIG += sailfishapp sailfishapp_no_deploy_qml
 CONFIG += use_map_qt
 #CONFIG += use_map_cairo
 
+CONFIG += use_mapnik
+
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
@@ -60,7 +62,8 @@ SOURCES += \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
-    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
+    src/mapnikmaster.cpp 
+#    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += qml/osmscout-server.qml \
     qml/cover/CoverPage.qml \
@@ -84,8 +87,9 @@ HEADERS += \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
-    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
-    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
+    src/mapnikmaster.h
+#    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
+#    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -101,7 +105,15 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
+use_mapnik {
+    DEFINES += USE_MAPNIK
+    DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/lib/mapnik/fonts\\\"
+    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/lib/mapnik/input\\\"
+    LIBS += -lmapnik -licuuc
+}
+
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -ldl
+LIBS += -lsqlite3
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
