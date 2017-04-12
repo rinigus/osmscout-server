@@ -10,8 +10,12 @@
 #include <mapnik/image_util.hpp>
 #include <mapnik/well_known_srs.hpp>
 #include <mapnik/debug.hpp>
-#include <string>
 
+#include <string>
+#include <algorithm>
+
+#include <QThread>
+#include <QDir>
 
 MapnikMaster::MapnikMaster(QObject *parent) :
   QObject(parent),
@@ -22,7 +26,7 @@ MapnikMaster::MapnikMaster(QObject *parent) :
   mapnik::datasource_cache::instance().register_datasources(MAPNIK_INPUT_PLUGINS_DIR);
   mapnik::freetype_engine::register_fonts(MAPNIK_FONTS_DIR);
 
-  mapnik::logger::set_severity(mapnik::logger::debug);
+  mapnik::logger::set_severity(mapnik::logger::error);
 
   onSettingsChanged();
 
@@ -36,40 +40,69 @@ MapnikMaster::~MapnikMaster()
 
 void MapnikMaster::onSettingsChanged()
 {
-  QMutexLocker lk(&m_mutex);
+  std::unique_lock<std::mutex> lk(m_mutex);
   AppSettings settings;
 
   m_scale = std::max(1e-3, settings.valueFloat(MAPNIKMASTER_SETTINGS "scale"));
   useMapnik = settings.valueBool(MAPNIKMASTER_SETTINGS "use_mapnik");
 
-  if (!useMapnik && m_map.layer_count()>0)
-    m_map.remove_all();
+  if (!useMapnik && m_pool_maps.size() > 0)
+    {
+      m_pool_maps.clear();
+      m_pool_maps_generation++;
+    }
+
+  m_pool_maps_cv.notify_all();
 }
 
 void MapnikMaster::onMapnikChanged(QStringList /*files*/)
 {
-  QMutexLocker lk(&m_mutex);
+  std::unique_lock<std::mutex> lk(m_mutex);
 
-  m_map.remove_all();
+  m_pool_maps.clear();
+  m_pool_maps_generation++;
+
   if (useMapnik)
     {
       try {
-        mapnik::load_map(m_map, "Mapnik/map.xml");
+        int ncpus = std::max(1, QThread::idealThreadCount());
+#ifdef IS_SAILFISH_OS
+        // In Sailfish, CPUs could be switched off one by one. As a result,
+        // "ideal thread count" set by Qt could be off.
+        // In other systems, this procedure is not needed and the defaults can be used
+        //
+        ncpus = 0;
+        QDir dir;
+        while ( dir.exists(QString("/sys/devices/system/cpu/cpu") + QString::number(ncpus)) )
+          ++ncpus;
+#endif
+        for (int i = 0; i < ncpus; ++i)
+          {
+            std::shared_ptr<mapnik::Map> map(new mapnik::Map());
+            mapnik::load_map(*map, "Mapnik/map.xml");
+            m_pool_maps.push_back(map);
+          }
       }
       catch ( std::exception const& ex )
       {
         InfoHub::logError("Mapnik exception: " + QString::fromStdString(ex.what()));
       }
     }
+
+  m_pool_maps_cv.notify_all();
 }
 
 bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double lat0, double lon0, double lat1, double lon1, QByteArray &result)
 {
-  QMutexLocker lk(&m_mutex);
+  bool success = false;
 
-  try
+  std::shared_ptr<mapnik::Map> map;
+  int generation = -1;
+
+  mapnik::box2d<double> box(lon0, lat0, lon1, lat1);
+
   {
-    mapnik::box2d<double> box(lon0, lat0, lon1, lat1);
+    std::unique_lock<std::mutex> lk(m_mutex);
 
     if ( !m_projection_transform.forward(box) )
       {
@@ -77,27 +110,45 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
         return false;
       }
 
-    m_map.set_height(height);
-    m_map.set_width(width);
+    while (useMapnik && m_pool_maps.empty())
+      m_pool_maps_cv.wait(lk);
+
+    if (!useMapnik || m_pool_maps.empty()) return false;
+
+    map = m_pool_maps.front();
+    m_pool_maps.pop_front();
+    generation = m_pool_maps_generation;
+  }
+
+  try
+  {
+    map->set_height(height);
+    map->set_width(width);
 
 #pragma message "This has to be optimized somehow"
-    m_map.set_buffer_size(256/2*m_scale);
+    map->set_buffer_size(256/2*m_scale);
 
-    m_map.zoom_to_box(box);
+    map->zoom_to_box(box);
 
-    mapnik::image_rgba8 buf(m_map.width(),m_map.height());
-    mapnik::agg_renderer<mapnik::image_rgba8> ren(m_map,buf,m_scale);
+    mapnik::image_rgba8 buf(map->width(),map->height());
+    mapnik::agg_renderer<mapnik::image_rgba8> ren(*map,buf,m_scale);
     ren.apply();
 
     std::string res = mapnik::save_to_string(buf,"png");
     result.append(res.data(), res.size());
 
-    return true;
+    success = true;
   }
   catch ( std::exception const& ex )
   {
     InfoHub::logError("Mapnik exception: " + QString::fromStdString(ex.what()));
   }
 
-  return false;
+  {
+    std::unique_lock<std::mutex> lk(m_mutex);
+    if (generation == m_pool_maps_generation)
+      m_pool_maps.push_front(map);
+  }
+
+  return success;
 }

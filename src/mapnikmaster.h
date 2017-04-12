@@ -2,7 +2,6 @@
 #define MAPNIKMASTER_H
 
 #include <QObject>
-#include <QMutex>
 #include <QStringList>
 
 #include <mapnik/map.hpp>
@@ -10,6 +9,10 @@
 #include <mapnik/projection.hpp>
 
 #include <atomic>
+#include <condition_variable>
+#include <mutex>
+#include <memory>
+#include <deque>
 
 /// \brief Access to Mapnik rendering
 ///
@@ -34,15 +37,20 @@ public slots:
     void onMapnikChanged(QStringList files);
 
 protected:
-    QMutex m_mutex;
+    std::mutex m_mutex;
 
-    mapnik::Map m_map;
+    //mapnik::Map m_map;
     mapnik::projection m_projection_longlat;
     mapnik::projection m_projection_merc;
     mapnik::proj_transform m_projection_transform;
 
     std::atomic<float> m_scale{1.0};
     QStringList m_mapnik_files;
+
+    // pool of mapnik maps
+    std::deque< std::shared_ptr< mapnik::Map > > m_pool_maps;
+    int m_pool_maps_generation{0}; ///< Increased when the new settings are loaded
+    std::condition_variable m_pool_maps_cv;
 };
 
 #endif // MAPNIKMASTER_H
