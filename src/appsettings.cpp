@@ -114,8 +114,9 @@ void AppSettings::initDefaults()
 
   CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
 
-  CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
   CHECK(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+  CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
+  CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 128);
   CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", "mapnik");
 }
 

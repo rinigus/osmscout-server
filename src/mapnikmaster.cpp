@@ -38,9 +38,6 @@ MapnikMaster::MapnikMaster(QObject *parent) :
   /////////////
 
   onSettingsChanged();
-
-#pragma message "Should be initialized by map manager with the main folder and list of files"
-  onMapnikChanged(QStringList());
 }
 
 MapnikMaster::~MapnikMaster()
@@ -53,6 +50,7 @@ void MapnikMaster::onSettingsChanged()
   AppSettings settings;
 
   m_scale = std::max(1e-3, settings.valueFloat(MAPNIKMASTER_SETTINGS "scale"));
+  m_buffer_size = std::max(0, settings.valueFloat(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels"));
   useMapnik = settings.valueBool(MAPNIKMASTER_SETTINGS "use_mapnik");
   m_configuration_dir = settings.valueString(MAPNIKMASTER_SETTINGS "configuration_dir");
 
@@ -101,7 +99,7 @@ void MapnikMaster::onSettingsChanged()
     }
 }
 
-void MapnikMaster::onMapnikChanged(QStringList files)
+void MapnikMaster::onMapnikChanged(QString root_directory, QStringList country_files)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
 
@@ -110,6 +108,12 @@ void MapnikMaster::onMapnikChanged(QStringList files)
 
   if (useMapnik)
     {
+      // ensure that the path is an absolute one
+      {
+        QDir d(root_directory);
+        root_directory = d.absolutePath();
+      }
+
       //////////////
       QDomDocument doc;
       {
@@ -121,45 +125,48 @@ void MapnikMaster::onMapnikChanged(QStringList files)
           }
       }
 
-      bool done = false;
-      while (!done)
+      QDomNodeList lold = doc.elementsByTagName("Layer");
+      int orig_layers_left = lold.size();
+      for (int li=0; li < orig_layers_left; ++li)
         {
-          done = true;
-
-          QDomNodeList lold = doc.elementsByTagName("Layer");
-          int orig_layers_left = lold.size();
-          for (int li=0; li < orig_layers_left && done; ++li)
+          QDomElement layer = lold.item(li).toElement();
+          QDomNodeList plist = layer.firstChildElement("Datasource").elementsByTagName("Parameter");
+          for (int pi=0; pi < plist.size(); ++pi)
             {
-              QDomElement layer = lold.item(li).toElement();
-              QDomNodeList plist = layer.firstChildElement("Datasource").elementsByTagName("Parameter");
-              for (int pi=0; pi < plist.size() && done; ++pi)
+              QDomElement e = plist.item(pi).toElement();
+
+              if (e.hasAttribute("name") && e.attribute("name") == "file")
                 {
-                  QDomElement e = plist.item(pi).toElement();
-                  if (e.hasAttribute("name") && e.attribute("name") == "file"/* && !e.hasAttribute("processed")*/)
+                  // country-specific layer: remove the defined layer and make as many clones
+                  // as many countries have been given in country_files
+                  QString fname = e.text();
+                  if (fname.indexOf("countries")>=0 && fname.indexOf(".sqlite") > 0)
                     {
-                      QString fname = e.text();
-                      if (fname.indexOf("countries")>=0 && fname.indexOf(".sqlite") > 0)
+                      for (QString f: country_files)
                         {
-//                          e.setAttribute("processed", "true");
-                          for (QString f: files)
-                            {
-                              while (e.hasChildNodes())
-                                e.removeChild(e.firstChild());
-                              QDomText txt = doc.createTextNode(f);
-                              e.appendChild(txt);
+                          while (e.hasChildNodes())
+                            e.removeChild(e.firstChild());
+                          QDomText txt = doc.createTextNode(root_directory + "/" + f);
+                          e.appendChild(txt);
 
-                              QDomElement element = layer.cloneNode().toElement();
-                              layer.parentNode().appendChild(element);
-                            }
-
-                          layer.parentNode().removeChild(layer);
-
-                          orig_layers_left--;
-                          li--;
-                          break;
-                          //                          done = false;
+                          QDomElement element = layer.cloneNode().toElement();
+                          layer.parentNode().appendChild(element);
                         }
 
+                      layer.parentNode().removeChild(layer);
+
+                      orig_layers_left--;
+                      li--;
+                      break;
+                    }
+
+                  else if (fname.indexOf("world")==0)
+                    {
+                      // world shapes: just prepend root_directory
+                      while (e.hasChildNodes())
+                        e.removeChild(e.firstChild());
+                      QDomText txt = doc.createTextNode(root_directory + "/" + fname);
+                      e.appendChild(txt);
                     }
                 }
             }
@@ -236,10 +243,7 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
   {
     map->set_height(height);
     map->set_width(width);
-
-#pragma message "This has to be optimized somehow"
-    map->set_buffer_size(256/2*m_scale);
-
+    map->set_buffer_size(m_buffer_size*m_scale);
     map->zoom_to_box(box);
 
     mapnik::image_rgba8 buf(map->width(),map->height());

@@ -35,7 +35,7 @@ signals:
 
 public slots:
     void onSettingsChanged();
-    void onMapnikChanged(QStringList files);
+    void onMapnikChanged(QString root_directory, QStringList country_files);
 
 protected:
     std::mutex m_mutex;
@@ -46,6 +46,7 @@ protected:
     mapnik::proj_transform m_projection_transform;
 
     std::atomic<float> m_scale{1.0};
+    std::atomic<int>  m_buffer_size{128}; ///< Size of a buffer around a tile in pixels for scale 1
     QString m_configuration_dir;
     QString m_local_xml;
 
