@@ -50,7 +50,7 @@ void MapnikMaster::onSettingsChanged()
   AppSettings settings;
 
   m_scale = std::max(1e-3, settings.valueFloat(MAPNIKMASTER_SETTINGS "scale"));
-  m_buffer_size = std::max(0, settings.valueFloat(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels"));
+  m_buffer_size = std::max(0, settings.valueInt(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels"));
   useMapnik = settings.valueBool(MAPNIKMASTER_SETTINGS "use_mapnik");
   m_configuration_dir = settings.valueString(MAPNIKMASTER_SETTINGS "configuration_dir");
 
