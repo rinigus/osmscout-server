@@ -11,22 +11,19 @@ At present, the server can be used to provide:
 * search for POIs next to a reference area;
 * calculating routes between given sequence of points.
 
-Server is a wrapper around libosmscout exposing its functionality.
+Server is a wrapper around libosmscout exposing its
+functionality. This library can be used to render maps, search for
+locations and POIs, and calculate routes. 
 
-Starting from version 0.6.0, the server has a support for a geocoder
-(search engine) that is based on libpostal
-(https://github.com/openvenues/libpostal). This new geocoder
-(https://github.com/rinigus/geocoder-nlp) is expected to improve the
-search results significantly and allow to use natural address queries
-by user.
+In addition to libosmscout, the server supports:
+* search via geocoder-nlp (https://github.com/rinigus/geocoder-nlp) that is based on libpostal (https://github.com/openvenues/libpostal);
+* map rendering via mapnik (https://github.com/mapnik/mapnik).
 
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps and modRana are
-provided under "thirdparty" folder. At present, Poor Maps includes
-plugins already in the upstream and no additional configuration is
-needed. Poor Maps plugins cover functionality of the server
-fully. modRana can use the server to show the map with the other
-functionality expected in near future.
+provided under "thirdparty" folder. At present, Poor Maps and modRana
+includes plugins already in the upstream and no additional
+configuration is needed. 
 
 The server is written using Qt. The server can be used as a console or
 a Sailfish application. For console version, use
@@ -41,16 +38,10 @@ in server environment when compiled as a console application.
 
 Starting from version 0.7, the server uses maps distributed via online
 distribution network. It is expected that the users would download,
-update, and, when needed, remove maps via server's GUI. This
+update, and, when needed, remove maps via server's GUI/CLI. This
 distribution model allows users to specify which components are
 required (libosmscout, geocoder-nlp, for example) and download only
 the required components.
-
-At present, maps downloads and managing is supported on Sailfish OS
-GUI only. If you want this functionality to be exposed to Linux CLI,
-open an issue to request it. Since I have not received any feedback
-from possible Linux users, it seems to me that the server is used only
-on Sailfish OS and there is no need to provide Linux CLI at this time.
 
 If tinkering is required, it is still possible to import the maps
 manually. However, in this case, the user is expected to incorporate
@@ -441,6 +432,8 @@ projects.
 libosmscout: http://libosmscout.sourceforge.net
 
 libpostal: https://github.com/openvenues/libpostal
+
+mapnik: https://github.com/mapnik/mapnik
 
 osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 
