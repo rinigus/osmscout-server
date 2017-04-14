@@ -116,6 +116,7 @@ void AppSettings::initDefaults()
 
   CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
   CHECK(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+  CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", "mapnik");
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)

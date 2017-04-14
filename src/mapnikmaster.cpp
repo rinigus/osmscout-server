@@ -14,8 +14,15 @@
 #include <string>
 #include <algorithm>
 
-#include <QThread>
+#include <QStandardPaths>
 #include <QDir>
+#include <QDirIterator>
+#include <QDomDocument>
+#include <QFile>
+#include <QThread>
+
+#include <QDebug>
+
 
 MapnikMaster::MapnikMaster(QObject *parent) :
   QObject(parent),
@@ -27,6 +34,8 @@ MapnikMaster::MapnikMaster(QObject *parent) :
   mapnik::freetype_engine::register_fonts(MAPNIK_FONTS_DIR);
 
   mapnik::logger::set_severity(mapnik::logger::error);
+
+  /////////////
 
   onSettingsChanged();
 
@@ -45,6 +54,7 @@ void MapnikMaster::onSettingsChanged()
 
   m_scale = std::max(1e-3, settings.valueFloat(MAPNIKMASTER_SETTINGS "scale"));
   useMapnik = settings.valueBool(MAPNIKMASTER_SETTINGS "use_mapnik");
+  m_configuration_dir = settings.valueString(MAPNIKMASTER_SETTINGS "configuration_dir");
 
   if (!useMapnik && m_pool_maps.size() > 0)
     {
@@ -53,9 +63,45 @@ void MapnikMaster::onSettingsChanged()
     }
 
   m_pool_maps_cv.notify_all();
+
+  if (useMapnik)
+    {
+      // prepare folder to keep mapnik configuration
+      QString local_path = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+      QDir dir(local_path);
+      if ( local_path.isEmpty() || !dir.mkpath(dir.absoluteFilePath(const_dir)) )
+        {
+          InfoHub::logWarning(tr("Cannot create configuration directory for Mapnik"));
+          return;
+        }
+
+
+      // make symbolic links to global configuration
+      dir.setPath(dir.absoluteFilePath(const_dir));
+      QDir global_dir(m_configuration_dir);
+      QDirIterator it(global_dir.absolutePath(), QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files);
+      while (it.hasNext())
+        {
+          it.next();
+          QString tgt = it.filePath();
+          QString fname = it.fileName();
+          if (fname == const_xml) continue; // new configuration XML will be generated
+
+          QFile lnk(tgt);
+          lnk.remove(dir.absoluteFilePath(fname));
+          if (!lnk.link(dir.absoluteFilePath(fname)))
+            {
+              InfoHub::logWarning(tr("Failed to create symbolic link to Mapnik configuration (%1)").
+                                  arg(fname));
+              return;
+            }
+        }
+
+      m_local_xml = dir.absoluteFilePath(const_xml);
+    }
 }
 
-void MapnikMaster::onMapnikChanged(QStringList /*files*/)
+void MapnikMaster::onMapnikChanged(QStringList files)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
 
@@ -64,6 +110,72 @@ void MapnikMaster::onMapnikChanged(QStringList /*files*/)
 
   if (useMapnik)
     {
+      //////////////
+      QDomDocument doc;
+      {
+        QFile file(m_configuration_dir + "/" + const_xml);
+        if (!file.open(QIODevice::ReadOnly) || !doc.setContent(&file))
+          {
+            InfoHub::logWarning(tr("Failed to load Mapnik configuration: %1").arg(file.fileName()));
+            return;
+          }
+      }
+
+      bool done = false;
+      while (!done)
+        {
+          done = true;
+
+          QDomNodeList lold = doc.elementsByTagName("Layer");
+          int orig_layers_left = lold.size();
+          for (int li=0; li < orig_layers_left && done; ++li)
+            {
+              QDomElement layer = lold.item(li).toElement();
+              QDomNodeList plist = layer.firstChildElement("Datasource").elementsByTagName("Parameter");
+              for (int pi=0; pi < plist.size() && done; ++pi)
+                {
+                  QDomElement e = plist.item(pi).toElement();
+                  if (e.hasAttribute("name") && e.attribute("name") == "file"/* && !e.hasAttribute("processed")*/)
+                    {
+                      QString fname = e.text();
+                      if (fname.indexOf("countries")>=0 && fname.indexOf(".sqlite") > 0)
+                        {
+//                          e.setAttribute("processed", "true");
+                          for (QString f: files)
+                            {
+                              while (e.hasChildNodes())
+                                e.removeChild(e.firstChild());
+                              QDomText txt = doc.createTextNode(f);
+                              e.appendChild(txt);
+
+                              QDomElement element = layer.cloneNode().toElement();
+                              layer.parentNode().appendChild(element);
+                            }
+
+                          layer.parentNode().removeChild(layer);
+
+                          orig_layers_left--;
+                          li--;
+                          break;
+                          //                          done = false;
+                        }
+
+                    }
+                }
+            }
+        }
+
+      {
+        QFile f(m_local_xml);
+        if (!f.open(QIODevice::WriteOnly))
+          {
+            InfoHub::logWarning(tr("Cannot write Mapnik configuration file: %1").arg(f.fileName()));
+            return;
+          }
+        f.write(doc.toByteArray());
+      }
+
+
       try {
         int ncpus = std::max(1, QThread::idealThreadCount());
 #ifdef IS_SAILFISH_OS
@@ -78,8 +190,8 @@ void MapnikMaster::onMapnikChanged(QStringList /*files*/)
 #endif
         for (int i = 0; i < ncpus; ++i)
           {
-            std::shared_ptr<mapnik::Map> map(new mapnik::Map());
-            mapnik::load_map(*map, "Mapnik/map.xml");
+            std::shared_ptr<mapnik::Map> map = std::make_shared<mapnik::Map>();
+            mapnik::load_map(*map, m_local_xml.toStdString());
             m_pool_maps.push_back(map);
           }
       }
