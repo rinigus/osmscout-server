@@ -270,7 +270,7 @@ const static QStringList mapnik_country_files{
 
 FeatureMapnikGlobal::FeatureMapnikGlobal(PathProvider *path):
   Feature(path, "mapnik/global", "mapnik_global",
-          QCoreApplication::translate("MapManagerFeature", "World coastline"),
+          QCoreApplication::translate("MapManagerFeature", "World coastlines"),
           mapnik_global_files,
           1)
 {
@@ -278,7 +278,7 @@ FeatureMapnikGlobal::FeatureMapnikGlobal(PathProvider *path):
 
 QString FeatureMapnikGlobal::errorMissing() const
 {
-  return QCoreApplication::translate("MapManagerFeature", "Missing World coastlines");
+  return QCoreApplication::translate("MapManagerFeature", "Missing world coastlines");
 }
 
 void FeatureMapnikGlobal::loadSettings()
@@ -298,5 +298,11 @@ FeatureMapnikCountry::FeatureMapnikCountry(PathProvider *path):
 QString FeatureMapnikCountry::errorMissing() const
 {
   return QCoreApplication::translate("MapManagerFeature", "Missing country-specific Mapnik dataset");
+}
+
+void FeatureMapnikCountry::loadSettings()
+{
+  AppSettings settings;
+  m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
 }
 

@@ -124,6 +124,10 @@ int main(int argc, char *argv[])
                                           QCoreApplication::translate("main", "List maps provided for download"));
   parser.addOption(optionListProvided);
 
+  QCommandLineOption optionListMissing("list-missing",
+                                          QCoreApplication::translate("main", "List missing maps"));
+  parser.addOption(optionListMissing);
+
   QCommandLineOption optionSubscribe("sub",
                                      QCoreApplication::translate("main", "Subscribe to a <country> dataset"),
                                      QCoreApplication::translate("main", "country-id"));
@@ -253,6 +257,9 @@ int main(int argc, char *argv[])
 
 #endif
 
+  // all is connected, load map manager settings
+  manager.onSettingsChanged();
+
 #ifdef IS_CONSOLE_QT
   // check for sanity and perform the commands if requested
   if (!manager.storageAvailable())
@@ -282,6 +289,12 @@ int main(int argc, char *argv[])
   if (parser.isSet(optionListProvided))
     {
       std::cout << manager.getProvidedCountries().toStdString() << "\n";
+      return 0;
+    }
+
+  if (parser.isSet(optionListMissing))
+    {
+      std::cout << manager.missingInfo().toStdString() << "\n";
       return 0;
     }
 

@@ -20,6 +20,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 
 #include <QDebug>
 
@@ -43,8 +44,6 @@ Manager::Manager(QObject *parent) : QObject(parent)
         m_features.clear();
         return;
       }
-
-  loadSettings();
 }
 
 
@@ -222,7 +221,7 @@ QString Manager::getPretty(const QJsonObject &obj) const
   if (obj.value("id").toString() == const_feature_id_postal_global)
     return tr("Address parsing language support");
   else if (obj.value("id").toString() == const_feature_id_mapnik_global)
-    return tr("World coastline");
+    return tr("World coastlines");
 
   QString name = obj.value("name").toString();
   name.replace("/", const_pretty_separator);
@@ -1003,6 +1002,10 @@ void Manager::onDownloadProgress()
     {
       last_message = txt;
       emit downloadProgress(txt);
+
+#ifdef IS_CONSOLE_QT
+      std::cout << "Download progress: " << txt.toStdString() << std::endl;
+#endif
     }
 }
 

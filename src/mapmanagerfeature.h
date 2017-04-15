@@ -151,6 +151,7 @@ namespace MapManager {
   public:
     FeatureMapnikCountry(PathProvider *path);
     virtual ~FeatureMapnikCountry() {}
+    virtual void loadSettings();
     virtual QString errorMissing() const;
   };
 }

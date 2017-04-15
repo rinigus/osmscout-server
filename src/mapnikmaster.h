@@ -42,7 +42,7 @@ protected:
     /// \brief Regenerates XML configuration and allocates new map objects, if needed
     ///
     /// This method should be called with the mutex locked by the caller
-    void reloadMapnik(QString world_directory, QStringList country_files);
+    void reloadMapnik(QString world_directory, QStringList country_dirs);
 
 protected:
     std::mutex m_mutex;

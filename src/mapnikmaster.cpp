@@ -19,6 +19,7 @@
 #include <QDirIterator>
 #include <QDomDocument>
 #include <QFile>
+#include <QFileInfo>
 #include <QThread>
 
 #include <QDebug>
@@ -121,14 +122,14 @@ void MapnikMaster::onMapnikChanged(QString world_directory, QStringList country_
 }
 
 // NB! should be called with the locked mutex
-void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_files)
+void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dirs)
 {
   if (useMapnik)
     {
       // regenerate configuration only if it changed
       if ( m_configuration_dir != m_old_config_style ||
            world_directory != m_old_config_path_world ||
-           country_files != m_old_config_countries )
+           country_dirs != m_old_config_countries )
         {
           QString world_directory_root;
           {
@@ -161,15 +162,17 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_fil
                   if (e.hasAttribute("name") && e.attribute("name") == "file")
                     {
                       // country-specific layer: remove the defined layer and make as many clones
-                      // as many countries have been given in country_files
+                      // as many countries have been given in country_dirs
                       QString fname = e.text();
-                      if (fname.indexOf("countries")>=0 && fname.indexOf(".sqlite") > 0)
+                      if (fname.indexOf("country")>=0 && fname.indexOf(".sqlite") > 0)
                         {
-                          for (QString f: country_files)
+                          QFileInfo finfo(fname);
+                          QString sqlname = finfo.fileName();
+                          for (QString f: country_dirs)
                             {
                               while (e.hasChildNodes())
                                 e.removeChild(e.firstChild());
-                              QDomText txt = doc.createTextNode(f);
+                              QDomText txt = doc.createTextNode(f + "/" + sqlname);
                               e.appendChild(txt);
 
                               QDomElement element = layer.cloneNode().toElement();
@@ -208,7 +211,10 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_fil
           // config is ready, keep the values for checking against new requests
           m_old_config_style = m_configuration_dir;
           m_old_config_path_world = world_directory;
-          m_old_config_countries = country_files;
+          m_old_config_countries = country_dirs;
+
+          for (auto s: country_dirs)
+            InfoHub::logInfo(tr("Mapnik: adding %1").arg(s));
         }
 
       m_pool_maps.clear();
