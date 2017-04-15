@@ -45,6 +45,7 @@ void AppSettings::initDefaults()
   CHECK(MAPMANAGER_SETTINGS "osmscout", 1);
   CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
   CHECK(MAPMANAGER_SETTINGS "postal_country", 0);
+  CHECK(MAPMANAGER_SETTINGS "mapnik", 0);
   CHECK(MAPMANAGER_SETTINGS "max_download_speed_in_kbps", -1);
   CHECK(MAPMANAGER_SETTINGS "development_disable_url_update", 0);
 

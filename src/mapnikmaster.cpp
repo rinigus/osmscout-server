@@ -60,155 +60,189 @@ void MapnikMaster::onSettingsChanged()
       m_pool_maps_generation++;
     }
 
-  m_pool_maps_cv.notify_all();
-
+  m_available = false;
   if (useMapnik)
     {
-      // prepare folder to keep mapnik configuration
-      QString local_path = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
-      QDir dir(local_path);
-      if ( local_path.isEmpty() || !dir.mkpath(dir.absoluteFilePath(const_dir)) )
+      if (m_old_config_style != m_configuration_dir)
         {
-          InfoHub::logWarning(tr("Cannot create configuration directory for Mapnik"));
-          return;
-        }
-
-
-      // make symbolic links to global configuration
-      dir.setPath(dir.absoluteFilePath(const_dir));
-      QDir global_dir(m_configuration_dir);
-      QDirIterator it(global_dir.absolutePath(), QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files);
-      while (it.hasNext())
-        {
-          it.next();
-          QString tgt = it.filePath();
-          QString fname = it.fileName();
-          if (fname == const_xml) continue; // new configuration XML will be generated
-
-          QFile lnk(tgt);
-          lnk.remove(dir.absoluteFilePath(fname));
-          if (!lnk.link(dir.absoluteFilePath(fname)))
+          // prepare folder to keep mapnik configuration
+          QString local_path = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+          QDir dir(local_path);
+          if ( local_path.isEmpty() || !dir.mkpath(dir.absoluteFilePath(const_dir)) )
             {
-              InfoHub::logWarning(tr("Failed to create symbolic link to Mapnik configuration (%1)").
-                                  arg(fname));
+              InfoHub::logWarning(tr("Cannot create configuration directory for Mapnik"));
               return;
             }
-        }
 
-      m_local_xml = dir.absoluteFilePath(const_xml);
+          // make symbolic links to global configuration
+          dir.setPath(dir.absoluteFilePath(const_dir));
+          QDir global_dir(m_configuration_dir);
+          QDirIterator it(global_dir.absolutePath(), QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files);
+          while (it.hasNext())
+            {
+              it.next();
+              QString tgt = it.filePath();
+              QString fname = it.fileName();
+              if (fname == const_xml) continue; // new configuration XML will be generated
+
+              QFile lnk(tgt);
+              lnk.remove(dir.absoluteFilePath(fname));
+              if (!lnk.link(dir.absoluteFilePath(fname)))
+                {
+                  InfoHub::logWarning(tr("Failed to create symbolic link to Mapnik configuration (%1)").
+                                      arg(fname));
+                  return;
+                }
+            }
+
+          m_local_xml = dir.absoluteFilePath(const_xml);
+
+          if ( !m_old_config_path_world.isEmpty() || !m_old_config_countries.isEmpty() )
+            {
+              reloadMapnik(m_old_config_path_world, m_old_config_countries);
+            }
+        }
     }
+
+  m_pool_maps_cv.notify_all();
 }
 
-void MapnikMaster::onMapnikChanged(QString root_directory, QStringList country_files)
+void MapnikMaster::onMapnikChanged(QString world_directory, QStringList country_files)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
 
   m_pool_maps.clear();
   m_pool_maps_generation++;
+  m_available = false;
 
+  reloadMapnik(world_directory, country_files);
+
+  m_pool_maps_cv.notify_all();
+}
+
+// NB! should be called with the locked mutex
+void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_files)
+{
   if (useMapnik)
     {
-      // ensure that the path is an absolute one
-      {
-        QDir d(root_directory);
-        root_directory = d.absolutePath();
-      }
-
-      //////////////
-      QDomDocument doc;
-      {
-        QFile file(m_configuration_dir + "/" + const_xml);
-        if (!file.open(QIODevice::ReadOnly) || !doc.setContent(&file))
-          {
-            InfoHub::logWarning(tr("Failed to load Mapnik configuration: %1").arg(file.fileName()));
-            return;
-          }
-      }
-
-      QDomNodeList lold = doc.elementsByTagName("Layer");
-      int orig_layers_left = lold.size();
-      for (int li=0; li < orig_layers_left; ++li)
+      // regenerate configuration only if it changed
+      if ( m_configuration_dir != m_old_config_style ||
+           world_directory != m_old_config_path_world ||
+           country_files != m_old_config_countries )
         {
-          QDomElement layer = lold.item(li).toElement();
-          QDomNodeList plist = layer.firstChildElement("Datasource").elementsByTagName("Parameter");
-          for (int pi=0; pi < plist.size(); ++pi)
+          QString world_directory_root;
+          {
+            QDir d(world_directory);
+            d.cdUp();
+            world_directory_root = d.absolutePath();
+          }
+
+          // generate new XML configuration
+          QDomDocument doc;
+          {
+            QFile file(m_configuration_dir + "/" + const_xml);
+            if (!file.open(QIODevice::ReadOnly) || !doc.setContent(&file))
+              {
+                InfoHub::logWarning(tr("Failed to load Mapnik configuration: %1").arg(file.fileName()));
+                return;
+              }
+          }
+
+          QDomNodeList lold = doc.elementsByTagName("Layer");
+          int orig_layers_left = lold.size();
+          for (int li=0; li < orig_layers_left; ++li)
             {
-              QDomElement e = plist.item(pi).toElement();
-
-              if (e.hasAttribute("name") && e.attribute("name") == "file")
+              QDomElement layer = lold.item(li).toElement();
+              QDomNodeList plist = layer.firstChildElement("Datasource").elementsByTagName("Parameter");
+              for (int pi=0; pi < plist.size(); ++pi)
                 {
-                  // country-specific layer: remove the defined layer and make as many clones
-                  // as many countries have been given in country_files
-                  QString fname = e.text();
-                  if (fname.indexOf("countries")>=0 && fname.indexOf(".sqlite") > 0)
-                    {
-                      for (QString f: country_files)
-                        {
-                          while (e.hasChildNodes())
-                            e.removeChild(e.firstChild());
-                          QDomText txt = doc.createTextNode(root_directory + "/" + f);
-                          e.appendChild(txt);
+                  QDomElement e = plist.item(pi).toElement();
 
-                          QDomElement element = layer.cloneNode().toElement();
-                          layer.parentNode().appendChild(element);
+                  if (e.hasAttribute("name") && e.attribute("name") == "file")
+                    {
+                      // country-specific layer: remove the defined layer and make as many clones
+                      // as many countries have been given in country_files
+                      QString fname = e.text();
+                      if (fname.indexOf("countries")>=0 && fname.indexOf(".sqlite") > 0)
+                        {
+                          for (QString f: country_files)
+                            {
+                              while (e.hasChildNodes())
+                                e.removeChild(e.firstChild());
+                              QDomText txt = doc.createTextNode(f);
+                              e.appendChild(txt);
+
+                              QDomElement element = layer.cloneNode().toElement();
+                              layer.parentNode().appendChild(element);
+                            }
+
+                          layer.parentNode().removeChild(layer);
+
+                          orig_layers_left--;
+                          li--;
+                          break;
                         }
 
-                      layer.parentNode().removeChild(layer);
-
-                      orig_layers_left--;
-                      li--;
-                      break;
-                    }
-
-                  else if (fname.indexOf("world")==0)
-                    {
-                      // world shapes: just prepend root_directory
-                      while (e.hasChildNodes())
-                        e.removeChild(e.firstChild());
-                      QDomText txt = doc.createTextNode(root_directory + "/" + fname);
-                      e.appendChild(txt);
+                      else if (fname.indexOf("global")==0)
+                        {
+                          // world shapes: just prepend root_directory
+                          while (e.hasChildNodes())
+                            e.removeChild(e.firstChild());
+                          QDomText txt = doc.createTextNode(world_directory_root + "/" + fname);
+                          e.appendChild(txt);
+                        }
                     }
                 }
             }
+
+          {
+            QFile f(m_local_xml);
+            if (!f.open(QIODevice::WriteOnly))
+              {
+                InfoHub::logWarning(tr("Cannot write Mapnik configuration file: %1").arg(f.fileName()));
+                return;
+              }
+            f.write(doc.toByteArray());
+          }
+
+          // config is ready, keep the values for checking against new requests
+          m_old_config_style = m_configuration_dir;
+          m_old_config_path_world = world_directory;
+          m_old_config_countries = country_files;
         }
 
-      {
-        QFile f(m_local_xml);
-        if (!f.open(QIODevice::WriteOnly))
-          {
-            InfoHub::logWarning(tr("Cannot write Mapnik configuration file: %1").arg(f.fileName()));
-            return;
-          }
-        f.write(doc.toByteArray());
-      }
-
-
-      try {
-        int ncpus = std::max(1, QThread::idealThreadCount());
+      m_pool_maps.clear();
+      m_pool_maps_generation++;
+      if (!m_old_config_path_world.isEmpty() || !m_old_config_countries.isEmpty())
+        {
+          try {
+            int ncpus = std::max(1, QThread::idealThreadCount());
 #ifdef IS_SAILFISH_OS
-        // In Sailfish, CPUs could be switched off one by one. As a result,
-        // "ideal thread count" set by Qt could be off.
-        // In other systems, this procedure is not needed and the defaults can be used
-        //
-        ncpus = 0;
-        QDir dir;
-        while ( dir.exists(QString("/sys/devices/system/cpu/cpu") + QString::number(ncpus)) )
-          ++ncpus;
+            // In Sailfish, CPUs could be switched off one by one. As a result,
+            // "ideal thread count" set by Qt could be off.
+            // In other systems, this procedure is not needed and the defaults can be used
+            //
+            ncpus = 0;
+            QDir dir;
+            while ( dir.exists(QString("/sys/devices/system/cpu/cpu") + QString::number(ncpus)) )
+              ++ncpus;
 #endif
-        for (int i = 0; i < ncpus; ++i)
-          {
-            std::shared_ptr<mapnik::Map> map = std::make_shared<mapnik::Map>();
-            mapnik::load_map(*map, m_local_xml.toStdString());
-            m_pool_maps.push_back(map);
-          }
-      }
-      catch ( std::exception const& ex )
-      {
-        InfoHub::logError("Mapnik exception: " + QString::fromStdString(ex.what()));
-      }
-    }
 
-  m_pool_maps_cv.notify_all();
+            for (int i = 0; i < ncpus; ++i)
+              {
+                std::shared_ptr<mapnik::Map> map = std::make_shared<mapnik::Map>();
+                mapnik::load_map(*map, m_local_xml.toStdString());
+                m_pool_maps.push_back(map);
+              }
+
+            m_available = true;
+          }
+          catch ( std::exception const& ex )
+          {
+            InfoHub::logError("Mapnik exception: " + QString::fromStdString(ex.what()));
+          }
+        }
+    }
 }
 
 bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double lat0, double lon0, double lat1, double lon1, QByteArray &result)
@@ -225,14 +259,18 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
 
     if ( !m_projection_transform.forward(box) )
       {
-        InfoHub::logError("Mapnik: failed to transform coordinates");
+        InfoHub::logError(tr("Mapnik: failed to transform coordinates"));
         return false;
       }
 
-    while (useMapnik && m_pool_maps.empty())
+    while (m_available && m_pool_maps.empty())
       m_pool_maps_cv.wait(lk);
 
-    if (!useMapnik || m_pool_maps.empty()) return false;
+    if (!m_available || m_pool_maps.empty())
+      {
+        InfoHub::logWarning(tr("Mapnik not available, probably due to missing datasets"));
+        return false;
+      }
 
     map = m_pool_maps.front();
     m_pool_maps.pop_front();

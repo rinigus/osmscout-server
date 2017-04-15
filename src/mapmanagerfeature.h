@@ -137,6 +137,22 @@ namespace MapManager {
     virtual QString errorMissing() const;
   };
 
+  class FeatureMapnikGlobal: public Feature
+  {
+  public:
+    FeatureMapnikGlobal(PathProvider *path);
+    virtual ~FeatureMapnikGlobal() {}
+    virtual void loadSettings();
+    virtual QString errorMissing() const;
+  };
+
+  class FeatureMapnikCountry: public Feature
+  {
+  public:
+    FeatureMapnikCountry(PathProvider *path);
+    virtual ~FeatureMapnikCountry() {}
+    virtual QString errorMissing() const;
+  };
 }
 
 #endif // MAPMANAGERFEATURE_H
