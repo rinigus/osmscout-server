@@ -56,7 +56,7 @@ Page {
     }
 
     function canBeActive() {
-        if (countryId === "postal/global")
+        if (countryId === "postal/global" || countryId === "mapnik/global")
             return false;
         return true;
     }

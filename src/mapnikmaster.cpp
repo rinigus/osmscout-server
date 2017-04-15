@@ -67,7 +67,7 @@ void MapnikMaster::onSettingsChanged()
       if (m_old_config_style != m_configuration_dir)
         {
           // prepare folder to keep mapnik configuration
-          QString local_path = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
+          QString local_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
           QDir dir(local_path);
           if ( local_path.isEmpty() || !dir.mkpath(dir.absoluteFilePath(const_dir)) )
             {

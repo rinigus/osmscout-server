@@ -61,6 +61,27 @@ Dialog {
             }
 
             SectionHeader {
+                text: qsTr("Rendering")
+            }
+
+            Label {
+                text: qsTr("This server allows you to select between two backends to draw the maps: <i>libosmscout</i> and <i>mapnik</i>.")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            ElementSwitch {
+                id: eMapnik
+                key: settingsMapnikPrefix + "use_mapnik"
+                mainLabel: qsTr("Use Mapnik for rendering maps")
+                secondaryLabel: qsTr("When selected, Mapnik will be used to render maps. " +
+                                     "Note that it requires additional databases for World coastlines and countries.<br>")
+            }
+
+            SectionHeader {
                 text: qsTr("Geocoder")
             }
 
@@ -140,6 +161,34 @@ Dialog {
                 }
             }
 
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Rectangle {
+                    width: parent.width
+                    height: Theme.paddingLarge
+                    color: "transparent"
+                }
+
+                Button {
+                    text: qsTr("Mapnik")
+                    onClicked: pageStack.push(Qt.resolvedUrl("MapnikPage.qml"))
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Label {
+                    text: qsTr("Map rendering settings for <i>mapnik</i> backend")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
             SectionHeader {
                 text: qsTr("Miscellaneous")
             }
@@ -188,5 +237,6 @@ Dialog {
 
         eMapsRoot.apply()
         eGeocoderNLP.apply()
+        eMapnik.apply()
     }
 }

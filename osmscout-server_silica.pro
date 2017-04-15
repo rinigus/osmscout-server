@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = harbour-osmscout-server
 
-QT += core gui network sql
+QT += core gui network sql xml
 
 CONFIG += c++11
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
@@ -110,6 +110,10 @@ use_mapnik {
     DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/lib/mapnik/fonts\\\"
     DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/lib/mapnik/input\\\"
     LIBS += -lmapnik -licuuc
+
+    mapnik.files = mapnik
+    mapnik.path = /usr/share/$${TARGET}
+    INSTALLS += mapnik
 }
 
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -ldl
