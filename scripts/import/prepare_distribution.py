@@ -17,6 +17,8 @@ url_specs = {
     "geocoder_nlp": "geocoder-nlp-3",
     "postal_global": "postal-global-1",
     "postal_country": "postal-country-1",
+    "mapnik_global": "mapnik-global-1",
+    "mapnik_country": "mapnik-country-1",
 }
 
 dist = json.loads( open("countries.json", "r").read() )
@@ -25,6 +27,12 @@ dist["postal/global"] = {
     "id": "postal/global",
     "type": "postal/global",
     "postal_global": { "path": "postal/global" }
+    }
+
+dist["mapnik/global"] = {
+    "id": "mapnik/global",
+    "type": "mapnik/global",
+    "mapnik_global": { "path": "mapnik/global" }
     }
 
 dist["url"] = url_specs
