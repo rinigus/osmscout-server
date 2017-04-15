@@ -15,7 +15,7 @@ sudo apt-get -qq update
 sudo apt-get install -y cmake
 
 sudo apt-get install -y \
-     pkg-config autoconf automake libtool \
+     pkg-config autoconf automake libtool wget \
      libxml2-dev \
      libprotobuf-dev protobuf-compiler \
      libagg-dev libfreetype6-dev \
@@ -24,8 +24,12 @@ sudo apt-get install -y \
      freeglut3 freeglut3-dev \
      libmarisa-dev libmicrohttpd-dev libsnappy-dev libsqlite3-dev libkyotocabinet-dev
 
-git clone https://github.com/openvenues/libpostal.git
-cd libpostal
+POSTAL_VERSION=0.3.4
+wget -O libpostal.tar.gz https://github.com/openvenues/libpostal/archive/v$POSTAL_VERSION.tar.gz
+tar zxvf libpostal.tar.gz
+cd libpostal-$POSTAL_VERSION
+#git clone https://github.com/openvenues/libpostal.git
+#cd libpostal
 ./bootstrap.sh
 ./configure --datadir=/usr/local/libpostal/data --disable-data-download
 make
