@@ -124,6 +124,10 @@ int main(int argc, char *argv[])
                                           QCoreApplication::translate("main", "List maps provided for download"));
   parser.addOption(optionListProvided);
 
+  QCommandLineOption optionListMissing("list-missing",
+                                          QCoreApplication::translate("main", "List missing maps"));
+  parser.addOption(optionListMissing);
+
   QCommandLineOption optionSubscribe("sub",
                                      QCoreApplication::translate("main", "Subscribe to a <country> dataset"),
                                      QCoreApplication::translate("main", "country-id"));
@@ -164,6 +168,7 @@ int main(int argc, char *argv[])
   rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
   rootContext->setContextProperty("settingsSpeedPrefix", ROUTING_SPEED_SETTINGS);
   rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
+  rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
 
   rootContext->setContextProperty("settings", &settings);
   rootContext->setContextProperty("infohub", &infoHub);
@@ -187,6 +192,15 @@ int main(int argc, char *argv[])
     {
       std::cerr << "Failed to allocate GeoMaster" << std::endl;
       return -2;
+    }
+
+  // setup Mapnik
+  mapnikMaster = new MapnikMaster();
+
+  if (mapnikMaster == nullptr)
+    {
+      std::cerr << "Failed to allocate MapnikMaster" << std::endl;
+      return -3;
     }
 
   // setup HTTP server
@@ -216,6 +230,8 @@ int main(int argc, char *argv[])
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     geoMaster, &GeoMaster::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                    mapnikMaster, &MapnikMaster::onSettingsChanged );
+  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &infoHub, &InfoHub::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &manager, &MapManager::Manager::onSettingsChanged );
@@ -228,6 +244,9 @@ int main(int argc, char *argv[])
   QObject::connect( &manager, &MapManager::Manager::databasePostalChanged,
                     geoMaster, &GeoMaster::onPostalChanged);
 
+  QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
+                    mapnikMaster, &MapnikMaster::onMapnikChanged );
+
 #ifdef IS_SAILFISH_OS
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &rolling_logger, &RollingLogger::onSettingsChanged );
@@ -238,6 +257,9 @@ int main(int argc, char *argv[])
                     &console_logger, &ConsoleLogger::onErrorMessage);
 
 #endif
+
+  // all is connected, load map manager settings
+  manager.onSettingsChanged();
 
 #ifdef IS_CONSOLE_QT
   // check for sanity and perform the commands if requested
@@ -268,6 +290,12 @@ int main(int argc, char *argv[])
   if (parser.isSet(optionListProvided))
     {
       std::cout << manager.getProvidedCountries().toStdString() << "\n";
+      return 0;
+    }
+
+  if (parser.isSet(optionListMissing))
+    {
+      std::cout << manager.missingInfo().toStdString() << "\n";
       return 0;
     }
 

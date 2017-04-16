@@ -44,7 +44,7 @@ Page {
                 key: settingsMapManagerPrefix + "geocoder_nlp"
                 autoApply: true
                 mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
-                secondaryLabel: qsTr("When selected, a libpostal-based geocoder datasets will be stored on device after downloading them. " +
+                secondaryLabel: qsTr("When selected, libpostal-based geocoder datasets will be stored on device after downloading them. " +
                                      "These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for " +
                                      "address parsing and lookup.")
 
@@ -53,6 +53,23 @@ Page {
                     // on mobile device
                     settings.setValue( settingsMapManagerPrefix + "postal_country",
                                       settings.valueInt(settingsMapManagerPrefix + "geocoder_nlp") )
+                }
+            }
+
+            ElementSwitch {
+                id: eManagerMapnik
+                activeState: page.activeState
+                key: settingsMapManagerPrefix + "mapnik"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Mapnik")
+                secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
+                                     "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering")
+
+                onSwitchChanged: {
+                    // ensure that we have the same value for geocoder-nlp as postal
+                    // on mobile device
+                    settings.setValue( settingsMapManagerPrefix + "mapnik",
+                                      settings.valueInt(settingsMapManagerPrefix + "mapnik") )
                 }
             }
 

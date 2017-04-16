@@ -149,6 +149,7 @@ namespace MapManager {
     void databaseOsmScoutChanged(QString database);
     void databaseGeocoderNLPChanged(QString database);
     void databasePostalChanged(QString global, QString country);
+    void databaseMapnikChanged(QString root_directory, QStringList country_files);
 
     void downloadingChanged(bool state);
     void downloadProgress(QString info);
@@ -191,6 +192,7 @@ namespace MapManager {
     void updateOsmScout();
     void updateGeocoderNLP();
     void updatePostal();
+    void updateMapnik();
 
     /// helper functions to deal with JSON representation of the features
     QJsonObject loadJson(QString fname) const;
@@ -255,9 +257,9 @@ namespace MapManager {
 
     const QString const_db_connection{"MapManager"};
 
-
     const QString const_feature_id_postal_global{"postal/global"};
     const QString const_feature_type_country{"territory"};
+    const QString const_feature_id_mapnik_global{"mapnik/global"};
 
     const QString const_pretty_separator{" / "};
   };

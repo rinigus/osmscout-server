@@ -20,6 +20,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 
 #include <QDebug>
 
@@ -33,6 +34,8 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeatureGeocoderNLP(this));
   m_features.append(new FeaturePostalGlobal(this));
   m_features.append(new FeaturePostalCountry(this));
+  m_features.append(new FeatureMapnikGlobal(this));
+  m_features.append(new FeatureMapnikCountry(this));
 
   for (Feature *p: m_features)
     if (p == nullptr)
@@ -41,8 +44,6 @@ Manager::Manager(QObject *parent) : QObject(parent)
         m_features.clear();
         return;
       }
-
-  loadSettings();
 }
 
 
@@ -100,6 +101,11 @@ void Manager::loadSettings()
     addCountry(const_feature_id_postal_global);
   else
     rmCountry(const_feature_id_postal_global);
+
+  if (settings.valueBool(MAPMANAGER_SETTINGS "mapnik"))
+    addCountry(const_feature_id_mapnik_global);
+  else
+    rmCountry(const_feature_id_mapnik_global);
 
   if ( m_db_files.isOpen() && m_db_files.databaseName() != fullPath(const_fname_db_files) )
     {
@@ -187,6 +193,7 @@ void Manager::nothingAvailable()
   updateOsmScout();
   updateGeocoderNLP();
   updatePostal();
+  updateMapnik();
 
   emit availibilityChanged();
   emit missingChanged(m_missing);
@@ -213,6 +220,8 @@ QString Manager::getPretty(const QJsonObject &obj) const
 {
   if (obj.value("id").toString() == const_feature_id_postal_global)
     return tr("Address parsing language support");
+  else if (obj.value("id").toString() == const_feature_id_mapnik_global)
+    return tr("World coastlines");
 
   QString name = obj.value("name").toString();
   name.replace("/", const_pretty_separator);
@@ -324,7 +333,7 @@ void Manager::scanDirectories(bool force_update)
         {
           for (QJsonObject::const_iterator i = m_maps_available.constBegin();
                i != m_maps_available.constEnd(); ++i)
-            if (i.key() != const_feature_id_postal_global)
+            if (i.key() != const_feature_id_postal_global && i.key() != const_feature_id_mapnik_global)
               {
                 m_map_selected = i.key();
                 break;
@@ -343,6 +352,7 @@ void Manager::scanDirectories(bool force_update)
       updateOsmScout();
       updateGeocoderNLP();
       updatePostal();
+      updateMapnik();
 
       emit availibilityChanged();
     }
@@ -992,6 +1002,10 @@ void Manager::onDownloadProgress()
     {
       last_message = txt;
       emit downloadProgress(txt);
+
+#ifdef IS_CONSOLE_QT
+      std::cout << "Download progress: " << txt.toStdString() << std::endl;
+#endif
     }
 }
 
@@ -1274,4 +1288,33 @@ void Manager::updatePostal()
       settings.setValue(GEOMASTER_SETTINGS "postal_country_dir", path_country);
       emit databasePostalChanged(path_global, path_country);
     }
+}
+
+////////////////////////////////////////////////////////////
+/// mapnik support
+void Manager::updateMapnik()
+{
+  // Mapnik is able to draw all available maps, so we give the full list
+  QString path_global;
+  QStringList path_countries;
+
+  QJsonObject obj_global = m_maps_available.value(const_feature_id_mapnik_global).toObject();
+  for (const Feature *f: m_features)
+    if (f->enabled() && f->name() == "mapnik_global")
+      path_global = fullPath( f->getPath(obj_global) );
+
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
+    {
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (const Feature *f: m_features)
+          if (f->enabled() && f->name() == "mapnik_country")
+            path_countries.append( fullPath( f->getPath(c) ) );
+    }
+
+  // let Mapnik check whether anything has actually changed
+  emit databaseMapnikChanged(path_global, path_countries);
 }

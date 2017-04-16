@@ -45,6 +45,7 @@ void AppSettings::initDefaults()
   CHECK(MAPMANAGER_SETTINGS "osmscout", 1);
   CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
   CHECK(MAPMANAGER_SETTINGS "postal_country", 0);
+  CHECK(MAPMANAGER_SETTINGS "mapnik", 0);
   CHECK(MAPMANAGER_SETTINGS "max_download_speed_in_kbps", -1);
   CHECK(MAPMANAGER_SETTINGS "development_disable_url_update", 0);
 
@@ -113,6 +114,11 @@ void AppSettings::initDefaults()
   CHECK(GEOMASTER_SETTINGS "languages", "");
 
   CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
+
+  CHECK(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+  CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
+  CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 128);
+  CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", DATA_PREFIX "mapnik/OSMBright");
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -122,6 +128,7 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
   if (key.contains(OSM_SETTINGS) ||
       key.contains(ROUTING_SPEED_SETTINGS) ||
       key.contains(GEOMASTER_SETTINGS) ||
+      key.contains(MAPNIKMASTER_SETTINGS) ||
       key.contains(MAPMANAGER_SETTINGS))
     {
       // this delayed signal execution prevents fireing signals together

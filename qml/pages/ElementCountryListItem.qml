@@ -24,6 +24,10 @@ ListItem {
                 iconSource = "image://theme/icon-m-chat"
                 info = qsTr("Available") + "; "
             }
+            else if (manager.isCountryAvailable(c.id) && c.id==="mapnik/global") {
+                iconSource = "image://theme/icon-m-image"
+                info = qsTr("Available") + "; "
+            }
             else if (manager.isCountryAvailable(c.id)) {
                 iconSource = "image://theme/icon-m-location"
                 info = qsTr("Available") + "; "

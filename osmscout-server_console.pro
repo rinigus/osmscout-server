@@ -12,12 +12,14 @@
 # The name of your application
 TARGET = osmscout-server
 
-QT = core network sql
+QT = core network sql xml
 
 CONFIG += c++11
 
 CONFIG += use_map_qt
 #CONFIG += use_map_cairo
+
+CONFIG += use_mapnik
 
 # installs
 stylesheets.files = stylesheets
@@ -48,7 +50,8 @@ SOURCES += src/dbmaster.cpp \
     src/config.cpp \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
-    src/mapmanagerfeature.cpp
+    src/mapmanagerfeature.cpp \
+    src/mapnikmaster.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
@@ -68,7 +71,8 @@ HEADERS += \
     src/geomaster.h \
     src/mapmanager.h \
     src/filedownloader.h \
-    src/mapmanagerfeature.h
+    src/mapmanagerfeature.h \
+    src/mapnikmaster.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -81,6 +85,13 @@ use_map_cairo {
     LIBS += -losmscout_map_cairo
     CONFIG += link_pkgconfig
     PKGCONFIG += pango cairo
+}
+
+use_mapnik {
+    DEFINES += USE_MAPNIK
+    DEFINES += MAPNIK_FONTS_DIR=\\\"$$system(mapnik-config --fonts)\\\"
+    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
+    LIBS += -lmapnik -licuuc
 }
 
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -lsqlite3

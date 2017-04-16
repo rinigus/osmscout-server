@@ -259,3 +259,50 @@ QString FeaturePostalCountry::errorMissing() const
 {
   return QCoreApplication::translate("MapManagerFeature", "Missing country-specific address parsing dataset");
 }
+
+////////////////////////////////////////////////////////////
+/// mapnik support
+const static QStringList mapnik_global_files{
+  "land-polygons-split.sqlite", "simplified-land-polygons.sqlite" };
+
+const static QStringList mapnik_country_files{
+  "mapnik.sqlite" };
+
+FeatureMapnikGlobal::FeatureMapnikGlobal(PathProvider *path):
+  Feature(path, "mapnik/global", "mapnik_global",
+          QCoreApplication::translate("MapManagerFeature", "World coastlines"),
+          mapnik_global_files,
+          1)
+{
+}
+
+QString FeatureMapnikGlobal::errorMissing() const
+{
+  return QCoreApplication::translate("MapManagerFeature", "Missing world coastlines");
+}
+
+void FeatureMapnikGlobal::loadSettings()
+{
+  AppSettings settings;
+  m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
+}
+
+FeatureMapnikCountry::FeatureMapnikCountry(PathProvider *path):
+  Feature(path, "territory", "mapnik_country",
+          QCoreApplication::translate("MapManagerFeature", "Mapnik country-specific support"),
+          mapnik_country_files,
+          1)
+{
+}
+
+QString FeatureMapnikCountry::errorMissing() const
+{
+  return QCoreApplication::translate("MapManagerFeature", "Missing country-specific Mapnik dataset");
+}
+
+void FeatureMapnikCountry::loadSettings()
+{
+  AppSettings settings;
+  m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
+}
+
