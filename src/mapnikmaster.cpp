@@ -36,7 +36,17 @@ MapnikMaster::MapnikMaster(QObject *parent) :
 
   mapnik::logger::set_severity(mapnik::logger::error);
 
-  /////////////
+  m_ncpus = std::max(1, QThread::idealThreadCount());
+#ifdef IS_SAILFISH_OS
+  // In Sailfish, CPUs could be switched off one by one. As a result,
+  // "ideal thread count" set by Qt could be off.
+  // In other systems, this procedure is not needed and the defaults can be used
+  //
+  m_ncpus = 0;
+  QDir dir;
+  while ( dir.exists(QString("/sys/devices/system/cpu/cpu") + QString::number(m_ncpus)) )
+    ++m_ncpus;
+#endif
 
   onSettingsChanged();
 }
@@ -59,12 +69,14 @@ void MapnikMaster::onSettingsChanged()
     {
       m_pool_maps.clear();
       m_pool_maps_generation++;
+      m_available = false;
     }
 
-  m_available = false;
+  qDebug() << "MSC: " << m_old_config_style << " " << m_configuration_dir << " " << m_available << " " << useMapnik;
+
   if (useMapnik)
     {
-      if (m_old_config_style != m_configuration_dir)
+      if (m_old_config_style != m_configuration_dir || (useMapnik && !m_available) )
         {
           // prepare folder to keep mapnik configuration
           QString local_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
@@ -100,7 +112,7 @@ void MapnikMaster::onSettingsChanged()
 
           if ( !m_old_config_path_world.isEmpty() || !m_old_config_countries.isEmpty() )
             {
-              reloadMapnik(m_old_config_path_world, m_old_config_countries);
+              reloadMapnik(m_old_config_path_world, m_old_config_countries, true);
             }
         }
     }
@@ -108,26 +120,25 @@ void MapnikMaster::onSettingsChanged()
   m_pool_maps_cv.notify_all();
 }
 
-void MapnikMaster::onMapnikChanged(QString world_directory, QStringList country_files)
+void MapnikMaster::onMapnikChanged(QString world_directory, QStringList country_dirs)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
 
-  m_pool_maps.clear();
-  m_pool_maps_generation++;
-  m_available = false;
-
-  reloadMapnik(world_directory, country_files);
+  reloadMapnik(world_directory, country_dirs, false);
+  m_old_config_path_world = world_directory;
+  m_old_config_countries = country_dirs;
 
   m_pool_maps_cv.notify_all();
 }
 
 // NB! should be called with the locked mutex
-void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dirs)
+void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dirs, bool config_changed)
 {
+  qDebug() << "reload mapnik: " << config_changed;
   if (useMapnik)
     {
       // regenerate configuration only if it changed
-      if ( m_configuration_dir != m_old_config_style ||
+      if ( config_changed ||
            world_directory != m_old_config_path_world ||
            country_dirs != m_old_config_countries )
         {
@@ -210,8 +221,6 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dir
 
           // config is ready, keep the values for checking against new requests
           m_old_config_style = m_configuration_dir;
-          m_old_config_path_world = world_directory;
-          m_old_config_countries = country_dirs;
 
           for (auto s: country_dirs)
             InfoHub::logInfo(tr("Mapnik: adding %1").arg(s));
@@ -219,22 +228,11 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dir
 
       m_pool_maps.clear();
       m_pool_maps_generation++;
+      m_available = false;
       if (!m_old_config_path_world.isEmpty() || !m_old_config_countries.isEmpty())
         {
           try {
-            int ncpus = std::max(1, QThread::idealThreadCount());
-#ifdef IS_SAILFISH_OS
-            // In Sailfish, CPUs could be switched off one by one. As a result,
-            // "ideal thread count" set by Qt could be off.
-            // In other systems, this procedure is not needed and the defaults can be used
-            //
-            ncpus = 0;
-            QDir dir;
-            while ( dir.exists(QString("/sys/devices/system/cpu/cpu") + QString::number(ncpus)) )
-              ++ncpus;
-#endif
-
-            for (int i = 0; i < ncpus; ++i)
+            for (int i = 0; i < m_ncpus; ++i)
               {
                 std::shared_ptr<mapnik::Map> map = std::make_shared<mapnik::Map>();
                 mapnik::load_map(*map, m_local_xml.toStdString());
@@ -248,6 +246,12 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dir
             InfoHub::logError("Mapnik exception: " + QString::fromStdString(ex.what()));
           }
         }
+    }
+  else if (!m_pool_maps.size()>0)
+    {
+      m_pool_maps.clear();
+      m_pool_maps_generation++;
+      m_available = false;
     }
 }
 

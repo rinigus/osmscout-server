@@ -35,14 +35,14 @@ signals:
 
 public slots:
     void onSettingsChanged();
-    void onMapnikChanged(QString world_directory, QStringList country_files);
+    void onMapnikChanged(QString world_directory, QStringList country_dirs);
 
 protected:
 
     /// \brief Regenerates XML configuration and allocates new map objects, if needed
     ///
     /// This method should be called with the mutex locked by the caller
-    void reloadMapnik(QString world_directory, QStringList country_dirs);
+    void reloadMapnik(QString world_directory, QStringList country_dirs, bool config_changed);
 
 protected:
     std::mutex m_mutex;
@@ -66,6 +66,7 @@ protected:
     std::deque< std::shared_ptr< mapnik::Map > > m_pool_maps;
     int m_pool_maps_generation{0}; ///< Increased when the new settings are loaded
     std::condition_variable m_pool_maps_cv;
+    int m_ncpus{0};
 
     const QString const_xml{"mapnik.xml"};
     const QString const_dir{"mapnik"};

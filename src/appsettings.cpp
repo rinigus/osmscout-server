@@ -118,7 +118,7 @@ void AppSettings::initDefaults()
   CHECK(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
   CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
   CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 128);
-  CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", DATA_PREFIX "mapnik");
+  CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", DATA_PREFIX "mapnik/OSMBright");
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
