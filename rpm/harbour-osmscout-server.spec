@@ -6,6 +6,8 @@
 Name:       harbour-osmscout-server
 
 # >> macros
+%define __provides_exclude_from ^%{_datadir}/.*$
+%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff|libsqlite3.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -68,6 +70,34 @@ rm -rf %{buildroot}
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
+
+# ship all shared libraries not allowed in Harbour with the app
+mkdir -p %{buildroot}%{_datadir}/%{name}/lib
+
+cp /usr/lib/libmapnik.so.3.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libproj.so.12 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_filesystem.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_regex.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_system.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libharfbuzz.so.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libjpeg.so.62 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libfreetype.so.6 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libsqlite3.so.0 %{buildroot}%{_datadir}/%{name}/lib
+
+# mapnik fonts and input plugins
+cp -r /usr/lib/mapnik %{buildroot}%{_datadir}/%{name}/lib
+
+strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.3.0
+strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
+
+# strip executable bit from all libraries
+chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
+chmod -x %{buildroot}%{_datadir}/%{name}/lib/mapnik/*/*
 
 %files
 %defattr(-,root,root,-)
