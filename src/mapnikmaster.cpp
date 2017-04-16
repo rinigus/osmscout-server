@@ -275,7 +275,7 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
 
     if (!m_available || m_pool_maps.empty())
       {
-        InfoHub::logWarning(tr("Mapnik not available, probably due to missing datasets"));
+        InfoHub::logWarning(tr("Mapnik not available"));
         return false;
       }
 
