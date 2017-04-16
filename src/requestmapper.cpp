@@ -261,6 +261,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
       Task *task = nullptr;
 
+#ifdef USE_MAPNIK
       if ( useMapnik )
         {
           task = new Task(connection_id,
@@ -271,6 +272,7 @@ unsigned int RequestMapper::service(const char *url_c,
                           "Error while rendering a tile" );
         }
       else
+#endif
         {
           int ntiles = 1 << shift;
           task = new Task(connection_id,

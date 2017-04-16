@@ -19,7 +19,9 @@ CONFIG += c++11
 CONFIG += use_map_qt
 #CONFIG += use_map_cairo
 
-CONFIG += use_mapnik
+!disable_mapnik {
+   CONFIG += use_mapnik
+}
 
 # installs
 stylesheets.files = stylesheets

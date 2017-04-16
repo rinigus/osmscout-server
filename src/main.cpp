@@ -194,6 +194,7 @@ int main(int argc, char *argv[])
       return -2;
     }
 
+#ifdef USE_MAPNIK
   // setup Mapnik
   mapnikMaster = new MapnikMaster();
 
@@ -202,6 +203,7 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate MapnikMaster" << std::endl;
       return -3;
     }
+#endif
 
   // setup HTTP server
   settings.beginGroup("http-listener");
@@ -229,8 +231,10 @@ int main(int argc, char *argv[])
                     osmScoutMaster, &DBMaster::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     geoMaster, &GeoMaster::onSettingsChanged );
+#ifdef USE_MAPNIK
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     mapnikMaster, &MapnikMaster::onSettingsChanged );
+#endif
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &infoHub, &InfoHub::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -244,8 +248,10 @@ int main(int argc, char *argv[])
   QObject::connect( &manager, &MapManager::Manager::databasePostalChanged,
                     geoMaster, &GeoMaster::onPostalChanged);
 
+#ifdef USE_MAPNIK
   QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
                     mapnikMaster, &MapnikMaster::onMapnikChanged );
+#endif
 
 #ifdef IS_SAILFISH_OS
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,

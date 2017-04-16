@@ -25,7 +25,9 @@ extern DBMaster *osmScoutMaster;
 
 extern GeoMaster *geoMaster;
 
+#ifdef USE_MAPNIK
 extern MapnikMaster *mapnikMaster;
+#endif
 
 extern std::atomic<bool> useGeocoderNLP;
 extern std::atomic<bool> useMapnik;

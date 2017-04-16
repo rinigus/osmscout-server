@@ -1,3 +1,5 @@
+#ifdef USE_MAPNIK
+
 #ifndef MAPNIKMASTER_H
 #define MAPNIKMASTER_H
 
@@ -73,3 +75,5 @@ protected:
 };
 
 #endif // MAPNIKMASTER_H
+
+#endif

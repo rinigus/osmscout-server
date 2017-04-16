@@ -1,3 +1,5 @@
+#ifdef USE_MAPNIK
+
 #include "mapnikmaster.h"
 #include "appsettings.h"
 #include "config.h"
@@ -313,3 +315,5 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
 
   return success;
 }
+
+#endif
