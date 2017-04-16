@@ -72,8 +72,6 @@ void MapnikMaster::onSettingsChanged()
       m_available = false;
     }
 
-  qDebug() << "MSC: " << m_old_config_style << " " << m_configuration_dir << " " << m_available << " " << useMapnik;
-
   if (useMapnik)
     {
       if (m_old_config_style != m_configuration_dir || (useMapnik && !m_available) )
@@ -134,7 +132,6 @@ void MapnikMaster::onMapnikChanged(QString world_directory, QStringList country_
 // NB! should be called with the locked mutex
 void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dirs, bool config_changed)
 {
-  qDebug() << "reload mapnik: " << config_changed;
   if (useMapnik)
     {
       // regenerate configuration only if it changed
@@ -229,7 +226,7 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dir
       m_pool_maps.clear();
       m_pool_maps_generation++;
       m_available = false;
-      if (!m_old_config_path_world.isEmpty() || !m_old_config_countries.isEmpty())
+      if (!world_directory.isEmpty() || !country_dirs.isEmpty())
         {
           try {
             for (int i = 0; i < m_ncpus; ++i)
