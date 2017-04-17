@@ -116,7 +116,11 @@ void AppSettings::initDefaults()
   CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
 
   CHECK(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+#ifdef IS_SAILFISH_OS
+  CHECK(MAPNIKMASTER_SETTINGS "scale", 3.0);
+#else
   CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
+#endif
   CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 128);
   CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", DATA_PREFIX "mapnik/OSMBright");
 }
