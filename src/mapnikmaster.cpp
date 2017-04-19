@@ -15,6 +15,7 @@
 
 #include <string>
 #include <algorithm>
+#include <chrono>
 
 #include <QStandardPaths>
 #include <QDir>
@@ -273,7 +274,11 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
       }
 
     while (m_available && m_pool_maps.empty())
-      m_pool_maps_cv.wait(lk);
+      {
+        auto now = std::chrono::system_clock::now();
+        m_pool_maps_cv.wait_until(lk, now + std::chrono::seconds(1));
+        if (m_pool_maps.empty()) std::cout << "In wait loop: " << m_available << std::endl;
+      }
 
     if (!m_available || m_pool_maps.empty())
       {
