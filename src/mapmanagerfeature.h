@@ -95,6 +95,7 @@ namespace MapManager {
     const int m_version;
 
     bool m_enabled{false};
+    bool m_assume_files_exist{false};
     QString m_url;
 
     const QString const_feature_id_url{"url"};

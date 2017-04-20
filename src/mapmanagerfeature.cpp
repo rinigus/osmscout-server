@@ -29,6 +29,7 @@ void Feature::loadSettings()
 {
   AppSettings settings;
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS + m_name);
+  m_assume_files_exist = settings.valueBool(MAPMANAGER_SETTINGS "assume_files_exist");
 }
 
 void Feature::setUrl(const QJsonObject &obj)
@@ -89,7 +90,7 @@ bool Feature::isCompatible(const QJsonObject &request) const
 
 bool Feature::isAvailable(const QJsonObject &request) const
 {
-  if (!m_enabled || !isMyType(request)) return true;
+  if (!m_enabled || !isMyType(request) || m_assume_files_exist) return true;
   if (!isCompatible(request)) return false;
 
   QString path = getPath(request);
@@ -116,7 +117,7 @@ bool Feature::hasFeatureDefined(const QJsonObject &request) const
 void Feature::checkMissingFiles(const QJsonObject &request,
                                 FilesToDownload &missing) const
 {
-  if (!m_enabled || !isMyType(request) || !isCompatible(request)) return;
+  if (!m_enabled || !isMyType(request) || !isCompatible(request) || m_assume_files_exist) return;
 
   QString path = getPath(request);
   QDir dir(m_path_provider->fullPath("."));
