@@ -122,7 +122,7 @@ void AppSettings::initDefaults()
 #else
   CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
 #endif
-  CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 128);
+  CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 64);
   CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", DATA_PREFIX "mapnik/OSMBright");
 }
 

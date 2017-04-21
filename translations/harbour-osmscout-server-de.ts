@@ -754,22 +754,22 @@
         <translation>Adressanalyse länderspezifische Unterstützung</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="274"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="286"/>
         <source>World coastlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="282"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="294"/>
         <source>Missing world coastlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="293"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="305"/>
         <source>Mapnik country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="301"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="313"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -954,18 +954,18 @@
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
-        <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Recommended value for the buffer size is 128 pixels. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering.</source>
+        <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="60"/>
+        <location filename="../qml/pages/MapnikPage.qml" line="61"/>
         <source>Style Sheet</source>
-        <translation type="unfinished">Style Sheet</translation>
+        <translation>Style Sheet</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="61"/>
+        <location filename="../qml/pages/MapnikPage.qml" line="62"/>
         <source>Style sheet used to render the map tiles</source>
-        <translation type="unfinished">Stylesheet zum Rendern der Kartenkacheln</translation>
+        <translation>Stylesheet zum Rendern der Kartenkacheln</translation>
     </message>
 </context>
 <context>
@@ -1516,7 +1516,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>
         <source>Rendering</source>
-        <translation type="unfinished">Rendering</translation>
+        <translation>Rendering</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="68"/>

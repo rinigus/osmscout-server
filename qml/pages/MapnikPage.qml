@@ -48,8 +48,9 @@ Dialog {
                 mainLabel: qsTr("Buffer size in pixels")
                 secondaryLabel: qsTr("By increasing the size of the area which is used to load the data while rendering a tile, " +
                                      "the renderer can improve label rendering by taking into account data from neighboring tiles. " +
-                                     "Recommended value for the buffer size is 128 pixels. If you see too many cut labels, try to " +
-                                     "increase the buffer size. Note that large buffer sizes would slow down the rendering.")
+                                     "If you see too many cut labels, try to " +
+                                     "increase the buffer size. Note that large buffer sizes would slow down the rendering. " +
+                                     "The buffer size is scaled by the scaling factor to adjust for the increase in labels size.")
                 validator: IntValidator { bottom: 0; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }

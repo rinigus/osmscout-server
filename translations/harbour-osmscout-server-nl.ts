@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>De server moet gebruikt worden met het cliëntprogramma dat kaarten kan weergeven, zoekopdrachten kan uitvoeren en geselecteerde routes kan weergeven. De server is een dunne laag die functionaliteit van &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; en &lt;i&gt;geocoder-nlp&lt;/i&gt; blootstelt via http. Deze server kan gebruikt worden als een drop-in-vervanging voor online diensten die kaarten aanbieden.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
@@ -572,7 +572,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="224"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Wereldkustlijnen</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="246"/>
@@ -754,24 +754,24 @@
         <translation>Landspecifieke adresverwerkingsondersteuning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="274"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="286"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Wereldkustlijnen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="282"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="294"/>
         <source>Missing world coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Wereldkustlijnen ontbreken</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="293"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="305"/>
         <source>Mapnik country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik landspecifieke ondersteuning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="301"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="313"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Landspecifieke Mapnik-gegevensset ontbreekt</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="242"/>
@@ -869,17 +869,17 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="47"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indien ingeschakeld worden geocoder-gegevenssets gebaseerd op libpostal opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de taalverwerkingsgegevensset (ongeveer 700MB) en landspecifieke gegevenssets voor het verwerken en opzoeken van adressen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="64"/>
         <source>Store datasets for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Gegevenssets voor Mapnik opslaan</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="65"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation type="unfinished"></translation>
+        <translation>Indien ingeschakeld worden gegevenssets die kaarten laten renderen met Mapnik opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 700MB) en landspecifieke gegevenssets voor het renderen</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="188"/>
@@ -892,37 +892,37 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="87"/>
         <source>Cannot create configuration directory for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan geen configuratiemap voor Mapnik aanmaken</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="106"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanmaken van symbolische link naar Mapnik-configuratie mislukt (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="158"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Laden van Mapnik-configuratie mislukt: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="216"/>
         <source>Cannot write Mapnik configuration file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan geen Mapnik-configuratiebestand schrijven: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="226"/>
         <source>Mapnik: adding %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: %1 wordt toegevoegd</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="272"/>
         <source>Mapnik: failed to transform coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: omzetten van coördinaten mislukt</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="285"/>
         <source>Mapnik not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik niet beschikbaar</translation>
     </message>
 </context>
 <context>
@@ -930,42 +930,42 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="22"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik is can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik kan gebruikt worden als renderback-end om kaarttegels aan te bieden aan de cliëntprogramma&apos;s</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
         <source>Scale factor</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaalfactor</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="38"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Schaalfactor wordt gebruikt om dingen op een kaart te tekenen. Op schermen met een hoge resolutie, zoals telefoons, is het een goed idee om schaalfactoren groter dan 1 te gebruiken. Een schaalfactor tussen 3 en 5 wordt voor de meeste mobiele toestellen aangeraden.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="48"/>
         <source>Buffer size in pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>Buffergrootte in pixels</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
-        <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Recommended value for the buffer size is 128 pixels. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="60"/>
-        <source>Style Sheet</source>
-        <translation type="unfinished">Stijlblad</translation>
+        <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
+        <translation type="unfinished">Door het gebied dat gebruikt wordt om de gegevens te laden bij het renderen van een tegel te vergroten kan de renderer renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Als je te veel geknipte labels ziet, probeer dan de buffergrootte te vergroten. Let op: grote buffergroottes vertragen het renderproces.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="61"/>
+        <source>Style Sheet</source>
+        <translation>Stijlblad</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapnikPage.qml" line="62"/>
         <source>Style sheet used to render the map tiles</source>
-        <translation type="unfinished">Stijlblad om kaarttegels te renderen</translation>
+        <translation>Stijlblad om kaarttegels te renderen</translation>
     </message>
 </context>
 <context>
@@ -1516,22 +1516,22 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>
         <source>Rendering</source>
-        <translation type="unfinished">Renderen</translation>
+        <translation>Renderen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="68"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Deze server laat je kiezen tussen twee back-ends om kaarten te tekenen: &lt;i&gt;libosmscout&lt;/i&gt; en &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="79"/>
         <source>Use Mapnik for rendering maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik Mapnik voor renderen van kaarten</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="80"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Indien ingeschakeld zal Mapnik worden gebruikt om kaarten te renderen. Let op: dit vereist extra databases voor wereldkustlijnen en landen.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
@@ -1581,12 +1581,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="176"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="183"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaartrenderinstellingen voor &lt;i&gt;mapnik&lt;/i&gt;-back-end</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="193"/>
@@ -1767,7 +1767,7 @@
     <message>
         <location filename="../src/main.cpp" line="128"/>
         <source>List missing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst van ontbrekende kaarten</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="132"/>
