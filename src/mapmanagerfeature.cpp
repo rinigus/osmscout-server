@@ -244,6 +244,7 @@ QString FeaturePostalGlobal::errorMissing() const
 
 void FeaturePostalGlobal::loadSettings()
 {
+  Feature::loadSettings();
   AppSettings settings;
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "postal_country");
 }
@@ -296,6 +297,7 @@ QString FeatureMapnikGlobal::errorMissing() const
 
 void FeatureMapnikGlobal::loadSettings()
 {
+  Feature::loadSettings();
   AppSettings settings;
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
 }
@@ -315,6 +317,7 @@ QString FeatureMapnikCountry::errorMissing() const
 
 void FeatureMapnikCountry::loadSettings()
 {
+  Feature::loadSettings();
   AppSettings settings;
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
 }
