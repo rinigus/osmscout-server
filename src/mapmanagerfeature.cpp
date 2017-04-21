@@ -264,7 +264,19 @@ QString FeaturePostalCountry::errorMissing() const
 ////////////////////////////////////////////////////////////
 /// mapnik support
 const static QStringList mapnik_global_files{
-  "land-polygons-split.sqlite", "simplified-land-polygons.sqlite" };
+  "land-polygons-split-3857/land_polygons.cpg",
+  "land-polygons-split-3857/land_polygons.index",
+  "land-polygons-split-3857/land_polygons.shp",
+  "land-polygons-split-3857/land_polygons.dbf",
+  "land-polygons-split-3857/land_polygons.prj",
+  "land-polygons-split-3857/land_polygons.shx",
+  "simplified-land-polygons-complete-3857/simplified_land_polygons.cpg",
+  "simplified-land-polygons-complete-3857/simplified_land_polygons.dbf",
+  "simplified-land-polygons-complete-3857/simplified_land_polygons.index",
+  "simplified-land-polygons-complete-3857/simplified_land_polygons.prj",
+  "simplified-land-polygons-complete-3857/simplified_land_polygons.shp",
+  "simplified-land-polygons-complete-3857/simplified_land_polygons.shx"
+};
 
 const static QStringList mapnik_country_files{
   "mapnik.sqlite" };
