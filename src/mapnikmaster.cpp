@@ -137,6 +137,14 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dir
 {
   if (useMapnik)
     {
+      // skip if nothing has changed from the last call
+      if ( !config_changed &&
+           world_directory == m_old_config_path_world &&
+           country_dirs == m_old_config_countries &&
+           m_available == useMapnik &&
+           m_pool_maps.size() > 0 )
+        return;
+
       // regenerate configuration only if it changed
       if ( config_changed ||
            world_directory != m_old_config_path_world ||
