@@ -52,13 +52,13 @@ QString Feature::getPath(const QJsonObject &obj) const
 uint64_t Feature::getSize(const QJsonObject &obj, bool force) const
 {
   if (!m_enabled && !force) return 0;
-  return obj.value(m_name).toObject().value("size").toString().toULong();
+  return obj.value(m_name).toObject().value("size").toString().toULongLong();
 }
 
 uint64_t Feature::getSizeCompressed(const QJsonObject &obj) const
 {
   if (!m_enabled) return 0;
-  return obj.value(m_name).toObject().value("size-compressed").toString().toULong();
+  return obj.value(m_name).toObject().value("size-compressed").toString().toULongLong();
 }
 
 static QDateTime toDT(const QString &t)
