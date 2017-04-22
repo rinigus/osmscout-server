@@ -1,18 +1,18 @@
 Name: harbour-osmscout-server
 Summary: OSM Scout Server
-Version: 0.8.1
+Version: 0.9.0
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
-URL: http://example.org/
+URL: https://github.com/rinigus/osmscout-server
 License: LGPL
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:
 - '%{name}-%{version}.tar.bz2'
 Description: |
-  Short description of my Sailfish OS Application
+  Server providing map tiles, search, and routing
 Configure: none
 # The qtc5 builder inserts macros to allow QtCreator to have fine
 # control over qmake/make execution

@@ -15,11 +15,11 @@ Name:       harbour-osmscout-server
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server
-Version:    0.8.1
+Version:    0.9.0
 Release:    1
 Group:      Qt/Qt
 License:    LGPL
-URL:        http://example.org/
+URL:        https://github.com/rinigus/osmscout-server
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-osmscout-server.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
@@ -37,7 +37,7 @@ BuildRequires:  libkyotocabinet-devel
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my Sailfish OS Application
+Server providing map tiles, search, and routing
 
 
 %prep
@@ -65,11 +65,7 @@ rm -rf %{buildroot}
 %qmake5_install
 
 # >> install post
-# << install post
-
-desktop-file-install --delete-original       \
-  --dir %{buildroot}%{_datadir}/applications             \
-   %{buildroot}%{_datadir}/applications/*.desktop
+################################
 
 # ship all shared libraries not allowed in Harbour with the app
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
@@ -98,6 +94,13 @@ strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
 # strip executable bit from all libraries
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/mapnik/*/*
+
+#################################
+# << install post
+
+desktop-file-install --delete-original       \
+  --dir %{buildroot}%{_datadir}/applications             \
+   %{buildroot}%{_datadir}/applications/*.desktop
 
 %files
 %defattr(-,root,root,-)

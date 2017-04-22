@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Apr 22 2017 rinigus <rinigus.git@gmail.com> 0.9.0-1
+- Mapnik added as an alternative map rendering backend
+- Mapnik uses a separate SQLite database
+- Enhance Linux command line support for map subscription
+
 * Wed Apr 5 2017 rinigus <rinigus.git@gmail.com> 0.8.1-1
 - Updated translations
 - Fix start error on i486

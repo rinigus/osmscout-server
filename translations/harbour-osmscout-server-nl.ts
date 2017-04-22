@@ -900,27 +900,27 @@
         <translation>Aanmaken van symbolische link naar Mapnik-configuratie mislukt (%1)</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="158"/>
+        <location filename="../src/mapnikmaster.cpp" line="166"/>
         <source>Failed to load Mapnik configuration: %1</source>
         <translation>Laden van Mapnik-configuratie mislukt: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="216"/>
+        <location filename="../src/mapnikmaster.cpp" line="224"/>
         <source>Cannot write Mapnik configuration file: %1</source>
         <translation>Kan geen Mapnik-configuratiebestand schrijven: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="226"/>
+        <location filename="../src/mapnikmaster.cpp" line="234"/>
         <source>Mapnik: adding %1</source>
         <translation>Mapnik: %1 wordt toegevoegd</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="272"/>
+        <location filename="../src/mapnikmaster.cpp" line="280"/>
         <source>Mapnik: failed to transform coordinates</source>
         <translation>Mapnik: omzetten van coördinaten mislukt</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="285"/>
+        <location filename="../src/mapnikmaster.cpp" line="293"/>
         <source>Mapnik not available</source>
         <translation>Mapnik niet beschikbaar</translation>
     </message>
