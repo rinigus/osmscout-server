@@ -749,27 +749,27 @@
         <translation>Adresverwerkingstaalondersteuning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="253"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="254"/>
         <source>Address parsing country-specific support</source>
         <translation>Landspecifieke adresverwerkingsondersteuning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="286"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="287"/>
         <source>World coastlines</source>
         <translation>Wereldkustlijnen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="294"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="295"/>
         <source>Missing world coastlines</source>
         <translation>Wereldkustlijnen ontbreken</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="305"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="307"/>
         <source>Mapnik country-specific support</source>
         <translation>Mapnik landspecifieke ondersteuning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="313"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="315"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation>Landspecifieke Mapnik-gegevensset ontbreekt</translation>
     </message>
@@ -784,7 +784,7 @@
         <translation>OSM Scout-bibliotheek</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="261"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="262"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation>Ontbrekende landsspecifieke adresverwerkingsgegevensset</translation>
     </message>
@@ -955,7 +955,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation type="unfinished">Door het gebied dat gebruikt wordt om de gegevens te laden bij het renderen van een tegel te vergroten kan de renderer renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Als je te veel geknipte labels ziet, probeer dan de buffergrootte te vergroten. Let op: grote buffergroottes vertragen het renderproces.</translation>
+        <translation>Door het gebied dat gebruikt wordt om de gegevens te laden bij het renderen van een tegel te vergroten kan de renderer renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Als je te veel geknipte labels ziet, probeer dan de buffergrootte te vergroten. Let op: grote buffergroottes vertragen het renderproces. De buffergrootte wordt aangepast door de schaalfactor om de verhoogde labelgrootte in acht te houden.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="61"/>

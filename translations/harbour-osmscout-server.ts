@@ -749,27 +749,27 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="253"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="254"/>
         <source>Address parsing country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="286"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="287"/>
         <source>World coastlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="294"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="295"/>
         <source>Missing world coastlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="305"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="307"/>
         <source>Mapnik country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="313"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="315"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -784,7 +784,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="261"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="262"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation type="unfinished"></translation>
     </message>

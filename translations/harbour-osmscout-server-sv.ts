@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Servern skall användas ihop med ett klientprogram som kan visa kartor, söka och visa markerade rutter. Servern är ett tunt lager med funktioner för &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; och &lt;i&gt;geocoder-nlp&lt;/i&gt; genom http. Denna server kan användas som ersättning för karttjänster online.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
@@ -572,7 +572,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="224"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Världskustlinjer</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="246"/>
@@ -749,29 +749,29 @@
         <translation>Språkstöd för adresstolkning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="253"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="254"/>
         <source>Address parsing country-specific support</source>
         <translation>Landsspecifikt stöd för adresstolkning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="286"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="287"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Världskustlinjer</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="294"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="295"/>
         <source>Missing world coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Saknade kustlinjer</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="305"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="307"/>
         <source>Mapnik country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik landsspecifikt stöd</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="313"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="315"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Saknad landsspecifikt Mapnik-datauppsättning</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="242"/>
@@ -784,7 +784,7 @@
         <translation>OSM Scout bibliotek</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="261"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="262"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation>Datauppsättning för landsspecifik adresstolkning saknas</translation>
     </message>
@@ -869,17 +869,17 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="47"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vid aktivering, kommer &lt;i&gt;libpostal&lt;/i&gt;-baserade datauppsättningar att lagras på enheten efter nerladdning. Dessa datauppsättningar består av språktolkningsdata (omkring 700 MB) och landsspecifik data för adresstolkning och uppslagning.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="64"/>
         <source>Store datasets for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagra datauppsättningar för Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="65"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation type="unfinished"></translation>
+        <translation>Vid aktivering, kommer datauppsättningar för rendering av kartor med Mapnik att lagras på enheten efter nerladdning. Dessa datauppsättningar består av världskustlinjer (omkring 700 MB) och landsspecifik data för rendering.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="188"/>
@@ -892,37 +892,37 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="87"/>
         <source>Cannot create configuration directory for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan inte skapa mapp för Mapnik-konfiguration</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="106"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte skapa symbolisk länk till Mapnik-konfiguration (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="158"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte läsa in Mapnik-konfiguration: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="216"/>
         <source>Cannot write Mapnik configuration file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte skriva Mapnik-konfigurationsfil: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="226"/>
         <source>Mapnik: adding %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: Lägger till %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="272"/>
         <source>Mapnik: failed to transform coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: Kunde inte omvandla koordinater</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="285"/>
         <source>Mapnik not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik är inte tillgänglig</translation>
     </message>
 </context>
 <context>
@@ -930,32 +930,32 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="22"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik is can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik kan användas som renderingsgränssnitt, för att förse klientprogram med kartor</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
         <source>Scale factor</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalningsfaktor</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="38"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skalningsfaktor för att rita upp funktioner på en karta. På högupplösta skärmar, som telefoner, är det en fördel att använda en skalningsfaktor större än 1. För en första utvärdering, föreslås en skalfaktor på 3-5 på mobila enheter.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="48"/>
         <source>Buffer size in pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>Buffertstorlek i pixel</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Genom att öka storleken på området som används för att läsa in data vid rendering av en kartruta, kan renderingsstillägget förbättra återgivningen genom att ta hänsyn till uppgifter från närliggande kartrutor. Om du ser alltför många avskurna etiketter, kan du försöka öka buffertstorleken. Notera att stor buffertstorlek bromsar renderingen. Buffertstorleken är skalad med skalningsfaktorn för att kompensera för ökningen av etikettstorlek.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="61"/>
@@ -1521,17 +1521,17 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="68"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denna server låter dig välja mellan två olika gränssnitt för att rita upp kartorna. &lt;i&gt;libosmscout&lt;/i&gt; och &lt;i&gt;Mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="79"/>
         <source>Use Mapnik for rendering maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Använd Mapnik för kartrendering</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="80"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Vid aktivering, kommer Mapnik att användas för kartrendering. Notera att det krävs ytterligare databaser för världskustlinjer och länder.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
@@ -1581,12 +1581,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="176"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="183"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartrenderingsinställningar för Mapnik-gränssnitt</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="193"/>
@@ -1767,7 +1767,7 @@
     <message>
         <location filename="../src/main.cpp" line="128"/>
         <source>List missing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista saknade kartor</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="132"/>
