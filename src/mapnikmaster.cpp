@@ -255,7 +255,7 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dir
           }
         }
     }
-  else if (!m_pool_maps.size()>0)
+  else if (m_pool_maps.size()>0)
     {
       m_pool_maps.clear();
       m_pool_maps_generation++;
