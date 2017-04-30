@@ -306,7 +306,7 @@ FeatureMapnikCountry::FeatureMapnikCountry(PathProvider *path):
   Feature(path, "territory", "mapnik_country",
           QCoreApplication::translate("MapManagerFeature", "Mapnik country-specific support"),
           mapnik_country_files,
-          1)
+          2)
 {
 }
 

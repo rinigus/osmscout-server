@@ -19,4 +19,4 @@ mkdir -p "$SQLDIR"
 
 $BNDINSTALL/osm-bright-sqlite/importer/import_pbf.sh "$PBF" "$SQLDIR/mapnik.sqlite"
 
-./pack.sh "$SQLDIR" 1
+./pack.sh "$SQLDIR" 2
