@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wypisz ze zbiory danych dla &lt;country&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
@@ -572,7 +572,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="224"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybrzeża świata</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="246"/>
@@ -756,22 +756,22 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="287"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybrzeża świata</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="295"/>
         <source>Missing world coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Brakujące wybrzeża świata</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="307"/>
         <source>Mapnik country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Wsparcie Mapnika dla poszczególnych krajów</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="315"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Brakujące zbiory danych Mapnika dla poszczególnych krajów </translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="242"/>
@@ -786,7 +786,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="262"/>
         <source>Missing country-specific address parsing dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Brakujące zbiory danych parsowanie adresów dla poszczególnych krajów</translation>
     </message>
 </context>
 <context>
@@ -874,7 +874,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="64"/>
         <source>Store datasets for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Przechowuj zestawy danych dla Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="65"/>
@@ -892,37 +892,37 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="87"/>
         <source>Cannot create configuration directory for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można utworzyć katalogu konfiguracji Mapnika</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="106"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się utworzyć linku symbolicznego do konfiguracji Mapnika (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="166"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się załadować konfiguracji Mapnika: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="224"/>
         <source>Cannot write Mapnik configuration file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można zapisać pliku konfiguracyjnego Mapnika: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="234"/>
         <source>Mapnik: adding %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: dodawanie %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="280"/>
         <source>Mapnik: failed to transform coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: nie udało się przekształcić współrzędnych</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="293"/>
         <source>Mapnik not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik niedostępny</translation>
     </message>
 </context>
 <context>
@@ -930,12 +930,12 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="22"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik is can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik może być użyty jako backend do renderowania, aby dostarczyć mapy do programów klienckich</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
@@ -950,7 +950,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="48"/>
         <source>Buffer size in pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozmiar bufora w pikselach</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
@@ -1277,7 +1277,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="45"/>
         <source>Number of parallel worker threads: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba równoległych wątków roboczych: %1</translation>
     </message>
 </context>
 <context>
@@ -1522,12 +1522,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="68"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serwer ten pozwala na wybór pomiędzy dwoma backend&apos;am do rysowania map: &lt;i&gt;libosmscout&lt;/i&gt; i &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="79"/>
         <source>Use Mapnik for rendering maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj Mapnika do renderowania map</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="80"/>
@@ -1582,12 +1582,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="176"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="183"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia renderowania map dla backendu &lt;i&gt;mapnik&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="193"/>
@@ -1743,48 +1743,48 @@
     <message>
         <location filename="../src/main.cpp" line="108"/>
         <source>Start download of the maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchom ściąganie map</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="112"/>
         <source>Update list of available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaktualizuj listę dostępnych map</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <source>List maps available on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista map dostępnych na urządzeniu</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="120"/>
         <source>List subscribed maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista subskrybowanych map</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="124"/>
         <source>List maps provided for download</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista map przeznaczonych do ściągnięcia</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="128"/>
         <source>List missing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista brakujących map</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="132"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Subskrybuj zbiór danych dla &lt;country&gt;</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="133"/>
         <location filename="../src/main.cpp" line="138"/>
         <source>country-id</source>
-        <translation type="unfinished"></translation>
+        <translation>id-państwa</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="137"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Wypisz zbiór danych dla &lt;country&gt; </translation>
     </message>
 </context>
 </TS>

@@ -572,7 +572,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="224"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>littoral mondial</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="246"/>
@@ -756,12 +756,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="287"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>littoral mondial</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="295"/>
         <source>Missing world coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>littoral mondial manquant</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="307"/>
