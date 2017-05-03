@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat May 3 2017 rinigus <rinigus.git@gmail.com> 0.9.5-1
+- Mapnik database schema changes to reduce size and speedup rendering
+- Mapnik renderer default style adjustments
+- Updated translations
+
 * Sat Apr 22 2017 rinigus <rinigus.git@gmail.com> 0.9.0-1
 - Mapnik added as an alternative map rendering backend
 - Mapnik uses a separate SQLite database
