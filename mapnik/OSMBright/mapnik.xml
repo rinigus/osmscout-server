@@ -1872,43 +1872,43 @@ order by area desc) as landusages]]></Parameter>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="19.5" stroke="#c6c3c0" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
+    <LineSymbolizer stroke-width="19.5" stroke="#caa173" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="13.5" stroke="#c6c3c0" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
+    <LineSymbolizer stroke-width="13.5" stroke="#caa173" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="7.5" stroke="#c6c3c0" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
+    <LineSymbolizer stroke-width="7.5" stroke="#caa173" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="5" stroke="#c6c3c0" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
+    <LineSymbolizer stroke-width="5" stroke="#caa173" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="4" stroke="#c6c3c0" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
+    <LineSymbolizer stroke-width="4" stroke="#caa173" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="3.5" stroke="#c6c3c0" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
+    <LineSymbolizer stroke-width="3.5" stroke="#caa173" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="3" stroke="#c6c3c0" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
+    <LineSymbolizer stroke-width="3" stroke="#caa173" stroke-linecap="butt" stroke-linejoin="round" stroke-dasharray="3, 3" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
@@ -2636,31 +2636,31 @@ order by area desc) as landusages]]></Parameter>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
     <MinScaleDenominator>500</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="19.5" stroke="#c6c3c0" stroke-linecap="round" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="19.5" stroke="#caa173" stroke-linecap="round" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="13.5" stroke="#c6c3c0" stroke-linecap="round" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="13.5" stroke="#caa173" stroke-linecap="round" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="7.5" stroke="#c6c3c0" stroke-linecap="round" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="7.5" stroke="#caa173" stroke-linecap="round" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="5" stroke="#c6c3c0" stroke-linecap="round" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="5" stroke="#caa173" stroke-linecap="round" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="4" stroke="#c6c3c0" stroke-linecap="round" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="4" stroke="#caa173" stroke-linecap="round" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
@@ -2925,13 +2925,13 @@ order by area desc) as landusages]]></Parameter>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="3.5" stroke="#c6c3c0" stroke-linecap="round" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="3.5" stroke="#caa173" stroke-linecap="round" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="3" stroke="#c6c3c0" stroke-linecap="round" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="3" stroke="#caa173" stroke-linecap="round" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3886,43 +3886,43 @@ order by area desc) as landusages]]></Parameter>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
     <MinScaleDenominator>500</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="19.5" stroke="#9e9c9a" stroke-linecap="butt" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="19.5" stroke="#a2815c" stroke-linecap="butt" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
     <MinScaleDenominator>2500</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="13.5" stroke="#9e9c9a" stroke-linecap="butt" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="13.5" stroke="#a2815c" stroke-linecap="butt" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>12500</MaxScaleDenominator>
     <MinScaleDenominator>5000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="7.5" stroke="#9e9c9a" stroke-linecap="butt" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="7.5" stroke="#a2815c" stroke-linecap="butt" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>50000</MaxScaleDenominator>
     <MinScaleDenominator>25000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="4" stroke="#9e9c9a" stroke-linecap="butt" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="4" stroke="#a2815c" stroke-linecap="butt" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>100000</MaxScaleDenominator>
     <MinScaleDenominator>50000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="1.5" stroke="#9e9c9a" stroke-linecap="butt" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1.5" stroke="#a2815c" stroke-linecap="butt" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>200000</MaxScaleDenominator>
     <MinScaleDenominator>100000</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="1" stroke="#9e9c9a" stroke-linecap="butt" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="1" stroke="#a2815c" stroke-linecap="butt" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>25000</MaxScaleDenominator>
     <MinScaleDenominator>12500</MinScaleDenominator>
     <Filter>([type] = 'secondary')</Filter>
-    <LineSymbolizer stroke-width="5" stroke="#9e9c9a" stroke-linecap="butt" stroke-linejoin="round" />
+    <LineSymbolizer stroke-width="5" stroke="#a2815c" stroke-linecap="butt" stroke-linejoin="round" />
   </Rule>
   <Rule>
     <MaxScaleDenominator>2500</MaxScaleDenominator>
