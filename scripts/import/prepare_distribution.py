@@ -7,18 +7,18 @@ import json, pickle, os, stat
 
 root_dir = "distribution"
 bucket = open("bucket_name", "r").read().strip()
-#url_base = "http://data.modrana.org/osm_scout_server"
-url_base = "https://kuqrhldx.e24files.com"
+url_base = "http://data.modrana.org/osm_scout_server"
+#url_base = "https://kuqrhldx.e24files.com"
 
 url_specs = {
     "base": url_base,
     "type": "url",
-    "osmscout": "osmscout-3",
-    "geocoder_nlp": "geocoder-nlp-3",
+    "osmscout": "osmscout-4",
+    "geocoder_nlp": "geocoder-nlp-4",
     "postal_global": "postal-global-1",
     "postal_country": "postal-country-1",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-1",
+    "mapnik_country": "mapnik-country-2",
 }
 
 dist = json.loads( open("countries.json", "r").read() )
