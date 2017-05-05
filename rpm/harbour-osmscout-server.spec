@@ -86,14 +86,17 @@ cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libsqlite3.so.0 %{buildroot}%{_datadir}/%{name}/lib
 
 # mapnik fonts and input plugins
-cp -r /usr/lib/mapnik %{buildroot}%{_datadir}/%{name}/lib
+# not needed anymore since input plugins are linked
+# into main mapnik library and fonts are distributed with
+# the styles
+#cp -r /usr/lib/mapnik %{buildroot}%{_datadir}/%{name}/lib
 
 strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.3.0
 strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
 
 # strip executable bit from all libraries
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
-chmod -x %{buildroot}%{_datadir}/%{name}/lib/mapnik/*/*
+#chmod -x %{buildroot}%{_datadir}/%{name}/lib/mapnik/*/*
 
 #################################
 # << install post
