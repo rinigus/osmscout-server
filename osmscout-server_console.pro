@@ -91,7 +91,8 @@ use_map_cairo {
 
 use_mapnik {
     DEFINES += USE_MAPNIK
-    DEFINES += MAPNIK_FONTS_DIR=\\\"$$system(mapnik-config --fonts)\\\"
+    #DEFINES += MAPNIK_FONTS_DIR=\\\"$$system(mapnik-config --fonts)\\\"
+    DEFINES += MAPNIK_FONTS_DIR=\\\"mapnik/fonts\\\"
     DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
     LIBS += -lmapnik -licuuc
 }
