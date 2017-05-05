@@ -4,6 +4,3 @@
 [submodule "scripts/languages/thirdparty/langcodes"]
 	path = scripts/languages/thirdparty/langcodes
 	url = https://github.com/LuminosoInsight/langcodes.git
-[submodule "scripts/mapnik"]
-	path = scripts/mapnik
-	url = https://github.com/rinigus/mapnik-styles-sqlite.git
