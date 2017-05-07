@@ -8,6 +8,8 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 
+#include <QDebug>
+
 GeoMaster::GeoMaster(QObject *parent) : QObject(parent)
 {
   onSettingsChanged();
@@ -71,6 +73,15 @@ void GeoMaster::onPostalChanged(QString /*global*/, QString /*country*/)
   onSettingsChanged();
 }
 
+void GeoMaster::onSelectedMapChanged(QString selected)
+{
+  {
+    QMutexLocker lk(&m_mutex);
+    m_map_selected = selected;
+  }
+  onSettingsChanged();
+}
+
 static std::string v2s(const std::vector<std::string> &v)
 {
   std::string s = "{";
@@ -86,6 +97,8 @@ static std::string v2s(const std::vector<std::string> &v)
 bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t limit,
                        double &lat, double &lon, std::string &name, size_t &number_of_results)
 {
+  QMutexLocker lk(&m_mutex);
+
   if (!m_geocoder && !m_geocoder.load())
     {
       InfoHub::logError(tr("Cannot open geocoding database"));

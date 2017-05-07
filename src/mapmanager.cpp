@@ -150,6 +150,8 @@ void Manager::loadSettings()
   scanDirectories(old_selection != m_map_selected);
   missingData();
   checkUpdates();
+  if (old_selection != m_map_selected)
+    emit selectedMapChanged(m_map_selected);
 }
 
 bool Manager::isStorageAvailable() const
@@ -184,6 +186,11 @@ bool Manager::createDirectory(QString path)
   return res;
 }
 
+QString Manager::selectedMap()
+{
+  return m_map_selected;
+}
+
 void Manager::nothingAvailable()
 {
   m_maps_available = QJsonObject();
@@ -197,6 +204,7 @@ void Manager::nothingAvailable()
 
   emit availibilityChanged();
   emit missingChanged(m_missing);
+  emit selectedMapChanged(m_map_selected);
 }
 
 QJsonObject Manager::loadJson(QString fname) const
@@ -355,6 +363,7 @@ void Manager::scanDirectories(bool force_update)
       updateMapnik();
 
       emit availibilityChanged();
+      emit selectedMapChanged(m_map_selected);
     }
 }
 

@@ -6,6 +6,8 @@
 
 #include <QObject>
 #include <QJsonObject>
+#include <QString>
+#include <QHash>
 #include <QMutex>
 
 /////////////////////////////////////////
@@ -47,6 +49,7 @@ public slots:
     void onSettingsChanged();
     void onGeocoderNLPChanged(QString dirname);
     void onPostalChanged(QString global, QString country);
+    void onSelectedMapChanged(QString);
 
 protected:
     bool search(const QString &searchPattern, QJsonObject &result, size_t limit,
@@ -58,6 +61,10 @@ protected:
 
     GeoNLP::Postal m_postal;
     GeoNLP::Geocoder m_geocoder;
+
+    QString m_map_selected;
+    QHash<QString, QString> m_postal_country_dirs;
+    QHash<QString, QString> m_geocoder_dirs;
 };
 
 #endif // GEOMASTER_H

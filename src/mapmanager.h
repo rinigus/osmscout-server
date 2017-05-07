@@ -37,6 +37,9 @@ namespace MapManager {
     /// \brief true when some data is missing
     Q_PROPERTY(bool missing READ missing NOTIFY missingChanged)
 
+    /// \brief current selected map
+    Q_PROPERTY(QString selectedMap READ selectedMap NOTIFY selectedMapChanged)
+
   public:
     explicit Manager(QObject *parent = 0);
     virtual ~Manager();
@@ -140,6 +143,7 @@ namespace MapManager {
     bool storageAvailable();
     bool downloading();
     bool missing();
+    QString selectedMap();
 
     virtual QString fullPath(const QString &path) const; ///< Transform relative path to the full path
 
@@ -165,6 +169,8 @@ namespace MapManager {
     void errorMessage(QString info);
 
     void storageAvailableChanged(bool available);
+
+    void selectedMapChanged(QString selected);
 
   public slots:
     void onSettingsChanged();

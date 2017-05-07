@@ -247,6 +247,8 @@ int main(int argc, char *argv[])
                     geoMaster, &GeoMaster::onGeocoderNLPChanged);
   QObject::connect( &manager, &MapManager::Manager::databasePostalChanged,
                     geoMaster, &GeoMaster::onPostalChanged);
+  QObject::connect( &manager, &MapManager::Manager::selectedMapChanged,
+                    geoMaster, &GeoMaster::onSelectedMapChanged);
 
 #ifdef USE_MAPNIK
   QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
