@@ -11,6 +11,7 @@
 #include <QJsonObject>
 #include <QList>
 #include <QSet>
+#include <QHash>
 #include <QPointer>
 #include <QDateTime>
 #include <QtSql>
@@ -151,8 +152,8 @@ namespace MapManager {
 
   signals:
     void databaseOsmScoutChanged(QString database);
-    void databaseGeocoderNLPChanged(QString database);
-    void databasePostalChanged(QString global, QString country);
+    void databaseGeocoderNLPChanged(QHash<QString,QString> dirs);
+    void databasePostalChanged(QString global, QHash<QString,QString> dirs_country);
     void databaseMapnikChanged(QString root_directory, QStringList country_files);
 
     void downloadingChanged(bool state);

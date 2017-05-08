@@ -1257,18 +1257,21 @@ void Manager::updateGeocoderNLP()
 {
   AppSettings settings;
 
-  QString path;
+  QHash<QString,QString> dirs;
 
-  QJsonObject obj = m_maps_available.value(m_map_selected).toObject();
-  for (const Feature *f: m_features)
-    if (f->enabled() && f->name() == "geocoder_nlp")
-      path = fullPath( f->getPath(obj) );
-
-  if (settings.valueString(GEOMASTER_SETTINGS "geocoder_path") != path)
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
     {
-      settings.setValue(GEOMASTER_SETTINGS "geocoder_path", path);
-      emit databaseGeocoderNLPChanged(path);
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (const Feature *f: m_features)
+          if (f->enabled() && f->name() == "geocoder_nlp")
+            dirs[id] = fullPath( f->getPath(c) );
     }
+
+  emit databaseGeocoderNLPChanged(dirs);
 }
 
 ////////////////////////////////////////////////////////////
@@ -1278,25 +1281,26 @@ void Manager::updatePostal()
   AppSettings settings;
 
   QString path_global;
-  QString path_country;
+  QHash<QString,QString> dirs_country;
 
   QJsonObject obj_global = m_maps_available.value(const_feature_id_postal_global).toObject();
   for (const Feature *f: m_features)
     if (f->enabled() && f->name() == "postal_global")
       path_global = fullPath( f->getPath(obj_global) );
 
-  QJsonObject obj_country = m_maps_available.value(m_map_selected).toObject();
-  for (const Feature *f: m_features)
-    if (f->enabled() && f->name() == "postal_country")
-      path_country = fullPath( f->getPath(obj_country) );
-
-  if (settings.valueString(GEOMASTER_SETTINGS "postal_main_dir") != path_global ||
-      settings.valueString(GEOMASTER_SETTINGS "postal_country_dir") != path_country )
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
     {
-      settings.setValue(GEOMASTER_SETTINGS "postal_main_dir", path_global);
-      settings.setValue(GEOMASTER_SETTINGS "postal_country_dir", path_country);
-      emit databasePostalChanged(path_global, path_country);
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (const Feature *f: m_features)
+          if (f->enabled() && f->name() == "postal_country")
+            dirs_country[id] = fullPath( f->getPath(c) );
     }
+
+  emit databasePostalChanged(path_global, dirs_country);
 }
 
 ////////////////////////////////////////////////////////////

@@ -47,8 +47,8 @@ public:
 
 public slots:
     void onSettingsChanged();
-    void onGeocoderNLPChanged(QString dirname);
-    void onPostalChanged(QString global, QString country);
+    void onGeocoderNLPChanged(QHash<QString, QString> dirs);
+    void onPostalChanged(QString global, QHash<QString, QString> dirs_country);
     void onSelectedMapChanged(QString);
 
 protected:
@@ -63,6 +63,7 @@ protected:
     GeoNLP::Geocoder m_geocoder;
 
     QString m_map_selected;
+    QString m_postal_global;
     QHash<QString, QString> m_postal_country_dirs;
     QHash<QString, QString> m_geocoder_dirs;
 };

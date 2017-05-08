@@ -32,11 +32,13 @@ void GeoMaster::onSettingsChanged()
 
   // apply new settings
   m_postal.set_initialize_every_call(settings.valueInt(GEOMASTER_SETTINGS "initialize_every_call") > 0);
-  m_postal.set_postal_datadir(settings.valueString(GEOMASTER_SETTINGS "postal_main_dir").toStdString(),
-                              settings.valueString(GEOMASTER_SETTINGS "postal_country_dir").toStdString());
   m_postal.set_use_primitive(settings.valueInt(GEOMASTER_SETTINGS "use_primitive") > 0);
 
-  QString geopath = settings.valueString(GEOMASTER_SETTINGS "geocoder_path");
+  std::string postal_global = m_postal_global.toStdString();
+  std::string postal_country = m_postal_country_dirs.value(m_map_selected).toStdString();
+  m_postal.set_postal_datadir(postal_global, postal_country);
+
+  QString geopath = m_geocoder_dirs.value(m_map_selected);
   if (geopath.length() < 1 || !m_geocoder.load(geopath.toStdString()))
     {
       InfoHub::logError(tr("Cannot open geocoder database") + ": " + geopath);
@@ -63,23 +65,41 @@ void GeoMaster::onSettingsChanged()
     InfoHub::logInfo(tr("libpostal will use all covered languages"));
 }
 
-void GeoMaster::onGeocoderNLPChanged(QString /*dirname*/)
+void GeoMaster::onGeocoderNLPChanged(QHash<QString, QString> dirs)
 {
-  onSettingsChanged();
+  bool changed;
+  {
+    QMutexLocker lk(&m_mutex);
+    changed = (m_geocoder_dirs != dirs);
+    m_geocoder_dirs = dirs;
+  }
+  if (changed)
+    onSettingsChanged();
 }
 
-void GeoMaster::onPostalChanged(QString /*global*/, QString /*country*/)
+void GeoMaster::onPostalChanged(QString global, QHash<QString, QString> country_dirs)
 {
-  onSettingsChanged();
+  bool changed;
+  {
+    QMutexLocker lk(&m_mutex);
+    changed = (m_postal_global != global || m_postal_country_dirs != country_dirs);
+    m_postal_global = global;
+    m_postal_country_dirs = country_dirs;
+  }
+  if (changed)
+    onSettingsChanged();
 }
 
 void GeoMaster::onSelectedMapChanged(QString selected)
 {
+  bool changed;
   {
     QMutexLocker lk(&m_mutex);
+    changed = (m_map_selected != selected);
     m_map_selected = selected;
   }
-  onSettingsChanged();
+  if (changed)
+    onSettingsChanged();
 }
 
 static std::string v2s(const std::vector<std::string> &v)
