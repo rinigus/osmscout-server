@@ -24,16 +24,50 @@ void GeoMaster::onSettingsChanged()
   // prepare for new settings
   m_geocoder.drop();
   m_postal.clear_languages();
+  m_countries.clear();
 
   useGeocoderNLP = (settings.valueInt(GEOMASTER_SETTINGS "use_geocoder_nlp") > 0);
 
-  if (!useGeocoderNLP)
+  if (!useGeocoderNLP || m_map_selected.isEmpty())
     return; // no need to load anything
 
   // apply new settings
-  m_postal.set_initialize_every_call(settings.valueInt(GEOMASTER_SETTINGS "initialize_every_call") > 0);
-  m_postal.set_use_primitive(settings.valueInt(GEOMASTER_SETTINGS "use_primitive") > 0);
+  m_postal.set_initialize_every_call(settings.valueBool(GEOMASTER_SETTINGS "initialize_every_call"));
+  m_postal.set_use_primitive(settings.valueBool(GEOMASTER_SETTINGS "use_primitive"));
 
+  m_search_in_all_maps = settings.valueBool(GEOMASTER_SETTINGS "search_in_all_maps");
+  m_continue_search_if_hit_found = settings.valueBool(GEOMASTER_SETTINGS "continue_search_if_hit_found");
+
+  // fill country list
+  {
+    m_postal_full_library = (m_postal_global.isEmpty() && m_postal_country_dirs.isEmpty());
+
+    // put selected map as a first element in the countries list
+    if (m_geocoder_dirs.contains(m_map_selected) &&
+        (m_postal_full_library || m_postal_country_dirs.contains(m_map_selected)))
+      m_countries.append(m_map_selected);
+    else
+      {
+        InfoHub::logError(tr("Selected country not available for geocoder: %1").arg(m_map_selected));
+        return;
+      }
+
+    if (m_search_in_all_maps)
+      {
+        QStringList geokeys = m_geocoder_dirs.keys();
+        geokeys.removeAll(m_map_selected);
+        for (const QString &k: geokeys)
+          if (m_postal_full_library || m_postal_country_dirs.contains(k))
+            m_countries.append(k);
+      }
+
+    QString info = tr("Countries used in search: ");
+    for (const QString &k: m_countries)
+      info += k + " ";
+    InfoHub::logInfo(info);
+  }
+
+  // prepare postal and geocoder
   std::string postal_global = m_postal_global.toStdString();
   std::string postal_country = m_postal_country_dirs.value(m_map_selected).toStdString();
   m_postal.set_postal_datadir(postal_global, postal_country);
@@ -54,12 +88,14 @@ void GeoMaster::onSettingsChanged()
   if (lang.length() > 0)
     {
       QStringList lngs = lang.split(',', QString::SkipEmptyParts);
+      QString used;
       for (QString l: lngs)
         {
           l = l.simplified();
           m_postal.add_language(l.toStdString());
-          InfoHub::logInfo(tr("libpostal using language") + ": " + l);
+          used += l + " ";
         }
+      InfoHub::logInfo(tr("libpostal using languages: %1").arg(used));
     }
   else
     InfoHub::logInfo(tr("libpostal will use all covered languages"));
@@ -119,60 +155,89 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
 {
   QMutexLocker lk(&m_mutex);
 
-  if (!m_geocoder && !m_geocoder.load())
-    {
-      InfoHub::logError(tr("Cannot open geocoding database"));
-      return false;
-    }
-
-  // parsing with libpostal
-  std::vector< GeoNLP::Postal::ParseResult > parsed_query;
-  GeoNLP::Postal::ParseResult nonorm;
-
-  if ( !m_postal.parse( searchPattern.toStdString(),
-                        parsed_query, nonorm) )
-    {
-      InfoHub::logError(tr("Error parsing by libpostal, maybe libpostal databases are not available"));
-      return false;
-    }
-
-  // search
-  m_geocoder.set_max_results(limit);
   std::vector<GeoNLP::Geocoder::GeoResult> search_result;
-  if ( !m_geocoder.search(parsed_query, search_result) )
+  QJsonObject parsed;
+  QJsonObject parsed_normalized;
+  for(const QString country: m_countries)
     {
-      InfoHub::logError(tr("Error while searching with geocoder-nlp"));
-      return false;
+      if (!m_geocoder.load(m_geocoder_dirs.value(country).toStdString()))
+        {
+          InfoHub::logError(tr("Cannot open geocoding database: %1").arg(m_geocoder_dirs.value(country)));
+          return false;
+        }
+
+      if (!m_postal_full_library)
+        m_postal.set_postal_datadir_country(m_postal_country_dirs.value(country).toStdString());
+
+      // parsing with libpostal
+      std::vector< GeoNLP::Postal::ParseResult > parsed_query;
+      GeoNLP::Postal::ParseResult nonorm;
+
+      if ( !m_postal.parse( searchPattern.toStdString(),
+                            parsed_query, nonorm) )
+        {
+          InfoHub::logError(tr("Error parsing by libpostal, maybe libpostal databases are not available"));
+          return false;
+        }
+
+      // record parsing results
+      {
+        QJsonObject r;
+        for (auto a: nonorm)
+          r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
+        parsed.insert(country, r);
+      }
+
+      {
+        QJsonArray arr;
+        for (const GeoNLP::Postal::ParseResult &pr: parsed_query)
+          {
+            QJsonObject r;
+            QString info;
+            for (auto a: pr)
+              {
+                r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
+                info += QString::fromStdString(a.first) + ": " + QString::fromStdString(v2s(a.second)) + "; ";
+              }
+
+            arr.push_back(r);
+
+            InfoHub::logInfo("Parsed query: " + info);
+          }
+        parsed_normalized.insert(country, arr);
+      }
+
+      // search
+      m_geocoder.set_max_results(limit);
+      std::vector<GeoNLP::Geocoder::GeoResult> search_result_country;
+      if ( !m_geocoder.search(parsed_query, search_result_country) )
+        {
+          InfoHub::logError(tr("Error while searching with geocoder-nlp"));
+          return false;
+        }
+
+      if (!search_result_country.empty())
+        {
+          if ( search_result.empty() ||
+               ( search_result[0].levels_resolved < search_result_country[0].levels_resolved ) )
+            search_result = search_result_country;
+          else if ( search_result[0].levels_resolved == search_result_country[0].levels_resolved )
+            search_result.insert(search_result.end(),
+                                 search_result_country.begin(), search_result_country.end());
+        }
+
+      if (!search_result.empty() && !m_continue_search_if_hit_found)
+        break;
     }
+
+  // enforce the limit
+  if (search_result.size() > limit)
+    search_result.resize(limit);
 
   // record results
   result.insert("query", searchPattern);
-
-  {
-    QJsonObject r;
-    for (auto a: nonorm)
-      r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
-    result.insert("parsed", r);
-  }
-
-  {
-    QJsonArray arr;
-    for (const GeoNLP::Postal::ParseResult &pr: parsed_query)
-      {
-        QJsonObject r;
-        QString info;
-        for (auto a: pr)
-          {
-            r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
-            info += QString::fromStdString(a.first) + ": " + QString::fromStdString(v2s(a.second)) + "; ";
-          }
-
-        arr.push_back(r);
-
-        InfoHub::logInfo("Parsed query: " + info);
-      }
-    result.insert("parsed_normalized", arr);
-  }
+  result.insert("parsed", parsed);
+  result.insert("parsed_normalized", parsed_normalized);
 
   {
     QJsonArray arr;

@@ -106,12 +106,13 @@ void AppSettings::initDefaults()
       setValue(OSM_SETTINGS "icons", icons);
     }
 
+  CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
   CHECK(GEOMASTER_SETTINGS "initialize_every_call", 0);
   CHECK(GEOMASTER_SETTINGS "use_primitive", 1);
   CHECK(GEOMASTER_SETTINGS "max_queries_per_hierarchy", 30);
   CHECK(GEOMASTER_SETTINGS "languages", "");
-
-  CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
+  CHECK(GEOMASTER_SETTINGS "search_in_all_maps", 1);
+  CHECK(GEOMASTER_SETTINGS "continue_search_if_hit_found", 1);
 
   CHECK(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
 #ifdef IS_SAILFISH_OS

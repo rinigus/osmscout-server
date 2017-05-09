@@ -7,6 +7,7 @@
 #include <QObject>
 #include <QJsonObject>
 #include <QString>
+#include <QStringList>
 #include <QHash>
 #include <QMutex>
 
@@ -62,8 +63,13 @@ protected:
     GeoNLP::Postal m_postal;
     GeoNLP::Geocoder m_geocoder;
 
+    bool m_search_in_all_maps{false};
+    bool m_continue_search_if_hit_found{false};
+    bool m_postal_full_library{false};
+
     QString m_map_selected;
     QString m_postal_global;
+    QStringList m_countries;
     QHash<QString, QString> m_postal_country_dirs;
     QHash<QString, QString> m_geocoder_dirs;
 };
