@@ -50,6 +50,13 @@ Dialog {
             }
 
             ElementSwitch {
+                id: eGeoSearchAllMaps
+                key: settingsGeomasterPrefix + "search_all_maps"
+                mainLabel: qsTr("Search all available maps")
+                secondaryLabel: qsTr("When enabled, each search will be performed using all available maps on the device")
+            }
+
+            ElementSwitch {
                 id: eGeoPrimitive
                 key: settingsGeomasterPrefix + "use_primitive"
                 mainLabel: qsTr("Use primitive parser")
@@ -74,6 +81,7 @@ Dialog {
 
     onAccepted: {
         eGeoInitEveryCall.apply()
+        eGeoSearchAllMaps.apply()
         eGeoPrimitive.apply()
         eGeoLanguages.apply()
     }

@@ -63,7 +63,7 @@ protected:
     GeoNLP::Postal m_postal;
     GeoNLP::Geocoder m_geocoder;
 
-    bool m_search_in_all_maps{false};
+    bool m_search_all_maps{false};
     bool m_continue_search_if_hit_found{false};
     bool m_postal_full_library{false};
 

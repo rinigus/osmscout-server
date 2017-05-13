@@ -35,7 +35,7 @@ void GeoMaster::onSettingsChanged()
   m_postal.set_initialize_every_call(settings.valueBool(GEOMASTER_SETTINGS "initialize_every_call"));
   m_postal.set_use_primitive(settings.valueBool(GEOMASTER_SETTINGS "use_primitive"));
 
-  m_search_in_all_maps = settings.valueBool(GEOMASTER_SETTINGS "search_in_all_maps");
+  m_search_all_maps = settings.valueBool(GEOMASTER_SETTINGS "search_all_maps");
   m_continue_search_if_hit_found = settings.valueBool(GEOMASTER_SETTINGS "continue_search_if_hit_found");
 
   // fill country list
@@ -52,7 +52,7 @@ void GeoMaster::onSettingsChanged()
         return;
       }
 
-    if (m_search_in_all_maps)
+    if (m_search_all_maps)
       {
         QStringList geokeys = m_geocoder_dirs.keys();
         geokeys.removeAll(m_map_selected);
