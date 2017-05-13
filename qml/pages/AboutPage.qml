@@ -52,7 +52,8 @@ Page {
                               "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br><br>" +
                               "langcodes: https://github.com/LuminosoInsight/langcodes<br><br>" +
                               "Hosting of maps: Natural Language Processing Centre (Faculty of Informatics, " +
-                              "Masaryk University, Brno, Czech Republic) through modRana.org<br>"
+                              "Masaryk University, Brno, Czech Republic) through modRana.org<br>" +
+                              "Fonts: Noto fonts (SIL Open Font License, Version 1.1)<br>"
 
 
     SilicaFlickable {
