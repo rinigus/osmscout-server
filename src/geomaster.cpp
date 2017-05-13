@@ -166,7 +166,7 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
     GeoNLP::Postal::ParseResult nonorm;
   };
 
-  //std::map< std::string, PostalRes > postal_cache;
+  size_t levels_resolved = 0;
   std::map< std::string, PostalRes > postal_cache;
   for(const QString country: m_countries)
     {
@@ -243,7 +243,7 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
       // search
       m_geocoder.set_max_results(limit);
       std::vector<GeoNLP::Geocoder::GeoResult> search_result_country;
-      if ( !m_geocoder.search(parsed_query, search_result_country) )
+      if ( !m_geocoder.search(parsed_query, search_result_country, levels_resolved) )
         {
           InfoHub::logError(tr("Error while searching with geocoder-nlp"));
           return false;
@@ -253,7 +253,10 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
         {
           if ( search_result.empty() ||
                ( search_result[0].levels_resolved < search_result_country[0].levels_resolved ) )
-            search_result = search_result_country;
+            {
+              search_result = search_result_country;
+              levels_resolved = search_result_country[0].levels_resolved;
+            }
           else if ( search_result[0].levels_resolved == search_result_country[0].levels_resolved )
             search_result.insert(search_result.end(),
                                  search_result_country.begin(), search_result_country.end());
