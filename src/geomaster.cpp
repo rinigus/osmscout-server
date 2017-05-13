@@ -10,6 +10,8 @@
 
 #include <QDebug>
 
+#include <map>
+
 GeoMaster::GeoMaster(QObject *parent) : QObject(parent)
 {
   onSettingsChanged();
@@ -158,6 +160,14 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
   std::vector<GeoNLP::Geocoder::GeoResult> search_result;
   QJsonObject parsed;
   QJsonObject parsed_normalized;
+
+  struct PostalRes {
+    std::vector< GeoNLP::Postal::ParseResult > parsed;
+    GeoNLP::Postal::ParseResult nonorm;
+  };
+
+  //std::map< std::string, PostalRes > postal_cache;
+  std::map< std::string, PostalRes > postal_cache;
   for(const QString country: m_countries)
     {
       if (!m_geocoder.load(m_geocoder_dirs.value(country).toStdString()))
@@ -166,46 +176,69 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
           return false;
         }
 
-      if (!m_postal_full_library)
-        m_postal.set_postal_datadir_country(m_postal_country_dirs.value(country).toStdString());
-
       // parsing with libpostal
       std::vector< GeoNLP::Postal::ParseResult > parsed_query;
       GeoNLP::Postal::ParseResult nonorm;
+      std::string postal_id;
 
-      if ( !m_postal.parse( searchPattern.toStdString(),
-                            parsed_query, nonorm) )
+      if (!m_postal_full_library)
+        postal_id = m_postal_country_dirs.value(country).toStdString();
+
+      if ( postal_cache.count(postal_id) > 0 )
         {
-          InfoHub::logError(tr("Error parsing by libpostal, maybe libpostal databases are not available"));
-          return false;
+          PostalRes &r = postal_cache[postal_id];
+          parsed_query = r.parsed;
+          nonorm = r.nonorm;
         }
+      else
+        {
+          if (!m_postal_full_library)
+            m_postal.set_postal_datadir_country(postal_id);
 
-      // record parsing results
-      {
-        QJsonObject r;
-        for (auto a: nonorm)
-          r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
-        parsed.insert(country, r);
-      }
+          if ( !m_postal.parse( searchPattern.toStdString(),
+                                parsed_query, nonorm) )
+            {
+              InfoHub::logError(tr("Error parsing by libpostal, maybe libpostal databases are not available"));
+              return false;
+            }
 
-      {
-        QJsonArray arr;
-        for (const GeoNLP::Postal::ParseResult &pr: parsed_query)
+          // record parsing results
           {
             QJsonObject r;
-            QString info;
-            for (auto a: pr)
-              {
-                r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
-                info += QString::fromStdString(a.first) + ": " + QString::fromStdString(v2s(a.second)) + "; ";
-              }
-
-            arr.push_back(r);
-
-            InfoHub::logInfo("Parsed query: " + info);
+            for (auto a: nonorm)
+              r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
+            parsed.insert(country, r);
           }
-        parsed_normalized.insert(country, arr);
-      }
+
+          PostalRes r;
+          r.parsed = parsed_query;
+          r.nonorm = nonorm;
+          postal_cache[postal_id] = r;
+
+          {
+            QJsonArray arr;
+            QStringList info_id_split = QString::fromStdString(postal_id).split('/');
+            QString info_id;
+            if (info_id_split.size() > 0)
+              info_id = info_id_split.value(info_id_split.size()-1);
+
+            for (const GeoNLP::Postal::ParseResult &pr: parsed_query)
+              {
+                QJsonObject r;
+                QString info;
+                for (auto a: pr)
+                  {
+                    r.insert(QString::fromStdString(a.first), QString::fromStdString(v2s(a.second)));
+                    info += QString::fromStdString(a.first) + ": " + QString::fromStdString(v2s(a.second)) + "; ";
+                  }
+
+                arr.push_back(r);
+
+                InfoHub::logInfo(tr("Parsed query [%1]: %2").arg(info_id).arg(info));
+              }
+            parsed_normalized.insert(country, arr);
+          }
+        }
 
       // search
       m_geocoder.set_max_results(limit);
