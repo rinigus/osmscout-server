@@ -22,16 +22,13 @@ In addition to libosmscout, the server supports:
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps and modRana are
 provided under "thirdparty" folder. At present, Poor Maps and modRana
-includes plugins already in the upstream and no additional
+include plugins already in the upstream and no additional
 configuration is needed. 
 
 The server is written using Qt. The server can be used as a console or
 a Sailfish application. For console version, use
 osmscout-server_console.pro as a project. For Sailfish, use
-osmscout-server_silica.pro. For drawing, its possible to use Qt or
-Cairo backends, determined during compilation. While default
-configuration uses Qt for drawing, it maybe advantageous to use Cairo
-in server environment when compiled as a console application.
+osmscout-server_silica.pro. 
 
 
 ## Maps
@@ -46,7 +43,7 @@ the required components.
 If tinkering is required, it is still possible to import the maps
 manually. However, in this case, the user is expected to incorporate
 the manually imported maps into configuration JSON file describing
-that map and update SQLite database with the map files.
+that map and use specific developer options.
 
 
 ### Maps distribution and data
@@ -59,66 +56,6 @@ data repository.
 Map data from OpenStreetMap, Open Database License 1.0. Maps are
 converted to a suitable format from downloaded extracts and/or using
 polygons as provided by Geofabrik GmbH.
-
-
-### Maps import
-
-Maps provided by OpenStreetMaps have to be converted to the format
-used by libosmscout library. The importing procedure below concerns
-only libosmscout backend. When using libpostal-based geocoder-nlp for
-searches, a separate databases are required (see
-https://github.com/rinigus/geocoder-nlp/blob/master/README.md).
-
-The maps are imported from PBF or OSM file formats, as provided by
-OpenStreetMap download servers.  While smaller maps lead to faster
-rendering, if you need to use the server to calculate the routes
-between countries, it maybe advantageous to generate a map covering
-multiple countries. I suggest to make a joined map using osmconvert
-(https://wiki.openstreetmap.org/wiki/Osmconvert) as described in
-https://wiki.openstreetmap.org/wiki/Osmconvert#Parallel_Processing
-
-For importing, you could either use pre-compiled released import tool
-or compile the import tool from source.
-
-
-### Using compiled Import tool 
-
-Get the Import tool corresponding to the release of libosmscout
-library that is used in your server build. For Sailfish OSM Scout
-Server releases, the following import tools are available:
-
-OSM Scout Server | libosmscout Sailfish
---- | ---
-0.7.x and later | please use distributed maps
-0.6.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20170126
-0.5.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161207
-0.4.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161128.2
-0.3.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
-
-Note that the maps format is not changing between all the versions. It
-will be specified in OSM Scout Server and libosmscout release
-changelog if the change in the format or significant import bug has
-been fixed. For example, you could use the server 0.5.x releases with
-the maps imported by the importer corresponding to 0.3.0.
-
-### Compiling Import tool
-
-See http://libosmscout.sourceforge.net/tutorials/Importing/ for
-instructions. You would have to compile the library on your PC and run
-the import program, as explained in the linked tutorial. Please
-install MARISA as a dependency to be able to generate index files for
-free-text search of the map data.
-
-To keep minimal number of required map database files, use
-the same options as in following import command example:
-
-```
-Import --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --typefile libosmscout/stylesheets/map.ost --destinationDirectory mymap mymap.osm.pbf
-```
-
-This would keep the number of produced files to minimum needed on the
-device. Expect that the size of map would be similar to the map file in
-PBF format.
 
 
 ## Settings
@@ -136,11 +73,10 @@ specify through GUI.
 Starting from version 0.3.0, server supports up to 100
 connections. The requests are processed in parallel, as much as
 possible, with the number of parallel threads the same as the number
-of CPUs. In practice, while tiles are rendered in parallel, a long
-routing calculation would block other operations until its finished
-due to the locking of a database.  Exceeding the number of supported
-connections would lead to dropping the connections exceeding the
-limit.
+of CPUs. Depending on the used backend, one operation can block other
+operations due to the blocking of the corresponding
+database. Exceeding the number of supported connections would lead to
+dropping the connections exceeding the limit.
 
 
 ## Default port
@@ -174,13 +110,14 @@ where
 
 `{shift}` - allows to change used {z} by increasing it to {z}+{shift}
 
-`{scale}` - size of a tile is {scale}*256
+`{scale}` - size of a tile in pixels is {scale}*256
 
 `{z}`, `{x}`, and `{y}` are as in http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames .
 
-Addition of `{scale}` and `{shift}` allows to experiment with different
-tile sizes to optimize for performance and human-map interaction. See
-Poor Maps settings for example.
+Addition of `{scale}` and `{shift}` allows to experiment with
+different tile sizes to optimize for performance and human-map
+interaction. Note that `shift` is ignored in Mapnik backend. See Poor
+Maps settings for example.
 
 
 ## Location search
