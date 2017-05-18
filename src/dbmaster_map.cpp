@@ -67,7 +67,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     {
         QMutexLocker lk(&m_mutex);
 
-        if (!m_database->IsOpen())
+        if (!loadDatabase())
         {
             InfoHub::logWarning(tr("Database is not open, cannot render a tile"));
             return false;

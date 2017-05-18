@@ -249,7 +249,7 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot search"));
         return false;
@@ -506,7 +506,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot search for POI"));
         return false;
@@ -667,7 +667,7 @@ bool DBMaster::poiTypes(QByteArray &result)
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot list POI types"));
         return false;

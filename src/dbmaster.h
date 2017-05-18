@@ -65,6 +65,8 @@ public slots:
 
 protected:
 
+    bool loadDatabase();
+
     bool loadStyle(bool daylight);
 
     bool search(const QString &search, SearchResults &result, size_t limit);

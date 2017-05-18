@@ -75,7 +75,7 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot route"));
         return false;

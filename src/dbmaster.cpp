@@ -34,23 +34,12 @@ void DBMaster::loadSettings()
   AppSettings settings;
 
   m_map_dir = settings.valueString(OSM_SETTINGS "map").toStdString();
-  if ( !m_database->IsOpen() || m_map_dir != m_database->GetPath() )
+  if ( m_map_dir != m_database->GetPath() )
     {
       if ( m_database->IsOpen() )
         m_database->Close();
 
-      if (m_map_dir.length() > 0) // skip if not set
-        {
-
-          if (!m_database->Open(m_map_dir))
-            {
-              InfoHub::logError(tr("Cannot open database") + ": " + QString::fromStdString(m_map_dir));
-              return;
-            }
-
-          // clear error state
-          InfoHub::logInfo(tr("Opened database") + " " + QString::fromStdString(m_map_dir), true);
-        }
+      // Database will be opened again on the first call
     }
 
   m_icons_dir = settings.valueString(OSM_SETTINGS "icons").toStdString();
@@ -62,12 +51,7 @@ void DBMaster::loadSettings()
   m_routing_cost_distance = settings.valueFloat(OSM_SETTINGS "routingCostLimitDistance");
   m_routing_cost_factor = settings.valueFloat(OSM_SETTINGS "routingCostLimitFactor");
 
-  std::string style = settings.valueString(OSM_SETTINGS "style").toStdString();
-  if (m_style_name != style)
-    {
-      m_style_name = style;
-      loadStyle(m_daylight);
-    }
+  m_style_name = settings.valueString(OSM_SETTINGS "style").toStdString();
 
   // load speed table
   m_routing_speeds.clear();
@@ -86,10 +70,26 @@ void DBMaster::onSettingsChanged()
   loadSettings();
 }
 
+bool DBMaster::loadDatabase()
+{
+  if (m_database->IsOpen()) return true;
+
+  bool opened = false;
+  if (m_map_dir.length() > 0)
+    opened = m_database->Open(m_map_dir);
+
+  if (opened)
+    InfoHub::logInfo(tr("Opened OSM Scout database: %1").arg(QString::fromStdString(m_map_dir)), true);
+  else
+    InfoHub::logError(tr("Cannot open OSM Scout database: %1").arg(QString::fromStdString(m_map_dir)));
+
+  return opened;
+}
+
 bool DBMaster::loadStyle(bool daylight)
 {
   if ( m_error_flag ||
-       !m_database->IsOpen() )
+       !loadDatabase() )
     return false;
 
   // check if its the same as before
