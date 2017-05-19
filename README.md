@@ -20,10 +20,10 @@ In addition to libosmscout, the server supports:
 * map rendering via mapnik (https://github.com/mapnik/mapnik).
 
 To use the server, you have to start it and configure the client to
-access it. An example configurations for Poor Maps and modRana are
-provided under "thirdparty" folder. At present, Poor Maps and modRana
-include plugins already in the upstream and no additional
-configuration is needed. 
+access it. An example configurations for Poor Maps, modRana, and
+JavaScript-based clients are provided under "example" folder. At
+present, Poor Maps and modRana include plugins already in the upstream
+and no additional configuration is needed. 
 
 The server is written using Qt. The server can be used as a console or
 a Sailfish application. For console version, use

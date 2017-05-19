@@ -1,6 +1,9 @@
 # Examples 
 
-Examples weree run using a map of Estonia.  Here, the URLs used to get
+Here examples of queries and integration of server with the different
+platforms are shown.
+
+Example queries were run using a map of Estonia.  Here, the URLs used to get
 example results are listed:
 
 `search.json`: `http://localhost:8553/v1/search?limit=10&search=Tallinn`
@@ -9,4 +12,3 @@ example results are listed:
 
 `route.json` : `http://localhost:8553/v1/route?p[0][search]=Tallinn&p[1][search]=Tartu`
 
-The resulting files are in `examples` directory.
