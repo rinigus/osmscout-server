@@ -41,6 +41,49 @@ Page {
             }
 
             //////////////////////////////////////////////////////////////////////////////////
+            //// Check for installed modules
+            Column {
+                id: modulesNotAvailable
+                width: page.width
+                spacing: Theme.paddingLarge
+
+                property string dname: ""
+
+                SectionHeader {
+                    text: qsTr("Missing modules")
+                }
+
+                Label {
+                    id: noModuleText
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+
+                Component.onCompleted: {
+                    modulesNotAvailable.visible = ( !modules.fonts || !modules.valhallaRoute )
+                    noModuleText.text =
+                            qsTr("<i>OSM Scout Server</i> uses several modules that have to be installed separately " +
+                                 "for its full functionality. Your device is missings the following module(s):<br><br>")
+
+                    if (!modules.fonts)
+                        noModuleText.text += qsTr("Fonts module is missing. This module is required for " +
+                                                      "rendering maps with Mapnik backend. Please install via Harbour or OpenRepos<br>" +
+                                                      "'OSM Scout Server Module: Fonts'<br><br>")
+                    if (!modules.valhallaRoute)
+                        noModuleText.text += qsTr("Valhalla routing module is missing. This module is required for " +
+                                                      "routing using Valhalla backend. Please install via Harbour or OpenRepos<br>" +
+                                                      "'OSM Scout Server Module: Route'<br><br>")
+
+                    noModuleText.text += qsTr("After installation of the module(s), please restart OSM Scout Server.")
+                }
+
+            }
+
+
+            //////////////////////////////////////////////////////////////////////////////////
             //// Welcome messages for new users
 
             Column {

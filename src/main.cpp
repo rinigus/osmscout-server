@@ -43,6 +43,7 @@
 
 #include "mapmanager.h"
 #include "infohub.h"
+#include "modulechecker.h"
 
 #include <QTranslator>
 #include <QCommandLineParser>
@@ -147,6 +148,9 @@ int main(int argc, char *argv[])
 
   infoHub.onSettingsChanged();
 
+  // check installed modules
+  ModuleChecker modules;
+
   // setup Map Manager
   MapManager::Manager manager;
 
@@ -174,6 +178,7 @@ int main(int argc, char *argv[])
   rootContext->setContextProperty("infohub", &infoHub);
   rootContext->setContextProperty("logger", &rolling_logger);
   rootContext->setContextProperty("manager", &manager);
+  rootContext->setContextProperty("modules", &modules);
 #endif
 
   // setup OSM Scout

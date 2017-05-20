@@ -62,7 +62,8 @@ SOURCES += \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
-    src/mapnikmaster.cpp 
+    src/mapnikmaster.cpp \ 
+    src/modulechecker.cpp
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += qml/osmscout-server.qml \
@@ -87,7 +88,8 @@ HEADERS += \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
-    src/mapnikmaster.h
+    src/mapnikmaster.h \
+    src/modulechecker.h
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
