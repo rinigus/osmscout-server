@@ -107,7 +107,7 @@ use_map_cairo {
 
 use_mapnik {
     DEFINES += USE_MAPNIK
-    DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/share/harbour-osmscout-server/mapnik/fonts\\\"
+    DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/share/harbour-osmscout-server-module-fonts/fonts\\\"
     DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/share/harbour-osmscout-server/lib/mapnik/input\\\"
     LIBS += -lmapnik -licuuc
 
