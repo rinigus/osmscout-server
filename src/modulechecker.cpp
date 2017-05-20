@@ -9,4 +9,5 @@ ModuleChecker::ModuleChecker(QObject *parent) : QObject(parent)
     m_fonts = f.exists();
   }
 
+  m_valhalla_route = true;
 }

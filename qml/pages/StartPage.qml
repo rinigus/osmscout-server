@@ -66,18 +66,15 @@ Page {
                     modulesNotAvailable.visible = ( !modules.fonts || !modules.valhallaRoute )
                     noModuleText.text =
                             qsTr("<i>OSM Scout Server</i> uses several modules that have to be installed separately " +
-                                 "for its full functionality. Your device is missings the following module(s):<br><br>")
+                                 "for full functionality.<br><br>Your device is missing the following module(s):<ul>")
 
                     if (!modules.fonts)
-                        noModuleText.text += qsTr("Fonts module is missing. This module is required for " +
-                                                      "rendering maps with Mapnik backend. Please install via Harbour or OpenRepos<br>" +
-                                                      "'OSM Scout Server Module: Fonts'<br><br>")
+                        noModuleText.text += qsTr("<li>OSM Scout Server Module: Fonts</li>")
                     if (!modules.valhallaRoute)
-                        noModuleText.text += qsTr("Valhalla routing module is missing. This module is required for " +
-                                                      "routing using Valhalla backend. Please install via Harbour or OpenRepos<br>" +
-                                                      "'OSM Scout Server Module: Route'<br><br>")
+                        noModuleText.text += qsTr("<li>OSM Scout Server Module: Route</li>")
 
-                    noModuleText.text += qsTr("After installation of the module(s), please restart OSM Scout Server.")
+                    noModuleText.text += qsTr("</ul><br>Please install missing modules via Harbour or OpenRepos. " +
+                                              "After installation of the module(s), please restart OSM Scout Server.")
                 }
 
             }
