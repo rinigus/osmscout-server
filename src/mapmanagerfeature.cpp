@@ -189,7 +189,7 @@ FeatureOsmScout::FeatureOsmScout(PathProvider *path):
   Feature(path, "territory", "osmscout",
           QCoreApplication::translate("MapManagerFeature", "OSM Scout library"),
           osmscout_files,
-          11)
+          13)
 {
 }
 
