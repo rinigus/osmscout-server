@@ -53,7 +53,8 @@ SOURCES += src/dbmaster.cpp \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
-    src/mapnikmaster.cpp
+    src/mapnikmaster.cpp \
+    src/modulechecker.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
@@ -74,7 +75,8 @@ HEADERS += \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
-    src/mapnikmaster.h
+    src/mapnikmaster.h \
+    src/modulechecker.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
