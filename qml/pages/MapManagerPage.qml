@@ -39,6 +39,23 @@ Page {
             }
 
             ElementSwitch {
+                id: eManagerMapnik
+                activeState: page.activeState
+                key: settingsMapManagerPrefix + "mapnik"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Mapnik")
+                secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
+                                     "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering")
+
+                onSwitchChanged: {
+                    // ensure that we have the same value for geocoder-nlp as postal
+                    // on mobile device
+                    settings.setValue( settingsMapManagerPrefix + "mapnik",
+                                      settings.valueInt(settingsMapManagerPrefix + "mapnik") )
+                }
+            }
+
+            ElementSwitch {
                 id: eManagerGeocoderNLP
                 activeState: page.activeState
                 key: settingsMapManagerPrefix + "geocoder_nlp"
@@ -57,20 +74,13 @@ Page {
             }
 
             ElementSwitch {
-                id: eManagerMapnik
+                id: eManagerOSMScout
                 activeState: page.activeState
-                key: settingsMapManagerPrefix + "mapnik"
+                key: settingsMapManagerPrefix + "osmscout"
                 autoApply: true
-                mainLabel: qsTr("Store datasets for Mapnik")
-                secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
-                                     "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering")
-
-                onSwitchChanged: {
-                    // ensure that we have the same value for geocoder-nlp as postal
-                    // on mobile device
-                    settings.setValue( settingsMapManagerPrefix + "mapnik",
-                                      settings.valueInt(settingsMapManagerPrefix + "mapnik") )
-                }
+                mainLabel: qsTr("Store datasets for libosmscout")
+                secondaryLabel: qsTr("When selected, libosmscout datasets will be stored on device after downloading them. " +
+                                     "These datasets are required for rendering, search, or routing by libosmscout backend.")
             }
 
             SectionHeader {
