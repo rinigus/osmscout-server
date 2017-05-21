@@ -29,6 +29,6 @@ git clone --recursive https://github.com/rinigus/geocoder-nlp.git $BNDSRC/geocod
 (cd libosmscout-version-tool && make INCLUDE=-I$BNDINSTALL/include LIBRARIES=-I$BNDINSTALL/lib && ln -s `pwd`/liboscmscout-version $BNDINSTALL/bin)
 
 # osm-bright-sqlite
-git clone https://github.com/rinigus/osm-bright-sqlite.git $BNDSRC/osm-bright-sqlite
-ln -s $BNDSRC/osm-bright-sqlite $BNDINSTALL
+git clone https://github.com/rinigus/mapnik-styles-sqlite.git $BNDSRC/mapnik-styles-sqlite
+ln -s $BNDSRC/mapnik-styles-sqlite $BNDINSTALL
 

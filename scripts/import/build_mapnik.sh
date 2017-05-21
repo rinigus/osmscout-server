@@ -17,6 +17,6 @@ SQLDIR="$BASE_DIR/mapnik/countries/$COUNTRY"
 rm -rf "$SQLDIR"
 mkdir -p "$SQLDIR"
 
-$BNDINSTALL/osm-bright-sqlite/importer/import_pbf.sh "$PBF" "$SQLDIR/mapnik.sqlite"
+$BNDINSTALL/mapnik-styles-sqlite/importer/import_pbf.sh "$PBF" "$SQLDIR/mapnik.sqlite"
 
 ./pack.sh "$SQLDIR" 2
