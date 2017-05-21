@@ -11,8 +11,8 @@ GEOCODER_IMPORTER=$BNDINSTALL/bin/geocoder-importer
 
 export LD_LIBRARY_PATH=$BNDINSTALL/lib
 
-if [ $# -lt 4 ] ; then
-	echo "Usage: $0 mapfile_pbf base_dir continent_country country_2_letter_code"
+if [ $# -lt 5 ] ; then
+	echo "Usage: $0 mapfile_pbf base_dir continent_country country_2_letter_code poly_file"
 	exit 1
 fi
 
@@ -20,6 +20,7 @@ PBF=$1
 BASE_DIR=$2
 CONTINENT_COUNTRY=$3
 COUNTRY_CODE=$4
+POLY_FILE=$5
 
 IMPDIR="$BASE_DIR/osmscout/$CONTINENT_COUNTRY"
 SQLDIR="$BASE_DIR/geocoder-nlp/$CONTINENT_COUNTRY"
@@ -28,7 +29,7 @@ rm -rf "$IMPDIR" "$SQLDIR"
 mkdir -p "$IMPDIR"
 mkdir -p "$SQLDIR"
 
-"$OSMSCOUT_IMPORTER" --typefile "$OSMSCOUT_MAPSTYLE" --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --destinationDirectory "$IMPDIR" "$PBF"
+"$OSMSCOUT_IMPORTER" --typefile "$OSMSCOUT_MAPSTYLE" --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --destinationDirectory "$IMPDIR" "$PBF" #"$POLY_FILE"
 
 "$GEOCODER_IMPORTER" "$IMPDIR" "$SQLDIR" "$COUNTRY_CODE"
 

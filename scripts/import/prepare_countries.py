@@ -33,6 +33,7 @@ fmake.write("$(BASE_DIR)/mapnik/countries/.directory:\n\tmkdir -p $(BASE_DIR)/ma
 for root, folders, files in os.walk(Hierarchy.base_dir):
     if "name" in files and not Hierarchy.ignore(root):
         name = Hierarchy.get_full_name(root)
+        poly = root + "/poly"
         print Hierarchy.get_id(root), name, Hierarchy.get_postal(root)
 
         cid = Hierarchy.get_id(root)
@@ -53,7 +54,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
         all_countries += country_target + " "
         fmake.write(country_target + ": $(BASE_DIR)/geocoder-nlp/.directory " + pbf +
                     "\n\t$(BUILDER) $(PBF_DIR)/" + pbfname(cid) + " $(BASE_DIR) " +
-                    spath(cid) + " " + Hierarchy.get_postal(root) + "\n\n")
+                    spath(cid) + " " + Hierarchy.get_postal(root) + " " + poly + "\n\n")
 
         # mapnik
         country_target = "$(BASE_DIR)/mapnik/countries/" + spath(cid) + ".timestamp"
