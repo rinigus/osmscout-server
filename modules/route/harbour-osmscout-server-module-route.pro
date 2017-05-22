@@ -13,8 +13,10 @@
 TARGET = harbour-osmscout-server-module-route
 
 CONFIG += sailfishapp
+CONFIG += c++11
 
-SOURCES += src/harbour-osmscout-server-module-route.cpp
+SOURCES += src/harbour-osmscout-server-module-route.cpp \
+    src/valhalla_route_service.cc
 
 OTHER_FILES += qml/harbour-osmscout-server-module-route.qml \
     qml/cover/CoverPage.qml \
@@ -24,6 +26,9 @@ OTHER_FILES += qml/harbour-osmscout-server-module-route.qml \
     rpm/harbour-osmscout-server-module-route.yaml \
     translations/*.ts \
     harbour-osmscout-server-module-route.desktop
+
+LIBS += -l:libvalhalla.a -lprime_server -lczmq -lzmq -lprotobuf
+LIBS += -lboost_thread-mt -lboost_program_options-mt -lboost_regex-mt -lboost_filesystem-mt -lboost_system-mt -lboost_iostreams-mt
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 

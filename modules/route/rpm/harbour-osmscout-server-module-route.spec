@@ -6,6 +6,8 @@
 Name:       harbour-osmscout-server-module-route
 
 # >> macros
+%define __provides_exclude_from ^%{_datadir}/.*$
+%define __requires_exclude ^libboost_|libicudata|libicui18n|libicuuc|libprime_server|libzmq|libczmq|libprotobuf.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -55,6 +57,34 @@ rm -rf %{buildroot}
 %qmake5_install
 
 # >> install post
+################################
+
+# ship all shared libraries not allowed in Harbour with the app
+mkdir -p %{buildroot}%{_datadir}/%{name}/lib
+
+cp /usr/lib/libboost_filesystem-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_regex-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_system-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_thread-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_program_options-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_iostreams-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_chrono-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+
+cp /usr/lib/libprime_server.so.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libczmq.so.4  %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libzmq.so.5  %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libprotobuf.so.8  %{buildroot}%{_datadir}/%{name}/lib
+
+cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
+
+strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
+
+# strip executable bit from all libraries
+chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
+
+################################
 # << install post
 
 desktop-file-install --delete-original       \
