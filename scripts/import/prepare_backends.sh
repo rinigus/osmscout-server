@@ -13,8 +13,8 @@ rm -rf $BNDSRC
 mkdir -p $BNDSRC
 
 # libpostal
-git clone https://github.com/openvenues/libpostal $BNDSRC/libpostal
-( cd $BNDSRC/libpostal && ./bootstrap.sh && ./configure --datadir=$BNDINSTALL --prefix=$BNDINSTALL && make -j3 && make install )
+#git clone https://github.com/openvenues/libpostal $BNDSRC/libpostal
+#( cd $BNDSRC/libpostal && ./bootstrap.sh && ./configure --datadir=$BNDINSTALL --prefix=$BNDINSTALL && make -j3 && make install )
 
 # libosmscout
 git clone --recursive https://github.com/rinigus/libosmscout.git $BNDSRC/libosmscout
@@ -31,4 +31,5 @@ git clone --recursive https://github.com/rinigus/geocoder-nlp.git $BNDSRC/geocod
 # osm-bright-sqlite
 git clone https://github.com/rinigus/mapnik-styles-sqlite.git $BNDSRC/mapnik-styles-sqlite
 ln -s $BNDSRC/mapnik-styles-sqlite $BNDINSTALL
+(cd $BNDSRC/mapnik-styles-sqlite/importer && ./install_twkb.sh)
 

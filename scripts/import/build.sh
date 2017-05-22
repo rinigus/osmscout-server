@@ -29,7 +29,12 @@ rm -rf "$IMPDIR" "$SQLDIR"
 mkdir -p "$IMPDIR"
 mkdir -p "$SQLDIR"
 
-"$OSMSCOUT_IMPORTER" --typefile "$OSMSCOUT_MAPSTYLE" --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --destinationDirectory "$IMPDIR" "$PBF" #"$POLY_FILE"
+# workaround https://github.com/Framstag/libosmscout/issues/332
+mkdir -p tmp_poly
+NPOLY=tmp_poly/$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1).poly
+cp "$POLY_FILE" $NPOLY
+"$OSMSCOUT_IMPORTER" --typefile "$OSMSCOUT_MAPSTYLE" --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --destinationDirectory "$IMPDIR" "$PBF" $NPOLY #"$POLY_FILE"
+rm $NPOLY
 
 "$GEOCODER_IMPORTER" "$IMPDIR" "$SQLDIR" "$COUNTRY_CODE"
 
