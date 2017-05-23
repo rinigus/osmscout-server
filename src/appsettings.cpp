@@ -122,6 +122,9 @@ void AppSettings::initDefaults()
 #endif
   CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 64);
   CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", DATA_PREFIX "mapnik/OSMBright");
+
+  CHECK(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
+  CHECK(VALHALLA_MASTER_SETTINGS "cache_in_mb", 128);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -132,6 +135,7 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
       key.contains(ROUTING_SPEED_SETTINGS) ||
       key.contains(GEOMASTER_SETTINGS) ||
       key.contains(MAPNIKMASTER_SETTINGS) ||
+      key.contains(VALHALLA_MASTER_SETTINGS) ||
       key.contains(MAPMANAGER_SETTINGS))
     {
       // this delayed signal execution prevents fireing signals together

@@ -173,6 +173,7 @@ int main(int argc, char *argv[])
   rootContext->setContextProperty("settingsSpeedPrefix", ROUTING_SPEED_SETTINGS);
   rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
   rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
+  rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
 
   rootContext->setContextProperty("settings", &settings);
   rootContext->setContextProperty("infohub", &infoHub);
@@ -210,6 +211,17 @@ int main(int argc, char *argv[])
     }
 #endif
 
+#ifdef USE_VALHALLA
+  // setup for Valhalla
+  valhallaMaster = new ValhallaMaster();
+
+  if (valhallaMaster == nullptr)
+    {
+      std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
+      return -4;
+    }
+#endif
+
   // setup HTTP server
   settings.beginGroup("http-listener");
   int port = settings.valueInt("port");
@@ -240,6 +252,10 @@ int main(int argc, char *argv[])
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     mapnikMaster, &MapnikMaster::onSettingsChanged );
 #endif
+#ifdef USE_VALHALLA
+  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                    valhallaMaster, &ValhallaMaster::onSettingsChanged );
+#endif
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &infoHub, &InfoHub::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -258,6 +274,10 @@ int main(int argc, char *argv[])
 #ifdef USE_MAPNIK
   QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
                     mapnikMaster, &MapnikMaster::onMapnikChanged );
+#endif
+#ifdef USE_VALHALLA
+  QObject::connect( &manager, &MapManager::Manager::databaseValhallaChanged,
+                    valhallaMaster, &ValhallaMaster::onValhallaChanged );
 #endif
 
 #ifdef IS_SAILFISH_OS

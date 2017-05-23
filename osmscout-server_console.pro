@@ -22,6 +22,9 @@ CONFIG += use_map_qt
 !disable_mapnik {
    CONFIG += use_mapnik
 }
+!disable_valhalla {
+   CONFIG += use_valhalla
+}
 
 # installs
 stylesheets.files = stylesheets
@@ -54,6 +57,7 @@ SOURCES += src/dbmaster.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
     src/mapnikmaster.cpp \
+    src/valhallamaster.cpp \
     src/modulechecker.cpp
 
 OTHER_FILES += \
@@ -76,6 +80,7 @@ HEADERS += \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
     src/mapnikmaster.h \
+    src/valhallamaster.h \
     src/modulechecker.h
 
 use_map_qt {
@@ -97,6 +102,12 @@ use_mapnik {
     DEFINES += MAPNIK_FONTS_DIR=\\\"modules/fonts/fonts\\\"
     DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
     LIBS += -lmapnik -licuuc
+}
+
+use_valhalla {
+    DEFINES += USE_VALHALLA
+    DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_route_service\\\"
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"modules/route/data/valhalla.json\\\"
 }
 
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -lsqlite3

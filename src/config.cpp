@@ -12,5 +12,10 @@ GeoMaster *geoMaster = NULL;
 MapnikMaster *mapnikMaster = NULL;
 #endif
 
+#ifdef USE_VALHALLA
+ValhallaMaster *valhallaMaster = NULL;
+#endif
+
 std::atomic<bool> useGeocoderNLP;
 std::atomic<bool> useMapnik;
+std::atomic<bool> useValhalla;

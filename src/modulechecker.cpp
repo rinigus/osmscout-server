@@ -11,5 +11,11 @@ ModuleChecker::ModuleChecker(QObject *parent) : QObject(parent)
   }
 #endif
 
-  m_valhalla_route = true;
+#ifdef USE_VALHALLA
+  {
+    QFileInfo f1(VALHALLA_EXECUTABLE);
+    QFileInfo f2(VALHALLA_CONFIG_TEMPLATE);
+    m_valhalla_route = (f1.exists() && f2.exists());
+  }
+#endif
 }

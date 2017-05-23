@@ -21,6 +21,7 @@ CONFIG += use_map_qt
 #CONFIG += use_map_cairo
 
 CONFIG += use_mapnik
+CONFIG += use_valhalla
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -63,7 +64,8 @@ SOURCES += \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
     src/mapnikmaster.cpp \ 
-    src/modulechecker.cpp
+    src/modulechecker.cpp \
+    src/valhallamaster.cpp
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += qml/osmscout-server.qml \
@@ -89,7 +91,8 @@ HEADERS += \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
     src/mapnikmaster.h \
-    src/modulechecker.h
+    src/modulechecker.h \
+    src/valhallamaster.h
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
@@ -116,6 +119,12 @@ use_mapnik {
     mapnik.files = mapnik
     mapnik.path = /usr/share/$${TARGET}
     INSTALLS += mapnik
+}
+
+use_valhalla {
+    DEFINES += USE_VALHALLA
+    DEFINES += VALHALLA_EXECUTABLE=\\\"/usr/bin/harbour-osmscout-server-module-route\\\"
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server-module-route/data/valhalla.json\\\"
 }
 
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -ldl

@@ -12,12 +12,15 @@
 
 #define MAPNIKMASTER_SETTINGS "mapnik/"
 
+#define VALHALLA_MASTER_SETTINGS "valhalla/"
+
 //////////////////////////////////////////////
 /// global variables
 
 #include "dbmaster.h"
 #include "geomaster.h"
 #include "mapnikmaster.h"
+#include "valhallamaster.h"
 
 #include <atomic>
 
@@ -29,7 +32,12 @@ extern GeoMaster *geoMaster;
 extern MapnikMaster *mapnikMaster;
 #endif
 
+#ifdef USE_VALHALLA
+extern ValhallaMaster *valhallaMaster;
+#endif
+
 extern std::atomic<bool> useGeocoderNLP;
 extern std::atomic<bool> useMapnik;
+extern std::atomic<bool> useValhalla;
 
 #endif // CONFIG_H

@@ -5,7 +5,7 @@
   "httpd": {
     "service": {
       "interrupt": "ipc:///tmp/osmscout_server_valhalla_interrupt",
-      "listen": "tcp://localhost:8002",
+      "listen": "tcp://127.0.0.1:8002",
       "loopback": "ipc:///tmp/osmscout_server_valhalla_loopback"
     }
   },
