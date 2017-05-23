@@ -15,6 +15,10 @@ TARGET = harbour-osmscout-server-module-route
 CONFIG += sailfishapp
 CONFIG += c++11
 
+data.files = data
+data.path = /usr/share/$${TARGET}
+INSTALLS += data
+
 SOURCES += src/harbour-osmscout-server-module-route.cpp \
     src/valhalla_route_service.cc
 
