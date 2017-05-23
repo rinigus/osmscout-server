@@ -27,6 +27,19 @@ BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  libzmq-devel >= 4.1.4
+BuildRequires:  czmq-devel >= 3.0
+BuildRequires:  protobuf-devel
+BuildRequires:  prime_server-devel == 0.6.3
+BuildRequires:  boost-devel >= 1.51
+BuildRequires:  boost-chrono >= 1.51
+BuildRequires:  boost-date-time >= 1.51
+BuildRequires:  boost-filesystem >= 1.51
+BuildRequires:  boost-iostreams >= 1.51
+BuildRequires:  boost-program-options >= 1.51
+BuildRequires:  boost-regex >= 1.51
+BuildRequires:  boost-system >= 1.51
+BuildRequires:  boost-thread >= 1.51
 BuildRequires:  desktop-file-utils
 
 %description

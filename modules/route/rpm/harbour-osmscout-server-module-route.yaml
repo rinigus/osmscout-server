@@ -27,8 +27,20 @@ PkgConfigBR:
   - Qt5Quick
 
 # Build dependencies without a pkgconfig setup can be listed here
-# PkgBR:
-#   - package-needed-to-build
+PkgBR:
+  - libzmq-devel >= 4.1.4
+  - czmq-devel >= 3.0
+  - protobuf-devel
+  - prime_server-devel == 0.6.3
+  - boost-devel >= 1.51
+  - boost-chrono >= 1.51
+  - boost-date-time >= 1.51
+  - boost-filesystem >= 1.51
+  - boost-iostreams >= 1.51
+  - boost-program-options >= 1.51
+  - boost-regex >= 1.51
+  - boost-system >= 1.51
+  - boost-thread >= 1.51
 
 # Runtime dependencies which are not automatically detected
 Requires:
