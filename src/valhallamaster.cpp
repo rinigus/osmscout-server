@@ -18,12 +18,16 @@ ValhallaMaster::ValhallaMaster(QObject *parent) : QObject(parent)
 {
 #pragma message "THIS SHOULD BE REMOVED"
   onSettingsChanged();
-  onValhallaChanged("../valhalla/valhalla_tiles", QStringList());
+  onValhallaChanged("valhalla", QStringList());
 }
 
 ValhallaMaster::~ValhallaMaster()
 {
-  if (m_process) m_process->deleteLater();
+  if (m_process)
+    {
+      stop();
+      m_process->deleteLater();
+    }
 }
 
 
@@ -53,7 +57,7 @@ void ValhallaMaster::onSettingsChanged()
       dir.setPath(dir.absoluteFilePath(const_dir));
       m_config_fname = dir.absoluteFilePath(const_conf);
 
-      if (changed && !m_dirname.isEmpty())
+      if (!m_dirname.isEmpty() && (changed || !m_process))
         {
           generateConfig();
           start();
@@ -68,7 +72,7 @@ void ValhallaMaster::onValhallaChanged(QString valhalla_directory, QStringList c
   if (!useValhalla) return;
 
   std::unique_lock<std::mutex> lk(m_mutex);
-  if ( valhalla_directory != m_dirname || m_countries != countries )
+  if ( valhalla_directory != m_dirname || m_countries != countries || !m_process )
     {
       m_dirname = valhalla_directory;
       m_countries = countries;

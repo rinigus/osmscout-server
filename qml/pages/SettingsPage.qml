@@ -108,6 +108,28 @@ Dialog {
             }
 
             SectionHeader {
+                text: qsTr("Routing Engine")
+            }
+
+            Label {
+                text: qsTr("Routing engine is responsible for calculating routes between origin and destination. " +
+                           "This server allows you to select between two routing engines: <i>Valhalla</i> and " +
+                           "<i>libosmscout</i>. ")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            ElementSwitch {
+                id: eValhalla
+                key: settingsValhallaPrefix + "use_valhalla"
+                mainLabel: qsTr("Use Valhalla as routing engine")
+                secondaryLabel: qsTr("When selected, Valhalla will be used to calculate the routing instructions.")
+            }
+
+            SectionHeader {
                 text: qsTr("Backend settings")
             }
 
@@ -116,15 +138,21 @@ Dialog {
                 spacing: Theme.paddingMedium
                 anchors.margins: Theme.horizontalPageMargin
 
+                Rectangle {
+                    width: parent.width
+                    height: Theme.paddingLarge
+                    color: "transparent"
+                }
+
                 Button {
-                    text: qsTr("OSM Scout library")
-                    onClicked: pageStack.push(Qt.resolvedUrl("OSMScoutPage.qml"))
+                    text: qsTr("Mapnik")
+                    onClicked: pageStack.push(Qt.resolvedUrl("MapnikPage.qml"))
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
 
                 Label {
-                    text: qsTr("OSM Scout library (<i>libosmscout</i>) settings. The library is used for drawing maps, search, and routing.")
+                    text: qsTr("Map rendering settings for <i>mapnik</i> backend")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -173,14 +201,37 @@ Dialog {
                 }
 
                 Button {
-                    text: qsTr("Mapnik")
-                    onClicked: pageStack.push(Qt.resolvedUrl("MapnikPage.qml"))
+                    text: qsTr("Valhalla")
+                    onClicked: pageStack.push(Qt.resolvedUrl("ValhallaPage.qml"))
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
 
                 Label {
-                    text: qsTr("Map rendering settings for <i>mapnik</i> backend")
+                    text: qsTr("Routing engine settings for <i>Valhalla</i> backend")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Button {
+                    text: qsTr("OSM Scout library")
+                    onClicked: pageStack.push(Qt.resolvedUrl("OSMScoutPage.qml"))
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Label {
+                    text: qsTr("OSM Scout library (<i>libosmscout</i>) settings. " +
+                               "The library can be used for drawing maps, search, and routing.")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -238,5 +289,6 @@ Dialog {
         eMapsRoot.apply()
         eGeocoderNLP.apply()
         eMapnik.apply()
+        eValhalla.apply()
     }
 }

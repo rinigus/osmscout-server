@@ -152,7 +152,7 @@ int main(int argc, char *argv[])
   ModuleChecker modules;
 
   // setup Map Manager
-  MapManager::Manager manager;
+  MapManager::Manager manager(app.data());
 
 #ifdef IS_CONSOLE_QT
   ConsoleLogger console_logger;
@@ -213,7 +213,7 @@ int main(int argc, char *argv[])
 
 #ifdef USE_VALHALLA
   // setup for Valhalla
-  valhallaMaster = new ValhallaMaster();
+  valhallaMaster = new ValhallaMaster(app.data());
 
   if (valhallaMaster == nullptr)
     {
