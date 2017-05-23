@@ -10,6 +10,7 @@
 
 #include <cstdint>
 #include <mutex>
+#include <atomic>
 
 class ValhallaMaster : public QObject
 {
@@ -28,13 +29,13 @@ protected:
   void generateConfig();
   void start();
   void stop();
+  void start_process(); ///< Called internally when there is no process running and its free to start a new one
 
   void onProcessStarted();
   void onProcessStopped(int exitCode, QProcess::ExitStatus exitStatus); ///< Called on error while starting or when process has stopped
   void onProcessStateChanged(QProcess::ProcessState newState); ///< Called when state of the process has changed
   void onProcessRead();
   void onProcessReadError();
-
 
 protected:
   std::mutex m_mutex;
@@ -46,7 +47,8 @@ protected:
   int m_cache;
 
   QProcess *m_process{nullptr};
-  bool m_process_started{false};
+  std::atomic<bool> m_process_ready{false};
+  bool m_process_start_when_ready{false};
 
   const QString const_conf{"valhalla.json"};
   const QString const_dir{"valhalla"};

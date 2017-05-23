@@ -53,9 +53,8 @@ void ValhallaMaster::onSettingsChanged()
       dir.setPath(dir.absoluteFilePath(const_dir));
       m_config_fname = dir.absoluteFilePath(const_conf);
 
-      if (changed)
+      if (changed && !m_dirname.isEmpty())
         {
-          stop();
           generateConfig();
           start();
         }
@@ -73,7 +72,6 @@ void ValhallaMaster::onValhallaChanged(QString valhalla_directory, QStringList c
     {
       m_dirname = valhalla_directory;
       m_countries = countries;
-      stop();
       generateConfig();
       start();
     }
@@ -110,19 +108,31 @@ void ValhallaMaster::generateConfig()
   QTextStream tout(&fout);
   tout << conf;
   if (tout.status() != QTextStream::Ok)
-  {
-    InfoHub::logWarning(tr("Error writing Valhalla's configuration file"));
-    return;
-  }
+    {
+      InfoHub::logWarning(tr("Error writing Valhalla's configuration file"));
+      return;
+    }
 }
 
 /// interaction with valhalla route service process
 void ValhallaMaster::start()
 {
-  stop();
+  if ( m_process )
+    {
+      // have to stop the running process first - otherwise may have issues with the ports
+      m_process_start_when_ready = true;
+      stop();
+      return;
+    }
+
+  start_process();
+}
+
+void ValhallaMaster::start_process()
+{
+  m_process_start_when_ready = false;
 
   m_process = new QProcess(this);
-
   connect( m_process, &QProcess::started,
            this, &ValhallaMaster::onProcessStarted );
 
@@ -149,10 +159,8 @@ void ValhallaMaster::stop()
 {
   if (m_process)
     {
+      m_process_ready = false;
       m_process->kill();
-      m_process->deleteLater();
-      m_process = nullptr;
-      m_process_started = false;
     }
 }
 
@@ -179,15 +187,26 @@ void ValhallaMaster::onProcessReadError()
 
 void ValhallaMaster::onProcessStarted()
 {
-  m_process_started = true;
+  m_process_ready = true;
+  InfoHub::logInfo(tr("Valhalla routing engine started"));
 }
 
 void ValhallaMaster::onProcessStopped(int exitCode, QProcess::ExitStatus /*exitStatus*/)
 {
+  if (!m_process) return;
+
   if (exitCode != 0)
+    InfoHub::logWarning(tr("Valhalla exited with error: %1").arg(exitCode));
+
+  if (m_process)
     {
-      InfoHub::logWarning(tr("Valhalla exited with error: %1").arg(exitCode));
-      return;
+      m_process_ready = false;
+      m_process->disconnect();
+      m_process->deleteLater();
+      m_process = nullptr;
+
+      if (m_process_start_when_ready)
+        start_process();
     }
 }
 
@@ -195,9 +214,13 @@ void ValhallaMaster::onProcessStateChanged(QProcess::ProcessState state)
 {
   if (!m_process) return;
 
-  if ( !m_process_started && state == QProcess::NotRunning )
+  if ( !m_process_ready && state == QProcess::NotRunning )
     {
       InfoHub::logWarning(tr("Could not start the Valhalla routing service: %1").arg(m_process->program()));
+
+      m_process->deleteLater();
+      m_process = nullptr;
+      m_process_ready = false;
     }
 }
 
