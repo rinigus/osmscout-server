@@ -138,12 +138,6 @@ Dialog {
                 spacing: Theme.paddingMedium
                 anchors.margins: Theme.horizontalPageMargin
 
-                Rectangle {
-                    width: parent.width
-                    height: Theme.paddingLarge
-                    color: "transparent"
-                }
-
                 Button {
                     text: qsTr("Mapnik")
                     onClicked: pageStack.push(Qt.resolvedUrl("MapnikPage.qml"))
@@ -221,6 +215,12 @@ Dialog {
                 width: parent.width
                 spacing: Theme.paddingMedium
                 anchors.margins: Theme.horizontalPageMargin
+
+                Rectangle {
+                    width: parent.width
+                    height: Theme.paddingLarge
+                    color: "transparent"
+                }
 
                 Button {
                     text: qsTr("OSM Scout library")
