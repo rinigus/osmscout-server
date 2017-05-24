@@ -69,15 +69,17 @@ void ValhallaMaster::onSettingsChanged()
 
 void ValhallaMaster::onValhallaChanged(QString valhalla_directory, QStringList countries)
 {
-  if (!useValhalla) return;
-
   std::unique_lock<std::mutex> lk(m_mutex);
   if ( valhalla_directory != m_dirname || m_countries != countries || !m_process )
     {
       m_dirname = valhalla_directory;
       m_countries = countries;
-      generateConfig();
-      start();
+
+      if (useValhalla)
+        {
+          generateConfig();
+          start();
+        }
     }
 }
 
@@ -134,6 +136,8 @@ void ValhallaMaster::start()
 
 void ValhallaMaster::start_process()
 {
+  InfoHub::logInfo(tr("Starting Valhalla routing engine"));
+
   m_process_start_when_ready = false;
 
   m_process = new QProcess(this);
@@ -155,17 +159,6 @@ void ValhallaMaster::start_process()
   QStringList arguments;
   arguments << m_config_fname << "1";
   m_process->start(VALHALLA_EXECUTABLE, arguments);
-
-  qDebug() << arguments;
-}
-
-void ValhallaMaster::stop()
-{
-  if (m_process)
-    {
-      m_process_ready = false;
-      m_process->kill();
-    }
 }
 
 void ValhallaMaster::onProcessRead()
@@ -185,7 +178,7 @@ void ValhallaMaster::onProcessReadError()
   QString txt = m_process->readAllStandardError();
   QTextStream tin(&txt, QIODevice::ReadOnly);
   while (!tin.atEnd())
-    InfoHub::logError("Valhalla: " + tin.readLine());
+    InfoHub::logWarning("Valhalla: " + tin.readLine());
 }
 
 
@@ -199,12 +192,15 @@ void ValhallaMaster::onProcessStopped(int exitCode, QProcess::ExitStatus /*exitS
 {
   if (!m_process) return;
 
-  if (exitCode != 0)
+  if (exitCode != 0 && !m_process_killed)
     InfoHub::logWarning(tr("Valhalla exited with error: %1").arg(exitCode));
 
   if (m_process)
     {
+      InfoHub::logInfo(tr("Valhalla routing engine stopped"));
+
       m_process_ready = false;
+      m_process_killed = false;
       m_process->disconnect();
       m_process->deleteLater();
       m_process = nullptr;
@@ -214,9 +210,37 @@ void ValhallaMaster::onProcessStopped(int exitCode, QProcess::ExitStatus /*exitS
     }
 }
 
+void ValhallaMaster::stop()
+{
+  if (m_process)
+    {
+      InfoHub::logInfo(tr("Stopping Valhalla routing engine"));
+
+      m_process_ready = false;
+      if ( m_process->state() == QProcess::Running )
+        {
+          m_process_killed = true;
+          m_process->kill();
+        }
+      else
+        {
+          InfoHub::logInfo(tr("Valhalla routing engine process cleanup"));
+
+          // cleanup and get ready to start a new process if needed
+          m_process->disconnect();
+          m_process->kill();
+          m_process->deleteLater();
+          m_process = nullptr;
+
+          if (m_process_start_when_ready)
+            start_process();
+        }
+    }
+}
+
 void ValhallaMaster::onProcessStateChanged(QProcess::ProcessState state)
 {
-  if (!m_process) return;
+  if (!m_process || m_process_killed) return;
 
   if ( !m_process_ready && state == QProcess::NotRunning )
     {

@@ -49,6 +49,7 @@ protected:
   QProcess *m_process{nullptr};
   std::atomic<bool> m_process_ready{false};
   bool m_process_start_when_ready{false};
+  bool m_process_killed{false};
 
   const QString const_conf{"valhalla.json"};
   const QString const_dir{"valhalla"};
