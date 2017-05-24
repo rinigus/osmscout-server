@@ -7,7 +7,7 @@ Page {
     property string mainText: "<p>" +
                               qsTr("The server has to be used with the client program that is able to display maps, query for searches and " +
                                    "display selected routes. The server is a thin layer exposing functionality of <i>libosmscout</i>, " +
-                                   "<i>mapnik</i>, <i>libpostal</i> and <i>geocoder-nlp</i> through http. " +
+                                   "<i>mapnik</i>, <i>valhalla</i>, <i>libpostal</i> and <i>geocoder-nlp</i> through http. " +
                                    "This server can be used as a drop-in replacement for " +
                                    "online services providing maps.") + "</p><br>" +
                               "<p>" + qsTr("Copyright:") + " 2016, 2017 <br>rinigus https://github.com/rinigus<br></p>" +
@@ -48,11 +48,13 @@ Page {
                               "libosmscout: http://libosmscout.sourceforge.net/<br><br>" +
                               "libpostal: https://github.com/openvenues/libpostal<br><br>" +
                               "mapnik: http://mapnik.org/<br><br>" +
+                              "valhalla: https://github.com/valhalla/valhalla<br><br>" +
+                              "geocoder-nlp: https://github.com/rinigus/geocoder-nlp<br><br>" +
                               "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br><br>" +
                               "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br><br>" +
                               "langcodes: https://github.com/LuminosoInsight/langcodes<br><br>" +
                               "Hosting of maps: Natural Language Processing Centre (Faculty of Informatics, " +
-                              "Masaryk University, Brno, Czech Republic) through modRana.org<br>" +
+                              "Masaryk University, Brno, Czech Republic) through modRana.org<br><br>" +
                               "Fonts: Noto fonts (SIL Open Font License, Version 1.1)<br>"
 
 
