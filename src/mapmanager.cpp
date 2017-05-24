@@ -281,7 +281,8 @@ void Manager::scanDirectories(bool force_update)
               {
                 InfoHub::logWarning(tr("No maps loaded: %1").arg(f->errorMissing()));
                 if (!f->isCompatible(request))
-                  InfoHub::logWarning(tr("Version of dataset for %1 is not supported").
+                  InfoHub::logWarning(tr("%1: version of dataset for %2 is not supported").
+                                      arg(f->pretty()).
                                       arg(getPretty(request)));
                 nothingAvailable();
                 return;
@@ -312,7 +313,8 @@ void Manager::scanDirectories(bool force_update)
                                     arg(getPretty(request)).
                                     arg(f->errorMissing()));
                 if (!f->isCompatible(request))
-                  InfoHub::logWarning(tr("Version of dataset for %1 is not supported").
+                  InfoHub::logWarning(tr("%1: version of dataset for %2 is not supported").
+                                      arg(f->pretty()).
                                       arg(getPretty(request)));
 
                 add = false;
@@ -748,7 +750,8 @@ void Manager::missingData()
         if (f->isCompatible(request))
           f->checkMissingFiles(request, missing);
         else
-          InfoHub::logWarning(tr("Version of dataset for %1 is not supported").
+          InfoHub::logWarning(tr("%1: version of dataset for %2 is not supported").
+                              arg(f->pretty()).
                               arg(getPretty(request)));
 
       if (missing.files.length() > 0)
