@@ -125,6 +125,7 @@ void AppSettings::initDefaults()
 
   CHECK(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
   CHECK(VALHALLA_MASTER_SETTINGS "cache_in_mb", 128);
+  CHECK(VALHALLA_MASTER_SETTINGS "route_port", 8554);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)

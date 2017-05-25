@@ -45,6 +45,8 @@ protected:
   QStringList m_countries;
 
   int m_cache;
+  int m_route_port;
+  QString m_valhalla_route_url;
 
   QProcess *m_process{nullptr};
   std::atomic<bool> m_process_ready{false};
@@ -56,6 +58,7 @@ protected:
 
   const QString const_tag_cache{"MAXIMAL_CACHE_SIZE"};
   const QString const_tag_dirname{"VALHALLA_TILE_DIRECTORY"};
+  const QString const_tag_route_port{"TCPIP_ROUTE_PORT"};
 };
 
 #endif // USE_VALHALLA

@@ -44,6 +44,13 @@ void ValhallaMaster::onSettingsChanged()
   changed |= (cache != m_cache);
   m_cache = cache;
 
+  int route_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
+  changed |= (route_port != m_route_port);
+  m_route_port = route_port;
+
+  m_valhalla_route_url = QString("http://127.0.0.1:%1").arg(m_route_port);
+  qDebug() << m_valhalla_route_url;
+
   if (useValhalla)
     {
       QString local_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
@@ -100,9 +107,10 @@ void ValhallaMaster::generateConfig()
       return;
     }
 
-  QString cache= QString::number(m_cache*1024*1024);
+  QString cache= QString::number(m_cache*1024L*1024L);
   conf.replace(const_tag_cache, cache);
   conf.replace(const_tag_dirname, m_dirname);
+  conf.replace(const_tag_route_port, QString::number(m_route_port));
 
   QFile fout(m_config_fname);
   if (!fout.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
