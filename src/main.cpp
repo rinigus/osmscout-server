@@ -52,6 +52,10 @@
 
 #include <iostream>
 
+#ifdef USE_CURL
+#include <curl/curl.h>
+#endif
+
 // this is needed for connection with signals. Otherwise, access via static members
 extern InfoHub infoHub;
 
@@ -59,6 +63,14 @@ extern InfoHub infoHub;
 
 int main(int argc, char *argv[])
 {
+#ifdef USE_CURL
+  if ( curl_global_init(CURL_GLOBAL_DEFAULT ) )
+    {
+      std::cerr << "Error initializing libcurl\n";
+      return -10;
+    }
+#endif
+
 #ifdef IS_CONSOLE_QT
 #ifdef USE_OSMSCOUT_MAP_CAIRO
   QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
@@ -122,11 +134,11 @@ int main(int argc, char *argv[])
   parser.addOption(optionListSubscribed);
 
   QCommandLineOption optionListProvided("list-provided",
-                                          QCoreApplication::translate("main", "List maps provided for download"));
+                                        QCoreApplication::translate("main", "List maps provided for download"));
   parser.addOption(optionListProvided);
 
   QCommandLineOption optionListMissing("list-missing",
-                                          QCoreApplication::translate("main", "List missing maps"));
+                                       QCoreApplication::translate("main", "List missing maps"));
   parser.addOption(optionListMissing);
 
   QCommandLineOption optionSubscribe("sub",
@@ -135,8 +147,8 @@ int main(int argc, char *argv[])
   parser.addOption(optionSubscribe);
 
   QCommandLineOption optionUnSubscribe("unsub",
-                                     QCoreApplication::translate("main", "Unsubscribe <country> dataset"),
-                                     QCoreApplication::translate("main", "country-id"));
+                                       QCoreApplication::translate("main", "Unsubscribe <country> dataset"),
+                                       QCoreApplication::translate("main", "country-id"));
   parser.addOption(optionUnSubscribe);
 
   // Process the actual command line arguments given by the user

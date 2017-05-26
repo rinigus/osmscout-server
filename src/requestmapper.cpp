@@ -140,6 +140,19 @@ static bool has(const QString &key, MHD_Connection *q)
   return has(key.toStdString().c_str(), q);
 }
 
+static int query_uri_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char *key, const char *value)
+{
+  QString *s = (QString*)cls;
+  if ( !s->isEmpty() ) (*s) += "&";
+  (*s) += key;
+  if (value != NULL)
+    {
+      (*s) += "=";
+      (*s) += value;
+    }
+  return MHD_YES;
+}
+
 //////////////////////////////////////////////////////////////////////
 /// Default error function
 //////////////////////////////////////////////////////////////////////
@@ -401,8 +414,8 @@ unsigned int RequestMapper::service(const char *url_c,
     }
 
   //////////////////////////////////////////////////////////////////////
-  /// ROUTING
-  else if (path == "/v1/route")
+  /// ROUTING VIA OSMSCOUT [V1]
+  else if (path == "/v1/route" && !useValhalla)
     {
       bool ok = true;
       QString type = q2value<QString>("type", "car", connection, ok);
@@ -478,6 +491,25 @@ unsigned int RequestMapper::service(const char *url_c,
       else MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/xml; charset=UTF-8");
       return MHD_HTTP_OK;
     }
+
+  //////////////////////////////////////////////////////////////////////
+  /// ROUTING VIA VALHALLA [V2]
+#ifdef USE_VALHALLA
+  else if (path == "/v2/route" && useValhalla)
+    {
+      QString uri;
+      MHD_get_connection_values(connection, MHD_GET_ARGUMENT_KIND, query_uri_iterator, &uri);
+
+      Task *task = new Task(connection_id,
+                            std::bind(&ValhallaMaster::route, valhallaMaster,
+                                      uri, std::placeholders::_1),
+                            "Error while looking for route via Valhalla");
+      m_pool.start(task);
+
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json; charset=UTF-8");
+      return MHD_HTTP_OK;
+    }
+#endif
 
   else // command unidentified. return help string
     {

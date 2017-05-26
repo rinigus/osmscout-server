@@ -9,8 +9,10 @@
 #include <QDir>
 #include <QFile>
 #include <QTextStream>
+#include <QUrl>
 
 #include <algorithm>
+#include <curl/curl.h>
 
 #include <QDebug>
 
@@ -49,7 +51,6 @@ void ValhallaMaster::onSettingsChanged()
   m_route_port = route_port;
 
   m_valhalla_route_url = QString("http://127.0.0.1:%1").arg(m_route_port);
-  qDebug() << m_valhalla_route_url;
 
   if (useValhalla)
     {
@@ -258,6 +259,46 @@ void ValhallaMaster::onProcessStateChanged(QProcess::ProcessState state)
       m_process = nullptr;
       m_process_ready = false;
     }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+/// Interaction with Valhalla service
+
+static size_t write_data(void *buffer, size_t size, size_t nmemb, void *userp)
+{
+  QByteArray *data = (QByteArray*)userp;
+  data->append((char*)buffer, size*nmemb);
+  return size*nmemb;
+}
+
+bool ValhallaMaster::route(QString uri, QByteArray &result)
+{
+  if (!m_process_ready) return false;
+
+  QUrl url(m_valhalla_route_url + "/route?" + uri);
+  bool success = true;
+
+  CURL *curl = curl_easy_init();
+  if (curl == NULL)
+    {
+      InfoHub::logWarning("Error initializing libCURL easy init"); // technical message, no need to translate
+      return false;
+    }
+
+  curl_easy_setopt(curl, CURLOPT_URL, url.toEncoded().data());
+  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+  curl_easy_setopt(curl, CURLOPT_WRITEDATA, &result);
+
+  CURLcode res = curl_easy_perform(curl);
+  if (res != CURLE_OK)
+    {
+      InfoHub::logWarning(tr("Error while communicating with Valhalla routing engine"));
+      success = false;
+    }
+
+  curl_easy_cleanup(curl);
+
+  return success;
 }
 
 #endif

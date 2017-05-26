@@ -37,6 +37,7 @@ PkgBR:
   - snappy-devel
   - sqlite-devel
   - libkyotocabinet-devel
+  - libcurl-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:

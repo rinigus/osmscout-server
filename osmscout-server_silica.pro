@@ -125,6 +125,15 @@ use_valhalla {
     DEFINES += USE_VALHALLA
     DEFINES += VALHALLA_EXECUTABLE=\\\"/usr/bin/harbour-osmscout-server-module-route\\\"
     DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server-module-route/data/valhalla.json\\\"
+    CONFIG += use_curl
+}
+
+use_curl {
+    DEFINES += USE_LIBCURL
+    CONFIG += link_pkgconfig
+    # those disappear if we use PKGCONFIG
+    LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
+    PKGCONFIG += libcurl
 }
 
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -ldl

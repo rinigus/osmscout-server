@@ -34,6 +34,7 @@ BuildRequires:  libpostal-devel
 BuildRequires:  snappy-devel
 BuildRequires:  sqlite-devel
 BuildRequires:  libkyotocabinet-devel
+BuildRequires:  libcurl-devel
 BuildRequires:  desktop-file-utils
 
 %description

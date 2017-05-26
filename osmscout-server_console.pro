@@ -108,6 +108,13 @@ use_valhalla {
     DEFINES += USE_VALHALLA
     DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_route_service\\\"
     DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"modules/route/data/valhalla.json\\\"
+    CONFIG += use_curl
+}
+
+use_curl {
+    DEFINES += USE_LIBCURL
+    CONFIG += link_pkgconfig
+    PKGCONFIG += libcurl
 }
 
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -lsqlite3

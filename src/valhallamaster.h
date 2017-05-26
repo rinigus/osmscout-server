@@ -19,6 +19,8 @@ public:
   explicit ValhallaMaster(QObject *parent = 0);
   virtual ~ValhallaMaster();
 
+  bool route(QString uri, QByteArray &result);
+
 signals:
 
 public slots:
