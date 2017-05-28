@@ -201,6 +201,7 @@ namespace MapManager {
     void updateGeocoderNLP();
     void updatePostal();
     void updateMapnik();
+    void updateValhalla();
 
     /// helper functions to deal with JSON representation of the features
     QJsonObject loadJson(QString fname) const;

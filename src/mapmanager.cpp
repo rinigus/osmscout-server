@@ -201,6 +201,7 @@ void Manager::nothingAvailable()
   updateGeocoderNLP();
   updatePostal();
   updateMapnik();
+  updateValhalla();
 
   emit availibilityChanged();
   emit missingChanged(m_missing);
@@ -363,6 +364,7 @@ void Manager::scanDirectories(bool force_update)
       updateGeocoderNLP();
       updatePostal();
       updateMapnik();
+      updateValhalla();
 
       emit availibilityChanged();
       emit selectedMapChanged(m_map_selected);
@@ -1333,4 +1335,11 @@ void Manager::updateMapnik()
 
   // let Mapnik check whether anything has actually changed
   emit databaseMapnikChanged(path_global, path_countries);
+}
+
+////////////////////////////////////////////////////////////
+/// Valhalla support
+void Manager::updateValhalla()
+{
+  emit databaseValhallaChanged(fullPath( "valhalla/tiles" ), QStringList());
 }

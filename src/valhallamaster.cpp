@@ -18,9 +18,7 @@
 
 ValhallaMaster::ValhallaMaster(QObject *parent) : QObject(parent)
 {
-#pragma message "THIS SHOULD BE REMOVED"
   onSettingsChanged();
-  onValhallaChanged("valhalla", QStringList());
 }
 
 ValhallaMaster::~ValhallaMaster()
