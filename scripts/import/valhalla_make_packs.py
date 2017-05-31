@@ -25,6 +25,7 @@ for pack in packages:
     for t in tiles:
         fname = os.path.join( planet_tiles, t )
         if os.path.exists(fname): totar.append(fname)
+        elif os.path.exists(fname + ".gz"): totar.append(fname + ".gz")
 
     if len(totar) > 0:
         tarname = os.path.join(packages_dir, "%d.tar" % counter)

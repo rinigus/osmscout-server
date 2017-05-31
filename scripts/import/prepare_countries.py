@@ -6,6 +6,7 @@
 
 import os, json, codecs
 from hierarchy import Hierarchy
+from valhalla_country_pack import country_pack as valhalla_pack
 
 
 fmake = open("Makefile.import", "w")
@@ -44,6 +45,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
                                     "osmscout": { "path": "osmscout/" + spath(cid) },
                                     "geocoder_nlp": { "path": "geocoder-nlp/" + spath(cid) },
                                     "mapnik_country": { "path": "mapnik/countries/" + spath(cid) },
+                                    "valhalla": valhalla_pack(poly),
         }
 
         pbf = "$(PBF_DIR)/" + pbfname(cid)

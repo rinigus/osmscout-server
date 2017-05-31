@@ -19,6 +19,7 @@ url_specs = {
     "postal_country": "postal-country-1",
     "mapnik_global": "mapnik-global-1",
     "mapnik_country": "mapnik-country-3",
+    "valhalla": "valhalla-1",
 }
 
 dist = json.loads( open("countries.json", "r").read() )
@@ -72,6 +73,7 @@ for d in dist:
         dist[d][sub].update( getprop(locdir) )
         uploader(locdir, remotedir)
 
+uploader(root_dir + "/valhalla", url_specs["valhalla"] + "/valhalla")
 
 # save provided countries
 fjson = open("provided/countries_provided.json", "w")
