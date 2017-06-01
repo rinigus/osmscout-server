@@ -179,6 +179,7 @@ namespace MapManager {
 
   protected:
     enum DownloadType { NoDownload=0, Countries=1, ServerUrl=2, ProvidedList=3 };
+    enum ListType { ListAvailable=0, ListRequested=2, ListProvided=3 };
 
   protected:
     void loadSettings();
@@ -192,10 +193,10 @@ namespace MapManager {
     /// \brief Composes a list of countries in alphabetical order
     ///
     /// This is a method that creates a list. Its called by other methods to retrieve the list.
-    void makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz);
+    void makeCountriesList(ListType list_type, QStringList &countries, QStringList &ids, QList<uint64_t> &sz);
 
     /// \brief Wrapper around makeCountriesList transforming the results to JSON
-    QString makeCountriesListAsJSON(bool list_available, bool tree);
+    QString makeCountriesListAsJSON(ListType list_type, bool tree);
 
     void updateOsmScout();
     void updateGeocoderNLP();

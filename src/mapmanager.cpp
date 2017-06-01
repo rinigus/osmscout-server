@@ -36,6 +36,7 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeaturePostalCountry(this));
   m_features.append(new FeatureMapnikGlobal(this));
   m_features.append(new FeatureMapnikCountry(this));
+  m_features.append(new FeatureValhalla(this));
 
   for (Feature *p: m_features)
     if (p == nullptr)
@@ -281,10 +282,6 @@ void Manager::scanDirectories(bool force_update)
             if (!f->isAvailable(request))
               {
                 InfoHub::logWarning(tr("No maps loaded: %1").arg(f->errorMissing()));
-                if (!f->isCompatible(request))
-                  InfoHub::logWarning(tr("%1: version of dataset for %2 is not supported").
-                                      arg(f->pretty()).
-                                      arg(getPretty(request)));
                 nothingAvailable();
                 return;
               }
@@ -313,10 +310,6 @@ void Manager::scanDirectories(bool force_update)
                 InfoHub::logWarning(tr("Missing dataset for %1: %2").
                                     arg(getPretty(request)).
                                     arg(f->errorMissing()));
-                if (!f->isCompatible(request))
-                  InfoHub::logWarning(tr("%1: version of dataset for %2 is not supported").
-                                      arg(f->pretty()).
-                                      arg(getPretty(request)));
 
                 add = false;
               }
@@ -353,7 +346,7 @@ void Manager::scanDirectories(bool force_update)
 
       QStringList countries, ids;
       QList<uint64_t> szs;
-      makeCountriesList(true, countries, ids, szs);
+      makeCountriesList(ListAvailable, countries, ids, szs);
 
       // print all loaded countries
       if (chatty_update)
@@ -408,15 +401,15 @@ QString Manager::getAvailableCountries()
 
 QString Manager::getRequestedCountries()
 {
-  return makeCountriesListAsJSON(true, false);
+  return makeCountriesListAsJSON(ListRequested, false);
 }
 
 QString Manager::getProvidedCountries()
 {
-  return makeCountriesListAsJSON(false, true);
+  return makeCountriesListAsJSON(ListProvided, true);
 }
 
-void Manager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz)
+void Manager::makeCountriesList(ListType list_type, QStringList &countries, QStringList &ids, QList<uint64_t> &sz)
 {
   QList< QPair<QString, QString> > available_global;
   QList< QPair<QString, QString> > available;
@@ -424,7 +417,8 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
   QJsonObject objlist;
   QHash<QString, uint64_t> sizes;
 
-  if (list_available) objlist = m_maps_requested;
+  if (list_type == ListAvailable) objlist = m_maps_available;
+  else if (list_type == ListRequested) objlist = m_maps_requested;
   else objlist = loadJson(fullPath(const_fname_countries_provided));
 
   for (QJsonObject::const_iterator i = objlist.constBegin();
@@ -435,7 +429,7 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
 
       if ( getType(c) == const_feature_type_country )
         available.append(qMakePair(getPretty(c), id));
-      else if (list_available)
+      else if (list_type == ListAvailable)
         available_global.append(qMakePair(getPretty(c), id));
 
       uint64_t s = 0;
@@ -541,13 +535,13 @@ static QJsonObject makeList(const CountryBranch branch)
   return dir;
 }
 
-QString Manager::makeCountriesListAsJSON(bool list_available, bool tree)
+QString Manager::makeCountriesListAsJSON(ListType list_type, bool tree)
 {
   QStringList countries;
   QStringList ids;
   QList<uint64_t> sz;
 
-  makeCountriesList(list_available, countries, ids, sz);
+  makeCountriesList(list_type, countries, ids, sz);
 
   CountryBranch root;
   root.isDir = true;

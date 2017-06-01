@@ -322,3 +322,101 @@ void FeatureMapnikCountry::loadSettings()
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
 }
 
+////////////////////////////////////////////////////////////
+/// valhalla support
+
+FeatureValhalla::FeatureValhalla(PathProvider *path):
+  Feature(path, "territory", "valhalla",
+          QCoreApplication::translate("MapManagerFeature", "Valhalla"),
+          QStringList(),
+          1)
+{
+}
+
+QString FeatureValhalla::errorMissing() const
+{
+  return QCoreApplication::translate("MapManagerFeature", "Missing Valhalla tiles");
+}
+
+bool FeatureValhalla::isAvailable(const QJsonObject &request) const
+{
+  if (!m_enabled || !isMyType(request) || m_assume_files_exist) return true;
+  if (!isCompatible(request)) return false;
+
+  QString path = getPath(request);
+  QDir dir(m_path_provider->fullPath("."));
+  QString version;
+  QString datetime;
+  QString req_version = request.value(m_name).toObject().value("version").toString();
+  QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
+
+  for (const auto &f: m_files)
+    if (!m_path_provider->isRegistered(path + "/" + f, version, datetime) ||
+        version != req_version || datetime != req_datetime ||
+        !dir.exists(m_path_provider->fullPath(path + "/" + f)))
+      return false;
+  return true;
+}
+
+void FeatureValhalla::checkMissingFiles(const QJsonObject &request,
+                                FilesToDownload &missing) const
+{
+  if (!m_enabled || !isMyType(request) || !isCompatible(request) || m_assume_files_exist) return;
+
+  QString path = getPath(request);
+  QDir dir(m_path_provider->fullPath("."));
+  QString version;
+  QString datetime;
+  QString req_version = request.value(m_name).toObject().value("version").toString();
+  QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
+  bool added = false;
+
+  for (const auto &f: m_files)
+    if (!m_path_provider->isRegistered(path + "/" + f, version, datetime) ||
+        version != req_version || datetime != req_datetime ||
+        !dir.exists(m_path_provider->fullPath(path + "/" + f)))
+      {
+        added = true;
+        FileTask t;
+        t.path = m_path_provider->fullPath(path + "/" + f);
+        t.url = m_url + "/" + path + "/" + f;
+        t.relpath = path + "/" + f;
+        t.version = req_version;
+        t.datetime = req_datetime;
+        missing.files.append(t);
+      }
+
+  if (added)
+    {
+      // this is an upper limit of the sizes. its smaller in reality if
+      // the feature is downloaded partially already
+      missing.todownload += getSizeCompressed(request);
+      missing.tostore  += getSize(request);
+    }
+}
+
+void FeatureValhalla::fillWantedFiles(const QJsonObject &request,
+                              QSet<QString> &wanted) const
+{
+  if (!m_enabled || !isMyType(request)) return;
+
+  QString path = getPath(request);
+  for (const auto &f: m_files)
+    wanted.insert( m_path_provider->fullPath(path + "/" + f) );
+}
+
+void FeatureValhalla::deleteFiles(const QJsonObject &request)
+{
+  if (!m_enabled || !isMyType(request)) return;
+
+  QString path = getPath(request);
+  QDir dir(m_path_provider->fullPath("."));
+  for (const auto &f: m_files)
+    {
+      QString fp = path + "/" + f;
+      if (dir.remove(fp))
+        InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Removed file: %1").arg(fp));
+      else
+        InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Failed to remove file: %1").arg(fp));
+    }
+}

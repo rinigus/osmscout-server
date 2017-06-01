@@ -73,13 +73,13 @@ namespace MapManager {
 
     bool isCompatible(const QJsonObject &request) const;
 
-    bool isAvailable(const QJsonObject &request) const;
+    virtual bool isAvailable(const QJsonObject &request) const;
 
-    void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing) const;
+    virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing) const;
 
-    void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted) const;
+    virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted) const;
 
-    void deleteFiles(const QJsonObject &request);
+    virtual void deleteFiles(const QJsonObject &request);
 
     bool hasFeatureDefined(const QJsonObject &request) const;
 
@@ -154,6 +154,19 @@ namespace MapManager {
     virtual ~FeatureMapnikCountry() {}
     virtual void loadSettings();
     virtual QString errorMissing() const;
+  };
+
+  class FeatureValhalla: public Feature
+  {
+  public:
+    FeatureValhalla(PathProvider *path);
+    virtual ~FeatureValhalla() {}
+    virtual QString errorMissing() const;
+
+    virtual bool isAvailable(const QJsonObject &request) const;
+    virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing) const;
+    virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted) const;
+    virtual void deleteFiles(const QJsonObject &request);
   };
 }
 

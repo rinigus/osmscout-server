@@ -178,6 +178,7 @@ Page {
                     target: manager
                     onSubscriptionChanged: noSubscriptions.checkVisible()
                     onStorageAvailableChanged: noSubscriptions.checkVisible()
+                    onAvailibilityChanged: noSubscriptions.checkVisible()
                 }
             }
 
