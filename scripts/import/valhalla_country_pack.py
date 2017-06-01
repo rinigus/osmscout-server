@@ -4,6 +4,7 @@ from shapely.geometry import MultiPolygon, Polygon
 # directories used for searching for packages
 valhalla_meta_dir = 'valhalla/packages_meta'
 valhalla_packages_dir = 'valhalla/packages'
+version = "1"
 
 # taken from http://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Python_Parsing
 def parse_poly(fname):
@@ -89,6 +90,7 @@ def country_pack(country_poly_fname):
 
     return { "packages": packs,
              "timestamp": ts,
+             "version": version,
              "size": str(size),
              "size-compressed": str(size_compressed) }
 
