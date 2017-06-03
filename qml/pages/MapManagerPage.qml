@@ -74,6 +74,16 @@ Page {
             }
 
             ElementSwitch {
+                id: eManagerValhalla
+                activeState: page.activeState
+                key: settingsMapManagerPrefix + "valhalla"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Valhalla routing engine")
+                secondaryLabel: qsTr("When selected, Valhalla datasets will be stored on device after downloading them. " +
+                                     "These datasets are required for using Valhalla as a routing engine.")
+            }
+
+            ElementSwitch {
                 id: eManagerOSMScout
                 activeState: page.activeState
                 key: settingsMapManagerPrefix + "osmscout"

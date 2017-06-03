@@ -45,6 +45,10 @@ Manager::Manager(QObject *parent) : QObject(parent)
         m_features.clear();
         return;
       }
+
+  for (Feature *p: m_features)
+    connect(p, &Feature::availibilityChanged,
+            this, &Manager::onAvailibilityChanged);
 }
 
 
@@ -249,6 +253,11 @@ void Manager::checkStorageAvailable()
   emit storageAvailableChanged(m_storage_available);
 }
 
+void Manager::onAvailibilityChanged()
+{
+  scanDirectories();
+}
+
 void Manager::scanDirectories(bool force_update)
 {
   if (!m_root_dir.exists())
@@ -278,7 +287,7 @@ void Manager::scanDirectories(bool force_update)
 
       if (getType(request) != const_feature_type_country)
         {
-          for (const Feature *f: m_features)
+          for (Feature *f: m_features)
             if (!f->isAvailable(request))
               {
                 InfoHub::logWarning(tr("No maps loaded: %1").arg(f->errorMissing()));
@@ -304,7 +313,7 @@ void Manager::scanDirectories(bool force_update)
           request.contains("name") )
         {
           bool add = true;
-          for (const Feature *f: m_features)
+          for (Feature *f: m_features)
             if (!f->isAvailable(request))
               {
                 InfoHub::logWarning(tr("Missing dataset for %1: %2").
@@ -1335,5 +1344,19 @@ void Manager::updateMapnik()
 /// Valhalla support
 void Manager::updateValhalla()
 {
-  emit databaseValhallaChanged(fullPath( "valhalla/tiles" ), QStringList());
+  QStringList path_countries;
+
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
+    {
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (const Feature *f: m_features)
+          if (f->enabled() && f->name() == "valhalla")
+            path_countries.append( fullPath( f->getPath(c) ) );
+    }
+
+  emit databaseValhallaChanged(fullPath( "valhalla/tiles" ), path_countries);
 }

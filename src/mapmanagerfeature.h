@@ -1,11 +1,14 @@
 #ifndef MAPMANAGERFEATURE_H
 #define MAPMANAGERFEATURE_H
 
+#include <QObject>
 #include <QString>
 #include <QStringList>
 #include <QList>
 #include <QJsonObject>
 #include <QDateTime>
+#include <QQueue>
+
 #include <cstdint>
 
 namespace MapManager {
@@ -40,15 +43,17 @@ namespace MapManager {
 
   /// \brief Abstract class describing features of the map in respect to Map Manager
   ///
-  class Feature
+  class Feature: public QObject
   {
+    Q_OBJECT
+
   protected:
     explicit Feature(PathProvider *path,
                      const QString &feature_type,
                      const QString &feature_name,
                      const QString &feature_pretty_name,
                      const QStringList &feature_files,
-                     const int version);
+                     const int version);    
 
   public:
     virtual ~Feature() {}
@@ -73,15 +78,18 @@ namespace MapManager {
 
     bool isCompatible(const QJsonObject &request) const;
 
-    virtual bool isAvailable(const QJsonObject &request) const;
+    virtual bool isAvailable(const QJsonObject &request);
 
     virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing) const;
 
     virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted) const;
 
-    virtual void deleteFiles(const QJsonObject &request);
+    // virtual void deleteFiles(const QJsonObject &request); // not used
 
     bool hasFeatureDefined(const QJsonObject &request) const;
+
+  signals:
+    void availibilityChanged();
 
   protected:
     QString getDateTimeAsString(const QJsonObject &obj) const;
@@ -156,17 +164,64 @@ namespace MapManager {
     virtual QString errorMissing() const;
   };
 
+  /// \brief Valhalla support
+  ///
+  /// Valhalla's support includes handling of the packages. If some other
+  /// backend will resurface with the similar distribution model, this class
+  /// should be refactored into general package handling and Valhalla's specific
+  /// parts.
+  ///
   class FeatureValhalla: public Feature
   {
   public:
     FeatureValhalla(PathProvider *path);
     virtual ~FeatureValhalla() {}
+
     virtual QString errorMissing() const;
 
-    virtual bool isAvailable(const QJsonObject &request) const;
+    virtual bool isAvailable(const QJsonObject &request);
     virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing) const;
     virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted) const;
-    virtual void deleteFiles(const QJsonObject &request);
+
+  protected:
+    enum PackStateType { PackNotAvailable, PackDownloaded, PackUnpacked };
+
+    struct PackTask {
+      QString filename;
+      QString datetime;
+
+      PackTask() {}
+      PackTask(const QString &fname, const QString &dtime):
+        filename(fname), datetime(dtime) {}
+
+      bool operator ==(const PackTask &a) const
+      { return filename == a.filename && datetime == a.datetime; }
+
+      bool isEmpty() const { return filename.isEmpty() && datetime.isEmpty(); }
+    };
+
+  protected:
+    QString packFileName(QString pack) const;
+    QString packListName(QString pack) const;
+    QString getTilesTimestamp() const;
+
+    QStringList getPackTileNames(QString listfname) const; ///< provides list of tile fnames; uses list filename as an argument
+    PackStateType getPackState(QString pack, QString req_version, QString req_datetime) const;
+
+    PackStateType isPackAvailable(QString pack, QString req_version, QString req_datetime);
+
+    void addForUnpacking(QString packtarname, QString datetime);
+    void handlePackTasks();
+    void onPackTaskFinished();
+    void onPackTaskError(QString errtxt);
+
+  protected:
+
+    QQueue<PackTask> m_pack_tasks;
+    PackTask m_pack_task_current;
+
+    const QString const_valhalla_tiles_dirname{"valhalla/tiles"};
+    const QString const_valhalla_tiles_timestamp{"valhalla/tiles/timestamp"};
   };
 }
 

@@ -56,6 +56,7 @@ SOURCES += src/dbmaster.cpp \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
+    src/mapmanagerfeature_packtaskworker.cpp \
     src/mapnikmaster.cpp \
     src/valhallamaster.cpp \
     src/modulechecker.cpp
@@ -79,6 +80,7 @@ HEADERS += \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
+    src/mapmanagerfeature_packtaskworker.h \
     src/mapnikmaster.h \
     src/valhallamaster.h \
     src/modulechecker.h

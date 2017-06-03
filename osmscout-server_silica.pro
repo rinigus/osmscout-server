@@ -63,6 +63,7 @@ SOURCES += \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
+    src/mapmanagerfeature_packtaskworker.cpp \
     src/mapnikmaster.cpp \ 
     src/modulechecker.cpp \
     src/valhallamaster.cpp
@@ -90,6 +91,7 @@ HEADERS += \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
+    src/mapmanagerfeature_packtaskworker.h \
     src/mapnikmaster.h \
     src/modulechecker.h \
     src/valhallamaster.h

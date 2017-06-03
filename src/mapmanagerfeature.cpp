@@ -1,10 +1,15 @@
 #include "mapmanagerfeature.h"
+#include "mapmanagerfeature_packtaskworker.h"
 #include "infohub.h"
 #include "appsettings.h"
 #include "config.h"
 
 #include <QDir>
 #include <QCoreApplication>
+#include <QFile>
+#include <QTextStream>
+#include <QJsonArray>
+#include <QThread>
 
 #include <QDebug>
 
@@ -16,6 +21,7 @@ Feature::Feature(PathProvider *path,
                  const QString &feature_pretty_name,
                  const QStringList &feature_files,
                  const int version):
+  QObject(),
   m_path_provider(path),
   m_type(feature_type),
   m_name(feature_name),
@@ -88,9 +94,10 @@ bool Feature::isCompatible(const QJsonObject &request) const
   return (m_version == request.value(m_name).toObject().value("version").toString().toInt());
 }
 
-bool Feature::isAvailable(const QJsonObject &request) const
+bool Feature::isAvailable(const QJsonObject &request)
 {
   if (!m_enabled || !isMyType(request) || m_assume_files_exist) return true;
+  if (!request.contains(m_name)) return true;
   if (!isCompatible(request)) return false;
 
   QString path = getPath(request);
@@ -161,21 +168,24 @@ void Feature::fillWantedFiles(const QJsonObject &request,
     wanted.insert( m_path_provider->fullPath(path + "/" + f) );
 }
 
-void Feature::deleteFiles(const QJsonObject &request)
-{
-  if (!m_enabled || !isMyType(request)) return;
+//////////////////////////////
+/// This method was not used. If planning to use it, should also implement
+/// corresponding method for Valhalla
+//void Feature::deleteFiles(const QJsonObject &request)
+//{
+//  if (!m_enabled || !isMyType(request)) return;
 
-  QString path = getPath(request);
-  QDir dir(m_path_provider->fullPath("."));
-  for (const auto &f: m_files)
-    {
-      QString fp = path + "/" + f;
-      if (dir.remove(fp))
-        InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Removed file: %1").arg(fp));
-      else
-        InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Failed to remove file: %1").arg(fp));
-    }
-}
+//  QString path = getPath(request);
+//  QDir dir(m_path_provider->fullPath("."));
+//  for (const auto &f: m_files)
+//    {
+//      QString fp = path + "/" + f;
+//      if (dir.remove(fp))
+//        InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Removed file: %1").arg(fp));
+//      else
+//        InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Failed to remove file: %1").arg(fp));
+//    }
+//}
 
 ////////////////////////////////////////////////////////////
 /// libosmscout support
@@ -338,49 +348,143 @@ QString FeatureValhalla::errorMissing() const
   return QCoreApplication::translate("MapManagerFeature", "Missing Valhalla tiles");
 }
 
-bool FeatureValhalla::isAvailable(const QJsonObject &request) const
+QString FeatureValhalla::packFileName(QString pack) const
 {
-  if (!m_enabled || !isMyType(request) || m_assume_files_exist) return true;
-  if (!isCompatible(request)) return false;
+  return "valhalla/packages/" + pack + ".tar";
+}
 
-  QString path = getPath(request);
-  QDir dir(m_path_provider->fullPath("."));
+QString FeatureValhalla::packListName(QString pack) const
+{
+  return "valhalla/packages/" + pack + ".tar.list";
+}
+
+QStringList FeatureValhalla::getPackTileNames(QString listfname) const
+{
+  QStringList list;
+
+  QFile file(listfname);
+  if (!file.open(QIODevice::ReadOnly)) return list;
+
+  QTextStream stream(&file);
+  QString line;
+  while (!stream.atEnd())
+    {
+      line = stream.readLine().trimmed();
+      if (!line.isEmpty())
+        list.append(line);
+    }
+
+  return list;
+}
+
+QString FeatureValhalla::getTilesTimestamp() const
+{
+  QFile file(m_path_provider->fullPath(const_valhalla_tiles_timestamp));
+  if (!file.open(QIODevice::ReadOnly)) return QString();
+
+  QTextStream stream(&file);
+  return stream.readAll().trimmed();
+}
+
+FeatureValhalla::PackStateType FeatureValhalla::getPackState(QString pack, QString req_version, QString req_datetime) const
+{
+  QString pfname = packFileName(pack);
+
   QString version;
   QString datetime;
+
+  if ( !m_path_provider->isRegistered(pfname, version, datetime) ||
+       version != req_version || datetime != req_datetime )
+    {
+      return PackNotAvailable;
+    }
+
+  QDir dir(m_path_provider->fullPath("."));
+
+  if (dir.exists(m_path_provider->fullPath(pfname)))
+    {
+      return PackDownloaded;
+    }
+
+  QString listname = m_path_provider->fullPath(packListName(pack));
+  if (dir.exists(listname))
+    {
+      QStringList tiles = getPackTileNames(listname);
+      if (tiles.isEmpty()) return PackNotAvailable; // either list is empty or there was error opening it
+      for (const QString tilename: tiles)
+        if (!dir.exists(m_path_provider->fullPath(tilename)))
+          {
+            return PackNotAvailable;
+          }
+
+      return PackUnpacked; // all tiles were there
+    }
+
+  return PackNotAvailable;
+}
+
+FeatureValhalla::PackStateType FeatureValhalla::isPackAvailable(QString pack, QString req_version, QString req_datetime)
+{
+  PackStateType state = getPackState(pack, req_version, req_datetime);
+  if (state == PackDownloaded)
+    {
+      // have to unpack the archive and would become available after that
+      addForUnpacking(m_path_provider->fullPath(packFileName(pack)), req_datetime);
+    }
+
+  return state;
+}
+
+bool FeatureValhalla::isAvailable(const QJsonObject &request)
+{
+  if (!m_enabled || !isMyType(request) || m_assume_files_exist) return true;
+  if (!request.contains(m_name)) return true;
+  if (!isCompatible(request)) return false;
+
   QString req_version = request.value(m_name).toObject().value("version").toString();
   QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
+  QString tilesTimestamp = getTilesTimestamp();
 
-  for (const auto &f: m_files)
-    if (!m_path_provider->isRegistered(path + "/" + f, version, datetime) ||
-        version != req_version || datetime != req_datetime ||
-        !dir.exists(m_path_provider->fullPath(path + "/" + f)))
-      return false;
-  return true;
+  if (!tilesTimestamp.isEmpty() && tilesTimestamp != req_datetime)
+    return false;
+
+  QJsonArray packs = request.value(m_name).toObject().value("packages").toArray();
+  bool allAvailable = true;
+  for (QJsonArray::const_iterator iter = packs.constBegin();
+       iter != packs.constEnd(); ++iter)
+    if ( isPackAvailable( (*iter).toString(), req_version, req_datetime ) != PackUnpacked )
+      allAvailable = false;
+
+  return allAvailable;
 }
 
 void FeatureValhalla::checkMissingFiles(const QJsonObject &request,
-                                FilesToDownload &missing) const
+                                        FilesToDownload &missing) const
 {
   if (!m_enabled || !isMyType(request) || !isCompatible(request) || m_assume_files_exist) return;
 
-  QString path = getPath(request);
-  QDir dir(m_path_provider->fullPath("."));
-  QString version;
-  QString datetime;
   QString req_version = request.value(m_name).toObject().value("version").toString();
   QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
   bool added = false;
+  bool addAll = false;
 
-  for (const auto &f: m_files)
-    if (!m_path_provider->isRegistered(path + "/" + f, version, datetime) ||
-        version != req_version || datetime != req_datetime ||
-        !dir.exists(m_path_provider->fullPath(path + "/" + f)))
+  QString tilesTimestamp = getTilesTimestamp();
+
+  if (!tilesTimestamp.isEmpty() && tilesTimestamp != req_datetime)
+    addAll = true;
+
+  QJsonArray packs = request.value(m_name).toObject().value("packages").toArray();
+  for (QJsonArray::const_iterator iter = packs.constBegin();
+       iter != packs.constEnd(); ++iter)
+    if ( addAll ||
+         getPackState( (*iter).toString(), req_version, req_datetime ) == PackNotAvailable )
       {
         added = true;
+        QString f = packFileName((*iter).toString());
         FileTask t;
-        t.path = m_path_provider->fullPath(path + "/" + f);
-        t.url = m_url + "/" + path + "/" + f;
-        t.relpath = path + "/" + f;
+        t.path = m_path_provider->fullPath(f);
+        t.url = m_url + "/" + f;
+        t.relpath = f;
         t.version = req_version;
         t.datetime = req_datetime;
         missing.files.append(t);
@@ -396,8 +500,9 @@ void FeatureValhalla::checkMissingFiles(const QJsonObject &request,
 }
 
 void FeatureValhalla::fillWantedFiles(const QJsonObject &request,
-                              QSet<QString> &wanted) const
+                                      QSet<QString> &wanted) const
 {
+#pragma message "This is not ready!"
   if (!m_enabled || !isMyType(request)) return;
 
   QString path = getPath(request);
@@ -405,18 +510,56 @@ void FeatureValhalla::fillWantedFiles(const QJsonObject &request,
     wanted.insert( m_path_provider->fullPath(path + "/" + f) );
 }
 
-void FeatureValhalla::deleteFiles(const QJsonObject &request)
+void FeatureValhalla::addForUnpacking(QString packtarname, QString datetime)
 {
-  if (!m_enabled || !isMyType(request)) return;
+  PackTask task(packtarname, datetime);
+  if ( m_pack_task_current == task || m_pack_tasks.contains(task) )
+    return;
 
-  QString path = getPath(request);
-  QDir dir(m_path_provider->fullPath("."));
-  for (const auto &f: m_files)
+  m_pack_tasks.enqueue(task);
+  handlePackTasks();
+}
+
+void FeatureValhalla::onPackTaskFinished()
+{
+  m_pack_task_current = PackTask();
+  handlePackTasks();
+}
+
+void FeatureValhalla::onPackTaskError(QString errtxt)
+{
+  InfoHub::logWarning(errtxt);
+}
+
+
+void FeatureValhalla::handlePackTasks()
+{
+  if (!m_pack_task_current.isEmpty())
+    return; // already working on a task
+
+  if (m_pack_tasks.isEmpty())
     {
-      QString fp = path + "/" + f;
-      if (dir.remove(fp))
-        InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Removed file: %1").arg(fp));
-      else
-        InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Failed to remove file: %1").arg(fp));
+      // should have been called after processing the last task
+      emit availibilityChanged();
+      return;
     }
+
+  m_pack_task_current = m_pack_tasks.dequeue();
+  PackTaskWorker *worker = new PackTaskWorker(m_pack_task_current.filename, m_pack_task_current.datetime,
+                                              m_path_provider->fullPath("."),
+                                              m_path_provider->fullPath(const_valhalla_tiles_dirname),
+                                              getTilesTimestamp());
+
+  if (worker == nullptr)
+    {
+      // technical message, no need to translate
+      InfoHub::logError("Cannot allocate QThread in FeatureValhalla::handlePackTasks");
+      return;
+    }
+
+  connect(worker, &PackTaskWorker::errorDuringTask, this, &FeatureValhalla::onPackTaskError );
+  connect(worker, &PackTaskWorker::finished, this, &FeatureValhalla::onPackTaskFinished );
+  connect(worker, &PackTaskWorker::finished, worker, &QObject::deleteLater);
+
+  worker->start();
 }
