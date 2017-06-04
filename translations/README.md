@@ -6,6 +6,11 @@ To simplify translations, there is a project registered at
 https://www.transifex.com/rinigus/osm-scout-server . Please use it for
 working on translations.
 
+Note that Valhalla routing instructions are translated as a part of
+Valhalla's project. Please see
+https://github.com/valhalla/valhalla/tree/master/locales for current
+translations and how to contribute.
+
 Some of the strings would contain macros in the form %macro%. These
 macros mark the positions in the phrase that would be filled in with
 corresponding data. For example, in string
