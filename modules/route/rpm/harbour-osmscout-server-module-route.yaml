@@ -32,6 +32,8 @@ PkgBR:
   - czmq-devel >= 3.0
   - protobuf-devel
   - prime_server-devel == 0.6.3
+  - valhalla == 2.2.4
+  - valhalla-devel == 2.2.4
   - boost-devel >= 1.51
   - boost-chrono >= 1.51
   - boost-date-time >= 1.51

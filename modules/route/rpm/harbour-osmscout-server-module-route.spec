@@ -31,6 +31,8 @@ BuildRequires:  libzmq-devel >= 4.1.4
 BuildRequires:  czmq-devel >= 3.0
 BuildRequires:  protobuf-devel
 BuildRequires:  prime_server-devel == 0.6.3
+BuildRequires:  valhalla == 2.2.4
+BuildRequires:  valhalla-devel == 2.2.4
 BuildRequires:  boost-devel >= 1.51
 BuildRequires:  boost-chrono >= 1.51
 BuildRequires:  boost-date-time >= 1.51
