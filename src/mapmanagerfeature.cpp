@@ -406,6 +406,12 @@ FeatureValhalla::PackStateType FeatureValhalla::getPackState(QString pack, QStri
       return PackDownloaded;
     }
 
+  // this has to be checked after "Downloaded" to allow to update tiles
+  // through unpacking
+  QString tilesTimestamp = getTilesTimestamp();
+  if (!tilesTimestamp.isEmpty() && tilesTimestamp != req_datetime)
+    return PackNotAvailable;
+
   QString listname = m_path_provider->fullPath(packListName(pack));
   if (dir.exists(listname))
     {
@@ -443,10 +449,6 @@ bool FeatureValhalla::isAvailable(const QJsonObject &request)
 
   QString req_version = request.value(m_name).toObject().value("version").toString();
   QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
-  QString tilesTimestamp = getTilesTimestamp();
-
-  if (!tilesTimestamp.isEmpty() && tilesTimestamp != req_datetime)
-    return false;
 
   QJsonArray packs = request.value(m_name).toObject().value("packages").toArray();
   bool allAvailable = true;
@@ -467,18 +469,11 @@ void FeatureValhalla::checkMissingFiles(const QJsonObject &request,
   QString req_version = request.value(m_name).toObject().value("version").toString();
   QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
   bool added = false;
-  bool addAll = false;
-
-  QString tilesTimestamp = getTilesTimestamp();
-
-  if (!tilesTimestamp.isEmpty() && tilesTimestamp != req_datetime)
-    addAll = true;
 
   QJsonArray packs = request.value(m_name).toObject().value("packages").toArray();
   for (QJsonArray::const_iterator iter = packs.constBegin();
        iter != packs.constEnd(); ++iter)
-    if ( addAll ||
-         getPackState( (*iter).toString(), req_version, req_datetime ) == PackNotAvailable )
+    if ( getPackState( (*iter).toString(), req_version, req_datetime ) == PackNotAvailable )
       {
         added = true;
         QString f = packFileName((*iter).toString());
