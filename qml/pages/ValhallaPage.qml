@@ -34,8 +34,8 @@ Dialog {
             ElementEntry {
                 id: eCache
                 key: settingsValhallaPrefix + "cache_in_mb"
-                mainLabel: qsTr("Cache for storing tiles")
-                secondaryLabel: qsTr("Memory cache that is used to keep Valhalla's tiles in RAM. Memory cache is given here in MB.")
+                mainLabel: qsTr("Cache for storing tiles, MB")
+                secondaryLabel: qsTr("Memory cache that is used to keep Valhalla's tiles in RAM.")
                 validator: DoubleValidator { bottom: 16; top: 1024; decimals: 0; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }

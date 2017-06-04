@@ -684,7 +684,7 @@
         <translation>Pobieranie listy państw</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1201"/>
+        <location filename="../src/mapmanager.cpp" line="1198"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Nie można sprawdzić czy są aktualizacje, z powodu braku listy wpieranych państw. Pobierz tą listę przed kolejną próbą uaktualnienia.</translation>
     </message>
@@ -709,32 +709,32 @@
         <translation>Lista państw: %:L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1118"/>
+        <location filename="../src/mapmanager.cpp" line="1115"/>
         <source>Error while deleting file:</source>
         <translation>Błąd podczas kasowania pliku:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1119"/>
+        <location filename="../src/mapmanager.cpp" line="1116"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation>Anulowanie usuwania pozostałych plików.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1124"/>
+        <location filename="../src/mapmanager.cpp" line="1121"/>
         <source>File removed during cleanup:</source>
         <translation>Plik usunięty podczas czyszczenia:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1144"/>
+        <location filename="../src/mapmanager.cpp" line="1141"/>
         <source>Updating the distribution server URL</source>
         <translation>Aktualizowanie adresu URL serwera dystrybucyjnego</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1197"/>
+        <location filename="../src/mapmanager.cpp" line="1194"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Nie można sprawdzić dostępności aktualizacji z powodu brakującego folderu przechowywania map</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1199"/>
+        <location filename="../src/mapmanager.cpp" line="1196"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Nie można sprawdzić czy są aktualizacje, z powodu braku listy żądanych państw. Pobierz tą listę przed kolejną próbą uaktualnienia.</translation>
     </message>
@@ -1938,12 +1938,12 @@
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="37"/>
-        <source>Cache for storing tiles</source>
+        <source>Cache for storing tiles, MB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="38"/>
-        <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM. Memory cache is given here in MB.</source>
+        <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
