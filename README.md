@@ -16,8 +16,9 @@ functionality. This library can be used to render maps, search for
 locations and POIs, and calculate routes. 
 
 In addition to libosmscout, the server supports:
-* search via geocoder-nlp (https://github.com/rinigus/geocoder-nlp) that is based on libpostal (https://github.com/openvenues/libpostal);
-* map rendering via mapnik (https://github.com/mapnik/mapnik).
+* map rendering via Mapnik (https://github.com/mapnik/mapnik);
+* search via Geocoder-NLP (https://github.com/rinigus/geocoder-nlp) which is based on libpostal (https://github.com/openvenues/libpostal);
+* routing instructions via Valhalla (https://github.com/valhalla/valhalla).
 
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps, modRana, and
@@ -271,6 +272,13 @@ how to process the results.
 
 ## Routing
 
+There are two versions of routing protocol that have to be used in
+accordance with the used backend. Version 1 (`v1/route`) is used by
+libosmscout and is described below. Version 2 (`v2/route`) is used by
+Valhalla and uses Valhalla's API.
+
+### Version 1: libosmscout
+
 The routing component allows to calculate routes between given
 points. Server can be accessed via `/v1/route` path:
 
@@ -336,6 +344,24 @@ At present, the car speeds on different roads are inserted in the
 code. This will improve in future.
 
 
+### Version 2: Valhalla
+
+This is the version that would be mainly supported in future. It uses
+Valhalla's API, as described in
+https://github.com/valhalla/valhalla-docs/blob/master/api-reference.md
+. Please note that there is no API key in the Valhalla's component
+used by OSM Scout Server. 
+
+At present, all calls via `v2/route`, as
+`http://localhost:8553/v2/route?...` would be forwarded to Valhalla
+via `/route?...`.
+
+Depending on users feedback, it would be possible to adapt libosmscout
+backend to support some subset of Valhalla's API making the selection
+of the routing engine on the server side as simple as it is now for
+geocoding and map tiles rendering. 
+
+
 ## Translations
 
 The translations were contributed by
@@ -371,6 +397,10 @@ libosmscout: http://libosmscout.sourceforge.net
 libpostal: https://github.com/openvenues/libpostal
 
 mapnik: https://github.com/mapnik/mapnik
+
+valhalla: https://github.com/valhalla/valhalla
+
+geocoder-nlp: https://github.com/rinigus/geocoder-nlp
 
 osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 
