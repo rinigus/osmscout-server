@@ -36,7 +36,9 @@ change imported regions.
   
 * Check that bucket_name is correct
 
-* Run ./import_master.sh
+* [TODO: Add Valhalla and Mapnik global instructions]
+
+* Run ./import_master.sh 
 
 
 ### On backend upgrade

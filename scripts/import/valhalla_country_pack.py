@@ -4,6 +4,7 @@ from shapely.geometry import MultiPolygon, Polygon
 # directories used for searching for packages
 valhalla_meta_dir = 'valhalla/packages_meta'
 valhalla_packages_dir = 'valhalla/packages'
+valhalla_tiles_timestamp = "valhalla/tiles/timestamp"
 version = "1"
 
 # taken from http://wiki.openstreetmap.org/wiki/Osmosis/Polygon_Filter_File_Python_Parsing
@@ -61,7 +62,7 @@ def getsize(sname):
     return int(f.read().split()[0])
 
 def gettimestamp(sname):
-    f = open(sname + ".timestamp", 'r')
+    f = open(valhalla_tiles_timestamp, 'r')
     return f.read().split()[0]
 
 # call with the name of POLY filename

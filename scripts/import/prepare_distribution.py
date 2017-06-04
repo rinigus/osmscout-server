@@ -13,12 +13,12 @@ url_base = "http://data.modrana.org/osm_scout_server"
 url_specs = {
     "base": url_base,
     "type": "url",
-    "osmscout": "osmscout-5",
-    "geocoder_nlp": "geocoder-nlp-5",
+    "osmscout": "osmscout-6",
+    "geocoder_nlp": "geocoder-nlp-6",
     "postal_global": "postal-global-1",
     "postal_country": "postal-country-1",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-3",
+    "mapnik_country": "mapnik-country-4",
     "valhalla": "valhalla-1",
 }
 
