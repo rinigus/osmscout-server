@@ -684,7 +684,7 @@
         <translation>Laddar ner lista över länder</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1198"/>
+        <location filename="../src/mapmanager.cpp" line="1201"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över tillgängliga länder saknas. Ladda ner listan före uppdateringskontroll.</translation>
     </message>
@@ -709,32 +709,32 @@
         <translation>Lista över länder: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1115"/>
+        <location filename="../src/mapmanager.cpp" line="1118"/>
         <source>Error while deleting file:</source>
         <translation>Fel vid borttagning av fil:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1116"/>
+        <location filename="../src/mapmanager.cpp" line="1119"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation>Avbryter borttagning av återstående filer.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1121"/>
+        <location filename="../src/mapmanager.cpp" line="1124"/>
         <source>File removed during cleanup:</source>
         <translation>Fil borttagen under rensning:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1141"/>
+        <location filename="../src/mapmanager.cpp" line="1144"/>
         <source>Updating the distribution server URL</source>
         <translation>Uppdaterar distributionsserverns URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1194"/>
+        <location filename="../src/mapmanager.cpp" line="1197"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan inte söka efter uppdateringar, eftersom kartlagringsmapp saknas.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1196"/>
+        <location filename="../src/mapmanager.cpp" line="1199"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över efterfrågade länder saknas. Välj länder före uppdateringskontroll.</translation>
     </message>
@@ -763,13 +763,8 @@
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="57"/>
-        <source>Removed file: %1</source>
-        <translation>Borttagen fil: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="59"/>
-        <source>Failed to remove file: %1</source>
-        <translation>Kunde inte ta bort fil: %1</translation>
+        <source>Failed to remove unnecessary file: %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="208"/>

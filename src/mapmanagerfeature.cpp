@@ -462,6 +462,7 @@ void FeatureValhalla::checkMissingFiles(const QJsonObject &request,
                                         FilesToDownload &missing) const
 {
   if (!m_enabled || !isMyType(request) || !isCompatible(request) || m_assume_files_exist) return;
+  if (!request.contains(m_name)) return;
 
   QString req_version = request.value(m_name).toObject().value("version").toString();
   QString req_datetime = request.value(m_name).toObject().value("timestamp").toString();
@@ -502,12 +503,26 @@ void FeatureValhalla::checkMissingFiles(const QJsonObject &request,
 void FeatureValhalla::fillWantedFiles(const QJsonObject &request,
                                       QSet<QString> &wanted) const
 {
-#pragma message "This is not ready!"
   if (!m_enabled || !isMyType(request)) return;
+  if (!request.contains(m_name)) return;
 
-  QString path = getPath(request);
-  for (const auto &f: m_files)
-    wanted.insert( m_path_provider->fullPath(path + "/" + f) );
+  // insert timestamp
+  wanted.insert( m_path_provider->fullPath(const_valhalla_tiles_timestamp) );
+
+  // insert packages-provided files and packages as well
+  QJsonArray packs = request.value(m_name).toObject().value("packages").toArray();
+  for (QJsonArray::const_iterator iter = packs.constBegin();
+       iter != packs.constEnd(); ++iter)
+    {
+      QString pack = (*iter).toString();
+      QString listname = m_path_provider->fullPath(packListName(pack));
+      wanted.insert( m_path_provider->fullPath( packFileName(pack) ) );
+      wanted.insert( listname );
+
+      QStringList tiles = getPackTileNames(listname);
+      for (const QString tilename: tiles)
+        wanted.insert( m_path_provider->fullPath(tilename) );
+    }
 }
 
 void FeatureValhalla::addForUnpacking(QString packtarname, QString datetime)

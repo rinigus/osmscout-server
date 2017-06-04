@@ -53,8 +53,6 @@ void PackTaskWorker::run()
 
   // delete package
   QDir dir(maindirname);
-  if (dir.remove(filename))
-    InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Removed file: %1").arg(filename));
-  else
-    InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Failed to remove file: %1").arg(filename));
+  if (!dir.remove(filename))
+    InfoHub::logInfo(QCoreApplication::translate("MapManagerFeature", "Failed to remove unnecessary file: %1").arg(filename));
 }
