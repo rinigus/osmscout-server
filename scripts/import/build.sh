@@ -29,12 +29,23 @@ rm -rf "$IMPDIR" "$SQLDIR"
 mkdir -p "$IMPDIR"
 mkdir -p "$SQLDIR"
 
-# workaround https://github.com/Framstag/libosmscout/issues/332
-mkdir -p tmp_poly
-NPOLY=tmp_poly/$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1).poly
-cp "$POLY_FILE" $NPOLY
-"$OSMSCOUT_IMPORTER" --typefile "$OSMSCOUT_MAPSTYLE" --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --destinationDirectory "$IMPDIR" "$PBF" $NPOLY #"$POLY_FILE"
-rm $NPOLY
+# workaround https://github.com/rinigus/osmscout-server/issues/148
+USEPOLY="YES"
+if [[ $POLY_FILE == *"russia/far-eastern-fed-district/chukotka"* ]]; then
+  USEPOLY="NO"
+fi
+
+if [[ "$USEPOLY" == "YES" ]]; then
+    # workaround [fixed upstream, can remove after update] https://github.com/Framstag/libosmscout/issues/332
+    mkdir -p tmp_poly
+    NPOLY=tmp_poly/$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1).poly
+    cp "$POLY_FILE" $NPOLY
+    "$OSMSCOUT_IMPORTER" --typefile "$OSMSCOUT_MAPSTYLE" --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --destinationDirectory "$IMPDIR" "$PBF" $NPOLY #"$POLY_FILE"
+    rm $NPOLY
+else
+    echo "Import skipping POLY"
+    "$OSMSCOUT_IMPORTER" --typefile "$OSMSCOUT_MAPSTYLE" --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --destinationDirectory "$IMPDIR" "$PBF" 
+fi
 
 "$GEOCODER_IMPORTER" "$IMPDIR" "$SQLDIR" "$COUNTRY_CODE"
 
