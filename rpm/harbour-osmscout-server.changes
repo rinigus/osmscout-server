@@ -5,6 +5,17 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Jun 5 2017 rinigus <rinigus.git@gmail.com> 0.10.0-1
+- Valhalla added as a routing engine
+- Routing is supported between different territories when using Valhalla
+- Search is performed for all databases when using Geocoder-NLP
+- Server is distributed using modular approach
+- Two server modules introduced: Route and Fonts
+- Update libosmscout version, 20170521
+- Make storage of libosmscout databases optional
+- Mapnik uses Noto fonts by default
+- Other smaller changes
+
 * Thu May 4 2017 rinigus <rinigus.git@gmail.com> 0.9.6-1
 - Fix typo in Mapnik style
 
