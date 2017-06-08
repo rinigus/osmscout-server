@@ -15,7 +15,7 @@ Name:       harbour-osmscout-server
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server
-Version:    0.10.0
+Version:    0.10.1
 Release:    1
 Group:      Qt/Qt
 License:    LGPL

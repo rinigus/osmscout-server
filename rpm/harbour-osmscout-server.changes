@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Jun 8 2017 rinigus <rinigus.git@gmail.com> 0.10.1-1
+- Updated translations
+
 * Mon Jun 5 2017 rinigus <rinigus.git@gmail.com> 0.10.0-1
 - Valhalla added as a routing engine
 - Routing is supported between different territories when using Valhalla
