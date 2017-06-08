@@ -804,12 +804,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="317"/>
         <source>Mapnik country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Support Mapnik par pays</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="325"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeu de données de pays Mapnik manquants</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="340"/>
@@ -937,17 +937,17 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="64"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lorsque sélectionné, un jeu de données geocoder basé sur libpostal sera stocké sur cet appareil après l&apos;avoir téléchargé. Ce jeu de données consiste en des jeux de décodage de langage (environ 700 Mo) et des jeux spécifiques au pays utilisés pour la recherche et le décodage d&apos;adresse.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="46"/>
         <source>Store datasets for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Stocker les jeux de données pour Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="47"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation type="unfinished"></translation>
+        <translation>Lorsque sélectionné, un jeu de données permettant d&apos;afficher les cartes avec Mapnik sera stocké sur cet appareil après l&apos;avoir téléchargé. Ce jeu de données contient les littoraux mondiaux (environ 700 Mo) et des données spécifiques au pays utilisés pour l&apos;affichage.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="208"/>
@@ -960,37 +960,37 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="87"/>
         <source>Cannot create configuration directory for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de créer le répertoire de configuration pour Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="106"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de créer le lien symbolique vers la configuration de Mapnik (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="166"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Echec du chargement de la configuration de Mapnik : %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="224"/>
         <source>Cannot write Mapnik configuration file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;écrire le fichier de configuration de Mapnik : %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="234"/>
         <source>Mapnik: adding %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik : ajout de %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="280"/>
         <source>Mapnik: failed to transform coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik n&apos;a pas pu transformer les coordonnées</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="293"/>
         <source>Mapnik not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik n&apos;est pas disponible</translation>
     </message>
 </context>
 <context>
@@ -998,32 +998,32 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="22"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik is can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik peut être utilisé comme serveur d&apos;affichage pour fournir les tuiles de cartes aux programmes clients</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
         <source>Scale factor</source>
-        <translation type="unfinished"></translation>
+        <translation>Facteur de taille</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="38"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Facteur de taille utilisé pour dessiner les éléments sur une carte. Sur les affichages haute résolution, tels que les téléphones, il est profitable d&apos;utiliser des facteurs de taille supérieurs à 1. Pour un premier essai, il est suggéré d&apos;utiliser un facteur de 3-5 sur les appareils mobiles.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="48"/>
         <source>Buffer size in pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille du tampon en pixels</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation type="unfinished"></translation>
+        <translation>En augmentant la taille de la zone qui est utilisée pour charger les données pendant l&apos;affichage d&apos;une tuile, le moteur d&apos;affichage peut améliorer l&apos;affichage en prenant en compte les données des tuiles voisines. Si vous voyez trop de textes coupés, essayez d&apos;augmenter la taille du tampon. Notez qu&apos;un tampon plus grand va ralentir l&apos;affichage. La taille du tampon est ajustée par rapport au facteur de taille pour s&apos;adapter à l&apos;augmentation de la taille du texte.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="61"/>
@@ -1589,17 +1589,17 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="68"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ce serveur vous permet de sélectionner parmi deux logiciels pour afficher les cartes : &lt;i&gt;libosmscout&lt;/i&gt; et &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="79"/>
         <source>Use Mapnik for rendering maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser Mapnik pour afficher les cartes</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="80"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Quand sélectionné, Mapnik sera utilisé pour afficher les cartes. Veuillez noter que des données additionnelles sont nécessaires pour les littoraux mondiaux et les pays.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
@@ -1674,12 +1674,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="142"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="149"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Paramètre de rendu des cartes pour &lt;i&gt;mapnik&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="233"/>
@@ -1981,7 +1981,7 @@
     <message>
         <location filename="../src/main.cpp" line="141"/>
         <source>List missing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Lister les cartes manquantes</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="145"/>

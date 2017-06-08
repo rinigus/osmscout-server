@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>El servidor debe utilizarse junto al programa cliente capaz de mostrar los mapas, hacer las búsquedas y mostrar las rutas seleccionadas. El servidor es una capa fina que presenta la funcionalidad de &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; y &lt;i&gt;geocoder-nlp&lt;/i&gt; a través de http. Este servidor se puede utilizar en lugar de los servicios de mapas en línea.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
@@ -204,12 +204,12 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="82"/>
         <source>Opened OSM Scout database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Base de datos OSM Scout abierta: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="84"/>
         <source>Cannot open OSM Scout database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible abrir la base de datos OSM Scout: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="109"/>
@@ -427,17 +427,17 @@
     <message>
         <location filename="../src/geomaster.cpp" line="53"/>
         <source>Selected country not available for geocoder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>El país seleccionado no está disponible para geocoder: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="66"/>
         <source>Countries used in search: </source>
-        <translation type="unfinished"></translation>
+        <translation>Países usados en la búsqueda:</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="100"/>
         <source>libpostal using languages: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Idiomas que usa libpostal: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="103"/>
@@ -447,7 +447,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="175"/>
         <source>Cannot open geocoding database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible abrir la base de datos de geocodificación: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="201"/>
@@ -457,7 +457,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="237"/>
         <source>Parsed query [%1]: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Consulta analizada [%1]: %2</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="248"/>
@@ -500,12 +500,12 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="55"/>
         <source>Search all available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar en todos los mapas disponibles</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="56"/>
         <source>When enabled, each search will be performed using all available maps on the device</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando se activa, cada búsqueda se realizará usando todos los mapas disponibles en el dispositivo</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="62"/>
@@ -620,7 +620,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="758"/>
         <source>%1: version of dataset for %2 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: la versión del conjunto de datos para %2 no es compatible</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="319"/>
@@ -744,27 +744,27 @@
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="17"/>
         <source>Error deleting Valhalla&apos;s tile directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al borrar directorio de tiles de Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="33"/>
         <source>Error while starting unpacking program</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al iniciar programa de descompresión</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="44"/>
         <source>Error during unpacking Valhalla&apos;s package</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al descomprimir el paquete de Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="51"/>
         <source>Unpacked Valhalla&apos;s package: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Paquete de Valhalla descomprimido: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="57"/>
         <source>Failed to remove unnecessary file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al eliminar fichero innecesario: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="208"/>
@@ -814,12 +814,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="340"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="348"/>
         <source>Missing Valhalla tiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Faltan tiles de Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="252"/>
@@ -862,22 +862,22 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="81"/>
         <source>Store datasets for Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Almacenar conjuntos de datos para el motor de cálculo de rutas Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="82"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando se activa, los conjuntos de datos de Valhalla se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos son necesarios para usar Valhalla como motor de cálculo de rutas.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="91"/>
         <source>Store datasets for libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>Almacenar conjuntos de datos de libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="92"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando se activa, los conjuntos de datos de libosmscout se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos son necesarios para el renderizado, búsqueda, o cálculo de rutas con el backend libosmscout.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="97"/>
@@ -1099,7 +1099,7 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="26"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
-        <translation>La librería OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) puede usarse para dibujar el mapa, las búsquedas, y las rutas</translation>
+        <translation>La librería OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) puede usarse para dibujar el mapa, las búsquedas, y el cálculo de rutas</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="35"/>
@@ -1624,22 +1624,22 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="111"/>
         <source>Routing Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Motor de cálculo de rutas</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation type="unfinished"></translation>
+        <translation>El motor de cálculo de rutas es responsable de calcular las rutas entre el origen y destino. Este servidor te permite seleccionar entre dos motores de cálculo de rutas: &lt;i&gt;Valhalla&lt;/i&gt; y &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>Use Valhalla as routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Usar Valhalla como motor de cálculo de rutas</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="129"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando se activa, Valhalla se usará para calcular las instrucciones de ruta.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="133"/>
@@ -1649,12 +1649,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="198"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="205"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustes del motor de cálculo de rutas para el backend &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="226"/>
@@ -1684,7 +1684,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="233"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajustes de la librería OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). La librería puede usarse para dibujar mapas, búsquedas y cálculo de rutas.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="244"/>
@@ -1747,27 +1747,27 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="53"/>
         <source>Missing modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Faltan módulos</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="68"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s):&lt;ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;El servidor OSM Scout Server&lt;/i&gt; usa varios módulos que tienen que instalarse por separado para un funcionamiento completo.&lt;br&gt;&lt;br&gt;En tu dispositivo faltan los siguientes módulos:&lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;Módulo del servidor OSM Scout: Fuentes&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="74"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;Módulo del servidor OSM Scout: Ruta&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="76"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Por favor, instala los módulos que faltan a través de Harbour u Openrepos. Tras la instalación de los módulos reinicia el servidor OSM Scout.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="94"/>
@@ -1860,67 +1860,67 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="59"/>
         <source>Cannot create configuration directory for Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible crear directorio de configuración para Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="97"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir la plantilla de configuración de Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="105"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al leer la plantilla de configuración de Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="117"/>
         <source>Error opening Valhalla&apos;s configuration file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir fichero de configuración de Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="125"/>
         <source>Error writing Valhalla&apos;s configuration file</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al escribir en el fichero de configuración de Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="146"/>
         <source>Starting Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciando motor de cálculo de rutas Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="207"/>
         <source>Valhalla routing engine stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>El motor de cálculo de rutas se ha detenido</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="224"/>
         <source>Stopping Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Deteniendo el motor de cálculo de rutas Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="293"/>
         <source>Error while communicating with Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Error en la comunicación con el motor de cálculo de rutas Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="195"/>
         <source>Valhalla routing engine started</source>
-        <translation type="unfinished"></translation>
+        <translation>El motor de cálculo de rutas Valhalla se ha iniciado</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
         <source>Valhalla exited with error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla cesó con error: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="234"/>
         <source>Valhalla routing engine process cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpieza del proceso de cálculo de rutas Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="254"/>
         <source>Could not start the Valhalla routing service: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>No se ha podido iniciar el servicio de cálculo de rutas Valhalla: %1</translation>
     </message>
 </context>
 <context>
@@ -1928,22 +1928,22 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="22"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="26"/>
         <source>Valhalla can be used as a routing engine to calculate routes and the routing instructions</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla puede usarse como motor para calcular rutas e instrucciones de ruta</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="37"/>
         <source>Cache for storing tiles, MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Caché para almacenar tiles, MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="38"/>
         <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>Memoria caché que se usa para conservar los tiles de Valhalla en la RAM.</translation>
     </message>
 </context>
 <context>

@@ -204,12 +204,12 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="82"/>
         <source>Opened OSM Scout database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Otwarta baza danych OSM Scout: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="84"/>
         <source>Cannot open OSM Scout database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można otworzyć bazy danych OSM Scout: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="109"/>
@@ -427,17 +427,17 @@
     <message>
         <location filename="../src/geomaster.cpp" line="53"/>
         <source>Selected country not available for geocoder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybrano państwo niedostępne dla geocodera: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="66"/>
         <source>Countries used in search: </source>
-        <translation type="unfinished"></translation>
+        <translation>Państwa użyte w wyszukiwaniu:</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="100"/>
         <source>libpostal using languages: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>języki używane przez libpostal: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="103"/>
@@ -447,7 +447,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="175"/>
         <source>Cannot open geocoding database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można otworzyć bazy danych geocodowania: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="201"/>
@@ -457,7 +457,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="237"/>
         <source>Parsed query [%1]: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Sparsowane zapytanie [%1]: %2</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="248"/>
@@ -500,12 +500,12 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="55"/>
         <source>Search all available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyszukaj wszystkie dostępne mapy</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="56"/>
         <source>When enabled, each search will be performed using all available maps on the device</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy włączone, każde wyszukiwanie będzie używało wszystkich dostępnych, na urządzeniu, map</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="62"/>
@@ -515,7 +515,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="63"/>
         <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
-        <translation type="unfinished"></translation>
+        <translation>Oprócz &lt;i&gt; libpostal &lt;/i&gt;, podstawowy parser umożliwia określenie hierarchii administracyjnej szukanego obiektu, rozdzielając komponenty przecinkami. Czasami, gdy libpostal nieprawidłowo analizuje żądanie, ten parser pozwala rozwiązać problem. &lt;br&gt; Przykład: house_number, street, town.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="72"/>
@@ -620,7 +620,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="758"/>
         <source>%1: version of dataset for %2 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: wersja zbioru danych dla %2 jest nie wspierana</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="319"/>
@@ -744,27 +744,27 @@
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="17"/>
         <source>Error deleting Valhalla&apos;s tile directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd usuwania katalogu kafelków Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="33"/>
         <source>Error while starting unpacking program</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd podczas uruchamiania programu rozpakowującego</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="44"/>
         <source>Error during unpacking Valhalla&apos;s package</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd podczas rozpakowywania paczki Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="51"/>
         <source>Unpacked Valhalla&apos;s package: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozpakowano paczkę Valhalla: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="57"/>
         <source>Failed to remove unnecessary file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd przy usuwaniu niepotrzebnego pliku: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="208"/>
@@ -814,12 +814,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="340"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="348"/>
         <source>Missing Valhalla tiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Brakujące kafelki Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="252"/>
@@ -862,17 +862,17 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="81"/>
         <source>Store datasets for Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Przechowaj zbiory danych dla silnika wyznaczania trasy Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="82"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy wybrane, zbiory danych Valhalla będą przechowywane na urządzeniu po ówczesnym ich ściągnięciu. Zbiory te wymagane są przez silnik wyznaczania trasy Valhalla.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="91"/>
         <source>Store datasets for libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>Przechowaj zbiory danych dla libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="92"/>
@@ -937,7 +937,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="64"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy wybrane, zestawy danych geocodera opartego na libpostal będą przechowywane na urządzeniu, po uprzednim ich ściągnięciu. Te zestawy danych składają się z zestawu do parsowania języka (około 700MB) i zbiorów danych, do parsowania adresów, specyficznych dla danego kraju oraz wyszukiwania. </translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="46"/>
@@ -947,7 +947,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="47"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy wybrane, zbiory danych pozwalające renderować mapy przy pomocy Mapnika, będą przechowywane na urządzeniu po uprzednim ich pobraniu. Te zbiory danych zawierają wybrzeża świata (około 700 MB) i zbiory danych specyficzne dla danego państwa, używane do renderowania</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="208"/>
@@ -1008,12 +1008,12 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
         <source>Scale factor</source>
-        <translation type="unfinished"></translation>
+        <translation>Współczynnik skali</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="38"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Współczynnik skali używany do rysowania obiektów na mapie. Na wyświetlaczach o wysokiej rozdzielczości, takich jak telefony, korzystne jest stosowanie współczynników skali większych niż 1. Zaleca się użycie współczynnika skali 3-5 na urządzeniach mobilnych.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="48"/>
@@ -1159,7 +1159,7 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="91"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation type="unfinished"></translation>
+        <translation>Współczynnik kosztów jest składnikiem limitu kosztów, który jest proporcjonalny do odległości geodezyjnej między trasą a miejscem docelowym</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="100"/>
@@ -1199,12 +1199,12 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="156"/>
         <source>Cutoff zoom level</source>
-        <translation type="unfinished"></translation>
+        <translation>Poziom graniczny zbliżenia</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="157"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Przy określonym poziomie zbliżenia, algorytm renderowania map przestanie sprawdzać etykiety w sąsiadujących kafelkach. Często 14 jest uznawane za poziom graniczny zbliżenia. Poprzez ustawienie większej wartości można osiągnąć bardziej dokładne renderowanie etykiet. Renderowania etykiet może znacznie spowolnić renderowanie map.</translation>
     </message>
 </context>
 <context>
@@ -1600,7 +1600,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="80"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy wybrane, Mapnik będzie użyty do renderowania map. Wymaga to dodatkowych baz danych dla wybrzeży świata i państw.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
@@ -1625,7 +1625,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="111"/>
         <source>Routing Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Silnik wyznaczania trasy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="115"/>
@@ -1635,12 +1635,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>Use Valhalla as routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj Valhalla jako silnika wyznaczania trasy</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="129"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy wybrane, Valhalla może być użyta do kalkulowania instrukcji wyznaczonych tras.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="133"/>
@@ -1650,12 +1650,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="198"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="205"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia silnika wyznaczania trasy dla backend&apos;u &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="226"/>
@@ -1748,7 +1748,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="53"/>
         <source>Missing modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Brakujące moduły</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="68"/>
@@ -1758,17 +1758,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;Moduł OSM Scout Server: Czcionki&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="74"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;Moduł OSM Scout Server: Trasa</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="76"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt; Proszę zainstalować brakujące moduły za pomocą Sklepu lub OpenRepos. Po instalacji modułu proszę zrestartować OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="94"/>
@@ -1861,67 +1861,67 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="59"/>
         <source>Cannot create configuration directory for Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można utworzyć katalogu konfiguracyjnego dla Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="97"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd otwierania szablonu konfiguracji Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="105"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd czytania szablonu konfiguracji Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="117"/>
         <source>Error opening Valhalla&apos;s configuration file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd otwierania pliku konfiguracyjnego Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="125"/>
         <source>Error writing Valhalla&apos;s configuration file</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd zapisywania pliku konfiguracyjnego Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="146"/>
         <source>Starting Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchamianie silnika wyznaczania trasy Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="207"/>
         <source>Valhalla routing engine stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>Silnik wyznaczania trasy Valhalla zatrzymany</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="224"/>
         <source>Stopping Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatrzymywanie silnika wyznaczania trasy Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="293"/>
         <source>Error while communicating with Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd w komunikacji z silnikiem wyznaczania trasy Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="195"/>
         <source>Valhalla routing engine started</source>
-        <translation type="unfinished"></translation>
+        <translation>Silnik wyznaczania trasy Valhalla uruchomiony</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
         <source>Valhalla exited with error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla zakończona z błędem: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="234"/>
         <source>Valhalla routing engine process cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Proces czyszczenia silnika wyznaczania trasy Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="254"/>
         <source>Could not start the Valhalla routing service: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można uruchomić usługi wyznaczania trasy Valhalla: %1</translation>
     </message>
 </context>
 <context>
@@ -1929,17 +1929,17 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="22"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="26"/>
         <source>Valhalla can be used as a routing engine to calculate routes and the routing instructions</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla może być używany jako silnik wyznaczania trasy do kalkulowania tras oraz instrukcji wyznaczonych tras</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="37"/>
         <source>Cache for storing tiles, MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamięć podręczna do przechowywania kafelków, MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="38"/>
