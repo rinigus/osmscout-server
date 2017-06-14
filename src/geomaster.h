@@ -46,6 +46,12 @@ public:
     ///
     bool search(const QString &searchPattern, double &lat, double &lon, std::string &name);
 
+    /// \brief Search for POI by its type or name near the given origin
+    ///
+    bool guide(const QString &poitype, const QString &name,
+               double lat, double lon, double radius, size_t limit, QByteArray &result_data);
+
+
 public slots:
     void onSettingsChanged();
     void onGeocoderNLPChanged(QHash<QString, QString> dirs);

@@ -346,12 +346,13 @@ unsigned int RequestMapper::service(const char *url_c,
       bool ok = true;
       double radius = q2value<double>("radius", 1000.0, connection, ok);
       size_t limit = q2value<size_t>("limit", 50, connection, ok);
-      QString poitype = q2value<QString>("poitype", "", connection, ok);
-      QString search = q2value<QString>("search", "", connection, ok);
+      QString poitype = q2value<QString>("poitype", QString(), connection, ok);
+      QString name_query = q2value<QString>("name", QString(), connection, ok);
+      QString search = q2value<QString>("search", QString(), connection, ok);
       double lon = q2value<double>("lng", 0, connection, ok);
       double lat = q2value<double>("lat", 0, connection, ok);
 
-      if (!ok)
+      if (!ok || (name_query.isEmpty() && poitype.isEmpty()) )
         {
           errorText(response, connection_id, "Error while reading guide query parameters");
           return MHD_HTTP_BAD_REQUEST;
@@ -361,29 +362,59 @@ unsigned int RequestMapper::service(const char *url_c,
 
       if ( has("lng", connection) && has("lat", connection) )
         {
-          Task *task = new Task(connection_id,
-                                std::bind(&DBMaster::guide, osmScoutMaster,
-                                          poitype, lat, lon, radius, limit, std::placeholders::_1),
-                                "Error while looking for POIs in guide");
+          Task *task;
+
+          if ( !useGeocoderNLP )
+            task = new Task(connection_id,
+                            std::bind(&DBMaster::guide, osmScoutMaster,
+                                      poitype, lat, lon, radius, limit, std::placeholders::_1),
+                            "Error while looking for POIs in guide");
+          else
+            task = new Task(connection_id,
+                            std::bind(&GeoMaster::guide, geoMaster,
+                                      poitype, name_query, lat, lon, radius, limit, std::placeholders::_1),
+                            "Error while looking for POIs in guide");
+
           m_pool.start(task);
         }
 
       else if ( has("search", connection) && search.length() > 0 )
         {
           std::string name;
-          if (osmScoutMaster->search(search, lat, lon, name))
+
+          if ( !useGeocoderNLP )
             {
-              Task *task = new Task(connection_id,
-                                    std::bind(&DBMaster::guide, osmScoutMaster,
-                                              poitype, lat, lon, radius, limit, std::placeholders::_1),
-                                    "Error while looking for POIs in guide");
-              m_pool.start(task);
+              if (osmScoutMaster->search(search, lat, lon, name))
+                {
+                  Task *task = new Task(connection_id,
+                                        std::bind(&DBMaster::guide, osmScoutMaster,
+                                                  poitype, lat, lon, radius, limit, std::placeholders::_1),
+                                        "Error while looking for POIs in guide");
+                  m_pool.start(task);
+                }
+              else
+                {
+                  QByteArray bytes;
+                  makeEmptyJson(bytes);
+                  MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+                }
             }
           else
             {
-              QByteArray bytes;
-              makeEmptyJson(bytes);
-              MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+              if (geoMaster->search(search, lat, lon, name))
+                {
+                  Task *task = new Task(connection_id,
+                                        std::bind(&GeoMaster::guide, geoMaster,
+                                                  poitype, name_query, lat, lon, radius, limit, std::placeholders::_1),
+                                        "Error while looking for POIs in guide");
+                  m_pool.start(task);
+                }
+              else
+                {
+                  QByteArray bytes;
+                  makeEmptyJson(bytes);
+                  MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+                }
             }
         }
 

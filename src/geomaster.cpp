@@ -347,3 +347,114 @@ bool GeoMaster::searchExposed(const QString &searchPattern, QByteArray &result, 
 
   return true;
 }
+
+
+bool GeoMaster::guide(const QString &poitype, const QString &name,
+                      double lat, double lon, double radius, size_t limit, QByteArray &result_data)
+{
+  if (poitype.isEmpty() && name.isEmpty())
+    return false;
+
+  QMutexLocker lk(&m_mutex);
+
+  std::vector<GeoNLP::Geocoder::GeoResult> search_result;
+  std::map< std::string, std::vector<std::string> > postal_cache;
+  std::string type_query = poitype.toStdString();
+  std::string name_query = name.toStdString();
+
+  for(const QString country: m_countries)
+    {
+      if (!m_geocoder.load(m_geocoder_dirs.value(country).toStdString()))
+        {
+          InfoHub::logError(tr("Cannot open geocoding database: %1").arg(m_geocoder_dirs.value(country)));
+          return false;
+        }
+
+      // parsing with libpostal
+      std::vector< std::string > parsed_name;
+      std::string postal_id;
+
+      if ( !name.isEmpty() )
+        {
+          if (!m_postal_full_library)
+            postal_id = m_postal_country_dirs.value(country).toStdString();
+
+          if ( postal_cache.count(postal_id) > 0 )
+            {
+              parsed_name = postal_cache[postal_id];
+            }
+          else
+            {
+              if (!m_postal_full_library)
+                m_postal.set_postal_datadir_country(postal_id);
+
+              m_postal.expand_string(name_query, parsed_name);
+
+              postal_cache[postal_id] = parsed_name;
+            }
+        }
+
+      // search
+      m_geocoder.set_max_results(limit);
+      std::vector<GeoNLP::Geocoder::GeoResult> search_result_country;
+
+      if ( !m_geocoder.search_nearby(parsed_name,
+                                     type_query,
+                                     lat, lon, radius,
+                                     search_result_country,
+                                     m_postal) )
+        {
+          InfoHub::logError(tr("Error while searching with geocoder-nlp"));
+          return false;
+        }
+
+      if (!search_result_country.empty())
+        {
+          search_result.insert(search_result.end(),
+                               search_result_country.begin(), search_result_country.end());
+        }
+
+      if (search_result.size() >= limit)
+        break;
+    }
+
+  // enforce the limit
+  if (search_result.size() > limit)
+    search_result.resize(limit);
+
+  // record results
+  QJsonObject result;
+  result.insert("query_type", poitype);
+  result.insert("query_name", name);
+  {
+    QJsonObject origin;
+    origin.insert("lng", lon);
+    origin.insert("lat", lat);
+    result.insert("origin", origin);
+  }
+
+  {
+    QJsonArray arr;
+    for (const GeoNLP::Geocoder::GeoResult &sr: search_result)
+      {
+        QJsonObject r;
+
+        r.insert("admin_region", QString::fromStdString(sr.address));
+        r.insert("title", QString::fromStdString(sr.title));
+        r.insert("lat", sr.latitude);
+        r.insert("lng", sr.longitude);
+        r.insert("object_id", sr.id);
+        r.insert("type", QString::fromStdString(sr.type));
+
+        arr.push_back(r);
+      }
+
+    result.insert("result", arr);
+  }
+
+  QJsonDocument document(result);
+  result_data = document.toJson();
+
+  return true;
+
+}

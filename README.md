@@ -240,7 +240,7 @@ List of available POI types is available via
 To find POIs within a given radius from a specified reference
 position, server can be accessed via `/v1/guide` path:
 
-`http://localhost:8553/v1/guide?radius={radius}&blimit={limit}&poitype={poitype}&search={search}&lng={lng}&lat={lat}`
+`http://localhost:8553/v1/guide?radius={radius}&blimit={limit}&poitype={poitype}&name={name}&search={search}&lng={lng}&lat={lat}`
 
 where
 
@@ -249,6 +249,8 @@ where
 `{radius}` - distance from the reference in meters
 
 `{poitype}` - POI type name substring (checked against POI type name in case-insensitive manner)
+
+`{name}` - Name of POI to search
 
 `{search}` - a query that is run to find a reference point, the first result is used
 
@@ -259,6 +261,13 @@ is looked for in all available POI types without taking into account
 the case of letters. For example, "Cafe" would match
 amenity_cafe_building and amenity_cafe. However, "Café" would miss
 them.
+
+In addition, POI can be searched by its name. For example, you could
+search for the restaurant by its name. This parameter is only
+supported by Geocoder-NLP backend.
+
+It is required, that either POI type, POI name, or the type and name
+are specified in the query.
 
 The reference point can be given either as a query ("Paris") or as a
 location coordinates. If the both forms are given in URL, location
