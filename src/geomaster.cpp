@@ -449,7 +449,7 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
         arr.push_back(r);
       }
 
-    result.insert("result", arr);
+    result.insert("results", arr);
   }
 
   QJsonDocument document(result);
