@@ -3,8 +3,7 @@
         "lat": 55.590141457245807,
         "lng": 12.997187025824104
     },
-    "query_name": "espresso HOUSE",
-    "query_type": "cafe",
+    "query": "espresso",
     "results": [
         {
             "admin_region": "Espresso House, Rådmansvången, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
@@ -12,6 +11,14 @@
             "lng": 13.001290805647443,
             "object_id": 578503,
             "title": "Espresso House, Rådmansvången",
+            "type": "amenity_cafe"
+        },
+        {
+            "admin_region": "Espresso Maker, Rådmansvången, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
+            "lat": 55.59489835496916,
+            "lng": 13.003541179027707,
+            "object_id": 578513,
+            "title": "Espresso Maker, Rådmansvången",
             "type": "amenity_cafe"
         },
         {
@@ -37,6 +44,14 @@
             "object_id": 578846,
             "title": "Espresso House, Gamla Staden",
             "type": "amenity_cafe"
+        },
+        {
+            "admin_region": "Nespresso, Gamla Staden, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
+            "lat": 55.604679030214839,
+            "lng": 13.000011391937818,
+            "object_id": 578932,
+            "title": "Nespresso, Gamla Staden",
+            "type": "shop"
         }
     ]
 }

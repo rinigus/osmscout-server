@@ -346,13 +346,13 @@ unsigned int RequestMapper::service(const char *url_c,
       bool ok = true;
       double radius = q2value<double>("radius", 1000.0, connection, ok);
       size_t limit = q2value<size_t>("limit", 50, connection, ok);
-      QString poitype = q2value<QString>("poitype", QString(), connection, ok);
-      QString name_query = q2value<QString>("name", QString(), connection, ok);
+      QString poitype = q2value<QString>("poitype", QString(), connection, ok); // left for compatibility
+      QString query = q2value<QString>("query", poitype, connection, ok);
       QString search = q2value<QString>("search", QString(), connection, ok);
       double lon = q2value<double>("lng", 0, connection, ok);
       double lat = q2value<double>("lat", 0, connection, ok);
 
-      if (!ok || (name_query.isEmpty() && poitype.isEmpty()) )
+      if (!ok || query.isEmpty() )
         {
           errorText(response, connection_id, "Error while reading guide query parameters");
           return MHD_HTTP_BAD_REQUEST;
@@ -367,12 +367,12 @@ unsigned int RequestMapper::service(const char *url_c,
           if ( !useGeocoderNLP )
             task = new Task(connection_id,
                             std::bind(&DBMaster::guide, osmScoutMaster,
-                                      poitype, lat, lon, radius, limit, std::placeholders::_1),
+                                      query, lat, lon, radius, limit, std::placeholders::_1),
                             "Error while looking for POIs in guide");
           else
             task = new Task(connection_id,
                             std::bind(&GeoMaster::guide, geoMaster,
-                                      poitype, name_query, lat, lon, radius, limit, std::placeholders::_1),
+                                      query, lat, lon, radius, limit, std::placeholders::_1),
                             "Error while looking for POIs in guide");
 
           m_pool.start(task);
@@ -388,7 +388,7 @@ unsigned int RequestMapper::service(const char *url_c,
                 {
                   Task *task = new Task(connection_id,
                                         std::bind(&DBMaster::guide, osmScoutMaster,
-                                                  poitype, lat, lon, radius, limit, std::placeholders::_1),
+                                                  query, lat, lon, radius, limit, std::placeholders::_1),
                                         "Error while looking for POIs in guide");
                   m_pool.start(task);
                 }
@@ -405,7 +405,7 @@ unsigned int RequestMapper::service(const char *url_c,
                 {
                   Task *task = new Task(connection_id,
                                         std::bind(&GeoMaster::guide, geoMaster,
-                                                  poitype, name_query, lat, lon, radius, limit, std::placeholders::_1),
+                                                  query, lat, lon, radius, limit, std::placeholders::_1),
                                         "Error while looking for POIs in guide");
                   m_pool.start(task);
                 }

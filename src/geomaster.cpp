@@ -349,18 +349,17 @@ bool GeoMaster::searchExposed(const QString &searchPattern, QByteArray &result, 
 }
 
 
-bool GeoMaster::guide(const QString &poitype, const QString &name,
+bool GeoMaster::guide(const QString &query_qst,
                       double lat, double lon, double radius, size_t limit, QByteArray &result_data)
 {
-  if (poitype.isEmpty() && name.isEmpty())
+  if (query_qst.isEmpty())
     return false;
 
   QMutexLocker lk(&m_mutex);
 
   std::vector<GeoNLP::Geocoder::GeoResult> search_result;
   std::map< std::string, std::vector<std::string> > postal_cache;
-  std::string type_query = poitype.toStdString();
-  std::string name_query = name.toStdString();
+  std::string query = query_qst.toStdString();
 
   for(const QString country: m_countries)
     {
@@ -371,35 +370,31 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
         }
 
       // parsing with libpostal
-      std::vector< std::string > parsed_name;
+      std::vector< std::string > parsed_query;
       std::string postal_id;
 
-      if ( !name.isEmpty() )
+      if (!m_postal_full_library)
+        postal_id = m_postal_country_dirs.value(country).toStdString();
+
+      if ( postal_cache.count(postal_id) > 0 )
+        {
+          parsed_query = postal_cache[postal_id];
+        }
+      else
         {
           if (!m_postal_full_library)
-            postal_id = m_postal_country_dirs.value(country).toStdString();
+            m_postal.set_postal_datadir_country(postal_id);
 
-          if ( postal_cache.count(postal_id) > 0 )
-            {
-              parsed_name = postal_cache[postal_id];
-            }
-          else
-            {
-              if (!m_postal_full_library)
-                m_postal.set_postal_datadir_country(postal_id);
+          m_postal.expand_string(query, parsed_query);
 
-              m_postal.expand_string(name_query, parsed_name);
-
-              postal_cache[postal_id] = parsed_name;
-            }
+          postal_cache[postal_id] = parsed_query;
         }
 
       // search
       m_geocoder.set_max_results(limit);
       std::vector<GeoNLP::Geocoder::GeoResult> search_result_country;
 
-      if ( !m_geocoder.search_nearby(parsed_name,
-                                     type_query,
+      if ( !m_geocoder.search_nearby(parsed_query,
                                      lat, lon, radius,
                                      search_result_country,
                                      m_postal) )
@@ -424,8 +419,7 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
 
   // record results
   QJsonObject result;
-  result.insert("query_type", poitype);
-  result.insert("query_name", name);
+  result.insert("query", query_qst);
   {
     QJsonObject origin;
     origin.insert("lng", lon);

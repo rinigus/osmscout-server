@@ -48,7 +48,7 @@ public:
 
     /// \brief Search for POI by its type or name near the given origin
     ///
-    bool guide(const QString &poitype, const QString &name,
+    bool guide(const QString &query,
                double lat, double lon, double radius, size_t limit, QByteArray &result_data);
 
 
