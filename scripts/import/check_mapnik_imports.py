@@ -9,7 +9,7 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 json_fname = sys.argv[1]
-print "Checking using", json_fname
+print "Checking using", json_fname, "\n"
 
 alldata = json.load( open(json_fname,"r") )
 issues = ""
@@ -21,7 +21,7 @@ for k in alldata:
             szScout = float( obj["osmscout"]["size"] )
 
             if szMapnik / szScout < cutoff:
-                print "Check:", k, "Mapnik: %0.1fMB  /  Scout: %0.1fMB" % ( szMapnik / 1024./1024., szScout / 1024. / 1024.)
+                print "Check:", k, "\tRatio: %0.2f \tMapnik: %0.1fMB  \t/  Scout: %0.1fMB" % ( szMapnik/szScout, szMapnik / 1024./1024., szScout / 1024. / 1024.)
                 issues += obj["mapnik_country"]["path"] + "* "
                 
         except:
