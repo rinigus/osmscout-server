@@ -22,7 +22,7 @@ for k in alldata:
 
             if szMapnik / szScout < cutoff:
                 print "Check:", k, "Mapnik: %0.1fMB  /  Scout: %0.1fMB" % ( szMapnik / 1024./1024., szScout / 1024. / 1024.)
-                issues += k + "* "
+                issues += obj["mapnik_country"]["path"] + "* "
                 
         except:
             print "Failed to parse:", k
