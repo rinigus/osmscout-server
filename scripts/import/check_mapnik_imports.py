@@ -53,5 +53,7 @@ if len(missing) > 0:
     for k in missing: print k[0]
     print
 
+    sys.exit(-10)
+
 else:
     print "Coast is clear - no issues found\n"

@@ -16,5 +16,8 @@ nice -n 19 make -f Makefile.splitter
 nice -n 19 make -f Makefile.import -j16
 
 ./prepare_distribution.py
+
+./check_mapnik_imports.py provided/countries_provided.json
+
 #./uploader.sh
 
