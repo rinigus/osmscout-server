@@ -5,6 +5,10 @@
 #include <QStandardPaths>
 #include <QTimer>
 
+#ifdef __linux__
+#include <sys/sysinfo.h>
+#endif
+
 #include <QDebug>
 
 #ifdef IS_SAILFISH_OS
@@ -125,7 +129,19 @@ void AppSettings::initDefaults()
   CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", DATA_PREFIX "mapnik/OSMBright");
 
   CHECK(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
-  CHECK(VALHALLA_MASTER_SETTINGS "cache_in_mb", 128);
+  {
+    int cache_size_default = 128;
+#ifdef __linux__
+    struct sysinfo s;
+    if (sysinfo(&s) == 0)
+      {
+        double ram = s.totalram/1024./1024./1024.;
+        if ( ram < 1.25 ) cache_size_default = 16;
+        else if ( ram < 2.1) cache_size_default = 64;
+      }
+#endif
+    CHECK(VALHALLA_MASTER_SETTINGS "cache_in_mb", cache_size_default);
+  }
   CHECK(VALHALLA_MASTER_SETTINGS "route_port", 8554);
 }
 
