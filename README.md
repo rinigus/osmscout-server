@@ -283,7 +283,8 @@ and Poor Maps implementation on how to process the results.
 There are two versions of routing protocol that have to be used in
 accordance with the used backend. Version 1 (`v1/route`) is used by
 libosmscout and is described below. Version 2 (`v2/route`) is used by
-Valhalla and uses Valhalla's API.
+Valhalla and uses Valhalla's API. Version 2 is supported, in part, by
+libosmscout as well.
 
 ### Version 1: libosmscout
 
@@ -364,10 +365,18 @@ At present, all calls via `v2/route`, as
 `http://localhost:8553/v2/route?...` would be forwarded to Valhalla
 via `/route?...`.
 
-Depending on users feedback, it would be possible to adapt libosmscout
-backend to support some subset of Valhalla's API making the selection
-of the routing engine on the server side as simple as it is now for
-geocoding and map tiles rendering. 
+
+### Version 2: libosmscout
+
+When using libosmscout as a backend, version 2 can be used to request
+the routes. In this case, the server would consider limited subset of
+Valhalla's API. In particular, `costing` option would be used to
+select the transportation mode (`auto`, `bicycle`, or `pedestrian`)
+with the order of points found from `location`. The reply of the
+server will follow Version 1 protocol with an additional flag `API
+version` set to `libosmscout V1` in the response of the server. Using
+this flag, the client application can determine whether version 1
+protocol response has been used.
 
 
 ## Translations

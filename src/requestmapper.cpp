@@ -20,6 +20,10 @@
 #include <QDir>
 #include <QCoreApplication>
 
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QJsonObject>
+
 #include <QDebug>
 
 #include <functional>
@@ -541,6 +545,64 @@ unsigned int RequestMapper::service(const char *url_c,
       return MHD_HTTP_OK;
     }
 #endif
+
+  //////////////////////////////////////////////////////////////////////
+  /// ROUTING VIA OSMSCOUT [V2]
+  else if (path == "/v2/route" && !useValhalla)
+    {
+      bool ok = true;
+      QString json = q2value<QString>("json", "", connection, ok);
+      QJsonObject objreq = QJsonDocument::fromJson(json.toUtf8()).object();
+
+      double radius = 1000.0;
+      bool gpx = false;
+
+      std::vector<osmscout::GeoCoord> points;
+      std::vector< std::string > names;
+
+      osmscout::Vehicle vehicle;
+      QString type = objreq.value("costing").toString();
+      if (type == "auto") vehicle = osmscout::vehicleCar;
+      else if (type == "bicycle") vehicle = osmscout::vehicleBicycle;
+      else if (type == "pedestrian") vehicle = osmscout::vehicleFoot;
+      else
+        {
+          errorText(response, connection_id, "Error in routing parameters: unknown vehicle" );
+          return MHD_HTTP_BAD_REQUEST;
+        }
+
+      QJsonArray arr = objreq.value("locations").toArray();
+      for (const auto &a: arr)
+        {
+          double lat = a.toObject().value("lat").toDouble(-301.0);
+          double lon = a.toObject().value("lon").toDouble(-301.0);
+
+          if (lat < -300 || lon < -300)
+            {
+              errorText(response, connection_id, "Error in routing parameters: unknown coordinates for location" );
+              return MHD_HTTP_BAD_REQUEST;
+            }
+
+          osmscout::GeoCoord c(lat,lon);
+          points.push_back(c);
+          names.push_back(std::string());
+        }
+
+      if (points.size() < 2)
+        {
+          errorText(response, connection_id, "Error in routing parameters: too few routing points" );
+          return MHD_HTTP_BAD_REQUEST;
+        }
+
+      Task *task = new Task(connection_id,
+                            std::bind(&DBMaster::route, osmScoutMaster,
+                                      vehicle, points, radius, names, gpx, std::placeholders::_1),
+                            "Error while looking for route");
+      m_pool.start(task);
+
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
+      return MHD_HTTP_OK;
+    }
 
   else // command unidentified. return help string
     {

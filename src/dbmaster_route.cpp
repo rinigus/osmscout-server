@@ -476,6 +476,8 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     summary.insert("length", totalDistance);
     rootObj.insert("summary", summary);
 
+    rootObj.insert("API version", QString("libosmscout V1"));
+
     QJsonDocument document(rootObj);
     result = document.toJson();
 
