@@ -19,6 +19,8 @@ data.files = data
 data.path = /usr/share/$${TARGET}
 INSTALLS += data
 
+DEFINES += APP_VERSION=\\\"$$VERSION\\\"
+
 SOURCES += src/harbour-osmscout-server-module-route.cpp \
     src/valhalla_route_service.cc
 

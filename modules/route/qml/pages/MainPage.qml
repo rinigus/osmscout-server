@@ -31,6 +31,16 @@ Page
             }
 
             Label {
+                 text: qsTr("Version: %1").arg(programVersion)
+                 anchors.right: parent.right
+                 anchors.leftMargin: Theme.horizontalPageMargin
+                 anchors.rightMargin: Theme.horizontalPageMargin
+                 wrapMode: Text.WordWrap
+                 font.pixelSize: Theme.fontSizeMedium
+                 color: Theme.highlightColor
+            }
+
+            Label {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap

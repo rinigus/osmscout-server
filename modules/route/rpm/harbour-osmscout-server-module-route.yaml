@@ -1,6 +1,6 @@
 Name: harbour-osmscout-server-module-route
 Summary: OSM Scout Server Module Route
-Version: 2.2.4
+Version: 2.2.6
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
@@ -17,6 +17,8 @@ Configure: none
 # The qtc5 builder inserts macros to allow QtCreator to have fine
 # control over qmake/make execution
 Builder: qtc5
+QMakeOptions:
+- VERSION='%{version}-%{release}'
 
 # This section specifies build dependencies that are resolved using pkgconfig.
 # This is the preferred way of specifying build dependencies for your package.
@@ -32,8 +34,8 @@ PkgBR:
   - czmq-devel >= 3.0
   - protobuf-devel
   - prime_server-devel == 0.6.3
-  - valhalla == 2.2.4
-  - valhalla-devel == 2.2.4
+  - valhalla == 2.2.6
+  - valhalla-devel == 2.2.6
   - boost-devel >= 1.51
   - boost-chrono >= 1.51
   - boost-date-time >= 1.51
