@@ -40,13 +40,29 @@ void ValhallaMaster::onSettingsChanged()
 
   bool changed = false;
 
-  int cache = std::max(0, settings.valueInt(VALHALLA_MASTER_SETTINGS "cache_in_mb"));
-  changed |= (cache != m_cache);
-  m_cache = cache;
+  {
+    int cache = std::max(0, settings.valueInt(VALHALLA_MASTER_SETTINGS "cache_in_mb"));
+    changed |= (cache != m_cache);
+    m_cache = cache;
 
-  int route_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
-  changed |= (route_port != m_route_port);
-  m_route_port = route_port;
+    int route_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
+    changed |= (route_port != m_route_port);
+    m_route_port = route_port;
+
+    double tol = 1e-3;
+
+    double limit_max_distance_auto = std::max(10, settings.valueInt(VALHALLA_MASTER_SETTINGS "limit_max_distance_auto"));
+    changed |= (fabs(m_limit_max_distance_auto-limit_max_distance_auto) > tol);
+    m_limit_max_distance_auto = limit_max_distance_auto;
+
+    double limit_max_distance_bicycle = std::max(10, settings.valueInt(VALHALLA_MASTER_SETTINGS "limit_max_distance_bicycle"));
+    changed |= (fabs(m_limit_max_distance_bicycle-limit_max_distance_bicycle) > tol);
+    m_limit_max_distance_bicycle = limit_max_distance_bicycle;
+
+    double limit_max_distance_pedestrian = std::max(10, settings.valueInt(VALHALLA_MASTER_SETTINGS "limit_max_distance_pedestrian"));
+    changed |= (fabs(m_limit_max_distance_pedestrian-limit_max_distance_pedestrian) > tol);
+    m_limit_max_distance_pedestrian = limit_max_distance_pedestrian;
+  }
 
   m_valhalla_route_url = QString("http://127.0.0.1:%1").arg(m_route_port);
 
@@ -110,6 +126,9 @@ void ValhallaMaster::generateConfig()
   conf.replace(const_tag_cache, cache);
   conf.replace(const_tag_dirname, m_dirname);
   conf.replace(const_tag_route_port, QString::number(m_route_port));
+  conf.replace(const_tag_limit_max_distance_auto, QString::number(m_limit_max_distance_auto*1e3));
+  conf.replace(const_tag_limit_max_distance_bicycle, QString::number(m_limit_max_distance_bicycle*1e3));
+  conf.replace(const_tag_limit_max_distance_pedestrian, QString::number(m_limit_max_distance_pedestrian*1e3));
 
   QFile fout(m_config_fname);
   if (!fout.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))

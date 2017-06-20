@@ -143,6 +143,9 @@ void AppSettings::initDefaults()
     CHECK(VALHALLA_MASTER_SETTINGS "cache_in_mb", cache_size_default);
   }
   CHECK(VALHALLA_MASTER_SETTINGS "route_port", 8554);
+  CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_auto", 5000.0);
+  CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_bicycle", 100.0);
+  CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_pedestrian", 75.0);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -214,6 +217,7 @@ int AppSettings::unitDisplayDecimals() const
 bool AppSettings::hasUnits(const QString &key) const
 {
   if (key == OSM_SETTINGS "routingCostLimitDistance" ||
+      key.contains(VALHALLA_MASTER_SETTINGS "limit_max_distance") ||
       key.indexOf(ROUTING_SPEED_SETTINGS) == 0)
     return true;
   return false;
@@ -230,7 +234,8 @@ QString AppSettings::unitName(bool speed) const
 
 QString AppSettings::unitName(const QString &key) const
 {
-  if (key == OSM_SETTINGS "routingCostLimitDistance")
+  if (key == OSM_SETTINGS "routingCostLimitDistance" ||
+      key.contains(VALHALLA_MASTER_SETTINGS "limit_max_distance"))
     return unitName(false);
 
   if (key.indexOf(ROUTING_SPEED_SETTINGS) == 0)

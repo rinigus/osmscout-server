@@ -50,6 +50,10 @@ protected:
   int m_route_port;
   QString m_valhalla_route_url;
 
+  float m_limit_max_distance_auto;
+  float m_limit_max_distance_bicycle;
+  float m_limit_max_distance_pedestrian;
+
   QProcess *m_process{nullptr};
   std::atomic<bool> m_process_ready{false};
   bool m_process_start_when_ready{false};
@@ -61,6 +65,9 @@ protected:
   const QString const_tag_cache{"MAXIMAL_CACHE_SIZE"};
   const QString const_tag_dirname{"VALHALLA_TILE_DIRECTORY"};
   const QString const_tag_route_port{"TCPIP_ROUTE_PORT"};
+  const QString const_tag_limit_max_distance_auto{"LIMIT_MAX_DISTANCE_AUTO"};
+  const QString const_tag_limit_max_distance_bicycle{"LIMIT_MAX_DISTANCE_BICYCLE"};
+  const QString const_tag_limit_max_distance_pedestrian{"LIMIT_MAX_DISTANCE_PEDESTRIAN"};
 };
 
 #endif // USE_VALHALLA

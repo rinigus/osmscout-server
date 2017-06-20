@@ -109,7 +109,7 @@
   },
   "service_limits": {
     "auto": {
-      "max_distance": 5000000.0,
+      "max_distance": LIMIT_MAX_DISTANCE_AUTO,
       "max_locations": 20
     },
     "auto_shorter": {
@@ -117,7 +117,7 @@
       "max_locations": 20
     },
     "bicycle": {
-      "max_distance": 500000.0,
+      "max_distance": LIMIT_MAX_DISTANCE_BICYCLE,
       "max_locations": 50
     },
     "bus": {
@@ -141,7 +141,7 @@
       "max_locations": 50
     },
     "pedestrian": {
-      "max_distance": 250000.0,
+      "max_distance": LIMIT_MAX_DISTANCE_PEDESTRIAN,
       "max_locations": 50,
       "max_transit_walking_distance": 10000,
       "min_transit_walking_distance": 1
