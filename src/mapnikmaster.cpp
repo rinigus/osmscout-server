@@ -75,9 +75,33 @@ void MapnikMaster::onSettingsChanged()
       m_available = false;
     }
 
+  // loading mapnik styles is delayed until they are needed
+
+  m_pool_maps_cv.notify_all();
+}
+
+void MapnikMaster::onMapnikChanged(QString world_directory, QStringList country_dirs)
+{
+  std::unique_lock<std::mutex> lk(m_mutex);
+
+  if ( world_directory == m_config_path_world &&
+       country_dirs == m_config_countries )
+    return;
+
+  m_config_maps_counter++;
+
+  m_config_path_world = world_directory;
+  m_config_countries = country_dirs;
+
+  m_pool_maps_cv.notify_all();
+}
+
+// NB! should be called with the locked mutex
+void MapnikMaster::checkForSettingsChanges()
+{
   if (useMapnik)
     {
-      if (m_old_config_style != m_configuration_dir || (useMapnik && !m_available) )
+      if (m_old_config_style != m_configuration_dir) // || (useMapnik && !m_available) )
         {
           // prepare folder to keep mapnik configuration
           QString local_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
@@ -111,44 +135,31 @@ void MapnikMaster::onSettingsChanged()
 
           m_local_xml = dir.absoluteFilePath(const_xml);
 
-          if ( !m_old_config_path_world.isEmpty() || !m_old_config_countries.isEmpty() )
+          if ( !m_config_path_world.isEmpty() || !m_config_countries.isEmpty() )
             {
-              reloadMapnik(m_old_config_path_world, m_old_config_countries, true);
+              reloadMapnik(m_config_path_world, m_config_countries, true);
             }
         }
+      else
+        reloadMapnik(m_config_path_world, m_config_countries, false);
     }
-
-  m_pool_maps_cv.notify_all();
-}
-
-void MapnikMaster::onMapnikChanged(QString world_directory, QStringList country_dirs)
-{
-  std::unique_lock<std::mutex> lk(m_mutex);
-
-  reloadMapnik(world_directory, country_dirs, false);
-  m_old_config_path_world = world_directory;
-  m_old_config_countries = country_dirs;
-
-  m_pool_maps_cv.notify_all();
 }
 
 // NB! should be called with the locked mutex
-void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dirs, bool config_changed)
+void MapnikMaster::reloadMapnik(const QString &world_directory, const QStringList &country_dirs, bool config_changed)
 {
   if (useMapnik)
     {
       // skip if nothing has changed from the last call
       if ( !config_changed &&
-           world_directory == m_old_config_path_world &&
-           country_dirs == m_old_config_countries &&
-           m_available == useMapnik &&
+           m_config_maps_counter == m_old_config_maps_counter &&
+           m_available &&
            m_pool_maps.size() > 0 )
         return;
 
       // regenerate configuration only if it changed
       if ( config_changed ||
-           world_directory != m_old_config_path_world ||
-           country_dirs != m_old_config_countries )
+           m_config_maps_counter != m_old_config_maps_counter )
         {
           QString world_directory_root;
           {
@@ -229,6 +240,7 @@ void MapnikMaster::reloadMapnik(QString world_directory, QStringList country_dir
 
           // config is ready, keep the values for checking against new requests
           m_old_config_style = m_configuration_dir;
+          m_old_config_maps_counter = m_config_maps_counter;
 
           for (auto s: country_dirs)
             InfoHub::logInfo(tr("Mapnik: adding %1").arg(s));
@@ -281,6 +293,8 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
         return false;
       }
 
+    checkForSettingsChanges();
+
     while (m_available && m_pool_maps.empty())
       {
         auto now = std::chrono::system_clock::now();
@@ -324,6 +338,8 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
     std::unique_lock<std::mutex> lk(m_mutex);
     if (generation == m_pool_maps_generation)
       m_pool_maps.push_front(map);
+
+    m_pool_maps_cv.notify_all();
   }
 
   return success;

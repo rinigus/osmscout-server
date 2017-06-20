@@ -41,10 +41,17 @@ public slots:
 
 protected:
 
+    /// \brief Checks whether new configuration is requested and loads it if needed
+    ///
+    /// This method allows to delay loading on start and dynamically change styles if needed. Its
+    /// called every time a new tile is requested.
+    /// This method should be called with the mutex locked by the caller
+    void checkForSettingsChanges();
+
     /// \brief Regenerates XML configuration and allocates new map objects, if needed
     ///
     /// This method should be called with the mutex locked by the caller
-    void reloadMapnik(QString world_directory, QStringList country_dirs, bool config_changed);
+    void reloadMapnik(const QString &world_directory, const QStringList &country_dirs, bool config_changed);
 
 protected:
     std::mutex m_mutex;
@@ -61,8 +68,10 @@ protected:
     QString m_local_xml;
 
     QString m_old_config_style;
-    QString m_old_config_path_world;
-    QStringList m_old_config_countries;
+    QString m_config_path_world;
+    QStringList m_config_countries;
+    size_t m_config_maps_counter{0};
+    size_t m_old_config_maps_counter{0};
 
     // pool of mapnik maps
     std::deque< std::shared_ptr< mapnik::Map > > m_pool_maps;
