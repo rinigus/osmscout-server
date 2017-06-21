@@ -7,7 +7,9 @@ Page {
     property bool activeState: false
     property bool anythingToDelete: false
     property int nFiles: 0
+    property int nDirs: 0
     property var fileNames: []
+    property var dirNames: []
 
     SilicaFlickable {
         anchors.fill: parent
@@ -47,10 +49,16 @@ Page {
                 color: Theme.highlightColor
             }
 
+            SectionHeader {
+                text: qsTr("Directories")
+                visible: anythingToDelete
+            }
+
             Label {
                 width: parent.width
                 visible: anythingToDelete
-                text: qsTr("Files:")
+                text: qsTr("Directories containing files that will be deleted during cleanup:")
+                wrapMode: Text.WordWrap
                 color: Theme.highlightColor
             }
 
@@ -60,15 +68,20 @@ Page {
                 width: parent.width - x
                 spacing: Theme.paddingMedium
                 Repeater {
-                    model: nFiles
+                    model: nDirs
                     delegate: Label {
                         width: parent.width
-                        text: fileNames[index]
+                        text: dirNames[index]
                         wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                         color: Theme.highlightColor
                         font.pixelSize: Theme.fontSizeSmall
                     }
                 }
+            }
+
+            SectionHeader {
+                text: qsTr("Cleanup")
+                visible: anythingToDelete
             }
 
             Column {
@@ -93,12 +106,41 @@ Page {
                 }
 
                 Label {
-                    text: qsTr("Delete unused files and free the occupied space")
+                    text: qsTr("Delete unused files (listed below) and free the occupied space")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
+                }
+            }
+
+            SectionHeader {
+                text: qsTr("Files")
+                visible: anythingToDelete
+            }
+
+            Label {
+                width: parent.width
+                visible: anythingToDelete
+                text: qsTr("Files to be deleted during cleanup:")
+                color: Theme.highlightColor
+            }
+
+            Column {
+                visible: anythingToDelete
+                x: Theme.horizontalPageMargin
+                width: parent.width - x
+                spacing: Theme.paddingMedium
+                Repeater {
+                    model: nFiles
+                    delegate: Label {
+                        width: parent.width
+                        text: fileNames[index]
+                        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                        color: Theme.highlightColor
+                        font.pixelSize: Theme.fontSizeSmall
+                    }
                 }
             }
 
@@ -113,9 +155,11 @@ Page {
 
     Component.onCompleted: {
         fileNames = manager.getNonNeededFilesList()
+        dirNames = manager.getDirsWithNonNeededFiles()
         var size = manager.getNonNeededFilesSize()
         if (size > 0) {
             nFiles = fileNames.length
+            nDirs = dirNames.length
             var s = Math.round(size/1024/1024)
             mainLabel.text = qsTr("Occupied space") + ": " + s + " " + qsTr("MB")
         }

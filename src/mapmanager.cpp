@@ -1097,6 +1097,26 @@ qint64 Manager::getNonNeededFilesSize()
   return m_not_needed_files_size;
 }
 
+QStringList Manager::getDirsWithNonNeededFiles()
+{
+  QStringList dirlist;
+
+  if (m_not_needed_files_size >= 0)
+    {
+      for (const QString &fp: m_not_needed_files)
+        {
+          QFileInfo fi(fp);
+          QString dir = fi.dir().path();
+          if (!dirlist.contains(dir))
+            dirlist.append(dir);
+        }
+
+      dirlist.sort();
+    }
+
+  return dirlist;
+}
+
 bool Manager::deleteNonNeededFiles(const QStringList files)
 {
   if (downloading()) return false;

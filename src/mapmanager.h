@@ -131,6 +131,13 @@ namespace MapManager {
     /// the list was not found due to active downloads
     Q_INVOKABLE qint64 getNonNeededFilesSize();
 
+    /// \brief Return directories in which non-required files are
+    ///
+    /// Creates a list of directories that will be affected by deletion
+    /// of non-required files. This list is significantly shorter and its easier
+    /// for user to check
+    Q_INVOKABLE QStringList getDirsWithNonNeededFiles();
+
     /// \brief Delete non-required files
     ///
     /// Deletes files found by the getNonNeededFilesList earlier. It
