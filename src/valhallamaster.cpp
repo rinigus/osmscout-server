@@ -187,6 +187,18 @@ void ValhallaMaster::start_process()
   m_process->start(VALHALLA_EXECUTABLE, arguments);
 }
 
+// List of blacklisted sub-strings that will not be
+// displayed to the user
+const static QStringList ignore_messages{
+  "[INFO] ",
+  "[ANALYTICS] ",
+  "elapsed time ",
+  "exceeded threshold::",
+  " GET /route?json=",
+  " 200 ",
+  "Tile extract could not be loaded"
+};
+
 void ValhallaMaster::onProcessRead()
 {
   if (!m_process) return;
@@ -194,7 +206,19 @@ void ValhallaMaster::onProcessRead()
   QString txt = m_process->readAllStandardOutput();
   QTextStream tin(&txt, QIODevice::ReadOnly);
   while (!tin.atEnd())
-    InfoHub::logInfo("Valhalla: " + tin.readLine());
+    {
+      const QString l = tin.readLine();
+      bool show_message = true;
+      for (const QString &i: ignore_messages)
+        if (l.contains(i))
+          {
+            show_message = false;
+            break;
+          }
+
+      if (show_message)
+        InfoHub::logInfo("Valhalla: " + l);
+    }
 }
 
 void ValhallaMaster::onProcessReadError()
@@ -314,6 +338,9 @@ bool ValhallaMaster::route(QString uri, QByteArray &result)
     }
 
   curl_easy_cleanup(curl);
+
+  if (success)
+    InfoHub::logInfo(tr("Route found by Valhalla"));
 
   return success;
 }
