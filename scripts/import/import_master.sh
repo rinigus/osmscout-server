@@ -6,7 +6,7 @@ set -e
 #(cd planet && wget http://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/pbf/planet-latest.osm{.pbf,.pbf.md5} && md5sum -c *.md5)
 
 # Valhalla import should get here
-echo "Missing Valhalla import"
+valhalla/import_planet.sh planet/planet-latest.osm.pbf
 
 rm -rf splitted
 ./prepare_splitter.py
