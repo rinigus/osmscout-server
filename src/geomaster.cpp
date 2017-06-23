@@ -31,7 +31,10 @@ void GeoMaster::onSettingsChanged()
   useGeocoderNLP = (settings.valueInt(GEOMASTER_SETTINGS "use_geocoder_nlp") > 0);
 
   if (!useGeocoderNLP || m_map_selected.isEmpty())
-    return; // no need to load anything
+    {
+      checkWarnings(false /*does not play any role here*/);
+      return; // no need to load anything
+    }
 
   // apply new settings
   m_postal.set_initialize_every_call(settings.valueBool(GEOMASTER_SETTINGS "initialize_every_call"));
@@ -98,9 +101,13 @@ void GeoMaster::onSettingsChanged()
           used += l + " ";
         }
       InfoHub::logInfo(tr("libpostal using languages: %1").arg(used));
+      checkWarnings(!lngs.isEmpty());
     }
   else
-    InfoHub::logInfo(tr("libpostal will use all covered languages"));
+    {
+      InfoHub::logInfo(tr("libpostal will use all covered languages"));
+      checkWarnings(false);
+    }
 }
 
 void GeoMaster::onGeocoderNLPChanged(QHash<QString, QString> dirs)
@@ -138,6 +145,23 @@ void GeoMaster::onSelectedMapChanged(QString selected)
   }
   if (changed)
     onSettingsChanged();
+}
+
+void GeoMaster::checkWarnings(bool lang_specified)
+{
+  bool toWarnLang = false;
+  if (!useGeocoderNLP) toWarnLang = false;
+  else
+    {
+      if (lang_specified) toWarnLang = false;
+      else toWarnLang = true;
+    }
+
+  if (toWarnLang != m_warnLargeRamLangNotSpecified)
+    {
+      m_warnLargeRamLangNotSpecified = toWarnLang;
+      emit warnLargeRamLangNotSpecifiedChanged(m_warnLargeRamLangNotSpecified);
+    }
 }
 
 static std::string v2s(const std::vector<std::string> &v)

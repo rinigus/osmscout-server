@@ -72,22 +72,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="210"/>
+        <location filename="../src/appsettings.cpp" line="230"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="210"/>
+        <location filename="../src/appsettings.cpp" line="230"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="212"/>
+        <location filename="../src/appsettings.cpp" line="232"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="212"/>
+        <location filename="../src/appsettings.cpp" line="232"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -415,57 +415,59 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="80"/>
+        <location filename="../src/geomaster.cpp" line="83"/>
         <source>Cannot open geocoder database</source>
         <translation>Geocoder Datenbank kann nicht geöffnet werden</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="84"/>
+        <location filename="../src/geomaster.cpp" line="87"/>
         <source>Opened geocoder database</source>
         <translation>Geöffente Geocoder Datenbank</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="53"/>
+        <location filename="../src/geomaster.cpp" line="56"/>
         <source>Selected country not available for geocoder: %1</source>
         <translation>Ausgewähltes Land nicht verfügbar für Geocoder: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="66"/>
+        <location filename="../src/geomaster.cpp" line="69"/>
         <source>Countries used in search: </source>
         <translation>Länder, die bei der Suche verwendet wurden:</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="100"/>
+        <location filename="../src/geomaster.cpp" line="103"/>
         <source>libpostal using languages: %1</source>
         <translation>libpostal nutzt Sprachen: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="103"/>
+        <location filename="../src/geomaster.cpp" line="108"/>
         <source>libpostal will use all covered languages</source>
         <translation>libpostal nutzt alle möglichen Sprachen</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="175"/>
+        <location filename="../src/geomaster.cpp" line="199"/>
+        <location filename="../src/geomaster.cpp" line="392"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Kann die Geocoding Datenbank nicht öffnen: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="201"/>
+        <location filename="../src/geomaster.cpp" line="225"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Fehler beim Analysieren von libpostal, vielleicht sind libpostal Datenbanken nicht verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="237"/>
+        <location filename="../src/geomaster.cpp" line="261"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Analysierte Abfrage [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="248"/>
+        <location filename="../src/geomaster.cpp" line="272"/>
+        <location filename="../src/geomaster.cpp" line="426"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Fehler beim Suchen mit geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="323"/>
+        <location filename="../src/geomaster.cpp" line="347"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Suche nach Referenzpunkt fehlgeschlagen: nicht gefunden</translation>
     </message>
@@ -674,7 +676,7 @@
         <translation>Die URL des Servers konnte nicht abgerufen werden.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="996"/>
+        <location filename="../src/mapmanager.cpp" line="997"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Liste der Länder:%L1 (D) / %L2 (W) MB</translation>
     </message>
@@ -684,12 +686,12 @@
         <translation>Herunterladen der Länderliste</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1198"/>
+        <location filename="../src/mapmanager.cpp" line="1219"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kann wegen der fehlenden Liste der Länder nicht nach Updates suchen. Laden Sie die Liste herunter, bevor Sie nach Updates suchen.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1007"/>
+        <location filename="../src/mapmanager.cpp" line="1008"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
@@ -699,42 +701,42 @@
         <translation>Füge Land oder Eigenschaft zur angeforderten Liste hinzu</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="969"/>
+        <location filename="../src/mapmanager.cpp" line="970"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Downloaf fehlgescjöagen, beende alle Downloads</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1000"/>
+        <location filename="../src/mapmanager.cpp" line="1001"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Liste der Länder: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1115"/>
+        <location filename="../src/mapmanager.cpp" line="1136"/>
         <source>Error while deleting file:</source>
         <translation>Fehler beim Lösche der Datei:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1116"/>
+        <location filename="../src/mapmanager.cpp" line="1137"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation>Abbrechen der Entfernung der verbleibenden Dateien.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1121"/>
+        <location filename="../src/mapmanager.cpp" line="1142"/>
         <source>File removed during cleanup:</source>
         <translation>Datei während der Bereinigung entfernt:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1141"/>
+        <location filename="../src/mapmanager.cpp" line="1162"/>
         <source>Updating the distribution server URL</source>
         <translation>Aktualisieren der Distributionsserver-URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1194"/>
+        <location filename="../src/mapmanager.cpp" line="1215"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kann nicht auf Updates aufgrund fehlenden Karten-Speicherordner überprüfen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1196"/>
+        <location filename="../src/mapmanager.cpp" line="1217"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kann wegen der fehlenden Liste der angeforderten Länder nicht nach Updates suchen. Wählen Sie Länder aus, bevor Sie nach Updates suchen.</translation>
     </message>
@@ -958,37 +960,37 @@
 <context>
     <name>MapnikMaster</name>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="87"/>
+        <location filename="../src/mapnikmaster.cpp" line="111"/>
         <source>Cannot create configuration directory for Mapnik</source>
         <translation>Das Konfigurationsverzeichnis für Mapnik kann nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="106"/>
+        <location filename="../src/mapnikmaster.cpp" line="130"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
         <translation>Fehler beim Erstellen der symbolischen Verknüpfung zur Mapnik-Konfiguration (%1)</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="166"/>
+        <location filename="../src/mapnikmaster.cpp" line="177"/>
         <source>Failed to load Mapnik configuration: %1</source>
         <translation>Fehler beim Laden der Mapnik Konfiguration: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="224"/>
+        <location filename="../src/mapnikmaster.cpp" line="235"/>
         <source>Cannot write Mapnik configuration file: %1</source>
         <translation>Kann Mapnik Konfigurationsdatei nicht schreiben: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="234"/>
+        <location filename="../src/mapnikmaster.cpp" line="246"/>
         <source>Mapnik: adding %1</source>
         <translation>Mapnik: Hinzufügen von %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="280"/>
+        <location filename="../src/mapnikmaster.cpp" line="292"/>
         <source>Mapnik: failed to transform coordinates</source>
         <translation>Mapnik: konnte Koordinaten nicht umwandeln</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="293"/>
+        <location filename="../src/mapnikmaster.cpp" line="307"/>
         <source>Mapnik not available</source>
         <translation>Mapnik nicht verfügbar</translation>
     </message>
@@ -1039,52 +1041,72 @@
 <context>
     <name>NonNeededFiles</name>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="28"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="30"/>
         <source>Unused files</source>
         <translation>Ungenutzte Dateien</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
-        <source>Files:</source>
-        <translation>Dateien:</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="81"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="94"/>
         <source>Delete files</source>
         <translation>Gelöschte Dateien</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="86"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="99"/>
         <source>Deleting</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="96"/>
-        <source>Delete unused files and free the occupied space</source>
-        <translation>Löschen Sie ungenutzte Dateien um belegten Speicherplatz zu freizugeben</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="127"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="171"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
         <translation>Alle gespeicherten Dateien werden von OSM Scout Server benötigt. Es sind keine Daten zum Löschen vorhanden.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="42"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="44"/>
         <source>WARNING: While care has been taken to ensure deleting of the found unused files only, the software has not been tested by many users yet. Use at your own risk and please report if there are any problems.</source>
         <translation>WARNUNG: Es wurde sorgfältig darauf geachtet, dass nur die ungenutzten Dateien gelöscht wurden. Allerdings wurde die Software noch nicht von vielen Benutzern getestet. Nutzen Sie es auf eigene Gefahr und melden Sie sich bitte, wenn es irgendwelche Probleme gibt.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="120"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
+        <source>Directories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="60"/>
+        <source>Directories containing files that will be deleted during cleanup:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="83"/>
+        <source>Cleanup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
+        <source>Delete unused files (listed below) and free the occupied space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="119"/>
+        <source>Files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="126"/>
+        <source>Files to be deleted during cleanup:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
         <source>Occupied space</source>
         <translation>Belegter Speicherplatz</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="125"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="169"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
         <translation>Fehler beim Überprüfen auf nicht benötigte Dateien. Dies könnte z.B. auf aktive Downloads zurückzuführen sein.</translation>
     </message>
@@ -1343,7 +1365,7 @@
 <context>
     <name>RequestMapper</name>
     <message>
-        <location filename="../src/requestmapper.cpp" line="45"/>
+        <location filename="../src/requestmapper.cpp" line="49"/>
         <source>Number of parallel worker threads: %1</source>
         <translation>Anzahl der parallelen Prozesse: %1</translation>
     </message>
@@ -1804,32 +1826,42 @@ Bitte&lt;b&gt;geben Sie einen separaten, leeren Ordner&lt;/b&gt; für OSM Scout 
         <translation>Zur Zeit sind noch keine Karten verfügbar. Nachdem Sie Karten abonniert haben, sollten Sie Downloads starten. Downloads können mit &lt;i&gt; Karten Manager &lt;/i&gt; (pulley menu) gestartet werden.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="229"/>
+        <location filename="../qml/pages/StartPage.qml" line="238"/>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="242"/>
+        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="261"/>
         <source>Map</source>
         <translation>Karte</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="267"/>
+        <location filename="../qml/pages/StartPage.qml" line="299"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="280"/>
+        <location filename="../qml/pages/StartPage.qml" line="312"/>
         <source>Jobs in a queue</source>
         <translation>Warteschlange</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="281"/>
+        <location filename="../qml/pages/StartPage.qml" line="313"/>
         <source>Idle</source>
         <translation>Inaktiv</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="298"/>
+        <location filename="../qml/pages/StartPage.qml" line="330"/>
         <source>Events</source>
         <translation>Ereignisse</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="329"/>
+        <location filename="../qml/pages/StartPage.qml" line="361"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
@@ -1860,67 +1892,72 @@ Bitte&lt;b&gt;geben Sie einen separaten, leeren Ordner&lt;/b&gt; für OSM Scout 
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="59"/>
+        <location filename="../src/valhallamaster.cpp" line="75"/>
         <source>Cannot create configuration directory for Valhalla</source>
         <translation>Das Konfigurationsverzeichnis für Valhalla kann nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="97"/>
+        <location filename="../src/valhallamaster.cpp" line="113"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Fehler beim Öffnen der Konfigurationsvorlage von Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="105"/>
+        <location filename="../src/valhallamaster.cpp" line="121"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Fehler beim Lesen von Valhalla&apos;s Konfigurationsvorlage</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="117"/>
+        <location filename="../src/valhallamaster.cpp" line="136"/>
         <source>Error opening Valhalla&apos;s configuration file %1</source>
         <translation>Fehler beim Öffnen der Konfigurationsdatei von Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="125"/>
+        <location filename="../src/valhallamaster.cpp" line="144"/>
         <source>Error writing Valhalla&apos;s configuration file</source>
         <translation>Fehler beim Schreiben von Valhalla&apos;s Konfigurationsdatei</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="146"/>
+        <location filename="../src/valhallamaster.cpp" line="165"/>
         <source>Starting Valhalla routing engine</source>
         <translation>Starten von Valhalla Navigation</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="207"/>
+        <location filename="../src/valhallamaster.cpp" line="250"/>
         <source>Valhalla routing engine stopped</source>
         <translation>Valhalla Navigation beendet</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="224"/>
+        <location filename="../src/valhallamaster.cpp" line="267"/>
         <source>Stopping Valhalla routing engine</source>
         <translation>Beende Valhalle Navigation</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="293"/>
+        <location filename="../src/valhallamaster.cpp" line="336"/>
         <source>Error while communicating with Valhalla routing engine</source>
         <translation>Fehler bei der Kommunikation mit der Valhalla Navigation</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="195"/>
+        <location filename="../src/valhallamaster.cpp" line="343"/>
+        <source>Route found by Valhalla</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/valhallamaster.cpp" line="238"/>
         <source>Valhalla routing engine started</source>
         <translation>Valhalle Navigation gestartet</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="203"/>
+        <location filename="../src/valhallamaster.cpp" line="246"/>
         <source>Valhalla exited with error: %1</source>
         <translation>Valhalla beendet mit Fehler: %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="234"/>
+        <location filename="../src/valhallamaster.cpp" line="277"/>
         <source>Valhalla routing engine process cleanup</source>
         <translation>Valhalla Navigation Prozess aufräumen</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="254"/>
+        <location filename="../src/valhallamaster.cpp" line="297"/>
         <source>Could not start the Valhalla routing service: %1</source>
         <translation>Der Valhalla-Navigations-Dienst konnte nicht gestartet werden: %1</translation>
     </message>
@@ -1938,14 +1975,44 @@ Bitte&lt;b&gt;geben Sie einen separaten, leeren Ordner&lt;/b&gt; für OSM Scout 
         <translation>Valhalla kann als Navigation verwendet werden, um Routen und die Fahr-Anweisungen zu berechnen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ValhallaPage.qml" line="37"/>
+        <location filename="../qml/pages/ValhallaPage.qml" line="35"/>
+        <source>Memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ValhallaPage.qml" line="41"/>
         <source>Cache for storing tiles, MB</source>
         <translation>Speicher zum Speichern von Kacheln, MB</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ValhallaPage.qml" line="38"/>
+        <location filename="../qml/pages/ValhallaPage.qml" line="42"/>
         <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
         <translation>Speicher-Cache, der verwendet wird, um die Kacheln von Valhalla im RAM zu halten.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ValhallaPage.qml" line="48"/>
+        <source>Limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ValhallaPage.qml" line="52"/>
+        <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ValhallaPage.qml" line="66"/>
+        <source>Limit for route by car</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ValhallaPage.qml" line="74"/>
+        <source>Limit for route by bicycle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ValhallaPage.qml" line="82"/>
+        <source>Limit for route by foot</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

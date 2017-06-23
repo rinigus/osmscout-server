@@ -211,6 +211,9 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate GeoMaster" << std::endl;
       return -2;
     }
+#ifdef IS_SAILFISH_OS
+  rootContext->setContextProperty("geocoder", geoMaster);
+#endif
 
 #ifdef USE_MAPNIK
   // setup Mapnik

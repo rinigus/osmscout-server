@@ -224,6 +224,38 @@ Page {
             //// Welcome messages: done
             //////////////////////////////////////////////////////////////////////////////////
 
+            //////////////////////////////////////////////////////////////////////////////////
+            /// Warnings
+
+            /// Warn if no language has been specified
+            Column {
+                id: noGeocoderLangSpecified
+                width: page.width
+                spacing: Theme.paddingLarge
+                visible: geocoder.warnLargeRamLangNotSpecified
+
+                SectionHeader {
+                    text: qsTr("Warning")
+                }
+
+                Label {
+                    text: qsTr("You have not specified languages used for parsing addresses by Geocoder-NLP. " +
+                               "As a result, all known languages are used and " +
+                               "you could experience very large RAM consumption. Such large RAM usage could " +
+                               "lead to the OSM Scout Server being killed by the kernel. <br><br>" +
+                               "To specify languages used for address parsing, go to <i>Settings</i> (pulley menu) and " +
+                               "select laniguages as a part of <i>Geocoder-NLP</i> settings.")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
+            /// Warnings: done
+            //////////////////////////////////////////////////////////////////////////////////
+
             ComboBox {
                 id: mapSelection
                 label: qsTr("Map")
