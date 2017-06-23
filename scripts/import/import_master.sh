@@ -7,6 +7,7 @@ set -e
 
 # Valhalla import should get here
 valhalla/import_planet.sh planet/planet-latest.osm.pbf
+valhalla/make_packs.py
 
 rm -rf splitted
 ./prepare_splitter.py
