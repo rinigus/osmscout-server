@@ -1073,32 +1073,32 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
         <source>Directories</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappen</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="60"/>
         <source>Directories containing files that will be deleted during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappen met bestanden die tijdens het opruimen verwijderd zullen worden:</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="83"/>
         <source>Cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Opruimen</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
         <source>Delete unused files (listed below) and free the occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwijder ongebruikte bestanden (zie hieronder) en maak bezette ruimte vrij</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="119"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestanden</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="126"/>
         <source>Files to be deleted during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestanden die tijdens het opruimen verwijderd zullen worden:</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
@@ -1826,12 +1826,12 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="238"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Waarschuwing</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="242"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Je hebt geen talen ingesteld voor het verwerken van adressen door Geocoder-NLP. Bijgevolg zullen alle gekende talen gebruikt worden en kan je RAM-verbruik de lucht in schieten. Dit hoge RAM-verbruik kan er dan weer toe leiden dat OSM Scout Server door de kernel wordt afgesloten. &lt;br&gt;&lt;br&gt;Ga om in te stellen welke talen gebruikt moeten worden voor adresverwerking naar &lt;i&gt;Instellingen&lt;/i&gt; (uittrekmenu) en selecteer de talen als onderdeel van de &lt;i&gt;Geocoder-NLP&lt;/i&gt;-instellingen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="261"/>
@@ -1937,7 +1937,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="343"/>
         <source>Route found by Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Route gevonden door Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="238"/>
@@ -1975,7 +1975,7 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="35"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Geheugen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="41"/>
@@ -1990,27 +1990,27 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="48"/>
         <source>Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Limieten</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="52"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Afstandslimieten voor routeberekeningen. Enkel routes waarbij de afstanden tussen locaties kleiner zijn dan de opgegeven limieten zullen worden berekend. Door de maximale afstanden tussen locaties te beperken, kan je accidentele berekeningen, die tot te lange routes en buitensporig RAM-gebruik op je apparaat zouden leiden, vermijden.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="66"/>
         <source>Limit for route by car</source>
-        <translation type="unfinished"></translation>
+        <translation>Limieten voor autoroute</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="74"/>
         <source>Limit for route by bicycle</source>
-        <translation type="unfinished"></translation>
+        <translation>Limieten voor fietsroute</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="82"/>
         <source>Limit for route by foot</source>
-        <translation type="unfinished"></translation>
+        <translation>Limieten voor wandelroute</translation>
     </message>
 </context>
 <context>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serwer musi być używany z aplikacją  kliencką, która potrafi wyświetlać mapy, wyszukiwać zapytania i wyświetlać wybrane trasy. Serwer jest cienką warstwą eksponującą funkcjonalność &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;,&lt;i&gt;valhalla&lt;/i&gt;,&lt;i&gt;libpostal&lt;/i&gt;i &lt;i&gt;geocoder-nlp&lt;/i&gt; przez http. Serwer ten może być użyty jako zamienni dla serwisów online zawierających mapy.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
@@ -879,7 +879,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="92"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy wybrane, zbiory danych libosmscout będą przechowywane na urządzeniu po uprzednim ich ściągnięciu. Zbiory danych wymagane są do renderowania, wyszukiwania lub wyznaczania trasy przez backend libosmscout.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="97"/>
@@ -1652,7 +1652,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation type="unfinished"></translation>
+        <translation>Silnik wytyczania trasy jest odpowiedzialny za kalkulowanie trasy pomiędzy punktem początkowym a końcowym. Serwer ten pozwala na wybór pomiędzy dwoma silnikami wytyczania trasy: &lt;i&gt;Valhalla&lt;/i&gt; i &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
@@ -1707,7 +1707,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="233"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia biblioteki OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). Biblioteka miże byc użyta do rysowania map, wyszukiwania i wytyczania trasy.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="244"/>
@@ -1775,7 +1775,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="68"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s):&lt;ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; używa oddzielnych modułów, które muszą być zainstalowane osobno dla pełnej funkcjonalności.&lt;br&gt;&lt;br&gt;Twoje urządzenie nie zawiera następujących modułów:&lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
@@ -1986,7 +1986,7 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="42"/>
         <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamięć podręczna używana do przechowywania kafelków Valhalla w RAMie.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="48"/>
