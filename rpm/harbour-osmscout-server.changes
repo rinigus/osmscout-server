@@ -5,6 +5,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Jun 24 2017 rinigus <rinigus.git@gmail.com> 0.11.0-1
+- Add guide search support for Geocoder-NLP
+- Guide search looks for type or name when using Geocoder-NLP
+- Support for V2 routing protocol by libosmscout backend
+- Updated translations
+- Other smaller changes
+
 * Thu Jun 8 2017 rinigus <rinigus.git@gmail.com> 0.10.1-1
 - Updated translations
 
