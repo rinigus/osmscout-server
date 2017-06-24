@@ -52,4 +52,4 @@ fi
 # determined from libosmscout/include/osmscout/TypeConfig.h:  static const uint32_t FILE_FORMAT_VERSION=11
 ./pack.sh "$IMPDIR" `backends-install/bin/liboscmscout-version`
 
-./pack.sh "$SQLDIR" 3
+./pack.sh "$SQLDIR" `backends-install/bin/geocoder-importer --version`
