@@ -1,6 +1,6 @@
 Name: harbour-osmscout-server-module-route
 Summary: OSM Scout Server Module Route
-Version: 2.2.6
+Version: 2.2.8
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
@@ -34,8 +34,8 @@ PkgBR:
   - czmq-devel >= 3.0
   - protobuf-devel
   - prime_server-devel == 0.6.3
-  - valhalla == 2.2.6
-  - valhalla-devel == 2.2.6
+  - valhalla == 2.2.8
+  - valhalla-devel == 2.2.8
   - boost-devel >= 1.51
   - boost-chrono >= 1.51
   - boost-date-time >= 1.51

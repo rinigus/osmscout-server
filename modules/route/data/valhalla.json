@@ -71,7 +71,7 @@
       "file_name": "path_to_some_file.log",
       "type": "std_out"
     },
-    "mode": "multimodal",
+    "mode": "auto",
     "multimodal": {
       "turn_penalty_factor": 70
     },
@@ -110,26 +110,37 @@
   "service_limits": {
     "auto": {
       "max_distance": LIMIT_MAX_DISTANCE_AUTO,
-      "max_locations": 20
+      "max_locations": 20,
+      "max_matrix_distance": 400000.0,
+      "max_matrix_locations": 50
     },
     "auto_shorter": {
       "max_distance": 5000000.0,
-      "max_locations": 20
+      "max_locations": 20,
+      "max_matrix_distance": 400000.0,
+      "max_matrix_locations": 50
     },
     "bicycle": {
       "max_distance": LIMIT_MAX_DISTANCE_BICYCLE,
-      "max_locations": 50
+      "max_locations": 50,
+      "max_matrix_distance": 200000.0,
+      "max_matrix_locations": 50
     },
     "bus": {
       "max_distance": 5000000.0,
-      "max_locations": 50
+      "max_locations": 50,
+      "max_matrix_distance": 400000.0,
+      "max_matrix_locations": 50
     },
     "hov": {
       "max_distance": 5000000.0,
-      "max_locations": 20
+      "max_locations": 20,
+      "max_matrix_distance": 400000.0,
+      "max_matrix_locations": 50
     },
     "isochrone": {
       "max_contours": 4,
+      "max_distance": 25000.0,
       "max_locations": 1,
       "max_time": 120
     },
@@ -138,21 +149,21 @@
     "max_reachability": 100,
     "multimodal": {
       "max_distance": 500000.0,
-      "max_locations": 50
+      "max_locations": 50,
+      "max_matrix_distance": 0.0,
+      "max_matrix_locations": 0
     },
     "pedestrian": {
       "max_distance": LIMIT_MAX_DISTANCE_PEDESTRIAN,
       "max_locations": 50,
+      "max_matrix_distance": 200000.0,
+      "max_matrix_locations": 50,
       "max_transit_walking_distance": 10000,
       "min_transit_walking_distance": 1
     },
     "skadi": {
       "max_shape": 750000,
       "min_resample": 10.0
-    },
-    "sources_to_targets": {
-      "max_distance": 200000.0,
-      "max_locations": 50
     },
     "trace": {
       "max_distance": 200000.0,
@@ -162,11 +173,15 @@
     },
     "transit": {
       "max_distance": 500000.0,
-      "max_locations": 50
+      "max_locations": 50,
+      "max_matrix_distance": 200000.0,
+      "max_matrix_locations": 50
     },
     "truck": {
       "max_distance": 5000000.0,
-      "max_locations": 20
+      "max_locations": 20,
+      "max_matrix_distance": 400000.0,
+      "max_matrix_locations": 50
     }
   },
   "skadi": {

@@ -15,7 +15,7 @@ Name:       harbour-osmscout-server-module-route
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server Module Route
-Version:    2.2.6
+Version:    2.2.8
 Release:    1
 Group:      Qt/Qt
 License:    MIT
@@ -31,8 +31,8 @@ BuildRequires:  libzmq-devel >= 4.1.4
 BuildRequires:  czmq-devel >= 3.0
 BuildRequires:  protobuf-devel
 BuildRequires:  prime_server-devel == 0.6.3
-BuildRequires:  valhalla == 2.2.6
-BuildRequires:  valhalla-devel == 2.2.6
+BuildRequires:  valhalla == 2.2.8
+BuildRequires:  valhalla-devel == 2.2.8
 BuildRequires:  boost-devel >= 1.51
 BuildRequires:  boost-chrono >= 1.51
 BuildRequires:  boost-date-time >= 1.51
