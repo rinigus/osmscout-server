@@ -181,7 +181,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="29"/>
         <source>OSM Scout Server</source>
-        <translation>Servidor OSM Scout</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="32"/>
@@ -1058,7 +1058,7 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="171"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
-        <translation>El Servidor OSM Scout usa todos los ficheros almacenados. No hay nada que eliminar.</translation>
+        <translation>OSM Scout Server usa todos los ficheros almacenados. No hay nada que eliminar.</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
@@ -1073,32 +1073,32 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
         <source>Directories</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorios</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="60"/>
         <source>Directories containing files that will be deleted during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorios cuyos ficheros se borrarán durante la limpieza:</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="83"/>
         <source>Cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpieza</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
         <source>Delete unused files (listed below) and free the occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Borrar los ficheros sin usar (enumerados abajo) y liberar el espacio ocupado</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="119"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheros</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="126"/>
         <source>Files to be deleted during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ficheros que se borrarán durante la limpieza:</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
@@ -1601,7 +1601,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="55"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
-        <translation>Carpeta para almacenar los mapas. &lt;br&gt;&lt;b&gt;¡NB!&lt;/b&gt; Esta carpeta será gestionada integramente por el Servidor OSM Scout. Por favor, &lt;b&gt;asigna una carpeta independiente y vacía&lt;/b&gt; que el Servidor OSM Scout pueda usar. Esto incluye la eliminación de todos los ficheros de esa carpeta al solicitar la limpieza o actualización de los mapas.&lt;br&gt;&lt;i&gt;Ejemplo:&lt;/i&gt; Mapas bajo &lt;i&gt;~nemo&lt;/i&gt;</translation>
+        <translation>Carpeta para almacenar los mapas. &lt;br&gt;&lt;b&gt;¡NB!&lt;/b&gt; Esta carpeta será gestionada integramente por OSM Scout Server. Por favor, &lt;b&gt;asigna una carpeta independiente y vacía&lt;/b&gt; que OSM Scout Server pueda usar. Esto incluye la eliminación de todos los ficheros de esa carpeta al solicitar la limpieza o actualización de los mapas.&lt;br&gt;&lt;i&gt;Ejemplo:&lt;/i&gt; Mapas bajo &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="64"/>
@@ -1764,7 +1764,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="40"/>
         <source>OSM Scout Server</source>
-        <translation>Servidor OSM Scout</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="53"/>
@@ -1774,22 +1774,22 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="68"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s):&lt;ul&gt;</source>
-        <translation>&lt;i&gt;El servidor OSM Scout Server&lt;/i&gt; usa varios módulos que tienen que instalarse por separado para un funcionamiento completo.&lt;br&gt;&lt;br&gt;En tu dispositivo faltan los siguientes módulos:&lt;ul&gt;</translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; usa varios módulos que tienen que instalarse por separado para un funcionamiento completo.&lt;br&gt;&lt;br&gt;En tu dispositivo faltan los siguientes módulos:&lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Módulo del servidor OSM Scout: Fuentes&lt;/li&gt;</translation>
+        <translation>&lt;li&gt;Módulo de OSM Scout Server: Fuentes&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="74"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Módulo del servidor OSM Scout: Ruta&lt;/li&gt;</translation>
+        <translation>&lt;li&gt;Módulo de OSM Scout Server: Ruta&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="76"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation>&lt;/ul&gt;&lt;br&gt;Por favor, instala los módulos que faltan a través de Harbour u Openrepos. Tras la instalación de los módulos reinicia el servidor OSM Scout.</translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Por favor, instala los módulos que faltan a través de Harbour u Openrepos. Tras la instalación de los módulos reinicia OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="94"/>
@@ -1811,7 +1811,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="137"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation>Se espera que el &lt;i&gt;Servidor OSM Scout&lt;/i&gt; sea utilizado con los mapas descargados. Para administrar los mapas, el servidor necesita una carpeta propia. Los archivos de esa carpeta solo serán administrados por el servidor. Esto incluye la eliminación de todos los archivos al solicitar la limpieza o actualización de los mapas. &lt;br&gt;&lt;br&gt;Por favor, &lt;b&gt;asigna una carpeta vacía e independiente&lt;/b&gt; para el Servidor OSM Scout. Para ello, crea una nueva carpeta usando un gestor de archivos o la línea de comandos y selecciona esa carpeta en &lt;i&gt;Ajustes&lt;/i&gt; (menú deslizante). Alternativamente, el directorio puede crearse y configurarse automáticamente en &lt;br&gt;%1&lt;br&gt; pulsando el botón de abajo</translation>
+        <translation>Se espera que &lt;i&gt;OSM Scout Server&lt;/i&gt; sea utilizado con los mapas descargados. Para administrar los mapas, el servidor necesita una carpeta propia. Los archivos de esa carpeta solo serán administrados por el servidor. Esto incluye la eliminación de todos los archivos al solicitar la limpieza o actualización de los mapas. &lt;br&gt;&lt;br&gt;Por favor, &lt;b&gt;asigna una carpeta vacía e independiente&lt;/b&gt; para OSM Scout Server. Para ello, crea una nueva carpeta usando un gestor de archivos o la línea de comandos y selecciona esa carpeta en &lt;i&gt;Ajustes&lt;/i&gt; (menú deslizante). Alternativamente, el directorio puede crearse y configurarse automáticamente en &lt;br&gt;%1&lt;br&gt; pulsando el botón de abajo</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="162"/>
@@ -1826,12 +1826,12 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="238"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Aviso</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="242"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>No has especificado los idiomas que se usarán en el análisis de direcciones con Geocoder-NLP. Como resultado, se usarán todos los idiomas conocidos y podrías experimentar un consumo muy alto de RAM. Un consumo tan alto de RAM podría hacer que el kernel finalizara la aplicación OSM Scout Server. &lt;br&gt;&lt;br&gt;Para especificar los idiomas usados en el análisis de direcciones, ve a &lt;i&gt;Ajustes&lt;/i&gt; (menú deslizante) y selecciona los idiomas como parte de los ajustes de &lt;i&gt;Geocoder-NLP&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="261"/>
@@ -1937,7 +1937,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="343"/>
         <source>Route found by Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta encontrada por Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="238"/>
@@ -1975,7 +1975,7 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="35"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Memoria</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="41"/>
@@ -1990,27 +1990,27 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="48"/>
         <source>Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Límites</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="52"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Distancias límite para cálculos de rutas. Sólo se calcularán rutas cuando las distancias entre las ubicaciones sea menor que las especificadas en los límites. Al limitar las distancias máximas entre ubicaciones, puedes evitar cálculos accidentales que te llevarían a rutas demasiado largas y que usarían excesiva RAM en tu dispositivo.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="66"/>
         <source>Limit for route by car</source>
-        <translation type="unfinished"></translation>
+        <translation>Límite para rutas en coche</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="74"/>
         <source>Limit for route by bicycle</source>
-        <translation type="unfinished"></translation>
+        <translation>Límite para rutas en bicicleta</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="82"/>
         <source>Limit for route by foot</source>
-        <translation type="unfinished"></translation>
+        <translation>Límite para rutas a pie</translation>
     </message>
 </context>
 <context>
@@ -2018,7 +2018,7 @@
     <message>
         <location filename="../src/main.cpp" line="116"/>
         <source>OSM Scout Server</source>
-        <translation>Servidor OSM Scout</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="121"/>
