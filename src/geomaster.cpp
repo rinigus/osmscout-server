@@ -150,7 +150,7 @@ void GeoMaster::onSelectedMapChanged(QString selected)
 void GeoMaster::checkWarnings(bool lang_specified)
 {
   bool toWarnLang = false;
-  if (!useGeocoderNLP) toWarnLang = false;
+  if (!useGeocoderNLP || m_map_selected.isEmpty()) toWarnLang = false;
   else
     {
       if (lang_specified) toWarnLang = false;
