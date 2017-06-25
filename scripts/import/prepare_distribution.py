@@ -19,7 +19,7 @@ url_specs = {
     "postal_country": "postal-country-1",
     "mapnik_global": "mapnik-global-1",
     "mapnik_country": "mapnik-country-5",
-    "valhalla": "valhalla-2",
+    "valhalla": "valhalla-3",
 }
 
 dist = json.loads( open("countries.json", "r").read() )

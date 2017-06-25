@@ -49,6 +49,10 @@ In case if there is a new liboscmscout or geocoder-nlp version:
 
 * update versions in the end of build.sh script
 
+* update versions in the end of build_mapnik.sh script
+
+* update version for Valhalla in valhalla_country_pack.py module
+
 * check for compatibility in mapmanagerfeature.cpp of the main tree
 
 
