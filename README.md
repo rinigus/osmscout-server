@@ -80,6 +80,46 @@ database. Exceeding the number of supported connections would lead to
 dropping the connections exceeding the limit.
 
 
+## General notes for developers
+
+There are several aspects that became evident while developing and
+using OSM Scout Server for providing offline solution on a mobile
+platform, such as Sailfish OS.
+
+### Request large tiles
+
+When requesting rendered map tiles, its advantageous to request larger
+tiles. Each tile is rendered with an overhead that is induced by
+labels located close to the borders. For example, current default
+settings in Mapnik backend, add 128 pixels on each side of the
+tile. This buffer is internally multiplied by the scale of Mapnik map,
+commonly set to 3. So, we have 384 pixels added on each side. If the
+common size of the tiles is requested (256x256), each tile triggers
+rendering of 1024x1024 out of which only 256x256 section is used. In
+other words, we use only 6.25% of the rendered data. By requesting
+tiles with the size 1024x1024, we bring up efficiency to 32.7%, a
+significant increase.
+
+### Do not use timeouts
+
+When using the server on mobile, one has to remember that the server
+is not rendering tiles nor performing any other calculations while the
+device is asleep. The server is not keeping device awake, its a job of
+a client that interacts with the user and knows whether current
+operation is time-critical, as during navigation, or can be postponed,
+as when user is just browsing a map and switched off the phone. As a
+result, using timeouts while interacting with the server is strongly
+discouraged. In particular, when using timeouts and the device was put
+to sleep, this can cause large number of re-submissions by a client
+leading to failure of the server to process a long accumulated queue
+of requests in reasonable time. So, its recommended not to use any
+timeouts when using server on the device that can be put to sleep or,
+if the timeouts are needed, not to submit new requests after
+that. Since, when client and the server are operating on the same
+device, network failure is not expected, such timeouts are, in
+general, not needed.
+
+
 ## Default port
 
 Default port is 8553 TCP and the server binds to 127.0.0.1 providing
