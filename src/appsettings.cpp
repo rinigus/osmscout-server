@@ -126,7 +126,7 @@ void AppSettings::initDefaults()
   CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
 #endif
   CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 64);
-  CHECK(MAPNIKMASTER_SETTINGS "configuration_dir", DATA_PREFIX "mapnik/OSMBright");
+  CHECK(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "mapnik");
 
   CHECK(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
   {

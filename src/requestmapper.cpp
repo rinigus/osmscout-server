@@ -263,6 +263,7 @@ unsigned int RequestMapper::service(const char *url_c,
   if (path == "/v1/tile")
     {
       bool ok = true;
+      QString style = q2value<QString>("style", "default", connection, ok);
       bool daylight = q2value<bool>("daylight", true, connection, ok);
       int shift = q2value<int>("shift", 0, connection, ok);
       int scale = q2value<int>("scale", 1, connection, ok);
@@ -283,7 +284,7 @@ unsigned int RequestMapper::service(const char *url_c,
         {
           task = new Task(connection_id,
                           std::bind(&MapnikMaster::renderMap, mapnikMaster,
-                                    daylight, 256*scale, 256*scale,
+                                    style, daylight, 256*scale, 256*scale,
                                     tiley2lat(y, z), tilex2long(x, z),
                                     tiley2lat(y+1, z), tilex2long(x+1, z), std::placeholders::_1),
                           "Error while rendering a tile" );

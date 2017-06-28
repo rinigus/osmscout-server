@@ -960,37 +960,42 @@
 <context>
     <name>MapnikMaster</name>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="111"/>
+        <location filename="../src/mapnikmaster.cpp" line="115"/>
+        <source>Problems with removing configuration directory used by Mapnik</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapnikmaster.cpp" line="120"/>
         <source>Cannot create configuration directory for Mapnik</source>
         <translation>Невозможно создать папку конфигурации для Mapnik</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="130"/>
+        <location filename="../src/mapnikmaster.cpp" line="139"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
         <translation>Не удалось создать символьную ссылку для конфигурации Mapnik (%1)</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="177"/>
+        <location filename="../src/mapnikmaster.cpp" line="186"/>
         <source>Failed to load Mapnik configuration: %1</source>
         <translation>Не удалось загрузить конфигурацию Mapnik: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="235"/>
+        <location filename="../src/mapnikmaster.cpp" line="244"/>
         <source>Cannot write Mapnik configuration file: %1</source>
         <translation>Невозможно записать конфигурационный файл Mapnik: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="246"/>
+        <location filename="../src/mapnikmaster.cpp" line="255"/>
         <source>Mapnik: adding %1</source>
         <translation>Mapnik: добавление %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="292"/>
+        <location filename="../src/mapnikmaster.cpp" line="301"/>
         <source>Mapnik: failed to transform coordinates</source>
         <translation>Mapnik: не удалось преобразовать координаты</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="307"/>
+        <location filename="../src/mapnikmaster.cpp" line="316"/>
         <source>Mapnik not available</source>
         <translation>Mapnik не доступен</translation>
     </message>

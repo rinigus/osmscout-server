@@ -143,9 +143,11 @@ See `examples` folder for results of the example queries.
 The server component for providing tiles operates using OSM convention
 with small extensions. URL is
 
-`http://localhost:8553/v1/tile?daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}`
+`http://localhost:8553/v1/tile?style={style}&daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}`
 
 where
+
+`{style}` - style of the map, set to `default` if not specified
 
 `{dlight}` - either 0 for night or 1 for day
 
@@ -159,6 +161,9 @@ Addition of `{scale}` and `{shift}` allows to experiment with
 different tile sizes to optimize for performance and human-map
 interaction. Note that `shift` is ignored in Mapnik backend. See Poor
 Maps settings for example.
+
+At present, only Mapnik backend supports different styles. When using
+libosmscout backend, `styles` parameter is ignored.
 
 
 ## Location search

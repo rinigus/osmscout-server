@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QStringList>
 #include <QString>
+#include <QHash>
 
 #include <mapnik/map.hpp>
 #include <mapnik/proj_transform.hpp>
@@ -28,7 +29,8 @@ public:
   explicit MapnikMaster(QObject *parent = 0);
   virtual ~MapnikMaster();
 
-  bool renderMap(bool daylight, int width, int height,
+  bool renderMap(const QString &style, bool daylight,
+                 int width, int height,
                  double lat0, double lon0,
                  double lat1, double lon1,
                  QByteArray &result);
@@ -53,6 +55,9 @@ protected:
     /// This method should be called with the mutex locked by the caller
     void reloadMapnik(const QString &world_directory, const QStringList &country_dirs, bool config_changed);
 
+    /// \brief Returns
+    QString configDir(const QString &style, bool daylight);
+
 protected:
     std::mutex m_mutex;
     bool m_available{false};
@@ -64,6 +69,7 @@ protected:
 
     std::atomic<float> m_scale{1.0};
     std::atomic<int>   m_buffer_size{128}; ///< Size of a buffer around a tile in pixels for scale 1
+    QString m_styles_dir;
     QString m_configuration_dir;
     QString m_local_xml;
 
@@ -72,6 +78,8 @@ protected:
     QStringList m_config_countries;
     size_t m_config_maps_counter{0};
     size_t m_old_config_maps_counter{0};
+
+    QHash<QString, QString> m_styles_cache;
 
     // pool of mapnik maps
     std::deque< std::shared_ptr< mapnik::Map > > m_pool_maps;
