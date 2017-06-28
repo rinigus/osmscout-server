@@ -317,7 +317,7 @@ bool MapnikMaster::renderMap(bool /*daylight*/, int width, int height, double la
   {
     map->set_height(height);
     map->set_width(width);
-    map->set_buffer_size(m_buffer_size*m_scale);
+    map->set_buffer_size(m_buffer_size);
     map->zoom_to_box(box);
 
     mapnik::image_rgba8 buf(map->width(),map->height());
