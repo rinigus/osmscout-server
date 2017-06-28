@@ -101,11 +101,20 @@ void MapnikMaster::checkForSettingsChanges()
 {
   if (useMapnik)
     {
-      if (m_old_config_style != m_configuration_dir) // || (useMapnik && !m_available) )
+      if (m_old_config_style != m_configuration_dir)
         {
           // prepare folder to keep mapnik configuration
-          QString local_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
+          QString local_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);          
           QDir dir(local_path);
+
+          // clear old dir if it exists
+          if (dir.exists(const_dir))
+            {
+              QDir old(dir.absoluteFilePath(const_dir));
+              if (!old.removeRecursively())
+                InfoHub::logWarning(tr("Problems with removing configuration directory used by Mapnik"));
+            }
+
           if ( local_path.isEmpty() || !dir.mkpath(dir.absoluteFilePath(const_dir)) )
             {
               InfoHub::logWarning(tr("Cannot create configuration directory for Mapnik"));
