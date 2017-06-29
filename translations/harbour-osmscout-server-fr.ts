@@ -960,42 +960,42 @@
 <context>
     <name>MapnikMaster</name>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="116"/>
+        <location filename="../src/mapnikmaster.cpp" line="122"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="122"/>
+        <location filename="../src/mapnikmaster.cpp" line="128"/>
         <source>Cannot create configuration directory for Mapnik</source>
         <translation>Impossible de créer le répertoire de configuration pour Mapnik</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="141"/>
+        <location filename="../src/mapnikmaster.cpp" line="147"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
         <translation>Impossible de créer le lien symbolique vers la configuration de Mapnik (%1)</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="188"/>
+        <location filename="../src/mapnikmaster.cpp" line="194"/>
         <source>Failed to load Mapnik configuration: %1</source>
         <translation>Echec du chargement de la configuration de Mapnik : %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="246"/>
+        <location filename="../src/mapnikmaster.cpp" line="252"/>
         <source>Cannot write Mapnik configuration file: %1</source>
         <translation>Impossible d&apos;écrire le fichier de configuration de Mapnik : %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="257"/>
+        <location filename="../src/mapnikmaster.cpp" line="263"/>
         <source>Mapnik: adding %1</source>
         <translation>Mapnik : ajout de %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="329"/>
+        <location filename="../src/mapnikmaster.cpp" line="335"/>
         <source>Mapnik: failed to transform coordinates</source>
         <translation>Mapnik n&apos;a pas pu transformer les coordonnées</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="345"/>
+        <location filename="../src/mapnikmaster.cpp" line="351"/>
         <source>Mapnik not available</source>
         <translation>Mapnik n&apos;est pas disponible</translation>
     </message>
@@ -1031,16 +1031,6 @@
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
         <translation>En augmentant la taille de la zone qui est utilisée pour charger les données pendant l&apos;affichage d&apos;une tuile, le moteur d&apos;affichage peut améliorer l&apos;affichage en prenant en compte les données des tuiles voisines. Si vous voyez trop de textes coupés, essayez d&apos;augmenter la taille du tampon. Notez qu&apos;un tampon plus grand va ralentir l&apos;affichage. La taille du tampon est ajustée par rapport au facteur de taille pour s&apos;adapter à l&apos;augmentation de la taille du texte.</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="61"/>
-        <source>Style Sheet</source>
-        <translation>Feuille de style</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="62"/>
-        <source>Style sheet used to render the map tiles</source>
-        <translation>Feuille de style utilisée pour le rendu des cartes</translation>
     </message>
 </context>
 <context>

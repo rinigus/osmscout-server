@@ -960,42 +960,42 @@
 <context>
     <name>MapnikMaster</name>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="116"/>
+        <location filename="../src/mapnikmaster.cpp" line="122"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="122"/>
+        <location filename="../src/mapnikmaster.cpp" line="128"/>
         <source>Cannot create configuration directory for Mapnik</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="141"/>
+        <location filename="../src/mapnikmaster.cpp" line="147"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="188"/>
+        <location filename="../src/mapnikmaster.cpp" line="194"/>
         <source>Failed to load Mapnik configuration: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="246"/>
+        <location filename="../src/mapnikmaster.cpp" line="252"/>
         <source>Cannot write Mapnik configuration file: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="257"/>
+        <location filename="../src/mapnikmaster.cpp" line="263"/>
         <source>Mapnik: adding %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="329"/>
+        <location filename="../src/mapnikmaster.cpp" line="335"/>
         <source>Mapnik: failed to transform coordinates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="345"/>
+        <location filename="../src/mapnikmaster.cpp" line="351"/>
         <source>Mapnik not available</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1031,16 +1031,6 @@
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="61"/>
-        <source>Style Sheet</source>
-        <translation>Styl</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="62"/>
-        <source>Style sheet used to render the map tiles</source>
-        <translation>Styl použitý k vykreslování mapových dlaždic</translation>
     </message>
 </context>
 <context>

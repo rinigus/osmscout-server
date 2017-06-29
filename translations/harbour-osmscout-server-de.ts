@@ -960,42 +960,42 @@
 <context>
     <name>MapnikMaster</name>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="116"/>
+        <location filename="../src/mapnikmaster.cpp" line="122"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="122"/>
+        <location filename="../src/mapnikmaster.cpp" line="128"/>
         <source>Cannot create configuration directory for Mapnik</source>
         <translation>Das Konfigurationsverzeichnis für Mapnik kann nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="141"/>
+        <location filename="../src/mapnikmaster.cpp" line="147"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
         <translation>Fehler beim Erstellen der symbolischen Verknüpfung zur Mapnik-Konfiguration (%1)</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="188"/>
+        <location filename="../src/mapnikmaster.cpp" line="194"/>
         <source>Failed to load Mapnik configuration: %1</source>
         <translation>Fehler beim Laden der Mapnik Konfiguration: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="246"/>
+        <location filename="../src/mapnikmaster.cpp" line="252"/>
         <source>Cannot write Mapnik configuration file: %1</source>
         <translation>Kann Mapnik Konfigurationsdatei nicht schreiben: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="257"/>
+        <location filename="../src/mapnikmaster.cpp" line="263"/>
         <source>Mapnik: adding %1</source>
         <translation>Mapnik: Hinzufügen von %1</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="329"/>
+        <location filename="../src/mapnikmaster.cpp" line="335"/>
         <source>Mapnik: failed to transform coordinates</source>
         <translation>Mapnik: konnte Koordinaten nicht umwandeln</translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="345"/>
+        <location filename="../src/mapnikmaster.cpp" line="351"/>
         <source>Mapnik not available</source>
         <translation>Mapnik nicht verfügbar</translation>
     </message>
@@ -1031,16 +1031,6 @@
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
         <translation>Durch die Erhöhung der Größe des Bereichs, der verwendet wird, um die Daten zu laden, während eine Kachel wiedergegeben wird, kann der Renderer das Etiketten-Rendering verbessern, indem er Daten von benachbarten Kacheln berücksichtigt. Wenn Sie zu viele beschnittene Etiketten sehen, versuchen Sie, die Puffergröße zu erhöhen. Beachten Sie, dass große Puffergrößen das Rendering verlangsamen würden. Die Puffergröße wird durch den Skalierungsfaktor skaliert, um den Anstieg der Etikettengröße anzupassen.</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="61"/>
-        <source>Style Sheet</source>
-        <translation>Style Sheet</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapnikPage.qml" line="62"/>
-        <source>Style sheet used to render the map tiles</source>
-        <translation>Stylesheet zum Rendern der Kartenkacheln</translation>
     </message>
 </context>
 <context>

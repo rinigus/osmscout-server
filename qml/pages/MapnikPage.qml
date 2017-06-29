@@ -54,15 +54,6 @@ Dialog {
                 validator: IntValidator { bottom: 0; }
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
             }
-
-            ElementSelector {
-                id: eStyle
-                key: settingsMapnikPrefix + "configuration_dir"
-                mainLabel: qsTr("Style Sheet")
-                secondaryLabel: qsTr("Style sheet used to render the map tiles")
-                directory: true
-                directory_file: "mapnik.xml"
-            }
         }
 
         VerticalScrollDecorator {}
