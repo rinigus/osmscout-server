@@ -104,11 +104,17 @@ void MapnikMaster::checkForSettingsChanges()
     {
       if (m_old_config_style != m_configuration_dir)
         {
+          /// General comment: Looks like Mapnik is not reloading
+          /// icons if their path stayed the same. As a result, if the style is
+          /// changed but icon path stayed the same due to symbolic linking, the
+          /// icon from old style will be used. To avoid this, we set the path
+          /// in accordance with the used theme through m_local_dir_offset
+
           // prepare folder to keep mapnik configuration
-          QString local_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);          
+          QString local_path = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
           QDir dir(local_path);
 
-          // clear old dir if it exists
+          // clear old main configuration dir if it exists
           if (dir.exists(const_dir))
             {
               QDir old(dir.absoluteFilePath(const_dir));
@@ -116,14 +122,15 @@ void MapnikMaster::checkForSettingsChanges()
                 InfoHub::logWarning(tr("Problems with removing configuration directory used by Mapnik"));
             }
 
-          if ( local_path.isEmpty() || !dir.mkpath(dir.absoluteFilePath(const_dir)) )
+          QString local_dir = const_dir + "/" + m_local_dir_offset;
+          if ( local_path.isEmpty() || !dir.mkpath(dir.absoluteFilePath(local_dir)) )
             {
               InfoHub::logWarning(tr("Cannot create configuration directory for Mapnik"));
               return;
             }
 
           // make symbolic links to global configuration
-          dir.setPath(dir.absoluteFilePath(const_dir));
+          dir.setPath(dir.absoluteFilePath(local_dir));
           QDir global_dir(m_configuration_dir);
           QDirIterator it(global_dir.absolutePath(), QDir::NoDotAndDotDot | QDir::AllDirs | QDir::Files);
           while (it.hasNext())
@@ -285,12 +292,17 @@ void MapnikMaster::reloadMapnik(const QString &world_directory, const QStringLis
     }
 }
 
-QString MapnikMaster::configDir(const QString &style, bool daylight)
+void MapnikMaster::setConfigDir(const QString &style, bool daylight)
 {
   QString cand = style + (daylight ? "/day" : "/night");
+  m_local_dir_offset = cand;
+
   auto iter = m_styles_cache.find(cand);
   if (iter != m_styles_cache.end())
-    return *iter;
+    {
+      m_configuration_dir = *iter;
+      return;
+    }
 
   // we don't have any info on this combination, let's try to find it
   QDir dir(m_styles_dir);
@@ -301,8 +313,8 @@ QString MapnikMaster::configDir(const QString &style, bool daylight)
     suggestion = style + "/day";
 
   suggestion = dir.absoluteFilePath(suggestion);
+  m_configuration_dir = suggestion;
   m_styles_cache.insert(cand, suggestion);
-  return suggestion;
 }
 
 bool MapnikMaster::renderMap(const QString &style, bool daylight, int width, int height,
@@ -324,7 +336,7 @@ bool MapnikMaster::renderMap(const QString &style, bool daylight, int width, int
         return false;
       }
 
-    m_configuration_dir = configDir(style, daylight);
+    setConfigDir(style, daylight);
     checkForSettingsChanges();
 
     while (m_available && m_pool_maps.empty())

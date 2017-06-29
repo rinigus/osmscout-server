@@ -55,8 +55,11 @@ protected:
     /// This method should be called with the mutex locked by the caller
     void reloadMapnik(const QString &world_directory, const QStringList &country_dirs, bool config_changed);
 
-    /// \brief Returns
-    QString configDir(const QString &style, bool daylight);
+    /// \brief Sets configuration directory and local configuration
+    ///
+    /// Used internally to set variables determining configuration directory
+    /// and its local copy location
+    void setConfigDir(const QString &style, bool daylight);
 
 protected:
     std::mutex m_mutex;
@@ -71,6 +74,7 @@ protected:
     std::atomic<int>   m_buffer_size{128}; ///< Size of a buffer around a tile in pixels for scale 1
     QString m_styles_dir;
     QString m_configuration_dir;
+    QString m_local_dir_offset;
     QString m_local_xml;
 
     QString m_old_config_style;

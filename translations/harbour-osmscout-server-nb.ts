@@ -960,42 +960,42 @@
 <context>
     <name>MapnikMaster</name>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="115"/>
+        <location filename="../src/mapnikmaster.cpp" line="116"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="120"/>
+        <location filename="../src/mapnikmaster.cpp" line="122"/>
         <source>Cannot create configuration directory for Mapnik</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="139"/>
+        <location filename="../src/mapnikmaster.cpp" line="141"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="186"/>
+        <location filename="../src/mapnikmaster.cpp" line="188"/>
         <source>Failed to load Mapnik configuration: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="244"/>
+        <location filename="../src/mapnikmaster.cpp" line="246"/>
         <source>Cannot write Mapnik configuration file: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="255"/>
+        <location filename="../src/mapnikmaster.cpp" line="257"/>
         <source>Mapnik: adding %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="301"/>
+        <location filename="../src/mapnikmaster.cpp" line="329"/>
         <source>Mapnik: failed to transform coordinates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapnikmaster.cpp" line="316"/>
+        <location filename="../src/mapnikmaster.cpp" line="345"/>
         <source>Mapnik not available</source>
         <translation type="unfinished"></translation>
     </message>
