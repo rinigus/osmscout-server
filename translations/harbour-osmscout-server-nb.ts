@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serveren må brukes med klientprogrammet som kan vise kart, spørre etter søk og vise valgte ruter. Serveren er et tynt lag som viser funksjonaliteten til &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; gjennom http. Denne serveren kan brukes som erstatning for online-tjenester som gir kart.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
@@ -46,7 +46,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="40"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Vær oppmerksom på at &lt;i&gt; libpostal &lt;/ i&gt; er utviklet for å brukes sammen med den finjustert modellen som dekker hele verden. De landbaserte modellene ble utviklet for å bruke &lt;i&gt; libpostal &lt;/ i&gt; på mobile enheter og har ikke blitt spesielt optimalisert. Vennligst send problemene med libpostal ytelse på landsbaserte modeller til &lt;i&gt; OSM Scout Server &lt;/ i&gt; eller &lt;i&gt; geocoder-nlp &lt;/ i&gt; GitHub prosjekter.</translation>
+        <translation>Vær oppmerksom på at &lt;i&gt; libpostal &lt;/ i&gt; er utviklet for å brukes sammen med den finjustert modellen som dekker hele verden. De landbaserte modellene ble utviklet for å bruke &lt;i&gt; libpostal &lt;/ i&gt; på mobile enheter og har ikke blitt spesielt optimalisert. Vennligst send problemene med libpostal ytelse på landsbaserte modeller til &lt;i&gt; OSM Scout Server &lt;/i&gt; eller &lt;i&gt; geocoder-nlp &lt;/i&gt; GitHub prosjekter.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="47"/>
@@ -204,12 +204,12 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="82"/>
         <source>Opened OSM Scout database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Åpnet OSM Scout database: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="84"/>
         <source>Cannot open OSM Scout database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke åpne OSM Scout database: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="109"/>
@@ -427,17 +427,17 @@
     <message>
         <location filename="../src/geomaster.cpp" line="56"/>
         <source>Selected country not available for geocoder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Valgt land ikke tilgjengelig for geokoder: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="69"/>
         <source>Countries used in search: </source>
-        <translation type="unfinished"></translation>
+        <translation>Land som brukes i søk:</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="103"/>
         <source>libpostal using languages: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>libpostal bruker språk: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="108"/>
@@ -448,7 +448,7 @@
         <location filename="../src/geomaster.cpp" line="199"/>
         <location filename="../src/geomaster.cpp" line="392"/>
         <source>Cannot open geocoding database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke åpne geocoding database: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="225"/>
@@ -458,7 +458,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="261"/>
         <source>Parsed query [%1]: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppdelt spørring [%1]: %2</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="272"/>
@@ -502,12 +502,12 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="55"/>
         <source>Search all available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Søk i alle tilgjengelige kart</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="56"/>
         <source>When enabled, each search will be performed using all available maps on the device</source>
-        <translation type="unfinished"></translation>
+        <translation>Når aktivert, vil hvert søk utføres i alle tilgjengelige kart på enheten</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="62"/>
@@ -599,7 +599,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="238"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdens kystlinjer</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="265"/>
@@ -622,7 +622,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="758"/>
         <source>%1: version of dataset for %2 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: versjon av datasettet for %2 støttes ikke</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="319"/>
@@ -746,27 +746,27 @@
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="17"/>
         <source>Error deleting Valhalla&apos;s tile directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil ved å sletting av Valhallas kartutsnitt katalog %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="33"/>
         <source>Error while starting unpacking program</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil ved oppstart av utpakkingsprogrammet</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="44"/>
         <source>Error during unpacking Valhalla&apos;s package</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil under utpakking av Valhallas pakke</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="51"/>
         <source>Unpacked Valhalla&apos;s package: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Utpakket Valhalla pakke: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="57"/>
         <source>Failed to remove unnecessary file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Feilet ved fjerning av unødvendig fil: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="208"/>
@@ -796,32 +796,32 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="297"/>
         <source>World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdens kystlinjer</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="305"/>
         <source>Missing world coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Mangler verdens kystlinjer</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="317"/>
         <source>Mapnik country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik landespesifikk støtte</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="325"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Mangler landspesifikt Mapnik datasett</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="340"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="348"/>
         <source>Missing Valhalla tiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Mangler Valhalla fliser</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="252"/>
@@ -864,22 +864,22 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="81"/>
         <source>Store datasets for Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre datasett for Valhalla rutemotor</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="82"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
-        <translation type="unfinished"></translation>
+        <translation>Når valgt, vil Valhalla datasett lagres på enheten etter at du har lastet ned dem. Disse datasettene kreves for å bruke Valhalla som rutemotor.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="91"/>
         <source>Store datasets for libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre dataset for libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="92"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
-        <translation type="unfinished"></translation>
+        <translation>Når valgt, vil libosmscout datasett lagres på enheten etter at du har lastet ned dem. Disse datasettene kreves for gjengivelse, søk eller ruting av libosmscout-bakgrunnsprosess</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="97"/>
@@ -939,17 +939,17 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="64"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Når valgt, vil libpostal-baserte geokoderdatasett lagres på enheten etter at de er lastet ned. Disse datasettene består av språkoppdeling datasett (ca. 700 MB) og landsspesifikke datasett som brukes til oppdeling og oppslag av adresser.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="46"/>
         <source>Store datasets for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre dataset for Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="47"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation type="unfinished"></translation>
+        <translation>Når valgt, vil datasett som tillater gjengivelse av kart med Mapnik bli lagret på enheten etter at de er lastet ned. Disse datasettene består av verdens kystlinjer (ca. 700 MB) og landsspesifikke datasett som brukes til gjengivelse</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="208"/>
@@ -967,37 +967,37 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="128"/>
         <source>Cannot create configuration directory for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke opprette konfigurasjons mappe for Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="147"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke opprette symbolsk lenke til Mapnik-konfigurasjonen (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="194"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke laste Mapnik-konfigurasjonen: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="252"/>
         <source>Cannot write Mapnik configuration file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke skrive til Mapnik konfigurasjonsfil: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="263"/>
         <source>Mapnik: adding %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: legger til %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="335"/>
         <source>Mapnik: failed to transform coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: klarte ikke å transformere koordinater</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="351"/>
         <source>Mapnik not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik er ikke tilgjengelig</translation>
     </message>
 </context>
 <context>
@@ -1005,32 +1005,32 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="22"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik is can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik  kan brukes som en bakgrunnsprosess for å gi kartfliser til klientprogrammene</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
         <source>Scale factor</source>
-        <translation type="unfinished"></translation>
+        <translation>Skaleringsfaktor</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="38"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
-        <translation type="unfinished"></translation>
+        <translation>skaleringsfaktor brukes til å tegne funksjoner på et kart. På høyoppløselige skjermer, som telefoner, er det fordelaktig å bruke skaleringsfaktor som er større enn 1. Som et første anslag foreslås det å bruke skaleringsfaktor på 3-5 på mobilenheter.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="48"/>
         <source>Buffer size in pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>Buffer størrelse i piksler</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ved å øke størrelsen på området som brukes til å laste dataene mens du gjør en flis, kan rendereren forbedre etikett gjengivelsen ved å ta hensyn til data fra nabobilder. Hvis du ser for mange brutte etiketter, prøv å øke bufferstørrelsen. Vær oppmerksom på at store bufferstørrelser vil redusere gjengivelsen. Bufferstørrelsen er skalert av skaleringsfaktoren for å justere for økningen i etikettstørrelse.</translation>
     </message>
 </context>
 <context>
@@ -1068,32 +1068,32 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
         <source>Directories</source>
-        <translation type="unfinished"></translation>
+        <translation>Kataloger</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="60"/>
         <source>Directories containing files that will be deleted during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kataloger som inneholder filer som vil bli slettet under opprydding:</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="83"/>
         <source>Cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Rydde opp</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
         <source>Delete unused files (listed below) and free the occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett ubrukte filer (oppført nedenfor) og frigjøre den brukte plassen</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="119"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Filer</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="126"/>
         <source>Files to be deleted during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Filer som blir slettet under opprydding:</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
@@ -1606,17 +1606,17 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="68"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Denne serveren lar deg velge mellom to bakgrunnstjenester for å tegne kartene: &lt;i&gt;libosmscout&lt;/i&gt; og &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="79"/>
         <source>Use Mapnik for rendering maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk Mapnik til å gjengi kart</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="80"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Når valgt, vil Mapnik brukes til å gjengi kart. Legg merke til at det krever flere databaser for verdens kystlinjer og land.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
@@ -1641,22 +1641,22 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="111"/>
         <source>Routing Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutemotor</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="115"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation type="unfinished"></translation>
+        <translation>Rutemotoren er ansvarlig for å beregne ruter mellom opprinnelse og destinasjon. Denne serveren lar deg velge mellom to rutemotorer: &lt;i&gt;Valhalla&lt;/i&gt; og &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>Use Valhalla as routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk Valhalla som rutemotor</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="129"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Når valgt, vil Valhalla bli brukt til å beregne rutebeskrivelsen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="133"/>
@@ -1666,12 +1666,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="198"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="205"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstillinger for &lt;i&gt;Valhalla&lt;/i&gt; bakgrunnstjeneste</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="226"/>
@@ -1691,17 +1691,17 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="142"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="149"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Innstillinger av kart gjengivelse for &lt;i&gt;mapnik&lt;/i&gt; backend</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="233"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout-biblioteket(&lt;i&gt;libosmscout&lt;/i&gt;) innstillinger. Biblioteket kan brukes til tegning av kart, søk og ruting.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="244"/>
@@ -1764,27 +1764,27 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="53"/>
         <source>Missing modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Manglende moduler</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="68"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s):&lt;ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; Bruker flere moduler som må installeres separat for full funksjonalitet.&lt;br&gt;&lt;br&gt;Enheten din mangler følgende modul(er):&lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="72"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;OSM Scout Server Module: Fonter&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="74"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;OSM Scout Server Module: Rute&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="76"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Vennligst installer manglende moduler via Harbor eller OpenRepos. Etter installasjon av modulen (e), må du starte OSM Scout Server på nytt.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="94"/>
@@ -1821,12 +1821,12 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="238"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsel</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="242"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har ikke spesifisert språk som brukes til å analysere adresser av Geocoder-NLP. Som et resultat blir alle kjente språk brukt, og du kan oppleve svært stort RAM-forbruk. En slik stor RAM-bruk kan føre til at OSM Scout Server blir drept av kjernen. &lt;br&gt;&lt;br&gt;For å spesifisere språk som brukes til adresseparsing, gå til &lt;i&gt;Innstillinger&lt;/i&gt; (Nedtrekksmeny) og velg språk som en del av &lt;i&gt;Geocoder-NLP&lt;/i&gt; innstillinger.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="261"/>
@@ -1887,72 +1887,72 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="75"/>
         <source>Cannot create configuration directory for Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke opprette konfigurasjons mappe for Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="113"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil ved åpning av Valhallas konfigurasjonsmal %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="121"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil ved åpning av Valhallas konfigurasjonsmal %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="136"/>
         <source>Error opening Valhalla&apos;s configuration file %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil ved åpning av Valhallas konfigurasjonsfil %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="144"/>
         <source>Error writing Valhalla&apos;s configuration file</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil ved skriving til Valhallas konfigurasjonsfil</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="165"/>
         <source>Starting Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Starter Valhalla rutemotor</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="250"/>
         <source>Valhalla routing engine stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla rutemotor stoppet</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="267"/>
         <source>Stopping Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopper Valhalla rutemotor</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="336"/>
         <source>Error while communicating with Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil under kommunikasjon med Valhalla rutemotor</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="343"/>
         <source>Route found by Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Rute funnet av Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="238"/>
         <source>Valhalla routing engine started</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla rutemotor startet</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="246"/>
         <source>Valhalla exited with error: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla avsluttet med feil: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="277"/>
         <source>Valhalla routing engine process cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla rutemotor utfører opprydding</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="297"/>
         <source>Could not start the Valhalla routing service: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke starte Valhalla-rutingstjenesten: %1</translation>
     </message>
 </context>
 <context>
@@ -1960,52 +1960,52 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="22"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="26"/>
         <source>Valhalla can be used as a routing engine to calculate routes and the routing instructions</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla kan brukes som en rutemotor for å beregne ruter og rutebeskrivelsen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="35"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Minne</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="41"/>
         <source>Cache for storing tiles, MB</source>
-        <translation type="unfinished"></translation>
+        <translation>hurtgilager for lagring av fliser, MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="42"/>
         <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>Minne hurtiglager som brukes til å holde Valhalla fliser i RAM.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="48"/>
         <source>Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Grenser</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="52"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Avstands grenser for ruteberegninger. Kun ruter med avstandene mellom steder som er mindre enn de angitte grenser, beregnes. Ved å begrense de maksimale avstandene mellom stedene, kan du forhindre utilsiktede beregninger som ville føre til for store ruter og ville bruke for mye RAM på enheten.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="66"/>
         <source>Limit for route by car</source>
-        <translation type="unfinished"></translation>
+        <translation>Grense for rute med bil</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="74"/>
         <source>Limit for route by bicycle</source>
-        <translation type="unfinished"></translation>
+        <translation>Grense for rute med sykkel</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="82"/>
         <source>Limit for route by foot</source>
-        <translation type="unfinished"></translation>
+        <translation>Grense for rute til fots</translation>
     </message>
 </context>
 <context>
@@ -2043,7 +2043,7 @@
     <message>
         <location filename="../src/main.cpp" line="141"/>
         <source>List missing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste manglende kart</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="145"/>

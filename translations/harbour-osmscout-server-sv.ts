@@ -771,7 +771,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="208"/>
         <source>Missing libosmscout maps</source>
-        <translation>Saknade libosmscout-kartor</translation>
+        <translation>libosmscout-kartor saknas</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="219"/>
@@ -781,7 +781,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="227"/>
         <source>Missing geocoder-nlp dataset</source>
-        <translation>Saknad geocoder-nlp datamängd</translation>
+        <translation>Datamängd för geocoder-nlp saknas</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="244"/>
@@ -801,7 +801,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="305"/>
         <source>Missing world coastlines</source>
-        <translation>Saknade kustlinjer</translation>
+        <translation>Kustlinjer saknas</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="317"/>
@@ -811,7 +811,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="325"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation>Saknad landsspecifik Mapnik datamängd</translation>
+        <translation>Landsspecifik datamängd för Mapnik saknas</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="340"/>
@@ -821,12 +821,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="348"/>
         <source>Missing Valhalla tiles</source>
-        <translation>Saknade Valhalla-kartor</translation>
+        <translation>Valhalla-kartor saknas</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="252"/>
         <source>Missing address language parsing dataset</source>
-        <translation>Saknad datamängd för språktolkning</translation>
+        <translation>Datamängd för språktolkning saknas</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="200"/>
@@ -836,7 +836,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="272"/>
         <source>Missing country-specific address parsing dataset</source>
-        <translation>Saknad landsspecifik datamängd för adresstolkning</translation>
+        <translation>Landsspecifik datamängd för adresstolkning saknas</translation>
     </message>
 </context>
 <context>
@@ -1811,7 +1811,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="162"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</translation>
+        <translation>Med lagringsmappen vald och tillgänglig, är nästa steg att hämta några kartor. Du kan välja, och ladda ner kartor med &lt;i&gt;Karthanteraren&lt;/i&gt;  (toppmenyn).</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="195"/>

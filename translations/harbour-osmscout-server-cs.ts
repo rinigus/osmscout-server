@@ -16,17 +16,17 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>License: LGPL</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence: LGPL</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Překlady</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="27"/>
         <source>Maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapy</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="29"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="38"/>
         <source>Libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Libpostal</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="40"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="47"/>
         <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
+        <translation>Poděkování</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="75"/>
@@ -84,12 +84,12 @@
     <message>
         <location filename="../src/appsettings.cpp" line="232"/>
         <source>km/h</source>
-        <translation type="unfinished"></translation>
+        <translation>km/h</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="232"/>
         <source>km</source>
-        <translation type="unfinished"></translation>
+        <translation>km</translation>
     </message>
 </context>
 <context>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="20"/>
         <source>Subscribed</source>
-        <translation type="unfinished"></translation>
+        <translation>Odebírané</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="24"/>
@@ -117,17 +117,17 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="35"/>
         <source>No subscription</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné odběry</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="98"/>
         <source>Availibility on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostupnost na zařízení</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="118"/>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="127"/>
@@ -142,38 +142,38 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="186"/>
         <source>incompatible version</source>
-        <translation type="unfinished"></translation>
+        <translation>nekompatibilní verze</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="206"/>
         <source>MB</source>
-        <translation type="unfinished"></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="208"/>
         <source>disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>vypnuto</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="223"/>
         <source>Subscription</source>
-        <translation type="unfinished"></translation>
+        <translation>Odběr</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="228"/>
         <source>Subscribe</source>
-        <translation type="unfinished"></translation>
+        <translation>Odebírat</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="239"/>
         <source>Unsubscribe</source>
-        <translation type="unfinished"></translation>
+        <translation>Odhlásit odběr</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="49"/>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="50"/>
         <source>%1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 MB</translation>
     </message>
 </context>
 <context>
@@ -254,12 +254,12 @@
     <message>
         <location filename="../src/dbmaster_route.cpp" line="196"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="197"/>
         <source>Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Cíl</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="254"/>
@@ -302,7 +302,7 @@
     <message>
         <location filename="../qml/pages/DownloadCountriesPage.qml" line="57"/>
         <source>Select country or territory</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte zemi či oblast</translation>
     </message>
 </context>
 <context>
@@ -310,29 +310,29 @@
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="18"/>
         <source>%1 territories</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 oblastí</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="25"/>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="29"/>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="33"/>
         <source>Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostupné</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="38"/>
         <source>Incompatible version</source>
-        <translation type="unfinished"></translation>
+        <translation>Nekompatibilní verze</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="42"/>
         <source>Subscribed</source>
-        <translation type="unfinished"></translation>
+        <translation>Odebíráno</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementCountryListItem.qml" line="47"/>
         <source>Size: %1 MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost: %1 MB</translation>
     </message>
 </context>
 <context>
@@ -340,12 +340,12 @@
     <message>
         <location filename="../qml/pages/ElementDownloads.qml" line="16"/>
         <source>No downloads active</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné aktivní stahování</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementDownloads.qml" line="17"/>
         <source>Download active</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivní stahování</translation>
     </message>
 </context>
 <context>
@@ -353,7 +353,7 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="27"/>
         <source>All supported languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechny podporované jazyky</translation>
     </message>
 </context>
 <context>
@@ -361,7 +361,7 @@
     <message>
         <location filename="../qml/pages/ElementSelector.qml" line="30"/>
         <source>&lt;Not selected&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Not selected&gt;</translation>
     </message>
 </context>
 <context>
@@ -370,28 +370,28 @@
         <location filename="../src/filedownloader.cpp" line="344"/>
         <location filename="../src/filedownloader.cpp" line="361"/>
         <source>Failed to download</source>
-        <translation type="unfinished"></translation>
+        <translation>Stahování selhalo</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="345"/>
         <source>Error code: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybový kód: %1</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="362"/>
         <source>Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypršel časový limit</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="396"/>
         <location filename="../src/filedownloader.cpp" line="416"/>
         <source>Error in processing downloaded data</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba ve zpracování stažených dat</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="426"/>
         <source>Error in processing downloaded data: could not start the program</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba ve zpracování stažených dat: nelze spustit program</translation>
     </message>
 </context>
 <context>
@@ -399,12 +399,12 @@
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="65"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Pro výběr umístění dlouze stiskněte složku a v kontextové nabídce vyberte &apos;Zvolit&apos;</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="200"/>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvolit</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="216"/>
@@ -417,54 +417,54 @@
     <message>
         <location filename="../src/geomaster.cpp" line="83"/>
         <source>Cannot open geocoder database</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít databázi geokodéru</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="87"/>
         <source>Opened geocoder database</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřená databáze geokodéru</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="56"/>
         <source>Selected country not available for geocoder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvolená země není dostupná pro geokodér: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="69"/>
         <source>Countries used in search: </source>
-        <translation type="unfinished"></translation>
+        <translation>Země zahrnuté ve vyhledávání:</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="103"/>
         <source>libpostal using languages: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>libpostal používá jazyky: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="108"/>
         <source>libpostal will use all covered languages</source>
-        <translation type="unfinished"></translation>
+        <translation>libpostal použije všechny pokryté jazyky</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="199"/>
         <location filename="../src/geomaster.cpp" line="392"/>
         <source>Cannot open geocoding database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít databázi geokodéru: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="225"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba ve zpracování libpostal; je možné, že databáze libpostal nejsou dostupné </translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="261"/>
         <source>Parsed query [%1]: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Zpracovaný dotaz [%1]: %2</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="272"/>
         <location filename="../src/geomaster.cpp" line="426"/>
         <source>Error while searching with geocoder-nlp</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při hledání pomocí geocoder-nlp</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="347"/>
@@ -482,7 +482,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
@@ -492,7 +492,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="47"/>
         <source>Languages</source>
-        <translation type="unfinished"></translation>
+        <translation>Jazyky</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="48"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="55"/>
         <source>Search all available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledat všechny dostupné mapy</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="56"/>
@@ -637,7 +637,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="557"/>
         <source>World</source>
-        <translation type="unfinished"></translation>
+        <translation>Svět</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="621"/>
@@ -647,7 +647,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="779"/>
         <source>Missing data: </source>
-        <translation type="unfinished"></translation>
+        <translation>Chybějící data:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="871"/>
@@ -657,7 +657,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="888"/>
         <source>File downloaded:</source>
-        <translation type="unfinished"></translation>
+        <translation>Stažený soubor:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="916"/>
@@ -667,7 +667,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="917"/>
         <source>File registration error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba registrace souboru</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="942"/>
@@ -713,7 +713,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1136"/>
         <source>Error while deleting file:</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při odstraňování souboru:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1137"/>
@@ -776,7 +776,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="219"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="227"/>
@@ -816,7 +816,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="340"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="348"/>
@@ -831,7 +831,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="200"/>
         <source>OSM Scout library</source>
-        <translation type="unfinished"></translation>
+        <translation>Knihovna OSM Scout</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="272"/>
@@ -844,7 +844,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="23"/>
         <source>Map Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Správce map</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="27"/>
@@ -884,7 +884,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="97"/>
         <source>Subscribed</source>
-        <translation type="unfinished"></translation>
+        <translation>Odebírané</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="143"/>
@@ -919,7 +919,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="250"/>
         <source>Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Úložiště</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="259"/>
@@ -934,7 +934,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="196"/>
         <source>Subscribe</source>
-        <translation type="unfinished"></translation>
+        <translation>Odebírat</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="64"/>
@@ -1005,7 +1005,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="22"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
@@ -1058,7 +1058,7 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
         <source>MB</source>
-        <translation type="unfinished"></translation>
+        <translation>MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="44"/>
@@ -1068,7 +1068,7 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="53"/>
         <source>Directories</source>
-        <translation type="unfinished"></translation>
+        <translation>Složky</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="60"/>
@@ -1088,7 +1088,7 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="119"/>
         <source>Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="126"/>
@@ -1098,7 +1098,7 @@
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
         <source>Occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Zabrané místo</translation>
     </message>
     <message>
         <location filename="../qml/pages/NonNeededFiles.qml" line="169"/>
@@ -1111,7 +1111,7 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="22"/>
         <source>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="26"/>
@@ -1591,7 +1591,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="54"/>
         <source>Maps storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapové úložiště</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="55"/>
@@ -1611,7 +1611,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="79"/>
         <source>Use Mapnik for rendering maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Použít Mapnik pro vykreslování map</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="80"/>
@@ -1621,7 +1621,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="85"/>
         <source>Geocoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Geokodér</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="89"/>
@@ -1631,7 +1631,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="103"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Použít geocoder-nlp s libpostal jako geokodér</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="104"/>
@@ -1641,7 +1641,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="111"/>
         <source>Routing Engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Navigační služba</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="115"/>
@@ -1651,7 +1651,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>Use Valhalla as routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Použít Valhallu jako navigační službu</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="129"/>
@@ -1661,12 +1661,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="133"/>
         <source>Backend settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení backendu</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="198"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="205"/>
@@ -1676,12 +1676,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="226"/>
         <source>OSM Scout library</source>
-        <translation type="unfinished"></translation>
+        <translation>Knihovna OSM Scout</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="170"/>
         <source>Geocoder-NLP</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="177"/>
@@ -1691,7 +1691,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="142"/>
         <source>Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="149"/>
@@ -1749,7 +1749,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="20"/>
         <source>Map Manager</source>
-        <translation type="unfinished"></translation>
+        <translation>Správce map</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="26"/>
@@ -1764,7 +1764,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="53"/>
         <source>Missing modules</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybějící moduly</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="68"/>
@@ -1791,12 +1791,12 @@
         <location filename="../qml/pages/StartPage.qml" line="158"/>
         <location filename="../qml/pages/StartPage.qml" line="191"/>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Vítejte</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="112"/>
         <source>Create default directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvořit výchozí složku</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="135"/>
@@ -1821,7 +1821,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="238"/>
         <source>Warning</source>
-        <translation type="unfinished"></translation>
+        <translation>Varování</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="242"/>
@@ -1856,7 +1856,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="361"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
 </context>
 <context>
@@ -1864,12 +1864,12 @@
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="25"/>
         <source>Updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizace</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="33"/>
         <source>Do you want to start the update?</source>
-        <translation type="unfinished"></translation>
+        <translation>Přejete si spustit aktualizaci?</translation>
     </message>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="41"/>
@@ -1960,7 +1960,7 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="22"/>
         <source>Valhalla</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="26"/>
@@ -1970,7 +1970,7 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="35"/>
         <source>Memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Paměť</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="41"/>
@@ -1985,7 +1985,7 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="48"/>
         <source>Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Limity</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="52"/>
@@ -1995,17 +1995,17 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="66"/>
         <source>Limit for route by car</source>
-        <translation type="unfinished"></translation>
+        <translation>Limit pro automobilovou navigaci</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="74"/>
         <source>Limit for route by bicycle</source>
-        <translation type="unfinished"></translation>
+        <translation>Limit pro cyklistickou navigaci</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="82"/>
         <source>Limit for route by foot</source>
-        <translation type="unfinished"></translation>
+        <translation>Limit pro pěší navigaci</translation>
     </message>
 </context>
 <context>
@@ -2018,32 +2018,32 @@
     <message>
         <location filename="../src/main.cpp" line="121"/>
         <source>Start download of the maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Začít stahovat mapy</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="125"/>
         <source>Update list of available maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizovat seznam dostupných map</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="129"/>
         <source>List maps available on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit mapy dostupné na zařízení</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="133"/>
         <source>List subscribed maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit odebírané mapy</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="137"/>
         <source>List maps provided for download</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit mapy poskytované ke stažení</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="141"/>
         <source>List missing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit chybějící mapy</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="145"/>
