@@ -962,7 +962,7 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="122"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Problem att ta bort konfigurationsmappen som används av Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="128"/>
