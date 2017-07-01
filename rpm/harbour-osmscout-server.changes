@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Jun 30 2017 rinigus <rinigus.git@gmail.com> 0.12.0-1
+- Add support for Mapnik style and daylight switching
+- Speedup Mapnik backend by removing double scaling of the buffer
+- Updated translations
+
 * Thu Jun 24 2017 rinigus <rinigus.git@gmail.com> 0.11.0-1
 - Add guide search support for Geocoder-NLP
 - Guide search looks for type or name when using Geocoder-NLP
