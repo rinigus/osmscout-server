@@ -16,15 +16,20 @@ Page {
             }
 
             MenuItem {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
+            }
+
+            MenuItem {
+                text: qsTr("Profiles")
+                onClicked: pageStack.push(Qt.resolvedUrl("ProfilesPage.qml"))
+            }
+
+            MenuItem {
                 id: mmMenu
                 text: qsTr("Map Manager")
                 enabled: manager.storageAvailable
                 onClicked: pageStack.push(Qt.resolvedUrl("MapManagerPage.qml"))
-            }
-
-            MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
             }
         }
 
@@ -243,7 +248,8 @@ Page {
                                "As a result, all known languages are used and " +
                                "you could experience very large RAM consumption. Such large RAM usage could " +
                                "lead to the OSM Scout Server being killed by the kernel. <br><br>" +
-                               "To specify languages used for address parsing, go to <i>Settings</i> (pulley menu) and " +
+                               "To specify languages used for address parsing, either select languages below or " +
+                               "go to <i>Settings</i> (pulley menu) and " +
                                "select laniguages as a part of <i>Geocoder-NLP</i> settings.")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
@@ -294,6 +300,13 @@ Page {
                 }
             }
 
+            ElementLanguageSelector {
+                id: eGeoLanguages
+                key: settingsGeomasterPrefix + "languages"
+                autoApply: true
+                mainLabel: qsTr("Languages")
+                secondaryLabel: qsTr("List of languages used for parsing addresses")
+            }
 
             SectionHeader {
                 text: qsTr("Status")

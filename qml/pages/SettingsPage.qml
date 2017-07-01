@@ -6,6 +6,8 @@ Dialog {
     id: dialog
     allowedOrientations : Orientation.All
 
+    property bool backendSelectionPossible: false
+
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
@@ -61,6 +63,23 @@ Dialog {
             }
 
             SectionHeader {
+                text: qsTr("Profiles")
+                visible: settings.profilesUsed
+            }
+
+            Label {
+                text: qsTr("Active backends are set by profiles. " +
+                           "If you wish to change them, please set the corresponding profile " +
+                           "or set profile to <i>Custom</i>.")
+                visible: settings.profilesUsed
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            SectionHeader {
                 text: qsTr("Rendering")
             }
 
@@ -75,6 +94,7 @@ Dialog {
 
             ElementSwitch {
                 id: eMapnik
+                activeState: dialog.backendSelectionPossible
                 key: settingsMapnikPrefix + "use_mapnik"
                 mainLabel: qsTr("Use Mapnik for rendering maps")
                 secondaryLabel: qsTr("When selected, Mapnik will be used to render maps. " +
@@ -99,6 +119,7 @@ Dialog {
 
             ElementSwitch {
                 id: eGeocoderNLP
+                activeState: dialog.backendSelectionPossible
                 key: settingsGeomasterPrefix + "use_geocoder_nlp"
                 mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
                 secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
@@ -124,6 +145,7 @@ Dialog {
 
             ElementSwitch {
                 id: eValhalla
+                activeState: dialog.backendSelectionPossible
                 key: settingsValhallaPrefix + "use_valhalla"
                 mainLabel: qsTr("Use Valhalla as routing engine")
                 secondaryLabel: qsTr("When selected, Valhalla will be used to calculate the routing instructions.")
@@ -277,6 +299,20 @@ Dialog {
         VerticalScrollDecorator {}
     }
 
+    function checkState()
+    {
+        dialog.backendSelectionPossible = !settings.profilesUsed
+    }
+
+    Component.onCompleted: {
+        checkState()
+    }
+
+    Connections {
+        target: settings
+        onProfilesUsedChanged: checkState()
+    }
+
     onAccepted: {
         eLogInfo.apply()
         eRollSize.apply()
@@ -284,7 +320,7 @@ Dialog {
 
         /// units are done by combo box, have to apply manually
         /// units are changed the last
-        settings.setValue(settingsOsmPrefix + "units", unitsBox.currentIndex)
+        settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
 
         eMapsRoot.apply()
         eGeocoderNLP.apply()

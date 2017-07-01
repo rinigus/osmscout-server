@@ -72,22 +72,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="230"/>
+        <location filename="../src/appsettings.cpp" line="253"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="230"/>
+        <location filename="../src/appsettings.cpp" line="253"/>
         <source>mi.</source>
         <translation>mi</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="232"/>
+        <location filename="../src/appsettings.cpp" line="255"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="232"/>
+        <location filename="../src/appsettings.cpp" line="255"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -351,7 +351,7 @@
 <context>
     <name>ElementLanguageSelector</name>
     <message>
-        <location filename="../qml/pages/ElementLanguageSelector.qml" line="27"/>
+        <location filename="../qml/pages/ElementLanguageSelector.qml" line="29"/>
         <source>All supported languages</source>
         <translation>Wszystkie wspierane języki</translation>
     </message>
@@ -842,117 +842,122 @@
 <context>
     <name>MapManagerPage</name>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="23"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="24"/>
         <source>Map Manager</source>
         <translation>Manager Map</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="27"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="28"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
         <translation>Manager Map odpowiedzialny jest za zarządzanie mapami offline oraz odpowiadającym im zbiorom danych na urządzeniu. Tutaj można wybrać funkcje i państwa które będą przechowywane, aktualizowane i usuwane z urządzenia.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="38"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="223"/>
         <source>Storage settings</source>
         <translation>Ustawienia przechowywania</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="63"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="260"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
         <translation>Przechowuj zbiory danych dla geocoder-nlp z libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="81"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="278"/>
         <source>Store datasets for Valhalla routing engine</source>
         <translation>Przechowaj zbiory danych dla silnika wyznaczania trasy Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="82"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="279"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
         <translation>Kiedy wybrane, zbiory danych Valhalla będą przechowywane na urządzeniu po ówczesnym ich ściągnięciu. Zbiory te wymagane są przez silnik wyznaczania trasy Valhalla.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="91"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="288"/>
         <source>Store datasets for libosmscout</source>
         <translation>Przechowaj zbiory danych dla libosmscout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="92"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="289"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
         <translation>Kiedy wybrane, zbiory danych libosmscout będą przechowywane na urządzeniu po uprzednim ich ściągnięciu. Zbiory danych wymagane są do renderowania, wyszukiwania lub wyznaczania trasy przez backend libosmscout.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="97"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="39"/>
         <source>Subscribed</source>
         <translation>Subskrybowany</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="143"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="85"/>
         <source>Downloads</source>
         <translation>Pobrane pliki</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="160"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="102"/>
         <source>Missing data:&lt;br&gt;</source>
         <translation>Brakujące dane:&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="176"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="118"/>
         <source>Start download</source>
         <translation>Rozpocznij pobieranie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="187"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="129"/>
         <source>Provided maps</source>
         <translation>Dostarczone mapy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="229"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="171"/>
         <source>Check for updates</source>
         <translation>Sprawdź czy są aktualizacje</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="239"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="181"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
         <translation>Zaktualizuj listę dostępnych map i zbiorów danych oraz czy zainstalowane mapy mogą być zaktualizowane</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="250"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Storage</source>
         <translation>Katalog przechowywania</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="259"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="201"/>
         <source>Start cleanup</source>
         <translation>Start czyszczenia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="270"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="212"/>
         <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
         <translation>Sprawdź, czy istnieją pliki, które nie są już używane od wcześniejszych subskrypcji</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="196"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="138"/>
         <source>Subscribe</source>
         <translation>Subskrybuj</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="64"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="227"/>
+        <source>Storage settings are set by profiles. If you wish to change them, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="261"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
         <translation>Kiedy wybrane, zestawy danych geocodera opartego na libpostal będą przechowywane na urządzeniu, po uprzednim ich ściągnięciu. Te zestawy danych składają się z zestawu do parsowania języka (około 700MB) i zbiorów danych, do parsowania adresów, specyficznych dla danego kraju oraz wyszukiwania. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="46"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="243"/>
         <source>Store datasets for Mapnik</source>
         <translation>Przechowuj zestawy danych dla Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="47"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="244"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
         <translation>Kiedy wybrane, zbiory danych pozwalające renderować mapy przy pomocy Mapnika, będą przechowywane na urządzeniu po uprzednim ich pobraniu. Te zbiory danych zawierają wybrzeża świata (około 700 MB) i zbiory danych specyficzne dla danego państwa, używane do renderowania</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="208"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="150"/>
         <source>Select the countries or territories that you want to keep on device</source>
         <translation>Wybierz państwa lub terytoria, które chcesz trzymać w urządzeniu</translation>
     </message>
@@ -1358,6 +1363,49 @@
     </message>
 </context>
 <context>
+    <name>ProfilesPage</name>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="22"/>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="26"/>
+        <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="38"/>
+        <source>Profile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="41"/>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="42"/>
+        <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="43"/>
+        <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="44"/>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="59"/>
+        <source>Default profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;Profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared with the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared with the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps and routing would be limited only to one territory in the implementation used by the server. In addition, rendering quality and search is inferior as well as routing speed is slower when compared with the default profile.&lt;br&gt;&lt;br&gt;When using Custom profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RequestMapper</name>
     <message>
         <location filename="../src/requestmapper.cpp" line="49"/>
@@ -1564,178 +1612,188 @@
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="22"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="24"/>
         <source>Settings</source>
         <translation>Ustawienia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="32"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="34"/>
         <source>Units</source>
         <translation>Jednostki</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="34"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="36"/>
         <source>Metric</source>
         <translation>Metryczne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="35"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="37"/>
         <source>Imperial</source>
         <translation>Imperialne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="42"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="44"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
         <translation>Jednostki stosowane w graficznym interfejsie użytkownika serwera. Jednostki zmienią się dopiero po zastosowaniu ustawień.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="54"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
         <source>Maps storage</source>
         <translation>Przechowywanie map</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="55"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
         <translation>Katalog do przechowywania map. &lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; Ten katalog będzie w pełni zarządzany przez OSM Scout Server. Proszę &lt;b&gt;przeznaczyć na to osobny, pusty katalog&lt;/b&gt; który OSM Scout Server będzie mógł używać. Dotyczy to również kasowania wszystkich plików w tym katalogu kiedy zostanie to zainicjowane przez czyszczenie lub aktualizację map.
 &lt;br&gt;&lt;i&gt;Przykład:&lt;/i&gt; Mapy w trakcie &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="64"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>Rendering</source>
         <translation>Renderowanie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="68"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
         <translation>Serwer ten pozwala na wybór pomiędzy dwoma backend&apos;am do rysowania map: &lt;i&gt;libosmscout&lt;/i&gt; i &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="79"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
         <source>Use Mapnik for rendering maps</source>
         <translation>Użyj Mapnika do renderowania map</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="80"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
         <translation>Kiedy wybrane, Mapnik będzie użyty do renderowania map. Wymaga to dodatkowych baz danych dla wybrzeży świata i państw.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="85"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="105"/>
         <source>Geocoder</source>
         <translation>Geocoder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="89"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="109"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Geocoder jest odpowiedzialny za analizowanie szukanych zapytań. W tym celu parsuje szukany string i wyszukuje odpowiadające mu obiekty na mapie. Ten serwer pozwala na wybranie pomiędzy dwoma backendami geocodera: &lt;i&gt;geocoder-nlp&lt;/i&gt; oraz &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="103"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
         <translation>Użyj geocoder-nlp z libpostal jako geocoder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="104"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="125"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
         <translation>Kiedy wybrane, geocoder bazujący na libpostal będzie używany analizowania wszystkich zapytań. Ważne, wymaga ro dodatkowych baz danych dla języków, parsowania oraz geokodowania.&lt;br&gt;Jeśli wybierzesz &lt;i&gt;geocoder-nlp&lt;/i&gt; ustaw język, poniżej w ustawieniach backendu, który będzie używany do parsowania adresu. W innym przypadku serwer użyje dużej ilość pamięci RAM.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="111"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="132"/>
         <source>Routing Engine</source>
         <translation>Silnik wyznaczania trasy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="115"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Silnik wytyczania trasy jest odpowiedzialny za kalkulowanie trasy pomiędzy punktem początkowym a końcowym. Serwer ten pozwala na wybór pomiędzy dwoma silnikami wytyczania trasy: &lt;i&gt;Valhalla&lt;/i&gt; i &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="128"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Use Valhalla as routing engine</source>
         <translation>Użyj Valhalla jako silnika wyznaczania trasy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="129"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="151"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
         <translation>Kiedy wybrane, Valhalla może być użyta do kalkulowania instrukcji wyznaczonych tras.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
         <source>Backend settings</source>
         <translation>Ustawienia backend&apos;u</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="198"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="220"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="205"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="227"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>Ustawienia silnika wyznaczania trasy dla backend&apos;u &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="226"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="248"/>
         <source>OSM Scout library</source>
         <translation>Biblioteka OSM Scout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="170"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="192"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="199"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Wybór języków używanych do parsowania adresów oraz inne ustawienia backend&apos;u &lt;i&gt;geocoder-nlp&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="142"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="164"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="149"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="66"/>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="71"/>
+        <source>Active backends are set by profiles. If you wish to change them, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="171"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>Ustawienia renderowania map dla backendu &lt;i&gt;mapnik&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="233"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="255"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>Ustawienia biblioteki OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). Biblioteka miże byc użyta do rysowania map, wyszukiwania i wytyczania trasy.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="266"/>
         <source>Miscellaneous</source>
         <translation>Różne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="250"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="272"/>
         <source>Log info messages</source>
         <translation>Loguj wiadomości z informacjami</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="251"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="273"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Kiedy wyłączone, wiadomości z informacjami nie będą zapisywane w logu wydarzeń. Wyjątkiem jest ładowanie bazy danych, które pokazywane jest zawsze. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="258"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="280"/>
         <source>Events log size</source>
         <translation>Rozmiar logów zdarzeń</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="259"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="281"/>
         <source>Number of events shown in the main page</source>
         <translation>Liczba zdarzeń pokazywana na stronie głównej</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="267"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="289"/>
         <source>Log messages into session log file</source>
         <translation>Zapisuj logi do pliku logów sesji</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="268"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="290"/>
         <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1748,114 +1806,129 @@
         <translation>O OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="20"/>
+        <location filename="../qml/pages/StartPage.qml" line="30"/>
         <source>Map Manager</source>
         <translation>Manager Map</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="26"/>
+        <location filename="../qml/pages/StartPage.qml" line="19"/>
         <source>Settings</source>
         <translation>Ustawienia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="40"/>
+        <location filename="../qml/pages/StartPage.qml" line="24"/>
+        <source>Profiles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="45"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="53"/>
+        <location filename="../qml/pages/StartPage.qml" line="58"/>
         <source>Missing modules</source>
         <translation>Brakujące moduły</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="68"/>
+        <location filename="../qml/pages/StartPage.qml" line="73"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s):&lt;ul&gt;</source>
         <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; używa oddzielnych modułów, które muszą być zainstalowane osobno dla pełnej funkcjonalności.&lt;br&gt;&lt;br&gt;Twoje urządzenie nie zawiera następujących modułów:&lt;ul&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="72"/>
+        <location filename="../qml/pages/StartPage.qml" line="77"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
         <translation>&lt;li&gt;Moduł OSM Scout Server: Czcionki&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="74"/>
+        <location filename="../qml/pages/StartPage.qml" line="79"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
         <translation>&lt;li&gt;Moduł OSM Scout Server: Trasa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="76"/>
+        <location filename="../qml/pages/StartPage.qml" line="81"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
         <translation>&lt;/ul&gt;&lt;br&gt; Proszę zainstalować brakujące moduły za pomocą Sklepu lub OpenRepos. Po instalacji modułu proszę zrestartować OSM Scout Server.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="94"/>
-        <location filename="../qml/pages/StartPage.qml" line="158"/>
-        <location filename="../qml/pages/StartPage.qml" line="191"/>
+        <location filename="../qml/pages/StartPage.qml" line="99"/>
+        <location filename="../qml/pages/StartPage.qml" line="163"/>
+        <location filename="../qml/pages/StartPage.qml" line="196"/>
         <source>Welcome</source>
         <translation>Witaj</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="112"/>
+        <location filename="../qml/pages/StartPage.qml" line="117"/>
         <source>Create default directory</source>
         <translation>Utwórz domyślny katalog</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="135"/>
+        <location filename="../qml/pages/StartPage.qml" line="140"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
         <translation>Tworzy katalog&lt;br&gt;%1&lt;br&gt;i konfiguruje go do przechowywania map</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="137"/>
+        <location filename="../qml/pages/StartPage.qml" line="142"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
         <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; przewidziany jest do używania z pobranymi mapami. Do zarządzania mapami Server wymaga osobnego katalogu. Pliki w tym katalogu powinny być zarządzane wyłącznie przez Server. Tyczy się to kasowania plików w tym katalogu wywołanym czyszczeniem map lub ich aktualizacją.&lt;br&gt;&lt;br&gt;Proszę&lt;b&gt;wskazać osobny, pusty katalog&lt;/b&gt; dla OSM Scout Server. W tym celu utwórz nowy katalog w managerze plików lub użyj wiersza poleceń. Następnie wybierz ten katalog w &lt;i&gt;Ustawienia&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatywnie, katalog może być utworzony automatycznie w &lt;br&gt;%1&lt;br&gt; przez naciśnięcie przycisku poniżej</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="162"/>
+        <location filename="../qml/pages/StartPage.qml" line="167"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>Następnym krokiem po wybraniu katalogu przechowywania map jest pobranie map. W tym celu należy wybrać i ściągnąć mapy używając &lt;i&gt;Manager Map&lt;/i&gt; (pulley menu).</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="195"/>
+        <location filename="../qml/pages/StartPage.qml" line="200"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>Nie ma jeszcze dostępnych map. Po subskrybowaniu ich, musisz je pobrać. Pobieranie można uruchomić w &lt;i&gt;Managerze map&lt;/i&gt; (pulley menu) </translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="238"/>
+        <location filename="../qml/pages/StartPage.qml" line="243"/>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="242"/>
-        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
+        <location filename="../qml/pages/StartPage.qml" line="247"/>
+        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="261"/>
+        <location filename="../qml/pages/StartPage.qml" line="267"/>
         <source>Map</source>
         <translation>Mapa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="299"/>
+        <location filename="../qml/pages/StartPage.qml" line="307"/>
+        <source>Languages</source>
+        <translation type="unfinished">Języki</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="308"/>
+        <source>List of languages used for parsing addresses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="312"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="312"/>
+        <location filename="../qml/pages/StartPage.qml" line="325"/>
         <source>Jobs in a queue</source>
         <translation>Zadania w kolejce</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="313"/>
+        <location filename="../qml/pages/StartPage.qml" line="326"/>
         <source>Idle</source>
         <translation>Bezczynność</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="330"/>
+        <location filename="../qml/pages/StartPage.qml" line="343"/>
         <source>Events</source>
         <translation>Zdarzenia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="361"/>
+        <location filename="../qml/pages/StartPage.qml" line="374"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>

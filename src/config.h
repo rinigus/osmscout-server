@@ -3,6 +3,8 @@
 
 // global configuration settings
 
+#define GENERAL_SETTINGS "server-general/"
+
 #define MAPMANAGER_SETTINGS "maps/"
 
 #define OSM_SETTINGS "libosmscout/"

@@ -10,6 +10,9 @@ class AppSettings : public QSettings
 {
     Q_OBJECT
 
+  /// \brief true when profiles are used to select backends
+  Q_PROPERTY(bool profilesUsed READ profilesUsed NOTIFY profilesUsedChanged)
+
 public:
     AppSettings();
     virtual ~AppSettings() {}
@@ -30,8 +33,11 @@ public:
 
     void initDefaults(); ///< Initialize settings for configurable parameters on the first start
 
+    bool profilesUsed() const { return m_profiles_used; }
+
 signals:
     void osmScoutSettingsChanged();
+    void profilesUsedChanged(bool used);
 
 public slots:
     void fireOsmScoutSettingsChanged();
@@ -39,8 +45,11 @@ public slots:
 protected:
     QString unitName(bool speed) const;
 
+    void setProfile();
+
 protected:
     bool m_signal_osm_scout_changed_waiting = false;
+    bool m_profiles_used = false;
 };
 
 #endif // APPSETTINGS_H

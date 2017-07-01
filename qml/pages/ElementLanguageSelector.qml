@@ -11,6 +11,8 @@ Column {
     property string value
     property alias display_value: textInput.text
 
+    property bool autoApply: false
+
     width: parent.width
     anchors.margins: Theme.horizontalPageMargin
     spacing: Theme.paddingSmall
@@ -31,6 +33,7 @@ Column {
     {
         value = v
         display()
+        if (autoApply) apply()
     }
 
     function select()
@@ -61,6 +64,7 @@ Column {
             text: ""
             x: Theme.horizontalPageMargin
             width: parent.width-2*x
+            anchors.verticalCenter: parent.verticalCenter
             color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
 
             Component.onCompleted: {

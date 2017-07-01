@@ -6,6 +6,7 @@ Page {
     id: page
     allowedOrientations : Orientation.All
     property bool activeState: false
+    property bool backendSelectionPossible: false
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
@@ -32,65 +33,6 @@ Page {
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
-            }
-
-            SectionHeader {
-                text: qsTr("Storage settings")
-            }
-
-            ElementSwitch {
-                id: eManagerMapnik
-                activeState: page.activeState
-                key: settingsMapManagerPrefix + "mapnik"
-                autoApply: true
-                mainLabel: qsTr("Store datasets for Mapnik")
-                secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
-                                     "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering")
-
-                onSwitchChanged: {
-                    // ensure that we have the same value for geocoder-nlp as postal
-                    // on mobile device
-                    settings.setValue( settingsMapManagerPrefix + "mapnik",
-                                      settings.valueInt(settingsMapManagerPrefix + "mapnik") )
-                }
-            }
-
-            ElementSwitch {
-                id: eManagerGeocoderNLP
-                activeState: page.activeState
-                key: settingsMapManagerPrefix + "geocoder_nlp"
-                autoApply: true
-                mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
-                secondaryLabel: qsTr("When selected, libpostal-based geocoder datasets will be stored on device after downloading them. " +
-                                     "These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for " +
-                                     "address parsing and lookup.")
-
-                onSwitchChanged: {
-                    // ensure that we have the same value for geocoder-nlp as postal
-                    // on mobile device
-                    settings.setValue( settingsMapManagerPrefix + "postal_country",
-                                      settings.valueInt(settingsMapManagerPrefix + "geocoder_nlp") )
-                }
-            }
-
-            ElementSwitch {
-                id: eManagerValhalla
-                activeState: page.activeState
-                key: settingsMapManagerPrefix + "valhalla"
-                autoApply: true
-                mainLabel: qsTr("Store datasets for Valhalla routing engine")
-                secondaryLabel: qsTr("When selected, Valhalla datasets will be stored on device after downloading them. " +
-                                     "These datasets are required for using Valhalla as a routing engine.")
-            }
-
-            ElementSwitch {
-                id: eManagerOSMScout
-                activeState: page.activeState
-                key: settingsMapManagerPrefix + "osmscout"
-                autoApply: true
-                mainLabel: qsTr("Store datasets for libosmscout")
-                secondaryLabel: qsTr("When selected, libosmscout datasets will be stored on device after downloading them. " +
-                                     "These datasets are required for rendering, search, or routing by libosmscout backend.")
             }
 
             SectionHeader {
@@ -276,24 +218,106 @@ Page {
                     color: Theme.highlightColor
                 }
             }
+
+            SectionHeader {
+                text: qsTr("Storage settings")
+            }
+
+            Label {
+                text: qsTr("Storage settings are set by profiles. " +
+                           "If you wish to change them, please set the corresponding profile " +
+                           "or set profile to <i>Custom</i>.")
+                visible: settings.profilesUsed
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            ElementSwitch {
+                id: eManagerMapnik
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "mapnik"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Mapnik")
+                secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
+                                     "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering")
+
+                onSwitchChanged: {
+                    // ensure that we have the same value for geocoder-nlp as postal
+                    // on mobile device
+                    settings.setValue( settingsMapManagerPrefix + "mapnik",
+                                      settings.valueInt(settingsMapManagerPrefix + "mapnik") )
+                }
+            }
+
+            ElementSwitch {
+                id: eManagerGeocoderNLP
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "geocoder_nlp"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
+                secondaryLabel: qsTr("When selected, libpostal-based geocoder datasets will be stored on device after downloading them. " +
+                                     "These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for " +
+                                     "address parsing and lookup.")
+
+                onSwitchChanged: {
+                    // ensure that we have the same value for geocoder-nlp as postal
+                    // on mobile device
+                    settings.setValue( settingsMapManagerPrefix + "postal_country",
+                                      settings.valueInt(settingsMapManagerPrefix + "geocoder_nlp") )
+                }
+            }
+
+            ElementSwitch {
+                id: eManagerValhalla
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "valhalla"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Valhalla routing engine")
+                secondaryLabel: qsTr("When selected, Valhalla datasets will be stored on device after downloading them. " +
+                                     "These datasets are required for using Valhalla as a routing engine.")
+            }
+
+            ElementSwitch {
+                id: eManagerOSMScout
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "osmscout"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for libosmscout")
+                secondaryLabel: qsTr("When selected, libosmscout datasets will be stored on device after downloading them. " +
+                                     "These datasets are required for rendering, search, or routing by libosmscout backend.")
+            }
         }
 
         VerticalScrollDecorator {}
     }
 
-    Component.onCompleted: {
+    function checkState()
+    {
         page.activeState = !manager.downloading
+        page.backendSelectionPossible = (page.activeState && !settings.profilesUsed)
+    }
+
+    Component.onCompleted: {
+        checkState()
         if (!manager.downloading && !manager.checkProvidedAvailable())
             manager.updateProvided()
     }
 
     Connections {
         target: manager
-        onDownloadingChanged: page.activeState = !manager.downloading
+        onDownloadingChanged: checkState()
         onUpdatesForDataFound: {
             var clist = JSON.parse( info )
             pageStack.push(Qt.resolvedUrl("UpdatesFound.qml"),
                            {"foundUpdates": clist})
-        }
+        }        
+    }
+
+    Connections {
+        target: settings
+        onProfilesUsedChanged: checkState()
     }
 }

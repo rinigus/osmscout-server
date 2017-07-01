@@ -69,9 +69,7 @@ SOURCES += \
     src/valhallamaster.cpp
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
-OTHER_FILES += qml/osmscout-server.qml \
-    qml/cover/CoverPage.qml \
-    rpm/osmscout-server.spec
+OTHER_FILES += rpm/osmscout-server.spec
 
 include(src/uhttp/uhttp.pri)
 include(src/fileselector/fileselector.pri)
@@ -164,8 +162,6 @@ TRANSLATIONS += \
     translations/harbour-osmscout-server-sv.ts
 
 DISTFILES += \
-    qml/pages/StartPage.qml \
-    qml/pages/AboutPage.qml \
     harbour-osmscout-server.desktop \
     rpm/harbour-osmscout-server.yaml \
     rpm/harbour-osmscout-server.changes \

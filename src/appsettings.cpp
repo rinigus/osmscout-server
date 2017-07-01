@@ -35,9 +35,12 @@ void AppSettings::initDefaults()
   //CHECK("maxThreads", QThread::idealThreadCount() + 2);
   endGroup();
 
-  CHECK(OSM_SETTINGS "units", 0);
+  /////////////////////////////////////////
+  /// general settings
 
-  // defaults for libosmscout
+  CHECK(GENERAL_SETTINGS "units", 0);
+  CHECK(GENERAL_SETTINGS "profile", 0);
+
 #ifdef IS_SAILFISH_OS
   QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
   CHECK(MAPMANAGER_SETTINGS "root", documents + "/Maps.OSMScoutServer");
@@ -45,12 +48,15 @@ void AppSettings::initDefaults()
   CHECK(MAPMANAGER_SETTINGS "root", "Maps");
 #endif
 
+  /////////////////////////////////////////
+  /// defaults for map manager
+
   CHECK(MAPMANAGER_SETTINGS "map_selected", "");
-  CHECK(MAPMANAGER_SETTINGS "osmscout", 1);
-  CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
-  CHECK(MAPMANAGER_SETTINGS "postal_country", 0);
-  CHECK(MAPMANAGER_SETTINGS "mapnik", 0);
-  CHECK(MAPMANAGER_SETTINGS "valhalla", 0);
+  CHECK(MAPMANAGER_SETTINGS "osmscout", 0);
+  CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+  CHECK(MAPMANAGER_SETTINGS "postal_country", 1);
+  CHECK(MAPMANAGER_SETTINGS "mapnik", 1);
+  CHECK(MAPMANAGER_SETTINGS "valhalla", 1);
   CHECK(MAPMANAGER_SETTINGS "max_download_speed_in_kbps", -1);
   CHECK(MAPMANAGER_SETTINGS "development_disable_url_update", 0);
   CHECK(MAPMANAGER_SETTINGS "assume_files_exist", 0);
@@ -58,6 +64,9 @@ void AppSettings::initDefaults()
   // force URL setting
   QSettings::setValue(MAPMANAGER_SETTINGS "provided_url",
                       "https://raw.githubusercontent.com/rinigus/osmscout-server/master/scripts/import/provided/url.json");
+
+  /////////////////////////////////////////
+  /// defaults for libosmscout
 
   /// used internally by MapManager to set the path - will be modified when support
   /// for multi-map handling is be ready
@@ -119,6 +128,9 @@ void AppSettings::initDefaults()
   CHECK(GEOMASTER_SETTINGS "search_all_maps", 1);
   CHECK(GEOMASTER_SETTINGS "continue_search_if_hit_found", 1);
 
+  /////////////////////////////////////////
+  /// mapnik settings
+
   CHECK(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
 #ifdef IS_SAILFISH_OS
   CHECK(MAPNIKMASTER_SETTINGS "scale", 3.0);
@@ -127,6 +139,9 @@ void AppSettings::initDefaults()
 #endif
   CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 64);
   CHECK(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "mapnik");
+
+  /////////////////////////////////////////
+  /// valhalla settings
 
   CHECK(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
   {
@@ -146,6 +161,9 @@ void AppSettings::initDefaults()
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_auto", 5000.0);
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_bicycle", 100.0);
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_pedestrian", 75.0);
+
+  /// set profile if specified
+  setProfile();
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -166,6 +184,11 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
           m_signal_osm_scout_changed_waiting = true;
           QTimer::singleShot(200, this, SLOT(fireOsmScoutSettingsChanged()));
         }
+    }
+
+  else if (key == GENERAL_SETTINGS "profile")
+    {
+      setProfile();
     }
 }
 
@@ -202,7 +225,7 @@ QString AppSettings::valueString(const QString &key)
 ///////////////////////////////////////////////////////
 int AppSettings::unitIndex() const
 {
-  return value(OSM_SETTINGS "units", 0).toInt();
+  return value(GENERAL_SETTINGS "units", 0).toInt();
 }
 
 int AppSettings::unitDisplayDecimals() const
@@ -251,4 +274,61 @@ double AppSettings::unitFactor() const
   if (i==1) return 1.0 / 1.609344;
 
   return 1.0; /// default
+}
+
+///////////////////////////////////////////////////////
+/// NB! Profiles have to be in sync here with the
+/// QML Profile page
+///////////////////////////////////////////////////////
+
+void AppSettings::setProfile()
+{
+  int index = valueInt(GENERAL_SETTINGS "profile");
+  bool profile_active = true;
+
+  if (index == 0) // default profile: Mapnik / GeocoderNLP / Valhalla
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+    }
+  else if (index == 1) // libosmscout + geocoder-nlp
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 1);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 0);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 0);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
+    }
+  else if (index == 2) // libosmscout
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 1);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 0);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 0);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 0);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
+    }
+  // all other profiles are either custom (index=3) or unknown
+  else
+    profile_active = false;
+
+  if (profile_active != m_profiles_used)
+    {
+      m_profiles_used = profile_active;
+      emit profilesUsedChanged(m_profiles_used);
+    }
 }
