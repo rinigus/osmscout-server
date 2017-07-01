@@ -41,6 +41,10 @@ void AppSettings::initDefaults()
   CHECK(GENERAL_SETTINGS "units", 0);
   CHECK(GENERAL_SETTINGS "profile", 0);
 
+  CHECK(GENERAL_SETTINGS "rollingLoggerSize", 10);
+  CHECK(GENERAL_SETTINGS "logInfo", 1);
+  CHECK(GENERAL_SETTINGS "logSession", 0);
+
 #ifdef IS_SAILFISH_OS
   QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
   CHECK(MAPMANAGER_SETTINGS "root", documents + "/Maps.OSMScoutServer");
@@ -79,10 +83,6 @@ void AppSettings::initDefaults()
   CHECK(OSM_SETTINGS "drawBackground", 1);
   CHECK(OSM_SETTINGS "dataLookupArea", 1.25);
   CHECK(OSM_SETTINGS "tileBordersZoomCutoff", 16);
-
-  CHECK(OSM_SETTINGS "rollingLoggerSize", 10);
-  CHECK(OSM_SETTINGS "logInfo", 1);
-  CHECK(OSM_SETTINGS "logSession", 0);
 
   CHECK(OSM_SETTINGS "routingCostLimitDistance", 50.0);
   CHECK(OSM_SETTINGS "routingCostLimitFactor", 5.0);

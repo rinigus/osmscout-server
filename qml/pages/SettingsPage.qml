@@ -268,7 +268,7 @@ Dialog {
 
             ElementSwitch {
                 id: eLogInfo
-                key: settingsOsmPrefix + "logInfo"
+                key: settingsGeneralPrefix + "logInfo"
                 mainLabel: qsTr("Log info messages")
                 secondaryLabel: qsTr( "When disabled, INFO messages will not be logged in Events log. " +
                                      "Exception is loading of the database which is shown always." )
@@ -276,7 +276,7 @@ Dialog {
 
             ElementEntry {
                 id: eRollSize
-                key: settingsOsmPrefix + "rollingLoggerSize"
+                key: settingsGeneralPrefix + "rollingLoggerSize"
                 mainLabel: qsTr("Events log size")
                 secondaryLabel: qsTr("Number of events shown in the main page")
                 validator: IntValidator { bottom: 3; top: 25; }
@@ -285,7 +285,7 @@ Dialog {
 
             ElementSwitch {
                 id: eLogSession
-                key: settingsOsmPrefix + "logSession"
+                key: settingsGeneralPrefix + "logSession"
                 mainLabel: qsTr("Log messages into session log file")
                 secondaryLabel: qsTr("When enabled, the messages are logged into a session log file." +
                                      "The log file is at .cache/harbour-osmscout-server directory. " +
