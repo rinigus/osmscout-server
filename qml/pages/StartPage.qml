@@ -1,8 +1,9 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "."
 
 Page {
-    id: page
+    id: rootPage
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
@@ -38,7 +39,7 @@ Page {
         Column {
             id: column
 
-            width: page.width
+            width: rootPage.width
             spacing: Theme.paddingLarge
 
             PageHeader {
@@ -49,7 +50,7 @@ Page {
             //// Check for installed modules
             Column {
                 id: modulesNotAvailable
-                width: page.width
+                width: rootPage.width
                 spacing: Theme.paddingLarge
 
                 property string dname: ""
@@ -89,7 +90,7 @@ Page {
 
             Column {
                 id: storageNotAvailable
-                width: page.width
+                width: rootPage.width
                 spacing: Theme.paddingLarge
 
                 property string dname: ""
@@ -155,7 +156,7 @@ Page {
 
             Column {
                 id: noSubscriptions
-                width: page.width
+                width: rootPage.width
                 spacing: Theme.paddingLarge
 
                 SectionHeader {
@@ -188,7 +189,7 @@ Page {
 
             Column {
                 id: noMapsAvailable
-                width: page.width
+                width: rootPage.width
                 spacing: Theme.paddingLarge
 
                 SectionHeader {
@@ -234,7 +235,7 @@ Page {
             /// Warn if no language has been specified
             Column {
                 id: noGeocoderLangSpecified
-                width: page.width
+                width: rootPage.width
                 spacing: Theme.paddingLarge
 
                 // that will be false when maps storage is not available
@@ -380,21 +381,86 @@ Page {
         }
     }
 
-//    function openWelcomeDialog()
-//    {
-//        console.log("working!")
-//        if (status == PageStatus.Active)
-//        {
-//            page.statusChanged.disconnect(openWelcomeDialog)
-//            pageStack.push(Qt.resolvedUrl("ProfilesPage.qml"))
-////            var component = Qt.createComponent("WelcomeDialog.qml")
-////            var popup = component.createObject(mainPage)
-////            popup.open()
-//        }
-//    }
+    ///////////////////////////////////////////////////////////
+    /// welcome wizard
+    Component {
+        id: firstWelcomeWizardPage
 
-//    Component.onCompleted: {
-//        console.log("Completed")
-//        page.statusChanged.connect(openWelcomeDialog)
-//    }
+        Dialog {
+
+            acceptDestination: secondWelcomeWizardPage
+
+            SilicaFlickable {
+                anchors.fill: parent
+                contentHeight: column.height + Theme.paddingLarge
+
+                Column {
+                    id: column
+                    width: parent.width
+
+                    DialogHeader {
+                        title: qsTr("Welcome")
+                        acceptText: qsTr("Next")
+                        cancelText: qsTr("Skip")
+                    }
+
+                    Label {
+                        text: qsTr("OSM Scout Server is a part of the solution allowing you to have offline maps on device. " +
+                                   "With this server, you could dowload the maps to your device and use the " +
+                                   "downloaded data to locally render maps, search for addresses and POIs, and " +
+                                   "calculate the routes. Such operations requires server and an additional client " +
+                                   "accessing the server to run simultaneously on the device.<br><br>" +
+                                   "This wizard will help you to select the backends used by the server and " +
+                                   "the specify languages for parsing your search requests.<br><br>" +
+                                   "Please choose 'Next' to start configuration."
+                                   )
+                        x: Theme.horizontalPageMargin
+                        width: parent.width-2*x
+                        wrapMode: Text.WordWrap
+                        color: Theme.highlightColor
+                    }
+                }
+
+                VerticalScrollDecorator {}
+            }
+        }
+    }
+
+    Component {
+        id: secondWelcomeWizardPage
+
+        ProfilesPage {
+            acceptDestination: thirdWelcomeWizardPage
+        }
+    }
+
+    Component {
+        id: thirdWelcomeWizardPage
+
+        LanguageSelector {
+            acceptDestination: rootPage
+            acceptDestinationAction: PageStackAction.Pop
+
+            value: eGeoLanguages.value
+            callback: eGeoLanguages.setValue
+            title: eGeoLanguages.mainLabel
+            comment: eGeoLanguages.selectorComment
+            note: eGeoLanguages.selectorNote
+        }
+    }
+
+
+    function openWelcomeWizard()
+    {
+        if (status == PageStatus.Active)
+        {
+            rootPage.statusChanged.disconnect(openWelcomeWizard)
+            pageStack.push(firstWelcomeWizardPage)
+        }
+    }
+
+    Component.onCompleted: {
+        if (settings.firstTime)
+            rootPage.statusChanged.connect(openWelcomeWizard)
+    }
 }

@@ -45,6 +45,8 @@ void AppSettings::initDefaults()
   CHECK(GENERAL_SETTINGS "logInfo", 1);
   CHECK(GENERAL_SETTINGS "logSession", 0);
 
+  CHECK(GENERAL_SETTINGS "firstTime", 1);
+
 #ifdef IS_SAILFISH_OS
   QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
   CHECK(MAPMANAGER_SETTINGS "root", documents + "/Maps.OSMScoutServer");
@@ -164,6 +166,10 @@ void AppSettings::initDefaults()
 
   /// set profile if specified
   setProfile();
+
+  /// set the notification of the first time use
+  m_first_time = valueBool(GENERAL_SETTINGS "firstTime");
+  setValue(GENERAL_SETTINGS "firstTime", 0);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)

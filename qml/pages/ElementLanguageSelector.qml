@@ -7,6 +7,11 @@ Column {
     property string key
     property string mainLabel: qsTr("Languages")
     property string secondaryLabel: qsTr("List of languages used for parsing addresses")
+    property string selectorComment: qsTr("Please select languages used for parsing addresses.")
+    property string selectorNote: qsTr("When none of the "+
+                                       "languages are selected in this form, it is assumed that all supported languages " +
+                                       "should be used for parsing.<br>" +
+                                       "Note that when all supported languages are used, RAM requirements could be large.")
 
     property string value
     property alias display_value: textInput.text
@@ -42,8 +47,8 @@ Column {
                            value: value,
                            title: mainLabel,
                            callback: setValue,
-                           comment: qsTr("Please select languages used for parsing addresses"),
-                           note: qsTr("Note that when all supported languages are used, RAM requirements could be large")
+                           comment: selectorComment,
+                           note: selectorNote
                        })
     }
 

@@ -13,6 +13,9 @@ class AppSettings : public QSettings
   /// \brief true when profiles are used to select backends
   Q_PROPERTY(bool profilesUsed READ profilesUsed NOTIFY profilesUsedChanged)
 
+  /// \brief true if the application has been run the first time
+  Q_PROPERTY(bool firstTime READ firstTime)
+
 public:
     AppSettings();
     virtual ~AppSettings() {}
@@ -35,6 +38,8 @@ public:
 
     bool profilesUsed() const { return m_profiles_used; }
 
+    bool firstTime() const { return m_first_time; }
+
 signals:
     void osmScoutSettingsChanged();
     void profilesUsedChanged(bool used);
@@ -50,6 +55,7 @@ protected:
 protected:
     bool m_signal_osm_scout_changed_waiting = false;
     bool m_profiles_used = false;
+    bool m_first_time = false;
 };
 
 #endif // APPSETTINGS_H
