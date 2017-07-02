@@ -5,8 +5,8 @@ Column {
     id: main
 
     property string key
-    property string mainLabel
-    property string secondaryLabel
+    property string mainLabel: qsTr("Languages")
+    property string secondaryLabel: qsTr("List of languages used for parsing addresses")
 
     property string value
     property alias display_value: textInput.text
@@ -42,7 +42,8 @@ Column {
                            value: value,
                            title: mainLabel,
                            callback: setValue,
-                           comment: secondaryLabel
+                           comment: qsTr("Please select languages used for parsing addresses"),
+                           note: qsTr("Note that when all supported languages are used, RAM requirements could be large")
                        })
     }
 

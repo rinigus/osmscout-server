@@ -19,12 +19,13 @@ Dialog {
             anchors.margins: Theme.horizontalPageMargin
 
             DialogHeader {
-                title: qsTr("Profiles")
+                title: qsTr("Profile")
             }
 
             Label {
                 text: qsTr("OSM Scout Server uses profiles to simplify the selection " +
-                           "of backends and the sets of downloaded databases."
+                           "of backends and the sets of downloaded databases.<br><br>" +
+                           "Please select active profile."
                            )
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
@@ -56,23 +57,23 @@ Dialog {
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
 
-                text: qsTr("Default profile uses <i>Mapnik</i> to render maps, <i>Geocoder-NLP</i> to search for locations "+
+                text: qsTr("<i>Default</i> profile uses <i>Mapnik</i> to render maps, <i>Geocoder-NLP</i> to search for locations, "+
                            "and <i>Valhalla</i> to calculate the routes. " +
                            "This profile is a recommended one.<br><br>" +
 
-                           "Profile where <i>libosmscout</i> is combined with <i>Geocoder-NLP</i> " +
-                           "has smaller storage requirements when compared with the default one. " +
+                           "The profile where <i>libosmscout</i> is combined with <i>Geocoder-NLP</i> " +
+                           "has smaller storage requirements when compared to the default one. " +
                            "However, rendering of the maps and routing would be limited only to one territory. " +
-                           "In addition, rendering quality is inferior and routing speed is slower when " +
-                           "compared with the default profile.<br><br>" +
+                           "In addition, rendering quality is inferior and routing speed is slower when compared to " +
+                           "the default profile.<br><br>" +
 
                            "<i>libosmscout</i> profile has the smallest storage requirements among all profiles. " +
-                           "However, rendering of the maps and routing would be limited only to one territory in the " +
-                           "implementation used by the server. In addition, rendering quality and search is inferior as well as " +
-                           "routing speed is slower when " +
-                           "compared with the default profile.<br><br>" +
+                           "However, rendering of the maps, search, and routing would be limited only to one territory. " +
+                           "In addition, rendering quality and search is inferior as well as " +
+                           "routing speed is slower  when compared to " +
+                           "the default profile.<br><br>" +
 
-                           "When using Custom profile, Settings and Map Manager Storage are not set by profiles " +
+                           "When using <i>Custom</i> profile, Settings and Map Manager Storage are not set by profiles " +
                            "and should be specified by user. " +
                            "This profile allows to select rendering, search, and routing components individually. Note that " +
                            "the user is responsible for adjusting the settings to make them consistent between requirements of " +

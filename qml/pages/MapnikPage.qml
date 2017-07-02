@@ -23,11 +23,11 @@ Dialog {
             }
 
             Label {
-                text: qsTr("Mapnik is can be used as a rendering backend to provide map tiles to the client programs")
+                text: qsTr("Mapnik can be used as a rendering backend to provide map tiles to the client programs")
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
+                //font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
             }
 

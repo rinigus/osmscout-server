@@ -28,7 +28,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
+                //font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
             }
 
@@ -44,7 +44,6 @@ Dialog {
             ElementLanguageSelector {
                 id: eGeoLanguages
                 key: settingsGeomasterPrefix + "languages"
-                mainLabel: qsTr("Languages")
                 secondaryLabel: qsTr("List of languages used for parsing addresses. " +
                                      "Note that when all supported languages are used, RAM requirements could be large")
             }

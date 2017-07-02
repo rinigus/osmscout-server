@@ -21,7 +21,7 @@ Page {
             }
 
             MenuItem {
-                text: qsTr("Profiles")
+                text: qsTr("Profile")
                 onClicked: pageStack.push(Qt.resolvedUrl("ProfilesPage.qml"))
             }
 
@@ -63,7 +63,7 @@ Page {
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
-                    font.pixelSize: Theme.fontSizeSmall
+                    //font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
                 }
 
@@ -81,7 +81,6 @@ Page {
                     noModuleText.text += qsTr("</ul><br>Please install missing modules via Harbour or OpenRepos. " +
                                               "After installation of the module(s), please restart OSM Scout Server.")
                 }
-
             }
 
 
@@ -104,7 +103,7 @@ Page {
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
-                    font.pixelSize: Theme.fontSizeSmall
+                    //font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
                 }
 
@@ -169,7 +168,7 @@ Page {
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
-                    font.pixelSize: Theme.fontSizeSmall
+                    //font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
                 }
 
@@ -202,7 +201,7 @@ Page {
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
-                    font.pixelSize: Theme.fontSizeSmall
+                    //font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
                 }
 
@@ -237,6 +236,8 @@ Page {
                 id: noGeocoderLangSpecified
                 width: page.width
                 spacing: Theme.paddingLarge
+
+                // that will be false when maps storage is not available
                 visible: geocoder.warnLargeRamLangNotSpecified
 
                 SectionHeader {
@@ -254,7 +255,7 @@ Page {
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
-                    font.pixelSize: Theme.fontSizeSmall
+                    //font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
                 }
             }
@@ -304,12 +305,12 @@ Page {
                 id: eGeoLanguages
                 key: settingsGeomasterPrefix + "languages"
                 autoApply: true
-                mainLabel: qsTr("Languages")
-                secondaryLabel: qsTr("List of languages used for parsing addresses")
+                visible: manager.storageAvailable
             }
 
             SectionHeader {
                 text: qsTr("Status")
+                visible: manager.storageAvailable
             }
 
             Label {
@@ -318,6 +319,7 @@ Page {
                 width: parent.width-2*Theme.horizontalPageMargin
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeSmall
+                visible: manager.storageAvailable
 
                 text: ""
 
@@ -337,10 +339,12 @@ Page {
             }
 
             ElementDownloads {
+                visible: manager.storageAvailable
             }
 
             SectionHeader {
                 text: qsTr("Events")
+                visible: manager.storageAvailable
             }
 
             Label {
@@ -350,6 +354,7 @@ Page {
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeSmall
                 wrapMode: Text.Wrap
+                visible: manager.storageAvailable
 
                 text: ""
 
@@ -375,4 +380,21 @@ Page {
         }
     }
 
+//    function openWelcomeDialog()
+//    {
+//        console.log("working!")
+//        if (status == PageStatus.Active)
+//        {
+//            page.statusChanged.disconnect(openWelcomeDialog)
+//            pageStack.push(Qt.resolvedUrl("ProfilesPage.qml"))
+////            var component = Qt.createComponent("WelcomeDialog.qml")
+////            var popup = component.createObject(mainPage)
+////            popup.open()
+//        }
+//    }
+
+//    Component.onCompleted: {
+//        console.log("Completed")
+//        page.statusChanged.connect(openWelcomeDialog)
+//    }
 }
