@@ -68,8 +68,8 @@ Dialog {
             }
 
             Label {
-                text: qsTr("Active backends are set by profiles. " +
-                           "If you wish to change them, please set the corresponding profile " +
+                text: qsTr("Active backends are set by the profile. " +
+                           "If you wish to change the backend selection, please set the corresponding profile " +
                            "or set profile to <i>Custom</i>.")
                 visible: settings.profilesUsed
                 x: Theme.horizontalPageMargin

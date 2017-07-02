@@ -224,8 +224,8 @@ Page {
             }
 
             Label {
-                text: qsTr("Storage settings are set by profiles. " +
-                           "If you wish to change them, please set the corresponding profile " +
+                text: qsTr("Storage settings are set by the profile. " +
+                           "If you wish to change storage settings, please set the corresponding profile " +
                            "or set profile to <i>Custom</i>.")
                 visible: settings.profilesUsed
                 x: Theme.horizontalPageMargin
