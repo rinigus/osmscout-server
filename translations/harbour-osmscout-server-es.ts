@@ -1871,90 +1871,90 @@
         <translation>&lt;/ul&gt;&lt;br&gt;Por favor, instala los módulos que faltan a través de Harbour u Openrepos. Tras la instalación de los módulos reinicia OSM Scout Server.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="99"/>
-        <location filename="../qml/pages/StartPage.qml" line="163"/>
-        <location filename="../qml/pages/StartPage.qml" line="196"/>
-        <location filename="../qml/pages/StartPage.qml" line="402"/>
+        <location filename="../qml/pages/StartPage.qml" line="105"/>
+        <location filename="../qml/pages/StartPage.qml" line="168"/>
+        <location filename="../qml/pages/StartPage.qml" line="207"/>
+        <location filename="../qml/pages/StartPage.qml" line="425"/>
         <source>Welcome</source>
         <translation>Bienvenido</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="117"/>
+        <location filename="../qml/pages/StartPage.qml" line="123"/>
         <source>Create default directory</source>
         <translation>Crear directorio por defecto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="140"/>
+        <location filename="../qml/pages/StartPage.qml" line="146"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
         <translation>Crea el directorio&lt;br&gt;%1&lt;br&gt;y lo configura para almacenar mapas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="142"/>
+        <location filename="../qml/pages/StartPage.qml" line="148"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
         <translation>Se espera que &lt;i&gt;OSM Scout Server&lt;/i&gt; sea utilizado con los mapas descargados. Para administrar los mapas, el servidor necesita una carpeta propia. Los archivos de esa carpeta solo serán administrados por el servidor. Esto incluye la eliminación de todos los archivos al solicitar la limpieza o actualización de los mapas. &lt;br&gt;&lt;br&gt;Por favor, &lt;b&gt;asigna una carpeta vacía e independiente&lt;/b&gt; para OSM Scout Server. Para ello, crea una nueva carpeta usando un gestor de archivos o la línea de comandos y selecciona esa carpeta en &lt;i&gt;Ajustes&lt;/i&gt; (menú deslizante). Alternativamente, el directorio puede crearse y configurarse automáticamente en &lt;br&gt;%1&lt;br&gt; pulsando el botón de abajo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="167"/>
+        <location filename="../qml/pages/StartPage.qml" line="172"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>Una vez seleccionada la carpeta de almacenamiento, el siguiente paso es obtener los mapas. Para ello, puedes seleccionar y descargar los mapas usando &lt;i&gt;Gestor de mapas&lt;/i&gt; (menú deslizante).</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="200"/>
+        <location filename="../qml/pages/StartPage.qml" line="211"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>No hay mapas disponibles aún. Después de añadir suscripciones tienes que iniciar las descargas. Las descargas pueden iniciarse usando el &lt;i&gt;Gestor de mapas&lt;/i&gt; (menú deslizante).</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="245"/>
+        <location filename="../qml/pages/StartPage.qml" line="262"/>
         <source>Warning</source>
         <translation>Aviso</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="249"/>
+        <location filename="../qml/pages/StartPage.qml" line="266"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="269"/>
+        <location filename="../qml/pages/StartPage.qml" line="292"/>
         <source>Map</source>
         <translation>Mapa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="313"/>
+        <location filename="../qml/pages/StartPage.qml" line="336"/>
         <source>Status</source>
         <translation>Estado</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="328"/>
+        <location filename="../qml/pages/StartPage.qml" line="351"/>
         <source>Jobs in a queue</source>
         <translation>Trabajos en cola</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="329"/>
+        <location filename="../qml/pages/StartPage.qml" line="352"/>
         <source>Idle</source>
         <translation>Inactivo</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="347"/>
+        <location filename="../qml/pages/StartPage.qml" line="370"/>
         <source>Events</source>
         <translation>Eventos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="380"/>
+        <location filename="../qml/pages/StartPage.qml" line="403"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="403"/>
+        <location filename="../qml/pages/StartPage.qml" line="426"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="404"/>
+        <location filename="../qml/pages/StartPage.qml" line="427"/>
         <source>Skip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="408"/>
+        <location filename="../qml/pages/StartPage.qml" line="431"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation type="unfinished"></translation>
     </message>

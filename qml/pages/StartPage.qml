@@ -82,6 +82,12 @@ Page {
                     noModuleText.text += qsTr("</ul><br>Please install missing modules via Harbour or OpenRepos. " +
                                               "After installation of the module(s), please restart OSM Scout Server.")
                 }
+
+                Rectangle { // just extra space to highlight the message
+                    height: Theme.paddingLarge*3
+                    width: parent.width
+                    color: "transparent"
+                }
             }
 
 
@@ -151,7 +157,6 @@ Page {
                                  "%1<br>by pressing a button below").arg(dname)
 
                 }
-
             }
 
             Column {
@@ -171,6 +176,12 @@ Page {
                     wrapMode: Text.WordWrap
                     //font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
+                }
+
+                Rectangle { // just extra space to highlight the message
+                    height: Theme.paddingLarge*3
+                    width: parent.width
+                    color: "transparent"
                 }
 
                 function checkVisible() {
@@ -204,6 +215,12 @@ Page {
                     wrapMode: Text.WordWrap
                     //font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
+                }
+
+                Rectangle { // just extra space to highlight the message
+                    height: Theme.paddingLarge*3
+                    width: parent.width
+                    color: "transparent"
                 }
 
                 function checkVisible() {
@@ -258,6 +275,12 @@ Page {
                     wrapMode: Text.WordWrap
                     //font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
+                }
+
+                Rectangle { // just extra space to highlight the message
+                    height: Theme.paddingLarge*3
+                    width: parent.width
+                    color: "transparent"
                 }
             }
 
