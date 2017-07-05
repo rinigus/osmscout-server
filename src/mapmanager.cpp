@@ -72,7 +72,11 @@ void Manager::loadSettings()
   QString old_selection = m_map_selected;
 
   QString root_dir_path = settings.valueString(MAPMANAGER_SETTINGS "root");
+  bool root_changed = ( root_dir_path != m_root_dir.path() );
   m_root_dir.setPath(root_dir_path);
+
+  if (root_changed)
+    InfoHub::logInfo(tr("Storage forlder changed to %1").arg(root_dir_path));
 
   // check for errors
   bool root_ok = false;
@@ -152,7 +156,7 @@ void Manager::loadSettings()
   if (storage_was_available != m_storage_available)
     emit storageAvailableChanged(m_storage_available);
 
-  scanDirectories(old_selection != m_map_selected);
+  scanDirectories(root_changed || old_selection != m_map_selected);
   missingData();
   checkUpdates();
   if (old_selection != m_map_selected)
@@ -263,6 +267,7 @@ void Manager::scanDirectories(bool force_update)
   if (!m_root_dir.exists())
     {
       InfoHub::logWarning(tr("Maps storage folder does not exist: ") + m_root_dir.absolutePath());
+      m_maps_requested = QJsonObject();
       nothingAvailable();
       return;
     }
@@ -271,6 +276,7 @@ void Manager::scanDirectories(bool force_update)
   if (!m_root_dir.exists(const_fname_countries_requested))
     {
       InfoHub::logWarning(tr("No maps were requested"));
+      m_maps_requested = QJsonObject();
       nothingAvailable();
       return;
     }
