@@ -72,22 +72,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="259"/>
+        <location filename="../src/appsettings.cpp" line="260"/>
         <source>mph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="259"/>
+        <location filename="../src/appsettings.cpp" line="260"/>
         <source>mi.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="261"/>
+        <location filename="../src/appsettings.cpp" line="262"/>
         <source>km/h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="261"/>
+        <location filename="../src/appsettings.cpp" line="262"/>
         <source>km</source>
         <translation type="unfinished"></translation>
     </message>
@@ -706,7 +706,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1225"/>
+        <location filename="../src/mapmanager.cpp" line="1236"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -731,32 +731,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1142"/>
+        <location filename="../src/mapmanager.cpp" line="1153"/>
         <source>Error while deleting file:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1143"/>
+        <location filename="../src/mapmanager.cpp" line="1154"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1148"/>
+        <location filename="../src/mapmanager.cpp" line="1159"/>
         <source>File removed during cleanup:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1168"/>
+        <location filename="../src/mapmanager.cpp" line="1179"/>
         <source>Updating the distribution server URL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1221"/>
+        <location filename="../src/mapmanager.cpp" line="1232"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1223"/>
+        <location filename="../src/mapmanager.cpp" line="1234"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1076,12 +1076,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="171"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
+        <source>Delete unused files and free the occupied space</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="142"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="135"/>
         <source>MB</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1106,27 +1111,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
-        <source>Delete unused files (listed below) and free the occupied space</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="119"/>
-        <source>Files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="126"/>
-        <source>Files to be deleted during cleanup:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="135"/>
         <source>Occupied space</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="169"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="140"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
         <translation type="unfinished"></translation>
     </message>

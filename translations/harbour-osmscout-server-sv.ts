@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -72,22 +70,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="259"/>
+        <location filename="../src/appsettings.cpp" line="260"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="259"/>
+        <location filename="../src/appsettings.cpp" line="260"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="261"/>
+        <location filename="../src/appsettings.cpp" line="262"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="261"/>
+        <location filename="../src/appsettings.cpp" line="262"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -353,22 +351,22 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="8"/>
         <source>Languages</source>
-        <translation type="unfinished">Språk</translation>
+        <translation>Språk</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="9"/>
         <source>List of languages used for parsing addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista över språk som används för adresstolkning</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="10"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj språk att använda för adresstolkning.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="11"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
-        <translation type="unfinished"></translation>
+        <translation>Om inget språk väljs i denna inställning, antas det att alla språk skall användas för adresstolkning.&lt;br&gt;Notera, att när alla språk används kan RAM-belastningen bli hög.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="34"/>
@@ -571,11 +569,6 @@
         <translation>Kunde inte allokera karthanteringsfunktioner</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage forlder changed to %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/mapmanager.cpp" line="86"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Kartlagringsmappen finns inte: %1</translation>
@@ -648,6 +641,11 @@
         <location filename="../src/mapmanager.cpp" line="325"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Saknad datamängd för %1: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="79"/>
+        <source>Storage forlder changed to %1</source>
+        <translation>Lagringsmappen ändrad till %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="369"/>
@@ -879,7 +877,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="227"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagringsinställningar anges efter profil. Om du vill ändra lagringsinställningar, måste du ange motsvarande profil eller ange profilen som &lt;i&gt;Anpassad&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="260"/>
@@ -1035,7 +1033,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik kan användas som renderingsgränssnitt för att tillhandahålla kartrutor i klientprogram</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
@@ -1076,12 +1074,17 @@
         <translation>Tar bort</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="171"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
+        <source>Delete unused files and free the occupied space</source>
+        <translation>Ta bort oanvända filer och återfå lagringsutrymmet</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="142"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
         <translation>Alla lagrade filer används av OSM Scout Server. Det finns inget att ta bort.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="135"/>
         <source>MB</source>
         <translation>MB</translation>
     </message>
@@ -1106,27 +1109,12 @@
         <translation>Städa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
-        <source>Delete unused files (listed below) and free the occupied space</source>
-        <translation>Ta bort oanvända filer (listade nedan) och frigör ockuperat utrymme</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="119"/>
-        <source>Files</source>
-        <translation>Filer</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="126"/>
-        <source>Files to be deleted during cleanup:</source>
-        <translation>Filer som tas bort under städning:</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="164"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="135"/>
         <source>Occupied space</source>
         <translation>Använt lagringsutrymme</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="169"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="140"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
         <translation>Kunde inte kontrollera oanvända filer. Detta kan t.ex. bero på aktiva nerladdningar</translation>
     </message>
@@ -1259,7 +1247,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation type="unfinished"></translation>
+        <translation>Transporthastigheter som används av OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) vid ruttberäkning</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="35"/>
@@ -1393,37 +1381,37 @@
         <location filename="../qml/pages/ProfilesPage.qml" line="22"/>
         <location filename="../qml/pages/ProfilesPage.qml" line="39"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="26"/>
         <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.&lt;br&gt;&lt;br&gt;Please select active profile.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server använder profiler, för att förenkla valet av gränssnitt och nerladdade databasuppsättningar.&lt;br&gt;&lt;br&gt;Välj aktiv profil.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="42"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Standard</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="43"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; med &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="44"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Anpassad</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="60"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1668,14 +1656,9 @@
         <translation>Mapp för kartlagring.&lt;br&gt;&lt;b&gt;OBS!&lt;/b&gt; Denna mapp hanteras till fullo av OSM Scout Server. &lt;b&gt;Tilldela en separat, tom mapp&lt;/b&gt; som OSM Scout Server kan använda. Detta inkluderar borttagning av alla filer i mappen vid din begäran om rensning, eller kartuppdatering.&lt;br&gt;&lt;i&gt;Exempel:&lt;/i&gt; Kartor under &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="66"/>
-        <source>Profiles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="71"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
@@ -1773,6 +1756,11 @@
         <translation>Mapnik</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="66"/>
+        <source>Profiles</source>
+        <translation>Profiler</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="171"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>Kartrenderingsinställningar för Mapnik-gränssnitt</translation>
@@ -1826,6 +1814,11 @@
         <translation>Om</translation>
     </message>
     <message>
+        <location filename="../qml/pages/StartPage.qml" line="25"/>
+        <source>Profile</source>
+        <translation>Profil</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/StartPage.qml" line="31"/>
         <source>Map Manager</source>
         <translation>Karthanterare</translation>
@@ -1834,11 +1827,6 @@
         <location filename="../qml/pages/StartPage.qml" line="20"/>
         <source>Settings</source>
         <translation>Inställningar</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StartPage.qml" line="25"/>
-        <source>Profile</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="46"/>
@@ -1911,22 +1899,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="266"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StartPage.qml" line="426"/>
-        <source>Next</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StartPage.qml" line="427"/>
-        <source>Skip</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/StartPage.qml" line="431"/>
-        <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har inte specificerat något språk att använda för adresstolkning med Geocoder-NLP. Därför används alla kända språk, vilket kan resultera i mycket stor RAM-belastning. Sådan stor RAM-användning kan leda till att OSM Scout Server dödas av kärnan. &lt;br&gt;&lt;br&gt;För att specificera språk för adresstolkning, kan du antingen välja språk nedan, eller gå till &lt;i&gt;Inställningar&lt;/i&gt; (toppmenyn) och välj språk som en del av inställningarna för &lt;i&gt;Geocoder-NLP&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="292"/>
@@ -1957,6 +1930,21 @@
         <location filename="../qml/pages/StartPage.qml" line="403"/>
         <source>Error</source>
         <translation>Fel</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="426"/>
+        <source>Next</source>
+        <translation>Nästa</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="427"/>
+        <source>Skip</source>
+        <translation>Hoppa över</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/StartPage.qml" line="431"/>
+        <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
