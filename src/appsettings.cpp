@@ -46,6 +46,7 @@ void AppSettings::initDefaults()
   CHECK(GENERAL_SETTINGS "logSession", 0);
 
   CHECK(GENERAL_SETTINGS "firstTime", 1);
+  CHECK(GENERAL_SETTINGS "lastRunVersion", 0);
 
 #ifdef IS_SAILFISH_OS
   QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
