@@ -5,6 +5,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Jul 5 2017 rinigus <rinigus.git@gmail.com> 0.13.0-1
+- Introduction of profiles
+- Startup wizard
+- Updated translations
+- Other small changes
+
 * Fri Jun 30 2017 rinigus <rinigus.git@gmail.com> 0.12.0-1
 - Add support for Mapnik style and daylight switching
 - Speedup Mapnik backend by removing double scaling of the buffer
