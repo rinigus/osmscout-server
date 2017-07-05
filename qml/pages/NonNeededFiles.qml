@@ -106,41 +106,12 @@ Page {
                 }
 
                 Label {
-                    text: qsTr("Delete unused files (listed below) and free the occupied space")
+                    text: qsTr("Delete unused files and free the occupied space")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
-                }
-            }
-
-            SectionHeader {
-                text: qsTr("Files")
-                visible: anythingToDelete
-            }
-
-            Label {
-                width: parent.width
-                visible: anythingToDelete
-                text: qsTr("Files to be deleted during cleanup:")
-                color: Theme.highlightColor
-            }
-
-            Column {
-                visible: anythingToDelete
-                x: Theme.horizontalPageMargin
-                width: parent.width - x
-                spacing: Theme.paddingMedium
-                Repeater {
-                    model: nFiles
-                    delegate: Label {
-                        width: parent.width
-                        text: fileNames[index]
-                        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                        color: Theme.highlightColor
-                        font.pixelSize: Theme.fontSizeSmall
-                    }
                 }
             }
 

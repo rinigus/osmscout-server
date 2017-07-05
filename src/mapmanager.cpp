@@ -1108,12 +1108,23 @@ QStringList Manager::getDirsWithNonNeededFiles()
 {
   QStringList dirlist;
 
+  /// Valhalla files are considered an exception and
+  /// we'll report just that some of the valhalla's subdir
+  /// will be deleted, not each subdir separately. Otherwise, we
+  /// would get too many subdirs in this case
+  const QString valhalla_base = fullPath("valhalla");
+
   if (m_not_needed_files_size >= 0)
     {
       for (const QString &fp: m_not_needed_files)
         {
           QFileInfo fi(fp);
           QString dir = fi.dir().path();
+
+          // special processing of valhalla's case
+          if (dir.indexOf(valhalla_base) == 0)
+            dir = valhalla_base;
+
           if (!dirlist.contains(dir))
             dirlist.append(dir);
         }
