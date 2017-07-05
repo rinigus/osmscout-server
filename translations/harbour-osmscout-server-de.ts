@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="de" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -644,7 +646,7 @@
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage forlder changed to %1</source>
+        <source>Storage folder changed to %1</source>
         <translation>Speicherordner wurde geändert %1</translation>
     </message>
     <message>
@@ -704,7 +706,7 @@
         <translation>Herunterladen der Länderliste</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1225"/>
+        <location filename="../src/mapmanager.cpp" line="1236"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kann wegen der fehlenden Liste der Länder nicht nach Updates suchen. Laden Sie die Liste herunter, bevor Sie nach Updates suchen.</translation>
     </message>
@@ -729,32 +731,32 @@
         <translation>Liste der Länder: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1142"/>
+        <location filename="../src/mapmanager.cpp" line="1153"/>
         <source>Error while deleting file:</source>
         <translation>Fehler beim Lösche der Datei:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1143"/>
+        <location filename="../src/mapmanager.cpp" line="1154"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation>Abbrechen des Entfernens der verbleibenden Dateien.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1148"/>
+        <location filename="../src/mapmanager.cpp" line="1159"/>
         <source>File removed during cleanup:</source>
         <translation>Datei während der Bereinigung entfernt:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1168"/>
+        <location filename="../src/mapmanager.cpp" line="1179"/>
         <source>Updating the distribution server URL</source>
         <translation>Aktualisieren der Distributionsserver-URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1221"/>
+        <location filename="../src/mapmanager.cpp" line="1232"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kann wegen fehlendem Karten-Speicherordner nicht auf Aktualisierungen prüfen.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1223"/>
+        <location filename="../src/mapmanager.cpp" line="1234"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kann wegen der fehlenden Liste der angeforderten Länder nicht nach Updates suchen. Wählen Sie Länder aus, bevor Sie nach Updates suchen.</translation>
     </message>
@@ -1900,7 +1902,7 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="266"/>
-        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
+        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation>Sie haben keine Sprachen für die Suche von Adressen mit Geocoder-NLP verwendet.Als Ergebnis werden alle bekannten Sprachen verwendet und Sie können sehr großen RAM-Verbrauch haben.Solche große RAM-Nutzung könnte dazu führen, dass der OSM Scout Server vom Kernel beendet wird. &lt;br&gt;&lt;br&gt;Um die für die Adressanalyse verwendeten Sprachen anzugeben, wählen Sie entweder Sprachen aus oder gehen Sie zu &lt;i&gt;Einstellungen&lt;/i&gt; (pulley menu) und wählen Sie die Sprachen als Teil der &lt;i&gt;Geocoder-NLP&lt;/i&gt;Einstellungen.</translation>
     </message>
     <message>

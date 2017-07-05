@@ -269,7 +269,7 @@ Page {
                                "lead to the OSM Scout Server being killed by the kernel. <br><br>" +
                                "To specify languages used for address parsing, either select languages below or " +
                                "go to <i>Settings</i> (pulley menu) and " +
-                               "select laniguages as a part of <i>Geocoder-NLP</i> settings.")
+                               "select languages as a part of <i>Geocoder-NLP</i> settings.")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap

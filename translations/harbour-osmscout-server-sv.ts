@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="sv" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -644,7 +646,7 @@
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage forlder changed to %1</source>
+        <source>Storage folder changed to %1</source>
         <translation>Lagringsmappen ändrad till %1</translation>
     </message>
     <message>
@@ -704,7 +706,7 @@
         <translation>Laddar ner lista över länder</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1225"/>
+        <location filename="../src/mapmanager.cpp" line="1236"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över tillgängliga länder saknas. Ladda ner listan före uppdateringskontroll.</translation>
     </message>
@@ -729,32 +731,32 @@
         <translation>Lista över länder: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1142"/>
+        <location filename="../src/mapmanager.cpp" line="1153"/>
         <source>Error while deleting file:</source>
         <translation>Fel vid borttagning av fil:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1143"/>
+        <location filename="../src/mapmanager.cpp" line="1154"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation>Avbryter borttagning av återstående filer.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1148"/>
+        <location filename="../src/mapmanager.cpp" line="1159"/>
         <source>File removed during cleanup:</source>
         <translation>Fil borttagen under rensning:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1168"/>
+        <location filename="../src/mapmanager.cpp" line="1179"/>
         <source>Updating the distribution server URL</source>
         <translation>Uppdaterar distributionsserverns URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1221"/>
+        <location filename="../src/mapmanager.cpp" line="1232"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan inte söka efter uppdateringar, eftersom kartlagringsmapp saknas.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1223"/>
+        <location filename="../src/mapmanager.cpp" line="1234"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över efterfrågade länder saknas. Välj länder före uppdateringskontroll.</translation>
     </message>
@@ -1411,7 +1413,7 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="60"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1658,7 +1660,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="71"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
@@ -1898,7 +1900,7 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="266"/>
-        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
+        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation>Du har inte specificerat något språk att använda för adresstolkning med Geocoder-NLP. Därför används alla kända språk, vilket kan resultera i mycket stor RAM-belastning. Sådan stor RAM-användning kan leda till att OSM Scout Server dödas av kärnan. &lt;br&gt;&lt;br&gt;För att specificera språk för adresstolkning, kan du antingen välja språk nedan, eller gå till &lt;i&gt;Inställningar&lt;/i&gt; (toppmenyn) och välj språk som en del av inställningarna för &lt;i&gt;Geocoder-NLP&lt;/i&gt;.</translation>
     </message>
     <message>
@@ -1944,7 +1946,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="431"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

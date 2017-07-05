@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="es" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -644,7 +646,7 @@
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage forlder changed to %1</source>
+        <source>Storage folder changed to %1</source>
         <translation>La carpeta de almacenamiento cambió a %1</translation>
     </message>
     <message>
@@ -704,7 +706,7 @@
         <translation>Descargando la lista de países</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1225"/>
+        <location filename="../src/mapmanager.cpp" line="1236"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>No es posible comprobar actualizaciones debido a que falta la lista de países provistos. Decarga la lista antes de comprobar actualizaciones.</translation>
     </message>
@@ -729,32 +731,32 @@
         <translation>Lista de países: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1142"/>
+        <location filename="../src/mapmanager.cpp" line="1153"/>
         <source>Error while deleting file:</source>
         <translation>Error al borrar el fichero:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1143"/>
+        <location filename="../src/mapmanager.cpp" line="1154"/>
         <source>Cancelling the removal of remaining files.</source>
         <translation>Cancelando la eliminación de los ficheros restantes.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1148"/>
+        <location filename="../src/mapmanager.cpp" line="1159"/>
         <source>File removed during cleanup:</source>
         <translation>Fichero eliminado al limpiar:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1168"/>
+        <location filename="../src/mapmanager.cpp" line="1179"/>
         <source>Updating the distribution server URL</source>
         <translation>Actualizando URL del servidor de distribución</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1221"/>
+        <location filename="../src/mapmanager.cpp" line="1232"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>No se ha podido comprobar las actualizaciones debido a que falta la carpeta de almacenamiento de mapas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1223"/>
+        <location filename="../src/mapmanager.cpp" line="1234"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>No se ha podido comprobar actualizaciones debido a que falta la lista de países solicitados. Selecciona los países antes de comprobar actualizaciones.</translation>
     </message>
@@ -1658,7 +1660,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="71"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
@@ -1758,7 +1760,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>Profiles</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="171"/>
@@ -1898,8 +1900,8 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="266"/>
-        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"/>
+        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="292"/>
@@ -1934,17 +1936,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="426"/>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="427"/>
         <source>Skip</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="431"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

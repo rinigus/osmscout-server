@@ -571,6 +571,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mapmanager.cpp" line="79"/>
+        <source>Storage folder changed to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mapmanager.cpp" line="86"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation type="unfinished"></translation>
@@ -642,11 +647,6 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="325"/>
         <source>Missing dataset for %1: %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage forlder changed to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1900,7 +1900,7 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="266"/>
-        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select laniguages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
+        <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

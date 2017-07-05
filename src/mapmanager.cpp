@@ -76,7 +76,7 @@ void Manager::loadSettings()
   m_root_dir.setPath(root_dir_path);
 
   if (root_changed)
-    InfoHub::logInfo(tr("Storage forlder changed to %1").arg(root_dir_path));
+    InfoHub::logInfo(tr("Storage folder changed to %1").arg(root_dir_path));
 
   // check for errors
   bool root_ok = false;
