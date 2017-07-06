@@ -415,29 +415,29 @@ bool GeoMaster::guide(const QString &query_qst,
         }
 
       // search
-      m_geocoder.set_max_results(limit);
-      std::vector<GeoNLP::Geocoder::GeoResult> search_result_country;
+      m_geocoder.set_max_results(-1); // limit is enforced later
 
       if ( !m_geocoder.search_nearby(parsed_query,
                                      lat, lon, radius,
-                                     search_result_country,
+                                     search_result,
                                      m_postal) )
         {
           InfoHub::logError(tr("Error while searching with geocoder-nlp"));
           return false;
         }
 
-      if (!search_result_country.empty())
-        {
-          search_result.insert(search_result.end(),
-                               search_result_country.begin(), search_result_country.end());
-        }
+//      if (!search_result_country.empty())
+//        {
+//          search_result.insert(search_result.end(),
+//                               search_result_country.begin(), search_result_country.end());
+//        }
 
-      if (search_result.size() >= limit)
-        break;
+//      if (search_result.size() >= limit)
+//        break;
     }
 
-  // enforce the limit
+  // sort and enforce the limit
+  std::sort(search_result.begin(), search_result.end());
   if (search_result.size() > limit)
     search_result.resize(limit);
 
