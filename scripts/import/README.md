@@ -31,14 +31,15 @@ change imported regions.
 
 ### On every import
 
-* Increase URL id for libosmscout, geocoder-nlp (and if needed for
-  others) in prepare_distribution.py
+* Increase URL id for libosmscout, geocoder-nlp, and others in
+  `prepare_distribution.py`
   
 * Check that bucket_name is correct
 
-* [TODO: Add Valhalla and Mapnik global instructions]
+* If coastlines have to be updated, see corresponding instructions
+  below and run them before the next instruction.
 
-* Run ./import_master.sh 
+* Run `./import_master.sh` 
 
 
 ### On backend upgrade
@@ -54,6 +55,38 @@ In case if there is a new liboscmscout or geocoder-nlp version:
 * update version for Valhalla in valhalla_country_pack.py module
 
 * check for compatibility in mapmanagerfeature.cpp of the main tree
+
+
+### On coastline update
+
+* Download data covering coastlines from http://openstreetmapdata.com/data/land-polygons :
+  http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
+  and http://data.openstreetmapdata.com/land-polygons-split-3857.zip
+  
+* Unzip the data:
+  ```
+    unzip simplified-land-polygons-complete-3857.zip
+    unzip land-polygons-split-3857.zip
+  ```
+  
+* Index the polygons by using `shapeindex` to create `.index` files:
+    ```
+    shapeindex simplified-land-polygons-complete-3857/simplified_land_polygons.shp
+    shapeindex land-polygons-split-3857/land_polygons.shp
+    ```
+
+* Place the directories `simplified-land-polygons-complete-3857` and
+  `land-polygons-split-3857` under `mapnik/global` of the distribution.
+  
+* Package the `mapnik/global` distribution by running `./pack.sh
+  distribution/mapnik/global 1` . Here, `1` stands for database
+  version.
+  
+  
+### libpostal databases
+
+Libpostal databases are imported by geocoder-nlp import scripts. See
+these scripts for instructions.
 
 
 ### Other scripts
