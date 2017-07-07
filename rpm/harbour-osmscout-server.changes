@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Jul 7 2017 rinigus <rinigus.git@gmail.com> 0.13.1-1
+- Update translations
+- Bugfix in guide search
+
 * Wed Jul 5 2017 rinigus <rinigus.git@gmail.com> 0.13.0-1
 - Introduction of profiles
 - Startup wizard
