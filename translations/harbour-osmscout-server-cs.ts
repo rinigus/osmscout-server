@@ -482,7 +482,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="272"/>
-        <location filename="../src/geomaster.cpp" line="426"/>
+        <location filename="../src/geomaster.cpp" line="425"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Chyba při hledání pomocí geocoder-nlp</translation>
     </message>
@@ -571,6 +571,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/mapmanager.cpp" line="79"/>
+        <source>Storage folder changed to %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../src/mapmanager.cpp" line="86"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation type="unfinished"></translation>
@@ -642,11 +647,6 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="325"/>
         <source>Missing dataset for %1: %2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage folder changed to %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

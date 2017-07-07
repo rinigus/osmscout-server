@@ -358,12 +358,12 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="9"/>
         <source>List of languages used for parsing addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista języków używanych do parsowania adresów</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="10"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę wybrać języki, które będą używane do parsowania adresów.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="11"/>
@@ -482,7 +482,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="272"/>
-        <location filename="../src/geomaster.cpp" line="426"/>
+        <location filename="../src/geomaster.cpp" line="425"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Błąd podczas wyszukiwania za pomocą geocoder-nlp</translation>
     </message>
@@ -571,6 +571,11 @@
         <translation>Nie można przydzielić funkcji Map Manager&apos;a</translation>
     </message>
     <message>
+        <location filename="../src/mapmanager.cpp" line="79"/>
+        <source>Storage folder changed to %1</source>
+        <translation>Katalog przechowywania zmieniony na %1</translation>
+    </message>
+    <message>
         <location filename="../src/mapmanager.cpp" line="86"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Katalog przechowywania map nie istnieje: %1</translation>
@@ -643,11 +648,6 @@
         <location filename="../src/mapmanager.cpp" line="325"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Brakujący zbiór danych dla %1: %2</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage folder changed to %1</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="369"/>
@@ -1383,7 +1383,7 @@
         <location filename="../qml/pages/ProfilesPage.qml" line="22"/>
         <location filename="../qml/pages/ProfilesPage.qml" line="39"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="26"/>
@@ -1393,27 +1393,27 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="42"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Domyślny</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="43"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; z &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="44"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybrany</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="60"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>1</translation>
     </message>
 </context>
 <context>
@@ -1761,7 +1761,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profile</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="171"/>
@@ -1819,7 +1819,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="25"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="31"/>
@@ -1937,12 +1937,12 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="426"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Następny</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="427"/>
         <source>Skip</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomiń</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="431"/>

@@ -482,7 +482,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="272"/>
-        <location filename="../src/geomaster.cpp" line="426"/>
+        <location filename="../src/geomaster.cpp" line="425"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Error al buscar con geocoder-nlp</translation>
     </message>
@@ -571,6 +571,11 @@
         <translation>No se han podido asignar las funciones al Gestor de mapas</translation>
     </message>
     <message>
+        <location filename="../src/mapmanager.cpp" line="79"/>
+        <source>Storage folder changed to %1</source>
+        <translation>La carpeta de almacenamiento cambió a %1</translation>
+    </message>
+    <message>
         <location filename="../src/mapmanager.cpp" line="86"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>La carpeta de almacenamiento de mapas no existe: %1</translation>
@@ -643,11 +648,6 @@
         <location filename="../src/mapmanager.cpp" line="325"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Falta el conjunto de datos para %1: %2</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage folder changed to %1</source>
-        <translation>La carpeta de almacenamiento cambió a %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="369"/>
@@ -1249,7 +1249,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation>Velocidades de transporte usadas por la librería OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) al calcular rutas</translation>
+        <translation>Velocidades de transporte usadas por la librería OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) al calcular las rutas</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="35"/>
@@ -1413,7 +1413,7 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="60"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>El perfil &lt;i&gt;por defecto&lt;/i&gt; usa &lt;i&gt;Mapnik&lt;/i&gt; para reproducir los mapas, &lt;i&gt;Geocoder-NLP&lt;/i&gt; para buscar localizaciones, y &lt;i&gt;Valhalla&lt;/i&gt; para calcular rutas. Este es el perfil recomendado.&lt;br&gt;&lt;br&gt;El perfil que combina &lt;i&gt;libosmscout&lt;/i&gt; con &lt;i&gt;Geocoder-NLP&lt;/i&gt; requiere un almacenamiento inferior comparado con el perfil por defecto. Sin embargo, el renderizado de mapas y el cálculo de rutas estaría limitado a un único territorio. Además, la calidad de renderizado es inferior y el tiempo que tarda en calcular las rutas es mayor que el perfil por defecto. El perfil &lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; es el perfil que requiere un menor almacenamiento entre todos los perfiles. Sin embargo, el renderizado de mapas, las búsquedas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad de renderizado y búsquedas es inferior, y el tiempo en el cálculo de rutas es superior si lo comparamos con el perfil por defecto.&lt;br&gt;&lt;br&gt;Si usas el perfil &lt;i&gt;Personalizado&lt;/i&gt;, los ajustes y el gestor de mapas no estarían configurados y deberíán ser especificados por el usuario. Este perfil permite seleccionar el renderizado, búsquedas y cálculo de rutas de manera individual. Ten en cuenta que el usuario es responsable de establecer los ajustes y que éstos sean coherentes entre los requerimientos del uso de backends y el almacenamiento.</translation>
+        <translation>El perfil &lt;i&gt;por defecto&lt;/i&gt; usa &lt;i&gt;Mapnik&lt;/i&gt; para reproducir los mapas, &lt;i&gt;Geocoder-NLP&lt;/i&gt; para buscar localizaciones, y &lt;i&gt;Valhalla&lt;/i&gt; para calcular rutas. Este es el perfil recomendado.&lt;br&gt;&lt;br&gt;El perfil que combina &lt;i&gt;libosmscout&lt;/i&gt; con &lt;i&gt;Geocoder-NLP&lt;/i&gt; requiere un almacenamiento inferior si se  compara con el perfil por defecto. Sin embargo, el renderizado de mapas y el cálculo de rutas estaría limitado a un único territorio. Además, la calidad del renderizado es inferior y el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;El perfil &lt;i&gt;libosmscout&lt;/i&gt; es el perfil que requiere un menor almacenamiento entre todos los perfiles. Sin embargo, el renderizado de mapas, las búsquedas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del renderizado y de las búsquedas es inferior, y el tiempo en el cálculo de rutas es superior si lo comparamos con el perfil por defecto.&lt;br&gt;&lt;br&gt;Si usas el perfil &lt;i&gt;Personalizado&lt;/i&gt;, los ajustes y el gestor de mapas no estarían configurados y deberían ser especificados por el usuario. Este perfil permite seleccionar el renderizado, búsquedas y cálculo de rutas de manera individual. Ten en cuenta que el usuario es responsable de establecer los ajustes y que éstos sean coherentes con los requerimientos del uso de backends y el almacenamiento.</translation>
     </message>
 </context>
 <context>
@@ -1660,7 +1660,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="71"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los backends activos se configuran por perfil. Si quieres cambiar el backend seleccionado, configura el perfil correspondiente o elige el perfil &lt;i&gt;Personalizado&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
@@ -1760,7 +1760,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Perfiles</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="171"/>
@@ -1901,7 +1901,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="266"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>No has especificado los idiomas que se usarán en el análisis de direcciones con Geocoder-NLP. Como resultado, se usarán todos los idiomas conocidos y podrías experimentar un consumo muy alto de RAM. Un consumo tan alto de RAM podría hacer que el kernel finalizara la aplicación OSM Scout Server. &lt;br&gt;&lt;br&gt;Para especificar los idiomas usados en el análisis de direcciones, selecciona los idiomas abajo o ve a &lt;i&gt;Ajustes&lt;/i&gt; (menú deslizante) y selecciona los idiomas como parte de los ajustes de &lt;i&gt;Geocoder-NLP&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="292"/>
@@ -1936,17 +1936,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="426"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Siguiente</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="427"/>
         <source>Skip</source>
-        <translation type="unfinished"></translation>
+        <translation>Omitir</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="431"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server es una parte de la solución que te permite tener mapas sin conexión en el dispositivo. Con este servidor, puedes descargar los mapas en tu dispositivo y utilizar los datos descargados para procesar mapas localmente, buscar direcciones y POIs, y calcular rutas. Tales operaciones requieren que el servidor y un cliente adicional que accede al servidor se ejecuten simultáneamente en el dispositivo. &lt;br&gt;&lt;br&gt;Este asistente te ayudará a seleccionar los backends que usará el servidor y a especificar los idiomas que se usarán en el análisis de tus solicitudes de búsqueda.&lt;br&gt;&lt;br&gt;Selecciona &apos;Siguiente&apos; para iniciar la configuración.</translation>
     </message>
 </context>
 <context>

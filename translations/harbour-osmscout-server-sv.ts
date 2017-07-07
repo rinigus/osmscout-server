@@ -482,7 +482,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="272"/>
-        <location filename="../src/geomaster.cpp" line="426"/>
+        <location filename="../src/geomaster.cpp" line="425"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Fel vid sökning med geocoder-nlp</translation>
     </message>
@@ -571,6 +571,11 @@
         <translation>Kunde inte allokera karthanteringsfunktioner</translation>
     </message>
     <message>
+        <location filename="../src/mapmanager.cpp" line="79"/>
+        <source>Storage folder changed to %1</source>
+        <translation>Lagringsmappen ändrad till %1</translation>
+    </message>
+    <message>
         <location filename="../src/mapmanager.cpp" line="86"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Kartlagringsmappen finns inte: %1</translation>
@@ -643,11 +648,6 @@
         <location filename="../src/mapmanager.cpp" line="325"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Saknad datamängd för %1: %2</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage folder changed to %1</source>
-        <translation>Lagringsmappen ändrad till %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="369"/>
@@ -1035,7 +1035,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation>Mapnik kan användas som renderingsgränssnitt för att tillhandahålla kartrutor i klientprogram</translation>
+        <translation>Mapnik kan användas som renderingsimplementation för att tillhandahålla kartrutor i klientprogram</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
@@ -1413,7 +1413,7 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="60"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Standardprofilen&lt;/i&gt; använder &lt;i&gt;Mapnik&lt;/i&gt; för kartrendering, &lt;i&gt;Geocoder-NLP&lt;/i&gt; för att söka efter platser och &lt;i&gt;Valhalla&lt;/i&gt; för att beräkna rutter. Denna profil är den som rekommenderas.&lt;br&gt;&lt;br&gt;Profilen där &lt;i&gt;libosmscout&lt;/i&gt; kombineras med &lt;i&gt;Geocoder-NLP&lt;/i&gt; har lägre krav på lagringsutrymme, jämfört med standardprofilen, men kartrendering och ruttberäkning begränsas till endast ett område. Dessutom är renderingskvaliteten sämre och ruttberäkningshastigheten är långsammare jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout-profilen&lt;/i&gt; har det lägsta kravet på lagringsutrymme bland profilerna, men kartrendering och ruttberäkning begränsas till endast ett område. Dessutom är renderingskvaliteten sämre och ruttberäkningens hastighet är långsammare jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;Vid användning av &lt;i&gt;Anpassad&lt;/i&gt; profil, bestäms inte inställningar och lagringsutrymme av profilen utan måste anges av användaren. Denna profil låter dig välja rendering-, sök- och ruttberäkningskomponenter individuellt. Observera att användaren är ansvarig för att justera inställningarna för att göra dem konsekventa mellan kraven i implementationer och lagring.</translation>
     </message>
 </context>
 <context>
@@ -1660,7 +1660,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="71"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiv implementering fastställs av profilen. Om du vill ändra gränssnittsvalet, måste du ange motsvarande profil, eller &lt;i&gt;Anpassad&lt;/i&gt; profil.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
@@ -1765,7 +1765,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="171"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation>Kartrenderingsinställningar för Mapnik-gränssnitt</translation>
+        <translation>Kartrenderingsinställningar för Mapnik-implementationen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="255"/>
@@ -1946,7 +1946,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="431"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server är en del av lösningen för att få offline-kartor på din enhet. Med denna server kan du ladda ner kartor till enheten och använda nerladdad data till att rendera kartor lokalt, söka efter adresser, intressepunkter och beräkna rutter. Sådan verksamhet kräver servern och en klient som ansluter till servern för att köras samtidigt på enheten.&lt;br&gt;&lt;br&gt;Den här guiden hjälper dig att välja de implementationer som används av servern och att ange språk för att analysera dina sökningar.&lt;br&gt;&lt;br&gt;Tryck &quot;Nästa&quot; för att starta konfigurationen.</translation>
     </message>
 </context>
 <context>

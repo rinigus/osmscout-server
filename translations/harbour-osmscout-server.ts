@@ -482,7 +482,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="272"/>
-        <location filename="../src/geomaster.cpp" line="426"/>
+        <location filename="../src/geomaster.cpp" line="425"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation type="unfinished"></translation>
     </message>

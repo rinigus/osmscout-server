@@ -358,17 +358,17 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="9"/>
         <source>List of languages used for parsing addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Перечень языков, используемых при анализе адресов</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="10"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбор языков для анализа адресов</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="11"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если в данной форме не указать языки, то все поддерживаемые языки будут использоваться при анализе. &lt;br&gt;Необходимо отметить, что при использовании всех языков расширяются требования к ОЗУ.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="34"/>
@@ -482,7 +482,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="272"/>
-        <location filename="../src/geomaster.cpp" line="426"/>
+        <location filename="../src/geomaster.cpp" line="425"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Ошибка поиска с помощью geocoder-nlp</translation>
     </message>
@@ -571,6 +571,11 @@
         <translation>Невозможно назначить параметры Диспетчера Карт</translation>
     </message>
     <message>
+        <location filename="../src/mapmanager.cpp" line="79"/>
+        <source>Storage folder changed to %1</source>
+        <translation>Папка хранения изменена на %1</translation>
+    </message>
+    <message>
         <location filename="../src/mapmanager.cpp" line="86"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Нет папки для хранения карт: %1</translation>
@@ -643,11 +648,6 @@
         <location filename="../src/mapmanager.cpp" line="325"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Отсутствует набор данных для %1: %2</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="79"/>
-        <source>Storage folder changed to %1</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="369"/>
@@ -851,7 +851,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="200"/>
         <source>OSM Scout library</source>
-        <translation>OSM Scout library</translation>
+        <translation>библиотека OSM Scout</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="272"/>
@@ -879,7 +879,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="227"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки хранения определяются профилем. Если требуется изменить настройки хранения, то необходимо установить соответствующий профиль или указать профиль как &lt;i&gt;Пользовательский&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="260"/>
@@ -944,7 +944,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="192"/>
         <source>Storage</source>
-        <translation>Хранение</translation>
+        <translation>Объем памяти</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="201"/>
@@ -987,7 +987,7 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="122"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Трудности с удалением папки конфигурации, используемой Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="128"/>
@@ -1035,7 +1035,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik может использоваться как бэкенд отрисовки тайлов карт для клиентских программ</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
@@ -1131,7 +1131,7 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="26"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
-        <translation>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) может быть использована для отрисовки карт, поиска и маршрутизации</translation>
+        <translation>Библиотека OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) может быть использована для отрисовки карт, поиска и маршрутизации</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="35"/>
@@ -1249,7 +1249,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation type="unfinished"></translation>
+        <translation>Скорости передвижения, используемые библиотекой OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) при прокладке маршрутов</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="35"/>
@@ -1383,37 +1383,37 @@
         <location filename="../qml/pages/ProfilesPage.qml" line="22"/>
         <location filename="../qml/pages/ProfilesPage.qml" line="39"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Профиль</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="26"/>
         <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.&lt;br&gt;&lt;br&gt;Please select active profile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервер OSM Scout использует профили для упрощения выбора бэкендов и наборов загруженных баз данных. &lt;br&gt;&lt;br&gt;Необходимо выбрать активный профиль.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="42"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="43"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; и &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="44"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Пользовательский</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="60"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Профиль &lt;i&gt;По умолчанию&lt;/i&gt; использует &lt;i&gt;Mapnik&lt;/i&gt; для отрисовки карт, &lt;i&gt;Geocoder-NLP&lt;/i&gt; для поиска мест и&lt;i&gt;Valhalla&lt;/i&gt; для прокладки маршрутов. Это рекомендуемый профиль. &lt;br&gt;&lt;br&gt;Профиль, в котором &lt;i&gt;libosmscout&lt;/i&gt; комбинируется с &lt;i&gt;Geocoder-NLP&lt;/i&gt; менее требователен к объему памяти по сравнению с профилем по умолчанию. Однако отрисовка карт и прокладка маршрутов могут быть ограничены только одной территорией. К тому же качество отрисовки и скорость прокладки маршрута ниже по сравнению с профилем по умолчанию. &lt;br&gt;&lt;br&gt;Профиль&lt;i&gt;libosmscout&lt;/i&gt; наименее требователен к размеру памяти среди всех профилей. Однако отрисовка карт, поиск и прокладка маршрутов могут быть ограничены только одной территорией. К тому же качество отрисовки и поиска хуже, а скорость прокладки маршрута ниже по сравнению с профилем по умолчанию. &lt;br&gt;&lt;br&gt;При использовании профиля &lt;i&gt;Пользовательский&lt;/i&gt; Настройки и Объем памяти Диспетчера карт не прописаны в профиле, поэтому должны быть специфицированы пользователем. Профиль позволяет выбрать компоненты отрисовки, поиска, прокладки маршрута индивидуально. Важно, что в данном случае пользователь является ответственным за подбор настроек для обеспечения совместимости между требованиями используемых бэкендов и объемом памяти.</translation>
     </message>
 </context>
 <context>
@@ -1660,12 +1660,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="71"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Активные бэкенды определяются профилем. При необходимости сменить бэкенд необходимо выбрать соответствующий профиль или установить &lt;i&gt;Пользовательский&lt;/i&gt; профиль.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="83"/>
         <source>Rendering</source>
-        <translation>Рендеринг</translation>
+        <translation>Отрисовка</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="87"/>
@@ -1740,7 +1740,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="248"/>
         <source>OSM Scout library</source>
-        <translation>OSM Scout library</translation>
+        <translation>Библиотека OSM Scout</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="192"/>
@@ -1760,7 +1760,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Профили</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="171"/>
@@ -1818,7 +1818,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="25"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Профиль</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="31"/>
@@ -1833,7 +1833,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="46"/>
         <source>OSM Scout Server</source>
-        <translation>OSM Scout Server</translation>
+        <translation>Сервер OSM Scout</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="59"/>
@@ -1843,17 +1843,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="74"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s):&lt;ul&gt;</source>
-        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; использует ряд модулей, которые необходимо инсталлировать отдельно для полной функциональности. &lt;br&gt;&lt;br&gt; На устройстве отсутствуют следующие модули: &lt;ul&gt;</translation>
+        <translation>&lt;i&gt;Сервер OSM Scout&lt;/i&gt; использует ряд модулей, которые необходимо инсталлировать отдельно для полной функциональности. &lt;br&gt;&lt;br&gt; На устройстве отсутствуют следующие модули: &lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="78"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Модуль OSM Scout Server: Шрифты&lt;/li&gt;</translation>
+        <translation>&lt;li&gt;Модуль Сервер OSM Scout: Шрифты&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="80"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
-        <translation>&lt;li&gt;Модуль OSM Scout Server: Маршрут&lt;/li&gt;</translation>
+        <translation>&lt;li&gt;Модуль Сервер OSM Scout: Маршрут&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="82"/>
@@ -1881,17 +1881,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="148"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation>предполагается, что &lt;i&gt;OSM Scout Server&lt;/i&gt; будет использоваться с загруженными картами. Для управления картами Серверу необходима отдельная папка. Файлы в папке должны управляться только Сервером. Это включает удаление всех файлов в папке по запросу при очистке или обновлении карт. &lt;br&gt;&lt;br&gt;Необходимо &lt;b&gt;предоставить отдельную пустую папку&lt;/b&gt; для OSM Scout Server. Для этого создать файл-менеджером или через командную строку новую папку и затем выбрать эту папку в &lt;i&gt;Настройках&lt;/i&gt;(pulley menu). &lt;br&gt;&lt;br&gt;Кроме того, каталог может быть создан и настроен автоматически в &lt;br&gt;%1&lt;br&gt;нажатием кнопки ниже</translation>
+        <translation>предполагается, что &lt;i&gt;OSM Scout Server&lt;/i&gt; будет использоваться с загруженными картами. Для управления картами Серверу необходима отдельная папка. Файлы в папке должны управляться только Сервером. Это включает удаление всех файлов в папке по запросу при очистке или обновлении карт. &lt;br&gt;&lt;br&gt;Необходимо &lt;b&gt;предоставить отдельную пустую папку&lt;/b&gt; для OSM Scout Server. Для этого создать файл-менеджером или через командную строку новую папку и затем выбрать эту папку в &lt;i&gt;Настройках&lt;/i&gt;(распускающееся меню). &lt;br&gt;&lt;br&gt;Кроме того, каталог может быть создан и настроен автоматически в &lt;br&gt;%1&lt;br&gt;нажатием кнопки ниже</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="172"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation>После выбора доступной папки для хранения следующим шагом будет получение необходимых карт. Для этого необходимо выбрать и загрузить карты через &lt;i&gt;Map Manager&lt;/i&gt; (pulley menu).</translation>
+        <translation>После выбора доступной папки для хранения следующим шагом будет получение необходимых карт. Для этого необходимо выбрать и загрузить карты через &lt;i&gt;Диспетчер карт&lt;/i&gt; (раскрывающееся меню).</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="211"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation>Пока нет доступных карт. После их выбора необходимо начать загрузку. Загрузка может быть начата через &lt;i&gt;Map Manager&lt;/i&gt; (pulley menu).</translation>
+        <translation>Пока нет доступных карт. После их выбора необходимо начать загрузку. Загрузка может быть начата через &lt;i&gt;Диспетчер карт&lt;/i&gt; (раскрывающееся меню).</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="262"/>
@@ -1901,7 +1901,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="266"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не указаны языки для анализа адресов с помощью Geocoder-NLP. В результате используются все известные языки и будет наблюдаться значительное потребление ОЗУ. Такое использование ОЗУ может привести к закрытию ядром сервера OSM Scout. &lt;br&gt;&lt;br&gt;Указать языки для анализа адресов или выбрать языки из списка ниже или перейти к &lt;i&gt;Настройки&lt;/i&gt;(раскрывающееся меню) и выбрать языки как часть настроек &lt;i&gt;Geocoder-NLP&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="292"/>
@@ -1936,17 +1936,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="426"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Следующий</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="427"/>
         <source>Skip</source>
-        <translation type="unfinished"></translation>
+        <translation>Пропустить</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="431"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервер OSM Scout это часть решения, позволяющего иметь офлайновые карты на устройстве. С этим сервером можно загружать карты на устройство и использовать загруженные данные для локальной отрисовки карт, поиска адресов и точек интереса, а также для прокладки маршрутов. Такие операции требуют сервера и дополнительного клиента с доступом к серверу, запущенных одновременно на устройстве. &lt;br&gt;&lt;br&gt;Этот ассистент поможет выбрать бэкенды, используемые сервером, и специфицировать языки для анализа поисковых запросов.&lt;br&gt;&lt;br&gt;Необходимо выбрать &quot;Следующий&quot; для запуска конфигурирования.</translation>
     </message>
 </context>
 <context>
