@@ -425,15 +425,6 @@ bool GeoMaster::guide(const QString &query_qst,
           InfoHub::logError(tr("Error while searching with geocoder-nlp"));
           return false;
         }
-
-//      if (!search_result_country.empty())
-//        {
-//          search_result.insert(search_result.end(),
-//                               search_result_country.begin(), search_result_country.end());
-//        }
-
-//      if (search_result.size() >= limit)
-//        break;
     }
 
   // sort and enforce the limit
