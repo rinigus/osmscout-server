@@ -296,19 +296,19 @@ Page {
 
     function checkState()
     {
-        page.activeState = !manager.downloading
+        page.activeState = manager.ready
         page.backendSelectionPossible = (page.activeState && !settings.profilesUsed)
     }
 
     Component.onCompleted: {
         checkState()
-        if (!manager.downloading && !manager.checkProvidedAvailable())
+        if (manager.ready && !manager.checkProvidedAvailable())
             manager.updateProvided()
     }
 
     Connections {
         target: manager
-        onDownloadingChanged: checkState()
+        onReadyChanged: checkState()
         onUpdatesForDataFound: {
             var clist = JSON.parse( info )
             pageStack.push(Qt.resolvedUrl("UpdatesFound.qml"),

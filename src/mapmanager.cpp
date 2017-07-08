@@ -3,6 +3,7 @@
 #include "appsettings.h"
 #include "config.h"
 #include "infohub.h"
+#include "mapmanager_deleterthread.h"
 
 #include <QDirIterator>
 #include <QDir>
@@ -11,6 +12,7 @@
 #include <QFile>
 #include <QBitArray>
 #include <QPair>
+#include <QThread>
 
 #include <QJsonDocument>
 #include <QJsonArray>
@@ -49,6 +51,14 @@ Manager::Manager(QObject *parent) : QObject(parent)
   for (Feature *p: m_features)
     connect(p, &Feature::availibilityChanged,
             this, &Manager::onAvailibilityChanged);
+
+  connect(this, &Manager::downloadingChanged,
+          this, &Manager::checkIfReady);
+
+  connect(this, &Manager::deletingChanged,
+          this, &Manager::checkIfReady);
+
+  checkIfReady();
 }
 
 
@@ -162,6 +172,21 @@ void Manager::loadSettings()
   if (old_selection != m_map_selected)
     emit selectedMapChanged(m_map_selected);
 }
+
+
+bool Manager::ready()
+{
+  return (!downloading() && !deleting());
+}
+
+void Manager::checkIfReady()
+{
+  bool oldr = m_ready;
+  m_ready = ready();
+  if (oldr != m_ready)
+    emit readyChanged(m_ready);
+}
+
 
 bool Manager::isStorageAvailable() const
 {
@@ -588,7 +613,7 @@ QString Manager::makeCountriesListAsJSON(ListType list_type, bool tree)
 
 void Manager::addCountry(QString id)
 {
-  if (downloading()) return;
+  if (!ready()) return;
 
   if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_provided))
     {
@@ -616,7 +641,7 @@ void Manager::addCountry(QString id)
 
 void Manager::rmCountry(QString id)
 {
-  if (downloading()) return;
+  if (!ready()) return;
 
   if ( m_root_dir.exists() && m_root_dir.exists(const_fname_countries_requested) )
     {
@@ -813,7 +838,7 @@ QString Manager::fullPath(const QString &path) const
 
 bool Manager::getCountries()
 {
-  if (downloading()) return false;
+  if (!ready()) return false;
 
   if (m_missing_data.length() < 1) return true; // all has been downloaded already
   if (m_missing_data[0].files.length() < 1)
@@ -1052,7 +1077,7 @@ QStringList Manager::getNonNeededFilesList()
 {
   QStringList files;
   m_not_needed_files_size = -1;
-  if (downloading()) return files;
+  if (!ready()) return files;
 
   qint64 notNeededSize = 0;
 
@@ -1135,9 +1160,10 @@ QStringList Manager::getDirsWithNonNeededFiles()
   return dirlist;
 }
 
+
 bool Manager::deleteNonNeededFiles(const QStringList files)
 {
-  if (downloading()) return false;
+  if (!ready()) return false;
 
   if ( files != m_not_needed_files )
     {
@@ -1146,21 +1172,34 @@ bool Manager::deleteNonNeededFiles(const QStringList files)
       return false;
     }
 
-  for (auto fname: m_not_needed_files)
-    {
-      if ( !m_root_dir.remove(fname) )
-        {
-          InfoHub::logWarning(tr("Error while deleting file:") + " " + fname);
-          InfoHub::logWarning(tr("Cancelling the removal of remaining files."));
-          m_not_needed_files.clear();
-          return false;
-        }
+  setDeleting(true);
 
-      InfoHub::logInfo(tr("File removed during cleanup:") + " " + fname);
-    }
+  DeleterThread *del = new DeleterThread(this, m_root_dir, m_not_needed_files);
+  connect(del, &DeleterThread::finished, this, &Manager::onDeleteFinished);
+  connect(del, &DeleterThread::finished, del, &DeleterThread::deleteLater);
+  del->start();
 
-  m_not_needed_files.clear();
   return true;
+}
+
+void Manager::setDeleting(bool state)
+{
+  if (state != m_deleting)
+    {
+      m_deleting = state;
+      emit deletingChanged(state);
+    }
+}
+
+bool Manager::deleting()
+{
+  return m_deleting;
+}
+
+void Manager::onDeleteFinished()
+{
+  m_not_needed_files.clear();
+  this->setDeleting(false);
 }
 
 ////////////////////////////////////////////////////////////
@@ -1168,7 +1207,7 @@ bool Manager::deleteNonNeededFiles(const QStringList files)
 
 bool Manager::updateProvided()
 {
-  if (downloading()) return false;
+  if (!ready()) return false;
 
   QString fname = const_fname_server_url;
   if (m_development_disable_url_update) fname += "-EXTRA";
@@ -1250,7 +1289,7 @@ QString Manager::updatesFound()
 
 void Manager::getUpdates()
 {
-  if (downloading()) return;
+  if (!ready()) return;
 
   QJsonObject possible_list = loadJson(fullPath(const_fname_countries_provided));
   QJsonObject requested = m_maps_requested;

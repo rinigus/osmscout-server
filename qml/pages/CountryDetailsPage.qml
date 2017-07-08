@@ -45,7 +45,7 @@ Page {
         fullName.text = c.name_full
         if (c.name === c.name_full) fullName.visible = false
 
-        page.activeState = (!manager.downloading && canBeActive())
+        page.activeState = (manager.ready && canBeActive())
         size.text = qsTr("%1 MB").arg(c.size)
         size_full.text = qsTr("%1 MB").arg(c.size_total)
 
@@ -256,8 +256,8 @@ Page {
 
     Connections {
         target: manager
-        onDownloadingChanged: {
-            page.activeState = (!manager.downloading && canBeActive())
+        onReadyChanged: {
+            page.activeState = (manager.ready && canBeActive())
             checkSubs()
         }
 

@@ -564,199 +564,212 @@
     </message>
 </context>
 <context>
+    <name>MapManager::DeleterThread</name>
+    <message>
+        <location filename="../src/mapmanager_deleterthread.cpp" line="11"/>
+        <source>Cleanup: %1 files to delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager_deleterthread.cpp" line="17"/>
+        <source>Error while deleting file:</source>
+        <translation type="unfinished">Fout bij verwijderen van bestand:</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager_deleterthread.cpp" line="18"/>
+        <source>Cancelling the removal of remaining files.</source>
+        <translation type="unfinished">Verwijderen van resterende bestanden wordt geannuleerd.</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager_deleterthread.cpp" line="27"/>
+        <source>Files left to remove: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager_deleterthread.cpp" line="32"/>
+        <source>Cleanup finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MapManager::Manager</name>
     <message>
-        <location filename="../src/mapmanager.cpp" line="44"/>
+        <location filename="../src/mapmanager.cpp" line="46"/>
         <source>Could not allocate Map Manager features</source>
         <translation>Kon kaartbeheerderfunctionaliteit niet toewijzen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="79"/>
+        <location filename="../src/mapmanager.cpp" line="89"/>
         <source>Storage folder changed to %1</source>
         <translation>Opslagmap gewijzigd naar %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="86"/>
+        <location filename="../src/mapmanager.cpp" line="96"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Kaartopslagmap bestaat niet: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="89"/>
+        <location filename="../src/mapmanager.cpp" line="99"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
         <translation>Pad voor kaartopslagmap verwijst niet naar een map: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="95"/>
+        <location filename="../src/mapmanager.cpp" line="105"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
         <translation>Kaartopslagmap is alleen-lezen, pas de toegangsrechten voor %1 aan</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="137"/>
-        <location filename="../src/mapmanager.cpp" line="139"/>
+        <location filename="../src/mapmanager.cpp" line="147"/>
+        <location filename="../src/mapmanager.cpp" line="149"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Openen van database voor het volgen van gedownloade bestanden mislukt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="140"/>
+        <location filename="../src/mapmanager.cpp" line="150"/>
         <source>Map Manager functionality would be disturbed</source>
         <translation>Functionaliteit van Kaartbeheerder zou worden verstoord</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="187"/>
+        <location filename="../src/mapmanager.cpp" line="212"/>
         <source>Cannot create directory without any name</source>
         <translation>Kan geen naamloze map aanmaken</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="194"/>
+        <location filename="../src/mapmanager.cpp" line="219"/>
         <source>Error creating directory %1</source>
         <translation>Fout bij aanmaken van map %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="240"/>
+        <location filename="../src/mapmanager.cpp" line="265"/>
         <source>Address parsing language support</source>
         <translation>Adresverwerkingstaalondersteuning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="242"/>
+        <location filename="../src/mapmanager.cpp" line="267"/>
         <source>World coastlines</source>
         <translation>Wereldkustlijnen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="269"/>
-        <location filename="../src/mapmanager.cpp" line="730"/>
-        <location filename="../src/mapmanager.cpp" line="858"/>
+        <location filename="../src/mapmanager.cpp" line="294"/>
+        <location filename="../src/mapmanager.cpp" line="755"/>
+        <location filename="../src/mapmanager.cpp" line="883"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Kaartopslagmap bestaat niet:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="278"/>
-        <location filename="../src/mapmanager.cpp" line="737"/>
+        <location filename="../src/mapmanager.cpp" line="303"/>
+        <location filename="../src/mapmanager.cpp" line="762"/>
         <source>No maps were requested</source>
         <translation>Geen kaarten opgevraagd</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="299"/>
+        <location filename="../src/mapmanager.cpp" line="324"/>
         <source>No maps loaded: %1</source>
         <translation>Geen kaarten geladen: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="764"/>
+        <location filename="../src/mapmanager.cpp" line="789"/>
         <source>%1: version of dataset for %2 is not supported</source>
         <translation>%1: versie van gegevensset voor %2 wordt niet ondersteund</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="325"/>
+        <location filename="../src/mapmanager.cpp" line="350"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Ontbrekende gegevensset voor %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="369"/>
+        <location filename="../src/mapmanager.cpp" line="394"/>
         <source>Available country or territory: </source>
         <translation>Beschikbaar land of territorium:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="563"/>
+        <location filename="../src/mapmanager.cpp" line="588"/>
         <source>World</source>
         <translation>Wereld</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="627"/>
+        <location filename="../src/mapmanager.cpp" line="652"/>
         <source>Removing country from requested list: </source>
         <translation>Land wordt verwijderd van opgevraagde lijst:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="785"/>
+        <location filename="../src/mapmanager.cpp" line="810"/>
         <source>Missing data: </source>
         <translation>Ontbrekende gegevens:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="877"/>
+        <location filename="../src/mapmanager.cpp" line="902"/>
         <source>Error starting the download of</source>
         <translation>Fout bij starten van download van</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="894"/>
+        <location filename="../src/mapmanager.cpp" line="919"/>
         <source>File downloaded:</source>
         <translation>Bestand gedownload:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="922"/>
+        <location filename="../src/mapmanager.cpp" line="947"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Kon gedownload bestand niet registreren in de volgdatabase</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="923"/>
+        <location filename="../src/mapmanager.cpp" line="948"/>
         <source>File registration error</source>
         <translation>Bestandsregistratiefout</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="948"/>
-        <location filename="../src/mapmanager.cpp" line="949"/>
+        <location filename="../src/mapmanager.cpp" line="973"/>
+        <location filename="../src/mapmanager.cpp" line="974"/>
         <source>Could not retrieve server URL</source>
         <translation>Kon server-URL niet ophalen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1003"/>
+        <location filename="../src/mapmanager.cpp" line="1028"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Lijst van landen: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="957"/>
+        <location filename="../src/mapmanager.cpp" line="982"/>
         <source>Downloading the list of countries</source>
         <translation>De lijst van landen wordt gedownload</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1236"/>
+        <location filename="../src/mapmanager.cpp" line="1275"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan niet controleren op updates omdat de lijst van aangeboden landen ontbreekt. Download deze lijst vooraleer je controleert op updates.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1014"/>
+        <location filename="../src/mapmanager.cpp" line="1039"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="600"/>
+        <location filename="../src/mapmanager.cpp" line="625"/>
         <source>Add country or feature to requested list</source>
         <translation>Voeg land of functionaliteit toe aan opgevraagde lijst</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="976"/>
+        <location filename="../src/mapmanager.cpp" line="1001"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Download mislukt, alle downloads worden geannuleerd</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1007"/>
+        <location filename="../src/mapmanager.cpp" line="1032"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Lijst van landen: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1153"/>
-        <source>Error while deleting file:</source>
-        <translation>Fout bij verwijderen van bestand:</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="1154"/>
-        <source>Cancelling the removal of remaining files.</source>
-        <translation>Verwijderen van resterende bestanden wordt geannuleerd.</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="1159"/>
-        <source>File removed during cleanup:</source>
-        <translation>Bestand verwijderd tijdens opruimen:</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="1179"/>
+        <location filename="../src/mapmanager.cpp" line="1218"/>
         <source>Updating the distribution server URL</source>
         <translation>Distributieserver-URL wordt bijgewerkt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1232"/>
+        <location filename="../src/mapmanager.cpp" line="1271"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan niet controleren op updates omdat de kaartopslagmap ontbreekt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1234"/>
+        <location filename="../src/mapmanager.cpp" line="1273"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan niet controleren op updates omdat de lijst van opgevraagde landen ontbreekt. Kies landen vooraleer je controleert op updates.</translation>
     </message>
@@ -1076,17 +1089,17 @@
         <translation>Bezig met verwijderen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="109"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="108"/>
         <source>Delete unused files and free the occupied space</source>
         <translation>Verwijder ongebruikte bestanden en maak bezette ruimte vrij</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="142"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="143"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
         <translation>Alle opgeslagen bestanden worden gebruikt door OSM Scout Server. Er is niets te verwijderen.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="135"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="136"/>
         <source>MB</source>
         <translation>MB</translation>
     </message>
@@ -1111,12 +1124,12 @@
         <translation>Opruimen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="135"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="136"/>
         <source>Occupied space</source>
         <translation>Bezette ruimte</translation>
     </message>
     <message>
-        <location filename="../qml/pages/NonNeededFiles.qml" line="140"/>
+        <location filename="../qml/pages/NonNeededFiles.qml" line="141"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
         <translation>Controleren op onnodige bestanden mislukt. Dit kan bijvoorbeeld zo zijn wegens actieve downloads</translation>
     </message>
@@ -1864,7 +1877,7 @@
         <location filename="../qml/pages/StartPage.qml" line="105"/>
         <location filename="../qml/pages/StartPage.qml" line="168"/>
         <location filename="../qml/pages/StartPage.qml" line="207"/>
-        <location filename="../qml/pages/StartPage.qml" line="425"/>
+        <location filename="../qml/pages/StartPage.qml" line="426"/>
         <source>Welcome</source>
         <translation>Welkom</translation>
     </message>
@@ -1894,57 +1907,57 @@
         <translation>Er zijn nog geen kaarten beschikbaar. Nadat je je op de kaarten abonneert, moet je de downloads starten. Dit kan via de &lt;i&gt;kaartbeheerder&lt;/i&gt; (uittrekmenu).</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="262"/>
+        <location filename="../qml/pages/StartPage.qml" line="263"/>
         <source>Warning</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="266"/>
+        <location filename="../qml/pages/StartPage.qml" line="267"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation>Je hebt geen talen ingesteld voor het verwerken van adressen door Geocoder-NLP. Bijgevolg zullen alle gekende talen gebruikt worden en kan je RAM-verbruik de lucht in schieten. Dit hoge RAM-verbruik kan er dan weer toe leiden dat OSM Scout Server door de kernel wordt afgesloten. &lt;br&gt;&lt;br&gt;Om in te stellen welke talen gebruikt moeten worden voor adresverwerking selecteer je hieronder de talen, of ga je naar &lt;i&gt;Instellingen&lt;/i&gt; (uittrekmenu) en selecteer je de talen als onderdeel van de &lt;i&gt;Geocoder-NLP&lt;/i&gt;-instellingen.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="292"/>
+        <location filename="../qml/pages/StartPage.qml" line="293"/>
         <source>Map</source>
         <translation>Kaart</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="336"/>
+        <location filename="../qml/pages/StartPage.qml" line="337"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="351"/>
+        <location filename="../qml/pages/StartPage.qml" line="352"/>
         <source>Jobs in a queue</source>
         <translation>Processen in een wachtrij</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="352"/>
+        <location filename="../qml/pages/StartPage.qml" line="353"/>
         <source>Idle</source>
         <translation>Inactief</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="370"/>
+        <location filename="../qml/pages/StartPage.qml" line="371"/>
         <source>Events</source>
         <translation>Gebeurtenissen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="403"/>
+        <location filename="../qml/pages/StartPage.qml" line="404"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="426"/>
+        <location filename="../qml/pages/StartPage.qml" line="427"/>
         <source>Next</source>
         <translation>Volgende</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="427"/>
+        <location filename="../qml/pages/StartPage.qml" line="428"/>
         <source>Skip</source>
         <translation>Overslaan</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="431"/>
+        <location filename="../qml/pages/StartPage.qml" line="432"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation>OSM Scout Server is een deel van de oplossing voor offline kaarten op je apparaat. Met deze server kan je kaarten downloaden en de gedownloade gegevens gebruiken om lokaal kaarten te renderen, te zoeken naar adressen en NP&apos;s, en voor routeberekening. Deze handelingen vereisen dat de server en een cliënt ervan tegelijk worden uitgevoerd op het apparaat.&lt;br&gt;&lt;br&gt;Deze configuratiewizard zal je helpen bij het selecteren van de door de server gebruikte back-ends en de talen voor het parseren van je zoekopdrachten.&lt;br&gt;&lt;br&gt;Tik op &apos;Volgende&apos; om te beginnen met de configuratie.</translation>
     </message>

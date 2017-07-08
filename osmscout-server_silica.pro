@@ -66,7 +66,8 @@ SOURCES += \
     src/mapmanagerfeature_packtaskworker.cpp \
     src/mapnikmaster.cpp \ 
     src/modulechecker.cpp \
-    src/valhallamaster.cpp
+    src/valhallamaster.cpp \
+    src/mapmanager_deleterthread.cpp
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += rpm/osmscout-server.spec
@@ -92,7 +93,8 @@ HEADERS += \
     src/mapmanagerfeature_packtaskworker.h \
     src/mapnikmaster.h \
     src/modulechecker.h \
-    src/valhallamaster.h
+    src/valhallamaster.h \
+    src/mapmanager_deleterthread.h
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 

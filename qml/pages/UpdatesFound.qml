@@ -7,7 +7,7 @@ Dialog {
     property var foundUpdates: []
     property int nUpdates: 0
 
-    canAccept: true
+    canAccept: manager.ready
 
     SilicaFlickable {
         anchors.fill: parent
@@ -69,13 +69,6 @@ Dialog {
 
     Component.onCompleted: {
         nUpdates = foundUpdates.length
-        console.log(foundUpdates)
-        page.canAccept = (!manager.downloading)
-    }
-
-    Connections {
-        target: manager
-        onDownloadingChanged: page.canAccept = !manager.downloading
     }
 
     onAccepted: manager.getUpdates()

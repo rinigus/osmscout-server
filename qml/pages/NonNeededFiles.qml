@@ -99,7 +99,6 @@ Page {
                         remorse.execute(qsTr("Deleting"),
                                         function () {
                                             manager.deleteNonNeededFiles(fileNames)
-                                            pageStack.pop()
                                         }
                                         )
                     }
@@ -122,9 +121,11 @@ Page {
     BusyIndicator {
         id: busy
         running: true
+        size: BusyIndicatorSize.Large
+        anchors.centerIn: parent
     }
 
-    Component.onCompleted: {
+    function updatePage() {
         fileNames = manager.getNonNeededFilesList()
         dirNames = manager.getDirsWithNonNeededFiles()
         var size = manager.getNonNeededFilesSize()
@@ -142,10 +143,28 @@ Page {
                 mainLabel.text = qsTr("All stored files are used by OSM Scout Server. " +
                                       "There is nothing to delete.")
         }
+    }
 
-        page.activeState = (size > 0 && !manager.downloading)
+    function checkState() {
+        var size = manager.getNonNeededFilesSize()
+        page.activeState = (size > 0 && manager.ready)
         page.anythingToDelete = (size > 0)
+        busy.running = manager.deleting
+    }
 
+    Component.onCompleted: {
+        updatePage()
+        checkState()
         busy.running = false
+    }
+
+    Connections {
+        target: manager
+        onDeletingChanged: {
+            if (!state)
+                updatePage()
+            checkState()
+        }
+        onReadyChanged: checkState()
     }
 }

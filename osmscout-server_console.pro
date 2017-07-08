@@ -59,6 +59,7 @@ SOURCES += src/dbmaster.cpp \
     src/mapmanagerfeature_packtaskworker.cpp \
     src/mapnikmaster.cpp \
     src/valhallamaster.cpp \
+    src/mapmanager_deleterthread.cpp \
     src/modulechecker.cpp
 
 OTHER_FILES += \
@@ -83,6 +84,7 @@ HEADERS += \
     src/mapmanagerfeature_packtaskworker.h \
     src/mapnikmaster.h \
     src/valhallamaster.h \
+    src/mapmanager_deleterthread.h \
     src/modulechecker.h
 
 use_map_qt {

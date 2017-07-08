@@ -32,8 +32,14 @@ namespace MapManager {
     /// \brief true when Map's storage dir is available
     Q_PROPERTY(bool storageAvailable READ storageAvailable NOTIFY storageAvailableChanged)
 
+    /// \brief true when Map Manager can receive configuration chages
+    Q_PROPERTY(bool ready READ ready NOTIFY readyChanged)
+
     /// \brief true when download is active
     Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
+
+    /// \brief true when manager is deleting
+    Q_PROPERTY(bool deleting READ deleting NOTIFY deletingChanged)
 
     /// \brief true when some data is missing
     Q_PROPERTY(bool missing READ missing NOTIFY missingChanged)
@@ -149,7 +155,9 @@ namespace MapManager {
 
     /// Properties exposed to QML
     bool storageAvailable();
+    bool ready();
     bool downloading();
+    bool deleting();
     bool missing();
     QString selectedMap();
 
@@ -164,8 +172,10 @@ namespace MapManager {
     void databaseMapnikChanged(QString root_directory, QStringList country_files);
     void databaseValhallaChanged(QString valhalla_directory, QStringList countries);
 
+    void readyChanged(bool ready);
     void downloadingChanged(bool state);
     void downloadProgress(QString info);
+    void deletingChanged(bool state);
 
     void missingChanged(bool missing);
     void missingInfoChanged(QString info);
@@ -191,6 +201,8 @@ namespace MapManager {
   protected:
     void loadSettings();
     bool isStorageAvailable() const;
+
+    void checkIfReady();
 
     void scanDirectories(bool force_update = false);
     void nothingAvailable(); ///< Helper method called when there are no maps available
@@ -220,7 +232,7 @@ namespace MapManager {
 
     void checkUpdates();
 
-    // handling of downloads
+    /// handling of downloads
     void onDownloadFinished(QString path);
     void onDownloadError(QString err);
     void onDownloadedBytes(uint64_t sz);
@@ -229,6 +241,9 @@ namespace MapManager {
 
     bool startDownload(DownloadType type, const QString &url, const QString &path, const FileDownloader::Type mode);
     void cleanupDownload();
+
+    void setDeleting(bool state);
+    void onDeleteFinished();
 
   protected:
 
@@ -250,6 +265,9 @@ namespace MapManager {
     QList< FilesToDownload > m_missing_data;
     QNetworkAccessManager m_network_manager;
     QPointer<FileDownloader> m_file_downloader;
+
+    bool m_deleting{false};
+    bool m_ready{false};
 
     DownloadType m_download_type{NoDownload};
     uint64_t m_last_reported_downloaded;

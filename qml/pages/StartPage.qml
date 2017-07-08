@@ -228,7 +228,7 @@ Page {
                     var avail = JSON.parse(manager.getAvailableCountries())
                     if (subs.children.length != 0 &&
                             avail.countries.length == 0 &&
-                            !manager.downloading)
+                            manager.ready)
                         noMapsAvailable.visible = true
                     else
                         noMapsAvailable.visible = false
@@ -239,6 +239,7 @@ Page {
                     target: manager
                     onSubscriptionChanged: noMapsAvailable.checkVisible()
                     onDownloadingChanged: noMapsAvailable.checkVisible()
+                    onReadyChanged: noMapsAvailable.checkVisible()
                     onAvailibilityChanged: noMapsAvailable.checkVisible()
                 }
             }
