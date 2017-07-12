@@ -221,7 +221,7 @@ FeatureGeocoderNLP::FeatureGeocoderNLP(PathProvider *path):
   Feature(path, "territory", "geocoder_nlp",
           QCoreApplication::translate("MapManagerFeature", "Geocoder-NLP"),
           geocodernlp_files,
-          3)
+          GeoNLP::Geocoder::version)
 {
 }
 
