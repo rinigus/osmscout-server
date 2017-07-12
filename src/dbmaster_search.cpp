@@ -65,8 +65,6 @@ bool GetAdminRegionHierachie(const osmscout::LocationService& locationService,
 QString GetAddress(const osmscout::LocationSearchResult::Entry& entry)
 {
     std::string label = entry.address->name;
-    if ( !entry.address->postalCode.empty() )
-        label += ", " + entry.address->postalCode;
     return QString::fromStdString(label);
 }
 
