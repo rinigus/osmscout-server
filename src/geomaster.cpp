@@ -43,6 +43,8 @@ void GeoMaster::onSettingsChanged()
   m_search_all_maps = settings.valueBool(GEOMASTER_SETTINGS "search_all_maps");
   m_continue_search_if_hit_found = settings.valueBool(GEOMASTER_SETTINGS "continue_search_if_hit_found");
 
+  m_geocoder.set_result_language( settings.preferredLanguage().toStdString() );
+
   // fill country list
   {
     m_postal_full_library = (m_postal_global.isEmpty() && m_postal_country_dirs.isEmpty());

@@ -40,8 +40,42 @@ Dialog {
                         unitsBox.currentIndex = settings.unitIndex();
                     }
                 }
+
                 Label {
                     text: qsTr("Units used in the graphical user interface of the server. The units will change only after you apply the settings.")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                ComboBox {
+                    id: preferredLanguageSelection
+                    label: qsTr("Language")
+                    enabled: manager.ready
+
+                    menu: ContextMenu {
+                        MenuItem { text: qsTr("Default") }
+                        MenuItem { text: qsTr("English") }
+                    }
+
+                    Component.onCompleted: {
+                        currentIndex = settings.valueInt(settingsGeneralPrefix + "language")
+                    }
+                }
+
+                Label {
+                    text: qsTr("Preferred language for location names shown in rendered maps or in the returned search results. " +
+                               "When possible, this language will be used. When set to <i>Default</i>, OpenStreetMap name will be used " +
+                               "which usually defaults to local language of the displayed country."
+                               )
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -318,13 +352,16 @@ Dialog {
         eRollSize.apply()
         eLogSession.apply()
 
-        /// units are done by combo box, have to apply manually
-        /// units are changed the last
-        settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
+        /// preferred languages are done by combo box, have to apply manually
+        settings.setValue(settingsGeneralPrefix + "language", preferredLanguageSelection.currentIndex)
 
         eMapsRoot.apply()
         eGeocoderNLP.apply()
         eMapnik.apply()
         eValhalla.apply()
+
+        /// units are done by combo box, have to apply manually
+        /// units are changed the last
+        settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
     }
 }

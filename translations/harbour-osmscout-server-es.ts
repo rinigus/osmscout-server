@@ -72,22 +72,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="260"/>
+        <location filename="../src/appsettings.cpp" line="262"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="260"/>
+        <location filename="../src/appsettings.cpp" line="262"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="262"/>
+        <location filename="../src/appsettings.cpp" line="264"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="262"/>
+        <location filename="../src/appsettings.cpp" line="264"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -435,59 +435,59 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="83"/>
+        <location filename="../src/geomaster.cpp" line="85"/>
         <source>Cannot open geocoder database</source>
         <translation>No es posible abrir la base de datos del geocodificador</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="87"/>
+        <location filename="../src/geomaster.cpp" line="89"/>
         <source>Opened geocoder database</source>
         <translation>Base de datos del geocodificador abierta</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="56"/>
+        <location filename="../src/geomaster.cpp" line="58"/>
         <source>Selected country not available for geocoder: %1</source>
         <translation>El país seleccionado no está disponible para geocoder: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="69"/>
+        <location filename="../src/geomaster.cpp" line="71"/>
         <source>Countries used in search: </source>
         <translation>Países usados en la búsqueda:</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="103"/>
+        <location filename="../src/geomaster.cpp" line="105"/>
         <source>libpostal using languages: %1</source>
         <translation>Idiomas que usa libpostal: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="108"/>
+        <location filename="../src/geomaster.cpp" line="110"/>
         <source>libpostal will use all covered languages</source>
         <translation>libpostal usará todos los idiomas cubiertos</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="199"/>
-        <location filename="../src/geomaster.cpp" line="392"/>
+        <location filename="../src/geomaster.cpp" line="201"/>
+        <location filename="../src/geomaster.cpp" line="394"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>No es posible abrir la base de datos de geocodificación: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="225"/>
+        <location filename="../src/geomaster.cpp" line="227"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Error de análisis de libpostal, quizás la base de datos de libpostal no está disponible</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="261"/>
+        <location filename="../src/geomaster.cpp" line="263"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Consulta analizada [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="272"/>
-        <location filename="../src/geomaster.cpp" line="425"/>
+        <location filename="../src/geomaster.cpp" line="274"/>
+        <location filename="../src/geomaster.cpp" line="427"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Error al buscar con geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="347"/>
+        <location filename="../src/geomaster.cpp" line="349"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>La búsqueda del punto de referencia ha fallado: no se pudo encontrar</translation>
     </message>
@@ -1666,167 +1666,187 @@
         <translation>Imperial</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="44"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="45"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
         <translation>Sistema de unidades usado en la interfaz gráfica de usuario del servidor. El sistema de unidades cambiará sólo después de aplicar los ajustes.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="56"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="61"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="65"/>
+        <source>Default</source>
+        <translation type="unfinished">Por defecto</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="66"/>
+        <source>English</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="75"/>
+        <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>Maps storage</source>
         <translation>Almacenamiento de mapas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="57"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="91"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
         <translation>Carpeta para almacenar los mapas. &lt;br&gt;&lt;b&gt;¡NB!&lt;/b&gt; Esta carpeta será gestionada integramente por OSM Scout Server. Por favor, &lt;b&gt;asigna una carpeta independiente y vacía&lt;/b&gt; que OSM Scout Server pueda usar. Esto incluye la eliminación de todos los ficheros de esa carpeta al solicitar la limpieza o actualización de los mapas.&lt;br&gt;&lt;i&gt;Ejemplo:&lt;/i&gt; Mapas bajo &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="71"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="105"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Los backends activos se configuran por perfil. Si quieres cambiar el backend seleccionado, configura el perfil correspondiente o elige el perfil &lt;i&gt;Personalizado&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="83"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
         <source>Rendering</source>
         <translation>Renderización</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="87"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="121"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
         <translation>Este servidor te permite elegir entre dos backends para dibujar los mapas: &lt;i&gt;libosmscout&lt;/i&gt; y &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="99"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
         <source>Use Mapnik for rendering maps</source>
         <translation>Usa Mapnik para el renderizado de mapas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
         <translation>Cuando se activa, se usará Mapnik para renderizar los mapas. Ten en cuenta que necesita de bases de datos adicionales para las costas del mundo y los países.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="105"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="139"/>
         <source>Geocoder</source>
         <translation>Geocodificador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="109"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="143"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>El geocodificador es responsable de resolver las búsquedas solicitadas. Para ello, analiza la cadena de búsqueda y localiza los objetos correspondientes en un mapa. Este servidor te permite seleccionar entre dos backends de geocodificadores: &lt;i&gt;geocoder-nlp&lt;/i&gt; y &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="124"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
         <translation>Usar geocoder-nlp con libpostal como un geocodificador</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="125"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
         <translation>Cuando se activa, se usará un geocodificador basado en libpostal para resolver todas las búsquedas solicitadas. Ten en cuenta que se necesita una base de datos adicional por idioma, análisis de entrada de usuario, y geocodificación.&lt;br&gt;¡NB! Si seleccionas &lt;i&gt;geocoder-nlp&lt;/i&gt;, por favor, especifica los idiomas que deberían usarse al analizar las direcciones en los ajustes del backen abajo. De lo contrario, el servidor podría usar gran cantidad de RAM.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="132"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="166"/>
         <source>Routing Engine</source>
         <translation>Motor de cálculo de rutas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="170"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>El motor de cálculo de rutas es responsable de calcular las rutas entre el origen y destino. Este servidor te permite seleccionar entre dos motores de cálculo de rutas: &lt;i&gt;Valhalla&lt;/i&gt; y &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="184"/>
         <source>Use Valhalla as routing engine</source>
         <translation>Usar Valhalla como motor de cálculo de rutas</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="151"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="185"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
         <translation>Cuando se activa, Valhalla se usará para calcular las instrucciones de ruta.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="189"/>
         <source>Backend settings</source>
         <translation>Ajustes del backend</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="220"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="254"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="227"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="261"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>Ajustes del motor de cálculo de rutas para el backend &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="248"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="282"/>
         <source>OSM Scout library</source>
         <translation>Librería OSM Scout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="192"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="226"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="199"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="233"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Selección de idiomas usados al analizar direcciones y otros ajustes del backend de &lt;i&gt;geocoder-nlp&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="164"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="198"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="66"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
         <source>Profiles</source>
         <translation>Perfiles</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="171"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="205"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>Ajustes del renderizado de mapas para el backend de &lt;i&gt;mapnik&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="255"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="289"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>Ajustes de la librería OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). La librería puede usarse para dibujar mapas, búsquedas y cálculo de rutas.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="266"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="300"/>
         <source>Miscellaneous</source>
         <translation>Otros</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="272"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="306"/>
         <source>Log info messages</source>
         <translation>Registro de mensajes info</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="273"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="307"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Cuando se desactiva, los mensajes INFO no se mostrarán en el registro de Eventos a excepción de la carga de la base de datos, que se muestra siempre.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="280"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="314"/>
         <source>Events log size</source>
         <translation>Tamaño del registro de Eventos</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="281"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="315"/>
         <source>Number of events shown in the main page</source>
         <translation>Número de eventos mostrados en la página principal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="289"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="323"/>
         <source>Log messages into session log file</source>
         <translation>Mensajes de registro dentro del fichero de registro de sesión</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="290"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="324"/>
         <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Cuando está activado, los mensajes se registran en un archivo de registro de sesión. El archivo de registro está en el directorio .cache/harbour-osmscout-server. Utiliza esta configuración sólo para fines de depuración. Con esta opción activada, los mensajes de información serán registrados y mostrados en eventos independientemente de los ajustes anteriores. Esto te permite activar temporalmente el registro completo y desactivarlo cuando el archivo de registro de sesión requerido se haya creado.</translation>
     </message>

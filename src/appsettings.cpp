@@ -40,6 +40,7 @@ void AppSettings::initDefaults()
 
   CHECK(GENERAL_SETTINGS "units", 0);
   CHECK(GENERAL_SETTINGS "profile", 0);
+  CHECK(GENERAL_SETTINGS "language", 0);
 
   CHECK(GENERAL_SETTINGS "rollingLoggerSize", 10);
   CHECK(GENERAL_SETTINGS "logInfo", 1);
@@ -182,7 +183,8 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
       key.contains(GEOMASTER_SETTINGS) ||
       key.contains(MAPNIKMASTER_SETTINGS) ||
       key.contains(VALHALLA_MASTER_SETTINGS) ||
-      key.contains(MAPMANAGER_SETTINGS))
+      key.contains(MAPMANAGER_SETTINGS) ||
+      key == GENERAL_SETTINGS "language" )
     {
       // this delayed signal execution prevents fireing signals together
       // if there are many changes in settings
@@ -338,4 +340,17 @@ void AppSettings::setProfile()
       m_profiles_used = profile_active;
       emit profilesUsedChanged(m_profiles_used);
     }
+}
+
+
+////////////////////////////////////////////////////////////////////
+/// Language preference support, has to be in sync with QML Settings
+/// page
+////////////////////////////////////////////////////////////////////
+
+QString AppSettings::preferredLanguage()
+{
+  int index = valueInt(GENERAL_SETTINGS "language");
+  if ( index == 1 ) return "en";
+  return QString();
 }
