@@ -5,6 +5,7 @@ Dialog {
 
     id: dialog
     allowedOrientations : Orientation.All
+    canAccept: manager.ready
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
@@ -37,6 +38,7 @@ Dialog {
             ComboBox {
                 id: profileSelection
                 label: qsTr("Profile")
+                enabled: manager.ready
 
                 menu: ContextMenu {
                     MenuItem { text: qsTr("Default") }
@@ -85,6 +87,7 @@ Dialog {
     }
 
     onAccepted: {
-        settings.setValue(settingsGeneralPrefix + "profile", profileSelection.currentIndex)
+        if (manager.ready)
+            settings.setValue(settingsGeneralPrefix + "profile", profileSelection.currentIndex)
     }
 }
