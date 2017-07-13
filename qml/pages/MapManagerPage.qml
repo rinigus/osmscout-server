@@ -115,6 +115,7 @@ Page {
             }
 
             Button {
+                id: start_button
                 text: qsTr("Start download")
                 enabled: page.activeState
                 preferredWidth: Theme.buttonWidthLarge
@@ -122,6 +123,31 @@ Page {
                 visible: manager.missing
                 onClicked: {
                     manager.getCountries()
+                }
+
+                function setVisibility() {
+                    visible = (manager.missing && !manager.downloading)
+                }
+
+                Component.onCompleted: {
+                    setVisibility()
+                }
+
+                Connections {
+                    target: manager
+                    onDownloadingChanged: start_button.setVisibility()
+                    onMissingChanged: start_button.setVisibility()
+                }
+            }
+
+            Button {
+                text: qsTr("Stop download")
+                enabled: manager.downloading
+                preferredWidth: Theme.buttonWidthLarge
+                anchors.horizontalCenter: parent.horizontalCenter
+                visible: manager.downloading
+                onClicked: {
+                    manager.stopDownload()
                 }
             }
 

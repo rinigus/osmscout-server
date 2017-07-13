@@ -1070,6 +1070,18 @@ void Manager::onWrittenBytes(uint64_t sz)
   onDownloadProgress();
 }
 
+void Manager::stopDownload()
+{
+  if (!downloading()) return;
+
+  InfoHub::logInfo(tr("Stopping downloads"));
+
+  cleanupDownload();
+
+  m_download_type = NoDownload;
+  emit downloadingChanged(false);
+}
+
 ////////////////////////////////////////////////////////////
 /// support for cleanup
 

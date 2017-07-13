@@ -121,6 +121,10 @@ namespace MapManager {
     /// \brief Gets missing countries and the found updates
     Q_INVOKABLE void getUpdates();
 
+    /// \brief Stops the download and clears download queue
+    ///
+    Q_INVOKABLE void stopDownload();
+
     /// \brief Create a list of non-required files
     ///
     /// Makes a list of non-required files to show to the user. This
