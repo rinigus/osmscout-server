@@ -67,6 +67,8 @@ void MapnikMaster::onSettingsChanged()
   m_buffer_size = std::max(0, settings.valueInt(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels"));
   useMapnik = settings.valueBool(MAPNIKMASTER_SETTINGS "use_mapnik");
   m_styles_dir = settings.valueString(MAPNIKMASTER_SETTINGS "styles_dir");
+  m_preferred_language = settings.preferredLanguage();
+
   m_styles_cache.clear(); /// clean styles remembered from earlier settings
 
   if (!useMapnik && m_pool_maps.size() > 0)
@@ -294,7 +296,11 @@ void MapnikMaster::reloadMapnik(const QString &world_directory, const QStringLis
 
 void MapnikMaster::setConfigDir(const QString &style, bool daylight)
 {
-  QString cand = style + (daylight ? "/day" : "/night");
+  QString dl = (daylight ? "/day" : "/night");
+  QString cand = style + dl;
+  if (!m_preferred_language.isEmpty())
+    cand += "-" + m_preferred_language;
+
   m_local_dir_offset = cand;
 
   auto iter = m_styles_cache.find(cand);
@@ -309,6 +315,8 @@ void MapnikMaster::setConfigDir(const QString &style, bool daylight)
   QString suggestion = QString("default") + (daylight ? "/day" : "/night");
   if (dir.exists(cand + "/" + const_xml))
     suggestion = cand;
+  else if (!m_preferred_language.isEmpty() && dir.exists(style + dl + "/" + const_xml))
+    suggestion = style + dl;
   else if (dir.exists(style + "/day/" + const_xml))
     suggestion = style + "/day";
 

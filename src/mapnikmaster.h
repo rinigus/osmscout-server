@@ -83,6 +83,8 @@ protected:
     size_t m_config_maps_counter{0};
     size_t m_old_config_maps_counter{0};
 
+    QString m_preferred_language;
+
     QHash<QString, QString> m_styles_cache;
 
     // pool of mapnik maps
