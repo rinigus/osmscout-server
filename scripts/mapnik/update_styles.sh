@@ -36,5 +36,9 @@ sync_style "$SCRIPTPATH/mapnik-styles-sqlite/install/OSMBrightCar/"          "$S
 sync_style "$SCRIPTPATH/mapnik-styles-sqlite/install/MidnightCommanderCar/"  "$STYLE"/car/night
 
 sync_style "$SCRIPTPATH/mapnik-styles-sqlite/install/OSMBrightEnglish/"          "$STYLE"/default/day-en
+sync_style "$SCRIPTPATH/mapnik-styles-sqlite/install/MidnightCommanderEnglish/"  "$STYLE"/default/night-en
+
+sync_style "$SCRIPTPATH/mapnik-styles-sqlite/install/OSMBrightCarEnglish/"          "$STYLE"/car/day-en
+sync_style "$SCRIPTPATH/mapnik-styles-sqlite/install/MidnightCommanderCarEnglish/"  "$STYLE"/car/night-en
 
 rsync -av "$SCRIPTPATH/mapnik-styles-sqlite/res" "$STYLE"/
