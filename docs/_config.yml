@@ -1,5 +1,4 @@
 title: OSM Scout Server
 description: Maps server providing tiles, geocoder, and router
 show_downloads: false
-google_analytics:
 theme: jekyll-theme-slate
