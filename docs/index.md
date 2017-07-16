@@ -36,7 +36,7 @@ There are several steps required to setup the server. The following
 guide is aimed at Sailfish OS users.
 
 
-## Modules
+### Modules
 
 The server uses modular approach with two separate modules required
 for its operation. Please proceed to Jolla Store or OpenRepos and
