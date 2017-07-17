@@ -19,4 +19,4 @@ install/valhalla_build_admins --config valhalla.json $PLANET
 install/valhalla_build_tiles --config valhalla.json $PLANET
 
 # gzip all tiles
-gzip -r valhalla/tiles/?
+gzip -r tiles/?
