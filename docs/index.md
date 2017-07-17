@@ -52,4 +52,4 @@ The server uses natural language processing (NLP) library that covers
 processing of addresses in large number of languages -
 [libpostal](https://github.com/openvenues/libpostal). To limit usage
 of resources, please specify languages as shown in
-[Language selection tutorial](languages.md)
+[Language selection tutorial](languages.html).
