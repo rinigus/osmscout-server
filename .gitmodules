@@ -7,3 +7,6 @@
 [submodule "scripts/mapnik/mapnik-styles-sqlite"]
 	path = scripts/mapnik/mapnik-styles-sqlite
 	url = https://github.com/rinigus/mapnik-styles-sqlite.git
+[submodule "docs/fullPage.js"]
+	path = docs/fullPage.js
+	url = https://github.com/alvarotrigo/fullPage.js.git
