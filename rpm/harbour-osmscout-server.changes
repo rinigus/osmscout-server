@@ -5,6 +5,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Jul 18 2017 rinigus <rinigus.git@gmail.com> 0.14.0-1
+- Add support for English as a secondary language
+- Deleting files during cleanup in separate thread
+- Bugfixes
+- Update translations
+
 * Fri Jul 7 2017 rinigus <rinigus.git@gmail.com> 0.13.1-1
 - Update translations
 - Bugfix in guide search
