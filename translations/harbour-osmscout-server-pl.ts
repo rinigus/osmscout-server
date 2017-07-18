@@ -761,7 +761,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1077"/>
         <source>Stopping downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatrzymywanie pobierania</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1230"/>
@@ -947,7 +947,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="144"/>
         <source>Stop download</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatrzymaj pobieranie</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="155"/>
@@ -1673,17 +1673,17 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="61"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Język</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">Domyślny</translation>
+        <translation>Domyślny</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>angielski</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>

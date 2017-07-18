@@ -568,7 +568,7 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="11"/>
         <source>Cleanup: %1 files to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистка: %1 файлов для удаления</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="17"/>
@@ -583,12 +583,12 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="27"/>
         <source>Files left to remove: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Осталось удалить %1 файлов</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="32"/>
         <source>Cleanup finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистка завершена</translation>
     </message>
 </context>
 <context>
@@ -761,7 +761,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1077"/>
         <source>Stopping downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Останов загрузок</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1230"/>
@@ -947,7 +947,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="144"/>
         <source>Stop download</source>
-        <translation type="unfinished"></translation>
+        <translation>Остановить загрузку</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="155"/>
@@ -1673,22 +1673,22 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="61"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Язык</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">По умолчанию</translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Английский</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
-        <translation type="unfinished"></translation>
+        <translation>Предпочитаемый язык для местных названий показан на отображаемых картах или в полученных поисковых результатах. При выборе &lt;i&gt;По умолчанию&lt;/i&gt;, OpenStreetMap будет использовать язык по умолчанию для отображаемой страны.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>

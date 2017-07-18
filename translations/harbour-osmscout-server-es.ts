@@ -761,7 +761,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1077"/>
         <source>Stopping downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Deteniendo descargas</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1230"/>
@@ -947,7 +947,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="144"/>
         <source>Stop download</source>
-        <translation type="unfinished"></translation>
+        <translation>Detener descarga</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="155"/>
@@ -1673,22 +1673,22 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="61"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">Por defecto</translation>
+        <translation>Por defecto</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Inglés</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
-        <translation type="unfinished"></translation>
+        <translation>Idioma elegido en el nombre de localizaciones que se muestran en los mapas o en los resultados de búsquedas. Si es posible este es el idioma que se usará. Si seleccionas &lt;i&gt;Por defecto&lt;/i&gt;, se usará el nombre de OpenStreetMap, que por defecto usará el idioma local del país mostrado.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>

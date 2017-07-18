@@ -1678,7 +1678,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>Default</source>
-        <translation type="unfinished">Standaard</translation>
+        <translation>Standaard</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
