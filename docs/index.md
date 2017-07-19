@@ -83,3 +83,10 @@ subscription of the maps and their download is described in
 After the maps are downloaded, you are ready to proceed with the
 configuration of your map access client. Select the corresponding
 section below to see how to configure it.
+
+
+### Settings
+
+There are multiple settings that can be useful to tune the operation
+of the server. See some examples in
+[Settings examples](settings_misc.html).
