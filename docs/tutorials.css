@@ -1,0 +1,54 @@
+/* Style for our texts
+ * --------------------------------------- */
+.caption {
+    font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    width: 90%;
+    text-align: center;
+    color: #FFF;
+    background-color: #303030;
+    border: solid;
+    border-color: #FFF;
+    border-width: 1mm;
+}
+
+.caption p.head {
+    font-size: 24pt;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.caption p.border {
+    font-size: 24pt;
+    padding: 5px;
+}
+
+a {
+    color: #00AEFF;
+}
+
+/* Centered texts in each section
+ * --------------------------------------- */
+.section{
+    text-align:center;
+}
+
+
+/* Backgrounds will cover all the section
+ * --------------------------------------- */
+#section1,
+#section2,
+#section3,
+#section4,
+#section5,
+#section6,
+#section7,
+#section8{
+    background-size: contain;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #303030;
+}
