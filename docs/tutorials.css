@@ -14,13 +14,27 @@
     border-width: 1mm;
 }
 
-.caption p.head {
+.captiontop {
+    font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    text-align: center;
+    color: #FFF;
+    background-color: #303030;
+    border: solid;
+    border-color: #FFF;
+    border-width: 1mm;
+}
+
+p.head {
     font-size: 24pt;
     font-weight: bold;
     padding: 5px;
 }
 
-.caption p.border {
+p.border {
     font-size: 24pt;
     padding: 5px;
 }
@@ -38,6 +52,7 @@ a {
 
 /* Backgrounds will cover all the section
  * --------------------------------------- */
+#section0,
 #section1,
 #section2,
 #section3,
@@ -45,7 +60,8 @@ a {
 #section5,
 #section6,
 #section7,
-#section8{
+#section8,
+#section9{
     background-size: contain;
     background-attachment: fixed;
     background-position: center;
