@@ -46,6 +46,18 @@ if instructed by the server. The modules are used automatically and
 don't have to be started by users.
 
 
+### Storage
+
+OSM Scout Server needs to store maps. The storage requirements could
+be significant. To store maps and manage them, a separate folder is
+required. Please note that, as a part of the managing, OSM Scout
+Server can delete, on your command, files from that folder. Thus, its
+important to allocate such folder and assign it to OSM Scout
+Manager. See [Storage allocation tutorial](storage.html) for example
+on how to do it with the help of
+[FileCase](https://openrepos.net/content/cepiperez/filecase-0).
+
+
 ### Profile
 
 To simplify configuration, OSM Scout Server uses profiles. You are
