@@ -35,7 +35,6 @@ opened as needed.
 There are several steps required to setup the server. The following
 guide is aimed at Sailfish OS users.
 
-
 ### Modules
 
 The server uses modular approach with two separate modules required
@@ -44,7 +43,6 @@ install _OSM Scout Server Module: Route_ and _OSM Scout Server Module:
 Fonts_. After installation of the modules, please restart the server,
 if instructed by the server. The modules are used automatically and
 don't have to be started by users.
-
 
 ### Storage
 
@@ -57,23 +55,6 @@ Manager. See [Storage allocation tutorial](storage.html) for example
 on how to do it with the help of
 [FileCase](https://openrepos.net/content/cepiperez/filecase-0).
 
-
-### Profile
-
-To simplify configuration, OSM Scout Server uses profiles. You are
-asked to select profile on the first start. Later, you can select
-profile as shown in the [Profile selection tutorial](profiles.html).
-
-
-### Language selection
-
-The server uses natural language processing (NLP) library that covers
-processing of addresses in large number of languages -
-[libpostal](https://github.com/openvenues/libpostal). To limit usage
-of resources, please specify languages as shown in
-[Language selection tutorial](languages.html).
-
-
 ### Map Manager
 
 To download, update, and remove maps, use Map Manager. The initial
@@ -84,9 +65,37 @@ After the maps are downloaded, you are ready to proceed with the
 configuration of your map access client. Select the corresponding
 section below to see how to configure it.
 
+### Language selection
+
+The server uses natural language processing (NLP) library that covers
+processing of addresses in large number of languages -
+[libpostal](https://github.com/openvenues/libpostal). To limit usage
+of resources, please specify languages as shown in
+[Language selection tutorial](languages.html).
+
+### Profile
+
+To simplify configuration, OSM Scout Server uses profiles. You are
+asked to select profile on the first start. Later, you can select
+profile as shown in the [Profile selection tutorial](profiles.html).
 
 ### Settings
 
 There are multiple settings that can be useful to tune the operation
 of the server. See some examples in
 [Settings examples](settings_misc.html).
+
+
+## Setting up the client
+
+After the server has been setup and the maps downloaded, the access to
+the server has to be configured in the client(s).
+
+For [Poor Maps](https://openrepos.net/content/otsaloma/poor-maps),
+instructions are [here](poor_maps.html).
+
+For [modRana](https://openrepos.net/content/martink/modrana-0),
+instructions are [here](modrana.html).
+
+After the client is setup, you can use them together with OSM Scout
+Server for offline maps access.
