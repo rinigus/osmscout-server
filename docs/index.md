@@ -60,3 +60,14 @@ processing of addresses in large number of languages -
 [libpostal](https://github.com/openvenues/libpostal). To limit usage
 of resources, please specify languages as shown in
 [Language selection tutorial](languages.html).
+
+
+### Map Manager
+
+To download, update, and remove maps, use Map Manager. The initial
+subscription of the maps and their download is described in
+[Map Manager Download tutorial](manager.html). 
+
+After the maps are downloaded, you are ready to proceed with the
+configuration of your map access client. Select the corresponding
+section below to see how to configure it.
