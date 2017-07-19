@@ -11,7 +11,8 @@ Here, the user guide is provided with the description of setting up
 the server and popular clients for offline operation on Sailfish OS
 device. For developer's info, see
 [GitHub page](https://github.com/rinigus/osmscout-server) of the
-project.
+project and it's
+[README](https://github.com/rinigus/osmscout-server/blob/master/README.md).
 
 
 ## Mode of operation

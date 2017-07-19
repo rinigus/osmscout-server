@@ -11,14 +11,17 @@ At present, the server can be used to provide:
 * search for POIs next to a reference area;
 * calculating routes between given sequence of points.
 
+User's guide is available at https://rinigus.github.io/osmscout-server 
+
 Server is a wrapper around libosmscout exposing its
 functionality. This library can be used to render maps, search for
 locations and POIs, and calculate routes. 
 
-In addition to libosmscout, the server supports:
+The server supports:
 * map rendering via Mapnik (https://github.com/mapnik/mapnik);
 * search via Geocoder-NLP (https://github.com/rinigus/geocoder-nlp) which is based on libpostal (https://github.com/openvenues/libpostal);
-* routing instructions via Valhalla (https://github.com/valhalla/valhalla).
+* routing instructions via Valhalla (https://github.com/valhalla/valhalla);
+* map rendering, search, and routing via libosmscout (http://libosmscout.sourceforge.net/).
 
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps, modRana, and
