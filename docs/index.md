@@ -46,6 +46,13 @@ if instructed by the server. The modules are used automatically and
 don't have to be started by users.
 
 
+### Profile
+
+To simplify configuration, OSM Scout Server uses profiles. You are
+asked to select profile on the first start. Later, you can select
+profile as shown in the [Profile selection tutorial](profiles.html).
+
+
 ### Language selection
 
 The server uses natural language processing (NLP) library that covers
