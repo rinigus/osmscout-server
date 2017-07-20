@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OSM Scout Server - Settings</title>
+	<meta name="author" content="rinigus" />
+	<meta name="description" content="OSM Scout Server tutorial" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
+	<style>
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(settings_misc/settings_misc_1.jpg);
+	}
+	#section2{
+		background-image: url(settings_misc/settings_misc_2.jpg);
+	}
+	#section3{
+		background-image: url(settings_misc/settings_misc_3.jpg);
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../fullPage.js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section" id="section1">
+    <div class="caption">
+      <p class="head">Enter Settings</p>
+      <p class="border">
+        On the main page, select Settings in pulley menu as shown
+        on the screenshot.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="caption">
+      <p class="head">Language</p>
+      <p class="border">
+        You can specify preferred language that you would like to use
+        for map drawing and search results. In the case shown on the
+        screenshot, the names in English will be used,
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="captiontop">
+      <p class="head">Backend settings</p>
+      <p class="border">
+        Settings for all backends are accessible towards the end of
+        Settings.
+      </p>
+      
+      <p class="border"><a href="index.html">Return to the main page</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

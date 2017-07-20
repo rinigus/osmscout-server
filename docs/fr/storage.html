@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OSM Scout Server - Storage Allocation</title>
+	<meta name="author" content="rinigus" />
+	<meta name="description" content="OSM Scout Server tutorial" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
+	<style>
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(storage/storage_1.jpg);
+	}
+	#section2{
+		background-image: url(storage/storage_2.jpg);
+	}
+	#section3{
+		background-image: url(storage/storage_3.jpg);
+	}
+	#section4{
+		background-image: url(storage/storage_4.jpg);
+	}
+	#section5{
+		background-image: url(storage/storage_5.jpg);
+	}
+	#section6{
+		background-image: url(storage/storage_6.jpg);
+	}
+	#section7{
+		background-image: url(storage/storage_7.jpg);
+	}
+	#section8{
+		background-image: url(storage/storage_8.jpg);
+	}
+	#section9{
+		background-image: url(storage/storage_9.jpg);
+	}
+	#section10{
+		background-image: url(storage/storage_10.jpg);
+	}
+	#section11{
+		background-image: url(storage/storage_11.jpg);
+	}
+	<!-- #section12{ -->
+	<!-- 	background-image: url(storage/storage_12.jpg); -->
+	<!-- } -->
+	#section13{
+		background-image: url(storage/storage_13.jpg);
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../fullPage.js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section" id="section1">
+    <div class="caption">
+      <p class="border">
+        Before storage is allocated and setup, you will be greeted
+        with the message asking you to do so. This tutorial will show how
+        to allocate storage on SD Card or other non-default location.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="caption">
+      <p class="head">Open <a href="https://openrepos.net/content/cepiperez/filecase-0">FileCase</a></p>
+      <p class="border">
+        Open file manager application on your Sailfish device. For
+        example, open FileCase and swipe it to the right, as shown on
+        the screenshot.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="caption">
+      <p class="head">SD Card</p>
+      <p class="border">
+        Click on SD Card as shown.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section4">
+    <div class="caption">
+      <p class="head">Create new folder</p>
+      <p class="border">
+        When you navigate on SD Card into location where you want your
+        new folder, create it by opening pulley menu, as shown
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="section5">
+    <div class="caption">
+      <p class="head">Name new folder</p>
+      <p class="border">
+        Name new folder as you wish. In this example, Maps.OSM is
+        used.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="section6">
+    <div class="caption">
+      <p class="head">Back to OSM Scout Server</p>
+      <p class="border">
+        Go back to OSM Scout Server and open its Settings by opening
+        pulley menu, as shown.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section7">
+    <div class="captiontop">
+      <p class="head">Storage selection</p>
+      <p class="border">
+        Open the storage selection dialog as shown by the highlighted
+        element on the screenshot.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section8">
+    <div class="caption">
+      <p class="head">Navigate to allocated folder</p>
+      <p class="border">
+        Navigate to the location where the allocated folder
+        is. In this example, we start from /home/nemo and have to get
+        to /media/sdcard/... . So, navigation starts with moving up by
+        pressing .. as shown.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section9">
+    <div class="caption">
+      <p class="border">
+        When arrived to root (/), look for media folder.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section10">
+    <div class="caption">
+      <p class="border">
+        Select media folder, as shown, and move along the file tree to
+        the allocated folder on SD Card until you see it.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section11">
+    <div class="caption">
+      <p class="head">Select allocated folder</p>
+      <p class="border">
+        When you can see the allocated folder, click on it and hold,
+        until you see opening of the context menu. Press Select to
+        confirm your selection.
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section13">
+    <div class="captiontop">
+      <p class="border">
+        The new allocated folder is selected, as shown in the
+        screenshot under "Maps storage". Proceed with the
+        Accept to confirm your new settings.
+      </p>
+      <p class="border"><a href="index.html">Return to the main page</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
