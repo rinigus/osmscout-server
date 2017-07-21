@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Jul 21 2017 rinigus <rinigus.git@gmail.com> 0.15.0-1
+- Revert to older libosmscout
+- Updated translations
+
 * Tue Jul 19 2017 rinigus <rinigus.git@gmail.com> 0.14.1-1
 - Updated translations
 - Geocoder-NLP update
