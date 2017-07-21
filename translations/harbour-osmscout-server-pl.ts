@@ -68,6 +68,11 @@
         <source>is a server that provides offline map services</source>
         <translation>jest serwerem dostarczającym serwisu map offline</translation>
     </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="92"/>
+        <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppSettings</name>
@@ -1272,7 +1277,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation type="unfinished"></translation>
+        <translation>Prędkość transportu użyta przez bibliotekę OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) podczas wyznaczania tras.</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="35"/>

@@ -68,6 +68,11 @@
         <source>is a server that provides offline map services</source>
         <translation>je server poskytující offline mapové služby</translation>
     </message>
+    <message>
+        <location filename="../qml/pages/AboutPage.qml" line="92"/>
+        <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppSettings</name>

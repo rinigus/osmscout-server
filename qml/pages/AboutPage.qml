@@ -45,17 +45,17 @@ Page {
                               "</p>" +
 
                               "<br><b>" + qsTr("Acknowledgments") + "</b><br><br>" +
-                              "libosmscout: http://libosmscout.sourceforge.net/<br><br>" +
-                              "libpostal: https://github.com/openvenues/libpostal<br><br>" +
-                              "mapnik: http://mapnik.org/<br><br>" +
-                              "valhalla: https://github.com/valhalla/valhalla<br><br>" +
-                              "geocoder-nlp: https://github.com/rinigus/geocoder-nlp<br><br>" +
-                              "osmscout-sailfish: https://github.com/Karry/osmscout-sailfish<br><br>" +
-                              "GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd<br><br>" +
-                              "langcodes: https://github.com/LuminosoInsight/langcodes<br><br>" +
+                              "Used external projects:<br>" +
+                              "<a href='http://libosmscout.sourceforge.net/'>libosmscout</a><br>" +
+                              "<a href='https://github.com/openvenues/libpostal'>libpostal</a><br>" +
+                              "<a href='http://mapnik.org'>Mapnik</a><br>" +
+                              "<a href='https://github.com/valhalla/valhalla'>Valhalla</a><br>" +
+                              "<a href='https://github.com/rinigus/geocoder-nlp'>Geocoder-NLP</a><br>" +
+                              "<a href='https://www.gnu.org/software/libmicrohttpd'>GNU Libmicrohttpd</a><br>" +
+                              "<a href='https://github.com/LuminosoInsight/langcodes'>langcodes</a><br><br>" +
                               "Hosting of maps: Natural Language Processing Centre (Faculty of Informatics, " +
-                              "Masaryk University, Brno, Czech Republic) through modRana.org<br><br>" +
-                              "Fonts: Noto fonts (SIL Open Font License, Version 1.1)<br>"
+                              "Masaryk University, Brno, Czech Republic) through <a href='http://modrana.org'>modRana.org</a><br><br>" +
+                              "Fonts: <a href='https://www.google.com/get/noto/'>Noto fonts</a> (SIL Open Font License, Version 1.1)<br>"
 
 
     SilicaFlickable {
@@ -82,11 +82,19 @@ Page {
             }
 
             Label {
-                text: "<center>" + programName + " " + qsTr("is a server that provides offline map services") + "</center>"
+                text: programName + " " + qsTr("is a server that provides offline map services")
                 wrapMode: Text.WordWrap
                 width: column.width
-                textFormat: Text.RichText
                 color: Theme.highlightColor
+            }
+
+            Label {
+                text: qsTr("User's guide is available <a href='https://rinigus.github.io/osmscout-server'>online</a>")
+                wrapMode: Text.WordWrap
+                width: column.width
+                color: Theme.highlightColor
+                linkColor: Theme.primaryColor
+                onLinkActivated: Qt.openUrlExternally(link)
             }
 
             Label {
@@ -95,6 +103,8 @@ Page {
                 width: column.width
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
+                linkColor: Theme.primaryColor
+                onLinkActivated: Qt.openUrlExternally(link)
                 //textFormat: Text.RichText
             }
         }
