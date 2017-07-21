@@ -11,6 +11,9 @@ BNDINSTALL=`pwd`/backends-install
 # dataset downloads when its not needed
 rm -rf $BNDSRC
 mkdir -p $BNDSRC
+rm $BNDINSTALL/bin/geocoder-importer || true
+rm $BNDINSTALL/bin/liboscmscout-version || true
+rm $BNDINSTALL/mapnik-styles-sqlite || true
 
 # libpostal
 #git clone https://github.com/openvenues/libpostal $BNDSRC/libpostal
@@ -19,14 +22,14 @@ mkdir -p $BNDSRC
 # libosmscout
 git clone --recursive https://github.com/rinigus/libosmscout.git $BNDSRC/libosmscout
 mkdir -p $BNDSRC/libosmscout/build
-( cd $BNDSRC/libosmscout/build && cmake -DCMAKE_INSTALL_PREFIX:PATH=$BNDINSTALL -DBUILD_WITH_OPENMP=OFF -DOSMSCOUT_BUILD_DOC_API=OFF -DOSMSCOUT_BUILD_BINDING_JAVA=OFF -DOSMSCOUT_BUILD_MAP_OPENGL=OFF  -DOSMSCOUT_BUILD_MAP_AGG=OFF -DOSMSCOUT_BUILD_MAP_CAIRO=OFF -DOSMSCOUT_BUILD_MAP_SVG=OFF -DOSMSCOUT_BUILD_MAP_QT=OFF -DOSMSCOUT_BUILD_MAP_IOSX=OFF -DOSMSCOUT_BUILD_TESTS=OFF -DOSMSCOUT_BUILD_DEMOS=OFF -DOSMSCOUT_BUILD_BINDING_JAVA=OFF -DOSMSCOUT_BUILD_BINDING_CSHARP=OFF -DOSMSCOUT_BUILD_DOC_API=OFF -DOSMSCOUT_BUILD_CLIENT_QT=OFF -DOSMSCOUT_BUILD_TOOL_OSMSCOUT2=OFF -DOSMSCOUT_BUILD_TOOL_STYLEEDITOR=OFF -DGPERFTOOLS_USAGE=OFF -DOSMSCOUT_BUILD_TOOL_IMPORT=ON .. && make -j6 && make install )
+( cd $BNDSRC/libosmscout/build && cmake -DCMAKE_INSTALL_PREFIX:PATH=$BNDINSTALL -DBUILD_WITH_OPENMP=OFF -DOSMSCOUT_BUILD_DOC_API=OFF -DOSMSCOUT_BUILD_BINDING_JAVA=OFF -DOSMSCOUT_BUILD_MAP_OPENGL=OFF  -DOSMSCOUT_BUILD_MAP_AGG=OFF -DOSMSCOUT_BUILD_MAP_CAIRO=OFF -DOSMSCOUT_BUILD_MAP_SVG=OFF -DOSMSCOUT_BUILD_MAP_QT=OFF -DOSMSCOUT_BUILD_MAP_IOSX=OFF -DOSMSCOUT_BUILD_TESTS=OFF -DOSMSCOUT_BUILD_DEMOS=OFF -DOSMSCOUT_BUILD_BINDING_CSHARP=OFF -DOSMSCOUT_BUILD_CLIENT_QT=OFF -DOSMSCOUT_BUILD_TOOL_OSMSCOUT2=OFF -DOSMSCOUT_BUILD_TOOL_STYLEEDITOR=OFF -DGPERFTOOLS_USAGE=OFF -DOSMSCOUT_BUILD_TOOL_IMPORT=ON .. && make -j8 && make install )
 
 # geocoder-nlp
 git clone --recursive https://github.com/rinigus/geocoder-nlp.git $BNDSRC/geocoder-nlp
 (cd $BNDSRC/geocoder-nlp/importer && make LIBPOSTAL_INCLUDE=-I$BNDINSTALL/include LIBPOSTAL_LIB="-L$BNDINSTALL/lib -lpostal" && ln -s `pwd`/importer $BNDINSTALL/bin/geocoder-importer )
 
 # libosmscout version tool
-(cd libosmscout-version-tool && make INCLUDE=-I$BNDINSTALL/include LIBRARIES=-I$BNDINSTALL/lib && ln -s `pwd`/liboscmscout-version $BNDINSTALL/bin)
+(cd libosmscout-version-tool && make clean && make INCLUDE=-I$BNDINSTALL/include LIBRARIES=-I$BNDINSTALL/lib && ln -s `pwd`/liboscmscout-version $BNDINSTALL/bin)
 
 # mapnik-styles-sqlite
 git clone https://github.com/rinigus/mapnik-styles-sqlite.git $BNDSRC/mapnik-styles-sqlite

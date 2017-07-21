@@ -19,4 +19,4 @@ mkdir -p "$SQLDIR"
 
 $BNDINSTALL/mapnik-styles-sqlite/importer/import_pbf.sh "$PBF" "$SQLDIR/mapnik.sqlite"
 
-./pack.sh "$SQLDIR" 2
+./pack.sh "$SQLDIR" 3
