@@ -1,7 +1,3 @@
-Documentation available in:
-
-[Français](../fr)
-
 
 # OSM Scout Server
 
