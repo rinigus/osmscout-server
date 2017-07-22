@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=en">
+    </noscript>
+    <!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
+    <script type="text/javascript">
+      var url = "en" + window.location.hash;
+      if (typeof IE_fix != "undefined") {
+        document.write("Redirecting...");
+        var referLink = document.createElement("a");
+        referLink.href = url;
+        document.body.appendChild(referLink);
+        referLink.click();
+      } else {
+        window.location.replace(url);
+      }
+    </script>
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <a href="en">Follow this link if you are not redirected automatically.</a>
+  </body>
+</html>

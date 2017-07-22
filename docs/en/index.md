@@ -1,3 +1,8 @@
+Documentation available in:
+
+[Français](../fr)
+
+
 # OSM Scout Server
 
 OSM Scout Server can be used as a drop-in replacement for online map
