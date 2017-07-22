@@ -12,6 +12,7 @@
 #include <QVector>
 #include <QMap>
 #include <QString>
+#include <QStringList>
 
 #include <string>
 #include <map>
@@ -40,15 +41,17 @@ public:
     /// \param searchPattern
     /// \param lat this is a return value, latitude of the reference point
     /// \param lon this is a return value, longitude of the reference point
+    /// \param name this is a return value, description of the found reference point
     /// \return true if a reference point was found
     ///
-    bool search(const QString &searchPattern, double &lat, double &lon);
+    bool search(const QString &searchPattern, double &lat, double &lon, std::string &name);
 
     bool guide(const QString &poitype, double lat, double lon, double radius, size_t limit, QByteArray &result);
 
     bool poiTypes(QByteArray &result); ///< Fill results with list of supported POI types
 
-    bool route(osmscout::Vehicle &vehicle, std::vector< osmscout::GeoCoord > &coordinates, double radius, bool gpx, QByteArray &result);
+    bool route(osmscout::Vehicle &vehicle, std::vector< osmscout::GeoCoord > &coordinates, double radius,
+               const std::vector< std::string > &names, bool gpx, QByteArray &result);
 
     /// \brief checks if DBMaster object is ready for operation
     ///
@@ -58,8 +61,11 @@ public:
 
 public slots:
     void onSettingsChanged();
+    void onDatabaseChanged(QString directory);
 
 protected:
+
+    bool loadDatabase();
 
     bool loadStyle(bool daylight);
 

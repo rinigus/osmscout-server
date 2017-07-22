@@ -10,6 +10,7 @@ Dialog {
 
     property string title
     property string comment
+    property string note
     property string value
 
     property var callback
@@ -31,6 +32,15 @@ Dialog {
 
             Label {
                 text: main.comment
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                //font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            Label {
+                text: main.note
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap

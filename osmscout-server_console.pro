@@ -12,12 +12,19 @@
 # The name of your application
 TARGET = osmscout-server
 
-QT = core network
+QT = core network sql xml
 
 CONFIG += c++11
 
 CONFIG += use_map_qt
 #CONFIG += use_map_cairo
+
+!disable_mapnik {
+   CONFIG += use_mapnik
+}
+!disable_valhalla {
+   CONFIG += use_valhalla
+}
 
 # installs
 stylesheets.files = stylesheets
@@ -45,7 +52,15 @@ SOURCES += src/dbmaster.cpp \
     src/dbmaster_route.cpp \
     src/routingforhuman.cpp \
     src/geomaster.cpp \
-    src/config.cpp
+    src/config.cpp \
+    src/mapmanager.cpp \
+    src/filedownloader.cpp \
+    src/mapmanagerfeature.cpp \
+    src/mapmanagerfeature_packtaskworker.cpp \
+    src/mapnikmaster.cpp \
+    src/valhallamaster.cpp \
+    src/mapmanager_deleterthread.cpp \
+    src/modulechecker.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
@@ -62,7 +77,15 @@ HEADERS += \
     src/infohub.h \
     src/consolelogger.h \
     src/routingforhuman.h \
-    src/geomaster.h
+    src/geomaster.h \
+    src/mapmanager.h \
+    src/filedownloader.h \
+    src/mapmanagerfeature.h \
+    src/mapmanagerfeature_packtaskworker.h \
+    src/mapnikmaster.h \
+    src/valhallamaster.h \
+    src/mapmanager_deleterthread.h \
+    src/modulechecker.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -77,7 +100,28 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa -lsqlite3
+use_mapnik {
+    DEFINES += USE_MAPNIK
+    #DEFINES += MAPNIK_FONTS_DIR=\\\"$$system(mapnik-config --fonts)\\\"
+    DEFINES += MAPNIK_FONTS_DIR=\\\"modules/fonts/fonts\\\"
+    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
+    LIBS += -lmapnik -licuuc
+}
+
+use_valhalla {
+    DEFINES += USE_VALHALLA
+    DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_route_service\\\"
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"modules/route/data/valhalla.json\\\"
+    CONFIG += use_curl
+}
+
+use_curl {
+    DEFINES += USE_LIBCURL
+    CONFIG += link_pkgconfig
+    PKGCONFIG += libcurl
+}
+
+LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -lsqlite3
 
 QMAKE_CXXFLAGS += -fopenmp
 LIBS += -fopenmp

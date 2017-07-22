@@ -23,8 +23,8 @@ void InfoHub::onSettingsChanged()
 {
     AppSettings settings;
 
-    m_log_info = (settings.valueInt(OSM_SETTINGS "logInfo") > 0);
-    m_log_session = (settings.valueInt(OSM_SETTINGS "logSession") > 0);
+    m_log_info = (settings.valueInt(GENERAL_SETTINGS "logInfo") > 0);
+    m_log_session = (settings.valueInt(GENERAL_SETTINGS "logSession") > 0);
 }
 
 void InfoHub::setError(bool e)

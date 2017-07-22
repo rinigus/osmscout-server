@@ -1,0 +1,13 @@
+# Rename this file as harbour-osmscout-server-module-route.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+
+* Mon May 22 2017 rinigus <rinigus.git@gmail.com> 2.2.4-1
+- Initial release
+

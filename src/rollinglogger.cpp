@@ -15,7 +15,7 @@ void RollingLogger::onSettingsChanged()
 {
     AppSettings settings;
 
-    m_size_max = settings.valueInt(OSM_SETTINGS "rollingLoggerSize");
+    m_size_max = settings.valueInt(GENERAL_SETTINGS "rollingLoggerSize");
 
     while (m_log.size() > m_size_max && m_log.size() > 1)
         m_log.dequeue();

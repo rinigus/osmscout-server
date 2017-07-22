@@ -59,6 +59,8 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
     if (m_error_flag) return false;
 
+    zoom_level = std::max(0, zoom_level);
+
     // initialize local variables with current settings
     bool renderSea;
     bool drawBackground;
@@ -67,7 +69,7 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
     {
         QMutexLocker lk(&m_mutex);
 
-        if (!m_database->IsOpen())
+        if (!loadDatabase())
         {
             InfoHub::logWarning(tr("Database is not open, cannot render a tile"));
             return false;

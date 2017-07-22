@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=OSM Scout Server Module: Fonts
+Exec=sailfish-qml harbour-osmscout-server-module-fonts
+Icon=harbour-osmscout-server-module-fonts
+Type=Application
+X-Nemo-Application-Type=silica-qt5

@@ -65,8 +65,6 @@ bool GetAdminRegionHierachie(const osmscout::LocationService& locationService,
 QString GetAddress(const osmscout::LocationSearchResult::Entry& entry)
 {
     std::string label = entry.address->name;
-    if ( !entry.address->postalCode.empty() )
-        label += ", " + entry.address->postalCode;
     return QString::fromStdString(label);
 }
 
@@ -249,7 +247,7 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot search"));
         return false;
@@ -472,7 +470,7 @@ bool DBMaster::searchExposed(const QString &searchPattern, QByteArray &result, s
 }
 
 
-bool DBMaster::search(const QString &searchPattern, double &lat, double &lon)
+bool DBMaster::search(const QString &searchPattern, double &lat, double &lon, std::string &name)
 {
     SearchResults all_results;
     if ( !search(searchPattern, all_results, 1) )
@@ -489,6 +487,10 @@ bool DBMaster::search(const QString &searchPattern, double &lat, double &lon)
 
     lat = all_results.results().at(0)["lat"].toDouble();
     lon = all_results.results().at(0)["lng"].toDouble();
+    if ( all_results.results().at(0).contains("admin_region") )
+        name = all_results.results().at(0)["admin_region"].toStdString();
+    else
+        name = all_results.results().at(0)["title"].toStdString();
 
     return true;
 }
@@ -502,7 +504,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot search for POI"));
         return false;
@@ -663,7 +665,7 @@ bool DBMaster::poiTypes(QByteArray &result)
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot list POI types"));
         return false;

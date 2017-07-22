@@ -4,6 +4,16 @@ import Sailfish.Silica 1.0
 CoverBackground {
 
     Image {
+        id: download
+        source: "image://theme/icon-cover-transfers"
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.margins: Theme.paddingLarge
+        fillMode: Image.PreserveAspectFit
+        visible: manager.downloading
+    }
+
+    Image {
         id: icon
         source: "/usr/share/icons/hicolor/256x256/apps/harbour-osmscout-server.png"
         anchors.centerIn: parent
