@@ -3,40 +3,43 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>OSM Scout Server - Poor Maps</title>
+	<title>OSM Scout Server - modRana</title>
 	<meta name="author" content="rinigus" />
 	<meta name="description" content="OSM Scout Server tutorial" />
 	<meta name="Resource-type" content="Document" />
 
-	<link rel="stylesheet" type="text/css" href="fullPage.js/jquery.fullPage.css" />
-        <link rel="stylesheet" type="text/css" href="tutorials.css" />
+	<link rel="stylesheet" type="text/css" href="../assets/fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
 	<style>
 
 	/* Defining each section background and styles
 	* --------------------------------------- */
 	#section1{
-		background-image: url(poor-maps/pm_1.jpg);
+		background-image: url(modrana/modrana_1.jpg);
 	}
 	#section2{
-		background-image: url(poor-maps/pm_2.jpg);
+		background-image: url(modrana/modrana_2.jpg);
 	}
 	#section3{
-		background-image: url(poor-maps/pm_3.jpg);
+		background-image: url(modrana/modrana_3.jpg);
 	}
 	#section4{
-		background-image: url(poor-maps/pm_4.jpg);
+		background-image: url(modrana/modrana_4.jpg);
 	}
 	#section5{
-		background-image: url(poor-maps/pm_5.jpg);
+		background-image: url(modrana/modrana_5.jpg);
 	}
 	#section6{
-		background-image: url(poor-maps/pm_6.jpg);
+		background-image: url(modrana/modrana_6.jpg);
 	}
 	#section7{
-		background-image: url(poor-maps/pm_7.jpg);
+		background-image: url(modrana/modrana_7.jpg);
 	}
 	#section8{
-		background-image: url(poor-maps/pm_8.jpg);
+		background-image: url(modrana/modrana_8.jpg);
+	}
+	#section9{
+		background-image: url(modrana/modrana_9.jpg);
 	}
 
 	</style>
@@ -50,9 +53,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
-	<script type="text/javascript" src="fullPage.js/vendors/scrolloverflow.js"></script>
+	<script type="text/javascript" src="../assets/fullPage.js/vendors/scrolloverflow.js"></script>
 
-	<script type="text/javascript" src="fullPage.js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="../assets/fullPage.js/jquery.fullPage.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -71,11 +74,11 @@
 <div id="fullpage">
   <div class="section" id="section1">
     <div class="captiontop">
-      <p class="head">Open <a href="https://openrepos.net/content/otsaloma/poor-maps">Poor Maps</a></p>
+      <p class="head">Open <a href="https://openrepos.net/content/martink/modrana-0">modRana</a></p>
       <p class="border">
-        Open Poor Maps and access its tools by pressing the button in
-        the bottom of the screen (highlighted by red box in the
-        screenshot).
+        Open modRana and access its tools by pressing the button in
+        the left of the bottom of the screen (highlighted by red box
+        in the screenshot).
       </p>
       <p class="border"><i>Scroll down for continuation</i></p>
     </div>
@@ -83,38 +86,58 @@
 
   <div class="section" id="section2">
     <div class="caption">
-      <p class="head">Basemap</p>
+      <p class="head">Map layer</p>
       <p class="border">
-        To configure drawing of the maps, click on "Basemaps", as shown.
+        To configure drawing of the maps, click on "Map".
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+  
+  <div class="section" id="section3">
+    <div class="caption">
+      <p class="border">
+        Proceed to "Main map".
       </p>
       <p class="border"><i>Scroll down for continuation</i></p>
     </div>
   </div>
 
-  <div class="section" id="section3">
-    <div class="captiontop">
-      <p class="border">
-        Select OSM Scout Server among the list of basemaps. Its
-        recommended to use @2x for faster rendering.
-      </p>
-      <p class="border"><i>Scroll down for continuation</i></p>
-    </div>
-  </div>
 
   <div class="section" id="section4">
-    <div class="caption">
-      <p class="head">Search</p>
+    <div class="captiontop">
       <p class="border">
-        In Poor Maps tools selection, select "Search", as shown.
+        Select OSM Scout Server among the list of map layers.
       </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
     </div>
   </div>
 
   <div class="section" id="section5">
-    <div class="caption">
+    <div class="captiontop">
+      <p class="head">Options</p>
       <p class="border">
-        In Search, choose OSM Scout Server as a search engine
-        provider, as shown.
+        After selecting the map layer, swipe back to get to the main
+        tools page. Select "Options".
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="section6">
+    <div class="caption">
+      <p class="head">POI</p>
+      <p class="border">
+        In Options, select POI.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="section7">
+    <div class="caption">
+      <p class="head">POI</p>
+      <p class="border">
+        Select OSM Scout Server as a provider for place search and
+        local search, as shown.
       </p>
     </div>
   </div>
@@ -123,28 +146,29 @@
     <div class="caption">
       <p class="head">Navigation</p>
       <p class="border">
-        In Poor Maps tools selection, select "Navigation", as shown.
+        After search configuration, swipe back to Options. In
+        Options, select Navigation.
       </p>
-      <p class="border"><i>Scroll down for continuation</i></p>
-    </div>
-  </div>
-
-  <div class="section" id="section7">
-    <div class="caption">
-      <p class="border">
-        In Navigation, choose OSM Scout Server as a search engine
-        provider, as shown.
-      </p>
-      <p class="border"><i>Scroll down for continuation</i></p>
     </div>
   </div>
 
   <div class="section" id="section8">
+    <div class="caption">
+      <p class="head">Navigation</p>
+      <p class="border">
+        In Navigation settings, select OSM Scout Server as a routing
+        provider, as shown. 
+      </p>
+      <p class="border"><i>Scroll down for continuation</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section9">
     <div class="captiontop">
       <p class="head">Mode of operation</p>
       <p class="border">
         You are all set! Don't forget that you need to have OSM Scout
-        Server and Poor Maps running <i>simultaneously</i> for offline
+        Server and modRana running <i>simultaneously</i> for offline
         operation.
       </p>
       <p class="border"><a href="index.html">Return to the main page</a></p>
