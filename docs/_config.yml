@@ -1,4 +1,4 @@
 title: OSM Scout Server
-description: Maps server providing tiles, geocoder, and router
+description: Maps server providing tiles, geocoder, and router<br><a href='https://rinigus.github.io/osmscout-server/en'>English</a> <a href='https://rinigus.github.io/osmscout-server/fr'>Français</a>
 show_downloads: false
 theme: jekyll-theme-slate
