@@ -1,6 +1,6 @@
 Documentation available in:
 
-[Français](../fr)
+[FranÃ§ais](../fr)
 
 
 # OSM Scout Server
@@ -26,7 +26,7 @@ In contrast to offline navigation solutions provided by other
 applications, the server is one of the two parts that are required by
 users. Users would need to have the server and a client accessing the
 server running _simultaneously_ and communicating with each
-other. 
+other.
 
 After initial setup, users would mainly have the server running in the
 background while accessing maps and getting navigation instructions
