@@ -45,7 +45,6 @@ Server providing map tiles, search, and routing
 %setup -q -n %{name}-%{version}
 
 # >> setup
-scripts/mapnik/update_styles.sh
 # << setup
 
 %build
