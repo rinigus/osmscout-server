@@ -21,7 +21,7 @@ nice -n 19 make -f Makefile.import -j16
 
 ./prepare_distribution.py
 
-./check_mapnik_imports.py provided/countries_provided.json
+./check_import.py
 
 #./uploader.sh
 

@@ -13,7 +13,7 @@ whitelist = { "north-america/us/region/pacific": 0.07,
               "russia/far-eastern-fed-district/magadan": 0.1 }
 
 if len(sys.argv) != 2:
-    print "Check for Mapnik imports by comparing them with the corresponding libosmscout immport size"
+    print "Check for Mapnik imports by comparing them with the corresponding libosmscout import size"
     print "\nCall with JSON given as an argument\n"
     sys.exit(1)
 
