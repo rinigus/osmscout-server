@@ -75,7 +75,7 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot route"));
         return false;
@@ -475,6 +475,8 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
     summary.insert("time", totalTime);
     summary.insert("length", totalDistance);
     rootObj.insert("summary", summary);
+
+    rootObj.insert("API version", QString("libosmscout V1"));
 
     QJsonDocument document(rootObj);
     result = document.toJson();

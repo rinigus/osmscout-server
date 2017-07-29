@@ -4,3 +4,9 @@
 [submodule "scripts/languages/thirdparty/langcodes"]
 	path = scripts/languages/thirdparty/langcodes
 	url = https://github.com/LuminosoInsight/langcodes.git
+[submodule "scripts/mapnik/mapnik-styles-sqlite"]
+	path = scripts/mapnik/mapnik-styles-sqlite
+	url = https://github.com/rinigus/mapnik-styles-sqlite.git
+[submodule "docs/fullPage.js"]
+	path = docs/assets/fullPage.js
+	url = https://github.com/alvarotrigo/fullPage.js.git

@@ -11,51 +11,43 @@ At present, the server can be used to provide:
 * search for POIs next to a reference area;
 * calculating routes between given sequence of points.
 
-Server is a wrapper around libosmscout exposing its functionality.
+User's guide is available at https://rinigus.github.io/osmscout-server 
 
-Starting from version 0.6.0, the server has a support for a geocoder
-(search engine) that is based on libpostal
-(https://github.com/openvenues/libpostal). This new geocoder
-(https://github.com/rinigus/geocoder-nlp) is expected to improve the
-search results significantly and allow to use natural address queries
-by user.
+Server is a wrapper around libosmscout exposing its
+functionality. This library can be used to render maps, search for
+locations and POIs, and calculate routes. 
+
+The server supports:
+* map rendering via Mapnik (https://github.com/mapnik/mapnik);
+* search via Geocoder-NLP (https://github.com/rinigus/geocoder-nlp) which is based on libpostal (https://github.com/openvenues/libpostal);
+* routing instructions via Valhalla (https://github.com/valhalla/valhalla);
+* map rendering, search, and routing via libosmscout (http://libosmscout.sourceforge.net/).
 
 To use the server, you have to start it and configure the client to
-access it. An example configurations for Poor Maps and modRana are
-provided under "thirdparty" folder. At present, Poor Maps includes
-plugins already in the upstream and no additional configuration is
-needed. Poor Maps plugins cover functionality of the server
-fully. modRana can use the server to show the map with the other
-functionality expected in near future.
+access it. An example configurations for Poor Maps, modRana, and
+JavaScript-based clients are provided under "example" folder. At
+present, Poor Maps and modRana include plugins already in the upstream
+and no additional configuration is needed. 
 
 The server is written using Qt. The server can be used as a console or
 a Sailfish application. For console version, use
 osmscout-server_console.pro as a project. For Sailfish, use
-osmscout-server_silica.pro. For drawing, its possible to use Qt or
-Cairo backends, determined during compilation. While default
-configuration uses Qt for drawing, it maybe advantageous to use Cairo
-in server environment when compiled as a console application.
+osmscout-server_silica.pro. 
 
 
 ## Maps
 
 Starting from version 0.7, the server uses maps distributed via online
 distribution network. It is expected that the users would download,
-update, and, when needed, remove maps via server's GUI. This
+update, and, when needed, remove maps via server's GUI/CLI. This
 distribution model allows users to specify which components are
 required (libosmscout, geocoder-nlp, for example) and download only
 the required components.
 
-At present, maps downloads and managing is supported on Sailfish OS
-GUI only. If you want this functionality to be exposed to Linux CLI,
-open an issue to request it. Since I have not received any feedback
-from possible Linux users, it seems to me that the server is used only
-on Sailfish OS and there is no need to provide Linux CLI at this time.
-
 If tinkering is required, it is still possible to import the maps
 manually. However, in this case, the user is expected to incorporate
 the manually imported maps into configuration JSON file describing
-that map and update SQLite database with the map files.
+that map and use specific developer options.
 
 
 ### Maps distribution and data
@@ -68,66 +60,6 @@ data repository.
 Map data from OpenStreetMap, Open Database License 1.0. Maps are
 converted to a suitable format from downloaded extracts and/or using
 polygons as provided by Geofabrik GmbH.
-
-
-### Maps import
-
-Maps provided by OpenStreetMaps have to be converted to the format
-used by libosmscout library. The importing procedure below concerns
-only libosmscout backend. When using libpostal-based geocoder-nlp for
-searches, a separate databases are required (see
-https://github.com/rinigus/geocoder-nlp/blob/master/README.md).
-
-The maps are imported from PBF or OSM file formats, as provided by
-OpenStreetMap download servers.  While smaller maps lead to faster
-rendering, if you need to use the server to calculate the routes
-between countries, it maybe advantageous to generate a map covering
-multiple countries. I suggest to make a joined map using osmconvert
-(https://wiki.openstreetmap.org/wiki/Osmconvert) as described in
-https://wiki.openstreetmap.org/wiki/Osmconvert#Parallel_Processing
-
-For importing, you could either use pre-compiled released import tool
-or compile the import tool from source.
-
-
-### Using compiled Import tool 
-
-Get the Import tool corresponding to the release of libosmscout
-library that is used in your server build. For Sailfish OSM Scout
-Server releases, the following import tools are available:
-
-OSM Scout Server | libosmscout Sailfish
---- | ---
-0.7.x | please use distributed maps
-0.6.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20170126
-0.5.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161207
-0.4.x | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161128.2
-0.3.0 | https://github.com/rinigus/libosmscout/releases/tag/0.0.git.20161118.1
-
-Note that the maps format is not changing between all the versions. It
-will be specified in OSM Scout Server and libosmscout release
-changelog if the change in the format or significant import bug has
-been fixed. For example, you could use the server 0.5.x releases with
-the maps imported by the importer corresponding to 0.3.0.
-
-### Compiling Import tool
-
-See http://libosmscout.sourceforge.net/tutorials/Importing/ for
-instructions. You would have to compile the library on your PC and run
-the import program, as explained in the linked tutorial. Please
-install MARISA as a dependency to be able to generate index files for
-free-text search of the map data.
-
-To keep minimal number of required map database files, use
-the same options as in following import command example:
-
-```
-Import --delete-temporary-files true --delete-debugging-files true --delete-analysis-files true --delete-report-files true --typefile libosmscout/stylesheets/map.ost --destinationDirectory mymap mymap.osm.pbf
-```
-
-This would keep the number of produced files to minimum needed on the
-device. Expect that the size of map would be similar to the map file in
-PBF format.
 
 
 ## Settings
@@ -145,11 +77,50 @@ specify through GUI.
 Starting from version 0.3.0, server supports up to 100
 connections. The requests are processed in parallel, as much as
 possible, with the number of parallel threads the same as the number
-of CPUs. In practice, while tiles are rendered in parallel, a long
-routing calculation would block other operations until its finished
-due to the locking of a database.  Exceeding the number of supported
-connections would lead to dropping the connections exceeding the
-limit.
+of CPUs. Depending on the used backend, one operation can block other
+operations due to the blocking of the corresponding
+database. Exceeding the number of supported connections would lead to
+dropping the connections exceeding the limit.
+
+
+## General notes for developers
+
+There are several aspects that became evident while developing and
+using OSM Scout Server for providing offline solution on a mobile
+platform, such as Sailfish OS.
+
+### Request large tiles
+
+When requesting rendered map tiles, its advantageous to request larger
+tiles. Each tile is rendered with an overhead that is induced by
+labels located close to the borders. For example, current default
+settings in Mapnik backend, add 128 pixels on each side of the
+tile. This buffer is internally multiplied by the scale of Mapnik map,
+commonly set to 3. So, we have 384 pixels added on each side. If the
+common size of the tiles is requested (256x256), each tile triggers
+rendering of 1024x1024 out of which only 256x256 section is used. In
+other words, we use only 6.25% of the rendered data. By requesting
+tiles with the size 1024x1024, we bring up efficiency to 32.7%, a
+significant increase.
+
+### Do not use timeouts
+
+When using the server on mobile, one has to remember that the server
+is not rendering tiles nor performing any other calculations while the
+device is asleep. The server is not keeping device awake, its a job of
+a client that interacts with the user and knows whether current
+operation is time-critical, as during navigation, or can be postponed,
+as when user is just browsing a map and switched off the phone. As a
+result, using timeouts while interacting with the server is strongly
+discouraged. In particular, when using timeouts and the device was put
+to sleep, this can cause large number of re-submissions by a client
+leading to failure of the server to process a long accumulated queue
+of requests in reasonable time. So, its recommended not to use any
+timeouts when using server on the device that can be put to sleep or,
+if the timeouts are needed, not to submit new requests after
+that. Since, when client and the server are operating on the same
+device, network failure is not expected, such timeouts are, in
+general, not needed.
 
 
 ## Default port
@@ -175,21 +146,27 @@ See `examples` folder for results of the example queries.
 The server component for providing tiles operates using OSM convention
 with small extensions. URL is
 
-`http://localhost:8553/v1/tile?daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}`
+`http://localhost:8553/v1/tile?style={style}&daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}`
 
 where
+
+`{style}` - style of the map, set to `default` if not specified
 
 `{dlight}` - either 0 for night or 1 for day
 
 `{shift}` - allows to change used {z} by increasing it to {z}+{shift}
 
-`{scale}` - size of a tile is {scale}*256
+`{scale}` - size of a tile in pixels is {scale}*256
 
 `{z}`, `{x}`, and `{y}` are as in http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames .
 
-Addition of `{scale}` and `{shift}` allows to experiment with different
-tile sizes to optimize for performance and human-map interaction. See
-Poor Maps settings for example.
+Addition of `{scale}` and `{shift}` allows to experiment with
+different tile sizes to optimize for performance and human-map
+interaction. Note that `shift` is ignored in Mapnik backend. See Poor
+Maps settings for example.
+
+At present, only Mapnik backend supports different styles. When using
+libosmscout backend, `styles` parameter is ignored.
 
 
 ## Location search
@@ -311,7 +288,7 @@ List of available POI types is available via
 To find POIs within a given radius from a specified reference
 position, server can be accessed via `/v1/guide` path:
 
-`http://localhost:8553/v1/guide?radius={radius}&blimit={limit}&poitype={poitype}&search={search}&lng={lng}&lat={lat}`
+`http://localhost:8553/v1/guide?radius={radius}&blimit={limit}&query={query}&search={search}&lng={lng}&lat={lat}`
 
 where
 
@@ -319,29 +296,45 @@ where
 
 `{radius}` - distance from the reference in meters
 
-`{poitype}` - POI type name substring (checked against POI type name in case-insensitive manner)
+`{query}` - POI type name substring (checked against POI type name in case-insensitive manner) or name of the POI
 
 `{search}` - a query that is run to find a reference point, the first result is used
 
 `{lng}`, `{lat}` - longitude and latidude, respectively.
 
-As mentioned above, given POI type is considered as a substring that
-is looked for in all available POI types without taking into account
-the case of letters. For example, "Cafe" would match
-amenity_cafe_building and amenity_cafe. However, "Café" would miss
-them.
+Query is considered as a substring that is looked for in all available
+POI types without taking into account the case of letters. For
+example, "Cafe" would match amenity_cafe_building and
+amenity_cafe. 
+
+In addition, POI can be searched by its name. For example, you could
+search for the restaurant by its name. This is only supported by
+Geocoder-NLP backend. In Geocoder-NLP, all query requests are
+normalized using libpostal and, in case of the names, compared with
+the normalized names of POIs.
+
+For backward compatibility, `query` keyword can be replaced with
+`poitype`.
 
 The reference point can be given either as a query ("Paris") or as a
 location coordinates. If the both forms are given in URL, location
 coordinates are preferred.
 
-The result is given in JSON format. It returns a JSON object with two
-keys: `"origin"` (coordinates of the reference point used in the search)
-and `"results"` (array with the POIs). See Poor Maps implementation on
-how to process the results.
+The result is given in JSON format. It returns a JSON object with
+keys: `"origin"` (coordinates of the reference point used in the
+search) and `"results"` (array with the POIs). See `examples` folder
+and Poor Maps implementation on how to process the results.
 
 
 ## Routing
+
+There are two versions of routing protocol that have to be used in
+accordance with the used backend. Version 1 (`v1/route`) is used by
+libosmscout and is described below. Version 2 (`v2/route`) is used by
+Valhalla and uses Valhalla's API. Version 2 is supported, in part, by
+libosmscout as well.
+
+### Version 1: libosmscout
 
 The routing component allows to calculate routes between given
 points. Server can be accessed via `/v1/route` path:
@@ -408,6 +401,32 @@ At present, the car speeds on different roads are inserted in the
 code. This will improve in future.
 
 
+### Version 2: Valhalla
+
+This is the version that would be mainly supported in future. It uses
+Valhalla's API, as described in
+https://github.com/valhalla/valhalla-docs/blob/master/api-reference.md
+. Please note that there is no API key in the Valhalla's component
+used by OSM Scout Server. 
+
+At present, all calls via `v2/route`, as
+`http://localhost:8553/v2/route?...` would be forwarded to Valhalla
+via `/route?...`.
+
+
+### Version 2: libosmscout
+
+When using libosmscout as a backend, version 2 can be used to request
+the routes. In this case, the server would consider limited subset of
+Valhalla's API. In particular, `costing` option would be used to
+select the transportation mode (`auto`, `bicycle`, or `pedestrian`)
+with the order of points found from `location`. The reply of the
+server will follow Version 1 protocol with an additional flag `API
+version` set to `libosmscout V1` in the response of the server. Using
+this flag, the client application can determine whether version 1
+protocol response has been used.
+
+
 ## Translations
 
 The translations were contributed by
@@ -420,7 +439,7 @@ The translations were contributed by
 - @Sagittarii: French
 - Oleg Artobolevsky @XOleg: Russian
 - A @atlochowski: Polish
-- Peer-Atle Motland @Pam: Norwegian
+- Peer-Atle Motland @Pam: Norwegian Bokmål
 
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README
@@ -441,6 +460,12 @@ projects.
 libosmscout: http://libosmscout.sourceforge.net
 
 libpostal: https://github.com/openvenues/libpostal
+
+mapnik: https://github.com/mapnik/mapnik
+
+valhalla: https://github.com/valhalla/valhalla
+
+geocoder-nlp: https://github.com/rinigus/geocoder-nlp
 
 osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 

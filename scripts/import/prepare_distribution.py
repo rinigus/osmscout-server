@@ -8,14 +8,18 @@ import json, pickle, os, stat
 root_dir = "distribution"
 bucket = open("bucket_name", "r").read().strip()
 url_base = "http://data.modrana.org/osm_scout_server"
+#url_base = "https://kuqrhldx.e24files.com"
 
 url_specs = {
     "base": url_base,
     "type": "url",
-    "osmscout": "osmscout-1",
-    "geocoder_nlp": "geocoder-nlp-1",
+    "osmscout": "osmscout-9",
+    "geocoder_nlp": "geocoder-nlp-9",
     "postal_global": "postal-global-1",
     "postal_country": "postal-country-1",
+    "mapnik_global": "mapnik-global-1",
+    "mapnik_country": "mapnik-country-6",
+    "valhalla": "valhalla-4",
 }
 
 dist = json.loads( open("countries.json", "r").read() )
@@ -24,6 +28,12 @@ dist["postal/global"] = {
     "id": "postal/global",
     "type": "postal/global",
     "postal_global": { "path": "postal/global" }
+    }
+
+dist["mapnik/global"] = {
+    "id": "mapnik/global",
+    "type": "mapnik/global",
+    "mapnik_global": { "path": "mapnik/global" }
     }
 
 dist["url"] = url_specs
@@ -39,7 +49,7 @@ def uploader(dirname, targetname, extra="/"):
     sd = dirname.replace("/", "\/")
     st = targetname.replace("/", "\/")
     upload_commands += "md5deep -t -l -r " + dirname + " | sed 's/%s/%s/g' >> digest.md5\n" % (sd,st)
-    upload_commands += "s3cmd --config=.s3cfg sync " + dirname + extra + " s3://" + bucket + "/" + targetname + extra + " --acl-public " + "\n"
+    upload_commands += "s3cmd --config=.s3cfg sync " + dirname + extra + " s3://" + bucket + "/" + targetname + extra + " --acl-public --signature-v2 " + "\n"
 
 def getprop(dirname):
     props = {}
@@ -63,6 +73,7 @@ for d in dist:
         dist[d][sub].update( getprop(locdir) )
         uploader(locdir, remotedir)
 
+uploader(root_dir + "/valhalla", url_specs["valhalla"] + "/valhalla")
 
 # save provided countries
 fjson = open("provided/countries_provided.json", "w")

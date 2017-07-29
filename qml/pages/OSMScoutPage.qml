@@ -27,7 +27,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
+                //font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
             }
 

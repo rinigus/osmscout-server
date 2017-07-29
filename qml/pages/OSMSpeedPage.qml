@@ -22,6 +22,15 @@ Dialog {
                 title: qsTr("Routing speeds")
             }
 
+            Label {
+                text: qsTr("Transportation speeds used by OSM Scout library (<i>libosmscout</i>) when calculating routes")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                //font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
             SectionHeader {
                 text: qsTr("Modes of transportation")
                 font.pixelSize: Theme.fontSizeMedium

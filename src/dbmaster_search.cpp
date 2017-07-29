@@ -65,8 +65,6 @@ bool GetAdminRegionHierachie(const osmscout::LocationService& locationService,
 QString GetAddress(const osmscout::LocationSearchResult::Entry& entry)
 {
     std::string label = entry.address->name;
-    if ( !entry.address->postalCode.empty() )
-        label += ", " + entry.address->postalCode;
     return QString::fromStdString(label);
 }
 
@@ -249,7 +247,7 @@ bool DBMaster::search(const QString &searchPattern, SearchResults &all_results, 
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot search"));
         return false;
@@ -506,7 +504,7 @@ bool DBMaster::guide(const QString &poitype, double lat, double lon, double radi
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot search for POI"));
         return false;
@@ -667,7 +665,7 @@ bool DBMaster::poiTypes(QByteArray &result)
 
     QMutexLocker lk(&m_mutex);
 
-    if (!m_database->IsOpen())
+    if (!loadDatabase())
     {
         InfoHub::logWarning(tr("Database is not open, cannot list POI types"));
         return false;

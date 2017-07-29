@@ -11,6 +11,7 @@
 #include <QJsonObject>
 #include <QList>
 #include <QSet>
+#include <QHash>
 #include <QPointer>
 #include <QDateTime>
 #include <QtSql>
@@ -31,11 +32,20 @@ namespace MapManager {
     /// \brief true when Map's storage dir is available
     Q_PROPERTY(bool storageAvailable READ storageAvailable NOTIFY storageAvailableChanged)
 
+    /// \brief true when Map Manager can receive configuration chages
+    Q_PROPERTY(bool ready READ ready NOTIFY readyChanged)
+
     /// \brief true when download is active
     Q_PROPERTY(bool downloading READ downloading NOTIFY downloadingChanged)
 
+    /// \brief true when manager is deleting
+    Q_PROPERTY(bool deleting READ deleting NOTIFY deletingChanged)
+
     /// \brief true when some data is missing
     Q_PROPERTY(bool missing READ missing NOTIFY missingChanged)
+
+    /// \brief current selected map
+    Q_PROPERTY(QString selectedMap READ selectedMap NOTIFY selectedMapChanged)
 
   public:
     explicit Manager(QObject *parent = 0);
@@ -43,6 +53,15 @@ namespace MapManager {
 
     /// \brief Check if the storage directory is available
     Q_INVOKABLE void checkStorageAvailable();
+
+    /// \brief Get the default storage directory to propose to the user
+    Q_INVOKABLE QString defaultStorageDirectory() const;
+
+    /// \brief Create a directory with the given path
+    ///
+    /// Use to create a new directory that can be later assigned to be
+    /// a storage directory for maps through settings. Returns true if successful
+    Q_INVOKABLE bool createDirectory(QString path);
 
     /// \brief Check if there is a list of provided countries
     Q_INVOKABLE bool checkProvidedAvailable();
@@ -102,6 +121,10 @@ namespace MapManager {
     /// \brief Gets missing countries and the found updates
     Q_INVOKABLE void getUpdates();
 
+    /// \brief Stops the download and clears download queue
+    ///
+    Q_INVOKABLE void stopDownload();
+
     /// \brief Create a list of non-required files
     ///
     /// Makes a list of non-required files to show to the user. This
@@ -118,6 +141,13 @@ namespace MapManager {
     /// the list was not found due to active downloads
     Q_INVOKABLE qint64 getNonNeededFilesSize();
 
+    /// \brief Return directories in which non-required files are
+    ///
+    /// Creates a list of directories that will be affected by deletion
+    /// of non-required files. This list is significantly shorter and its easier
+    /// for user to check
+    Q_INVOKABLE QStringList getDirsWithNonNeededFiles();
+
     /// \brief Delete non-required files
     ///
     /// Deletes files found by the getNonNeededFilesList earlier. It
@@ -129,8 +159,11 @@ namespace MapManager {
 
     /// Properties exposed to QML
     bool storageAvailable();
+    bool ready();
     bool downloading();
+    bool deleting();
     bool missing();
+    QString selectedMap();
 
     virtual QString fullPath(const QString &path) const; ///< Transform relative path to the full path
 
@@ -138,11 +171,15 @@ namespace MapManager {
 
   signals:
     void databaseOsmScoutChanged(QString database);
-    void databaseGeocoderNLPChanged(QString database);
-    void databasePostalChanged(QString global, QString country);
+    void databaseGeocoderNLPChanged(QHash<QString,QString> dirs);
+    void databasePostalChanged(QString global, QHash<QString,QString> dirs_country);
+    void databaseMapnikChanged(QString root_directory, QStringList country_files);
+    void databaseValhallaChanged(QString valhalla_directory, QStringList countries);
 
+    void readyChanged(bool ready);
     void downloadingChanged(bool state);
     void downloadProgress(QString info);
+    void deletingChanged(bool state);
 
     void missingChanged(bool missing);
     void missingInfoChanged(QString info);
@@ -150,37 +187,46 @@ namespace MapManager {
     void subscriptionChanged();
     void availibilityChanged();
 
-    void updatesFound(QString info);
+    void updatesForDataFound(QString info);
 
     void errorMessage(QString info);
 
     void storageAvailableChanged(bool available);
 
+    void selectedMapChanged(QString selected);
+
   public slots:
     void onSettingsChanged();
 
   protected:
-    enum DownloadType { NoDownload=0, Countries=1, ProvidedList=2 };
+    enum DownloadType { NoDownload=0, Countries=1, ServerUrl=2, ProvidedList=3 };
+    enum ListType { ListAvailable=0, ListRequested=2, ListProvided=3 };
 
   protected:
     void loadSettings();
+    bool isStorageAvailable() const;
+
+    void checkIfReady();
 
     void scanDirectories(bool force_update = false);
     void nothingAvailable(); ///< Helper method called when there are no maps available
+    void onAvailibilityChanged();
 
     void missingData();
 
     /// \brief Composes a list of countries in alphabetical order
     ///
     /// This is a method that creates a list. Its called by other methods to retrieve the list.
-    void makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz);
+    void makeCountriesList(ListType list_type, QStringList &countries, QStringList &ids, QList<uint64_t> &sz);
 
     /// \brief Wrapper around makeCountriesList transforming the results to JSON
-    QString makeCountriesListAsJSON(bool list_available, bool tree);
+    QString makeCountriesListAsJSON(ListType list_type, bool tree);
 
     void updateOsmScout();
     void updateGeocoderNLP();
     void updatePostal();
+    void updateMapnik();
+    void updateValhalla();
 
     /// helper functions to deal with JSON representation of the features
     QJsonObject loadJson(QString fname) const;
@@ -190,7 +236,7 @@ namespace MapManager {
 
     void checkUpdates();
 
-    // handling of downloads
+    /// handling of downloads
     void onDownloadFinished(QString path);
     void onDownloadError(QString err);
     void onDownloadedBytes(uint64_t sz);
@@ -200,11 +246,14 @@ namespace MapManager {
     bool startDownload(DownloadType type, const QString &url, const QString &path, const FileDownloader::Type mode);
     void cleanupDownload();
 
+    void setDeleting(bool state);
+    void onDeleteFinished();
+
   protected:
 
     // settings
     QDir m_root_dir;
-    bool m_dir_existed{false};
+    bool m_storage_available{false};
     QList< Feature* > m_features;
     QString m_provided_url;
 
@@ -221,6 +270,9 @@ namespace MapManager {
     QNetworkAccessManager m_network_manager;
     QPointer<FileDownloader> m_file_downloader;
 
+    bool m_deleting{false};
+    bool m_ready{false};
+
     DownloadType m_download_type{NoDownload};
     uint64_t m_last_reported_downloaded;
     uint64_t m_last_reported_written;
@@ -228,23 +280,26 @@ namespace MapManager {
     QStringList m_not_needed_files;
     qint64 m_not_needed_files_size{-1};
 
-    QJsonObject m_last_found_updates;
+    QJsonArray m_last_found_updates;
 
     // tracking downloaded files and their versions
     QSqlDatabase m_db_files;
     QSqlQuery m_query_files_available;
     QSqlQuery m_query_files_insert;
 
+    bool m_development_disable_url_update{false}; ///< allows to keep url.json while developing application
+
     /// const values used to access data
+    const QString const_fname_server_url{"url.json"};
     const QString const_fname_countries_provided{"countries_provided.json"};
     const QString const_fname_countries_requested{"countries_requested.json"};
     const QString const_fname_db_files{"files.sqlite"};
 
     const QString const_db_connection{"MapManager"};
 
-
     const QString const_feature_id_postal_global{"postal/global"};
     const QString const_feature_type_country{"territory"};
+    const QString const_feature_id_mapnik_global{"mapnik/global"};
 
     const QString const_pretty_separator{" / "};
   };

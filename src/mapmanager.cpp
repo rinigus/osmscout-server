@@ -3,6 +3,7 @@
 #include "appsettings.h"
 #include "config.h"
 #include "infohub.h"
+#include "mapmanager_deleterthread.h"
 
 #include <QDirIterator>
 #include <QDir>
@@ -11,6 +12,7 @@
 #include <QFile>
 #include <QBitArray>
 #include <QPair>
+#include <QThread>
 
 #include <QJsonDocument>
 #include <QJsonArray>
@@ -20,6 +22,7 @@
 
 #include <algorithm>
 #include <cmath>
+#include <iostream>
 
 #include <QDebug>
 
@@ -33,6 +36,9 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeatureGeocoderNLP(this));
   m_features.append(new FeaturePostalGlobal(this));
   m_features.append(new FeaturePostalCountry(this));
+  m_features.append(new FeatureMapnikGlobal(this));
+  m_features.append(new FeatureMapnikCountry(this));
+  m_features.append(new FeatureValhalla(this));
 
   for (Feature *p: m_features)
     if (p == nullptr)
@@ -42,7 +48,17 @@ Manager::Manager(QObject *parent) : QObject(parent)
         return;
       }
 
-  loadSettings();
+  for (Feature *p: m_features)
+    connect(p, &Feature::availibilityChanged,
+            this, &Manager::onAvailibilityChanged);
+
+  connect(this, &Manager::downloadingChanged,
+          this, &Manager::checkIfReady);
+
+  connect(this, &Manager::deletingChanged,
+          this, &Manager::checkIfReady);
+
+  checkIfReady();
 }
 
 
@@ -62,11 +78,41 @@ void Manager::loadSettings()
 {
   AppSettings settings;
 
+  bool storage_was_available = m_storage_available;
   QString old_selection = m_map_selected;
 
-  m_root_dir.setPath(settings.valueString(MAPMANAGER_SETTINGS "root"));
+  QString root_dir_path = settings.valueString(MAPMANAGER_SETTINGS "root");
+  bool root_changed = ( root_dir_path != m_root_dir.path() );
+  m_root_dir.setPath(root_dir_path);
+
+  if (root_changed)
+    InfoHub::logInfo(tr("Storage folder changed to %1").arg(root_dir_path));
+
+  // check for errors
+  bool root_ok = false;
+  {
+    QFileInfo rinfo(m_root_dir.absolutePath());
+    if (!rinfo.exists())
+      InfoHub::logWarning(tr("Maps storage folder does not exist: %1").arg(rinfo.absoluteFilePath()));
+    else if (!rinfo.isDir())
+      {
+        QString err = tr("Maps storage folder path does not point to a directory: %1").arg(rinfo.absoluteFilePath());
+        InfoHub::logWarning(err);
+        emit errorMessage(err);
+      }
+    else if (!rinfo.isWritable())
+      {
+        QString err = tr("Maps storage folder is not writable, please adjust permissions for %1").arg(rinfo.absoluteFilePath());
+        InfoHub::logWarning(err);
+        emit errorMessage(err);
+      }
+    else
+      root_ok = true;
+  }
+
   m_map_selected = settings.valueString(MAPMANAGER_SETTINGS "map_selected");
   m_provided_url = settings.valueString(MAPMANAGER_SETTINGS "provided_url");
+  m_development_disable_url_update = settings.valueBool(MAPMANAGER_SETTINGS "development_disable_url_update");
 
   for (Feature *p: m_features) p->loadSettings();
 
@@ -75,27 +121,36 @@ void Manager::loadSettings()
   else
     rmCountry(const_feature_id_postal_global);
 
-  if (m_dir_existed != m_root_dir.exists())
-    emit storageAvailableChanged(m_root_dir.exists());
+  if (settings.valueBool(MAPMANAGER_SETTINGS "mapnik"))
+    addCountry(const_feature_id_mapnik_global);
+  else
+    rmCountry(const_feature_id_mapnik_global);
 
-  if ( m_root_dir.exists() &&
-       (!m_db_files.isOpen() || m_db_files.databaseName() != fullPath(const_fname_db_files) ) )
+  if ( m_db_files.isOpen() && m_db_files.databaseName() != fullPath(const_fname_db_files) )
     {
       m_query_files_available.clear();
       m_query_files_insert.clear();
 
       m_db_files.close();
       QSqlDatabase::removeDatabase(const_db_connection);
+    }
 
+  if ( root_ok &&
+       (!m_db_files.isOpen()) )
+    {
       // open new connection and prepare database
       m_db_files = QSqlDatabase::addDatabase("QSQLITE", const_db_connection);
       m_db_files.setDatabaseName(fullPath(const_fname_db_files));
       if (!m_db_files.open())
         {
-          InfoHub::logWarning(tr("Failed to open the database for tracking downloaded files"));
-          emit errorMessage("Failed to open the database for tracking downloaded files<br><br>Map Manager functionality would be disturbed");
+          QSqlError error = m_db_files.lastError();
+          InfoHub::logWarning(tr("Failed to open the database for tracking downloaded files") + ": " +
+                              error.text());
+          emit errorMessage(tr("Failed to open the database for tracking downloaded files") + "<br><br>" +
+                            tr("Map Manager functionality would be disturbed") + "<br><br>" +
+                            error.text());
         }
-     else // all is fine, prepare queries and tables
+      else // all is fine, prepare queries and tables
         {
           m_db_files.exec("CREATE TABLE IF NOT EXISTS files (name TEXT PRIMARY KEY, version TEXT, datetime TEXT)");
           m_query_files_available = QSqlQuery(m_db_files);
@@ -107,11 +162,67 @@ void Manager::loadSettings()
         }
     }
 
-  scanDirectories(old_selection != m_map_selected);
+  m_storage_available = isStorageAvailable();
+  if (storage_was_available != m_storage_available)
+    emit storageAvailableChanged(m_storage_available);
+
+  scanDirectories(root_changed || old_selection != m_map_selected);
   missingData();
   checkUpdates();
+  if (old_selection != m_map_selected)
+    emit selectedMapChanged(m_map_selected);
+}
 
-  m_dir_existed = m_root_dir.exists();
+
+bool Manager::ready()
+{
+  return (!downloading() && !deleting());
+}
+
+void Manager::checkIfReady()
+{
+  bool oldr = m_ready;
+  m_ready = ready();
+  if (oldr != m_ready)
+    emit readyChanged(m_ready);
+}
+
+
+bool Manager::isStorageAvailable() const
+{
+  QFileInfo rinfo(m_root_dir.absolutePath());
+  return (rinfo.exists() && rinfo.isDir() && rinfo.isWritable() && m_db_files.isOpen());
+}
+
+QString Manager::defaultStorageDirectory() const
+{
+  QString d = QStandardPaths::writableLocation(QStandardPaths::HomeLocation);
+  if (!d.isEmpty())
+    {
+      QDir dir(d);
+      return dir.absoluteFilePath("Maps.OSM");
+    }
+  return d;
+}
+
+bool Manager::createDirectory(QString path)
+{
+  if (path.isEmpty())
+    {
+      emit errorMessage(tr("Cannot create directory without any name"));
+      return false;
+    }
+
+  QDir d(path);
+  bool res = d.mkpath(".");
+  if (!res)
+    emit errorMessage(tr("Error creating directory %1").arg(path));
+  return res;
+}
+
+QString Manager::selectedMap()
+{
+  return m_map_selected;
 }
 
 void Manager::nothingAvailable()
@@ -123,9 +234,12 @@ void Manager::nothingAvailable()
   updateOsmScout();
   updateGeocoderNLP();
   updatePostal();
+  updateMapnik();
+  updateValhalla();
 
   emit availibilityChanged();
   emit missingChanged(m_missing);
+  emit selectedMapChanged(m_map_selected);
 }
 
 QJsonObject Manager::loadJson(QString fname) const
@@ -149,6 +263,8 @@ QString Manager::getPretty(const QJsonObject &obj) const
 {
   if (obj.value("id").toString() == const_feature_id_postal_global)
     return tr("Address parsing language support");
+  else if (obj.value("id").toString() == const_feature_id_mapnik_global)
+    return tr("World coastlines");
 
   QString name = obj.value("name").toString();
   name.replace("/", const_pretty_separator);
@@ -157,12 +273,18 @@ QString Manager::getPretty(const QJsonObject &obj) const
 
 bool Manager::storageAvailable()
 {
-  return m_root_dir.exists();
+  return m_storage_available;
 }
 
 void Manager::checkStorageAvailable()
 {
-  emit storageAvailableChanged(m_root_dir.exists());
+  m_storage_available = isStorageAvailable();
+  emit storageAvailableChanged(m_storage_available);
+}
+
+void Manager::onAvailibilityChanged()
+{
+  scanDirectories();
 }
 
 void Manager::scanDirectories(bool force_update)
@@ -170,6 +292,7 @@ void Manager::scanDirectories(bool force_update)
   if (!m_root_dir.exists())
     {
       InfoHub::logWarning(tr("Maps storage folder does not exist: ") + m_root_dir.absolutePath());
+      m_maps_requested = QJsonObject();
       nothingAvailable();
       return;
     }
@@ -178,6 +301,7 @@ void Manager::scanDirectories(bool force_update)
   if (!m_root_dir.exists(const_fname_countries_requested))
     {
       InfoHub::logWarning(tr("No maps were requested"));
+      m_maps_requested = QJsonObject();
       nothingAvailable();
       return;
     }
@@ -194,13 +318,10 @@ void Manager::scanDirectories(bool force_update)
 
       if (getType(request) != const_feature_type_country)
         {
-          for (const Feature *f: m_features)
+          for (Feature *f: m_features)
             if (!f->isAvailable(request))
               {
                 InfoHub::logWarning(tr("No maps loaded: %1").arg(f->errorMissing()));
-                if (!f->isCompatible(request))
-                  InfoHub::logWarning(tr("Version of dataset for %1 is not supported").
-                                      arg(getPretty(request)));
                 nothingAvailable();
                 return;
               }
@@ -223,15 +344,12 @@ void Manager::scanDirectories(bool force_update)
           request.contains("name") )
         {
           bool add = true;
-          for (const Feature *f: m_features)
+          for (Feature *f: m_features)
             if (!f->isAvailable(request))
               {
                 InfoHub::logWarning(tr("Missing dataset for %1: %2").
                                     arg(getPretty(request)).
                                     arg(f->errorMissing()));
-                if (!f->isCompatible(request))
-                  InfoHub::logWarning(tr("Version of dataset for %1 is not supported").
-                                      arg(getPretty(request)));
 
                 add = false;
               }
@@ -259,7 +377,7 @@ void Manager::scanDirectories(bool force_update)
         {
           for (QJsonObject::const_iterator i = m_maps_available.constBegin();
                i != m_maps_available.constEnd(); ++i)
-            if (i.key() != const_feature_id_postal_global)
+            if (i.key() != const_feature_id_postal_global && i.key() != const_feature_id_mapnik_global)
               {
                 m_map_selected = i.key();
                 break;
@@ -268,7 +386,7 @@ void Manager::scanDirectories(bool force_update)
 
       QStringList countries, ids;
       QList<uint64_t> szs;
-      makeCountriesList(true, countries, ids, szs);
+      makeCountriesList(ListAvailable, countries, ids, szs);
 
       // print all loaded countries
       if (chatty_update)
@@ -278,8 +396,11 @@ void Manager::scanDirectories(bool force_update)
       updateOsmScout();
       updateGeocoderNLP();
       updatePostal();
+      updateMapnik();
+      updateValhalla();
 
       emit availibilityChanged();
+      emit selectedMapChanged(m_map_selected);
     }
 }
 
@@ -320,15 +441,15 @@ QString Manager::getAvailableCountries()
 
 QString Manager::getRequestedCountries()
 {
-  return makeCountriesListAsJSON(true, false);
+  return makeCountriesListAsJSON(ListRequested, false);
 }
 
 QString Manager::getProvidedCountries()
 {
-  return makeCountriesListAsJSON(false, true);
+  return makeCountriesListAsJSON(ListProvided, true);
 }
 
-void Manager::makeCountriesList(bool list_available, QStringList &countries, QStringList &ids, QList<uint64_t> &sz)
+void Manager::makeCountriesList(ListType list_type, QStringList &countries, QStringList &ids, QList<uint64_t> &sz)
 {
   QList< QPair<QString, QString> > available_global;
   QList< QPair<QString, QString> > available;
@@ -336,7 +457,8 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
   QJsonObject objlist;
   QHash<QString, uint64_t> sizes;
 
-  if (list_available) objlist = m_maps_requested;
+  if (list_type == ListAvailable) objlist = m_maps_available;
+  else if (list_type == ListRequested) objlist = m_maps_requested;
   else objlist = loadJson(fullPath(const_fname_countries_provided));
 
   for (QJsonObject::const_iterator i = objlist.constBegin();
@@ -347,7 +469,7 @@ void Manager::makeCountriesList(bool list_available, QStringList &countries, QSt
 
       if ( getType(c) == const_feature_type_country )
         available.append(qMakePair(getPretty(c), id));
-      else if (list_available)
+      else if (list_type == ListAvailable)
         available_global.append(qMakePair(getPretty(c), id));
 
       uint64_t s = 0;
@@ -453,13 +575,13 @@ static QJsonObject makeList(const CountryBranch branch)
   return dir;
 }
 
-QString Manager::makeCountriesListAsJSON(bool list_available, bool tree)
+QString Manager::makeCountriesListAsJSON(ListType list_type, bool tree)
 {
   QStringList countries;
   QStringList ids;
   QList<uint64_t> sz;
 
-  makeCountriesList(list_available, countries, ids, sz);
+  makeCountriesList(list_type, countries, ids, sz);
 
   CountryBranch root;
   root.isDir = true;
@@ -491,7 +613,7 @@ QString Manager::makeCountriesListAsJSON(bool list_available, bool tree)
 
 void Manager::addCountry(QString id)
 {
-  if (downloading()) return;
+  if (!ready()) return;
 
   if (!m_maps_available.contains(id) && m_root_dir.exists() && m_root_dir.exists(const_fname_countries_provided))
     {
@@ -519,7 +641,7 @@ void Manager::addCountry(QString id)
 
 void Manager::rmCountry(QString id)
 {
-  if (downloading()) return;
+  if (!ready()) return;
 
   if ( m_root_dir.exists() && m_root_dir.exists(const_fname_countries_requested) )
     {
@@ -664,7 +786,8 @@ void Manager::missingData()
         if (f->isCompatible(request))
           f->checkMissingFiles(request, missing);
         else
-          InfoHub::logWarning(tr("Version of dataset for %1 is not supported").
+          InfoHub::logWarning(tr("%1: version of dataset for %2 is not supported").
+                              arg(f->pretty()).
                               arg(getPretty(request)));
 
       if (missing.files.length() > 0)
@@ -715,7 +838,7 @@ QString Manager::fullPath(const QString &path) const
 
 bool Manager::getCountries()
 {
-  if (downloading()) return false;
+  if (!ready()) return false;
 
   if (m_missing_data.length() < 1) return true; // all has been downloaded already
   if (m_missing_data[0].files.length() < 1)
@@ -839,9 +962,30 @@ void Manager::onDownloadFinished(QString path)
       m_download_type = NoDownload;
       getCountries();
     }
+  else if (dtype == ServerUrl)
+    {
+      m_download_type = NoDownload;
+
+      QJsonObject url = loadJson(fullPath(const_fname_server_url));
+      QString listurl = url.value("url").toString();
+      if (listurl.isEmpty())
+        {
+          onDownloadError(tr("Could not retrieve server URL"));
+          InfoHub::logWarning(tr("Could not retrieve server URL"));
+          return;
+        }
+
+      if ( startDownload(ProvidedList, listurl,
+                         fullPath(const_fname_countries_provided),
+                         FileDownloader::Plain) )
+        {
+          emit downloadProgress(tr("Downloading the list of countries"));
+        }
+    }
   else if (dtype == ProvidedList)
     {
       m_download_type = NoDownload;
+      loadSettings(); // to ensure that global datasets are requested if needed
       checkUpdates();
     }
   else
@@ -884,7 +1028,10 @@ void Manager::onDownloadProgress()
     txt = QString(tr("List of countries: %L1 (D) / %L2 (W) MB")).
         arg(m_last_reported_downloaded/1024/1024).
         arg(m_last_reported_written/1024/1024);
-
+  else if ( dtype == ServerUrl )
+    txt = QString(tr("List of countries: %L1 (D) / %L2 (W)")).
+        arg(m_last_reported_downloaded/1024/1024).
+        arg(m_last_reported_written/1024/1024);
   else if (dtype == Countries )
     {
       if (m_missing_data.length() > 0)
@@ -904,6 +1051,10 @@ void Manager::onDownloadProgress()
     {
       last_message = txt;
       emit downloadProgress(txt);
+
+#ifdef IS_CONSOLE_QT
+      std::cout << "Download progress: " << txt.toStdString() << std::endl;
+#endif
     }
 }
 
@@ -919,6 +1070,18 @@ void Manager::onWrittenBytes(uint64_t sz)
   onDownloadProgress();
 }
 
+void Manager::stopDownload()
+{
+  if (!downloading()) return;
+
+  InfoHub::logInfo(tr("Stopping downloads"));
+
+  cleanupDownload();
+
+  m_download_type = NoDownload;
+  emit downloadingChanged(false);
+}
+
 ////////////////////////////////////////////////////////////
 /// support for cleanup
 
@@ -926,7 +1089,7 @@ QStringList Manager::getNonNeededFilesList()
 {
   QStringList files;
   m_not_needed_files_size = -1;
-  if (downloading()) return files;
+  if (!ready()) return files;
 
   qint64 notNeededSize = 0;
 
@@ -934,6 +1097,7 @@ QStringList Manager::getNonNeededFilesList()
 
   // fill up needed files
   QSet<QString> wanted;
+  wanted.insert(fullPath(const_fname_server_url));
   wanted.insert(fullPath(const_fname_countries_requested));
   wanted.insert(fullPath(const_fname_countries_provided));
   wanted.insert(fullPath(const_fname_db_files));
@@ -977,9 +1141,41 @@ qint64 Manager::getNonNeededFilesSize()
   return m_not_needed_files_size;
 }
 
+QStringList Manager::getDirsWithNonNeededFiles()
+{
+  QStringList dirlist;
+
+  /// Valhalla files are considered an exception and
+  /// we'll report just that some of the valhalla's subdir
+  /// will be deleted, not each subdir separately. Otherwise, we
+  /// would get too many subdirs in this case
+  const QString valhalla_base = fullPath("valhalla");
+
+  if (m_not_needed_files_size >= 0)
+    {
+      for (const QString &fp: m_not_needed_files)
+        {
+          QFileInfo fi(fp);
+          QString dir = fi.dir().path();
+
+          // special processing of valhalla's case
+          if (dir.indexOf(valhalla_base) == 0)
+            dir = valhalla_base;
+
+          if (!dirlist.contains(dir))
+            dirlist.append(dir);
+        }
+
+      dirlist.sort();
+    }
+
+  return dirlist;
+}
+
+
 bool Manager::deleteNonNeededFiles(const QStringList files)
 {
-  if (downloading()) return false;
+  if (!ready()) return false;
 
   if ( files != m_not_needed_files )
     {
@@ -988,21 +1184,34 @@ bool Manager::deleteNonNeededFiles(const QStringList files)
       return false;
     }
 
-  for (auto fname: m_not_needed_files)
-    {
-      if ( !m_root_dir.remove(fname) )
-        {
-          InfoHub::logWarning(tr("Error while deleting file:") + " " + fname);
-          InfoHub::logWarning(tr("Cancelling the removal of remaining files."));
-          m_not_needed_files.clear();
-          return false;
-        }
+  setDeleting(true);
 
-      InfoHub::logInfo(tr("File removed during cleanup:") + " " + fname);
-    }
+  DeleterThread *del = new DeleterThread(this, m_root_dir, m_not_needed_files);
+  connect(del, &DeleterThread::finished, this, &Manager::onDeleteFinished);
+  connect(del, &DeleterThread::finished, del, &DeleterThread::deleteLater);
+  del->start();
 
-  m_not_needed_files.clear();
   return true;
+}
+
+void Manager::setDeleting(bool state)
+{
+  if (state != m_deleting)
+    {
+      m_deleting = state;
+      emit deletingChanged(state);
+    }
+}
+
+bool Manager::deleting()
+{
+  return m_deleting;
+}
+
+void Manager::onDeleteFinished()
+{
+  m_not_needed_files.clear();
+  this->setDeleting(false);
 }
 
 ////////////////////////////////////////////////////////////
@@ -1010,13 +1219,15 @@ bool Manager::deleteNonNeededFiles(const QStringList files)
 
 bool Manager::updateProvided()
 {
-  if (downloading()) return false;
+  if (!ready()) return false;
 
-  if ( startDownload(ProvidedList, m_provided_url,
-                     fullPath(const_fname_countries_provided),
+  QString fname = const_fname_server_url;
+  if (m_development_disable_url_update) fname += "-EXTRA";
+  if ( startDownload(ServerUrl, m_provided_url,
+                     fullPath(fname),
                      FileDownloader::Plain) )
     {
-      emit downloadProgress(tr("Downloading the list of countries"));
+      emit downloadProgress(tr("Updating the distribution server URL"));
       return true;
     }
 
@@ -1025,7 +1236,7 @@ bool Manager::updateProvided()
 
 void Manager::checkUpdates()
 {
-  m_last_found_updates = QJsonObject();
+  m_last_found_updates = QJsonArray();
 
   if ( m_root_dir.exists() &&
        m_root_dir.exists(const_fname_countries_requested) &&
@@ -1045,19 +1256,24 @@ void Manager::checkUpdates()
           const QJsonObject possible = possible_list.value(request_iter.key()).toObject();
           if (possible.empty()) continue;
 
+          uint64_t s = 0;
           for (const Feature *f: m_features)
             if ( f->hasFeatureDefined(possible) &&
                  (!f->hasFeatureDefined(request) ||
                   f->getDateTime(request) < f->getDateTime(possible)) )
-              update.insert(f->name(), possible.value(f->name()).toObject());
+              {
+                update.insert(f->name(), possible.value(f->name()).toObject());
+                s += f->getSize(request);
+              }
 
           if (!update.empty())
             {
               update.insert("id", request_iter.key());
-              update.insert("pretty", getPretty(possible) );
+              update.insert("name", getPretty(possible) );
               update.insert("type", possible.value("type").toString());
+              update.insert("size", QString("%L1").arg( (int)round(s/1024./1024.) ) );
 
-              m_last_found_updates.insert(request_iter.key(), update);
+              m_last_found_updates.append(update);
             }
         }
     }
@@ -1071,8 +1287,11 @@ void Manager::checkUpdates()
         InfoHub::logWarning(tr("Cannot check for updates due to missing list of provided countries. Download the list before checking for updates."));
     }
 
-  QJsonDocument doc(m_last_found_updates);
-  emit updatesFound(doc.toJson());
+  if (!m_last_found_updates.empty())
+    {
+      QJsonDocument doc(m_last_found_updates);
+      emit updatesForDataFound(doc.toJson());
+    }
 }
 
 QString Manager::updatesFound()
@@ -1082,26 +1301,19 @@ QString Manager::updatesFound()
 
 void Manager::getUpdates()
 {
-  if (downloading()) return;
+  if (!ready()) return;
 
+  QJsonObject possible_list = loadJson(fullPath(const_fname_countries_provided));
   QJsonObject requested = m_maps_requested;
 
-  for (QJsonObject::const_iterator iter = m_last_found_updates.constBegin();
+  for (QJsonArray::const_iterator iter = m_last_found_updates.constBegin();
        iter != m_last_found_updates.constEnd(); ++iter)
     {
-      if (!requested.contains(iter.key())) continue;
+      const QJsonObject update = (*iter).toObject();
+      QString key = update.value("id").toString();
+      if (!requested.contains(key) || !possible_list.contains(key)) continue;
 
-      const QJsonObject update = iter.value().toObject();
-      QJsonObject requpdated = requested.value(iter.key()).toObject();
-
-      for (Feature *f: m_features)
-        if ( f->hasFeatureDefined(update) )
-          {
-            f->deleteFiles(update);
-            requpdated.insert( f->name(), update.value(f->name()).toObject() );
-          }
-
-      requested.insert(iter.key(), requpdated);
+      requested.insert(key, possible_list.value(key).toObject());
     }
 
   { // write updated requested json to a file
@@ -1142,20 +1354,21 @@ void Manager::updateGeocoderNLP()
 {
   AppSettings settings;
 
-  QString path;
+  QHash<QString,QString> dirs;
 
-  // version of the geocoder where all data is in a single file
-#pragma message "This would have to change when GeocoderNLP format would change to the directory-based one"
-  QJsonObject obj = m_maps_available.value(m_map_selected).toObject();
-  for (const Feature *f: m_features)
-    if (f->enabled() && f->name() == "geocoder_nlp")
-      path = fullPath( f->getPath(obj) + "/location.sqlite" );
-
-  if (settings.valueString(GEOMASTER_SETTINGS "geocoder_path") != path)
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
     {
-      settings.setValue(GEOMASTER_SETTINGS "geocoder_path", path);
-      emit databaseGeocoderNLPChanged(path);
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (const Feature *f: m_features)
+          if (f->enabled() && f->name() == "geocoder_nlp")
+            dirs[id] = fullPath( f->getPath(c) );
     }
+
+  emit databaseGeocoderNLPChanged(dirs);
 }
 
 ////////////////////////////////////////////////////////////
@@ -1165,23 +1378,74 @@ void Manager::updatePostal()
   AppSettings settings;
 
   QString path_global;
-  QString path_country;
+  QHash<QString,QString> dirs_country;
 
   QJsonObject obj_global = m_maps_available.value(const_feature_id_postal_global).toObject();
   for (const Feature *f: m_features)
     if (f->enabled() && f->name() == "postal_global")
       path_global = fullPath( f->getPath(obj_global) );
 
-  QJsonObject obj_country = m_maps_available.value(m_map_selected).toObject();
-  for (const Feature *f: m_features)
-    if (f->enabled() && f->name() == "postal_country")
-      path_country = fullPath( f->getPath(obj_country) );
-
-  if (settings.valueString(GEOMASTER_SETTINGS "postal_main_dir") != path_global ||
-      settings.valueString(GEOMASTER_SETTINGS "postal_country_dir") != path_country )
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
     {
-      settings.setValue(GEOMASTER_SETTINGS "postal_main_dir", path_global);
-      settings.setValue(GEOMASTER_SETTINGS "postal_country_dir", path_country);
-      emit databasePostalChanged(path_global, path_country);
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (const Feature *f: m_features)
+          if (f->enabled() && f->name() == "postal_country")
+            dirs_country[id] = fullPath( f->getPath(c) );
     }
+
+  emit databasePostalChanged(path_global, dirs_country);
+}
+
+////////////////////////////////////////////////////////////
+/// mapnik support
+void Manager::updateMapnik()
+{
+  // Mapnik is able to draw all available maps, so we give the full list
+  QString path_global;
+  QStringList path_countries;
+
+  QJsonObject obj_global = m_maps_available.value(const_feature_id_mapnik_global).toObject();
+  for (const Feature *f: m_features)
+    if (f->enabled() && f->name() == "mapnik_global")
+      path_global = fullPath( f->getPath(obj_global) );
+
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
+    {
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (const Feature *f: m_features)
+          if (f->enabled() && f->name() == "mapnik_country")
+            path_countries.append( fullPath( f->getPath(c) ) );
+    }
+
+  // let Mapnik check whether anything has actually changed
+  emit databaseMapnikChanged(path_global, path_countries);
+}
+
+////////////////////////////////////////////////////////////
+/// Valhalla support
+void Manager::updateValhalla()
+{
+  QStringList path_countries;
+
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
+    {
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (const Feature *f: m_features)
+          if (f->enabled() && f->name() == "valhalla")
+            path_countries.append( fullPath( f->getPath(c) ) );
+    }
+
+  emit databaseValhallaChanged(fullPath( "valhalla/tiles" ), path_countries);
 }

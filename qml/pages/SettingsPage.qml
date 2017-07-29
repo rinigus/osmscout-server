@@ -6,6 +6,8 @@ Dialog {
     id: dialog
     allowedOrientations : Orientation.All
 
+    property bool backendSelectionPossible: false
+
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
         anchors.fill: parent
@@ -38,8 +40,42 @@ Dialog {
                         unitsBox.currentIndex = settings.unitIndex();
                     }
                 }
+
                 Label {
                     text: qsTr("Units used in the graphical user interface of the server. The units will change only after you apply the settings.")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                ComboBox {
+                    id: preferredLanguageSelection
+                    label: qsTr("Language")
+                    enabled: manager.ready
+
+                    menu: ContextMenu {
+                        MenuItem { text: qsTr("Default") }
+                        MenuItem { text: qsTr("English") }
+                    }
+
+                    Component.onCompleted: {
+                        currentIndex = settings.valueInt(settingsGeneralPrefix + "language")
+                    }
+                }
+
+                Label {
+                    text: qsTr("Preferred language for location names shown in rendered maps or in the returned search results. " +
+                               "When possible, this language will be used. When set to <i>Default</i>, OpenStreetMap name will be used " +
+                               "which usually defaults to local language of the displayed country."
+                               )
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -61,6 +97,45 @@ Dialog {
             }
 
             SectionHeader {
+                text: qsTr("Profiles")
+                visible: settings.profilesUsed
+            }
+
+            Label {
+                text: qsTr("Active backends are set by the profile. " +
+                           "If you wish to change the backend selection, please set the corresponding profile " +
+                           "or set profile to <i>Custom</i>.")
+                visible: settings.profilesUsed
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                //font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            SectionHeader {
+                text: qsTr("Rendering")
+            }
+
+            Label {
+                text: qsTr("This server allows you to select between two backends to draw the maps: <i>libosmscout</i> and <i>mapnik</i>.")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            ElementSwitch {
+                id: eMapnik
+                activeState: dialog.backendSelectionPossible
+                key: settingsMapnikPrefix + "use_mapnik"
+                mainLabel: qsTr("Use Mapnik for rendering maps")
+                secondaryLabel: qsTr("When selected, Mapnik will be used to render maps. " +
+                                     "Note that it requires additional databases for World coastlines and countries.<br>")
+            }
+
+            SectionHeader {
                 text: qsTr("Geocoder")
             }
 
@@ -78,12 +153,36 @@ Dialog {
 
             ElementSwitch {
                 id: eGeocoderNLP
+                activeState: dialog.backendSelectionPossible
                 key: settingsGeomasterPrefix + "use_geocoder_nlp"
                 mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
                 secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
                                      "Note that it requires additional databases for language, user input parsing, and geocoding.<br>" +
                                      "NB! If you select <i>geocoder-nlp</i>, please specify languages that should be used for " +
                                      "address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.")
+            }
+
+            SectionHeader {
+                text: qsTr("Routing Engine")
+            }
+
+            Label {
+                text: qsTr("Routing engine is responsible for calculating routes between origin and destination. " +
+                           "This server allows you to select between two routing engines: <i>Valhalla</i> and " +
+                           "<i>libosmscout</i>. ")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            ElementSwitch {
+                id: eValhalla
+                activeState: dialog.backendSelectionPossible
+                key: settingsValhallaPrefix + "use_valhalla"
+                mainLabel: qsTr("Use Valhalla as routing engine")
+                secondaryLabel: qsTr("When selected, Valhalla will be used to calculate the routing instructions.")
             }
 
             SectionHeader {
@@ -96,14 +195,14 @@ Dialog {
                 anchors.margins: Theme.horizontalPageMargin
 
                 Button {
-                    text: qsTr("OSM Scout library")
-                    onClicked: pageStack.push(Qt.resolvedUrl("OSMScoutPage.qml"))
+                    text: qsTr("Mapnik")
+                    onClicked: pageStack.push(Qt.resolvedUrl("MapnikPage.qml"))
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
 
                 Label {
-                    text: qsTr("OSM Scout library (<i>libosmscout</i>) settings. The library is used for drawing maps, search, and routing.")
+                    text: qsTr("Map rendering settings for <i>mapnik</i> backend")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -140,13 +239,70 @@ Dialog {
                 }
             }
 
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Rectangle {
+                    width: parent.width
+                    height: Theme.paddingLarge
+                    color: "transparent"
+                }
+
+                Button {
+                    text: qsTr("Valhalla")
+                    onClicked: pageStack.push(Qt.resolvedUrl("ValhallaPage.qml"))
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Label {
+                    text: qsTr("Routing engine settings for <i>Valhalla</i> backend")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                Rectangle {
+                    width: parent.width
+                    height: Theme.paddingLarge
+                    color: "transparent"
+                }
+
+                Button {
+                    text: qsTr("OSM Scout library")
+                    onClicked: pageStack.push(Qt.resolvedUrl("OSMScoutPage.qml"))
+                    preferredWidth: Theme.buttonWidthLarge
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                Label {
+                    text: qsTr("OSM Scout library (<i>libosmscout</i>) settings. " +
+                               "The library can be used for drawing maps, search, and routing.")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
             SectionHeader {
                 text: qsTr("Miscellaneous")
             }
 
             ElementSwitch {
                 id: eLogInfo
-                key: settingsOsmPrefix + "logInfo"
+                key: settingsGeneralPrefix + "logInfo"
                 mainLabel: qsTr("Log info messages")
                 secondaryLabel: qsTr( "When disabled, INFO messages will not be logged in Events log. " +
                                      "Exception is loading of the database which is shown always." )
@@ -154,7 +310,7 @@ Dialog {
 
             ElementEntry {
                 id: eRollSize
-                key: settingsOsmPrefix + "rollingLoggerSize"
+                key: settingsGeneralPrefix + "rollingLoggerSize"
                 mainLabel: qsTr("Events log size")
                 secondaryLabel: qsTr("Number of events shown in the main page")
                 validator: IntValidator { bottom: 3; top: 25; }
@@ -163,7 +319,7 @@ Dialog {
 
             ElementSwitch {
                 id: eLogSession
-                key: settingsOsmPrefix + "logSession"
+                key: settingsGeneralPrefix + "logSession"
                 mainLabel: qsTr("Log messages into session log file")
                 secondaryLabel: qsTr("When enabled, the messages are logged into a session log file." +
                                      "The log file is at .cache/harbour-osmscout-server directory. " +
@@ -177,16 +333,35 @@ Dialog {
         VerticalScrollDecorator {}
     }
 
+    function checkState()
+    {
+        dialog.backendSelectionPossible = !settings.profilesUsed
+    }
+
+    Component.onCompleted: {
+        checkState()
+    }
+
+    Connections {
+        target: settings
+        onProfilesUsedChanged: checkState()
+    }
+
     onAccepted: {
         eLogInfo.apply()
         eRollSize.apply()
         eLogSession.apply()
 
-        /// units are done by combo box, have to apply manually
-        /// units are changed the last
-        settings.setValue(settingsOsmPrefix + "units", unitsBox.currentIndex)
+        /// preferred languages are done by combo box, have to apply manually
+        settings.setValue(settingsGeneralPrefix + "language", preferredLanguageSelection.currentIndex)
 
         eMapsRoot.apply()
         eGeocoderNLP.apply()
+        eMapnik.apply()
+        eValhalla.apply()
+
+        /// units are done by combo box, have to apply manually
+        /// units are changed the last
+        settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
     }
 }

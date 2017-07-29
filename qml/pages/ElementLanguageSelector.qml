@@ -5,11 +5,18 @@ Column {
     id: main
 
     property string key
-    property string mainLabel
-    property string secondaryLabel
+    property string mainLabel: qsTr("Languages")
+    property string secondaryLabel: qsTr("List of languages used for parsing addresses")
+    property string selectorComment: qsTr("Please select languages used for parsing addresses.")
+    property string selectorNote: qsTr("When none of the "+
+                                       "languages are selected in this form, it is assumed that all supported languages " +
+                                       "should be used for parsing.<br>" +
+                                       "Note that when all supported languages are used, RAM requirements could be large.")
 
     property string value
     property alias display_value: textInput.text
+
+    property bool autoApply: false
 
     width: parent.width
     anchors.margins: Theme.horizontalPageMargin
@@ -31,6 +38,7 @@ Column {
     {
         value = v
         display()
+        if (autoApply) apply()
     }
 
     function select()
@@ -39,7 +47,8 @@ Column {
                            value: value,
                            title: mainLabel,
                            callback: setValue,
-                           comment: secondaryLabel
+                           comment: selectorComment,
+                           note: selectorNote
                        })
     }
 
@@ -61,6 +70,7 @@ Column {
             text: ""
             x: Theme.horizontalPageMargin
             width: parent.width-2*x
+            anchors.verticalCenter: parent.verticalCenter
             color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
 
             Component.onCompleted: {

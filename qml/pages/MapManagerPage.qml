@@ -6,6 +6,7 @@ Page {
     id: page
     allowedOrientations : Orientation.All
     property bool activeState: false
+    property bool backendSelectionPossible: false
 
     // To enable PullDownMenu, place our content in a SilicaFlickable
     SilicaFlickable {
@@ -30,30 +31,8 @@ Page {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
+                //font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
-            }
-
-            SectionHeader {
-                text: qsTr("Storage settings")
-            }
-
-            ElementSwitch {
-                id: eManagerGeocoderNLP
-                activeState: page.activeState
-                key: settingsMapManagerPrefix + "geocoder_nlp"
-                autoApply: true
-                mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
-                secondaryLabel: qsTr("When selected, a libpostal-based geocoder datasets will be stored on device after downloading them. " +
-                                     "These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for " +
-                                     "address parsing and lookup.")
-
-                onSwitchChanged: {
-                    // ensure that we have the same value for geocoder-nlp as postal
-                    // on mobile device
-                    settings.setValue( settingsMapManagerPrefix + "postal_country",
-                                      settings.valueInt(settingsMapManagerPrefix + "geocoder_nlp") )
-                }
             }
 
             SectionHeader {
@@ -136,6 +115,7 @@ Page {
             }
 
             Button {
+                id: start_button
                 text: qsTr("Start download")
                 enabled: page.activeState
                 preferredWidth: Theme.buttonWidthLarge
@@ -143,6 +123,31 @@ Page {
                 visible: manager.missing
                 onClicked: {
                     manager.getCountries()
+                }
+
+                function setVisibility() {
+                    visible = (manager.missing && !manager.downloading)
+                }
+
+                Component.onCompleted: {
+                    setVisibility()
+                }
+
+                Connections {
+                    target: manager
+                    onDownloadingChanged: start_button.setVisibility()
+                    onMissingChanged: start_button.setVisibility()
+                }
+            }
+
+            Button {
+                text: qsTr("Stop download")
+                enabled: manager.downloading
+                preferredWidth: Theme.buttonWidthLarge
+                anchors.horizontalCenter: parent.horizontalCenter
+                visible: manager.downloading
+                onClicked: {
+                    manager.stopDownload()
                 }
             }
 
@@ -189,19 +194,18 @@ Page {
                 }
 
                 Button {
-                    text: qsTr("Update list")
+                    text: qsTr("Check for updates")
                     enabled: page.activeState
                     preferredWidth: Theme.buttonWidthLarge
                     anchors.horizontalCenter: parent.horizontalCenter
                     onClicked: {
-                        if (!manager.updateProvided())
-                            console.log("Could not start the download. Perhaps you are downloading something already. " +
-                                        "Please wait till the current download is finished")
+                        manager.updateProvided()
                     }
                 }
 
                 Label {
-                    text: qsTr("List of currently available maps and datasets")
+                    text: qsTr("Update the list of currently available maps and datasets and check " +
+                               "if the installed maps can be updated")
                     x: Theme.horizontalPageMargin
                     width: parent.width-2*x
                     wrapMode: Text.WordWrap
@@ -240,19 +244,106 @@ Page {
                     color: Theme.highlightColor
                 }
             }
+
+            SectionHeader {
+                text: qsTr("Storage settings")
+            }
+
+            Label {
+                text: qsTr("Storage settings are set by the profile. " +
+                           "If you wish to change storage settings, please set the corresponding profile " +
+                           "or set profile to <i>Custom</i>.")
+                visible: settings.profilesUsed
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                //font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            ElementSwitch {
+                id: eManagerMapnik
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "mapnik"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Mapnik")
+                secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
+                                     "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering")
+
+                onSwitchChanged: {
+                    // ensure that we have the same value for geocoder-nlp as postal
+                    // on mobile device
+                    settings.setValue( settingsMapManagerPrefix + "mapnik",
+                                      settings.valueInt(settingsMapManagerPrefix + "mapnik") )
+                }
+            }
+
+            ElementSwitch {
+                id: eManagerGeocoderNLP
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "geocoder_nlp"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
+                secondaryLabel: qsTr("When selected, libpostal-based geocoder datasets will be stored on device after downloading them. " +
+                                     "These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for " +
+                                     "address parsing and lookup.")
+
+                onSwitchChanged: {
+                    // ensure that we have the same value for geocoder-nlp as postal
+                    // on mobile device
+                    settings.setValue( settingsMapManagerPrefix + "postal_country",
+                                      settings.valueInt(settingsMapManagerPrefix + "geocoder_nlp") )
+                }
+            }
+
+            ElementSwitch {
+                id: eManagerValhalla
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "valhalla"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Valhalla routing engine")
+                secondaryLabel: qsTr("When selected, Valhalla datasets will be stored on device after downloading them. " +
+                                     "These datasets are required for using Valhalla as a routing engine.")
+            }
+
+            ElementSwitch {
+                id: eManagerOSMScout
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "osmscout"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for libosmscout")
+                secondaryLabel: qsTr("When selected, libosmscout datasets will be stored on device after downloading them. " +
+                                     "These datasets are required for rendering, search, or routing by libosmscout backend.")
+            }
         }
 
         VerticalScrollDecorator {}
     }
 
+    function checkState()
+    {
+        page.activeState = manager.ready
+        page.backendSelectionPossible = (page.activeState && !settings.profilesUsed)
+    }
+
     Component.onCompleted: {
-        page.activeState = !manager.downloading
-        if (!manager.downloading && !manager.checkProvidedAvailable())
+        checkState()
+        if (manager.ready && !manager.checkProvidedAvailable())
             manager.updateProvided()
     }
 
     Connections {
         target: manager
-        onDownloadingChanged: page.activeState = !manager.downloading
+        onReadyChanged: checkState()
+        onUpdatesForDataFound: {
+            var clist = JSON.parse( info )
+            pageStack.push(Qt.resolvedUrl("UpdatesFound.qml"),
+                           {"foundUpdates": clist})
+        }        
+    }
+
+    Connections {
+        target: settings
+        onProfilesUsedChanged: checkState()
     }
 }

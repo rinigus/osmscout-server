@@ -42,6 +42,8 @@ Page {
         model: fileModel
 
         header: Column {
+            spacing: Theme.paddingMedium
+
             PageHeader {
                 id: head
                 title: page.title
@@ -66,7 +68,7 @@ Page {
                 x: Theme.horizontalPageMargin
                 width: page.width-2*x
                 visible: page.directory && page.directory_file.length < 1
-                font.pixelSize: Theme.fontSizeSmall
+                font.pixelSize: Theme.fontSizeMedium
                 color: Theme.highlightColor
                 wrapMode: Text.WordWrap
             }

@@ -12,13 +12,16 @@
 # The name of your application
 TARGET = harbour-osmscout-server
 
-QT += core gui network sql
+QT += core gui network sql xml
 
 CONFIG += c++11
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
 
 CONFIG += use_map_qt
 #CONFIG += use_map_cairo
+
+CONFIG += use_mapnik
+CONFIG += use_valhalla
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -60,11 +63,14 @@ SOURCES += \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
-    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
+    src/mapmanagerfeature_packtaskworker.cpp \
+    src/mapnikmaster.cpp \ 
+    src/modulechecker.cpp \
+    src/valhallamaster.cpp \
+    src/mapmanager_deleterthread.cpp
+#    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
-OTHER_FILES += qml/osmscout-server.qml \
-    qml/cover/CoverPage.qml \
-    rpm/osmscout-server.spec
+OTHER_FILES += rpm/osmscout-server.spec
 
 include(src/uhttp/uhttp.pri)
 include(src/fileselector/fileselector.pri)
@@ -84,8 +90,13 @@ HEADERS += \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
-    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
-    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
+    src/mapmanagerfeature_packtaskworker.h \
+    src/mapnikmaster.h \
+    src/modulechecker.h \
+    src/valhallamaster.h \
+    src/mapmanager_deleterthread.h
+#    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
+#    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -101,7 +112,34 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa -ldl
+use_mapnik {
+    DEFINES += USE_MAPNIK
+    DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/share/harbour-osmscout-server-module-fonts/fonts\\\"
+    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/share/harbour-osmscout-server/lib/mapnik/input\\\"
+    LIBS += -lmapnik -licuuc
+
+    mapnik.files = mapnik
+    mapnik.path = /usr/share/$${TARGET}
+    INSTALLS += mapnik
+}
+
+use_valhalla {
+    DEFINES += USE_VALHALLA
+    DEFINES += VALHALLA_EXECUTABLE=\\\"/usr/bin/harbour-osmscout-server-module-route\\\"
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server-module-route/data/valhalla.json\\\"
+    CONFIG += use_curl
+}
+
+use_curl {
+    DEFINES += USE_LIBCURL
+    CONFIG += link_pkgconfig
+    # those disappear if we use PKGCONFIG
+    LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
+    PKGCONFIG += libcurl
+}
+
+LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -ldl
+LIBS += -lsqlite3
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 
@@ -118,15 +156,13 @@ TRANSLATIONS += \
     translations/harbour-osmscout-server-de.ts \
     translations/harbour-osmscout-server-es.ts \
     translations/harbour-osmscout-server-fr.ts \
+    translations/harbour-osmscout-server-nb.ts \
     translations/harbour-osmscout-server-nl.ts \
-    translations/harbour-osmscout-server-no.ts \
     translations/harbour-osmscout-server-pl.ts \
     translations/harbour-osmscout-server-ru.ts \
     translations/harbour-osmscout-server-sv.ts
 
 DISTFILES += \
-    qml/pages/StartPage.qml \
-    qml/pages/AboutPage.qml \
     harbour-osmscout-server.desktop \
     rpm/harbour-osmscout-server.yaml \
     rpm/harbour-osmscout-server.changes \
