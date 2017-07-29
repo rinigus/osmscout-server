@@ -1,12 +1,12 @@
 
 # OSM Scout Server
 
-OSM Scout Server can be used as a drop-in replacement for online map
-services providing map tiles, search, and routing. As a result, an
-offline operation is possible if the device has a server and map
-client programs installed and running. OSM Scout Server is mainly
-developed for Sailfish OS, but could be used on a regular Linux
-system.
+OSM Scout Server se puede utilizar en lugar de los servicios de
+mapas en línea, proporcionando tiles de mapas, búsquedas, y cálculo
+de rutas. Como resultado, si el dispositivo tiene un servidor
+y programas cliente de mapas instalado en ejecución es posible obtener
+mapas sin conexión. OSM Scout Server se ha desarrollado principalmente
+para Sailfish aunque puede usarse en un sistema regular de Linux.
 
 Here, the user guide is provided with the description of setting up
 the server and popular clients for offline operation on Sailfish OS
