@@ -2,17 +2,18 @@
 # OSM Scout Server
 
 OSM Scout Server se puede utilizar en lugar de los servicios de
-mapas en línea, proporcionando tiles de mapas, búsquedas, y cálculo
-de rutas. Como resultado, si el dispositivo tiene un servidor
-y programas cliente de mapas instalado en ejecución es posible obtener
-mapas sin conexión. OSM Scout Server se ha desarrollado principalmente
-para Sailfish aunque puede usarse en un sistema regular de Linux.
+mapas en línea que proporcionan tiles de mapa, realiza búsquedas, y 
+calcula rutas. Si el dispositivo tiene instalados un
+servidor y un cliente de mapas y ambos se están ejecutando es posible
+obtener mapas sin conexión. OSM Scout Server se ha desarrollado
+principalmente para Sailfish OS aunque también se puede usar en un
+sistema de Linux convencional.
 
-Here, the user guide is provided with the description of setting up
-the server and popular clients for offline operation on Sailfish OS
-device. For developer's info, see
-[GitHub page](https://github.com/rinigus/osmscout-server) of the
-project and it's
+Aquí, la guía de usuario proporciona una descripción de la configuración
+del servidor y de los clientes populares para el funcionamiento sin
+conexión en el dispositivo Sailfish OS. Para obtener información del
+desarrollador, consulta el proyecto en la 
+[página de GitHub](https://github.com/rinigus/osmscout-server) y su
 [README](https://github.com/rinigus/osmscout-server/blob/master/README.md).
 
 
