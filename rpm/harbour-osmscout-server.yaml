@@ -43,6 +43,12 @@ PkgBR:
 Requires:
   - sailfishsilica-qt5 >= 0.10.9
 
+RpmLintIgnore:
+  - arch-dependent-file-in-usr-share
+  - library-without-ldconfig-postin
+  - library-without-ldconfig-postun
+  - filename-too-long-for-joliet
+
 # All installed files
 Files:
   - '%{_bindir}'
