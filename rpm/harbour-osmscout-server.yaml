@@ -41,16 +41,7 @@ PkgBR:
   - snappy-devel
   - libkyotocabinet-devel
   - mapnik-devel
-  - boost-devel
   - libicu52-devel
-  - harfbuzz-devel
-  - freetype-devel
-  - libxml2-devel
-  - libjpeg-turbo-devel
-  - libpng-devel
-  - libtiff-devel
-  - cairo-devel
-  - proj-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:
