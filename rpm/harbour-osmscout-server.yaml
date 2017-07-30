@@ -41,6 +41,7 @@ PkgBR:
   - snappy-devel
   - libkyotocabinet-devel
   - mapnik-devel
+  - boost-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:

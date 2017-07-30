@@ -39,6 +39,7 @@ BuildRequires:  libpostal-devel
 BuildRequires:  snappy-devel
 BuildRequires:  libkyotocabinet-devel
 BuildRequires:  mapnik-devel
+BuildRequires:  boost-devel
 BuildRequires:  desktop-file-utils
 
 %description
