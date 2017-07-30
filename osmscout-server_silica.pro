@@ -155,6 +155,7 @@ TRANSLATIONS += \
     translations/harbour-osmscout-server-cs.ts \
     translations/harbour-osmscout-server-de.ts \
     translations/harbour-osmscout-server-es.ts \
+    translations/harbour-osmscout-server-fi.ts \
     translations/harbour-osmscout-server-fr.ts \
     translations/harbour-osmscout-server-nb.ts \
     translations/harbour-osmscout-server-nl.ts \

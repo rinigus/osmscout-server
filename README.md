@@ -31,8 +31,8 @@ and no additional configuration is needed.
 
 The server is written using Qt. The server can be used as a console or
 a Sailfish application. For console version, use
-osmscout-server_console.pro as a project. For Sailfish, use
-osmscout-server_silica.pro. 
+osmscout-server_console.pro as a project, available in console
+subfolder. For Sailfish, use osmscout-server_silica.pro.
 
 
 ## Maps
@@ -440,6 +440,7 @@ The translations were contributed by
 - Oleg Artobolevsky @XOleg: Russian
 - A @atlochowski: Polish
 - Peer-Atle Motland @Pam: Norwegian Bokmål
+- Matti Lehtimäki @mal: Finnish
 
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README
