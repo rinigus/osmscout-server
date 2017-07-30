@@ -27,6 +27,10 @@ PkgConfigBR:
   - Qt5Core
   - Qt5Qml
   - Qt5Quick
+  - Qt5Xml
+  - Qt5Sql
+  - sqlite3
+  - libcurl
 
 # Build dependencies without a pkgconfig setup can be listed here
 PkgBR:
@@ -35,9 +39,7 @@ PkgBR:
   - libosmscout-qt-devel
   - libpostal-devel
   - snappy-devel
-  - sqlite-devel
   - libkyotocabinet-devel
-  - libcurl-devel
 
 # Runtime dependencies which are not automatically detected
 Requires:
