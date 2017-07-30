@@ -40,6 +40,7 @@ BuildRequires:  snappy-devel
 BuildRequires:  libkyotocabinet-devel
 BuildRequires:  mapnik-devel
 BuildRequires:  libicu52-devel
+BuildRequires:  qt5-qttools-linguist
 BuildRequires:  desktop-file-utils
 
 %description
