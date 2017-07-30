@@ -4,12 +4,24 @@ all required strings.
 
 To simplify translations, there is a project registered at
 https://www.transifex.com/rinigus/osm-scout-server . Please use it for
-working on translations.
+working on translations of the strings within application.
 
 Note that Valhalla routing instructions are translated as a part of
 Valhalla's project. Please see
 https://github.com/valhalla/valhalla/tree/master/locales for current
 translations and how to contribute.
+
+User's Guide is located in `docs` subfolder of the project. For new
+translations, fork the repository in github, add new language
+subfolder by making a copy of `docs/en`, and translate HTML files into
+your language. In addition, you would have to make screenshots on
+Sailfish OS for the tutorials using translated application(s). These
+screenshots would have to be named as they are in English version to
+keep the same structure of the tutorial. Notice that tutorials
+information text covers part of the screenshots. You would either have
+to make screenshots which are very close to the English version or
+start changing location of the information text to accommodate your
+screenshots.
 
 Some of the strings would contain macros in the form %macro%. These
 macros mark the positions in the phrase that would be filled in with
