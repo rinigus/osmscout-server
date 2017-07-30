@@ -40,6 +40,15 @@ BuildRequires:  snappy-devel
 BuildRequires:  libkyotocabinet-devel
 BuildRequires:  mapnik-devel
 BuildRequires:  boost-devel
+BuildRequires:  libicu52-devel
+BuildRequires:  harfbuzz-devel
+BuildRequires:  freetype-devel
+BuildRequires:  libxml2-devel
+BuildRequires:  libjpeg-turbo-devel
+BuildRequires:  libpng-devel
+BuildRequires:  libtiff-devel
+BuildRequires:  cairo-devel
+BuildRequires:  proj-devel
 BuildRequires:  desktop-file-utils
 
 %description
