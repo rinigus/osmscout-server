@@ -42,6 +42,7 @@ PkgBR:
   - libkyotocabinet-devel
   - mapnik-devel
   - libicu52-devel
+  - python
 
 # Runtime dependencies which are not automatically detected
 Requires:
