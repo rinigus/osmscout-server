@@ -62,7 +62,7 @@ con un ejemplo de cómo hacerlo con
 
 ### Gestor de mapas
 
-Para descargar, actualizar y eliminar mapas, usa el Gestor de mapas.
+Para descargar, actualizar y eliminar mapas, usa el gestor de mapas.
 La suscripción de los mapas y su descarga se describe en el
 [Tutorial del gestor de mapas](manager.html). 
 
@@ -100,7 +100,7 @@ tienes que configurar el acceso al servidor en el cliente o clientes.
 Para [Poor Maps](https://openrepos.net/content/otsaloma/poor-maps),
 las instrucciones están [aquí](poor_maps.html).
 
-Para [modRana](https://openrepos.net/content/martink/modrana-0),
+Para [ModRana](https://openrepos.net/content/martink/modrana-0),
 las instrucciones están [aquí](modrana.html).
 
 Después de configurar el cliente, pues usarlo junto a OSM Scout Server
