@@ -89,7 +89,7 @@ Más tarde puedes seleccionar un perfil tal y como se muestra en el
 
 Hay múltiples ajustes que pueden se útiles para mejorar el funcionamiento
 del servidor. Consulta algunos ejemplos en
-[Ejeplos de ajustes](settings_misc.html).
+[Ejemplos de ajustes](settings_misc.html).
 
 
 ## Configuración del cliente
