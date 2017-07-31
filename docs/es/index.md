@@ -94,7 +94,7 @@ del servidor. Consulta algunos ejemplos en
 
 ## Configuración del cliente
 
-Una vez que se ha configurado el servidor y se han descargado los mapas, 
+Una vez que has configurado el servidor y has descargado los mapas, 
 tienes que configurar el acceso al servidor en el cliente o clientes.
 
 Para [Poor Maps](https://openrepos.net/content/otsaloma/poor-maps),
