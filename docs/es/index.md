@@ -2,103 +2,106 @@
 # OSM Scout Server
 
 OSM Scout Server se puede utilizar en lugar de los servicios de
-mapas en línea que proporcionan tiles de mapa, realiza búsquedas, y 
-calcula rutas. Si el dispositivo tiene instalados un
-servidor y un cliente de mapas y ambos se están ejecutando es posible
+mapas en línea que proporcionan tiles de mapas, realiza búsquedas, y 
+calcula rutas. Si el dispositivo tiene instalados un servidor
+y un cliente de mapas y ambos se ejecutan al mismo tiempo es posible
 obtener mapas sin conexión. OSM Scout Server se ha desarrollado
-principalmente para Sailfish OS aunque también se puede usar en un
-sistema de Linux convencional.
+principalmente para el sistema operativo Sailfish aunque también se
+puede usar en un sistema de Linux convencional.
 
 Aquí, la guía de usuario proporciona una descripción de la configuración
 del servidor y de los clientes populares para el funcionamiento sin
-conexión en el dispositivo Sailfish OS. Para obtener información del
-desarrollador, consulta el proyecto en la 
-[página de GitHub](https://github.com/rinigus/osmscout-server) y su
+conexión en un dispositivo con Sailfish. Para obtener información del
+desarrollador, consulta el proyecto en la
+[página de GitHub](https://github.com/rinigus/osmscout-server) y el
 [README](https://github.com/rinigus/osmscout-server/blob/master/README.md).
 
+## Funcionamiento
 
-## Mode of operation
+A diferencia de las soluciones a la navegación sin conexión proporcionadas
+por otras aplicaciones, el servidor es una de las dos partes necesarias
+para su uso. Los usuarios deben tener el servidor y un cliente que
+acceda al servidor ejecutándose _simultáneamente_ y comunicándose entre
+sí.
 
-In contrast to offline navigation solutions provided by other
-applications, the server is one of the two parts that are required by
-users. Users would need to have the server and a client accessing the
-server running _simultaneously_ and communicating with each
-other.
+Después de la configuración inicial, los usuarios tendrán principalmente
+el servidor ejecutándose en segundo plano mientras acceden a los mapas
+y obtienen las instrucciones de navegación a través del cliente. La
+interfaz gráfica del servidor sólo es necesaria para gestionar los
+mapas en el dispositivo. En el sistema operativo Sailfish, el modo normal
+de funcionamiento requiere que el servidor esté ejecutándose como una
+de las aplicaciones que muestran su cubierta en la pantalla de inicio
+y que un cliente esté abierto si es necesario.
 
-After initial setup, users would mainly have the server running in the
-background while accessing maps and getting navigation instructions
-through client. The server's GUI is only needed for managing maps on
-device. On Sailfish OS, the normal mode of operation would require
-server running as one of the applications showing a cover and client
-opened as needed.
+## Configuración del servidor
 
+Para configurar el servidor son necesarios varios pasos. La siguiente
+guía está dirigida a los usuarios del sistema operativo Sailfish.
 
-## Setting up the server
+### Módulos
 
-There are several steps required to setup the server. The following
-guide is aimed at Sailfish OS users.
+El servidor usa el enfoque modular con dos módulos independientes que
+son necesarios para su funcionamiento. Por favor, dirígete a la
+tienda de Jolla o a OpenRepos e instala _OSM Scout Server Module: Route_
+y _OSM Scout Server Module: Fonts_. Después de la instalación de los
+módulos reinicia el servidor sí así lo indica. Los módulos se
+usan automáticamente y los usuarios no tienen que iniciarlos.
 
-### Modules
+### Almacenamiento
 
-The server uses modular approach with two separate modules required
-for its operation. Please proceed to Jolla Store or OpenRepos and
-install _OSM Scout Server Module: Route_ and _OSM Scout Server Module:
-Fonts_. After installation of the modules, please restart the server,
-if instructed by the server. The modules are used automatically and
-don't have to be started by users.
-
-### Storage
-
-OSM Scout Server needs to store maps. The storage requirements could
-be significant. To store maps and manage them, a separate folder is
-required. Please note that, as a part of the managing, OSM Scout
-Server can delete, on your command, files from that folder. Thus, its
-important to allocate such folder and assign it to OSM Scout
-Manager. See [Storage allocation tutorial](storage.html) for example
-on how to do it with the help of
+OSM Scout Server necesita almacenar los mapas. Los requisitos de
+almacenamiento pueden ser considerables. Para almacenar los mapas y
+gestionarlos es necesaria una carpeta independiente. Por favor,
+ten en cuenta que, como parte de la gestión, OSM Scout Server puede
+borrar, a petición tuya, ficheros de esa carpeta. Por lo tanto,
+es importante que crees esa carpeta y después la asignes como
+almacenamiento en OSM Scout Server.
+Consulta el [Tutorial de asignación de almacenamiento](storage.html)
+con un ejemplo de cómo hacerlo con
 [FileCase](https://openrepos.net/content/cepiperez/filecase-0).
 
-### Map Manager
+### Gestor de mapas
 
-To download, update, and remove maps, use Map Manager. The initial
-subscription of the maps and their download is described in
-[Map Manager Download tutorial](manager.html). 
+Para descargar, actualizar y eliminar mapas, usa el Gestor de mapas.
+La suscripción de los mapas y su descarga se describe en el
+[Tutorial del gestor de mapas](manager.html). 
 
-After the maps are downloaded, you are ready to proceed with the
-configuration of your map access client. Select the corresponding
-section below to see how to configure it.
+Una vez que has descargado los mapas, estás preparado para configurar
+el cliente. Ve a la sección correspondiente más abajo para ver cómo se
+configura. 
 
-### Language selection
+### Selección del idioma
 
-The server uses natural language processing (NLP) library that covers
-processing of addresses in large number of languages -
-[libpostal](https://github.com/openvenues/libpostal). To limit usage
-of resources, please specify languages as shown in
-[Language selection tutorial](languages.html).
+El servidor usa la librería del procesamiento de lenguaje natural (PLN)
+que cubre el procesamiento de las direcciones postales en muchos idiomas -
+[libpostal](https://github.com/openvenues/libpostal). Para limitar el
+uso de recursos, por favor, especifica los idiomas tal y como se muestra
+en el [Tutorial de selección del idioma](languages.html).
 
-### Profile
+### Perfil
 
-To simplify configuration, OSM Scout Server uses profiles. You are
-asked to select profile on the first start. Later, you can select
-profile as shown in the [Profile selection tutorial](profiles.html).
+Para simplificar la configuración, OSM Scout Server usa perfiles. En el 
+primer inicio de la aplicación se solicitará que selecciones un perfil.
+Más tarde puedes seleccionar un perfil tal y como se muestra en el
+[Tutorial de selección del perfil](profiles.html).
 
-### Settings
+### Ajustes
 
-There are multiple settings that can be useful to tune the operation
-of the server. See some examples in
-[Settings examples](settings_misc.html).
+Hay múltiples ajustes que pueden se útiles para mejorar el funcionamiento
+del servidor. Consulta algunos ejemplos en
+[Ejeplos de ajustes](settings_misc.html).
 
 
-## Setting up the client
+## Configuración del cliente
 
-After the server has been setup and the maps downloaded, the access to
-the server has to be configured in the client(s).
+Una vez que se ha configurado el servidor y se han descargado los mapas, 
+tienes que configurar el acceso al servidor en el cliente(s).
 
-For [Poor Maps](https://openrepos.net/content/otsaloma/poor-maps),
-instructions are [here](poor_maps.html).
+Para [Poor Maps](https://openrepos.net/content/otsaloma/poor-maps),
+las instrucciones está [aquí](poor_maps.html).
 
-For [modRana](https://openrepos.net/content/martink/modrana-0),
-instructions are [here](modrana.html).
+Para [modRana](https://openrepos.net/content/martink/modrana-0),
+las instrucciones están [aquí](modrana.html).
 
-After the client is setup, you can use them together with OSM Scout
-Server for offline maps access.
+Después de configurar el cliente, pues usarlos junto a OSM Scout Server
+para el acceso a los mapas sin conexión.
