@@ -44,7 +44,7 @@ El servidor usa el enfoque modular con dos módulos independientes que
 son necesarios para su funcionamiento. Por favor, dirígete a la
 tienda de Jolla o a OpenRepos e instala _OSM Scout Server Module: Route_
 y _OSM Scout Server Module: Fonts_. Después de la instalación de los
-módulos reinicia el servidor sí así lo indica. Los módulos se
+módulos reinicia el servidor si así lo indica. Los módulos se
 usan automáticamente y los usuarios no tienen que iniciarlos.
 
 ### Almacenamiento
