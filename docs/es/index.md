@@ -19,8 +19,8 @@ desarrollador, consulta el proyecto en la
 ## Funcionamiento
 
 A diferencia de las soluciones a la navegación sin conexión proporcionadas
-por otras aplicaciones, el servidor es una de las dos partes necesarias
-para su uso. Los usuarios deben tener el servidor y un cliente que
+por otras aplicaciones, el servidor es una de las dos partes imprescindibles
+para el funcionamiento. Los usuarios deben tener el servidor y un cliente que
 acceda al servidor ejecutándose _simultáneamente_ y comunicándose entre
 sí.
 
@@ -50,7 +50,7 @@ usan automáticamente y los usuarios no tienen que iniciarlos.
 ### Almacenamiento
 
 OSM Scout Server necesita almacenar los mapas. Los requisitos de
-almacenamiento pueden ser considerables. Para almacenar los mapas y
+almacenamiento pueden ser significativos. Para almacenar los mapas y
 gestionarlos es necesaria una carpeta independiente. Por favor,
 ten en cuenta que, como parte de la gestión, OSM Scout Server puede
 borrar, a petición tuya, ficheros de esa carpeta. Por lo tanto,
@@ -87,7 +87,7 @@ Más tarde puedes seleccionar un perfil tal y como se muestra en el
 
 ### Ajustes
 
-Hay múltiples ajustes que pueden se útiles para mejorar el funcionamiento
+Hay múltiples ajustes que pueden ser útiles para mejorar el funcionamiento
 del servidor. Consulta algunos ejemplos en
 [Ejemplos de ajustes](settings_misc.html).
 
@@ -95,13 +95,13 @@ del servidor. Consulta algunos ejemplos en
 ## Configuración del cliente
 
 Una vez que se ha configurado el servidor y se han descargado los mapas, 
-tienes que configurar el acceso al servidor en el cliente(s).
+tienes que configurar el acceso al servidor en el cliente o clientes.
 
 Para [Poor Maps](https://openrepos.net/content/otsaloma/poor-maps),
-las instrucciones está [aquí](poor_maps.html).
+las instrucciones están [aquí](poor_maps.html).
 
 Para [modRana](https://openrepos.net/content/martink/modrana-0),
 las instrucciones están [aquí](modrana.html).
 
-Después de configurar el cliente, pues usarlos junto a OSM Scout Server
+Después de configurar el cliente, pues usarlo junto a OSM Scout Server
 para el acceso a los mapas sin conexión.
