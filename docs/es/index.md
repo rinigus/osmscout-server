@@ -7,7 +7,7 @@ calcula rutas. Si el dispositivo tiene instalados un servidor
 y un cliente de mapas y ambos se ejecutan al mismo tiempo es posible
 obtener mapas sin conexión. OSM Scout Server se ha desarrollado
 principalmente para el sistema operativo Sailfish aunque también se
-puede usar en un sistema de Linux convencional.
+puede usar en un sistema Linux convencional.
 
 Aquí, la guía de usuario proporciona una descripción de la configuración
 del servidor y de los clientes populares para el funcionamiento sin
