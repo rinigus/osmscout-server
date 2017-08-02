@@ -1,8 +1,8 @@
 
 # OSM Scout Server
 
-OSM Scout Server se puede utilizar en lugar de los servicios de
-mapas en línea que proporcionan tiles de mapas, realiza búsquedas, y 
+OSM Scout Server es una alternativa a los servicios de mapas 
+con conexión de datos que proporcionan mapas, realiza búsquedas, y 
 calcula rutas. Si el dispositivo tiene instalados un servidor
 y un cliente de mapas y ambos se ejecutan al mismo tiempo es posible
 obtener mapas sin conexión. OSM Scout Server se ha desarrollado
@@ -20,18 +20,17 @@ desarrollador, consulta el proyecto en la
 
 A diferencia de las soluciones a la navegación sin conexión proporcionadas
 por otras aplicaciones, el servidor es una de las dos partes imprescindibles
-para el funcionamiento. Los usuarios deben tener el servidor y un cliente que
+para su funcionamiento. Los usuarios deben tener el servidor y un cliente que
 acceda al servidor ejecutándose _simultáneamente_ y comunicándose entre
 sí.
 
-Después de la configuración inicial, los usuarios tendrán principalmente
-el servidor ejecutándose en segundo plano mientras acceden a los mapas
-y obtienen las instrucciones de navegación a través del cliente. La
-interfaz gráfica del servidor sólo es necesaria para gestionar los
-mapas en el dispositivo. En el sistema operativo Sailfish, el modo normal
-de funcionamiento requiere que el servidor esté ejecutándose como una
-de las aplicaciones que muestran su cubierta en la pantalla de inicio
-y que un cliente esté abierto si es necesario.
+Después de la configuración inicial, los usuarios en primer lugar deben
+ejecutar el servidor y tenerlo abierto en segundo plano para poder acceder
+a los mapas y obtener las instrucciones de navegación a través del cliente.
+La interfaz gráfica del servidor sólo es necesaria para gestionar los
+mapas en el dispositivo. En Sailfish, el funcionamiento normal requiere
+tener el servidor ejecutándose en segundo plano, mostrándose su cubierta
+en la pantalla de inicio, y el cliente abierto cuando se necesite.
 
 ## Configuración del servidor
 
@@ -44,7 +43,7 @@ El servidor usa el enfoque modular con dos módulos independientes que
 son necesarios para su funcionamiento. Por favor, dirígete a la
 tienda de Jolla o a OpenRepos e instala _OSM Scout Server Module: Route_
 y _OSM Scout Server Module: Fonts_. Después de la instalación de los
-módulos reinicia el servidor si así lo indica. Los módulos se
+módulos reinicia el servidor si así se indica. Los módulos se
 usan automáticamente y los usuarios no tienen que iniciarlos.
 
 ### Almacenamiento
@@ -68,12 +67,12 @@ La suscripción de los mapas y su descarga se describe en el
 
 Una vez que has descargado los mapas, estás preparado para configurar
 el cliente. Ve a la sección correspondiente más abajo para ver cómo se
-configura. 
+hace. 
 
 ### Selección del idioma
 
 El servidor usa la librería del procesamiento de lenguaje natural (PLN)
-que cubre el procesamiento de las direcciones postales en muchos idiomas -
+que permite el análisis de las direcciones postales en muchos idiomas -
 [libpostal](https://github.com/openvenues/libpostal). Para limitar el
 uso de recursos, por favor, especifica los idiomas tal y como se muestra
 en el [Tutorial de selección del idioma](languages.html).
@@ -82,7 +81,7 @@ en el [Tutorial de selección del idioma](languages.html).
 
 Para simplificar la configuración, OSM Scout Server usa perfiles. En el 
 primer inicio de la aplicación se solicitará que selecciones un perfil.
-Más tarde puedes seleccionar un perfil tal y como se muestra en el
+Más tarde puedes cambiar el perfil siguiendo las instrucciones del
 [Tutorial de selección del perfil](profiles.html).
 
 ### Ajustes
@@ -100,7 +99,7 @@ tienes que configurar el acceso al servidor en el cliente o clientes.
 Para [Poor Maps](https://openrepos.net/content/otsaloma/poor-maps),
 las instrucciones están [aquí](poor_maps.html).
 
-Para [ModRana](https://openrepos.net/content/martink/modrana-0),
+Para [modRana](https://openrepos.net/content/martink/modrana-0),
 las instrucciones están [aquí](modrana.html).
 
 Después de configurar el cliente, pues usarlo junto a OSM Scout Server
