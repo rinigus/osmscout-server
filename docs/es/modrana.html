@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OSM Scout Server - modRana</title>
+	<meta name="author" content="rinigus" />
+	<meta name="description" content="OSM Scout Server tutorial" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../assets/fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
+	<style>
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(modrana/modrana_1.jpg);
+	}
+	#section2{
+		background-image: url(modrana/modrana_2.jpg);
+	}
+	#section3{
+		background-image: url(modrana/modrana_3.jpg);
+	}
+	#section4{
+		background-image: url(modrana/modrana_4.jpg);
+	}
+	#section5{
+		background-image: url(modrana/modrana_5.jpg);
+	}
+	#section6{
+		background-image: url(modrana/modrana_6.jpg);
+	}
+	#section7{
+		background-image: url(modrana/modrana_7.jpg);
+	}
+	#section8{
+		background-image: url(modrana/modrana_8.jpg);
+	}
+	#section9{
+		background-image: url(modrana/modrana_9.jpg);
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section" id="section1">
+    <div class="captiontop">
+      <p class="head">Abrir <a href="https://openrepos.net/content/martink/modrana-0">modRana</a></p>
+      <p class="border">
+        Abre modRana y accede a las herramientas pulsando el botón
+		de la parte inferior izquierda de la pantalla (resaltado con
+		el recuadro rojo en la captura de pantalla).
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="caption">
+      <p class="head">Capa de mapa</p>
+      <p class="border">
+        Para configurar el dibujo de mapas, haz clic en "Map"
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+  
+  <div class="section" id="section3">
+    <div class="caption">
+      <p class="border">
+        Accede a "Main map".
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+
+  <div class="section" id="section4">
+    <div class="captiontop">
+      <p class="border">
+        Selecciona OSM Scout Server entre la lista de capas de mapas.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section5">
+    <div class="captiontop">
+      <p class="head">Opciones</p>
+      <p class="border">
+		Después de seleccionar la capa de mapa, desliza hacia la derecha
+		hasta llegar a la página principal. Selecciona "Options".
+      </p>
+	  <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section6">
+    <div class="caption">
+      <p class="head">POI</p>
+      <p class="border">
+        En Options, selecciona POI.
+      </p>
+	  <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section7">
+    <div class="caption">
+      <p class="head">POI</p>
+      <p class="border">
+        Selecciona OSM Scout Server como proveedor del motor de
+		búsqueda de lugares y búsqueda local, como se muestra.
+      </p>
+	  <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section6">
+    <div class="caption">
+      <p class="head">Navegación</p>
+      <p class="border">
+        Después de configurar de la búsqueda, desliza hacia la derecha
+		hasta llegar a Options. En Options, selecciona Navigation.
+      </p>
+	  <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section8">
+    <div class="caption">
+      <p class="head">Navegación</p>
+      <p class="border">
+        En los ajustes de navegación, selecciona OSM Scout Server como
+		proveedor del motor de cálculo de rutas, como se muestra.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section9">
+    <div class="captiontop">
+      <p class="head">Funcionamiento</p>
+      <p class="border">
+		¡Ya está listo! No olvides que OSM Scout Server y modRana
+		tienen que estar ejecutándose <i>simultáneamente</i> para que
+		funcionen los mapas sin conexión.
+      </p>
+      <p class="border"><a href="index.html">Volver a la página principal</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

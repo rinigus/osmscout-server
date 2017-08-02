@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OSM Scout Server - Profile selection</title>
+	<meta name="author" content="rinigus" />
+	<meta name="description" content="OSM Scout Server tutorial" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../assets/fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
+	<style>
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(profile/prof_1.png);
+	}
+	#section2{
+		background-image: url(profile/prof_2.png);
+	}
+	#section3{
+		background-image: url(profile/prof_3.png);
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section" id="section1">
+    <div class="caption">
+      <p class="head">Iniciar configuración</p>
+      <p class="border">
+        En la página principal, selecciona Perfil en el menú
+		deslizante, como muestra la captura de pantalla.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="caption">
+      <p class="border">
+        Puedes seleccionar el perfil en el elemento resaltado de la captura de pantalla.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="caption">
+      <p class="head">Seleccionar y aceptar</p>
+      <p class="border">
+        Selecciona el perfil que te gustaría usar. Se recomienda
+		seleccionar el perfil por defecto. Continúa con Aceptar.
+
+        <p class="border"><a href="index.html">Volver a la página principal</a></p>
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

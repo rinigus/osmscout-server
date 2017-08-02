@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OSM Scout Server - Storage Allocation</title>
+	<meta name="author" content="rinigus" />
+	<meta name="description" content="OSM Scout Server tutorial" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../assets/fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
+	<style>
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(storage/storage_1.png);
+	}
+	#section2{
+		background-image: url(storage/storage_2.png);
+	}
+	#section3{
+		background-image: url(storage/storage_3.png);
+	}
+	#section4{
+		background-image: url(storage/storage_4.png);
+	}
+	#section5{
+		background-image: url(storage/storage_5.png);
+	}
+	#section6{
+		background-image: url(storage/storage_6.png);
+	}
+	#section7{
+		background-image: url(storage/storage_7.png);
+	}
+	#section8{
+		background-image: url(storage/storage_8.png);
+	}
+	#section9{
+		background-image: url(storage/storage_9.png);
+	}
+	#section10{
+		background-image: url(storage/storage_10.png);
+	}
+	#section11{
+		background-image: url(storage/storage_11.png);
+	}
+	<!-- #section12{ -->
+	<!-- 	background-image: url(storage/storage_12.png); -->
+	<!-- } -->
+	#section13{
+		background-image: url(storage/storage_13.png);
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section" id="section1">
+    <div class="caption">
+      <p class="border">
+        Antes de asignar la carpeta de almacenamiento, se mostrará un
+		mensaje solicitando que lo hagas. Este tutorial te mostrará cómo
+		asignar una carpeta de la tarjeta SD u otra ubicación no predeterminada.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="caption">
+      <p class="head">Abrir <a href="https://openrepos.net/content/cepiperez/filecase-0">FileCase</a></p>
+      <p class="border">
+        Abre una aplicación de explorador de archivos en tu dispositivo
+		Sailfish. Por ejemplo, abre Filecase y desliza hacia la izquierda, como
+		muestra la captura de pantalla.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="caption">
+      <p class="head">Tarjeta SD</p>
+      <p class="border">
+        Haz clic en Tarjeta SD, como se muestra.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section4">
+    <div class="caption">
+      <p class="head">Crear nueva carpeta</p>
+      <p class="border">
+        Navega dentro de la tarjeta SD hasta la ubicación donde quieres
+		crear tu carpeta, y créala desde el menú deslizante, como se muestra.
+      </p>
+	  <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section5">
+    <div class="caption">
+      <p class="head">Nombre de la nueva carpeta</p>
+      <p class="border">
+        Nombra la nueva carpeta como desees. En este ejemplo, el nombre
+		usado es Maps.OSM.
+      </p>
+	  <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section6">
+    <div class="caption">
+      <p class="head">Volver a OSM Scout Server</p>
+      <p class="border">
+        Vuelve a OSM Scout Server y abre los Ajustes desde el
+		menú deslizante, como se muestra.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section7">
+    <div class="captiontop">
+      <p class="head">Selección del almacenamiento</p>
+      <p class="border">
+        Abre el diálogo de selección del almacenamiento, como muestra
+		el elemento resaltado de la captura de pantalla.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section8">
+    <div class="caption">
+      <p class="head">Navegar hasta la carpeta asignada</p>
+      <p class="border">
+        Navega hasta la ubicación de la carpeta que vas a asignar. En
+		este ejemplo, partimos de /home/nemo/Documents/ y tenemos
+		que llegar a /media/sdcard/... . Por tanto, primero desplázate
+		hacia arriba y presiona .., como se muestra.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section9">
+    <div class="caption">
+      <p class="border">
+        Cuando llegues al directorio raíz (/), busca la carpeta media.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section10">
+    <div class="caption">
+      <p class="border">
+        Selecciona la carpeta media, como se muestra, y navega dentro
+		hasta encontrar la carpeta de la Tarjeta SD que deseas asignar.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section11">
+    <div class="caption">
+      <p class="head">Seleccionar la carpeta asignada</p>
+      <p class="border">
+        Cuando veas la carpeta que quieres asignar, haz clic en ella
+		y mantén pulsado, hasta que se abra el menú contextual. Presiona
+		Seleccionar para confirmar tu selección.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section13">
+    <div class="captiontop">
+      <p class="border">
+        Has asignado la nueva carpeta, como muestra la captura de
+		pantalla en "Almacenamiento de mapas". Continua con Aceptar
+		para confirmar los nuevos ajustes.
+      </p>
+      <p class="border"><a href="index.html">Volver a la página principal</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

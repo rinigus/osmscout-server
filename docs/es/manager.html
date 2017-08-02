@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OSM Scout Server - Map Manager</title>
+	<meta name="author" content="rinigus" />
+	<meta name="description" content="OSM Scout Server tutorial" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../assets/fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
+	<style>
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section0{
+		background-image: url(manager/manager_0.png);
+	}
+	#section2{
+		background-image: url(manager/manager_2.png);
+	}
+	#section3{
+		background-image: url(manager/manager_3.png);
+	}
+	#section5{
+		background-image: url(manager/manager_5.png);
+	}
+	#section6{
+		background-image: url(manager/manager_6.png);
+	}
+	#section7{
+		background-image: url(manager/manager_7.png);
+	}
+	#section8{
+		background-image: url(manager/manager_8.png);
+	}
+	#section9{
+		background-image: url(manager/manager_9.png);
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section" id="section0">
+    <div class="caption">
+      <p class="head">Entrar en el gestor de mapas</p>
+      <p class="border">
+        En la página principal, selecciona Gestor de mapas en el menú
+		deslizante, como muestra la captura de pantalla.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="captiontop">
+      <p class="head">Subscribir</p>
+      <p class="border">
+        En la página Gestor de mapas, haz clic en el botón Suscribir, como
+		muestra la captura de pantalla.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="caption">
+      <p class="border">
+        Navega hasta encontrar el territorio que te interesa.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section5">
+    <div class="caption">
+      <p class="head">Detalles del país</p>
+      <p class="border">
+        Para cada país o territorio se muestra información de los
+		tamaños y fechas de cada conjunto de datos.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="section6">
+    <div class="captiontop">
+      <p class="head">Subscribir</p>
+      <p class="border">
+        Presiona Suscribir en todos los países que te interesan, como muestra
+		la captura de pantalla. Después, navega hacia atrás (desliza hacia
+		la derecha) hasta volver a la página principal del gestor de mapas.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section7">
+    <div class="caption">
+      <p class="border">
+        Todos los países suscritos se mostrarán como en la captura de pantalla.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section8">
+    <div class="captiontop">
+      <p class="head">Descargar</p>
+      <p class="border">
+        Presiona Iniciar descarga para iniciar la descarga, como 
+		muestra la captura de pantalla. Para obtener mejores
+		resultados, pon el dispositivo a cargar y usa la red WiFi.
+      </p>
+      <p class="border"><i>Desplaza hacia abajo para continuar</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section9">
+    <div class="caption">
+      <p class="border">
+        Cuando finalicen las descargas, cada país descargado tendrá el
+		correspondiente icono, como muestra la captura de pantalla. Puedes
+		salir y volver al gestor de mapas en cualquier momento. Si la
+		descarga falla, cierra el mensaje de error e inténtalo de nuevo.
+      </p>
+      <p class="border"><a href="index.html">Volver a la página principal</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
