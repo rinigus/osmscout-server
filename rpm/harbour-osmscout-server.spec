@@ -22,19 +22,25 @@ License:    LGPL
 URL:        https://github.com/rinigus/osmscout-server
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-osmscout-server.yaml
+Source101:  harbour-osmscout-server-rpmlintrc
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Xml)
+BuildRequires:  pkgconfig(Qt5Sql)
+BuildRequires:  pkgconfig(sqlite3)
+BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  libmarisa-devel
 BuildRequires:  libmicrohttpd-devel
 BuildRequires:  libosmscout-qt-devel
 BuildRequires:  libpostal-devel
 BuildRequires:  snappy-devel
-BuildRequires:  sqlite-devel
 BuildRequires:  libkyotocabinet-devel
-BuildRequires:  libcurl-devel
+BuildRequires:  mapnik-devel
+BuildRequires:  libicu52-devel
+BuildRequires:  qt5-qttools-linguist
 BuildRequires:  desktop-file-utils
 
 %description

@@ -23,6 +23,7 @@ Page {
                               "Oleg Artobolevsky @XOleg: Russian<br>" +
                               "A @atlochowski: Polish<br>" +
                               "Peer-Atle Motland @Pam: Norwegian Bokmål<br>" +
+                              "Matti Lehtimäki @mal: Finnish<br>" +
 
                               "<br><b>" + qsTr("Maps") + "</b><br>" +
                               "<p>" +

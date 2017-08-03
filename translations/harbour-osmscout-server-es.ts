@@ -6,70 +6,70 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>El servidor debe utilizarse junto al programa cliente capaz de mostrar los mapas, hacer las búsquedas y mostrar las rutas seleccionadas. El servidor es una capa fina que presenta la funcionalidad de &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; y &lt;i&gt;geocoder-nlp&lt;/i&gt; a través de http. Este servidor se puede utilizar en lugar de los servicios de mapas en línea.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
         <source>Copyright:</source>
-        <translation>Derechos de autor:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>License: LGPL</source>
-        <translation>Licencia: LGPL</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation>Traducciones</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="27"/>
+        <location filename="../qml/pages/AboutPage.qml" line="28"/>
         <source>Maps</source>
-        <translation>Mapas</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="29"/>
+        <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation>Los mapas están alojados en el Centro de Procesamiento de Lenguajes Naturales (Facultad de Informática, Universidad Masaryk, Brno, República Checa) a través del repositorio de datos de modRana.org.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="34"/>
+        <location filename="../qml/pages/AboutPage.qml" line="35"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation>Los datos de mapa proceden de OpenStreetMap, Licencia Abierta de Base de Datos 1.0. Los mapas se convierten a un formato adecuado desde los extractos descargados y/o usando polígonos conforme a lo dispuesto por Geofabrik GmbH.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="38"/>
+        <location filename="../qml/pages/AboutPage.qml" line="39"/>
         <source>Libpostal</source>
-        <translation>Libpostal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="40"/>
+        <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Por favor, ten en cuenta que &lt;i&gt;libpostal&lt;/i&gt; se ha desarrollado para ajustarse bien en el modelo que cubre todo el mundo. Los modelos basados ​​en países fueron desarrollados para usar &lt;i&gt;libpostal&lt;/i&gt; en dispositivos móviles pero no se ajustan especificamente a estos dispositivos. Por favor, informa de las incidencias sobre el rendimiento de libpostal en los modelos basados ​​en países a través de github, en los proyectos &lt;i&gt;OSM Scout Server&lt;/i&gt; o &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="47"/>
+        <location filename="../qml/pages/AboutPage.qml" line="48"/>
         <source>Acknowledgments</source>
-        <translation>Agradecimientos</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="75"/>
+        <location filename="../qml/pages/AboutPage.qml" line="76"/>
         <source>About</source>
-        <translation>Acerca de</translation>
+        <translation type="unfinished">Acerca de</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="79"/>
+        <location filename="../qml/pages/AboutPage.qml" line="80"/>
         <source>version</source>
-        <translation>versión</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="85"/>
+        <location filename="../qml/pages/AboutPage.qml" line="86"/>
         <source>is a server that provides offline map services</source>
-        <translation>es un servidor que proporciona un servicio de mapas sin conexión</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="92"/>
+        <location filename="../qml/pages/AboutPage.qml" line="93"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1441,7 +1441,7 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="62"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>El perfil &lt;i&gt;por defecto&lt;/i&gt; usa &lt;i&gt;Mapnik&lt;/i&gt; para reproducir los mapas, &lt;i&gt;Geocoder-NLP&lt;/i&gt; para buscar localizaciones, y &lt;i&gt;Valhalla&lt;/i&gt; para calcular rutas. Este es el perfil recomendado.&lt;br&gt;&lt;br&gt;El perfil que combina &lt;i&gt;libosmscout&lt;/i&gt; con &lt;i&gt;Geocoder-NLP&lt;/i&gt; requiere un almacenamiento inferior si se  compara con el perfil por defecto. Sin embargo, el renderizado de mapas y el cálculo de rutas estaría limitado a un único territorio. Además, la calidad del renderizado es inferior y el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;El perfil &lt;i&gt;libosmscout&lt;/i&gt; es el perfil que requiere un menor almacenamiento entre todos los perfiles. Sin embargo, el renderizado de mapas, las búsquedas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del renderizado y de las búsquedas es inferior, y el tiempo en el cálculo de rutas es superior si lo comparamos con el perfil por defecto.&lt;br&gt;&lt;br&gt;Si usas el perfil &lt;i&gt;Personalizado&lt;/i&gt;, los ajustes y el gestor de mapas no estarán configurados y el usuario debe ajustarlos. Este perfil permite seleccionar el renderizado, búsquedas y cálculo de rutas de manera individual. Ten en cuenta que el usuario es responsable de establecer los ajustes y de que éstos sean coherentes con los requerimientos del uso de backends y el almacenamiento.</translation>
+        <translation>El perfil &lt;i&gt;Por defecto&lt;/i&gt; usa &lt;i&gt;Mapnik&lt;/i&gt; para reproducir los mapas, &lt;i&gt;Geocoder-NLP&lt;/i&gt; para buscar localizaciones, y &lt;i&gt;Valhalla&lt;/i&gt; para calcular rutas. Este es el perfil recomendado.&lt;br&gt;&lt;br&gt;El perfil que combina &lt;i&gt;libosmscout&lt;/i&gt; con &lt;i&gt;Geocoder-NLP&lt;/i&gt; requiere un almacenamiento inferior si se  compara con el perfil por defecto. Sin embargo, el renderizado de mapas y el cálculo de rutas estaría limitado a un único territorio. Además, la calidad del renderizado es inferior y el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;El perfil &lt;i&gt;libosmscout&lt;/i&gt; es el perfil que requiere un menor almacenamiento entre todos los perfiles. Sin embargo, el renderizado de mapas, las búsquedas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del renderizado y de las búsquedas es inferior, y el tiempo en el cálculo de rutas es superior si lo comparamos con el perfil por defecto.&lt;br&gt;&lt;br&gt;Si usas el perfil &lt;i&gt;Personalizado&lt;/i&gt;, los ajustes y el gestor de mapas no estarán configurados y el usuario debe ajustarlos. Este perfil permite seleccionar el renderizado, búsquedas y cálculo de rutas de manera individual. Ten en cuenta que el usuario es responsable de establecer los ajustes y de que éstos sean coherentes con los requerimientos del uso de backends y el almacenamiento.</translation>
     </message>
 </context>
 <context>
