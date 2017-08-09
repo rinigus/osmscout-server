@@ -16,17 +16,17 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>License: LGPL</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence: LGPL</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Překlady</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="28"/>
         <source>Maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapy</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="30"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="39"/>
         <source>Libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Libpostal</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="41"/>
@@ -51,22 +51,22 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="48"/>
         <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
+        <translation>Poděkování</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="76"/>
         <source>About</source>
-        <translation type="unfinished">O programu</translation>
+        <translation>O programu</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="80"/>
         <source>version</source>
-        <translation type="unfinished"></translation>
+        <translation>verze</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="86"/>
         <source>is a server that provides offline map services</source>
-        <translation type="unfinished"></translation>
+        <translation>je server poskytující offline mapové služby</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="93"/>

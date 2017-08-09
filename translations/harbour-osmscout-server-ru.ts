@@ -6,72 +6,72 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервер должен использоваться с программой-клиентом, способной отображать карты, поисковые запросы и выбранные маршруты. Сервер это тонкий слой, показывающий функциональность &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; и &lt;i&gt;geocoder-nlp&lt;/i&gt; через http. Этот сервер может быть использован как прямая замена для онлайновых картографических сервисов.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
         <source>Copyright:</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright:</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>License: LGPL</source>
-        <translation type="unfinished"></translation>
+        <translation>Лицензия: LGPL</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Переводы</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="28"/>
         <source>Maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Карты</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation type="unfinished"></translation>
+        <translation>Карты размещены Центром Обработки Естественного Языка(факультет Информатики Масарикова Университета, Брно, Чешская Республика) в репозиториях modRana.org</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="35"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Картографические данные из OpenStreetMap,Open Database License 1.0. Карты преобразованы в необходимый формат из загруженных архивов и/или полигонов, предоставленных Geofabrik GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="39"/>
         <source>Libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Libpostal</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста отметьте, что &lt;i&gt;libpostal&lt;/i&gt; разрабатывается для использования с тонко настроенной моделью покрывающей планету. Модели на основе стран были разработаны для использования &lt;i&gt;libpostal&lt;/i&gt; на мобильных устройствах и не были специально настроены. Пожалуйста отправляйте вопросы по работоспособности &lt;i&gt;libpostal&lt;/i&gt; для моделей, основанных на странах, на github-проекты &lt;i&gt;OSM Scout Server&lt;/i&gt; или &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="48"/>
         <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
+        <translation>Благодарность</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="76"/>
         <source>About</source>
-        <translation type="unfinished">О программе</translation>
+        <translation>О программе</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="80"/>
         <source>version</source>
-        <translation type="unfinished"></translation>
+        <translation>версия</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="86"/>
         <source>is a server that provides offline map services</source>
-        <translation type="unfinished"></translation>
+        <translation>это сервер, предоставляющий автономные картографические сервисы</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="93"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Доступно Руководство пользователя &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;онлайн&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
