@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Aug 9 2017 rinigus <rinigus.git@gmail.com> 1.0.0-1
+- Updated translations
+
 * Fri Jul 21 2017 rinigus <rinigus.git@gmail.com> 0.15.0-1
 - Revert to older libosmscout
 - Updated translations
