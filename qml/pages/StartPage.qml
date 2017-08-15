@@ -194,7 +194,7 @@ Page {
                     target: manager
                     onSubscriptionChanged: noSubscriptions.checkVisible()
                     onStorageAvailableChanged: noSubscriptions.checkVisible()
-                    onAvailibilityChanged: noSubscriptions.checkVisible()
+                    onAvailabilityChanged: noSubscriptions.checkVisible()
                 }
             }
 
@@ -240,7 +240,7 @@ Page {
                     onSubscriptionChanged: noMapsAvailable.checkVisible()
                     onDownloadingChanged: noMapsAvailable.checkVisible()
                     onReadyChanged: noMapsAvailable.checkVisible()
-                    onAvailibilityChanged: noMapsAvailable.checkVisible()
+                    onAvailabilityChanged: noMapsAvailable.checkVisible()
                 }
             }
 
@@ -322,7 +322,7 @@ Page {
 
                 Connections {
                     target: manager
-                    onAvailibilityChanged: mapSelection.updateData()
+                    onAvailabilityChanged: mapSelection.updateData()
                 }
             }
 
@@ -430,7 +430,7 @@ Page {
 
                     Label {
                         text: qsTr("OSM Scout Server is a part of the solution allowing you to have offline maps on device. " +
-                                   "With this server, you could dowload the maps to your device and use the " +
+                                   "With this server, you could download the maps to your device and use the " +
                                    "downloaded data to locally render maps, search for addresses and POIs, and " +
                                    "calculate the routes. Such operations requires server and an additional client " +
                                    "accessing the server to run simultaneously on the device.<br><br>" +

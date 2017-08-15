@@ -95,7 +95,7 @@ Page {
             }
 
             SectionHeader {
-                text: qsTr("Availibility on device")
+                text: qsTr("Availability on device")
             }
 
             Label {
@@ -265,7 +265,7 @@ Page {
             fillData()
             checkSubs()
         }
-        onAvailibilityChanged: {
+        onAvailabilityChanged: {
             fillData()
             checkSubs()
         }

@@ -124,7 +124,7 @@
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="98"/>
-        <source>Availibility on device</source>
+        <source>Availability on device</source>
         <translation>Saatavuus laitteella</translation>
     </message>
     <message>
@@ -509,7 +509,7 @@
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
-        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponoding objects on a map.</source>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
         <translation>Geokooderi vastaa hakujen tulkinnasta. Se tulkitsee hakutekstin ja etsii vastaavat paikat kartalla.</translation>
     </message>
     <message>
@@ -1735,7 +1735,7 @@
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="143"/>
-        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Geokooderi vastaa hakujen tulkinnasta. Se tulkitsee hakutekstin ja etsii vastaavat paikat kartalla. Tämä palvelin antaa sinun valita kahden geokooderi taustapalvelun väliltä: &lt;i&gt;geocoder-nlp&lt;/i&gt; ja &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
@@ -1850,7 +1850,7 @@
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="324"/>
-        <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
+        <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Kun vallittu, viestit tallennetaan istuntolokiin. Lokitiedosto sijaitsee cache/harbour-osmscout-server -hakemistossa. Käytä tätä asetusta vain virheenkorjaustarkoituksiin. Kun tämä asetus on aktivoitu, info-viestit tallennetaan riippumatta ylempänä olevista asetuksista. Tämä mahdollistaa täyden lokin aktivoinnin tilapäisesti ja deaktivoinnin tarvittavan istuntolokin luomisen jälkeen.</translation>
     </message>
 </context>
@@ -1991,7 +1991,7 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="432"/>
-        <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
+        <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation>OSM Scout Server on osa ratkaisua, joka mahdollistaa offline-kartat laitteella. Tällä palvelimella voit ladata kartat laitteellesi ja käyttää ladattuja tietoja karttojen piirtoon, osoitteiden ja POI-pisteiden hakuun ja reittien laskentaan paikallisesti. Tällaiset operaatiot vaativat palvelimen ja erillisen palvelinta käyttävän asiakasohjelman ajamisen samanaikaisesti laitteella.&lt;br&gt;&lt;br&gt;Tämä avustaja auttaa sinua valitsemaan palvelimen käyttämät taustapalvelut ja määrittämään hakutermien käsittelyssä käytetyt kielet.&lt;br&gt;&lt;br&gt;Valitse &apos;Seuraava&apos; aloittaaksesi asetusten määrityksen.</translation>
     </message>
 </context>

@@ -49,8 +49,8 @@ Manager::Manager(QObject *parent) : QObject(parent)
       }
 
   for (Feature *p: m_features)
-    connect(p, &Feature::availibilityChanged,
-            this, &Manager::onAvailibilityChanged);
+    connect(p, &Feature::availabilityChanged,
+            this, &Manager::onAvailabilityChanged);
 
   connect(this, &Manager::downloadingChanged,
           this, &Manager::checkIfReady);
@@ -237,7 +237,7 @@ void Manager::nothingAvailable()
   updateMapnik();
   updateValhalla();
 
-  emit availibilityChanged();
+  emit availabilityChanged();
   emit missingChanged(m_missing);
   emit selectedMapChanged(m_map_selected);
 }
@@ -282,7 +282,7 @@ void Manager::checkStorageAvailable()
   emit storageAvailableChanged(m_storage_available);
 }
 
-void Manager::onAvailibilityChanged()
+void Manager::onAvailabilityChanged()
 {
   scanDirectories();
 }
@@ -399,7 +399,7 @@ void Manager::scanDirectories(bool force_update)
       updateMapnik();
       updateValhalla();
 
-      emit availibilityChanged();
+      emit availabilityChanged();
       emit selectedMapChanged(m_map_selected);
     }
 }
