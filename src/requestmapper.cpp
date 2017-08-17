@@ -283,8 +283,10 @@ unsigned int RequestMapper::service(const char *url_c,
 
       // ensure that x and y comply with the limits
       int zs = 1 << z;
-      x = x % zs;
-      y = y % zs;
+      if (x > 0) x = x % zs;
+      else if (x < 0) x = ( x + (-x/zs + 1)*zs ) % zs;
+      if (y > 0) y = y % zs;
+      else if (y < 0) y = ( y + (-y/zs + 1)*zs ) % zs;
 
 #ifdef USE_MAPNIK
       if ( useMapnik )
