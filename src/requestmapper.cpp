@@ -72,12 +72,14 @@ RequestMapper::~RequestMapper()
 
 static double tilex2long(int x, int z)
 {
-  return x / pow(2.0, z) * 360.0 - 180;
+  double zs = 1 << z;
+  return x / (zs) * 360.0 - 180;
 }
 
 static double tiley2lat(int y, int z)
 {
-  double n = M_PI - 2.0 * M_PI * y / pow(2.0, z);
+  double zs = 1 << z;
+  double n = M_PI - 2.0 * M_PI * y / (zs);
   return 180.0 / M_PI * atan(0.5 * (exp(n) - exp(-n)));
 }
 
@@ -278,6 +280,11 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       Task *task = nullptr;
+
+      // ensure that x and y comply with the limits
+      int zs = 1 << z;
+      x = x % zs;
+      y = y % zs;
 
 #ifdef USE_MAPNIK
       if ( useMapnik )
