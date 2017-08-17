@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Aug 17 2017 rinigus <rinigus.git@gmail.com> 1.0.2-1
+- Normalize tile indexes if requested out of range
+
 * Wed Aug 16 2017 rinigus <rinigus.git@gmail.com> 1.0.1-1
 - Updated Finnish translation
 - Fix typos
