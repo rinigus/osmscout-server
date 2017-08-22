@@ -51,6 +51,7 @@
 #include <QDebug>
 
 #include <iostream>
+#include <csignal>
 
 #ifdef USE_CURL
 #include <curl/curl.h>
@@ -365,6 +366,9 @@ int main(int argc, char *argv[])
     }
 
 #endif
+
+  // register singlar handler
+  signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });
 
   return app->exec();
 }
