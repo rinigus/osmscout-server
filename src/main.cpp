@@ -280,21 +280,6 @@ int main(int argc, char *argv[])
     }
 #endif
 
-  // setup HTTP server
-  settings.beginGroup("http-listener");
-  int port = settings.valueInt("port");
-  QString host = settings.valueString("host");
-  settings.endGroup();
-
-  RequestMapper requests;
-  MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str() );
-
-  if ( !http_server )
-    {
-      std::cerr << "Failed to start HTTP server" << std::endl;
-      return -2;
-    }
-
 #ifdef IS_SAILFISH_OS  
   if (v)
     {
@@ -408,5 +393,27 @@ int main(int argc, char *argv[])
   // register singlar handler
   signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });
 
-  return app->exec();
+  int return_code = 0;
+
+  {
+    // setup HTTP server
+    settings.beginGroup("http-listener");
+    int port = settings.valueInt("port");
+    QString host = settings.valueString("host");
+    settings.endGroup();
+
+    // start HTTP server
+    RequestMapper requests;
+    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str() );
+
+    if ( !http_server )
+      {
+        std::cerr << "Failed to start HTTP server" << std::endl;
+        return -2;
+      }
+
+    return_code = app->exec();
+  }
+
+  return return_code;
 }
