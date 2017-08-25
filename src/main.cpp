@@ -45,6 +45,8 @@
 #include "infohub.h"
 #include "modulechecker.h"
 
+#include "systemdservice.h"
+
 #include <QTranslator>
 #include <QCommandLineParser>
 
@@ -134,6 +136,10 @@ int main(int argc, char *argv[])
                                    QCoreApplication::translate("main", "Do not output logs when running in console mode"));
   parser.addOption(optionQuiet);
 
+  QCommandLineOption optionSystemD(QStringList() << "systemd",
+                                   QCoreApplication::translate("main", "Run the server in SystemD socket-activated mode"));
+  parser.addOption(optionSystemD);
+
   QCommandLineOption optionDownload(QStringList() << "d" << "download",
                                     QCoreApplication::translate("main", "Start download of the maps"));
   parser.addOption(optionDownload);
@@ -206,6 +212,9 @@ int main(int argc, char *argv[])
   // setup Map Manager
   MapManager::Manager manager(app.data());
 
+  // enable systemd interaction
+  SystemDService systemd_service;
+
 #ifdef IS_SAILFISH_OS
   if (rolling_logger) rolling_logger->onSettingsChanged();
 
@@ -234,6 +243,7 @@ int main(int argc, char *argv[])
       if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
       rootContext->setContextProperty("manager", &manager);
       rootContext->setContextProperty("modules", &modules);
+      rootContext->setContextProperty("systemd_service", &systemd_service);
     }
 #endif
 
@@ -395,6 +405,9 @@ int main(int argc, char *argv[])
 
   int return_code = 0;
 
+  if (!parser.isSet(optionSystemD))
+    systemd_service.stop();
+
   {
     // setup HTTP server
     settings.beginGroup("http-listener");
@@ -414,6 +427,10 @@ int main(int argc, char *argv[])
 
     return_code = app->exec();
   }
+
+  // if the service is enabled, start it after we leave the server
+  if (systemd_service.enabled())
+    systemd_service.start();
 
   return return_code;
 }
