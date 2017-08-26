@@ -46,6 +46,7 @@
 #include "modulechecker.h"
 
 #include "systemdservice.h"
+#include "util.hpp"
 
 #include <QTranslator>
 #include <QCommandLineParser>
@@ -206,14 +207,31 @@ int main(int argc, char *argv[])
 
   infoHub.onSettingsChanged();
 
+  // enable systemd interaction
+  SystemDService systemd_service;
+
+  // stop systemD service and socket if running as a separate application
+  if (!parser.isSet(optionSystemD))
+    systemd_service.stop();
+
+  // wait till the used ports are freed. here, the timeout is used internally in
+  // the used wait function
+  {
+    int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
+    int valhalla_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
+
+    if (!wait_till_port_is_free(http_port))
+      std::cerr << "Port " << http_port << " is occupied\n";
+
+    if (!wait_till_port_is_free(valhalla_port))
+      std::cerr << "Port " << valhalla_port << " is occupied\n";
+  }
+
   // check installed modules
   ModuleChecker modules;
 
   // setup Map Manager
   MapManager::Manager manager(app.data());
-
-  // enable systemd interaction
-  SystemDService systemd_service;
 
 #ifdef IS_SAILFISH_OS
   if (rolling_logger) rolling_logger->onSettingsChanged();
@@ -405,15 +423,10 @@ int main(int argc, char *argv[])
 
   int return_code = 0;
 
-  if (!parser.isSet(optionSystemD))
-    systemd_service.stop();
-
   {
     // setup HTTP server
-    settings.beginGroup("http-listener");
-    int port = settings.valueInt("port");
-    QString host = settings.valueString("host");
-    settings.endGroup();
+    int port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
+    QString host = settings.valueString(HTTP_SERVER_SETTINGS "host");
 
     // start HTTP server
     RequestMapper requests;

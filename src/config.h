@@ -16,6 +16,8 @@
 
 #define VALHALLA_MASTER_SETTINGS "valhalla/"
 
+#define HTTP_SERVER_SETTINGS "http-listener/"
+
 //////////////////////////////////////////////
 /// global variables
 

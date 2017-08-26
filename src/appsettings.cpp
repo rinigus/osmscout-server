@@ -29,11 +29,9 @@ AppSettings::AppSettings():
 void AppSettings::initDefaults()
 {
   // defaults for server
-  beginGroup("http-listener");
-  CHECK("host", "127.0.0.1");
-  CHECK("port", 8553);
+  CHECK(HTTP_SERVER_SETTINGS "host", "127.0.0.1");
+  CHECK(HTTP_SERVER_SETTINGS "port", 8553);
   //CHECK("maxThreads", QThread::idealThreadCount() + 2);
-  endGroup();
 
   /////////////////////////////////////////
   /// general settings

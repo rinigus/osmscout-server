@@ -61,7 +61,8 @@ SOURCES += src/dbmaster.cpp \
     src/valhallamaster.cpp \
     src/mapmanager_deleterthread.cpp \
     src/modulechecker.cpp \
-    src/systemdservice.cpp
+    src/systemdservice.cpp \
+    src/util.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
@@ -87,7 +88,8 @@ HEADERS += \
     src/valhallamaster.h \
     src/mapmanager_deleterthread.h \
     src/modulechecker.h \
-    src/systemdservice.h
+    src/systemdservice.h \
+    src/util.hpp
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
