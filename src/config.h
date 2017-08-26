@@ -1,6 +1,13 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#ifdef IS_CONSOLE_QT
+#define APP_PREFIX ""
+#endif
+#ifdef IS_SAILFISH_OS
+#define APP_PREFIX "harbour-"
+#endif
+
 // global configuration settings
 
 #define GENERAL_SETTINGS "server-general/"

@@ -15,8 +15,6 @@
 #include <QGuiApplication>
 #endif
 
-#define APP_PREFIX ""
-
 #endif // of IS_CONSOLE_QT
 
 #include "consolelogger.h"
@@ -25,7 +23,6 @@
 #include <sailfishapp.h>
 #include <QtQuick>
 #include <QtQml>
-#define APP_PREFIX "harbour-"
 
 #include "rollinglogger.h"
 #include "filemodel.h"
