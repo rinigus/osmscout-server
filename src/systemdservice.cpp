@@ -55,7 +55,7 @@ void SystemDService::action_helper(const QString &action, const QString &ext)
 void SystemDService::stop()
 {
   action_helper("stop", ".socket");
-  action_helper("stop", ".service");
+  action_helper("stop", "");
 }
 
 void SystemDService::start()

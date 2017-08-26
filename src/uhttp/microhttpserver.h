@@ -31,11 +31,11 @@ public:
     /// \param service object providing service to connections
     /// \param port server listening on the port
     /// \param address server binding to this interface given in x.x.x.x form. If NULL, server binds to all interfaces
-    /// \param parent
+    /// \param systemd set to true if systemd socket is supposed to be used
     ///
     explicit Server(ServiceBase *service,
                     unsigned int port,
-                    const char *address);
+                    const char *address, bool systemd = false);
     virtual ~Server();
 
     operator bool() const { return m_state; }

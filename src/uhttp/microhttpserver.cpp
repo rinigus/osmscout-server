@@ -13,6 +13,7 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
+#include <systemd/sd-daemon.h>
 
 //#define DEBUG_CONNECTIONS
 
@@ -21,48 +22,48 @@
 
 static void content_reader_free_callback(void *cls)
 {
-    MicroHTTP::Connection::keytype key = (MicroHTTP::Connection::keytype)cls;
-    MicroHTTP::ConnectionStore::serverDone(key);
+  MicroHTTP::Connection::keytype key = (MicroHTTP::Connection::keytype)cls;
+  MicroHTTP::ConnectionStore::serverDone(key);
 
 #ifdef DEBUG_CONNECTIONS
-    std::cout << "Finished: " << (size_t)key << std::endl;
+  std::cout << "Finished: " << (size_t)key << std::endl;
 #endif
 }
 
 static ssize_t content_reader_callback (void *cls, uint64_t pos, char *buf, size_t max)
 {
-    MicroHTTP::Connection::keytype key = (MicroHTTP::Connection::keytype)cls;
-    MicroHTTP::Server *server;
-    MHD_Connection *connection;
+  MicroHTTP::Connection::keytype key = (MicroHTTP::Connection::keytype)cls;
+  MicroHTTP::Server *server;
+  MHD_Connection *connection;
 
-    MicroHTTP::Connection::State state = MicroHTTP::ConnectionStore::state(key, server, connection);
+  MicroHTTP::Connection::State state = MicroHTTP::ConnectionStore::state(key, server, connection);
 
 #ifdef DEBUG_CONNECTIONS
-    std::cout << "Content reader: " << (size_t)key << " " << state << std::endl;
+  std::cout << "Content reader: " << (size_t)key << " " << state << std::endl;
 #endif
 
-    if (server == NULL || state == MicroHTTP::Connection::NoInstance || !(*server))
-        return MHD_CONTENT_READER_END_WITH_ERROR;
+  if (server == NULL || state == MicroHTTP::Connection::NoInstance || !(*server))
+    return MHD_CONTENT_READER_END_WITH_ERROR;
 
-    if ( state == MicroHTTP::Connection::Wait )
+  if ( state == MicroHTTP::Connection::Wait )
     {
-        server->suspend(connection);
-        return 0;
+      server->suspend(connection);
+      return 0;
     }
 
-    QByteArray data;
-    if ( !MicroHTTP::ConnectionStore::dataToSend(key, data) )
-        return MHD_CONTENT_READER_END_WITH_ERROR;
+  QByteArray data;
+  if ( !MicroHTTP::ConnectionStore::dataToSend(key, data) )
+    return MHD_CONTENT_READER_END_WITH_ERROR;
 
-    if (pos >= (size_t)data.size())
-        return MHD_CONTENT_READER_END_OF_STREAM;
+  if (pos >= (size_t)data.size())
+    return MHD_CONTENT_READER_END_OF_STREAM;
 
-    size_t p = (size_t)pos;
-    size_t tosend = std::min(max, data.size() - p);
+  size_t p = (size_t)pos;
+  size_t tosend = std::min(max, data.size() - p);
 
-    memcpy(buf, data.constData() + pos, tosend);
+  memcpy(buf, data.constData() + pos, tosend);
 
-    return tosend;
+  return tosend;
 }
 
 static int answer_to_connection (void *cls, struct MHD_Connection *connection,
@@ -70,45 +71,45 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
                                  const char */*version*/, const char */*upload_data*/,
                                  size_t */*upload_data_size*/, void **/*con_cls*/)
 {
-    //std::cout << "answer:" << url << " / " << method << " / version " << version  << std::endl;
+  //std::cout << "answer:" << url << " / " << method << " / version " << version  << std::endl;
 
-    if (strcmp("GET", method))
+  if (strcmp("GET", method))
     {
-        //std::cout << method << " -> not GET" << std::endl;
-        return MHD_NO;
+      //std::cout << method << " -> not GET" << std::endl;
+      return MHD_NO;
     }
 
-    struct MHD_Response *response;
-    MicroHTTP::Server *server = (MicroHTTP::Server*)cls;
-    MicroHTTP::Connection::keytype
-            connection_id = MicroHTTP::ConnectionStore::next(server, connection);
+  struct MHD_Response *response;
+  MicroHTTP::Server *server = (MicroHTTP::Server*)cls;
+  MicroHTTP::Connection::keytype
+      connection_id = MicroHTTP::ConnectionStore::next(server, connection);
 
-    int ret;
+  int ret;
 
-    response =
-            MHD_create_response_from_callback(-1, 1024*1024,
-                                              content_reader_callback,
-                                              connection_id,
-                                              content_reader_free_callback);
+  response =
+      MHD_create_response_from_callback(-1, 1024*1024,
+                                        content_reader_callback,
+                                        connection_id,
+                                        content_reader_free_callback);
 
-    unsigned int status_code =
-            server->service()->service(url, connection, response, connection_id);
+  unsigned int status_code =
+      server->service()->service(url, connection, response, connection_id);
 
-    ret = MHD_queue_response (connection, status_code, response);
-    MHD_destroy_response (response);
+  ret = MHD_queue_response (connection, status_code, response);
+  MHD_destroy_response (response);
 
 #ifdef DEBUG_CONNECTIONS
-    std::cout << "Started: " << (size_t)connection_id << std::endl;
+  std::cout << "Started: " << (size_t)connection_id << std::endl;
 #endif
 
-    return ret;
+  return ret;
 }
 
 void* uri_logger(void * cls, const char * uri, struct MHD_Connection */*con*/)
 {
-    MicroHTTP::Server *server = (MicroHTTP::Server*)cls;
-    server->service()->loguri(uri);
-    return NULL;
+  MicroHTTP::Server *server = (MicroHTTP::Server*)cls;
+  server->service()->loguri(uri);
+  return NULL;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -116,118 +117,142 @@ void* uri_logger(void * cls, const char * uri, struct MHD_Connection */*con*/)
 ///
 
 MicroHTTP::Server::Server(ServiceBase *service,
-                          unsigned int port, const char *addrstring) :
-    #ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
-    QObject(),
-    #endif
-    m_service(service)
+                          unsigned int port, const char *addrstring, bool systemd) :
+  #ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
+  QObject(),
+  #endif
+  m_service(service)
 {
-    // Listen on specified address only
-    struct sockaddr_in server_address;
+  // Listen on specified address only
+  if (!systemd)
+    { // regular application
+      struct sockaddr_in server_address;
 
-    memset (&server_address, 0, sizeof(server_address));
-    server_address.sin_family = AF_INET;
-    server_address.sin_port = htons(port);
+      memset (&server_address, 0, sizeof(server_address));
+      server_address.sin_family = AF_INET;
+      server_address.sin_port = htons(port);
 
-    if (addrstring == NULL) server_address.sin_addr.s_addr = htonl(INADDR_ANY);
-    else
-    {
-        if ( inet_aton(addrstring, &server_address.sin_addr ) == 0 )
+      if (addrstring == NULL) server_address.sin_addr.s_addr = htonl(INADDR_ANY);
+      else
         {
-            std::cerr << "Wrong interface address: " << addrstring << std::endl;
-            m_state = false;
-            return;
+          if ( inet_aton(addrstring, &server_address.sin_addr ) == 0 )
+            {
+              std::cerr << "Wrong interface address: " << addrstring << std::endl;
+              m_state = false;
+              return;
+            }
+        }
+
+      m_daemon = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY | MHD_USE_SUSPEND_RESUME,
+                                   port /*ignored since its in SOCK_ADDR OPTION*/,
+                                   NULL, NULL,
+                                   answer_to_connection, this,
+                                   MHD_OPTION_SOCK_ADDR, &server_address,
+                                   MHD_OPTION_CONNECTION_LIMIT, 100,
+                                   MHD_OPTION_CONNECTION_TIMEOUT, 600, // seconds
+                                   //MHD_OPTION_NOTIFY_COMPLETED, request_completed, this,
+                                   MHD_OPTION_URI_LOG_CALLBACK, uri_logger, this,
+                                   MHD_OPTION_END);
+    }
+  else
+    { // systemd service
+      if (sd_listen_fds(0) != 1)
+        {
+          std::cerr << "Number of SystemD-provided file descriptors is different from one\n";
+        }
+      else
+        {
+          int fd = SD_LISTEN_FDS_START + 0;
+
+          m_daemon = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY | MHD_USE_SUSPEND_RESUME | MHD_USE_ITC,
+                                       port /*ignored since its in SOCK_ADDR OPTION*/,
+                                       NULL, NULL,
+                                       answer_to_connection, this,
+                                       MHD_OPTION_LISTEN_SOCKET, fd,
+                                       MHD_OPTION_CONNECTION_LIMIT, 100,
+                                       MHD_OPTION_CONNECTION_TIMEOUT, 600, // seconds
+                                       MHD_OPTION_URI_LOG_CALLBACK, uri_logger, this,
+                                       MHD_OPTION_END);
         }
     }
-
-    m_daemon = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY | MHD_USE_SUSPEND_RESUME,
-                                 port /*ignered since its in SOCK_ADDR OPTION*/,
-                                 NULL, NULL,
-                                 answer_to_connection, this,
-                                 MHD_OPTION_SOCK_ADDR, &server_address,
-                                 MHD_OPTION_CONNECTION_LIMIT, 100,
-                                 MHD_OPTION_CONNECTION_TIMEOUT, 600, // seconds
-                                 //MHD_OPTION_NOTIFY_COMPLETED, request_completed, this,
-                                 MHD_OPTION_URI_LOG_CALLBACK, uri_logger, this,
-                                 MHD_OPTION_END);
-    if (m_daemon == NULL)
+  if (m_daemon == NULL)
     {
-        m_state = false;
-        return;
+      m_state = false;
+      return;
     }
 
 #ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
-    startTimer(15000);
+  startTimer(15000);
 #endif
 }
 
 MicroHTTP::Server::~Server()
 {
-    std::lock_guard<std::mutex> _lk(m_mutex);
+  std::lock_guard<std::mutex> _lk(m_mutex);
 
-    m_state = false; // indicates that we are going to shutdown
-    for (MHD_Connection *conn: m_connections_sleeping)
-        MHD_resume_connection(conn);
-    m_connections_sleeping.clear();
+  m_state = false; // indicates that we are going to shutdown
+  for (MHD_Connection *conn: m_connections_sleeping)
+    MHD_resume_connection(conn);
+  m_connections_sleeping.clear();
 
-    MHD_stop_daemon (m_daemon);
+  MHD_stop_daemon (m_daemon);
 }
 
 void MicroHTTP::Server::cleanup()
 {
-    std::lock_guard<std::mutex> _lk(m_mutex);
+  std::lock_guard<std::mutex> _lk(m_mutex);
 
-    if (!m_state) return;
+  if (!m_state) return;
 
-    for (MHD_Connection *conn: m_connections_sleeping)
+  for (MHD_Connection *conn: m_connections_sleeping)
     {
-        MHD_resume_connection(conn);
+      MHD_resume_connection(conn);
 #ifdef DEBUG_CONNECTIONS
-        std::cout << "Resume by timer: " << (size_t)conn << std::endl;
+      std::cout << "Resume by timer: " << (size_t)conn << std::endl;
 #endif
     }
-    m_connections_sleeping.clear();
+  m_connections_sleeping.clear();
 }
 
 
 #ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
 void MicroHTTP::Server::timerEvent(QTimerEvent */*event*/)
 {
-    cleanup();
+  cleanup();
 }
 #endif
 
 
 void MicroHTTP::Server::suspend(MHD_Connection *conn)
 {
-    std::lock_guard<std::mutex> _lk(m_mutex);
+  std::lock_guard<std::mutex> _lk(m_mutex);
 
-    if (!m_state) return;
+  if (!m_state) return;
 
-    MHD_suspend_connection(conn);
-    m_connections_sleeping.insert(conn);
+  MHD_suspend_connection(conn);
+  m_connections_sleeping.insert(conn);
 
 #ifdef DEBUG_CONNECTIONS
-    std::cout << "Suspend: " << (size_t)conn << std::endl;
+  std::cout << "Suspend: " << (size_t)conn << std::endl;
 #endif
 }
 
 void MicroHTTP::Server::resume(MHD_Connection *conn)
 {
-    std::lock_guard<std::mutex> _lk(m_mutex);
+  std::lock_guard<std::mutex> _lk(m_mutex);
 
 
 #ifdef DEBUG_CONNECTIONS
-    std::cout << "Called to resume: " << (size_t)conn << std::endl;
+  std::cout << "Called to resume: " << (size_t)conn << std::endl;
 #endif
 
-    if (!m_state || m_connections_sleeping.count(conn) == 0) return;
+  if (!m_state || m_connections_sleeping.count(conn) == 0) return;
 
-    MHD_resume_connection(conn);
+  MHD_resume_connection(conn);
 
 #ifdef DEBUG_CONNECTIONS
-    std::cout << "Resumed: " << (size_t)conn << std::endl;
+  std::cout << "Resumed: " << (size_t)conn << std::endl;
 #endif
 
-    m_connections_sleeping.erase(conn);
+  m_connections_sleeping.erase(conn);
 }

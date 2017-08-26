@@ -125,6 +125,10 @@ use_curl {
     PKGCONFIG += libcurl
 }
 
+# systemd support
+CONFIG += link_pkgconfig
+PKGCONFIG += libsystemd
+
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -lsqlite3
 
 QMAKE_CXXFLAGS += -fopenmp

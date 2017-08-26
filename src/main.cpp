@@ -134,7 +134,7 @@ int main(int argc, char *argv[])
   parser.addOption(optionConsole);
 
   QCommandLineOption optionQuiet(QStringList() << "quiet",
-                                   QCoreApplication::translate("main", "Do not output logs when running in console mode"));
+                                 QCoreApplication::translate("main", "Do not output logs when running in console mode"));
   parser.addOption(optionQuiet);
 
   QCommandLineOption optionSystemD(QStringList() << "systemd",
@@ -216,16 +216,17 @@ int main(int argc, char *argv[])
 
   // wait till the used ports are freed. here, the timeout is used internally in
   // the used wait function
-  {
-    int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
-    int valhalla_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
+  if (!parser.isSet(optionSystemD))
+    {
+      int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
+      int valhalla_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
 
-    if (!wait_till_port_is_free(http_port))
-      std::cerr << "Port " << http_port << " is occupied\n";
+      if (!wait_till_port_is_free(http_port))
+        std::cerr << "Port " << http_port << " is occupied\n";
 
-    if (!wait_till_port_is_free(valhalla_port))
-      std::cerr << "Port " << valhalla_port << " is occupied\n";
-  }
+      if (!wait_till_port_is_free(valhalla_port))
+        std::cerr << "Port " << valhalla_port << " is occupied\n";
+    }
 
   // check installed modules
   ModuleChecker modules;
@@ -420,6 +421,8 @@ int main(int argc, char *argv[])
 
   // register singlar handler
   signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });
+  signal(SIGINT, [](int /*sig*/){ qApp->quit(); });
+  signal(SIGHUP, [](int /*sig*/){ qApp->quit(); });
 
   int return_code = 0;
 
@@ -430,7 +433,8 @@ int main(int argc, char *argv[])
 
     // start HTTP server
     RequestMapper requests;
-    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str() );
+    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str(),
+                                   parser.isSet(optionSystemD) );
 
     if ( !http_server )
       {
@@ -442,7 +446,7 @@ int main(int argc, char *argv[])
   }
 
   // if the service is enabled, start it after we leave the server
-  if (systemd_service.enabled())
+  if (!parser.isSet(optionSystemD) && 1)//systemd_service.enabled())
     systemd_service.start();
 
   return return_code;
