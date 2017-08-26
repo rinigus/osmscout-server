@@ -141,7 +141,7 @@ Dialog {
 
             Label {
                 text: qsTr("Geocoder is responsible for resolving search requests. " +
-                           "For that, it parses the search string and finds the corresponding objects on a map." +
+                           "For that, it parses the search string and finds the corresponding objects on a map. " +
                            "This server allows you to select between two geocoder backends: <i>geocoder-nlp</i> and " +
                            "<i>libosmscout</i>. ")
                 x: Theme.horizontalPageMargin
@@ -321,7 +321,7 @@ Dialog {
                 id: eLogSession
                 key: settingsGeneralPrefix + "logSession"
                 mainLabel: qsTr("Log messages into session log file")
-                secondaryLabel: qsTr("When enabled, the messages are logged into a session log file." +
+                secondaryLabel: qsTr("When enabled, the messages are logged into a session log file. " +
                                      "The log file is at .cache/harbour-osmscout-server directory. " +
                                      "Use this setting only for debugging purposes. With this setting enabled, " +
                                      "info messages will be logged and shown on events irrespective to the " +

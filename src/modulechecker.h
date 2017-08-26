@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-/// \brief Checks availibility of the installed modules
+/// \brief Checks availability of the installed modules
 ///
 class ModuleChecker : public QObject
 {

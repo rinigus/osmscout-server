@@ -89,7 +89,7 @@ namespace MapManager {
     bool hasFeatureDefined(const QJsonObject &request) const;
 
   signals:
-    void availibilityChanged();
+    void availabilityChanged();
 
   protected:
     QString getDateTimeAsString(const QJsonObject &obj) const;

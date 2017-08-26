@@ -97,7 +97,7 @@ ListItem {
     Connections {
         target: manager
         onSubscriptionChanged: listItem.updateData()
-        onAvailibilityChanged: listItem.updateData()
+        onAvailabilityChanged: listItem.updateData()
     }
 
     onClicked: {

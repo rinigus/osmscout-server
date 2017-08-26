@@ -185,7 +185,7 @@ namespace MapManager {
     void missingInfoChanged(QString info);
 
     void subscriptionChanged();
-    void availibilityChanged();
+    void availabilityChanged();
 
     void updatesForDataFound(QString info);
 
@@ -210,7 +210,7 @@ namespace MapManager {
 
     void scanDirectories(bool force_update = false);
     void nothingAvailable(); ///< Helper method called when there are no maps available
-    void onAvailibilityChanged();
+    void onAvailabilityChanged();
 
     void missingData();
 

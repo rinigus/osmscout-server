@@ -6,72 +6,72 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelinta täytyy käyttä asiakasohjelman, joka voi näyttää karttoja, suorittaa hakuja ja näyttää reittejä, kanssa. Palvelin on ohut kerros, joka tarjoaa kirjastojen &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; ja &lt;i&gt;geocoder-nlp&lt;/i&gt; ominaisuudet http:n kautta. Tätä palvelinta voidaan käyttää korvaamaan online-karttapalvelut.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
         <source>Copyright:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekijänoikeus:</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>License: LGPL</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisenssi: LGPL</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Käännökset</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="28"/>
         <source>Maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartat</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartat isännöi Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Tsekin tasavalta) modRana.org:n kautta.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="35"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>OpenStreetMapin karttatiedor, Open Database License 1.0. Kartat on muunnettu sopivaan muotoon ladatuista osista ja/tai käyttäen Geofabrik GmbH:n tarjoamia polygoneja.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="39"/>
         <source>Libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Libpostal</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Huomio että &lt;i&gt;libpostal&lt;/i&gt; on kehitetty käytettäväksi optimoidun koko maailman kattavan mallin kanssa. Maakohtaiset mallit kehitettiin &lt;i&gt;libpostalin&lt;/i&gt; käyttämiseksi mobiililaitteilla ja niitä ei ole tarkkaan optimoitu. Lähetä tiedot ongelmista &lt;i&gt;libpostalin&lt;/i&gt; maakohtaisten mallien suorituskyvyssä joko &lt;i&gt;OSM Scout Server&lt;/i&gt; tai &lt;i&gt;geocoder-nlp&lt;/i&gt; github-projekteihin.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="48"/>
         <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiitokset</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="76"/>
         <source>About</source>
-        <translation type="unfinished">Tietoja</translation>
+        <translation>Tietoja</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="80"/>
         <source>version</source>
-        <translation type="unfinished"></translation>
+        <translation>versio</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="86"/>
         <source>is a server that provides offline map services</source>
-        <translation type="unfinished"></translation>
+        <translation>on palvelin, joka tarjoaa offline-karttapalvelut</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="93"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttöopas on saatavilla &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;verkossa&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -107,17 +107,17 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="24"/>
         <source>All datasets covering selected features are available</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki valitut ominaisuudet kattavat datasetit ovat saatavilla</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="26"/>
         <source>Some datasets are missing. You would have to start downloads to get them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jotkut datasetit puuttuvat. Sinun täytyy aloittaa lataukset saadaksesi ne.</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="28"/>
         <source>Some or all datasets are incompatible with this version. You would have to update list of provided maps, the maps, and/or install the latest release of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Jotkut tai kaikki datasetit ovat epäyhteensopivia tämän version kanssa. Sinun täytyy päivittää saatavilla olevien karttojen lista, kartat ja/tai asentaa OSM Scout Serverin uusin version.</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="35"/>
@@ -126,7 +126,7 @@
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="98"/>
-        <source>Availibility on device</source>
+        <source>Availability on device</source>
         <translation>Saatavuus laitteella</translation>
     </message>
     <message>
@@ -137,12 +137,12 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="127"/>
         <source>Selected datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitut datasetit</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="147"/>
         <source>All datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki datasetit</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="186"/>
@@ -172,7 +172,7 @@
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="239"/>
         <source>Unsubscribe</source>
-        <translation>Peruuttaa tilaus</translation>
+        <translation>Peruuta tilaus</translation>
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="49"/>
@@ -196,7 +196,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="33"/>
         <source>Idle</source>
-        <translation type="unfinished"></translation>
+        <translation>Odotustila</translation>
     </message>
 </context>
 <context>
@@ -219,7 +219,7 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="109"/>
         <source>Cannot allocate Style config</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei voitu varata tyylin konfiguraatiota</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="117"/>
@@ -274,7 +274,7 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="270"/>
         <source>Error while parsing search string</source>
-        <translation>Virhe hakutermin jäsennyksessä</translation>
+        <translation>Virhe hakutekstin tulkinnassa</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="277"/>
@@ -363,17 +363,17 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="9"/>
         <source>List of languages used for parsing addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista osoitteiden tulkintaan käytetyistä kielistä</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="10"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse osoitteiden tulkintaan käytettävät kielet.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="11"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun mitään kieliä ei ole valittu, oletetaan että kaikkia tuettuja kieliä käytetään tulkinnassa.&lt;br&gt;Huomioi että mikäli kaikkia tuettuja kieliä käytetään voi muistinkäyttö olla suurta.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="34"/>
@@ -424,7 +424,7 @@
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="67"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitaksesi kansio, paina pitkään haluttua kansiota ja paina &apos;Valitse&apos; kontekstivalikossa</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="202"/>
@@ -442,17 +442,17 @@
     <message>
         <location filename="../src/geomaster.cpp" line="85"/>
         <source>Cannot open geocoder database</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei voitu avata geokooderitietokantaa</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="89"/>
         <source>Opened geocoder database</source>
-        <translation type="unfinished"></translation>
+        <translation>Avattiin geokooderitietokanta</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="58"/>
         <source>Selected country not available for geocoder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Valittu maa ei ole saatavilla geokooderille: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="71"/>
@@ -462,28 +462,28 @@
     <message>
         <location filename="../src/geomaster.cpp" line="105"/>
         <source>libpostal using languages: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>libpostalin käyttämät kielet: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="110"/>
         <source>libpostal will use all covered languages</source>
-        <translation type="unfinished"></translation>
+        <translation>libpostal käyttää kaikkia tuettuja kieliä</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="201"/>
         <location filename="../src/geomaster.cpp" line="394"/>
         <source>Cannot open geocoding database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei voitu avata geokooderitietokantaa: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="227"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe libpostalin tulkinnassa, libpostalin tietokannat eivät ehkä ole saatavilla</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="263"/>
         <source>Parsed query [%1]: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Tulkittu kysely [%1]: %2</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="274"/>
@@ -502,7 +502,7 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="36"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Huom: Katso Tietoja osoitteiden tulkintaan liittyvien ongelmien raportoimiseksi.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="22"/>
@@ -511,13 +511,13 @@
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
-        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponoding objects on a map.</source>
-        <translation type="unfinished"></translation>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
+        <translation>Geokooderi vastaa hakujen tulkinnasta. Se tulkitsee hakutekstin ja etsii vastaavat paikat kartalla.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="47"/>
         <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista osoitteiden tulkintaan käytetyistä kielistä. Huomioi että mikäli kaikkia tuettuja kieliä käytetään voi muistinkäyttö olla suurta</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="54"/>
@@ -532,22 +532,22 @@
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="61"/>
         <source>Use primitive parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä primitiivitulkkia</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="62"/>
         <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Libpostalin&lt;/i&gt; lisäksi, primitiivitulkki antaa sinun määrittää haetun kohteen hallinnollinen hierarkia erottamalla komponentit pilkuilla. Joskus kun libpostal epäonnistuu haun tulkinnassa tämä tulkki mahdollistaa ongelman ratkaisun.&lt;br&gt;Esimerkki: talon_numero, katu, kaupunki.</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="71"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
-        <translation type="unfinished"></translation>
+        <translation>Lataa &lt;i&gt;libpostal&lt;/i&gt; jokaisella kutsulla</translation>
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="72"/>
         <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun valittu, &lt;i&gt;libpostalin&lt;/i&gt; tietokannat ladataan muistiin vain pyyntöä tulkittaessa Tämän seurauksena, joskin haut kestävät pidempään, on libpostalin muistinkäyttä pientä odotustilassa.</translation>
     </message>
 </context>
 <context>
@@ -565,7 +565,7 @@
     <message>
         <location filename="../src/infohub.cpp" line="116"/>
         <source>INFO: </source>
-        <translation>INFO: </translation>
+        <translation>HUOMIO: </translation>
     </message>
 </context>
 <context>
@@ -647,7 +647,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="265"/>
         <source>Address parsing language support</source>
-        <translation type="unfinished"></translation>
+        <translation>Osoitteiden tulkinnan kielituki</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="267"/>
@@ -675,12 +675,12 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="789"/>
         <source>%1: version of dataset for %2 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %2 datasetin versio ei ole tuettu</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="350"/>
         <source>Missing dataset for %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuva %1 datasetti: %2</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="394"/>
@@ -715,7 +715,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="947"/>
         <source>Could not register downloaded file in the tracking database</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei voitu rekisteröidä ladattua tiedostoa seurantatietokantaan</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="948"/>
@@ -824,17 +824,17 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="230"/>
         <source>Missing geocoder-nlp dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuva geocoder-nlp datasetti</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="247"/>
         <source>Address parsing language support</source>
-        <translation type="unfinished"></translation>
+        <translation>Osoitteiden tulkinnan kielituki</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="267"/>
         <source>Address parsing country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Osoitteiden tulkinnan maakohtainen tuki</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="300"/>
@@ -854,7 +854,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="328"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuva maakohtainen Mapnik-datasetti</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="343"/>
@@ -869,17 +869,17 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="255"/>
         <source>Missing address language parsing dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuva osoitteiden kielen tulkinnan datasetti</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="203"/>
         <source>OSM Scout library</source>
-        <translation>OSM Scout kirjasto</translation>
+        <translation>OSM Scout -kirjasto</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="275"/>
         <source>Missing country-specific address parsing dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuva maakohtainen osoitteiden tulkinnan datasetti</translation>
     </message>
 </context>
 <context>
@@ -892,7 +892,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="28"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation type="unfinished"></translation>
+        <translation>Karttamanageri hallinnoi offline-karttojen ja niihin liittyvien datasettien varastoinnin laitteella. Tässä voit valita laitteelle tallennettavat, päivitettävät tai poistettavat ominaisuudet ja maat.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="249"/>
@@ -907,27 +907,27 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="286"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna datasetit geocoder-nlp:lle libpostalin kanssa</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="304"/>
         <source>Store datasets for Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna Valhalla-reititysmoottorin datasetit.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="305"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun valittuna, Valhallan datasetit tallennetaan laitteelle latauksen jälkeen. Näitä datasettejä tarvitaan Valhallan käyttämiseksi reititysmoottorina.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="314"/>
         <source>Store datasets for libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna libosmscoutin datasetit.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="315"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun valittuna, libosmscoutin datasetit tallennetaan laitteelle latauksen jälkeen. Näitä datasettejä tarvitaan piirtoon, hakuun tai reititykseen libosmscoutia käyttäen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="39"/>
@@ -967,7 +967,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="207"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä lista tällä hetkellä saatavilla olevista kartoista, dataseteistä ja tarkista ovatko asennetut kartat päivitettävissä</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="218"/>
@@ -992,17 +992,17 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun valittuna, libpostaliin pohjautuvat geokooderi-datasetit tallennetaan laitteelle latauksen jälkeen. Nämä datasetit koostuvat kielen tulkintaan (noin 700 MB) ja maakohtaisista osoitteiden tulkintaan käytettävistä dataseteistä </translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="269"/>
         <source>Store datasets for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna Mapnikin datasetit</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="270"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun valittuna, karttojen piirtoon Mapnikilla tarvittavat datasetit tallennetaan laitteelle latauksen jälkeen. Nämä datasetit koostuvat maailman rantaviivoista (noin 700 MB) ja maakohtaisista piirtoon käytettävistä dataseteistä</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="176"/>
@@ -1083,7 +1083,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kasvattamalla ladattavan alueen kokoa laatan piirrossa, tekstien piirron laatu voi parantua ottamalla huomioon viereisten laattojen sisällön. Jos näet liian monta leikkautunutta tekstiä, kokeile kasvattaa puskurin kokoa. Huomioi että puskurin koon kasvattaminen hidastaa piirtoa. Puskurin koko skaalataan skaalaustekijällä tekstien koon kasvun kompensoimiseksi.</translation>
     </message>
 </context>
 <context>
@@ -1259,12 +1259,12 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="156"/>
         <source>Cutoff zoom level</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstitarkistuksen suurin zoomaustaso</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="157"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Määritetyllä zoomaustasolla kartan piirtoalgoritmi lopettaa viereisten laattojen tekstien tarkistamisen. Usein arvoa 14 käytetään tekstintarkistuksen suurimpana zoomaustasona. Asettamalla suuremman arvon voit saavuttaa tarkemman tekstien piirron suurilla zoomaustasoilla. Huomioi että tekstien piirto voi huomattavasti hidastaa kartan piirtoa.</translation>
     </message>
 </context>
 <context>
@@ -1322,7 +1322,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="88"/>
         <source>motorway junction</source>
-        <translation>moottoritieristeys</translation>
+        <translation>moottoritieliittymä</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="96"/>
@@ -1472,7 +1472,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="77"/>
         <source>Straight on</source>
-        <translation>Suoraan</translation>
+        <translation>Jatka suoraan</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="79"/>
@@ -1497,12 +1497,12 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="99"/>
         <source>Start at %start%. Drive along %along%</source>
-        <translation type="unfinished"></translation>
+        <translation>Aloita %start%. Aja pitkin %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="106"/>
         <source>Start at %start%</source>
-        <translation type="unfinished"></translation>
+        <translation>Aloita %start%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="154"/>
@@ -1538,18 +1538,18 @@
         <location filename="../src/routingforhuman.cpp" line="277"/>
         <location filename="../src/routingforhuman.cpp" line="363"/>
         <source>At %motoName% (exit %motoRef%), %command%</source>
-        <translation type="unfinished"></translation>
+        <translation>%motoName% (liittymä %motoRef%), %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="283"/>
         <location filename="../src/routingforhuman.cpp" line="369"/>
         <source>At %motoName%, %command%</source>
-        <translation type="unfinished"></translation>
+        <translation>%motoName%, %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway into %into%</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistu moottoritieltä %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="338"/>
@@ -1565,27 +1565,27 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="344"/>
         <source>Leave motorway. %move% into %into%</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistu moottoritieltä. %move% %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="352"/>
         <source>Leave motorway %from%. %move%</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistu moottoritieltä %from%. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="356"/>
         <source>Leave motorway %from%. %move% into %into%</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistu moottoritieltä %from%. %move% %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation type="unfinished"></translation>
+        <translation>Tien nimi muuttuu %from% %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="388"/>
         <source>Way changes name to %to%</source>
-        <translation type="unfinished"></translation>
+        <translation>Tien nimi muuttuu %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="146"/>
@@ -1615,7 +1615,7 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="149"/>
         <source>%turncommand% into %where%</source>
-        <translation type="unfinished"></translation>
+        <translation>%turncommand% %where%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="171"/>
@@ -1668,7 +1668,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="37"/>
         <source>Imperial</source>
-        <translation>Imperialinen</translation>
+        <translation>Imperiaalinen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="45"/>
@@ -1733,22 +1733,22 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="139"/>
         <source>Geocoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Geokooderi</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="143"/>
-        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation type="unfinished"></translation>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
+        <translation>Geokooderi vastaa hakujen tulkinnasta. Se tulkitsee hakutekstin ja etsii vastaavat paikat kartalla. Tämä palvelin antaa sinun valita kahden geokooderi taustapalvelun väliltä: &lt;i&gt;geocoder-nlp&lt;/i&gt; ja &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä geocoder-nlp:tä libpostalin kanssa geokooderina</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="159"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kun valittuna, libpostalin perustuvaa geokooderia käytetään kaikkien hakujen tulkitaan.Huomioi että tämä vaatii lisätietokantoja kielen, käyttäjän syötteen tulkintaa ja geokoodaukseen.&lt;br&gt;Huom! Jos valitset &lt;i&gt;geocoder-nlp&lt;/i&gt;, määritä myös osoitteiden tulkintaan käytettävät kielet taustapalvelun asetuksissa alempana. Muutoin palvelin voi käyttää paljon muistia.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="166"/>
@@ -1798,7 +1798,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="233"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Osoitteiden tulkintaan käytettävien kielten valita ja muut &lt;i&gt;geocoder-nlp&lt;/i&gt; taustapalvelun asetukset</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="198"/>
@@ -1852,7 +1852,7 @@
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="324"/>
-        <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
+        <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Kun vallittu, viestit tallennetaan istuntolokiin. Lokitiedosto sijaitsee cache/harbour-osmscout-server -hakemistossa. Käytä tätä asetusta vain virheenkorjaustarkoituksiin. Kun tämä asetus on aktivoitu, info-viestit tallennetaan riippumatta ylempänä olevista asetuksista. Tämä mahdollistaa täyden lokin aktivoinnin tilapäisesti ja deaktivoinnin tarvittavan istuntolokin luomisen jälkeen.</translation>
     </message>
 </context>
@@ -1949,7 +1949,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="267"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Et ole valinnut Geocoder-NLP:n osoitteiden tulkintaan käytettämiä kieliä. Tämän seurauksen kaikkia tunnettuja kieliä käytetään mikä voi johtaa hyvin suureen muistikäyttöön. Tällainen suuri muistinkäyttö voi johtaa OSM Scout Serverin prosessin tappaamiseen. &lt;br&gt;&lt;br&gt;Valitaksesi osoitteiden tulkintaan käytettävät kielet valitse kieliä joko alempaa tai mene &lt;i&gt;Asetuksiin&lt;/i&gt; (vetovalikko) ja valitse kielet osana &lt;i&gt;Geocoder-NLP:n&lt;/i&gt; asetuksia.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="293"/>
@@ -1969,7 +1969,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="353"/>
         <source>Idle</source>
-        <translation type="unfinished"></translation>
+        <translation>Odotustila</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="371"/>
@@ -1993,7 +1993,7 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="432"/>
-        <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
+        <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation>OSM Scout Server on osa ratkaisua, joka mahdollistaa offline-kartat laitteella. Tällä palvelimella voit ladata kartat laitteellesi ja käyttää ladattuja tietoja karttojen piirtoon, osoitteiden ja POI-pisteiden hakuun ja reittien laskentaan paikallisesti. Tällaiset operaatiot vaativat palvelimen ja erillisen palvelinta käyttävän asiakasohjelman ajamisen samanaikaisesti laitteella.&lt;br&gt;&lt;br&gt;Tämä avustaja auttaa sinua valitsemaan palvelimen käyttämät taustapalvelut ja määrittämään hakutermien käsittelyssä käytetyt kielet.&lt;br&gt;&lt;br&gt;Valitse &apos;Seuraava&apos; aloittaaksesi asetusten määrityksen.</translation>
     </message>
 </context>
@@ -2186,7 +2186,7 @@
     <message>
         <location filename="../src/main.cpp" line="145"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilaa &lt;country&gt; datasetti</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="146"/>
@@ -2197,7 +2197,7 @@
     <message>
         <location filename="../src/main.cpp" line="150"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Peruuta &lt;country&gt; datasetin tilaus</translation>
     </message>
 </context>
 </TS>

@@ -6,72 +6,72 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Serwer musi być używany z aplikacją  kliencką, która potrafi wyświetlać mapy, wyszukiwać zapytania i wyświetlać wybrane trasy. Serwer jest cienką warstwą eksponującą funkcjonalność &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;,&lt;i&gt;valhalla&lt;/i&gt;,&lt;i&gt;libpostal&lt;/i&gt;i &lt;i&gt;geocoder-nlp&lt;/i&gt; przez http. Serwer ten może być użyty jako zamienni dla serwisów online zawierających mapy.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="13"/>
         <source>Copyright:</source>
-        <translation type="unfinished"></translation>
+        <translation>Prawa autorskie:</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>License: LGPL</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencja: LGPL</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="16"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <translation>Tłumaczenia</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="28"/>
         <source>Maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapy</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="30"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapy są hostowane w Centrum Procesowania Języka Naturalnego (Wydział informatyki Uniwersytetu Masaryk, Brno, Czeska Republika) w repozytoriach danych modRana.org</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="35"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dane mapy z OpenStreetMap, Open Database License 1.0. Mapy są skonwertowane do odpowiedniego formatu z pobranych fragmentów i/lub używają wielokątów dostarczonych przez Geofabrik GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="39"/>
         <source>Libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Libpostal</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libpostal&lt;/i&gt; został stworzony aby wykorzystywać go z dokładnym modelem obejmującym Świat. Modele oparte na państwach zostały stworzone do użytku z &lt;i&gt;libpostal&lt;/i&gt; na urządzeniach mobilnych i nie zostały zoptymalizowane. Proszę o zgłaszanie błędów z wydajnością libpostal, w modelach opartych na państwach, na stronach githuba &lt;i&gt;OSM Scout Server&lt;/i&gt; oraz &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="48"/>
         <source>Acknowledgments</source>
-        <translation type="unfinished"></translation>
+        <translation>Podziękowania</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="76"/>
         <source>About</source>
-        <translation type="unfinished">O OSM Scout Server</translation>
+        <translation>O OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="80"/>
         <source>version</source>
-        <translation type="unfinished"></translation>
+        <translation>wersja</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="86"/>
         <source>is a server that provides offline map services</source>
-        <translation type="unfinished"></translation>
+        <translation>jest serwerem dostarczającym serwisu map offline</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="93"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Instrukcja obsługi jest &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;dostępna&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -126,7 +126,7 @@
     </message>
     <message>
         <location filename="../qml/pages/CountryDetailsPage.qml" line="98"/>
-        <source>Availibility on device</source>
+        <source>Availability on device</source>
         <translation>Dostępność w urządzeniu</translation>
     </message>
     <message>
@@ -511,7 +511,7 @@
     </message>
     <message>
         <location filename="../qml/pages/GeocoderPage.qml" line="26"/>
-        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponoding objects on a map.</source>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
         <translation>Geocoder jest odpowiedzialny za rozwiązywanie żądań wyszukiwania. W tym celu analizuje string wyszukiwania i wyszukuje odpowiadające obiekty na mapie.</translation>
     </message>
     <message>
@@ -1738,7 +1738,7 @@
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="143"/>
-        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Geocoder jest odpowiedzialny za analizowanie szukanych zapytań. W tym celu parsuje szukany string i wyszukuje odpowiadające mu obiekty na mapie. Ten serwer pozwala na wybranie pomiędzy dwoma backendami geocodera: &lt;i&gt;geocoder-nlp&lt;/i&gt; oraz &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
@@ -1853,7 +1853,7 @@
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="324"/>
-        <source>When enabled, the messages are logged into a session log file.The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
+        <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1994,7 +1994,7 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="432"/>
-        <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could dowload the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
+        <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

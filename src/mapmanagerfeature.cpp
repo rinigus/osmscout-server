@@ -553,7 +553,7 @@ void FeatureValhalla::handlePackTasks()
   if (m_pack_tasks.isEmpty())
     {
       // should have been called after processing the last task
-      emit availibilityChanged();
+      emit availabilityChanged();
       return;
     }
 

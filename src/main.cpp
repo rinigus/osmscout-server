@@ -45,12 +45,15 @@
 #include "infohub.h"
 #include "modulechecker.h"
 
+#include "systemdservice.h"
+
 #include <QTranslator>
 #include <QCommandLineParser>
 
 #include <QDebug>
 
 #include <iostream>
+#include <csignal>
 
 #ifdef USE_CURL
 #include <curl/curl.h>
@@ -63,6 +66,16 @@ extern InfoHub infoHub;
 
 int main(int argc, char *argv[])
 {
+  bool has_logger_console = false;
+
+#ifdef IS_SAILFISH_OS
+  bool has_logger_rolling = true;
+#endif
+
+#ifdef IS_CONSOLE_QT
+  has_logger_console = true;
+#endif
+
 #ifdef USE_CURL
   if ( curl_global_init(CURL_GLOBAL_DEFAULT ) )
     {
@@ -81,8 +94,6 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef IS_SAILFISH_OS
-  RollingLogger rolling_logger;
-
   QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
   qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
 #endif
@@ -116,6 +127,18 @@ int main(int argc, char *argv[])
   parser.setApplicationDescription(QCoreApplication::translate("main", "OSM Scout Server"));
   parser.addHelpOption();
   parser.addVersionOption();
+
+  QCommandLineOption optionConsole(QStringList() << "console",
+                                   QCoreApplication::translate("main", "Run the server without GUI as a console application"));
+  parser.addOption(optionConsole);
+
+  QCommandLineOption optionQuiet(QStringList() << "quiet",
+                                   QCoreApplication::translate("main", "Do not output logs when running in console mode"));
+  parser.addOption(optionQuiet);
+
+  QCommandLineOption optionSystemD(QStringList() << "systemd",
+                                   QCoreApplication::translate("main", "Run the server in SystemD socket-activated mode"));
+  parser.addOption(optionSystemD);
 
   QCommandLineOption optionDownload(QStringList() << "d" << "download",
                                     QCoreApplication::translate("main", "Start download of the maps"));
@@ -154,6 +177,29 @@ int main(int argc, char *argv[])
   // Process the actual command line arguments given by the user
   parser.process(*app);
 
+  // check logger related options
+#ifdef IS_SAILFISH_OS
+  if (parser.isSet(optionConsole)) // have to enable logger when running as GUI
+    has_logger_rolling = false;
+
+  if (parser.isSet(optionConsole))
+    has_logger_console = !parser.isSet(optionQuiet);
+#endif
+#ifdef IS_CONSOLE_QT
+  has_logger_console = !parser.isSet(optionQuiet);
+#endif
+
+  // setup loggers
+  ConsoleLogger *console_logger = nullptr;
+  if (has_logger_console)
+    console_logger = new ConsoleLogger(app.data());
+
+#ifdef IS_SAILFISH_OS
+  RollingLogger *rolling_logger = nullptr;
+  if (has_logger_rolling)
+    rolling_logger = new RollingLogger(app.data());
+#endif
+
   // can use after the app name is defined
   AppSettings settings;
   settings.initDefaults();
@@ -166,33 +212,39 @@ int main(int argc, char *argv[])
   // setup Map Manager
   MapManager::Manager manager(app.data());
 
-#ifdef IS_CONSOLE_QT
-  ConsoleLogger console_logger;
-#endif
+  // enable systemd interaction
+  SystemDService systemd_service;
 
 #ifdef IS_SAILFISH_OS
-  //ConsoleLogger _logger_console;
+  if (rolling_logger) rolling_logger->onSettingsChanged();
 
-  rolling_logger.onSettingsChanged();
+  QScopedPointer<QQuickView> v;
+  QQmlContext *rootContext = nullptr;
+  if (!parser.isSet(optionConsole))
+    {
+      v.reset(SailfishApp::createView());
+      rootContext = v->rootContext();
+    }
 
-  QScopedPointer<QQuickView> v(SailfishApp::createView());
-  QQmlContext *rootContext = v->rootContext();
+  if (rootContext)
+    {
+      rootContext->setContextProperty("programName", "OSM Scout Server");
+      rootContext->setContextProperty("programVersion", APP_VERSION);
+      rootContext->setContextProperty("settingsMapManagerPrefix", MAPMANAGER_SETTINGS);
+      rootContext->setContextProperty("settingsGeneralPrefix", GENERAL_SETTINGS);
+      rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
+      rootContext->setContextProperty("settingsSpeedPrefix", ROUTING_SPEED_SETTINGS);
+      rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
+      rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
+      rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
 
-  rootContext->setContextProperty("programName", "OSM Scout Server");
-  rootContext->setContextProperty("programVersion", APP_VERSION);
-  rootContext->setContextProperty("settingsMapManagerPrefix", MAPMANAGER_SETTINGS);
-  rootContext->setContextProperty("settingsGeneralPrefix", GENERAL_SETTINGS);
-  rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
-  rootContext->setContextProperty("settingsSpeedPrefix", ROUTING_SPEED_SETTINGS);
-  rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
-  rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
-  rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
-
-  rootContext->setContextProperty("settings", &settings);
-  rootContext->setContextProperty("infohub", &infoHub);
-  rootContext->setContextProperty("logger", &rolling_logger);
-  rootContext->setContextProperty("manager", &manager);
-  rootContext->setContextProperty("modules", &modules);
+      rootContext->setContextProperty("settings", &settings);
+      rootContext->setContextProperty("infohub", &infoHub);
+      if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
+      rootContext->setContextProperty("manager", &manager);
+      rootContext->setContextProperty("modules", &modules);
+      rootContext->setContextProperty("systemd_service", &systemd_service);
+    }
 #endif
 
   // setup OSM Scout
@@ -213,7 +265,7 @@ int main(int argc, char *argv[])
       return -2;
     }
 #ifdef IS_SAILFISH_OS
-  rootContext->setContextProperty("geocoder", geoMaster);
+  if (rootContext) rootContext->setContextProperty("geocoder", geoMaster);
 #endif
 
 #ifdef USE_MAPNIK
@@ -238,26 +290,12 @@ int main(int argc, char *argv[])
     }
 #endif
 
-  // setup HTTP server
-  settings.beginGroup("http-listener");
-  int port = settings.valueInt("port");
-  QString host = settings.valueString("host");
-  settings.endGroup();
-
-  RequestMapper requests;
-  MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str() );
-
-  if ( !http_server )
+#ifdef IS_SAILFISH_OS  
+  if (v)
     {
-      std::cerr << "Failed to start HTTP server" << std::endl;
-      return -2;
+      v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
+      v->show();
     }
-
-#ifdef IS_SAILFISH_OS
-
-  v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
-  v->show();
-
 #endif
 
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -296,21 +334,19 @@ int main(int argc, char *argv[])
                     valhallaMaster, &ValhallaMaster::onValhallaChanged );
 #endif
 
+  if (console_logger)
+    QObject::connect( &manager, &MapManager::Manager::errorMessage,
+                      console_logger, &ConsoleLogger::onErrorMessage);
+
 #ifdef IS_SAILFISH_OS
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    &rolling_logger, &RollingLogger::onSettingsChanged );
-#endif
-
-#ifdef IS_CONSOLE_QT
-  QObject::connect( &manager, &MapManager::Manager::errorMessage,
-                    &console_logger, &ConsoleLogger::onErrorMessage);
-
+  if (rolling_logger)
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      rolling_logger, &RollingLogger::onSettingsChanged );
 #endif
 
   // all is connected, load map manager settings
   manager.onSettingsChanged();
 
-#ifdef IS_CONSOLE_QT
   // check for sanity and perform the commands if requested
   if (!manager.storageAvailable())
     {
@@ -364,7 +400,37 @@ int main(int argc, char *argv[])
       return 0;
     }
 
-#endif
+  // register singlar handler
+  signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });
 
-  return app->exec();
+  int return_code = 0;
+
+  if (!parser.isSet(optionSystemD))
+    systemd_service.stop();
+
+  {
+    // setup HTTP server
+    settings.beginGroup("http-listener");
+    int port = settings.valueInt("port");
+    QString host = settings.valueString("host");
+    settings.endGroup();
+
+    // start HTTP server
+    RequestMapper requests;
+    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str() );
+
+    if ( !http_server )
+      {
+        std::cerr << "Failed to start HTTP server" << std::endl;
+        return -2;
+      }
+
+    return_code = app->exec();
+  }
+
+  // if the service is enabled, start it after we leave the server
+  if (systemd_service.enabled())
+    systemd_service.start();
+
+  return return_code;
 }
