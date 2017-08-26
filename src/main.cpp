@@ -446,7 +446,7 @@ int main(int argc, char *argv[])
   }
 
   // if the service is enabled, start it after we leave the server
-  if (!parser.isSet(optionSystemD) && 1)//systemd_service.enabled())
+  if (!parser.isSet(optionSystemD) && systemd_service.enabled())
     systemd_service.start();
 
   return return_code;
