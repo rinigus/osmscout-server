@@ -31,6 +31,7 @@ PkgConfigBR:
   - Qt5Sql
   - sqlite3
   - libcurl
+  - libsystemd-daemon
 
 # Build dependencies without a pkgconfig setup can be listed here
 PkgBR:

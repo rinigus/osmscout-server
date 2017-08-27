@@ -22,6 +22,7 @@ CONFIG += use_map_qt
 
 CONFIG += use_mapnik
 CONFIG += use_valhalla
+CONFIG += use_systemd
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -67,7 +68,9 @@ SOURCES += \
     src/mapnikmaster.cpp \ 
     src/modulechecker.cpp \
     src/valhallamaster.cpp \
-    src/mapmanager_deleterthread.cpp
+    src/mapmanager_deleterthread.cpp \
+    src/systemdservice.cpp \
+    src/util.cpp
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += rpm/osmscout-server.spec
@@ -94,7 +97,9 @@ HEADERS += \
     src/mapnikmaster.h \
     src/modulechecker.h \
     src/valhallamaster.h \
-    src/mapmanager_deleterthread.h
+    src/mapmanager_deleterthread.h \
+    src/systemdservice.h \
+    src/util.hpp
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
@@ -128,6 +133,12 @@ use_valhalla {
     DEFINES += VALHALLA_EXECUTABLE=\\\"/usr/bin/harbour-osmscout-server-module-route\\\"
     DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server-module-route/data/valhalla.json\\\"
     CONFIG += use_curl
+}
+
+use_systemd {
+    DEFINES += USE_SYSTEMD
+    CONFIG += link_pkgconfig
+    PKGCONFIG += libsystemd-daemon
 }
 
 use_curl {

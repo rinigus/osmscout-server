@@ -32,6 +32,7 @@ BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(Qt5Sql)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(libcurl)
+BuildRequires:  pkgconfig(libsystemd-daemon)
 BuildRequires:  libmarisa-devel
 BuildRequires:  libmicrohttpd-devel
 BuildRequires:  libosmscout-qt-devel
