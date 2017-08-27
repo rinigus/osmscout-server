@@ -134,9 +134,11 @@ int main(int argc, char *argv[])
                                  QCoreApplication::translate("main", "Do not output logs when running in console mode"));
   parser.addOption(optionQuiet);
 
+#ifdef USE_SYSTEMD
   QCommandLineOption optionSystemD(QStringList() << "systemd",
                                    QCoreApplication::translate("main", "Run the server in SystemD socket-activated mode"));
   parser.addOption(optionSystemD);
+#endif
 
   QCommandLineOption optionDownload(QStringList() << "d" << "download",
                                     QCoreApplication::translate("main", "Start download of the maps"));
@@ -204,6 +206,7 @@ int main(int argc, char *argv[])
 
   infoHub.onSettingsChanged();
 
+#ifdef USE_SYSTEMD
   // enable systemd interaction
   SystemDService systemd_service;
 
@@ -224,6 +227,7 @@ int main(int argc, char *argv[])
       if (!wait_till_port_is_free(valhalla_port))
         std::cerr << "Port " << valhalla_port << " is occupied\n";
     }
+#endif
 
   // check installed modules
   ModuleChecker modules;
@@ -259,7 +263,9 @@ int main(int argc, char *argv[])
       if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
       rootContext->setContextProperty("manager", &manager);
       rootContext->setContextProperty("modules", &modules);
+#ifdef USE_SYSTEMD
       rootContext->setContextProperty("systemd_service", &systemd_service);
+#endif
     }
 #endif
 
@@ -431,7 +437,12 @@ int main(int argc, char *argv[])
     // start HTTP server
     RequestMapper requests;
     MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str(),
-                                   parser.isSet(optionSystemD) );
+#ifdef USE_SYSTEMD
+                                   parser.isSet(optionSystemD)
+#else
+                                   false
+#endif
+                                   );
 
     if ( !http_server )
       {
@@ -442,9 +453,11 @@ int main(int argc, char *argv[])
     return_code = app->exec();
   }
 
+#ifdef USE_SYSTEMD
   // if the service is enabled, start it after we leave the server
   if (!parser.isSet(optionSystemD) && systemd_service.enabled())
     systemd_service.start();
+#endif
 
   return return_code;
 }

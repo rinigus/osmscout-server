@@ -25,6 +25,9 @@ CONFIG += use_map_qt
 !disable_valhalla {
    CONFIG += use_valhalla
 }
+!disable_systemd {
+   CONFIG += use_systemd
+}
 
 # installs
 stylesheets.files = stylesheets
@@ -125,9 +128,11 @@ use_curl {
     PKGCONFIG += libcurl
 }
 
-# systemd support
-CONFIG += link_pkgconfig
-PKGCONFIG += libsystemd
+use_systemd {
+    DEFINES += USE_SYSTEMD
+    CONFIG += link_pkgconfig
+    PKGCONFIG += libsystemd
+}
 
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -lsqlite3
 

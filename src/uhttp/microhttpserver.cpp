@@ -13,7 +13,9 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
+#ifdef USE_SYSTEMD
 #include <systemd/sd-daemon.h>
+#endif
 
 //#define DEBUG_CONNECTIONS
 
@@ -124,7 +126,9 @@ MicroHTTP::Server::Server(ServiceBase *service,
   m_service(service)
 {
   // Listen on specified address only
+#ifdef USE_SYSTEMD
   if (!systemd)
+#endif
     { // regular application
       struct sockaddr_in server_address;
 
@@ -154,6 +158,7 @@ MicroHTTP::Server::Server(ServiceBase *service,
                                    MHD_OPTION_URI_LOG_CALLBACK, uri_logger, this,
                                    MHD_OPTION_END);
     }
+#ifdef USE_SYSTEMD
   else
     { // systemd service
       if (sd_listen_fds(0) != 1)
@@ -175,6 +180,7 @@ MicroHTTP::Server::Server(ServiceBase *service,
                                        MHD_OPTION_END);
         }
     }
+#endif
   if (m_daemon == NULL)
     {
       m_state = false;
