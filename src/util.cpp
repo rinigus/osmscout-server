@@ -37,7 +37,7 @@ bool port_free(int port)
 bool wait_till_port_is_free(int port)
 {
   const size_t cycles = 10;
-  for (size_t i=0; true || i < cycles; ++i)
+  for (size_t i=0; i < cycles; ++i)
     if (port_free(port))
       {
         return true;
