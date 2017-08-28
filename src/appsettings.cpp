@@ -164,6 +164,8 @@ void AppSettings::initDefaults()
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_bicycle", 100.0);
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_pedestrian", 75.0);
 
+  CHECK(REQUEST_MAPPER_SETTINGS "idle_timeout", -1.0);
+
   /// set profile if specified
   setProfile();
 
@@ -182,6 +184,7 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
       key.contains(MAPNIKMASTER_SETTINGS) ||
       key.contains(VALHALLA_MASTER_SETTINGS) ||
       key.contains(MAPMANAGER_SETTINGS) ||
+      key.contains(REQUEST_MAPPER_SETTINGS) ||
       key == GENERAL_SETTINGS "language" )
     {
       // this delayed signal execution prevents fireing signals together

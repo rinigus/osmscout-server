@@ -450,6 +450,17 @@ int main(int argc, char *argv[])
         return -2;
       }
 
+    // connect request mapper to the settings
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      &requests, &RequestMapper::onSettingsChanged );
+
+    // enable idle timeout shutdown if started by systemd
+#ifdef USE_SYSTEMD
+    if (parser.isSet(optionSystemD))
+      QObject::connect(&requests, &RequestMapper::idleTimeout,
+                       app.data(), QCoreApplication::quit );
+#endif
+
     return_code = app->exec();
   }
 

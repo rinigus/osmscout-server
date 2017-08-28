@@ -25,6 +25,8 @@
 
 #define HTTP_SERVER_SETTINGS "http-listener/"
 
+#define REQUEST_MAPPER_SETTINGS "request-mapper/"
+
 //////////////////////////////////////////////
 /// global variables
 

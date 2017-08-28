@@ -8,6 +8,7 @@
 #include "geomaster.h"
 #include "infohub.h"
 #include "config.h"
+#include "appsettings.h"
 
 #include "microhttpconnectionstore.h"
 
@@ -30,7 +31,9 @@
 
 //#define DEBUG_CONNECTIONS
 
-RequestMapper::RequestMapper()
+RequestMapper::RequestMapper(QObject *parent):
+  QObject(parent),
+  MicroHTTP::ServiceBase()
 {
 #ifdef IS_SAILFISH_OS
   // In Sailfish, CPUs could be switched off one by one. As a result,
@@ -48,13 +51,36 @@ RequestMapper::RequestMapper()
 
   InfoHub::logInfo( QCoreApplication::translate("RequestMapper",
                                                 "Number of parallel worker threads: %1").arg(m_pool.maxThreadCount()) );
-}
 
+  onSettingsChanged();
+  m_last_call.start();
+
+  connect(&m_timer, &QTimer::timeout,
+          this, &RequestMapper::checkIdle);
+}
 
 RequestMapper::~RequestMapper()
 {
 }
 
+void RequestMapper::onSettingsChanged()
+{
+  AppSettings settings;
+  m_idle_timeout = settings.valueFloat(REQUEST_MAPPER_SETTINGS "idle_timeout");
+
+  if (m_idle_timeout > 0)
+    m_timer.start( std::max(1000, (int)m_idle_timeout*1000/4));
+  else m_timer.stop();
+}
+
+void RequestMapper::checkIdle()
+{
+  if (m_idle_timeout > 0 && m_last_call.hasExpired((qint64)(m_idle_timeout*1000)))
+    {
+      m_last_call.restart();
+      emit idleTimeout();
+    }
+}
 
 //////////////////////////////////////////////////////////////////////
 /// Helper functions to get tile coordinates
@@ -259,6 +285,8 @@ unsigned int RequestMapper::service(const char *url_c,
 {
   QUrl url(url_c);
   QString path(url.path());
+
+  m_last_call.restart();
 
   //////////////////////////////////////////////////////////////////////
   /// TILES

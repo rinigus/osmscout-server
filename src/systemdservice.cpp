@@ -60,7 +60,7 @@ void SystemDService::setEnabled(bool e)
               "ExecStart=/usr/bin/" APP_PREFIX "osmscout-server --console --systemd\n";
 
           QDir dir;
-          QString path = QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.local/share/systemd/user";
+          QString path = QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/systemd/user";
           if (dir.mkpath(path))
             {
               dir.setPath(path);
