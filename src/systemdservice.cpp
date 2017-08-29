@@ -38,6 +38,8 @@ void SystemDService::update()
 
 void SystemDService::setEnabled(bool e)
 {  
+  if (m_enabled == e) return;
+
   if (e)
     {
       AppSettings settings;
