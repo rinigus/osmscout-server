@@ -7,7 +7,7 @@ Name:       harbour-osmscout-server
 
 # >> macros
 %define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff|libsqlite3.*$
+%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff|libsqlite3.*|libsystemd-daemon.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -92,6 +92,7 @@ cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libsqlite3.so.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libsystemd-daemon.so.0 %{buildroot}%{_datadir}/%{name}/lib
 
 # mapnik fonts and input plugins
 # not needed anymore since input plugins are linked

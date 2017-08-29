@@ -84,6 +84,33 @@ Dialog {
                 }
             }
 
+            Column {
+                width: parent.width
+                spacing: Theme.paddingMedium
+                anchors.margins: Theme.horizontalPageMargin
+
+                TextSwitch {
+                    id: systemdEnable
+                    text: qsTr("Enable automatic activation")
+                    enabled: manager.ready
+
+                    Component.onCompleted: {
+                        checked = systemd_service.enabled
+                    }
+                }
+
+                Label {
+                    text: qsTr("When enabled, OSM Scout Server will be activated automatically by any client accessing it. " +
+                               "Automatically started server will work in the background."
+                               )
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
+            }
+
             ElementSelector {
                 id: eMapsRoot
                 key: settingsMapManagerPrefix + "root"
@@ -363,5 +390,7 @@ Dialog {
         /// units are done by combo box, have to apply manually
         /// units are changed the last
         settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
+
+        systemd_service.enabled = systemdEnable.checked
     }
 }
