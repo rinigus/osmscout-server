@@ -84,6 +84,20 @@ Dialog {
                 }
             }
 
+            ElementSelector {
+                id: eMapsRoot
+                key: settingsMapManagerPrefix + "root"
+                mainLabel: qsTr("Maps storage")
+                secondaryLabel: qsTr("Folder to store maps.<br><b>NB!</b> This folder will be fully managed by OSM Scout Server. " +
+                                     "Please <b>allocate separate, empty folder</b> that OSM Scout Server could use. " +
+                                     "This includes deleting all files within that folder when requested by you during cleanup or " +
+                                     "map updates.<br>" +
+                                     "<i>Example:</i> Maps under <i>~nemo</i>")
+                directory: true
+            }
+
+            ///////////////////////////////////////
+            /// systemd support
             Column {
                 width: parent.width
                 spacing: Theme.paddingMedium
@@ -91,7 +105,7 @@ Dialog {
 
                 TextSwitch {
                     id: systemdEnable
-                    text: qsTr("Enable automatic activation")
+                    text: qsTr("Automatic activation")
                     enabled: manager.ready
 
                     Component.onCompleted: {
@@ -109,19 +123,68 @@ Dialog {
                     font.pixelSize: Theme.fontSizeSmall
                     color: Theme.highlightColor
                 }
+
+                ComboBox {
+                    id: idleTimeout
+                    label: qsTr("Idle timeout")
+                    enabled: manager.ready && systemdEnable.checked
+
+                    property var timeouts: [
+                        {"value": 900, "desc": qsTr("15 minutes") },
+                        {"value": 1800, "desc": qsTr("30 minutes") },
+                        {"value": 3600, "desc": qsTr("1 hour")},
+                        {"value": 7200, "desc": qsTr("2 hours")},
+                        {"value": 14400, "desc": qsTr("4 hours")},
+                        {"value": 28800, "desc": qsTr("8 hours")},
+                        {"value": 86400, "desc": qsTr("24 hours")},
+                        {"value": -1, "desc": qsTr("No timeout")}
+                    ]
+
+
+                    menu: ContextMenu {
+                        MenuItem { text: idleTimeout.timeouts[0]["desc"] }
+                        MenuItem { text: idleTimeout.timeouts[1]["desc"] }
+                        MenuItem { text: idleTimeout.timeouts[2]["desc"] }
+                        MenuItem { text: idleTimeout.timeouts[3]["desc"] }
+                        MenuItem { text: idleTimeout.timeouts[4]["desc"] }
+                        MenuItem { text: idleTimeout.timeouts[5]["desc"] }
+                        MenuItem { text: idleTimeout.timeouts[6]["desc"] }
+                        MenuItem { text: idleTimeout.timeouts[7]["desc"] }
+                    }
+
+                    function apply() {
+                        settings.setValue(settingsRequestMapperPrefix + "idle_timeout", timeouts[currentIndex]["value"])
+                    }
+
+                    Component.onCompleted: {
+                        var timeout = settings.valueInt(settingsRequestMapperPrefix + "idle_timeout")
+                        if (timeout < 0) {
+                            currentIndex = 7
+                            return
+                        }
+
+                        for (var i = 0; i < timeouts.length-2; i++)
+                            if ( timeout <= timeouts[i]["value"] ) {
+                                currentIndex = i
+                                return
+                            }
+
+                        currentIndex = timeouts.length-2
+                    }
+                }
+
+                Label {
+                    text: qsTr("When started automatically, the server will shutdown itself after " +
+                               "not receiving any requests for longer than the idle timeout")
+                    x: Theme.horizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                    font.pixelSize: Theme.fontSizeSmall
+                    color: Theme.highlightColor
+                }
             }
 
-            ElementSelector {
-                id: eMapsRoot
-                key: settingsMapManagerPrefix + "root"
-                mainLabel: qsTr("Maps storage")
-                secondaryLabel: qsTr("Folder to store maps.<br><b>NB!</b> This folder will be fully managed by OSM Scout Server. " +
-                                     "Please <b>allocate separate, empty folder</b> that OSM Scout Server could use. " +
-                                     "This includes deleting all files within that folder when requested by you during cleanup or " +
-                                     "map updates.<br>" +
-                                     "<i>Example:</i> Maps under <i>~nemo</i>")
-                directory: true
-            }
+            ///////////////////////////////////////
 
             SectionHeader {
                 text: qsTr("Profiles")
@@ -392,5 +455,6 @@ Dialog {
         settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
 
         systemd_service.enabled = systemdEnable.checked
+        idleTimeout.apply()
     }
 }

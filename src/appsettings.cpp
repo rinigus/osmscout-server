@@ -164,7 +164,7 @@ void AppSettings::initDefaults()
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_bicycle", 100.0);
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_pedestrian", 75.0);
 
-  CHECK(REQUEST_MAPPER_SETTINGS "idle_timeout", -1.0);
+  CHECK(REQUEST_MAPPER_SETTINGS "idle_timeout", 3600);
 
   /// set profile if specified
   setProfile();

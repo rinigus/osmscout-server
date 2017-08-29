@@ -257,6 +257,7 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
       rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
       rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
+      rootContext->setContextProperty("settingsRequestMapperPrefix", REQUEST_MAPPER_SETTINGS);
 
       rootContext->setContextProperty("settings", &settings);
       rootContext->setContextProperty("infohub", &infoHub);
