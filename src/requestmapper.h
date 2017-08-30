@@ -9,9 +9,10 @@
 #include "microhttpservicebase.h"
 
 #include <QThreadPool>
-#include <QElapsedTimer>
 #include <QTimer>
 #include <QObject>
+
+#include <time.h>
 
 /**
   The request mapper dispatches incoming HTTP requests to controller classes
@@ -44,7 +45,7 @@ public slots:
 protected:
   QThreadPool m_pool;
   QTimer m_timer;
-  QElapsedTimer m_last_call;
+  struct timespec m_last_call;
   double m_idle_timeout;
 };
 

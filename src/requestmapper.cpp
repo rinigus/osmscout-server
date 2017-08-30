@@ -53,7 +53,7 @@ RequestMapper::RequestMapper(QObject *parent):
                                                 "Number of parallel worker threads: %1").arg(m_pool.maxThreadCount()) );
 
   onSettingsChanged();
-  m_last_call.start();
+  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
 
   connect(&m_timer, &QTimer::timeout,
           this, &RequestMapper::checkIdle);
@@ -75,9 +75,14 @@ void RequestMapper::onSettingsChanged()
 
 void RequestMapper::checkIdle()
 {
-  if (m_idle_timeout > 0 && m_last_call.hasExpired((qint64)(m_idle_timeout*1000)))
+  if (m_idle_timeout <= 0) return;
+
+  struct timespec now;
+  clock_gettime(CLOCK_BOOTTIME, &now);
+  double dt = now.tv_sec - m_last_call.tv_sec;
+  if (dt > m_idle_timeout)
     {
-      m_last_call.restart();
+      clock_gettime(CLOCK_BOOTTIME, &m_last_call);
       emit idleTimeout();
     }
 }
@@ -286,7 +291,7 @@ unsigned int RequestMapper::service(const char *url_c,
   QUrl url(url_c);
   QString path(url.path());
 
-  m_last_call.restart();
+  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
 
   //////////////////////////////////////////////////////////////////////
   /// TILES
