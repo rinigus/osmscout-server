@@ -69,7 +69,7 @@ void RequestMapper::onSettingsChanged()
   m_idle_timeout = settings.valueInt(REQUEST_MAPPER_SETTINGS "idle_timeout");
 
   if (m_idle_timeout > 0)
-    m_timer.start( std::max(1000, (int)m_idle_timeout*1000/4));
+    m_timer.start( std::max(1000, (int)m_idle_timeout*1000/10));
   else m_timer.stop();
 }
 

@@ -140,6 +140,7 @@ int main(int argc, char *argv[])
   parser.addOption(optionSystemD);
 #endif
 
+#ifdef IS_CONSOLE_QT
   QCommandLineOption optionDownload(QStringList() << "d" << "download",
                                     QCoreApplication::translate("main", "Start download of the maps"));
   parser.addOption(optionDownload);
@@ -173,6 +174,7 @@ int main(int argc, char *argv[])
                                        QCoreApplication::translate("main", "Unsubscribe <country> dataset"),
                                        QCoreApplication::translate("main", "country-id"));
   parser.addOption(optionUnSubscribe);
+#endif
 
   // Process the actual command line arguments given by the user
   parser.process(*app);
@@ -370,6 +372,7 @@ int main(int argc, char *argv[])
   // all is connected, load map manager settings
   manager.onSettingsChanged();
 
+#ifdef IS_CONSOLE_QT
   // check for sanity and perform the commands if requested
   if (!manager.storageAvailable())
     {
@@ -422,6 +425,7 @@ int main(int argc, char *argv[])
       manager.rmCountry(c);
       return 0;
     }
+#endif
 
   // register singlar handler
   signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });

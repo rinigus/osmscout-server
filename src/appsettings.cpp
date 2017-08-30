@@ -45,7 +45,7 @@ void AppSettings::initDefaults()
   CHECK(GENERAL_SETTINGS "logSession", 0);
 
   CHECK(GENERAL_SETTINGS "firstTime", 1);
-  CHECK(GENERAL_SETTINGS "lastRunVersion", 0);
+  CHECK(GENERAL_SETTINGS "lastRunVersion", GENERAL_APP_VERSION);
 
 #ifdef IS_SAILFISH_OS
   QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
@@ -164,7 +164,7 @@ void AppSettings::initDefaults()
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_bicycle", 100.0);
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_pedestrian", 75.0);
 
-  CHECK(REQUEST_MAPPER_SETTINGS "idle_timeout", 3600);
+  CHECK(REQUEST_MAPPER_SETTINGS "idle_timeout", 1800);
 
   /// set profile if specified
   setProfile();
@@ -172,6 +172,10 @@ void AppSettings::initDefaults()
   /// set the notification of the first time use
   m_first_time = valueBool(GENERAL_SETTINGS "firstTime");
   setValue(GENERAL_SETTINGS "firstTime", 0);
+
+  /// for changelogs
+  m_last_run_version = valueInt(GENERAL_SETTINGS "lastRunVersion");
+  setValue(GENERAL_SETTINGS "lastRunVersion", GENERAL_APP_VERSION);
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)

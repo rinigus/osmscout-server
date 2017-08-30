@@ -16,6 +16,9 @@ class AppSettings : public QSettings
   /// \brief true if the application has been run the first time
   Q_PROPERTY(bool firstTime READ firstTime)
 
+  /// \brief application version that was run before
+  Q_PROPERTY(int lastRunVersion READ lastRunVersion)
+
 public:
   AppSettings();
   virtual ~AppSettings() {}
@@ -40,6 +43,8 @@ public:
 
   bool firstTime() const { return m_first_time; }
 
+  bool lastRunVersion() const { return m_last_run_version; }
+
   /// \brief Preferred language for search results, map, and routing
   ///
   /// Returns empty string if the preference is in displayed/searhed local country
@@ -62,6 +67,7 @@ protected:
   bool m_signal_osm_scout_changed_waiting = false;
   bool m_profiles_used = false;
   bool m_first_time = false;
+  int m_last_run_version{0};
 };
 
 #endif // APPSETTINGS_H

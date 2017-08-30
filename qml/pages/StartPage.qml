@@ -462,8 +462,7 @@ Page {
         id: thirdWelcomeWizardPage
 
         LanguageSelector {
-            acceptDestination: rootPage
-            acceptDestinationAction: PageStackAction.Pop
+            acceptDestination: fourthWelcomeWizardPage
 
             value: eGeoLanguages.value
             callback: eGeoLanguages.setValue
@@ -473,6 +472,14 @@ Page {
         }
     }
 
+    Component {
+        id: fourthWelcomeWizardPage
+
+        SystemdActivationPage {
+            acceptDestination: rootPage
+            acceptDestinationAction: PageStackAction.Pop
+        }
+    }
 
     function openWelcomeWizard()
     {
@@ -483,8 +490,19 @@ Page {
         }
     }
 
+    function openSystemdActivation()
+    {
+        if (status == PageStatus.Active)
+        {
+            rootPage.statusChanged.disconnect(openSystemdActivation)
+            pageStack.push(fourthWelcomeWizardPage)
+        }
+    }
+
     Component.onCompleted: {
         if (settings.firstTime)
             rootPage.statusChanged.connect(openWelcomeWizard)
+        else if (settings.lastRunVersion == 0)
+            rootPage.statusChanged.connect(openSystemdActivation)
     }
 }
