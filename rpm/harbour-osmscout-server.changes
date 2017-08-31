@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Aug 31 2017 rinigus <rinigus.git@gmail.com> 1.1.0-1
+- Add automatic start via systemd socket activation
+
 * Thu Aug 17 2017 rinigus <rinigus.git@gmail.com> 1.0.2-1
 - Normalize tile indexes if requested out of range
 
