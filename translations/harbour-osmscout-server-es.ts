@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -46,7 +44,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="41"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Por favor, ten en cuenta que &lt;i&gt;libpostal&lt;/i&gt; se ha desarrollado para ajustarse bien en el modelo que cubre todo el mundo. Los modelos basados ​​en países fueron desarrollados para usar &lt;i&gt;libpostal&lt;/i&gt; en dispositivos móviles pero no se ajustan especificamente a estos dispositivos. Por favor, informa de las incidencias sobre el rendimiento de libpostal en los modelos basados ​​en países a través de github, en los proyectos &lt;i&gt;OSM Scout Server&lt;/i&gt; o &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation>Ten en cuenta que &lt;i&gt;libpostal&lt;/i&gt; se ha desarrollado para ajustarse bien en el modelo que cubre todo el mundo. Los modelos basados ​​en países fueron desarrollados para usar &lt;i&gt;libpostal&lt;/i&gt; en dispositivos móviles pero no se ajustan especificamente a estos dispositivos. Por favor, informa de las incidencias sobre el rendimiento de libpostal en los modelos basados ​​en países a través de github, en los proyectos &lt;i&gt;OSM Scout Server&lt;/i&gt; o &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="48"/>
@@ -234,7 +232,7 @@
     <message>
         <location filename="../src/dbmaster_map.cpp" line="74"/>
         <source>Database is not open, cannot render a tile</source>
-        <translation>La base de datos no está abierta, no es posible renderizar un tile</translation>
+        <translation>La base de datos no está abierta, no es posible renderizar una tesela</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="80"/>
@@ -264,7 +262,7 @@
     <message>
         <location filename="../src/dbmaster_route.cpp" line="197"/>
         <source>Target</source>
-        <translation>Meta</translation>
+        <translation>Destino</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="252"/>
@@ -279,7 +277,7 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="277"/>
         <source>Error while searching for location</source>
-        <translation>Error al buscar la ubicación</translation>
+        <translation>Error al buscar la localización</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="484"/>
@@ -789,7 +787,7 @@
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="17"/>
         <source>Error deleting Valhalla&apos;s tile directory %1</source>
-        <translation>Error al borrar directorio de tiles de Valhalla %1</translation>
+        <translation>Error al borrar directorio de teselas de Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="33"/>
@@ -864,7 +862,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="351"/>
         <source>Missing Valhalla tiles</source>
-        <translation>Faltan tiles de Valhalla</translation>
+        <translation>Faltan teselas de Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="255"/>
@@ -1063,7 +1061,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation>Mapnik se puede utilizar como un backend de renderizado para proporcionar tiles de mapas a los programas cliente</translation>
+        <translation>Mapnik se puede utilizar como un backend de renderizado para proporcionar teselas de mapa a los programas cliente</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
@@ -1083,7 +1081,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation>Al aumentar el tamaño del área usado para cargar los datos durante el renderizado de un tile, el visualizador puede mejorar el renderizado de etiquetas al tener en cuenta los datos de los tiles colindantes. Si visualizas demasiadas etiquetas cortadas, prueba a aumentar el tamaño del búfer. Ten en cuenta que tamaños de búfer grandes hacen que el renderizado sea más lento. El tamaño del búfer se escala conforme al factor de escala para ajustar el aumento en el tamaño de las etiquetas.</translation>
+        <translation>Al aumentar el tamaño del área usado para cargar los datos durante el renderizado de una tesela, el visualizador puede mejorar el renderizado de etiquetas al tener en cuenta los datos de las teselas colindantes. Si visualizas demasiadas etiquetas cortadas, prueba a aumentar el tamaño del búfer. Ten en cuenta que tamaños de búfer grandes hacen que el renderizado sea más lento. El tamaño del búfer se escala conforme al factor de escala para ajustar el aumento en el tamaño de las etiquetas.</translation>
     </message>
 </context>
 <context>
@@ -1254,7 +1252,7 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="143"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation>Al aumentar el tamaño del área usado para cargar los datos durante el renderizado de un tile, el visualizador puede mejorar el renderizado de etiquetas al tener en cuenta los datos de los tiles colindantes. El valor de factor 1.0 corresponde a los datos de carga originados únicamente para el tile renderizado. Un valor alto del factor disminuiría la velocidad de renderizado y aumentaría la RAM del servidor. Debido al impacto sobre la memoria RAM, dependiendo del tamaño del tile, factores tan pequeños como 2 pueden conducir a llenar la memoria RAM del dispositivo.</translation>
+        <translation>Al aumentar el tamaño del área usado para cargar los datos durante el renderizado de una tesela, el visualizador puede mejorar el renderizado de etiquetas al tener en cuenta los datos de las teselas colindantes. El valor de factor 1.0 corresponde a los datos de carga originados únicamente para la tesela renderizada. Un valor alto del factor disminuiría la velocidad de renderizado y aumentaría la RAM del servidor. Debido al impacto sobre la memoria RAM, dependiendo del tamaño de la tesela, factores tan pequeños como 2 pueden conducir a llenar la memoria RAM del dispositivo.</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="156"/>
@@ -1264,7 +1262,7 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="157"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation>En el nivel de zoom especificado, el algoritmo de renderizado del mapa detendrá la comprobación de etiquetas en los tiles colindantes. Normalmente se utiliza 14 como nivel mínimo de zoom. Con un valor más alto se podría conseguir un renderizado de etiquetas más preciso con niveles mayores de zoom. Ten en cuenta que el renderizado de etiquetas podría ralentizar considerablemente el renderizado de mapas.</translation>
+        <translation>En el nivel de zoom especificado, el algoritmo de renderizado del mapa detendrá la comprobación de etiquetas en las teselas colindantes. Normalmente se utiliza 14 como nivel mínimo de zoom. Con un valor más alto se podría conseguir un renderizado de etiquetas más preciso en niveles de zoom mayores. Ten en cuenta que el renderizado de etiquetas podría ralentizar considerablemente el renderizado de mapas.</translation>
     </message>
 </context>
 <context>
@@ -1738,7 +1736,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="143"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation>El geocodificador es responsable de resolver las búsquedas solicitadas. Para ello, analiza la cadena de búsqueda y localiza los objetos correspondientes en un mapa. Este servidor te permite seleccionar entre dos backends de geocodificadores: &lt;i&gt;geocoder-nlp&lt;/i&gt; y &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
+        <translation>El geocodificador es responsable de resolver las búsquedas solicitadas. Para ello, analiza la cadena de búsqueda y localiza los objetos correspondientes en un mapa. Este servidor te permite elegir entre dos backends de geocodificadores: &lt;i&gt;geocoder-nlp&lt;/i&gt; y &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="158"/>
@@ -1853,7 +1851,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="324"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
-        <translation>Cuando está activado, los mensajes se registran en un archivo de registro de sesión. El archivo de registro está en el directorio .cache/harbour-osmscout-server. Utiliza esta configuración sólo para fines de depuración. Con esta opción activada, los mensajes de información serán registrados y mostrados en eventos independientemente de los ajustes anteriores. Esto te permite activar temporalmente el registro completo y desactivarlo cuando el archivo de registro de sesión requerido se haya creado.</translation>
+        <translation>Cuando está activado, los mensajes se registran en un archivo de registro de sesión. El archivo de registro está en el directorio .cache/harbour-osmscout-server. Utiliza esta configuración sólo para fines de depuración. Con esta opción activada, los mensajes de información se registrarán y se mostrarán en eventos con independencia de los ajustes anteriores. Esto te permite activar temporalmente el registro completo y desactivarlo cuando el archivo de registro de sesión requerido se haya generado.</translation>
     </message>
 </context>
 <context>
@@ -2113,12 +2111,12 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="41"/>
         <source>Cache for storing tiles, MB</source>
-        <translation>Caché para almacenar tiles, MB</translation>
+        <translation>Caché para almacenar teselas, MB</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="42"/>
         <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
-        <translation>Memoria caché que se usa para conservar los tiles de Valhalla en la RAM.</translation>
+        <translation>Memoria caché que se usa para conservar las teselas de Valhalla en la RAM.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="48"/>
@@ -2128,7 +2126,7 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="52"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
-        <translation>Distancias límite para cálculos de rutas. Sólo se calcularán rutas cuando las distancias entre las ubicaciones sea menor que las especificadas en los límites. Al limitar las distancias máximas entre ubicaciones, puedes evitar cálculos accidentales que te llevarían a rutas demasiado largas y que usarían excesiva RAM en tu dispositivo.</translation>
+        <translation>Distancias límite para cálculos de rutas. Sólo se calcularán rutas cuando las distancias entre las localizaciones sea menor que las especificadas en los límites. Al limitar las distancias máximas entre localizaciones, puedes evitar cálculos accidentales que te llevarían a rutas demasiado largas y que usarían excesiva RAM en tu dispositivo.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="66"/>
