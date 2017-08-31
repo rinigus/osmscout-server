@@ -27,9 +27,13 @@ other.
 After initial setup, users would mainly have the server running in the
 background while accessing maps and getting navigation instructions
 through client. The server's GUI is only needed for managing maps on
-device. On Sailfish OS, the normal mode of operation would require
-server running as one of the applications showing a cover and client
-opened as needed.
+device. 
+
+On Sailfish OS, the normal mode of operation would require server
+running as one of the applications showing a cover and client opened
+as needed. Alternatively, the server can be activated automatically by
+_systemd_ on request by the client. Such mode of operation allows
+client to access the server without exposing GUI of the server.
 
 
 ## Setting up the server
@@ -84,7 +88,9 @@ profile as shown in the [Profile selection tutorial](profiles.html).
 ### Settings
 
 There are multiple settings that can be useful to tune the operation
-of the server. See some examples in
+of the server. Among other settings, this includes language
+preference, units, and whether the server is activated
+automatically. See some examples in
 [Settings examples](settings_misc.html).
 
 
