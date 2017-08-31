@@ -1696,6 +1696,11 @@
         <translation>Haluttu kieli kartalla näytetyille paikannimille tai haun tuloksille. Tätä kieltä käytetään aina kun mahdollista. Kun määritetty kieli on&lt;i&gt;Oletus&lt;/i&gt;, OpenStreetMap-nimeä käytetään, mikä yleensä on näytetyn maan paikallisen kielen mukainen.</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>Maps storage</source>
         <translation>Karttojen tallennus</translation>
@@ -1708,11 +1713,6 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="108"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
-        <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1758,11 +1758,6 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="140"/>
         <source>No timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
-        <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1864,6 +1859,11 @@
         <location filename="../qml/pages/SettingsPage.qml" line="288"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
+        <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="190"/>

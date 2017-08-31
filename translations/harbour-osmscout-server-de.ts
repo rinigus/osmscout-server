@@ -1696,6 +1696,11 @@
         <translation>Bevorzugte Sprache für Ortsnamen, die in gerenderten Karten oder in den zurückgegebenen Suchergebnissen angezeigt werden. Wenn möglich, wird diese Sprache verwendet. Wenn auf &lt;i&gt;Default&lt;/i&gt;gesetzt, wird der OpenStreetMap-Name verwendet, der normalerweise die lokale Sprache des angezeigten Landes verwendet.</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>Maps storage</source>
         <translation>Kartenspeicher</translation>
@@ -1708,11 +1713,6 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="108"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
-        <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1758,11 +1758,6 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="140"/>
         <source>No timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
-        <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1865,6 +1860,11 @@ Wichtig! Wenn Sie &lt;i&gt;geocoder-nlp&lt;/i&gt; auswählen, geben Sie bitte Sp
         <location filename="../qml/pages/SettingsPage.qml" line="288"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
+        <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="190"/>

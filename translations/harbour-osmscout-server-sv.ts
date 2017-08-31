@@ -1696,6 +1696,11 @@
         <translation>Önskat språk för platsnamn som visas på kartor och i sökresultat. Detta språk kommer att användas om möjligt. Om &lt;i&gt;Standard&lt;/i&gt; anges, kommer  OpenStreetMap-namn att användas, vilket oftast innebär det lokala språket i det visade landet.</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
+        <translation>Vid aktivering kommer OSM Scout Server att aktiveras automatiskt, av valfri kompatibel klient. Automatiskt startad server arbetar i bakgrunden.</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>Maps storage</source>
         <translation>Kartlagring</translation>
@@ -1708,62 +1713,52 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="108"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
-        <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk aktivering</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="129"/>
         <source>Idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Tidsgräns för inaktivitet</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="133"/>
         <source>15 minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>15 minuter</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="134"/>
         <source>30 minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>30 minuter</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="135"/>
         <source>1 hour</source>
-        <translation type="unfinished"></translation>
+        <translation>1 timma</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="136"/>
         <source>2 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>2 timmar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>4 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>4 timmar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="138"/>
         <source>8 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>8 timmar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="139"/>
         <source>24 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>24 timmar</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="140"/>
         <source>No timeout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
-        <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen tidsgräns</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="195"/>
@@ -1864,6 +1859,11 @@
         <location filename="../qml/pages/SettingsPage.qml" line="288"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
+        <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
+        <translation>Vid automatisk start, stängs servern av efter inaktivitetstid som överstiger tidsgränsen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="190"/>
@@ -2062,12 +2062,12 @@
     <message>
         <location filename="../src/systemdservice.cpp" line="79"/>
         <source>Cannot create or change to directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan inte skapa eller ändra mappen: %1</translation>
     </message>
     <message>
         <location filename="../src/systemdservice.cpp" line="89"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan inte hitta OSM Scout Server på sökvägen</translation>
     </message>
 </context>
 <context>
@@ -2076,22 +2076,22 @@
         <location filename="../qml/pages/SystemdActivationPage.qml" line="22"/>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="46"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatisk aktivering</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="26"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server kan aktiveras automatiskt när klienten begär åtkomst till den. Vid automatisk start, kommer den att stoppas vid inaktivitet överstigande uppgiven tidsgräns.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="36"/>
         <source>Do you want to enable automatic activation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vill du aktivera automatisk aktivering?</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Notera att servern körs utan användargränssnitt, vid automatisk aktivering. Automatisk aktivering och motsvarande tidsgräns för inaktivitet, kan konfigureras senare i inställningarna.</translation>
     </message>
 </context>
 <context>
@@ -2253,17 +2253,17 @@
     <message>
         <location filename="../src/main.cpp" line="130"/>
         <source>Run the server without GUI as a console application</source>
-        <translation type="unfinished"></translation>
+        <translation>Kör servern som konsolprogram, utan GUI</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="134"/>
         <source>Do not output logs when running in console mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa inte utdata från loggar, vid körning i konsolläge</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="139"/>
         <source>Run the server in SystemD socket-activated mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Kör servern i systemd, socket-aktiverat läge</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="145"/>
