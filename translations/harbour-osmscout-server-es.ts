@@ -1698,7 +1698,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="117"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
-        <translation type="unfinished"></translation>
+        <translation>Al habilitar, OSM Scout Server se activará automáticamente cuando cualquier cliente acceda a él. Automáticamente el servidor iniciado trabajará en segundo plano.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
@@ -1713,52 +1713,52 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="108"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
+        <translation>Activación automática</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="129"/>
         <source>Idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de inactividad</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="133"/>
         <source>15 minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>15 minutos</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="134"/>
         <source>30 minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>30 minutos</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="135"/>
         <source>1 hour</source>
-        <translation type="unfinished"></translation>
+        <translation>1 hora</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="136"/>
         <source>2 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>2 horas</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>4 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>4 horas</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="138"/>
         <source>8 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>8 horas</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="139"/>
         <source>24 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>24 horas</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="140"/>
         <source>No timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Sin tiempo de espera</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="195"/>
@@ -1863,7 +1863,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="177"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Cuando se inicia automáticamente, el servidor se apagará sólo después de no recibir solicitudes durante un tiempo superior al de inactividad</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="190"/>
@@ -2062,12 +2062,12 @@
     <message>
         <location filename="../src/systemdservice.cpp" line="79"/>
         <source>Cannot create or change to directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible crear o cambiar al directorio: %1</translation>
     </message>
     <message>
         <location filename="../src/systemdservice.cpp" line="89"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation>No es posible encontrar OSM Scout Server en la ruta</translation>
     </message>
 </context>
 <context>
@@ -2076,22 +2076,22 @@
         <location filename="../qml/pages/SystemdActivationPage.qml" line="22"/>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="46"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
+        <translation>Activación automática</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="26"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server puede activarse automáticamente cuando los clientes accedan a él. Cuando se inicia automáticamente, se detendrá si está inactivo después de un periodo de tiempo.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="36"/>
         <source>Do you want to enable automatic activation?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Quieres habilitar la activación automática?</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Te en cuenta que cuando  se activa, el servidor se ejecuta sin ninguna interfaz de usuario. La activación automática y el correspodiente tiempo de inactividad puede configurarse más tarde en Ajustes.</translation>
     </message>
 </context>
 <context>
@@ -2253,17 +2253,17 @@
     <message>
         <location filename="../src/main.cpp" line="130"/>
         <source>Run the server without GUI as a console application</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutar el servidor sin GUI como una aplicación de consola</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="134"/>
         <source>Do not output logs when running in console mode</source>
-        <translation type="unfinished"></translation>
+        <translation>No generar registros cuando se está ejecutándo en modo consola</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="139"/>
         <source>Run the server in SystemD socket-activated mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutar el servidor en modo SystemD socket-activado</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="145"/>
