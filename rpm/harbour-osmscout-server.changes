@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Sep 9  2017 rinigus <rinigus.git@gmail.com> 1.1.1-1
+- Update translations
+
 * Thu Aug 31 2017 rinigus <rinigus.git@gmail.com> 1.1.0-1
 - Add automatic start via systemd socket activation
 
