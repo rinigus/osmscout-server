@@ -24,9 +24,7 @@ accédant au serveur, lancé simultanément et communicant l'un avec l'autre.
 Après une configuration initiale, les utilisateurs vont principalement avoir
 le serveur lancé en arrière plan et accéder aux cartes et instructions de navigation
 à travers le logiciel client. L'interface graphique du serveur n'est présente
-que pour gérer les cartes présentes sur l'appareil. Sur Sailfish OS, le mode d'opération
-normal requière que le serveur soit lancé en tant qu'application affichant une vignette
-sur l'écran principal, et qu'un client soit aussi lancé quand nécessaire.
+que pour gérer les cartes présentes sur l'appareil.
 
 
 ## Configurer le serveur
@@ -83,8 +81,9 @@ Plus tard, il est possible de changer de profil en suivant le
 
 ### Paramètres
 
-De nombreux paramètrtres sont disponibles pour régler finement le fonctionnement
-du serveur. Voir quelques exemples dans [les exemples de paramètres](settings_misc.html).
+De nombreux paramètres sont disponibles pour régler finement le fonctionnement
+du serveur. Entre autres, cela inclus les langues, unités et si le serveur doit 
+être activé automatiquement. Voir quelques exemples dans [les exemples de paramètres](settings_misc.html).
 
 
 ## Configuration du client
