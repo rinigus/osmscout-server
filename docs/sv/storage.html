@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OSM Scout Server - Lagringsplats</title>
+	<meta name="author" content="rinigus" />
+	<meta name="description" content="OSM Scout Server tutorial" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../assets/fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
+	<style>
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(storage/storage_1.jpg);
+	}
+	#section2{
+		background-image: url(storage/storage_2.jpg);
+	}
+	#section3{
+		background-image: url(storage/storage_3.jpg);
+	}
+	#section4{
+		background-image: url(storage/storage_4.jpg);
+	}
+	#section5{
+		background-image: url(storage/storage_5.jpg);
+	}
+	#section6{
+		background-image: url(storage/storage_6.jpg);
+	}
+	#section7{
+		background-image: url(storage/storage_7.jpg);
+	}
+	#section8{
+		background-image: url(storage/storage_8.jpg);
+	}
+	#section9{
+		background-image: url(storage/storage_9.jpg);
+	}
+	#section10{
+		background-image: url(storage/storage_10.jpg);
+	}
+	#section11{
+		background-image: url(storage/storage_11.jpg);
+	}
+	<!-- #section12{ -->
+	<!-- 	background-image: url(storage/storage_12.jpg); -->
+	<!-- } -->
+	#section13{
+		background-image: url(storage/storage_13.jpg);
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section" id="section1">
+    <div class="caption">
+      <p class="border">
+        Innan lagringsplatsen är allokerad och inställd, kommer du att
+        få en uppmaning om att göra detta. Denna handledning visar hur du
+        skapar lagringsplats på SD-kortet eller annan icke standardplats.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="caption">
+      <p class="head">Starta <a href="https://openrepos.net/content/cepiperez/filecase-0">FileCase</a></p>
+      <p class="border">
+        Starta en filhanterare på din Sailfish-enhet. Du kan t.ex öppna
+        FileCase och svepa åt höger, som det visas på skärmklippet.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="caption">
+      <p class="head">SD-kort</p>
+      <p class="border">
+        Tryck på SD-kort.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section4">
+    <div class="caption">
+      <p class="head">Skapa ny mapp</p>
+      <p class="border">
+        Gå till den plats på SD-kortet, där du vill ha din lagringsmapp
+        och skapa den via toppmenyn, som det visas på skärmklippet.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section5">
+    <div class="caption">
+      <p class="head">Namnge mappen</p>
+      <p class="border">
+        Namnge mappen som du önskar. I exemplet heter den Maps.OSM.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section6">
+    <div class="caption">
+      <p class="head">Tillbaka till OSM Scout Server</p>
+      <p class="border">
+        Gå tillbaka till OSM Scout Server och öppna inställningarna
+        från toppmenyn, som visat.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section7">
+    <div class="captiontop">
+      <p class="head">Välja lagringsplats</p>
+      <p class="border">
+        Öppna lagringsplatsdialogen som visas markerat på skärmklippet.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section8">
+    <div class="caption">
+      <p class="head">Navigera till den nyskapade mappen</p>
+      <p class="border">
+        Navigera till platsen för den nyskapade mappen. I detta
+        exempel, börjar vi från /home/nemo och måste ta oss till
+        /media/sdcard/, så navigeringen börjar med att flytta upp
+        två nivåer genom att trycka som skärmklippet visar.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section9">
+    <div class="caption">
+      <p class="border">
+        Gå till "media" när du är i root-mappen (/).
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section10">
+    <div class="caption">
+      <p class="border">
+        I media-mappen fortsätter du till din nyskapade mapp.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section11">
+    <div class="caption">
+      <p class="head">Välj lagringsmapp</p>
+      <p class="border">
+        Långtryck på den nya lagringsmappen tills kontextmenyn öppnas,
+        tryck sedan "Välj" för att bekräfta ditt val.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section13">
+    <div class="captiontop">
+      <p class="border">
+        Den nya lagringsmappen är vald, som visas på skärmklippet,
+        under "Kartlagring". Fortsätt genom att acceptera de nya
+        inställningarna.
+      </p>
+      <p class="border"><a href="index.html">Tillbaka till startsidan</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
