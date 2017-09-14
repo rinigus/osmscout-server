@@ -58,7 +58,7 @@ man gör det med
 
 ### Karthanterare
 
-Använd karthanterarenför att ladda ner, uppdatera och ta bort kartor.
+Använd karthanteraren för att ladda ner, uppdatera och ta bort kartor.
 Prenumeration på kartor och deras nerladdning, beskrivs i
 [Karthanteringsguiden](manager.html). 
 
