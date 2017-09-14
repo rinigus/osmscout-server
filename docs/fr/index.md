@@ -70,7 +70,7 @@ Le serveur utilise une bibliothèque de traitement automatique du langage nature
 (NLP) qui permet le décodage d'adresses dans de nombreuses langues -
 [libpostal](https://github.com/openvenues/libpostal). Pour limiter les ressources
 consommées, veuillez spécifier les langues souhaitées comme indiqué dans le
-[tutoriel de sélection de la langue] (languages.html).
+[tutoriel de sélection de la langue](languages.html).
 
 ### Profil
 
