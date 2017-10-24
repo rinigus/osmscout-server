@@ -354,10 +354,9 @@ unsigned int RequestMapper::service(const char *url_c,
   else if (path == "/v1/mbgl/tile")
     {
       bool ok = true;
-      // no meaningful default x y z values
-      int x = q2value<int>("x", -1, connection, ok);
-      int y = q2value<int>("y", -1, connection, ok);
-      int z = q2value<int>("z", -1, connection, ok);
+      int x = q2value<int>("x", 0, connection, ok);
+      int y = q2value<int>("y", 0, connection, ok);
+      int z = q2value<int>("z", 0, connection, ok);
 
       if (ok && x>=0 && y>=0 && z>=0)
         {
@@ -699,9 +698,7 @@ unsigned int RequestMapper::service(const char *url_c,
       return MHD_HTTP_OK;
     }
 
-  else // command unidentified. return help string
-    {
-      errorText(response, connection_id, "Unknown URL path");
-      return MHD_HTTP_BAD_REQUEST;
-    }
+  // command unidentified. return help string
+  errorText(response, connection_id, "Unknown URL path");
+  return MHD_HTTP_BAD_REQUEST;
 }
