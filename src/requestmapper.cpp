@@ -190,6 +190,11 @@ static int query_uri_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char
   return MHD_YES;
 }
 
+int constexpr strlength(const char* str)
+{
+    return *str ? 1 + strlength(str + 1) : 0;
+}
+
 //////////////////////////////////////////////////////////////////////
 /// Default error function
 //////////////////////////////////////////////////////////////////////
@@ -348,6 +353,54 @@ unsigned int RequestMapper::service(const char *url_c,
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "image/png");
       return MHD_HTTP_OK;
     }
+
+  //////////////////////////////////////////////////////////////////////
+  /// MAPBOX GL SUPPORT: TILES , SPRITE, GLYPHS)
+#define MBGL_TILE_START "/v1/mbgl/tile/" // NB! UPDATE LENGTH BELOW IF CHANGED
+  else if (path.startsWith(MBGL_TILE_START))
+    {
+      constexpr int base_len = strlength(MBGL_TILE_START);
+      constexpr int ext_len = strlength(".pbf");
+      QString relpath = path.mid(base_len, std::max(-1, path.length() - base_len - ext_len));
+      QStringList splitted = relpath.split("/");
+      if (splitted.length() == 3)
+        {
+          bool ok_z, ok_x, ok_y;
+          int z = splitted[0].toInt(&ok_z);
+          int x = splitted[1].toInt(&ok_x);
+          int y = splitted[2].toInt(&ok_y);
+          if (ok_x && ok_y && ok_z)
+            {
+              bool compressed = false;
+              bool found = true;
+              QByteArray bytes;
+
+              if (!mapboxglMaster->getTile(x, y, z, bytes, compressed, found))
+                {
+                  errorText(response, connection_id, "Error while listing available POI types");
+                  return MHD_HTTP_INTERNAL_SERVER_ERROR;
+                }
+              if (!found)
+                {
+                  errorText(response, connection_id, "Tile not found");
+                  return MHD_HTTP_NOT_FOUND;
+                }
+
+              MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+              MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+              MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/x-protobuf");
+              if (compressed)
+                MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_ENCODING, "gzip");
+              MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+              return MHD_HTTP_OK;
+            }
+        }
+
+      // error condition
+      errorText(response, connection_id, "Malformed Mapbox GL tile request");
+      return MHD_HTTP_BAD_REQUEST;
+    }
+
 
   //////////////////////////////////////////////////////////////////////
   /// SEARCH

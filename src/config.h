@@ -34,6 +34,7 @@
 
 #include "dbmaster.h"
 #include "geomaster.h"
+#include "mapboxglmaster.h"
 #include "mapnikmaster.h"
 #include "valhallamaster.h"
 
@@ -42,6 +43,8 @@
 extern DBMaster *osmScoutMaster;
 
 extern GeoMaster *geoMaster;
+
+extern MapboxGLMaster *mapboxglMaster;
 
 #ifdef USE_MAPNIK
 extern MapnikMaster *mapnikMaster;

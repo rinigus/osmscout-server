@@ -293,6 +293,14 @@ int main(int argc, char *argv[])
   if (rootContext) rootContext->setContextProperty("geocoder", geoMaster);
 #endif
 
+  // setup Mapbox GL
+  mapboxglMaster = new MapboxGLMaster();
+  if (mapboxglMaster == nullptr)
+    {
+      std::cerr << "Failed to allocate MapboxGLMaster" << std::endl;
+      return -3;
+    }
+
 #ifdef USE_MAPNIK
   // setup Mapnik
   mapnikMaster = new MapnikMaster();
@@ -300,7 +308,7 @@ int main(int argc, char *argv[])
   if (mapnikMaster == nullptr)
     {
       std::cerr << "Failed to allocate MapnikMaster" << std::endl;
-      return -3;
+      return -4;
     }
 #endif
 
@@ -311,7 +319,7 @@ int main(int argc, char *argv[])
   if (valhallaMaster == nullptr)
     {
       std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
-      return -4;
+      return -5;
     }
 #endif
 
@@ -452,7 +460,7 @@ int main(int argc, char *argv[])
     if ( !http_server )
       {
         std::cerr << "Failed to start HTTP server" << std::endl;
-        return -2;
+        return -100;
       }
 
     // connect request mapper to the settings
