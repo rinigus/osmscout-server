@@ -1,11 +1,13 @@
 #!/bin/bash
 
+set -e
+
 PROGPATH=$(dirname "$0")
 source $PROGPATH/env.sh
 
-createdb --host=$POSTGRES_DB --port=$POSTGRES_PORT --user=$POSTGRES_USER $POSTGRES_DB
+createdb --host=$POSTGRES_HOST --port=$POSTGRES_PORT --user=$POSTGRES_USER $POSTGRES_DB
 
-psql --host=$POSTGRES_DB --port=$POSTGRES_PORT --user=$POSTGRES_USER --dbname="$db" <<-'EOSQL'
+psql --host=$POSTGRES_HOST --port=$POSTGRES_PORT --user=$POSTGRES_USER --dbname="$db" <<-'EOSQL'
     CREATE EXTENSION postgis;
     CREATE EXTENSION hstore;
     CREATE EXTENSION unaccent;
