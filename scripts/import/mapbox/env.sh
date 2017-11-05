@@ -2,13 +2,17 @@
 
 # setup environment variables used by import scripts
 
-POSTGRES_USER=$USER
-POSTGRES_PASSWORD=
+export POSTGRES_USER=$USER
+export POSTGRES_PASSWORD=test
 
-POSTGRES_DB=osm
-POSTGRES_HOST=`pwd`/pg-socket
-POSTGRES_PORT=35432
+export POSTGRES_DB=osm
+export POSTGRES_HOST=`pwd`/pg-socket
+export POSTGRES_PORT=35432
 
-IMPORT_DATA_DIR=`pwd`/data
+export IMPORT_DATA_DIR=`pwd`/data
+export NATURAL_EARTH_DB=$IMPORT_DATA_DIR/natural_earth_vector.sqlite
+export IMPORT_DIR=$IMPORT_DATA_DIR
 
-PATH=.:$PATH
+export IMPOSM_CACHE_DIR=`pwd`/imposm-cache
+
+export PATH=.:$PATH

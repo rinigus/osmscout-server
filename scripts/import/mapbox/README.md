@@ -30,7 +30,14 @@ To initialize local PostGIS database:
 
 There are several programs that are used during import and are possibly not available in a general Linux distributions. To get the corresponding tools, run `prepare_tools.sh`
 
-
 ## Obtaining the data
 
 In addition to Planet OSM, there are several other datasets used in generation of the tiles. Run `prepare_datasets.sh` to get the datasets.
+
+## Importing data into PostGIS
+
+* Run: `./import_datasets.sh`
+
+* Make a link to the planet.pbf: `ln -s ../planet/planet-latest.osm.pbf .`
+
+* Run: `./import_osm.sh planet-latest.osm.pbf`
