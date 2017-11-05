@@ -12,5 +12,4 @@ psql --host=$POSTGRES_HOST --port=$POSTGRES_PORT --user=$POSTGRES_USER --dbname=
     CREATE EXTENSION hstore;
     CREATE EXTENSION unaccent;
     CREATE EXTENSION fuzzystrmatch;
-    CREATE EXTENSION osml10n;
 EOSQL

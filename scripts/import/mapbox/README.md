@@ -1,14 +1,12 @@
 # Mapbox GL tiles
 
-Mapbox GL map import is based on [OpenMapTiles schema](https://github.com/openmaptiles/openmaptiles). The schema will be developed further in future and proposed upstream.
+Mapbox GL map import is based on [OpenMapTiles schema](https://github.com/openmaptiles/openmaptiles).
 
-In contrast to OpenMapTiles approach, this import procedure does not require docker images and is using the database accessible directly. The scripts from OpenMapTiles repositories have been adjusted, if needed.
+In contrast to OpenMapTiles approach, this import procedure does not require docker images and is using the directly accessible database. The scripts from OpenMapTiles repositories have been adjusted, if needed. All import is done in Linux, but similar approach could work on other platforms as well.
 
 ## Preparation of PostGIS database
 
 Install PostgreSQL, PostGIS using your distribution.
-
-### Initialize PostGIS
 
 To initialize local PostGIS database:
 
@@ -25,3 +23,14 @@ To initialize local PostGIS database:
 * Start PostgreSQL: ```postgres -D `pwd`/db```
 
 * Adjust environment variables in `env.sh`
+
+* Create the database by running `./create_database.sh`
+
+## Obtaining the required programs
+
+There are several programs that are used during import and are possibly not available in a general Linux distributions. To get the corresponding tools, run `prepare_tools.sh`
+
+
+## Obtaining the data
+
+In addition to Planet OSM, there are several other datasets used in generation of the tiles. Run `prepare_datasets.sh` to get the datasets.
