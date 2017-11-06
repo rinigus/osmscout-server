@@ -114,3 +114,7 @@ these scripts for instructions.
   maps distribution from S3 cloud / HTTP server. See note on the top
   of the script on how to specify mirror path and URL
   
+* update_distribution_wrapper.sh - used on the distribution server to
+  update distribution from S3 cloud / HTTP server. See the script for
+  configuration options. This is a wrapper that is expected to be used
+  in cron script to run update_distribution.py
