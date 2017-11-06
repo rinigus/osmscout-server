@@ -15,4 +15,5 @@ export IMPORT_DIR=$IMPORT_DATA_DIR
 
 export IMPOSM_CACHE_DIR=`pwd`/imposm-cache
 
-export PATH=.:$PATH
+export GOPATH=`pwd`/go
+export PATH=.:`pwd`/go/bin:$PATH

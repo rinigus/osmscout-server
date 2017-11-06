@@ -14,7 +14,7 @@ mkdir -p "$IMPOSM_CACHE_DIR"
 
 (cd openmaptiles/openmaptiles && make)
 
-imposm3/imposm3 import \
+imposm3 import \
         -connection "$PG_CONNECT" \
         -mapping "$MAPPING_YAML" \
         -overwritecache \
