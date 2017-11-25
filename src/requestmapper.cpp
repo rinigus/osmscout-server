@@ -372,7 +372,12 @@ unsigned int RequestMapper::service(const char *url_c,
           if (!found)
             {
               errorText(response, connection_id, "Tile not found");
-              return MHD_HTTP_NOT_FOUND;
+              //return MHD_HTTP_NOT_FOUND;
+
+              // this will force Mapbox GL Native client to load parent tiles. 404 is interpreted
+              // as an empty tile by Mapbox GL.
+              // See https://github.com/mapbox/mapbox-gl-native/issues/10545
+              return 418;
             }
 
           MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
