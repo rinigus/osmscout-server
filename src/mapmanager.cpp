@@ -36,6 +36,7 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeatureGeocoderNLP(this));
   m_features.append(new FeaturePostalGlobal(this));
   m_features.append(new FeaturePostalCountry(this));
+  m_features.append(new FeatureMapboxGLGlobal(this));
   m_features.append(new FeatureMapnikGlobal(this));
   m_features.append(new FeatureMapnikCountry(this));
   m_features.append(new FeatureValhalla(this));
@@ -125,6 +126,11 @@ void Manager::loadSettings()
     addCountry(const_feature_id_mapnik_global);
   else
     rmCountry(const_feature_id_mapnik_global);
+
+  if (settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl"))
+    addCountry(const_feature_id_mapboxgl_global);
+  else
+    rmCountry(const_feature_id_mapboxgl_global);
 
   if ( m_db_files.isOpen() && m_db_files.databaseName() != fullPath(const_fname_db_files) )
     {
@@ -235,6 +241,7 @@ void Manager::nothingAvailable()
   updateGeocoderNLP();
   updatePostal();
   updateMapnik();
+  updateMapboxGL();
   updateValhalla();
 
   emit availabilityChanged();
@@ -264,7 +271,9 @@ QString Manager::getPretty(const QJsonObject &obj) const
   if (obj.value("id").toString() == const_feature_id_postal_global)
     return tr("Address parsing language support");
   else if (obj.value("id").toString() == const_feature_id_mapnik_global)
-    return tr("World coastlines");
+    return tr("Mapnik World coastlines");
+  else if (obj.value("id").toString() == const_feature_id_mapboxgl_global)
+    return tr("Mapbox GL World overlay");
 
   QString name = obj.value("name").toString();
   name.replace("/", const_pretty_separator);
@@ -377,7 +386,9 @@ void Manager::scanDirectories(bool force_update)
         {
           for (QJsonObject::const_iterator i = m_maps_available.constBegin();
                i != m_maps_available.constEnd(); ++i)
-            if (i.key() != const_feature_id_postal_global && i.key() != const_feature_id_mapnik_global)
+            if (i.key() != const_feature_id_postal_global &&
+                i.key() != const_feature_id_mapnik_global &&
+                i.key() != const_feature_id_mapboxgl_global)
               {
                 m_map_selected = i.key();
                 break;
@@ -397,6 +408,7 @@ void Manager::scanDirectories(bool force_update)
       updateGeocoderNLP();
       updatePostal();
       updateMapnik();
+      updateMapboxGL();
       updateValhalla();
 
       emit availabilityChanged();
@@ -1427,6 +1439,35 @@ void Manager::updateMapnik()
 
   // let Mapnik check whether anything has actually changed
   emit databaseMapnikChanged(path_global, path_countries);
+}
+
+////////////////////////////////////////////////////////////
+/// mapboxgl support
+void Manager::updateMapboxGL()
+{
+  // MapboxGL is able to draw all available maps, so we give the full list
+  QString path_global;
+  QStringList path_countries;
+
+  QJsonObject obj_global = m_maps_available.value(const_feature_id_mapboxgl_global).toObject();
+  for (const Feature *f: m_features)
+    if (f->enabled() && f->name() == "mapboxgl_global")
+      path_global = fullPath( f->getPath(obj_global) );
+
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
+    {
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+#pragma message "MapboxGL country-specific support is not implemented"
+//      if ( getType(c) == const_feature_type_country )
+//        for (const Feature *f: m_features)
+//          if (f->enabled() && f->name() == "mapboxgl_country")
+//            path_countries.append( fullPath( f->getPath(c) ) );
+    }
+
+  emit databaseMapboxGLChanged(path_global, path_countries);
 }
 
 ////////////////////////////////////////////////////////////

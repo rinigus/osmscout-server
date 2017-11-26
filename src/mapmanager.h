@@ -174,6 +174,7 @@ namespace MapManager {
     void databaseGeocoderNLPChanged(QHash<QString,QString> dirs);
     void databasePostalChanged(QString global, QHash<QString,QString> dirs_country);
     void databaseMapnikChanged(QString root_directory, QStringList country_files);
+    void databaseMapboxGLChanged(QString root_directory, QStringList country_files);
     void databaseValhallaChanged(QString valhalla_directory, QStringList countries);
 
     void readyChanged(bool ready);
@@ -226,6 +227,7 @@ namespace MapManager {
     void updateGeocoderNLP();
     void updatePostal();
     void updateMapnik();
+    void updateMapboxGL();
     void updateValhalla();
 
     /// helper functions to deal with JSON representation of the features
@@ -300,6 +302,7 @@ namespace MapManager {
     const QString const_feature_id_postal_global{"postal/global"};
     const QString const_feature_type_country{"territory"};
     const QString const_feature_id_mapnik_global{"mapnik/global"};
+    const QString const_feature_id_mapboxgl_global{"mapboxgl/global"};
 
     const QString const_pretty_separator{" / "};
   };

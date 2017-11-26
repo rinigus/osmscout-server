@@ -164,6 +164,24 @@ namespace MapManager {
     virtual QString errorMissing() const;
   };
 
+  class FeatureMapboxGLGlobal: public Feature
+  {
+  public:
+    FeatureMapboxGLGlobal(PathProvider *path);
+    virtual ~FeatureMapboxGLGlobal() {}
+    virtual void loadSettings();
+    virtual QString errorMissing() const;
+  };
+
+  class FeatureMapboxGLCountry: public Feature
+  {
+  public:
+    FeatureMapboxGLCountry(PathProvider *path);
+    virtual ~FeatureMapboxGLCountry() {}
+    virtual void loadSettings();
+    virtual QString errorMissing() const;
+  };
+
   /// \brief Valhalla support
   ///
   /// Valhalla's support includes handling of the packages. If some other

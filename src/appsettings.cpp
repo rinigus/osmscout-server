@@ -62,6 +62,7 @@ void AppSettings::initDefaults()
   CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
   CHECK(MAPMANAGER_SETTINGS "postal_country", 1);
   CHECK(MAPMANAGER_SETTINGS "mapnik", 1);
+  CHECK(MAPMANAGER_SETTINGS "mapboxgl", 0);
   CHECK(MAPMANAGER_SETTINGS "valhalla", 1);
   CHECK(MAPMANAGER_SETTINGS "max_download_speed_in_kbps", -1);
   CHECK(MAPMANAGER_SETTINGS "development_disable_url_update", 0);

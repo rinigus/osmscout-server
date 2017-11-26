@@ -297,7 +297,7 @@ const static QStringList mapnik_country_files{
 
 FeatureMapnikGlobal::FeatureMapnikGlobal(PathProvider *path):
   Feature(path, "mapnik/global", "mapnik_global",
-          QCoreApplication::translate("MapManagerFeature", "World coastlines"),
+          QCoreApplication::translate("MapManagerFeature", "Mapnik World coastlines"),
           mapnik_global_files,
           1)
 {
@@ -305,7 +305,7 @@ FeatureMapnikGlobal::FeatureMapnikGlobal(PathProvider *path):
 
 QString FeatureMapnikGlobal::errorMissing() const
 {
-  return QCoreApplication::translate("MapManagerFeature", "Missing world coastlines");
+  return QCoreApplication::translate("MapManagerFeature", "Missing Mapnik World coastlines");
 }
 
 void FeatureMapnikGlobal::loadSettings()
@@ -334,6 +334,35 @@ void FeatureMapnikCountry::loadSettings()
   AppSettings settings;
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
 }
+
+
+////////////////////////////////////////////////////////////
+/// MapboxGL support
+const static QStringList mapboxgl_global_files{
+  "tiles-world.sqlite"
+};
+
+
+FeatureMapboxGLGlobal::FeatureMapboxGLGlobal(PathProvider *path):
+  Feature(path, "mapboxgl/global", "mapboxgl_global",
+          QCoreApplication::translate("MapManagerFeature", "Mapbox GL World overlay"),
+          mapboxgl_global_files,
+          1)
+{
+}
+
+QString FeatureMapboxGLGlobal::errorMissing() const
+{
+  return QCoreApplication::translate("MapManagerFeature", "Missing Mapbox GL World overlay");
+}
+
+void FeatureMapboxGLGlobal::loadSettings()
+{
+  Feature::loadSettings();
+  AppSettings settings;
+  m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl");
+}
+
 
 ////////////////////////////////////////////////////////////
 /// valhalla support
