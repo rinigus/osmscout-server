@@ -3,9 +3,9 @@ from poly import parse_poly
 from shapely.geometry import Polygon
 
 # directories used for searching for packages
-valhalla_meta_dir = 'valhalla/packages_meta'
-valhalla_packages_dir = 'valhalla/packages'
-valhalla_tiles_timestamp = "valhalla/tiles/timestamp"
+mapbox_meta_dir = 'mapbox/packages_meta'
+mapbox_packages_dir = 'mapbox/packages'
+mapbox_tiles_timestamp = "mapbox/packages/timestamp"
 version = "1"
 
 def getsize(sname):
@@ -13,8 +13,11 @@ def getsize(sname):
     return int(f.read().split()[0])
 
 def gettimestamp(sname):
-    f = open(valhalla_tiles_timestamp, 'r')
+    f = open(mapbox_tiles_timestamp, 'r')
     return f.read().split()[0]
+
+def getpackname(sname):
+    return sname[len("tiles-section-"):-len(".sqlite")]
 
 # call with the name of POLY filename
 def country_pack(country_poly_fname):
@@ -23,7 +26,7 @@ def country_pack(country_poly_fname):
     size_compressed = 0
     size = 0
     ts = None
-    for bbox in glob.glob(valhalla_meta_dir + "/*.bbox"):
+    for bbox in glob.glob(mapbox_meta_dir + "/*.bbox"):
         coors = []
         for i in open(bbox, 'r'):
             for k in i.split():
@@ -33,9 +36,9 @@ def country_pack(country_poly_fname):
                           (coors[2], coors[3]), (coors[2], coors[1]) ) )
 
         if country.intersects(poly):
-            pname = bbox[len(valhalla_meta_dir)+1:-len(".bbox")]
-            packs.append(pname)
-            pdata = valhalla_packages_dir + "/" + bbox[len(valhalla_meta_dir)+1:-len(".bbox")] + ".tar"
+            pname = bbox[len(mapbox_meta_dir)+1:-len(".bbox")]
+            packs.append(getpackname(pname))
+            pdata = mapbox_packages_dir + "/" + pname
             size_compressed += getsize(pdata + '.size-compressed')
             size += getsize(pdata + '.size')
             ts = gettimestamp(pdata)
@@ -47,4 +50,4 @@ def country_pack(country_poly_fname):
              "size-compressed": str(size_compressed) }
 
 if __name__ == '__main__':
-    print country_pack('hierarchy/europe/estonia/poly')
+    print country_pack('hierarchy/europe/poly')
