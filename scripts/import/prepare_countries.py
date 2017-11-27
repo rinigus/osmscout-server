@@ -6,6 +6,7 @@
 
 import os, json, codecs
 from hierarchy import Hierarchy
+from mapbox_country_pack import country_pack as mapbox_pack
 from valhalla_country_pack import country_pack as valhalla_pack
 
 
@@ -45,6 +46,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
                                     "osmscout": { "path": "osmscout/" + spath(cid) },
                                     "geocoder_nlp": { "path": "geocoder-nlp/" + spath(cid) },
                                     "mapnik_country": { "path": "mapnik/countries/" + spath(cid) },
+                                    "mapbox_country": mapbox_pack(poly),
                                     "valhalla": valhalla_pack(poly),
         }
 
