@@ -46,7 +46,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
                                     "osmscout": { "path": "osmscout/" + spath(cid) },
                                     "geocoder_nlp": { "path": "geocoder-nlp/" + spath(cid) },
                                     "mapnik_country": { "path": "mapnik/countries/" + spath(cid) },
-                                    "mapbox_country": mapbox_pack(poly),
+                                    "mapboxgl": mapbox_pack(poly),
                                     "valhalla": valhalla_pack(poly),
         }
 

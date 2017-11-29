@@ -4,6 +4,7 @@
 # This has to be run after all imports are finished
 
 import json, pickle, os, stat
+from mapbox_country_pack import world_pack as mapboxgl_world_pack
 
 root_dir = "distribution"
 bucket = open("bucket_name", "r").read().strip()
@@ -19,6 +20,7 @@ url_specs = {
     "postal_country": "postal-country-1",
     "mapnik_global": "mapnik-global-1",
     "mapnik_country": "mapnik-country-6",
+    "mapboxgl": "mapboxgl-1",
     "valhalla": "valhalla-4",
 }
 
@@ -74,6 +76,14 @@ for d in dist:
         uploader(locdir, remotedir)
 
 uploader(root_dir + "/valhalla", url_specs["valhalla"] + "/valhalla")
+uploader(root_dir + "/mapboxgl", url_specs["mapboxgl"] + "/mapboxgl")
+
+# add mapbox global object after uploader commands are ready
+dist["mapboxgl/global"] = {
+    "id": "mapboxgl/global",
+    "type": "mapboxgl/global",
+    "mapboxgl": mapboxgl_world_pack()
+    }
 
 # save provided countries
 fjson = open("provided/countries_provided.json", "w")

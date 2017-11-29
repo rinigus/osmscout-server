@@ -344,7 +344,7 @@ const static QStringList mapboxgl_global_files{
 
 
 FeatureMapboxGLGlobal::FeatureMapboxGLGlobal(PathProvider *path):
-  Feature(path, "mapboxgl/global", "mapboxgl_global",
+  Feature(path, "mapboxgl/global", "mapboxgl",
           QCoreApplication::translate("MapManagerFeature", "Mapbox GL World overlay"),
           mapboxgl_global_files,
           1)

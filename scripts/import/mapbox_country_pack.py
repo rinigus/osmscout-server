@@ -49,5 +49,17 @@ def country_pack(country_poly_fname):
              "size": str(size),
              "size-compressed": str(size_compressed) }
 
+def world_pack():
+    pname = "tiles-world.sqlite"
+    pdata = mapbox_packages_dir + "/" + pname
+    return { "path": "mapboxgl/packages", # generic path, tiles-world.sqlite is specified as requested files in the mapmanagerfeature
+             "timestamp": gettimestamp(pdata),
+             "version": version,
+             "size": str(getsize(pdata + '.size')),
+             "size-compressed": str(getsize(pdata + '.size-compressed')) }
+    
+
 if __name__ == '__main__':
     print country_pack('hierarchy/europe/poly')
+    print
+    print world_pack()
