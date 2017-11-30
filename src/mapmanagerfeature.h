@@ -80,9 +80,9 @@ namespace MapManager {
 
     virtual bool isAvailable(const QJsonObject &request);
 
-    virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing) const;
+    virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing);
 
-    virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted) const;
+    virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted);
 
     // virtual void deleteFiles(const QJsonObject &request); // not used
 
@@ -99,8 +99,8 @@ namespace MapManager {
     const QString m_type;
     const QString m_name;
     const QString m_pretty;
-    const QStringList m_files;
     const int m_version;
+    QStringList m_files;
 
     bool m_enabled{false};
     bool m_assume_files_exist{false};
@@ -180,6 +180,13 @@ namespace MapManager {
     virtual ~FeatureMapboxGLCountry() {}
     virtual void loadSettings();
     virtual QString errorMissing() const;
+
+    virtual bool isAvailable(const QJsonObject &request);
+    virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing);
+    virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted);
+
+  protected:
+    void requestFiles(const QJsonObject &request); /// refreshes m_files from request pack
   };
 
   /// \brief Valhalla support
@@ -198,8 +205,8 @@ namespace MapManager {
     virtual QString errorMissing() const;
 
     virtual bool isAvailable(const QJsonObject &request);
-    virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing) const;
-    virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted) const;
+    virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing);
+    virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted);
 
   protected:
     enum PackStateType { PackNotAvailable, PackDownloaded, PackUnpacked };

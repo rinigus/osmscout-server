@@ -20,7 +20,8 @@ url_specs = {
     "postal_country": "postal-country-1",
     "mapnik_global": "mapnik-global-1",
     "mapnik_country": "mapnik-country-6",
-    "mapboxgl": "mapboxgl-1",
+    "mapboxgl_country": "mapboxgl-1",
+    "mapboxgl_global": "mapboxgl-1",
     "valhalla": "valhalla-4",
 }
 
@@ -63,6 +64,8 @@ def getprop(dirname):
 # fill database details
 for d in dist:
     for sub in dist[d]:
+        if "packages" in dist[d][sub]:
+            continue # this item is distributed via packages
         try:
             rpath = dist[d][sub]["path"]
             print rpath
@@ -76,13 +79,13 @@ for d in dist:
         uploader(locdir, remotedir)
 
 uploader(root_dir + "/valhalla", url_specs["valhalla"] + "/valhalla")
-uploader(root_dir + "/mapboxgl", url_specs["mapboxgl"] + "/mapboxgl")
+uploader(root_dir + "/mapboxgl", url_specs["mapboxgl_country"] + "/mapboxgl")
 
 # add mapbox global object after uploader commands are ready
 dist["mapboxgl/global"] = {
     "id": "mapboxgl/global",
     "type": "mapboxgl/global",
-    "mapboxgl": mapboxgl_world_pack()
+    "mapboxgl_global": mapboxgl_world_pack()
     }
 
 # save provided countries

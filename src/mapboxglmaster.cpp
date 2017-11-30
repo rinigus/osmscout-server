@@ -6,10 +6,12 @@
 #include <QSqlQuery>
 #include <QVariant>
 
+#include <QDebug>
+
 MapboxGLMaster::MapboxGLMaster(QObject *parent) : QObject(parent)
 {
   QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", const_conn_world);
-  db.setDatabaseName("world.mbtiles");
+  db.setDatabaseName("tiles-world.sqlite");
   db.open();
 }
 
@@ -50,3 +52,16 @@ bool MapboxGLMaster::getTile(int x, int y, int z, QByteArray &result, bool &comp
   found = false;
   return true;
 }
+
+void MapboxGLMaster::onSettingsChanged()
+{
+  //std::unique_lock<std::mutex> lk(m_mutex);
+  //AppSettings settings;
+}
+
+void MapboxGLMaster::onMapboxGLChanged(QString world_database, QStringList country_databases)
+{
+  //std::unique_lock<std::mutex> lk(m_mutex);
+  qDebug() << world_database << " " << country_databases;
+}
+

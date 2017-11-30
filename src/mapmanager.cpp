@@ -37,6 +37,7 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeaturePostalGlobal(this));
   m_features.append(new FeaturePostalCountry(this));
   m_features.append(new FeatureMapboxGLGlobal(this));
+  m_features.append(new FeatureMapboxGLCountry(this));
   m_features.append(new FeatureMapnikGlobal(this));
   m_features.append(new FeatureMapnikCountry(this));
   m_features.append(new FeatureValhalla(this));
@@ -794,7 +795,7 @@ void Manager::missingData()
       const QJsonObject request = request_iter.value().toObject();
       if (request.empty()) continue;
 
-      for (const Feature *f: m_features)
+      for (Feature *f: m_features)
         if (f->isCompatible(request))
           f->checkMissingFiles(request, missing);
         else
@@ -1121,7 +1122,7 @@ QStringList Manager::getNonNeededFilesList()
       const QJsonObject request = request_iter.value().toObject();
       if (request.empty()) continue;
 
-      for (const Feature *f: m_features)
+      for (Feature *f: m_features)
         f->fillWantedFiles(request, wanted);
     }
 
@@ -1450,22 +1451,33 @@ void Manager::updateMapboxGL()
   QStringList path_countries;
 
   QJsonObject obj_global = m_maps_available.value(const_feature_id_mapboxgl_global).toObject();
-  for (const Feature *f: m_features)
+  for (Feature *f: m_features)
     if (f->enabled() && f->name() == "mapboxgl_global")
-      path_global = fullPath( f->getPath(obj_global) );
+      {
+        QSet<QString> fnames;
+        f->fillWantedFiles(obj_global, fnames);
+        if (fnames.size() != 1)
+          {
+            InfoHub::logError(QString("Internal error, please report as a bug. MapboxGL Global returned wantedFiles != 1: %1").arg(fnames.size()));
+            return;
+          }
+        path_global = *(fnames.begin());
+      }
 
+  QSet<QString> fnames;
   for (QJsonObject::const_iterator i = m_maps_available.constBegin();
        i != m_maps_available.constEnd(); ++i )
     {
       const QJsonObject c = i.value().toObject();
       QString id = getId(c);
 
-#pragma message "MapboxGL country-specific support is not implemented"
-//      if ( getType(c) == const_feature_type_country )
-//        for (const Feature *f: m_features)
-//          if (f->enabled() && f->name() == "mapboxgl_country")
-//            path_countries.append( fullPath( f->getPath(c) ) );
+      if ( getType(c) == const_feature_type_country )
+        for (Feature *f: m_features)
+          if (f->enabled() && f->name() == "mapboxgl_country")
+            f->fillWantedFiles(c, fnames);
     }
+
+  path_countries = fnames.toList();
 
   emit databaseMapboxGLChanged(path_global, path_countries);
 }

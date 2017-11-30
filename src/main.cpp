@@ -335,6 +335,8 @@ int main(int argc, char *argv[])
                     osmScoutMaster, &DBMaster::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     geoMaster, &GeoMaster::onSettingsChanged );
+  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                    mapboxglMaster, &MapboxGLMaster::onSettingsChanged );
 #ifdef USE_MAPNIK
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     mapnikMaster, &MapnikMaster::onSettingsChanged );
@@ -357,7 +359,8 @@ int main(int argc, char *argv[])
                     geoMaster, &GeoMaster::onPostalChanged);
   QObject::connect( &manager, &MapManager::Manager::selectedMapChanged,
                     geoMaster, &GeoMaster::onSelectedMapChanged);
-
+  QObject::connect( &manager, &MapManager::Manager::databaseMapboxGLChanged,
+                    mapboxglMaster, &MapboxGLMaster::onMapboxGLChanged );
 #ifdef USE_MAPNIK
   QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
                     mapnikMaster, &MapnikMaster::onMapnikChanged );

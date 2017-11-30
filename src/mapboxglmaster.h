@@ -18,6 +18,8 @@ public:
 signals:
 
 public slots:
+  void onSettingsChanged();
+  void onMapboxGLChanged(QString world_database, QStringList country_databases);
 
 protected:
 
