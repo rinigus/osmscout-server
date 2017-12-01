@@ -174,7 +174,7 @@ namespace MapManager {
     void databaseGeocoderNLPChanged(QHash<QString,QString> dirs);
     void databasePostalChanged(QString global, QHash<QString,QString> dirs_country);
     void databaseMapnikChanged(QString root_directory, QStringList country_files);
-    void databaseMapboxGLChanged(QString root_directory, QStringList country_files);
+    void databaseMapboxGLChanged(QString root_directory, QSet<QString> country_files);
     void databaseValhallaChanged(QString valhalla_directory, QStringList countries);
 
     void readyChanged(bool ready);

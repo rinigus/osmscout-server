@@ -193,9 +193,10 @@ static int query_uri_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char
 //////////////////////////////////////////////////////////////////////
 /// Default error function
 //////////////////////////////////////////////////////////////////////
-static void errorText(MHD_Response *response, MicroHTTP::Connection::keytype connection_id, const char *txt)
+static void errorText(MHD_Response *response, MicroHTTP::Connection::keytype connection_id, const char *txt, bool verbose=true)
 {
-  InfoHub::logWarning(txt);
+  if (verbose)
+    InfoHub::logWarning(txt);
 
   QByteArray data;
   {
@@ -371,7 +372,7 @@ unsigned int RequestMapper::service(const char *url_c,
             }
           if (!found)
             {
-              errorText(response, connection_id, "Tile not found");
+              errorText(response, connection_id, "Tile not found", false);
               //return MHD_HTTP_NOT_FOUND;
 
               // this will force Mapbox GL Native client to load parent tiles. 404 is interpreted
@@ -401,6 +402,11 @@ unsigned int RequestMapper::service(const char *url_c,
   //////////////////////////////////////////////////////////////////////
   /// MAPBOX GL SUPPORT: GLYPHS
   else if (path == "/v1/mbgl/glyphs")
+    {
+    }
+  //////////////////////////////////////////////////////////////////////
+  /// MAPBOX GL SUPPORT: STYLE
+  else if (path == "/v1/mbgl/style")
     {
     }
 

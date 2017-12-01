@@ -1448,7 +1448,7 @@ void Manager::updateMapboxGL()
 {
   // MapboxGL is able to draw all available maps, so we give the full list
   QString path_global;
-  QStringList path_countries;
+  QSet<QString> path_countries;
 
   QJsonObject obj_global = m_maps_available.value(const_feature_id_mapboxgl_global).toObject();
   for (Feature *f: m_features)
@@ -1456,15 +1456,15 @@ void Manager::updateMapboxGL()
       {
         QSet<QString> fnames;
         f->fillWantedFiles(obj_global, fnames);
-        if (fnames.size() != 1)
+        if (fnames.size() > 1)
           {
-            InfoHub::logError(QString("Internal error, please report as a bug. MapboxGL Global returned wantedFiles != 1: %1").arg(fnames.size()));
+            InfoHub::logError(QString("Internal error, please report as a bug. MapboxGL Global returned wantedFiles > 1: %1").arg(fnames.size()));
             return;
           }
-        path_global = *(fnames.begin());
+        if (fnames.size() > 0)
+          path_global = *(fnames.begin());
       }
 
-  QSet<QString> fnames;
   for (QJsonObject::const_iterator i = m_maps_available.constBegin();
        i != m_maps_available.constEnd(); ++i )
     {
@@ -1474,10 +1474,8 @@ void Manager::updateMapboxGL()
       if ( getType(c) == const_feature_type_country )
         for (Feature *f: m_features)
           if (f->enabled() && f->name() == "mapboxgl_country")
-            f->fillWantedFiles(c, fnames);
+            f->fillWantedFiles(c, path_countries);
     }
-
-  path_countries = fnames.toList();
 
   emit databaseMapboxGLChanged(path_global, path_countries);
 }
