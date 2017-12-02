@@ -19,6 +19,7 @@ locations and POIs, and calculate routes.
 
 The server supports:
 * map rendering via Mapnik (https://github.com/mapnik/mapnik);
+* hosting of Mapbox GL vector tiles (https://github.com/mapbox/awesome-vector-tiles);
 * search via Geocoder-NLP (https://github.com/rinigus/geocoder-nlp) which is based on libpostal (https://github.com/openvenues/libpostal);
 * routing instructions via Valhalla (https://github.com/valhalla/valhalla);
 * map rendering, search, and routing via libosmscout (http://libosmscout.sourceforge.net/).
@@ -141,9 +142,9 @@ specifying arguments. Here, order of query elements is not important.
 See `examples` folder for results of the example queries.
 
 
-## Tiles
+## Raster tiles
 
-The server component for providing tiles operates using OSM convention
+The server component for providing raster tiles operates using OSM convention
 with small extensions. URL is
 
 `http://localhost:8553/v1/tile?style={style}&daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}`
@@ -167,6 +168,24 @@ Maps settings for example.
 
 At present, only Mapnik backend supports different styles. When using
 libosmscout backend, `styles` parameter is ignored.
+
+
+## Mapbox GL vector tiles
+
+The vector tiles and associated styles, fonts and icons are provided
+via server.
+
+### Tiles
+
+For requesting tiles, use
+
+`http://localhost:8553//v1/mbgl/tile?z={z}&x={x}&y={y}`
+
+where
+
+`{z}`, `{x}`, and `{y}` are as in
+http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames .
+
 
 
 ## Location search
@@ -473,6 +492,8 @@ osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
 
 langcodes: https://github.com/LuminosoInsight/langcodes
+
+Mapbox GL import scripts: https://github.com/rinigus/mapbox-gl-importer
 
 Hosting of maps: Natural Language Processing Centre
 (https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
