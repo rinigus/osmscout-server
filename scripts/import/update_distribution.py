@@ -116,7 +116,7 @@ if not get( digest_name + ".bz2", digest2dict(digest_md5_new)[digest_name + ".bz
     sys.exit(-1)
 
 # extract digest
-os.system("bunzip2 -f " + os.path.join(mirror_root, digest_new_name) + ".bz2")
+os.system("bunzip2 -k -f " + os.path.join(mirror_root, digest_new_name) + ".bz2")
 
 #########################################
 # download loop
@@ -136,6 +136,7 @@ for f in updated_files:
 # all is fine and we are up to date. have to move digests to get ready
 # for the next run
 os.rename( os.path.join(mirror_root, digest_new_name), os.path.join(mirror_root, digest_name) )
+os.rename( os.path.join(mirror_root, digest_new_name + ".bz2"), os.path.join(mirror_root, digest_name + ".bz2") )
 os.rename( os.path.join(mirror_root, digest_new_name + ".bz2.md5"), os.path.join(mirror_root, digest_name + ".bz2.md5") )
 
 print "\nAll files downloaded"
@@ -143,8 +144,9 @@ print "\nAll files downloaded"
 #########################################
 # cleanup
 
-# to ensure that we don't delete digest and its own digest files during cleanup
+# to ensure that we don't delete digest, its compressed form and its own digest during cleanup
 digest_new_dict[digest_name] = {} 
+digest_new_dict[digest_name + ".bz2"] = {} 
 digest_new_dict[digest_name + ".bz2.md5"] = {} 
 
 toremove = []
