@@ -109,6 +109,9 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
+# mapbox gl is enabled by default
+DEFINES += MAPBOXGL_STYLEDIR=\\\"styles/mapboxgl/styles\\\"
+
 use_mapnik {
     DEFINES += USE_MAPNIK
     #DEFINES += MAPNIK_FONTS_DIR=\\\"$$system(mapnik-config --fonts)\\\"

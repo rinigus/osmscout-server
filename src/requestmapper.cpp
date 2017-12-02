@@ -408,6 +408,28 @@ unsigned int RequestMapper::service(const char *url_c,
   /// MAPBOX GL SUPPORT: STYLE
   else if (path == "/v1/mbgl/style")
     {
+      bool ok = true;
+      QString style = q2value<QString>("style", "default", connection, ok);
+
+      if (ok)
+        {
+          QByteArray bytes;
+          if (!mapboxglMaster->getStyle(style, bytes))
+            {
+              errorText(response, connection_id, "Error while getting Mapbox GL style");
+              return MHD_HTTP_NOT_FOUND;
+            }
+
+          MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+          MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+          return MHD_HTTP_OK;
+        }
+
+      // error condition
+      errorText(response, connection_id, "Malformed Mapbox GL style request");
+      return MHD_HTTP_BAD_REQUEST;
     }
 
 

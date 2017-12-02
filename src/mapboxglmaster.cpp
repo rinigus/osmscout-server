@@ -1,21 +1,29 @@
 #include "mapboxglmaster.h"
 
+#include "appsettings.h"
+#include "config.h"
 #include "infohub.h"
 
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QVariant>
 #include <QFileInfo>
+#include <QDir>
 
 #include <QDebug>
 
 MapboxGLMaster::MapboxGLMaster(QObject *parent) : QObject(parent)
 {
+  AppSettings settings;
+
+  QString host = settings.valueString(HTTP_SERVER_SETTINGS "host");
+  int port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
+
+  m_hostname_port = host + ":" + QString::number(port);
 }
 
 MapboxGLMaster::~MapboxGLMaster()
 {
-
 }
 
 bool MapboxGLMaster::getTile(int x, int y, int z, QByteArray &result, bool &compressed, bool &found)
@@ -71,8 +79,6 @@ bool MapboxGLMaster::getTile(int x, int y, int z, QByteArray &result, bool &comp
 
 void MapboxGLMaster::onSettingsChanged()
 {
-  //std::unique_lock<std::mutex> lk(m_mutex);
-  //AppSettings settings;
 }
 
 void MapboxGLMaster::onMapboxGLChanged(QString world_database, QSet<QString> country_databases)
@@ -115,3 +121,43 @@ void MapboxGLMaster::onMapboxGLChanged(QString world_database, QSet<QString> cou
     }
 }
 
+bool MapboxGLMaster::getStyle(const QString &stylename, QByteArray &result)
+{
+  QDir dir(MAPBOXGL_STYLEDIR);
+  QFileInfo fi(dir.absoluteFilePath(stylename + ".json"));
+  QString fpath = fi.canonicalFilePath();
+
+  // expected to serve files from subfolder(s)
+  if (!fpath.startsWith(dir.absolutePath()))
+    {
+      InfoHub::logWarning(tr("Malformed Mapbox GL style request: %1").arg(stylename));
+      return false;
+    }
+
+  if (!fi.exists())
+    {
+      InfoHub::logWarning(tr("Requested Mapbox GL style does not exist: %1 [%2]").arg(stylename).arg(fpath));
+      return false;
+    }
+
+  // load style file
+  QFile fin(fpath);
+
+  if (!fin.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+      InfoHub::logWarning(tr("Error opening Mapbox GL style template %1").arg(fpath));
+      return false;
+    }
+
+  QTextStream tin(&fin);
+  QString style = tin.readAll();
+  if (tin.status() != QTextStream::Ok)
+    {
+      InfoHub::logWarning(tr("Error reading Mapbox GL style template %1").arg(fpath));
+      return false;
+    }
+
+  style.replace(const_tag_hostname_port, m_hostname_port);
+  result = style.toUtf8();
+  return true;
+}

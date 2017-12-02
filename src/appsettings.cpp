@@ -183,6 +183,8 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
 {
   QSettings::setValue(key, value);
 
+  // http connection settings cannot be changed on fly
+
   if (key.contains(OSM_SETTINGS) ||
       key.contains(ROUTING_SPEED_SETTINGS) ||
       key.contains(GEOMASTER_SETTINGS) ||
