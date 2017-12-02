@@ -179,13 +179,21 @@ via server.
 
 For requesting tiles, use
 
-`http://localhost:8553//v1/mbgl/tile?z={z}&x={x}&y={y}`
+`http://localhost:8553/v1/mbgl/tile?z={z}&x={x}&y={y}`
 
 where
 
 `{z}`, `{x}`, and `{y}` are as in
 http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames .
 
+
+### Styles
+
+For requesting styles, use
+
+`http://localhost:8553/v1/mbgl/style?style={style}`
+
+where `{style}` is a style name. 
 
 
 ## Location search
