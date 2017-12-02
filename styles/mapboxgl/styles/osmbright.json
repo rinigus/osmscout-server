@@ -55,7 +55,7 @@
       "maxzoom": 14
     }
   },
-  "sprite": "https://openmaptiles.github.io/osm-bright-gl-style/sprite",
+  "sprite": "http://HOSTNAMEPORT/v1/mbgl/sprite",
   "glyphs": "http://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
   "layers": [
     {

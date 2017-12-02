@@ -123,7 +123,7 @@ void MapboxGLMaster::onMapboxGLChanged(QString world_database, QSet<QString> cou
 
 bool MapboxGLMaster::getStyle(const QString &stylename, QByteArray &result)
 {
-  QDir dir(MAPBOXGL_STYLEDIR);
+  QDir dir(MAPBOXGL_STYLEDIR); dir.cd("styles");
   QFileInfo fi(dir.absoluteFilePath(stylename + ".json"));
   QString fpath = fi.canonicalFilePath();
 
@@ -159,5 +159,49 @@ bool MapboxGLMaster::getStyle(const QString &stylename, QByteArray &result)
 
   style.replace(const_tag_hostname_port, m_hostname_port);
   result = style.toUtf8();
+  return true;
+}
+
+bool MapboxGLMaster::getSpriteJson(QByteArray &result)
+{
+  QDir dir(MAPBOXGL_STYLEDIR);
+  QFile fin(dir.filePath("sprites/sprite.json"));
+
+  if (!fin.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+      InfoHub::logWarning(tr("Error opening Mapbox GL sprite JSON"));
+      return false;
+    }
+
+  QTextStream tin(&fin);
+  QString txt = tin.readAll();
+  if (tin.status() != QTextStream::Ok)
+    {
+      InfoHub::logWarning(tr("Error reading Mapbox GL sprite JSON"));
+      return false;
+    }
+
+  result = txt.toUtf8();
+  return true;
+}
+
+bool MapboxGLMaster::getSpriteImage(QByteArray &result)
+{
+  QDir dir(MAPBOXGL_STYLEDIR);
+  QFile fin(dir.filePath("sprites/sprite.png"));
+
+  if (!fin.open(QIODevice::ReadOnly))
+    {
+      InfoHub::logWarning(tr("Error opening Mapbox GL sprite image"));
+      return false;
+    }
+
+  result = fin.readAll();
+  if (result.size() == 0)
+    {
+      InfoHub::logWarning(tr("Error reading Mapbox GL sprite image"));
+      return false;
+    }
+
   return true;
 }

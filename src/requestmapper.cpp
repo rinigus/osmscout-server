@@ -396,9 +396,39 @@ unsigned int RequestMapper::service(const char *url_c,
     }
   //////////////////////////////////////////////////////////////////////
   /// MAPBOX GL SUPPORT: SPRITE
-  else if (path == "/v1/mbgl/sprite")
+  else if (path == "/v1/mbgl/sprite.json")
     {
+      QByteArray bytes;
+
+      if (!mapboxglMaster->getSpriteJson(bytes))
+        {
+          errorText(response, connection_id, "Error while getting Mapbox GL sprite JSON file");
+          return MHD_HTTP_NOT_FOUND;
+        }
+
+      MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+      MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+      return MHD_HTTP_OK;
     }
+  else if (path == "/v1/mbgl/sprite.png")
+    {
+      QByteArray bytes;
+
+      if (!mapboxglMaster->getSpriteImage(bytes))
+        {
+          errorText(response, connection_id, "Error while getting Mapbox GL sprite image file");
+          return MHD_HTTP_NOT_FOUND;
+        }
+
+      MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+      MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "image/png");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+      return MHD_HTTP_OK;
+    }
+
   //////////////////////////////////////////////////////////////////////
   /// MAPBOX GL SUPPORT: GLYPHS
   else if (path == "/v1/mbgl/glyphs")

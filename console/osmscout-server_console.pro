@@ -110,7 +110,7 @@ use_map_cairo {
 }
 
 # mapbox gl is enabled by default
-DEFINES += MAPBOXGL_STYLEDIR=\\\"styles/mapboxgl/styles\\\"
+DEFINES += MAPBOXGL_STYLEDIR=\\\"styles/mapboxgl\\\"
 
 use_mapnik {
     DEFINES += USE_MAPNIK

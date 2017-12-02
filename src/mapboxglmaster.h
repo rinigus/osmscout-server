@@ -18,6 +18,8 @@ public:
 
   bool getTile(int x, int y, int z, QByteArray &result, bool &compressed, bool &found);
   bool getStyle(const QString &stylename, QByteArray &result);
+  bool getSpriteJson(QByteArray &result);
+  bool getSpriteImage(QByteArray &result);
 
 signals:
 

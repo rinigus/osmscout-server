@@ -187,13 +187,16 @@ where
 http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames .
 
 
-### Styles
+### Styles, sprite
 
 For requesting styles, use
 
 `http://localhost:8553/v1/mbgl/style?style={style}`
 
-where `{style}` is a style name. 
+where `{style}` is a style name. The styles can use provided sprite
+with icons by specifying `http://localhost:8553/v1/mbgl/sprite` as
+a corresponding URL in style definition.
+
 
 
 ## Location search
