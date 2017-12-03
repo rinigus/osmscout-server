@@ -279,6 +279,16 @@ Page {
             }
 
             ElementSwitch {
+                id: eManagerMapbox
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "mapboxgl"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Mapbox GL")
+                secondaryLabel: qsTr("When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. " +
+                                     "These datasets consist of World coastlines (about 12 MB) and country-specific datasets")
+            }
+
+            ElementSwitch {
                 id: eManagerGeocoderNLP
                 activeState: page.backendSelectionPossible
                 key: settingsMapManagerPrefix + "geocoder_nlp"
@@ -287,13 +297,6 @@ Page {
                 secondaryLabel: qsTr("When selected, libpostal-based geocoder datasets will be stored on device after downloading them. " +
                                      "These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for " +
                                      "address parsing and lookup.")
-
-                onSwitchChanged: {
-                    // ensure that we have the same value for geocoder-nlp as postal
-                    // on mobile device
-                    settings.setValue( settingsMapManagerPrefix + "postal_country",
-                                      settings.valueInt(settingsMapManagerPrefix + "geocoder_nlp") )
-                }
             }
 
             ElementSwitch {

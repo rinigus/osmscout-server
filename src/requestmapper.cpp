@@ -396,7 +396,7 @@ unsigned int RequestMapper::service(const char *url_c,
     }
   //////////////////////////////////////////////////////////////////////
   /// MAPBOX GL SUPPORT: SPRITE
-  else if (path == "/v1/mbgl/sprite.json")
+  else if (path == "/v1/mbgl/sprite.json" || path == "/v1/mbgl/sprite@2x.json")
     {
       QByteArray bytes;
 
@@ -412,7 +412,7 @@ unsigned int RequestMapper::service(const char *url_c,
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
       return MHD_HTTP_OK;
     }
-  else if (path == "/v1/mbgl/sprite.png")
+  else if (path == "/v1/mbgl/sprite.png" || path == "/v1/mbgl/sprite@2x.png")
     {
       QByteArray bytes;
 

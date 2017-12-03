@@ -167,9 +167,6 @@ void AppSettings::initDefaults()
 
   CHECK(REQUEST_MAPPER_SETTINGS "idle_timeout", 1800);
 
-  /// set profile if specified
-  setProfile();
-
   /// set the notification of the first time use
   m_first_time = valueBool(GENERAL_SETTINGS "firstTime");
   setValue(GENERAL_SETTINGS "firstTime", 0);
@@ -177,6 +174,9 @@ void AppSettings::initDefaults()
   /// for changelogs
   m_last_run_version = valueInt(GENERAL_SETTINGS "lastRunVersion");
   setValue(GENERAL_SETTINGS "lastRunVersion", GENERAL_APP_VERSION);
+
+  /// set profile if specified (after all version checks)
+  setProfile();
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -308,6 +308,7 @@ void AppSettings::setProfile()
       setValue(MAPMANAGER_SETTINGS "osmscout", 0);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
       setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
       setValue(MAPMANAGER_SETTINGS "mapnik", 1);
       setValue(MAPMANAGER_SETTINGS "valhalla", 1);
 
@@ -320,6 +321,7 @@ void AppSettings::setProfile()
       setValue(MAPMANAGER_SETTINGS "osmscout", 1);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
       setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
       setValue(MAPMANAGER_SETTINGS "mapnik", 0);
       setValue(MAPMANAGER_SETTINGS "valhalla", 0);
 
@@ -332,6 +334,7 @@ void AppSettings::setProfile()
       setValue(MAPMANAGER_SETTINGS "osmscout", 1);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
       setValue(MAPMANAGER_SETTINGS "postal_country", 0);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
       setValue(MAPMANAGER_SETTINGS "mapnik", 0);
       setValue(MAPMANAGER_SETTINGS "valhalla", 0);
 
@@ -339,6 +342,33 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
     }
+  /// NB! MAKE TRANSITION BETWEEN NEW AND OLD PROFILES USING LAST RUN VERSION!
+//  else if (index == 3) // profile: Mapnik / MapboxGL / GeocoderNLP / Valhalla
+//    {
+//      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+//      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+//      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+//      setValue(MAPMANAGER_SETTINGS "mapboxgl", 1);
+//      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
+//      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+//      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+//      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
+//      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+//    }
+//  else if (index == 4) // profile: MapboxGL / GeocoderNLP / Valhalla
+//    {
+//      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+//      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+//      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+//      setValue(MAPMANAGER_SETTINGS "mapboxgl", 1);
+//      setValue(MAPMANAGER_SETTINGS "mapnik", 0);
+//      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+//      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+//      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
+//      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+//    }
   // all other profiles are either custom (index=3) or unknown
   else
     profile_active = false;

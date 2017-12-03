@@ -38,6 +38,10 @@ data.files = data
 data.path = /usr/share/$${TARGET}
 INSTALLS += data
 
+styles.files = styles
+styles.path = /usr/share/$${TARGET}
+INSTALLS += data
+
 # defines
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += IS_CONSOLE_QT

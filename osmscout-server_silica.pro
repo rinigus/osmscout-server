@@ -41,6 +41,10 @@ data.files = data
 data.path = /usr/share/$${TARGET}
 INSTALLS += data
 
+styles.files = styles
+styles.path = /usr/share/$${TARGET}
+INSTALLS += styles
+
 # defines
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += IS_SAILFISH_OS
@@ -70,7 +74,8 @@ SOURCES += \
     src/valhallamaster.cpp \
     src/mapmanager_deleterthread.cpp \
     src/systemdservice.cpp \
-    src/util.cpp
+    src/util.cpp \
+    src/mapboxglmaster.cpp
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += rpm/osmscout-server.spec
@@ -99,7 +104,8 @@ HEADERS += \
     src/valhallamaster.h \
     src/mapmanager_deleterthread.h \
     src/systemdservice.h \
-    src/util.hpp
+    src/util.hpp \
+    src/mapboxglmaster.h
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
@@ -116,6 +122,9 @@ use_map_cairo {
     CONFIG += link_pkgconfig
     PKGCONFIG += pango cairo
 }
+
+# mapbox gl is enabled by default
+DEFINES += MAPBOXGL_STYLEDIR=\\\"/usr/share/harbour-osmscout-server/styles/mapboxgl\\\"
 
 use_mapnik {
     DEFINES += USE_MAPNIK
