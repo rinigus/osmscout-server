@@ -428,11 +428,43 @@ unsigned int RequestMapper::service(const char *url_c,
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
       return MHD_HTTP_OK;
     }
-
   //////////////////////////////////////////////////////////////////////
   /// MAPBOX GL SUPPORT: GLYPHS
   else if (path == "/v1/mbgl/glyphs")
     {
+      bool ok = true;
+      QString stack = q2value<QString>("stack", QString(), connection, ok);
+      QString range = q2value<QString>("range", QString(), connection, ok);
+
+      if (ok && !stack.isEmpty() && !range.isEmpty())
+        {
+          bool compressed = false;
+          bool found = true;
+          QByteArray bytes;
+
+          if (!mapboxglMaster->getGlyphs(stack, range, bytes, compressed, found))
+            {
+              errorText(response, connection_id, "Error while getting Mapbox GL glyphs");
+              return MHD_HTTP_INTERNAL_SERVER_ERROR;
+            }
+          if (!found)
+            {
+              errorText(response, connection_id, "Glyphs not found");
+              return MHD_HTTP_NOT_FOUND;
+            }
+
+          MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+          MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/x-protobuf");
+          if (compressed)
+            MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_ENCODING, "gzip");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+          return MHD_HTTP_OK;
+        }
+
+      // error condition
+      errorText(response, connection_id, "Malformed Mapbox GL glyphs request");
+      return MHD_HTTP_BAD_REQUEST;
     }
   //////////////////////////////////////////////////////////////////////
   /// MAPBOX GL SUPPORT: STYLE

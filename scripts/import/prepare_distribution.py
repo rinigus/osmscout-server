@@ -22,6 +22,7 @@ url_specs = {
     "mapnik_country": "mapnik-country-6",
     "mapboxgl_country": "mapboxgl-1",
     "mapboxgl_global": "mapboxgl-1",
+    "mapboxgl_glyphs": "mapboxgl-1",
     "valhalla": "valhalla-4",
 }
 
@@ -37,6 +38,12 @@ dist["mapnik/global"] = {
     "id": "mapnik/global",
     "type": "mapnik/global",
     "mapnik_global": { "path": "mapnik/global" }
+    }
+
+dist["mapboxgl/glyphs"] = {
+    "id": "mapboxgl/glyphs",
+    "type": "mapboxgl/glyphs",
+    "mapboxgl_glyphs": { "path": "mapboxgl/glyphs" }
     }
 
 dist["url"] = url_specs
@@ -79,7 +86,7 @@ for d in dist:
         uploader(locdir, remotedir)
 
 uploader(root_dir + "/valhalla", url_specs["valhalla"] + "/valhalla")
-uploader(root_dir + "/mapboxgl", url_specs["mapboxgl_country"] + "/mapboxgl")
+uploader(root_dir + "/mapboxgl", url_specs["mapboxgl_country"] + "/mapboxgl/packages")
 
 # add mapbox global object after uploader commands are ready
 dist["mapboxgl/global"] = {

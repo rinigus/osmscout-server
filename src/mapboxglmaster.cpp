@@ -26,6 +26,59 @@ MapboxGLMaster::~MapboxGLMaster()
 {
 }
 
+void MapboxGLMaster::onSettingsChanged()
+{
+}
+
+void MapboxGLMaster::onMapboxGLChanged(QString world_database, QString glyphs_database, QSet<QString> country_databases)
+{
+  std::unique_lock<std::mutex> lk(m_mutex);
+
+  if (m_world_fname == world_database && m_glyphs_fname == glyphs_database && m_country_fnames == country_databases)
+    return; // already using these settings
+
+  m_world_fname = world_database;
+  m_glyphs_fname = glyphs_database;
+  m_country_fnames = country_databases;
+
+  // close all previous connections
+  for (const QString &c: m_db_connections)
+    QSqlDatabase::removeDatabase(c);
+  m_db_connections.clear();
+
+  ////////////////////////////////////
+  /// open database connections
+
+  // world
+  if (!world_database.isEmpty())
+    {
+      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", const_conn_world);
+      db.setDatabaseName(world_database);
+      m_db_connections.insert(const_conn_world);
+    }
+
+  // glyphs
+  if (!glyphs_database.isEmpty())
+    {
+      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", const_conn_glyphs);
+      db.setDatabaseName(glyphs_database);
+      m_db_connections.insert(const_conn_glyphs);
+    }
+
+  // sections
+  for (const QString &current: country_databases)
+    {
+      /// process the database name for sections in form
+      /// /dir/dir.../tiles-section-7-71-38.sqlite
+      QFileInfo fi(current);
+      QString connection = const_conn_prefix + fi.baseName().mid(14);
+
+      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", connection);
+      db.setDatabaseName(current);
+      m_db_connections.insert(connection);
+    }
+}
+
 bool MapboxGLMaster::getTile(int x, int y, int z, QByteArray &result, bool &compressed, bool &found)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
@@ -77,48 +130,45 @@ bool MapboxGLMaster::getTile(int x, int y, int z, QByteArray &result, bool &comp
   return true;
 }
 
-void MapboxGLMaster::onSettingsChanged()
-{
-}
-
-void MapboxGLMaster::onMapboxGLChanged(QString world_database, QSet<QString> country_databases)
+bool MapboxGLMaster::getGlyphs(QString stack, QString range, QByteArray &result, bool &compressed, bool &found)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
 
-  if (m_world_fname == world_database && m_country_fnames == country_databases)
-    return; // already using these settings
+  compressed = false; /// maybe would be flexible in future, for now just assume its compressed
 
-  m_world_fname = world_database;
-  m_country_fnames = country_databases;
-
-  // close all previous connections
-  for (const QString &c: m_db_connections)
-    QSqlDatabase::removeDatabase(c);
-  m_db_connections.clear();
-
-  ////////////////////////////////////
-  /// open database connections
-
-  // world
-  if (!world_database.isEmpty())
+  const QString connection = const_conn_glyphs;
+  if (!m_db_connections.contains(connection))
     {
-      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", const_conn_world);
-      db.setDatabaseName(world_database);
-      m_db_connections.insert(const_conn_world);
+      found = false;
+      return true;
     }
 
-  // sections
-  for (const QString &current: country_databases)
-    {
-      /// process the database name for sections in form
-      /// /dir/dir.../tiles-section-7-71-38.sqlite
-      QFileInfo fi(current);
-      QString connection = const_conn_prefix + fi.baseName().mid(14);
+  QSqlDatabase db = QSqlDatabase::database(connection, true);
 
-      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", connection);
-      db.setDatabaseName(current);
-      m_db_connections.insert(connection);
+  if (!db.isOpen()) return false;
+
+  QSqlQuery query(db);
+  query.setForwardOnly(true);
+  query.prepare("SELECT pbf FROM fonts WHERE (stack=:stack AND range=:range)");
+  query.bindValue(":stack", stack);
+  query.bindValue(":range", range);
+
+  if (!query.exec())
+    {
+      InfoHub::logWarning(tr("Failed to run query in Mapbox GL fonts database"));
+      return false;
     }
+
+  while (query.next())
+    {
+      // will be called only once since there is only one tile matching it
+      result = query.value(0).toByteArray();
+      found = true;
+      return true;
+    }
+
+  found = false;
+  return true;
 }
 
 bool MapboxGLMaster::getStyle(const QString &stylename, QByteArray &result)

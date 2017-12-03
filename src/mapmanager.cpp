@@ -37,6 +37,7 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeaturePostalGlobal(this));
   m_features.append(new FeaturePostalCountry(this));
   m_features.append(new FeatureMapboxGLGlobal(this));
+  m_features.append(new FeatureMapboxGLGlyphs(this));
   m_features.append(new FeatureMapboxGLCountry(this));
   m_features.append(new FeatureMapnikGlobal(this));
   m_features.append(new FeatureMapnikCountry(this));
@@ -129,9 +130,15 @@ void Manager::loadSettings()
     rmCountry(const_feature_id_mapnik_global);
 
   if (settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl"))
-    addCountry(const_feature_id_mapboxgl_global);
+    {
+      addCountry(const_feature_id_mapboxgl_global);
+      addCountry(const_feature_id_mapboxgl_glyphs);
+    }
   else
-    rmCountry(const_feature_id_mapboxgl_global);
+    {
+      rmCountry(const_feature_id_mapboxgl_global);
+      rmCountry(const_feature_id_mapboxgl_glyphs);
+    }
 
   if ( m_db_files.isOpen() && m_db_files.databaseName() != fullPath(const_fname_db_files) )
     {
@@ -275,6 +282,8 @@ QString Manager::getPretty(const QJsonObject &obj) const
     return tr("Mapnik World coastlines");
   else if (obj.value("id").toString() == const_feature_id_mapboxgl_global)
     return tr("Mapbox GL World overlay");
+  else if (obj.value("id").toString() == const_feature_id_mapboxgl_glyphs)
+    return tr("Mapbox GL fonts");
 
   QString name = obj.value("name").toString();
   name.replace("/", const_pretty_separator);
@@ -389,7 +398,8 @@ void Manager::scanDirectories(bool force_update)
                i != m_maps_available.constEnd(); ++i)
             if (i.key() != const_feature_id_postal_global &&
                 i.key() != const_feature_id_mapnik_global &&
-                i.key() != const_feature_id_mapboxgl_global)
+                i.key() != const_feature_id_mapboxgl_global &&
+                i.key() != const_feature_id_mapboxgl_glyphs)
               {
                 m_map_selected = i.key();
                 break;
@@ -1448,22 +1458,42 @@ void Manager::updateMapboxGL()
 {
   // MapboxGL is able to draw all available maps, so we give the full list
   QString path_global;
+  QString path_glyphs;
   QSet<QString> path_countries;
 
-  QJsonObject obj_global = m_maps_available.value(const_feature_id_mapboxgl_global).toObject();
-  for (Feature *f: m_features)
-    if (f->enabled() && f->name() == "mapboxgl_global")
-      {
-        QSet<QString> fnames;
-        f->fillWantedFiles(obj_global, fnames);
-        if (fnames.size() > 1)
-          {
-            InfoHub::logError(QString("Internal error, please report as a bug. MapboxGL Global returned wantedFiles > 1: %1").arg(fnames.size()));
-            return;
-          }
-        if (fnames.size() > 0)
-          path_global = *(fnames.begin());
-      }
+  {
+    QJsonObject obj_global = m_maps_available.value(const_feature_id_mapboxgl_global).toObject();
+    for (Feature *f: m_features)
+      if (f->enabled() && f->name() == "mapboxgl_global")
+        {
+          QSet<QString> fnames;
+          f->fillWantedFiles(obj_global, fnames);
+          if (fnames.size() > 1)
+            {
+              InfoHub::logError(QString("Internal error, please report as a bug. MapboxGL Global returned wantedFiles > 1: %1").arg(fnames.size()));
+              return;
+            }
+          if (fnames.size() > 0)
+            path_global = *(fnames.begin());
+        }
+  }
+
+  {
+    QJsonObject obj_global = m_maps_available.value(const_feature_id_mapboxgl_glyphs).toObject();
+    for (Feature *f: m_features)
+      if (f->enabled() && f->name() == "mapboxgl_glyphs")
+        {
+          QSet<QString> fnames;
+          f->fillWantedFiles(obj_global, fnames);
+          if (fnames.size() > 1)
+            {
+              InfoHub::logError(QString("Internal error, please report as a bug. MapboxGL Glyphs returned wantedFiles > 1: %1").arg(fnames.size()));
+              return;
+            }
+          if (fnames.size() > 0)
+            path_glyphs = *(fnames.begin());
+        }
+  }
 
   for (QJsonObject::const_iterator i = m_maps_available.constBegin();
        i != m_maps_available.constEnd(); ++i )
@@ -1477,7 +1507,7 @@ void Manager::updateMapboxGL()
             f->fillWantedFiles(c, path_countries);
     }
 
-  emit databaseMapboxGLChanged(path_global, path_countries);
+  emit databaseMapboxGLChanged(path_global, path_glyphs, path_countries);
 }
 
 ////////////////////////////////////////////////////////////

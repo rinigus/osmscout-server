@@ -173,6 +173,15 @@ namespace MapManager {
     virtual QString errorMissing() const;
   };
 
+  class FeatureMapboxGLGlyphs: public Feature
+  {
+  public:
+    FeatureMapboxGLGlyphs(PathProvider *path);
+    virtual ~FeatureMapboxGLGlyphs() {}
+    virtual void loadSettings();
+    virtual QString errorMissing() const;
+  };
+
   class FeatureMapboxGLCountry: public Feature
   {
   public:

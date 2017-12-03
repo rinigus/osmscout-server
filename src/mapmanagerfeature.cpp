@@ -342,7 +342,6 @@ const static QStringList mapboxgl_global_files{
   "tiles-world.sqlite"
 };
 
-
 FeatureMapboxGLGlobal::FeatureMapboxGLGlobal(PathProvider *path):
   Feature(path, "mapboxgl/global", "mapboxgl_global",
           QCoreApplication::translate("MapManagerFeature", "Mapbox GL World overlay"),
@@ -362,6 +361,32 @@ void FeatureMapboxGLGlobal::loadSettings()
   AppSettings settings;
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl");
 }
+
+
+const static QStringList mapboxgl_glyphs_files{
+  "glyphs.sqlite"
+};
+
+FeatureMapboxGLGlyphs::FeatureMapboxGLGlyphs(PathProvider *path):
+  Feature(path, "mapboxgl/glyphs", "mapboxgl_glyphs",
+          QCoreApplication::translate("MapManagerFeature", "Mapbox GL fonts"),
+          mapboxgl_glyphs_files,
+          1)
+{
+}
+
+QString FeatureMapboxGLGlyphs::errorMissing() const
+{
+  return QCoreApplication::translate("MapManagerFeature", "Missing Mapbox GL fonts");
+}
+
+void FeatureMapboxGLGlyphs::loadSettings()
+{
+  Feature::loadSettings();
+  AppSettings settings;
+  m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl");
+}
+
 
 FeatureMapboxGLCountry::FeatureMapboxGLCountry(PathProvider *path):
   Feature(path, "territory", "mapboxgl_country",

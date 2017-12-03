@@ -14,6 +14,8 @@ rm -rf distribution/mapboxgl/packages
 mkdir -p distribution/mapboxgl/packages
 cp mapbox/packages/*.bz2 distribution/mapboxgl/packages/
 
+echo Mapbox GL glyphs imported and already packed
+#./pack.sh distribution/mapboxgl/glyphs 1
 
 # Valhalla import
 valhalla/import_planet.sh planet/planet-latest.osm.pbf
