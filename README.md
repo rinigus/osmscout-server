@@ -193,9 +193,24 @@ For requesting styles, use
 
 `http://localhost:8553/v1/mbgl/style?style={style}`
 
-where `{style}` is a style name. The styles can use provided sprite
-with icons by specifying `http://localhost:8553/v1/mbgl/sprite` as
-a corresponding URL in style definition.
+where `{style}` is a style name. 
+
+Fonts (glyphs) are provided via 
+
+`http://localhost:8553/v1/mbgl/glyphs?stack={fontstack}&range={range}`
+
+where 
+
+`{fontstack}` - requested font stack, for example `Noto Sans`
+
+`{range}` - requested range, for example `0-255`.
+
+In the styles, corresponding setting for glyphs is
+`http://localhost:8553/v1/mbgl/glyphs?stack={fontstack}&range={range}`.
+
+The styles can use provided sprite with icons by specifying
+`http://localhost:8553/v1/mbgl/sprite` as a corresponding URL in style
+definition.
 
 
 

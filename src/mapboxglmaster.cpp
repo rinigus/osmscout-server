@@ -134,7 +134,7 @@ bool MapboxGLMaster::getGlyphs(QString stack, QString range, QByteArray &result,
 {
   std::unique_lock<std::mutex> lk(m_mutex);
 
-  compressed = false; /// maybe would be flexible in future, for now just assume its compressed
+  compressed = false; /// maybe would be flexible in future, for now just assume its not compressed
 
   const QString connection = const_conn_glyphs;
   if (!m_db_connections.contains(connection))
