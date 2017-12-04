@@ -471,7 +471,7 @@ unsigned int RequestMapper::service(const char *url_c,
   else if (path == "/v1/mbgl/style")
     {
       bool ok = true;
-      QString style = q2value<QString>("style", "default", connection, ok);
+      QString style = q2value<QString>("style", "osmbright", connection, ok);
 
       if (ok)
         {

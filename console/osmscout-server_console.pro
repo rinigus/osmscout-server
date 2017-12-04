@@ -40,7 +40,7 @@ INSTALLS += data
 
 styles.files = styles
 styles.path = /usr/share/$${TARGET}
-INSTALLS += data
+INSTALLS += styles
 
 # defines
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
