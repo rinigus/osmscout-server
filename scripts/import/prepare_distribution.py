@@ -14,16 +14,16 @@ url_base = "http://data.modrana.org/osm_scout_server"
 url_specs = {
     "base": url_base,
     "type": "url",
-    "osmscout": "osmscout-9",
-    "geocoder_nlp": "geocoder-nlp-9",
+    "osmscout": "osmscout-11",
+    "geocoder_nlp": "geocoder-nlp-11",
     "postal_global": "postal-global-1",
     "postal_country": "postal-country-1",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-6",
+    "mapnik_country": "mapnik-country-8",
     "mapboxgl_country": "mapboxgl-1",
     "mapboxgl_global": "mapboxgl-1",
     "mapboxgl_glyphs": "mapboxgl-1",
-    "valhalla": "valhalla-4",
+    "valhalla": "valhalla-6",
 }
 
 dist = json.loads( open("countries.json", "r").read() )
@@ -86,7 +86,7 @@ for d in dist:
         uploader(locdir, remotedir)
 
 uploader(root_dir + "/valhalla", url_specs["valhalla"] + "/valhalla")
-uploader(root_dir + "/mapboxgl", url_specs["mapboxgl_country"] + "/mapboxgl/packages")
+uploader(root_dir + "/mapboxgl/packages", url_specs["mapboxgl_country"] + "/mapboxgl/packages")
 
 # add mapbox global object after uploader commands are ready
 dist["mapboxgl/global"] = {
