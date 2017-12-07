@@ -20,6 +20,7 @@
 #include <QThreadPool>
 #include <QDir>
 #include <QCoreApplication>
+#include <QDateTime>
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -28,6 +29,8 @@
 #include <QDebug>
 
 #include <functional>
+
+#define DEFAULT_EXPIRY 3600 // in seconds
 
 //#define DEBUG_CONNECTIONS
 
@@ -190,6 +193,18 @@ static int query_uri_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char
   return MHD_YES;
 }
 
+
+//////////////////////////////////////////////////////////////////////
+/// Expiry header
+//////////////////////////////////////////////////////////////////////
+static void set_expiry(MHD_Response *response, unsigned int seconds)
+{
+  QDateTime dt = QDateTime::currentDateTimeUtc().addSecs(seconds);
+  QString expiry = dt.toString("ddd, dd MMM yyyy hh:mm:ss") + " GMT";
+  MHD_add_response_header(response, MHD_HTTP_HEADER_EXPIRES, expiry.toStdString().c_str());
+}
+
+
 //////////////////////////////////////////////////////////////////////
 /// Default error function
 //////////////////////////////////////////////////////////////////////
@@ -294,6 +309,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
   clock_gettime(CLOCK_BOOTTIME, &m_last_call);
 
+
   //////////////////////////////////////////////////////////////////////
   /// TILES
   if (path == "/v1/tile")
@@ -387,6 +403,7 @@ unsigned int RequestMapper::service(const char *url_c,
           if (compressed)
             MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_ENCODING, "gzip");
           MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+          set_expiry(response, DEFAULT_EXPIRY);
           return MHD_HTTP_OK;
         }
 
@@ -426,6 +443,7 @@ unsigned int RequestMapper::service(const char *url_c,
       MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "image/png");
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+      set_expiry(response, DEFAULT_EXPIRY);
       return MHD_HTTP_OK;
     }
   //////////////////////////////////////////////////////////////////////
@@ -459,6 +477,7 @@ unsigned int RequestMapper::service(const char *url_c,
           if (compressed)
             MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_ENCODING, "gzip");
           MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+          set_expiry(response, DEFAULT_EXPIRY);
           return MHD_HTTP_OK;
         }
 
