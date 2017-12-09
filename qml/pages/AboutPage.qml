@@ -7,7 +7,8 @@ Page {
     property string mainText: "<p>" +
                               qsTr("The server has to be used with the client program that is able to display maps, query for searches and " +
                                    "display selected routes. The server is a thin layer exposing functionality of <i>libosmscout</i>, " +
-                                   "<i>mapnik</i>, <i>valhalla</i>, <i>libpostal</i> and <i>geocoder-nlp</i> through http. " +
+                                   "<i>Mapnik</i>, <i>Valhalla</i>, <i>libpostal</i>, <i>Geocoder-NLP</i> and providing data for " +
+                                   "<i>Mapbox GL</i> through web service. " +
                                    "This server can be used as a drop-in replacement for " +
                                    "online services providing maps.") + "</p><br>" +
                               "<p>" + qsTr("Copyright:") + " 2016, 2017 <br>rinigus https://github.com/rinigus<br></p>" +

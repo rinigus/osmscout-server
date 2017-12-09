@@ -5,8 +5,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Dec 9 2017 rinigus <rinigus.git@gmail.com> 1.2.0-1
+- Add support for MapboxGL
+- Updated translations of documentation and application
+
 * Sat Sep 9  2017 rinigus <rinigus.git@gmail.com> 1.1.1-1
-- Update translations
+- Updated translations
 
 * Thu Aug 31 2017 rinigus <rinigus.git@gmail.com> 1.1.0-1
 - Add automatic start via systemd socket activation
