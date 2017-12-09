@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pl" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -405,7 +403,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="353"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pamiętaj, że jeśli pobieranie nie powiedzie się z powodu braku pliku na serwerze, rozważ sprawdzenie aktualizacji w Menedżerze map. Po przesłaniu nowych map adres URL każdej bazy danych zostanie zmieniony, co może doprowadzić do takiego błędu, dopóki nie zostanie zaktualizowana lokalna lista dostępnych map przez program Map Manager.</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>
@@ -1088,7 +1086,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="49"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwiększając rozmiar obszaru, który służy do ładowania danych podczas renderowania sąsiadujących płytek, renderer może poprawić renderowanie etykiet, biorąc pod uwagę dane z sąsiednich płytek. Jeśli widzisz zbyt wiele uciętych etykiet, spróbuj zwiększyć rozmiar bufora. Zauważ, że duże rozmiary bufora spowolnią renderowanie. Rozmiar bufora jest skalowany przez współczynnik skalowania, aby dostosować się do zwiększenia wielkości etykiet.</translation>
     </message>
 </context>
 <context>
@@ -1234,7 +1232,7 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="101"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation type="unfinished"></translation>
+        <translation>Koszt odległości jest częścią limitu kosztu</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="118"/>
@@ -1259,7 +1257,7 @@
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="143"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zwiększając rozmiar obszaru, który służy do ładowania danych podczas renderowania sąsiadujących płytek, renderer może poprawić renderowanie etykiet, biorąc pod uwagę dane z sąsiednich płytek. Wartość współczynnika równa 1.0 odpowiada ładowanym danym pochodzącym z renderowanego kafelka. Duża wartość tego czynnika może zmniejszyć szybkość renderowania i zwiększyć zapotrzebowanie na RAM serwera. Ze względu na jego wpływ na pamięć RAM, w zależności od rozmiaru kafelków, czynniki tak małe jak 2 mogą powodować zapełnienie pamięci RAM urządzenia.</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMScoutPage.qml" line="156"/>
@@ -1332,7 +1330,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="96"/>
         <source>motorway link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="104"/>
@@ -1352,7 +1350,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="128"/>
         <source>primary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="136"/>
@@ -1377,7 +1375,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="168"/>
         <source>secondary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="176"/>
@@ -1392,7 +1390,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="192"/>
         <source>tertiary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="200"/>
@@ -1402,7 +1400,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="208"/>
         <source>trunk link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="216"/>
@@ -1698,12 +1696,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferowany język nazw lokalizacji wyświetlanych w renderowanych mapach lub w zwróconych wynikach wyszukiwania. Jeśli to możliwe, ten język zostanie użyty. Jeśli zostanie ustawiona wartość &lt;i&gt;domyślna&lt;/i&gt;, zostanie użyta nazwa OpenStreetMap, która domyślnie jest językiem lokalnym wyświetlanego kraju.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="117"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy włączone, OSM Scout Server zostanie włączony przez klienta próbującego z nim się połączyć. Serwer uruchomiony automatycznie będzie działał w tle.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
@@ -1869,7 +1867,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="177"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy uruchomiony automatycznie, serwer zostanie zamknięty, kiedy nie otrzymuje żadnych zapytań przez czas dłuższy niż czas stanu spoczynku.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="190"/>
@@ -1919,7 +1917,7 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="414"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kiedy włączone, wiadomości są rejestrowane w pliku dziennika sesji. Plik dziennika znajduje się w katalogu .cache / harbor-osmscout-server. Użyj tego ustawienia tylko w celu debugowania. Po włączeniu tego ustawienia wiadomości informacyjne będą rejestrowane i wyświetlane w zdarzeniach, niezależnie od ustawień powyżej. Pozwala to na tymczasowe włączenie pełnego logowania i wyłączenie go, gdy został utworzony wymagany plik dziennika sesji.</translation>
     </message>
 </context>
 <context>
@@ -2015,7 +2013,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="267"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie określono języków używanych do parsowania adresów przez Geocoder-NLP. W rezultacie wszystkie znane języki są używane i można doświadczyć bardzo dużego zużycia pamięci RAM. Tak duże użycie pamięci RAM może spowodować, że serwer systemu OSM Scout Server zostanie zabity przez jądro.&lt;br&gt;&lt;br&gt;Aby określić języki używane do parsowania adresów, wybierz języki poniżej lub przejdź do menu &lt;i&gt;Ustawienia&lt;/i&gt; (pulley menu) i wybierz języki jako część ustawień &lt;i&gt;Geocoder-NLP&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="293"/>
@@ -2060,7 +2058,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="432"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server jest częścią rozwiązania pozwalającego na posiadanie map offline na urządzeniu. Z tym serwerem, można ściągnąć mapy na twoje urządzenie i użyć ściągnięte dane do renderowania map, wyszukiwania adresów, POI i kalkulowania tras. Te operacje wymagają serwera i dodatkowego klienta korzystającego z serwera pracujących jednocześnie na urządzeniu.&lt;br&gt;&lt;br&gt; Ten kreator pomoże Ci wybrać backend używany przez serwer i określić język do parsowania twoich zapytań.&lt;br&gt;&lt;br&gt;Wybierz &apos;Dalej&apos; aby przejść do konfiguracji.</translation>
     </message>
 </context>
 <context>
@@ -2087,7 +2085,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="26"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server może być aktywowany automatycznie, gdy klienci próbują się z nim połączyć. Gdy zostanie uruchomiony automatycznie, zostanie on zatrzymany w stanie spoczynku po upływie określonego czasu.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="36"/>
@@ -2097,7 +2095,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Należy pamiętać, że podczas automatycznego uruchamiania serwer działa bez żadnego interfejsu użytkownika. Automatyczna aktywacja i odpowiedni czas oczekiwania mogą zostać później skonfigurowane w Ustawieniach.</translation>
     </message>
 </context>
 <context>
@@ -2231,7 +2229,7 @@
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="52"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Granice odległości dla obliczeń tras. Zostaną obliczone tylko trasy z dystansami między lokalizacjami, które są mniejsze od podanych granic. Ograniczając maksymalne odległości między lokalizacjami, możesz zapobiec przypadkowemu obliczeniom, które prowadziły by do zbyt dużych tras i wykorzystywałoby zbyt dużo pamięci RAM w urządzeniu.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ValhallaPage.qml" line="66"/>
@@ -2269,7 +2267,7 @@
     <message>
         <location filename="../src/main.cpp" line="139"/>
         <source>Run the server in SystemD socket-activated mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchom serwer w trybie aktywacji gniazda SystemD</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="145"/>

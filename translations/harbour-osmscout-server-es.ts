@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -405,7 +403,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="353"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si la descarga falla debido a que falta el archivo en el servidor, debes comprobar si hay actualizaciones en el gestor de mapas. Cuando se cargan nuevos mapas, la URL de cada base de datos cambia, lo que puede provocar este error hasta que se actualiza la lista local de mapas disponibles en el gestor de mapas.</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>

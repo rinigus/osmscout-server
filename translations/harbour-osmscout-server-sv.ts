@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="sv" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -405,7 +403,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="353"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>Notera att om nerladdningen misslyckas på grund av att filen saknas på servern, bör du söka efter uppdateringar i karthanteraren. När nya kartor laddas upp, ändras webbadressen för motsvarande databas, vilket kan leda till kvarvarande fel, till dess att tillgängliga kartor uppdaterats via karthanteraren.</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>
