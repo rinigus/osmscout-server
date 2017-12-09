@@ -285,7 +285,7 @@ Page {
                 autoApply: true
                 mainLabel: qsTr("Store datasets for Mapbox GL")
                 secondaryLabel: qsTr("When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. " +
-                                     "These datasets consist of World coastlines (about 12 MB) and country-specific datasets")
+                                     "These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets")
             }
 
             ElementSwitch {
