@@ -6,16 +6,12 @@ offline operation is possible if the device has a server and map
 client programs installed and running.
 
 At present, the server can be used to provide:
-* map tiles for other applications;
+* vector or raster tiles for other applications;
 * search for locations and free text search;
 * search for POIs next to a reference area;
 * calculating routes between given sequence of points.
 
-User's guide is available at https://rinigus.github.io/osmscout-server 
-
-Server is a wrapper around libosmscout exposing its
-functionality. This library can be used to render maps, search for
-locations and POIs, and calculate routes. 
+User's guide is available at https://rinigus.github.io/osmscout-server
 
 The server supports:
 * map rendering via Mapnik (https://github.com/mapnik/mapnik);
@@ -28,7 +24,7 @@ To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps, modRana, and
 JavaScript-based clients are provided under "example" folder. At
 present, Poor Maps and modRana include plugins already in the upstream
-and no additional configuration is needed. 
+and no additional configuration is needed.
 
 The server is written using Qt. The server can be used as a console or
 a Sailfish application. For console version, use
@@ -193,13 +189,13 @@ For requesting styles, use
 
 `http://localhost:8553/v1/mbgl/style?style={style}`
 
-where `{style}` is a style name. 
+where `{style}` is a style name.
 
-Fonts (glyphs) are provided via 
+Fonts (glyphs) are provided via
 
 `http://localhost:8553/v1/mbgl/glyphs?stack={fontstack}&range={range}`
 
-where 
+where
 
 `{fontstack}` - requested font stack, for example `Noto Sans`
 
@@ -323,7 +319,7 @@ is used. For example,
 
 ## List of available POI types
 
-List of available POI types is available via 
+List of available POI types is available via
 
 `http://localhost:8553/v1/poi_types`
 
@@ -350,7 +346,7 @@ where
 Query is considered as a substring that is looked for in all available
 POI types without taking into account the case of letters. For
 example, "Cafe" would match amenity_cafe_building and
-amenity_cafe. 
+amenity_cafe.
 
 In addition, POI can be searched by its name. For example, you could
 search for the restaurant by its name. This is only supported by
@@ -394,7 +390,7 @@ query by starting from index 0 and incrementing it by one until the
 points with consecutive indexes are all found. Note that if you skip
 an index in the list (like having indexes 0, 1, 3, and 4), the points
 after the increment larger than one will be ignored (in the example,
-points 3 and 4). 
+points 3 and 4).
 
 The query parameters are:
 
@@ -420,7 +416,7 @@ given by names:
 
 
 The result is given in JSON format. It returns a JSON object with
-several keys: 
+several keys:
 
 `locations` - coordinates of the reference points used in the calculations;
 
@@ -452,7 +448,7 @@ This is the version that would be mainly supported in future. It uses
 Valhalla's API, as described in
 https://github.com/valhalla/valhalla-docs/blob/master/api-reference.md
 . Please note that there is no API key in the Valhalla's component
-used by OSM Scout Server. 
+used by OSM Scout Server.
 
 At present, all calls via `v2/route`, as
 `http://localhost:8553/v2/route?...` would be forwarded to Valhalla
