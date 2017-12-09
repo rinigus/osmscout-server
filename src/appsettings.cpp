@@ -31,7 +31,6 @@ void AppSettings::initDefaults()
   // defaults for server
   CHECK(HTTP_SERVER_SETTINGS "host", "127.0.0.1");
   CHECK(HTTP_SERVER_SETTINGS "port", 8553);
-  //CHECK("maxThreads", QThread::idealThreadCount() + 2);
 
   /////////////////////////////////////////
   /// general settings
