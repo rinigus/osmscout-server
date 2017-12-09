@@ -175,6 +175,16 @@ void AppSettings::initDefaults()
   m_last_run_version = valueInt(GENERAL_SETTINGS "lastRunVersion");
   setValue(GENERAL_SETTINGS "lastRunVersion", GENERAL_APP_VERSION);
 
+  /// profiles changed from version 1 to version 2
+  if (m_last_run_version == 1)
+    {
+      int old_profile = valueInt(GENERAL_SETTINGS "profile");
+      if (old_profile > 0) // inserted new profiles with indexes 1 and 2
+        {
+          setValue(GENERAL_SETTINGS "profile", old_profile + 2);
+        }
+    }
+
   /// set profile if specified (after all version checks)
   setProfile();
 }
@@ -316,7 +326,33 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
     }
-  else if (index == 1) // libosmscout + geocoder-nlp
+  else if (index == 1) // Mapbox GL / GeocoderNLP / Valhalla
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 1);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 0);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+    }
+  else if (index == 2) // Mapbox GL + Mapnik / GeocoderNLP / Valhalla
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 1);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+    }
+  else if (index == 3) // libosmscout + geocoder-nlp
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 1);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
@@ -329,7 +365,7 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
     }
-  else if (index == 2) // libosmscout
+  else if (index == 4) // libosmscout
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 1);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
@@ -342,34 +378,7 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
     }
-  /// NB! MAKE TRANSITION BETWEEN NEW AND OLD PROFILES USING LAST RUN VERSION!
-//  else if (index == 3) // profile: Mapnik / MapboxGL / GeocoderNLP / Valhalla
-//    {
-//      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
-//      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
-//      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
-//      setValue(MAPMANAGER_SETTINGS "mapboxgl", 1);
-//      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
-//      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
-
-//      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
-//      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
-//      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
-//    }
-//  else if (index == 4) // profile: MapboxGL / GeocoderNLP / Valhalla
-//    {
-//      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
-//      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
-//      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
-//      setValue(MAPMANAGER_SETTINGS "mapboxgl", 1);
-//      setValue(MAPMANAGER_SETTINGS "mapnik", 0);
-//      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
-
-//      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
-//      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
-//      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
-//    }
-  // all other profiles are either custom (index=3) or unknown
+  // all other profiles are either custom (index=5) or unknown
   else
     profile_active = false;
 

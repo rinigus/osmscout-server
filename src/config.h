@@ -27,7 +27,7 @@
 
 #define REQUEST_MAPPER_SETTINGS "request-mapper/"
 
-#define GENERAL_APP_VERSION 1
+#define GENERAL_APP_VERSION 2
 
 //////////////////////////////////////////////
 /// global variables
