@@ -130,7 +130,7 @@ bool MapboxGLMaster::getTile(int x, int y, int z, QByteArray &result, bool &comp
   return true;
 }
 
-bool MapboxGLMaster::getGlyphs(QString stack, QString range, QByteArray &result, bool &compressed, bool &found)
+bool MapboxGLMaster::getGlyphs(QString stackstr, QString range, QByteArray &result, bool &compressed, bool &found)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
 
@@ -147,24 +147,33 @@ bool MapboxGLMaster::getGlyphs(QString stack, QString range, QByteArray &result,
 
   if (!db.isOpen()) return false;
 
-  QSqlQuery query(db);
-  query.setForwardOnly(true);
-  query.prepare("SELECT pbf FROM fonts WHERE (stack=:stack AND range=:range)");
-  query.bindValue(":stack", stack);
-  query.bindValue(":range", range);
+  QStringList stacks = stackstr.split(",");
 
-  if (!query.exec())
-    {
-      InfoHub::logWarning(tr("Failed to run query in Mapbox GL fonts database"));
-      return false;
-    }
+  // lookup Noto if default MapboxGL fonts are requested and not found
+  if (stackstr.contains("Open Sans Regular") && stackstr.contains("Arial Unicode MS Regular"))
+    stacks.append("Noto Sans Regular");
 
-  while (query.next())
+  for (QString stack: stacks)
     {
-      // will be called only once since there is only one tile matching it
-      result = query.value(0).toByteArray();
-      found = true;
-      return true;
+      QSqlQuery query(db);
+      query.setForwardOnly(true);
+      query.prepare("SELECT pbf FROM fonts WHERE (stack=:stack AND range=:range)");
+      query.bindValue(":stack", stack);
+      query.bindValue(":range", range);
+
+      if (!query.exec())
+        {
+          InfoHub::logWarning(tr("Failed to run query in Mapbox GL fonts database"));
+          return false;
+        }
+
+      while (query.next())
+        {
+          // will be called only once since there is only one tile matching it
+          result = query.value(0).toByteArray();
+          found = true;
+          return true;
+        }
     }
 
   found = false;

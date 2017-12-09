@@ -3586,7 +3586,7 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Italic"
+          "Noto Sans Italic"
         ],
         "text-size": 14,
         "text-field": "{name}",
@@ -3614,7 +3614,7 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Italic"
+          "Noto Sans Italic"
         ],
         "text-size": 14,
         "text-field": "{name}",
@@ -3650,7 +3650,7 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Italic"
+          "Noto Sans Italic"
         ],
         "text-size": 14,
         "text-field": "{name}",
@@ -3686,7 +3686,7 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Italic"
+          "Noto Sans Italic"
         ],
         "text-size": {
           "stops": [
@@ -3741,7 +3741,7 @@
       "layout": {
         "text-padding": 2,
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
         "text-anchor": "top",
         "icon-image": "{class}_11",
@@ -3790,7 +3790,7 @@
       "layout": {
         "text-padding": 2,
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
         "text-anchor": "top",
         "icon-image": "{class}_11",
@@ -3838,7 +3838,7 @@
       "layout": {
         "text-padding": 2,
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
         "text-anchor": "top",
         "icon-image": "{class}_11",
@@ -3883,7 +3883,7 @@
           ]
         },
         "text-font": [
-          "Klokantech Noto Sans Regular"
+          "Noto Sans Regular"
         ],
         "text-field": "{name}",
         "symbol-placement": "line",
@@ -3931,7 +3931,7 @@
           ]
         },
         "text-font": [
-          "Klokantech Noto Sans Regular"
+          "Noto Sans Regular"
         ],
         "text-field": "{name}",
         "symbol-placement": "line",
@@ -3972,7 +3972,7 @@
           ]
         },
         "text-font": [
-          "Klokantech Noto Sans Regular"
+          "Noto Sans Regular"
         ],
         "text-field": "{name}",
         "symbol-placement": "line",
@@ -4016,7 +4016,7 @@
         "icon-rotation-alignment": "viewport",
         "symbol-spacing": 200,
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
         "symbol-placement": {
           "base": 1,
@@ -4067,7 +4067,7 @@
         "icon-rotation-alignment": "viewport",
         "symbol-spacing": 200,
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
         "symbol-placement": {
           "base": 1,
@@ -4125,7 +4125,7 @@
         "icon-rotation-alignment": "viewport",
         "symbol-spacing": 200,
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
         "symbol-placement": {
           "base": 1,
@@ -4175,9 +4175,9 @@
           ]
         },
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-transform": "uppercase",
         "text-max-width": 9
       },
@@ -4200,7 +4200,7 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Regular"
+          "Noto Sans Regular"
         ],
         "text-size": {
           "base": 1.2,
@@ -4215,7 +4215,7 @@
             ]
           ]
         },
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-max-width": 8
       },
       "paint": {
@@ -4237,7 +4237,7 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Regular"
+          "Noto Sans Regular"
         ],
         "text-size": {
           "base": 1.2,
@@ -4252,7 +4252,7 @@
             ]
           ]
         },
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-max-width": 8
       },
       "paint": {
@@ -4274,7 +4274,7 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
         "text-size": {
           "base": 1.2,
@@ -4289,7 +4289,7 @@
             ]
           ]
         },
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-max-width": 8
       },
       "paint": {
@@ -4312,7 +4312,7 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
         "text-size": {
           "base": 1.2,
@@ -4327,7 +4327,7 @@
             ]
           ]
         },
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-max-width": 8,
         "icon-image": "star_11",
         "text-offset": [
@@ -4358,9 +4358,9 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-size": {
           "stops": [
             [
@@ -4398,9 +4398,9 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-size": {
           "stops": [
             [
@@ -4437,9 +4437,9 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-size": {
           "stops": [
             [
@@ -4477,9 +4477,9 @@
       ],
       "layout": {
         "text-font": [
-          "Klokantech Noto Sans Bold"
+          "Noto Sans Bold"
         ],
-        "text-field": "{name_en}",
+        "text-field": "{name}",
         "text-size": 14,
         "text-max-width": 6.25,
         "text-transform": "uppercase"
@@ -4500,7 +4500,7 @@
       "layout": {
         "text-field": "{housename}",
         "text-font": [
-          "Klokantech Noto Sans Italic"
+          "Noto Sans Italic"
         ],
         "text-size": 12,
         "icon-optional": true
@@ -4518,7 +4518,7 @@
       "layout": {
         "text-field": "{housenumber}",
         "text-font": [
-          "Klokantech Noto Sans Italic"
+          "Noto Sans Italic"
         ],
         "text-size": 12,
         "icon-optional": true
