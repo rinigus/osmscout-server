@@ -134,7 +134,7 @@ bool MapboxGLMaster::getGlyphs(QString stackstr, QString range, QByteArray &resu
 {
   std::unique_lock<std::mutex> lk(m_mutex);
 
-  compressed = false; /// maybe would be flexible in future, for now just assume its not compressed
+  compressed = false; // maybe would be flexible in future, for now just assume its not compressed
 
   const QString connection = const_conn_glyphs;
   if (!m_db_connections.contains(connection))
@@ -149,8 +149,11 @@ bool MapboxGLMaster::getGlyphs(QString stackstr, QString range, QByteArray &resu
 
   QStringList stacks = stackstr.split(",");
 
-  // lookup Noto if default MapboxGL fonts are requested and not found
-  if (stackstr.contains("Open Sans Regular") && stackstr.contains("Arial Unicode MS Regular"))
+  // Add Noto Sans Regular as a backup for:
+  // * default MapboxGL fonts
+  // * Noto Italic (many scripts are missing)
+  if ( (stackstr.contains("Open Sans Regular") && stackstr.contains("Arial Unicode MS Regular")) ||
+       stackstr.contains("Noto Sans Italic") )
     stacks.append("Noto Sans Regular");
 
   for (QString stack: stacks)
