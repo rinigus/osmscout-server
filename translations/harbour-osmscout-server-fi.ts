@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelinta täytyy käyttä asiakasohjelman, joka voi näyttää karttoja, suorittaa hakuja ja näyttää reittejä, kanssa. Palvelin on ohut kerros, joka tarjoaa kirjastojen &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; ja &lt;i&gt;Geocoder-NLP&lt;/i&gt; ominaisuudet ja tarjoaa datan &lt;i&gt;Mapbox GL:n&lt;/i&gt; käyttöön http:n kautta. Tätä palvelinta voidaan käyttää korvaamaan online-karttapalvelut.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
@@ -685,17 +685,17 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="282"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik maailman rantaviivat</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="284"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL maailman overlay</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="286"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL fontit</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="416"/>
@@ -854,12 +854,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="300"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik maailman rantaviivat</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="308"/>
         <source>Missing Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuvat Mapnik maailman rantaviivat</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="320"/>
@@ -874,32 +874,32 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="347"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL maailman overlay</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="355"/>
         <source>Missing Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuva Mapbox GL maailman overlay</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="372"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL fontit</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="380"/>
         <source>Missing Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuvat Mapbox GL fontit</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="393"/>
         <source>Mapbox GL country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL maakohtainen tuki</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="401"/>
         <source>Missing country-specific Mapbox GL dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Puuttuvat maakohtaiset Mapbox GL datasetit</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="446"/>
@@ -952,12 +952,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="286"/>
         <source>Store datasets for Mapbox GL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna Mapbox GL datasetit</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="296"/>
@@ -1045,6 +1040,11 @@
         <translation>Tilaa</translation>
     </message>
     <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
+        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
+        <translation>Kun valittuna, Mabox GL formaatin vektorilaattoja sisältävät datasetit tallennetaan laitteen niiden lataamisen jälkeen. Nämä datasetit sisältävät maailman rantaviivat (noin 12 MB), fontit (noin 80 MB), ja maakohtaiset datasetit</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="297"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
         <translation>Kun valittuna, libpostaliin pohjautuvat geokooderi-datasetit tallennetaan laitteelle latauksen jälkeen. Nämä datasetit koostuvat kielen tulkintaan (noin 700 MB) ja maakohtaisista osoitteiden tulkintaan käytettävistä dataseteistä </translation>
@@ -1070,52 +1070,52 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="117"/>
         <source>Failed to run query in Mapbox GL database</source>
-        <translation type="unfinished"></translation>
+        <translation>Haku Mapbox GL tietokannassa epäonnistui</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="169"/>
         <source>Failed to run query in Mapbox GL fonts database</source>
-        <translation type="unfinished"></translation>
+        <translation>Haku Mapbox GL fonttien tietokannasta epäonnistui</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="195"/>
         <source>Malformed Mapbox GL style request: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheellinen Mapbox GL -tyyli pyyntö: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="201"/>
         <source>Requested Mapbox GL style does not exist: %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>Pyydetty Mapbox GL tyyli ei ole olemassa: %1 [%2]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="210"/>
         <source>Error opening Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL tyylitemplaatin avaaminen epäonnistui %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="218"/>
         <source>Error reading Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL tyylitemplaatin lukeminen epäonnistui %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="234"/>
         <source>Error opening Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL sprite JSON:n avaus epäonnistui</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="242"/>
         <source>Error reading Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL sprite JSON:n lukeminen epäonnistui</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="257"/>
         <source>Error opening Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe avatessa Mapbox GL sprite kuvaa</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="264"/>
         <source>Error reading Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe lukiessa Mapbox GL sprite kuvaa</translation>
     </message>
 </context>
 <context>
@@ -1534,12 +1534,17 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
         <source>Recommended for vector tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Suositeltu vektorilaattakarttojen kanssa</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Suositeltu vektori- ja rasterilaattakarttojen kanssa</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
+        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
+        <translation>&lt;i&gt;Oletus&lt;/i&gt;-profiili käyttää &lt;i&gt;Mapnikia&lt;/i&gt; karttojen piirtoon rasterilaatoille, &lt;i&gt;Geocoder-NLP:tä&lt;/i&gt; sijaintien hakuun, ja &lt;i&gt;Valhallaa&lt;/i&gt; reittien laskentaan. Tämä profiili on suositeltu käytettäväksi perinteisten rasterilaattoja käyttävien asiakasohjelmien kanssa.&lt;br&gt;&lt;br&gt;&lt;i&gt;Mapbox GL&lt;/i&gt; -pluginia käyttävien karttaohjelmien käyttäjille suositeltu vektorilaattakarttaprofiili sisältää &lt;i&gt;Mapbox GL&lt;/i&gt; -datasetit ja käyttää samoja haku ja reititys -plugineja kuin &lt;i&gt;Oletus&lt;/i&gt;-profiili.&lt;br&gt;&lt;br&gt;Käyttäjille, jotka haluavat käyttää sekä rasteri- että vektorilaattoja käyttäviä karttjaohjelmia, suositeltu profiili, joka yhdistää vektori- ja rasterilaatat, sisältää&lt;i&gt;Mapbox GL&lt;/i&gt; -datasetit, tukee karttojen piirtoa rasterilaatoille &lt;i&gt;Mapnikilla&lt;/i&gt;, ja käyttää samoja haku ja reititys -plugineja kuin &lt;i&gt;Oletus&lt;/i&gt;-profiili. Koska tämä profiili sisältää tiedot useammalle piirtotaustapalvelulle sillä on suurimmat tilavaatimukset.&lt;br&gt;&lt;br&gt;Profiilissa, jossa &lt;i&gt;libosmscout&lt;/i&gt; on yhdistetty &lt;i&gt;Geocoder-NLP:n&lt;/i&gt; kanssa on pienemmät tilavaatimukset kuin oletusprofiilissa. Kuitenkin karttojen piirto ja reititys on rajoitettu vain yhdelle alueelle. Lisäksi piirtolaatu on heikompi ja reititysnopeus hitaampi oletusprofiiliin verrattuna.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt;-profiililla on pienimmät tilavaatimukset kaikista profiileista. Kuitenkin karttojen piirto, haku ja reititys on rajoitettu vain yhdelle alueelle. Lisäksi piirtolaatu ja haut ovat heikompia sekä reititysnopeus on hitaampi oletusprofiiliin verrattuna.&lt;br&gt;&lt;br&gt;Käytettäessä &lt;i&gt;Muokattu&lt;/i&gt;-profiilia, Asetukset ja Karttamanageri eivät ole profiilin asettamia vaan käyttäjän täytyy määrittää ne. Tämä profiili mahdollistaa piirto-, haku- ja reitityskomponenttien määrittämisen erikseen. Huomio että käyttäjä on vastuussa asetusten määrittämisestä ja niiden tekemisestä yhteensopiviksi taustapalveluiden ja tilakäytön kanssa. </translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
@@ -1555,11 +1560,6 @@
         <location filename="../qml/pages/ProfilesPage.qml" line="49"/>
         <source>Custom</source>
         <translation>Mukautettu</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
-        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

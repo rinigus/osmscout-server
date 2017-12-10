@@ -6,7 +6,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>El servidor debe usarse junto al programa cliente que muestra los mapas, hace las búsquedas y muestra las rutas seleccionadas. El servidor es una capa fina que presenta la funcionalidad &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; y que proporciona datos para &lt;i&gt;Mapbox GL&lt;/i&gt; a través del servicio Web. Este servidor se puede usar en lugar de los servicios de mapas con conexión de datos.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
@@ -284,7 +284,7 @@
     <message>
         <location filename="../src/dbmaster_search.cpp" line="484"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>La busqueda del punto de referencia ha fallado: no se pudo encontrar</translation>
+        <translation>Error en la busqueda del punto de referencia: no se pudo encontrar</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="509"/>
@@ -405,7 +405,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="353"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation>Si la descarga falla debido a que falta el archivo en el servidor, debes comprobar si hay actualizaciones en el gestor de mapas. Cuando se cargan nuevos mapas, la URL de cada base de datos cambia, lo que puede provocar este error hasta que se actualiza la lista local de mapas disponibles en el gestor de mapas.</translation>
+        <translation>Cuando la descarga falla porque falta el archivo en el servidor, debes comprobar si hay actualizaciones en el gestor de mapas. Cuando se cargan nuevos mapas, la URL de cada base de datos cambia, produciéndose este error hasta que se actualiza la lista local de mapas disponibles en el gestor de mapas.</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>
@@ -499,7 +499,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="349"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>La búsqueda del punto de referencia ha fallado: no se pudo encontrar</translation>
+        <translation>Error en la búsqueda del punto de referencia: no se pudo encontrar</translation>
     </message>
 </context>
 <context>
@@ -680,22 +680,22 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="369"/>
         <source>Missing dataset for %1: %2</source>
-        <translation>Falta el conjunto de datos para %1: %2</translation>
+        <translation>Falta conjunto de datos para %1: %2</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="282"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Costas del mundo de Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="284"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Capa del mundo de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="286"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuentes de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="416"/>
@@ -756,7 +756,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1310"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
-        <translation>No es posible comprobar actualizaciones debido a que falta la lista de países provistos. Decarga la lista antes de comprobar actualizaciones.</translation>
+        <translation>No es posible comprobar actualizaciones debido a que falta la lista de países provistos. Descarga la lista antes de comprobar actualizaciones.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1062"/>
@@ -796,7 +796,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1308"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
-        <translation>No se ha podido comprobar actualizaciones debido a que falta la lista de países solicitados. Selecciona los países antes de comprobar actualizaciones.</translation>
+        <translation>No se han podido comprobar actualizaciones debido a que falta la lista de países solicitados. Selecciona los países antes de comprobar actualizaciones.</translation>
     </message>
 </context>
 <context>
@@ -829,7 +829,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="211"/>
         <source>Missing libosmscout maps</source>
-        <translation>Faltan los mapas libosmscout</translation>
+        <translation>Faltan mapas libosmscout</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="222"/>
@@ -839,7 +839,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="230"/>
         <source>Missing geocoder-nlp dataset</source>
-        <translation>Falta el conjunto de datos geocoder-nlp</translation>
+        <translation>Falta conjunto de datos geocoder-nlp</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="247"/>
@@ -854,52 +854,52 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="300"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Costas del mundo de Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="308"/>
         <source>Missing Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Faltan costas del mundo de Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="320"/>
         <source>Mapnik country-specific support</source>
-        <translation>Soporte específico de Mapnik al país</translation>
+        <translation>Soporte de Mapnik al país indicado</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="328"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation>Falta el conjunto de datos de Mapnik del país específico</translation>
+        <translation>Falta conjunto de datos de Mapnik del país indicado</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="347"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Capa del mundo de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="355"/>
         <source>Missing Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Falta capa del mundo de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="372"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Fuentes de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="380"/>
         <source>Missing Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Faltan fuentes de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="393"/>
         <source>Mapbox GL country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Soporte de Mapbox GL al país indicado</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="401"/>
         <source>Missing country-specific Mapbox GL dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Falta conjunto de datos de Mapbox GL del país indicado</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="446"/>
@@ -914,7 +914,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="255"/>
         <source>Missing address language parsing dataset</source>
-        <translation>Falta el conjunto de datos del idioma en el análisis de direcciones</translation>
+        <translation>Falta conjunto de datos del idioma en el análisis de direcciones</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="203"/>
@@ -924,7 +924,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="275"/>
         <source>Missing country-specific address parsing dataset</source>
-        <translation>Falta el conjunto de datos del país en el análisis de direcciones</translation>
+        <translation>Falta conjunto de datos del país en el análisis de direcciones</translation>
     </message>
 </context>
 <context>
@@ -952,12 +952,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="286"/>
         <source>Store datasets for Mapbox GL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Almacenar conjuntos de datos de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="296"/>
@@ -1045,9 +1040,14 @@
         <translation>Suscribir</translation>
     </message>
     <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
+        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
+        <translation>Cuando se activa, los conjuntos de datos de teselas vectoriales en formato Mapbox GL se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden las costas del mundo (aprox. 12 MB), fuentes (aprox. 80 MB) y el conjunto de datos del país indicado </translation>
+    </message>
+    <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="297"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation>Cuando se activa, los conjuntos de datos del geocodificador basado en libpostal se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden el conjunto de datos del idioma de análisis (aproximadamente 700 MB) y el conjunto de datos específico del país usado en el análisis de direcciones y búsqueda.</translation>
+        <translation>Cuando se activa, los conjuntos de datos del geocodificador basado en libpostal se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden el conjunto de datos del idioma de análisis (aprox. 700 MB) y el conjunto de datos del país indicado usado en el análisis de direcciones y búsqueda.</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="269"/>
@@ -1057,7 +1057,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="270"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation>Cuando se activa, los conjuntos de datos que permiten el renderizado de mapas con Mapnik se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden las costas del mundo (aproximadamente 700MB) y el conjunto de datos específico del país usado para el renderizado </translation>
+        <translation>Cuando se activa, los conjuntos de datos que permiten el renderizado de mapas con Mapnik se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden las costas del mundo (aprox. 700MB) y el conjunto de datos del país indicado usado para el renderizado </translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="176"/>
@@ -1070,52 +1070,52 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="117"/>
         <source>Failed to run query in Mapbox GL database</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al ejecutar consulta en base de datos de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="169"/>
         <source>Failed to run query in Mapbox GL fonts database</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al ejecutar consulta en base de datos fuentes de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="195"/>
         <source>Malformed Mapbox GL style request: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error en solicitud de estilo de Mapbox GL: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="201"/>
         <source>Requested Mapbox GL style does not exist: %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>No existe estilo de Mapbox GL solicitado: %1 [%2]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="210"/>
         <source>Error opening Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir plantilla de estilo de Mapbox GL %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="218"/>
         <source>Error reading Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al leer plantilla de estilo de Mapbox GL %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="234"/>
         <source>Error opening Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir  JSON sprite de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="242"/>
         <source>Error reading Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al leer JSON sprite de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="257"/>
         <source>Error opening Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir imagen sprite de Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="264"/>
         <source>Error reading Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al leer imagen sprite de Mapbox GL</translation>
     </message>
 </context>
 <context>
@@ -1133,12 +1133,12 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="149"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation>Se produjo un fallo al crear enlace simbólico a la configuración de Mapnik (%1)</translation>
+        <translation>Error al crear enlace simbólico a la configuración de Mapnik (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="196"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation>Se produjo un fallo al cargar la configuración de Mapnik: %1</translation>
+        <translation>Error al cargar la configuración de Mapnik: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="254"/>
@@ -1153,7 +1153,7 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="343"/>
         <source>Mapnik: failed to transform coordinates</source>
-        <translation>Mapnik: se produjo un fallo al transformar coordenadas</translation>
+        <translation>Mapnik: error al transformar coordenadas</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="359"/>
@@ -1534,12 +1534,17 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
         <source>Recommended for vector tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Recomendado para mapas de teselas vectoriales</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Recomendado para mapas de teselas vectoriales y de mapas de bit</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
+        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
+        <translation>El perfil &lt;i&gt;Por defecto&lt;/i&gt; usa &lt;i&gt;Mapnik&lt;/i&gt; para reproducir mapas con teselas de mapas de bit, &lt;i&gt;Geocoder-NLP&lt;/i&gt; para buscar localizaciones, y &lt;i&gt;Valhalla&lt;/i&gt; para calcular rutas. Este es el perfil recomendado para clientes tradicionales de mapas de teselas de mapas de bit.&lt;br&gt;&lt;br&gt;Para usuarios de aplicaciones de mapas que admiten el complemento &lt;i&gt;Mapbox GL&lt;/i&gt;, el perfil recomendado para mapas de teselas vectoriales incluye conjuntos de datos de &lt;i&gt;Mapbox GL&lt;/i&gt; y usa los mismos complementos de búsqueda y cálculo de rutas que el perfil &lt;i&gt;Por defecto&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Para usuarios que quieren usar clientes de mapas de teselas vectoriales y de mapas de bit, el perfil recomendado combina teselas vectoriales y de mapas de bit, incluye conjuntos de datos de &lt;i&gt;Mapbox GL&lt;/i&gt;, admite el renderizado de mapas en teselas de mapas de bit con &lt;i&gt;Mapnik&lt;/i&gt;, y usa los mismos complementos de búsqueda y cálculo de rutas que el perfil &lt;i&gt;Por defecto&lt;/i&gt;. Como este perfil incluye datos para varios backends de renderizado, se requiere un mayor almacenamiento.&lt;br&gt;&lt;br&gt;El perfil que combina  &lt;i&gt;libosmscout&lt;/i&gt; con &lt;i&gt;Geocoder-NLP&lt;/i&gt; requiere un menor almacenamiento que el perfil por defecto. Sin embargo, el renderizado de mapas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del renderizado es inferior y el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;El perfil &lt;i&gt;libosmscout&lt;/i&gt; es el perfil que requiere un menor almacenamiento entre todos los perfiles. Sin embargo, el renderizado de mapas, las búsquedas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del rederizado y de las búsquedas es inferior a la vez que el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;Si usas el perfil &lt;i&gt;Personalizado&lt;/i&gt;, los ajustes y el gestor de mapas no estarán configurados y debes ajustarlos. Este perfil permite seleccionar el renderizado, búsquedas y cálculo de rutas de forma individual. Ten encuenta que el usuario es responsable de los ajustes y que éstos sean coherentes con los requerimientos del uso de backends y el almacenamiento.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
@@ -1555,11 +1560,6 @@
         <location filename="../qml/pages/ProfilesPage.qml" line="49"/>
         <source>Custom</source>
         <translation>Personalizado</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
-        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
