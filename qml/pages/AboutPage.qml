@@ -14,6 +14,8 @@ Page {
                               "<p>" + qsTr("Copyright:") + " 2016, 2017 <br>rinigus https://github.com/rinigus<br></p>" +
                               qsTr("License: LGPL") + "<br><br>" +
 
+                              "Donations: <a href='https://liberapay.com/rinigus'>https://liberapay.com/rinigus</a>" + "<br><br>" +
+
                               "<b>" + qsTr("Translations") + "</b><br><br>" +
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +
                               "Lukáš Karas @Karry: Czech<br>" +

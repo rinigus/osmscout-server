@@ -1,5 +1,8 @@
 # OSM Scout Server
 
+[![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)
+[![Donate](https://img.shields.io/badge/donate-liberapay-yellow.svg)](https://liberapay.com/rinigus)
+
 OSM Scout server can be used as a drop-in replacement for online map
 services providing map tiles, search, and routing. As a result, an
 offline operation is possible if the device has a server and map
@@ -522,4 +525,3 @@ Hosting of maps: Natural Language Processing Centre
 University, Brno, Czech Republic) through modRana
 (http://modrana.org).
 
-[![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)
