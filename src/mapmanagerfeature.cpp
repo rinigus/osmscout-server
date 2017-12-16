@@ -47,9 +47,8 @@ void Feature::setUrl(const QJsonObject &obj)
   if (obj.contains(const_feature_id_url))
     {
       const QJsonObject o = obj.value(const_feature_id_url).toObject();
-      QString base = o.value("base").toString();
       QString special = o.value(m_name).toString();
-      m_url = base + "/" + special;
+      m_url = special;
     }
 }
 

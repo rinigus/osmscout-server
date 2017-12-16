@@ -70,7 +70,8 @@ SOURCES += src/dbmaster.cpp \
     src/modulechecker.cpp \
     src/systemdservice.cpp \
     src/util.cpp \
-    src/mapboxglmaster.cpp
+    src/mapboxglmaster.cpp \
+    src/mapmanager_urlcollection.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
@@ -98,7 +99,8 @@ HEADERS += \
     src/modulechecker.h \
     src/systemdservice.h \
     src/util.hpp \
-    src/mapboxglmaster.h
+    src/mapboxglmaster.h \
+    src/mapmanager_urlcollection.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT

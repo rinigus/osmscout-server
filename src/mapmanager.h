@@ -3,6 +3,7 @@
 
 #include "filedownloader.h"
 #include "mapmanagerfeature.h"
+#include "mapmanager_urlcollection.h"
 
 #include <QObject>
 #include <QDir>
@@ -63,7 +64,7 @@ namespace MapManager {
     /// a storage directory for maps through settings. Returns true if successful
     Q_INVOKABLE bool createDirectory(QString path);
 
-    /// \brief Check if there is a list of provided countries
+    /// \brief Check if there is a list of provided countries and server urls
     Q_INVOKABLE bool checkProvidedAvailable();
 
     /// \brief Composes a list of countries on device in alphabetical order and returns as an JSON array
@@ -245,7 +246,9 @@ namespace MapManager {
     void onWrittenBytes(uint64_t sz);
     void onDownloadProgress();
 
-    bool startDownload(DownloadType type, const QString &url, const QString &path, const FileDownloader::Type mode);
+    void loadUrls(); /// loads URLs of the servers providing maps
+
+    bool startDownload(DownloadType type, QString url, const QString &path, const FileDownloader::Type mode, bool fullpath=false);
     void cleanupDownload();
 
     void setDeleting(bool state);
@@ -258,6 +261,8 @@ namespace MapManager {
     bool m_storage_available{false};
     QList< Feature* > m_features;
     QString m_provided_url;
+
+    UrlCollection m_base_urls;
 
     // available maps
     QJsonObject m_maps_available;
@@ -276,6 +281,10 @@ namespace MapManager {
     bool m_ready{false};
 
     DownloadType m_download_type{NoDownload};
+    QString m_download_url;
+    QString m_download_path;
+    FileDownloader::Type m_download_filemode;
+
     uint64_t m_last_reported_downloaded;
     uint64_t m_last_reported_written;
 

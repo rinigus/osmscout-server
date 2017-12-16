@@ -68,6 +68,7 @@ SOURCES += \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
+    src/mapmanager_urlcollection.cpp \
     src/mapmanagerfeature_packtaskworker.cpp \
     src/mapnikmaster.cpp \ 
     src/modulechecker.cpp \
@@ -75,7 +76,7 @@ SOURCES += \
     src/mapmanager_deleterthread.cpp \
     src/systemdservice.cpp \
     src/util.cpp \
-    src/mapboxglmaster.cpp
+    src/mapboxglmaster.cpp 
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += rpm/osmscout-server.spec
@@ -98,6 +99,7 @@ HEADERS += \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
+    src/mapmanager_urlcollection.h \
     src/mapmanagerfeature_packtaskworker.h \
     src/mapnikmaster.h \
     src/modulechecker.h \

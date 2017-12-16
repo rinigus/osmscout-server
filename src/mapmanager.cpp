@@ -180,13 +180,13 @@ void Manager::loadSettings()
   if (storage_was_available != m_storage_available)
     emit storageAvailableChanged(m_storage_available);
 
+  loadUrls();
   scanDirectories(root_changed || old_selection != m_map_selected);
   missingData();
   checkUpdates();
   if (old_selection != m_map_selected)
     emit selectedMapChanged(m_map_selected);
 }
-
 
 bool Manager::ready()
 {
@@ -526,8 +526,14 @@ void Manager::makeCountriesList(ListType list_type, QStringList &countries, QStr
 
 bool Manager::checkProvidedAvailable()
 {
-  QJsonObject objlist = loadJson(fullPath(const_fname_countries_provided));
-  return !objlist.empty();
+  QJsonObject objlist_prov = loadJson(fullPath(const_fname_countries_provided));
+  return (!objlist_prov.empty() && !m_base_urls.isEmpty());
+}
+
+void Manager::loadUrls()
+{
+  QJsonObject obj = loadJson(fullPath(const_fname_server_url));
+  m_base_urls.load(obj);
 }
 
 ///////////////////////////////////////////////////////
@@ -789,7 +795,7 @@ void Manager::missingData()
 
   QJsonObject req_countries = m_maps_requested;
 
-  // get URLs
+  // get URL components for features
   QJsonObject provided = loadJson(fullPath(const_fname_countries_provided));
   for (Feature *f: m_features)
     f->setUrl(provided);
@@ -899,11 +905,17 @@ bool Manager::isRegistered(const QString &path, QString &version, QString &datet
   return false;
 }
 
-bool Manager::startDownload(DownloadType type, const QString &url, const QString &path, const FileDownloader::Type mode)
+bool Manager::startDownload(DownloadType type, QString url, const QString &path, const FileDownloader::Type mode, bool fullpath)
 {
   if (!m_root_dir.exists())
     {
       InfoHub::logWarning(tr("Maps storage folder does not exist: ") + m_root_dir.absolutePath());
+      return false;
+    }
+
+  if (!fullpath && m_base_urls.isEmpty())
+    {
+      InfoHub::logWarning(tr("No servers found to download the data from"));
       return false;
     }
 
@@ -912,7 +924,11 @@ bool Manager::startDownload(DownloadType type, const QString &url, const QString
 
   m_last_reported_downloaded = 0;
   m_last_reported_written = 0;
+  m_download_url = url;
+  m_download_path = path;
+  m_download_filemode = mode;
 
+  if (!fullpath) url = m_base_urls.url() + "/" + url;
   m_file_downloader = new FileDownloader(&m_network_manager, url, path, mode, this);
   if (!m_file_downloader)
     {
@@ -988,17 +1004,15 @@ void Manager::onDownloadFinished(QString path)
   else if (dtype == ServerUrl)
     {
       m_download_type = NoDownload;
-
-      QJsonObject url = loadJson(fullPath(const_fname_server_url));
-      QString listurl = url.value("url").toString();
-      if (listurl.isEmpty())
+      loadUrls();
+      if (m_base_urls.isEmpty())
         {
           onDownloadError(tr("Could not retrieve server URL"));
           InfoHub::logWarning(tr("Could not retrieve server URL"));
           return;
         }
 
-      if ( startDownload(ProvidedList, listurl,
+      if ( startDownload(ProvidedList, const_fname_countries_provided,
                          fullPath(const_fname_countries_provided),
                          FileDownloader::Plain) )
         {
@@ -1021,10 +1035,24 @@ void Manager::onDownloadFinished(QString path)
 
 void Manager::onDownloadError(QString err)
 {
+  cleanupDownload();
+
+  if (m_download_type != ServerUrl)
+    {
+      // try to download from the next server if possible
+      InfoHub::logInfo(tr("Download failed from %1").arg(m_base_urls.url()));
+
+      if (m_base_urls.next() &&
+          startDownload( m_download_type,
+                         m_download_url, m_download_path, m_download_filemode ) )
+        {
+          // new download started from the next server, no need to propagate the error
+          return;
+        }
+    }
+
   InfoHub::logWarning(tr("Download failed, dropping all downloads"));
   emit errorMessage(err);
-
-  cleanupDownload();
 
   m_download_type = NoDownload;
   emit downloadingChanged(false);
@@ -1248,7 +1276,8 @@ bool Manager::updateProvided()
   if (m_development_disable_url_update) fname += "-EXTRA";
   if ( startDownload(ServerUrl, m_provided_url,
                      fullPath(fname),
-                     FileDownloader::Plain) )
+                     FileDownloader::Plain,
+                     true) )
     {
       emit downloadProgress(tr("Updating the distribution server URL"));
       return true;
