@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -462,7 +460,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="71"/>
         <source>Countries used in search: </source>
-        <translation>Países usados en la búsqueda:</translation>
+        <translation>Países usados en la búsqueda: </translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="105"/>
@@ -700,7 +698,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="416"/>
         <source>Available country or territory: </source>
-        <translation>País o territorio disponible:</translation>
+        <translation>País o territorio disponible: </translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="611"/>
@@ -710,7 +708,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="675"/>
         <source>Removing country from requested list: </source>
-        <translation>Eliminando país de la lista solicitada:</translation>
+        <translation>Eliminando país de la lista solicitada: </translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="833"/>
@@ -1017,7 +1015,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="207"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation>Actualizar la lista de mapas y conjuntos de datos disponibles actualmente y comprobar si los mapas instalados pueden actualizarse </translation>
+        <translation>Actualizar lista de mapas y de conjuntos de datos disponibles actualmente y comprobar si hay actualizaciones de los mapas instalados</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="218"/>
@@ -1042,7 +1040,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
         <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation>Cuando se activa, los conjuntos de datos de teselas vectoriales en formato Mapbox GL se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden las costas del mundo (aprox. 12 MB), fuentes (aprox. 80 MB) y el conjunto de datos del país indicado </translation>
+        <translation>Cuando se activa, los conjuntos de datos de teselas vectoriales en formato Mapbox GL se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden las costas del mundo (aprox. 12 MB), fuentes (aprox. 80 MB) y el conjunto de datos del país indicado</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="297"/>
@@ -1057,7 +1055,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="270"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation>Cuando se activa, los conjuntos de datos que permiten el renderizado de mapas con Mapnik se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden las costas del mundo (aprox. 700MB) y el conjunto de datos del país indicado usado para el renderizado </translation>
+        <translation>Cuando se activa, los conjuntos de datos que permiten el renderizado de mapas con Mapnik se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden las costas del mundo (aprox. 700MB) y el conjunto de datos del país indicado usado para el renderizado</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="176"/>
@@ -1534,17 +1532,17 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
         <source>Recommended for vector tiles maps</source>
-        <translation>Recomendado para mapas de teselas vectoriales</translation>
+        <translation>Recomendado para mapas vectoriales</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation>Recomendado para mapas de teselas vectoriales y de mapas de bit</translation>
+        <translation>Recomendado mapas vectoriales y mapas de bit</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>El perfil &lt;i&gt;Por defecto&lt;/i&gt; usa &lt;i&gt;Mapnik&lt;/i&gt; para reproducir mapas con teselas de mapas de bit, &lt;i&gt;Geocoder-NLP&lt;/i&gt; para buscar localizaciones, y &lt;i&gt;Valhalla&lt;/i&gt; para calcular rutas. Este es el perfil recomendado para clientes tradicionales de mapas de teselas de mapas de bit.&lt;br&gt;&lt;br&gt;Para usuarios de aplicaciones de mapas que admiten el complemento &lt;i&gt;Mapbox GL&lt;/i&gt;, el perfil recomendado para mapas de teselas vectoriales incluye conjuntos de datos de &lt;i&gt;Mapbox GL&lt;/i&gt; y usa los mismos complementos de búsqueda y cálculo de rutas que el perfil &lt;i&gt;Por defecto&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Para usuarios que quieren usar clientes de mapas de teselas vectoriales y de mapas de bit, el perfil recomendado combina teselas vectoriales y de mapas de bit, incluye conjuntos de datos de &lt;i&gt;Mapbox GL&lt;/i&gt;, admite el renderizado de mapas en teselas de mapas de bit con &lt;i&gt;Mapnik&lt;/i&gt;, y usa los mismos complementos de búsqueda y cálculo de rutas que el perfil &lt;i&gt;Por defecto&lt;/i&gt;. Como este perfil incluye datos para varios backends de renderizado, se requiere un mayor almacenamiento.&lt;br&gt;&lt;br&gt;El perfil que combina  &lt;i&gt;libosmscout&lt;/i&gt; con &lt;i&gt;Geocoder-NLP&lt;/i&gt; requiere un menor almacenamiento que el perfil por defecto. Sin embargo, el renderizado de mapas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del renderizado es inferior y el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;El perfil &lt;i&gt;libosmscout&lt;/i&gt; es el perfil que requiere un menor almacenamiento entre todos los perfiles. Sin embargo, el renderizado de mapas, las búsquedas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del rederizado y de las búsquedas es inferior a la vez que el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;Si usas el perfil &lt;i&gt;Personalizado&lt;/i&gt;, los ajustes y el gestor de mapas no estarán configurados y debes ajustarlos. Este perfil permite seleccionar el renderizado, búsquedas y cálculo de rutas de forma individual. Ten encuenta que el usuario es responsable de los ajustes y que éstos sean coherentes con los requerimientos del uso de backends y el almacenamiento.</translation>
+        <translation>El perfil &lt;i&gt;Por defecto&lt;/i&gt; usa &lt;i&gt;Mapnik&lt;/i&gt; para reproducir mapas con teselas de mapas de bit, &lt;i&gt;Geocoder-NLP&lt;/i&gt; para buscar localizaciones, y &lt;i&gt;Valhalla&lt;/i&gt; para calcular rutas. Este es el perfil recomendado para clientes tradicionales de mapas con teselas de mapas de bit.&lt;br&gt;&lt;br&gt;Para el uso de aplicaciones de mapas con el complemento &lt;i&gt;Mapbox GL&lt;/i&gt;, el perfil recomendado para mapas vectoriales incluye conjuntos de datos de &lt;i&gt;Mapbox GL&lt;/i&gt; y usa los mismos complementos de búsqueda y cálculo de rutas que el perfil &lt;i&gt;Por defecto&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Para usuarios que quieren usar clientes de mapas con teselas vectoriales y de mapas de bit, el perfil recomendado para mapas vectoriales y mapas de bit incluye conjuntos de datos de &lt;i&gt;Mapbox GL&lt;/i&gt;, admite el renderizado de mapas con teselas de mapas de bit de &lt;i&gt;Mapnik&lt;/i&gt;, y usa los mismos complementos de búsqueda y cálculo de rutas que el perfil &lt;i&gt;Por defecto&lt;/i&gt;. Como este perfil incluye datos para varios backends de renderizado, se requiere un mayor almacenamiento.&lt;br&gt;&lt;br&gt;El perfil que combina  &lt;i&gt;libosmscout&lt;/i&gt; con &lt;i&gt;Geocoder-NLP&lt;/i&gt; requiere un menor almacenamiento que el perfil por defecto. Sin embargo, el renderizado de mapas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del renderizado es inferior y el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;El perfil &lt;i&gt;libosmscout&lt;/i&gt; es el perfil que requiere un menor almacenamiento entre todos los perfiles. Sin embargo, el renderizado de mapas, las búsquedas y el cálculo de rutas estaría limitado a un sólo territorio. Además, la calidad del renderizado y de las búsquedas es inferior a la vez que el tiempo que tarda en calcular las rutas es superior al del perfil por defecto.&lt;br&gt;&lt;br&gt;Si usas el perfil &lt;i&gt;Personalizado&lt;/i&gt;, los ajustes y el gestor de mapas no estarán configurados y debes ajustarlos. Este perfil permite seleccionar el renderizado, búsquedas y cálculo de rutas de forma individual. Ten en cuenta que el usuario es responsable de los ajustes y que éstos sean coherentes con los requerimientos del uso de backends y el almacenamiento.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
