@@ -445,6 +445,14 @@ int main(int argc, char *argv[])
 
   int return_code = 0;
 
+#ifdef USE_VALHALLA
+  valhallaMaster->start(true);
+#endif
+
+  // prepare server by processing all outstanding events
+  // that way, it will be ready immediately to process requests
+  app->processEvents();
+
   {
     // setup HTTP server
     int port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
