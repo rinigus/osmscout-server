@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -720,7 +718,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="918"/>
         <source>No servers found to download the data from</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen server gevonden om gegevens van te downloaden</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="941"/>
@@ -751,7 +749,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1043"/>
         <source>Download failed from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloaden van %1 mislukt</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1079"/>
