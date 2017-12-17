@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fi" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -17,57 +19,57 @@
         <translation>Lisenssi: LGPL</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="17"/>
+        <location filename="../qml/pages/AboutPage.qml" line="19"/>
         <source>Translations</source>
         <translation>Käännökset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="29"/>
+        <location filename="../qml/pages/AboutPage.qml" line="31"/>
         <source>Maps</source>
         <translation>Kartat</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="31"/>
+        <location filename="../qml/pages/AboutPage.qml" line="33"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
         <translation>Kartat isännöi Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Tsekin tasavalta) modRana.org:n kautta.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="36"/>
+        <location filename="../qml/pages/AboutPage.qml" line="38"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
         <translation>OpenStreetMapin karttatiedor, Open Database License 1.0. Kartat on muunnettu sopivaan muotoon ladatuista osista ja/tai käyttäen Geofabrik GmbH:n tarjoamia polygoneja.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="40"/>
+        <location filename="../qml/pages/AboutPage.qml" line="42"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="42"/>
+        <location filename="../qml/pages/AboutPage.qml" line="44"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Huomio että &lt;i&gt;libpostal&lt;/i&gt; on kehitetty käytettäväksi optimoidun koko maailman kattavan mallin kanssa. Maakohtaiset mallit kehitettiin &lt;i&gt;libpostalin&lt;/i&gt; käyttämiseksi mobiililaitteilla ja niitä ei ole tarkkaan optimoitu. Lähetä tiedot ongelmista &lt;i&gt;libpostalin&lt;/i&gt; maakohtaisten mallien suorituskyvyssä joko &lt;i&gt;OSM Scout Server&lt;/i&gt; tai &lt;i&gt;geocoder-nlp&lt;/i&gt; github-projekteihin.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="49"/>
+        <location filename="../qml/pages/AboutPage.qml" line="51"/>
         <source>Acknowledgments</source>
         <translation>Kiitokset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="77"/>
+        <location filename="../qml/pages/AboutPage.qml" line="79"/>
         <source>About</source>
         <translation>Tietoja</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="81"/>
+        <location filename="../qml/pages/AboutPage.qml" line="83"/>
         <source>version</source>
         <translation>versio</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="87"/>
+        <location filename="../qml/pages/AboutPage.qml" line="89"/>
         <source>is a server that provides offline map services</source>
         <translation>on palvelin, joka tarjoaa offline-karttapalvelut</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="94"/>
+        <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Käyttöopas on saatavilla &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;verkossa&lt;/a&gt;</translation>
     </message>
@@ -654,14 +656,14 @@
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="313"/>
-        <location filename="../src/mapmanager.cpp" line="778"/>
-        <location filename="../src/mapmanager.cpp" line="906"/>
+        <location filename="../src/mapmanager.cpp" line="784"/>
+        <location filename="../src/mapmanager.cpp" line="912"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Karttojen tallennuskansiota ei ole olemassa: </translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="322"/>
-        <location filename="../src/mapmanager.cpp" line="785"/>
+        <location filename="../src/mapmanager.cpp" line="791"/>
         <source>No maps were requested</source>
         <translation>Yhtään karttaa ei pyydetty</translation>
     </message>
@@ -671,7 +673,7 @@
         <translation>Yhtään karttaa ei ladattu: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="812"/>
+        <location filename="../src/mapmanager.cpp" line="818"/>
         <source>%1: version of dataset for %2 is not supported</source>
         <translation>%1: %2 datasetin versio ei ole tuettu</translation>
     </message>
@@ -701,98 +703,108 @@
         <translation>Saatavilla oleva maa tai alue: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="611"/>
+        <location filename="../src/mapmanager.cpp" line="617"/>
         <source>World</source>
         <translation>Maailma</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="675"/>
+        <location filename="../src/mapmanager.cpp" line="681"/>
         <source>Removing country from requested list: </source>
         <translation>Poistetaan maa pyydettyjen listalta: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="833"/>
+        <location filename="../src/mapmanager.cpp" line="839"/>
         <source>Missing data: </source>
         <translation>Puuttuvat tiedot: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="925"/>
+        <location filename="../src/mapmanager.cpp" line="918"/>
+        <source>No servers found to download the data from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="941"/>
         <source>Error starting the download of</source>
         <translation>Virhe aloittaessa latausta</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="942"/>
+        <location filename="../src/mapmanager.cpp" line="958"/>
         <source>File downloaded:</source>
         <translation>Ladattu tiedosto:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="970"/>
+        <location filename="../src/mapmanager.cpp" line="986"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Ei voitu rekisteröidä ladattua tiedostoa seurantatietokantaan</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="971"/>
+        <location filename="../src/mapmanager.cpp" line="987"/>
         <source>File registration error</source>
         <translation>Tiedoston rekisteröintivirhe</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="996"/>
-        <location filename="../src/mapmanager.cpp" line="997"/>
+        <location filename="../src/mapmanager.cpp" line="1010"/>
+        <location filename="../src/mapmanager.cpp" line="1011"/>
         <source>Could not retrieve server URL</source>
         <translation>Palvelimen URL:ää ei voitu hakea</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1051"/>
+        <location filename="../src/mapmanager.cpp" line="1043"/>
+        <source>Download failed from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1079"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Lista maista: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1005"/>
+        <location filename="../src/mapmanager.cpp" line="1019"/>
         <source>Downloading the list of countries</source>
         <translation>Ladataan listaa maista</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1310"/>
+        <location filename="../src/mapmanager.cpp" line="1339"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Päivityksiä ei voitu tarkistaa saatavilla olevien maiden listan puuttumisen takia. Lataa lista ennen päivityksien tarkistusta.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1062"/>
+        <location filename="../src/mapmanager.cpp" line="1090"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="648"/>
+        <location filename="../src/mapmanager.cpp" line="654"/>
         <source>Add country or feature to requested list</source>
         <translation>Lisää kartta tai ominaisuus pyydettyjen listalle</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1024"/>
+        <location filename="../src/mapmanager.cpp" line="1054"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Lataus epäonnistui, peruutetaan kaikki lataukset</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1055"/>
+        <location filename="../src/mapmanager.cpp" line="1083"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Lista maista: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1100"/>
+        <location filename="../src/mapmanager.cpp" line="1128"/>
         <source>Stopping downloads</source>
         <translation>Lopetetaan lataukset</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1253"/>
+        <location filename="../src/mapmanager.cpp" line="1282"/>
         <source>Updating the distribution server URL</source>
         <translation>Päivitetään jakelupalvelimen URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1306"/>
+        <location filename="../src/mapmanager.cpp" line="1335"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Päivityksiä ei voitu tarkistaa puuttuvan karttojen säilytyskansion takia</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1308"/>
+        <location filename="../src/mapmanager.cpp" line="1337"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Päivityksiä ei voitu tarkistaa pyydettyjen maiden listan puuttumisen takia. Valitse maita ennen päivitysten tarkistusta.</translation>
     </message>
@@ -825,102 +837,102 @@
         <translation>Tarpeettomien tiedostojen poisto epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="211"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="210"/>
         <source>Missing libosmscout maps</source>
         <translation>libosmscout kartat puuttuvat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="222"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="221"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="230"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="229"/>
         <source>Missing geocoder-nlp dataset</source>
         <translation>Puuttuva geocoder-nlp datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="247"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="246"/>
         <source>Address parsing language support</source>
         <translation>Osoitteiden tulkinnan kielituki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="267"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="266"/>
         <source>Address parsing country-specific support</source>
         <translation>Osoitteiden tulkinnan maakohtainen tuki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="300"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="299"/>
         <source>Mapnik World coastlines</source>
         <translation>Mapnik maailman rantaviivat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="308"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="307"/>
         <source>Missing Mapnik World coastlines</source>
         <translation>Puuttuvat Mapnik maailman rantaviivat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="320"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="319"/>
         <source>Mapnik country-specific support</source>
         <translation>Mapnik maakohtainen tuki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="328"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="327"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation>Puuttuva maakohtainen Mapnik-datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="347"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="346"/>
         <source>Mapbox GL World overlay</source>
         <translation>Mapbox GL maailman overlay</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="355"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="354"/>
         <source>Missing Mapbox GL World overlay</source>
         <translation>Puuttuva Mapbox GL maailman overlay</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="372"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="371"/>
         <source>Mapbox GL fonts</source>
         <translation>Mapbox GL fontit</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="380"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="379"/>
         <source>Missing Mapbox GL fonts</source>
         <translation>Puuttuvat Mapbox GL fontit</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="393"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="392"/>
         <source>Mapbox GL country-specific support</source>
         <translation>Mapbox GL maakohtainen tuki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="401"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="400"/>
         <source>Missing country-specific Mapbox GL dataset</source>
         <translation>Puuttuvat maakohtaiset Mapbox GL datasetit</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="446"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="445"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="454"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="453"/>
         <source>Missing Valhalla tiles</source>
         <translation>Puuttuvat Valhallan tiedostot</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="255"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="254"/>
         <source>Missing address language parsing dataset</source>
         <translation>Puuttuva osoitteiden kielen tulkinnan datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="203"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="202"/>
         <source>OSM Scout library</source>
         <translation>OSM Scout -kirjasto</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="275"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="274"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation>Puuttuva maakohtainen osoitteiden tulkinnan datasetti</translation>
     </message>
@@ -2236,72 +2248,72 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="75"/>
+        <location filename="../src/valhallamaster.cpp" line="74"/>
         <source>Cannot create configuration directory for Valhalla</source>
         <translation>Ei voitu luoda Valhallan asetuskansiota</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="113"/>
+        <location filename="../src/valhallamaster.cpp" line="112"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Virhe avatessa Valhallan asetustemplaattia %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="121"/>
+        <location filename="../src/valhallamaster.cpp" line="120"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Virhe lukiessa Valhallan asetustemplaattia</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="136"/>
+        <location filename="../src/valhallamaster.cpp" line="135"/>
         <source>Error opening Valhalla&apos;s configuration file %1</source>
         <translation>Virhe avatessa Valhallan asetustiedostoa %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="144"/>
+        <location filename="../src/valhallamaster.cpp" line="143"/>
         <source>Error writing Valhalla&apos;s configuration file</source>
         <translation>Virhe kirjoittaessa Valhallan asetustiedostoa</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="165"/>
+        <location filename="../src/valhallamaster.cpp" line="171"/>
         <source>Starting Valhalla routing engine</source>
         <translation>Käynnistetään Valhalla-reititysmoottori</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="250"/>
+        <location filename="../src/valhallamaster.cpp" line="259"/>
         <source>Valhalla routing engine stopped</source>
         <translation>Valhalla-reititysmoottori pysäytettiin</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="267"/>
+        <location filename="../src/valhallamaster.cpp" line="276"/>
         <source>Stopping Valhalla routing engine</source>
         <translation>Pysäytetään Valhalla-reititysmoottori</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="336"/>
+        <location filename="../src/valhallamaster.cpp" line="345"/>
         <source>Error while communicating with Valhalla routing engine</source>
         <translation>Virhe kommunikoidessa Valhalla-reititysmoottorin kanssa</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="343"/>
+        <location filename="../src/valhallamaster.cpp" line="352"/>
         <source>Route found by Valhalla</source>
         <translation>Valhalla löysi reitin</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="238"/>
+        <location filename="../src/valhallamaster.cpp" line="247"/>
         <source>Valhalla routing engine started</source>
         <translation>Valhalla-reititysmoottori käynnistetty</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="246"/>
+        <location filename="../src/valhallamaster.cpp" line="255"/>
         <source>Valhalla exited with error: %1</source>
         <translation>Valhalla päättyi virheeseen: %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="277"/>
+        <location filename="../src/valhallamaster.cpp" line="286"/>
         <source>Valhalla routing engine process cleanup</source>
         <translation>Valhalla-reititysmoottorin prosessin siivous</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="297"/>
+        <location filename="../src/valhallamaster.cpp" line="306"/>
         <source>Could not start the Valhalla routing service: %1</source>
         <translation>Valhalla-reitityspalvelua ei voitu käynnistää: %1</translation>
     </message>
