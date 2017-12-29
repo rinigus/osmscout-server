@@ -4329,7 +4329,7 @@
         },
         "text-field": "{name}",
         "text-max-width": 8,
-        "icon-image": "star_11",
+        "icon-image": "star-11",
         "text-offset": [
           0.4,
           0
