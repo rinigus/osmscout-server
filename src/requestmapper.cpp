@@ -1,8 +1,3 @@
-/**
-  @file
-  @author Stefan Frings
-*/
-
 #include "requestmapper.h"
 #include "dbmaster.h"
 #include "geomaster.h"
@@ -427,6 +422,7 @@ unsigned int RequestMapper::service(const char *url_c,
       MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json");
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+      set_expiry(response, DEFAULT_EXPIRY);
       return MHD_HTTP_OK;
     }
   else if (path == "/v1/mbgl/sprite.png" || path == "/v1/mbgl/sprite@2x.png")
