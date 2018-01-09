@@ -538,165 +538,172 @@
     "x": 220,
     "y": 481
   },
-  "shop_alcohol-11": {
+  "shop-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 264,
     "y": 481
   },
-  "shop_art-11": {
+  "shop_alcohol-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 308,
     "y": 481
   },
-  "shop_bag-11": {
+  "shop_art-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 352,
     "y": 481
   },
-  "shop_bakery-11": {
+  "shop_bag-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 396,
     "y": 481
   },
-  "shop_clothes-11": {
+  "shop_bakery-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 440,
     "y": 481
   },
-  "shop_coffee-11": {
+  "shop_clothes-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 484,
     "y": 481
   },
-  "shop_convenience-11": {
+  "shop_coffee-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 528,
+    "y": 261
+  },
+  "shop_convenience-11": {
+    "height": 44,
+    "pixelRatio": 4,
+    "width": 44,
+    "x": 572,
     "y": 261
   },
   "shop_deli-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 572,
+    "x": 616,
     "y": 261
   },
   "shop_department_store-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 616,
+    "x": 660,
     "y": 261
   },
   "shop_diy-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 660,
+    "x": 704,
     "y": 261
   },
   "shop_florist-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 704,
+    "x": 748,
     "y": 261
   },
   "shop_garden_centre-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 748,
+    "x": 792,
     "y": 261
   },
   "shop_gift-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 792,
+    "x": 836,
     "y": 261
   },
   "shop_hairdresser-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 836,
+    "x": 880,
     "y": 261
   },
   "shop_laundry-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 880,
+    "x": 924,
     "y": 261
   },
   "shop_music-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 924,
+    "x": 968,
     "y": 261
   },
   "shop_pet-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 968,
+    "x": 1012,
     "y": 261
   },
   "shop_seafood-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 1012,
-    "y": 261
-  },
-  "shop_sports-11": {
-    "height": 44,
-    "pixelRatio": 4,
-    "width": 44,
     "x": 528,
     "y": 305
   },
-  "shop_toys-11": {
+  "shop_sports-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 572,
     "y": 305
   },
-  "skiing-11": {
+  "shop_toys-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 616,
     "y": 305
   },
-  "soccer-11": {
+  "skiing-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 660,
     "y": 305
   },
-  "stadium-11": {
+  "soccer-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
     "x": 704,
+    "y": 305
+  },
+  "stadium-11": {
+    "height": 44,
+    "pixelRatio": 4,
+    "width": 44,
+    "x": 748,
     "y": 305
   },
   "star-11": {
@@ -710,42 +717,42 @@
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 748,
+    "x": 792,
     "y": 305
   },
   "telephone-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 792,
+    "x": 836,
     "y": 305
   },
   "tennis-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 836,
+    "x": 880,
     "y": 305
   },
   "theatre-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 880,
+    "x": 924,
     "y": 305
   },
   "toilets-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 924,
+    "x": 968,
     "y": 305
   },
   "townhall-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 968,
+    "x": 1012,
     "y": 305
   },
   "us-highway_1": {
@@ -836,14 +843,14 @@
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 1012,
-    "y": 305
+    "x": 528,
+    "y": 349
   },
   "zoo-11": {
     "height": 44,
     "pixelRatio": 4,
     "width": 44,
-    "x": 528,
+    "x": 572,
     "y": 349
   }
 }

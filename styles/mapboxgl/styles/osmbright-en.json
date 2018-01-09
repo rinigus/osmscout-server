@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "OSM Bright",
+  "name": "OSM Bright English",
   "center": [
     24,
     58
@@ -2944,7 +2944,7 @@
           "Noto Sans Italic"
         ],
         "text-size": 14,
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 5,
         "symbol-placement": "line",
         "text-letter-spacing": 0.2,
@@ -2979,7 +2979,7 @@
           "Noto Sans Italic"
         ],
         "text-size": 14,
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 5,
         "symbol-placement": "point",
         "symbol-spacing": 350,
@@ -3031,7 +3031,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 5,
         "symbol-placement": "point",
         "symbol-spacing": 350,
@@ -3089,7 +3089,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 5,
         "symbol-placement": "point",
         "symbol-spacing": 350,
@@ -3147,7 +3147,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 5,
         "symbol-placement": "point",
         "symbol-spacing": 350,
@@ -3205,7 +3205,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 5,
         "symbol-placement": "point",
         "symbol-spacing": 350,
@@ -3263,7 +3263,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 5,
         "symbol-placement": "point",
         "symbol-spacing": 350,
@@ -3316,7 +3316,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 5,
         "symbol-placement": "point",
         "symbol-spacing": 350,
@@ -3355,7 +3355,7 @@
         ],
         "text-anchor": "top",
         "icon-image": "{symbol}-11",
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-offset": [
           0,
           0.6
@@ -3404,7 +3404,7 @@
         ],
         "text-anchor": "top",
         "icon-image": "{symbol}-11",
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-offset": [
           0,
           0.6
@@ -3452,7 +3452,7 @@
         ],
         "text-anchor": "top",
         "icon-image": "{symbol}-11",
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-offset": [
           0,
           0.6
@@ -3495,7 +3495,7 @@
         "text-font": [
           "Noto Sans Regular"
         ],
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "symbol-placement": "line",
         "text-rotation-alignment": "map"
       },
@@ -3543,7 +3543,7 @@
         "text-font": [
           "Noto Sans Regular"
         ],
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "symbol-placement": "line",
         "text-rotation-alignment": "map"
       },
@@ -3584,7 +3584,7 @@
         "text-font": [
           "Noto Sans Regular"
         ],
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "symbol-placement": "line",
         "text-rotation-alignment": "map"
       },
@@ -3809,7 +3809,7 @@
         ],
         "text-anchor": "bottom",
         "icon-image": "airport-11",
-        "text-field": "{name}\n{iata}",
+        "text-field": "{name_en}\n{iata}",
         "text-offset": [
           0,
           -0.6
@@ -3838,7 +3838,7 @@
         "text-font": [
           "Noto Sans Bold"
         ],
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-size": 14,
         "text-max-width": 6.25,
         "text-transform": "uppercase"
@@ -3863,7 +3863,7 @@
         "text-font": [
           "Noto Sans Bold"
         ],
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-size": {
           "stops": [
             [
@@ -3912,7 +3912,7 @@
         "text-font": [
           "Noto Sans Bold"
         ],
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-size": {
           "stops": [
             [
@@ -3961,7 +3961,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 8,
         "text-anchor": "left"
       },
@@ -3985,7 +3985,7 @@
         "text-font": [
           "Noto Sans Regular"
         ],
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-size": {
           "stops": [
             [
@@ -4034,7 +4034,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 8
       },
       "paint": {
@@ -4070,7 +4070,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 8
       },
       "paint": {
@@ -4106,7 +4106,7 @@
             ]
           ]
         },
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-max-width": 8
       },
       "paint": {
@@ -4142,7 +4142,7 @@
         "text-font": [
           "Noto Sans Regular"
         ],
-        "text-field": "{name}",
+        "text-field": "{name_en}",
         "text-transform": "uppercase",
         "text-max-width": 9
       },
