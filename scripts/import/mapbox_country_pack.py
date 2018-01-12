@@ -6,11 +6,15 @@ from shapely.geometry import Polygon
 mapbox_meta_dir = 'mapbox/packages_meta'
 mapbox_packages_dir = 'mapbox/packages'
 mapbox_tiles_timestamp = "mapbox/packages/timestamp"
-version = "1"
+#version = "1"
 
 def getsize(sname):
     f = open(sname, 'r')
     return int(f.read().split()[0])
+
+def getversion(pname):
+    f = open(pname + ".version", 'r')
+    return f.read().split()[0]
 
 def gettimestamp(sname):
     f = open(mapbox_tiles_timestamp, 'r')
@@ -42,7 +46,8 @@ def country_pack(country_poly_fname):
             size_compressed += getsize(pdata + '.size-compressed')
             size += getsize(pdata + '.size')
             ts = gettimestamp(pdata)
-
+            version = getversion(pdata)
+            
     return { "path": "mapboxgl/packages", # generic path
              "packages": packs,
              "timestamp": ts,
@@ -55,7 +60,7 @@ def world_pack():
     pdata = mapbox_packages_dir + "/" + pname
     return { "path": "mapboxgl/packages", # generic path, tiles-world.sqlite is specified as requested files in the mapmanagerfeature
              "timestamp": gettimestamp(pdata),
-             "version": version,
+             "version": getversion(pdata),
              "size": str(getsize(pdata + '.size')),
              "size-compressed": str(getsize(pdata + '.size-compressed')) }
     
