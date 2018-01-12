@@ -3,7 +3,7 @@
 # This script prepares files before uploading them for distribution
 # This has to be run after all imports are finished
 
-import json, pickle, os, stat
+import json, pickle, os, stat, shutil
 from mapbox_country_pack import world_pack as mapboxgl_world_pack
 
 root_dir = "distribution"
@@ -124,3 +124,27 @@ os.chmod('uploader.sh', st.st_mode | stat.S_IEXEC)
 
 print "Check uploader script and run it"
 
+# generate public_html folder for testing
+
+testing_mirror = "public_http"
+shutil.rmtree(testing_mirror, ignore_errors=True)
+os.mkdir(testing_mirror)
+os.symlink("../provided/countries_provided.json",
+           os.path.join(testing_mirror, "countries_provided.json"))
+
+distlink = {  "geocoder_nlp": "geocoder-nlp",
+              "mapboxgl_country": "mapboxgl",
+              "mapnik_country": "mapnik",
+              "mapnik_global": "mapnik",
+              "osmscout": "osmscout",
+              "postal_country": "postal",
+              "postal_global": "postal",
+              "valhalla": "valhalla" }
+
+for t in ["geocoder_nlp", "mapboxgl_country",
+          "mapnik_country", "mapnik_global",
+          "osmscout",
+          "postal_country",  "postal_global", "valhalla" ]:
+    d = os.path.join(testing_mirror, url_specs[t])
+    os.mkdir(d)
+    os.symlink( "../../distribution/" + distlink[t], os.path.join(d, distlink[t]) )
