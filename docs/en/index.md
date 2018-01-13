@@ -123,3 +123,27 @@ If you enabled automatic activation then all you have to do is to start the clie
 * Start OSM Scout Server and minimize it as a tile on Sailfish desktop
 * Start the client (Poor Maps, modRana, or any other client)
 * When finished, close the server and the client.
+
+
+## Implementation of automatic activation
+
+To enable automatic activation, OSM Scout Server interfaces with _systemd_ by creating _service_ and _socket_ files in the home directory of the user running the server. In addition, the socket activation is enabled by running `systemctl`. In Sailfish, that results in creating or modification
+of
+
+```
+/home/nemo/.config/systemd/user/osmscout-server.service
+/home/nemo/.config/systemd/user/osmscout-server.socket
+/home/nemo/.config/systemd/user/user-session.target.wants
+```
+
+If you wish to remove the automatic activation manually, run
+
+```
+systemctl disable osmscout-server.socket
+```
+
+and then remove _service_ and _socket_ files. In Sailfish, remove
+```
+/home/nemo/.config/systemd/user/osmscout-server.service
+/home/nemo/.config/systemd/user/osmscout-server.socket
+```
