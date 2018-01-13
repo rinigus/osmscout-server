@@ -27,7 +27,7 @@ other.
 After initial setup, users would mainly have the server running in the
 background while accessing maps and getting navigation instructions
 through client. The server's GUI is only needed for managing maps on
-device. 
+device.
 
 On Sailfish OS, the normal mode of operation would require server
 running as one of the applications showing a cover and client opened
@@ -65,7 +65,7 @@ on how to do it with the help of
 
 To download, update, and remove maps, use Map Manager. The initial
 subscription of the maps and their download is described in
-[Map Manager Download tutorial](manager.html). 
+[Map Manager Download tutorial](manager.html).
 
 After the maps are downloaded, you are ready to proceed with the
 configuration of your map access client. Select the corresponding
@@ -107,3 +107,16 @@ instructions are [here](modrana.html).
 
 After the client is setup, you can use them together with OSM Scout
 Server for offline maps access.
+
+
+## Running
+
+As described above, when using OSM Scout Server, you need to run the
+server and client at the same time. There are two ways to do it:
+
+1. If you enabled automatic activation then all you have to do is to start the client. The client will access either the server running as GUI application in the background or, if its not started, the server running as a service.
+
+2. Manual control:
+  * Start OSM Scout Server and minimize it as a tile on Sailfish desktop
+  * Start the client (Poor Maps, modRana, or any other client)
+  * When finished, close the server and the client.
