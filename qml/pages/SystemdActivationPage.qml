@@ -50,6 +50,15 @@ Dialog {
             }
 
             Label {
+                text: qsTr("It is recommended to enable automatic activation to simplify the access to the server.")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+            }
+
+            Label {
                 text: qsTr("Note that when automatically activated, the server runs without any user interface. " +
                            "Automatic activation and the corresponding idle timeout can be later configured in Settings.")
                 x: Theme.horizontalPageMargin
@@ -57,6 +66,18 @@ Dialog {
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
+            }
+
+            Label {
+                text: qsTr("For technical details, created files, and how to remove them if needed, see corresponding section " +
+                           "of the <a href='https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation'>User's Guide</a>.")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeSmall
+                color: Theme.highlightColor
+                linkColor: Theme.primaryColor
+                onLinkActivated: Qt.openUrlExternally(link)
             }
         }
 
