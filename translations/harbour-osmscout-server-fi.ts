@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fi" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -718,7 +720,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="918"/>
         <source>No servers found to download the data from</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="941"/>
@@ -749,7 +751,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1043"/>
         <source>Download failed from %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1079"/>
@@ -1573,7 +1575,7 @@
 <context>
     <name>RequestMapper</name>
     <message>
-        <location filename="../src/requestmapper.cpp" line="55"/>
+        <location filename="../src/requestmapper.cpp" line="50"/>
         <source>Number of parallel worker threads: %1</source>
         <translation>Rinnakkaisten säikeiden lukumäärä: %1</translation>
     </message>
@@ -1842,202 +1844,212 @@
         <translation>Automaattinen aktivointi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="129"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="128"/>
+        <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
+        <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Idle timeout</source>
         <translation>Odotustilan aikakatkaisu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="154"/>
         <source>15 minutes</source>
         <translation>15 minuuttia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
         <source>30 minutes</source>
         <translation>30 minuuttia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="135"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="156"/>
         <source>1 hour</source>
         <translation>1 tunti</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="157"/>
         <source>2 hours</source>
         <translation>2 tuntia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>4 hours</source>
         <translation>4 tuntia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="138"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
         <source>8 hours</source>
         <translation>8 tuntia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="139"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="160"/>
         <source>24 hours</source>
         <translation>24 tuntia</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="140"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="161"/>
         <source>No timeout</source>
         <translation>Ei aikakatkaisua</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="195"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="216"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Aktiiviset taustapalvelut on asetettu profiilissa. Jos haluat vaihtaa taustapalveluja aseta vastaava profiili tai aseta profiiliksi &lt;i&gt;Muokattu&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="207"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>Rendering</source>
         <translation>Piirto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="211"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
         <translation>Tämä palvelin antaa sinun valita kahden taustapalvelun välillä karttojen piirtämiseksi: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="223"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
         <source>Use Mapnik for rendering maps</source>
         <translation>Käytä Mapnikia karttojen piirtoon</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="245"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
         <translation>Kun valittuna, Mapnikia käytetään karttojen piirtoon. Huomioi, että se tarvitsee lisätietokantoja maailman rantaviivoille ja maille.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="229"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="250"/>
         <source>Geocoder</source>
         <translation>Geokooderi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="233"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="254"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Geokooderi vastaa hakujen tulkinnasta. Se tulkitsee hakutekstin ja etsii vastaavat paikat kartalla. Tämä palvelin antaa sinun valita kahden geokooderi taustapalvelun väliltä: &lt;i&gt;geocoder-nlp&lt;/i&gt; ja &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="248"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="269"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
         <translation>Käytä geocoder-nlp:tä libpostalin kanssa geokooderina</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="249"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="270"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
         <translation>Kun valittuna, libpostalin perustuvaa geokooderia käytetään kaikkien hakujen tulkitaan.Huomioi että tämä vaatii lisätietokantoja kielen, käyttäjän syötteen tulkintaa ja geokoodaukseen.&lt;br&gt;Huom! Jos valitset &lt;i&gt;geocoder-nlp&lt;/i&gt;, määritä myös osoitteiden tulkintaan käytettävät kielet taustapalvelun asetuksissa alempana. Muutoin palvelin voi käyttää paljon muistia.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="256"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
         <source>Routing Engine</source>
         <translation>Reititysmoottori</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="260"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="281"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Reititysmoottori vastaa reittien laskemisesta lähtöpisteen ja kohteen välille. Tämä palvelin antaa sinun valita kahden reititysmoottorin väliltä: &lt;i&gt;Valhalla&lt;/i&gt; ja &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="274"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="295"/>
         <source>Use Valhalla as routing engine</source>
         <translation>Käytä Valhallaa reititysmoottorina</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="275"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="296"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
         <translation>Kun valittuna Valhallaa käytetään reititysohjeiden laskemiseen.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="279"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="300"/>
         <source>Backend settings</source>
         <translation>Palvelinasetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="344"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="365"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="351"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="372"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>&lt;i&gt;Valhallan&lt;/i&gt; reititysmoottorin asetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="372"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="393"/>
         <source>OSM Scout library</source>
         <translation>OSM Scout kirjasto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="316"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="337"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="323"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="344"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Osoitteiden tulkintaan käytettävien kielten valita ja muut &lt;i&gt;geocoder-nlp&lt;/i&gt; taustapalvelun asetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="288"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="309"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="198"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
         <translation>Automaattisesti käynnistettäessä palvelin pysäyttää itsensä mikäli se ei vastaanota mitään pyyntöjä yli odotustilan aikakatkaisun aikana.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="190"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="211"/>
         <source>Profiles</source>
         <translation>Profiilit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="295"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="316"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>&lt;i&gt;Mapnikin&lt;/i&gt; kartanpiirtoasetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="379"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="400"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>OSM Scout -kirjasto (&lt;i&gt;libosmscout&lt;/i&gt;). Tätä kirjastoa voidaan käyttää kartan piirtämiseen, hakuihin ja reititykseen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="390"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="411"/>
         <source>Miscellaneous</source>
         <translation>Sekalaiset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="396"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="417"/>
         <source>Log info messages</source>
         <translation>Kirjaa info-viestit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="397"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="418"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Kun poistettu käytöstä, INFO-viestejä ei tallenneta Tapahtumalokiin. Poikkeuksena on tietokannan lataus, mikä näytetään aina.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="404"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="425"/>
         <source>Events log size</source>
         <translation>Tapahtumalokin koko</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="405"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="426"/>
         <source>Number of events shown in the main page</source>
         <translation>Pääsivulla näytettävien tapahtumien lukumäärä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="413"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="434"/>
         <source>Log messages into session log file</source>
         <translation>Tallenna viestit istuntolokitiedostoon</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="414"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="435"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Kun vallittu, viestit tallennetaan istuntolokiin. Lokitiedosto sijaitsee cache/harbour-osmscout-server -hakemistossa. Käytä tätä asetusta vain virheenkorjaustarkoituksiin. Kun tämä asetus on aktivoitu, info-viestit tallennetaan riippumatta ylempänä olevista asetuksista. Tämä mahdollistaa täyden lokin aktivoinnin tilapäisesti ja deaktivoinnin tarvittavan istuntolokin luomisen jälkeen.</translation>
     </message>
@@ -2216,8 +2228,18 @@
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
+        <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
         <translation>Huomio että käynnistettäessä automaattisesti palvelin ajetaan ilman mitään käyttöliittymää. Automaattista aktivointia ja sen odotustilan aikakatkaisua voidaan muuttaa Asetuksissa.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
+        <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

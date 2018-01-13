@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -1443,7 +1445,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="96"/>
         <source>motorway link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="104"/>
@@ -1463,7 +1465,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="128"/>
         <source>primary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="136"/>
@@ -1488,7 +1490,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="168"/>
         <source>secondary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="176"/>
@@ -1503,7 +1505,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="192"/>
         <source>tertiary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="200"/>
@@ -1513,7 +1515,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="208"/>
         <source>trunk link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="216"/>
@@ -1552,7 +1554,7 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
@@ -1573,7 +1575,7 @@
 <context>
     <name>RequestMapper</name>
     <message>
-        <location filename="../src/requestmapper.cpp" line="55"/>
+        <location filename="../src/requestmapper.cpp" line="50"/>
         <source>Number of parallel worker threads: %1</source>
         <translation>Liczba równoległych wątków roboczych: %1</translation>
     </message>
@@ -1843,202 +1845,212 @@
         <translation>Automatyczna aktywacja</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="129"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="128"/>
+        <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
+        <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Idle timeout</source>
         <translation>Limit czasu dla bezczynności</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="154"/>
         <source>15 minutes</source>
         <translation>15 minut</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
         <source>30 minutes</source>
         <translation>30 minut</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="135"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="156"/>
         <source>1 hour</source>
         <translation>1 godzina</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="136"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="157"/>
         <source>2 hours</source>
         <translation>2 godziny</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>4 hours</source>
         <translation>4 godziny</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="138"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
         <source>8 hours</source>
         <translation>8 godzin</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="139"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="160"/>
         <source>24 hours</source>
         <translation>24 godziny</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="140"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="161"/>
         <source>No timeout</source>
         <translation>Brak limitu czasu</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="195"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="216"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Aktywne backend&apos;y są ustawiane przez profil. Jeśli chcesz zmienić wybór backend&apos;u, ustaw odpowiedni profil lub ustaw profil &lt;i&gt;Wybrany&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="207"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>Rendering</source>
         <translation>Renderowanie</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="211"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
         <translation>Serwer ten pozwala na wybór pomiędzy dwoma backend&apos;am do rysowania map: &lt;i&gt;libosmscout&lt;/i&gt; i &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="223"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
         <source>Use Mapnik for rendering maps</source>
         <translation>Użyj Mapnika do renderowania map</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="224"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="245"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
         <translation>Kiedy wybrane, Mapnik będzie użyty do renderowania map. Wymaga to dodatkowych baz danych dla wybrzeży świata i państw.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="229"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="250"/>
         <source>Geocoder</source>
         <translation>Geocoder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="233"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="254"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Geocoder jest odpowiedzialny za analizowanie szukanych zapytań. W tym celu parsuje szukany string i wyszukuje odpowiadające mu obiekty na mapie. Ten serwer pozwala na wybranie pomiędzy dwoma backendami geocodera: &lt;i&gt;geocoder-nlp&lt;/i&gt; oraz &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="248"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="269"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
         <translation>Użyj geocoder-nlp z libpostal jako geocoder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="249"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="270"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
         <translation>Kiedy wybrane, geocoder bazujący na libpostal będzie używany analizowania wszystkich zapytań. Ważne, wymaga ro dodatkowych baz danych dla języków, parsowania oraz geokodowania.&lt;br&gt;Jeśli wybierzesz &lt;i&gt;geocoder-nlp&lt;/i&gt; ustaw język, poniżej w ustawieniach backendu, który będzie używany do parsowania adresu. W innym przypadku serwer użyje dużej ilość pamięci RAM.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="256"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
         <source>Routing Engine</source>
         <translation>Silnik wyznaczania trasy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="260"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="281"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Silnik wytyczania trasy jest odpowiedzialny za kalkulowanie trasy pomiędzy punktem początkowym a końcowym. Serwer ten pozwala na wybór pomiędzy dwoma silnikami wytyczania trasy: &lt;i&gt;Valhalla&lt;/i&gt; i &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="274"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="295"/>
         <source>Use Valhalla as routing engine</source>
         <translation>Użyj Valhalla jako silnika wyznaczania trasy</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="275"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="296"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
         <translation>Kiedy wybrane, Valhalla może być użyta do kalkulowania instrukcji wyznaczonych tras.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="279"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="300"/>
         <source>Backend settings</source>
         <translation>Ustawienia backend&apos;u</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="344"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="365"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="351"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="372"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>Ustawienia silnika wyznaczania trasy dla backend&apos;u &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="372"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="393"/>
         <source>OSM Scout library</source>
         <translation>Biblioteka OSM Scout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="316"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="337"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="323"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="344"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Wybór języków używanych do parsowania adresów oraz inne ustawienia backend&apos;u &lt;i&gt;geocoder-nlp&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="288"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="309"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="177"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="198"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
         <translation>Kiedy uruchomiony automatycznie, serwer zostanie zamknięty, kiedy nie otrzymuje żadnych zapytań przez czas dłuższy niż czas stanu spoczynku.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="190"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="211"/>
         <source>Profiles</source>
         <translation>Profile</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="295"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="316"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>Ustawienia renderowania map dla backendu &lt;i&gt;mapnik&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="379"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="400"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>Ustawienia biblioteki OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). Biblioteka miże byc użyta do rysowania map, wyszukiwania i wytyczania trasy.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="390"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="411"/>
         <source>Miscellaneous</source>
         <translation>Różne</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="396"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="417"/>
         <source>Log info messages</source>
         <translation>Loguj wiadomości z informacjami</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="397"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="418"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Kiedy wyłączone, wiadomości z informacjami nie będą zapisywane w logu wydarzeń. Wyjątkiem jest ładowanie bazy danych, które pokazywane jest zawsze. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="404"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="425"/>
         <source>Events log size</source>
         <translation>Rozmiar logów zdarzeń</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="405"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="426"/>
         <source>Number of events shown in the main page</source>
         <translation>Liczba zdarzeń pokazywana na stronie głównej</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="413"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="434"/>
         <source>Log messages into session log file</source>
         <translation>Zapisuj logi do pliku logów sesji</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="414"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="435"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Kiedy włączone, wiadomości są rejestrowane w pliku dziennika sesji. Plik dziennika znajduje się w katalogu .cache / harbor-osmscout-server. Użyj tego ustawienia tylko w celu debugowania. Po włączeniu tego ustawienia wiadomości informacyjne będą rejestrowane i wyświetlane w zdarzeniach, niezależnie od ustawień powyżej. Pozwala to na tymczasowe włączenie pełnego logowania i wyłączenie go, gdy został utworzony wymagany plik dziennika sesji.</translation>
     </message>
@@ -2217,8 +2229,18 @@
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
+        <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
         <translation>Należy pamiętać, że podczas automatycznego uruchamiania serwer działa bez żadnego interfejsu użytkownika. Automatyczna aktywacja i odpowiedni czas oczekiwania mogą zostać później skonfigurowane w Ustawieniach.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
+        <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
