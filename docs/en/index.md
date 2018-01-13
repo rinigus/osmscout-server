@@ -114,9 +114,12 @@ Server for offline maps access.
 As described above, when using OSM Scout Server, you need to run the
 server and client at the same time. There are two ways to do it:
 
-1. If you enabled automatic activation then all you have to do is to start the client. The client will access either the server running as GUI application in the background or, if its not started, the server running as a service.
+### Automatic
 
-2. Manual control:
-  * Start OSM Scout Server and minimize it as a tile on Sailfish desktop
-  * Start the client (Poor Maps, modRana, or any other client)
-  * When finished, close the server and the client.
+If you enabled automatic activation then all you have to do is to start the client. The client will access either the server running as GUI application in the background or, if its not started, the server running as a service.
+
+### Manual
+
+* Start OSM Scout Server and minimize it as a tile on Sailfish desktop
+* Start the client (Poor Maps, modRana, or any other client)
+* When finished, close the server and the client.
