@@ -46,7 +46,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="44"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Let op: &lt;i&gt;libpostal&lt;/i&gt; is ontwikkeld om gebruikt te worden met het verfijnd model dat de wereld omvat. De landspecifieke modellen zijn ontwikkeld voor het gebruik van &lt;i&gt;libpostal&lt;/i&gt; op mobiele apparaten en zijn niet specifiek afgestemd. Meld problemen met prestaties van libpostal mbt landspecifieke modellen op de GitHub-pagina&apos;s van &lt;i&gt;OSM Scout Server&lt;/i&gt; of &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation>Let op: &lt;i&gt;libpostal&lt;/i&gt; is ontwikkeld om gebruikt te worden met het verfijnde model dat de wereld omvat. De landspecifieke modellen zijn ontwikkeld voor het gebruik van &lt;i&gt;libpostal&lt;/i&gt; op mobiele apparaten en zijn niet specifiek afgestemd. Meld problemen met prestaties van libpostal mbt landspecifieke modellen op de GitHub-pagina’s van &lt;i&gt;OSM Scout Server&lt;/i&gt; of &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="51"/>
@@ -71,7 +71,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation>Een gebruikersgids is &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt; beschikbaar</translation>
+        <translation>Een gebruikershandleiding is &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt; beschikbaar</translation>
     </message>
 </context>
 <context>
@@ -429,7 +429,7 @@
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="67"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation>Hou ingedrukt op een map en kies &apos;Selecteren&apos; in het contextmenu om de map te selecteren.</translation>
+        <translation>Hou ingedrukt op een map en kies ‘Selecteren’ in het contextmenu om de map te selecteren.</translation>
     </message>
     <message>
         <location filename="../qml/pages/FileSelector.qml" line="202"/>
@@ -1181,7 +1181,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation>Mapnik kan gebruikt worden als renderback-end om kaarttegels aan te bieden aan de cliëntprogramma&apos;s</translation>
+        <translation>Mapnik kan gebruikt worden als renderback-end om kaarttegels aan te bieden aan de cliëntprogramma’s</translation>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
@@ -1405,7 +1405,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="42"/>
         <source>Maximal car speed</source>
-        <translation>Maximale snelheid voor auto&apos;s</translation>
+        <translation>Maximale snelheid voor auto’s</translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="43"/>
@@ -1846,12 +1846,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het is aanbevolen automatische activering in te schakelen om de toegang tot de server te vereenvoudigen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voor technische details, aangemaakte bestanden en hoe ze te verwijderen, zie het overeenkomstige deel in de &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Gebruikershandleiding&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="150"/>
@@ -2192,7 +2192,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="432"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation>OSM Scout Server is een deel van de oplossing voor offline kaarten op je apparaat. Met deze server kan je kaarten downloaden en de gedownloade gegevens gebruiken om lokaal kaarten te renderen, te zoeken naar adressen en NP&apos;s, en voor routeberekening. Deze handelingen vereisen dat de server en een cliënt ervan tegelijk worden uitgevoerd op het apparaat.&lt;br&gt;&lt;br&gt;Deze configuratiewizard zal je helpen bij het selecteren van de door de server gebruikte back-ends en de talen voor het parseren van je zoekopdrachten.&lt;br&gt;&lt;br&gt;Tik op &apos;Volgende&apos; om te beginnen met de configuratie.</translation>
+        <translation>OSM Scout Server is een deel van de oplossing voor offline kaarten op je apparaat. Met deze server kan je kaarten downloaden en de gedownloade gegevens gebruiken om lokaal kaarten te renderen, te zoeken naar adressen en NP’s, en voor routeberekening. Deze handelingen vereisen dat de server en een cliënt ervan tegelijk worden uitgevoerd op het apparaat.&lt;br&gt;&lt;br&gt;Deze configuratiewizard zal je helpen bij het selecteren van de door de server gebruikte back-ends en de talen voor het parseren van je zoekopdrachten.&lt;br&gt;&lt;br&gt;Tik op ‘Volgende’ om te beginnen met de configuratie.</translation>
     </message>
 </context>
 <context>
@@ -2229,7 +2229,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het is aanbevolen automatische activering in te schakelen om de toegang tot de server te vereenvoudigen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
@@ -2239,7 +2239,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Voor technische details, aangemaakte bestanden en hoe ze te verwijderen, zie het overeenkomstige deel in de &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Gebruikershandleiding&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>

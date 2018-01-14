@@ -71,7 +71,7 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation>La guía de usuario está disponible &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</translation>
+        <translation>La guía de usuario está disponible &lt;a href=&apos;https://rinigus.github.io/osmscout-server/es&apos;&gt;online&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -1846,12 +1846,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se recomienda habilitar la activación automática para simplificar el acceso al servidor.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para  consultar los detalles técnicos, los archivos creados, y cómo eliminarlos, ve a la sección correspondiente en la &lt;a href=&apos;https://rinigus.github.io/osmscout-server/es/#implementación-de-la-activación-automática&apos;&gt;Guía de usuario&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="150"/>
@@ -2229,7 +2229,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se recomienda habilitar la activación automática para simplificar el acceso al servidor.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
@@ -2239,7 +2239,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Para  consultar los detalles técnicos, los archivos creados, y cómo eliminarlos, ve a la sección correspondiente en la &lt;a href=&apos;https://rinigus.github.io/osmscout-server/es/#implementación-de-la-activación-automática&apos;&gt;Guía de usuario&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
