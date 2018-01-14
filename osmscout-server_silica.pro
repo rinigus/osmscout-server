@@ -22,6 +22,7 @@ CONFIG += use_map_qt
 
 CONFIG += use_mapnik
 CONFIG += use_valhalla
+CONFIG += use_systemd
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -39,6 +40,10 @@ INSTALLS += stylesheets
 data.files = data
 data.path = /usr/share/$${TARGET}
 INSTALLS += data
+
+styles.files = styles
+styles.path = /usr/share/$${TARGET}
+INSTALLS += styles
 
 # defines
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
@@ -63,11 +68,15 @@ SOURCES += \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
+    src/mapmanager_urlcollection.cpp \
     src/mapmanagerfeature_packtaskworker.cpp \
     src/mapnikmaster.cpp \ 
     src/modulechecker.cpp \
     src/valhallamaster.cpp \
-    src/mapmanager_deleterthread.cpp
+    src/mapmanager_deleterthread.cpp \
+    src/systemdservice.cpp \
+    src/util.cpp \
+    src/mapboxglmaster.cpp 
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
 
 OTHER_FILES += rpm/osmscout-server.spec
@@ -90,11 +99,15 @@ HEADERS += \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
+    src/mapmanager_urlcollection.h \
     src/mapmanagerfeature_packtaskworker.h \
     src/mapnikmaster.h \
     src/modulechecker.h \
     src/valhallamaster.h \
-    src/mapmanager_deleterthread.h
+    src/mapmanager_deleterthread.h \
+    src/systemdservice.h \
+    src/util.hpp \
+    src/mapboxglmaster.h
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
@@ -112,6 +125,9 @@ use_map_cairo {
     PKGCONFIG += pango cairo
 }
 
+# mapbox gl is enabled by default
+DEFINES += MAPBOXGL_STYLEDIR=\\\"/usr/share/harbour-osmscout-server/styles/mapboxgl\\\"
+
 use_mapnik {
     DEFINES += USE_MAPNIK
     DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/share/harbour-osmscout-server-module-fonts/fonts\\\"
@@ -128,6 +144,12 @@ use_valhalla {
     DEFINES += VALHALLA_EXECUTABLE=\\\"/usr/bin/harbour-osmscout-server-module-route\\\"
     DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server-module-route/data/valhalla.json\\\"
     CONFIG += use_curl
+}
+
+use_systemd {
+    DEFINES += USE_SYSTEMD
+    CONFIG += link_pkgconfig
+    PKGCONFIG += libsystemd-daemon
 }
 
 use_curl {

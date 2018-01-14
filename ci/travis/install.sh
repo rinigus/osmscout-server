@@ -22,7 +22,8 @@ sudo apt-get install -y \
      libcairo2-dev libpangocairo-1.0-0 libpango1.0-dev \
      qt5-default qtdeclarative5-dev libqt5svg5-dev qtlocation5-dev qtbase5-dev \
      freeglut3 freeglut3-dev \
-     libmarisa-dev libmicrohttpd-dev libsnappy-dev libsqlite3-dev libkyotocabinet-dev libmapnik-dev
+     libmarisa-dev libmicrohttpd-dev libsnappy-dev libsqlite3-dev libkyotocabinet-dev libmapnik-dev \
+     libsystemd-daemon-dev
 
 POSTAL_VERSION=0.3.4
 wget -O libpostal.tar.gz https://github.com/openvenues/libpostal/archive/v$POSTAL_VERSION.tar.gz

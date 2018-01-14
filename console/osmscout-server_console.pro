@@ -25,6 +25,9 @@ CONFIG += use_map_qt
 !disable_valhalla {
    CONFIG += use_valhalla
 }
+!disable_systemd {
+   CONFIG += use_systemd
+}
 
 # installs
 stylesheets.files = stylesheets
@@ -34,6 +37,10 @@ INSTALLS += stylesheets
 data.files = data
 data.path = /usr/share/$${TARGET}
 INSTALLS += data
+
+styles.files = styles
+styles.path = /usr/share/$${TARGET}
+INSTALLS += styles
 
 # defines
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
@@ -61,7 +68,10 @@ SOURCES += src/dbmaster.cpp \
     src/valhallamaster.cpp \
     src/mapmanager_deleterthread.cpp \
     src/modulechecker.cpp \
-    src/systemdservice.cpp
+    src/systemdservice.cpp \
+    src/util.cpp \
+    src/mapboxglmaster.cpp \
+    src/mapmanager_urlcollection.cpp
 
 OTHER_FILES += \
     osmscout-server.desktop
@@ -87,7 +97,10 @@ HEADERS += \
     src/valhallamaster.h \
     src/mapmanager_deleterthread.h \
     src/modulechecker.h \
-    src/systemdservice.h
+    src/systemdservice.h \
+    src/util.hpp \
+    src/mapboxglmaster.h \
+    src/mapmanager_urlcollection.h
 
 use_map_qt {
     DEFINES += USE_OSMSCOUT_MAP_QT
@@ -101,6 +114,9 @@ use_map_cairo {
     CONFIG += link_pkgconfig
     PKGCONFIG += pango cairo
 }
+
+# mapbox gl is enabled by default
+DEFINES += MAPBOXGL_STYLEDIR=\\\"styles/mapboxgl\\\"
 
 use_mapnik {
     DEFINES += USE_MAPNIK
@@ -121,6 +137,12 @@ use_curl {
     DEFINES += USE_LIBCURL
     CONFIG += link_pkgconfig
     PKGCONFIG += libcurl
+}
+
+use_systemd {
+    DEFINES += USE_SYSTEMD
+    CONFIG += link_pkgconfig
+    PKGCONFIG += libsystemd
 }
 
 LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -lsqlite3

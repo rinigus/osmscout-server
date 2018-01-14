@@ -20,6 +20,7 @@ public:
   virtual ~ValhallaMaster();
 
   bool route(QString uri, QByteArray &result);
+  void start(bool sync = false);
 
 signals:
 
@@ -29,7 +30,6 @@ public slots:
 
 protected:
   void generateConfig();
-  void start();
   void stop();
   void start_process(); ///< Called internally when there is no process running and its free to start a new one
 
@@ -58,6 +58,8 @@ protected:
   std::atomic<bool> m_process_ready{false};
   bool m_process_start_when_ready{false};
   bool m_process_killed{false};
+
+  bool m_idle_mode{true};
 
   const QString const_conf{"valhalla.json"};
   const QString const_dir{"valhalla"};

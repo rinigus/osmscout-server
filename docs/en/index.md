@@ -27,9 +27,13 @@ other.
 After initial setup, users would mainly have the server running in the
 background while accessing maps and getting navigation instructions
 through client. The server's GUI is only needed for managing maps on
-device. On Sailfish OS, the normal mode of operation would require
-server running as one of the applications showing a cover and client
-opened as needed.
+device.
+
+On Sailfish OS, the normal mode of operation would require server
+running as one of the applications showing a cover and client opened
+as needed. Alternatively, the server can be activated automatically by
+_systemd_ on request by the client. Such mode of operation allows
+client to access the server without exposing GUI of the server.
 
 
 ## Setting up the server
@@ -61,7 +65,7 @@ on how to do it with the help of
 
 To download, update, and remove maps, use Map Manager. The initial
 subscription of the maps and their download is described in
-[Map Manager Download tutorial](manager.html). 
+[Map Manager Download tutorial](manager.html).
 
 After the maps are downloaded, you are ready to proceed with the
 configuration of your map access client. Select the corresponding
@@ -84,7 +88,9 @@ profile as shown in the [Profile selection tutorial](profiles.html).
 ### Settings
 
 There are multiple settings that can be useful to tune the operation
-of the server. See some examples in
+of the server. Among other settings, this includes language
+preference, units, and whether the server is activated
+automatically. See some examples in
 [Settings examples](settings_misc.html).
 
 
@@ -101,3 +107,43 @@ instructions are [here](modrana.html).
 
 After the client is setup, you can use them together with OSM Scout
 Server for offline maps access.
+
+
+## Running
+
+As described above, when using OSM Scout Server, you need to run the
+server and client at the same time. There are two ways to do it:
+
+### Automatic
+
+If you enabled automatic activation then all you have to do is to start the client. The client will access either the server running as GUI application in the background or, if its not started, the server running as a service.
+
+### Manual
+
+* Start OSM Scout Server and minimize it as a tile on Sailfish desktop
+* Start the client (Poor Maps, modRana, or any other client)
+* When finished, close the server and the client.
+
+
+## Implementation of automatic activation
+
+To enable automatic activation, OSM Scout Server interfaces with _systemd_ by creating _service_ and _socket_ files in the home directory of the user running the server. In addition, the socket activation is enabled by running `systemctl`. In Sailfish, that results in creating or modification
+of
+
+```
+/home/nemo/.config/systemd/user/osmscout-server.service
+/home/nemo/.config/systemd/user/osmscout-server.socket
+/home/nemo/.config/systemd/user/user-session.target.wants
+```
+
+If you wish to remove the automatic activation manually, run
+
+```
+systemctl disable osmscout-server.socket
+```
+
+and then remove _service_ and _socket_ files. In Sailfish, remove
+```
+/home/nemo/.config/systemd/user/osmscout-server.service
+/home/nemo/.config/systemd/user/osmscout-server.socket
+```

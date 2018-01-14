@@ -5,71 +5,71 @@
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
-        <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Servern måste användas med ett klientprogram som kan visa kartor, utföra sökningar och visa beräknade rutter. Servern är ett tunt lager som exponerar funktionaliteten i &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; och &lt;i&gt;geocoder-nlp&lt;/i&gt; via http. Denna server kan användas som ersättning för de online-tjänster som tillhandahåller kartor.</translation>
+        <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
+        <translation>Servern måste användas med ett klientprogram som kan visa kartor, utföra sökningar och visa beräknade rutter. Servern är ett tunt lager som exponerar funktionaliteten i &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; och &lt;i&gt;Geocoder-NLP&lt;/i&gt; och tillhandahåller data för &lt;i&gt;Mapbox GL&lt;/i&gt; genom webbtjänst. Denna server kan användas som ersättning för de online-tjänster som tillhandahåller kartor.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="13"/>
+        <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>Copyright:</source>
         <translation>Copyright:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="14"/>
+        <location filename="../qml/pages/AboutPage.qml" line="15"/>
         <source>License: LGPL</source>
         <translation>Licens: LGPL</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="16"/>
+        <location filename="../qml/pages/AboutPage.qml" line="19"/>
         <source>Translations</source>
         <translation>Översättningar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="28"/>
+        <location filename="../qml/pages/AboutPage.qml" line="31"/>
         <source>Maps</source>
         <translation>Kartor</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="30"/>
+        <location filename="../qml/pages/AboutPage.qml" line="33"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
         <translation>Kartorna tillhandahålls av Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Tjeckiska republiken) genom modRana.org dataarkiv.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="35"/>
+        <location filename="../qml/pages/AboutPage.qml" line="38"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
         <translation>Kartdata från OpenStreetMap, Open Database License 1.0. Kartorna konverteras till passande format från nerladdade extrakt och/eller använder polygonfiler tillhandahållna av Geofabrik GmbH.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="39"/>
+        <location filename="../qml/pages/AboutPage.qml" line="42"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="41"/>
+        <location filename="../qml/pages/AboutPage.qml" line="44"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Notera att &lt;i&gt;libpostal&lt;/i&gt; utvecklats för att användas med den finavstämda modell som täcker hela världen. De landbaserade modellerna, utvecklades för att användas på mobila enheter och har inte trimmats speciellt. Posta frågor angående libpostal-prestanda på landbaserade modeller hos GitHub-projektet för &lt;i&gt;OSM Scout Server&lt;/i&gt; eller &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="48"/>
+        <location filename="../qml/pages/AboutPage.qml" line="51"/>
         <source>Acknowledgments</source>
         <translation>Erkännanden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <location filename="../qml/pages/AboutPage.qml" line="79"/>
         <source>About</source>
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="80"/>
+        <location filename="../qml/pages/AboutPage.qml" line="83"/>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="86"/>
+        <location filename="../qml/pages/AboutPage.qml" line="89"/>
         <source>is a server that provides offline map services</source>
         <translation>är en server som tillhandahåller karttjänster offline.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="93"/>
+        <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Användarmanual finns tillgänglig &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</translation>
     </message>
@@ -77,22 +77,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="262"/>
+        <location filename="../src/appsettings.cpp" line="279"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="262"/>
+        <location filename="../src/appsettings.cpp" line="279"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="264"/>
+        <location filename="../src/appsettings.cpp" line="281"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="264"/>
+        <location filename="../src/appsettings.cpp" line="281"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -392,29 +392,34 @@
 <context>
     <name>FileDownloader</name>
     <message>
-        <location filename="../src/filedownloader.cpp" line="344"/>
-        <location filename="../src/filedownloader.cpp" line="361"/>
+        <location filename="../src/filedownloader.cpp" line="345"/>
+        <location filename="../src/filedownloader.cpp" line="371"/>
         <source>Failed to download</source>
         <translation>Kunde inte ladda ner</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="345"/>
+        <location filename="../src/filedownloader.cpp" line="346"/>
         <source>Error code: %1</source>
         <translation>Felkod: %1</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="362"/>
+        <location filename="../src/filedownloader.cpp" line="353"/>
+        <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
+        <translation>Notera att om nerladdningen misslyckas på grund av att filen saknas på servern, bör du söka efter uppdateringar i karthanteraren. När nya kartor laddas upp, ändras webbadressen för motsvarande databas, vilket kan leda till kvarvarande fel, till dess att tillgängliga kartor uppdaterats via karthanteraren.</translation>
+    </message>
+    <message>
+        <location filename="../src/filedownloader.cpp" line="372"/>
         <source>Timeout</source>
         <translation>Tidsgräns</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="396"/>
-        <location filename="../src/filedownloader.cpp" line="416"/>
+        <location filename="../src/filedownloader.cpp" line="406"/>
+        <location filename="../src/filedownloader.cpp" line="426"/>
         <source>Error in processing downloaded data</source>
         <translation>Fel vid bearbetning av nerladdad data</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="426"/>
+        <location filename="../src/filedownloader.cpp" line="436"/>
         <source>Error in processing downloaded data: could not start the program</source>
         <translation>Fel vid bearbetning av nerladdad data: Kunde inte starta programmet</translation>
     </message>
@@ -599,187 +604,207 @@
 <context>
     <name>MapManager::Manager</name>
     <message>
-        <location filename="../src/mapmanager.cpp" line="46"/>
+        <location filename="../src/mapmanager.cpp" line="49"/>
         <source>Could not allocate Map Manager features</source>
         <translation>Kunde inte allokera karthanteringsfunktioner</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="89"/>
+        <location filename="../src/mapmanager.cpp" line="92"/>
         <source>Storage folder changed to %1</source>
         <translation>Lagringsmappen ändrad till %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="96"/>
+        <location filename="../src/mapmanager.cpp" line="99"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Kartlagringsmappen finns inte: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="99"/>
+        <location filename="../src/mapmanager.cpp" line="102"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
         <translation>Sökvägen för kartlagring pekar inte mot någon mapp: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="105"/>
+        <location filename="../src/mapmanager.cpp" line="108"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
         <translation>Kartlagringsmappen är inte skrivbar, justera rättigheterna för %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="147"/>
-        <location filename="../src/mapmanager.cpp" line="149"/>
+        <location filename="../src/mapmanager.cpp" line="161"/>
+        <location filename="../src/mapmanager.cpp" line="163"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Kunde inte öppna databasen för att spåra nerladdade filer</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="150"/>
+        <location filename="../src/mapmanager.cpp" line="164"/>
         <source>Map Manager functionality would be disturbed</source>
         <translation>Karthanteringsfunktioner kommer att störas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="212"/>
+        <location filename="../src/mapmanager.cpp" line="226"/>
         <source>Cannot create directory without any name</source>
         <translation>Kan inte skapa en mapp utan namn</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="219"/>
+        <location filename="../src/mapmanager.cpp" line="233"/>
         <source>Error creating directory %1</source>
         <translation>Kunde inte skapa mappen %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="265"/>
+        <location filename="../src/mapmanager.cpp" line="280"/>
         <source>Address parsing language support</source>
         <translation>Språkstöd för adresstolkning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="267"/>
-        <source>World coastlines</source>
-        <translation>Världskustlinjer</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="294"/>
-        <location filename="../src/mapmanager.cpp" line="755"/>
-        <location filename="../src/mapmanager.cpp" line="883"/>
+        <location filename="../src/mapmanager.cpp" line="313"/>
+        <location filename="../src/mapmanager.cpp" line="784"/>
+        <location filename="../src/mapmanager.cpp" line="912"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Kartlagringsmappen finns inte: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="303"/>
-        <location filename="../src/mapmanager.cpp" line="762"/>
+        <location filename="../src/mapmanager.cpp" line="322"/>
+        <location filename="../src/mapmanager.cpp" line="791"/>
         <source>No maps were requested</source>
         <translation>Inga kartor efterfrågades</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="324"/>
+        <location filename="../src/mapmanager.cpp" line="343"/>
         <source>No maps loaded: %1</source>
         <translation>Inga kartor inlästa: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="789"/>
+        <location filename="../src/mapmanager.cpp" line="818"/>
         <source>%1: version of dataset for %2 is not supported</source>
         <translation>%1: Dataupssättningsversionen för %2 stöds inte</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="350"/>
+        <location filename="../src/mapmanager.cpp" line="369"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Saknad datamängd för %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="394"/>
+        <location filename="../src/mapmanager.cpp" line="282"/>
+        <source>Mapnik World coastlines</source>
+        <translation>Mapnik World kustlinjer</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="284"/>
+        <source>Mapbox GL World overlay</source>
+        <translation>Mapbox GL World överlager</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="286"/>
+        <source>Mapbox GL fonts</source>
+        <translation>Mapbox GL teckensnitt</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="416"/>
         <source>Available country or territory: </source>
         <translation>Tillgängligt land eller område: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="588"/>
+        <location filename="../src/mapmanager.cpp" line="617"/>
         <source>World</source>
         <translation>Världen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="652"/>
+        <location filename="../src/mapmanager.cpp" line="681"/>
         <source>Removing country from requested list: </source>
         <translation>Tar bort land från förfrågningslitan: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="810"/>
+        <location filename="../src/mapmanager.cpp" line="839"/>
         <source>Missing data: </source>
         <translation>Saknad data: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="902"/>
+        <location filename="../src/mapmanager.cpp" line="918"/>
+        <source>No servers found to download the data from</source>
+        <translation>Inga servrar hittades att ladda ner data från</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="941"/>
         <source>Error starting the download of</source>
         <translation>Kunde inte starta nerladdning av</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="919"/>
+        <location filename="../src/mapmanager.cpp" line="958"/>
         <source>File downloaded:</source>
         <translation>Nerladdad fil:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="947"/>
+        <location filename="../src/mapmanager.cpp" line="986"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Kunde inte registrera nerladdad fil i spårningsdatabasen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="948"/>
+        <location filename="../src/mapmanager.cpp" line="987"/>
         <source>File registration error</source>
         <translation>Filregistreringsfel</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="973"/>
-        <location filename="../src/mapmanager.cpp" line="974"/>
+        <location filename="../src/mapmanager.cpp" line="1010"/>
+        <location filename="../src/mapmanager.cpp" line="1011"/>
         <source>Could not retrieve server URL</source>
         <translation>Kunde inte hämta serverns URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1028"/>
+        <location filename="../src/mapmanager.cpp" line="1043"/>
+        <source>Download failed from %1</source>
+        <translation>Nerladdning från %1 misslyckades</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1079"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Lista över länder: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="982"/>
+        <location filename="../src/mapmanager.cpp" line="1019"/>
         <source>Downloading the list of countries</source>
         <translation>Laddar ner lista över länder</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1287"/>
+        <location filename="../src/mapmanager.cpp" line="1339"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över tillgängliga länder saknas. Ladda ner listan före uppdateringskontroll.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1039"/>
+        <location filename="../src/mapmanager.cpp" line="1090"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="625"/>
+        <location filename="../src/mapmanager.cpp" line="654"/>
         <source>Add country or feature to requested list</source>
         <translation>Lägg till land eller funktion i förfrågningslistan</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1001"/>
+        <location filename="../src/mapmanager.cpp" line="1054"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Nerladdning misslyckades, släpper alla nerladdningar</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1032"/>
+        <location filename="../src/mapmanager.cpp" line="1083"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Lista över länder: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1077"/>
+        <location filename="../src/mapmanager.cpp" line="1128"/>
         <source>Stopping downloads</source>
         <translation>Stoppar nerladdningar</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1230"/>
+        <location filename="../src/mapmanager.cpp" line="1282"/>
         <source>Updating the distribution server URL</source>
         <translation>Uppdaterar distributionsserverns URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1283"/>
+        <location filename="../src/mapmanager.cpp" line="1335"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan inte söka efter uppdateringar, eftersom kartlagringsmapp saknas.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1285"/>
+        <location filename="../src/mapmanager.cpp" line="1337"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan inte söka efter uppdateringar, eftersom listan över efterfrågade länder saknas. Välj länder före uppdateringskontroll.</translation>
     </message>
@@ -812,72 +837,102 @@
         <translation>Kunde inte ta bort onödig fil: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="211"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="210"/>
         <source>Missing libosmscout maps</source>
         <translation>libosmscout-kartor saknas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="222"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="221"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="230"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="229"/>
         <source>Missing geocoder-nlp dataset</source>
         <translation>Datamängd för geocoder-nlp saknas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="247"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="246"/>
         <source>Address parsing language support</source>
         <translation>Språkstöd för adresstolkning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="267"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="266"/>
         <source>Address parsing country-specific support</source>
         <translation>Landsspecifikt stöd för adresstolkning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="300"/>
-        <source>World coastlines</source>
-        <translation>Världskustlinjer</translation>
+        <location filename="../src/mapmanagerfeature.cpp" line="299"/>
+        <source>Mapnik World coastlines</source>
+        <translation>Mapnik World kustlinjer</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="308"/>
-        <source>Missing world coastlines</source>
-        <translation>Kustlinjer saknas</translation>
+        <location filename="../src/mapmanagerfeature.cpp" line="307"/>
+        <source>Missing Mapnik World coastlines</source>
+        <translation>Saknade Mapnik World kustlinjer</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="320"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="319"/>
         <source>Mapnik country-specific support</source>
         <translation>Mapnik landsspecifikt stöd</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="328"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="327"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation>Landsspecifik datamängd för Mapnik saknas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="343"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="346"/>
+        <source>Mapbox GL World overlay</source>
+        <translation>Mapbox GL World överlagring</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="354"/>
+        <source>Missing Mapbox GL World overlay</source>
+        <translation>Saknade Mapbox GL World överlager</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="371"/>
+        <source>Mapbox GL fonts</source>
+        <translation>Mapbox GL teckensnitt</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="379"/>
+        <source>Missing Mapbox GL fonts</source>
+        <translation>Saknade Mapbox GL teckensnitt</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="392"/>
+        <source>Mapbox GL country-specific support</source>
+        <translation>Mapbox GL landsspecifikt stöd</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="400"/>
+        <source>Missing country-specific Mapbox GL dataset</source>
+        <translation>Saknad landsspecifik datauppsättning för Mapbox GL</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="445"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="351"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="453"/>
         <source>Missing Valhalla tiles</source>
         <translation>Valhalla-kartor saknas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="255"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="254"/>
         <source>Missing address language parsing dataset</source>
         <translation>Datamängd för språktolkning saknas</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="203"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="202"/>
         <source>OSM Scout library</source>
         <translation>OSM Scout bibliotek</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="275"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="274"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation>Landsspecifik datamängd för adresstolkning saknas</translation>
     </message>
@@ -906,26 +961,31 @@
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="286"/>
+        <source>Store datasets for Mapbox GL</source>
+        <translation>Lagra datauppsättning för Mapbox GL</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="296"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
         <translation>Lagra dataupsättningar för geocoder-nlp med libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="304"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="307"/>
         <source>Store datasets for Valhalla routing engine</source>
         <translation>Lagra datamängder för Valhallas ruttmotor</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="305"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="308"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
         <translation>Vid aktivering kommer datamängder för Valhalla att lagras på enheten efter nerladdning. Dessa datamängder krävs för att använda Valhalla som ruttmotor.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="314"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="317"/>
         <source>Store datasets for libosmscout</source>
         <translation>Lagra datamängder för libosmscout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="315"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="318"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
         <translation>Vid aktivering kommer datamängder för libosmscout att lagras på enheten efter nerladdning. Dessa datamängder krävs för rendering, sökning eller ruttberäkning med libosmscout-gränssnittet.</translation>
     </message>
@@ -991,6 +1051,11 @@
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
+        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
+        <translation>Vid aktivering lagras datauppsättningar med vektorrutor på enheten, efter nerladdning. Dessa datauppsättningar innehåller världskustlinjer (ca: 12 MB), teckensnitt (ca: 80 MB) och landsspecifika datauppsättningar.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="297"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
         <translation>Vid aktivering, kommer &lt;i&gt;libpostal&lt;/i&gt;-baserade datamängder att lagras på enheten efter nerladdning. Dessa datamängder består av språktolkningsdata (omkring 700 MB) och landsspecifik data för adresstolkning och uppslagning.</translation>
     </message>
@@ -1008,6 +1073,59 @@
         <location filename="../qml/pages/MapManagerPage.qml" line="176"/>
         <source>Select the countries or territories that you want to keep on device</source>
         <translation>Välj de länder och områden som du vill spara på enheten</translation>
+    </message>
+</context>
+<context>
+    <name>MapboxGLMaster</name>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="117"/>
+        <source>Failed to run query in Mapbox GL database</source>
+        <translation>Det gick inte att köra frågan i Mapbox GL-databasen</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="169"/>
+        <source>Failed to run query in Mapbox GL fonts database</source>
+        <translation>Det gick inte att köra frågan i Mapbox GL teckensnittsdatabas</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="195"/>
+        <source>Malformed Mapbox GL style request: %1</source>
+        <translation>Felaktig Mapbox GL-förfrågan: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="201"/>
+        <source>Requested Mapbox GL style does not exist: %1 [%2]</source>
+        <translation>Begärd Mapbox GL-stil finns inte: %1 [%2]</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="210"/>
+        <source>Error opening Mapbox GL style template %1</source>
+        <translation>Kunde inte öppna Mapbox GL stilmall %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="218"/>
+        <source>Error reading Mapbox GL style template %1</source>
+        <translation>Kunde inte läsa Mapbox GL stilmall %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="234"/>
+        <source>Error opening Mapbox GL sprite JSON</source>
+        <translation>Kunde inte öppna Mapbox GL sprite JSON</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="242"/>
+        <source>Error reading Mapbox GL sprite JSON</source>
+        <translation>Kunde inte läsa Mapbox GL sprite JSON</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="257"/>
+        <source>Error opening Mapbox GL sprite image</source>
+        <translation>Kunde inte öppna Mapbox GL sprite-bild</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="264"/>
+        <source>Error reading Mapbox GL sprite image</source>
+        <translation>Kunde inte läsa Mapbox GL sprite-bild</translation>
     </message>
 </context>
 <context>
@@ -1425,29 +1543,39 @@
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
+        <source>Recommended for vector tiles maps</source>
+        <translation>Rekommenderas för vektorbaserade kartrutor</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
+        <source>Recommended for vector and raster tiles maps</source>
+        <translation>Rekommenderas för vektor- och rasterbaserade kartrutor</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
+        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
+        <translation>&lt;i&gt;Standardprofilen&lt;/i&gt; använder &lt;i&gt;Mapnik&lt;/i&gt; för rasterbaserad kartrendering, &lt;i&gt;Geocoder-NLP&lt;/i&gt; för att söka efter platser och &lt;i&gt;Valhalla&lt;/i&gt; för att beräkna rutter. Detta är den profil som rekommenderas för traditionella klienter med rasterbaserade kartrutor.&lt;br&gt;&lt;br&gt;För användare med kartprogram som brukar &lt;i&gt;Mapbox GL-instick&lt;/i&gt;, rekommenderas profilen för vektorbaserade kartrutor som inkluderar &lt;i&gt;Mapbox GL&lt;/i&gt; datauppsättningar och samma sök- och ruttberäkningsinstick som &lt;i&gt;standardprofilen&lt;/i&gt;.&lt;br&gt;&lt;br&gt;För användare som vill använda raster- och vektorbaserade kartprogram, rekommenderas profilen som kombinerar vektor- och rasterkartrutor, vilken inkluderar &lt;i&gt;Mapbox GL&lt;/i&gt; datauppsättningar, stöder kartrendering i rasterbaserade kartrutor från &lt;i&gt;Mapnik&lt;/i&gt; och använder samma sök- och ruttberäkningsinstick som &lt;i&gt;standardprofilen&lt;/i&gt;. Eftersom denna profil innehåller data för flera renderingsprogram har den det största lagringskravet.&lt;br&gt;&lt;br&gt;Profilen där &lt;i&gt;libosmscout&lt;/i&gt; kombineras med &lt;i&gt;Geocoder-NLP&lt;/i&gt; har mindre lagringskrav jämfört med standardprofilen, men rendering av kartor och ruttberäkning begränsas till endast ett territorium. Dessutom är renderingskvaliteten sämre och ruttberäkningshastigheten långsammare, jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout-profilen&lt;/i&gt; har de minsta lagringskraven bland alla profiler, men rendering av kartor och ruttberäkning begränsas också här till endast ett territorium. Dessutom är renderingskvalitet och sökning sämre, och ruttberäkningshastigheten långsammare jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;Vid användning av &lt;i&gt;Anpassad&lt;/i&gt; profil, bestäms inte inställningar och lagringsutrymme av profilen utan måste anges av användaren. Denna profil låter dig välja rendering-, sök- och ruttberäkningskomponenter individuellt. Observera att användaren är ansvarig för att justera inställningarna för att göra dem konsekventa mellan kraven i implementationer och lagring.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
         <translation>&lt;i&gt;libosmscout&lt;/i&gt; med &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
+        <location filename="../qml/pages/ProfilesPage.qml" line="48"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
         <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
+        <location filename="../qml/pages/ProfilesPage.qml" line="49"/>
         <source>Custom</source>
         <translation>Anpassad</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="62"/>
-        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>&lt;i&gt;Standardprofilen&lt;/i&gt; använder &lt;i&gt;Mapnik&lt;/i&gt; för kartrendering, &lt;i&gt;Geocoder-NLP&lt;/i&gt; för att söka efter platser och &lt;i&gt;Valhalla&lt;/i&gt; för att beräkna rutter. Denna profil är den som rekommenderas.&lt;br&gt;&lt;br&gt;Profilen där &lt;i&gt;libosmscout&lt;/i&gt; kombineras med &lt;i&gt;Geocoder-NLP&lt;/i&gt; har lägre krav på lagringsutrymme, jämfört med standardprofilen, men kartrendering och ruttberäkning begränsas till endast ett område. Dessutom är renderingskvaliteten sämre och ruttberäkningshastigheten är långsammare jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout-profilen&lt;/i&gt; har det lägsta kravet på lagringsutrymme bland profilerna, men kartrendering och ruttberäkning begränsas till endast ett område. Dessutom är renderingskvaliteten sämre och ruttberäkningens hastighet är långsammare jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;Vid användning av &lt;i&gt;Anpassad&lt;/i&gt; profil, bestäms inte inställningar och lagringsutrymme av profilen utan måste anges av användaren. Denna profil låter dig välja rendering-, sök- och ruttberäkningskomponenter individuellt. Observera att användaren är ansvarig för att justera inställningarna för att göra dem konsekventa mellan kraven i implementationer och lagring.</translation>
     </message>
 </context>
 <context>
     <name>RequestMapper</name>
     <message>
-        <location filename="../src/requestmapper.cpp" line="49"/>
+        <location filename="../src/requestmapper.cpp" line="50"/>
         <source>Number of parallel worker threads: %1</source>
         <translation>Antal parallellt arbetande trådar: %1</translation>
     </message>
@@ -1696,6 +1824,11 @@
         <translation>Önskat språk för platsnamn som visas på kartor och i sökresultat. Detta språk kommer att användas om möjligt. Om &lt;i&gt;Standard&lt;/i&gt; anges, kommer  OpenStreetMap-namn att användas, vilket oftast innebär det lokala språket i det visade landet.</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
+        <translation>Vid aktivering kommer OSM Scout Server att aktiveras automatiskt, av valfri kompatibel klient. Automatiskt startad server arbetar i bakgrunden.</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>Maps storage</source>
         <translation>Kartlagring</translation>
@@ -1706,152 +1839,217 @@
         <translation>Mapp för kartlagring.&lt;br&gt;&lt;b&gt;OBS!&lt;/b&gt; Denna mapp hanteras till fullo av OSM Scout Server. &lt;b&gt;Tilldela en separat, tom mapp&lt;/b&gt; som OSM Scout Server kan använda. Detta inkluderar borttagning av alla filer i mappen vid din begäran om rensning, eller kartuppdatering.&lt;br&gt;&lt;i&gt;Exempel:&lt;/i&gt; Kartor under &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="105"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="108"/>
+        <source>Automatic activation</source>
+        <translation>Automatisk aktivering</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="128"/>
+        <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
+        <translation>Automatisk aktivering rekommenderas, för att förenkla åtkomst till servern.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
+        <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
+        <translation>Se motsvarande sektion i &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;användarmanualen&lt;/a&gt;, för detaljerad teknisk information, skapade filer och hur man tar bort dem vid behov.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <source>Idle timeout</source>
+        <translation>Tidsgräns för inaktivitet</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="154"/>
+        <source>15 minutes</source>
+        <translation>15 minuter</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
+        <source>30 minutes</source>
+        <translation>30 minuter</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="156"/>
+        <source>1 hour</source>
+        <translation>1 timma</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="157"/>
+        <source>2 hours</source>
+        <translation>2 timmar</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
+        <source>4 hours</source>
+        <translation>4 timmar</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
+        <source>8 hours</source>
+        <translation>8 timmar</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="160"/>
+        <source>24 hours</source>
+        <translation>24 timmar</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="161"/>
+        <source>No timeout</source>
+        <translation>Ingen tidsgräns</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="216"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Aktiv implementering fastställs av profilen. Om du vill ändra gränssnittsvalet, måste du ange motsvarande profil, eller &lt;i&gt;Anpassad&lt;/i&gt; profil.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>Rendering</source>
         <translation>Rendering</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="121"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
         <translation>Denna server låter dig välja mellan två olika gränssnitt för att rita upp kartorna. &lt;i&gt;libosmscout&lt;/i&gt; och &lt;i&gt;Mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
         <source>Use Mapnik for rendering maps</source>
         <translation>Använd Mapnik för kartrendering</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="245"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
         <translation>Vid aktivering, kommer Mapnik att användas för kartrendering. Notera att det krävs ytterligare databaser för världskustlinjer och länder.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="139"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="250"/>
         <source>Geocoder</source>
         <translation>Geocoder</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="143"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="254"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Geocoder ansvarar för att slå upp sökförfrågningar. För det, tolkar den söksträngen och identifierar motsvarande objekt på en karta. Denna server låter dig välja mellan två geokodare, &lt;i&gt;geocoder-nlp&lt;/i&gt; och &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="269"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
         <translation>Använd geocoder-nlp med libpostal som geokodare</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="270"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
         <translation>Vid aktivering, kommer en libpostal-baserad geokodare att användas för att slå upp alla sökförfrågningar. Notera att det krävs ytterligare databaser för språk, tolkning av användarens indata och geokodning.&lt;br&gt;OBS! Om du väljer &lt;i&gt;geocoder-nlp&lt;/i&gt;, bör du specificera vilka språk som skall användas för adresstolkning, i serverinställningarna nedan. Annars kan servern använda stora mängder RAM.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="166"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
         <source>Routing Engine</source>
         <translation>Ruttmotor</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="170"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="281"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Ruttmotorn ansvarar för beräkning av rutter mellan utgångspunkt och destination. Denna server låter dig välja mellan två ruttmotorer, &lt;i&gt;Valhalla&lt;/i&gt; och &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="184"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="295"/>
         <source>Use Valhalla as routing engine</source>
         <translation>Använ Valhalla som ruttmotor</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="185"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="296"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
         <translation>Vid aktivering kommer Valhalla att användas för beräkning av rutter.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="189"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="300"/>
         <source>Backend settings</source>
         <translation>Serverinställningar</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="254"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="365"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="261"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="372"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>Ruttmotorinställningar för &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="282"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="393"/>
         <source>OSM Scout library</source>
         <translation>OSM Scout bibliotek</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="226"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="337"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="233"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="344"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Val av språk för adresstolkning och andra inställningar i serverdelen för &lt;i&gt;geocoder-nlp&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="198"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="309"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="198"/>
+        <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
+        <translation>Vid automatisk start, stängs servern av efter inaktivitetstid som överstiger tidsgränsen</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="211"/>
         <source>Profiles</source>
         <translation>Profiler</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="205"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="316"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>Kartrenderingsinställningar för Mapnik-implementationen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="289"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="400"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>OSM Scout biblioteksinställningar. Biblioteket kan användas för att rita upp kartor, söka och beräkna rutter.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="300"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="411"/>
         <source>Miscellaneous</source>
         <translation>Diverse</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="306"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="417"/>
         <source>Log info messages</source>
         <translation>Logga infomeddelanden</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="307"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="418"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Vid inaktivering, kommer inga INFO-meddelanden att loggas i händelseloggen. Undantaget är inläsning av databasen, vilket alltid visas.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="314"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="425"/>
         <source>Events log size</source>
         <translation>Händelseloggens storlek</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="315"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="426"/>
         <source>Number of events shown in the main page</source>
         <translation>Antal händelser som visas på huvudsidan</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="323"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="434"/>
         <source>Log messages into session log file</source>
         <translation>Logga meddelanden i sessionsloggfilen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="324"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="435"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Vid aktivering, loggas meddelanden i en sessionsloggfil. Loggfilen finns i .cache/harbour-osmscout-server. Använd den här inställningen endast för felsökning. Med denna inställning aktiverad, kommer infomeddelanden att loggas och visas i händelser oavsett ovanstående inställningar. Detta låter dig aktivera fullständig loggning tillfälligt, och inaktivera det när den eftersökta sessionsloggfilen producerats.</translation>
     </message>
@@ -1998,6 +2196,53 @@
     </message>
 </context>
 <context>
+    <name>SystemDService</name>
+    <message>
+        <location filename="../src/systemdservice.cpp" line="79"/>
+        <source>Cannot create or change to directory: %1</source>
+        <translation>Kan inte skapa eller ändra mappen: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/systemdservice.cpp" line="89"/>
+        <source>Cannot find OSM Scout Server in the PATH</source>
+        <translation>Kan inte hitta OSM Scout Server på sökvägen</translation>
+    </message>
+</context>
+<context>
+    <name>SystemdActivationPage</name>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="22"/>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="46"/>
+        <source>Automatic activation</source>
+        <translation>Automatisk aktivering</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="26"/>
+        <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
+        <translation>OSM Scout Server kan aktiveras automatiskt när klienten begär åtkomst till den. Vid automatisk start, kommer den att stoppas vid inaktivitet överstigande uppgiven tidsgräns.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="36"/>
+        <source>Do you want to enable automatic activation?</source>
+        <translation>Vill du aktivera automatisk aktivering?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
+        <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
+        <translation>Automatisk aktivering rekommenderas, för att förenkla åtkomst till servern.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
+        <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
+        <translation>Notera att servern körs utan användargränssnitt, vid automatisk aktivering. Automatisk aktivering och motsvarande tidsgräns för inaktivitet, kan konfigureras senare i inställningarna.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
+        <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
+        <translation>Se motsvarande sektion i &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;användarmanualen&lt;/a&gt;, för detaljerad teknisk information, skapade filer och hur man tar bort dem vid behov.</translation>
+    </message>
+</context>
+<context>
     <name>UpdatesFound</name>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="25"/>
@@ -2023,72 +2268,72 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="75"/>
+        <location filename="../src/valhallamaster.cpp" line="74"/>
         <source>Cannot create configuration directory for Valhalla</source>
         <translation>Kan inte skapa konfigurationsmapp för Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="113"/>
+        <location filename="../src/valhallamaster.cpp" line="112"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Fel vid öppning av Valhallas konfigurationsmall %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="121"/>
+        <location filename="../src/valhallamaster.cpp" line="120"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Fel vid läsning av Valhallas konfigurationsmall</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="136"/>
+        <location filename="../src/valhallamaster.cpp" line="135"/>
         <source>Error opening Valhalla&apos;s configuration file %1</source>
         <translation>Fel vid öppning av Valhallas konfigurationsfil %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="144"/>
+        <location filename="../src/valhallamaster.cpp" line="143"/>
         <source>Error writing Valhalla&apos;s configuration file</source>
         <translation>Fel vid skrivning till Valhallas konfigurationsfil</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="165"/>
+        <location filename="../src/valhallamaster.cpp" line="171"/>
         <source>Starting Valhalla routing engine</source>
         <translation>Startar Valhallas ruttmotor</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="250"/>
+        <location filename="../src/valhallamaster.cpp" line="259"/>
         <source>Valhalla routing engine stopped</source>
         <translation>Valhallas ruttmotor stoppad</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="267"/>
+        <location filename="../src/valhallamaster.cpp" line="276"/>
         <source>Stopping Valhalla routing engine</source>
         <translation>Stoppar Valhallas ruttmotor</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="336"/>
+        <location filename="../src/valhallamaster.cpp" line="345"/>
         <source>Error while communicating with Valhalla routing engine</source>
         <translation>Fel i kommunikationen med Valhallas ruttmotor</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="343"/>
+        <location filename="../src/valhallamaster.cpp" line="352"/>
         <source>Route found by Valhalla</source>
         <translation>Rutt beräknad av Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="238"/>
+        <location filename="../src/valhallamaster.cpp" line="247"/>
         <source>Valhalla routing engine started</source>
         <translation>Valhallas ruttmotor startad</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="246"/>
+        <location filename="../src/valhallamaster.cpp" line="255"/>
         <source>Valhalla exited with error: %1</source>
         <translation>Valhalla avslutades med felmeddelande: %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="277"/>
+        <location filename="../src/valhallamaster.cpp" line="286"/>
         <source>Valhalla routing engine process cleanup</source>
         <translation>Rensning av Valhalla ruttmotorprocess</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="297"/>
+        <location filename="../src/valhallamaster.cpp" line="306"/>
         <source>Could not start the Valhalla routing service: %1</source>
         <translation>Kunde inte starta Valhallas rutt-tjänst: %1</translation>
     </message>
@@ -2149,53 +2394,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="116"/>
+        <location filename="../src/main.cpp" line="125"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="121"/>
+        <location filename="../src/main.cpp" line="130"/>
+        <source>Run the server without GUI as a console application</source>
+        <translation>Kör servern som konsolprogram, utan GUI</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="134"/>
+        <source>Do not output logs when running in console mode</source>
+        <translation>Visa inte utdata från loggar, vid körning i konsolläge</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="139"/>
+        <source>Run the server in SystemD socket-activated mode</source>
+        <translation>Kör servern i systemd, socket-aktiverat läge</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="145"/>
         <source>Start download of the maps</source>
         <translation>Starta nerladdning av kartorna</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="125"/>
+        <location filename="../src/main.cpp" line="149"/>
         <source>Update list of available maps</source>
         <translation>Uppdatera listan över tillgängliga kartor</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="129"/>
+        <location filename="../src/main.cpp" line="153"/>
         <source>List maps available on device</source>
         <translation>Lista kartor, tillgängliga på enheten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="133"/>
+        <location filename="../src/main.cpp" line="157"/>
         <source>List subscribed maps</source>
         <translation>Lista prenumererade kartor</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="137"/>
+        <location filename="../src/main.cpp" line="161"/>
         <source>List maps provided for download</source>
         <translation>Lista kartor, tillhandahållna för nerladdning</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="141"/>
+        <location filename="../src/main.cpp" line="165"/>
         <source>List missing maps</source>
         <translation>Lista saknade kartor</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="145"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Prenumerera på en &lt;country&gt; datamängd</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="146"/>
-        <location filename="../src/main.cpp" line="151"/>
+        <location filename="../src/main.cpp" line="170"/>
+        <location filename="../src/main.cpp" line="175"/>
         <source>country-id</source>
         <translation>lands-ID</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="150"/>
+        <location filename="../src/main.cpp" line="174"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Sluta prenumerera på &lt;country&gt; datamängd</translation>
     </message>

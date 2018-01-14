@@ -5,71 +5,71 @@
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
-        <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; and &lt;i&gt;geocoder-nlp&lt;/i&gt; through http. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Palvelinta täytyy käyttä asiakasohjelman, joka voi näyttää karttoja, suorittaa hakuja ja näyttää reittejä, kanssa. Palvelin on ohut kerros, joka tarjoaa kirjastojen &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; ja &lt;i&gt;geocoder-nlp&lt;/i&gt; ominaisuudet http:n kautta. Tätä palvelinta voidaan käyttää korvaamaan online-karttapalvelut.</translation>
+        <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
+        <translation>Palvelinta täytyy käyttä asiakasohjelman, joka voi näyttää karttoja, suorittaa hakuja ja näyttää reittejä, kanssa. Palvelin on ohut kerros, joka tarjoaa kirjastojen &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; ja &lt;i&gt;Geocoder-NLP&lt;/i&gt; ominaisuudet ja tarjoaa datan &lt;i&gt;Mapbox GL:n&lt;/i&gt; käyttöön http:n kautta. Tätä palvelinta voidaan käyttää korvaamaan online-karttapalvelut.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="13"/>
+        <location filename="../qml/pages/AboutPage.qml" line="14"/>
         <source>Copyright:</source>
         <translation>Tekijänoikeus:</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="14"/>
+        <location filename="../qml/pages/AboutPage.qml" line="15"/>
         <source>License: LGPL</source>
         <translation>Lisenssi: LGPL</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="16"/>
+        <location filename="../qml/pages/AboutPage.qml" line="19"/>
         <source>Translations</source>
         <translation>Käännökset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="28"/>
+        <location filename="../qml/pages/AboutPage.qml" line="31"/>
         <source>Maps</source>
         <translation>Kartat</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="30"/>
+        <location filename="../qml/pages/AboutPage.qml" line="33"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
         <translation>Kartat isännöi Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Tsekin tasavalta) modRana.org:n kautta.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="35"/>
+        <location filename="../qml/pages/AboutPage.qml" line="38"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
         <translation>OpenStreetMapin karttatiedor, Open Database License 1.0. Kartat on muunnettu sopivaan muotoon ladatuista osista ja/tai käyttäen Geofabrik GmbH:n tarjoamia polygoneja.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="39"/>
+        <location filename="../qml/pages/AboutPage.qml" line="42"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="41"/>
+        <location filename="../qml/pages/AboutPage.qml" line="44"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Huomio että &lt;i&gt;libpostal&lt;/i&gt; on kehitetty käytettäväksi optimoidun koko maailman kattavan mallin kanssa. Maakohtaiset mallit kehitettiin &lt;i&gt;libpostalin&lt;/i&gt; käyttämiseksi mobiililaitteilla ja niitä ei ole tarkkaan optimoitu. Lähetä tiedot ongelmista &lt;i&gt;libpostalin&lt;/i&gt; maakohtaisten mallien suorituskyvyssä joko &lt;i&gt;OSM Scout Server&lt;/i&gt; tai &lt;i&gt;geocoder-nlp&lt;/i&gt; github-projekteihin.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="48"/>
+        <location filename="../qml/pages/AboutPage.qml" line="51"/>
         <source>Acknowledgments</source>
         <translation>Kiitokset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="76"/>
+        <location filename="../qml/pages/AboutPage.qml" line="79"/>
         <source>About</source>
         <translation>Tietoja</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="80"/>
+        <location filename="../qml/pages/AboutPage.qml" line="83"/>
         <source>version</source>
         <translation>versio</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="86"/>
+        <location filename="../qml/pages/AboutPage.qml" line="89"/>
         <source>is a server that provides offline map services</source>
         <translation>on palvelin, joka tarjoaa offline-karttapalvelut</translation>
     </message>
     <message>
-        <location filename="../qml/pages/AboutPage.qml" line="93"/>
+        <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Käyttöopas on saatavilla &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;verkossa&lt;/a&gt;</translation>
     </message>
@@ -77,22 +77,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="262"/>
+        <location filename="../src/appsettings.cpp" line="279"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="262"/>
+        <location filename="../src/appsettings.cpp" line="279"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="264"/>
+        <location filename="../src/appsettings.cpp" line="281"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="264"/>
+        <location filename="../src/appsettings.cpp" line="281"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -392,29 +392,34 @@
 <context>
     <name>FileDownloader</name>
     <message>
-        <location filename="../src/filedownloader.cpp" line="344"/>
-        <location filename="../src/filedownloader.cpp" line="361"/>
+        <location filename="../src/filedownloader.cpp" line="345"/>
+        <location filename="../src/filedownloader.cpp" line="371"/>
         <source>Failed to download</source>
         <translation>Lataus epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="345"/>
+        <location filename="../src/filedownloader.cpp" line="346"/>
         <source>Error code: %1</source>
         <translation>Virhekoodi: %1</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="362"/>
+        <location filename="../src/filedownloader.cpp" line="353"/>
+        <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
+        <translation>Huomio että mikäli lataus epäonnistuu palvelimelta puuttuvan tiedoston takia harkitse päivitysten tarkistusta Karttamanagerissa. Kun uusia karttoja on ladattu palvelimelle jokaisen tietokannan URL muuttuu mikä voi aiheuttaa kyseisen virheen kunnes laitteen saatavilla olevien karttojen lista on päivitetty Karttamanagerissa.</translation>
+    </message>
+    <message>
+        <location filename="../src/filedownloader.cpp" line="372"/>
         <source>Timeout</source>
         <translation>Aikakatkaisu</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="396"/>
-        <location filename="../src/filedownloader.cpp" line="416"/>
+        <location filename="../src/filedownloader.cpp" line="406"/>
+        <location filename="../src/filedownloader.cpp" line="426"/>
         <source>Error in processing downloaded data</source>
         <translation>Virhe ladattujen tietojen käsittelyssä</translation>
     </message>
     <message>
-        <location filename="../src/filedownloader.cpp" line="426"/>
+        <location filename="../src/filedownloader.cpp" line="436"/>
         <source>Error in processing downloaded data: could not start the program</source>
         <translation>Virhe ladattujen tietojen käsittelyssä: ohjelmaa ei voitu käynnistää</translation>
     </message>
@@ -599,187 +604,207 @@
 <context>
     <name>MapManager::Manager</name>
     <message>
-        <location filename="../src/mapmanager.cpp" line="46"/>
+        <location filename="../src/mapmanager.cpp" line="49"/>
         <source>Could not allocate Map Manager features</source>
         <translation>Karttamanagerin ominaisuuksia ei voitu varata</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="89"/>
+        <location filename="../src/mapmanager.cpp" line="92"/>
         <source>Storage folder changed to %1</source>
         <translation>Tallennuskansioksi vaihtui %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="96"/>
+        <location filename="../src/mapmanager.cpp" line="99"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Karttojen tallennuskansiota ei ole olemassa: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="99"/>
+        <location filename="../src/mapmanager.cpp" line="102"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
         <translation>Karttojen tallennuskansion polku ei osoita kansioon: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="105"/>
+        <location filename="../src/mapmanager.cpp" line="108"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
         <translation>Karttojen tallennuskansio ei ole kirjoittavissa, muokkaa %1 käyttäjäoikeudet</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="147"/>
-        <location filename="../src/mapmanager.cpp" line="149"/>
+        <location filename="../src/mapmanager.cpp" line="161"/>
+        <location filename="../src/mapmanager.cpp" line="163"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Tietokannan avaaminen ladattujen tiedostojen seurantaan epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="150"/>
+        <location filename="../src/mapmanager.cpp" line="164"/>
         <source>Map Manager functionality would be disturbed</source>
         <translation>Karttamanagerin toiminta häiriintyisi</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="212"/>
+        <location filename="../src/mapmanager.cpp" line="226"/>
         <source>Cannot create directory without any name</source>
         <translation>Hakemistoa ei voida luoda ilman nimeä</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="219"/>
+        <location filename="../src/mapmanager.cpp" line="233"/>
         <source>Error creating directory %1</source>
         <translation>Virhe luotaessa hakemistoa %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="265"/>
+        <location filename="../src/mapmanager.cpp" line="280"/>
         <source>Address parsing language support</source>
         <translation>Osoitteiden tulkinnan kielituki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="267"/>
-        <source>World coastlines</source>
-        <translation>Maailman rantaviivat</translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="294"/>
-        <location filename="../src/mapmanager.cpp" line="755"/>
-        <location filename="../src/mapmanager.cpp" line="883"/>
+        <location filename="../src/mapmanager.cpp" line="313"/>
+        <location filename="../src/mapmanager.cpp" line="784"/>
+        <location filename="../src/mapmanager.cpp" line="912"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Karttojen tallennuskansiota ei ole olemassa: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="303"/>
-        <location filename="../src/mapmanager.cpp" line="762"/>
+        <location filename="../src/mapmanager.cpp" line="322"/>
+        <location filename="../src/mapmanager.cpp" line="791"/>
         <source>No maps were requested</source>
         <translation>Yhtään karttaa ei pyydetty</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="324"/>
+        <location filename="../src/mapmanager.cpp" line="343"/>
         <source>No maps loaded: %1</source>
         <translation>Yhtään karttaa ei ladattu: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="789"/>
+        <location filename="../src/mapmanager.cpp" line="818"/>
         <source>%1: version of dataset for %2 is not supported</source>
         <translation>%1: %2 datasetin versio ei ole tuettu</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="350"/>
+        <location filename="../src/mapmanager.cpp" line="369"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Puuttuva %1 datasetti: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="394"/>
+        <location filename="../src/mapmanager.cpp" line="282"/>
+        <source>Mapnik World coastlines</source>
+        <translation>Mapnik maailman rantaviivat</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="284"/>
+        <source>Mapbox GL World overlay</source>
+        <translation>Mapbox GL maailman overlay</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="286"/>
+        <source>Mapbox GL fonts</source>
+        <translation>Mapbox GL fontit</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="416"/>
         <source>Available country or territory: </source>
         <translation>Saatavilla oleva maa tai alue: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="588"/>
+        <location filename="../src/mapmanager.cpp" line="617"/>
         <source>World</source>
         <translation>Maailma</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="652"/>
+        <location filename="../src/mapmanager.cpp" line="681"/>
         <source>Removing country from requested list: </source>
         <translation>Poistetaan maa pyydettyjen listalta: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="810"/>
+        <location filename="../src/mapmanager.cpp" line="839"/>
         <source>Missing data: </source>
         <translation>Puuttuvat tiedot: </translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="902"/>
+        <location filename="../src/mapmanager.cpp" line="918"/>
+        <source>No servers found to download the data from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="941"/>
         <source>Error starting the download of</source>
         <translation>Virhe aloittaessa latausta</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="919"/>
+        <location filename="../src/mapmanager.cpp" line="958"/>
         <source>File downloaded:</source>
         <translation>Ladattu tiedosto:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="947"/>
+        <location filename="../src/mapmanager.cpp" line="986"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Ei voitu rekisteröidä ladattua tiedostoa seurantatietokantaan</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="948"/>
+        <location filename="../src/mapmanager.cpp" line="987"/>
         <source>File registration error</source>
         <translation>Tiedoston rekisteröintivirhe</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="973"/>
-        <location filename="../src/mapmanager.cpp" line="974"/>
+        <location filename="../src/mapmanager.cpp" line="1010"/>
+        <location filename="../src/mapmanager.cpp" line="1011"/>
         <source>Could not retrieve server URL</source>
         <translation>Palvelimen URL:ää ei voitu hakea</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1028"/>
+        <location filename="../src/mapmanager.cpp" line="1043"/>
+        <source>Download failed from %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1079"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Lista maista: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="982"/>
+        <location filename="../src/mapmanager.cpp" line="1019"/>
         <source>Downloading the list of countries</source>
         <translation>Ladataan listaa maista</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1287"/>
+        <location filename="../src/mapmanager.cpp" line="1339"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Päivityksiä ei voitu tarkistaa saatavilla olevien maiden listan puuttumisen takia. Lataa lista ennen päivityksien tarkistusta.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1039"/>
+        <location filename="../src/mapmanager.cpp" line="1090"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="625"/>
+        <location filename="../src/mapmanager.cpp" line="654"/>
         <source>Add country or feature to requested list</source>
         <translation>Lisää kartta tai ominaisuus pyydettyjen listalle</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1001"/>
+        <location filename="../src/mapmanager.cpp" line="1054"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Lataus epäonnistui, peruutetaan kaikki lataukset</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1032"/>
+        <location filename="../src/mapmanager.cpp" line="1083"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Lista maista: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1077"/>
+        <location filename="../src/mapmanager.cpp" line="1128"/>
         <source>Stopping downloads</source>
         <translation>Lopetetaan lataukset</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1230"/>
+        <location filename="../src/mapmanager.cpp" line="1282"/>
         <source>Updating the distribution server URL</source>
         <translation>Päivitetään jakelupalvelimen URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1283"/>
+        <location filename="../src/mapmanager.cpp" line="1335"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Päivityksiä ei voitu tarkistaa puuttuvan karttojen säilytyskansion takia</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1285"/>
+        <location filename="../src/mapmanager.cpp" line="1337"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Päivityksiä ei voitu tarkistaa pyydettyjen maiden listan puuttumisen takia. Valitse maita ennen päivitysten tarkistusta.</translation>
     </message>
@@ -812,72 +837,102 @@
         <translation>Tarpeettomien tiedostojen poisto epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="211"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="210"/>
         <source>Missing libosmscout maps</source>
         <translation>libosmscout kartat puuttuvat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="222"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="221"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="230"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="229"/>
         <source>Missing geocoder-nlp dataset</source>
         <translation>Puuttuva geocoder-nlp datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="247"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="246"/>
         <source>Address parsing language support</source>
         <translation>Osoitteiden tulkinnan kielituki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="267"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="266"/>
         <source>Address parsing country-specific support</source>
         <translation>Osoitteiden tulkinnan maakohtainen tuki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="300"/>
-        <source>World coastlines</source>
-        <translation>Maailman rantaviivat</translation>
+        <location filename="../src/mapmanagerfeature.cpp" line="299"/>
+        <source>Mapnik World coastlines</source>
+        <translation>Mapnik maailman rantaviivat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="308"/>
-        <source>Missing world coastlines</source>
-        <translation>Maailman rantaviivat puuttuvat</translation>
+        <location filename="../src/mapmanagerfeature.cpp" line="307"/>
+        <source>Missing Mapnik World coastlines</source>
+        <translation>Puuttuvat Mapnik maailman rantaviivat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="320"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="319"/>
         <source>Mapnik country-specific support</source>
         <translation>Mapnik maakohtainen tuki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="328"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="327"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation>Puuttuva maakohtainen Mapnik-datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="343"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="346"/>
+        <source>Mapbox GL World overlay</source>
+        <translation>Mapbox GL maailman overlay</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="354"/>
+        <source>Missing Mapbox GL World overlay</source>
+        <translation>Puuttuva Mapbox GL maailman overlay</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="371"/>
+        <source>Mapbox GL fonts</source>
+        <translation>Mapbox GL fontit</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="379"/>
+        <source>Missing Mapbox GL fonts</source>
+        <translation>Puuttuvat Mapbox GL fontit</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="392"/>
+        <source>Mapbox GL country-specific support</source>
+        <translation>Mapbox GL maakohtainen tuki</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="400"/>
+        <source>Missing country-specific Mapbox GL dataset</source>
+        <translation>Puuttuvat maakohtaiset Mapbox GL datasetit</translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanagerfeature.cpp" line="445"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="351"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="453"/>
         <source>Missing Valhalla tiles</source>
         <translation>Puuttuvat Valhallan tiedostot</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="255"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="254"/>
         <source>Missing address language parsing dataset</source>
         <translation>Puuttuva osoitteiden kielen tulkinnan datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="203"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="202"/>
         <source>OSM Scout library</source>
         <translation>OSM Scout -kirjasto</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="275"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="274"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation>Puuttuva maakohtainen osoitteiden tulkinnan datasetti</translation>
     </message>
@@ -906,26 +961,31 @@
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="286"/>
+        <source>Store datasets for Mapbox GL</source>
+        <translation>Tallenna Mapbox GL datasetit</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="296"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
         <translation>Tallenna datasetit geocoder-nlp:lle libpostalin kanssa</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="304"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="307"/>
         <source>Store datasets for Valhalla routing engine</source>
         <translation>Tallenna Valhalla-reititysmoottorin datasetit.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="305"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="308"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
         <translation>Kun valittuna, Valhallan datasetit tallennetaan laitteelle latauksen jälkeen. Näitä datasettejä tarvitaan Valhallan käyttämiseksi reititysmoottorina.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="314"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="317"/>
         <source>Store datasets for libosmscout</source>
         <translation>Tallenna libosmscoutin datasetit.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/MapManagerPage.qml" line="315"/>
+        <location filename="../qml/pages/MapManagerPage.qml" line="318"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
         <translation>Kun valittuna, libosmscoutin datasetit tallennetaan laitteelle latauksen jälkeen. Näitä datasettejä tarvitaan piirtoon, hakuun tai reititykseen libosmscoutia käyttäen.</translation>
     </message>
@@ -991,6 +1051,11 @@
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
+        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
+        <translation>Kun valittuna, Mabox GL formaatin vektorilaattoja sisältävät datasetit tallennetaan laitteen niiden lataamisen jälkeen. Nämä datasetit sisältävät maailman rantaviivat (noin 12 MB), fontit (noin 80 MB), ja maakohtaiset datasetit</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/MapManagerPage.qml" line="297"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
         <translation>Kun valittuna, libpostaliin pohjautuvat geokooderi-datasetit tallennetaan laitteelle latauksen jälkeen. Nämä datasetit koostuvat kielen tulkintaan (noin 700 MB) ja maakohtaisista osoitteiden tulkintaan käytettävistä dataseteistä </translation>
     </message>
@@ -1008,6 +1073,59 @@
         <location filename="../qml/pages/MapManagerPage.qml" line="176"/>
         <source>Select the countries or territories that you want to keep on device</source>
         <translation>Valitse maat ja alueet, jotka haluat säilyttää laitteella</translation>
+    </message>
+</context>
+<context>
+    <name>MapboxGLMaster</name>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="117"/>
+        <source>Failed to run query in Mapbox GL database</source>
+        <translation>Haku Mapbox GL tietokannassa epäonnistui</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="169"/>
+        <source>Failed to run query in Mapbox GL fonts database</source>
+        <translation>Haku Mapbox GL fonttien tietokannasta epäonnistui</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="195"/>
+        <source>Malformed Mapbox GL style request: %1</source>
+        <translation>Virheellinen Mapbox GL -tyyli pyyntö: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="201"/>
+        <source>Requested Mapbox GL style does not exist: %1 [%2]</source>
+        <translation>Pyydetty Mapbox GL tyyli ei ole olemassa: %1 [%2]</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="210"/>
+        <source>Error opening Mapbox GL style template %1</source>
+        <translation>Mapbox GL tyylitemplaatin avaaminen epäonnistui %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="218"/>
+        <source>Error reading Mapbox GL style template %1</source>
+        <translation>Mapbox GL tyylitemplaatin lukeminen epäonnistui %1</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="234"/>
+        <source>Error opening Mapbox GL sprite JSON</source>
+        <translation>Mapbox GL sprite JSON:n avaus epäonnistui</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="242"/>
+        <source>Error reading Mapbox GL sprite JSON</source>
+        <translation>Mapbox GL sprite JSON:n lukeminen epäonnistui</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="257"/>
+        <source>Error opening Mapbox GL sprite image</source>
+        <translation>Virhe avatessa Mapbox GL sprite kuvaa</translation>
+    </message>
+    <message>
+        <location filename="../src/mapboxglmaster.cpp" line="264"/>
+        <source>Error reading Mapbox GL sprite image</source>
+        <translation>Virhe lukiessa Mapbox GL sprite kuvaa</translation>
     </message>
 </context>
 <context>
@@ -1425,29 +1543,39 @@
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
+        <source>Recommended for vector tiles maps</source>
+        <translation>Suositeltu vektorilaattakarttojen kanssa</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
+        <source>Recommended for vector and raster tiles maps</source>
+        <translation>Suositeltu vektori- ja rasterilaattakarttojen kanssa</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
+        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
+        <translation>&lt;i&gt;Oletus&lt;/i&gt;-profiili käyttää &lt;i&gt;Mapnikia&lt;/i&gt; karttojen piirtoon rasterilaatoille, &lt;i&gt;Geocoder-NLP:tä&lt;/i&gt; sijaintien hakuun, ja &lt;i&gt;Valhallaa&lt;/i&gt; reittien laskentaan. Tämä profiili on suositeltu käytettäväksi perinteisten rasterilaattoja käyttävien asiakasohjelmien kanssa.&lt;br&gt;&lt;br&gt;&lt;i&gt;Mapbox GL&lt;/i&gt; -pluginia käyttävien karttaohjelmien käyttäjille suositeltu vektorilaattakarttaprofiili sisältää &lt;i&gt;Mapbox GL&lt;/i&gt; -datasetit ja käyttää samoja haku ja reititys -plugineja kuin &lt;i&gt;Oletus&lt;/i&gt;-profiili.&lt;br&gt;&lt;br&gt;Käyttäjille, jotka haluavat käyttää sekä rasteri- että vektorilaattoja käyttäviä karttjaohjelmia, suositeltu profiili, joka yhdistää vektori- ja rasterilaatat, sisältää&lt;i&gt;Mapbox GL&lt;/i&gt; -datasetit, tukee karttojen piirtoa rasterilaatoille &lt;i&gt;Mapnikilla&lt;/i&gt;, ja käyttää samoja haku ja reititys -plugineja kuin &lt;i&gt;Oletus&lt;/i&gt;-profiili. Koska tämä profiili sisältää tiedot useammalle piirtotaustapalvelulle sillä on suurimmat tilavaatimukset.&lt;br&gt;&lt;br&gt;Profiilissa, jossa &lt;i&gt;libosmscout&lt;/i&gt; on yhdistetty &lt;i&gt;Geocoder-NLP:n&lt;/i&gt; kanssa on pienemmät tilavaatimukset kuin oletusprofiilissa. Kuitenkin karttojen piirto ja reititys on rajoitettu vain yhdelle alueelle. Lisäksi piirtolaatu on heikompi ja reititysnopeus hitaampi oletusprofiiliin verrattuna.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt;-profiililla on pienimmät tilavaatimukset kaikista profiileista. Kuitenkin karttojen piirto, haku ja reititys on rajoitettu vain yhdelle alueelle. Lisäksi piirtolaatu ja haut ovat heikompia sekä reititysnopeus on hitaampi oletusprofiiliin verrattuna.&lt;br&gt;&lt;br&gt;Käytettäessä &lt;i&gt;Muokattu&lt;/i&gt;-profiilia, Asetukset ja Karttamanageri eivät ole profiilin asettamia vaan käyttäjän täytyy määrittää ne. Tämä profiili mahdollistaa piirto-, haku- ja reitityskomponenttien määrittämisen erikseen. Huomio että käyttäjä on vastuussa asetusten määrittämisestä ja niiden tekemisestä yhteensopiviksi taustapalveluiden ja tilakäytön kanssa. </translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
         <translation>&lt;i&gt;libosmscout&lt;/i&gt; ja &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
+        <location filename="../qml/pages/ProfilesPage.qml" line="48"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
         <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
+        <location filename="../qml/pages/ProfilesPage.qml" line="49"/>
         <source>Custom</source>
         <translation>Mukautettu</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="62"/>
-        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>&lt;i&gt;Oletus&lt;/i&gt;-profiili käyttää &lt;i&gt;Mapnikia&lt;/i&gt; karttojen piirtoon, &lt;i&gt;Geocoder-NLP:ää&lt;/i&gt; sijantien hakuun, ja &lt;i&gt;Valhallaa&lt;/i&gt; reittien laskentaan. Tämä profiili on suositeltu käytettäväksi.&lt;br&gt;&lt;br&gt;Profiilissa, jossa &lt;i&gt;libosmscout&lt;/i&gt; on yhdistetty &lt;i&gt;Geocoder-NLP:n&lt;/i&gt; kanssa on pienemmät tilavaatimukset kuin oletusprofiilissa. Kuitenkin karttojen piirto ja reititys on rajoitettu vain yhdelle alueelle. Lisäksi piirtolaatu on heikompi ja reititysnopeus hitaampi oletusprofiiliin verrattuna.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; -profiililla on pienimmät tilavaatimukset kaikista profiileista. Kuitenkin karttojen piirto, haku ja reititys on rajoitettu vain yhdelle alueelle. Lisäksi piirtolaatu ja haut ovat heikompia sekä reititysnopeus on hitaampi oletusprofiiliin verrattuna.&lt;br&gt;&lt;br&gt;Käytettäessä &lt;i&gt;Muokattu&lt;/i&gt;-profiilia, Asetukset ja Karttamanageri eivät ole profiilin asettamia vaan käyttäjän täytyy määrittää ne. Tämä profiili mahdollistaa piirto-, haku- ja reitityskomponenttien määrittämisen erikseen. Huomio että käyttäjä on vastuussa asetusten määrittämisestä ja niiden tekemisestä yhteensopiviksi taustapalveluiden ja tilakäytön kanssa.</translation>
     </message>
 </context>
 <context>
     <name>RequestMapper</name>
     <message>
-        <location filename="../src/requestmapper.cpp" line="49"/>
+        <location filename="../src/requestmapper.cpp" line="50"/>
         <source>Number of parallel worker threads: %1</source>
         <translation>Rinnakkaisten säikeiden lukumäärä: %1</translation>
     </message>
@@ -1696,6 +1824,11 @@
         <translation>Haluttu kieli kartalla näytetyille paikannimille tai haun tuloksille. Tätä kieltä käytetään aina kun mahdollista. Kun määritetty kieli on&lt;i&gt;Oletus&lt;/i&gt;, OpenStreetMap-nimeä käytetään, mikä yleensä on näytetyn maan paikallisen kielen mukainen.</translation>
     </message>
     <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
+        <translation>Kun valittu, OSM Scout Server aktivoidaan automaattisesti mikäli asiakasohjelmat ottavat siihen yhteyden. Automaattisesti käynnistetty palvelin työskentelee taustalla.</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
         <source>Maps storage</source>
         <translation>Karttojen tallennus</translation>
@@ -1706,152 +1839,217 @@
         <translation>Kansio karttojen tallentamiseen.&lt;br&gt;&lt;b&gt;HUOM!&lt;/b&gt; Tämä kansio on kokonaan OSM Scout Serverin käytössä. &lt;b&gt;Varaa erillinen, tyhjä kansio&lt;/b&gt;, jota OSM Scout Server voi käyttää. Tämä sisältää kaikkien kansiossa olevien tiedostojen poistamisen pyydettäessä siivouksen tai karttojen päivityksen yhteydessä.&lt;br&gt;&lt;i&gt;Esimerkki:&lt;/i&gt; Kartat &lt;i&gt;~nemo&lt;/i&gt; alla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="105"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="108"/>
+        <source>Automatic activation</source>
+        <translation>Automaattinen aktivointi</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="128"/>
+        <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="137"/>
+        <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="150"/>
+        <source>Idle timeout</source>
+        <translation>Odotustilan aikakatkaisu</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="154"/>
+        <source>15 minutes</source>
+        <translation>15 minuuttia</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="155"/>
+        <source>30 minutes</source>
+        <translation>30 minuuttia</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="156"/>
+        <source>1 hour</source>
+        <translation>1 tunti</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="157"/>
+        <source>2 hours</source>
+        <translation>2 tuntia</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
+        <source>4 hours</source>
+        <translation>4 tuntia</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
+        <source>8 hours</source>
+        <translation>8 tuntia</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="160"/>
+        <source>24 hours</source>
+        <translation>24 tuntia</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="161"/>
+        <source>No timeout</source>
+        <translation>Ei aikakatkaisua</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="216"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Aktiiviset taustapalvelut on asetettu profiilissa. Jos haluat vaihtaa taustapalveluja aseta vastaava profiili tai aseta profiiliksi &lt;i&gt;Muokattu&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="117"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="228"/>
         <source>Rendering</source>
         <translation>Piirto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="121"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="232"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
         <translation>Tämä palvelin antaa sinun valita kahden taustapalvelun välillä karttojen piirtämiseksi: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="133"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="244"/>
         <source>Use Mapnik for rendering maps</source>
         <translation>Käytä Mapnikia karttojen piirtoon</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="134"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="245"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
         <translation>Kun valittuna, Mapnikia käytetään karttojen piirtoon. Huomioi, että se tarvitsee lisätietokantoja maailman rantaviivoille ja maille.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="139"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="250"/>
         <source>Geocoder</source>
         <translation>Geokooderi</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="143"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="254"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Geokooderi vastaa hakujen tulkinnasta. Se tulkitsee hakutekstin ja etsii vastaavat paikat kartalla. Tämä palvelin antaa sinun valita kahden geokooderi taustapalvelun väliltä: &lt;i&gt;geocoder-nlp&lt;/i&gt; ja &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="158"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="269"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
         <translation>Käytä geocoder-nlp:tä libpostalin kanssa geokooderina</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="159"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="270"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
         <translation>Kun valittuna, libpostalin perustuvaa geokooderia käytetään kaikkien hakujen tulkitaan.Huomioi että tämä vaatii lisätietokantoja kielen, käyttäjän syötteen tulkintaa ja geokoodaukseen.&lt;br&gt;Huom! Jos valitset &lt;i&gt;geocoder-nlp&lt;/i&gt;, määritä myös osoitteiden tulkintaan käytettävät kielet taustapalvelun asetuksissa alempana. Muutoin palvelin voi käyttää paljon muistia.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="166"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="277"/>
         <source>Routing Engine</source>
         <translation>Reititysmoottori</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="170"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="281"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Reititysmoottori vastaa reittien laskemisesta lähtöpisteen ja kohteen välille. Tämä palvelin antaa sinun valita kahden reititysmoottorin väliltä: &lt;i&gt;Valhalla&lt;/i&gt; ja &lt;i&gt;libosmscout&lt;/i&gt;. </translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="184"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="295"/>
         <source>Use Valhalla as routing engine</source>
         <translation>Käytä Valhallaa reititysmoottorina</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="185"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="296"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
         <translation>Kun valittuna Valhallaa käytetään reititysohjeiden laskemiseen.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="189"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="300"/>
         <source>Backend settings</source>
         <translation>Palvelinasetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="254"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="365"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="261"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="372"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>&lt;i&gt;Valhallan&lt;/i&gt; reititysmoottorin asetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="282"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="393"/>
         <source>OSM Scout library</source>
         <translation>OSM Scout kirjasto</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="226"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="337"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="233"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="344"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Osoitteiden tulkintaan käytettävien kielten valita ja muut &lt;i&gt;geocoder-nlp&lt;/i&gt; taustapalvelun asetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="198"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="309"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="100"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="198"/>
+        <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
+        <translation>Automaattisesti käynnistettäessä palvelin pysäyttää itsensä mikäli se ei vastaanota mitään pyyntöjä yli odotustilan aikakatkaisun aikana.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SettingsPage.qml" line="211"/>
         <source>Profiles</source>
         <translation>Profiilit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="205"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="316"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>&lt;i&gt;Mapnikin&lt;/i&gt; kartanpiirtoasetukset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="289"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="400"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>OSM Scout -kirjasto (&lt;i&gt;libosmscout&lt;/i&gt;). Tätä kirjastoa voidaan käyttää kartan piirtämiseen, hakuihin ja reititykseen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="300"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="411"/>
         <source>Miscellaneous</source>
         <translation>Sekalaiset</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="306"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="417"/>
         <source>Log info messages</source>
         <translation>Kirjaa info-viestit</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="307"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="418"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Kun poistettu käytöstä, INFO-viestejä ei tallenneta Tapahtumalokiin. Poikkeuksena on tietokannan lataus, mikä näytetään aina.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="314"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="425"/>
         <source>Events log size</source>
         <translation>Tapahtumalokin koko</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="315"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="426"/>
         <source>Number of events shown in the main page</source>
         <translation>Pääsivulla näytettävien tapahtumien lukumäärä</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="323"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="434"/>
         <source>Log messages into session log file</source>
         <translation>Tallenna viestit istuntolokitiedostoon</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SettingsPage.qml" line="324"/>
+        <location filename="../qml/pages/SettingsPage.qml" line="435"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Kun vallittu, viestit tallennetaan istuntolokiin. Lokitiedosto sijaitsee cache/harbour-osmscout-server -hakemistossa. Käytä tätä asetusta vain virheenkorjaustarkoituksiin. Kun tämä asetus on aktivoitu, info-viestit tallennetaan riippumatta ylempänä olevista asetuksista. Tämä mahdollistaa täyden lokin aktivoinnin tilapäisesti ja deaktivoinnin tarvittavan istuntolokin luomisen jälkeen.</translation>
     </message>
@@ -1998,6 +2196,53 @@
     </message>
 </context>
 <context>
+    <name>SystemDService</name>
+    <message>
+        <location filename="../src/systemdservice.cpp" line="79"/>
+        <source>Cannot create or change to directory: %1</source>
+        <translation>Ei voitu luoda tai muuttaa hakemistoa: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/systemdservice.cpp" line="89"/>
+        <source>Cannot find OSM Scout Server in the PATH</source>
+        <translation>Ei löydetty OSM Scout Serveriä PATH:sta</translation>
+    </message>
+</context>
+<context>
+    <name>SystemdActivationPage</name>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="22"/>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="46"/>
+        <source>Automatic activation</source>
+        <translation>Automaattinen aktivointi</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="26"/>
+        <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
+        <translation>OSM Scout Server voidaan aktivoida automaattisesti kun asiakasohjelmat ottavat siihen yhteyden. Käynnistettäessä automaattisesti ohjelma pysäytetään mikäli se on ollut käyttämättä annetun ajan.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="36"/>
+        <source>Do you want to enable automatic activation?</source>
+        <translation>Haluatko ottaa käyttöön automaattisen aktivoinnin?</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
+        <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
+        <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
+        <translation>Huomio että käynnistettäessä automaattisesti palvelin ajetaan ilman mitään käyttöliittymää. Automaattista aktivointia ja sen odotustilan aikakatkaisua voidaan muuttaa Asetuksissa.</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
+        <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>UpdatesFound</name>
     <message>
         <location filename="../qml/pages/UpdatesFound.qml" line="25"/>
@@ -2023,72 +2268,72 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="75"/>
+        <location filename="../src/valhallamaster.cpp" line="74"/>
         <source>Cannot create configuration directory for Valhalla</source>
         <translation>Ei voitu luoda Valhallan asetuskansiota</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="113"/>
+        <location filename="../src/valhallamaster.cpp" line="112"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Virhe avatessa Valhallan asetustemplaattia %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="121"/>
+        <location filename="../src/valhallamaster.cpp" line="120"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Virhe lukiessa Valhallan asetustemplaattia</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="136"/>
+        <location filename="../src/valhallamaster.cpp" line="135"/>
         <source>Error opening Valhalla&apos;s configuration file %1</source>
         <translation>Virhe avatessa Valhallan asetustiedostoa %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="144"/>
+        <location filename="../src/valhallamaster.cpp" line="143"/>
         <source>Error writing Valhalla&apos;s configuration file</source>
         <translation>Virhe kirjoittaessa Valhallan asetustiedostoa</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="165"/>
+        <location filename="../src/valhallamaster.cpp" line="171"/>
         <source>Starting Valhalla routing engine</source>
         <translation>Käynnistetään Valhalla-reititysmoottori</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="250"/>
+        <location filename="../src/valhallamaster.cpp" line="259"/>
         <source>Valhalla routing engine stopped</source>
         <translation>Valhalla-reititysmoottori pysäytettiin</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="267"/>
+        <location filename="../src/valhallamaster.cpp" line="276"/>
         <source>Stopping Valhalla routing engine</source>
         <translation>Pysäytetään Valhalla-reititysmoottori</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="336"/>
+        <location filename="../src/valhallamaster.cpp" line="345"/>
         <source>Error while communicating with Valhalla routing engine</source>
         <translation>Virhe kommunikoidessa Valhalla-reititysmoottorin kanssa</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="343"/>
+        <location filename="../src/valhallamaster.cpp" line="352"/>
         <source>Route found by Valhalla</source>
         <translation>Valhalla löysi reitin</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="238"/>
+        <location filename="../src/valhallamaster.cpp" line="247"/>
         <source>Valhalla routing engine started</source>
         <translation>Valhalla-reititysmoottori käynnistetty</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="246"/>
+        <location filename="../src/valhallamaster.cpp" line="255"/>
         <source>Valhalla exited with error: %1</source>
         <translation>Valhalla päättyi virheeseen: %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="277"/>
+        <location filename="../src/valhallamaster.cpp" line="286"/>
         <source>Valhalla routing engine process cleanup</source>
         <translation>Valhalla-reititysmoottorin prosessin siivous</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="297"/>
+        <location filename="../src/valhallamaster.cpp" line="306"/>
         <source>Could not start the Valhalla routing service: %1</source>
         <translation>Valhalla-reitityspalvelua ei voitu käynnistää: %1</translation>
     </message>
@@ -2149,53 +2394,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="116"/>
+        <location filename="../src/main.cpp" line="125"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="121"/>
+        <location filename="../src/main.cpp" line="130"/>
+        <source>Run the server without GUI as a console application</source>
+        <translation>Aja palvelin ilman käyttöliittymää konsoliohjelmana.</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="134"/>
+        <source>Do not output logs when running in console mode</source>
+        <translation>Älä tulosta lokeja ajetaessa konsolitilassa.</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="139"/>
+        <source>Run the server in SystemD socket-activated mode</source>
+        <translation>Aja palvelin SystemD socket-aktivoidussa tilassa</translation>
+    </message>
+    <message>
+        <location filename="../src/main.cpp" line="145"/>
         <source>Start download of the maps</source>
         <translation>Aloitta karttojen lataus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="125"/>
+        <location filename="../src/main.cpp" line="149"/>
         <source>Update list of available maps</source>
         <translation>Päivitä saatavilla olevien karttojen lista</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="129"/>
+        <location filename="../src/main.cpp" line="153"/>
         <source>List maps available on device</source>
         <translation>Listaa laitteessa olevat kartat</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="133"/>
+        <location filename="../src/main.cpp" line="157"/>
         <source>List subscribed maps</source>
         <translation>Listaa tilatut kartat</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="137"/>
+        <location filename="../src/main.cpp" line="161"/>
         <source>List maps provided for download</source>
         <translation>Listaa ladattavissa olevat kartat</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="141"/>
+        <location filename="../src/main.cpp" line="165"/>
         <source>List missing maps</source>
         <translation>Listaa puuttuvat kartat</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="145"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Tilaa &lt;country&gt; datasetti</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="146"/>
-        <location filename="../src/main.cpp" line="151"/>
+        <location filename="../src/main.cpp" line="170"/>
+        <location filename="../src/main.cpp" line="175"/>
         <source>country-id</source>
         <translation>maa-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="150"/>
+        <location filename="../src/main.cpp" line="174"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Peruuta &lt;country&gt; datasetin tilaus</translation>
     </message>

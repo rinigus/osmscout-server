@@ -30,7 +30,6 @@ ValhallaMaster::~ValhallaMaster()
     }
 }
 
-
 void ValhallaMaster::onSettingsChanged()
 {
   std::unique_lock<std::mutex> lk(m_mutex);
@@ -82,7 +81,7 @@ void ValhallaMaster::onSettingsChanged()
       if (!m_dirname.isEmpty() && (changed || !m_process))
         {
           generateConfig();
-          start();
+          if (!m_idle_mode) start();
         }
     }
   else
@@ -100,7 +99,7 @@ void ValhallaMaster::onValhallaChanged(QString valhalla_directory, QStringList c
       if (useValhalla)
         {
           generateConfig();
-          start();
+          if (!m_idle_mode) start();
         }
     }
 }
@@ -147,10 +146,15 @@ void ValhallaMaster::generateConfig()
 }
 
 /// interaction with valhalla route service process
-void ValhallaMaster::start()
+void ValhallaMaster::start(bool sync)
 {
+  m_idle_mode = false;
+
   if ( m_process )
     {
+      if (sync)
+        InfoHub::logError("Internal error: Valhalla start called in sync mode while still running"); // technical message, no translation needed
+
       // have to stop the running process first - otherwise may have issues with the ports
       m_process_start_when_ready = true;
       stop();
@@ -158,11 +162,16 @@ void ValhallaMaster::start()
     }
 
   start_process();
+  if (sync)
+    m_process->waitForStarted(15000);
 }
 
 void ValhallaMaster::start_process()
 {
   InfoHub::logInfo(tr("Starting Valhalla routing engine"));
+
+  if (m_idle_mode)
+    InfoHub::logError("Internal error: Valhalla start_process called while idle");
 
   m_process_start_when_ready = false;
 

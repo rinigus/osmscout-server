@@ -1,13 +1,9 @@
-/**
-  @file
-  @author Stefan Frings
-*/
-
 #include "requestmapper.h"
 #include "dbmaster.h"
 #include "geomaster.h"
 #include "infohub.h"
 #include "config.h"
+#include "appsettings.h"
 
 #include "microhttpconnectionstore.h"
 
@@ -19,6 +15,7 @@
 #include <QThreadPool>
 #include <QDir>
 #include <QCoreApplication>
+#include <QDateTime>
 
 #include <QJsonArray>
 #include <QJsonDocument>
@@ -28,9 +25,13 @@
 
 #include <functional>
 
+#define DEFAULT_EXPIRY 3600 // in seconds
+
 //#define DEBUG_CONNECTIONS
 
-RequestMapper::RequestMapper()
+RequestMapper::RequestMapper(QObject *parent):
+  QObject(parent),
+  MicroHTTP::ServiceBase()
 {
 #ifdef IS_SAILFISH_OS
   // In Sailfish, CPUs could be switched off one by one. As a result,
@@ -48,13 +49,41 @@ RequestMapper::RequestMapper()
 
   InfoHub::logInfo( QCoreApplication::translate("RequestMapper",
                                                 "Number of parallel worker threads: %1").arg(m_pool.maxThreadCount()) );
-}
 
+  onSettingsChanged();
+  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
+
+  connect(&m_timer, &QTimer::timeout,
+          this, &RequestMapper::checkIdle);
+}
 
 RequestMapper::~RequestMapper()
 {
 }
 
+void RequestMapper::onSettingsChanged()
+{
+  AppSettings settings;
+  m_idle_timeout = settings.valueInt(REQUEST_MAPPER_SETTINGS "idle_timeout");
+
+  if (m_idle_timeout > 0)
+    m_timer.start( std::max(1000, (int)m_idle_timeout*1000/10));
+  else m_timer.stop();
+}
+
+void RequestMapper::checkIdle()
+{
+  if (m_idle_timeout <= 0) return;
+
+  struct timespec now;
+  clock_gettime(CLOCK_BOOTTIME, &now);
+  double dt = now.tv_sec - m_last_call.tv_sec;
+  if (dt > m_idle_timeout)
+    {
+      clock_gettime(CLOCK_BOOTTIME, &m_last_call);
+      emit idleTimeout();
+    }
+}
 
 //////////////////////////////////////////////////////////////////////
 /// Helper functions to get tile coordinates
@@ -159,12 +188,25 @@ static int query_uri_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char
   return MHD_YES;
 }
 
+
+//////////////////////////////////////////////////////////////////////
+/// Expiry header
+//////////////////////////////////////////////////////////////////////
+static void set_expiry(MHD_Response *response, unsigned int seconds)
+{
+  QDateTime dt = QDateTime::currentDateTimeUtc().addSecs(seconds);
+  QString expiry = dt.toString("ddd, dd MMM yyyy hh:mm:ss") + " GMT";
+  MHD_add_response_header(response, MHD_HTTP_HEADER_EXPIRES, expiry.toStdString().c_str());
+}
+
+
 //////////////////////////////////////////////////////////////////////
 /// Default error function
 //////////////////////////////////////////////////////////////////////
-static void errorText(MHD_Response *response, MicroHTTP::Connection::keytype connection_id, const char *txt)
+static void errorText(MHD_Response *response, MicroHTTP::Connection::keytype connection_id, const char *txt, bool verbose=true)
 {
-  InfoHub::logWarning(txt);
+  if (verbose)
+    InfoHub::logWarning(txt);
 
   QByteArray data;
   {
@@ -260,6 +302,9 @@ unsigned int RequestMapper::service(const char *url_c,
   QUrl url(url_c);
   QString path(url.path());
 
+  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
+
+
   //////////////////////////////////////////////////////////////////////
   /// TILES
   if (path == "/v1/tile")
@@ -315,6 +360,155 @@ unsigned int RequestMapper::service(const char *url_c,
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "image/png");
       return MHD_HTTP_OK;
     }
+
+  //////////////////////////////////////////////////////////////////////
+  /// MAPBOX GL SUPPORT: TILES
+  else if (path == "/v1/mbgl/tile")
+    {
+      bool ok = true;
+      int x = q2value<int>("x", 0, connection, ok);
+      int y = q2value<int>("y", 0, connection, ok);
+      int z = q2value<int>("z", 0, connection, ok);
+
+      if (ok && x>=0 && y>=0 && z>=0)
+        {
+          bool compressed = false;
+          bool found = true;
+          QByteArray bytes;
+
+          if (!mapboxglMaster->getTile(x, y, z, bytes, compressed, found))
+            {
+              errorText(response, connection_id, "Error while getting Mapbox GL tile");
+              return MHD_HTTP_INTERNAL_SERVER_ERROR;
+            }
+          if (!found)
+            {
+              errorText(response, connection_id, "Tile not found", false);
+              //return MHD_HTTP_NOT_FOUND;
+
+              // this will force Mapbox GL Native client to load parent tiles. 404 is interpreted
+              // as an empty tile by Mapbox GL.
+              // See https://github.com/mapbox/mapbox-gl-native/issues/10545
+              return 418;
+            }
+
+          MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+          MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/x-protobuf");
+          if (compressed)
+            MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_ENCODING, "gzip");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+          set_expiry(response, DEFAULT_EXPIRY);
+          return MHD_HTTP_OK;
+        }
+
+      // error condition
+      errorText(response, connection_id, "Malformed Mapbox GL tile request");
+      return MHD_HTTP_BAD_REQUEST;
+    }
+  //////////////////////////////////////////////////////////////////////
+  /// MAPBOX GL SUPPORT: SPRITE
+  else if (path == "/v1/mbgl/sprite.json" || path == "/v1/mbgl/sprite@2x.json")
+    {
+      QByteArray bytes;
+
+      if (!mapboxglMaster->getSpriteJson(bytes))
+        {
+          errorText(response, connection_id, "Error while getting Mapbox GL sprite JSON file");
+          return MHD_HTTP_NOT_FOUND;
+        }
+
+      MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+      MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+      set_expiry(response, DEFAULT_EXPIRY);
+      return MHD_HTTP_OK;
+    }
+  else if (path == "/v1/mbgl/sprite.png" || path == "/v1/mbgl/sprite@2x.png")
+    {
+      QByteArray bytes;
+
+      if (!mapboxglMaster->getSpriteImage(bytes))
+        {
+          errorText(response, connection_id, "Error while getting Mapbox GL sprite image file");
+          return MHD_HTTP_NOT_FOUND;
+        }
+
+      MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+      MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "image/png");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+      set_expiry(response, DEFAULT_EXPIRY);
+      return MHD_HTTP_OK;
+    }
+  //////////////////////////////////////////////////////////////////////
+  /// MAPBOX GL SUPPORT: GLYPHS
+  else if (path == "/v1/mbgl/glyphs")
+    {
+      bool ok = true;
+      QString stack = q2value<QString>("stack", QString(), connection, ok);
+      QString range = q2value<QString>("range", QString(), connection, ok);
+
+      if (ok && !stack.isEmpty() && !range.isEmpty())
+        {
+          bool compressed = false;
+          bool found = true;
+          QByteArray bytes;
+
+          if (!mapboxglMaster->getGlyphs(stack, range, bytes, compressed, found))
+            {
+              errorText(response, connection_id, "Error while getting Mapbox GL glyphs");
+              return MHD_HTTP_INTERNAL_SERVER_ERROR;
+            }
+          if (!found)
+            {
+              errorText(response, connection_id, "Glyphs not found");
+              return MHD_HTTP_NOT_FOUND;
+            }
+
+          MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+          MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/x-protobuf");
+          if (compressed)
+            MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_ENCODING, "gzip");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+          set_expiry(response, DEFAULT_EXPIRY);
+          return MHD_HTTP_OK;
+        }
+
+      // error condition
+      errorText(response, connection_id, "Malformed Mapbox GL glyphs request");
+      return MHD_HTTP_BAD_REQUEST;
+    }
+  //////////////////////////////////////////////////////////////////////
+  /// MAPBOX GL SUPPORT: STYLE
+  else if (path == "/v1/mbgl/style")
+    {
+      bool ok = true;
+      QString style = q2value<QString>("style", "osmbright", connection, ok);
+
+      if (ok)
+        {
+          QByteArray bytes;
+          if (!mapboxglMaster->getStyle(style, bytes))
+            {
+              errorText(response, connection_id, "Error while getting Mapbox GL style");
+              return MHD_HTTP_NOT_FOUND;
+            }
+
+          MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
+          MHD_add_response_header(response, MHD_HTTP_HEADER_ACCESS_CONTROL_ALLOW_ORIGIN, "*");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json");
+          MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_LENGTH, QString::number(bytes.length()).toStdString().c_str());
+          return MHD_HTTP_OK;
+        }
+
+      // error condition
+      errorText(response, connection_id, "Malformed Mapbox GL style request");
+      return MHD_HTTP_BAD_REQUEST;
+    }
+
 
   //////////////////////////////////////////////////////////////////////
   /// SEARCH
@@ -614,9 +808,7 @@ unsigned int RequestMapper::service(const char *url_c,
       return MHD_HTTP_OK;
     }
 
-  else // command unidentified. return help string
-    {
-      errorText(response, connection_id, "Unknown URL path");
-      return MHD_HTTP_BAD_REQUEST;
-    }
+  // command unidentified. return help string
+  errorText(response, connection_id, "Unknown URL path");
+  return MHD_HTTP_BAD_REQUEST;
 }

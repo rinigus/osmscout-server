@@ -36,6 +36,9 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeatureGeocoderNLP(this));
   m_features.append(new FeaturePostalGlobal(this));
   m_features.append(new FeaturePostalCountry(this));
+  m_features.append(new FeatureMapboxGLGlobal(this));
+  m_features.append(new FeatureMapboxGLGlyphs(this));
+  m_features.append(new FeatureMapboxGLCountry(this));
   m_features.append(new FeatureMapnikGlobal(this));
   m_features.append(new FeatureMapnikCountry(this));
   m_features.append(new FeatureValhalla(this));
@@ -126,6 +129,17 @@ void Manager::loadSettings()
   else
     rmCountry(const_feature_id_mapnik_global);
 
+  if (settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl"))
+    {
+      addCountry(const_feature_id_mapboxgl_global);
+      addCountry(const_feature_id_mapboxgl_glyphs);
+    }
+  else
+    {
+      rmCountry(const_feature_id_mapboxgl_global);
+      rmCountry(const_feature_id_mapboxgl_glyphs);
+    }
+
   if ( m_db_files.isOpen() && m_db_files.databaseName() != fullPath(const_fname_db_files) )
     {
       m_query_files_available.clear();
@@ -166,13 +180,13 @@ void Manager::loadSettings()
   if (storage_was_available != m_storage_available)
     emit storageAvailableChanged(m_storage_available);
 
+  loadUrls();
   scanDirectories(root_changed || old_selection != m_map_selected);
   missingData();
   checkUpdates();
   if (old_selection != m_map_selected)
     emit selectedMapChanged(m_map_selected);
 }
-
 
 bool Manager::ready()
 {
@@ -235,6 +249,7 @@ void Manager::nothingAvailable()
   updateGeocoderNLP();
   updatePostal();
   updateMapnik();
+  updateMapboxGL();
   updateValhalla();
 
   emit availabilityChanged();
@@ -264,7 +279,11 @@ QString Manager::getPretty(const QJsonObject &obj) const
   if (obj.value("id").toString() == const_feature_id_postal_global)
     return tr("Address parsing language support");
   else if (obj.value("id").toString() == const_feature_id_mapnik_global)
-    return tr("World coastlines");
+    return tr("Mapnik World coastlines");
+  else if (obj.value("id").toString() == const_feature_id_mapboxgl_global)
+    return tr("Mapbox GL World overlay");
+  else if (obj.value("id").toString() == const_feature_id_mapboxgl_glyphs)
+    return tr("Mapbox GL fonts");
 
   QString name = obj.value("name").toString();
   name.replace("/", const_pretty_separator);
@@ -377,7 +396,10 @@ void Manager::scanDirectories(bool force_update)
         {
           for (QJsonObject::const_iterator i = m_maps_available.constBegin();
                i != m_maps_available.constEnd(); ++i)
-            if (i.key() != const_feature_id_postal_global && i.key() != const_feature_id_mapnik_global)
+            if (i.key() != const_feature_id_postal_global &&
+                i.key() != const_feature_id_mapnik_global &&
+                i.key() != const_feature_id_mapboxgl_global &&
+                i.key() != const_feature_id_mapboxgl_glyphs)
               {
                 m_map_selected = i.key();
                 break;
@@ -397,6 +419,7 @@ void Manager::scanDirectories(bool force_update)
       updateGeocoderNLP();
       updatePostal();
       updateMapnik();
+      updateMapboxGL();
       updateValhalla();
 
       emit availabilityChanged();
@@ -503,8 +526,14 @@ void Manager::makeCountriesList(ListType list_type, QStringList &countries, QStr
 
 bool Manager::checkProvidedAvailable()
 {
-  QJsonObject objlist = loadJson(fullPath(const_fname_countries_provided));
-  return !objlist.empty();
+  QJsonObject objlist_prov = loadJson(fullPath(const_fname_countries_provided));
+  return (!objlist_prov.empty() && !m_base_urls.isEmpty());
+}
+
+void Manager::loadUrls()
+{
+  QJsonObject obj = loadJson(fullPath(const_fname_server_url));
+  m_base_urls.load(obj);
 }
 
 ///////////////////////////////////////////////////////
@@ -766,7 +795,7 @@ void Manager::missingData()
 
   QJsonObject req_countries = m_maps_requested;
 
-  // get URLs
+  // get URL components for features
   QJsonObject provided = loadJson(fullPath(const_fname_countries_provided));
   for (Feature *f: m_features)
     f->setUrl(provided);
@@ -782,7 +811,7 @@ void Manager::missingData()
       const QJsonObject request = request_iter.value().toObject();
       if (request.empty()) continue;
 
-      for (const Feature *f: m_features)
+      for (Feature *f: m_features)
         if (f->isCompatible(request))
           f->checkMissingFiles(request, missing);
         else
@@ -876,11 +905,17 @@ bool Manager::isRegistered(const QString &path, QString &version, QString &datet
   return false;
 }
 
-bool Manager::startDownload(DownloadType type, const QString &url, const QString &path, const FileDownloader::Type mode)
+bool Manager::startDownload(DownloadType type, QString url, const QString &path, const FileDownloader::Type mode, bool fullpath)
 {
   if (!m_root_dir.exists())
     {
       InfoHub::logWarning(tr("Maps storage folder does not exist: ") + m_root_dir.absolutePath());
+      return false;
+    }
+
+  if (!fullpath && m_base_urls.isEmpty())
+    {
+      InfoHub::logWarning(tr("No servers found to download the data from"));
       return false;
     }
 
@@ -889,7 +924,11 @@ bool Manager::startDownload(DownloadType type, const QString &url, const QString
 
   m_last_reported_downloaded = 0;
   m_last_reported_written = 0;
+  m_download_url = url;
+  m_download_path = path;
+  m_download_filemode = mode;
 
+  if (!fullpath) url = m_base_urls.url() + "/" + url;
   m_file_downloader = new FileDownloader(&m_network_manager, url, path, mode, this);
   if (!m_file_downloader)
     {
@@ -965,17 +1004,15 @@ void Manager::onDownloadFinished(QString path)
   else if (dtype == ServerUrl)
     {
       m_download_type = NoDownload;
-
-      QJsonObject url = loadJson(fullPath(const_fname_server_url));
-      QString listurl = url.value("url").toString();
-      if (listurl.isEmpty())
+      loadUrls();
+      if (m_base_urls.isEmpty())
         {
           onDownloadError(tr("Could not retrieve server URL"));
           InfoHub::logWarning(tr("Could not retrieve server URL"));
           return;
         }
 
-      if ( startDownload(ProvidedList, listurl,
+      if ( startDownload(ProvidedList, const_fname_countries_provided,
                          fullPath(const_fname_countries_provided),
                          FileDownloader::Plain) )
         {
@@ -998,10 +1035,24 @@ void Manager::onDownloadFinished(QString path)
 
 void Manager::onDownloadError(QString err)
 {
+  cleanupDownload();
+
+  if (m_download_type != ServerUrl)
+    {
+      // try to download from the next server if possible
+      InfoHub::logInfo(tr("Download failed from %1").arg(m_base_urls.url()));
+
+      if (m_base_urls.next() &&
+          startDownload( m_download_type,
+                         m_download_url, m_download_path, m_download_filemode ) )
+        {
+          // new download started from the next server, no need to propagate the error
+          return;
+        }
+    }
+
   InfoHub::logWarning(tr("Download failed, dropping all downloads"));
   emit errorMessage(err);
-
-  cleanupDownload();
 
   m_download_type = NoDownload;
   emit downloadingChanged(false);
@@ -1109,7 +1160,7 @@ QStringList Manager::getNonNeededFilesList()
       const QJsonObject request = request_iter.value().toObject();
       if (request.empty()) continue;
 
-      for (const Feature *f: m_features)
+      for (Feature *f: m_features)
         f->fillWantedFiles(request, wanted);
     }
 
@@ -1225,7 +1276,8 @@ bool Manager::updateProvided()
   if (m_development_disable_url_update) fname += "-EXTRA";
   if ( startDownload(ServerUrl, m_provided_url,
                      fullPath(fname),
-                     FileDownloader::Plain) )
+                     FileDownloader::Plain,
+                     true) )
     {
       emit downloadProgress(tr("Updating the distribution server URL"));
       return true;
@@ -1427,6 +1479,64 @@ void Manager::updateMapnik()
 
   // let Mapnik check whether anything has actually changed
   emit databaseMapnikChanged(path_global, path_countries);
+}
+
+////////////////////////////////////////////////////////////
+/// mapboxgl support
+void Manager::updateMapboxGL()
+{
+  // MapboxGL is able to draw all available maps, so we give the full list
+  QString path_global;
+  QString path_glyphs;
+  QSet<QString> path_countries;
+
+  {
+    QJsonObject obj_global = m_maps_available.value(const_feature_id_mapboxgl_global).toObject();
+    for (Feature *f: m_features)
+      if (f->enabled() && f->name() == "mapboxgl_global")
+        {
+          QSet<QString> fnames;
+          f->fillWantedFiles(obj_global, fnames);
+          if (fnames.size() > 1)
+            {
+              InfoHub::logError(QString("Internal error, please report as a bug. MapboxGL Global returned wantedFiles > 1: %1").arg(fnames.size()));
+              return;
+            }
+          if (fnames.size() > 0)
+            path_global = *(fnames.begin());
+        }
+  }
+
+  {
+    QJsonObject obj_global = m_maps_available.value(const_feature_id_mapboxgl_glyphs).toObject();
+    for (Feature *f: m_features)
+      if (f->enabled() && f->name() == "mapboxgl_glyphs")
+        {
+          QSet<QString> fnames;
+          f->fillWantedFiles(obj_global, fnames);
+          if (fnames.size() > 1)
+            {
+              InfoHub::logError(QString("Internal error, please report as a bug. MapboxGL Glyphs returned wantedFiles > 1: %1").arg(fnames.size()));
+              return;
+            }
+          if (fnames.size() > 0)
+            path_glyphs = *(fnames.begin());
+        }
+  }
+
+  for (QJsonObject::const_iterator i = m_maps_available.constBegin();
+       i != m_maps_available.constEnd(); ++i )
+    {
+      const QJsonObject c = i.value().toObject();
+      QString id = getId(c);
+
+      if ( getType(c) == const_feature_type_country )
+        for (Feature *f: m_features)
+          if (f->enabled() && f->name() == "mapboxgl_country")
+            f->fillWantedFiles(c, path_countries);
+    }
+
+  emit databaseMapboxGLChanged(path_global, path_glyphs, path_countries);
 }
 
 ////////////////////////////////////////////////////////////

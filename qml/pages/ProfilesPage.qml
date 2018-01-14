@@ -42,6 +42,8 @@ Dialog {
 
                 menu: ContextMenu {
                     MenuItem { text: qsTr("Default") }
+                    MenuItem { text: qsTr("Recommended for vector tiles maps") }
+                    MenuItem { text: qsTr("Recommended for vector and raster tiles maps") }
                     MenuItem { text: qsTr("<i>libosmscout</i> with <i>Geocoder-NLP</i>") }
                     MenuItem { text: qsTr("<i>libosmscout</i>") }
                     MenuItem { text: qsTr("Custom") }
@@ -59,9 +61,20 @@ Dialog {
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
 
-                text: qsTr("<i>Default</i> profile uses <i>Mapnik</i> to render maps, <i>Geocoder-NLP</i> to search for locations, "+
+                text: qsTr("<i>Default</i> profile uses <i>Mapnik</i> to render maps into raster tiles, " +
+                           "<i>Geocoder-NLP</i> to search for locations, " +
                            "and <i>Valhalla</i> to calculate the routes. " +
-                           "This profile is a recommended one.<br><br>" +
+                           "This profile is a recommended one for traditional raster tile map clients.<br><br>" +
+
+                           "For users with map applications using <i>Mapbox GL</i> plugin, " +
+                           "the recommended profile for vector tiles maps includes <i>Mapbox GL</i> datasets and uses " +
+                           "the same search and routing plugins as the <i>Default</i> profile.<br><br>" +
+
+                           "For users wishing to use raster and vector tile map clients, " +
+                           "the recommended profile combining vector and raster tiles includes <i>Mapbox GL</i> datasets, supports " +
+                           "map rendering into raster tiles by <i>Mapnik</i>, and uses " +
+                           "the same search and routing plugins as the <i>Default</i> profile. Since this profile includes " +
+                           " data for multiple rendering backends, it has the largest storage requirements.<br><br>" +
 
                            "The profile where <i>libosmscout</i> is combined with <i>Geocoder-NLP</i> " +
                            "has smaller storage requirements when compared to the default one. " +

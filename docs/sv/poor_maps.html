@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>OSM Scout Server - Poor Maps</title>
+	<meta name="author" content="rinigus" />
+	<meta name="description" content="OSM Scout Server tutorial" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../assets/fullPage.js/jquery.fullPage.css" />
+        <link rel="stylesheet" type="text/css" href="../assets/tutorials.css" />
+	<style>
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section1{
+		background-image: url(poor-maps/pm_1.png);
+	}
+	#section2{
+		background-image: url(poor-maps/pm_2.png);
+	}
+	#section3{
+		background-image: url(poor-maps/pm_3.png);
+	}
+	#section4{
+		background-image: url(poor-maps/pm_4.png);
+	}
+	#section5{
+		background-image: url(poor-maps/pm_5.png);
+	}
+	#section6{
+		background-image: url(poor-maps/pm_6.png);
+	}
+	#section7{
+		background-image: url(poor-maps/pm_7.png);
+	}
+	#section8{
+		background-image: url(poor-maps/pm_8.png);
+	}
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/vendors/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="../assets/fullPage.js/jquery.fullPage.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				verticalCentered: false,
+
+				//to avoid problems with css3 transforms and fixed elements in Chrome, as detailed here: https://github.com/alvarotrigo/fullPage.js/issues/208
+				css3:false
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+  <div class="section" id="section1">
+    <div class="captiontop">
+      <p class="head">Starta <a href="https://openrepos.net/content/otsaloma/poor-maps">Poor Maps</a></p>
+      <p class="border">
+        Starta Poor Maps och gå till verktygen genom att trycka på knappen
+        i botten på skärmen (markerat med röd fyrkant på skärmklippet).
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section2">
+    <div class="caption">
+      <p class="head">Baskarta</p>
+      <p class="border">
+        Tryck på "Baskartor och överlägg", för att konfigurera kartvisning.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section3">
+    <div class="captiontop">
+      <p class="border">
+        Välj OSM Scout Server i listan över baskartor. Användning av @2x
+        rekommenderas för snabbare rendering.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section4">
+    <div class="caption">
+      <p class="head">Sök</p>
+      <p class="border">
+        Välj "Sök", i Poor Maps verktygsmeny.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="section5">
+    <div class="caption">
+      <p class="border">
+        Välj OSM Scout Server som sökmotorleverantör.
+      </p>
+    </div>
+  </div>
+
+  <div class="section" id="section6">
+    <div class="caption">
+      <p class="head">Navigation</p>
+      <p class="border">
+        Välj "Navigation" i Poor Maps verkygsmeny, som visat.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section7">
+    <div class="caption">
+      <p class="border">
+        Välj OSM Scout Server som sökmotorleverantör, i navigationsmenyn.
+      </p>
+      <p class="border"><i>Skrolla neråt för att fortsätta</i></p>
+    </div>
+  </div>
+
+  <div class="section" id="section8">
+    <div class="caption">
+      <p class="head">Driftläge</p>
+      <p class="border">
+        Du är klar! Glöm inte att OSM Scout Server och Poor Maps måste
+        köras <i>samtidigt</i> för offline-användning.
+      </p>
+      <p class="border"><a href="index.html">Tillbaka till startsidan</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,3 +1,7 @@
 {
-    "url": "http://data.modrana.org/osm_scout_server/countries_provided.json"
+    "url": "http://data.modrana.org/osm_scout_server/countries_provided.json",
+    "servers": [
+        [ "http://data.modrana.org/osm_scout_server" ],
+        [ "http://osm-maps.kaktux.de" ]
+        ]
 }

@@ -3,7 +3,8 @@
 # This script prepares files before uploading them for distribution
 # This has to be run after all imports are finished
 
-import json, pickle, os, stat
+import json, pickle, os, stat, shutil
+from mapbox_country_pack import world_pack as mapboxgl_world_pack
 
 root_dir = "distribution"
 bucket = open("bucket_name", "r").read().strip()
@@ -13,13 +14,16 @@ url_base = "http://data.modrana.org/osm_scout_server"
 url_specs = {
     "base": url_base,
     "type": "url",
-    "osmscout": "osmscout-9",
-    "geocoder_nlp": "geocoder-nlp-9",
+    "osmscout": "osmscout-12",
+    "geocoder_nlp": "geocoder-nlp-12",
     "postal_global": "postal-global-1",
     "postal_country": "postal-country-1",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-6",
-    "valhalla": "valhalla-4",
+    "mapnik_country": "mapnik-country-9",
+    "mapboxgl_country": "mapboxgl-2",
+    "mapboxgl_global": "mapboxgl-2",
+    "mapboxgl_glyphs": "mapboxgl-2",
+    "valhalla": "valhalla-7",
 }
 
 dist = json.loads( open("countries.json", "r").read() )
@@ -34,6 +38,12 @@ dist["mapnik/global"] = {
     "id": "mapnik/global",
     "type": "mapnik/global",
     "mapnik_global": { "path": "mapnik/global" }
+    }
+
+dist["mapboxgl/glyphs"] = {
+    "id": "mapboxgl/glyphs",
+    "type": "mapboxgl/glyphs",
+    "mapboxgl_glyphs": { "path": "mapboxgl/glyphs" }
     }
 
 dist["url"] = url_specs
@@ -61,6 +71,8 @@ def getprop(dirname):
 # fill database details
 for d in dist:
     for sub in dist[d]:
+        if "packages" in dist[d][sub]:
+            continue # this item is distributed via packages
         try:
             rpath = dist[d][sub]["path"]
             print rpath
@@ -74,6 +86,14 @@ for d in dist:
         uploader(locdir, remotedir)
 
 uploader(root_dir + "/valhalla", url_specs["valhalla"] + "/valhalla")
+uploader(root_dir + "/mapboxgl/packages", url_specs["mapboxgl_country"] + "/mapboxgl/packages")
+
+# add mapbox global object after uploader commands are ready
+dist["mapboxgl/global"] = {
+    "id": "mapboxgl/global",
+    "type": "mapboxgl/global",
+    "mapboxgl_global": mapboxgl_world_pack()
+    }
 
 # save provided countries
 fjson = open("provided/countries_provided.json", "w")
@@ -104,3 +124,27 @@ os.chmod('uploader.sh', st.st_mode | stat.S_IEXEC)
 
 print "Check uploader script and run it"
 
+# generate public_html folder for testing
+
+testing_mirror = "public_http"
+shutil.rmtree(testing_mirror, ignore_errors=True)
+os.mkdir(testing_mirror)
+os.symlink("../provided/countries_provided.json",
+           os.path.join(testing_mirror, "countries_provided.json"))
+
+distlink = {  "geocoder_nlp": "geocoder-nlp",
+              "mapboxgl_country": "mapboxgl",
+              "mapnik_country": "mapnik",
+              "mapnik_global": "mapnik",
+              "osmscout": "osmscout",
+              "postal_country": "postal",
+              "postal_global": "postal",
+              "valhalla": "valhalla" }
+
+for t in ["geocoder_nlp", "mapboxgl_country",
+          "mapnik_country", "mapnik_global",
+          "osmscout",
+          "postal_country",  "postal_global", "valhalla" ]:
+    d = os.path.join(testing_mirror, url_specs[t])
+    os.mkdir(d)
+    os.symlink( "../../distribution/" + distlink[t], os.path.join(d, distlink[t]) )

@@ -29,8 +29,8 @@ Feature::Feature(PathProvider *path,
   m_type(feature_type),
   m_name(feature_name),
   m_pretty(feature_pretty_name),
-  m_files(feature_files),
-  m_version(version)
+  m_version(version),
+  m_files(feature_files)
 {
 }
 
@@ -47,9 +47,8 @@ void Feature::setUrl(const QJsonObject &obj)
   if (obj.contains(const_feature_id_url))
     {
       const QJsonObject o = obj.value(const_feature_id_url).toObject();
-      QString base = o.value("base").toString();
       QString special = o.value(m_name).toString();
-      m_url = base + "/" + special;
+      m_url = special;
     }
 }
 
@@ -125,7 +124,7 @@ bool Feature::hasFeatureDefined(const QJsonObject &request) const
 }
 
 void Feature::checkMissingFiles(const QJsonObject &request,
-                                FilesToDownload &missing) const
+                                FilesToDownload &missing)
 {
   if (!m_enabled || !isMyType(request) || !isCompatible(request) || m_assume_files_exist) return;
 
@@ -162,7 +161,7 @@ void Feature::checkMissingFiles(const QJsonObject &request,
 }
 
 void Feature::fillWantedFiles(const QJsonObject &request,
-                              QSet<QString> &wanted) const
+                              QSet<QString> &wanted)
 {
   if (!m_enabled || !isMyType(request)) return;
 
@@ -297,7 +296,7 @@ const static QStringList mapnik_country_files{
 
 FeatureMapnikGlobal::FeatureMapnikGlobal(PathProvider *path):
   Feature(path, "mapnik/global", "mapnik_global",
-          QCoreApplication::translate("MapManagerFeature", "World coastlines"),
+          QCoreApplication::translate("MapManagerFeature", "Mapnik World coastlines"),
           mapnik_global_files,
           1)
 {
@@ -305,7 +304,7 @@ FeatureMapnikGlobal::FeatureMapnikGlobal(PathProvider *path):
 
 QString FeatureMapnikGlobal::errorMissing() const
 {
-  return QCoreApplication::translate("MapManagerFeature", "Missing world coastlines");
+  return QCoreApplication::translate("MapManagerFeature", "Missing Mapnik World coastlines");
 }
 
 void FeatureMapnikGlobal::loadSettings()
@@ -333,6 +332,109 @@ void FeatureMapnikCountry::loadSettings()
   Feature::loadSettings();
   AppSettings settings;
   m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
+}
+
+
+////////////////////////////////////////////////////////////
+/// MapboxGL support
+const static QStringList mapboxgl_global_files{
+  "tiles-world.sqlite"
+};
+
+FeatureMapboxGLGlobal::FeatureMapboxGLGlobal(PathProvider *path):
+  Feature(path, "mapboxgl/global", "mapboxgl_global",
+          QCoreApplication::translate("MapManagerFeature", "Mapbox GL World overlay"),
+          mapboxgl_global_files,
+          2)
+{
+}
+
+QString FeatureMapboxGLGlobal::errorMissing() const
+{
+  return QCoreApplication::translate("MapManagerFeature", "Missing Mapbox GL World overlay");
+}
+
+void FeatureMapboxGLGlobal::loadSettings()
+{
+  Feature::loadSettings();
+  AppSettings settings;
+  m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl");
+}
+
+
+const static QStringList mapboxgl_glyphs_files{
+  "glyphs.sqlite"
+};
+
+FeatureMapboxGLGlyphs::FeatureMapboxGLGlyphs(PathProvider *path):
+  Feature(path, "mapboxgl/glyphs", "mapboxgl_glyphs",
+          QCoreApplication::translate("MapManagerFeature", "Mapbox GL fonts"),
+          mapboxgl_glyphs_files,
+          1)
+{
+}
+
+QString FeatureMapboxGLGlyphs::errorMissing() const
+{
+  return QCoreApplication::translate("MapManagerFeature", "Missing Mapbox GL fonts");
+}
+
+void FeatureMapboxGLGlyphs::loadSettings()
+{
+  Feature::loadSettings();
+  AppSettings settings;
+  m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl");
+}
+
+
+FeatureMapboxGLCountry::FeatureMapboxGLCountry(PathProvider *path):
+  Feature(path, "territory", "mapboxgl_country",
+          QCoreApplication::translate("MapManagerFeature", "Mapbox GL country-specific support"),
+          QStringList(),
+          2)
+{
+}
+
+QString FeatureMapboxGLCountry::errorMissing() const
+{
+  return QCoreApplication::translate("MapManagerFeature", "Missing country-specific Mapbox GL dataset");
+}
+
+void FeatureMapboxGLCountry::loadSettings()
+{
+  Feature::loadSettings();
+  AppSettings settings;
+  m_enabled = settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl");
+}
+
+void FeatureMapboxGLCountry::requestFiles(const QJsonObject &request)
+{
+  m_files.clear();
+  QJsonArray packs = request.value(m_name).toObject().value("packages").toArray();
+  for (QJsonArray::const_iterator iter = packs.constBegin();
+       iter != packs.constEnd(); ++iter)
+    m_files.append("tiles-section-" + (*iter).toString() + ".sqlite");
+}
+
+bool FeatureMapboxGLCountry::isAvailable(const QJsonObject &request)
+{
+  if (!request.contains(m_name)) return true;
+  requestFiles(request);
+  return Feature::isAvailable(request);
+}
+
+void FeatureMapboxGLCountry::checkMissingFiles(const QJsonObject &request, FilesToDownload &missing)
+{
+  if (!request.contains(m_name)) return;
+  requestFiles(request);
+  Feature::checkMissingFiles(request, missing);
+}
+
+void FeatureMapboxGLCountry::fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted)
+{
+  if (!request.contains(m_name)) return;
+  requestFiles(request);
+  Feature::fillWantedFiles(request, wanted);
 }
 
 ////////////////////////////////////////////////////////////
@@ -464,7 +566,7 @@ bool FeatureValhalla::isAvailable(const QJsonObject &request)
 }
 
 void FeatureValhalla::checkMissingFiles(const QJsonObject &request,
-                                        FilesToDownload &missing) const
+                                        FilesToDownload &missing)
 {
   if (!m_enabled || !isMyType(request) || !isCompatible(request) || m_assume_files_exist) return;
   if (!request.contains(m_name)) return;
@@ -499,7 +601,7 @@ void FeatureValhalla::checkMissingFiles(const QJsonObject &request,
 }
 
 void FeatureValhalla::fillWantedFiles(const QJsonObject &request,
-                                      QSet<QString> &wanted) const
+                                      QSet<QString> &wanted)
 {
   if (!m_enabled || !isMyType(request)) return;
   if (!request.contains(m_name)) return;

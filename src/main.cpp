@@ -15,8 +15,6 @@
 #include <QGuiApplication>
 #endif
 
-#define APP_PREFIX ""
-
 #endif // of IS_CONSOLE_QT
 
 #include "consolelogger.h"
@@ -25,7 +23,6 @@
 #include <sailfishapp.h>
 #include <QtQuick>
 #include <QtQml>
-#define APP_PREFIX "harbour-"
 
 #include "rollinglogger.h"
 #include "filemodel.h"
@@ -46,6 +43,7 @@
 #include "modulechecker.h"
 
 #include "systemdservice.h"
+#include "util.hpp"
 
 #include <QTranslator>
 #include <QCommandLineParser>
@@ -133,13 +131,16 @@ int main(int argc, char *argv[])
   parser.addOption(optionConsole);
 
   QCommandLineOption optionQuiet(QStringList() << "quiet",
-                                   QCoreApplication::translate("main", "Do not output logs when running in console mode"));
+                                 QCoreApplication::translate("main", "Do not output logs when running in console mode"));
   parser.addOption(optionQuiet);
 
+#ifdef USE_SYSTEMD
   QCommandLineOption optionSystemD(QStringList() << "systemd",
                                    QCoreApplication::translate("main", "Run the server in SystemD socket-activated mode"));
   parser.addOption(optionSystemD);
+#endif
 
+#ifdef IS_CONSOLE_QT
   QCommandLineOption optionDownload(QStringList() << "d" << "download",
                                     QCoreApplication::translate("main", "Start download of the maps"));
   parser.addOption(optionDownload);
@@ -173,6 +174,7 @@ int main(int argc, char *argv[])
                                        QCoreApplication::translate("main", "Unsubscribe <country> dataset"),
                                        QCoreApplication::translate("main", "country-id"));
   parser.addOption(optionUnSubscribe);
+#endif
 
   // Process the actual command line arguments given by the user
   parser.process(*app);
@@ -206,14 +208,34 @@ int main(int argc, char *argv[])
 
   infoHub.onSettingsChanged();
 
+#ifdef USE_SYSTEMD
+  // enable systemd interaction
+  SystemDService systemd_service;
+
+  // stop systemD service and socket if running as a separate application
+  if (!parser.isSet(optionSystemD))
+    systemd_service.stop();
+
+  // wait till the used ports are freed. here, the timeout is used internally in
+  // the used wait function
+  if (!parser.isSet(optionSystemD))
+    {
+      int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
+      int valhalla_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
+
+      if (!wait_till_port_is_free(http_port))
+        std::cerr << "Port " << http_port << " is occupied\n";
+
+      if (!wait_till_port_is_free(valhalla_port))
+        std::cerr << "Port " << valhalla_port << " is occupied\n";
+    }
+#endif
+
   // check installed modules
   ModuleChecker modules;
 
   // setup Map Manager
   MapManager::Manager manager(app.data());
-
-  // enable systemd interaction
-  SystemDService systemd_service;
 
 #ifdef IS_SAILFISH_OS
   if (rolling_logger) rolling_logger->onSettingsChanged();
@@ -237,13 +259,16 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
       rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
       rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
+      rootContext->setContextProperty("settingsRequestMapperPrefix", REQUEST_MAPPER_SETTINGS);
 
       rootContext->setContextProperty("settings", &settings);
       rootContext->setContextProperty("infohub", &infoHub);
       if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
       rootContext->setContextProperty("manager", &manager);
       rootContext->setContextProperty("modules", &modules);
+#ifdef USE_SYSTEMD
       rootContext->setContextProperty("systemd_service", &systemd_service);
+#endif
     }
 #endif
 
@@ -268,6 +293,14 @@ int main(int argc, char *argv[])
   if (rootContext) rootContext->setContextProperty("geocoder", geoMaster);
 #endif
 
+  // setup Mapbox GL
+  mapboxglMaster = new MapboxGLMaster();
+  if (mapboxglMaster == nullptr)
+    {
+      std::cerr << "Failed to allocate MapboxGLMaster" << std::endl;
+      return -3;
+    }
+
 #ifdef USE_MAPNIK
   // setup Mapnik
   mapnikMaster = new MapnikMaster();
@@ -275,7 +308,7 @@ int main(int argc, char *argv[])
   if (mapnikMaster == nullptr)
     {
       std::cerr << "Failed to allocate MapnikMaster" << std::endl;
-      return -3;
+      return -4;
     }
 #endif
 
@@ -286,7 +319,7 @@ int main(int argc, char *argv[])
   if (valhallaMaster == nullptr)
     {
       std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
-      return -4;
+      return -5;
     }
 #endif
 
@@ -302,6 +335,8 @@ int main(int argc, char *argv[])
                     osmScoutMaster, &DBMaster::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     geoMaster, &GeoMaster::onSettingsChanged );
+  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                    mapboxglMaster, &MapboxGLMaster::onSettingsChanged );
 #ifdef USE_MAPNIK
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     mapnikMaster, &MapnikMaster::onSettingsChanged );
@@ -324,7 +359,8 @@ int main(int argc, char *argv[])
                     geoMaster, &GeoMaster::onPostalChanged);
   QObject::connect( &manager, &MapManager::Manager::selectedMapChanged,
                     geoMaster, &GeoMaster::onSelectedMapChanged);
-
+  QObject::connect( &manager, &MapManager::Manager::databaseMapboxGLChanged,
+                    mapboxglMaster, &MapboxGLMaster::onMapboxGLChanged );
 #ifdef USE_MAPNIK
   QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
                     mapnikMaster, &MapnikMaster::onMapnikChanged );
@@ -347,6 +383,7 @@ int main(int argc, char *argv[])
   // all is connected, load map manager settings
   manager.onSettingsChanged();
 
+#ifdef IS_CONSOLE_QT
   // check for sanity and perform the commands if requested
   if (!manager.storageAvailable())
     {
@@ -399,38 +436,63 @@ int main(int argc, char *argv[])
       manager.rmCountry(c);
       return 0;
     }
+#endif
 
   // register singlar handler
   signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });
+  signal(SIGINT, [](int /*sig*/){ qApp->quit(); });
+  signal(SIGHUP, [](int /*sig*/){ qApp->quit(); });
 
   int return_code = 0;
 
-  if (!parser.isSet(optionSystemD))
-    systemd_service.stop();
+#ifdef USE_VALHALLA
+  valhallaMaster->start(true);
+#endif
+
+  // prepare server by processing all outstanding events
+  // that way, it will be ready immediately to process requests
+  app->processEvents();
 
   {
     // setup HTTP server
-    settings.beginGroup("http-listener");
-    int port = settings.valueInt("port");
-    QString host = settings.valueString("host");
-    settings.endGroup();
+    int port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
+    QString host = settings.valueString(HTTP_SERVER_SETTINGS "host");
 
     // start HTTP server
     RequestMapper requests;
-    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str() );
+    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str(),
+#ifdef USE_SYSTEMD
+                                   parser.isSet(optionSystemD)
+#else
+                                   false
+#endif
+                                   );
 
     if ( !http_server )
       {
         std::cerr << "Failed to start HTTP server" << std::endl;
-        return -2;
+        return -100;
       }
+
+    // connect request mapper to the settings
+    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                      &requests, &RequestMapper::onSettingsChanged );
+
+    // enable idle timeout shutdown if started by systemd
+#ifdef USE_SYSTEMD
+    if (parser.isSet(optionSystemD))
+      QObject::connect(&requests, &RequestMapper::idleTimeout,
+                       app.data(), QCoreApplication::quit );
+#endif
 
     return_code = app->exec();
   }
 
+#ifdef USE_SYSTEMD
   // if the service is enabled, start it after we leave the server
-  if (systemd_service.enabled())
+  if (!parser.isSet(optionSystemD) && systemd_service.enabled())
     systemd_service.start();
+#endif
 
   return return_code;
 }

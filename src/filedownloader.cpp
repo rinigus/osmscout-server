@@ -341,10 +341,20 @@ void FileDownloader::onNetworkError(QNetworkReply::NetworkError /*code*/)
 
   if (m_reply)
     {
+      QString errstr = m_reply->errorString();
       QString err = tr("Failed to download") + "<br>" + m_path +
           "<br><br>" +tr("Error code: %1").arg(QString::number(m_reply->error())) + "<br><blockquote><small>" +
-          m_reply->errorString() +
+          errstr +
           "</small></blockquote>";
+
+      if (errstr.indexOf("Not Found") > 0) // there is some text before this message, hence > 0
+        err +=
+            "<br>" +
+            tr("Note that if download fails due to the file missing on the server, "
+               "please consider checking for updates in Map Manager. When new maps are uploaded, "
+               "the URL for each database is changed that can lead to such error until the local list "
+               "of available maps is updated by Map Manager.");
+
       onError(err);
     }
 }

@@ -1,24 +1,24 @@
 # OSM Scout Server
 
+[![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)
+[![Donate](https://img.shields.io/badge/donate-liberapay-yellow.svg)](https://liberapay.com/rinigus)
+
 OSM Scout server can be used as a drop-in replacement for online map
 services providing map tiles, search, and routing. As a result, an
 offline operation is possible if the device has a server and map
 client programs installed and running.
 
 At present, the server can be used to provide:
-* map tiles for other applications;
+* vector or raster tiles for other applications;
 * search for locations and free text search;
 * search for POIs next to a reference area;
 * calculating routes between given sequence of points.
 
-User's guide is available at https://rinigus.github.io/osmscout-server 
-
-Server is a wrapper around libosmscout exposing its
-functionality. This library can be used to render maps, search for
-locations and POIs, and calculate routes. 
+User's guide is available at https://rinigus.github.io/osmscout-server
 
 The server supports:
 * map rendering via Mapnik (https://github.com/mapnik/mapnik);
+* hosting of Mapbox GL vector tiles (https://github.com/mapbox/awesome-vector-tiles);
 * search via Geocoder-NLP (https://github.com/rinigus/geocoder-nlp) which is based on libpostal (https://github.com/openvenues/libpostal);
 * routing instructions via Valhalla (https://github.com/valhalla/valhalla);
 * map rendering, search, and routing via libosmscout (http://libosmscout.sourceforge.net/).
@@ -27,7 +27,7 @@ To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps, modRana, and
 JavaScript-based clients are provided under "example" folder. At
 present, Poor Maps and modRana include plugins already in the upstream
-and no additional configuration is needed. 
+and no additional configuration is needed.
 
 The server is written using Qt. The server can be used as a console or
 a Sailfish application. For console version, use
@@ -141,9 +141,9 @@ specifying arguments. Here, order of query elements is not important.
 See `examples` folder for results of the example queries.
 
 
-## Tiles
+## Raster tiles
 
-The server component for providing tiles operates using OSM convention
+The server component for providing raster tiles operates using OSM convention
 with small extensions. URL is
 
 `http://localhost:8553/v1/tile?style={style}&daylight={dlight}&shift={shift}&scale={scale}&z={z}&x={x}&y={y}`
@@ -167,6 +167,50 @@ Maps settings for example.
 
 At present, only Mapnik backend supports different styles. When using
 libosmscout backend, `styles` parameter is ignored.
+
+
+## Mapbox GL vector tiles
+
+The vector tiles and associated styles, fonts and icons are provided
+via server.
+
+### Tiles
+
+For requesting tiles, use
+
+`http://localhost:8553/v1/mbgl/tile?z={z}&x={x}&y={y}`
+
+where
+
+`{z}`, `{x}`, and `{y}` are as in
+http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames .
+
+
+### Styles, sprite
+
+For requesting styles, use
+
+`http://localhost:8553/v1/mbgl/style?style={style}`
+
+where `{style}` is a style name.
+
+Fonts (glyphs) are provided via
+
+`http://localhost:8553/v1/mbgl/glyphs?stack={fontstack}&range={range}`
+
+where
+
+`{fontstack}` - requested font stack, for example `Noto Sans`
+
+`{range}` - requested range, for example `0-255`.
+
+In the styles, corresponding setting for glyphs is
+`http://localhost:8553/v1/mbgl/glyphs?stack={fontstack}&range={range}`.
+
+The styles can use provided sprite with icons by specifying
+`http://localhost:8553/v1/mbgl/sprite` as a corresponding URL in style
+definition.
+
 
 
 ## Location search
@@ -278,7 +322,7 @@ is used. For example,
 
 ## List of available POI types
 
-List of available POI types is available via 
+List of available POI types is available via
 
 `http://localhost:8553/v1/poi_types`
 
@@ -305,7 +349,7 @@ where
 Query is considered as a substring that is looked for in all available
 POI types without taking into account the case of letters. For
 example, "Cafe" would match amenity_cafe_building and
-amenity_cafe. 
+amenity_cafe.
 
 In addition, POI can be searched by its name. For example, you could
 search for the restaurant by its name. This is only supported by
@@ -349,7 +393,7 @@ query by starting from index 0 and incrementing it by one until the
 points with consecutive indexes are all found. Note that if you skip
 an index in the list (like having indexes 0, 1, 3, and 4), the points
 after the increment larger than one will be ignored (in the example,
-points 3 and 4). 
+points 3 and 4).
 
 The query parameters are:
 
@@ -375,7 +419,7 @@ given by names:
 
 
 The result is given in JSON format. It returns a JSON object with
-several keys: 
+several keys:
 
 `locations` - coordinates of the reference points used in the calculations;
 
@@ -407,7 +451,7 @@ This is the version that would be mainly supported in future. It uses
 Valhalla's API, as described in
 https://github.com/valhalla/valhalla-docs/blob/master/api-reference.md
 . Please note that there is no API key in the Valhalla's component
-used by OSM Scout Server. 
+used by OSM Scout Server.
 
 At present, all calls via `v2/route`, as
 `http://localhost:8553/v2/route?...` would be forwarded to Valhalla
@@ -474,9 +518,10 @@ GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
 
 langcodes: https://github.com/LuminosoInsight/langcodes
 
+Mapbox GL import scripts: https://github.com/rinigus/mapbox-gl-importer
+
 Hosting of maps: Natural Language Processing Centre
 (https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
 University, Brno, Czech Republic) through modRana
 (http://modrana.org).
 
-[![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)

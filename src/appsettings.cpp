@@ -29,11 +29,8 @@ AppSettings::AppSettings():
 void AppSettings::initDefaults()
 {
   // defaults for server
-  beginGroup("http-listener");
-  CHECK("host", "127.0.0.1");
-  CHECK("port", 8553);
-  //CHECK("maxThreads", QThread::idealThreadCount() + 2);
-  endGroup();
+  CHECK(HTTP_SERVER_SETTINGS "host", "127.0.0.1");
+  CHECK(HTTP_SERVER_SETTINGS "port", 8553);
 
   /////////////////////////////////////////
   /// general settings
@@ -47,7 +44,7 @@ void AppSettings::initDefaults()
   CHECK(GENERAL_SETTINGS "logSession", 0);
 
   CHECK(GENERAL_SETTINGS "firstTime", 1);
-  CHECK(GENERAL_SETTINGS "lastRunVersion", 0);
+  CHECK(GENERAL_SETTINGS "lastRunVersion", GENERAL_APP_VERSION);
 
 #ifdef IS_SAILFISH_OS
   QString documents = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
@@ -64,6 +61,7 @@ void AppSettings::initDefaults()
   CHECK(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
   CHECK(MAPMANAGER_SETTINGS "postal_country", 1);
   CHECK(MAPMANAGER_SETTINGS "mapnik", 1);
+  CHECK(MAPMANAGER_SETTINGS "mapboxgl", 0);
   CHECK(MAPMANAGER_SETTINGS "valhalla", 1);
   CHECK(MAPMANAGER_SETTINGS "max_download_speed_in_kbps", -1);
   CHECK(MAPMANAGER_SETTINGS "development_disable_url_update", 0);
@@ -166,17 +164,35 @@ void AppSettings::initDefaults()
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_bicycle", 100.0);
   CHECK(VALHALLA_MASTER_SETTINGS "limit_max_distance_pedestrian", 75.0);
 
-  /// set profile if specified
-  setProfile();
+  CHECK(REQUEST_MAPPER_SETTINGS "idle_timeout", 1800);
 
   /// set the notification of the first time use
   m_first_time = valueBool(GENERAL_SETTINGS "firstTime");
   setValue(GENERAL_SETTINGS "firstTime", 0);
+
+  /// for changelogs
+  m_last_run_version = valueInt(GENERAL_SETTINGS "lastRunVersion");
+  setValue(GENERAL_SETTINGS "lastRunVersion", GENERAL_APP_VERSION);
+
+  /// profiles changed from version 1 to version 2
+  if (m_last_run_version == 1)
+    {
+      int old_profile = valueInt(GENERAL_SETTINGS "profile");
+      if (old_profile > 0) // inserted new profiles with indexes 1 and 2
+        {
+          setValue(GENERAL_SETTINGS "profile", old_profile + 2);
+        }
+    }
+
+  /// set profile if specified (after all version checks)
+  setProfile();
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
 {
   QSettings::setValue(key, value);
+
+  // http connection settings cannot be changed on fly
 
   if (key.contains(OSM_SETTINGS) ||
       key.contains(ROUTING_SPEED_SETTINGS) ||
@@ -184,6 +200,7 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
       key.contains(MAPNIKMASTER_SETTINGS) ||
       key.contains(VALHALLA_MASTER_SETTINGS) ||
       key.contains(MAPMANAGER_SETTINGS) ||
+      key.contains(REQUEST_MAPPER_SETTINGS) ||
       key == GENERAL_SETTINGS "language" )
     {
       // this delayed signal execution prevents fireing signals together
@@ -300,6 +317,7 @@ void AppSettings::setProfile()
       setValue(MAPMANAGER_SETTINGS "osmscout", 0);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
       setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
       setValue(MAPMANAGER_SETTINGS "mapnik", 1);
       setValue(MAPMANAGER_SETTINGS "valhalla", 1);
 
@@ -307,11 +325,38 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
     }
-  else if (index == 1) // libosmscout + geocoder-nlp
+  else if (index == 1) // Mapbox GL / GeocoderNLP / Valhalla
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 1);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 0);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+    }
+  else if (index == 2) // Mapbox GL + Mapnik / GeocoderNLP / Valhalla
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 1);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+    }
+  else if (index == 3) // libosmscout + geocoder-nlp
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 1);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
       setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
       setValue(MAPMANAGER_SETTINGS "mapnik", 0);
       setValue(MAPMANAGER_SETTINGS "valhalla", 0);
 
@@ -319,11 +364,12 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
     }
-  else if (index == 2) // libosmscout
+  else if (index == 4) // libosmscout
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 1);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
       setValue(MAPMANAGER_SETTINGS "postal_country", 0);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
       setValue(MAPMANAGER_SETTINGS "mapnik", 0);
       setValue(MAPMANAGER_SETTINGS "valhalla", 0);
 
@@ -331,7 +377,7 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
     }
-  // all other profiles are either custom (index=3) or unknown
+  // all other profiles are either custom (index=5) or unknown
   else
     profile_active = false;
 

@@ -8,6 +8,8 @@ DBMaster *osmScoutMaster = NULL;
 
 GeoMaster *geoMaster = NULL;
 
+MapboxGLMaster *mapboxglMaster = NULL;
+
 #ifdef USE_MAPNIK
 MapnikMaster *mapnikMaster = NULL;
 #endif
