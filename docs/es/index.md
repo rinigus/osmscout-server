@@ -104,3 +104,41 @@ las instrucciones están [aquí](modrana.html).
 
 Después de configurar el cliente, pues usarlo junto a OSM Scout Server
 para el acceso a los mapas sin conexión.
+
+
+## Ejecución
+
+Como se describe más arriba, cuando se usa OSM Scout Server necesitas ejecutar el servidor y el cliente al mismo tiempo. Hay dos formas de hacerlo:
+
+### Automática
+
+Si habilitas la activación automática sólo tienes que iniciar el cliente. El cliente accederá al servidor y éste, o bien se ejecuta como aplicación GUI en segundo plano, o bien, si no se ha iniciado, se ejecuta como un servicio.
+
+### Manual
+
+* Inicia OSM Scout Server y minimízalo, mostrándose su cubierta en la página de inicio
+* Inicia el cliente (Poor Maps, modRana, o cualquier otro)
+* Cuando termines, cierra el servidor y el cliente.
+
+
+## Implementación de la activación automática
+
+Al habilitar la activación automática, OSM Scout Server interactúa con _systemd_ creando los archivos _service_ y _socket_ en el directorio home del usuario que ejecuta el servidor. Además, la activación del socket se efectúa ejecutando `systemctl`. En Sailfish eso da como resultado la creación o modificación de 
+
+```
+/home/nemo/.config/systemd/user/osmscout-server.service
+/home/nemo/.config/systemd/user/osmscout-server.socket
+/home/nemo/.config/systemd/user/user-session.target.wants
+```
+
+Si quieres eliminar la activación automática de forma manual, ejecuta 
+
+```
+systemctl disable osmscout-server.socket
+```
+
+y después elimina los archivos _service_ y _socket_. En Sailfish, elimina
+```
+/home/nemo/.config/systemd/user/osmscout-server.service
+/home/nemo/.config/systemd/user/osmscout-server.socket
+```
