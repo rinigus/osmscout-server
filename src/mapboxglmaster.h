@@ -19,14 +19,17 @@ public:
   bool getTile(int x, int y, int z, QByteArray &result, bool &compressed, bool &found);
   bool getGlyphs(QString sprite, QString range, QByteArray &result, bool &compressed, bool &found);
   bool getStyle(const QString &stylename, QByteArray &result);
-  bool getSpriteJson(QByteArray &result);
-  bool getSpriteImage(QByteArray &result);
+  bool getSpriteJson(const QString &fname, QByteArray &result);
+  bool getSpriteImage(const QString &fname, QByteArray &result);
 
 signals:
 
 public slots:
   void onSettingsChanged();
   void onMapboxGLChanged(QString world_database, QString glyphs_database, QSet<QString> country_databases);
+
+protected:
+  QString getFilePath(const QString &dname, const QString &fname);
 
 protected:
   std::mutex m_mutex;

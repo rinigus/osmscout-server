@@ -183,24 +183,35 @@ bool MapboxGLMaster::getGlyphs(QString stackstr, QString range, QByteArray &resu
   return true;
 }
 
-bool MapboxGLMaster::getStyle(const QString &stylename, QByteArray &result)
+
+QString MapboxGLMaster::getFilePath(const QString &dname, const QString &fname)
 {
-  QDir dir(MAPBOXGL_STYLEDIR); dir.cd("styles");
-  QFileInfo fi(dir.absoluteFilePath(stylename + ".json"));
+  QDir dir(MAPBOXGL_STYLEDIR); dir.cd(dname);
+  QFileInfo fi(dir.absoluteFilePath(fname));
   QString fpath = fi.canonicalFilePath();
 
   // expected to serve files from subfolder(s)
   if (!fpath.startsWith(dir.absolutePath()))
     {
-      InfoHub::logWarning(tr("Malformed Mapbox GL style request: %1").arg(stylename));
-      return false;
+      InfoHub::logWarning(tr("Malformed Mapbox GL file request: %1/%2").arg(dname).arg(fname));
+      return QString();
     }
 
   if (!fi.exists())
     {
-      InfoHub::logWarning(tr("Requested Mapbox GL style does not exist: %1 [%2]").arg(stylename).arg(fpath));
-      return false;
+      InfoHub::logWarning(tr("Requested Mapbox GL file does not exist: %1 [%2]").arg(fname).arg(fpath));
+      return QString();
     }
+
+  return fpath;
+}
+
+
+bool MapboxGLMaster::getStyle(const QString &stylename, QByteArray &result)
+{
+  QString fpath = getFilePath("styles", stylename + ".json");
+  if (fpath.isEmpty())
+    return false;
 
   // load style file
   QFile fin(fpath);
@@ -224,10 +235,13 @@ bool MapboxGLMaster::getStyle(const QString &stylename, QByteArray &result)
   return true;
 }
 
-bool MapboxGLMaster::getSpriteJson(QByteArray &result)
+bool MapboxGLMaster::getSpriteJson(const QString &fname, QByteArray &result)
 {
-  QDir dir(MAPBOXGL_STYLEDIR);
-  QFile fin(dir.filePath("sprites/sprite.json"));
+  QString fpath = getFilePath("sprites", fname);
+  if (fpath.isEmpty())
+    return false;
+
+  QFile fin(fpath);
 
   if (!fin.open(QIODevice::ReadOnly | QIODevice::Text))
     {
@@ -247,10 +261,13 @@ bool MapboxGLMaster::getSpriteJson(QByteArray &result)
   return true;
 }
 
-bool MapboxGLMaster::getSpriteImage(QByteArray &result)
+bool MapboxGLMaster::getSpriteImage(const QString &fname, QByteArray &result)
 {
-  QDir dir(MAPBOXGL_STYLEDIR);
-  QFile fin(dir.filePath("sprites/sprite.png"));
+  QString fpath = getFilePath("sprites", fname);
+  if (fpath.isEmpty())
+    return false;
+
+  QFile fin(fpath);
 
   if (!fin.open(QIODevice::ReadOnly))
     {
