@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -1086,42 +1088,42 @@
         <translation>Nie udało się uruchomić zapytania w bazie danych czcionek Mapbox GL</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="195"/>
-        <source>Malformed Mapbox GL style request: %1</source>
-        <translation>Niepoprawne żądanie stylu Mapbox GL: %1</translation>
+        <location filename="../src/mapboxglmaster.cpp" line="196"/>
+        <source>Malformed Mapbox GL file request: %1/%2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="201"/>
-        <source>Requested Mapbox GL style does not exist: %1 [%2]</source>
-        <translation>Żądany styl Mapbox GL nie istnieje: %1 [%2]</translation>
+        <location filename="../src/mapboxglmaster.cpp" line="202"/>
+        <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="210"/>
+        <location filename="../src/mapboxglmaster.cpp" line="221"/>
         <source>Error opening Mapbox GL style template %1</source>
         <translation>Błąd otwierania szablonu stylu Mapbox GL %1</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="218"/>
+        <location filename="../src/mapboxglmaster.cpp" line="229"/>
         <source>Error reading Mapbox GL style template %1</source>
         <translation>Błąd odczytu szablonu stylu Mapbox GL %1</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="234"/>
+        <location filename="../src/mapboxglmaster.cpp" line="248"/>
         <source>Error opening Mapbox GL sprite JSON</source>
         <translation>Błąd otwierania Mapbox GL sprite JSON</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="242"/>
+        <location filename="../src/mapboxglmaster.cpp" line="256"/>
         <source>Error reading Mapbox GL sprite JSON</source>
         <translation>Błąd odczytu Mapbox GL sprite JSON</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="257"/>
+        <location filename="../src/mapboxglmaster.cpp" line="274"/>
         <source>Error opening Mapbox GL sprite image</source>
         <translation>Błąd otwierania Mapbox GL sprite obrazka</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="264"/>
+        <location filename="../src/mapboxglmaster.cpp" line="281"/>
         <source>Error reading Mapbox GL sprite image</source>
         <translation>Błąd odczytu Mapbox GL sprite obrazka</translation>
     </message>
@@ -1443,7 +1445,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="96"/>
         <source>motorway link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="104"/>
@@ -1463,7 +1465,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="128"/>
         <source>primary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="136"/>
@@ -1488,7 +1490,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="168"/>
         <source>secondary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="176"/>
@@ -1503,7 +1505,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="192"/>
         <source>tertiary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="200"/>
@@ -1513,7 +1515,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="208"/>
         <source>trunk link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="216"/>
@@ -1552,7 +1554,7 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="47"/>

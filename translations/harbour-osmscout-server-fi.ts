@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fi" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -718,7 +720,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="918"/>
         <source>No servers found to download the data from</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="941"/>
@@ -749,7 +751,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1043"/>
         <source>Download failed from %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1079"/>
@@ -1086,42 +1088,42 @@
         <translation>Haku Mapbox GL fonttien tietokannasta epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="195"/>
-        <source>Malformed Mapbox GL style request: %1</source>
-        <translation>Virheellinen Mapbox GL -tyyli pyyntö: %1</translation>
+        <location filename="../src/mapboxglmaster.cpp" line="196"/>
+        <source>Malformed Mapbox GL file request: %1/%2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="201"/>
-        <source>Requested Mapbox GL style does not exist: %1 [%2]</source>
-        <translation>Pyydetty Mapbox GL tyyli ei ole olemassa: %1 [%2]</translation>
+        <location filename="../src/mapboxglmaster.cpp" line="202"/>
+        <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="210"/>
+        <location filename="../src/mapboxglmaster.cpp" line="221"/>
         <source>Error opening Mapbox GL style template %1</source>
         <translation>Mapbox GL tyylitemplaatin avaaminen epäonnistui %1</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="218"/>
+        <location filename="../src/mapboxglmaster.cpp" line="229"/>
         <source>Error reading Mapbox GL style template %1</source>
         <translation>Mapbox GL tyylitemplaatin lukeminen epäonnistui %1</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="234"/>
+        <location filename="../src/mapboxglmaster.cpp" line="248"/>
         <source>Error opening Mapbox GL sprite JSON</source>
         <translation>Mapbox GL sprite JSON:n avaus epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="242"/>
+        <location filename="../src/mapboxglmaster.cpp" line="256"/>
         <source>Error reading Mapbox GL sprite JSON</source>
         <translation>Mapbox GL sprite JSON:n lukeminen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="257"/>
+        <location filename="../src/mapboxglmaster.cpp" line="274"/>
         <source>Error opening Mapbox GL sprite image</source>
         <translation>Virhe avatessa Mapbox GL sprite kuvaa</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="264"/>
+        <location filename="../src/mapboxglmaster.cpp" line="281"/>
         <source>Error reading Mapbox GL sprite image</source>
         <translation>Virhe lukiessa Mapbox GL sprite kuvaa</translation>
     </message>
@@ -1844,12 +1846,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="150"/>
@@ -2227,7 +2229,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
@@ -2237,7 +2239,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

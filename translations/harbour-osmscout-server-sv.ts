@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="sv" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="sv" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -1086,42 +1088,42 @@
         <translation>Det gick inte att köra frågan i Mapbox GL teckensnittsdatabas</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="195"/>
-        <source>Malformed Mapbox GL style request: %1</source>
-        <translation>Felaktig Mapbox GL-förfrågan: %1</translation>
+        <location filename="../src/mapboxglmaster.cpp" line="196"/>
+        <source>Malformed Mapbox GL file request: %1/%2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="201"/>
-        <source>Requested Mapbox GL style does not exist: %1 [%2]</source>
-        <translation>Begärd Mapbox GL-stil finns inte: %1 [%2]</translation>
+        <location filename="../src/mapboxglmaster.cpp" line="202"/>
+        <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="210"/>
+        <location filename="../src/mapboxglmaster.cpp" line="221"/>
         <source>Error opening Mapbox GL style template %1</source>
         <translation>Kunde inte öppna Mapbox GL stilmall %1</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="218"/>
+        <location filename="../src/mapboxglmaster.cpp" line="229"/>
         <source>Error reading Mapbox GL style template %1</source>
         <translation>Kunde inte läsa Mapbox GL stilmall %1</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="234"/>
+        <location filename="../src/mapboxglmaster.cpp" line="248"/>
         <source>Error opening Mapbox GL sprite JSON</source>
         <translation>Kunde inte öppna Mapbox GL sprite JSON</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="242"/>
+        <location filename="../src/mapboxglmaster.cpp" line="256"/>
         <source>Error reading Mapbox GL sprite JSON</source>
         <translation>Kunde inte läsa Mapbox GL sprite JSON</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="257"/>
+        <location filename="../src/mapboxglmaster.cpp" line="274"/>
         <source>Error opening Mapbox GL sprite image</source>
         <translation>Kunde inte öppna Mapbox GL sprite-bild</translation>
     </message>
     <message>
-        <location filename="../src/mapboxglmaster.cpp" line="264"/>
+        <location filename="../src/mapboxglmaster.cpp" line="281"/>
         <source>Error reading Mapbox GL sprite image</source>
         <translation>Kunde inte läsa Mapbox GL sprite-bild</translation>
     </message>
