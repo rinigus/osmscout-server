@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -721,7 +719,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="918"/>
         <source>No servers found to download the data from</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wurden keine Server gefunden, von denen die Daten heruntergeladen werden können</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="941"/>
@@ -752,7 +750,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="1043"/>
         <source>Download failed from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Download fehlgeschlagen von %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1079"/>
@@ -1848,12 +1846,12 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird empfohlen, die automatische Aktivierung zu aktivieren, um den Zugriff auf den Server zu vereinfachen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Für technische Details, erstellte Dateien und wie Sie diese bei Bedarf entfernen können, finden Sie im entsprechenden Abschnitt des &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt; Bedienungsanleitung&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="150"/>
@@ -2233,7 +2231,7 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es wird empfohlen, die automatische Aktivierung zu aktivieren, um den Zugriff auf den Server zu vereinfachen.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
@@ -2243,7 +2241,7 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Für technische Details, erstellte Dateien und wie Sie diese bei Bedarf entfernen können, finden Sie im entsprechenden Abschnitt des &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt; Bedienungsanleitung&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>

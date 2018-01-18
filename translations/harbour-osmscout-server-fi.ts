@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -720,7 +718,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="918"/>
         <source>No servers found to download the data from</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="941"/>
@@ -751,7 +749,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1043"/>
         <source>Download failed from %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1079"/>
@@ -1846,12 +1844,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="150"/>
@@ -2229,7 +2227,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
@@ -2239,7 +2237,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>

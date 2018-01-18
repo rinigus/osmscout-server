@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pl" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -1445,7 +1443,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="96"/>
         <source>motorway link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="104"/>
@@ -1465,7 +1463,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="128"/>
         <source>primary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="136"/>
@@ -1490,7 +1488,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="168"/>
         <source>secondary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="176"/>
@@ -1505,7 +1503,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="192"/>
         <source>tertiary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="200"/>
@@ -1515,7 +1513,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="208"/>
         <source>trunk link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="216"/>
@@ -1554,7 +1552,7 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
@@ -1847,12 +1845,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zalecane jest aby włączyć automatyczną aktywację w celu uproszczenia dostępu do serwera.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po szczegóły techniczne, utworzone pliki oraz jak je usunąć, jeśli potrzeba, zajrzyj do odpowiedniej sekcji w &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Instrukcji obsługi&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="150"/>
@@ -2230,7 +2228,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zalecane jest aby włączyć automatyczną aktywację w celu uproszczenia dostępu do serwera.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
@@ -2240,7 +2238,7 @@
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po szczegóły techniczne, utworzone pliki oraz jak je usunąć (jeśli potrzeba) zajrzyj do odpowiedniej sekcji w &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Instrukcji obsługi&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
