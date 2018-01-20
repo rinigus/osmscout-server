@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Jan 20 2018 rinigus <rinigus.git@gmail.com> 1.4.0-1
+- Updated translations
+- Support for multiple Mapbox GL icon packs
+- Addition of Mapbox GL dark style
+
 * Sun Jan 14 2018 rinigus <rinigus.git@gmail.com> 1.4.0-1
 - Updated Mapbox GL tile schema
 - Mapbox GL style with English names
