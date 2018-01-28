@@ -323,6 +323,99 @@
       }
     },
     {
+      "id": "waterway-other",
+      "type": "line",
+      "source": "osmscout",
+      "source-layer": "waterway",
+      "filter": [
+        "!in",
+        "class",
+        "canal",
+        "river",
+        "stream"
+      ],
+      "layout": {
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#011422",
+        "line-width": {
+          "base": 1.3,
+          "stops": [
+            [
+              13,
+              0.5
+            ],
+            [
+              20,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "waterway-stream-canal",
+      "type": "line",
+      "source": "osmscout",
+      "source-layer": "waterway",
+      "filter": [
+        "in",
+        "class",
+        "canal",
+        "stream"
+      ],
+      "layout": {
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#011422",
+        "line-width": {
+          "base": 1.3,
+          "stops": [
+            [
+              13,
+              0.5
+            ],
+            [
+              20,
+              6
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "waterway-river",
+      "type": "line",
+      "source": "osmscout",
+      "source-layer": "waterway",
+      "filter": [
+        "==",
+        "class",
+        "river"
+      ],
+      "layout": {
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#011422",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              10,
+              0.8
+            ],
+            [
+              20,
+              6
+            ]
+          ]
+        }
+      }
+    },
+    {
       "id": "building",
       "type": "fill",
       "source": "osmscout",
