@@ -405,7 +405,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="353"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation>Cuando la descarga falla porque falta el archivo en el servidor, debes comprobar si hay actualizaciones en el gestor de mapas. Cuando se cargan nuevos mapas, la URL de cada base de datos cambia, produciéndose este error hasta que se actualiza la lista local de mapas disponibles en el gestor de mapas.</translation>
+        <translation>Cuando la descarga falla porque el archivo no está en el servidor, debes comprobar si hay actualizaciones en el gestor de mapas. Cuando se cargan nuevos mapas, la URL de cada base de datos cambia produciéndose este error, hasta que en el gestor de descargas se actualiza la lista local de mapas disponibles.</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>
@@ -1090,12 +1090,12 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="196"/>
         <source>Malformed Mapbox GL file request: %1/%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Solicitud de archivo Mapbox GL malformado: %1/%2</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="202"/>
         <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>El archivo Mapbox GL solicitado no existe: %1 [%2]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="221"/>

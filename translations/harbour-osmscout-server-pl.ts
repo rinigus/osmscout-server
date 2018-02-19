@@ -1090,12 +1090,12 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="196"/>
         <source>Malformed Mapbox GL file request: %1/%2</source>
-        <translation type="unfinished"></translation>
+        <translation>Żadany plik Mapbox GL jest uszkodzony: %1%2</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="202"/>
         <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>Żądany plik Mapbox GL nie istnieje: %1 [%2]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="221"/>
