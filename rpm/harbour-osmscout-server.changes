@@ -5,9 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
-* Tue Feb 20 2018 rinigus <rinigus.git@gmail.com> 1.4.2-1
+* Wed Feb 21 2018 rinigus <rinigus.git@gmail.com> 1.4.3-1
 - Updated translations
 - Fix Mapbox GL style to show rivers
+- Change SFOS packaging to introduce explicit systemd dependency
 
 * Sat Jan 20 2018 rinigus <rinigus.git@gmail.com> 1.4.1-1
 - Updated translations

@@ -7,7 +7,7 @@ Name:       harbour-osmscout-server
 
 # >> macros
 %define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff|libsystemd.*|libsystemd-daemon.*$
+%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -15,7 +15,7 @@ Name:       harbour-osmscout-server
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server
-Version:    1.4.2
+Version:    1.4.3
 Release:    1
 Group:      Qt/Qt
 License:    LGPL
@@ -90,7 +90,6 @@ cp /usr/lib/libfreetype.so.6 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libsystemd-daemon.so.0 %{buildroot}%{_datadir}/%{name}/lib
 
 # mapnik fonts and input plugins
 # not needed anymore since input plugins are linked
