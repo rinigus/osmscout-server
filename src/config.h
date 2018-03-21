@@ -40,7 +40,9 @@
 
 #include <atomic>
 
+#ifdef USE_OSMSCOUT
 extern DBMaster *osmScoutMaster;
+#endif
 
 extern GeoMaster *geoMaster;
 

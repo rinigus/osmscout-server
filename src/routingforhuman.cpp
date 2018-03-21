@@ -1,3 +1,5 @@
+#ifdef USE_OSMSCOUT
+
 #include "routingforhuman.h"
 
 #include <QJsonDocument>
@@ -392,3 +394,4 @@ void RoutingForHuman::DumpNameChangedDescription(QJsonObject& action,
     action.insert("type", QString("straight"));
 }
 
+#endif

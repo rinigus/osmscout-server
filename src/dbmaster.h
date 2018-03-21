@@ -1,6 +1,8 @@
 #ifndef DBMASTER_H
 #define DBMASTER_H
 
+#ifdef USE_OSMSCOUT
+
 #include <osmscout/Database.h>
 #include <osmscout/MapService.h>
 
@@ -98,5 +100,7 @@ protected:
     osmscout::MapServiceRef m_map_service;
     osmscout::StyleConfigRef m_style_config;
 };
+
+#endif // USE_OSMSCOUT
 
 #endif // DBMASTER_H

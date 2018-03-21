@@ -4,7 +4,9 @@
 /// GLOBAL VARIABLES: ALLOCATION
 ///
 
+#ifdef USE_OSMSCOUT
 DBMaster *osmScoutMaster = NULL;
+#endif
 
 GeoMaster *geoMaster = NULL;
 

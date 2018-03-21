@@ -1,3 +1,5 @@
+#ifdef USE_OSMSCOUT
+
 #include "dbmaster.h"
 #include "appsettings.h"
 #include "config.h"
@@ -483,3 +485,5 @@ bool DBMaster::route(osmscout::Vehicle &vehicle, std::vector<osmscout::GeoCoord>
 
     return true;
 }
+
+#endif

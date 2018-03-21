@@ -1,3 +1,5 @@
+#ifdef USE_OSMSCOUT
+
 #include "dbmaster.h"
 #include "appsettings.h"
 #include "config.h"
@@ -129,3 +131,5 @@ void DBMaster::onDatabaseChanged(QString /*directory*/)
 {
   loadSettings();
 }
+
+#endif

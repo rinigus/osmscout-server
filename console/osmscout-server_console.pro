@@ -16,18 +16,16 @@ QT = core network sql xml
 
 CONFIG += c++11
 
+# selection of backends
+CONFIG += use_mapnik
+CONFIG += use_osmscout
+CONFIG += use_valhalla
+CONFIG += use_systemd
+
+# libosmscout settings
 CONFIG += use_map_qt
 #CONFIG += use_map_cairo
 
-!disable_mapnik {
-   CONFIG += use_mapnik
-}
-!disable_valhalla {
-   CONFIG += use_valhalla
-}
-!disable_systemd {
-   CONFIG += use_systemd
-}
 
 # installs
 stylesheets.files = stylesheets
@@ -102,20 +100,26 @@ HEADERS += \
     src/mapboxglmaster.h \
     src/mapmanager_urlcollection.h
 
-use_map_qt {
-    DEFINES += USE_OSMSCOUT_MAP_QT
-    QT += gui
-    LIBS += -losmscout_map_qt
+use_osmscout {
+    DEFINES += USE_OSMSCOUT
+
+    use_map_qt {
+        DEFINES += USE_OSMSCOUT_MAP_QT
+        QT += gui
+        LIBS += -losmscout_map_qt
+    }
+
+    use_map_cairo {
+        DEFINES += USE_OSMSCOUT_MAP_CAIRO
+        LIBS += -losmscout_map_cairo
+        CONFIG += link_pkgconfig
+        PKGCONFIG += pango cairo
+    }
+
+    LIBS += -losmscout_map -losmscout
 }
 
-use_map_cairo {
-    DEFINES += USE_OSMSCOUT_MAP_CAIRO
-    LIBS += -losmscout_map_cairo
-    CONFIG += link_pkgconfig
-    PKGCONFIG += pango cairo
-}
-
-# mapbox gl is enabled by default
+# mapbox gl is enabled always
 DEFINES += MAPBOXGL_STYLEDIR=\\\"styles/mapboxgl\\\"
 
 use_mapnik {
@@ -128,7 +132,8 @@ use_mapnik {
 
 use_valhalla {
     DEFINES += USE_VALHALLA
-    DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_route_service\\\"
+    #DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_route_service\\\"
+    DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_service\\\"
     DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"modules/route/data/valhalla.json\\\"
     CONFIG += use_curl
 }
@@ -145,7 +150,7 @@ use_systemd {
     PKGCONFIG += libsystemd
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -lsqlite3
+LIBS += -lmarisa -lkyotocabinet -lz -lsqlite3
 
 QMAKE_CXXFLAGS += -fopenmp
 LIBS += -fopenmp

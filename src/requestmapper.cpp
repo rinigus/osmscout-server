@@ -309,6 +309,10 @@ unsigned int RequestMapper::service(const char *url_c,
   /// TILES
   if (path == "/v1/tile")
     {
+#if !defined(USE_OSMSCOUT) && !defined(USE_MAPNIK)
+      errorText(response, connection_id, "Raster tiles are not supported in this configuration");
+      return MHD_HTTP_INTERNAL_SERVER_ERROR;
+#else
       bool ok = true;
       QString style = q2value<QString>("style", "default", connection, ok);
       bool daylight = q2value<bool>("daylight", true, connection, ok);
@@ -334,7 +338,9 @@ unsigned int RequestMapper::service(const char *url_c,
       else if (y < 0) y = ( y + (-y/zs + 1)*zs ) % zs;
 
 #ifdef USE_MAPNIK
+#ifdef USE_OSMSCOUT
       if ( useMapnik )
+#endif
         {
           task = new Task(connection_id,
                           std::bind(&MapnikMaster::renderMap, mapnikMaster,
@@ -343,8 +349,11 @@ unsigned int RequestMapper::service(const char *url_c,
                                     tiley2lat(y+1, z), tilex2long(x+1, z), std::placeholders::_1),
                           "Error while rendering a tile" );
         }
+#ifdef USE_OSMSCOUT
       else
 #endif
+#endif
+#ifdef USE_OSMSCOUT
         {
           int ntiles = 1 << shift;
           task = new Task(connection_id,
@@ -354,11 +363,16 @@ unsigned int RequestMapper::service(const char *url_c,
                                     (tilex2long(x, z) + tilex2long(x+1, z))/2.0, std::placeholders::_1),
                           "Error while rendering a tile" );
         }
+#endif
 
       m_pool.start(task);
 
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "image/png");
       return MHD_HTTP_OK;
+
+      errorText(response, connection_id, "Error allocating raster tile generation task, possible misconfiguration of the server");
+      return MHD_HTTP_INTERNAL_SERVER_ERROR;
+#endif
     }
 
   //////////////////////////////////////////////////////////////////////
@@ -406,6 +420,7 @@ unsigned int RequestMapper::service(const char *url_c,
       errorText(response, connection_id, "Malformed Mapbox GL tile request");
       return MHD_HTTP_BAD_REQUEST;
     }
+
   //////////////////////////////////////////////////////////////////////
   /// MAPBOX GL SUPPORT: SPRITE
   else if (path.startsWith("/v1/mbgl/sprite"))
@@ -486,6 +501,7 @@ unsigned int RequestMapper::service(const char *url_c,
       errorText(response, connection_id, "Malformed Mapbox GL glyphs request");
       return MHD_HTTP_BAD_REQUEST;
     }
+
   //////////////////////////////////////////////////////////////////////
   /// MAPBOX GL SUPPORT: STYLE
   else if (path == "/v1/mbgl/style")
@@ -534,12 +550,14 @@ unsigned int RequestMapper::service(const char *url_c,
       Task *task;
       bool extended_reply = (path == "/v2/search");
 
+#ifdef USE_OSMSCOUT
       if ( !useGeocoderNLP )
         task = new Task(connection_id,
                         std::bind( &DBMaster::searchExposed, osmScoutMaster,
                                    search, std::placeholders::_1, limit),
                         "Error while searching");
       else
+#endif
         task = new Task(connection_id,
                         std::bind( &GeoMaster::searchExposed, geoMaster,
                                    search, std::placeholders::_1, limit,
@@ -577,12 +595,14 @@ unsigned int RequestMapper::service(const char *url_c,
         {
           Task *task;
 
+#ifdef USE_OSMSCOUT
           if ( !useGeocoderNLP )
             task = new Task(connection_id,
                             std::bind(&DBMaster::guide, osmScoutMaster,
                                       query, lat, lon, radius, limit, std::placeholders::_1),
                             "Error while looking for POIs in guide");
           else
+#endif
             task = new Task(connection_id,
                             std::bind(&GeoMaster::guide, geoMaster,
                                       query, lat, lon, radius, limit, std::placeholders::_1),
@@ -595,6 +615,7 @@ unsigned int RequestMapper::service(const char *url_c,
         {
           std::string name;
 
+#ifdef USE_OSMSCOUT
           if ( !useGeocoderNLP )
             {
               if (osmScoutMaster->search(search, lat, lon, name))
@@ -613,6 +634,7 @@ unsigned int RequestMapper::service(const char *url_c,
                 }
             }
           else
+#endif
             {
               if (geoMaster->search(search, lat, lon, name))
                 {
@@ -643,6 +665,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
   //////////////////////////////////////////////////////////////////////
   /// LIST AVAILABLE POI TYPES
+#ifdef USE_OSMSCOUT
   else if (path == "/v1/poi_types")
     {
       QByteArray bytes;
@@ -656,9 +679,11 @@ unsigned int RequestMapper::service(const char *url_c,
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
       return MHD_HTTP_OK;
     }
+#endif
 
   //////////////////////////////////////////////////////////////////////
   /// ROUTING VIA OSMSCOUT [V1]
+#ifdef USE_OSMSCOUT
   else if (path == "/v1/route" && !useValhalla)
     {
       bool ok = true;
@@ -735,11 +760,16 @@ unsigned int RequestMapper::service(const char *url_c,
       else MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/xml; charset=UTF-8");
       return MHD_HTTP_OK;
     }
+#endif
 
   //////////////////////////////////////////////////////////////////////
   /// ROUTING VIA VALHALLA [V2]
 #ifdef USE_VALHALLA
-  else if (path == "/v2/route" && useValhalla)
+  else if (path == "/v2/route"
+         #ifdef USE_OSMSCOUT
+           && useValhalla
+         #endif
+           )
     {
       QString uri;
       MHD_get_connection_values(connection, MHD_GET_ARGUMENT_KIND, query_uri_iterator, &uri);
@@ -757,6 +787,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
   //////////////////////////////////////////////////////////////////////
   /// ROUTING VIA OSMSCOUT [V2]
+#ifdef USE_OSMSCOUT
   else if (path == "/v2/route" && !useValhalla)
     {
       bool ok = true;
@@ -812,6 +843,7 @@ unsigned int RequestMapper::service(const char *url_c,
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
       return MHD_HTTP_OK;
     }
+#endif
 
   // command unidentified. return help string
   errorText(response, connection_id, "Unknown URL path");

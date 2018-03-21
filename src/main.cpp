@@ -8,11 +8,10 @@
 
 #ifdef IS_CONSOLE_QT
 
-#ifdef USE_OSMSCOUT_MAP_CAIRO
-#include <QCoreApplication>
-#endif
-#ifdef USE_OSMSCOUT_MAP_QT
+#if defined(USE_OSMSCOUT) && defined(USE_OSMSCOUT_MAP_QT)
 #include <QGuiApplication>
+#else
+#include <QCoreApplication>
 #endif
 
 #endif // of IS_CONSOLE_QT
@@ -83,11 +82,10 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef IS_CONSOLE_QT
-#ifdef USE_OSMSCOUT_MAP_CAIRO
-  QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
-#endif
-#ifdef USE_OSMSCOUT_MAP_QT
+#if defined(USE_OSMSCOUT) && defined(USE_OSMSCOUT_MAP_QT)
   QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
+#else
+  QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
 #endif
 #endif
 
@@ -272,6 +270,7 @@ int main(int argc, char *argv[])
     }
 #endif
 
+#ifdef USE_OSMSCOUT
   // setup OSM Scout
   osmScoutMaster = new DBMaster();
 
@@ -280,6 +279,7 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate DBMaster" << std::endl;
       return -1;
     }
+#endif
 
   // setup Geocoder-NLP
   geoMaster = new GeoMaster();
@@ -331,8 +331,10 @@ int main(int argc, char *argv[])
     }
 #endif
 
+#ifdef USE_OSMSCOUT
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     osmScoutMaster, &DBMaster::onSettingsChanged );
+#endif
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     geoMaster, &GeoMaster::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -350,8 +352,10 @@ int main(int argc, char *argv[])
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &manager, &MapManager::Manager::onSettingsChanged );
 
+#ifdef USE_OSMSCOUT
   QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,
                     osmScoutMaster, &DBMaster::onDatabaseChanged );
+#endif
 
   QObject::connect( &manager, &MapManager::Manager::databaseGeocoderNLPChanged,
                     geoMaster, &GeoMaster::onGeocoderNLPChanged);

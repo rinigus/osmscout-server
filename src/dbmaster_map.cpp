@@ -1,3 +1,5 @@
+#ifdef USE_OSMSCOUT
+
 #include "dbmaster.h"
 #include "appsettings.h"
 #include "config.h"
@@ -240,3 +242,5 @@ bool DBMaster::renderMap(bool daylight, double dpi, int zoom_level, int width, i
 
     return success;
 }
+
+#endif

@@ -17,6 +17,13 @@ QT += core gui network sql xml
 CONFIG += c++11
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
 
+# selection of backends
+CONFIG += use_mapnik
+CONFIG += use_osmscout
+CONFIG += use_valhalla
+CONFIG += use_systemd
+
+# libosmscout settings
 CONFIG += use_map_qt
 #CONFIG += use_map_cairo
 
@@ -111,21 +118,28 @@ HEADERS += \
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
 #    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
 
-use_map_qt {
-    DEFINES += USE_OSMSCOUT_MAP_QT
-    LIBS += -losmscout_map_qt
+use_osmscout {
+    DEFINES += USE_OSMSCOUT
+
+    use_map_qt {
+        DEFINES += USE_OSMSCOUT_MAP_QT
+        QT += gui
+        LIBS += -losmscout_map_qt
+    }
+
+    use_map_cairo {
+        DEFINES += USE_OSMSCOUT_MAP_CAIRO
+        LIBS += -losmscout_map_cairo
+        # those disappear if we use PKGCONFIG
+        LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
+        CONFIG += link_pkgconfig
+        PKGCONFIG += pango cairo
+    }
+
+    LIBS += -losmscout_map -losmscout
 }
 
-use_map_cairo {
-    DEFINES += USE_OSMSCOUT_MAP_CAIRO
-    LIBS += -losmscout_map_cairo
-    # those disappear if we use PKGCONFIG
-    LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
-    CONFIG += link_pkgconfig
-    PKGCONFIG += pango cairo
-}
-
-# mapbox gl is enabled by default
+# mapbox gl is enabled always
 DEFINES += MAPBOXGL_STYLEDIR=\\\"/usr/share/harbour-osmscout-server/styles/mapboxgl\\\"
 
 use_mapnik {
@@ -160,7 +174,7 @@ use_curl {
     PKGCONFIG += libcurl
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -ldl
+LIBS += -lmarisa -lkyotocabinet -lz -ldl
 LIBS += -lsqlite3
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256

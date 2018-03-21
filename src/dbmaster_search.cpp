@@ -1,3 +1,5 @@
+#ifdef USE_OSMSCOUT
+
 #include "dbmaster.h"
 #include "appsettings.h"
 #include "config.h"
@@ -683,3 +685,5 @@ bool DBMaster::poiTypes(QByteArray &result)
 
     return true;
 }
+
+#endif
