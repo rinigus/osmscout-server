@@ -17,10 +17,10 @@ QT = core network sql xml
 CONFIG += c++11
 
 # selection of backends
-CONFIG += use_mapnik
+#CONFIG += use_mapnik
 CONFIG += use_osmscout
 CONFIG += use_valhalla
-CONFIG += use_systemd
+#CONFIG += use_systemd
 
 # libosmscout settings
 CONFIG += use_map_qt
