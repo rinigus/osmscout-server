@@ -28,14 +28,6 @@ CONFIG += use_map_qt
 
 
 # installs
-stylesheets.files = stylesheets
-stylesheets.path = /usr/share/$${TARGET}
-INSTALLS += stylesheets
-
-data.files = data
-data.path = /usr/share/$${TARGET}
-INSTALLS += data
-
 styles.files = styles
 styles.path = /usr/share/$${TARGET}
 INSTALLS += styles

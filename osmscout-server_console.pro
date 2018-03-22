@@ -1,1 +1,0 @@
-console/osmscout-server_console.pro
