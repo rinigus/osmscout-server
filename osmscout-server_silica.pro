@@ -40,14 +40,6 @@ qml.files = qml
 qml.path = /usr/share/$${TARGET}
 INSTALLS += qml
 
-stylesheets.files = stylesheets
-stylesheets.path = /usr/share/$${TARGET}
-INSTALLS += stylesheets
-
-data.files = data
-data.path = /usr/share/$${TARGET}
-INSTALLS += data
-
 styles.files = styles
 styles.path = /usr/share/$${TARGET}
 INSTALLS += styles

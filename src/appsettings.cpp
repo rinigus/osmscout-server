@@ -78,8 +78,8 @@ void AppSettings::initDefaults()
   /// for multi-map handling is be ready
   CHECK(OSM_SETTINGS "map", "");
 
-  CHECK(OSM_SETTINGS "style", DATA_PREFIX "stylesheets/standard.oss");
-  CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/28x28/standard");
+  CHECK(OSM_SETTINGS "style", DATA_PREFIX "styles/osmscout/stylesheets/standard.oss");
+  CHECK(OSM_SETTINGS "icons", DATA_PREFIX "styles/osmscout/icons/28x28/standard");
   CHECK(OSM_SETTINGS "fontSize", 5.0);
   CHECK(OSM_SETTINGS "renderSea", 1);
   CHECK(OSM_SETTINGS "drawBackground", 1);
@@ -140,7 +140,7 @@ void AppSettings::initDefaults()
   CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
 #endif
   CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 64);
-  CHECK(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "mapnik");
+  CHECK(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "styles/mapnik");
 
   /////////////////////////////////////////
   /// valhalla settings
@@ -183,6 +183,14 @@ void AppSettings::initDefaults()
           setValue(GENERAL_SETTINGS "profile", old_profile + 2);
         }
     }
+
+  /// location of styles changed in version 3
+  if (m_last_run_version < 3)
+  {
+      setValue(OSM_SETTINGS "style", DATA_PREFIX "styles/osmscout/stylesheets/standard.oss");
+      setValue(OSM_SETTINGS "icons", DATA_PREFIX "styles/osmscout/icons/28x28/standard");
+      setValue(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "styles/mapnik");
+  }
 
   /// set profile if specified (after all version checks)
   setProfile();
