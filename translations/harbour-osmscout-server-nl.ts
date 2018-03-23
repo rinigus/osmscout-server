@@ -77,22 +77,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="279"/>
+        <location filename="../src/appsettings.cpp" line="287"/>
         <source>mph</source>
         <translation>mpu</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="279"/>
+        <location filename="../src/appsettings.cpp" line="287"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="281"/>
+        <location filename="../src/appsettings.cpp" line="289"/>
         <source>km/h</source>
         <translation>km/u</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="281"/>
+        <location filename="../src/appsettings.cpp" line="289"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -202,102 +202,102 @@
 <context>
     <name>DBMaster</name>
     <message>
-        <location filename="../src/dbmaster.cpp" line="16"/>
+        <location filename="../src/dbmaster.cpp" line="18"/>
         <source>Cannot create database object</source>
         <translation>Kan databaseobject niet aanmaken</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="82"/>
+        <location filename="../src/dbmaster.cpp" line="84"/>
         <source>Opened OSM Scout database: %1</source>
         <translation>OSM Scout-database geopend: %1</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="84"/>
+        <location filename="../src/dbmaster.cpp" line="86"/>
         <source>Cannot open OSM Scout database: %1</source>
         <translation>Kan OSM Scout-database niet openen: %1</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="109"/>
+        <location filename="../src/dbmaster.cpp" line="111"/>
         <source>Cannot allocate Style config</source>
         <translation>Kan stijlconfiguratie niet toewijzen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="117"/>
+        <location filename="../src/dbmaster.cpp" line="119"/>
         <source>Cannot open style</source>
         <translation>Kan stijl niet openen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="123"/>
+        <location filename="../src/dbmaster.cpp" line="125"/>
         <source>Loaded style</source>
         <translation>Stijl geladen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_map.cpp" line="74"/>
+        <location filename="../src/dbmaster_map.cpp" line="76"/>
         <source>Database is not open, cannot render a tile</source>
         <translation>Database is niet open, kan geen tegels renderen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="80"/>
+        <location filename="../src/dbmaster_route.cpp" line="82"/>
         <source>Database is not open, cannot route</source>
         <translation>Database is niet open, routering is niet mogelijk</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="100"/>
+        <location filename="../src/dbmaster_route.cpp" line="102"/>
         <source>Cannot open routing database</source>
         <translation>Kan routeringsdatabase niet openen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="137"/>
+        <location filename="../src/dbmaster_route.cpp" line="139"/>
         <source>There was an error while calculating the route!</source>
         <translation>Er trad een fout op bij het berekenen van de route!</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="147"/>
+        <location filename="../src/dbmaster_route.cpp" line="149"/>
         <source>Error during route conversion to points</source>
         <translation>Fout tijdens omzetten van route naar punten</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="196"/>
+        <location filename="../src/dbmaster_route.cpp" line="198"/>
         <source>Start</source>
         <translation>Beginpunt</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="197"/>
+        <location filename="../src/dbmaster_route.cpp" line="199"/>
         <source>Target</source>
         <translation>Bestemming</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="252"/>
+        <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
         <translation>Database is niet open, kan niet zoeken</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="270"/>
+        <location filename="../src/dbmaster_search.cpp" line="272"/>
         <source>Error while parsing search string</source>
         <translation>Fout bij verwerken van zoekopdracht</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="277"/>
+        <location filename="../src/dbmaster_search.cpp" line="279"/>
         <source>Error while searching for location</source>
         <translation>Fout bij zoeken naar locatie</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="484"/>
+        <location filename="../src/dbmaster_search.cpp" line="486"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Zoeken naar referentiepunt mislukt: niet gevonden</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="509"/>
+        <location filename="../src/dbmaster_search.cpp" line="511"/>
         <source>Database is not open, cannot search for POI</source>
         <translation>Database is niet open, kan niet zoeken naar NP</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="570"/>
+        <location filename="../src/dbmaster_search.cpp" line="572"/>
         <source>Cannot load data from database</source>
         <translation>Kan gegevens niet laden uit database</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="670"/>
+        <location filename="../src/dbmaster_search.cpp" line="672"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>Database is niet open, kan NP-types niet oplijsten</translation>
     </message>
@@ -604,207 +604,217 @@
 <context>
     <name>MapManager::Manager</name>
     <message>
-        <location filename="../src/mapmanager.cpp" line="49"/>
+        <location filename="../src/mapmanager.cpp" line="51"/>
         <source>Could not allocate Map Manager features</source>
         <translation>Kon kaartbeheerderfunctionaliteit niet toewijzen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="92"/>
+        <location filename="../src/mapmanager.cpp" line="97"/>
         <source>Storage folder changed to %1</source>
         <translation>Opslagmap gewijzigd naar %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="99"/>
+        <location filename="../src/mapmanager.cpp" line="104"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Kaartopslagmap bestaat niet: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="102"/>
+        <location filename="../src/mapmanager.cpp" line="107"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
         <translation>Pad voor kaartopslagmap verwijst niet naar een map: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="108"/>
+        <location filename="../src/mapmanager.cpp" line="113"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
         <translation>Kaartopslagmap is alleen-lezen, pas de toegangsrechten voor %1 aan</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="161"/>
-        <location filename="../src/mapmanager.cpp" line="163"/>
+        <location filename="../src/mapmanager.cpp" line="166"/>
+        <location filename="../src/mapmanager.cpp" line="168"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Openen van database voor het volgen van gedownloade bestanden mislukt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="164"/>
+        <location filename="../src/mapmanager.cpp" line="169"/>
         <source>Map Manager functionality would be disturbed</source>
         <translation>Functionaliteit van Kaartbeheerder zou worden verstoord</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="226"/>
+        <location filename="../src/mapmanager.cpp" line="231"/>
         <source>Cannot create directory without any name</source>
         <translation>Kan geen naamloze map aanmaken</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="233"/>
+        <location filename="../src/mapmanager.cpp" line="238"/>
         <source>Error creating directory %1</source>
         <translation>Fout bij aanmaken van map %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="280"/>
+        <location filename="../src/mapmanager.cpp" line="285"/>
         <source>Address parsing language support</source>
         <translation>Adresverwerkingstaalondersteuning</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="313"/>
-        <location filename="../src/mapmanager.cpp" line="784"/>
-        <location filename="../src/mapmanager.cpp" line="912"/>
+        <location filename="../src/mapmanager.cpp" line="318"/>
+        <location filename="../src/mapmanager.cpp" line="789"/>
+        <location filename="../src/mapmanager.cpp" line="918"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Kaartopslagmap bestaat niet:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="322"/>
-        <location filename="../src/mapmanager.cpp" line="791"/>
+        <location filename="../src/mapmanager.cpp" line="327"/>
+        <location filename="../src/mapmanager.cpp" line="796"/>
         <source>No maps were requested</source>
         <translation>Geen kaarten opgevraagd</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="343"/>
+        <location filename="../src/mapmanager.cpp" line="348"/>
         <source>No maps loaded: %1</source>
         <translation>Geen kaarten geladen: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="818"/>
+        <location filename="../src/mapmanager.cpp" line="823"/>
         <source>%1: version of dataset for %2 is not supported</source>
         <translation>%1: versie van gegevensset voor %2 wordt niet ondersteund</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="369"/>
+        <location filename="../src/mapmanager.cpp" line="374"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Ontbrekende gegevensset voor %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="282"/>
+        <location filename="../src/mapmanager.cpp" line="287"/>
         <source>Mapnik World coastlines</source>
         <translation>Mapnik-wereldkustlijnen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="284"/>
+        <location filename="../src/mapmanager.cpp" line="289"/>
         <source>Mapbox GL World overlay</source>
         <translation>Mapbox GL-wereldoverlay</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="286"/>
+        <location filename="../src/mapmanager.cpp" line="291"/>
         <source>Mapbox GL fonts</source>
         <translation>Mapbox GL-lettertypen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="416"/>
+        <location filename="../src/mapmanager.cpp" line="421"/>
         <source>Available country or territory: </source>
         <translation>Beschikbaar land of territorium:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="617"/>
+        <location filename="../src/mapmanager.cpp" line="622"/>
         <source>World</source>
         <translation>Wereld</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="681"/>
+        <location filename="../src/mapmanager.cpp" line="686"/>
         <source>Removing country from requested list: </source>
         <translation>Land wordt verwijderd van opgevraagde lijst:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="839"/>
+        <location filename="../src/mapmanager.cpp" line="844"/>
         <source>Missing data: </source>
         <translation>Ontbrekende gegevens:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="918"/>
+        <location filename="../src/mapmanager.cpp" line="924"/>
         <source>No servers found to download the data from</source>
         <translation>Geen server gevonden om gegevens van te downloaden</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="941"/>
+        <location filename="../src/mapmanager.cpp" line="947"/>
         <source>Error starting the download of</source>
         <translation>Fout bij starten van download van</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="958"/>
+        <location filename="../src/mapmanager.cpp" line="964"/>
         <source>File downloaded:</source>
         <translation>Bestand gedownload:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="986"/>
+        <location filename="../src/mapmanager.cpp" line="992"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Kon gedownload bestand niet registreren in de volgdatabase</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="987"/>
+        <location filename="../src/mapmanager.cpp" line="993"/>
         <source>File registration error</source>
         <translation>Bestandsregistratiefout</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1010"/>
-        <location filename="../src/mapmanager.cpp" line="1011"/>
+        <location filename="../src/mapmanager.cpp" line="1016"/>
+        <location filename="../src/mapmanager.cpp" line="1017"/>
         <source>Could not retrieve server URL</source>
         <translation>Kon server-URL niet ophalen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1043"/>
+        <location filename="../src/mapmanager.cpp" line="1049"/>
         <source>Download failed from %1</source>
         <translation>Downloaden van %1 mislukt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1079"/>
+        <location filename="../src/mapmanager.cpp" line="1085"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Lijst van landen: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1019"/>
+        <location filename="../src/mapmanager.cpp" line="1025"/>
         <source>Downloading the list of countries</source>
         <translation>De lijst van landen wordt gedownload</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1339"/>
+        <location filename="../src/mapmanager.cpp" line="1358"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan niet controleren op updates omdat de lijst van aangeboden landen ontbreekt. Download deze lijst vooraleer je controleert op updates.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1090"/>
+        <location filename="../src/mapmanager.cpp" line="1096"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="654"/>
+        <location filename="../src/mapmanager.cpp" line="659"/>
         <source>Add country or feature to requested list</source>
         <translation>Voeg land of functionaliteit toe aan opgevraagde lijst</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1054"/>
+        <location filename="../src/mapmanager.cpp" line="1060"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Download mislukt, alle downloads worden geannuleerd</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1083"/>
+        <location filename="../src/mapmanager.cpp" line="1089"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Lijst van landen: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1128"/>
+        <location filename="../src/mapmanager.cpp" line="1109"/>
+        <source>Unpacking files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1111"/>
+        <source>%1; Unpacking files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1141"/>
         <source>Stopping downloads</source>
         <translation>Downloads worden gestopt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1282"/>
+        <location filename="../src/mapmanager.cpp" line="1301"/>
         <source>Updating the distribution server URL</source>
         <translation>Distributieserver-URL wordt bijgewerkt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1335"/>
+        <location filename="../src/mapmanager.cpp" line="1354"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan niet controleren op updates omdat de kaartopslagmap ontbreekt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1337"/>
+        <location filename="../src/mapmanager.cpp" line="1356"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan niet controleren op updates omdat de lijst van opgevraagde landen ontbreekt. Kies landen vooraleer je controleert op updates.</translation>
     </message>
@@ -1583,195 +1593,195 @@
 <context>
     <name>RoutingForHuman</name>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="71"/>
+        <location filename="../src/routingforhuman.cpp" line="73"/>
         <source>Turn sharp left</source>
         <translation>Sla scherp linksaf</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="73"/>
+        <location filename="../src/routingforhuman.cpp" line="75"/>
         <source>Turn left</source>
         <translation>Sla linksaf</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="75"/>
+        <location filename="../src/routingforhuman.cpp" line="77"/>
         <source>Turn slightly left</source>
         <translation>Sla iets linksaf</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="77"/>
+        <location filename="../src/routingforhuman.cpp" line="79"/>
         <source>Straight on</source>
         <translation>Rechtdoor</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="79"/>
+        <location filename="../src/routingforhuman.cpp" line="81"/>
         <source>Turn slightly right</source>
         <translation>Sla iets rechtsaf</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="81"/>
+        <location filename="../src/routingforhuman.cpp" line="83"/>
         <source>Turn right</source>
         <translation>Sla rechtsaf</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="83"/>
+        <location filename="../src/routingforhuman.cpp" line="85"/>
         <source>Turn sharp right</source>
         <translation>Sla scherp rechtsaf</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="98"/>
+        <location filename="../src/routingforhuman.cpp" line="100"/>
         <source>Drive along %along%</source>
         <translation>Rij langs %along%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="99"/>
+        <location filename="../src/routingforhuman.cpp" line="101"/>
         <source>Start at %start%. Drive along %along%</source>
         <translation>Begin te %start%. Rij langs %along%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="106"/>
+        <location filename="../src/routingforhuman.cpp" line="108"/>
         <source>Start at %start%</source>
         <translation>Begin te %start%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="154"/>
+        <location filename="../src/routingforhuman.cpp" line="156"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
         <translation>%turncommand% bij kruispunt (%crossingway%)</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="223"/>
+        <location filename="../src/routingforhuman.cpp" line="225"/>
         <source>Enter motorway %motorway%</source>
         <translation>Rijd de autosnelweg %motorway% op</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="227"/>
+        <location filename="../src/routingforhuman.cpp" line="229"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
         <translation>Rijd de autosnelweg %motorway% op bij kruispunt %crossing%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="266"/>
+        <location filename="../src/routingforhuman.cpp" line="268"/>
         <source>Change motorway to %to%</source>
         <translation>Verander van autosnelweg naar %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="269"/>
+        <location filename="../src/routingforhuman.cpp" line="271"/>
         <source>Change motorway from %from%</source>
         <translation>Verander van autosnelweg van %from%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="272"/>
+        <location filename="../src/routingforhuman.cpp" line="274"/>
         <source>Change motorway from %from% to %to%</source>
         <translation>Verander van autosnelweg, van %from% naar %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="277"/>
-        <location filename="../src/routingforhuman.cpp" line="363"/>
+        <location filename="../src/routingforhuman.cpp" line="279"/>
+        <location filename="../src/routingforhuman.cpp" line="365"/>
         <source>At %motoName% (exit %motoRef%), %command%</source>
         <translation>%command% op %motoName% (afslag %motoRef%)</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="283"/>
-        <location filename="../src/routingforhuman.cpp" line="369"/>
+        <location filename="../src/routingforhuman.cpp" line="285"/>
+        <location filename="../src/routingforhuman.cpp" line="371"/>
         <source>At %motoName%, %command%</source>
         <translation>%command% op %motoName%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="335"/>
+        <location filename="../src/routingforhuman.cpp" line="337"/>
         <source>Leave motorway into %into%</source>
         <translation>Verlaat de autosnelweg naar %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="338"/>
+        <location filename="../src/routingforhuman.cpp" line="340"/>
         <source>Leave motorway. %move%</source>
         <translation>Verlaat de autosnelweg. %move%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="341"/>
-        <location filename="../src/routingforhuman.cpp" line="348"/>
+        <location filename="../src/routingforhuman.cpp" line="343"/>
+        <location filename="../src/routingforhuman.cpp" line="350"/>
         <source>Leave motorway %from%</source>
         <translation>Verlaat de autosnelweg %from%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="344"/>
+        <location filename="../src/routingforhuman.cpp" line="346"/>
         <source>Leave motorway. %move% into %into%</source>
         <translation>Verlaat de autosnelweg. %move% naar %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="352"/>
+        <location filename="../src/routingforhuman.cpp" line="354"/>
         <source>Leave motorway %from%. %move%</source>
         <translation>Verlaat de autosnelweg %from%. %move%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="356"/>
+        <location filename="../src/routingforhuman.cpp" line="358"/>
         <source>Leave motorway %from%. %move% into %into%</source>
         <translation>Verlaat de autosnelweg %from%. %move% naar %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="384"/>
+        <location filename="../src/routingforhuman.cpp" line="386"/>
         <source>Way changes name from %from% to %to%</source>
         <translation>Weg verandert van naam, van %from% naar %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="388"/>
+        <location filename="../src/routingforhuman.cpp" line="390"/>
         <source>Way changes name to %to%</source>
         <translation>Weg verandert van naam naar %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="146"/>
+        <location filename="../src/routingforhuman.cpp" line="148"/>
         <source>Turn</source>
         <translation>Sla af</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="192"/>
+        <location filename="../src/routingforhuman.cpp" line="194"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
         <translation>Verlaat rondpunt (afslag %num%) naar straat %street%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="196"/>
+        <location filename="../src/routingforhuman.cpp" line="198"/>
         <source>Leave roundabout (%num% exit)</source>
         <translation>Verlaat rondpunt (afslag %num%)</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="167"/>
+        <location filename="../src/routingforhuman.cpp" line="169"/>
         <source>Enter roundabout</source>
         <translation>Rijd het rondpunt op</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="118"/>
+        <location filename="../src/routingforhuman.cpp" line="120"/>
         <source>Target reached: %target%</source>
         <translation>Bestemming bereikt: %target%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="149"/>
+        <location filename="../src/routingforhuman.cpp" line="151"/>
         <source>%turncommand% into %where%</source>
         <translation>%turncommand% naar %where%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="171"/>
+        <location filename="../src/routingforhuman.cpp" line="173"/>
         <source>At crossing %crossway%, enter roundabout</source>
         <translation>Rijd het rondpunt op bij kruispunt %crossway%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="188"/>
+        <location filename="../src/routingforhuman.cpp" line="190"/>
         <source>Leave roundabout</source>
         <translation>Verlaat het rondpunt</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="188"/>
+        <location filename="../src/routingforhuman.cpp" line="190"/>
         <source>exit</source>
         <translation>afslag</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="221"/>
+        <location filename="../src/routingforhuman.cpp" line="223"/>
         <source>Enter motorway</source>
         <translation>Rijd de autosnelweg op</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="264"/>
+        <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway</source>
         <translation>Verander van autosnelweg</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="333"/>
+        <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway</source>
         <translation>Verlaat de autosnelweg</translation>
     </message>
@@ -2394,68 +2404,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="125"/>
+        <location filename="../src/main.cpp" line="123"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="130"/>
+        <location filename="../src/main.cpp" line="128"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Server uitvoeren zonder gebruikersinterface, als consoletoepassing</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="134"/>
+        <location filename="../src/main.cpp" line="132"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Logs niet aanmaken in consolemodus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="139"/>
+        <location filename="../src/main.cpp" line="137"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Server uitvoeren in SystemD-socket-geactiveerde modus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="145"/>
+        <location filename="../src/main.cpp" line="143"/>
         <source>Start download of the maps</source>
         <translation>Download van kaarten starten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="149"/>
+        <location filename="../src/main.cpp" line="147"/>
         <source>Update list of available maps</source>
         <translation>Lijst van beschikbare kaarten bijwerken</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="153"/>
+        <location filename="../src/main.cpp" line="151"/>
         <source>List maps available on device</source>
         <translation>Lijst van op apparaat beschikbare kaarten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="157"/>
+        <location filename="../src/main.cpp" line="155"/>
         <source>List subscribed maps</source>
         <translation>Lijst van kaarten waarop je bent geabonneerd</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="161"/>
+        <location filename="../src/main.cpp" line="159"/>
         <source>List maps provided for download</source>
         <translation>Lijst van voor download aangeboden kaarten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="165"/>
+        <location filename="../src/main.cpp" line="163"/>
         <source>List missing maps</source>
         <translation>Lijst van ontbrekende kaarten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="167"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Abonneren op een &lt;country&gt;-gegevensset</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="170"/>
-        <location filename="../src/main.cpp" line="175"/>
+        <location filename="../src/main.cpp" line="168"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>country-id</source>
         <translation>land-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="174"/>
+        <location filename="../src/main.cpp" line="172"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Abonnement op &lt;country&gt;-gegevensset opzeggen</translation>
     </message>

@@ -207,6 +207,8 @@ namespace MapManager {
   ///
   class FeatureValhalla: public Feature
   {
+    Q_OBJECT
+
   public:
     FeatureValhalla(PathProvider *path);
     virtual ~FeatureValhalla() {}
@@ -216,6 +218,11 @@ namespace MapManager {
     virtual bool isAvailable(const QJsonObject &request);
     virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing);
     virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted);
+
+    bool unpacking() const;
+
+  signals:
+    void unpackingChanged(bool);
 
   protected:
     enum PackStateType { PackNotAvailable, PackDownloaded, PackUnpacked };
@@ -253,6 +260,7 @@ namespace MapManager {
 
     QQueue<PackTask> m_pack_tasks;
     PackTask m_pack_task_current;
+    bool m_unpacking{false};
 
     const QString const_valhalla_tiles_dirname{"valhalla/tiles"};
     const QString const_valhalla_tiles_timestamp{"valhalla/tiles/timestamp"};

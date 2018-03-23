@@ -213,6 +213,7 @@ namespace MapManager {
     void scanDirectories(bool force_update = false);
     void nothingAvailable(); ///< Helper method called when there are no maps available
     void onAvailabilityChanged();
+    void onUnpackingChanged();
 
     void missingData();
 
@@ -297,6 +298,9 @@ namespace MapManager {
     QSqlDatabase m_db_files;
     QSqlQuery m_query_files_available;
     QSqlQuery m_query_files_insert;
+
+    // special handling of Valhalla to support unpacking
+    FeatureValhalla *m_feature_valhalla{nullptr}; ///< do not delete on destruction, its deleted via m_features
 
     bool m_development_disable_url_update{false}; ///< allows to keep url.json while developing application
 

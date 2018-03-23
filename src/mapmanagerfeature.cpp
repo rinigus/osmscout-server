@@ -453,6 +453,11 @@ QString FeatureValhalla::errorMissing() const
   return QCoreApplication::translate("MapManagerFeature", "Missing Valhalla tiles");
 }
 
+bool FeatureValhalla::unpacking() const
+{
+  return m_unpacking;
+}
+
 QString FeatureValhalla::packFileName(QString pack) const
 {
   return "valhalla/packages/" + pack + ".tar";
@@ -656,6 +661,10 @@ void FeatureValhalla::handlePackTasks()
     {
       // should have been called after processing the last task
       emit availabilityChanged();
+
+      m_unpacking = false;
+      emit unpackingChanged(m_unpacking);
+
       return;
     }
 
@@ -675,6 +684,12 @@ void FeatureValhalla::handlePackTasks()
   connect(worker, &PackTaskWorker::errorDuringTask, this, &FeatureValhalla::onPackTaskError );
   connect(worker, &PackTaskWorker::finished, this, &FeatureValhalla::onPackTaskFinished );
   connect(worker, &PackTaskWorker::finished, worker, &QObject::deleteLater);
+
+  if (!m_unpacking)
+    {
+      m_unpacking = true;
+      emit unpackingChanged(m_unpacking);
+    }
 
   worker->start();
 }

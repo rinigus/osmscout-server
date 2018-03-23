@@ -41,7 +41,9 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeatureMapboxGLCountry(this));
   m_features.append(new FeatureMapnikGlobal(this));
   m_features.append(new FeatureMapnikCountry(this));
-  m_features.append(new FeatureValhalla(this));
+
+  m_feature_valhalla = new FeatureValhalla(this);
+  m_features.append(m_feature_valhalla);
 
   for (Feature *p: m_features)
     if (p == nullptr)
@@ -60,6 +62,9 @@ Manager::Manager(QObject *parent) : QObject(parent)
 
   connect(this, &Manager::deletingChanged,
           this, &Manager::checkIfReady);
+
+  connect(m_feature_valhalla, &FeatureValhalla::unpackingChanged,
+          this, &Manager::onUnpackingChanged);
 
   checkIfReady();
 }
@@ -190,7 +195,7 @@ void Manager::loadSettings()
 
 bool Manager::ready()
 {
-  return (!downloading() && !deleting());
+  return (m_download_type == NoDownload && !deleting());
 }
 
 void Manager::checkIfReady()
@@ -882,7 +887,8 @@ bool Manager::getCountries()
 
 bool Manager::downloading()
 {
-  return (m_download_type != NoDownload);
+  return (m_download_type != NoDownload ||
+      (m_feature_valhalla && m_feature_valhalla->unpacking()));
 }
 
 bool Manager::isRegistered(const QString &path, QString &version, QString &datetime)
@@ -948,7 +954,7 @@ bool Manager::startDownload(DownloadType type, QString url, const QString &path,
   connect(m_file_downloader.data(), &FileDownloader::writtenBytes, this, &Manager::onWrittenBytes);
 
   m_download_type = type;
-  emit downloadingChanged(true);
+  emit downloadingChanged(downloading());
 
   return true;
 }
@@ -1030,7 +1036,7 @@ void Manager::onDownloadFinished(QString path)
 
   // check if we set it to NoDownload
   if (m_download_type == NoDownload)
-    emit downloadingChanged(false);
+    emit downloadingChanged(downloading());
 }
 
 void Manager::onDownloadError(QString err)
@@ -1055,7 +1061,7 @@ void Manager::onDownloadError(QString err)
   emit errorMessage(err);
 
   m_download_type = NoDownload;
-  emit downloadingChanged(false);
+  emit downloadingChanged(downloading());
 }
 
 void Manager::cleanupDownload()
@@ -1093,10 +1099,17 @@ void Manager::onDownloadProgress()
               arg((m_missing_data[0].tostore - m_last_reported_written)/1024.0/1024.0, 0, 'f', 1);
         }
     }
-  else
+  else if (dtype != NoDownload)
     txt = QString("Unknown: %L1 (D) %L2 (W) MB").
         arg(m_last_reported_downloaded/1024.0/1024.0, 0, 'f', 1).
         arg(m_last_reported_written/1024.0/1024.0, 0, 'f', 1);
+
+  if (m_feature_valhalla && m_feature_valhalla->unpacking())
+    {
+      if (txt.isEmpty()) txt = tr("Unpacking files");
+      else
+        txt = QString(tr("%1; Unpacking files").arg(txt));
+    }
 
   if (txt != last_message )
     {
@@ -1123,14 +1136,20 @@ void Manager::onWrittenBytes(uint64_t sz)
 
 void Manager::stopDownload()
 {
-  if (!downloading()) return;
+  if (m_download_type == NoDownload) return;
 
   InfoHub::logInfo(tr("Stopping downloads"));
 
   cleanupDownload();
 
   m_download_type = NoDownload;
-  emit downloadingChanged(false);
+  emit downloadingChanged(downloading());
+}
+
+void Manager::onUnpackingChanged()
+{
+  onDownloadProgress();
+  emit downloadingChanged(downloading());
 }
 
 ////////////////////////////////////////////////////////////
