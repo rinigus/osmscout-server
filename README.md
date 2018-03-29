@@ -449,7 +449,7 @@ code. This will improve in future.
 
 This is the version that would be mainly supported in future. It uses
 Valhalla's API, as described in
-https://github.com/valhalla/valhalla-docs/blob/master/api-reference.md
+https://github.com/valhalla/valhalla-docs/blob/master/turn-by-turn/api-reference.md
 . Please note that there is no API key in the Valhalla's component
 used by OSM Scout Server.
 
