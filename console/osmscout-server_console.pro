@@ -17,7 +17,7 @@ QT = core network sql xml
 CONFIG += c++11
 
 # selection of backends
-#CONFIG += use_mapnik
+CONFIG += use_mapnik
 CONFIG += use_osmscout
 CONFIG += use_valhalla
 #CONFIG += use_systemd
@@ -124,9 +124,8 @@ use_mapnik {
 
 use_valhalla {
     DEFINES += USE_VALHALLA
-    #DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_route_service\\\"
     DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_service\\\"
-    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"modules/route/data/valhalla.json\\\"
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"../osmscout-server-route/data/valhalla.json\\\"
     CONFIG += use_curl
 }
 
