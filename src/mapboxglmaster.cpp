@@ -193,7 +193,7 @@ QString MapboxGLMaster::getFilePath(const QString &dname, const QString &fname)
   // expected to serve files from subfolder(s)
   if (!fpath.startsWith(dir.absolutePath()))
     {
-      InfoHub::logWarning(tr("Malformed Mapbox GL file request: %1/%2").arg(dname).arg(fname));
+      InfoHub::logWarning(tr("Malformed Mapbox GL file request: %1/%2 [%3] [%4]").arg(dname).arg(fname).arg(fpath).arg(MAPBOXGL_STYLEDIR));
       return QString();
     }
 
