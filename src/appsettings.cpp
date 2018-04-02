@@ -192,6 +192,16 @@ void AppSettings::initDefaults()
       setValue(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "styles/mapnik");
   }
 
+  /// profiles changed from version 2 to version 4
+  if (m_last_run_version < 4)
+  {
+      int old_profile = valueInt(GENERAL_SETTINGS "profile");
+      int new_profile = old_profile;
+      if (old_profile == 0) new_profile = 1;
+      else if (old_profile == 1) new_profile = 0;
+      setValue(GENERAL_SETTINGS "profile", new_profile);
+  }
+
   /// set profile if specified (after all version checks)
   setProfile();
 }
@@ -320,20 +330,7 @@ void AppSettings::setProfile()
   int index = valueInt(GENERAL_SETTINGS "profile");
   bool profile_active = true;
 
-  if (index == 0) // default profile: Mapnik / GeocoderNLP / Valhalla
-    {
-      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
-      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
-      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
-      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
-      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
-      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
-
-      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
-      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
-      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
-    }
-  else if (index == 1) // Mapbox GL / GeocoderNLP / Valhalla
+  if (index == 0) // default profile: Mapbox GL / GeocoderNLP / Valhalla
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 0);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
@@ -344,6 +341,19 @@ void AppSettings::setProfile()
 
       setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+    }
+  else if (index == 1) // Mapnik / GeocoderNLP / Valhalla
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
     }
   else if (index == 2) // Mapbox GL + Mapnik / GeocoderNLP / Valhalla

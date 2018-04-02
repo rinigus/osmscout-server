@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -75,22 +77,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="279"/>
+        <location filename="../src/appsettings.cpp" line="297"/>
         <source>mph</source>
         <translation>миль/ч</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="279"/>
+        <location filename="../src/appsettings.cpp" line="297"/>
         <source>mi.</source>
         <translation>миль</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="281"/>
+        <location filename="../src/appsettings.cpp" line="299"/>
         <source>km/h</source>
         <translation>км/ч</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="281"/>
+        <location filename="../src/appsettings.cpp" line="299"/>
         <source>km</source>
         <translation>км</translation>
     </message>
@@ -200,102 +202,102 @@
 <context>
     <name>DBMaster</name>
     <message>
-        <location filename="../src/dbmaster.cpp" line="16"/>
+        <location filename="../src/dbmaster.cpp" line="18"/>
         <source>Cannot create database object</source>
         <translation>Невозможно создать объект базы данных</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="82"/>
+        <location filename="../src/dbmaster.cpp" line="84"/>
         <source>Opened OSM Scout database: %1</source>
         <translation>Открытая база данных OSM Scout: %1</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="84"/>
+        <location filename="../src/dbmaster.cpp" line="86"/>
         <source>Cannot open OSM Scout database: %1</source>
         <translation>Невозможно открыть базу данных OSM Scout: %1</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="109"/>
+        <location filename="../src/dbmaster.cpp" line="111"/>
         <source>Cannot allocate Style config</source>
         <translation>Невозможно выделить конфигурацию Style</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="117"/>
+        <location filename="../src/dbmaster.cpp" line="119"/>
         <source>Cannot open style</source>
         <translation>невозможно открыть style</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="123"/>
+        <location filename="../src/dbmaster.cpp" line="125"/>
         <source>Loaded style</source>
         <translation>Загружен style</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_map.cpp" line="74"/>
+        <location filename="../src/dbmaster_map.cpp" line="76"/>
         <source>Database is not open, cannot render a tile</source>
         <translation>База данных не открыта, невозможно произвести рендеринг тайла</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="80"/>
+        <location filename="../src/dbmaster_route.cpp" line="82"/>
         <source>Database is not open, cannot route</source>
         <translation>База данных не открыта, невозможно проложить маршрут</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="100"/>
+        <location filename="../src/dbmaster_route.cpp" line="102"/>
         <source>Cannot open routing database</source>
         <translation>Невозможно открыть базу данных маршрутизации</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="137"/>
+        <location filename="../src/dbmaster_route.cpp" line="139"/>
         <source>There was an error while calculating the route!</source>
         <translation>Ошибка при вычислении маршрута!</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="147"/>
+        <location filename="../src/dbmaster_route.cpp" line="149"/>
         <source>Error during route conversion to points</source>
         <translation>Ошибка конвертации маршрута к точкам</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="196"/>
+        <location filename="../src/dbmaster_route.cpp" line="198"/>
         <source>Start</source>
         <translation>Старт</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="197"/>
+        <location filename="../src/dbmaster_route.cpp" line="199"/>
         <source>Target</source>
         <translation>Финиш</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="252"/>
+        <location filename="../src/dbmaster_search.cpp" line="254"/>
         <source>Database is not open, cannot search</source>
         <translation>База данных не открыта, поиск невозможен</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="270"/>
+        <location filename="../src/dbmaster_search.cpp" line="272"/>
         <source>Error while parsing search string</source>
         <translation>Ошибка при анализе поискового запроса</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="277"/>
+        <location filename="../src/dbmaster_search.cpp" line="279"/>
         <source>Error while searching for location</source>
         <translation>Ошибка поиска местоположения</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="484"/>
+        <location filename="../src/dbmaster_search.cpp" line="486"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Невозможно найти опорную точку</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="509"/>
+        <location filename="../src/dbmaster_search.cpp" line="511"/>
         <source>Database is not open, cannot search for POI</source>
         <translation>База данных не открыта, невозможно найти POI</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="570"/>
+        <location filename="../src/dbmaster_search.cpp" line="572"/>
         <source>Cannot load data from database</source>
         <translation>Невозможно загрузить данные из базы данных</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="670"/>
+        <location filename="../src/dbmaster_search.cpp" line="672"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>База данных не открыта, нет списка типов POI</translation>
     </message>
@@ -602,207 +604,217 @@
 <context>
     <name>MapManager::Manager</name>
     <message>
-        <location filename="../src/mapmanager.cpp" line="49"/>
+        <location filename="../src/mapmanager.cpp" line="51"/>
         <source>Could not allocate Map Manager features</source>
         <translation>Невозможно назначить параметры Диспетчера Карт</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="92"/>
+        <location filename="../src/mapmanager.cpp" line="97"/>
         <source>Storage folder changed to %1</source>
         <translation>Папка хранения изменена на %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="99"/>
+        <location filename="../src/mapmanager.cpp" line="104"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Нет папки для хранения карт: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="102"/>
+        <location filename="../src/mapmanager.cpp" line="107"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
         <translation>Путь папки хранения карт не указывает на каталог: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="108"/>
+        <location filename="../src/mapmanager.cpp" line="113"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
         <translation>Папка хранения карт недоступна для записи. Необходимо изменить разрешения для %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="161"/>
-        <location filename="../src/mapmanager.cpp" line="163"/>
+        <location filename="../src/mapmanager.cpp" line="166"/>
+        <location filename="../src/mapmanager.cpp" line="168"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Невозможно открыть базу данных для отслеживания загруженных файлов</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="164"/>
+        <location filename="../src/mapmanager.cpp" line="169"/>
         <source>Map Manager functionality would be disturbed</source>
         <translation>Функциональность Диспетчера Карт возможно нарушена</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="226"/>
+        <location filename="../src/mapmanager.cpp" line="231"/>
         <source>Cannot create directory without any name</source>
         <translation>Невозможно создать каталог без имени</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="233"/>
+        <location filename="../src/mapmanager.cpp" line="238"/>
         <source>Error creating directory %1</source>
         <translation>Ошибка создания каталога %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="280"/>
+        <location filename="../src/mapmanager.cpp" line="285"/>
         <source>Address parsing language support</source>
         <translation>Поддержка языка анализа адреса</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="313"/>
-        <location filename="../src/mapmanager.cpp" line="784"/>
-        <location filename="../src/mapmanager.cpp" line="912"/>
+        <location filename="../src/mapmanager.cpp" line="318"/>
+        <location filename="../src/mapmanager.cpp" line="789"/>
+        <location filename="../src/mapmanager.cpp" line="918"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Папка хранения карт отсутствует</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="322"/>
-        <location filename="../src/mapmanager.cpp" line="791"/>
+        <location filename="../src/mapmanager.cpp" line="327"/>
+        <location filename="../src/mapmanager.cpp" line="796"/>
         <source>No maps were requested</source>
         <translation>Карты не были запрошены</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="343"/>
+        <location filename="../src/mapmanager.cpp" line="348"/>
         <source>No maps loaded: %1</source>
         <translation>Карты не загружены: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="818"/>
+        <location filename="../src/mapmanager.cpp" line="823"/>
         <source>%1: version of dataset for %2 is not supported</source>
         <translation>%1: версия набора данных для %2 не поддерживается</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="369"/>
+        <location filename="../src/mapmanager.cpp" line="374"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Отсутствует набор данных для %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="282"/>
+        <location filename="../src/mapmanager.cpp" line="287"/>
         <source>Mapnik World coastlines</source>
         <translation>Береговые линии земного шара от Mapnik</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="284"/>
+        <location filename="../src/mapmanager.cpp" line="289"/>
         <source>Mapbox GL World overlay</source>
         <translation>Наложение по земному шару от Mapbox GL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="286"/>
+        <location filename="../src/mapmanager.cpp" line="291"/>
         <source>Mapbox GL fonts</source>
         <translation>Шрифты Mapbox GL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="416"/>
+        <location filename="../src/mapmanager.cpp" line="421"/>
         <source>Available country or territory: </source>
         <translation>Доступна страна или территория</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="617"/>
+        <location filename="../src/mapmanager.cpp" line="622"/>
         <source>World</source>
         <translation>Планета</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="681"/>
+        <location filename="../src/mapmanager.cpp" line="686"/>
         <source>Removing country from requested list: </source>
         <translation>Удвление страны из запрошенного списка:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="839"/>
+        <location filename="../src/mapmanager.cpp" line="844"/>
         <source>Missing data: </source>
         <translation>Отсутствующие данные:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="918"/>
+        <location filename="../src/mapmanager.cpp" line="924"/>
         <source>No servers found to download the data from</source>
         <translation>Не найдены серверы для загрузки данных из</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="941"/>
+        <location filename="../src/mapmanager.cpp" line="947"/>
         <source>Error starting the download of</source>
         <translation>Ошибка запуска загрузки</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="958"/>
+        <location filename="../src/mapmanager.cpp" line="964"/>
         <source>File downloaded:</source>
         <translation>Файл загружен:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="986"/>
+        <location filename="../src/mapmanager.cpp" line="992"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Невозможно зарегистрировать загруженный файл в базе данных слежения</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="987"/>
+        <location filename="../src/mapmanager.cpp" line="993"/>
         <source>File registration error</source>
         <translation>Ошибка регистрации файла</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1010"/>
-        <location filename="../src/mapmanager.cpp" line="1011"/>
+        <location filename="../src/mapmanager.cpp" line="1016"/>
+        <location filename="../src/mapmanager.cpp" line="1017"/>
         <source>Could not retrieve server URL</source>
         <translation>Невозможно получить URL сервера</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1043"/>
+        <location filename="../src/mapmanager.cpp" line="1049"/>
         <source>Download failed from %1</source>
         <translation>Неудачная загрузка из %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1079"/>
+        <location filename="../src/mapmanager.cpp" line="1085"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Список стран: %L1 (D) / %L2 (W) МБ</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1019"/>
+        <location filename="../src/mapmanager.cpp" line="1025"/>
         <source>Downloading the list of countries</source>
         <translation>Загрузка списка стран</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1339"/>
+        <location filename="../src/mapmanager.cpp" line="1358"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Невозможно проверить обновления по причине отсутствия списка имеющихся стран. Загрузить список до проверки обновлений.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1090"/>
+        <location filename="../src/mapmanager.cpp" line="1096"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) МБ</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="654"/>
+        <location filename="../src/mapmanager.cpp" line="659"/>
         <source>Add country or feature to requested list</source>
         <translation>Добавить страну или параметр в запрошенный список</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1054"/>
+        <location filename="../src/mapmanager.cpp" line="1060"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Неудачная загрузка, сброс всех загрузок</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1083"/>
+        <location filename="../src/mapmanager.cpp" line="1089"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Список территорий: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1128"/>
+        <location filename="../src/mapmanager.cpp" line="1109"/>
+        <source>Unpacking files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1111"/>
+        <source>%1; Unpacking files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mapmanager.cpp" line="1141"/>
         <source>Stopping downloads</source>
         <translation>Останов загрузок</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1282"/>
+        <location filename="../src/mapmanager.cpp" line="1301"/>
         <source>Updating the distribution server URL</source>
         <translation>Обновление URL раздающего сервера</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1335"/>
+        <location filename="../src/mapmanager.cpp" line="1354"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Невозможно проверить обновления по причине отсутствия папки хранения карт</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1337"/>
+        <location filename="../src/mapmanager.cpp" line="1356"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Невозможно проверить обновления по причине отсутствия списка запрошенных стран. Выбрать страны до проверки обновлений.</translation>
     </message>
@@ -1087,8 +1099,8 @@
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="196"/>
-        <source>Malformed Mapbox GL file request: %1/%2</source>
-        <translation>Некорректный запрос файла Mapbox GL: %1/%2</translation>
+        <source>Malformed Mapbox GL file request: %1/%2 [%3] [%4]</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="202"/>
@@ -1541,18 +1553,18 @@
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
-        <source>Recommended for vector tiles maps</source>
-        <translation>Рекомендовано для карт с векторными тайлами</translation>
+        <source>Recommended for raster tiles maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
+        <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
         <source>Recommended for vector and raster tiles maps</source>
         <translation>Рекомендовано для карт с векторными и растровыми тайлами</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
-        <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>Профиль &lt;i&gt;По умолчанию&lt;/i&gt; использует &lt;i&gt;Mapnik&lt;/i&gt; для отображения карт в растровые тайлы, &lt;i&gt;Geocoder-NLP&lt;/i&gt; для поиска мест и &lt;i&gt;Valhalla&lt;/i&gt; для расчета маршрутов. Этот профиль рекомендован для клиентов традиционных растровых карт. &lt;br&gt;&lt;br&gt;Для пользователей, картографические приложения которых используют плагин &lt;i&gt;Mapbox GL&lt;/i&gt;, рекомендованный профиль для векторных карт включает наборы данных &lt;i&gt;Mapbox GL&lt;/i&gt; и использует те же плагины для поиска и маршрутизации, что и профиль &lt;i&gt;По умолчанию&lt;/i&gt;. &lt;br&gt;&lt;br&gt; Для пользователей, желающих использовать программы-клиенты растровых и векторных карт, рекомендованный профиль, совмещающий растровые и векторные тайлы, включает наборы данных &lt;i&gt;Mapbox GL&lt;/i&gt;, поддерживает отображение карт в растровые тайлы с помощью &lt;i&gt;Mapnik&lt;/i&gt; и использует те же плагины для поиска и маршрутизации, что и профиль &lt;i&gt;По умолчанию&lt;/i&gt;. По той причине, что этот профиль включает данные для нескольких бэкэндов отображения, имеются определенные требования к устройству хранения. &lt;br&gt;&lt;br&gt; Профиль, в котором &lt;i&gt;libosmscout&lt;/i&gt; объединен с &lt;i&gt;Geocoder-NLP&lt;/i&gt; имеет меньшие требования к устройству хранения, чем профиль по умолчанию. Однако отображение карт и маршрутизация должны быть ограничены только одной территорией. Помимо этого качество отображения хуже, и скорость маршрутизации ниже по сравнению с профилем по умолчанию. &lt;br&gt;&lt;br&gt; Профиль&lt;i&gt;libosmscout&lt;/i&gt; имеет наименьшие требования к устройству хранения по сравнению с другими профилями. Однако отображение карт, поиск и маршрутизация должны быть ограничены только одной территорией. Кроме того качество отображения хуже, и скорость маршрутизации ниже по сравнению с профилем по умолчанию. &lt;br&gt;&lt;br&gt; При использовании профиля &lt;i&gt;Пользовательский&lt;/i&gt; Настройки и Папка хранения Диспетчера карт не определяются профилем, а должны быть указаны пользователем. Этот профиль позволяет выбрать компоненты отображения, поиска, маршрутизации индивидуально. Необходимо отметить, что в данном случае пользователь отвечает за подбор настроек для согласования требований используемых бэкэндов и устройства хранения.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
@@ -1577,199 +1589,240 @@
         <source>Number of parallel worker threads: %1</source>
         <translation>Количество параллельных рабочих потоков: %1</translation>
     </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="55"/>
+        <source>Enable corresponding backend(s) using Profiles.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="325"/>
+        <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="401"/>
+        <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="569"/>
+        <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="616"/>
+        <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="718"/>
+        <source>List of POI types is not available since libosmscout is disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="744"/>
+        <location filename="../src/requestmapper.cpp" line="864"/>
+        <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="837"/>
+        <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RoutingForHuman</name>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="71"/>
+        <location filename="../src/routingforhuman.cpp" line="73"/>
         <source>Turn sharp left</source>
         <translation>Резкий поворот налево</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="73"/>
+        <location filename="../src/routingforhuman.cpp" line="75"/>
         <source>Turn left</source>
         <translation>Поворот налево</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="75"/>
+        <location filename="../src/routingforhuman.cpp" line="77"/>
         <source>Turn slightly left</source>
         <translation>Немного влево</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="77"/>
+        <location filename="../src/routingforhuman.cpp" line="79"/>
         <source>Straight on</source>
         <translation>Прямо</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="79"/>
+        <location filename="../src/routingforhuman.cpp" line="81"/>
         <source>Turn slightly right</source>
         <translation>Немного вправо</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="81"/>
+        <location filename="../src/routingforhuman.cpp" line="83"/>
         <source>Turn right</source>
         <translation>Поворот направо</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="83"/>
+        <location filename="../src/routingforhuman.cpp" line="85"/>
         <source>Turn sharp right</source>
         <translation>Резкий поворот направо</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="98"/>
+        <location filename="../src/routingforhuman.cpp" line="100"/>
         <source>Drive along %along%</source>
         <translation>двигаться вдоль %along%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="99"/>
+        <location filename="../src/routingforhuman.cpp" line="101"/>
         <source>Start at %start%. Drive along %along%</source>
         <translation>Начать от %start%. Двигаться вдоль %along%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="106"/>
+        <location filename="../src/routingforhuman.cpp" line="108"/>
         <source>Start at %start%</source>
         <translation>Начать от %start%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="154"/>
+        <location filename="../src/routingforhuman.cpp" line="156"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
         <translation>После пересечения (%crossingway%), %turncommand%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="223"/>
+        <location filename="../src/routingforhuman.cpp" line="225"/>
         <source>Enter motorway %motorway%</source>
         <translation>Въехать на автомагистраль %motorway%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="227"/>
+        <location filename="../src/routingforhuman.cpp" line="229"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
         <translation>После пересечения %crossing% въехать  на автомагистраль %motorway%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="266"/>
+        <location filename="../src/routingforhuman.cpp" line="268"/>
         <source>Change motorway to %to%</source>
         <translation>Сменить автомагистраль на %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="269"/>
+        <location filename="../src/routingforhuman.cpp" line="271"/>
         <source>Change motorway from %from%</source>
         <translation>Сменить автомагистраль с %from%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="272"/>
+        <location filename="../src/routingforhuman.cpp" line="274"/>
         <source>Change motorway from %from% to %to%</source>
         <translation>Сменить автомагистраль с %from% на %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="277"/>
-        <location filename="../src/routingforhuman.cpp" line="363"/>
+        <location filename="../src/routingforhuman.cpp" line="279"/>
+        <location filename="../src/routingforhuman.cpp" line="365"/>
         <source>At %motoName% (exit %motoRef%), %command%</source>
         <translation>На %motoName% (exit %motoRef%), %command%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="283"/>
-        <location filename="../src/routingforhuman.cpp" line="369"/>
+        <location filename="../src/routingforhuman.cpp" line="285"/>
+        <location filename="../src/routingforhuman.cpp" line="371"/>
         <source>At %motoName%, %command%</source>
         <translation>На %motoName%, %command%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="335"/>
+        <location filename="../src/routingforhuman.cpp" line="337"/>
         <source>Leave motorway into %into%</source>
         <translation>Покинуть автомагистраль на %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="338"/>
+        <location filename="../src/routingforhuman.cpp" line="340"/>
         <source>Leave motorway. %move%</source>
         <translation>Покинуть автомагистраль. %move%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="341"/>
-        <location filename="../src/routingforhuman.cpp" line="348"/>
+        <location filename="../src/routingforhuman.cpp" line="343"/>
+        <location filename="../src/routingforhuman.cpp" line="350"/>
         <source>Leave motorway %from%</source>
         <translation>Покинуть автомагистраль %from%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="344"/>
+        <location filename="../src/routingforhuman.cpp" line="346"/>
         <source>Leave motorway. %move% into %into%</source>
         <translation>Покинуть автомагистраль. %move% на %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="352"/>
+        <location filename="../src/routingforhuman.cpp" line="354"/>
         <source>Leave motorway %from%. %move%</source>
         <translation>Покинуть автомагистраль %from%. %move%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="356"/>
+        <location filename="../src/routingforhuman.cpp" line="358"/>
         <source>Leave motorway %from%. %move% into %into%</source>
         <translation>Покинуть автомагистраль %from%. %move% на %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="384"/>
+        <location filename="../src/routingforhuman.cpp" line="386"/>
         <source>Way changes name from %from% to %to%</source>
         <translation>Дорога меняет название с %from% на %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="388"/>
+        <location filename="../src/routingforhuman.cpp" line="390"/>
         <source>Way changes name to %to%</source>
         <translation>Дорога меняет название на %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="146"/>
+        <location filename="../src/routingforhuman.cpp" line="148"/>
         <source>Turn</source>
         <translation>Поворот</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="192"/>
+        <location filename="../src/routingforhuman.cpp" line="194"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
         <translation>Покинуть круговой перекресток (%num% exit) на улицу %street%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="196"/>
+        <location filename="../src/routingforhuman.cpp" line="198"/>
         <source>Leave roundabout (%num% exit)</source>
         <translation>Покинуть круговой перекресток (%num% exit)</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="167"/>
+        <location filename="../src/routingforhuman.cpp" line="169"/>
         <source>Enter roundabout</source>
         <translation>Въехать на круговой перекресток</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="118"/>
+        <location filename="../src/routingforhuman.cpp" line="120"/>
         <source>Target reached: %target%</source>
         <translation>Конечный пункт достигнут: %target%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="149"/>
+        <location filename="../src/routingforhuman.cpp" line="151"/>
         <source>%turncommand% into %where%</source>
         <translation>%turncommand% на %where%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="171"/>
+        <location filename="../src/routingforhuman.cpp" line="173"/>
         <source>At crossing %crossway%, enter roundabout</source>
         <translation>После пересечения %crossway% въехать на круговой перекресток</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="188"/>
+        <location filename="../src/routingforhuman.cpp" line="190"/>
         <source>Leave roundabout</source>
         <translation>Покинуть круговой перекресток</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="188"/>
+        <location filename="../src/routingforhuman.cpp" line="190"/>
         <source>exit</source>
         <translation>выезд</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="221"/>
+        <location filename="../src/routingforhuman.cpp" line="223"/>
         <source>Enter motorway</source>
         <translation>Въехать на автомагистраль</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="264"/>
+        <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway</source>
         <translation>Сменить автомагистраль</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="333"/>
+        <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway</source>
         <translation>Покинуть автомагистраль</translation>
     </message>
@@ -2392,68 +2445,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="125"/>
+        <location filename="../src/main.cpp" line="123"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="130"/>
+        <location filename="../src/main.cpp" line="128"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Запустить сервер без графического пользовательского интерфейса как консольное приложение</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="134"/>
+        <location filename="../src/main.cpp" line="132"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Не выводить логи при запуске в консольном режиме</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="139"/>
+        <location filename="../src/main.cpp" line="137"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Запустить сервер в SystemD socket активированном режиме</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="145"/>
+        <location filename="../src/main.cpp" line="143"/>
         <source>Start download of the maps</source>
         <translation>Начать загрузку карт</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="149"/>
+        <location filename="../src/main.cpp" line="147"/>
         <source>Update list of available maps</source>
         <translation>Обновить список доступных карт</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="153"/>
+        <location filename="../src/main.cpp" line="151"/>
         <source>List maps available on device</source>
         <translation>Список доступных на устройстве карт</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="157"/>
+        <location filename="../src/main.cpp" line="155"/>
         <source>List subscribed maps</source>
         <translation>Список выбранных карт</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="161"/>
+        <location filename="../src/main.cpp" line="159"/>
         <source>List maps provided for download</source>
         <translation>Список карт для загрузки</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="165"/>
+        <location filename="../src/main.cpp" line="163"/>
         <source>List missing maps</source>
         <translation>Список недостающих карт</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="167"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Выбрать набор данных для &lt;country&gt;</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="170"/>
-        <location filename="../src/main.cpp" line="175"/>
+        <location filename="../src/main.cpp" line="168"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>country-id</source>
         <translation>идентификатор страны</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="174"/>
+        <location filename="../src/main.cpp" line="172"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Отказаться от набора данных для &lt;country&gt;</translation>
     </message>

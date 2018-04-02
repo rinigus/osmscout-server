@@ -42,7 +42,7 @@ Dialog {
 
                 menu: ContextMenu {
                     MenuItem { text: qsTr("Default") }
-                    MenuItem { text: qsTr("Recommended for vector tiles maps") }
+                    MenuItem { text: qsTr("Recommended for raster tiles maps") }
                     MenuItem { text: qsTr("Recommended for vector and raster tiles maps") }
                     MenuItem { text: qsTr("<i>libosmscout</i> with <i>Geocoder-NLP</i>") }
                     MenuItem { text: qsTr("<i>libosmscout</i>") }
@@ -61,13 +61,13 @@ Dialog {
                 font.pixelSize: Theme.fontSizeSmall
                 color: Theme.highlightColor
 
-                text: qsTr("<i>Default</i> profile uses <i>Mapnik</i> to render maps into raster tiles, " +
+                text: qsTr("<i>Default</i> profile supports map applications using <i>Mapbox GL</i> plugin, uses " +
                            "<i>Geocoder-NLP</i> to search for locations, " +
                            "and <i>Valhalla</i> to calculate the routes. " +
-                           "This profile is a recommended one for traditional raster tile map clients.<br><br>" +
+                           "This profile is a recommended one for new vector tile map clients.<br><br>" +
 
-                           "For users with map applications using <i>Mapbox GL</i> plugin, " +
-                           "the recommended profile for vector tiles maps includes <i>Mapbox GL</i> datasets and uses " +
+                           "For users with map applications using traditional raster tiles, " +
+                           "the recommended profile for raster tiles maps includes <i>Mapnik</i> datasets and uses " +
                            "the same search and routing plugins as the <i>Default</i> profile.<br><br>" +
 
                            "For users wishing to use raster and vector tile map clients, " +
