@@ -175,16 +175,14 @@ CONFIG(release, debug|release) {
     DEFINES += QT_NO_WARNING_OUTPUT QT_NO_DEBUG_OUTPUT
 }
 
-# German translation is enabled as an example. If you aren't
-# planning to localize your app, remember to comment out the
-# following TRANSLATIONS line. And also do not forget to
-# modify the localized app name in the the .desktop file.
+
 TRANSLATIONS += \
     translations/harbour-osmscout-server-cs.ts \
     translations/harbour-osmscout-server-de.ts \
     translations/harbour-osmscout-server-es.ts \
     translations/harbour-osmscout-server-fi.ts \
     translations/harbour-osmscout-server-fr.ts \
+    translations/harbour-osmscout-server-it.ts \
     translations/harbour-osmscout-server-nb.ts \
     translations/harbour-osmscout-server-nl.ts \
     translations/harbour-osmscout-server-pl.ts \
