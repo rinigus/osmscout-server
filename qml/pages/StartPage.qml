@@ -68,11 +68,12 @@ Page {
                     color: Theme.highlightColor
                 }
 
-                Component.onCompleted: {
+                function checkModules() {
                     modulesNotAvailable.visible = ( !modules.fonts || !modules.valhallaRoute )
                     noModuleText.text =
                             qsTr("<i>OSM Scout Server</i> uses several modules that have to be installed separately " +
-                                 "for full functionality.<br><br>Your device is missing the following module(s):<ul>")
+                                 "for full functionality.<br><br>Your device is missing the following module(s) " +
+                                 "that are required by the current profile:<ul>")
 
                     if (!modules.fonts)
                         noModuleText.text += qsTr("<li>OSM Scout Server Module: Fonts</li>")
@@ -81,6 +82,13 @@ Page {
 
                     noModuleText.text += qsTr("</ul><br>Please install missing modules via Harbour or OpenRepos. " +
                                               "After installation of the module(s), please restart OSM Scout Server.")
+                }
+
+                Component.onCompleted: checkModules()
+
+                Connections {
+                    target: modules
+                    onModulesChanged: modulesNotAvailable.checkModules()
                 }
 
                 Rectangle { // just extra space to highlight the message

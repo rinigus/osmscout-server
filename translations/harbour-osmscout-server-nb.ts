@@ -2139,109 +2139,109 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="74"/>
-        <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s):&lt;ul&gt;</source>
-        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; Bruker flere moduler som må installeres separat for full funksjonalitet.&lt;br&gt;&lt;br&gt;Enheten din mangler følgende modul(er):&lt;ul&gt;</translation>
+        <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s) that are required by the current profile:&lt;ul&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="78"/>
+        <location filename="../qml/pages/StartPage.qml" line="79"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
         <translation>&lt;li&gt;OSM Scout Server Module: Fonter&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="80"/>
+        <location filename="../qml/pages/StartPage.qml" line="81"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
         <translation>&lt;li&gt;OSM Scout Server Module: Rute&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="82"/>
+        <location filename="../qml/pages/StartPage.qml" line="83"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
         <translation>&lt;/ul&gt;&lt;br&gt;Vennligst installer manglende moduler via Harbor eller OpenRepos. Etter installasjon av modulen (e), må du starte OSM Scout Server på nytt.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="105"/>
-        <location filename="../qml/pages/StartPage.qml" line="168"/>
-        <location filename="../qml/pages/StartPage.qml" line="207"/>
-        <location filename="../qml/pages/StartPage.qml" line="426"/>
+        <location filename="../qml/pages/StartPage.qml" line="113"/>
+        <location filename="../qml/pages/StartPage.qml" line="176"/>
+        <location filename="../qml/pages/StartPage.qml" line="215"/>
+        <location filename="../qml/pages/StartPage.qml" line="434"/>
         <source>Welcome</source>
         <translation>Velkommen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="123"/>
+        <location filename="../qml/pages/StartPage.qml" line="131"/>
         <source>Create default directory</source>
         <translation>Opprett standardkatalog</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="146"/>
+        <location filename="../qml/pages/StartPage.qml" line="154"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
         <translation>oppretter katalog&lt;br&gt;%1&lt;br&gt;og konfigurerer den for lagring av kart</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="148"/>
+        <location filename="../qml/pages/StartPage.qml" line="156"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
         <translation>&lt;I&gt; OSM Scout Server &lt;/ i&gt; er forventet å brukes sammen med de nedlastede kart. For å administrere kart, krever Serveren en egen mappe. Filene i den mappen skal forvaltes av bare Serveren. Dette inkluderer å slette alle filene i mappen når du ber om det under opprydding eller kartoppdateringer . &lt;br&gt; Vennligst &lt;b&gt; klargjør en separat, tom mappe &lt;/ b&gt; for OSM Scout Server. For det, opprette en ny mappe i en filbehandler eller ved hjelp av kommandolinjen , og velg deretter mappen i &lt;i&gt; Innstillinger &lt;/ i&gt; (nedtreksmenyen). &lt;br&gt; Alternativt katalogen kan opprettes og konfigureres automatisk i &lt;br&gt;%1 &lt;br&gt; ved å trykke på knappen under</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="172"/>
+        <location filename="../qml/pages/StartPage.qml" line="180"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>Med lagringsmappe valgt og tilgjengelig, er neste skritt å få noen kart. Til det, kan du velge og laste ned kart ved hjelp av &lt;i&gt; Kart Behandleren &lt;/ i&gt; (nedtrekksmenyen).</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="211"/>
+        <location filename="../qml/pages/StartPage.qml" line="219"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>Det er ingen kart tilgjengelig ennå. Etter å ha abonnert på dem, må du starte nedlastinger. Nedlastinger kan startes ved hjelp av &lt;i&gt; Kart Behandler &lt;/ i&gt; (nedtrekksmenyen).</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="263"/>
+        <location filename="../qml/pages/StartPage.qml" line="271"/>
         <source>Warning</source>
         <translation>Advarsel</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="267"/>
+        <location filename="../qml/pages/StartPage.qml" line="275"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="293"/>
+        <location filename="../qml/pages/StartPage.qml" line="301"/>
         <source>Map</source>
         <translation>Kart</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="337"/>
+        <location filename="../qml/pages/StartPage.qml" line="345"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="352"/>
+        <location filename="../qml/pages/StartPage.qml" line="360"/>
         <source>Jobs in a queue</source>
         <translation>Jobber i kø</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="353"/>
+        <location filename="../qml/pages/StartPage.qml" line="361"/>
         <source>Idle</source>
         <translation>Innaktiv</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="371"/>
+        <location filename="../qml/pages/StartPage.qml" line="379"/>
         <source>Events</source>
         <translation>Hendelser</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="404"/>
+        <location filename="../qml/pages/StartPage.qml" line="412"/>
         <source>Error</source>
         <translation>Feil</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="427"/>
+        <location filename="../qml/pages/StartPage.qml" line="435"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="428"/>
+        <location filename="../qml/pages/StartPage.qml" line="436"/>
         <source>Skip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="432"/>
+        <location filename="../qml/pages/StartPage.qml" line="440"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation type="unfinished"></translation>
     </message>

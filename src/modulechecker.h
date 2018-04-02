@@ -5,6 +5,10 @@
 
 /// \brief Checks availability of the installed modules
 ///
+/// If everything is fine with the module (either installed or
+/// not required) then corresponding variable is set to true. If
+/// the installation of the module is needed, it is set to false.
+///
 class ModuleChecker : public QObject
 {
   Q_OBJECT
@@ -21,12 +25,17 @@ public:
   bool valhallaRoute() const { return m_valhalla_route; }
 
 signals:
+  void modulesChanged();
 
 public slots:
+  void onSettingsChanged();
 
 protected:
-  bool m_fonts{false};
-  bool m_valhalla_route{false};
+  void checkModules();
+
+protected:
+  bool m_fonts{true};
+  bool m_valhalla_route{true};
 };
 
 #endif // MODULECHECKER_H

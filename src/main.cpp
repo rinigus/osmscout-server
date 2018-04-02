@@ -351,6 +351,8 @@ int main(int argc, char *argv[])
                     &infoHub, &InfoHub::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &manager, &MapManager::Manager::onSettingsChanged );
+  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                    &modules, &ModuleChecker::onSettingsChanged );
 
 #ifdef USE_OSMSCOUT
   QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,

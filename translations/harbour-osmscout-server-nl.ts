@@ -791,12 +791,12 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1109"/>
         <source>Unpacking files</source>
-        <translation type="unfinished"></translation>
+        <translation>Bestanden worden uitgepakt</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1111"/>
         <source>%1; Unpacking files</source>
-        <translation type="unfinished"></translation>
+        <translation>%1; bestanden worden uitgepakt</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1141"/>
@@ -1100,7 +1100,7 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="196"/>
         <source>Malformed Mapbox GL file request: %1/%2 [%3] [%4]</source>
-        <translation type="unfinished"></translation>
+        <translation>Misvormd Mapbox GL-bestandsverzoek: %1/%2 [%3] [%4]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="202"/>
@@ -1554,12 +1554,12 @@
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
         <source>Recommended for raster tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanbevolen voor kaarten op basis van rastertegels</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het profiel &lt;i&gt;Standaard&lt;/i&gt; ondersteunt kaarttoepassingen die gebruik maken van de &lt;i&gt;Mapbox GL&lt;/i&gt;-plug-in, en gebruikt &lt;i&gt;Geocoder-NLP&lt;/i&gt; om locaties te zoeken en &lt;i&gt;Valhalla&lt;/i&gt; om de routes te berekenen. Dit profiel wordt aanbevolen voor nieuwe vectortegelkaartcliënten.&lt;br&gt;&lt;br&gt;Voor gebruikers van kaarttoepassingen met traditionele rastertegels bevat het aanbevolen profiel voor rastertegelkaarten &lt;i&gt;Mapnik&lt;/i&gt;-gegevenssets en gebruikt het dezelfde zoek- en routeberekeningsplug-ins als het profiel &lt;i&gt;Standaard&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Voor gebruikers die raster- en vectortegelkaartcliënten willen gebruiken, bevat het aanbevolen profiel dat vector- en rastertegels combineert &lt;i&gt;Mapbox GL&lt;/i&gt;-gegevenssets, ondersteunt het het renderen van kaarten in rastertegels met &lt;i&gt;Mapnik&lt;/i&gt;, en gebruikt het dezelfde zoek- en routeberekeningsplug-ins als het profiel &lt;i&gt;Standaard&lt;/i&gt;. Gezien dit profiel gegevens bevat voor meerdere renderingsback-ends, heeft het ook de hoogste opslagvereisten.&lt;br&gt;&lt;br&gt;Het profiel waarbij &lt;i&gt;libosmscout&lt;/i&gt; gecombineerd wordt met &lt;i&gt;Geocoder-NLP&lt;/i&gt; heeft lagere opslagvereisten vergeleken met het standaardprofiel. Renderen van kaarten en routeberekening is in vergelijking met het standaardprofiel weliswaar beperkt tot één gebied, de kwaliteit van renderen is minder goed en de routeberekening is trager. &lt;br&gt;&lt;br&gt;Het &lt;i&gt;libosmscout&lt;/i&gt;-profiel heeft de laagste opslagvereisten van alle profielen, maar renderen van kaarten, zoeken en routeberekening zijn beperkt tot één gebied. Ook hier is de kwaliteit van renderen en zoeken, evenals de snelheid van de routeberekening, inferieur.&lt;br&gt;&lt;br&gt;Bij gebruik van het profiel &lt;i&gt;Aangepast&lt;/i&gt; worden de instellingen en kaartbeheeropslag niet ingesteld door profielen, en moeten ze door de gebruiker worden ingesteld. Dit profiel biedt de mogelijkheid de onderdelen voor renderen, zoeken en routeberekening apart te selecteren. Let op: de gebruiker is verantwoordelijk voor het aanpassen van de instellingen om ze consistent te houden tussen de vereisten van de gebruikte back-ends en de opslag.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
@@ -1592,43 +1592,43 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="55"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Schakel de overeenkomstige back-end(s) in via Profielen.</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="325"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Rastertegels zijn niet beschikbaar omdat Mapnik en libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld zijn. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="401"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL-back-end is uitgeschakeld door het geselecteerde profiel of de geselecteerde instellingen. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="569"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoeken is niet beschikbaar omdat GeocoderNLP en libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld zijn. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="616"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoeken naar nabij NP’s is niet beschikbaar omdat GeocodeNLP en libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld zijn. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="718"/>
         <source>List of POI types is not available since libosmscout is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijst van NP-types is niet beschikbaar omdat libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld is. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="744"/>
         <location filename="../src/requestmapper.cpp" line="864"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Routeberekening is niet beschikbaar omdat Valhalla en libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld zijn. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="837"/>
         <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Routeberekening is niet beschikbaar omdat Valhalla door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld is. %1</translation>
     </message>
 </context>
 <context>
@@ -2139,109 +2139,109 @@
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="74"/>
-        <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s):&lt;ul&gt;</source>
-        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; gebruikt voor volledige functionaliteit verschillende modules die apart geïnstalleerd moeten worden.&lt;br&gt;&lt;br&gt;Volgende module(s) ontbreekt/ontbreken op je apparaat:&lt;ul&gt;</translation>
+        <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s) that are required by the current profile:&lt;ul&gt;</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="78"/>
+        <location filename="../qml/pages/StartPage.qml" line="79"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
         <translation>&lt;li&gt;OSM Scout Server-module: lettertypen&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="80"/>
+        <location filename="../qml/pages/StartPage.qml" line="81"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
         <translation>&lt;li&gt;OSM Scout Server-module: route&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="82"/>
+        <location filename="../qml/pages/StartPage.qml" line="83"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
         <translation>&lt;/ul&gt;&lt;br&gt;Installeer ontbrekende module(s) via de Winkel of OpenRepos. Herstart vervolgens OSM Scout Server.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="105"/>
-        <location filename="../qml/pages/StartPage.qml" line="168"/>
-        <location filename="../qml/pages/StartPage.qml" line="207"/>
-        <location filename="../qml/pages/StartPage.qml" line="426"/>
+        <location filename="../qml/pages/StartPage.qml" line="113"/>
+        <location filename="../qml/pages/StartPage.qml" line="176"/>
+        <location filename="../qml/pages/StartPage.qml" line="215"/>
+        <location filename="../qml/pages/StartPage.qml" line="434"/>
         <source>Welcome</source>
         <translation>Welkom</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="123"/>
+        <location filename="../qml/pages/StartPage.qml" line="131"/>
         <source>Create default directory</source>
         <translation>Standaardmap aanmaken</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="146"/>
+        <location filename="../qml/pages/StartPage.qml" line="154"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
         <translation>Maakt map &lt;br&gt;%1&lt;br&gt; aan en configureert ze voor opslag van kaarten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="148"/>
+        <location filename="../qml/pages/StartPage.qml" line="156"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
         <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; wordt verwacht gebruikt te worden met de gedownloade kaarten. Om de kaarten te beheren vereist de server een aparte map. De bestanden in die map mogen enkel beheerd worden door de server. Dit omvat het verwijderen van alle bestanden binnen die map wanneer daartoe gevraagd tijdens opruimen of kaartupdates.&lt;br&gt;&lt;br&gt;&lt;b&gt;Wijs een aparte, lege map toe&lt;/b&gt; voor OSM Scout Server. Maak daarvoor een nieuwe map aan in een bestandsbeheerder of via de opdrachtregel en selecteer vervolgens deze map in &lt;i&gt;Instellingen&lt;/i&gt; (uittrekmenu).&lt;br&gt;&lt;br&gt;De map kan ook automatisch aangemaakt en ingesteld worden op &lt;br&gt;%1&lt;br&gt;door een knop hieronder.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="172"/>
+        <location filename="../qml/pages/StartPage.qml" line="180"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>Nu de opslagmap geselecteerd en beschikbaar is, is de volgende stap het ophalen van kaarten. Je kan kaarten selecteren en downloaden via de &lt;i&gt;kaartbeheerder&lt;/i&gt; (uittrekmenu).</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="211"/>
+        <location filename="../qml/pages/StartPage.qml" line="219"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>Er zijn nog geen kaarten beschikbaar. Nadat je je op de kaarten abonneert, moet je de downloads starten. Dit kan via de &lt;i&gt;kaartbeheerder&lt;/i&gt; (uittrekmenu).</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="263"/>
+        <location filename="../qml/pages/StartPage.qml" line="271"/>
         <source>Warning</source>
         <translation>Waarschuwing</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="267"/>
+        <location filename="../qml/pages/StartPage.qml" line="275"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation>Je hebt geen talen ingesteld voor het verwerken van adressen door Geocoder-NLP. Bijgevolg zullen alle gekende talen gebruikt worden en kan je RAM-verbruik de lucht in schieten. Dit hoge RAM-verbruik kan er dan weer toe leiden dat OSM Scout Server door de kernel wordt afgesloten. &lt;br&gt;&lt;br&gt;Om in te stellen welke talen gebruikt moeten worden voor adresverwerking selecteer je hieronder de talen, of ga je naar &lt;i&gt;Instellingen&lt;/i&gt; (uittrekmenu) en selecteer je de talen als onderdeel van de &lt;i&gt;Geocoder-NLP&lt;/i&gt;-instellingen.</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="293"/>
+        <location filename="../qml/pages/StartPage.qml" line="301"/>
         <source>Map</source>
         <translation>Kaart</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="337"/>
+        <location filename="../qml/pages/StartPage.qml" line="345"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="352"/>
+        <location filename="../qml/pages/StartPage.qml" line="360"/>
         <source>Jobs in a queue</source>
         <translation>Processen in een wachtrij</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="353"/>
+        <location filename="../qml/pages/StartPage.qml" line="361"/>
         <source>Idle</source>
         <translation>Inactief</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="371"/>
+        <location filename="../qml/pages/StartPage.qml" line="379"/>
         <source>Events</source>
         <translation>Gebeurtenissen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="404"/>
+        <location filename="../qml/pages/StartPage.qml" line="412"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="427"/>
+        <location filename="../qml/pages/StartPage.qml" line="435"/>
         <source>Next</source>
         <translation>Volgende</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="428"/>
+        <location filename="../qml/pages/StartPage.qml" line="436"/>
         <source>Skip</source>
         <translation>Overslaan</translation>
     </message>
     <message>
-        <location filename="../qml/pages/StartPage.qml" line="432"/>
+        <location filename="../qml/pages/StartPage.qml" line="440"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation>OSM Scout Server is een deel van de oplossing voor offline kaarten op je apparaat. Met deze server kan je kaarten downloaden en de gedownloade gegevens gebruiken om lokaal kaarten te renderen, te zoeken naar adressen en NP’s, en voor routeberekening. Deze handelingen vereisen dat de server en een cliënt ervan tegelijk worden uitgevoerd op het apparaat.&lt;br&gt;&lt;br&gt;Deze configuratiewizard zal je helpen bij het selecteren van de door de server gebruikte back-ends en de talen voor het parseren van je zoekopdrachten.&lt;br&gt;&lt;br&gt;Tik op ‘Volgende’ om te beginnen met de configuratie.</translation>
     </message>
