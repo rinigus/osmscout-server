@@ -7,7 +7,7 @@ Name:       harbour-osmscout-server
 
 # >> macros
 %define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff$
+%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}

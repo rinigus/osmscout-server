@@ -122,9 +122,6 @@ use_osmscout {
     use_map_cairo {
         DEFINES += USE_OSMSCOUT_MAP_CAIRO
         LIBS += -losmscout_map_cairo
-        # those disappear if we use PKGCONFIG
-        LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
-        CONFIG += link_pkgconfig
         PKGCONFIG += pango cairo
     }
 
@@ -154,15 +151,11 @@ use_valhalla {
 
 use_systemd {
     DEFINES += USE_SYSTEMD
-    CONFIG += link_pkgconfig
     PKGCONFIG += libsystemd-daemon
 }
 
 use_curl {
     DEFINES += USE_LIBCURL
-    CONFIG += link_pkgconfig
-    # those disappear if we use PKGCONFIG
-    LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
     PKGCONFIG += libcurl
 }
 
