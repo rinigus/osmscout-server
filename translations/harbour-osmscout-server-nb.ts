@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nb" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nb" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="14"/>
@@ -71,28 +69,28 @@
     <message>
         <location filename="../qml/pages/AboutPage.qml" line="96"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="287"/>
+        <location filename="../src/appsettings.cpp" line="279"/>
         <source>mph</source>
         <translation>mph</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="287"/>
+        <location filename="../src/appsettings.cpp" line="279"/>
         <source>mi.</source>
         <translation>mi.</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="289"/>
+        <location filename="../src/appsettings.cpp" line="281"/>
         <source>km/h</source>
         <translation>km/t</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="289"/>
+        <location filename="../src/appsettings.cpp" line="281"/>
         <source>km</source>
         <translation>km</translation>
     </message>
@@ -202,102 +200,102 @@
 <context>
     <name>DBMaster</name>
     <message>
-        <location filename="../src/dbmaster.cpp" line="18"/>
+        <location filename="../src/dbmaster.cpp" line="16"/>
         <source>Cannot create database object</source>
         <translation>Kan ikke opprette databaseobjekt </translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="84"/>
+        <location filename="../src/dbmaster.cpp" line="82"/>
         <source>Opened OSM Scout database: %1</source>
         <translation>Åpnet OSM Scout database: %1</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="86"/>
+        <location filename="../src/dbmaster.cpp" line="84"/>
         <source>Cannot open OSM Scout database: %1</source>
         <translation>Kan ikke åpne OSM Scout database: %1</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="111"/>
+        <location filename="../src/dbmaster.cpp" line="109"/>
         <source>Cannot allocate Style config</source>
         <translation>Kan ikke allokere Stil konfigurasjon</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="119"/>
+        <location filename="../src/dbmaster.cpp" line="117"/>
         <source>Cannot open style</source>
         <translation>Kan ikke åpne stil</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster.cpp" line="125"/>
+        <location filename="../src/dbmaster.cpp" line="123"/>
         <source>Loaded style</source>
         <translation>Lastet Stil</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_map.cpp" line="76"/>
+        <location filename="../src/dbmaster_map.cpp" line="74"/>
         <source>Database is not open, cannot render a tile</source>
         <translation>Database er ikke åpen, kan ikke gjengi kartutsnitt</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="82"/>
+        <location filename="../src/dbmaster_route.cpp" line="80"/>
         <source>Database is not open, cannot route</source>
         <translation>Database er ikke åpen, kan ikke rute</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="102"/>
+        <location filename="../src/dbmaster_route.cpp" line="100"/>
         <source>Cannot open routing database</source>
         <translation>Kan ikke åpne ruting database</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="139"/>
+        <location filename="../src/dbmaster_route.cpp" line="137"/>
         <source>There was an error while calculating the route!</source>
         <translation>Det oppstod en feil under beregning av rute!</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="149"/>
+        <location filename="../src/dbmaster_route.cpp" line="147"/>
         <source>Error during route conversion to points</source>
         <translation>Feil ved rute konvertering til sted</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="198"/>
+        <location filename="../src/dbmaster_route.cpp" line="196"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_route.cpp" line="199"/>
+        <location filename="../src/dbmaster_route.cpp" line="197"/>
         <source>Target</source>
         <translation>Mål</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="254"/>
+        <location filename="../src/dbmaster_search.cpp" line="252"/>
         <source>Database is not open, cannot search</source>
         <translation>Database er ikke åpen, kan ikke søke</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="272"/>
+        <location filename="../src/dbmaster_search.cpp" line="270"/>
         <source>Error while parsing search string</source>
         <translation>Feil ved oppdeling av søkestreng </translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="279"/>
+        <location filename="../src/dbmaster_search.cpp" line="277"/>
         <source>Error while searching for location</source>
         <translation>Feil mens du søker etter sted</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="486"/>
+        <location filename="../src/dbmaster_search.cpp" line="484"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Søk etter referansepunkt  mislyktes: Finner ikke</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="511"/>
+        <location filename="../src/dbmaster_search.cpp" line="509"/>
         <source>Database is not open, cannot search for POI</source>
         <translation>Database er ikke åpen, kan ikke søke etter POI</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="572"/>
+        <location filename="../src/dbmaster_search.cpp" line="570"/>
         <source>Cannot load data from database</source>
         <translation>Kan ikke laste data fra databasen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="672"/>
+        <location filename="../src/dbmaster_search.cpp" line="670"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>Database er ikke åpen, kan ikke liste POI-typer</translation>
     </message>
@@ -363,17 +361,17 @@
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="9"/>
         <source>List of languages used for parsing addresses</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="10"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="11"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ElementLanguageSelector.qml" line="34"/>
@@ -405,7 +403,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="353"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>
@@ -578,7 +576,7 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="11"/>
         <source>Cleanup: %1 files to delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="17"/>
@@ -593,228 +591,218 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="27"/>
         <source>Files left to remove: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="32"/>
         <source>Cleanup finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
     <name>MapManager::Manager</name>
     <message>
-        <location filename="../src/mapmanager.cpp" line="51"/>
+        <location filename="../src/mapmanager.cpp" line="49"/>
         <source>Could not allocate Map Manager features</source>
         <translation>Kunne ikke allokere Kart Behandler funksjonen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="97"/>
+        <location filename="../src/mapmanager.cpp" line="92"/>
         <source>Storage folder changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="104"/>
+        <location filename="../src/mapmanager.cpp" line="99"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Kart lagringsmappen finnes ikke: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="107"/>
+        <location filename="../src/mapmanager.cpp" line="102"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
         <translation>Kart lagringsmappestien peker ikke på en mappe: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="113"/>
+        <location filename="../src/mapmanager.cpp" line="108"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
         <translation>Kart lagringsmappen er skrivebeskyttet. vennligst endre rettighetene for %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="166"/>
-        <location filename="../src/mapmanager.cpp" line="168"/>
+        <location filename="../src/mapmanager.cpp" line="161"/>
+        <location filename="../src/mapmanager.cpp" line="163"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Kunne ikke åpne database for sporing av nedlastede filer</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="169"/>
+        <location filename="../src/mapmanager.cpp" line="164"/>
         <source>Map Manager functionality would be disturbed</source>
         <translation>Map Manager funksjonalitet ville bli forstyrret</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="231"/>
+        <location filename="../src/mapmanager.cpp" line="226"/>
         <source>Cannot create directory without any name</source>
         <translation>Kan ikke lage mappe uten navn</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="238"/>
+        <location filename="../src/mapmanager.cpp" line="233"/>
         <source>Error creating directory %1</source>
         <translation>Feil ved oppretting av mappe %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="285"/>
+        <location filename="../src/mapmanager.cpp" line="280"/>
         <source>Address parsing language support</source>
         <translation>Adresse oppdeling språkstøtte</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="318"/>
-        <location filename="../src/mapmanager.cpp" line="789"/>
-        <location filename="../src/mapmanager.cpp" line="918"/>
+        <location filename="../src/mapmanager.cpp" line="313"/>
+        <location filename="../src/mapmanager.cpp" line="784"/>
+        <location filename="../src/mapmanager.cpp" line="912"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Kart lagringsmappen finnes ikke:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="327"/>
-        <location filename="../src/mapmanager.cpp" line="796"/>
+        <location filename="../src/mapmanager.cpp" line="322"/>
+        <location filename="../src/mapmanager.cpp" line="791"/>
         <source>No maps were requested</source>
         <translation>Ingen kart ble forespurt</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="348"/>
+        <location filename="../src/mapmanager.cpp" line="343"/>
         <source>No maps loaded: %1</source>
         <translation>Ingen kart lastet:%1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="823"/>
+        <location filename="../src/mapmanager.cpp" line="818"/>
         <source>%1: version of dataset for %2 is not supported</source>
         <translation>%1: versjon av datasettet for %2 støttes ikke</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="374"/>
+        <location filename="../src/mapmanager.cpp" line="369"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Manglende datasett for %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="287"/>
+        <location filename="../src/mapmanager.cpp" line="282"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="289"/>
+        <location filename="../src/mapmanager.cpp" line="284"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="291"/>
+        <location filename="../src/mapmanager.cpp" line="286"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="421"/>
+        <location filename="../src/mapmanager.cpp" line="416"/>
         <source>Available country or territory: </source>
         <translation>Tilgjengelig land eller territorium:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="622"/>
+        <location filename="../src/mapmanager.cpp" line="617"/>
         <source>World</source>
         <translation>Verden</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="686"/>
+        <location filename="../src/mapmanager.cpp" line="681"/>
         <source>Removing country from requested list: </source>
         <translation>Fjerner landet fra forespurt listen:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="844"/>
+        <location filename="../src/mapmanager.cpp" line="839"/>
         <source>Missing data: </source>
         <translation>Mangler data:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="924"/>
+        <location filename="../src/mapmanager.cpp" line="918"/>
         <source>No servers found to download the data from</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="947"/>
+        <location filename="../src/mapmanager.cpp" line="941"/>
         <source>Error starting the download of</source>
         <translation>Feil ved start av nedlastingen av</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="964"/>
+        <location filename="../src/mapmanager.cpp" line="958"/>
         <source>File downloaded:</source>
         <translation>Fil lastet ned:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="992"/>
+        <location filename="../src/mapmanager.cpp" line="986"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Kan ikke registrere den nedlastede filen i sporingsdatabasen</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="993"/>
+        <location filename="../src/mapmanager.cpp" line="987"/>
         <source>File registration error</source>
         <translation>Fil registrerings feil</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1016"/>
-        <location filename="../src/mapmanager.cpp" line="1017"/>
+        <location filename="../src/mapmanager.cpp" line="1010"/>
+        <location filename="../src/mapmanager.cpp" line="1011"/>
         <source>Could not retrieve server URL</source>
         <translation>Kunne ikke hente server URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1049"/>
+        <location filename="../src/mapmanager.cpp" line="1043"/>
         <source>Download failed from %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1085"/>
+        <location filename="../src/mapmanager.cpp" line="1079"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Liste av land: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1025"/>
+        <location filename="../src/mapmanager.cpp" line="1019"/>
         <source>Downloading the list of countries</source>
         <translation>Nedlasting av listen over land</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1358"/>
+        <location filename="../src/mapmanager.cpp" line="1339"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Kan ikke se etter oppdateringer på grunn av manglende liste over tilgjengelige land. Last ned listen før du sjekker etter oppdateringer.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1096"/>
+        <location filename="../src/mapmanager.cpp" line="1090"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="659"/>
+        <location filename="../src/mapmanager.cpp" line="654"/>
         <source>Add country or feature to requested list</source>
         <translation>Legg land eller funksjon til forespurt liste</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1060"/>
+        <location filename="../src/mapmanager.cpp" line="1054"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Nedlasting mislyktes, alle nedlastinger droppes</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1089"/>
+        <location filename="../src/mapmanager.cpp" line="1083"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Liste av land: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1109"/>
-        <source>Unpacking files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="1111"/>
-        <source>%1; Unpacking files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mapmanager.cpp" line="1141"/>
+        <location filename="../src/mapmanager.cpp" line="1128"/>
         <source>Stopping downloads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1301"/>
+        <location filename="../src/mapmanager.cpp" line="1282"/>
         <source>Updating the distribution server URL</source>
         <translation>Oppdatering av distribusjonsserver URL</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1354"/>
+        <location filename="../src/mapmanager.cpp" line="1335"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Kan ikke se etter oppdateringer på grunn av manglende kart lagringsmappe</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1356"/>
+        <location filename="../src/mapmanager.cpp" line="1337"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Kan ikke se etter oppdateringer på grunn av manglende oversikt over forespurte land. Velg land før du sjekker etter oppdateringer.</translation>
     </message>
@@ -874,12 +862,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="299"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="307"/>
         <source>Missing Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="319"/>
@@ -894,32 +882,32 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="346"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="354"/>
         <source>Missing Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="371"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="379"/>
         <source>Missing Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="392"/>
         <source>Mapbox GL country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="400"/>
         <source>Missing country-specific Mapbox GL dataset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="445"/>
@@ -967,12 +955,12 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="253"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="286"/>
         <source>Store datasets for Mapbox GL</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="296"/>
@@ -1022,7 +1010,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="144"/>
         <source>Stop download</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="155"/>
@@ -1062,7 +1050,7 @@
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="287"/>
         <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/MapManagerPage.qml" line="297"/>
@@ -1090,52 +1078,52 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="117"/>
         <source>Failed to run query in Mapbox GL database</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="169"/>
         <source>Failed to run query in Mapbox GL fonts database</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="196"/>
-        <source>Malformed Mapbox GL file request: %1/%2 [%3] [%4]</source>
-        <translation type="unfinished"></translation>
+        <source>Malformed Mapbox GL file request: %1/%2</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="202"/>
         <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="221"/>
         <source>Error opening Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="229"/>
         <source>Error reading Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="248"/>
         <source>Error opening Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="256"/>
         <source>Error reading Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="274"/>
         <source>Error opening Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="281"/>
         <source>Error reading Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1143,7 +1131,7 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="124"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="130"/>
@@ -1191,7 +1179,7 @@
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/MapnikPage.qml" line="37"/>
@@ -1405,7 +1393,7 @@
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="26"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/OSMSpeedPage.qml" line="35"/>
@@ -1539,47 +1527,47 @@
         <location filename="../qml/pages/ProfilesPage.qml" line="23"/>
         <location filename="../qml/pages/ProfilesPage.qml" line="40"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="27"/>
         <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.&lt;br&gt;&lt;br&gt;Please select active profile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="44"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="45"/>
         <source>Recommended for vector tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="46"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile uses &lt;i&gt;Mapnik&lt;/i&gt; to render maps into raster tiles, &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for traditional raster tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, the recommended profile for vector tiles maps includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="47"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="48"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/ProfilesPage.qml" line="49"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1589,240 +1577,199 @@
         <source>Number of parallel worker threads: %1</source>
         <translation>antall parallelle tråder: %1</translation>
     </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="55"/>
-        <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="325"/>
-        <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="401"/>
-        <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="569"/>
-        <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="616"/>
-        <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="718"/>
-        <source>List of POI types is not available since libosmscout is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="744"/>
-        <location filename="../src/requestmapper.cpp" line="864"/>
-        <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="837"/>
-        <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>RoutingForHuman</name>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="73"/>
+        <location filename="../src/routingforhuman.cpp" line="71"/>
         <source>Turn sharp left</source>
         <translation>Sving skarpt til venstre</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="75"/>
+        <location filename="../src/routingforhuman.cpp" line="73"/>
         <source>Turn left</source>
         <translation>Sving til venstre</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="77"/>
+        <location filename="../src/routingforhuman.cpp" line="75"/>
         <source>Turn slightly left</source>
         <translation>Sving litt til venstre</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="79"/>
+        <location filename="../src/routingforhuman.cpp" line="77"/>
         <source>Straight on</source>
         <translation>Rett frem</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="81"/>
+        <location filename="../src/routingforhuman.cpp" line="79"/>
         <source>Turn slightly right</source>
         <translation>Sving litt til høyre</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="83"/>
+        <location filename="../src/routingforhuman.cpp" line="81"/>
         <source>Turn right</source>
         <translation>Sving til høyre</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="85"/>
+        <location filename="../src/routingforhuman.cpp" line="83"/>
         <source>Turn sharp right</source>
         <translation>Sving skarpt til høyre</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="100"/>
+        <location filename="../src/routingforhuman.cpp" line="98"/>
         <source>Drive along %along%</source>
         <translation>Kjør langs %along%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="101"/>
+        <location filename="../src/routingforhuman.cpp" line="99"/>
         <source>Start at %start%. Drive along %along%</source>
         <translation>Start ved %start%. Kjør langs %along%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="108"/>
+        <location filename="../src/routingforhuman.cpp" line="106"/>
         <source>Start at %start%</source>
         <translation>Start ved %start%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="156"/>
+        <location filename="../src/routingforhuman.cpp" line="154"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
         <translation>Ved krysset (%crossingway%), %turncommand%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="225"/>
+        <location filename="../src/routingforhuman.cpp" line="223"/>
         <source>Enter motorway %motorway%</source>
         <translation>Kjør på motorvei %motorway%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="229"/>
+        <location filename="../src/routingforhuman.cpp" line="227"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
         <translation>Ved krysset %crossing%, kjør på motorvei %motorway%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="268"/>
+        <location filename="../src/routingforhuman.cpp" line="266"/>
         <source>Change motorway to %to%</source>
         <translation>Bytt motorvei til %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="271"/>
+        <location filename="../src/routingforhuman.cpp" line="269"/>
         <source>Change motorway from %from%</source>
         <translation>Bytt motorvei fra %from%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="274"/>
+        <location filename="../src/routingforhuman.cpp" line="272"/>
         <source>Change motorway from %from% to %to%</source>
         <translation>Bytt motorvei fra %from% til %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="279"/>
-        <location filename="../src/routingforhuman.cpp" line="365"/>
+        <location filename="../src/routingforhuman.cpp" line="277"/>
+        <location filename="../src/routingforhuman.cpp" line="363"/>
         <source>At %motoName% (exit %motoRef%), %command%</source>
         <translation>Ved %motoName% (avkjørsel %motoRef%), %command%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="285"/>
-        <location filename="../src/routingforhuman.cpp" line="371"/>
+        <location filename="../src/routingforhuman.cpp" line="283"/>
+        <location filename="../src/routingforhuman.cpp" line="369"/>
         <source>At %motoName%, %command%</source>
         <translation>Ved %motoName%, %command%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="337"/>
+        <location filename="../src/routingforhuman.cpp" line="335"/>
         <source>Leave motorway into %into%</source>
         <translation>Kjør av motorvei til %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="340"/>
+        <location filename="../src/routingforhuman.cpp" line="338"/>
         <source>Leave motorway. %move%</source>
         <translation>Kjør av motorvei. %move%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="343"/>
-        <location filename="../src/routingforhuman.cpp" line="350"/>
+        <location filename="../src/routingforhuman.cpp" line="341"/>
+        <location filename="../src/routingforhuman.cpp" line="348"/>
         <source>Leave motorway %from%</source>
         <translation>Kjør av motorvei %from%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="346"/>
+        <location filename="../src/routingforhuman.cpp" line="344"/>
         <source>Leave motorway. %move% into %into%</source>
         <translation>Kjør av motorvei. %move% til %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="354"/>
+        <location filename="../src/routingforhuman.cpp" line="352"/>
         <source>Leave motorway %from%. %move%</source>
         <translation>Kjør av motorvei %from%. %move%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="358"/>
+        <location filename="../src/routingforhuman.cpp" line="356"/>
         <source>Leave motorway %from%. %move% into %into%</source>
         <translation>Kjør av motorvei %from%. %move% til %into%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="386"/>
+        <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>Way changes name from %from% to %to%</source>
         <translation>Veien endrer navn fra %from% til %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="390"/>
+        <location filename="../src/routingforhuman.cpp" line="388"/>
         <source>Way changes name to %to%</source>
         <translation>Veien endrer navn til %to%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="148"/>
+        <location filename="../src/routingforhuman.cpp" line="146"/>
         <source>Turn</source>
         <translation>Snu</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="194"/>
+        <location filename="../src/routingforhuman.cpp" line="192"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
         <translation>Forlat rundkjøringen (%num% avkjørsel) til gate %street%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="198"/>
+        <location filename="../src/routingforhuman.cpp" line="196"/>
         <source>Leave roundabout (%num% exit)</source>
         <translation>Forlat rundkjøringen (%num% avkjørsel)</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="169"/>
+        <location filename="../src/routingforhuman.cpp" line="167"/>
         <source>Enter roundabout</source>
         <translation>Kjør inn i rundkjøringen</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="120"/>
+        <location filename="../src/routingforhuman.cpp" line="118"/>
         <source>Target reached: %target%</source>
         <translation>Målet nådd: %target%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="151"/>
+        <location filename="../src/routingforhuman.cpp" line="149"/>
         <source>%turncommand% into %where%</source>
         <translation>%turncommand% til %where%</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="173"/>
+        <location filename="../src/routingforhuman.cpp" line="171"/>
         <source>At crossing %crossway%, enter roundabout</source>
         <translation>Ved krysset %crossway%, kjør inn i rundkjøringen</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="190"/>
+        <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>Leave roundabout</source>
         <translation>Forlat rundkjøringen</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="190"/>
+        <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>exit</source>
         <translation>avkjørsel</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="223"/>
+        <location filename="../src/routingforhuman.cpp" line="221"/>
         <source>Enter motorway</source>
         <translation>Kjør på motorvei</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="266"/>
+        <location filename="../src/routingforhuman.cpp" line="264"/>
         <source>Change motorway</source>
         <translation>Bytt motorvei</translation>
     </message>
     <message>
-        <location filename="../src/routingforhuman.cpp" line="335"/>
+        <location filename="../src/routingforhuman.cpp" line="333"/>
         <source>Leave motorway</source>
         <translation>Kjør av motorvei</translation>
     </message>
@@ -1857,27 +1804,27 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="61"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="65"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="66"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="75"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="117"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="90"/>
@@ -1892,67 +1839,67 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="108"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="150"/>
         <source>Idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="154"/>
         <source>15 minutes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="155"/>
         <source>30 minutes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="156"/>
         <source>1 hour</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="157"/>
         <source>2 hours</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="158"/>
         <source>4 hours</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="159"/>
         <source>8 hours</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="160"/>
         <source>24 hours</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="161"/>
         <source>No timeout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="216"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="228"/>
@@ -2052,12 +1999,12 @@
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="198"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="211"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SettingsPage.qml" line="316"/>
@@ -2115,7 +2062,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="25"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="31"/>
@@ -2198,7 +2145,7 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="267"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="293"/>
@@ -2233,17 +2180,17 @@
     <message>
         <location filename="../qml/pages/StartPage.qml" line="427"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="428"/>
         <source>Skip</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/StartPage.qml" line="432"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2251,12 +2198,12 @@
     <message>
         <location filename="../src/systemdservice.cpp" line="79"/>
         <source>Cannot create or change to directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/systemdservice.cpp" line="89"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2265,32 +2212,32 @@
         <location filename="../qml/pages/SystemdActivationPage.qml" line="22"/>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="46"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="26"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="36"/>
         <source>Do you want to enable automatic activation?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="62"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2445,68 +2392,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="123"/>
+        <location filename="../src/main.cpp" line="125"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="128"/>
+        <location filename="../src/main.cpp" line="130"/>
         <source>Run the server without GUI as a console application</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="132"/>
+        <location filename="../src/main.cpp" line="134"/>
         <source>Do not output logs when running in console mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="137"/>
+        <location filename="../src/main.cpp" line="139"/>
         <source>Run the server in SystemD socket-activated mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="143"/>
+        <location filename="../src/main.cpp" line="145"/>
         <source>Start download of the maps</source>
         <translation>Start nedlasting av kartene</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="147"/>
+        <location filename="../src/main.cpp" line="149"/>
         <source>Update list of available maps</source>
         <translation>Oppdater liste over tilgjengelige kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="151"/>
+        <location filename="../src/main.cpp" line="153"/>
         <source>List maps available on device</source>
         <translation>List kart som er tilgjengelig på enheten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="155"/>
+        <location filename="../src/main.cpp" line="157"/>
         <source>List subscribed maps</source>
         <translation>List abbonerte kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="159"/>
+        <location filename="../src/main.cpp" line="161"/>
         <source>List maps provided for download</source>
         <translation>List kart som er klare for nedlasting</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="163"/>
+        <location filename="../src/main.cpp" line="165"/>
         <source>List missing maps</source>
         <translation>Liste manglende kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="167"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Abboner på &lt;country&gt; dataset</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="168"/>
-        <location filename="../src/main.cpp" line="173"/>
+        <location filename="../src/main.cpp" line="170"/>
+        <location filename="../src/main.cpp" line="175"/>
         <source>country-id</source>
         <translation>land-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="172"/>
+        <location filename="../src/main.cpp" line="174"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Avslutt abbonent på &lt;country&gt; dataset</translation>
     </message>
