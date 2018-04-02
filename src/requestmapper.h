@@ -6,6 +6,7 @@
 #include <QThreadPool>
 #include <QTimer>
 #include <QObject>
+#include <QString>
 
 #include <time.h>
 
@@ -42,6 +43,15 @@ protected:
   QTimer m_timer;
   struct timespec m_last_call;
   double m_idle_timeout;
+
+  // availibility of different backends
+  bool m_available_geocodernlp{false};
+  bool m_available_mapboxgl{false};
+  bool m_available_mapnik{false};
+  bool m_available_osmscout{false};
+  bool m_available_valhalla{false};
+
+  QString m_info_enable_backends;
 };
 
 #endif // REQUESTMAPPER_H

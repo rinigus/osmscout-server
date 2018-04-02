@@ -1101,7 +1101,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="196"/>
-        <source>Malformed Mapbox GL file request: %1/%2</source>
+        <source>Malformed Mapbox GL file request: %1/%2 [%3] [%4]</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1590,6 +1590,47 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../src/requestmapper.cpp" line="50"/>
         <source>Number of parallel worker threads: %1</source>
         <translation>Anzahl der parallelen Prozesse: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="55"/>
+        <source>Enable corresponding backend(s) using Profiles.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="325"/>
+        <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="401"/>
+        <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="569"/>
+        <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="616"/>
+        <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="718"/>
+        <source>List of POI types is not available since libosmscout is disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="744"/>
+        <location filename="../src/requestmapper.cpp" line="864"/>
+        <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/requestmapper.cpp" line="837"/>
+        <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

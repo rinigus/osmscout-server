@@ -51,6 +51,9 @@ RequestMapper::RequestMapper(QObject *parent):
                                                 "Number of parallel worker threads: %1").arg(m_pool.maxThreadCount()) );
 
   onSettingsChanged();
+
+  m_info_enable_backends = tr("Enable corresponding backend(s) using Profiles.");
+
   clock_gettime(CLOCK_BOOTTIME, &m_last_call);
 
   connect(&m_timer, &QTimer::timeout,
@@ -65,6 +68,13 @@ void RequestMapper::onSettingsChanged()
 {
   AppSettings settings;
   m_idle_timeout = settings.valueInt(REQUEST_MAPPER_SETTINGS "idle_timeout");
+
+  // availibility
+  m_available_geocodernlp = settings.valueBool(MAPMANAGER_SETTINGS "geocoder_nlp");
+  m_available_mapboxgl = settings.valueBool(MAPMANAGER_SETTINGS "mapboxgl");
+  m_available_mapnik = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
+  m_available_osmscout = settings.valueBool(MAPMANAGER_SETTINGS "osmscout");
+  m_available_valhalla = settings.valueBool(MAPMANAGER_SETTINGS "valhalla");
 
   if (m_idle_timeout > 0)
     m_timer.start( std::max(1000, (int)m_idle_timeout*1000/10));
@@ -309,6 +319,14 @@ unsigned int RequestMapper::service(const char *url_c,
   /// TILES
   if (path == "/v1/tile")
     {
+      if (!m_available_mapnik && !m_available_osmscout)
+        {
+          errorText(response, connection_id, "Raster tiles are not supported with these settings");
+          InfoHub::logWarning(tr("Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1")
+                              .arg(m_info_enable_backends));
+          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
+
 #if !defined(USE_OSMSCOUT) && !defined(USE_MAPNIK)
       errorText(response, connection_id, "Raster tiles are not supported in this configuration");
       return MHD_HTTP_INTERNAL_SERVER_ERROR;
@@ -373,6 +391,16 @@ unsigned int RequestMapper::service(const char *url_c,
       errorText(response, connection_id, "Error allocating raster tile generation task, possible misconfiguration of the server");
       return MHD_HTTP_INTERNAL_SERVER_ERROR;
 #endif
+    }
+
+  //////////////////////////////////////////////////////////////////////
+  /// MAPBOX GL SUPPORT: CHECK IF IT IS AVAILABLE WHEN REQUESTED
+  else if (path.startsWith("/v1/mbgl") && !m_available_mapboxgl)
+    {
+      errorText(response, connection_id, "Mapbox GL is not supported with these settings");
+      InfoHub::logWarning(tr("Mapbox GL backend is disabled by selected profile or settings. %1")
+                          .arg(m_info_enable_backends));
+      return MHD_HTTP_INTERNAL_SERVER_ERROR;
     }
 
   //////////////////////////////////////////////////////////////////////
@@ -535,6 +563,14 @@ unsigned int RequestMapper::service(const char *url_c,
   /// SEARCH
   else if (path == "/v1/search" || path == "/v2/search")
     {
+      if (!m_available_geocodernlp && !m_available_osmscout)
+        {
+          errorText(response, connection_id, "Search is not supported with these settings");
+          InfoHub::logWarning(tr("Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1")
+                              .arg(m_info_enable_backends));
+          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
+
       bool ok = true;
       size_t limit = q2value<size_t>("limit", 25, connection, ok);
       QString search = q2value<QString>("search", "", connection, ok);
@@ -574,6 +610,14 @@ unsigned int RequestMapper::service(const char *url_c,
   /// GUIDE: LOOKUP POIs NEAR REFERENCE POINT
   else if (path == "/v1/guide")
     {
+      if (!m_available_geocodernlp && !m_available_osmscout)
+        {
+          errorText(response, connection_id, "Guide is not supported with these settings");
+          InfoHub::logWarning(tr("Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1")
+                              .arg(m_info_enable_backends));
+          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
+
       bool ok = true;
       double radius = q2value<double>("radius", 1000.0, connection, ok);
       size_t limit = q2value<size_t>("limit", 50, connection, ok);
@@ -668,6 +712,14 @@ unsigned int RequestMapper::service(const char *url_c,
 #ifdef USE_OSMSCOUT
   else if (path == "/v1/poi_types")
     {
+      if (!m_available_osmscout)
+        {
+          errorText(response, connection_id, "List of POI types is not supported with these settings");
+          InfoHub::logWarning(tr("List of POI types is not available since libosmscout is disabled by selected profile or settings. %1")
+                              .arg(m_info_enable_backends));
+          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
+
       QByteArray bytes;
       if (!osmScoutMaster->poiTypes(bytes))
         {
@@ -686,6 +738,14 @@ unsigned int RequestMapper::service(const char *url_c,
 #ifdef USE_OSMSCOUT
   else if (path == "/v1/route" && !useValhalla)
     {
+      if (!m_available_osmscout)
+        {
+          errorText(response, connection_id, "Routing is not supported with these settings");
+          InfoHub::logWarning(tr("Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1")
+                              .arg(m_info_enable_backends));
+          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
+
       bool ok = true;
       QString type = q2value<QString>("type", "car", connection, ok);
       double radius = q2value<double>("radius", 1000.0, connection, ok);
@@ -771,6 +831,14 @@ unsigned int RequestMapper::service(const char *url_c,
          #endif
            )
     {
+      if (!m_available_valhalla)
+        {
+          errorText(response, connection_id, "Routing is not supported with these settings");
+          InfoHub::logWarning(tr("Routing is not available since Valhalla is disabled by selected profile or settings. %1")
+                              .arg(m_info_enable_backends));
+          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
+
       QString uri;
       MHD_get_connection_values(connection, MHD_GET_ARGUMENT_KIND, query_uri_iterator, &uri);
 
@@ -790,6 +858,14 @@ unsigned int RequestMapper::service(const char *url_c,
 #ifdef USE_OSMSCOUT
   else if (path == "/v2/route" && !useValhalla)
     {
+      if (!m_available_osmscout)
+        {
+          errorText(response, connection_id, "Routing is not supported with these settings");
+          InfoHub::logWarning(tr("Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1")
+                              .arg(m_info_enable_backends));
+          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
+
       bool ok = true;
       QString json = q2value<QString>("json", "", connection, ok);
       QJsonObject objreq = QJsonDocument::fromJson(json.toUtf8()).object();
