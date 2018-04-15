@@ -17,13 +17,26 @@ QT = core network sql xml
 CONFIG += c++11
 
 # selection of backends
-#CONFIG += use_mapnik
-CONFIG += use_osmscout
-CONFIG += use_valhalla
-#CONFIG += use_systemd
+!disable_mapnik {
+    CONFIG += use_mapnik
+}
+
+!disable_osmscout {
+    CONFIG += use_osmscout
+}
+
+!disable_valhalla {
+    CONFIG += use_valhalla
+}
+
+!disable_systemd {
+    CONFIG += use_systemd
+}
 
 # libosmscout settings
-CONFIG += use_map_qt
+!use_map_cairo {
+    CONFIG += use_map_qt
+}
 #CONFIG += use_map_cairo
 
 
