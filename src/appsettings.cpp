@@ -19,6 +19,10 @@
 #define DATA_PREFIX ""
 #endif
 
+#ifdef IS_QTCONTROLS_QT
+#define DATA_PREFIX ""
+#endif
+
 AppSettings::AppSettings():
   QSettings()
 {

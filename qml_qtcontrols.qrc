@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/qtcontrols/osmscout-server.qml</file>
+        <file>qtquickcontrols2.conf</file>
+    </qresource>
+</RCC>

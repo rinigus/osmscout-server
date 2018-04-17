@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = osmscout-server
 
-QT = core network sql xml
+QT = core network sql xml quick gui
 
 CONFIG += c++11 object_parallel_to_source
 
@@ -41,45 +41,57 @@ CONFIG += c++11 object_parallel_to_source
 
 
 # installs
+qml.files = qml
+qml.path = /usr/share/$${TARGET}
+INSTALLS += qml
+
 styles.files = styles
 styles.path = /usr/share/$${TARGET}
 INSTALLS += styles
 
 # defines
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
-DEFINES += IS_CONSOLE_QT
+DEFINES += IS_QTCONTROLS_QT
+
+# The following define makes your compiler emit warnings if you use
+# any feature of Qt which as been marked deprecated (the exact warnings
+# depend on your compiler). Please consult the documentation of the
+# deprecated API in order to know how to port your code away from it.
+DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += src/dbmaster.cpp \
     src/main.cpp \
     src/requestmapper.cpp \
     src/appsettings.cpp \
+    src/dbmaster_route.cpp \
     src/dbmaster_search.cpp \
     src/dbmaster_map.cpp \
     src/osmscout-server_console.cpp \
     src/searchresults.cpp \
     src/infohub.cpp \
+    src/rollinglogger.cpp \
     src/consolelogger.cpp \
-    src/dbmaster_route.cpp \
     src/routingforhuman.cpp \
     src/geomaster.cpp \
     src/config.cpp \
     src/mapmanager.cpp \
     src/filedownloader.cpp \
     src/mapmanagerfeature.cpp \
+    src/mapmanager_urlcollection.cpp \
     src/mapmanagerfeature_packtaskworker.cpp \
-    src/mapnikmaster.cpp \
+    src/mapnikmaster.cpp \ 
+    src/modulechecker.cpp \
     src/valhallamaster.cpp \
     src/mapmanager_deleterthread.cpp \
-    src/modulechecker.cpp \
     src/systemdservice.cpp \
     src/util.cpp \
-    src/mapboxglmaster.cpp \
-    src/mapmanager_urlcollection.cpp
-
+    src/mapboxglmaster.cpp
+    
 OTHER_FILES += \
     osmscout-server.desktop
 
 include(src/uhttp/uhttp.pri)
+include(src/fileselector/fileselector.pri)
 include(src/geocoder-nlp/geocoder-nlp.pri)
 
 HEADERS += \
@@ -89,22 +101,23 @@ HEADERS += \
     src/config.h \
     src/searchresults.h \
     src/infohub.h \
+    src/rollinglogger.h \
     src/consolelogger.h \
     src/routingforhuman.h \
     src/geomaster.h \
     src/mapmanager.h \
     src/filedownloader.h \
     src/mapmanagerfeature.h \
+    src/mapmanager_urlcollection.h \
     src/mapmanagerfeature_packtaskworker.h \
     src/mapnikmaster.h \
+    src/modulechecker.h \
     src/valhallamaster.h \
     src/mapmanager_deleterthread.h \
-    src/modulechecker.h \
     src/systemdservice.h \
     src/util.hpp \
-    src/mapboxglmaster.h \
-    src/mapmanager_urlcollection.h
-
+    src/mapboxglmaster.h
+    
 use_osmscout {
     DEFINES += USE_OSMSCOUT
 
@@ -158,6 +171,8 @@ LIBS += -lmarisa -lkyotocabinet -lz -lsqlite3
 
 QMAKE_CXXFLAGS += -fopenmp
 LIBS += -fopenmp
+
+RESOURCES += qml_qtcontrols.qrc
 
 CONFIG(release, debug|release) {
     DEFINES += QT_NO_WARNING_OUTPUT QT_NO_DEBUG_OUTPUT

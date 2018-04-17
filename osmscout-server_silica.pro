@@ -14,7 +14,7 @@ TARGET = harbour-osmscout-server
 
 QT += core gui network sql xml
 
-CONFIG += c++11
+CONFIG += c++11 object_parallel_to_source
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
 
 # selection of backends

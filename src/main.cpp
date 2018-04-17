@@ -16,16 +16,24 @@
 
 #endif // of IS_CONSOLE_QT
 
+#ifdef IS_QTCONTROLS_QT
+#include <QGuiApplication>
+#endif
+
 #include "consolelogger.h"
 
 #ifdef IS_SAILFISH_OS
 #include <sailfishapp.h>
+#endif // of IS_SAILFISH_OS
+
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
 #include <QtQuick>
 #include <QtQml>
+#include <QQmlApplicationEngine>
 
 #include "rollinglogger.h"
 #include "filemodel.h"
-#endif // of IS_SAILFISH_OS
+#endif // of IS_SAILFISH_OS || IS_QTCONTROLS_QT
 
 // HTTP server
 #include "microhttpserver.h"
@@ -65,7 +73,7 @@ int main(int argc, char *argv[])
 {
   bool has_logger_console = false;
 
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   bool has_logger_rolling = true;
 #endif
 
@@ -91,6 +99,11 @@ int main(int argc, char *argv[])
 
 #ifdef IS_SAILFISH_OS
   QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+#endif
+#ifdef IS_QTCONTROLS_QT
+  QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
+#endif
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
 #endif
 
@@ -178,7 +191,7 @@ int main(int argc, char *argv[])
   parser.process(*app);
 
   // check logger related options
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   if (parser.isSet(optionConsole)) // have to enable logger when running as GUI
     has_logger_rolling = false;
 
@@ -194,7 +207,7 @@ int main(int argc, char *argv[])
   if (has_logger_console)
     console_logger = new ConsoleLogger(app.data());
 
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   RollingLogger *rolling_logger = nullptr;
   if (has_logger_rolling)
     rolling_logger = new RollingLogger(app.data());
@@ -235,9 +248,11 @@ int main(int argc, char *argv[])
   // setup Map Manager
   MapManager::Manager manager(app.data());
 
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   if (rolling_logger) rolling_logger->onSettingsChanged();
+#endif
 
+#ifdef IS_SAILFISH_OS
   QScopedPointer<QQuickView> v;
   QQmlContext *rootContext = nullptr;
   if (!parser.isSet(optionConsole))
@@ -245,7 +260,13 @@ int main(int argc, char *argv[])
       v.reset(SailfishApp::createView());
       rootContext = v->rootContext();
     }
+#endif
+#ifdef IS_QTCONTROLS_QT
+  QQmlApplicationEngine engine;
+  QQmlContext *rootContext = engine.rootContext();
+#endif
 
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   if (rootContext)
     {
       rootContext->setContextProperty("programName", "OSM Scout Server");
@@ -289,7 +310,7 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate GeoMaster" << std::endl;
       return -2;
     }
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   if (rootContext) rootContext->setContextProperty("geocoder", geoMaster);
 #endif
 
@@ -323,12 +344,15 @@ int main(int argc, char *argv[])
     }
 #endif
 
-#ifdef IS_SAILFISH_OS  
+#ifdef IS_SAILFISH_OS
   if (v)
     {
       v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
       v->show();
     }
+#endif
+#ifdef IS_QTCONTROLS_QT
+  engine.load(QUrl(QStringLiteral("qrc:/qml/qtcontrols/osmscout-server.qml")));
 #endif
 
 #ifdef USE_OSMSCOUT
