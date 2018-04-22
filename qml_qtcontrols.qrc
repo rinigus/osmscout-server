@@ -2,5 +2,11 @@
     <qresource prefix="/">
         <file>qml/qtcontrols/osmscout-server.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>qml/qtcontrols/SectionHeader.qml</file>
+        <file>qml/qtcontrols/StartPage.qml</file>
+        <file>qml/qtcontrols/ElementLanguageSelector.qml</file>
+        <file>qml/qtcontrols/ElementDownloads.qml</file>
+        <file>qml/qtcontrols/Theme.qml</file>
+        <file>qml/qtcontrols/Label.qml</file>
     </qresource>
 </RCC>

@@ -352,6 +352,7 @@ int main(int argc, char *argv[])
     }
 #endif
 #ifdef IS_QTCONTROLS_QT
+  qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/qml/qtcontrols/Theme.qml")), "osmscout.theme", 1, 0, "Theme");
   engine.load(QUrl(QStringLiteral("qrc:/qml/qtcontrols/osmscout-server.qml")));
 #endif
 

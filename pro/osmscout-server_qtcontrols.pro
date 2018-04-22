@@ -41,10 +41,6 @@ CONFIG += c++11 object_parallel_to_source
 
 
 # installs
-qml.files = qml
-qml.path = /usr/share/$${TARGET}
-INSTALLS += qml
-
 styles.files = styles
 styles.path = /usr/share/$${TARGET}
 INSTALLS += styles
@@ -177,3 +173,4 @@ RESOURCES += qml_qtcontrols.qrc
 CONFIG(release, debug|release) {
     DEFINES += QT_NO_WARNING_OUTPUT QT_NO_DEBUG_OUTPUT
 }
+
