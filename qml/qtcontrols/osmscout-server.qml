@@ -18,22 +18,43 @@ ApplicationWindow {
     header: ToolBar {
         contentHeight: toolButton.implicitHeight
 
-        ToolButton {
-            id: toolButton
-            text: stackView.depth > 1 ? "\u25C0" : "\u2630"
-            font.pixelSize: Qt.application.font.pixelSize * 1.6
-            onClicked: {
-                if (stackView.depth > 1) {
-                    stackView.pop()
-                } else {
-                    drawer.open()
+        RowLayout {
+            anchors.fill: parent
+
+            ToolButton {
+                id: toolButton
+                text: pageStack.depth > 1 ? "\u25C0" : "\u2630"
+                font.pixelSize: Qt.application.font.pixelSize * 1.6
+                onClicked: {
+                    if (pageStack.depth > 1) {
+                        pageStack.pop()
+                    } else {
+                        drawer.open()
+                    }
                 }
             }
-        }
 
-        Label {
-            text: stackView.currentItem.title
-            anchors.centerIn: parent
+            Label {
+                text: pageStack.currentItem.title
+                anchors.centerIn: parent
+                elide: Label.ElideRight
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
+                Layout.fillWidth: true
+            }
+
+            ToolButton {
+                id: acceptButton
+                text: "Accept"
+                font.pixelSize: Qt.application.font.pixelSize * 1.6
+                visible: pageStack.depth > 1 && pageStack.currentItem.dialogue === true
+                onClicked: {
+                    pageStack.currentItem.onAccepted()
+                    if (pageStack.depth > 1) {
+                        pageStack.pop()
+                    }
+                }
+            }
         }
     }
 
@@ -49,7 +70,7 @@ ApplicationWindow {
                 text: qsTr("Home")
                 width: parent.width
                 onClicked: {
-                    stackView.pop(null)
+                    pageStack.pop(null)
                     drawer.close()
                 }
             }
@@ -57,7 +78,7 @@ ApplicationWindow {
                 text: qsTr("Map Manager")
                 width: parent.width
                 onClicked: {
-                    stackView.push(".qml")
+                    pageStack.push(".qml")
                     drawer.close()
                 }
             }
@@ -65,7 +86,7 @@ ApplicationWindow {
                 text: qsTr("Profile")
                 width: parent.width
                 onClicked: {
-                    stackView.push(".qml")
+                    pageStack.push(".qml")
                     drawer.close()
                 }
             }
@@ -73,7 +94,7 @@ ApplicationWindow {
                 text: qsTr("Settings")
                 width: parent.width
                 onClicked: {
-                    stackView.push(".qml")
+                    pageStack.push(".qml")
                     drawer.close()
                 }
             }
@@ -81,7 +102,7 @@ ApplicationWindow {
                 text: qsTr("About")
                 width: parent.width
                 onClicked: {
-                    stackView.push(".qml")
+                    pageStack.push(".qml")
                     drawer.close()
                 }
             }
@@ -89,44 +110,9 @@ ApplicationWindow {
     }
 
     StackView {
-        id: stackView
+        id: pageStack
         initialItem: StartPage { }
         anchors.fill: parent
+        anchors.topMargin: Theme.paddingLarge
     }
-
-//    StackLayout {
-//        width: parent.width
-//        height: parent.height
-//        currentIndex: bar.currentIndex
-
-//        StartPage {
-//            id: startPage
-//        }
-//        Item {
-//            id: discoverTab
-//        }
-//        Item {
-//            id: activityTab
-//        }
-//    }
-
-//    footer: TabBar {
-//        id: bar
-
-//        TabButton {
-//            text: qsTr("Main")
-//        }
-//        TabButton {
-//            text: qsTr("Map Manager")
-//        }
-//        TabButton {
-//            text: qsTr("Profile")
-//        }
-//        TabButton {
-//            text: qsTr("Settings")
-//        }
-//        TabButton {
-//            text: qsTr("About")
-//        }
-//    }
 }

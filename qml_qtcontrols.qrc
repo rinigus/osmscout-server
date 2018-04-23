@@ -8,5 +8,6 @@
         <file>qml/qtcontrols/ElementDownloads.qml</file>
         <file>qml/qtcontrols/Theme.qml</file>
         <file>qml/qtcontrols/Label.qml</file>
+        <file>qml/qtcontrols/LanguageSelector.qml</file>
     </qresource>
 </RCC>
