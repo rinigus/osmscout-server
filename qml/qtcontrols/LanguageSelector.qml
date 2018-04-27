@@ -5,21 +5,15 @@ import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import "."
 
-ScrollView {
+Dialog {
 
     id: main
 
-    property bool dialogue: true
-
-    property string title
     property string comment
     property string note
     property string value
 
     property var callback
-
-    width: parent ? parent.width : 100
-    height: parent ? parent.height : 100
 
     ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
     ScrollBar.vertical.policy: ScrollBar.AsNeeded

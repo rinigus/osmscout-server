@@ -6,6 +6,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
+import Qt.labs.settings 1.0
 import "."
 
 ApplicationWindow {
@@ -48,6 +49,7 @@ ApplicationWindow {
                 text: "Accept"
                 font.pixelSize: Qt.application.font.pixelSize * 1.6
                 visible: pageStack.depth > 1 && pageStack.currentItem.dialogue === true
+                enabled: pageStack.depth > 1 && pageStack.currentItem.canAccept === true
                 onClicked: {
                     pageStack.currentItem.onAccepted()
                     if (pageStack.depth > 1) {
@@ -60,7 +62,6 @@ ApplicationWindow {
 
     Drawer {
         id: drawer
-        width: appWindow.width * 0.66
         height: appWindow.height
 
         Column {
@@ -68,7 +69,6 @@ ApplicationWindow {
 
             ItemDelegate {
                 text: qsTr("Home")
-                width: parent.width
                 onClicked: {
                     pageStack.pop(null)
                     drawer.close()
@@ -76,33 +76,29 @@ ApplicationWindow {
             }
             ItemDelegate {
                 text: qsTr("Map Manager")
-                width: parent.width
                 onClicked: {
-                    pageStack.push(".qml")
+                    pageStack.push(Qt.resolvedUrl("MapManagerPage.qml"))
                     drawer.close()
                 }
             }
             ItemDelegate {
                 text: qsTr("Profile")
-                width: parent.width
                 onClicked: {
-                    pageStack.push(".qml")
+                    pageStack.push(Qt.resolvedUrl("ProfilesPage.qml"))
                     drawer.close()
                 }
             }
             ItemDelegate {
                 text: qsTr("Settings")
-                width: parent.width
                 onClicked: {
-                    pageStack.push(".qml")
+                    pageStack.push(Qt.resolvedUrl("SettingsPage.qml"))
                     drawer.close()
                 }
             }
             ItemDelegate {
                 text: qsTr("About")
-                width: parent.width
                 onClicked: {
-                    pageStack.push(".qml")
+                    pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
                     drawer.close()
                 }
             }
@@ -114,5 +110,12 @@ ApplicationWindow {
         initialItem: StartPage { }
         anchors.fill: parent
         anchors.topMargin: Theme.paddingLarge
+    }
+
+    Settings {
+        property alias x: appWindow.x
+        property alias y: appWindow.y
+        property alias width: appWindow.width
+        property alias height: appWindow.height
     }
 }

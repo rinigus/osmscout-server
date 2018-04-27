@@ -61,7 +61,7 @@ Column {
         wrapMode: Text.WordWrap
     }
 
-    MenuItem {
+    ItemDelegate {
         id: textInput
         x: Theme.horizontalPageMargin
         width: parent.width-2*x
@@ -72,7 +72,7 @@ Column {
             setValue(settings.valueString(main.key))
         }
 
-        onTriggered: select()
+        onClicked: select()
     }
 
 

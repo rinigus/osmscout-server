@@ -51,7 +51,7 @@ ScrollView {
                 if (!modules.valhallaRoute)
                     noModuleText.text += qsTr("<li>OSM Scout Server Module: Route</li>")
 
-                noModuleText.text += qsTr("</ul><br>Please install missing modules via Harbour or OpenRepos. " +
+                noModuleText.text += qsTr("</ul><br>Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. " +
                                           "After installation of the module(s), please restart OSM Scout Server.")
             }
 
@@ -368,15 +368,14 @@ ScrollView {
     }
 
 
-    //    Connections {
-    //        target: manager
+    Connections {
+        target: manager
 
-    //        onErrorMessage: {
-    //            pageStack.completeAnimation()
-    //            pageStack.push( Qt.resolvedUrl("MessagePage.qml"),
-    //                           {"header": qsTr("Error"), "message": info} )
-    //        }
-    //    }
+        onErrorMessage: {
+            pageStack.push( Qt.resolvedUrl("MessagePage.qml"),
+                           {"title": qsTr("Error"), "message": info} )
+        }
+    }
 
     //        ///////////////////////////////////////////////////////////
     //        /// welcome wizard
