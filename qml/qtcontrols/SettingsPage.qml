@@ -23,7 +23,6 @@ Dialog {
             anchors.margins: Theme.horizontalPageMargin
 
             Row {
-                id: unitsBoxContainer
                 spacing: Theme.horizontalPageMargin
                 x: Theme.horizontalPageMargin
                 width: dialog.width - 2*x
@@ -64,18 +63,30 @@ Dialog {
             spacing: Theme.paddingMedium
             anchors.margins: Theme.horizontalPageMargin
 
-            ComboBox {
-                id: preferredLanguageSelection
-                label: qsTr("Language")
-                enabled: manager.ready
+            Row {
+                spacing: Theme.horizontalPageMargin
+                x: Theme.horizontalPageMargin
+                width: dialog.width - 2*x
 
-                menu: ContextMenu {
-                    MenuItem { text: qsTr("Default") }
-                    MenuItem { text: qsTr("English") }
+                Text {
+                    id: preferredLanguageSelectionText
+                    text: qsTr("Language")
+                    anchors.verticalCenter: profileSelection.verticalCenter
                 }
 
-                Component.onCompleted: {
-                    currentIndex = settings.valueInt(settingsGeneralPrefix + "language")
+                ComboBox {
+                    id: preferredLanguageSelection
+                    enabled: manager.ready
+                    width: parent.width - preferredLanguageSelectionText.width - 2*Theme.horizontalPageMargin
+
+                    model: ListModel {
+                        ListElement { text: qsTr("Default") }
+                        ListElement { text: qsTr("English") }
+                    }
+
+                    Component.onCompleted: {
+                        currentIndex = settings.valueInt(settingsGeneralPrefix + "language")
+                    }
                 }
             }
 
@@ -111,7 +122,7 @@ Dialog {
             spacing: Theme.paddingMedium
             anchors.margins: Theme.horizontalPageMargin
 
-            TextSwitch {
+            Switch {
                 id: systemdEnable
                 text: qsTr("Automatic activation")
                 enabled: manager.ready
@@ -153,52 +164,64 @@ Dialog {
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
-            ComboBox {
-                id: idleTimeout
-                label: qsTr("Idle timeout")
-                enabled: manager.ready && systemdEnable.checked
+            Row {
+                spacing: Theme.horizontalPageMargin
+                x: Theme.horizontalPageMargin
+                width: dialog.width - 2*x
 
-                property var timeouts: [
-                    {"value": 900, "desc": qsTr("15 minutes") },
-                    {"value": 1800, "desc": qsTr("30 minutes") },
-                    {"value": 3600, "desc": qsTr("1 hour")},
-                    {"value": 7200, "desc": qsTr("2 hours")},
-                    {"value": 14400, "desc": qsTr("4 hours")},
-                    {"value": 28800, "desc": qsTr("8 hours")},
-                    {"value": 86400, "desc": qsTr("24 hours")},
-                    {"value": -1, "desc": qsTr("No timeout")}
-                ]
-
-
-                menu: ContextMenu {
-                    MenuItem { text: idleTimeout.timeouts[0]["desc"] }
-                    MenuItem { text: idleTimeout.timeouts[1]["desc"] }
-                    MenuItem { text: idleTimeout.timeouts[2]["desc"] }
-                    MenuItem { text: idleTimeout.timeouts[3]["desc"] }
-                    MenuItem { text: idleTimeout.timeouts[4]["desc"] }
-                    MenuItem { text: idleTimeout.timeouts[5]["desc"] }
-                    MenuItem { text: idleTimeout.timeouts[6]["desc"] }
-                    MenuItem { text: idleTimeout.timeouts[7]["desc"] }
+                Text {
+                    id: idleTimeoutText
+                    text: qsTr("Idle timeout")
+                    anchors.verticalCenter: profileSelection.verticalCenter
                 }
 
-                function apply() {
-                    settings.setValue(settingsRequestMapperPrefix + "idle_timeout", timeouts[currentIndex]["value"])
-                }
+                ComboBox {
+                    id: idleTimeout
+                    width: parent.width - idleTimeoutText.width - 2*Theme.horizontalPageMargin
+                    enabled: manager.ready && systemdEnable.checked
 
-                Component.onCompleted: {
-                    var timeout = settings.valueInt(settingsRequestMapperPrefix + "idle_timeout")
-                    if (timeout < 0) {
-                        currentIndex = 7
-                        return
+                    property var timeouts: [
+                        {"value": 900, "desc": qsTr("15 minutes") },
+                        {"value": 1800, "desc": qsTr("30 minutes") },
+                        {"value": 3600, "desc": qsTr("1 hour")},
+                        {"value": 7200, "desc": qsTr("2 hours")},
+                        {"value": 14400, "desc": qsTr("4 hours")},
+                        {"value": 28800, "desc": qsTr("8 hours")},
+                        {"value": 86400, "desc": qsTr("24 hours")},
+                        {"value": -1, "desc": qsTr("No timeout")}
+                    ]
+
+
+                    model: ListModel {
+                        ListElement { text: idleTimeout.timeouts[0]["desc"] }
+                        ListElement { text: idleTimeout.timeouts[1]["desc"] }
+                        ListElement { text: idleTimeout.timeouts[2]["desc"] }
+                        ListElement { text: idleTimeout.timeouts[3]["desc"] }
+                        ListElement { text: idleTimeout.timeouts[4]["desc"] }
+                        ListElement { text: idleTimeout.timeouts[5]["desc"] }
+                        ListElement { text: idleTimeout.timeouts[6]["desc"] }
+                        ListElement { text: idleTimeout.timeouts[7]["desc"] }
                     }
 
-                    for (var i = 0; i < timeouts.length-2; i++)
-                        if ( timeout <= timeouts[i]["value"] ) {
-                            currentIndex = i
+                    function apply() {
+                        settings.setValue(settingsRequestMapperPrefix + "idle_timeout", timeouts[currentIndex]["value"])
+                    }
+
+                    Component.onCompleted: {
+                        var timeout = settings.valueInt(settingsRequestMapperPrefix + "idle_timeout")
+                        if (timeout < 0) {
+                            currentIndex = 7
                             return
                         }
 
-                    currentIndex = timeouts.length-2
+                        for (var i = 0; i < timeouts.length-2; i++)
+                            if ( timeout <= timeouts[i]["value"] ) {
+                                currentIndex = i
+                                return
+                            }
+
+                        currentIndex = timeouts.length-2
+                    }
                 }
             }
 
@@ -449,41 +472,39 @@ Dialog {
         }
     }
 
-    VerticalScrollDecorator {}
-}
 
-function checkState()
-{
-    dialog.backendSelectionPossible = !settings.profilesUsed
-}
+    function checkState()
+    {
+        dialog.backendSelectionPossible = !settings.profilesUsed
+    }
 
-Component.onCompleted: {
-    checkState()
-}
+    Component.onCompleted: {
+        checkState()
+    }
 
-Connections {
-    target: settings
-    onProfilesUsedChanged: checkState()
-}
+    Connections {
+        target: settings
+        onProfilesUsedChanged: checkState()
+    }
 
-onAccepted: {
-    eLogInfo.apply()
-    eRollSize.apply()
-    eLogSession.apply()
+    function onAccepted() {
+        eLogInfo.apply()
+        eRollSize.apply()
+        eLogSession.apply()
 
-    /// preferred languages are done by combo box, have to apply manually
-    settings.setValue(settingsGeneralPrefix + "language", preferredLanguageSelection.currentIndex)
+        /// preferred languages are done by combo box, have to apply manually
+        settings.setValue(settingsGeneralPrefix + "language", preferredLanguageSelection.currentIndex)
 
-    eMapsRoot.apply()
-    eGeocoderNLP.apply()
-    eMapnik.apply()
-    eValhalla.apply()
+        eMapsRoot.apply()
+        eGeocoderNLP.apply()
+        eMapnik.apply()
+        eValhalla.apply()
 
-    /// units are done by combo box, have to apply manually
-    /// units are changed the last
-    settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
+        /// units are done by combo box, have to apply manually
+        /// units are changed the last
+        settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
 
-    systemd_service.enabled = systemdEnable.checked
-    idleTimeout.apply()
-}
+        systemd_service.enabled = systemdEnable.checked
+        idleTimeout.apply()
+    }
 }
