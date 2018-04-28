@@ -126,6 +126,8 @@ Page {
     }
 
     function updatePage() {
+        nDirs = 0
+        nFiles = 0
         fileNames = manager.getNonNeededFilesList()
         dirNames = manager.getDirsWithNonNeededFiles()
         var size = manager.getNonNeededFilesSize()
