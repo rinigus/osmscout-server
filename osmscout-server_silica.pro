@@ -45,8 +45,8 @@ CONFIG += sailfishapp sailfishapp_no_deploy_qml
 CONFIG += sailfishapp_i18n
 
 # installs
-qml.files = qml
-qml.path = /usr/share/$${TARGET}
+qml.files = qml/silica
+qml.path = /usr/share/$${TARGET}/qml
 INSTALLS += qml
 
 styles.files = styles
