@@ -1028,8 +1028,7 @@ void Manager::onDownloadFinished(QString path)
   else if (dtype == ProvidedList)
     {
       m_download_type = NoDownload;
-      loadSettings(); // to ensure that global datasets are requested if needed
-      checkUpdates();
+      loadSettings(); // to ensure that global datasets are requested if needed and updates checked
     }
   else
     m_download_type = NoDownload;
