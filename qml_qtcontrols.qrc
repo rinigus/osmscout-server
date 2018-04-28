@@ -17,7 +17,6 @@
         <file>qml/qtcontrols/ElementEntry.qml</file>
         <file>qml/qtcontrols/ElementSelector.qml</file>
         <file>qml/qtcontrols/ElementSwitch.qml</file>
-        <file>qml/qtcontrols/FileSelector.qml</file>
         <file>qml/qtcontrols/GeocoderPage.qml</file>
         <file>qml/qtcontrols/MapManagerPage.qml</file>
         <file>qml/qtcontrols/MapnikPage.qml</file>

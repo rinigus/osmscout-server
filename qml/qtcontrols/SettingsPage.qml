@@ -9,13 +9,14 @@ Dialog {
 
     property bool backendSelectionPossible: false
 
+    contentHeight: column.height + Theme.paddingLarge
+
     Column {
         id: column
 
-        width: dialog.width
+        x: Theme.horizontalPageMargin
+        width: dialog.width - 2*x
         spacing: Theme.paddingLarge
-        anchors.margins: Theme.horizontalPageMargin
-
 
         Column {
             width: parent.width
@@ -29,8 +30,8 @@ Dialog {
 
                 Text {
                     id: unitsBoxText
-                    text: qsTr("Profile")
-                    anchors.verticalCenter: profileSelection.verticalCenter
+                    text: qsTr("Units")
+                    anchors.verticalCenter: unitsBox.verticalCenter
                 }
 
                 ComboBox {
@@ -54,7 +55,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
+                font.pointSize: Theme.fontSizeSmall
             }
         }
 
@@ -71,7 +72,7 @@ Dialog {
                 Text {
                     id: preferredLanguageSelectionText
                     text: qsTr("Language")
-                    anchors.verticalCenter: profileSelection.verticalCenter
+                    anchors.verticalCenter: preferredLanguageSelection.verticalCenter
                 }
 
                 ComboBox {
@@ -98,8 +99,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pointSize: Theme.fontSizeSmall
             }
         }
 
@@ -139,8 +139,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pointSize: Theme.fontSizeSmall
             }
 
             Label {
@@ -148,8 +147,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pointSize: Theme.fontSizeSmall
             }
 
             Label {
@@ -158,9 +156,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
-                linkColor: Theme.primaryColor
+                font.pointSize: Theme.fontSizeSmall
                 onLinkActivated: Qt.openUrlExternally(link)
             }
 
@@ -172,7 +168,7 @@ Dialog {
                 Text {
                     id: idleTimeoutText
                     text: qsTr("Idle timeout")
-                    anchors.verticalCenter: profileSelection.verticalCenter
+                    anchors.verticalCenter: idleTimeout.verticalCenter
                 }
 
                 ComboBox {
@@ -193,14 +189,19 @@ Dialog {
 
 
                     model: ListModel {
-                        ListElement { text: idleTimeout.timeouts[0]["desc"] }
-                        ListElement { text: idleTimeout.timeouts[1]["desc"] }
-                        ListElement { text: idleTimeout.timeouts[2]["desc"] }
-                        ListElement { text: idleTimeout.timeouts[3]["desc"] }
-                        ListElement { text: idleTimeout.timeouts[4]["desc"] }
-                        ListElement { text: idleTimeout.timeouts[5]["desc"] }
-                        ListElement { text: idleTimeout.timeouts[6]["desc"] }
-                        ListElement { text: idleTimeout.timeouts[7]["desc"] }
+
+                        Component.onCompleted: {
+                            append({ text: idleTimeout.timeouts[0]["desc"] } )
+                        }
+
+//                        ListElement { text: idleTimeout.timeouts[0]["desc"] }
+//                        ListElement { text: idleTimeout.timeouts[1]["desc"] }
+//                        ListElement { text: idleTimeout.timeouts[2]["desc"] }
+//                        ListElement { text: idleTimeout.timeouts[3]["desc"] }
+//                        ListElement { text: idleTimeout.timeouts[4]["desc"] }
+//                        ListElement { text: idleTimeout.timeouts[5]["desc"] }
+//                        ListElement { text: idleTimeout.timeouts[6]["desc"] }
+//                        ListElement { text: idleTimeout.timeouts[7]["desc"] }
                     }
 
                     function apply() {
@@ -231,8 +232,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pointSize: Theme.fontSizeSmall
             }
         }
 
@@ -251,8 +251,6 @@ Dialog {
             x: Theme.horizontalPageMargin
             width: parent.width-2*x
             wrapMode: Text.WordWrap
-            //font.pixelSize: Theme.fontSizeSmall
-            color: Theme.highlightColor
         }
 
         SectionHeader {
@@ -264,8 +262,7 @@ Dialog {
             x: Theme.horizontalPageMargin
             width: parent.width-2*x
             wrapMode: Text.WordWrap
-            font.pixelSize: Theme.fontSizeSmall
-            color: Theme.highlightColor
+            font.pointSize: Theme.fontSizeSmall
         }
 
         ElementSwitch {
@@ -289,8 +286,7 @@ Dialog {
             x: Theme.horizontalPageMargin
             width: parent.width-2*x
             wrapMode: Text.WordWrap
-            font.pixelSize: Theme.fontSizeSmall
-            color: Theme.highlightColor
+            font.pointSize: Theme.fontSizeSmall
         }
 
         ElementSwitch {
@@ -315,8 +311,7 @@ Dialog {
             x: Theme.horizontalPageMargin
             width: parent.width-2*x
             wrapMode: Text.WordWrap
-            font.pixelSize: Theme.fontSizeSmall
-            color: Theme.highlightColor
+            font.pointSize: Theme.fontSizeSmall
         }
 
         ElementSwitch {
@@ -339,7 +334,6 @@ Dialog {
             Button {
                 text: qsTr("Mapnik")
                 onClicked: pageStack.push(Qt.resolvedUrl("MapnikPage.qml"))
-                preferredWidth: Theme.buttonWidthLarge
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -348,8 +342,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pointSize: Theme.fontSizeSmall
             }
         }
 
@@ -367,7 +360,6 @@ Dialog {
             Button {
                 text: qsTr("Geocoder-NLP")
                 onClicked: pageStack.push(Qt.resolvedUrl("GeocoderPage.qml"))
-                preferredWidth: Theme.buttonWidthLarge
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -376,8 +368,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pointSize: Theme.fontSizeSmall
             }
         }
 
@@ -395,7 +386,6 @@ Dialog {
             Button {
                 text: qsTr("Valhalla")
                 onClicked: pageStack.push(Qt.resolvedUrl("ValhallaPage.qml"))
-                preferredWidth: Theme.buttonWidthLarge
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -404,8 +394,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pointSize: Theme.fontSizeSmall
             }
         }
 
@@ -423,7 +412,6 @@ Dialog {
             Button {
                 text: qsTr("OSM Scout library")
                 onClicked: pageStack.push(Qt.resolvedUrl("OSMScoutPage.qml"))
-                preferredWidth: Theme.buttonWidthLarge
                 anchors.horizontalCenter: parent.horizontalCenter
             }
 
@@ -433,8 +421,7 @@ Dialog {
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pointSize: Theme.fontSizeSmall
             }
         }
 

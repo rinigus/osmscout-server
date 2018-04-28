@@ -25,7 +25,7 @@ ApplicationWindow {
             ToolButton {
                 id: toolButton
                 text: pageStack.depth > 1 ? "\u25C0" : "\u2630"
-                font.pixelSize: Qt.application.font.pixelSize * 1.6
+                font.pointSize: Qt.application.font.pointSize * 1.6
                 onClicked: {
                     if (pageStack.depth > 1) {
                         pageStack.pop()
@@ -42,6 +42,7 @@ ApplicationWindow {
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
                 Layout.fillWidth: true
+                font.pointSize: Qt.application.font.pointSize * 1.6
             }
 
             ToolButton {

@@ -12,7 +12,7 @@ Dialog {
     property bool activeState: false
     property bool backendSelectionPossible: false
 
-    // To enable PullDownMenu, place our content in a SilicaFlickable
+    contentHeight: column.height + Theme.paddingLarge
 
     Column {
         id: column

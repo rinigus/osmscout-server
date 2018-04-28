@@ -1,5 +1,6 @@
 import QtQuick 2.0
-import Sailfish.Silica 1.0
+import QtQuick.Controls 1.4
+import "."
 
 Column {
     id: main
@@ -30,60 +31,71 @@ Column {
         }
     }
 
-    TextField {
-        id: textInput
-        width: parent.width
-        text: ""
-        label: parent.mainLabel
-        placeholderText: parent.mainLabel
+    Row {
+        spacing: Theme.horizontalPageMargin
+        x: Theme.horizontalPageMargin
+        width: main.width - 2*x
 
-        Component.onCompleted: {
-            text = settings.valueString(main.key)
-            main.hasUnits = settings.hasUnits(main.key)
-            if (main.hasUnits)
-            {
-                main.displayFactor = settings.unitFactor();
-                validator.decimals = settings.unitDisplayDecimals()
+        Text {
+            id: textInputLabel
+            text: main.mainLabel
+            anchors.verticalCenter: textInput.verticalCenter
+        }
 
-                var v = parseFloat(text) * main.displayFactor
-                text = v.toFixed(settings.unitDisplayDecimals())
 
-                label = label + ", " + settings.unitName(main.key)
+        TextField {
+            id: textInput
+            width: parent.width - textInputLabel.width - 2*Theme.horizontalPageMargin
+            text: ""
+            placeholderText: main.mainLabel
+
+            Component.onCompleted: {
+                text = settings.valueString(main.key)
+                main.hasUnits = settings.hasUnits(main.key)
+                if (main.hasUnits)
+                {
+                    main.displayFactor = settings.unitFactor();
+                    validator.decimals = settings.unitDisplayDecimals()
+
+                    var v = parseFloat(text) * main.displayFactor
+                    text = v.toFixed(settings.unitDisplayDecimals())
+
+                    textInputLabel.text = main.mainLabel + ", " + settings.unitName(main.key)
+                }
             }
-        }
 
-        EnterKey.enabled: text.length > 0
-        EnterKey.onClicked: {
-            /// commented out since we apply settings separately
-            // settings.setValue(parent.key, parent.value)
-            focus = false
-        }
+            //        EnterKey.enabled: text.length > 0
+            //        EnterKey.onClicked: {
+            //            /// commented out since we apply settings separately
+            //            // settings.setValue(parent.key, parent.value)
+            //            focus = false
+            //        }
 
-//        onFocusChanged: {
-//            if (!focus)
-//            {
-//                if (settings.valueString(parent.key) !== text)
-//                {
-//                    secLabel.text = "<b>Setting not applied.</b> " + parent.secondaryLabel
-//                    secLabel.visible = true
-//                }
-//                else
-//                {
-//                    secLabel.text = parent.secondaryLabel
-//                    secLabel.visible = (parent.secondaryLabel.length > 0)
-//                }
-//            }
-//        }
+            //        onFocusChanged: {
+            //            if (!focus)
+            //            {
+            //                if (settings.valueString(parent.key) !== text)
+            //                {
+            //                    secLabel.text = "<b>Setting not applied.</b> " + parent.secondaryLabel
+            //                    secLabel.visible = true
+            //                }
+            //                else
+            //                {
+            //                    secLabel.text = parent.secondaryLabel
+            //                    secLabel.visible = (parent.secondaryLabel.length > 0)
+            //                }
+            //            }
+            //        }
+        }
     }
 
     Label {
         id: secLabel
-        text: parent.secondaryLabel
+        text: main.secondaryLabel
         x: Theme.horizontalPageMargin
-        width: parent.width-2*x
+        width: main.width-2*x
         wrapMode: Text.WordWrap
-        font.pixelSize: Theme.fontSizeSmall
-        color: Theme.highlightColor
+        font.pointSize: Theme.fontSizeSmall
 
         Component.onCompleted: { visible = (parent.secondaryLabel.length > 0) }
     }

@@ -69,6 +69,7 @@ Dialog {
 
     ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
     ScrollBar.vertical.policy: ScrollBar.AsNeeded
+    contentHeight: column.height + Theme.paddingLarge
 
     Column {
         id: column

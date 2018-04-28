@@ -1,6 +1,8 @@
 import QtQuick 2.0
-import Sailfish.Silica 1.0
-import harbour.osmscout.server.FileManager 1.0
+import QtQuick.Controls 2.2
+import QtQuick.Dialogs 1.0
+
+import "."
 
 Column {
     id: main
@@ -36,34 +38,37 @@ Column {
         display()
     }
 
-    function select()
-    {
-        pageStack.push(Qt.resolvedUrl("FileSelector.qml"), {
-                           homePath: value,
-                           showFormat: true,
-                           title: "Select " + mainLabel,
-                           callback: setPath,
-                           directory: directory,
-                           directory_file: directory_file
-                       })
+    FileDialog {
+        id: selector
+        title: "Select " + mainLabel
+        selectFolder: main.directory
+
+        onAccepted: {
+            var path = fileUrl.toString();
+            // remove prefixed "file://"
+            path = path.replace(/^(file:\/{2})/,"");
+            // unescape html codes like '%23' for '#'
+            var cleanPath = decodeURIComponent(path);
+            setPath(cleanPath)
+        }
     }
 
-//    SectionHeader {
-//        text: parent.mainLabel
-//        font.pixelSize: Theme.fontSizeSmall
-//    }
+    function select()
+    {
+        selector.folder = 'file://' + value
+        selector.open()
+    }
 
     Label {
         text: parent.mainLabel
         x: Theme.horizontalPageMargin
         width: parent.width-2*x
         wrapMode: Text.WordWrap
-        font.pixelSize: Theme.fontSizeMedium
-        color: Theme.highlightColor
     }
 
-    ListItem {
+    ItemDelegate {
         id: listItem
+        width: parent.width
 
         Column {
             width: parent.width
@@ -74,7 +79,6 @@ Column {
                 text: ""
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
-                color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
 
                 Component.onCompleted: {
                     main.value = settings.valueString(main.key)
@@ -87,9 +91,7 @@ Column {
                 text: ""
                 x: Theme.horizontalPageMargin
                 width: parent.width-2*x
-                color: listItem.highlighted ? Theme.highlightColor : Theme.primaryColor
-                font.pixelSize: Theme.fontSizeTiny
-                truncationMode: TruncationMode.Fade
+                font.pointSize: Theme.fontSizeTiny
             }
         }
 
@@ -102,8 +104,7 @@ Column {
         x: Theme.horizontalPageMargin
         width: parent.width-2*x
         wrapMode: Text.WordWrap
-        font.pixelSize: Theme.fontSizeSmall
-        color: Theme.highlightColor
+        font.pointSize: Theme.fontSizeSmall
 
         Component.onCompleted: { visible = (parent.secondaryLabel.length > 0) }
     }

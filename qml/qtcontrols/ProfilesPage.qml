@@ -10,6 +10,7 @@ Dialog {
     title: qsTr("Profile")
 
     canAccept: manager.ready
+    contentHeight: column.height + Theme.paddingLarge
 
     Column {
         id: column

@@ -38,7 +38,7 @@ Dialog {
                 wrapMode: Text.WordWrap
                 width: parent.width
                 horizontalAlignment: Text.AlignRight
-                font.pixelSize: Theme.fontSizeTiny
+                font.pointSize: Theme.fontSizeTiny
                 visible: page.fullpath_visible
             }
         }

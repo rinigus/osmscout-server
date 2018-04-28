@@ -1,8 +1,13 @@
 import QtQuick 2.0
-import Sailfish.Silica 1.0
+import QtQuick.Controls 2.2
+import QtQuick.Layouts 1.3
+import "."
 
-Page {
+Dialog {
     id: page
+
+    dialogue: false
+    title: qsTr("Unused files")
 
     property bool activeState: false
     property bool anythingToDelete: false
@@ -11,121 +16,100 @@ Page {
     property var fileNames: []
     property var dirNames: []
 
-    SilicaFlickable {
-        anchors.fill: parent
-        contentHeight: column.height + Theme.paddingLarge
+    contentHeight: column.height + Theme.paddingLarge
 
-        RemorsePopup { id: remorse }
+    Column {
+        id: column
+
+        x: Theme.paddingLarge
+        width: page.width-2*x
+
+        spacing: Theme.paddingLarge
+
+        Label {
+            id: mainLabel
+            width: parent.width
+            wrapMode: Text.WordWrap
+        }
+
+        Label {
+            id: warning
+            width: parent.width
+            visible: anythingToDelete
+            text: qsTr("WARNING: While care has been taken to ensure deleting of the found unused files only, " +
+                       "the software has not been tested by many users yet. Use at your own risk and please " +
+                       "report if there are any problems.")
+            wrapMode: Text.WordWrap
+        }
+
+        SectionHeader {
+            text: qsTr("Directories")
+            visible: anythingToDelete
+        }
+
+        Label {
+            width: parent.width
+            visible: anythingToDelete
+            text: qsTr("Directories containing files that will be deleted during cleanup:")
+            wrapMode: Text.WordWrap
+        }
 
         Column {
-            id: column
-
-            anchors.margins: Theme.horizontalPageMargin
-            anchors.left: parent.left
-            anchors.right: parent.right
-
-            spacing: Theme.paddingLarge
-
-            PageHeader {
-                title: qsTr("Unused files")
-            }
-
-            Label {
-                id: mainLabel
-                width: parent.width
-                wrapMode: Text.WordWrap
-                color: Theme.highlightColor
-            }
-
-            Label {
-                id: warning
-                width: parent.width
-                visible: anythingToDelete
-                text: qsTr("WARNING: While care has been taken to ensure deleting of the found unused files only, " +
-                           "the software has not been tested by many users yet. Use at your own risk and please " +
-                           "report if there are any problems.")
-                wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
-            }
-
-            SectionHeader {
-                text: qsTr("Directories")
-                visible: anythingToDelete
-            }
-
-            Label {
-                width: parent.width
-                visible: anythingToDelete
-                text: qsTr("Directories containing files that will be deleted during cleanup:")
-                wrapMode: Text.WordWrap
-                color: Theme.highlightColor
-            }
-
-            Column {
-                visible: anythingToDelete
-                x: Theme.horizontalPageMargin
-                width: parent.width - x
-                spacing: Theme.paddingMedium
-                Repeater {
-                    model: nDirs
-                    delegate: Label {
-                        width: parent.width
-                        text: dirNames[index]
-                        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                        color: Theme.highlightColor
-                        font.pixelSize: Theme.fontSizeSmall
-                    }
+            visible: anythingToDelete
+            x: Theme.horizontalPageMargin
+            width: parent.width - x
+            spacing: Theme.paddingMedium
+            Repeater {
+                model: nDirs
+                delegate: Label {
+                    width: parent.width
+                    text: dirNames[index]
+                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    font.pointSize: Theme.fontSizeSmall
                 }
             }
-
-            SectionHeader {
-                text: qsTr("Cleanup")
-                visible: anythingToDelete
-            }
-
-            Column {
-                visible: anythingToDelete
-                width: parent.width
-                spacing: Theme.paddingMedium
-                anchors.margins: Theme.horizontalPageMargin
-
-                Button {
-                    text: qsTr("Delete files")
-                    enabled: page.activeState
-                    preferredWidth: Theme.buttonWidthLarge
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    onClicked: {
-                        remorse.execute(qsTr("Deleting"),
-                                        function () {
-                                            manager.deleteNonNeededFiles(fileNames)
-                                        }
-                                        )
-                    }
-                }
-
-                Label {
-                    text: qsTr("Delete unused files and free the occupied space")
-                    x: Theme.horizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
-                    font.pixelSize: Theme.fontSizeSmall
-                    color: Theme.highlightColor
-                }
-            }
-
-            VerticalScrollDecorator {}
         }
+
+        SectionHeader {
+            text: qsTr("Cleanup")
+            visible: anythingToDelete
+        }
+
+        Column {
+            visible: anythingToDelete
+            width: parent.width
+            spacing: Theme.paddingMedium
+            anchors.margins: Theme.horizontalPageMargin
+
+            Button {
+                text: qsTr("Delete files")
+                enabled: page.activeState
+                anchors.horizontalCenter: parent.horizontalCenter
+                onClicked: {
+                    manager.deleteNonNeededFiles(fileNames)
+                }
+            }
+
+            Label {
+                text: qsTr("Delete unused files and free the occupied space")
+                x: Theme.horizontalPageMargin
+                width: parent.width-2*x
+                wrapMode: Text.WordWrap
+                font.pointSize: Theme.fontSizeSmall
+            }
+        }
+
     }
 
     BusyIndicator {
         id: busy
         running: true
-        size: BusyIndicatorSize.Large
         anchors.centerIn: parent
     }
 
     function updatePage() {
+        nDirs = 0
+        nFiles = 0
         fileNames = manager.getNonNeededFilesList()
         dirNames = manager.getDirsWithNonNeededFiles()
         var size = manager.getNonNeededFilesSize()
