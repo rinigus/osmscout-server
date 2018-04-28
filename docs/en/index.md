@@ -139,7 +139,7 @@ of
 If you wish to remove the automatic activation manually, run
 
 ```
-systemctl disable osmscout-server.socket
+systemctl --user disable osmscout-server.socket
 ```
 
 and then remove _service_ and _socket_ files. In Sailfish, remove
