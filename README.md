@@ -29,10 +29,10 @@ JavaScript-based clients are provided under "example" folder. At
 present, Poor Maps and modRana include plugins already in the upstream
 and no additional configuration is needed.
 
-The server is written using Qt. The server can be used as a console or
-a Sailfish application. For console version, use
-osmscout-server_console.pro as a project, available in console
-subfolder. For Sailfish, use osmscout-server_silica.pro.
+The server is written using Qt. The server can be used as a console, a
+Sailfish, or a QtQuick application. For console and QtQuick versions,
+use the corresponding project file, available in pro subfolder. For
+Sailfish, use osmscout-server_silica.pro.
 
 
 ## Maps
