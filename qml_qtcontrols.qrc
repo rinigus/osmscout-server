@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/qtcontrols/osmscout-server.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>qml/qtcontrols/SectionHeader.qml</file>
+        <file>qml/qtcontrols/StartPage.qml</file>
+        <file>qml/qtcontrols/ElementLanguageSelector.qml</file>
+        <file>qml/qtcontrols/ElementDownloads.qml</file>
+        <file>qml/qtcontrols/Theme.qml</file>
+        <file>qml/qtcontrols/Label.qml</file>
+        <file>qml/qtcontrols/LanguageSelector.qml</file>
+        <file>qml/qtcontrols/MessagePage.qml</file>
+        <file>qml/qtcontrols/AboutPage.qml</file>
+        <file>qml/qtcontrols/CountryDetailsPage.qml</file>
+        <file>qml/qtcontrols/DownloadCountriesPage.qml</file>
+        <file>qml/qtcontrols/ElementCountryListItem.qml</file>
+        <file>qml/qtcontrols/ElementEntry.qml</file>
+        <file>qml/qtcontrols/ElementSelector.qml</file>
+        <file>qml/qtcontrols/ElementSwitch.qml</file>
+        <file>qml/qtcontrols/GeocoderPage.qml</file>
+        <file>qml/qtcontrols/MapManagerPage.qml</file>
+        <file>qml/qtcontrols/MapnikPage.qml</file>
+        <file>qml/qtcontrols/NonNeededFiles.qml</file>
+        <file>qml/qtcontrols/OSMScoutPage.qml</file>
+        <file>qml/qtcontrols/OSMSpeedPage.qml</file>
+        <file>qml/qtcontrols/ProfilesPage.qml</file>
+        <file>qml/qtcontrols/SettingsPage.qml</file>
+        <file>qml/qtcontrols/SystemdActivationPage.qml</file>
+        <file>qml/qtcontrols/UpdatesFound.qml</file>
+        <file>qml/qtcontrols/ValhallaPage.qml</file>
+        <file>qml/qtcontrols/Dialog.qml</file>
+    </qresource>
+</RCC>

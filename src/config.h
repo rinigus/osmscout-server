@@ -4,6 +4,9 @@
 #ifdef IS_CONSOLE_QT
 #define APP_PREFIX ""
 #endif
+#ifdef IS_QTCONTROLS_QT
+#define APP_PREFIX ""
+#endif
 #ifdef IS_SAILFISH_OS
 #define APP_PREFIX "harbour-"
 #endif

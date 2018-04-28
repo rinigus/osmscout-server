@@ -62,6 +62,5 @@ Dialog {
     onAccepted: {
         eScale.apply()
         eBuffer.apply()
-        eStyle.apply()
     }
 }
