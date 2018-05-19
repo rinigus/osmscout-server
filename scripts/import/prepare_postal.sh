@@ -16,7 +16,7 @@ done
 ./pack.sh $PG $VERSION
 
 # country
-#rsync -av $POSCOUNTRY/ $PC
+rsync -av $POSCOUNTRY/ $PC
 for i in $PC/*; do
     ./pack.sh $i $VERSION
 done
