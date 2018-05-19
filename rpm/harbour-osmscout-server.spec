@@ -36,8 +36,7 @@ BuildRequires:  pkgconfig(libsystemd-daemon)
 BuildRequires:  libmarisa-devel
 BuildRequires:  libmicrohttpd-devel
 BuildRequires:  libosmscout-qt-devel
-BuildRequires:  libpostal-devel
-BuildRequires:  snappy-devel
+BuildRequires:  libpostal-devel >= 1.0.0
 BuildRequires:  libkyotocabinet-devel
 BuildRequires:  mapnik-devel
 BuildRequires:  libicu52-devel

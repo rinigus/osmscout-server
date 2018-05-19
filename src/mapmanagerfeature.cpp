@@ -232,20 +232,21 @@ QString FeatureGeocoderNLP::errorMissing() const
 ////////////////////////////////////////////////////////////
 /// libpostal support
 const static QStringList postal_global_files{
-  "address_expansions/address_dictionary.dat", "language_classifier/language_classifier.dat",
+  "address_expansions/address_dictionary.dat",
+  "language_classifier/language_classifier.dat",
   "numex/numex.dat", "transliteration/transliteration.dat" };
 
 const static QStringList postal_country_files{
-  "address_parser/address_parser.dat", "address_parser/address_parser_phrases.trie",
-  "address_parser/address_parser_vocab.trie", "geodb/geodb_feature_graph.dat",
-  "geodb/geodb_features.trie", "geodb/geodb_names.trie", "geodb/geodb_postal_codes.dat",
-  "geodb/geodb.spi", "geodb/geodb.spl" };
+  "address_parser/address_parser_crf.dat",
+  "address_parser/address_parser_phrases.dat",
+  "address_parser/address_parser_postal_codes.dat",
+  "address_parser/address_parser_vocab.trie" };
 
 FeaturePostalGlobal::FeaturePostalGlobal(PathProvider *path):
   Feature(path, "postal/global", "postal_global",
           QCoreApplication::translate("MapManagerFeature", "Address parsing language support"),
           postal_global_files,
-          1)
+          2)
 {
 }
 
@@ -265,7 +266,7 @@ FeaturePostalCountry::FeaturePostalCountry(PathProvider *path):
   Feature(path, "territory", "postal_country",
           QCoreApplication::translate("MapManagerFeature", "Address parsing country-specific support"),
           postal_country_files,
-          1)
+          2)
 {
 }
 

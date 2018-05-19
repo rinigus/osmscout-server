@@ -38,8 +38,7 @@ PkgBR:
   - libmarisa-devel
   - libmicrohttpd-devel
   - libosmscout-qt-devel
-  - libpostal-devel
-  - snappy-devel
+  - libpostal-devel >= 1.0.0
   - libkyotocabinet-devel
   - mapnik-devel
   - libicu52-devel
