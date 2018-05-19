@@ -42,7 +42,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
         provided_countries[cid] = { "id": cid,
                                     "type": "territory",
                                     "name": Hierarchy.get_full_name(root),
-                                    "postal_country": { "path": "postal/countries/" + Hierarchy.get_postal(root) },
+                                    "postal_country": { "path": "postal/countries-v1/" + Hierarchy.get_postal(root) },
                                     "osmscout": { "path": "osmscout/" + spath(cid) },
                                     "geocoder_nlp": { "path": "geocoder-nlp/" + spath(cid) },
                                     "mapnik_country": { "path": "mapnik/countries/" + spath(cid) },

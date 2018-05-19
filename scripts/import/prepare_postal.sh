@@ -2,9 +2,9 @@
 
 set -e
 
-VERSION=1
-PG=distribution/postal/global
-PC=distribution/postal/countries
+VERSION=2
+PG=distribution/postal/global-v1
+PC=distribution/postal/countries-v1
 BNDINSTALL=`pwd`/backends-install
 POSCOUNTRY=postal-country
 
@@ -16,7 +16,7 @@ done
 ./pack.sh $PG $VERSION
 
 # country
-rsync -av $POSCOUNTRY/ $PC
+#rsync -av $POSCOUNTRY/ $PC
 for i in $PC/*; do
     ./pack.sh $i $VERSION
 done

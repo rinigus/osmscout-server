@@ -31,7 +31,7 @@ dist = json.loads( open("countries.json", "r").read() )
 dist["postal/global"] = {
     "id": "postal/global",
     "type": "postal/global",
-    "postal_global": { "path": "postal/global" }
+    "postal_global": { "path": "postal/global-v1" }
     }
 
 dist["mapnik/global"] = {
