@@ -25,7 +25,7 @@ sudo apt-get install -y \
      libmarisa-dev libmicrohttpd-dev libsnappy-dev libsqlite3-dev libkyotocabinet-dev libmapnik-dev \
      libsystemd-daemon-dev
 
-POSTAL_VERSION=0.3.4
+POSTAL_VERSION=1.0.0
 wget -O libpostal.tar.gz https://github.com/openvenues/libpostal/archive/v$POSTAL_VERSION.tar.gz
 tar zxvf libpostal.tar.gz
 cd libpostal-$POSTAL_VERSION
