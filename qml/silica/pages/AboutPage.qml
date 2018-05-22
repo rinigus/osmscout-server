@@ -11,10 +11,12 @@ Page {
                                    "<i>Mapbox GL</i> through web service. " +
                                    "This server can be used as a drop-in replacement for " +
                                    "online services providing maps.") + "</p><br>" +
-                              "<p>" + qsTr("Copyright:") + " 2016, 2017 <br>rinigus https://github.com/rinigus<br></p>" +
+                              "<p>" + qsTr("Copyright:") + " 2016-2018 <a href='https://github.com/rinigus'>Rinigus</a><br></p>" +
                               qsTr("License: LGPL") + "<br><br>" +
 
-                              "Donations: <a href='https://liberapay.com/rinigus'>https://liberapay.com/rinigus</a>" + "<br><br>" +
+                              "Donations: <a href='https://liberapay.com/rinigus'>Liberapay</a> " +
+                              "<a href='http://rinigus.github.io/donate-bitcoin'>Bitcoin</a>" +
+                              "<br><br>" +
 
                               "<b>" + qsTr("Translations") + "</b><br><br>" +
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +
