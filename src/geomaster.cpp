@@ -292,6 +292,9 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
         break;
     }
 
+  // sort results
+  std::sort(search_result.begin(), search_result.end() );
+
   // enforce the limit
   if (search_result.size() > limit)
     search_result.resize(limit);
@@ -314,6 +317,7 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
         r.insert("object_id", sr.id);
         r.insert("type", QString::fromStdString(sr.type));
         r.insert("levels_resolved", (int)sr.levels_resolved);
+        r.insert("admin_levels", (int)sr.admin_levels);
 
         arr.push_back(r);
       }
