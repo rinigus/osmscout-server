@@ -159,7 +159,7 @@ ScrollView {
 
             function checkVisible() {
                 noSubscriptions.visible = (manager.storageAvailable &&
-                                           JSON.parse(manager.getRequestedCountries()).children.length == 0)
+                                           JSON.parse(manager.getRequestedCountries()).children.length === 0)
             }
 
             Component.onCompleted: noSubscriptions.checkVisible()
@@ -197,8 +197,8 @@ ScrollView {
             function checkVisible() {
                 var subs = JSON.parse(manager.getRequestedCountries())
                 var avail = JSON.parse(manager.getAvailableCountries())
-                if (subs.children.length != 0 &&
-                        avail.countries.length == 0 &&
+                if (subs.children.length !== 0 &&
+                        avail.countries.length === 0 &&
                         manager.ready)
                     noMapsAvailable.visible = true
                 else
@@ -262,6 +262,7 @@ ScrollView {
             spacing: Theme.horizontalPageMargin
             x: Theme.horizontalPageMargin
             width: parent.width - 2*x
+            visible: settings.countrySelectionNeeded
 
             Text {
                 id: comboText
@@ -455,7 +456,7 @@ ScrollView {
 
     //        function openWelcomeWizard()
     //        {
-    //            if (status == PageStatus.Active)
+    //            if (status === PageStatus.Active)
     //            {
     //                rootPage.statusChanged.disconnect(openWelcomeWizard)
     //                pageStack.push(firstWelcomeWizardPage)
@@ -464,7 +465,7 @@ ScrollView {
 
     //        function openSystemdActivation()
     //        {
-    //            if (status == PageStatus.Active)
+    //            if (status === PageStatus.Active)
     //            {
     //                rootPage.statusChanged.disconnect(openSystemdActivation)
     //                pageStack.push(fourthWelcomeWizardPage)
@@ -474,7 +475,7 @@ ScrollView {
     //        Component.onCompleted: {
     //            if (settings.firstTime)
     //                rootPage.statusChanged.connect(openWelcomeWizard)
-    //            else if (settings.lastRunVersion == 0)
+    //            else if (settings.lastRunVersion === 0)
     //                rootPage.statusChanged.connect(openSystemdActivation)
     //        }
 }

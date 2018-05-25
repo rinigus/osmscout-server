@@ -208,6 +208,9 @@ void AppSettings::initDefaults()
 
   /// set profile if specified (after all version checks)
   setProfile();
+
+  /// check if country selection is needed
+  checkCountrySelectionNeeded();
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -238,6 +241,9 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
     {
       setProfile();
     }
+
+  // always check if country selection is needed
+  checkCountrySelectionNeeded();
 }
 
 void AppSettings::fireOsmScoutSettingsChanged()
@@ -421,4 +427,23 @@ QString AppSettings::preferredLanguage()
   int index = valueInt(GENERAL_SETTINGS "language");
   if ( index == 1 ) return "en";
   return QString();
+}
+
+
+void AppSettings::checkCountrySelectionNeeded()
+{
+  bool old = m_country_selection_needed;
+
+  if ( ( !valueBool(GEOMASTER_SETTINGS "search_all_maps") ) ||
+       ( valueBool(MAPMANAGER_SETTINGS "osmscout") &&
+         (!valueBool(GEOMASTER_SETTINGS "use_geocoder_nlp") ||
+          !valueBool(MAPNIKMASTER_SETTINGS "use_mapnik") ||
+          !valueBool(VALHALLA_MASTER_SETTINGS "use_valhalla") )
+          ) )
+    m_country_selection_needed = true;
+  else
+    m_country_selection_needed = false;
+
+  if (old != m_country_selection_needed)
+    emit countrySelectionNeededChanged(m_country_selection_needed);
 }

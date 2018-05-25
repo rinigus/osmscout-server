@@ -194,7 +194,7 @@ Page {
 
                 function checkVisible() {
                     noSubscriptions.visible = (manager.storageAvailable &&
-                                               JSON.parse(manager.getRequestedCountries()).children.length == 0)
+                                               JSON.parse(manager.getRequestedCountries()).children.length === 0)
                 }
 
                 Component.onCompleted: noSubscriptions.checkVisible()
@@ -234,8 +234,8 @@ Page {
                 function checkVisible() {
                     var subs = JSON.parse(manager.getRequestedCountries())
                     var avail = JSON.parse(manager.getAvailableCountries())
-                    if (subs.children.length != 0 &&
-                            avail.countries.length == 0 &&
+                    if (subs.children.length !== 0 &&
+                            avail.countries.length === 0 &&
                             manager.ready)
                         noMapsAvailable.visible = true
                     else
@@ -299,6 +299,7 @@ Page {
             ComboBox {
                 id: mapSelection
                 label: qsTr("Map")
+                visible: settings.countrySelectionNeeded
 
                 property int ncountries: 0
                 property var countries: []
@@ -491,7 +492,7 @@ Page {
 
     function openWelcomeWizard()
     {
-        if (status == PageStatus.Active)
+        if (status === PageStatus.Active)
         {
             rootPage.statusChanged.disconnect(openWelcomeWizard)
             pageStack.push(firstWelcomeWizardPage)
@@ -500,7 +501,7 @@ Page {
 
     function openSystemdActivation()
     {
-        if (status == PageStatus.Active)
+        if (status === PageStatus.Active)
         {
             rootPage.statusChanged.disconnect(openSystemdActivation)
             pageStack.push(fourthWelcomeWizardPage)
@@ -510,7 +511,7 @@ Page {
     Component.onCompleted: {
         if (settings.firstTime)
             rootPage.statusChanged.connect(openWelcomeWizard)
-        else if (settings.lastRunVersion == 0)
+        else if (settings.lastRunVersion === 0)
             rootPage.statusChanged.connect(openSystemdActivation)
     }
 }

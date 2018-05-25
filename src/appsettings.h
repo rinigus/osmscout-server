@@ -13,6 +13,9 @@ class AppSettings : public QSettings
   /// \brief true when profiles are used to select backends
   Q_PROPERTY(bool profilesUsed READ profilesUsed NOTIFY profilesUsedChanged)
 
+  /// \brief true if country selection has to be shown
+  Q_PROPERTY(bool countrySelectionNeeded READ countrySelectionNeeded NOTIFY countrySelectionNeededChanged)
+
   /// \brief true if the application has been run the first time
   Q_PROPERTY(bool firstTime READ firstTime)
 
@@ -41,6 +44,8 @@ public:
 
   bool profilesUsed() const { return m_profiles_used; }
 
+  bool countrySelectionNeeded() const { return m_country_selection_needed; }
+
   bool firstTime() const { return m_first_time; }
 
   bool lastRunVersion() const { return m_last_run_version; }
@@ -54,6 +59,7 @@ public:
 signals:
   void osmScoutSettingsChanged();
   void profilesUsedChanged(bool used);
+  void countrySelectionNeededChanged(bool selection);
 
 public slots:
   void fireOsmScoutSettingsChanged();
@@ -63,9 +69,12 @@ protected:
 
   void setProfile();
 
+  void checkCountrySelectionNeeded();
+
 protected:
   bool m_signal_osm_scout_changed_waiting = false;
   bool m_profiles_used = false;
+  bool m_country_selection_needed = true;
   bool m_first_time = false;
   int m_last_run_version{0};
 };
