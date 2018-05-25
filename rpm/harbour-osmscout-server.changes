@@ -5,6 +5,16 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri May 25 2018 rinigus <rinigus.git@gmail.com> 1.6.0-1
+- addition of QtQuick Controls GUI version
+- update geocoder to libpostal 1.1 API
+- adjust geocoder results sorting
+- changes in Valhalla packaging
+- added nl_BE translation
+- updated translations
+- moved Silica QML into separate folder
+- show map selection only if needed
+
 * Tue Apr 3 2018 rinigus <rinigus.git@gmail.com> 1.5.0-1
 - revise warning messages on missing backend data
 - notify about missing modules only if required by selected backends
