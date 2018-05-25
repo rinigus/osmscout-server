@@ -2783,7 +2783,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="17"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
@@ -2793,7 +2793,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>
         <source>Map Manager</source>
-        <translation type="unfinished">Kart Behandler</translation>
+        <translation>Kart Behandler</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="86"/>
@@ -2803,12 +2803,12 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="93"/>
         <source>Settings</source>
-        <translation type="unfinished">Innstillinger</translation>
+        <translation>Innstillinger</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="100"/>
         <source>About</source>
-        <translation type="unfinished">Om</translation>
+        <translation>Om</translation>
     </message>
 </context>
 </TS>

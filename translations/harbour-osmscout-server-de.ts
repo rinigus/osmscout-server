@@ -2787,7 +2787,7 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="17"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
@@ -2797,22 +2797,22 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>
         <source>Map Manager</source>
-        <translation type="unfinished">Karten-Manager</translation>
+        <translation>Karten-Manager</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="86"/>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="93"/>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="100"/>
         <source>About</source>
-        <translation type="unfinished">Über</translation>
+        <translation>Über</translation>
     </message>
 </context>
 </TS>
