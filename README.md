@@ -480,7 +480,7 @@ The translations were contributed by
 - Lukáš Karas @Karry: Czech
 - Åke Engelbrektson @eson57: Swedish
 - Ricardo Breitkopf @monkeyisland: German
-- Nathan Follens @pljmn: Dutch
+- Nathan Follens @pljmn: Dutch (NL and BE)
 - @Sagittarii: French
 - Oleg Artobolevsky @XOleg: Russian
 - A @atlochowski: Polish

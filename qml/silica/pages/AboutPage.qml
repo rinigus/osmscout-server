@@ -23,7 +23,7 @@ Page {
                               "Lukáš Karas @Karry: Czech<br>" +
                               "Åke Engelbrektson @eson57: Swedish<br>" +
                               "Ricardo Breitkopf @monkeyisland: German<br>" +
-                              "Nathan Follens @pljmn: Dutch<br>" +
+                              "Nathan Follens @pljmn: Dutch (NL and BE)<br>" +
                               "@Sagittarii: French<br>" +
                               "Oleg Artobolevsky @XOleg: Russian<br>" +
                               "A @atlochowski: Polish<br>" +

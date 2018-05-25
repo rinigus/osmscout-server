@@ -138,12 +138,12 @@ use_osmscout {
 }
 
 # mapbox gl is enabled always
-DEFINES += MAPBOXGL_STYLEDIR=\\\"/usr/share/harbour-osmscout-server/styles/mapboxgl\\\"
+DEFINES += MAPBOXGL_STYLEDIR=\\\"/usr/share/$${TARGET}/styles/mapboxgl\\\"
 
 use_mapnik {
     DEFINES += USE_MAPNIK
     DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/share/harbour-osmscout-server-module-fonts/fonts\\\"
-    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/share/harbour-osmscout-server/lib/mapnik/input\\\"
+    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/share/$${TARGET}/lib/mapnik/input\\\"
     LIBS += -lmapnik -licuuc
 
     mapnik.files = mapnik
@@ -188,7 +188,8 @@ TRANSLATIONS += \
     translations/harbour-osmscout-server-nl.ts \
     translations/harbour-osmscout-server-pl.ts \
     translations/harbour-osmscout-server-ru.ts \
-    translations/harbour-osmscout-server-sv.ts
+    translations/harbour-osmscout-server-sv.ts \
+    translations/harbour-osmscout-server-nl_BE.ts
 
 DISTFILES += \
     harbour-osmscout-server.desktop \
