@@ -22,68 +22,68 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="24"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="19"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="26"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="21"/>
         <source>Translations</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="36"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="31"/>
-        <source>Maps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="38"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="33"/>
+        <source>Maps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="40"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="35"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="43"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="38"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="45"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="40"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="47"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="42"/>
-        <source>Libpostal</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="49"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="44"/>
+        <source>Libpostal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="51"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="46"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="56"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="51"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="58"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="53"/>
         <source>Acknowledgments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="10"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="79"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="81"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="82"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="83"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="84"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="85"/>
         <source>version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="87"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="89"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="89"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="91"/>
         <source>is a server that provides offline map services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="93"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="96"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="95"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="98"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -91,22 +91,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="301"/>
+        <location filename="../src/appsettings.cpp" line="307"/>
         <source>mph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="301"/>
+        <location filename="../src/appsettings.cpp" line="307"/>
         <source>mi.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="303"/>
+        <location filename="../src/appsettings.cpp" line="309"/>
         <source>km/h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="303"/>
+        <location filename="../src/appsettings.cpp" line="309"/>
         <source>km</source>
         <translation type="unfinished"></translation>
     </message>
@@ -523,7 +523,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="201"/>
-        <location filename="../src/geomaster.cpp" line="394"/>
+        <location filename="../src/geomaster.cpp" line="398"/>
         <source>Cannot open geocoding database: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -539,12 +539,12 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="274"/>
-        <location filename="../src/geomaster.cpp" line="427"/>
+        <location filename="../src/geomaster.cpp" line="431"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="349"/>
+        <location filename="../src/geomaster.cpp" line="353"/>
         <source>Search for reference point failed: cannot find</source>
         <translation type="unfinished"></translation>
     </message>
@@ -919,77 +919,77 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="246"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="247"/>
         <source>Address parsing language support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="266"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="267"/>
         <source>Address parsing country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="299"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="300"/>
         <source>Mapnik World coastlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="307"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="308"/>
         <source>Missing Mapnik World coastlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="319"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="320"/>
         <source>Mapnik country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="327"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="328"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="346"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="347"/>
         <source>Mapbox GL World overlay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="354"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="355"/>
         <source>Missing Mapbox GL World overlay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="371"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="372"/>
         <source>Mapbox GL fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="379"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="380"/>
         <source>Missing Mapbox GL fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="392"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="393"/>
         <source>Mapbox GL country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="400"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="401"/>
         <source>Missing country-specific Mapbox GL dataset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="445"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="446"/>
         <source>Valhalla</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="453"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="454"/>
         <source>Missing Valhalla tiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="254"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="255"/>
         <source>Missing address language parsing dataset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -999,7 +999,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="274"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="275"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2385,7 +2385,7 @@
         <location filename="../qml/silica/pages/StartPage.qml" line="113"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="176"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="215"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="434"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="431"/>
         <source>Welcome</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2441,53 +2441,53 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="268"/>
+        <location filename="../qml/qtcontrols/StartPage.qml" line="269"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="301"/>
         <source>Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="316"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="345"/>
+        <location filename="../qml/qtcontrols/StartPage.qml" line="312"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="342"/>
         <source>Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="329"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="360"/>
+        <location filename="../qml/qtcontrols/StartPage.qml" line="325"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="357"/>
         <source>Jobs in a queue</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="330"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="361"/>
+        <location filename="../qml/qtcontrols/StartPage.qml" line="326"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="358"/>
         <source>Idle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="348"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="379"/>
+        <location filename="../qml/qtcontrols/StartPage.qml" line="344"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="376"/>
         <source>Events</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="376"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="412"/>
+        <location filename="../qml/qtcontrols/StartPage.qml" line="372"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="409"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="435"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="432"/>
         <source>Next</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="436"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="433"/>
         <source>Skip</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="440"/>
+        <location filename="../qml/silica/pages/StartPage.qml" line="437"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation type="unfinished"></translation>
     </message>
