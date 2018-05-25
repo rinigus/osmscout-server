@@ -299,10 +299,11 @@ Page {
             ComboBox {
                 id: mapSelection
                 label: qsTr("Map")
-                visible: settings.countrySelectionNeeded
 
                 property int ncountries: 0
                 property var countries: []
+
+                visible: settings.countrySelectionNeeded && ncountries >= 1
 
                 function updateData()
                 {
@@ -310,11 +311,6 @@ Page {
                     mapSelection.countries = ret.countries
                     mapSelection.ncountries = mapSelection.countries.length
                     mapSelection.currentIndex = ret.current
-
-                    if (mapSelection.ncountries < 1)
-                        mapSelection.visible = false
-                    else
-                        mapSelection.visible = true
                 }
 
                 menu: ContextMenu {

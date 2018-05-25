@@ -262,7 +262,7 @@ ScrollView {
             spacing: Theme.horizontalPageMargin
             x: Theme.horizontalPageMargin
             width: parent.width - 2*x
-            visible: settings.countrySelectionNeeded
+            visible: settings.countrySelectionNeeded && mapSelection.ncountries >= 1
 
             Text {
                 id: comboText
@@ -287,11 +287,6 @@ ScrollView {
                         names.push(mapSelection.countries[i].name)
                     mapSelection.model = names
                     mapSelection.currentIndex = ret.current
-
-                    if (mapSelection.ncountries < 1)
-                        mapSelection.visible = false
-                    else
-                        mapSelection.visible = true
                 }
 
                 onCurrentIndexChanged: settings.setValue(settingsMapManagerPrefix + "map_selected",
