@@ -2421,12 +2421,12 @@
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="54"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Installera saknade moduler via Harbour, OpenRepos eller annat sätt, avsett för ditt operativsystem. Starta om OSM Scout Server efter installation av modul(er).</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="184"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det finns ännu inga kartor tillgängliga. Efter prenumeration av kartor, måste du starta nerladdning. Nerladdningen kan startas i &lt;i&gt;Karthanteraren&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="234"/>
@@ -2788,7 +2788,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Hem</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>

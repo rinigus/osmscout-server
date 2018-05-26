@@ -2421,12 +2421,12 @@
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="54"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Installeer ontbrekende module(s) via de Winkel of OpenRepos, of gelijk welke andere manier overeenkomstig met je besturingssysteem. Herstart vervolgens OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="184"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Er zijn nog geen kaarten beschikbaar. Nadat je je op de kaarten abonneert, moet je de downloads starten. Dit kan via de &lt;i&gt;kaartbeheerder&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="234"/>
