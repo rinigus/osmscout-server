@@ -16,8 +16,10 @@ rm $BNDINSTALL/bin/liboscmscout-version || true
 rm $BNDINSTALL/mapnik-styles-sqlite || true
 
 # libpostal: version specified by commit id
-git clone https://github.com/openvenues/libpostal $BNDSRC/libpostal
-( cd $BNDSRC/libpostal && git checkout 7f7aada32ab1a65b94f880a45f9755bbd941eedc )
+# git clone https://github.com/openvenues/libpostal $BNDSRC/libpostal
+# ( cd $BNDSRC/libpostal && git checkout 7f7aada32ab1a65b94f880a45f9755bbd941eedc )
+git clone https://github.com/rinigus/libpostal $BNDSRC/libpostal
+( cd $BNDSRC/libpostal && git checkout 17eb4a63356aa1cc9aa073635f4952d6d4c2c54b )
 ( cd $BNDSRC/libpostal && ./bootstrap.sh && ./configure --datadir=$BNDINSTALL --prefix=$BNDINSTALL && make -j3 && make install )
 
 # libosmscout
