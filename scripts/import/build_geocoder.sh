@@ -6,7 +6,7 @@ BNDSRC=`pwd`/backends-source
 BNDINSTALL=`pwd`/backends-install
 
 MAPSTYLE=$BNDSRC/geocoder-nlp/importer/stylesheet/map.ost
-IMPORTER=$BNDINSTALL/bin/geocoder-importer
+IMPORTER=$BNDINSTALL/bin/geocoder-importer-pbf
 
 export LD_LIBRARY_PATH=$BNDINSTALL/lib
 
