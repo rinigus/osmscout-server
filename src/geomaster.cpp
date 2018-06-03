@@ -458,6 +458,7 @@ bool GeoMaster::guide(const QString &query_qst,
         r.insert("title", QString::fromStdString(sr.title));
         r.insert("lat", sr.latitude);
         r.insert("lng", sr.longitude);
+        r.insert("distance", sr.distance);
         r.insert("object_id", sr.id);
         r.insert("type", QString::fromStdString(sr.type));
 
