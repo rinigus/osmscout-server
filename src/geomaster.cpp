@@ -434,7 +434,7 @@ bool GeoMaster::guide(const QString &query_qst,
     }
 
   // sort and enforce the limit
-  std::sort(search_result.begin(), search_result.end());
+  GeoNLP::Geocoder::sort_by_distance(search_result.begin(), search_result.end());
   if (search_result.size() > limit)
     search_result.resize(limit);
 
