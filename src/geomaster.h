@@ -54,7 +54,7 @@ public:
 
   /// \brief Search for POI by its type or name near the given origin
   ///
-  bool guide(const QString &query,
+  bool guide(const QString &poitype, const QString &name,
              double lat, double lon, double radius, size_t limit, QByteArray &result_data);
 
   bool warnLargeRamLangNotSpecified() const { return m_warnLargeRamLangNotSpecified; }
