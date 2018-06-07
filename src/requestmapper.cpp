@@ -157,7 +157,7 @@ template <> double qstring2value(const QString &s, bool &ok)
 template <> QString qstring2value(const QString &s, bool &ok)
 {
   ok = true;
-  return s;
+  return s.trimmed();
 }
 
 template <typename T>

@@ -394,7 +394,8 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
 
   // fill type query - for now just use as its a full query
   std::vector<std::string> type_query;
-  type_query.push_back(type_query_norm.toStdString());
+  if (!type_query_norm.isEmpty())
+    type_query.push_back(type_query_norm.toStdString());
 
   for(const QString country: m_countries)
     {
