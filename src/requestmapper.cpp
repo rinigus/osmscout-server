@@ -622,10 +622,13 @@ unsigned int RequestMapper::service(const char *url_c,
       double radius = q2value<double>("radius", 1000.0, connection, ok);
       size_t limit = q2value<size_t>("limit", 50, connection, ok);
       QString poitype = q2value<QString>("poitype", QString(), connection, ok);
+      QString poitype_query = q2value<QString>("query", QString(), connection, ok); // backward compatibility
       QString name_query = q2value<QString>("name", QString(), connection, ok);
       QString search = q2value<QString>("search", QString(), connection, ok);
       double lon = q2value<double>("lng", 0, connection, ok);
       double lat = q2value<double>("lat", 0, connection, ok);
+
+      if (poitype.isEmpty()) poitype = poitype_query;
 
       if (!ok || (name_query.isEmpty() && poitype.isEmpty()) )
         {
