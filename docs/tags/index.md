@@ -1,7 +1,7 @@
 # Tags and their aliases as used in OSM Scout Server
 
 Language | Aliases | Geocoder Tags 
- --- | --- | --- 
+ --- | ---:| ---: 
 AF | [556 aliases](alias2tag_af.md) | [302 tags](tag2alias_af.md) 
 AR | [648 aliases](alias2tag_ar.md) | [348 tags](tag2alias_ar.md) 
 BR | [644 aliases](alias2tag_br.md) | [348 tags](tag2alias_br.md) 
