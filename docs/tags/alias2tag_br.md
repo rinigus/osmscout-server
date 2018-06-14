@@ -1,4 +1,4 @@
-# BR: Aliases and the tags that they correspond to
+# BR: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 

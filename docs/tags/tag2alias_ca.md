@@ -1,4 +1,4 @@
-# CA: Tag and its main corresponding alias for 
+# CA: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

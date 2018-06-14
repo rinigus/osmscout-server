@@ -1,4 +1,4 @@
-# FI: Aliases and the tags that they correspond to
+# FI: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 

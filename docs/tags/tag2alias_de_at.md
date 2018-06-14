@@ -1,4 +1,4 @@
-# DE_AT: Tag and its main corresponding alias for 
+# DE_AT: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

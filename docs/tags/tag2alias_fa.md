@@ -1,4 +1,4 @@
-# FA: Tag and its main corresponding alias for 
+# FA: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

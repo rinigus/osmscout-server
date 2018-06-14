@@ -1,4 +1,4 @@
-# PS: Tag and its main corresponding alias for 
+# PS: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

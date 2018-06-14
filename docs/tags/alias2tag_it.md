@@ -1,4 +1,4 @@
-# IT: Aliases and the tags that they correspond to
+# IT: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 

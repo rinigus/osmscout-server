@@ -1,4 +1,4 @@
-# CS: Tag and its main corresponding alias for 
+# CS: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

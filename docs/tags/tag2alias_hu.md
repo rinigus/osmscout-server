@@ -1,4 +1,4 @@
-# HU: Tag and its main corresponding alias for 
+# HU: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

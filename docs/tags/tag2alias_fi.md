@@ -1,4 +1,4 @@
-# FI: Tag and its main corresponding alias for 
+# FI: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

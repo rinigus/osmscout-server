@@ -1,4 +1,4 @@
-# RU: Tag and its main corresponding alias for 
+# RU: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

@@ -1,4 +1,4 @@
-# CS: Aliases and the tags that they correspond to
+# CS: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 

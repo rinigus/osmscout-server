@@ -1,4 +1,4 @@
-# IA: Tag and its main corresponding alias for 
+# IA: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

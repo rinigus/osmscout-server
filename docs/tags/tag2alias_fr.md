@@ -1,4 +1,4 @@
-# FR: Tag and its main corresponding alias for 
+# FR: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

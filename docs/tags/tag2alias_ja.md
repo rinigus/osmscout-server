@@ -1,4 +1,4 @@
-# JA: Tag and its main corresponding alias for 
+# JA: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

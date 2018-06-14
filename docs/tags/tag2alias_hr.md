@@ -1,4 +1,4 @@
-# HR: Tag and its main corresponding alias for 
+# HR: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

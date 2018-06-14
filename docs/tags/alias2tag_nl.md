@@ -1,9 +1,7 @@
-# NL: Aliases and the tags that they correspond to
+# NL: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 
--
-| Nachtclub |  [amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub)
 Administratieve grens |  [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative)
 Administratieve grenzen |  [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative)
 Afrit |  [highway\_motorway\_junction](https://taginfo.openstreetmap.org/tags/highway=motorway_junction)
@@ -366,6 +364,7 @@ Museum |  [tourism\_museum](https://taginfo.openstreetmap.org/tags/tourism=museu
 Museums |  [tourism\_museum](https://taginfo.openstreetmap.org/tags/tourism=museum)
 Muziekwinkel |  [shop\_music](https://taginfo.openstreetmap.org/tags/shop=music)
 Muziekwinkels |  [shop\_music](https://taginfo.openstreetmap.org/tags/shop=music)
+Nachtclub |  [amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub)
 Nachtclubs |  [amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub)
 Natuurbehoud |  [landuse\_conservation](https://taginfo.openstreetmap.org/tags/landuse=conservation) [landuse\_conservation](https://taginfo.openstreetmap.org/tags/landuse=conservation)
 Natuurreservaat |  [leisure\_nature\_reserve](https://taginfo.openstreetmap.org/tags/leisure=nature_reserve)

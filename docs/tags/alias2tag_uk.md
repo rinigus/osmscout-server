@@ -1,4 +1,4 @@
-# UK: Aliases and the tags that they correspond to
+# UK: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 

@@ -1,4 +1,4 @@
-# PL: Aliases and the tags that they correspond to
+# PL: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 
@@ -124,6 +124,7 @@ Fast Food |  [amenity\_fast\_food](https://taginfo.openstreetmap.org/tags/amenit
 Fast Foods |  [amenity\_fast\_food](https://taginfo.openstreetmap.org/tags/amenity=fast_food)
 Fontanna |  [amenity\_fountain](https://taginfo.openstreetmap.org/tags/amenity=fountain)
 Fontannas |  [amenity\_fountain](https://taginfo.openstreetmap.org/tags/amenity=fountain)
+Fryzjer |  [shop\_hairdresser](https://taginfo.openstreetmap.org/tags/shop=hairdresser)
 Fryzjerzy |  [shop\_hairdresser](https://taginfo.openstreetmap.org/tags/shop=hairdresser)
 Gabinet dentystyczny |  [amenity\_dentist](https://taginfo.openstreetmap.org/tags/amenity=dentist)
 Gabinet dentystycznys |  [amenity\_dentist](https://taginfo.openstreetmap.org/tags/amenity=dentist)

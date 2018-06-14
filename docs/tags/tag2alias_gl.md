@@ -1,4 +1,4 @@
-# GL: Tag and its main corresponding alias for 
+# GL: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

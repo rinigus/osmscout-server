@@ -1,4 +1,4 @@
-# EU: Tag and its main corresponding alias for 
+# EU: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

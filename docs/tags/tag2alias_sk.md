@@ -1,4 +1,4 @@
-# SK: Tag and its main corresponding alias for 
+# SK: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

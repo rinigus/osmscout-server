@@ -1,4 +1,4 @@
-# NL: Tag and its main corresponding alias for 
+# NL: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 
@@ -41,8 +41,7 @@ Tag | Alias
 [amenity\_ice\_cream](https://taginfo.openstreetmap.org/tags/amenity=ice_cream) | IJs
 [amenity\_kindergarten](https://taginfo.openstreetmap.org/tags/amenity=kindergarten) | Kleuterschool
 [amenity\_library](https://taginfo.openstreetmap.org/tags/amenity=library) | Bibliotheek
-[amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub) | -
-| Nachtclub
+[amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub) | Nachtclub
 [amenity\_nursing\_home](https://taginfo.openstreetmap.org/tags/amenity=nursing_home) | Verpleeghuis
 [amenity\_pharmacy](https://taginfo.openstreetmap.org/tags/amenity=pharmacy) | Apotheek
 [amenity\_place\_of\_worship](https://taginfo.openstreetmap.org/tags/amenity=place_of_worship) | Gebedsplaats

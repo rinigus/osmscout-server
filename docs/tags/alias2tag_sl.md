@@ -1,8 +1,9 @@
-# SL: Aliases and the tags that they correspond to
+# SL: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 
 Aerodrom |  [aeroway\_aerodrome](https://taginfo.openstreetmap.org/tags/aeroway=aerodrome)
+Aerodromi |  [aeroway\_aerodrome](https://taginfo.openstreetmap.org/tags/aeroway=aerodrome)
 Apartma |  [tourism\_apartment](https://taginfo.openstreetmap.org/tags/tourism=apartment) [tourism\_apartments](https://taginfo.openstreetmap.org/tags/tourism=apartments) [tourism\_chalet](https://taginfo.openstreetmap.org/tags/tourism=chalet)
 Apartmaji |  [tourism\_apartment](https://taginfo.openstreetmap.org/tags/tourism=apartment) [tourism\_apartments](https://taginfo.openstreetmap.org/tags/tourism=apartments) [tourism\_chalet](https://taginfo.openstreetmap.org/tags/tourism=chalet)
 Arheološka najdišča |  [historic\_archaeological\_site](https://taginfo.openstreetmap.org/tags/historic=archaeological_site)
@@ -351,6 +352,7 @@ Opuščene železnice |  [railway\_disused](https://taginfo.openstreetmap.org/ta
 Orodjarna |  [shop\_doityourself](https://taginfo.openstreetmap.org/tags/shop=doityourself)
 Orodjarne |  [shop\_doityourself](https://taginfo.openstreetmap.org/tags/shop=doityourself)
 Orodje |  [shop\_hardware](https://taginfo.openstreetmap.org/tags/shop=hardware)
+Oskrba živali |  [amenity\_animal\_boarding](https://taginfo.openstreetmap.org/tags/amenity=animal_boarding)
 Otok |  [place\_island](https://taginfo.openstreetmap.org/tags/place=island)
 Otoki |  [place\_island](https://taginfo.openstreetmap.org/tags/place=island)
 Otoček |  [place\_islet](https://taginfo.openstreetmap.org/tags/place=islet)

@@ -1,4 +1,4 @@
-# SL: Tag and its main corresponding alias for 
+# SL: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 
@@ -9,6 +9,7 @@ Tag | Alias
 [aerialway\_magic\_carpet](https://taginfo.openstreetmap.org/tags/aerialway=magic_carpet) | Trak
 [aerialway\_platter](https://taginfo.openstreetmap.org/tags/aerialway=platter) | Vlečnica
 [aeroway\_aerodrome](https://taginfo.openstreetmap.org/tags/aeroway=aerodrome) | Letališče
+[amenity\_animal\_boarding](https://taginfo.openstreetmap.org/tags/amenity=animal_boarding) | Oskrba živali
 [amenity\_animal\_shelter](https://taginfo.openstreetmap.org/tags/amenity=animal_shelter) | Zavetišče za živali
 [amenity\_arts\_centre](https://taginfo.openstreetmap.org/tags/amenity=arts_centre) | Umetnostni center
 [amenity\_atm](https://taginfo.openstreetmap.org/tags/amenity=atm) | Bankomat

@@ -1,4 +1,4 @@
-# SV: Tag and its main corresponding alias for 
+# SV: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 

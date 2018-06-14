@@ -1,4 +1,4 @@
-# PT: Aliases and the tags that they correspond to
+# PT: Aliases and the corresponding tags, alias -> tag
 
 Alias | Tag(s) 
 --- | --- 

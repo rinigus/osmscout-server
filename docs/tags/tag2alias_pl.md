@@ -1,4 +1,4 @@
-# PL: Tag and its main corresponding alias for 
+# PL: Tag and its main alias, tag -> alias
 
 Tag | Alias 
 --- | --- 
@@ -224,6 +224,7 @@ Tag | Alias
 [shop\_general](https://taginfo.openstreetmap.org/tags/shop=general) | Sklep ogólny
 [shop\_gift](https://taginfo.openstreetmap.org/tags/shop=gift) | Sklep z pamiątkami
 [shop\_greengrocer](https://taginfo.openstreetmap.org/tags/shop=greengrocer) | Warzywniak
+[shop\_hairdresser](https://taginfo.openstreetmap.org/tags/shop=hairdresser) | Fryzjer
 [shop\_hardware](https://taginfo.openstreetmap.org/tags/shop=hardware) | Sklep ze sprzętem
 [shop\_hifi](https://taginfo.openstreetmap.org/tags/shop=hifi) | Hi-Fi
 [shop\_jewelry](https://taginfo.openstreetmap.org/tags/shop=jewelry) | Sklep z biżuterią
