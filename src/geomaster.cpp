@@ -97,10 +97,12 @@ void GeoMaster::onSettingsChanged()
   if (lang.length() > 0)
     {
       lang_list = lang.split(',', QString::SkipEmptyParts);
+      for (int i=0; i < lang_list.size(); ++i)
+        lang_list[i] = lang_list[i].simplified();
+
       QString used;
       for (QString l: lang_list)
         {
-          l = l.simplified();
           m_postal.add_language(l.toStdString());
           used += l + " ";
         }
@@ -224,6 +226,9 @@ void GeoMaster::loadTagAlias(const QStringList &lang_list)
     }
 
   m_tag_alias_langs = langs;
+
+//  for (auto i = m_alias_to_tag.begin(); i!=m_alias_to_tag.end(); i++)
+//    qDebug() << i.key() << " " << i.value();
 }
 
 QString GeoMaster::tag2alias(const QString &tag) const
