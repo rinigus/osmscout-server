@@ -25,7 +25,7 @@ findex = open(doc_prefix + "index.md", "w")
 findex.write("# Tags and their aliases as used in OSM Scout Server\n\n")
 findex.write('Language | Aliases | Geocoder Tags \n --- | ---:| ---: \n')
 
-for language in [ "af","ar","br","ca","cs","de","en","es","et","eu","fa","fi","fr","gl","hr","hu",
+for language in [ "af","ar","br","ca","cs","de","de_at","en","es","et","eu","fa","fi","fr","gl","hr","hu",
                  "ia","is","it","ja","mk","nl","no","pl","ps","pt","ru","sk","sl","sv","uk","vi" ]:
 
 #for language in [ "es","ja","sl" ]:
@@ -51,10 +51,10 @@ for language in [ "af","ar","br","ca","cs","de","en","es","et","eu","fa","fi","f
             singular = (k[-1] == 'N')
             if geotag in geotags_to_ignore: continue
 
-            alias2tag[unicodedata.normalize('NFKC', k[0].casefold())].append( geotag )
+            alias2tag[k[0]].append( geotag )
 
             if singular and geotag not in tag2alias:
-                tag2alias[geotag] = unicodedata.normalize('NFKC', k[0])
+                tag2alias[geotag] = k[0]
 
             Geo2OSM[geotag] = k[1] + '=' + k[2]
 

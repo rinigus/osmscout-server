@@ -6,6 +6,7 @@
 #include <QMutexLocker>
 
 #include <QJsonArray>
+#include <QJsonObject>
 #include <QJsonDocument>
 
 #include <QDebug>
@@ -91,25 +92,28 @@ void GeoMaster::onSettingsChanged()
   m_geocoder.set_max_queries_per_hierarchy(settings.valueInt(GEOMASTER_SETTINGS "max_queries_per_hierarchy"));
 
   QString lang = settings.valueString(GEOMASTER_SETTINGS "languages");
+  QStringList lang_list;
 
   if (lang.length() > 0)
     {
-      QStringList lngs = lang.split(',', QString::SkipEmptyParts);
+      lang_list = lang.split(',', QString::SkipEmptyParts);
       QString used;
-      for (QString l: lngs)
+      for (QString l: lang_list)
         {
           l = l.simplified();
           m_postal.add_language(l.toStdString());
           used += l + " ";
         }
       InfoHub::logInfo(tr("libpostal using languages: %1").arg(used));
-      checkWarnings(!lngs.isEmpty());
+      checkWarnings(!lang_list.isEmpty());
     }
   else
     {
       InfoHub::logInfo(tr("libpostal will use all covered languages"));
       checkWarnings(false);
     }
+
+  loadTagAlias(lang_list);
 }
 
 void GeoMaster::onGeocoderNLPChanged(QHash<QString, QString> dirs)
@@ -164,6 +168,70 @@ void GeoMaster::checkWarnings(bool lang_specified)
       m_warnLargeRamLangNotSpecified = toWarnLang;
       emit warnLargeRamLangNotSpecifiedChanged(m_warnLargeRamLangNotSpecified);
     }
+}
+
+QString GeoMaster::normalize(const QString &str) const
+{
+  return str.normalized(QString::NormalizationForm_KC).toCaseFolded();
+}
+
+void GeoMaster::loadTagAlias(const QStringList &lang_list)
+{
+  QStringList langs;
+  QString locale = QLocale::system().name();
+
+  langs.append(locale.toLower());
+  langs.append(locale.left( locale.indexOf('_') ).toLower());
+  langs.append(lang_list);
+
+  if ( m_tag_alias_langs == langs)
+    return; // we loaded that already
+
+  m_tag_to_alias.clear();
+  m_alias_to_tag.clear();
+
+  // load JSON aliases and tags
+  QJsonObject data;
+  {
+    QFile f(GEOCODERNLP_ALIASFILE);
+    if (f.open(QIODevice::ReadOnly | QIODevice::Text))
+      data = QJsonDocument::fromJson(f.readAll()).object();
+  }
+
+  for (const QString &lang: langs)
+    {
+      {
+        const QJsonObject d = data.value("tag2alias").toObject().value(lang).toObject();
+        for (auto iter = d.constBegin(); iter!=d.end(); ++iter)
+          {
+            QString tag = iter.key();
+            QString alias = iter.value().toString();
+            if ( !m_tag_to_alias.contains(tag) )
+              m_tag_to_alias[tag] = alias;
+          }
+      }
+
+      {
+        const QJsonObject d = data.value("alias2tag").toObject().value(lang).toObject();
+        for (auto iter = d.constBegin(); iter!=d.constEnd(); ++iter)
+          {
+            QString alias = GeoMaster::normalize(iter.key());
+            QJsonArray arr = iter.value().toArray();
+            for (auto ti=arr.constBegin(); ti!=arr.constEnd(); ti++)
+              m_alias_to_tag[alias].insert( (*ti).toString() );
+          }
+      }
+    }
+
+  m_tag_alias_langs = langs;
+}
+
+QString GeoMaster::tag2alias(const QString &tag) const
+{
+  auto iter = m_tag_to_alias.find(tag);
+  if (iter == m_tag_to_alias.constEnd())
+    return tag;
+  return *iter;
 }
 
 static std::string v2s(const std::vector<std::string> &v)
@@ -315,7 +383,7 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
         r.insert("lat", sr.latitude);
         r.insert("lng", sr.longitude);
         r.insert("object_id", sr.id);
-        r.insert("type", QString::fromStdString(sr.type));
+        r.insert("type", tag2alias(QString::fromStdString(sr.type)));
         r.insert("levels_resolved", (int)sr.levels_resolved);
         r.insert("admin_levels", (int)sr.admin_levels);
 
@@ -389,13 +457,22 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
 
   std::vector<GeoNLP::Geocoder::GeoResult> search_result;
   std::map< std::string, std::vector<std::string> > postal_cache;
-  QString type_query_norm = poitype.normalized(QString::NormalizationForm_KC).toCaseFolded();
   std::string name_query = name.toStdString();
 
   // fill type query - for now just use as its a full query
   std::vector<std::string> type_query;
-  if (!type_query_norm.isEmpty())
-    type_query.push_back(type_query_norm.toStdString());
+  if (!poitype.isEmpty())
+    {
+      QString typenorm = normalize(poitype);
+      auto tags = m_alias_to_tag.find(typenorm);
+      if (tags != m_alias_to_tag.constEnd())
+        {
+          for (auto t: *tags)
+            type_query.push_back(t.toStdString());
+        }
+      else
+        type_query.push_back(poitype.toStdString());
+    }
 
   for(const QString country: m_countries)
     {
@@ -471,7 +548,7 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
         r.insert("lng", sr.longitude);
         r.insert("distance", sr.distance);
         r.insert("object_id", sr.id);
-        r.insert("type", QString::fromStdString(sr.type));
+        r.insert("type", tag2alias(QString::fromStdString(sr.type)));
 
         arr.push_back(r);
       }

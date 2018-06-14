@@ -9,6 +9,8 @@
 #include <QString>
 #include <QStringList>
 #include <QHash>
+#include <QPair>
+#include <QSet>
 #include <QMutex>
 
 /////////////////////////////////////////
@@ -74,6 +76,10 @@ protected:
 
   void checkWarnings(bool lang_specified);
 
+  void loadTagAlias(const QStringList &lang_list);
+  QString normalize(const QString &str) const;
+  QString tag2alias(const QString &tag) const;
+
 protected:
   QMutex m_mutex;
 
@@ -91,6 +97,10 @@ protected:
   QStringList m_countries;
   QHash<QString, QString> m_postal_country_dirs;
   QHash<QString, QString> m_geocoder_dirs;
+
+  QStringList m_tag_alias_langs;
+  QHash<QString, QString> m_tag_to_alias;         ///< mapping from geocoder tags to preferred alias
+  QHash<QString, QSet<QString> > m_alias_to_tag;  ///< mapping from alias to geocoder tags
 };
 
 #endif // GEOMASTER_H

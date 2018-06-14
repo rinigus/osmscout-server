@@ -133,6 +133,9 @@ use_osmscout {
     LIBS += -losmscout_map -losmscout
 }
 
+# geocoder-nlp is enabled always
+DEFINES += GEOCODERNLP_ALIASFILE=\\\"data/geocoder-npl-tag-aliases.json\\\"
+
 # mapbox gl is enabled always
 DEFINES += MAPBOXGL_STYLEDIR=\\\"styles/mapboxgl\\\"
 

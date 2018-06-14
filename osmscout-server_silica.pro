@@ -49,6 +49,10 @@ qml.files = qml/silica
 qml.path = /usr/share/$${TARGET}/qml
 INSTALLS += qml
 
+data.files = data
+data.path = /usr/share/$${TARGET}
+INSTALLS += data
+
 styles.files = styles
 styles.path = /usr/share/$${TARGET}
 INSTALLS += styles
@@ -136,6 +140,9 @@ use_osmscout {
 
     LIBS += -losmscout_map -losmscout
 }
+
+# geocoder-nlp is enabled always
+DEFINES += GEOCODERNLP_ALIASFILE=\\\"/usr/share/$${TARGET}/data/geocoder-npl-tag-aliases.json\\\"
 
 # mapbox gl is enabled always
 DEFINES += MAPBOXGL_STYLEDIR=\\\"/usr/share/$${TARGET}/styles/mapboxgl\\\"

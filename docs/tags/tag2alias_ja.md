@@ -12,7 +12,7 @@ Tag | Alias
 [amenity\_embassy](https://taginfo.openstreetmap.org/tags/amenity=embassy) | 大使館
 [amenity\_kindergarten](https://taginfo.openstreetmap.org/tags/amenity=kindergarten) | 幼稚園
 [amenity\_library](https://taginfo.openstreetmap.org/tags/amenity=library) | 図書館
-[amenity\_pub](https://taginfo.openstreetmap.org/tags/amenity=pub) | パブ(立ち吞み屋)
+[amenity\_pub](https://taginfo.openstreetmap.org/tags/amenity=pub) | パブ（立ち吞み屋）
 [amenity\_sauna](https://taginfo.openstreetmap.org/tags/amenity=sauna) | サウナ
 [amenity\_school](https://taginfo.openstreetmap.org/tags/amenity=school) | 学校
 [amenity\_taxi](https://taginfo.openstreetmap.org/tags/amenity=taxi) | タクシー乗り場
