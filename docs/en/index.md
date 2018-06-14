@@ -129,7 +129,11 @@ If you enabled automatic activation then all you have to do is to start the clie
 
 To distinguish types of objects, the geocoder uses tags that are imported from OpenStreetMap. Tags are also associated with aliases in a language-dependent manner. The tags and their aliases are listed in [tags](../tags).
 
-Aliases and the tags are imported from the list of special phrases maintained for Nominatim at https://wiki.openstreetmap.org/wiki/Nominatim/Special_Phrases . If you find something missing or want to correct it, please correct it at the source.
+Aliases and the tags are imported from the list of special phrases
+maintained for Nominatim at
+[https://wiki.openstreetmap.org/wiki/Nominatim/Special_Phrases](https://wiki.openstreetmap.org/wiki/Nominatim/Special_Phrases). If
+you find something missing or want to correct it, please correct it at
+the source.
 
 
 ## Implementation of automatic activation

@@ -221,6 +221,10 @@ difference is in returned JSON format with the second version, in
 addition to returning the results, giving feedback on query parsing to
 the user.
 
+Location search uses tags and their aliases to figure out the type of
+the searched POI. List of the current tags and aliases is given at
+[https://rinigus.github.io/osmscout-server/tags](https://rinigus.github.io/osmscout-server/tags).
+
 ### Location search: version 1
 
 The location search is accessed by the following URL:
