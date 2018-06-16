@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fi" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -296,37 +298,37 @@
         <translation>Kohde</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="254"/>
+        <location filename="../src/dbmaster_search.cpp" line="257"/>
         <source>Database is not open, cannot search</source>
         <translation>Tietokanta ei ole auki, ei voida hakea</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="272"/>
+        <location filename="../src/dbmaster_search.cpp" line="275"/>
         <source>Error while parsing search string</source>
         <translation>Virhe hakutekstin tulkinnassa</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="279"/>
+        <location filename="../src/dbmaster_search.cpp" line="282"/>
         <source>Error while searching for location</source>
         <translation>Virhe etsiessä sijaintia</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="486"/>
+        <location filename="../src/dbmaster_search.cpp" line="489"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Referenssipisteen etsintä epäonnistui: ei löydetty</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="511"/>
+        <location filename="../src/dbmaster_search.cpp" line="514"/>
         <source>Database is not open, cannot search for POI</source>
         <translation>Tietokanta ei ole auki, ei voida hakea POI:ta</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="572"/>
+        <location filename="../src/dbmaster_search.cpp" line="575"/>
         <source>Cannot load data from database</source>
         <translation>Tietoja ei voitu ladata tietokannasta</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="672"/>
+        <location filename="../src/dbmaster_search.cpp" line="675"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>Tietokanta ei ole auki, ei voida listata POI-tyyppejä</translation>
     </message>
@@ -490,59 +492,59 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="85"/>
+        <location filename="../src/geomaster.cpp" line="86"/>
         <source>Cannot open geocoder database</source>
         <translation>Ei voitu avata geokooderitietokantaa</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="89"/>
+        <location filename="../src/geomaster.cpp" line="90"/>
         <source>Opened geocoder database</source>
         <translation>Avattiin geokooderitietokanta</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="58"/>
+        <location filename="../src/geomaster.cpp" line="59"/>
         <source>Selected country not available for geocoder: %1</source>
         <translation>Valittu maa ei ole saatavilla geokooderille: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="71"/>
+        <location filename="../src/geomaster.cpp" line="72"/>
         <source>Countries used in search: </source>
         <translation>Haussa käytetyt maat: </translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="105"/>
+        <location filename="../src/geomaster.cpp" line="109"/>
         <source>libpostal using languages: %1</source>
         <translation>libpostalin käyttämät kielet: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="110"/>
+        <location filename="../src/geomaster.cpp" line="114"/>
         <source>libpostal will use all covered languages</source>
         <translation>libpostal käyttää kaikkia tuettuja kieliä</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="201"/>
-        <location filename="../src/geomaster.cpp" line="398"/>
+        <location filename="../src/geomaster.cpp" line="277"/>
+        <location filename="../src/geomaster.cpp" line="489"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Ei voitu avata geokooderitietokantaa: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="227"/>
+        <location filename="../src/geomaster.cpp" line="303"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Virhe libpostalin tulkinnassa, libpostalin tietokannat eivät ehkä ole saatavilla</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="263"/>
+        <location filename="../src/geomaster.cpp" line="339"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Tulkittu kysely [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="274"/>
-        <location filename="../src/geomaster.cpp" line="431"/>
+        <location filename="../src/geomaster.cpp" line="350"/>
+        <location filename="../src/geomaster.cpp" line="526"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>VIrhe etsiessä geocoder-nlp:llä</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="353"/>
+        <location filename="../src/geomaster.cpp" line="429"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Referenssipisteen etsintä epäonnistui: ei löydetty</translation>
     </message>
@@ -1774,18 +1776,13 @@
         <translation>POI-haku ei ole saatavilla koska GeocoderNLP ja libosmscout on poistettu käytöstä joko valitussa profiilissa tai asetuksissa. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="718"/>
-        <source>List of POI types is not available since libosmscout is disabled by selected profile or settings. %1</source>
-        <translation>POI-tyyppien lista ei ole saatavilla koska libosmscout on poistettu käytöstä joko valitussa profiilissa tai asetuksissa. %1</translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="744"/>
-        <location filename="../src/requestmapper.cpp" line="864"/>
+        <location filename="../src/requestmapper.cpp" line="751"/>
+        <location filename="../src/requestmapper.cpp" line="871"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Reititys ei ole saatavilla koska Valhalla ja libosmscout on poistettu käytöstä joko valitussa profiilissa tai asetuksissa. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="837"/>
+        <location filename="../src/requestmapper.cpp" line="844"/>
         <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
         <translation>Reititys ei ole saatavilla koska Valhalla on poistettu käytöstä joko valitussa profiilissa tai asetuksissa. %1</translation>
     </message>
@@ -2419,12 +2416,12 @@
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="54"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="184"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="234"/>
@@ -2786,7 +2783,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
         <source>Home</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>

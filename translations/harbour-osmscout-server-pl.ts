@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -296,37 +298,37 @@
         <translation>Cel</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="254"/>
+        <location filename="../src/dbmaster_search.cpp" line="257"/>
         <source>Database is not open, cannot search</source>
         <translation>Baza danych nie jest otwarta, nie można wyszukać</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="272"/>
+        <location filename="../src/dbmaster_search.cpp" line="275"/>
         <source>Error while parsing search string</source>
         <translation>Błąd podczas parsowania szukanego stringu</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="279"/>
+        <location filename="../src/dbmaster_search.cpp" line="282"/>
         <source>Error while searching for location</source>
         <translation>Błąd podczas szukania miejsca</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="486"/>
+        <location filename="../src/dbmaster_search.cpp" line="489"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Szukanie punktu odniesienia nie powiodło się: nie można znaleźć</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="511"/>
+        <location filename="../src/dbmaster_search.cpp" line="514"/>
         <source>Database is not open, cannot search for POI</source>
         <translation>Baza danych nie jest otwarta, nie można wyszukać POI</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="572"/>
+        <location filename="../src/dbmaster_search.cpp" line="575"/>
         <source>Cannot load data from database</source>
         <translation>Nie można załadować danych z bazy danych</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="672"/>
+        <location filename="../src/dbmaster_search.cpp" line="675"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>Baza danych nie jest otwarta, nie można pokazać listy typów POI</translation>
     </message>
@@ -490,59 +492,59 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="85"/>
+        <location filename="../src/geomaster.cpp" line="86"/>
         <source>Cannot open geocoder database</source>
         <translation>Nie można otworzyć bazy danych geokodowania</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="89"/>
+        <location filename="../src/geomaster.cpp" line="90"/>
         <source>Opened geocoder database</source>
         <translation>Otworzono bazę danych geokodowania</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="58"/>
+        <location filename="../src/geomaster.cpp" line="59"/>
         <source>Selected country not available for geocoder: %1</source>
         <translation>Wybrano państwo niedostępne dla geocodera: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="71"/>
+        <location filename="../src/geomaster.cpp" line="72"/>
         <source>Countries used in search: </source>
         <translation>Państwa użyte w wyszukiwaniu:</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="105"/>
+        <location filename="../src/geomaster.cpp" line="109"/>
         <source>libpostal using languages: %1</source>
         <translation>języki używane przez libpostal: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="110"/>
+        <location filename="../src/geomaster.cpp" line="114"/>
         <source>libpostal will use all covered languages</source>
         <translation>libpostal użyje wszystkich wspieranych językach</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="201"/>
-        <location filename="../src/geomaster.cpp" line="398"/>
+        <location filename="../src/geomaster.cpp" line="277"/>
+        <location filename="../src/geomaster.cpp" line="489"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Nie można otworzyć bazy danych geocodowania: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="227"/>
+        <location filename="../src/geomaster.cpp" line="303"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Błąd parsowania przez libpostal, możliwe że baza danych libpostal jest niedostępna</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="263"/>
+        <location filename="../src/geomaster.cpp" line="339"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Sparsowane zapytanie [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="274"/>
-        <location filename="../src/geomaster.cpp" line="431"/>
+        <location filename="../src/geomaster.cpp" line="350"/>
+        <location filename="../src/geomaster.cpp" line="526"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Błąd podczas wyszukiwania za pomocą geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="353"/>
+        <location filename="../src/geomaster.cpp" line="429"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Szukanie punktu odniesienia nie powiodło się: nie można znaleźć</translation>
     </message>
@@ -1589,7 +1591,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="86"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="96"/>
         <source>motorway link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="94"/>
@@ -1613,7 +1615,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="118"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="128"/>
         <source>primary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="126"/>
@@ -1643,7 +1645,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="158"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="168"/>
         <source>secondary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="166"/>
@@ -1661,7 +1663,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="182"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="192"/>
         <source>tertiary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="190"/>
@@ -1673,7 +1675,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="198"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="208"/>
         <source>trunk link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="206"/>
@@ -1714,7 +1716,7 @@
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="68"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="51"/>
@@ -1774,18 +1776,13 @@
         <translation>Wyszukiwanie pobliskich POI jest niedostępne odkąd GeocoderNLP i libosmscout są wyłączone w ustawieniach lub poprzez wybrany profil. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="718"/>
-        <source>List of POI types is not available since libosmscout is disabled by selected profile or settings. %1</source>
-        <translation>Lista typów POI jest niedostępna odkąd libosmscout jest wyłączone w ustawieniach lub poprzez wybrany profil. %1</translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="744"/>
-        <location filename="../src/requestmapper.cpp" line="864"/>
+        <location filename="../src/requestmapper.cpp" line="751"/>
+        <location filename="../src/requestmapper.cpp" line="871"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Wyznaczanie trasy jest niedostępne odkąd Valhalla i libosmscout są wyłączone w ustawieniach lub poprzez wybrany profil. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="837"/>
+        <location filename="../src/requestmapper.cpp" line="844"/>
         <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
         <translation>Wyznaczanie trasy jest niedostępne odkąd Valhalla jest wyłączona w ustawieniach lub poprzez wybrany profil. %1</translation>
     </message>

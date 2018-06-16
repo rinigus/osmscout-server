@@ -1,11 +1,13 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nb" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nb" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="13"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="19"/>
@@ -83,7 +85,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="95"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="98"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -296,37 +298,37 @@
         <translation>Mål</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="254"/>
+        <location filename="../src/dbmaster_search.cpp" line="257"/>
         <source>Database is not open, cannot search</source>
         <translation>Database er ikke åpen, kan ikke søke</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="272"/>
+        <location filename="../src/dbmaster_search.cpp" line="275"/>
         <source>Error while parsing search string</source>
         <translation>Feil ved oppdeling av søkestreng </translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="279"/>
+        <location filename="../src/dbmaster_search.cpp" line="282"/>
         <source>Error while searching for location</source>
         <translation>Feil mens du søker etter sted</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="486"/>
+        <location filename="../src/dbmaster_search.cpp" line="489"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Søk etter referansepunkt  mislyktes: Finner ikke</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="511"/>
+        <location filename="../src/dbmaster_search.cpp" line="514"/>
         <source>Database is not open, cannot search for POI</source>
         <translation>Database er ikke åpen, kan ikke søke etter POI</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="572"/>
+        <location filename="../src/dbmaster_search.cpp" line="575"/>
         <source>Cannot load data from database</source>
         <translation>Kan ikke laste data fra databasen</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="672"/>
+        <location filename="../src/dbmaster_search.cpp" line="675"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>Database er ikke åpen, kan ikke liste POI-typer</translation>
     </message>
@@ -404,19 +406,19 @@
         <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="11"/>
         <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="9"/>
         <source>List of languages used for parsing addresses</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="12"/>
         <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="10"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="13"/>
         <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="11"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="36"/>
@@ -450,7 +452,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="353"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>
@@ -490,59 +492,59 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="85"/>
+        <location filename="../src/geomaster.cpp" line="86"/>
         <source>Cannot open geocoder database</source>
         <translation>Kan ikke åpne geokoder database</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="89"/>
+        <location filename="../src/geomaster.cpp" line="90"/>
         <source>Opened geocoder database</source>
         <translation>Åpnet geokoder database</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="58"/>
+        <location filename="../src/geomaster.cpp" line="59"/>
         <source>Selected country not available for geocoder: %1</source>
         <translation>Valgt land ikke tilgjengelig for geokoder: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="71"/>
+        <location filename="../src/geomaster.cpp" line="72"/>
         <source>Countries used in search: </source>
         <translation>Land som brukes i søk:</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="105"/>
+        <location filename="../src/geomaster.cpp" line="109"/>
         <source>libpostal using languages: %1</source>
         <translation>libpostal bruker språk: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="110"/>
+        <location filename="../src/geomaster.cpp" line="114"/>
         <source>libpostal will use all covered languages</source>
         <translation>libpostal vil bruke alle installerte språk</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="201"/>
-        <location filename="../src/geomaster.cpp" line="398"/>
+        <location filename="../src/geomaster.cpp" line="277"/>
+        <location filename="../src/geomaster.cpp" line="489"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Kan ikke åpne geocoding database: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="227"/>
+        <location filename="../src/geomaster.cpp" line="303"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Feil oppdeling av libpostal, kanskje libpostal databaser ikke er tilgjengelige</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="263"/>
+        <location filename="../src/geomaster.cpp" line="339"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Oppdelt spørring [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="274"/>
-        <location filename="../src/geomaster.cpp" line="431"/>
+        <location filename="../src/geomaster.cpp" line="350"/>
+        <location filename="../src/geomaster.cpp" line="526"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Feil ved søking med geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="353"/>
+        <location filename="../src/geomaster.cpp" line="429"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Søk etter referansepunkt  mislyktes: Finner ikke</translation>
     </message>
@@ -633,7 +635,7 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="11"/>
         <source>Cleanup: %1 files to delete</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="17"/>
@@ -648,12 +650,12 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="27"/>
         <source>Files left to remove: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="32"/>
         <source>Cleanup finished</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -666,7 +668,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="97"/>
         <source>Storage folder changed to %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="104"/>
@@ -740,17 +742,17 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="287"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="289"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="291"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="421"/>
@@ -775,7 +777,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="924"/>
         <source>No servers found to download the data from</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="947"/>
@@ -806,7 +808,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1048"/>
         <source>Download failed from %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1084"/>
@@ -846,17 +848,17 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1108"/>
         <source>Unpacking files</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1110"/>
         <source>%1; Unpacking files</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1140"/>
         <source>Stopping downloads</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1300"/>
@@ -929,12 +931,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="300"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="308"/>
         <source>Missing Mapnik World coastlines</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="320"/>
@@ -949,32 +951,32 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="347"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="355"/>
         <source>Missing Mapbox GL World overlay</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="372"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="380"/>
         <source>Missing Mapbox GL fonts</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="393"/>
         <source>Mapbox GL country-specific support</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="401"/>
         <source>Missing country-specific Mapbox GL dataset</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="446"/>
@@ -1026,13 +1028,13 @@
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="236"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="253"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="267"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="286"/>
         <source>Store datasets for Mapbox GL</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="277"/>
@@ -1092,7 +1094,7 @@
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="137"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="144"/>
         <source>Stop download</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="147"/>
@@ -1140,7 +1142,7 @@
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="268"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="287"/>
         <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="278"/>
@@ -1172,52 +1174,52 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="117"/>
         <source>Failed to run query in Mapbox GL database</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="169"/>
         <source>Failed to run query in Mapbox GL fonts database</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="196"/>
         <source>Malformed Mapbox GL file request: %1/%2 [%3] [%4]</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="202"/>
         <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="221"/>
         <source>Error opening Mapbox GL style template %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="229"/>
         <source>Error reading Mapbox GL style template %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="248"/>
         <source>Error opening Mapbox GL sprite JSON</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="256"/>
         <source>Error reading Mapbox GL sprite JSON</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="274"/>
         <source>Error opening Mapbox GL sprite image</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="281"/>
         <source>Error reading Mapbox GL sprite image</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1225,7 +1227,7 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="124"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="130"/>
@@ -1275,7 +1277,7 @@
         <location filename="../qml/qtcontrols/MapnikPage.qml" line="20"/>
         <location filename="../qml/silica/pages/MapnikPage.qml" line="26"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapnikPage.qml" line="29"/>
@@ -1529,7 +1531,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="20"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="26"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="27"/>
@@ -1690,55 +1692,55 @@
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="23"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="40"/>
         <source>Profile</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="22"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="27"/>
         <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.&lt;br&gt;&lt;br&gt;Please select active profile.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="49"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="44"/>
         <source>Default</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="50"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="45"/>
         <source>Recommended for raster tiles maps</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="68"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="51"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="46"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="52"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="47"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="53"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="48"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="54"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="49"/>
         <source>Custom</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1751,43 +1753,38 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="55"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="325"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="401"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="569"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="616"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="718"/>
-        <source>List of POI types is not available since libosmscout is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="744"/>
-        <location filename="../src/requestmapper.cpp" line="864"/>
+        <location filename="../src/requestmapper.cpp" line="751"/>
+        <location filename="../src/requestmapper.cpp" line="871"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="837"/>
+        <location filename="../src/requestmapper.cpp" line="844"/>
         <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2022,31 +2019,31 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="74"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="61"/>
         <source>Language</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="84"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="65"/>
         <source>Default</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="85"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="66"/>
         <source>English</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="95"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="75"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="136"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="117"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="109"/>
@@ -2064,79 +2061,79 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="127"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="108"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="146"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="154"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="170"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="150"/>
         <source>Idle timeout</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="180"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="154"/>
         <source>15 minutes</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="181"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="155"/>
         <source>30 minutes</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="182"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="156"/>
         <source>1 hour</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="183"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="157"/>
         <source>2 hours</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="184"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="158"/>
         <source>4 hours</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="185"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="159"/>
         <source>8 hours</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="186"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="160"/>
         <source>24 hours</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="187"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="161"/>
         <source>No timeout</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="247"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="216"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="257"/>
@@ -2256,13 +2253,13 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="230"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="198"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="242"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="211"/>
         <source>Profiles</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="341"/>
@@ -2329,7 +2326,7 @@
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="25"/>
         <source>Profile</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="31"/>
@@ -2357,7 +2354,7 @@
         <location filename="../qml/qtcontrols/StartPage.qml" line="45"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="74"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s) that are required by the current profile:&lt;ul&gt;</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="50"/>
@@ -2419,12 +2416,12 @@
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="54"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="184"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="234"/>
@@ -2436,7 +2433,7 @@
         <location filename="../qml/qtcontrols/StartPage.qml" line="238"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="275"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="269"/>
@@ -2477,17 +2474,17 @@
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="432"/>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="433"/>
         <source>Skip</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="437"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2495,12 +2492,12 @@
     <message>
         <location filename="../src/systemdservice.cpp" line="79"/>
         <source>Cannot create or change to directory: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/systemdservice.cpp" line="89"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2511,37 +2508,37 @@
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="22"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="46"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="20"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="26"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="28"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="36"/>
         <source>Do you want to enable automatic activation?</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="43"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="51"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="62"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="60"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2717,17 +2714,17 @@
     <message>
         <location filename="../src/main.cpp" line="141"/>
         <source>Run the server without GUI as a console application</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="145"/>
         <source>Do not output logs when running in console mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="150"/>
         <source>Run the server in SystemD socket-activated mode</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="156"/>
@@ -2786,7 +2783,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
         <source>Home</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>
@@ -2796,7 +2793,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="86"/>
         <source>Profile</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="93"/>

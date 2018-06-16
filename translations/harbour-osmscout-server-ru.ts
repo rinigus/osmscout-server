@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -296,37 +298,37 @@
         <translation>Финиш</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="254"/>
+        <location filename="../src/dbmaster_search.cpp" line="257"/>
         <source>Database is not open, cannot search</source>
         <translation>База данных не открыта, поиск невозможен</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="272"/>
+        <location filename="../src/dbmaster_search.cpp" line="275"/>
         <source>Error while parsing search string</source>
         <translation>Ошибка при анализе поискового запроса</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="279"/>
+        <location filename="../src/dbmaster_search.cpp" line="282"/>
         <source>Error while searching for location</source>
         <translation>Ошибка поиска местоположения</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="486"/>
+        <location filename="../src/dbmaster_search.cpp" line="489"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Невозможно найти опорную точку</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="511"/>
+        <location filename="../src/dbmaster_search.cpp" line="514"/>
         <source>Database is not open, cannot search for POI</source>
         <translation>База данных не открыта, невозможно найти POI</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="572"/>
+        <location filename="../src/dbmaster_search.cpp" line="575"/>
         <source>Cannot load data from database</source>
         <translation>Невозможно загрузить данные из базы данных</translation>
     </message>
     <message>
-        <location filename="../src/dbmaster_search.cpp" line="672"/>
+        <location filename="../src/dbmaster_search.cpp" line="675"/>
         <source>Database is not open, cannot list POI types</source>
         <translation>База данных не открыта, нет списка типов POI</translation>
     </message>
@@ -490,59 +492,59 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="85"/>
+        <location filename="../src/geomaster.cpp" line="86"/>
         <source>Cannot open geocoder database</source>
         <translation>Невозможно открыть базу данных геокодера</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="89"/>
+        <location filename="../src/geomaster.cpp" line="90"/>
         <source>Opened geocoder database</source>
         <translation>Открытая база данных геокодера</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="58"/>
+        <location filename="../src/geomaster.cpp" line="59"/>
         <source>Selected country not available for geocoder: %1</source>
         <translation>Выбранная страна недоступна для геокодера: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="71"/>
+        <location filename="../src/geomaster.cpp" line="72"/>
         <source>Countries used in search: </source>
         <translation>Страны, используемые при поиске:</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="105"/>
+        <location filename="../src/geomaster.cpp" line="109"/>
         <source>libpostal using languages: %1</source>
         <translation>libpostal, использующий языки: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="110"/>
+        <location filename="../src/geomaster.cpp" line="114"/>
         <source>libpostal will use all covered languages</source>
         <translation>libpostal будет использовать все имеющиеся языки</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="201"/>
-        <location filename="../src/geomaster.cpp" line="398"/>
+        <location filename="../src/geomaster.cpp" line="277"/>
+        <location filename="../src/geomaster.cpp" line="489"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Невозможно открыть геокодирующую базу данных: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="227"/>
+        <location filename="../src/geomaster.cpp" line="303"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Ошибка анализа с помощью libpostal, возможно базы данных libpostal недоступны</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="263"/>
+        <location filename="../src/geomaster.cpp" line="339"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Обработанный запрос [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="274"/>
-        <location filename="../src/geomaster.cpp" line="431"/>
+        <location filename="../src/geomaster.cpp" line="350"/>
+        <location filename="../src/geomaster.cpp" line="526"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Ошибка поиска с помощью geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="353"/>
+        <location filename="../src/geomaster.cpp" line="429"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Невозможно найти опорную точку</translation>
     </message>
@@ -1774,18 +1776,13 @@
         <translation>Поиск точек POI в ближайших окрестностях недоступен, поскольку GeocoderNLP и libosmscout отключены в настройках или выбранном профиле. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="718"/>
-        <source>List of POI types is not available since libosmscout is disabled by selected profile or settings. %1</source>
-        <translation>Список категорий точек POI недоступен, поскольку libosmscout отключена в настройках или выбранном профиле. %1</translation>
-    </message>
-    <message>
-        <location filename="../src/requestmapper.cpp" line="744"/>
-        <location filename="../src/requestmapper.cpp" line="864"/>
+        <location filename="../src/requestmapper.cpp" line="751"/>
+        <location filename="../src/requestmapper.cpp" line="871"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Прокладка маршрутов недоступна, поскольку модуль Valhalla и libosmscout отключены в настройках или выбранном профиле. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="837"/>
+        <location filename="../src/requestmapper.cpp" line="844"/>
         <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
         <translation>Прокладка маршрутов недоступна, поскольку модуль Valhalla отключен в настройках или выбранном профиле. %1</translation>
     </message>
