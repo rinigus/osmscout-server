@@ -9,7 +9,8 @@ tag_alias_json = "data/geocoder-npl-tag-aliases.json"
 doc_prefix = "docs/tags/"
 
 ### ignored tags
-geotags_to_ignore = [ 'amenity_brothel' ]
+geotags_to_ignore = [ 'amenity_brothel',
+                      'shop_erotic' ]
 
 ### alias -> tag transfer and tag -> alias
 A2T = {}

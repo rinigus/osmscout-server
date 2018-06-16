@@ -7639,12 +7639,6 @@
 "Entw\u00e4sserungsgr\u00e4ben": [
 "waterway_drain"
 ],
-"Erotikshop": [
-"shop_erotic"
-],
-"Erotikshops": [
-"shop_erotic"
-],
 "Fahrradgesch\u00e4ft": [
 "shop_bicycle"
 ],
@@ -8655,12 +8649,6 @@
 ],
 "Seilbahnen": [
 "railway_funicular"
-],
-"Sexshop": [
-"shop_erotic"
-],
-"Sexshops": [
-"shop_erotic"
 ],
 "Siedlung": [
 "landuse_residential"
@@ -10055,12 +10043,6 @@
 "Emergency Phones": [
 "amenity_emergency_phone"
 ],
-"Erotic Shop": [
-"shop_erotic"
-],
-"Erotic Shops": [
-"shop_erotic"
-],
 "Estate Agent": [
 "shop_estate_agent"
 ],
@@ -11185,12 +11167,6 @@
 ],
 "Service Roads": [
 "highway_service"
-],
-"Sex Shop": [
-"shop_erotic"
-],
-"Sex Shops": [
-"shop_erotic"
 ],
 "Shelter": [
 "amenity_shelter"
@@ -46867,7 +46843,6 @@
 "shop_doityourself": "Baumarkt",
 "shop_dry_cleaning": "Textilreinigung",
 "shop_electronics": "Elektronikgesch\u00e4ft",
-"shop_erotic": "Erotikshop",
 "shop_estate_agent": "Imobilienh\u00e4ndler",
 "shop_farm": "Hofladen",
 "shop_fashion": "Modegesch\u00e4ft",
@@ -47237,7 +47212,6 @@
 "shop_doityourself": "Do-It-Yourself",
 "shop_dry_cleaning": "Dry Cleaning",
 "shop_electronics": "Electronics Shop",
-"shop_erotic": "Erotic Shop",
 "shop_estate_agent": "Estate Agent",
 "shop_farm": "Farm Shop",
 "shop_fashion": "Fashion Shop",
