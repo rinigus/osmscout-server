@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_BE" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_BE" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -2788,7 +2786,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Startscherm</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>

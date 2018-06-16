@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="13"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Der Server muss mit einem Client-Programm verwendet werden, das in der Lage ist Karten darzustellen, Suchanfragen zu verarbeiten und ausgewählte Routen anzuzeigen. Dieser Server ist ein Zwischenglied für den Zugriff auf die Funktionen von &lt;i&gt;libsosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; , &lt;i&gt;geocoder-nlp&lt;/i&gt; und Daten aus dem Webdienst &lt;i&gt;Mapbox GL &lt;/i&gt;. Er kann als gleichwertiger Ersatz für Online--Kartendienste dienen.</translation>
+        <translation>Der Server muss mit einem Client-Programm verwendet werden, das in der Lage ist Karten darzustellen, Suchanfragen zu stellen und ausgewählte Routen anzuzeigen. Dieser Server ist ein Zwischenglied für den Zugriff auf die Funktionen von &lt;i&gt;libsosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;  und &lt;i&gt;geocoder-nlp&lt;/i&gt; sowie von Daten aus dem Webdienst &lt;i&gt;Mapbox GL &lt;/i&gt;. Er kann als gleichwertiger Ersatz für Online-Kartendienste dienen.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="19"/>
@@ -123,13 +121,13 @@
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="26"/>
         <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="24"/>
         <source>All datasets covering selected features are available</source>
-        <translation>Alle Datensätze für die ausgewählten Funktionen stehen zur Verfügung.</translation>
+        <translation>Für die ausgewählten Kartenobjekte sind alle Datensätze verfügbar.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="28"/>
         <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="26"/>
         <source>Some datasets are missing. You would have to start downloads to get them.</source>
-        <translation>Einige Datensätze fehlen. Starte die Downloads, um sie zu erhalten.</translation>
+        <translation>Einige Datensätze fehlen. Starte die Kartenübertragung, um sie zu erhalten.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="30"/>
@@ -201,7 +199,7 @@
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="227"/>
         <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="239"/>
         <source>Unsubscribe</source>
-        <translation>Nicht abonnieren</translation>
+        <translation>Abbestellen</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="51"/>
@@ -464,12 +462,12 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <location filename="../src/filedownloader.cpp" line="406"/>
         <location filename="../src/filedownloader.cpp" line="426"/>
         <source>Error in processing downloaded data</source>
-        <translation>Fehler beim Bearbeiten heruntergeladener Daten</translation>
+        <translation>Fehler bei der Verarbeitung der heruntergeladenen Daten</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="436"/>
         <source>Error in processing downloaded data: could not start the program</source>
-        <translation>Fehler beim Bearbeiten von heruntergeladenen Daten: Das Programm konnte nicht gestartet werden.</translation>
+        <translation>Fehler bei der Verarbeitung der heruntergeladenen Daten: Das Programm konnte nicht gestartet werden.</translation>
     </message>
 </context>
 <context>
@@ -556,7 +554,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="30"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="36"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation>Haftungsausschluss: Siehe bitte Berichterstattung der Probleme mit der Adresssuche.</translation>
+        <translation>Achtung: Bitte lies die Hinweise zum Melden von Problemen mit der Adressensuche in &apos;Über&apos;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="10"/>
@@ -574,7 +572,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="40"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="47"/>
         <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
-        <translation>Die Liste der verwendeten Sprachen bei der Adresssuche. Sind alle unterstützten Sprachen aktiv, kann die Auslastung des Arbeitsspeichers sehr hoch werden.</translation>
+        <translation>Die Liste der verwendeten Sprachen bei der Adressensuche. Hinweis: Sind alle unterstützten Sprachen aktiv, kann die Auslastung des Arbeitsspeichers sehr hoch werden.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="47"/>
@@ -636,17 +634,17 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="11"/>
         <source>Cleanup: %1 files to delete</source>
-        <translation>Aufräumen: %1 Dateien zu löschen</translation>
+        <translation>Bereinigung: %1 Dateien zu löschen</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="17"/>
         <source>Error while deleting file:</source>
-        <translation>Fehler beim Lösche der Datei:</translation>
+        <translation>Fehler beim Löschen der Datei:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="18"/>
         <source>Cancelling the removal of remaining files.</source>
-        <translation>Abbrechen des Entfernens der verbleibenden Dateien.</translation>
+        <translation>Breche Löschvorgang der verbleibenden Dateien ab.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="27"/>
@@ -656,7 +654,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="32"/>
         <source>Cleanup finished</source>
-        <translation>Aufräumen beendet</translation>
+        <translation>Bereinigung abgeschlossen</translation>
     </message>
 </context>
 <context>
@@ -664,12 +662,12 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="51"/>
         <source>Could not allocate Map Manager features</source>
-        <translation>Die Eigenschaften des Karten-Managers konnten nicht zugeordnet werden.</translation>
+        <translation>Konnte Funktionen der Kartenverwaltung nicht bereitstellen.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="97"/>
         <source>Storage folder changed to %1</source>
-        <translation>Speicherordner wurde geändert %1</translation>
+        <translation>Speicherordner geändert zu %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="104"/>
@@ -684,7 +682,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="113"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
-        <translation>Das Kartenverzeichnis ist nicht schreibbar, bitte passe die Berechtigungen für %1 an.</translation>
+        <translation>Das Kartenverzeichnis ist nicht beschreibbar, bitte passe die Berechtigungen für %1 an.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="166"/>
@@ -695,12 +693,12 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="169"/>
         <source>Map Manager functionality would be disturbed</source>
-        <translation>Karten-Manager Funktionalität wäre gestört</translation>
+        <translation>Kartenverwaltung Funktionalität wäre gestört</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="231"/>
         <source>Cannot create directory without any name</source>
-        <translation>Kann kein Verzeichnis ohne Namen erstellen.</translation>
+        <translation>Kann kein Verzeichnis ohne Namen erstellen</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="238"/>
@@ -1011,13 +1009,13 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="10"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="24"/>
         <source>Map Manager</source>
-        <translation>Karten-Manager</translation>
+        <translation>Kartenverwaltung</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="26"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="28"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation>Der Karten-Manager verwaltet Offline-Karten und zugehörige Datensätze auf dem Gerät. Hier kannst du Karten herunterladen, aktualisieren oder löschen.</translation>
+        <translation>Die Kartenverwaltung verwaltet Offline-Karten und zugehörige Datensätze auf dem Gerät. Hier kannst du Karten herunterladen, aktualisieren oder löschen.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="232"/>
@@ -1312,7 +1310,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="10"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="30"/>
         <source>Unused files</source>
-        <translation>Ungenutzte Dateien</translation>
+        <translation>Nicht genutzte Dateien</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="85"/>
@@ -1335,7 +1333,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="127"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="145"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
-        <translation>Alle gespeicherten Dateien werden von OSM Scout Server benötigt. Es gibt nichts zu Löschen.</translation>
+        <translation>Alle vorhandenen Daten werden von OSM Scout Server benötigt. Es gibt nichts zu Löschen.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="120"/>
@@ -1359,7 +1357,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="53"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="60"/>
         <source>Directories containing files that will be deleted during cleanup:</source>
-        <translation>Verzeichnisse, die Dateien enthalten, welche beim Aufräumen entfernt werden:</translation>
+        <translation>Datenverzeichnisse, die bei der Bereinigung entfernt werden:</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="74"/>
@@ -1428,7 +1426,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="52"/>
         <location filename="../qml/silica/pages/OSMScoutPage.qml" line="57"/>
         <source>Icons used to mark features on the map</source>
-        <translation>Symbole zur Kennzeichnung von Funktionen auf der Karte</translation>
+        <translation>Symbole zur Darstellungen von Objekten auf der Karte</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="60"/>
@@ -1446,13 +1444,13 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="70"/>
         <location filename="../qml/silica/pages/OSMScoutPage.qml" line="75"/>
         <source>Routing</source>
-        <translation>Routen</translation>
+        <translation>Navigation</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="74"/>
         <location filename="../qml/silica/pages/OSMScoutPage.qml" line="79"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
-        <translation>Das Routing wird unter den möglichen Routen berechnet, die der Kostenbegrenzung entsprechen</translation>
+        <translation>Die Navigation errechnet sich aus möglichen Routen, die der eingestellten Kostenbegrenzung entsprechen</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="84"/>
@@ -1464,7 +1462,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="85"/>
         <location filename="../qml/silica/pages/OSMScoutPage.qml" line="91"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation>Der Kostenfaktor ist Bestandteil einer Kostengrenze, die proportional zum geodätischen Abstand zwischen dem Routenursprung und dem Ziel ist</translation>
+        <translation>Der Kostenfaktor ist Bestandteil einer Kostengrenze und proportional zum geodätischen Abstand zwischen Ursprung und Ziel.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="94"/>
@@ -1527,13 +1525,13 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="9"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="22"/>
         <source>Routing speeds</source>
-        <translation>Routing-Geschwindigkeiten</translation>
+        <translation>Reisegeschwindigkeiten</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="20"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="26"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation>Transportgeschwindigkeiten von OSM Scout library verwendet (&lt;i&gt;libosmscout&lt;/i&gt;) bei der Berechnung der Routen.</translation>
+        <translation>Durchschnittliche Reisegeschwindigkeiten zur Berechnung von Routen (&lt;i&gt;libosmscout&lt;/i&gt;)</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="27"/>
@@ -1545,7 +1543,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="33"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="42"/>
         <source>Maximal car speed</source>
-        <translation>Maximale Fahrzeug-Geschwindigkeit</translation>
+        <translation>Maximalgeschwindigkeit des Fahrzeugs</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="34"/>
@@ -1557,7 +1555,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="42"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="51"/>
         <source>Expected speed of a bicycle</source>
-        <translation>Erwartete Geschwindigkeit eines Fahrrades</translation>
+        <translation>Erwartete Geschwindigkeit eines Fahrrads</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="50"/>
@@ -1569,7 +1567,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="56"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="65"/>
         <source>Car speed on different roads</source>
-        <translation>Fahrzeug-Geschwindigkeit auf unterschiedlichen Straßen</translation>
+        <translation>Geschwindigkeit des Fahrzeug auf verschiedenen Straßen</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="62"/>
@@ -1700,7 +1698,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="22"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="27"/>
         <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.&lt;br&gt;&lt;br&gt;Please select active profile.</source>
-        <translation>OSM Scout Server verwendet Profile, um die Auswahl von Backends und die Sätze der heruntergeladenen Datenbanken zu vereinfachen. &lt;br&gt;&lt;br&gt;Bitte aktives Profil auswählen.</translation>
+        <translation>OSM Scout Server nutzt Profile, um die Auswahl von Darstellungsmethoden und Kartendaten zu vereinfachen.&lt;br&gt;&lt;br&gt;Bitte wähle ein Profil.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="49"/>
@@ -1712,25 +1710,25 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="50"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="45"/>
         <source>Recommended for raster tiles maps</source>
-        <translation>Empfohlen für Karten mit Rasterkacheln.</translation>
+        <translation>Empfehlung für Karten mit Rasterkacheln</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="68"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Profil &lt;i&gt;Standard&lt;/i&gt; unterstützt Anwendungen, die das Plugin&lt;i&gt;Mapbox GL&lt;/i&gt; verwenden. Es verwendet &lt;i&gt;Geocoder-NLP&lt;/i&gt; zur Suche nach Orten und &lt;i&gt;Valhalla&lt;/i&gt; für die Routenberechnung. Dieses Profil wird für neuere Clients mit Vektorkachel-Karten empfohlen.&lt;br&gt;&lt;br&gt;Für Nutzer von Karten-Apps die mit herkömmlichen Rasterkacheln arbeiten enthält das empfohlene Profil für Karten mit Rasterkacheln Datensätze von &lt;i&gt;Mapnik&lt;/i&gt;, verwendet ansonsten die selben Such- und Routendienste wie das Profil &lt;i&gt;Standard&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Für Nutzer, die Karten-Apps für Raster- sowie Vektorkacheln nutzen möchten, enthält das entsprechende Profil Kartendaten von &lt;i&gt;Mapbox GL&lt;/i&gt; bereit und unterstützt gleichzeitig die Kartendarstellung über &lt;i&gt;Mapnik&lt;/i&gt;. Such- und Routendienst sind ebenfalls die selben wie für &lt;i&gt;Standard&lt;/i&gt;. Da dieses Profil Daten für verschiedene Darstellungsmethoden enthält, beansprucht es den meisten Speicherplatz.&lt;br&gt;&lt;br&gt;Das Profil, das &lt;i&gt;libosmscout&lt;/i&gt; mit &lt;i&gt;Geocoder-NLP&lt;/i&gt; kombiniert, benötigt  im Vergleich zum Standardprofil weniger Speicher. Allerdings sind dabei Kartendarstellung und Routenberechnung auf ein Kartengebiet eingeschränkt. Zudem sind die Darstellungsqualität geringer und die Routenberechnung langsamer.&lt;br&gt;&lt;br&gt;Das Profil &lt;i&gt;libosmscout&lt;/i&gt; hat insgesamt die geringsten Speicheranforderungen. Hier gelten jedoch die gleichen Einschränkungen wie für das Kombinationsprofil.&lt;br&gt;&lt;br&gt;Wenn du das Benutzerdefinierte Profil nutzt, sind die Einstellungen und Verwaltung des Kartenspeichers dir überlassen. Du kannst die Komponenten zur Kartendarstellung, Suche und Routenberechnung selbst wählen. Du bist allerdings auch dafür verantwortlich, die Einstellungen so zu setzen, dass Kartendaten und Darstellungsmethode des aktiven Backends aufeinander abgestimmt sind.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="51"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="46"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation>Empfohlen für Vektor- und Rasterkacheln Karten</translation>
+        <translation>Emfehlung für Vektor- und Rasterkacheln Karten</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="52"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="47"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation>&lt;i&gt;libosmscout &lt;/i&gt;mit &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; und &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="53"/>
@@ -1755,7 +1753,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../src/requestmapper.cpp" line="55"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiviere die zugehörigen Backends über ein entsprechendes Profil.</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="325"/>
@@ -2032,7 +2030,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="84"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="65"/>
         <source>Default</source>
-        <translation>Standard</translation>
+        <translation>Vorgabe</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="85"/>
@@ -2044,13 +2042,13 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="95"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="75"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
-        <translation>Bevorzugte Sprache für Ortsnamen, die in gerenderten Karten oder in den zurückgegebenen Suchergebnissen angezeigt werden. Wenn möglich, wird diese Sprache verwendet. Wenn auf &lt;i&gt;Default&lt;/i&gt;gesetzt, wird der OpenStreetMap-Name verwendet, der normalerweise die lokale Sprache des angezeigten Landes verwendet.</translation>
+        <translation>Bevorzugte Sprache für Ortsnamen in Kartendarstellung und Suchergebnissen. Wo möglich wird diese Sprache verwendet. Die Einstellung &lt;i&gt;Vorgabe&lt;/i&gt; zeigt den jeweiligen Namen von OpenStreetMap; der normalerweise der Sprache des angezeigten Landes entspricht.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="136"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="117"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
-        <translation>Wenn aktiviert, wird OSM Scout Server automatisch von jedem Client aktiviert, der darauf zugreift. Der automatisch gestartete Server wird im Hintergrund arbeiten.</translation>
+        <translation>Falls ausgewählt, startet OSM Scout Server automatisch, sobald ein Client darauf zugreift. Der automatisch gestartete Server arbeitet im Hintergrund.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="109"/>
@@ -2069,25 +2067,25 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="127"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="108"/>
         <source>Automatic activation</source>
-        <translation>Automatische Aktivierung</translation>
+        <translation>Automatisch starten</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="146"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="128"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation>Es wird empfohlen, die automatische Aktivierung zu aktivieren, um den Zugriff auf den Server zu vereinfachen.</translation>
+        <translation>Es wird empfohlen, den automatischen Start zu aktivieren, um den Zugriff auf den Server zu vereinfachen.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="154"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="137"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation>Für technische Informationen, eine Übersicht erstellter Dateien und wie du diese bei Bedarf entfernen kannst, siehe den entsprechenden Abschnitt in der &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt; Bedienungsanleitung&lt;/a&gt;.</translation>
+        <translation>Für technische Informationen, eine Übersicht erstellter Dateien und Hinweise, wie du diese bei Bedarf entfernen kannst, siehe den entsprechenden Abschnitt in der &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt; Bedienungsanleitung&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="170"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="150"/>
         <source>Idle timeout</source>
-        <translation>Leerlauf Zeitlimit</translation>
+        <translation>Zeitlimit für Leerlauf</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="180"/>
@@ -2141,7 +2139,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="247"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="216"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation>Aktive Backends werden durch das Profil gesteuert. Wenn du die Backend-Auswahl ändern möchtest, wähle bitte das entsprechende Profil oder &lt;i&gt;Benutzerdefiniert&lt;/i&gt;.</translation>
+        <translation>Aktive Backends werden durch das Profil gesteuert. Wenn du das Backend wechseln möchtest, wähle bitte das entsprechende Profil oder &lt;i&gt;Benutzerdefiniert&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="257"/>
@@ -2153,13 +2151,13 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="261"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="232"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation>Du kannst zwischen zwei Backends wählen, um Karten darzustellen: &lt;i&gt;libosmscout&lt;/i&gt; und &lt;i&gt;mapnik&lt;/i&gt;.</translation>
+        <translation>Zur Kartendarstellung kannst du zwischen zwei Backends wählen: &lt;i&gt;libosmscout&lt;/i&gt; und &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="272"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="244"/>
         <source>Use Mapnik for rendering maps</source>
-        <translation>Verwende Mapnik zum Rendern von Karten</translation>
+        <translation>Verwende Mapnik zur Kartendarstellung</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="273"/>
@@ -2177,7 +2175,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="282"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="254"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation>Geocoder übernimmt die Verarbeitung von Suchanfragen. Dafür analysiert er die Suchbegriffe und findet die passenden Objekte auf der Karte. Du kannst zwischen zwei Geocoder-Backends auswählen: &lt;i&gt;geocoder-nlp&lt;/i&gt; und &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
+        <translation>Der Geocoder übernimmt die Verarbeitung von Suchanfragen. Dafür analysiert er die Suchbegriffe und findet die passenden Objekte auf der Karte. Du kannst zwischen zwei Geocoder-Backends auswählen: &lt;i&gt;geocoder-nlp&lt;/i&gt; und &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="296"/>
@@ -2189,25 +2187,25 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="297"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="270"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation>Wenn ausgewählt, wird der libpostal-basierte Geocoder für Suchanfragen verwendet. Beachte, dass zusätzliche Datenbanken für Sprache, Benutzereingabe-Analyse und Geocoding nötig sind.&lt;br&gt;Wichtig! Wenn du  &lt;i&gt;geocoder-nlp&lt;/i&gt; wählst, gib bitte die Sprachen an, die für die Adresssuche in den unten aufgeführten Backend-Einstellungen verwendet werden sollen. Ansonsten kann der Server zuviel Arbeitspeicher belegen.</translation>
+        <translation>Wenn ausgewählt, wird der libpostal-basierte Geocoder für Suchanfragen verwendet. Beachte, dass zusätzliche Datenbanken für Sprache, Benutzereingabe-Analyse und Geocoding nötig sind.&lt;br&gt;Wichtig! Wenn du &lt;i&gt;geocoder-nlp&lt;/i&gt; auswählst, gib bitte die Sprachen an, die für die Adressensuche in den unten aufgeführten Backend-Einstellungen verwendet werden sollen. Ansonsten kann der Server sehr viel Arbeitspeicher belegen.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="304"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="277"/>
         <source>Routing Engine</source>
-        <translation>Routing-Engine</translation>
+        <translation>Navigationsmodul</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="308"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="281"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation>Die Routing-Engine ist für die Berechnung von Routen zwischen Standort und Zielort verantwortlich. Du kannst zwischen zwei Routing-Engines auswählen: &lt;i&gt;Valhalla&lt;/i&gt; und &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
+        <translation>Das Navigationsmodul ist für die Berechnung von Routen zwischen Start- und Zielort verantwortlich. Du kannst zwischen zwei Navigationsmodulen auswählen: &lt;i&gt;Valhalla&lt;/i&gt; und &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="321"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="295"/>
         <source>Use Valhalla as routing engine</source>
-        <translation>Benutze Valhalla als Navigation</translation>
+        <translation>Verwende Valhalla zur Navigation</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="322"/>
@@ -2231,13 +2229,13 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="393"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="372"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
-        <translation>Navigations-Einstellungen für &lt;i&gt;Valhalla&lt;/i&gt;</translation>
+        <translation>Navigationseinstellungen für &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="413"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="393"/>
         <source>OSM Scout library</source>
-        <translation>OSM Scout library</translation>
+        <translation>OSM Scout-Bibliothek</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="361"/>
@@ -2249,7 +2247,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="367"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="344"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
-        <translation>Auswahl von Sprachen, die für die Adressanalyse und andere Einstellungen des &lt;i&gt;geocoder-nlp&lt;/i&gt;-Backends verwendet werden</translation>
+        <translation>Auswahl der Sprachen für die Adressensuche und andere Einstellungen für &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="335"/>
@@ -2261,7 +2259,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="230"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="198"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
-        <translation>Wenn automatisch gestartet, wird der Server wenn er keine Anfragen erhält, nach dem Leerlaufzeitlimit beendet.</translation>
+        <translation>Das Programm beendet sich nach der angegebenen Leerlaufzeit selbst, wenn es automatisch gestartet wurde und keine Anfragen mehr empfängt</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="242"/>
@@ -2273,13 +2271,13 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="341"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="316"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation>Kartenzeichnungseinstellungen für &lt;i&gt; mapnik &lt;/i&gt; backend</translation>
+        <translation>Einstellung der Kartendarstellung für &lt;i&gt;Mapnik &lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="419"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="400"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
-        <translation>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) Einstellungen. Die Bibliothek kann zum Zeichnen von Karten, Suchen und Navigation verwendet werden.</translation>
+        <translation>Einstellungen der OSM Scout-Bibliblothek (&lt;i&gt;libosmscout&lt;/i&gt;). Sie erlaubt die Darstellung von Karten, Suche und Navigation.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="429"/>
@@ -2291,13 +2289,13 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="435"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="417"/>
         <source>Log info messages</source>
-        <translation>Info Nachrichten protokollieren</translation>
+        <translation>Infomeldungen protokollieren</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="436"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="418"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
-        <translation>Wenn deaktiviert, werden INFO-Nachrichten nicht im Ereignisprotokoll protokolliert. Die geladene Datenbank wird immer angezeigt.</translation>
+        <translation>Falls deaktiviert, werden INFO-Meldungen nicht ins Ereignisprotokoll aufgenommen. Die Information zur geladenen Datenbank wird jedoch immer angezeigt.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="443"/>
@@ -2315,13 +2313,13 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="452"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="434"/>
         <source>Log messages into session log file</source>
-        <translation>Protokolliere Nachrichten in die Sitzungsprotokolldatei</translation>
+        <translation>Schreibe Nachrichten in Protokolldatei</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="453"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="435"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
-        <translation>Wenn diese Option aktiviert ist, werden die Nachrichten in einer Sitzungsprotokolldatei protokolliert. Die Protokolldatei befindet sich im Verzeichnis .cache/harbour-osmscout-server. Verwenden Sie diese Einstellung nur zur Fehlersuche. Mit dieser Einstellung werden Info-Meldungen protokolliert und bei Ereignissen angezeigt, unabhängig von den Einstellungen oben. Auf diese Weise können Sie die vollständige Protokollierung vorübergehend aktivieren und deaktivieren, wenn die erforderliche Sitzungsprotokoll-Datei erstellt wurde.</translation>
+        <translation>Speichert die Nachrichten der Sitzung in eine Protokolldatei (Verzeichnis: .cache/harbour-osmscout-server). Verwende diese Einstellung bitte nur zur Fehlersuche. Mit ihr werden Info-Meldungen mitprotokolliert und unabhängig von der obigen Einstellung  auch in der Ereignisansicht angezeigt. Du kannst hier also vorübergehend eine vollständige Protokollierung einschalten und nach Ausgabe der erforderlichen Protokolldateien wieder anhalten.</translation>
     </message>
 </context>
 <context>
@@ -2339,7 +2337,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="31"/>
         <source>Map Manager</source>
-        <translation>Karten-Manager</translation>
+        <translation>Kartenverwaltung</translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="20"/>
@@ -2362,7 +2360,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/StartPage.qml" line="45"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="74"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s) that are required by the current profile:&lt;ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; verwendet verschiedene Zusatzmodule, die separat installiert werden müssen.&lt;br&gt;&lt;br&gt;Deinem Gerät fehlen folgende, vom momentanen Profil benötigten, Module:&lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="50"/>
@@ -2402,35 +2400,35 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
         <location filename="../qml/qtcontrols/StartPage.qml" line="121"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="154"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
-        <translation>Erstellt das Verzeichnis &lt;br&gt;%1&lt;br&gt; und konfiguriert es für die Speicherung von Karten.</translation>
+        <translation>Erstellt und konfiguriert das Verzeichnis &lt;br&gt;%1&lt;br&gt; für das Speichern von Karten</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="123"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="156"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; ist mit den heruntergeladenen Karten zu verwenden. Um die Karten zu verwalten, benötigt der Server einen separaten Verzeichnis. Die Dateien in diesem Verzeichnis sollten nur vom Server verwaltet werden. Dies schließt das Löschen aller Dateien innerhalb dieses Verzeichnisses ein, wenn sie von Ihnen während der Bereinigung oder der Kartenaktualisierungen angefordert werden.&lt;br&gt;&lt;br&gt;
-Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout Server an. Erstellen Sie dazu einem neuen Verzeichnis mit einem Dateimanager oder verwenden Sie die Befehlszeile und wählen Sie dieses Verzeichnis in &lt;i&gt;Einstellungen&lt;/i&gt; (pulley menu) &lt;br&gt;&lt;br&gt;Alternativ kann das Verzeichnis bei &lt;br&gt;%1&lt;br&gt;automatisch erstellt und eingerichtet werden, durch Anklicken einer der folgenden Schaltflächen</translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; ist für Offline-Karten ausgelegt. Für die Verwaltung solcher Karten ist ein eigenes Verzeichnis nötig. Die Dateien in diesem Verzeichnis sollten nur vom Server selbst verändert werden. Das gilt auch für das Löschen von Dateien innerhalb dieses Verzeichnisses, wenn du Kartendaten aktualisierst oder bereinigst.&lt;br&gt;&lt;br&gt;
+Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout Server ein. Lege dazu einfach ein neuen Ordner an und trage ihn in den &lt;i&gt;Einstellungen&lt;/i&gt; (Schiebemenü) ein.&lt;br&gt;&lt;br&gt;Alternativ kannst du das Verzeichnis durch antippen der untenstehenden Schaltfläche auch automatisch in &lt;br&gt;%1&lt;br&gt; anlegen und einrichten lassen</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="147"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="180"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation>Wenn ein vorhandener Speicherort gewählt wurde,  ist der nächste Schritt Karten herunterzuladen. Hierzu können Sie die Karten mit dem &lt;i&gt;Karten-Manager&lt;/i&gt; auswählen (im &quot;Pulley Menu&quot;).</translation>
+        <translation>Sobald du einen Speicherorder gewählt hast, kannst du Karten herunterladen. Wähle dazu Karten mit in &lt;i&gt;Kartenverwaltung&lt;/i&gt; (Schiebemenü) aus.</translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="219"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation>Zur Zeit sind noch keine Karten verfügbar. Nachdem Sie Karten abonniert haben, sollten Sie das Herunterladen starten. Downloads können mit dem &lt;i&gt;Karten-Manager&lt;/i&gt; (im &quot;Pulley Menu&quot;) gestartet werden.</translation>
+        <translation>Zurzeit sind noch keine Karten verfügbar. Nach dem Abbonnieren musst du die Karten herunterladen. Die Übertragung startest du in der &lt;i&gt;Kartenverwaltung&lt;/i&gt; (im Schiebemenü).</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="54"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Installiere die fehlende Module bitte über Harbour, OpenRepos oder auf dem deinem System entsprecheden Weg. Starte OSM Scout Server bitte nach der Installation neu.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="184"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurzeit sind noch keine Karten verfügbar. Nach dem Abbonnieren musst du die Karten herunterladen. Die Übertragung startest du in der &lt;i&gt;Kartenverwaltung&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="234"/>
@@ -2442,7 +2440,7 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
         <location filename="../qml/qtcontrols/StartPage.qml" line="238"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="275"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation>Sie haben keine Sprachen für die Suche von Adressen mit Geocoder-NLP verwendet.Als Ergebnis werden alle bekannten Sprachen verwendet und Sie können sehr großen RAM-Verbrauch haben.Solche große RAM-Nutzung könnte dazu führen, dass der OSM Scout Server vom Kernel beendet wird. &lt;br&gt;&lt;br&gt;Um die für die Adressanalyse verwendeten Sprachen anzugeben, wählen Sie entweder Sprachen aus oder gehen Sie zu &lt;i&gt;Einstellungen&lt;/i&gt; (pulley menu) und wählen Sie die Sprachen als Teil der &lt;i&gt;Geocoder-NLP&lt;/i&gt;Einstellungen.</translation>
+        <translation>Du hast keine Sprache für die Adressuche mit Geocoder-NLP festgelegt. Es werden sämtliche bekannten Sprachen durchsucht. Das kann zu einer hohen Auslastung des Arbeitspeichers führen. Dabei wird OSM Scout Maps möglicherweise vom System beendet.&lt;br&gt;&lt;br&gt;Um eine bestimmte Sprache zu verwenden, wähle entweder eine der untenstehenden aus oder wechsle in die &lt;i&gt;Einstellungen&lt;/i&gt; (Schiebemenü) und lege dort die Sprachen in den &lt;i&gt;Geocoder-NLP&lt;/i&gt;-Einstellungen fest.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="269"/>
@@ -2493,7 +2491,7 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="437"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation>OSM Scout Server ist ein Teil der Lösung, so dass Sie offline Karten auf dem Gerät haben können.Mit diesem Server können Sie die Karten auf Ihr Gerät herunterladen und die heruntergeladenen Daten verwenden, um Karten lokal zu rendern, nach Adressen und POIs zu suchen und die Routen zu berechnen. Solche Operationen erfordern Server und einen zusätzlichen Client, der auf den Server zugreift, um gleichzeitig auf dem Gerät zu laufen.&lt;br&gt;&lt;br&gt;Dieser Assistent hilft Ihnen, die vom Server verwendeten Backends auszuwählen und die Sprachen für das Analysieren Ihrer Suchanfragen anzugeben.&lt;br&gt;&lt;br&gt;Bitte wählen Sie &apos;Weiter&apos;, um die Konfiguration zu starten.</translation>
+        <translation>OSM Scout Server ermöglicht dir, Offline-Karten auf deinem Gerät zu verwenden. Mit diesem Server kannst du Karten auf dein Gerät herunterladen und lokal nach Adressen und Orten (POIs) suchen sowie Routen planen. Du benötigst zusätzlich zu diesem Server einen Client, der die Karten darstellt.&lt;br&gt;&lt;br&gt;Dieser Assistent hilft dir, die vom Server verwendeten Darstellungsmethoden auszuwählen und Sprachen für die Suche festzulegen.&lt;br&gt;&lt;br&gt;Bitte gehe auf &apos;Weiter&apos;, um mit der Konfiguration zu beginnen.</translation>
     </message>
 </context>
 <context>
@@ -2501,12 +2499,12 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     <message>
         <location filename="../src/systemdservice.cpp" line="79"/>
         <source>Cannot create or change to directory: %1</source>
-        <translation>Kann nicht erstellen oder in das Verzeichnis wechseln: %1</translation>
+        <translation>Kann Verzeichnis nicht erstellen oder zu ihm wechseln: %1</translation>
     </message>
     <message>
         <location filename="../src/systemdservice.cpp" line="89"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
-        <translation>Der OSM Scout Server kann nicht im PATH gefunden werden</translation>
+        <translation>Konnte OSM Scout Server nicht in Pfadvariable finden</translation>
     </message>
 </context>
 <context>
@@ -2517,37 +2515,37 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="22"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="46"/>
         <source>Automatic activation</source>
-        <translation>Automatische Aktivierung</translation>
+        <translation>Automatisch starten</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="20"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="26"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
-        <translation>OSM Scout Server kann automatisch gestartet werden wenn ein Client Proramm zugreift. Wenn automatisch gestartet, wird der Server im Leerlauf nach angebener Zeit gestoppt.</translation>
+        <translation>OSM Scout Server kann automatisch gestartet werden, wenn ein Client-Programm zugreifen möchte. Das Programm beendet sich nach der angegebenen Leerlaufzeit selbst.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="28"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="36"/>
         <source>Do you want to enable automatic activation?</source>
-        <translation>Wollen Sie die automatische Aktivierung freischalten?</translation>
+        <translation>Möchtest du den automatischen Start einschalten?</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="43"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation>Es wird empfohlen, die automatische Aktivierung zu aktivieren, um den Zugriff auf den Server zu vereinfachen.</translation>
+        <translation>Es wird empfohlen, den automatischen Start zu aktivieren, um den Zugriff auf den Server zu vereinfachen.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="51"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="62"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
-        <translation>Beachten Sie, dass der Server, wenn er automatisch aktiviert ist, ohne Benutzeroberfläche läuft. Die automatische Aktivierung und die entsprechende Leerlaufzeit können später unter Einstellungen konfiguriert werden.</translation>
+        <translation>Beachte bitte, dass der Server ohne eigene Oberfläche läuft, wenn er automatisch gestartet wird. Den automatischen Start und die Leerlaufzeit kannst du später in den Einstellungen konfigurieren.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="60"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="72"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation>Für technische Details, erstellte Dateien und wie Sie diese bei Bedarf entfernen können, finden Sie im entsprechenden Abschnitt des &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt; Bedienungsanleitung&lt;/a&gt;.</translation>
+        <translation>Für technische Informationen, eine Übersicht erstellter Dateien und Hinweise, wie du diese bei Bedarf entfernen kannst, siehe den entsprechenden Abschnitt in der &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt; Bedienungsanleitung&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -2562,19 +2560,19 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
         <location filename="../qml/qtcontrols/UpdatesFound.qml" line="30"/>
         <location filename="../qml/silica/pages/UpdatesFound.qml" line="33"/>
         <source>Do you want to start the update?</source>
-        <translation>Willst du mit der Aktualisierung beginnen?</translation>
+        <translation>Möchtest du die Aktualisierung beginnen?</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/UpdatesFound.qml" line="37"/>
         <location filename="../qml/silica/pages/UpdatesFound.qml" line="41"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
-        <translation>Bitte beachten Sie, dass die Karten erst nach Abschluss der Aktualisierung verfügbar sind, sobald Sie Aktualisierungen gestartet haben.</translation>
+        <translation>Beachte bitte, dass die Karten erst dann verfügbar sind, wenn die Aktualisierung abgeschlossen ist.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/UpdatesFound.qml" line="45"/>
         <location filename="../qml/silica/pages/UpdatesFound.qml" line="50"/>
         <source>List of countries and features with the found updates</source>
-        <translation>Liste der Länder und Funktionen mit den gefundenen Aktualisierungen</translation>
+        <translation>Länder und Kartenobjekte mit verfügbaren Aktualisierungen</translation>
     </message>
 </context>
 <context>
@@ -2779,7 +2777,7 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     <message>
         <location filename="../src/main.cpp" line="185"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation>Abbestellen &lt;country&gt; Datensatz</translation>
+        <translation>Datensatz für &lt;country&gt; abbestellen </translation>
     </message>
 </context>
 <context>
@@ -2792,12 +2790,12 @@ Bitte &lt;b&gt;geben Sie ein separates, leeres Verzeichnis&lt;/b&gt; für OSM Sc
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Startseite</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>
         <source>Map Manager</source>
-        <translation>Karten-Manager</translation>
+        <translation>Kartenverwaltung</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="86"/>

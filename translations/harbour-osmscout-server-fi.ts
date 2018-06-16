@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -2421,12 +2419,12 @@
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="54"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="184"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="234"/>
@@ -2788,7 +2786,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>
