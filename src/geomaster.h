@@ -59,6 +59,8 @@ public:
   bool guide(const QString &poitype, const QString &name,
              double lat, double lon, double radius, size_t limit, QByteArray &result_data);
 
+  bool poiTypes(QByteArray &result); ///< Fill results with list of supported POI types
+
   bool warnLargeRamLangNotSpecified() const { return m_warnLargeRamLangNotSpecified; }
 
 public slots:
@@ -101,6 +103,7 @@ protected:
   QStringList m_tag_alias_langs;
   QHash<QString, QString> m_tag_to_alias;         ///< mapping from geocoder tags to preferred alias
   QHash<QString, QSet<QString> > m_alias_to_tag;  ///< mapping from alias to geocoder tags
+  QStringList m_aliases;
 };
 
 #endif // GEOMASTER_H

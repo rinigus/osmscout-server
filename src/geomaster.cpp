@@ -191,6 +191,9 @@ void GeoMaster::loadTagAlias(const QStringList &lang_list)
 
   m_tag_to_alias.clear();
   m_alias_to_tag.clear();
+  m_aliases.clear();
+
+  QSet<QString> aliases;
 
   // load JSON aliases and tags
   QJsonObject data;
@@ -221,14 +224,14 @@ void GeoMaster::loadTagAlias(const QStringList &lang_list)
             QJsonArray arr = iter.value().toArray();
             for (auto ti=arr.constBegin(); ti!=arr.constEnd(); ti++)
               m_alias_to_tag[alias].insert( (*ti).toString() );
+            aliases.insert(iter.key());
           }
       }
     }
 
-  m_tag_alias_langs = langs;
+  m_aliases = QStringList::fromSet(aliases);;
 
-//  for (auto i = m_alias_to_tag.begin(); i!=m_alias_to_tag.end(); i++)
-//    qDebug() << i.key() << " " << i.value();
+  m_tag_alias_langs = langs;
 }
 
 QString GeoMaster::tag2alias(const QString &tag) const
@@ -565,5 +568,18 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
   result_data = document.toJson();
 
   return true;
+}
 
+bool GeoMaster::poiTypes(QByteArray &result)
+{
+  QMutexLocker lk(&m_mutex);
+
+  QJsonArray arr;
+  for (const auto s: m_aliases)
+    arr.push_back(s);
+
+  QJsonDocument document(arr);
+  result = document.toJson();
+
+  return true;
 }

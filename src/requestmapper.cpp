@@ -712,29 +712,33 @@ unsigned int RequestMapper::service(const char *url_c,
 
   //////////////////////////////////////////////////////////////////////
   /// LIST AVAILABLE POI TYPES
-#ifdef USE_OSMSCOUT
   else if (path == "/v1/poi_types")
     {
-      if (!m_available_osmscout)
-        {
-          errorText(response, connection_id, "List of POI types is not supported with these settings");
-          InfoHub::logWarning(tr("List of POI types is not available since libosmscout is disabled by selected profile or settings. %1")
-                              .arg(m_info_enable_backends));
-          return MHD_HTTP_INTERNAL_SERVER_ERROR;
-        }
 
       QByteArray bytes;
-      if (!osmScoutMaster->poiTypes(bytes))
+#ifdef USE_OSMSCOUT
+      if ( !useGeocoderNLP )
         {
-          errorText(response, connection_id, "Error while listing available POI types");
-          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+          if (!osmScoutMaster->poiTypes(bytes))
+            {
+              errorText(response, connection_id, "Error while listing available POI types using libosmscout");
+              return MHD_HTTP_INTERNAL_SERVER_ERROR;
+            }
+        }
+      else
+#endif
+        {
+          if (!geoMaster->poiTypes(bytes))
+            {
+              errorText(response, connection_id, "Error while listing available POI types using geocoder-nlp");
+              return MHD_HTTP_INTERNAL_SERVER_ERROR;
+            }
         }
 
       MicroHTTP::ConnectionStore::setData(connection_id, bytes, false);
-      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json; charset=UTF-8");
       return MHD_HTTP_OK;
     }
-#endif
 
   //////////////////////////////////////////////////////////////////////
   /// ROUTING VIA OSMSCOUT [V1]

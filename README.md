@@ -331,6 +331,9 @@ List of available POI types is available via
 
 `http://localhost:8553/v1/poi_types`
 
+The list is given as JSON array. When using geocoder-nlp as a search
+backend, the list represents currently used aliases for the used tags.
+
 
 ## POI search near a reference position
 

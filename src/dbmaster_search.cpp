@@ -11,6 +11,9 @@
 
 #include <QString>
 #include <QTextStream>
+#include <QJsonArray>
+#include <QJsonObject>
+#include <QJsonDocument>
 #include <QVector>
 #include <QMap>
 #include <QSet>
@@ -673,15 +676,18 @@ bool DBMaster::poiTypes(QByteArray &result)
         return false;
     }
 
-    QTextStream output(&result, QIODevice::WriteOnly);
-
+    QJsonArray arr;
     osmscout::TypeConfigRef typeConfig(m_database->GetTypeConfig());
 
     for (const osmscout::TypeInfoRef &r: typeConfig->GetTypes())
     {
         QString name = QString::fromStdString(r->GetName());
-        output << name << "\n";
+        if (!name.isEmpty())
+          arr.push_back(name);
     }
+
+    QJsonDocument document(arr);
+    result = document.toJson();
 
     return true;
 }
