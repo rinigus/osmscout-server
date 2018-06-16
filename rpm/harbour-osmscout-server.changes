@@ -5,6 +5,16 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Jun 16 2018 rinigus <rinigus.git@gmail.com> 1.7.0-1
+- support for aliases in multiple languages in guide search
+- support for POIs without a name in guide search
+- extend API for guide search by specified type and/or name
+- provide the list of currently used aliases
+- sort guide results by distance
+- adjusted lists of imported types for geocoder-nlp
+- other enhancements and bugfixes in geocoder-nlp
+- Updated translations
+
 * Fri May 25 2018 rinigus <rinigus.git@gmail.com> 1.6.0-1
 - addition of QtQuick Controls GUI version
 - update geocoder to libpostal 1.1 API
