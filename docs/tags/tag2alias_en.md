@@ -293,7 +293,6 @@ Tag | Alias
 [shop\_doityourself](https://taginfo.openstreetmap.org/tags/shop=doityourself) | Do-It-Yourself
 [shop\_dry\_cleaning](https://taginfo.openstreetmap.org/tags/shop=dry_cleaning) | Dry Cleaning
 [shop\_electronics](https://taginfo.openstreetmap.org/tags/shop=electronics) | Electronics Shop
-[shop\_erotic](https://taginfo.openstreetmap.org/tags/shop=erotic) | Erotic Shop
 [shop\_estate\_agent](https://taginfo.openstreetmap.org/tags/shop=estate_agent) | Estate Agent
 [shop\_farm](https://taginfo.openstreetmap.org/tags/shop=farm) | Farm Shop
 [shop\_fashion](https://taginfo.openstreetmap.org/tags/shop=fashion) | Fashion Shop

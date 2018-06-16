@@ -294,7 +294,6 @@ Tag | Alias
 [shop\_doityourself](https://taginfo.openstreetmap.org/tags/shop=doityourself) | Baumarkt
 [shop\_dry\_cleaning](https://taginfo.openstreetmap.org/tags/shop=dry_cleaning) | Textilreinigung
 [shop\_electronics](https://taginfo.openstreetmap.org/tags/shop=electronics) | Elektronikgeschäft
-[shop\_erotic](https://taginfo.openstreetmap.org/tags/shop=erotic) | Erotikshop
 [shop\_estate\_agent](https://taginfo.openstreetmap.org/tags/shop=estate_agent) | Imobilienhändler
 [shop\_farm](https://taginfo.openstreetmap.org/tags/shop=farm) | Hofladen
 [shop\_fashion](https://taginfo.openstreetmap.org/tags/shop=fashion) | Modegeschäft
