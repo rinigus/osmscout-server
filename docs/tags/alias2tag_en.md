@@ -476,6 +476,8 @@ Organic Food Shops |  [shop\_organic](https://taginfo.openstreetmap.org/tags/sho
 Outdoor Shop |  [shop\_outdoor](https://taginfo.openstreetmap.org/tags/shop=outdoor)
 Outdoor Shops |  [shop\_outdoor](https://taginfo.openstreetmap.org/tags/shop=outdoor)
 Park |  [leisure\_park](https://taginfo.openstreetmap.org/tags/leisure=park)
+Parking |  [amenity\_parking](https://taginfo.openstreetmap.org/tags/amenity=parking)
+Parkings |  [amenity\_parking](https://taginfo.openstreetmap.org/tags/amenity=parking)
 Parks |  [leisure\_park](https://taginfo.openstreetmap.org/tags/leisure=park)
 Path |  [highway\_path](https://taginfo.openstreetmap.org/tags/highway=path)
 Paths |  [highway\_path](https://taginfo.openstreetmap.org/tags/highway=path)

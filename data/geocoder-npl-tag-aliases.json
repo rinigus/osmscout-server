@@ -10773,6 +10773,12 @@
 "Park": [
 "leisure_park"
 ],
+"Parking": [
+"amenity_parking"
+],
+"Parkings": [
+"amenity_parking"
+],
 "Parks": [
 "leisure_park"
 ],
@@ -14314,6 +14320,12 @@
 ],
 "Park": [
 "leisure_park"
+],
+"Parkla": [
+"amenity_parking"
+],
+"Parklad": [
+"amenity_parking"
 ],
 "Piknikuplats": [
 "tourism_picnic_site"
@@ -46969,6 +46981,7 @@
 "amenity_motorcycle_parking": "Motorcycle parking",
 "amenity_nightclub": "Night Club",
 "amenity_nursing_home": "Nursing Home",
+"amenity_parking": "Parking",
 "amenity_pharmacy": "Pharmacy",
 "amenity_place_of_worship": "Church",
 "amenity_police": "Police",
@@ -47666,6 +47679,7 @@
 "amenity_kindergarten": "Lasteaed",
 "amenity_library": "Raamatukogu",
 "amenity_nightclub": "\u00d6\u00f6klubi",
+"amenity_parking": "Parkla",
 "amenity_pharmacy": "Apteek",
 "amenity_police": "Politsei",
 "amenity_post_box": "Postkast",

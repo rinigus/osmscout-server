@@ -30,6 +30,7 @@ Tag | Alias
 [amenity\_kindergarten](https://taginfo.openstreetmap.org/tags/amenity=kindergarten) | Lasteaed
 [amenity\_library](https://taginfo.openstreetmap.org/tags/amenity=library) | Raamatukogu
 [amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub) | Ööklubi
+[amenity\_parking](https://taginfo.openstreetmap.org/tags/amenity=parking) | Parkla
 [amenity\_pharmacy](https://taginfo.openstreetmap.org/tags/amenity=pharmacy) | Apteek
 [amenity\_police](https://taginfo.openstreetmap.org/tags/amenity=police) | Politsei
 [amenity\_post\_box](https://taginfo.openstreetmap.org/tags/amenity=post_box) | Postkast

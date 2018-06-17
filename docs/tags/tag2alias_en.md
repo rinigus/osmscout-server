@@ -50,6 +50,7 @@ Tag | Alias
 [amenity\_motorcycle\_parking](https://taginfo.openstreetmap.org/tags/amenity=motorcycle_parking) | Motorcycle parking
 [amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub) | Night Club
 [amenity\_nursing\_home](https://taginfo.openstreetmap.org/tags/amenity=nursing_home) | Nursing Home
+[amenity\_parking](https://taginfo.openstreetmap.org/tags/amenity=parking) | Parking
 [amenity\_pharmacy](https://taginfo.openstreetmap.org/tags/amenity=pharmacy) | Pharmacy
 [amenity\_place\_of\_worship](https://taginfo.openstreetmap.org/tags/amenity=place_of_worship) | Church
 [amenity\_police](https://taginfo.openstreetmap.org/tags/amenity=police) | Police
