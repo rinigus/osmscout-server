@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Állatorvosi rendelő
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Szemétgyűjtő kosár
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Közigazgatási határ
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Épület
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Épület
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Társasház
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Háztömb
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker

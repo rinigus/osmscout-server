@@ -63,7 +63,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Veearts
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Asblik
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Administratiewe grens
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Gebou
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Gebou
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Woonstelblok
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Boublok
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker

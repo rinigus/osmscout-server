@@ -67,7 +67,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Veterinárna ordinácia
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Odpadkový kôš
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Administratívne hranice
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Budova
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Budova
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Bytový dom
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker
 [building\_chapel](https://taginfo.openstreetmap.org/tags/building=chapel) | Kaplnka

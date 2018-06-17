@@ -29,7 +29,7 @@ findex.write('Language | Aliases | Geocoder Tags \n --- | ---:| ---: \n')
 for language in [ "af","ar","br","ca","cs","de","de_at","en","es","et","eu","fa","fi","fr","gl","hr","hu",
                  "ia","is","it","ja","mk","nl","no","pl","ps","pt","ru","sk","sl","sv","uk","vi" ]:
 
-#for language in [ "nl" ]:
+#for language in [ "af" ]:
 
     print("Language", language)
     alias2tag = collections.defaultdict(list)
@@ -44,12 +44,13 @@ for language in [ "af","ar","br","ca","cs","de","de_at","en","es","et","eu","fa"
         if len(n) != 5:
             continue
         k = []
-        for j in n: k.append(j.strip())
+        for j in n: k.append(j.strip().replace('&quot;',''))
         if k[0].find('|') == 0:
             k[0] = k[0][1:].strip()
-        use = (k[-2] == '-' and k[2].find('"')<0)
+        use = (k[-2] == '-') # and k[2].find('"')<0)
         if use:
-            geotag = k[1] + '_' + k[2]
+            if k[2] == 'yes': geotag=k[1]
+            else: geotag = k[1] + '_' + k[2]
             alias = k[0]
             singular = (k[-1] == 'N')
             if geotag in geotags_to_ignore: continue

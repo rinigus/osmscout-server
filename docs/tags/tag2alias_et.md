@@ -44,7 +44,7 @@ Tag | Alias
 [amenity\_toilets](https://taginfo.openstreetmap.org/tags/amenity=toilets) | WC
 [amenity\_university](https://taginfo.openstreetmap.org/tags/amenity=university) | Ülikool
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Prügikast
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Hoone
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Hoone
 [building\_chapel](https://taginfo.openstreetmap.org/tags/building=chapel) | Kabel
 [building\_church](https://taginfo.openstreetmap.org/tags/building=church) | Kirik
 [building\_hotel](https://taginfo.openstreetmap.org/tags/building=hotel) | Hotell

@@ -55,7 +55,7 @@ Tag | Alias
 [amenity\_vending\_machine](https://taginfo.openstreetmap.org/tags/amenity=vending_machine) | Máy Bán hàng
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Thùng rác
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Biên giới Hành chính
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Tòa nhà
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Tòa nhà
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Boong ke
 [building\_church](https://taginfo.openstreetmap.org/tags/building=church) | Nhà thờ
 [building\_city\_hall](https://taginfo.openstreetmap.org/tags/building=city_hall) | Trụ sở Thành phố

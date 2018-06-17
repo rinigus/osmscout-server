@@ -60,7 +60,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Eläinlääkäri
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Roskakori
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Hallinnollinen raja
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Rakennus
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Rakennus
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Talo
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunkkeri
 [building\_church](https://taginfo.openstreetmap.org/tags/building=church) | Kirkko

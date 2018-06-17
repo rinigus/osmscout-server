@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Surjianerezh evit al loened
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Pod-lastez
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Bevennoù melestradurel
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Savadur
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Savadur
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Kendi
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Kendi
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker

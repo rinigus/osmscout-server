@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | جراحة بيطرية
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | سلة نفايات
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | حدود إدارية
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | مبنى
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | مبنى
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | مجموعة شقق
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | مجمع مباني
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | ملجأ محصن

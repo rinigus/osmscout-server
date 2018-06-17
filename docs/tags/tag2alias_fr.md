@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Vétérinaire
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Corbeille
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Limite administrative
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Bâtiment
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Bâtiment
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Immeuble
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Immeuble
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker

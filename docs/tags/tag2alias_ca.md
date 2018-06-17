@@ -51,7 +51,7 @@ Tag | Alias
 [amenity\_toilets](https://taginfo.openstreetmap.org/tags/amenity=toilets) | Banys
 [amenity\_townhall](https://taginfo.openstreetmap.org/tags/amenity=townhall) | Ajuntament
 [amenity\_university](https://taginfo.openstreetmap.org/tags/amenity=university) | Universitat
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Edifici
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Edifici
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Bloc d'apartaments
 [building\_chapel](https://taginfo.openstreetmap.org/tags/building=chapel) | Capella
 [building\_church](https://taginfo.openstreetmap.org/tags/building=church) | Església

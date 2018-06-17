@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Ветеринарная клиника
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Мусорный бак
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Административная граница
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Здание
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Здание
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Многоквартирный дом
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Ряд зданий
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Бункер

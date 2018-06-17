@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Clinica veterinari
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Corbe a papiro
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Limite administrative
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Edificio
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Edificio
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Bloco de appartamentos
 [building\_chapel](https://taginfo.openstreetmap.org/tags/building=chapel) | Cappella
 [building\_church](https://taginfo.openstreetmap.org/tags/building=church) | Ecclesia

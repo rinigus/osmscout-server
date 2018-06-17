@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Clínica veterinaria
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Papelera
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Límite administrativo
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Edificio
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Edificio
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Bloque de apartamentos
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Bloque de edificios
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Búnker

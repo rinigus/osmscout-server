@@ -78,6 +78,7 @@ Tag | Alias
 [amenity\_vending\_machine](https://taginfo.openstreetmap.org/tags/amenity=vending_machine) | Avtomat
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Veterinarska klinika
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Koš za smeti
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Zgradba
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Stanovanjski blok
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Blok
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker
@@ -109,7 +110,6 @@ Tag | Alias
 [building\_tower](https://taginfo.openstreetmap.org/tags/building=tower) | Stolp
 [building\_train\_station](https://taginfo.openstreetmap.org/tags/building=train_station) | Železniška postaja
 [building\_university](https://taginfo.openstreetmap.org/tags/building=university) | Univerzitetna zgradba
-[building\_yes](https://taginfo.openstreetmap.org/tags/building=yes) | Zgradba
 [craft\_beekeeper](https://taginfo.openstreetmap.org/tags/craft=beekeeper) | Čebelarstvo
 [cuisine\_pizza](https://taginfo.openstreetmap.org/tags/cuisine=pizza) | Picerija
 [emergency\_fire\_hydrant](https://taginfo.openstreetmap.org/tags/emergency=fire_hydrant) | Hidrant

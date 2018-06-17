@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Dierenarts
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Vuilbak
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Administratieve grens
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Gebouw
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Gebouw
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Appartement
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker
 [building\_chapel](https://taginfo.openstreetmap.org/tags/building=chapel) | Kapel

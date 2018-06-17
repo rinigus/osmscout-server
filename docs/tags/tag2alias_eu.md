@@ -55,7 +55,7 @@ Tag | Alias
 [amenity\_university](https://taginfo.openstreetmap.org/tags/amenity=university) | Unibertsitate
 [amenity\_vending\_machine](https://taginfo.openstreetmap.org/tags/amenity=vending_machine) | Salmenta automatiko
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Muga Administratiboa
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Eraikina
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Eraikina
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker
 [building\_chapel](https://taginfo.openstreetmap.org/tags/building=chapel) | Kapera
 [building\_church](https://taginfo.openstreetmap.org/tags/building=church) | Eliza

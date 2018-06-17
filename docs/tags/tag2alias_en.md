@@ -75,6 +75,7 @@ Tag | Alias
 [amenity\_vending\_machine](https://taginfo.openstreetmap.org/tags/amenity=vending_machine) | Vending Machine
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Veterinary Surgery
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Waste Basket
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Building
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Apartment Block
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Building Block
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker
@@ -105,7 +106,6 @@ Tag | Alias
 [building\_tower](https://taginfo.openstreetmap.org/tags/building=tower) | Tower
 [building\_train\_station](https://taginfo.openstreetmap.org/tags/building=train_station) | Railway Station
 [building\_university](https://taginfo.openstreetmap.org/tags/building=university) | University Building
-[building\_yes](https://taginfo.openstreetmap.org/tags/building=yes) | Building
 [emergency\_fire\_hydrant](https://taginfo.openstreetmap.org/tags/emergency=fire_hydrant) | Fire Hydrant
 [highway\_bridleway](https://taginfo.openstreetmap.org/tags/highway=bridleway) | Bridleway
 [highway\_bus\_guideway](https://taginfo.openstreetmap.org/tags/highway=bus_guideway) | Guided Bus Lane

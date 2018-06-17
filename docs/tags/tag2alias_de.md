@@ -76,6 +76,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Tierarzt
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Mülleimer
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Verwaltungsgrenze
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Gebäude
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Wohnblock
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Gebäudeblock
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker
@@ -106,7 +107,6 @@ Tag | Alias
 [building\_tower](https://taginfo.openstreetmap.org/tags/building=tower) | Turm
 [building\_train\_station](https://taginfo.openstreetmap.org/tags/building=train_station) | Bahnhof
 [building\_university](https://taginfo.openstreetmap.org/tags/building=university) | Universitätsgebäude
-[building\_yes](https://taginfo.openstreetmap.org/tags/building=yes) | Gebäude
 [emergency\_fire\_hydrant](https://taginfo.openstreetmap.org/tags/emergency=fire_hydrant) | Hydrant
 [highway\_bridleway](https://taginfo.openstreetmap.org/tags/highway=bridleway) | Reitweg
 [highway\_bus\_guideway](https://taginfo.openstreetmap.org/tags/highway=bus_guideway) | Busspur
@@ -207,7 +207,7 @@ Tag | Alias
 [leisure\_water\_park](https://taginfo.openstreetmap.org/tags/leisure=water_park) | Wasserpark
 [man\_made\_water\_well](https://taginfo.openstreetmap.org/tags/man_made=water_well) | Brunnen
 [man\_made\_windmill](https://taginfo.openstreetmap.org/tags/man_made=windmill) | Windmühle
-[mountain\_pass\_yes](https://taginfo.openstreetmap.org/tags/mountain_pass=yes) | Pass
+[mountain\_pass](https://taginfo.openstreetmap.org/tags/mountain_pass=yes) | Pass
 [natural\_bay](https://taginfo.openstreetmap.org/tags/natural=bay) | Bucht
 [natural\_beach](https://taginfo.openstreetmap.org/tags/natural=beach) | Strand
 [natural\_cape](https://taginfo.openstreetmap.org/tags/natural=cape) | Kap

@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Ветлікарня
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Контейнер для сміття
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Адміністративний кордон
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Будівля
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Будівля
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Житловий масив
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Квартал
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Бункер

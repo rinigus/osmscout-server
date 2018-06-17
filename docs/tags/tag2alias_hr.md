@@ -68,7 +68,7 @@ Tag | Alias
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Veterinar
 [amenity\_waste\_basket](https://taginfo.openstreetmap.org/tags/amenity=waste_basket) | Kanta za otpatke
 [boundary\_administrative](https://taginfo.openstreetmap.org/tags/boundary=administrative) | Administrativna granica
-[building\_&quot;yes&quot;](https://taginfo.openstreetmap.org/tags/building=&quot;yes&quot;) | Zgrada
+[building](https://taginfo.openstreetmap.org/tags/building=yes) | Zgrada
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Stambeni blok
 [building\_block](https://taginfo.openstreetmap.org/tags/building=block) | Blok zgrada
 [building\_bunker](https://taginfo.openstreetmap.org/tags/building=bunker) | Bunker

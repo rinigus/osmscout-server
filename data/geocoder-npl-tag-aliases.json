@@ -366,11 +366,11 @@
 "tourism_guest_house"
 ],
 "Gebou": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Gebous": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Gelykvloerse kruising": [
@@ -2651,7 +2651,7 @@
 "railway_switch"
 ],
 "\u0645\u0628\u0646\u0649": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u0645\u0628\u0646\u0649 \u0628\u0644\u062f\u064a\u0629": [
@@ -2728,7 +2728,7 @@
 "building_office"
 ],
 "\u0645\u0628\u0646\u0649s": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u0645\u062a\u062c\u0631": [
@@ -5018,7 +5018,7 @@
 "amenity_sauna"
 ],
 "Savadur": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building",
 "landuse_construction"
 ],
@@ -5085,7 +5085,7 @@
 "building_industrial"
 ],
 "Savadurs": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building",
 "landuse_construction"
 ],
@@ -6076,7 +6076,7 @@
 "natural_spring"
 ],
 "Edifici": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Edifici comercial": [
@@ -6123,7 +6123,7 @@
 "building_university"
 ],
 "Edificis": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Edificis p\u00fablics": [
@@ -7811,14 +7811,14 @@
 "amenity_restaurant"
 ],
 "Gebirgspass": [
-"mountain_pass_yes"
+"mountain_pass"
 ],
 "Gebirgsp\u00e4sse": [
-"mountain_pass_yes"
+"mountain_pass"
 ],
 "Geb\u00e4ude": [
-"building_yes",
-"building_yes"
+"building",
+"building"
 ],
 "Geb\u00e4udeblock": [
 "building_block"
@@ -8401,7 +8401,7 @@
 "leisure_park"
 ],
 "Pass": [
-"mountain_pass_yes"
+"mountain_pass"
 ],
 "Pension": [
 "tourism_guest_house"
@@ -8464,7 +8464,7 @@
 "highway_primary"
 ],
 "P\u00e4sse": [
-"mountain_pass_yes"
+"mountain_pass"
 ],
 "Quelle": [
 "natural_spring"
@@ -9549,7 +9549,7 @@
 "landuse_brownfield"
 ],
 "Building": [
-"building_yes",
+"building",
 "historic_building"
 ],
 "Building Block": [
@@ -9565,7 +9565,7 @@
 "building_entrance"
 ],
 "Buildings": [
-"building_yes",
+"building",
 "historic_building"
 ],
 "Bunker": [
@@ -12404,7 +12404,7 @@
 "shop_confectionery"
 ],
 "Edificio": [
-"building_&quot;yes&quot;"
+"building"
 ],
 "Edificio comercial": [
 "building_commercial",
@@ -12439,7 +12439,7 @@
 "building_university"
 ],
 "Edificios": [
-"building_&quot;yes&quot;"
+"building"
 ],
 "Edificios comerciales": [
 "building_commercial",
@@ -13962,10 +13962,10 @@
 "amenity_dentist"
 ],
 "Hoone": [
-"building_&quot;yes&quot;"
+"building"
 ],
 "Hooned": [
-"building_&quot;yes&quot;"
+"building"
 ],
 "Hotell": [
 "building_hotel",
@@ -14922,11 +14922,11 @@
 "building_public"
 ],
 "Eraikina": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Eraikinas": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Eraikitze-lanetan dagoen Autopista": [
@@ -17414,11 +17414,11 @@
 "amenity_bureau_de_change"
 ],
 "Rakennukset": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Rakennus": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Rakennusty\u00f6maa": [
@@ -18091,7 +18091,7 @@
 "amenity_post_office"
 ],
 "B\u00e2timent": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "B\u00e2timent d'universit\u00e9": [
@@ -18124,7 +18124,7 @@
 "building_residential"
 ],
 "B\u00e2timents": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "B\u00e2timents d'universit\u00e9s": [
@@ -22924,7 +22924,7 @@
 "landuse_brownfield"
 ],
 "Zgrada": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Zgrada Sveu\u010dili\u0161ta": [
@@ -22940,7 +22940,7 @@
 "building_faculty"
 ],
 "Zgradas": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "Zlatarna": [
@@ -24976,7 +24976,7 @@
 "landuse_construction"
 ],
 "\u00c9p\u00fclet": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u00c9p\u00fcletbej\u00e1rat": [
@@ -24986,7 +24986,7 @@
 "building_entrance"
 ],
 "\u00c9p\u00fclets": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u00c9tterem": [
@@ -25552,7 +25552,7 @@
 "building_church"
 ],
 "Edificio": [
-"building_&quot;yes&quot;"
+"building"
 ],
 "Edificio agricole": [
 "building_farm"
@@ -25580,7 +25580,7 @@
 "building_public"
 ],
 "Edificios": [
-"building_&quot;yes&quot;"
+"building"
 ],
 "Edificios agricole": [
 "building_farm"
@@ -29086,11 +29086,11 @@
 "landuse_conservation"
 ],
 "\u0417\u0433\u0440\u0430\u0434\u0430": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u0417\u0433\u0440\u0430\u0434\u0430s": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u0417\u0434\u0440\u0430\u0432\u0430 \u0445\u0440\u0430\u043d\u0430": [
@@ -30993,10 +30993,10 @@
 "amenity_place_of_worship"
 ],
 "Gebouw": [
-"building_&quot;yes&quot;"
+"building"
 ],
 "Gebouwen": [
-"building_&quot;yes&quot;"
+"building"
 ],
 "Gehucht": [
 "place_hamlet"
@@ -35134,7 +35134,7 @@
 "amenity_fuel"
 ],
 "\u0417\u0434\u0430\u043d\u0438\u0435": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u0417\u0434\u0430\u043d\u0438\u0435 \u0431\u043e\u043b\u044c\u043d\u0438\u0446\u044b": [
@@ -35144,7 +35144,7 @@
 "building_retail"
 ],
 "\u0417\u0434\u0430\u043d\u0438\u044f": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u0417\u0434\u0430\u043d\u0438\u044f \u0431\u043e\u043b\u044c\u043d\u0438\u0446\u044b": [
@@ -36672,12 +36672,12 @@
 "highway_gate"
 ],
 "Budova": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building",
 "place_house"
 ],
 "Budovas": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building",
 "place_house"
 ],
@@ -40696,11 +40696,11 @@
 "landuse_recreation_ground"
 ],
 "Zgradba": [
-"building_yes",
+"building",
 "historic_building"
 ],
 "Zgradbe": [
-"building_yes",
+"building",
 "historic_building"
 ],
 "Zlatarna": [
@@ -42031,11 +42031,11 @@
 "place_house"
 ],
 "\u0411\u0443\u0434\u0456\u0432\u043b\u044f": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u0411\u0443\u0434\u0456\u0432\u043b\u044fs": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "\u0411\u0443\u0434\u0456\u0432\u043d\u0438\u0446\u0442\u0432\u043e": [
@@ -44463,7 +44463,7 @@
 "amenity_courthouse"
 ],
 "C\u00e1c T\u00f2a nh\u00e0": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "C\u00e1c T\u00f2a nh\u00e0 B\u1ec7nh vi\u1ec7n": [
@@ -45111,7 +45111,7 @@
 "amenity_courthouse"
 ],
 "T\u00f2a nh\u00e0": [
-"building_&quot;yes&quot;",
+"building",
 "historic_building"
 ],
 "T\u00f2a nh\u00e0 B\u1ec7nh vi\u1ec7n": [
@@ -45347,7 +45347,7 @@
 "amenity_veterinary": "Veearts",
 "amenity_waste_basket": "Asblik",
 "boundary_administrative": "Administratiewe grens",
-"building_&quot;yes&quot;": "Gebou",
+"building": "Gebou",
 "building_apartments": "Woonstelblok",
 "building_block": "Boublok",
 "building_bunker": "Bunker",
@@ -45656,7 +45656,7 @@
 "amenity_veterinary": "\u062c\u0631\u0627\u062d\u0629 \u0628\u064a\u0637\u0631\u064a\u0629",
 "amenity_waste_basket": "\u0633\u0644\u0629 \u0646\u0641\u0627\u064a\u0627\u062a",
 "boundary_administrative": "\u062d\u062f\u0648\u062f \u0625\u062f\u0627\u0631\u064a\u0629",
-"building_&quot;yes&quot;": "\u0645\u0628\u0646\u0649",
+"building": "\u0645\u0628\u0646\u0649",
 "building_apartments": "\u0645\u062c\u0645\u0648\u0639\u0629 \u0634\u0642\u0642",
 "building_block": "\u0645\u062c\u0645\u0639 \u0645\u0628\u0627\u0646\u064a",
 "building_bunker": "\u0645\u0644\u062c\u0623 \u0645\u062d\u0635\u0646",
@@ -46006,7 +46006,7 @@
 "amenity_veterinary": "Surjianerezh evit al loened",
 "amenity_waste_basket": "Pod-lastez",
 "boundary_administrative": "Bevenno\u00f9 melestradurel",
-"building_&quot;yes&quot;": "Savadur",
+"building": "Savadur",
 "building_apartments": "Kendi",
 "building_block": "Kendi",
 "building_bunker": "Bunker",
@@ -46339,7 +46339,7 @@
 "amenity_toilets": "Banys",
 "amenity_townhall": "Ajuntament",
 "amenity_university": "Universitat",
-"building_&quot;yes&quot;": "Edifici",
+"building": "Edifici",
 "building_apartments": "Bloc d'apartaments",
 "building_chapel": "Capella",
 "building_church": "Esgl\u00e9sia",
@@ -46625,6 +46625,7 @@
 "amenity_veterinary": "Tierarzt",
 "amenity_waste_basket": "M\u00fclleimer",
 "boundary_administrative": "Verwaltungsgrenze",
+"building": "Geb\u00e4ude",
 "building_apartments": "Wohnblock",
 "building_block": "Geb\u00e4udeblock",
 "building_bunker": "Bunker",
@@ -46655,7 +46656,6 @@
 "building_tower": "Turm",
 "building_train_station": "Bahnhof",
 "building_university": "Universit\u00e4tsgeb\u00e4ude",
-"building_yes": "Geb\u00e4ude",
 "emergency_fire_hydrant": "Hydrant",
 "highway_bridleway": "Reitweg",
 "highway_bus_guideway": "Busspur",
@@ -46756,7 +46756,7 @@
 "leisure_water_park": "Wasserpark",
 "man_made_water_well": "Brunnen",
 "man_made_windmill": "Windm\u00fchle",
-"mountain_pass_yes": "Pass",
+"mountain_pass": "Pass",
 "natural_bay": "Bucht",
 "natural_beach": "Strand",
 "natural_cape": "Kap",
@@ -46994,6 +46994,7 @@
 "amenity_vending_machine": "Vending Machine",
 "amenity_veterinary": "Veterinary Surgery",
 "amenity_waste_basket": "Waste Basket",
+"building": "Building",
 "building_apartments": "Apartment Block",
 "building_block": "Building Block",
 "building_bunker": "Bunker",
@@ -47024,7 +47025,6 @@
 "building_tower": "Tower",
 "building_train_station": "Railway Station",
 "building_university": "University Building",
-"building_yes": "Building",
 "emergency_fire_hydrant": "Fire Hydrant",
 "highway_bridleway": "Bridleway",
 "highway_bus_guideway": "Guided Bus Lane",
@@ -47353,7 +47353,7 @@
 "amenity_veterinary": "Cl\u00ednica veterinaria",
 "amenity_waste_basket": "Papelera",
 "boundary_administrative": "L\u00edmite administrativo",
-"building_&quot;yes&quot;": "Edificio",
+"building": "Edificio",
 "building_apartments": "Bloque de apartamentos",
 "building_block": "Bloque de edificios",
 "building_bunker": "B\u00fanker",
@@ -47680,7 +47680,7 @@
 "amenity_toilets": "WC",
 "amenity_university": "\u00dclikool",
 "amenity_waste_basket": "Pr\u00fcgikast",
-"building_&quot;yes&quot;": "Hoone",
+"building": "Hoone",
 "building_chapel": "Kabel",
 "building_church": "Kirik",
 "building_hotel": "Hotell",
@@ -47819,7 +47819,7 @@
 "amenity_university": "Unibertsitate",
 "amenity_vending_machine": "Salmenta automatiko",
 "boundary_administrative": "Muga Administratiboa",
-"building_&quot;yes&quot;": "Eraikina",
+"building": "Eraikina",
 "building_bunker": "Bunker",
 "building_chapel": "Kapera",
 "building_church": "Eliza",
@@ -48123,7 +48123,7 @@
 "amenity_veterinary": "El\u00e4inl\u00e4\u00e4k\u00e4ri",
 "amenity_waste_basket": "Roskakori",
 "boundary_administrative": "Hallinnollinen raja",
-"building_&quot;yes&quot;": "Rakennus",
+"building": "Rakennus",
 "building_apartments": "Talo",
 "building_bunker": "Bunkkeri",
 "building_church": "Kirkko",
@@ -48380,7 +48380,7 @@
 "amenity_veterinary": "V\u00e9t\u00e9rinaire",
 "amenity_waste_basket": "Corbeille",
 "boundary_administrative": "Limite administrative",
-"building_&quot;yes&quot;": "B\u00e2timent",
+"building": "B\u00e2timent",
 "building_apartments": "Immeuble",
 "building_block": "Immeuble",
 "building_bunker": "Bunker",
@@ -48941,7 +48941,7 @@
 "amenity_veterinary": "Veterinar",
 "amenity_waste_basket": "Kanta za otpatke",
 "boundary_administrative": "Administrativna granica",
-"building_&quot;yes&quot;": "Zgrada",
+"building": "Zgrada",
 "building_apartments": "Stambeni blok",
 "building_block": "Blok zgrada",
 "building_bunker": "Bunker",
@@ -49291,7 +49291,7 @@
 "amenity_veterinary": "\u00c1llatorvosi rendel\u0151",
 "amenity_waste_basket": "Szem\u00e9tgy\u0171jt\u0151 kos\u00e1r",
 "boundary_administrative": "K\u00f6zigazgat\u00e1si hat\u00e1r",
-"building_&quot;yes&quot;": "\u00c9p\u00fclet",
+"building": "\u00c9p\u00fclet",
 "building_apartments": "T\u00e1rsash\u00e1z",
 "building_block": "H\u00e1zt\u00f6mb",
 "building_bunker": "Bunker",
@@ -49641,7 +49641,7 @@
 "amenity_veterinary": "Clinica veterinari",
 "amenity_waste_basket": "Corbe a papiro",
 "boundary_administrative": "Limite administrative",
-"building_&quot;yes&quot;": "Edificio",
+"building": "Edificio",
 "building_apartments": "Bloco de appartamentos",
 "building_chapel": "Cappella",
 "building_church": "Ecclesia",
@@ -50225,7 +50225,7 @@
 "amenity_veterinary": "\u0412\u0435\u0442\u0435\u0440\u0438\u043d\u0430\u0440\u043d\u0430 \u043a\u043b\u0438\u043d\u0438\u043a\u0430",
 "amenity_waste_basket": "\u041a\u043e\u0440\u043f\u0430 \u0437\u0430 \u043e\u0442\u043f\u0430\u0434\u043e\u0446\u0438",
 "boundary_administrative": "\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u0438\u0432\u043d\u0430 \u0433\u0440\u0430\u043d\u0438\u0446\u0430",
-"building_&quot;yes&quot;": "\u0417\u0433\u0440\u0430\u0434\u0430",
+"building": "\u0417\u0433\u0440\u0430\u0434\u0430",
 "building_apartments": "\u0421\u0442\u0430\u043d\u0431\u0435\u043d \u0431\u043b\u043e\u043a",
 "building_block": "\u0411\u043b\u043e\u043a \u0437\u0433\u0440\u0430\u0434\u0438",
 "building_bunker": "\u0411\u0443\u043d\u043a\u0435\u0440",
@@ -50575,7 +50575,7 @@
 "amenity_veterinary": "Dierenarts",
 "amenity_waste_basket": "Vuilbak",
 "boundary_administrative": "Administratieve grens",
-"building_&quot;yes&quot;": "Gebouw",
+"building": "Gebouw",
 "building_apartments": "Appartement",
 "building_bunker": "Bunker",
 "building_chapel": "Kapel",
@@ -51270,7 +51270,7 @@
 "amenity_veterinary": "\u0412\u0435\u0442\u0435\u0440\u0438\u043d\u0430\u0440\u043d\u0430\u044f \u043a\u043b\u0438\u043d\u0438\u043a\u0430",
 "amenity_waste_basket": "\u041c\u0443\u0441\u043e\u0440\u043d\u044b\u0439 \u0431\u0430\u043a",
 "boundary_administrative": "\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u0438\u0432\u043d\u0430\u044f \u0433\u0440\u0430\u043d\u0438\u0446\u0430",
-"building_&quot;yes&quot;": "\u0417\u0434\u0430\u043d\u0438\u0435",
+"building": "\u0417\u0434\u0430\u043d\u0438\u0435",
 "building_apartments": "\u041c\u043d\u043e\u0433\u043e\u043a\u0432\u0430\u0440\u0442\u0438\u0440\u043d\u044b\u0439 \u0434\u043e\u043c",
 "building_block": "\u0420\u044f\u0434 \u0437\u0434\u0430\u043d\u0438\u0439",
 "building_bunker": "\u0411\u0443\u043d\u043a\u0435\u0440",
@@ -51619,7 +51619,7 @@
 "amenity_veterinary": "Veterin\u00e1rna ordin\u00e1cia",
 "amenity_waste_basket": "Odpadkov\u00fd k\u00f4\u0161",
 "boundary_administrative": "Administrat\u00edvne hranice",
-"building_&quot;yes&quot;": "Budova",
+"building": "Budova",
 "building_apartments": "Bytov\u00fd dom",
 "building_bunker": "Bunker",
 "building_chapel": "Kaplnka",
@@ -51959,6 +51959,7 @@
 "amenity_vending_machine": "Avtomat",
 "amenity_veterinary": "Veterinarska klinika",
 "amenity_waste_basket": "Ko\u0161 za smeti",
+"building": "Zgradba",
 "building_apartments": "Stanovanjski blok",
 "building_block": "Blok",
 "building_bunker": "Bunker",
@@ -51990,7 +51991,6 @@
 "building_tower": "Stolp",
 "building_train_station": "\u017delezni\u0161ka postaja",
 "building_university": "Univerzitetna zgradba",
-"building_yes": "Zgradba",
 "craft_beekeeper": "\u010cebelarstvo",
 "cuisine_pizza": "Picerija",
 "emergency_fire_hydrant": "Hidrant",
@@ -52511,7 +52511,7 @@
 "amenity_veterinary": "\u0412\u0435\u0442\u043b\u0456\u043a\u0430\u0440\u043d\u044f",
 "amenity_waste_basket": "\u041a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440 \u0434\u043b\u044f \u0441\u043c\u0456\u0442\u0442\u044f",
 "boundary_administrative": "\u0410\u0434\u043c\u0456\u043d\u0456\u0441\u0442\u0440\u0430\u0442\u0438\u0432\u043d\u0438\u0439 \u043a\u043e\u0440\u0434\u043e\u043d",
-"building_&quot;yes&quot;": "\u0411\u0443\u0434\u0456\u0432\u043b\u044f",
+"building": "\u0411\u0443\u0434\u0456\u0432\u043b\u044f",
 "building_apartments": "\u0416\u0438\u0442\u043b\u043e\u0432\u0438\u0439 \u043c\u0430\u0441\u0438\u0432",
 "building_block": "\u041a\u0432\u0430\u0440\u0442\u0430\u043b",
 "building_bunker": "\u0411\u0443\u043d\u043a\u0435\u0440",
@@ -52847,7 +52847,7 @@
 "amenity_vending_machine": "M\u00e1y B\u00e1n h\u00e0ng",
 "amenity_waste_basket": "Th\u00f9ng r\u00e1c",
 "boundary_administrative": "Bi\u00ean gi\u1edbi H\u00e0nh ch\u00ednh",
-"building_&quot;yes&quot;": "T\u00f2a nh\u00e0",
+"building": "T\u00f2a nh\u00e0",
 "building_bunker": "Boong ke",
 "building_church": "Nh\u00e0 th\u1edd",
 "building_city_hall": "Tr\u1ee5 s\u1edf Th\u00e0nh ph\u1ed1",
