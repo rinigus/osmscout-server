@@ -229,7 +229,8 @@ void GeoMaster::loadTagAlias(const QStringList &lang_list)
       }
     }
 
-  m_aliases = QStringList::fromSet(aliases);;
+  m_aliases = QStringList::fromSet(aliases);
+  m_aliases.sort();
 
   m_tag_alias_langs = langs;
 }
