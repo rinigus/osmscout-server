@@ -12,6 +12,8 @@
 #include <mutex>
 #include <atomic>
 
+#include <valhalla/tyr/actor.h>
+
 class ValhallaMaster : public QObject
 {
   Q_OBJECT
@@ -20,7 +22,7 @@ public:
   virtual ~ValhallaMaster();
 
   bool route(QString uri, QByteArray &result);
-  void start(bool sync = false);
+  void start();
 
 signals:
 
@@ -42,27 +44,18 @@ protected:
 protected:
   std::mutex m_mutex;
 
+  std::unique_ptr< valhalla::tyr::actor_t > m_actor;
+
   QString m_config_fname;
   QString m_dirname;
   QStringList m_countries;
+  std::string m_config_json;
 
   int m_cache;
-  int m_route_port;
-  QString m_valhalla_route_url;
 
   float m_limit_max_distance_auto;
   float m_limit_max_distance_bicycle;
   float m_limit_max_distance_pedestrian;
-
-  QProcess *m_process{nullptr};
-  std::atomic<bool> m_process_ready{false};
-  bool m_process_start_when_ready{false};
-  bool m_process_killed{false};
-
-  bool m_idle_mode{true};
-
-  const QString const_conf{"valhalla.json"};
-  const QString const_dir{"valhalla"};
 
   const QString const_tag_cache{"MAXIMAL_CACHE_SIZE"};
   const QString const_tag_dirname{"VALHALLA_TILE_DIRECTORY"};

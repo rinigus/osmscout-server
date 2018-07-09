@@ -18,7 +18,6 @@ void ModuleChecker::checkModules()
 {
   AppSettings settings;
   bool available_mapnik = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
-  bool available_valhalla = settings.valueBool(MAPMANAGER_SETTINGS "valhalla");
 
 #ifdef USE_MAPNIK
   { // fonts module
@@ -29,9 +28,8 @@ void ModuleChecker::checkModules()
 
 #ifdef USE_VALHALLA
   {
-    QFileInfo f1(VALHALLA_EXECUTABLE);
-    QFileInfo f2(VALHALLA_CONFIG_TEMPLATE);
-    m_valhalla_route = !available_valhalla || (f1.exists() && f2.exists());
+    // Valhalla is build in
+    m_valhalla_route = true;
   }
 #endif
 

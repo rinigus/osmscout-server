@@ -160,9 +160,8 @@ use_mapnik {
 
 use_valhalla {
     DEFINES += USE_VALHALLA
-    DEFINES += VALHALLA_EXECUTABLE=\\\"/usr/bin/harbour-osmscout-server-module-route\\\"
-    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server-module-route/data/valhalla.json\\\"
-    CONFIG += use_curl
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server/data/valhalla.json\\\"
+    PKGCONFIG += libvalhalla
 }
 
 use_systemd {

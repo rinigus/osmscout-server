@@ -232,13 +232,9 @@ int main(int argc, char *argv[])
   if (!parser.isSet(optionSystemD))
     {
       int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
-      int valhalla_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
 
       if (!wait_till_port_is_free(http_port))
         std::cerr << "Port " << http_port << " is occupied\n";
-
-      if (!wait_till_port_is_free(valhalla_port))
-        std::cerr << "Port " << valhalla_port << " is occupied\n";
     }
 #endif
 
@@ -477,7 +473,7 @@ int main(int argc, char *argv[])
   int return_code = 0;
 
 #ifdef USE_VALHALLA
-  valhallaMaster->start(true);
+  valhallaMaster->start();
 #endif
 
   // prepare server by processing all outstanding events

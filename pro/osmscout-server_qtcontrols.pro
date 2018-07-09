@@ -149,9 +149,8 @@ use_mapnik {
 
 use_valhalla {
     DEFINES += USE_VALHALLA
-    DEFINES += VALHALLA_EXECUTABLE=\\\"../valhalla/install/bin/valhalla_service\\\"
-    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"../osmscout-server-route/data/valhalla.json\\\"
-    CONFIG += use_curl
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"data/valhalla.json\\\"
+    PKGCONFIG += libvalhalla
 }
 
 use_curl {

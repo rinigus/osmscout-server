@@ -185,19 +185,47 @@ static bool has(const QString &key, MHD_Connection *q)
   return has(key.toStdString().c_str(), q);
 }
 
-static int query_uri_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char *key, const char *value)
+//static int query_uri_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char *key, const char *value)
+//{
+//  QString *s = (QString*)cls;
+//  if ( !s->isEmpty() ) (*s) += "&";
+//  (*s) += key;
+//  if (value != NULL)
+//    {
+//      (*s) += "=";
+//      (*s) += value;
+//    }
+//  return MHD_YES;
+//}
+
+static int query_json_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char *key, const char *value)
 {
   QString *s = (QString*)cls;
-  if ( !s->isEmpty() ) (*s) += "&";
-  (*s) += key;
+  if ( !s->isEmpty() ) (*s) += ",";
   if (value != NULL)
     {
-      (*s) += "=";
-      (*s) += value;
+      (*s) += "\"" + QString::fromStdString(key) + "\": ";
+      QString v(value);
+      v = v.trimmed();
+      bool isnum = false;
+      v.toDouble(&isnum);
+      if ( isnum ||
+           (v.startsWith("{") && v.endsWith("}") ) ||
+           (v.startsWith("[") && v.endsWith("]") ) )
+           (*s) += v;
+      else
+        (*s) += '"' + v + '"';
     }
   return MHD_YES;
 }
 
+static QString query_json_postprocess(QString s)
+{
+  if (s.endsWith(","))
+    s = s.left(s.length()-1);
+  s = "{" + s + "}";
+  return s;
+}
 
 //////////////////////////////////////////////////////////////////////
 /// Expiry header
@@ -846,12 +874,24 @@ unsigned int RequestMapper::service(const char *url_c,
           return MHD_HTTP_INTERNAL_SERVER_ERROR;
         }
 
-      QString uri;
-      MHD_get_connection_values(connection, MHD_GET_ARGUMENT_KIND, query_uri_iterator, &uri);
+      bool ok = true;
+      QString json = q2value<QString>("json", QString(), connection, ok);
+
+      if (json.isEmpty())
+        {
+          MHD_get_connection_values(connection, MHD_GET_ARGUMENT_KIND, query_json_iterator, &json);
+          json = query_json_postprocess(json);
+        }
+
+      if (json.isEmpty() )
+        {
+          errorText(response, connection_id, "Error while reading route query");
+          return MHD_HTTP_BAD_REQUEST;
+        }
 
       Task *task = new Task(connection_id,
                             std::bind(&ValhallaMaster::route, valhallaMaster,
-                                      uri, std::placeholders::_1),
+                                      json, std::placeholders::_1),
                             "Error while looking for route via Valhalla");
       m_pool.start(task);
 
