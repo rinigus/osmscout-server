@@ -31,9 +31,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(Qt5Sql)
 BuildRequires:  pkgconfig(sqlite3)
-BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  pkgconfig(libsystemd-daemon)
-BuildRequires:  pkgconfig(libvalhalla)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  libmarisa-devel
@@ -44,9 +42,11 @@ BuildRequires:  libkyotocabinet-devel
 BuildRequires:  mapnik-devel
 BuildRequires:  libicu52-devel
 BuildRequires:  qt5-qttools-linguist
+BuildRequires:  valhalla-lite-devel
 BuildRequires:  protobuf-devel
 BuildRequires:  boost-devel >= 1.51
 BuildRequires:  boost-date-time >= 1.51
+BuildRequires:  boost-chrono >= 1.51
 BuildRequires:  boost-filesystem >= 1.51
 BuildRequires:  boost-iostreams >= 1.51
 BuildRequires:  boost-regex >= 1.51
@@ -102,9 +102,9 @@ cp /usr/lib/libboost_filesystem-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_regex-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_system-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_iostreams-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_date_time-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_chrono-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_thread-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_date_time-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/libprotobuf.so.8  %{buildroot}%{_datadir}/%{name}/lib
 

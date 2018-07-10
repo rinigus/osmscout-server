@@ -161,7 +161,10 @@ use_mapnik {
 use_valhalla {
     DEFINES += USE_VALHALLA
     DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server/data/valhalla.json\\\"
+    CONFIG += use_curl
     PKGCONFIG += libvalhalla
+#    LIBS += -l:libvalhalla.a -lprotobuf -llz4 -lz
+#    LIBS += -lboost_regex-mt -lboost_filesystem-mt -lboost_system-mt -lboost_iostreams-mt
 }
 
 use_systemd {
