@@ -21,7 +21,9 @@ public:
   explicit ValhallaMaster(QObject *parent = 0);
   virtual ~ValhallaMaster();
 
-  bool route(QString uri, QByteArray &result);
+  bool route(QString json, QByteArray &result);
+  bool trace_attributes(QString json, QByteArray &result);
+
   void start();
 
 signals:

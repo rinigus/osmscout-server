@@ -161,4 +161,21 @@ bool ValhallaMaster::route(QString json, QByteArray &result)
   return success;
 }
 
+bool ValhallaMaster::trace_attributes(QString json, QByteArray &result)
+{
+  if (!m_actor) return false;
+
+  bool success = true;
+  try {
+    std::string r = m_actor->trace_attributes(json.toStdString());
+    result = QByteArray::fromStdString(r);
+  }
+  catch (std::exception &e) {
+    InfoHub::logWarning("Exception in Valhalla routing: " + QString::fromStdString(e.what()));
+    success = false;
+    m_actor->cleanup();
+  }
+
+  return success;
+}
 #endif

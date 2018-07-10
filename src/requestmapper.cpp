@@ -968,6 +968,50 @@ unsigned int RequestMapper::service(const char *url_c,
     }
 #endif
 
+  //////////////////////////////////////////////////////////////////////
+  /// VALHALLA MAP MATCHING [V2]
+#ifdef USE_VALHALLA
+  else if (path == "/v2/trace_attributes"
+         #ifdef USE_OSMSCOUT
+           && useValhalla
+         #endif
+           )
+    {
+      if (!m_available_valhalla)
+        {
+          errorText(response, connection_id, "Map matching is not supported with these settings");
+          InfoHub::logWarning(tr("Map matching is not available since Valhalla is disabled by selected profile or settings. %1")
+                              .arg(m_info_enable_backends));
+          return MHD_HTTP_INTERNAL_SERVER_ERROR;
+        }
+
+      bool ok = true;
+      QString json = q2value<QString>("json", QString(), connection, ok);
+
+      if (json.isEmpty())
+        {
+          MHD_get_connection_values(connection, MHD_GET_ARGUMENT_KIND, query_json_iterator, &json);
+          json = query_json_postprocess(json);
+        }
+
+      if (json.isEmpty() )
+        {
+          errorText(response, connection_id, "Error while reading route query");
+          return MHD_HTTP_BAD_REQUEST;
+        }
+
+      Task *task = new Task(connection_id,
+                            std::bind(&ValhallaMaster::trace_attributes, valhallaMaster,
+                                      json, std::placeholders::_1),
+                            "Error while looking for route via Valhalla");
+      m_pool.start(task);
+
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json; charset=UTF-8");
+      return MHD_HTTP_OK;
+    }
+#endif
+
+
   // command unidentified. return help string
   errorText(response, connection_id, "Unknown URL path");
   return MHD_HTTP_BAD_REQUEST;
