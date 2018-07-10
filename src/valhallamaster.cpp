@@ -120,7 +120,7 @@ void ValhallaMaster::start()
 
   m_actor.release();
   m_actor.reset(new valhalla::tyr::actor_t(pt, true)); // with autoclean
-  InfoHub::logInfo(tr("Starting Valhalla routing engine"));
+  InfoHub::logInfo(tr("Valhalla routing engine started"));
 }
 
 // List of blacklisted sub-strings that will not be
@@ -143,14 +143,17 @@ void ValhallaMaster::stop()
 ///////////////////////////////////////////////////////////////////////////////
 /// Interaction with Valhalla service
 
-bool ValhallaMaster::route(QString json, QByteArray &result)
+bool ValhallaMaster::callActor(ActorType atype, const QString &json, QByteArray &result)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
   if (!m_actor) return false;
 
   bool success = true;
   try {
-    std::string r = m_actor->route(json.toStdString());
+    std::string s = json.toStdString();
+    std::string r;
+    if (atype == Route) r = m_actor->route(s);
+    else if (atype == TraceAttributes) r = m_actor->trace_attributes(s);
     result = QByteArray::fromStdString(r);
   }
   catch (std::exception &e) {
@@ -162,22 +165,13 @@ bool ValhallaMaster::route(QString json, QByteArray &result)
   return success;
 }
 
-bool ValhallaMaster::trace_attributes(QString json, QByteArray &result)
+bool ValhallaMaster::route(const QString &json, QByteArray &result)
 {
-  std::unique_lock<std::mutex> lk(m_mutex);
-  if (!m_actor) return false;
+  return callActor(Route, json, result);
+}
 
-  bool success = true;
-  try {
-    std::string r = m_actor->trace_attributes(json.toStdString());
-    result = QByteArray::fromStdString(r);
-  }
-  catch (std::exception &e) {
-    InfoHub::logWarning("Exception in Valhalla routing: " + QString::fromStdString(e.what()));
-    success = false;
-    m_actor->cleanup();
-  }
-
-  return success;
+bool ValhallaMaster::trace_attributes(const QString &json, QByteArray &result)
+{
+  return callActor(TraceAttributes, json, result);
 }
 #endif

@@ -21,8 +21,8 @@ public:
   explicit ValhallaMaster(QObject *parent = 0);
   virtual ~ValhallaMaster();
 
-  bool route(QString json, QByteArray &result);
-  bool trace_attributes(QString json, QByteArray &result);
+  bool route(const QString &json, QByteArray &result);
+  bool trace_attributes(const QString &json, QByteArray &result);
 
   void start();
 
@@ -33,15 +33,13 @@ public slots:
   void onValhallaChanged(QString valhalla_directory, QStringList countries);
 
 protected:
+  enum ActorType { Route, TraceAttributes };
+
+protected:
   void generateConfig();
   void stop();
-  void start_process(); ///< Called internally when there is no process running and its free to start a new one
 
-  void onProcessStarted();
-  void onProcessStopped(int exitCode, QProcess::ExitStatus exitStatus); ///< Called on error while starting or when process has stopped
-  void onProcessStateChanged(QProcess::ProcessState newState); ///< Called when state of the process has changed
-  void onProcessRead();
-  void onProcessReadError();
+  bool callActor(ActorType atype, const QString &json, QByteArray &result);
 
 protected:
   std::mutex m_mutex;
