@@ -100,7 +100,9 @@ cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/libboost_filesystem-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_regex-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_regex.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_system-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_system.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_iostreams-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_date_time-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_chrono-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
