@@ -145,6 +145,7 @@ void ValhallaMaster::stop()
 
 bool ValhallaMaster::route(QString json, QByteArray &result)
 {
+  std::unique_lock<std::mutex> lk(m_mutex);
   if (!m_actor) return false;
 
   bool success = true;
@@ -163,6 +164,7 @@ bool ValhallaMaster::route(QString json, QByteArray &result)
 
 bool ValhallaMaster::trace_attributes(QString json, QByteArray &result)
 {
+  std::unique_lock<std::mutex> lk(m_mutex);
   if (!m_actor) return false;
 
   bool success = true;
