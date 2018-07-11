@@ -1,0 +1,52 @@
+{
+    "parsed": {
+        "europe/estonia": {
+            "house_number": "{1}",
+            "road": "{tartu mnt}"
+        }
+    },
+    "parsed_normalized": {
+        "europe/estonia": [
+            {
+                "house_number": "{1}",
+                "road": "{tartu mount, tartu maantee}"
+            },
+            {
+                "h-0": "{tartu mount 1, tartu maantee 1}"
+            }
+        ]
+    },
+    "query": "tartu mnt 1",
+    "result": [
+        {
+            "admin_levels": 6,
+            "admin_region": "10, Tartu mnt, Kose alevik, Kose vald, Harju maakond, Eesti",
+            "lat": 59.16627846037058,
+            "levels_resolved": 2,
+            "lng": 25.176606067840794,
+            "object_id": 72066,
+            "title": "10, Tartu mnt",
+            "type": "Building"
+        },
+        {
+            "admin_levels": 6,
+            "admin_region": "10a, Tartu mnt, Kose alevik, Kose vald, Harju maakond, Eesti",
+            "lat": 59.16641391192685,
+            "levels_resolved": 2,
+            "lng": 25.17635125798249,
+            "object_id": 72065,
+            "title": "10a, Tartu mnt",
+            "type": "Building"
+        },
+        {
+            "admin_levels": 6,
+            "admin_region": "1, Tartu mnt, Puka alevik, Otep‰‰ vald, Valga maakond, Eesti",
+            "lat": 58.058145255283605,
+            "levels_resolved": 2,
+            "lng": 26.22730378975946,
+            "object_id": 164821,
+            "title": "1, Tartu mnt",
+            "type": "Building"
+        }
+    ]
+}
