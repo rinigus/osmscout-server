@@ -240,7 +240,7 @@ where
 Results are returned in JSON format. Example query:
 `http://localhost:8553/v1/search?limit=10&search=tartu mnt 1, tallinn`
 
-```
+```json
 [
 {
 "admin_region": "Tallinn, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
@@ -273,7 +273,7 @@ one. However, the result includes parsing feedback when geocoder-nlp
 is used. For example,
 `http://localhost:8553/v2/search?limit=3&search=tartu mnt 1, tallinn`:
 
-```
+```json
 {
     "parsed": {
         "city": "tallinn",
@@ -373,83 +373,47 @@ coordinates are preferred.
 
 The result is given in JSON format. It returns a JSON object with two
 keys: `"origin"` (coordinates of the reference point used in the search)
-and `"results"` (array with the POIs). See Poor Maps implementation on
-how to process the results.
+and `"results"` (array with the POIs). Example response to `http://localhost:8553/v1/guide?limit=2&poitype=restaurant&radius=1000&search=pühavaimu,%20tallinn`:
+
+```json
+{
+    "origin": {
+        "lat": 59.43834699271878,
+        "lng": 24.746281838016813
+    },
+    "query_name": "",
+    "query_type": "restaurant",
+    "results": [
+        {
+            "admin_region": "Golden Dragon, 7, Pühavaimu, Tallinna vanalinn, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+            "distance": 48.305660772979806,
+            "lat": 59.4385562050235,
+            "lng": 24.74703017433754,
+            "object_id": 41060,
+            "title": "Golden Dragon, 7, Pühavaimu",
+            "type": "Food"
+        },
+        {
+            "admin_region": "Restoran Trofé, 29, Pikk, Tallinna vanalinn, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+            "distance": 57.47079082155229,
+            "lat": 59.43886465906252,
+            "lng": 24.746263062553567,
+            "object_id": 41038,
+            "title": "Restoran Trofé, 29, Pikk",
+            "type": "Food"
+        }
+    ]
+}
+```
 
 
 ## Routing
 
 There are two versions of routing protocol that have to be used in
-accordance with the used backend. Version 1 (`v1/route`) is used by
-libosmscout and is described below. Version 2 (`v2/route`) is used by
+accordance with the used backend. Version 2 (`v2/route`) is used by
 Valhalla and uses Valhalla's API. Version 2 is supported, in part, by
-libosmscout as well.
-
-### Version 1: libosmscout
-
-The routing component allows to calculate routes between given
-points. Server can be accessed via `/v1/route` path:
-
-`http://localhost:8553/v1/route?radius={radius}&type={type}&gpx={gpx}&p[0][search]={search}&p[0][lng]={lng}&p[0][lat]={lat}& ... &p[n-1][search]={search}&p[n-1][lng]={lng}&p[n-1][lat]={lat}`
-
-where each point along the route can be given either by `{search}` or
-longitude and latitude with precise coordinates preferred if the both
-approaches are used. The number of points `n` should be at least two,
-with the counting starting from 0. The server looks for points in the
-query by starting from index 0 and incrementing it by one until the
-points with consecutive indexes are all found. Note that if you skip
-an index in the list (like having indexes 0, 1, 3, and 4), the points
-after the increment larger than one will be ignored (in the example,
-points 3 and 4).
-
-The query parameters are:
-
-`{type}` - type of the vehicle with `car`, `bicycle`, and `foot`
-supported (`car` is default);
-
-`{radius}` - distance from the points in meters where closest routing
-point is searched for (1000 meters by default);
-
-`{gpx}` - when 1 or larger integer, GPX trace of the route will be
-given in the response of the server instead of JSON reply;
-
-`{search}` - a query that is run to find a reference point, the first
-result is used;
-
-`{lng}`, `{lat}` - longitude and latidude, respectively.
-
-
-For example, the following request finds the route between two cities
-given by names:
-
-`http://localhost:8553/v1/route?p[0][search]=Tallinn&p[1][search]=Tartu`
-
-
-The result is given in JSON format. It returns a JSON object with
-several keys:
-
-`locations` - coordinates of the reference points used in the calculations;
-
-`language` - language of the maneuvers instructions;
-
-`lat` - array of latitudes with the calculated route;
-
-`lng` - array of longitudes with the calculated route;
-
-`maneuvers` - array of objects describing maneuvers;
-
-`summary` - object specifying length and duration of the route;
-
-`units_distance` - units of distances used in route description (kilometers for now);
-
-`units_time` - units of time used in route description (seconds for now).
-
-
-See included example under Examples and Poor Maps implementation on
-how to process the results.
-
-At present, the car speeds on different roads are inserted in the
-code. This will improve in future.
+libosmscout as well. Older Version 1 (`v1/route`) is used by
+libosmscout and is described in [OLD_API](README.older_api.md). 
 
 
 ### Version 2: Valhalla
@@ -476,6 +440,7 @@ server will follow Version 1 protocol with an additional flag `API
 version` set to `libosmscout V1` in the response of the server. Using
 this flag, the client application can determine whether version 1
 protocol response has been used.
+
 
 
 ## Translations
