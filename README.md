@@ -345,7 +345,7 @@ this flag, the client application can determine whether version 1
 protocol response has been used.
 
 
-## Valhalla API for routing, map matching, and other APIs
+## Valhalla API for routing, map matching, and other services
 
 Valhalla is interfaced by OSM Scout Server through Valhalla's C++ API
 and it exposes most of Valhalla's functionality via different path
