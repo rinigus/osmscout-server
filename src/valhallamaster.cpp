@@ -152,8 +152,14 @@ bool ValhallaMaster::callActor(ActorType atype, const QString &json, QByteArray 
   try {
     std::string s = json.toStdString();
     std::string r;
-    if (atype == Route) r = m_actor->route(s);
+    if (atype == Height) r = m_actor->height(s);
+    else if (atype == Isochrone) r = m_actor->isochrone(s);
+    else if (atype == Locate) r = m_actor->locate(s);
+    else if (atype == Matrix) r = m_actor->matrix(s);
+    else if (atype == OptimizedRoute) r = m_actor->optimized_route(s);
+    else if (atype == Route) r = m_actor->route(s);
     else if (atype == TraceAttributes) r = m_actor->trace_attributes(s);
+    else if (atype == TraceRoute) r = m_actor->trace_route(s);
     result = QByteArray::fromStdString(r);
   }
   catch (std::exception &e) {
@@ -165,13 +171,5 @@ bool ValhallaMaster::callActor(ActorType atype, const QString &json, QByteArray 
   return success;
 }
 
-bool ValhallaMaster::route(const QString &json, QByteArray &result)
-{
-  return callActor(Route, json, result);
-}
 
-bool ValhallaMaster::trace_attributes(const QString &json, QByteArray &result)
-{
-  return callActor(TraceAttributes, json, result);
-}
 #endif

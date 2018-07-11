@@ -13,7 +13,7 @@ At present, the server can be used to provide:
 * vector or raster tiles for other applications;
 * search for locations and free text search;
 * search for POIs next to a reference area;
-* calculating routes between given sequence of points.
+* calculating routes between given sequence of points;
 
 User's guide is available at https://rinigus.github.io/osmscout-server
 
@@ -130,7 +130,7 @@ Default port is 8553 TCP and the server binds to 127.0.0.1 providing
 services to local apps only.
 
 
-## URL scheme
+## URL schema
 
 Access to functionality is provided via path and query parts of
 URL. The path determines the module that is accessed with the query
@@ -307,14 +307,19 @@ search) and `"results"` (array with the POIs). See
 
 ## Routing
 
-There are two versions of routing protocol that have to be used in
-accordance with the used backend. Version 2 (`v2/route`) is used by
-Valhalla and uses Valhalla's API. Version 2 is supported, in part, by
-libosmscout as well. Older Version 1 (`v1/route`) is used by
-libosmscout and is described in [OLD_API](README.older_api.md). 
+The current protocol (version 2) is fully used by Valhalla's backend
+and is Valhalla's API for `route` call. In part, version 2 is
+supported, by libosmscout as well. Version 1 (`v1/route`) is used by
+libosmscout and is described in [OLD_API](README.older_api.md).
 
 
 ### Version 2: Valhalla
+
+Routing instructions calculations are only one of the several Valhalla
+APIs that are exposed by OSM Scout Server. For description of the URL
+schema, as used by Valhalla's backend, see below in a separate
+section. Valhalla is a recommended backend for routing and it is
+expected that the most of the users will be using it.
 
 This is the version that would be mainly supported in future. It uses
 Valhalla's API, as described in
@@ -323,7 +328,7 @@ https://github.com/valhalla/valhalla-docs/blob/master/turn-by-turn/api-reference
 used by OSM Scout Server.
 
 At present, all calls via `v2/route`, as
-`http://localhost:8553/v2/route?...` would be forwarded to Valhalla
+`http://localhost:8553/v2/route?...` would equivalent to Valhalla
 via `/route?...`.
 
 
@@ -339,6 +344,47 @@ set to `libosmscout V1` in the response of the server. Using
 this flag, the client application can determine whether version 1
 protocol response has been used.
 
+
+## Valhalla API for routing, map matching, and other APIs
+
+Valhalla is interfaced by OSM Scout Server through Valhalla's C++ API
+and it exposes most of Valhalla's functionality via different path
+components of the URL.
+
+URL schema for Valhalla's APIs is in the form
+
+`http://localhost:8553/v2/{api_name}?json={json}`
+
+where 
+
+`{api_name}` - name of the used API, as specified below
+
+`{json}` - JSON query, as specified by the corresponding Valhalla's API.
+
+OSM Scout Server does not impose any API key to the Valhalla's
+calls. The following Valhalla's APIs are supported (with the link given describing the API):
+
+* `route` - [routing instructions](https://github.com/valhalla/valhalla/blob/master/docs/api/turn-by-turn/api-reference.md)
+
+* `trace_attributes` - [map matching, trace attributes](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md), 
+  for obtaining road attributes as a result of matching the coordinate sequence, as fed from GPS device, with the road network. 
+  Can be used for just in time navigation information. 
+
+* `trace_route` - [map matching, trace_route](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md), 
+  for creating navigation instructions on the basis of coordinate sequence. Can be used to share the used road.
+  
+* `locate` - [information about streets and intersections](https://github.com/valhalla/valhalla/blob/master/docs/api/locate/api-reference.md)
+
+* `matrix` - [time-distance matrix](https://github.com/valhalla/valhalla/blob/master/docs/api/matrix/api-reference.md)
+  
+* `optimized_route` - [optimized route between set of locations](https://github.com/valhalla/valhalla/blob/master/docs/api/optimized/api-reference.md)
+
+* `isochrone` - [reachability from a given point within a time limit](https://github.com/valhalla/valhalla/blob/master/docs/api/isochrone/api-reference.md)
+
+* `height` - [elevation data for a single location or a path](https://github.com/valhalla/valhalla/blob/master/docs/api/elevation/api-reference.md)
+
+At the moment of writing (Jul 2018), elevation data is not imported in the distributed maps. The corresponding issue has been 
+opened (https://github.com/rinigus/osmscout-server/issues/244).
 
 
 ## Translations

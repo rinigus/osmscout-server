@@ -17,12 +17,18 @@
 class ValhallaMaster : public QObject
 {
   Q_OBJECT
+
+public:
+  enum ActorType { Height, Isochrone, Locate, Matrix, OptimizedRoute, Route, TraceAttributes, TraceRoute };
+
 public:
   explicit ValhallaMaster(QObject *parent = 0);
   virtual ~ValhallaMaster();
 
-  bool route(const QString &json, QByteArray &result);
-  bool trace_attributes(const QString &json, QByteArray &result);
+  /// \brief Call Valhalla's action
+  ///
+  /// Used to call route, trace_attributes and other actor actions
+  bool callActor(ActorType atype, const QString &json, QByteArray &result);
 
   void start();
 
@@ -33,13 +39,8 @@ public slots:
   void onValhallaChanged(QString valhalla_directory, QStringList countries);
 
 protected:
-  enum ActorType { Route, TraceAttributes };
-
-protected:
   void generateConfig();
   void stop();
-
-  bool callActor(ActorType atype, const QString &json, QByteArray &result);
 
 protected:
   std::mutex m_mutex;
