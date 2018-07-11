@@ -348,7 +348,7 @@ where
 
 `{radius}` - distance from the reference in meters
 
-`{poitype}` - POI type name substring (checked against POI type name in case-insensitive manner)
+`{poitype}` - POI type name
 
 `{name}` - Name of POI to search
 
@@ -356,11 +356,9 @@ where
 
 `{lng}`, `{lat}` - longitude and latidude, respectively.
 
-As mentioned above, given POI type is considered as a substring that
-is looked for in all available POI types without taking into account
-the case of letters. For example, "Cafe" would match
-amenity_cafe_building and amenity_cafe. However, "Café" would miss
-them.
+Given POI type is considered either as an alias or imported POI
+type. Type comparison is done in a case-insensitive manner. POI types
+are formed from OSM tags in the form `tag_value`.
 
 In addition, POI can be searched by its name. For example, you could
 search for the restaurant by its name. This parameter is only
