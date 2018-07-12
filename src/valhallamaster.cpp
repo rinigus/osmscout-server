@@ -60,7 +60,7 @@ void ValhallaMaster::onSettingsChanged()
       if (!m_dirname.isEmpty() && (changed || !m_actor))
         {
           generateConfig();
-          start();
+          if (!m_idle_mode) start();
         }
     }
   else
@@ -78,7 +78,7 @@ void ValhallaMaster::onValhallaChanged(QString valhalla_directory, QStringList c
       if (useValhalla)
         {
           generateConfig();
-          start();
+          if (!m_idle_mode) start();
         }
     }
 }
@@ -113,6 +113,8 @@ void ValhallaMaster::generateConfig()
 /// interaction with valhalla route service process
 void ValhallaMaster::start()
 {
+  m_idle_mode = false;
+
   std::stringstream ss;
   ss << m_config_json;
   boost::property_tree::ptree pt;

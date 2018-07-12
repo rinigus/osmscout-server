@@ -52,6 +52,8 @@ protected:
   QStringList m_countries;
   std::string m_config_json;
 
+  bool m_idle_mode{true}; ///< Used to delay start while loading settings
+
   int m_cache;
 
   float m_limit_max_distance_auto;
