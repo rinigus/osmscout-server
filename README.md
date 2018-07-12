@@ -13,7 +13,7 @@ At present, the server can be used to provide:
 * vector or raster tiles for other applications;
 * search for locations and free text search;
 * search for POIs next to a reference area;
-* calculating routes between given sequence of points.
+* calculating routes between given sequence of points;
 
 User's guide is available at https://rinigus.github.io/osmscout-server
 
@@ -130,7 +130,7 @@ Default port is 8553 TCP and the server binds to 127.0.0.1 providing
 services to local apps only.
 
 
-## URL scheme
+## URL schema
 
 Access to functionality is provided via path and query parts of
 URL. The path determines the module that is accessed with the query
@@ -139,7 +139,9 @@ specifying arguments. Here, order of query elements is not important.
 
 ## Examples
 
-See `examples` folder for results of the example queries.
+See `examples` folder for the example queries and their
+results. Below, just the results are referenced. For corresponding
+queries, see accompanying [README](examples/README.md). 
 
 
 ## Raster tiles
@@ -172,7 +174,7 @@ libosmscout backend, `styles` parameter is ignored.
 
 ## Mapbox GL vector tiles
 
-The vector tiles and associated styles, fonts and icons are provided
+The vector tiles, associated styles, fonts, and icons are provided
 via server.
 
 ### Tiles
@@ -221,10 +223,6 @@ difference is in returned JSON format with the second version, in
 addition to returning the results, giving feedback on query parsing to
 the user.
 
-Location search uses tags and their aliases to figure out the type of
-the searched POI. List of the current tags and aliases is given at
-[https://rinigus.github.io/osmscout-server/tags](https://rinigus.github.io/osmscout-server/tags).
-
 ### Location search: version 1
 
 The location search is accessed by the following URL:
@@ -237,30 +235,7 @@ where
 
 `{query}` - location and free text search
 
-Results are returned in JSON format. Example query:
-`http://localhost:8553/v1/search?limit=10&search=tartu mnt 1, tallinn`
-
-```
-[
-{
-"admin_region": "Tallinn, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-"lat": 59.434895,
-"lng": 24.758684,
-"object_id": "Node 631817",
-"title": "Tartu mnt 1, Tallinn",
-"type": "address"
-},
-{
-"admin_region": "Tallinn, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-"lat": 59.404687,
-"lng": 24.810360,
-"object_id": "Way 9670330",
-"title": "Tartu mnt, Tallinn",
-"type": "highway_trunk"
-},
-...
-]
-```
+Results are returned in JSON format ([example](examples/search_v1.json)).
 
 ### Location search: version 2
 
@@ -270,59 +245,7 @@ The location search is accessed by the following URL:
 
 where meaning of the query parameters is the same as for the version
 one. However, the result includes parsing feedback when geocoder-nlp
-is used. For example,
-`http://localhost:8553/v2/search?limit=3&search=tartu mnt 1, tallinn`:
-
-```
-{
-    "parsed": {
-        "city": "tallinn",
-        "house_number": "1",
-        "road": "tartu mnt"
-    },
-    "parsed_normalized": [
-        {
-            "city": "tallinn",
-            "house_number": "1",
-            "road": "tartu maantee"
-        },
-        {
-            "h-0": "tallinn",
-            "h-1": "tartu maantee 1"
-        }
-    ],
-    "query": "tartu mnt 1, tallinn",
-    "result": [
-        {
-            "admin_region": "1, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-            "lat": 59.434894989690889,
-            "levels_resolved": 3,
-            "lng": 24.758684372594075,
-            "object_id": 31299,
-            "title": "1, Tartu mnt",
-            "type": ""
-        },
-        {
-            "admin_region": "13, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-            "lat": 59.434417556482686,
-            "levels_resolved": 3,
-            "lng": 24.761235153386252,
-            "object_id": 31312,
-            "title": "13, Tartu mnt",
-            "type": ""
-        },
-        {
-            "admin_region": "14, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-            "lat": 59.433896537377663,
-            "levels_resolved": 3,
-            "lng": 24.761358535001861,
-            "object_id": 31314,
-            "title": "14, Tartu mnt",
-            "type": ""
-        }
-    ]
-}
-```
+is used, see [example](examples/search_v2.json).
 
 
 ## List of available POI types
@@ -333,6 +256,8 @@ List of available POI types is available via
 
 The list is given as JSON array. When using geocoder-nlp as a search
 backend, the list represents currently used aliases for the used tags.
+Shortened version of the response is given as an
+[example](examples/poi_types.json).
 
 
 ## POI search near a reference position
@@ -340,7 +265,7 @@ backend, the list represents currently used aliases for the used tags.
 To find POIs within a given radius from a specified reference
 position, server can be accessed via `/v1/guide` path:
 
-`http://localhost:8553/v1/guide?radius={radius}&blimit={limit}&poitype={poitype}&name={name}&search={search}&lng={lng}&lat={lat}`
+`http://localhost:8553/v1/guide?radius={radius}&limit={limit}&poitype={poitype}&name={name}&search={search}&lng={lng}&lat={lat}`
 
 where
 
@@ -348,7 +273,7 @@ where
 
 `{radius}` - distance from the reference in meters
 
-`{poitype}` - POI type name substring (checked against POI type name in case-insensitive manner)
+`{poitype}` - POI type name
 
 `{name}` - Name of POI to search
 
@@ -356,11 +281,12 @@ where
 
 `{lng}`, `{lat}` - longitude and latidude, respectively.
 
-As mentioned above, given POI type is considered as a substring that
-is looked for in all available POI types without taking into account
-the case of letters. For example, "Cafe" would match
-amenity_cafe_building and amenity_cafe. However, "Café" would miss
-them.
+Given POI type is considered either as an alias or imported POI
+type. Type comparison is done in a case-insensitive manner. POI types
+are formed from OSM tags in the form `tag_value`.
+
+List of the current tags and aliases, as used by geocoder-nlp, is given at
+[https://rinigus.github.io/osmscout-server/tags](https://rinigus.github.io/osmscout-server/tags).
 
 In addition, POI can be searched by its name. For example, you could
 search for the restaurant by its name. This parameter is only
@@ -374,87 +300,26 @@ location coordinates. If the both forms are given in URL, location
 coordinates are preferred.
 
 The result is given in JSON format. It returns a JSON object with two
-keys: `"origin"` (coordinates of the reference point used in the search)
-and `"results"` (array with the POIs). See Poor Maps implementation on
-how to process the results.
+keys: `"origin"` (coordinates of the reference point used in the
+search) and `"results"` (array with the POIs). See
+[example](examples/guide.json) for details.
 
 
 ## Routing
 
-There are two versions of routing protocol that have to be used in
-accordance with the used backend. Version 1 (`v1/route`) is used by
-libosmscout and is described below. Version 2 (`v2/route`) is used by
-Valhalla and uses Valhalla's API. Version 2 is supported, in part, by
-libosmscout as well.
-
-### Version 1: libosmscout
-
-The routing component allows to calculate routes between given
-points. Server can be accessed via `/v1/route` path:
-
-`http://localhost:8553/v1/route?radius={radius}&type={type}&gpx={gpx}&p[0][search]={search}&p[0][lng]={lng}&p[0][lat]={lat}& ... &p[n-1][search]={search}&p[n-1][lng]={lng}&p[n-1][lat]={lat}`
-
-where each point along the route can be given either by `{search}` or
-longitude and latitude with precise coordinates preferred if the both
-approaches are used. The number of points `n` should be at least two,
-with the counting starting from 0. The server looks for points in the
-query by starting from index 0 and incrementing it by one until the
-points with consecutive indexes are all found. Note that if you skip
-an index in the list (like having indexes 0, 1, 3, and 4), the points
-after the increment larger than one will be ignored (in the example,
-points 3 and 4).
-
-The query parameters are:
-
-`{type}` - type of the vehicle with `car`, `bicycle`, and `foot`
-supported (`car` is default);
-
-`{radius}` - distance from the points in meters where closest routing
-point is searched for (1000 meters by default);
-
-`{gpx}` - when 1 or larger integer, GPX trace of the route will be
-given in the response of the server instead of JSON reply;
-
-`{search}` - a query that is run to find a reference point, the first
-result is used;
-
-`{lng}`, `{lat}` - longitude and latidude, respectively.
-
-
-For example, the following request finds the route between two cities
-given by names:
-
-`http://localhost:8553/v1/route?p[0][search]=Tallinn&p[1][search]=Tartu`
-
-
-The result is given in JSON format. It returns a JSON object with
-several keys:
-
-`locations` - coordinates of the reference points used in the calculations;
-
-`language` - language of the maneuvers instructions;
-
-`lat` - array of latitudes with the calculated route;
-
-`lng` - array of longitudes with the calculated route;
-
-`maneuvers` - array of objects describing maneuvers;
-
-`summary` - object specifying length and duration of the route;
-
-`units_distance` - units of distances used in route description (kilometers for now);
-
-`units_time` - units of time used in route description (seconds for now).
-
-
-See included example under Examples and Poor Maps implementation on
-how to process the results.
-
-At present, the car speeds on different roads are inserted in the
-code. This will improve in future.
+The current protocol (version 2) is fully used by Valhalla's backend
+and is Valhalla's API for `route` call. In part, version 2 is
+supported, by libosmscout as well. Version 1 (`v1/route`) is used by
+libosmscout and is described in [OLD_API](README.older_api.md).
 
 
 ### Version 2: Valhalla
+
+Routing instructions calculations are only one of the several Valhalla
+APIs that are exposed by OSM Scout Server. For description of the URL
+schema, as used by Valhalla's backend, see below in a separate
+section. Valhalla is a recommended backend for routing and it is
+expected that the most of the users will be using it.
 
 This is the version that would be mainly supported in future. It uses
 Valhalla's API, as described in
@@ -463,7 +328,7 @@ https://github.com/valhalla/valhalla-docs/blob/master/turn-by-turn/api-reference
 used by OSM Scout Server.
 
 At present, all calls via `v2/route`, as
-`http://localhost:8553/v2/route?...` would be forwarded to Valhalla
+`http://localhost:8553/v2/route?...` would equivalent to Valhalla
 via `/route?...`.
 
 
@@ -474,10 +339,52 @@ the routes. In this case, the server would consider limited subset of
 Valhalla's API. In particular, `costing` option would be used to
 select the transportation mode (`auto`, `bicycle`, or `pedestrian`)
 with the order of points found from `location`. The reply of the
-server will follow Version 1 protocol with an additional flag `API
-version` set to `libosmscout V1` in the response of the server. Using
+server will follow Version 1 protocol with an additional flag `API version` 
+set to `libosmscout V1` in the response of the server. Using
 this flag, the client application can determine whether version 1
 protocol response has been used.
+
+
+## Valhalla API for routing, map matching, and other services
+
+Valhalla is interfaced by OSM Scout Server through Valhalla's C++ API
+and it exposes most of Valhalla's functionality via different path
+components of the URL.
+
+URL schema for Valhalla's APIs is in the form
+
+`http://localhost:8553/v2/{api_name}?json={json}`
+
+where 
+
+`{api_name}` - name of the used API, as specified below
+
+`{json}` - JSON query, as specified by the corresponding Valhalla's API.
+
+OSM Scout Server does not impose any API key to the Valhalla's
+calls. The following Valhalla's APIs are supported (with the link given describing the API):
+
+* `route` - [routing instructions](https://github.com/valhalla/valhalla/blob/master/docs/api/turn-by-turn/api-reference.md)
+
+* `trace_attributes` - [map matching, trace attributes](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md), 
+  for obtaining road attributes as a result of matching the coordinate sequence, as fed from GPS device, with the road network. 
+  Can be used for just in time navigation information. 
+
+* `trace_route` - [map matching, trace_route](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md), 
+  for creating navigation instructions on the basis of coordinate sequence. Can be used to share the used road.
+  
+* `locate` - [information about streets and intersections](https://github.com/valhalla/valhalla/blob/master/docs/api/locate/api-reference.md)
+
+* `matrix` - [time-distance matrix](https://github.com/valhalla/valhalla/blob/master/docs/api/matrix/api-reference.md)
+  
+* `optimized_route` - [optimized route between set of locations](https://github.com/valhalla/valhalla/blob/master/docs/api/optimized/api-reference.md)
+
+* `isochrone` - [reachability from a given point within a time limit](https://github.com/valhalla/valhalla/blob/master/docs/api/isochrone/api-reference.md)
+
+* `height` - [elevation data for a single location or a path](https://github.com/valhalla/valhalla/blob/master/docs/api/elevation/api-reference.md)
+
+At the moment of writing (Jul 2018), elevation data is not imported in the distributed maps. The corresponding issue has been 
+opened (https://github.com/rinigus/osmscout-server/issues/244).
 
 
 ## Translations

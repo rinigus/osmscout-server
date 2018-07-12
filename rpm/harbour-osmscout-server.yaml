@@ -30,8 +30,9 @@ PkgConfigBR:
   - Qt5Xml
   - Qt5Sql
   - sqlite3
-  - libcurl
   - libsystemd-daemon
+  - zlib
+  - libcurl
 
 # Build dependencies without a pkgconfig setup can be listed here
 PkgBR:
@@ -43,6 +44,17 @@ PkgBR:
   - mapnik-devel
   - libicu52-devel
   - qt5-qttools-linguist
+  - valhalla-lite-devel
+  - protobuf-devel
+  - boost-devel >= 1.51
+  - boost-date-time >= 1.51
+  - boost-chrono >= 1.51
+  - boost-filesystem >= 1.51
+  - boost-iostreams >= 1.51
+  - boost-regex >= 1.51
+  - boost-system >= 1.51
+  - lz4-devel
+
 
 # Runtime dependencies which are not automatically detected
 Requires:

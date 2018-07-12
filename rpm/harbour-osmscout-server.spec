@@ -7,7 +7,7 @@ Name:       harbour-osmscout-server
 
 # >> macros
 %define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff.*$
+%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libboost_iostreams|libboost_chrono|libboost_thread|libboost_date_time|libprotobuf|libz|liblz4|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -31,8 +31,9 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(Qt5Sql)
 BuildRequires:  pkgconfig(sqlite3)
-BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  pkgconfig(libsystemd-daemon)
+BuildRequires:  pkgconfig(zlib)
+BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  libmarisa-devel
 BuildRequires:  libmicrohttpd-devel
 BuildRequires:  libosmscout-qt-devel
@@ -41,6 +42,16 @@ BuildRequires:  libkyotocabinet-devel
 BuildRequires:  mapnik-devel
 BuildRequires:  libicu52-devel
 BuildRequires:  qt5-qttools-linguist
+BuildRequires:  valhalla-lite-devel
+BuildRequires:  protobuf-devel
+BuildRequires:  boost-devel >= 1.51
+BuildRequires:  boost-date-time >= 1.51
+BuildRequires:  boost-chrono >= 1.51
+BuildRequires:  boost-filesystem >= 1.51
+BuildRequires:  boost-iostreams >= 1.51
+BuildRequires:  boost-regex >= 1.51
+BuildRequires:  boost-system >= 1.51
+BuildRequires:  lz4-devel
 BuildRequires:  desktop-file-utils
 
 %description
@@ -79,9 +90,6 @@ mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/libmapnik.so.3.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libproj.so.12 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_filesystem.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_regex.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_system.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libharfbuzz.so.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libjpeg.so.62 %{buildroot}%{_datadir}/%{name}/lib
@@ -89,6 +97,23 @@ cp /usr/lib/libfreetype.so.6 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
+
+cp /usr/lib/libboost_filesystem-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_regex-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_regex.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_system-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_system.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_iostreams-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_date_time-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_chrono-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_thread-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+
+cp /usr/lib/libprotobuf.so.8  %{buildroot}%{_datadir}/%{name}/lib
+
+cp /usr/lib/liblz4.so.1.8.1 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/liblz4.so.1 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libz.so.1.2.8 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libz.so.1 %{buildroot}%{_datadir}/%{name}/lib
 
 # mapnik fonts and input plugins
 # not needed anymore since input plugins are linked
