@@ -15,10 +15,68 @@
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
 
+#include <valhalla/midgard/logging.h>
+
 #include <QDebug>
+
+// List of blacklisted sub-strings that will not be
+// displayed to the user
+const static QStringList ignore_messages{
+  "[INFO] ",
+  "[ANALYTICS] ",
+  "elapsed time ",
+  "exceeded threshold::",
+  " GET /route?json=",
+  " 200 ",
+  "Tile extract could not be loaded"
+};
+
+// Logger class to send messages to InfoHub
+class ValhallaLogger: public valhalla::midgard::logging::Logger
+{
+public:
+  ValhallaLogger(const valhalla::midgard::logging::LoggingConfig& config): valhalla::midgard::logging::Logger(config)
+  {}
+
+  virtual void Log(const std::string &message, const valhalla::midgard::logging::LogLevel level)
+  {
+    // filter messages before logging
+    if (message.find("Tile extract could not be loaded") != std::string::npos)
+      return;
+
+    QString m = "Valhalla: " + QString::fromStdString(message);
+    if (level == valhalla::midgard::logging::LogLevel::ERROR)
+      InfoHub::logError(m);
+    else if (level == valhalla::midgard::logging::LogLevel::WARN)
+      InfoHub::logWarning(m);
+//    else if (level == valhalla::midgard::logging::LogLevel::INFO)
+//      InfoHub::logInfo(m);
+//    else
+//      qDebug() << "skipped in production: " << m;
+  }
+
+  virtual void Log(const std::string &message, const std::string& custom_directive)
+  {
+    // filter messages before logging
+    if (custom_directive.empty() ||
+        custom_directive.find("[ANALYTICS]") != std::string::npos)
+      return;
+
+    InfoHub::logInfo( "Valhalla: " + QString::fromStdString(custom_directive + ": " + message) );
+  }
+};
 
 ValhallaMaster::ValhallaMaster(QObject *parent) : QObject(parent)
 {
+  // register Valhalla logger
+  valhalla::midgard::logging::RegisterLogger("osmscout",
+                                             [](const valhalla::midgard::logging::LoggingConfig& config) {
+      valhalla::midgard::logging::Logger* l = new ValhallaLogger(config);
+      return l;
+    });
+
+  valhalla::midgard::logging::Configure({ {"type", "osmscout"}, {"color", ""} });
+
   onSettingsChanged();
 }
 
@@ -125,18 +183,6 @@ void ValhallaMaster::start()
   InfoHub::logInfo(tr("Valhalla routing engine started"));
 }
 
-// List of blacklisted sub-strings that will not be
-// displayed to the user
-const static QStringList ignore_messages{
-  "[INFO] ",
-  "[ANALYTICS] ",
-  "elapsed time ",
-  "exceeded threshold::",
-  " GET /route?json=",
-  " 200 ",
-  "Tile extract could not be loaded"
-};
-
 void ValhallaMaster::stop()
 {
   m_actor.release();
@@ -165,7 +211,7 @@ bool ValhallaMaster::callActor(ActorType atype, const QString &json, QByteArray 
     result = QByteArray::fromStdString(r);
   }
   catch (std::exception &e) {
-    InfoHub::logWarning("Exception in Valhalla routing: " + QString::fromStdString(e.what()));
+    InfoHub::logWarning(tr("Exception in Valhalla: %1").arg(QString::fromStdString(e.what())));
     success = false;
     m_actor->cleanup();
   }

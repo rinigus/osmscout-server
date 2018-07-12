@@ -24,8 +24,8 @@
     "logging": {
       "color": false,
       "file_name": "path_to_some_file.log",
-      "long_request": 100.0,
-      "type": "std_out"
+      "long_request": 3000.0,
+      "type": "osmscout"
     },
     "service": {
       "proxy": "ipc:///tmp/osmscout_server_valhalla_loki"
@@ -75,7 +75,7 @@
     "logging": {
       "color": false,
       "file_name": "path_to_some_file.log",
-      "type": "std_out"
+      "type": "osmscout"
     },
     "mode": "auto",
     "multimodal": {
@@ -97,7 +97,7 @@
     "logging": {
       "color": false,
       "file_name": "path_to_some_file.log",
-      "type": "std_out"
+      "type": "osmscout"
     },
     "max_cache_size": MAXIMAL_CACHE_SIZE,
     "shortcuts": true,
@@ -110,7 +110,7 @@
     "logging": {
       "color": false,
       "file_name": "path_to_some_file.log",
-      "type": "std_out"
+      "type": "osmscout"
     },
     "service": {
       "proxy": "ipc:///tmp/osmscout_server_valhalla_odin"
@@ -205,8 +205,8 @@
     "logging": {
       "color": false,
       "file_name": "path_to_some_file.log",
-      "long_request": 110.0,
-      "type": "std_out"
+      "long_request": 3000.0,
+      "type": "osmscout"
     },
     "service": {
       "proxy": "ipc:///tmp/osmscout_server_valhalla_thor"
@@ -217,8 +217,8 @@
     "logging": {
       "color": false,
       "file_name": "path_to_some_file.log",
-      "long_request": 100.0,
-      "type": "std_out"
+      "long_request": 3000.0,
+      "type": "osmscout"
     },
     "service": {
       "proxy": "ipc:///tmp/osmscout_server_valhalla_tyr"
