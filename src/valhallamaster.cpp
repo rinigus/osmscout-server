@@ -19,17 +19,6 @@
 
 #include <QDebug>
 
-// List of blacklisted sub-strings that will not be
-// displayed to the user
-const static QStringList ignore_messages{
-  "[INFO] ",
-  "[ANALYTICS] ",
-  "elapsed time ",
-  "exceeded threshold::",
-  " GET /route?json=",
-  " 200 ",
-  "Tile extract could not be loaded"
-};
 
 // Logger class to send messages to InfoHub
 class ValhallaLogger: public valhalla::midgard::logging::Logger
