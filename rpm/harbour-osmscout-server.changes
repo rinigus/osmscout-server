@@ -5,6 +5,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu Jul 12 2018 rinigus <rinigus.git@gmail.com> 1.8.0-1
+- use Valhalla C++ API
+- expose multiple Valhalla's services
+- add Mapbox GL car styles
+- update translations
+- other small changes
+
 * Sat Jun 16 2018 rinigus <rinigus.git@gmail.com> 1.7.0-1
 - support for aliases in multiple languages in guide search
 - support for POIs without a name in guide search
