@@ -7,7 +7,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="13"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="8"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>De server moet gebruikt worden met het cliëntprogramma dat kaarten kan weergeven, zoekopdrachten kan uitvoeren en geselecteerde routes kan weergeven. De server is een dunne laag die functionaliteit van &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; en &lt;i&gt;Mapbox GL&lt;/i&gt; blootstelt via webdiensten. Deze server kan gebruikt worden als een drop-in-vervanging voor online diensten die kaarten aanbieden.</translation>
+        <translation>De server moet worden gebruikt met het cliëntprogramma dat kaarten kan weergeven, zoekopdrachten kan uitvoeren en geselecteerde routes kan weergeven. De server is een dunne laag die functionaliteit van &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; en &lt;i&gt;Mapbox GL&lt;/i&gt; blootstelt via webdiensten. Deze server kan worden gebruikt als een drop-in-vervanging voor online diensten die kaarten aanbieden.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="19"/>
@@ -1784,7 +1784,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="880"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Routeberekening en andere diensten van Valhalla zijn niet beschikbaar, aangezien Valhalla uitgeschakeld is door het geselecteerde profiel of in de instellingen. %1</translation>
     </message>
 </context>
 <context>
@@ -2583,7 +2583,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitzondering in Valhalla: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="172"/>

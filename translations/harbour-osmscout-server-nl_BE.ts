@@ -1784,7 +1784,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="880"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Routeberekening en andere diensten van Valhalla zijn niet beschikbaar, aangezien dat Valhalla is uitgeschakeld door het geselecteerd profiel of in de instellingen. %1</translation>
     </message>
 </context>
 <context>
@@ -2583,7 +2583,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitzondering in Valhalla: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="172"/>
