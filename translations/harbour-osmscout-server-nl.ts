@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -1561,7 +1559,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="50"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="59"/>
         <source>Expected speed while walking</source>
-        <translation>Verwachte snelheid voor wandelen</translation>
+        <translation>Verwachte snelheid voor lopen</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="56"/>
@@ -2701,7 +2699,7 @@
         <location filename="../qml/qtcontrols/ValhallaPage.qml" line="74"/>
         <location filename="../qml/silica/pages/ValhallaPage.qml" line="82"/>
         <source>Limit for route by foot</source>
-        <translation>Limieten voor wandelroute</translation>
+        <translation>Limieten voor looproute</translation>
     </message>
 </context>
 <context>

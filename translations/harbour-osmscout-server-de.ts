@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -385,13 +383,13 @@
         <location filename="../qml/qtcontrols/ElementDownloads.qml" line="12"/>
         <location filename="../qml/silica/pages/ElementDownloads.qml" line="16"/>
         <source>No downloads active</source>
-        <translation>Keine Downloads aktiv</translation>
+        <translation>Keine laufenden Übertragungen</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ElementDownloads.qml" line="13"/>
         <location filename="../qml/silica/pages/ElementDownloads.qml" line="17"/>
         <source>Download active</source>
-        <translation>Download aktiv</translation>
+        <translation>Übertragung läuft</translation>
     </message>
 </context>
 <context>
@@ -783,7 +781,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="947"/>
         <source>Error starting the download of</source>
-        <translation>Fehler beim Starten des Downloads von</translation>
+        <translation>Fehler beim Starten der Übertragung von</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="964"/>
@@ -809,7 +807,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="1048"/>
         <source>Download failed from %1</source>
-        <translation>Download fehlgeschlagen von %1</translation>
+        <translation>Herunterladen von %1 fehlgeschlagen</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1084"/>
@@ -824,7 +822,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="1357"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
-        <translation>Aktualisierung nicht möglich, die Liste der Länderkarten fehlt. Aktualisiere sie zuerst, bevor du nach Karten-Aktualisierungen suchst.</translation>
+        <translation>Aktualisierung nicht möglich, die Liste der Länderkarten fehlt. Aktualisiere sie zuerst, bevor du nach Aktualisierungen für die Karten selbst suchst.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1095"/>
@@ -839,7 +837,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="1059"/>
         <source>Download failed, dropping all downloads</source>
-        <translation>Herunterladen fehlgeschlagen, beende alle Downloads</translation>
+        <translation>Herunterladen fehlgeschlagen, breche Übertragung ab</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1088"/>
@@ -859,7 +857,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="1140"/>
         <source>Stopping downloads</source>
-        <translation>Stoppe Downloads</translation>
+        <translation>Halte die Übertragung an</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1300"/>
@@ -1077,7 +1075,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="81"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="85"/>
         <source>Downloads</source>
-        <translation>Downloads</translation>
+        <translation>Übertragungen</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="96"/>
@@ -1095,7 +1093,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="137"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="144"/>
         <source>Stop download</source>
-        <translation>Stoppe Download</translation>
+        <translation>Herunterladen anhalten</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="147"/>
@@ -1113,7 +1111,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="195"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="207"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation>Liste der aktuell verfügbaren Karten und Datensätze aktualisieren und Kartenaktualisierungen für installierte Karten suchen.</translation>
+        <translation>Aktualisiere die Liste der aktuell verfügbaren Karten und zugehöriger Datensätze und suche nach Aktualisierungen für installierte Karten.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="204"/>
@@ -1377,7 +1375,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="125"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="143"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
-        <translation>Fehler beim Überprüfen auf nicht benötigte Dateien. Dies könnte z.B. auf aktive Downloads zurückzuführen sein.</translation>
+        <translation>Fehler bei der Suche nach ungenutzten Dateien. Das könnte z.B. an laufenden Übertragungen liegen.</translation>
     </message>
 </context>
 <context>
@@ -1718,7 +1716,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="68"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>Das Profil &lt;i&gt;Standard&lt;/i&gt; unterstützt Anwendungen, die das Plugin&lt;i&gt;Mapbox GL&lt;/i&gt; verwenden. Es verwendet &lt;i&gt;Geocoder-NLP&lt;/i&gt; zur Suche nach Orten und &lt;i&gt;Valhalla&lt;/i&gt; für die Routenberechnung. Dieses Profil wird für neuere Clients mit Vektorkachel-Karten empfohlen.&lt;br&gt;&lt;br&gt;Für Nutzer von Karten-Apps die mit herkömmlichen Rasterkacheln arbeiten enthält das empfohlene Profil für Karten mit Rasterkacheln Datensätze von &lt;i&gt;Mapnik&lt;/i&gt;, verwendet ansonsten die selben Such- und Routendienste wie das Profil &lt;i&gt;Standard&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Für Nutzer, die Karten-Apps für Raster- sowie Vektorkacheln nutzen möchten, enthält das entsprechende Profil Kartendaten von &lt;i&gt;Mapbox GL&lt;/i&gt; bereit und unterstützt gleichzeitig die Kartendarstellung über &lt;i&gt;Mapnik&lt;/i&gt;. Such- und Routendienst sind ebenfalls die selben wie für &lt;i&gt;Standard&lt;/i&gt;. Da dieses Profil Daten für verschiedene Darstellungsmethoden enthält, beansprucht es den meisten Speicherplatz.&lt;br&gt;&lt;br&gt;Das Profil, das &lt;i&gt;libosmscout&lt;/i&gt; mit &lt;i&gt;Geocoder-NLP&lt;/i&gt; kombiniert, benötigt  im Vergleich zum Standardprofil weniger Speicher. Allerdings sind dabei Kartendarstellung und Routenberechnung auf ein Kartengebiet eingeschränkt. Zudem sind die Darstellungsqualität geringer und die Routenberechnung langsamer.&lt;br&gt;&lt;br&gt;Das Profil &lt;i&gt;libosmscout&lt;/i&gt; hat insgesamt die geringsten Speicheranforderungen. Hier gelten jedoch die gleichen Einschränkungen wie für das Kombinationsprofil.&lt;br&gt;&lt;br&gt;Wenn du das Benutzerdefinierte Profil nutzt, sind die Einstellungen und Verwaltung des Kartenspeichers dir überlassen. Du kannst die Komponenten zur Kartendarstellung, Suche und Routenberechnung selbst wählen. Du bist allerdings auch dafür verantwortlich, die Einstellungen so zu setzen, dass Kartendaten und Darstellungsmethode des aktiven Backends aufeinander abgestimmt sind.</translation>
+        <translation>Das Profil &lt;i&gt;Standard&lt;/i&gt; unterstützt Anwendungen, die das Plugin &lt;i&gt;Mapbox GL&lt;/i&gt; verwenden. Es verwendet &lt;i&gt;Geocoder-NLP&lt;/i&gt; zur Suche nach Orten und &lt;i&gt;Valhalla&lt;/i&gt; für die Routenberechnung. Dieses Profil wird für neuere Clients mit Vektorkachel-Karten empfohlen.&lt;br&gt;&lt;br&gt;Für Nutzer von Karten-Apps die mit herkömmlichen Rasterkacheln arbeiten enthält das entsprechend empfohlene Profil Datensätze von &lt;i&gt;Mapnik&lt;/i&gt; und verwendet ansonsten die selben Such- und Routendienste wie das Profil &lt;i&gt;Standard&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Für Nutzer, die Karten-Apps sowohl für Raster- als auch Vektorkacheln nutzen möchten, stellt das zugehörige Profil Kartendaten von &lt;i&gt;Mapbox GL&lt;/i&gt; bereit und unterstützt gleichzeitig die Kartendarstellung über &lt;i&gt;Mapnik&lt;/i&gt;. Such- und Routendienst sind ebenfalls die selben wie für &lt;i&gt;Standard&lt;/i&gt;. Da dieses Profil jeweils die Daten für zwei unterschiedliche Darstellungsmethoden enthält, beansprucht es den meisten Speicherplatz.&lt;br&gt;&lt;br&gt;Das Profil, das &lt;i&gt;libosmscout&lt;/i&gt; mit &lt;i&gt;Geocoder-NLP&lt;/i&gt; kombiniert, benötigt  im Vergleich zum Standardprofil weniger Speicher. Allerdings sind dabei Kartendarstellung und Routenberechnung auf ein Kartengebiet eingeschränkt. Zudem sind die Darstellungsqualität geringer und die Routenberechnung langsamer.&lt;br&gt;&lt;br&gt;Das Profil &lt;i&gt;libosmscout&lt;/i&gt; hat insgesamt die geringsten Speicheranforderungen. Hier gelten jedoch die gleichen Einschränkungen wie für das Kombinationsprofil.&lt;br&gt;&lt;br&gt;Wenn du das Benutzerdefinierte Profil nutzt, sind die Einstellungen und Verwaltung des Kartenspeichers dir überlassen. Du kannst die Komponenten zur Kartendarstellung, Suche und Routenberechnung selbst wählen. Du bist allerdings auch dafür verantwortlich, die Einstellungen so zu setzen, dass Kartendaten und Darstellungsmethode des aktiven Backends aufeinander abgestimmt sind.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="51"/>
@@ -2733,7 +2731,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/main.cpp" line="156"/>
         <source>Start download of the maps</source>
-        <translation>Starte Herunterladen der Karten</translation>
+        <translation>Starte die Übertragung der Karten</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="160"/>
@@ -2753,7 +2751,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/main.cpp" line="172"/>
         <source>List maps provided for download</source>
-        <translation>Zeige Karte die zum Herunterladen zur Verfügung gestellt sind</translation>
+        <translation>Zeige Karten, die zum Herunterladen zur Verfügung stehen</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="176"/>
