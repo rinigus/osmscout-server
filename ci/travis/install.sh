@@ -25,6 +25,12 @@ sudo apt-get install -y \
      libmarisa-dev libmicrohttpd-dev libsnappy-dev libsqlite3-dev libkyotocabinet-dev libmapnik-dev \
      libsystemd-daemon-dev
 
+# valhalla
+sudo add-apt-repository -y ppa:valhalla-core/valhalla
+sudo apt-get update
+sudo apt-get install -y valhalla-bin
+
+# libpostal
 POSTAL_VERSION=1.0.0
 wget -O libpostal.tar.gz https://github.com/openvenues/libpostal/archive/v$POSTAL_VERSION.tar.gz
 tar zxvf libpostal.tar.gz
@@ -37,13 +43,14 @@ make
 sudo make install
 cd ..
 
+# libosmscout
 git clone https://github.com/rinigus/libosmscout.git
 cd libosmscout
 mkdir build
 cd build
 cmake -DBUILD_WITH_OPENMP=OFF -DOSMSCOUT_BUILD_MAP_OPENGL=OFF -DOSMSCOUT_BUILD_IMPORT=OFF -DOSMSCOUT_BUILD_MAP_AGG=OFF -DOSMSCOUT_BUILD_MAP_CAIRO=OFF -DOSMSCOUT_BUILD_MAP_SVG=OFF -DOSMSCOUT_BUILD_MAP_IOSX=OFF -DOSMSCOUT_BUILD_TESTS=OFF -DOSMSCOUT_BUILD_DEMOS=OFF -DOSMSCOUT_BUILD_BINDING_JAVA=OFF -DOSMSCOUT_BUILD_BINDING_CSHARP=OFF -DOSMSCOUT_BUILD_DOC_API=OFF -DOSMSCOUT_BUILD_CLIENT_QT=ON -DOSMSCOUT_BUILD_TOOL_OSMSCOUT2=OFF -DOSMSCOUT_BUILD_TOOL_STYLEEDITOR=OFF -DGPERFTOOLS_USAGE=OFF -DOSMSCOUT_BUILD_TOOL_IMPORT=OFF -DOSMSCOUT_BUILD_TOOL_DUMPDATA=OFF ..
-
 make
 sudo make install
+
 
 echo "Installation end time: `date`"
