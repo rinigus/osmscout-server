@@ -26,9 +26,22 @@ sudo apt-get install -y \
      libsystemd-daemon-dev
 
 # valhalla
+VALHALLA_VERSION=2.6.2
 sudo add-apt-repository -y ppa:valhalla-core/valhalla
 sudo apt-get update
-sudo apt-get install -y valhalla-bin
+sudo apt-get install -y cmake make libtool pkg-config g++ gcc jq lcov protobuf-compiler vim-common libboost-all-dev libboost-all-dev libcurl4-openssl-dev zlib1g-dev liblz4-dev libprime-server0.6.3-dev libprotobuf-dev
+sudo apt-get install -y libgeos-dev libgeos++-dev liblua5.2-dev libspatialite-dev libsqlite3-dev lua5.2 wget
+if [[ $(grep -cF xenial /etc/lsb-release) > 0 ]]; then sudo apt-get install -y libsqlite3-mod-spatialite; fi
+wget -O valhalla.tar.gz https://github.com/valhalla/valhalla/archive/$VALHALLA_VERSION.tar.gz
+tar zxvf valhalla.tar.gz
+cd valhalla-$VALHALLA_VERSION
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX:PATH=/usr -DBUILD_SHARED_LIBS=OFF -DBUILD_STATIC_LIBS=ON -DENABLE_DATA_TOOLS=OFF -DENABLE_PYTHON_BINDINGS=OFF -DENABLE_SERVICES=OFF
+make
+sudo make install
+cd ../..
+
 
 # libpostal
 POSTAL_VERSION=1.0.0
