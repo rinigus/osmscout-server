@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fr" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -520,29 +522,29 @@
         <translation>libpostal va utiliser toutes les langues</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="277"/>
-        <location filename="../src/geomaster.cpp" line="489"/>
+        <location filename="../src/geomaster.cpp" line="278"/>
+        <location filename="../src/geomaster.cpp" line="490"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Impossible de charger la base de données geocoding : %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="303"/>
+        <location filename="../src/geomaster.cpp" line="304"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Erreur de décodage par libpostal : les bases de données libpostal ne sont peut-être pas disponibles</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="339"/>
+        <location filename="../src/geomaster.cpp" line="340"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Requête analysée [%1]  : %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="350"/>
-        <location filename="../src/geomaster.cpp" line="526"/>
+        <location filename="../src/geomaster.cpp" line="351"/>
+        <location filename="../src/geomaster.cpp" line="527"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Erreur lors de la recherche avec geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="429"/>
+        <location filename="../src/geomaster.cpp" line="430"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Point de référence impossible à trouver</translation>
     </message>
@@ -1714,7 +1716,7 @@
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="68"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="51"/>
@@ -1751,38 +1753,38 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="55"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="325"/>
+        <location filename="../src/requestmapper.cpp" line="353"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="401"/>
+        <location filename="../src/requestmapper.cpp" line="429"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="569"/>
+        <location filename="../src/requestmapper.cpp" line="597"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="616"/>
+        <location filename="../src/requestmapper.cpp" line="644"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="751"/>
-        <location filename="../src/requestmapper.cpp" line="871"/>
+        <location filename="../src/requestmapper.cpp" line="779"/>
+        <location filename="../src/requestmapper.cpp" line="936"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="844"/>
-        <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <location filename="../src/requestmapper.cpp" line="880"/>
+        <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2414,12 +2416,12 @@
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="54"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="184"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="234"/>
@@ -2569,74 +2571,24 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="74"/>
-        <source>Cannot create configuration directory for Valhalla</source>
-        <translation>Impossible de créer le répertoire de configuration pour Valhalla</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="112"/>
+        <location filename="../src/valhallamaster.cpp" line="138"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Erreur lors de l&apos;ouverture du modèle de configuration Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="120"/>
+        <location filename="../src/valhallamaster.cpp" line="146"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Erreur lors de la lecture du modèle de configuration Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="135"/>
-        <source>Error opening Valhalla&apos;s configuration file %1</source>
-        <translation>Erreur lors de l&apos;ouverture du ficher de configuration Valhalla %1</translation>
+        <location filename="../src/valhallamaster.cpp" line="203"/>
+        <source>Exception in Valhalla: %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="143"/>
-        <source>Error writing Valhalla&apos;s configuration file</source>
-        <translation>Erreur lors de l&apos;écriture du ficher de configuration Valhalla</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="171"/>
-        <source>Starting Valhalla routing engine</source>
-        <translation>Démarrer le moteur de calcul d&apos;itinéraire Valhalla</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="259"/>
-        <source>Valhalla routing engine stopped</source>
-        <translation>Moteur de calcul d&apos;itinéraire Valhalla arrêté</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="276"/>
-        <source>Stopping Valhalla routing engine</source>
-        <translation>Moteur de calcul d&apos;itinéraire Valhalla en cours d&apos;arrêt</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="345"/>
-        <source>Error while communicating with Valhalla routing engine</source>
-        <translation>Erreur de communication avec le moteur de calcul d&apos;itinéraire Valhalla</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="352"/>
-        <source>Route found by Valhalla</source>
-        <translation>Itinéraire trouvé par Valhalla</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="247"/>
+        <location filename="../src/valhallamaster.cpp" line="172"/>
         <source>Valhalla routing engine started</source>
         <translation>Moteur de calcul d&apos;itinéraire Valhalla démarré</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="255"/>
-        <source>Valhalla exited with error: %1</source>
-        <translation>Valhalla a quitté avec l&apos;erreur : %1</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="286"/>
-        <source>Valhalla routing engine process cleanup</source>
-        <translation>Nettoyage du moteur de calcul d&apos;itinéraire Valhalla</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="306"/>
-        <source>Could not start the Valhalla routing service: %1</source>
-        <translation>Impossible de démarrer le service d&apos;itinéraire Valhalla : %1</translation>
     </message>
 </context>
 <context>
@@ -2781,7 +2733,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="72"/>
         <source>Home</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="79"/>

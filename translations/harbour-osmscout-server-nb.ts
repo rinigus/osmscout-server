@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nb" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nb" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -520,29 +522,29 @@
         <translation>libpostal vil bruke alle installerte språk</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="277"/>
-        <location filename="../src/geomaster.cpp" line="489"/>
+        <location filename="../src/geomaster.cpp" line="278"/>
+        <location filename="../src/geomaster.cpp" line="490"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Kan ikke åpne geocoding database: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="303"/>
+        <location filename="../src/geomaster.cpp" line="304"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Feil oppdeling av libpostal, kanskje libpostal databaser ikke er tilgjengelige</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="339"/>
+        <location filename="../src/geomaster.cpp" line="340"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Oppdelt spørring [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="350"/>
-        <location filename="../src/geomaster.cpp" line="526"/>
+        <location filename="../src/geomaster.cpp" line="351"/>
+        <location filename="../src/geomaster.cpp" line="527"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Feil ved søking med geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="429"/>
+        <location filename="../src/geomaster.cpp" line="430"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Søk etter referansepunkt  mislyktes: Finner ikke</translation>
     </message>
@@ -1754,35 +1756,35 @@
         <translation>Aktiver tilsvarende tjenest(er) ved hjelp av Profiler.</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="325"/>
+        <location filename="../src/requestmapper.cpp" line="353"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Raster fliser er ikke tilgjengelig siden Mapnik og libosmscout er deaktivert av den valgte profil eller innstillinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="401"/>
+        <location filename="../src/requestmapper.cpp" line="429"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
         <translation>Mapbox GL tjenesten er deaktivert av den valgte profil eller innstilinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="569"/>
+        <location filename="../src/requestmapper.cpp" line="597"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Søk er ikke tilgjengelig siden GeocoderNLP and libosmscout er deaktivert av den valgte profil eller innstilinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="616"/>
+        <location filename="../src/requestmapper.cpp" line="644"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation> Oppslag av POI i nærheten er ikke tilgjengelig siden GeocoderNLP og libosmscout er deaktivert av den valgte profil eller innstilinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="751"/>
-        <location filename="../src/requestmapper.cpp" line="871"/>
+        <location filename="../src/requestmapper.cpp" line="779"/>
+        <location filename="../src/requestmapper.cpp" line="936"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Ruting er ikke tilgjengelig siden Valhalla og libosmscout er deaktivert av den valgte profil eller innstilinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="844"/>
-        <source>Routing is not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation>Ruting er ikke tilgjengelig siden Valhalla er deaktivert av den valgte profil eller innstilinger. %1</translation>
+        <location filename="../src/requestmapper.cpp" line="880"/>
+        <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2569,74 +2571,24 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="74"/>
-        <source>Cannot create configuration directory for Valhalla</source>
-        <translation>Kan ikke opprette konfigurasjons mappe for Valhalla</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="112"/>
+        <location filename="../src/valhallamaster.cpp" line="138"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Feil ved åpning av Valhallas konfigurasjonsmal %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="120"/>
+        <location filename="../src/valhallamaster.cpp" line="146"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Feil ved åpning av Valhallas konfigurasjonsmal %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="135"/>
-        <source>Error opening Valhalla&apos;s configuration file %1</source>
-        <translation>Feil ved åpning av Valhallas konfigurasjonsfil %1</translation>
+        <location filename="../src/valhallamaster.cpp" line="203"/>
+        <source>Exception in Valhalla: %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="143"/>
-        <source>Error writing Valhalla&apos;s configuration file</source>
-        <translation>Feil ved skriving til Valhallas konfigurasjonsfil</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="171"/>
-        <source>Starting Valhalla routing engine</source>
-        <translation>Starter Valhalla rutemotor</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="259"/>
-        <source>Valhalla routing engine stopped</source>
-        <translation>Valhalla rutemotor stoppet</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="276"/>
-        <source>Stopping Valhalla routing engine</source>
-        <translation>Stopper Valhalla rutemotor</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="345"/>
-        <source>Error while communicating with Valhalla routing engine</source>
-        <translation>Feil under kommunikasjon med Valhalla rutemotor</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="352"/>
-        <source>Route found by Valhalla</source>
-        <translation>Rute funnet av Valhalla</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="247"/>
+        <location filename="../src/valhallamaster.cpp" line="172"/>
         <source>Valhalla routing engine started</source>
         <translation>Valhalla rutemotor startet</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="255"/>
-        <source>Valhalla exited with error: %1</source>
-        <translation>Valhalla avsluttet med feil: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="286"/>
-        <source>Valhalla routing engine process cleanup</source>
-        <translation>Valhalla rutemotor utfører opprydding</translation>
-    </message>
-    <message>
-        <location filename="../src/valhallamaster.cpp" line="306"/>
-        <source>Could not start the Valhalla routing service: %1</source>
-        <translation>Kunne ikke starte Valhalla-rutingstjenesten: %1</translation>
     </message>
 </context>
 <context>
