@@ -18,6 +18,7 @@ MapnikMaster *mapnikMaster = NULL;
 
 #ifdef USE_VALHALLA
 ValhallaMaster *valhallaMaster = NULL;
+ValhallaMapMatcher *valhallaMapMatcher = NULL;
 #endif
 
 std::atomic<bool> useGeocoderNLP;

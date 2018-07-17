@@ -338,6 +338,13 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
       return -5;
     }
+
+  valhallaMapMatcher = new ValhallaMapMatcher(app.data());
+  if (valhallaMapMatcher == nullptr)
+    {
+      std::cerr << "Failed to allocate ValhallaMapMatcher" << std::endl;
+      return -5;
+    }
 #endif
 
 #ifdef IS_SAILFISH_OS
@@ -474,6 +481,8 @@ int main(int argc, char *argv[])
 
 #ifdef USE_VALHALLA
   valhallaMaster->start();
+#pragma message "REMOVE THIS TESTING CODE"
+  valhallaMapMatcher->start("HELLO ID", "car");
 #endif
 
   // prepare server by processing all outstanding events
