@@ -32,6 +32,14 @@
 
 #define GENERAL_APP_VERSION 4
 
+// d-bus access
+#define DBUS_SERVICE "org.osm.scout.server1"
+#define DBUS_PATH_ROOT "/org/osm/scout/server1"
+#define DBUS_INTERFACE_ROOT "org.osm.scout.server1"
+
+#define DBUS_PATH_MAPMATCHING DBUS_PATH_ROOT "/mapmatching1"
+#define DBUS_INTERFACE_MAPMATCHING DBUS_INTERFACE_ROOT ".mapmatching1"
+
 //////////////////////////////////////////////
 /// global variables
 

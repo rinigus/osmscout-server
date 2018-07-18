@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = harbour-osmscout-server
 
-QT += core gui network sql xml positioning
+QT += core gui network sql xml positioning dbus
 
 CONFIG += c++11 object_parallel_to_source
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
@@ -89,8 +89,8 @@ SOURCES += \
     src/systemdservice.cpp \
     src/util.cpp \
     src/mapboxglmaster.cpp \ 
-    src/valhallamapmatcher.cpp
-#    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
+    src/valhallamapmatcher.cpp \
+    src/valhallamapmatcherdbus.cpp
 
 OTHER_FILES += rpm/osmscout-server.spec
 
@@ -121,9 +121,8 @@ HEADERS += \
     src/systemdservice.h \
     src/util.hpp \
     src/mapboxglmaster.h \
-    src/valhallamapmatcher.h
-#    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
-#    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
+    src/valhallamapmatcher.h \
+    src/valhallamapmatcherdbus.h
 
 use_osmscout {
     DEFINES += USE_OSMSCOUT

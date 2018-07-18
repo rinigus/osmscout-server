@@ -28,7 +28,7 @@ public:
   /// \brief Call Valhalla's action
   ///
   /// Used to call route, trace_attributes and other actor actions
-  bool callActor(ActorType atype, const QString &json, QByteArray &result);
+  bool callActor(ActorType atype, const QByteArray &json, QByteArray &result);
 
   void start();
 

@@ -39,6 +39,9 @@
 #include "microhttpserver.h"
 #include "requestmapper.h"
 
+// DBus interface
+#include "valhallamapmatcherdbus.h"
+
 // LIB OSM Scout interface
 #include "dbmaster.h"
 
@@ -52,8 +55,9 @@
 #include "systemdservice.h"
 #include "util.hpp"
 
-#include <QTranslator>
 #include <QCommandLineParser>
+#include <QDBusConnection>
+#include <QTranslator>
 
 #include <QDebug>
 
@@ -481,8 +485,6 @@ int main(int argc, char *argv[])
 
 #ifdef USE_VALHALLA
   valhallaMaster->start();
-#pragma message "REMOVE THIS TESTING CODE"
-  valhallaMapMatcher->start("HELLO ID", "car");
 #endif
 
   // prepare server by processing all outstanding events
@@ -520,6 +522,18 @@ int main(int argc, char *argv[])
       QObject::connect(&requests, &RequestMapper::idleTimeout,
                        app.data(), QCoreApplication::quit );
 #endif
+
+    // establish d-bus connection
+    QDBusConnection dbussession = QDBusConnection::sessionBus();
+
+    // add d-bus interface
+    new ValhallaMapMatcherDBus(valhallaMapMatcher);
+    if (!dbussession.registerObject(DBUS_PATH_MAPMATCHING, valhallaMapMatcher))
+      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
+
+    // register dbus service
+    if (!dbussession.registerService(DBUS_SERVICE))
+      InfoHub::logWarning(app->tr("Failed to register DBus service: %1").arg(DBUS_SERVICE));
 
     return_code = app->exec();
   }

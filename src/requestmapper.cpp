@@ -916,7 +916,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
       Task *task = new Task(connection_id,
                             std::bind(&ValhallaMaster::callActor, valhallaMaster,
-                                      actor, json, std::placeholders::_1),
+                                      actor, json.toLatin1(), std::placeholders::_1),
                             "Error while looking for route via Valhalla");
       m_pool.start(task);
 
