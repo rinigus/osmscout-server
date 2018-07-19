@@ -7,7 +7,7 @@
 #include <QDBusAbstractAdaptor>
 #include <QDBusMessage>
 #include <QHash>
-#include <QPointer>
+#include <QSharedPointer>
 
 class ValhallaMapMatcherDBus : public QDBusAbstractAdaptor
 {
@@ -19,14 +19,21 @@ public:
   ~ValhallaMapMatcherDBus();
 
 public slots:
-  QString update(double lat, double lon, double accuracy, const QDBusMessage &message);
+  QString update(int mode, double lat, double lon, double accuracy, const QDBusMessage &message);
 
-  bool start(int mode, const QDBusMessage &message);
+  bool reset(int mode, const QDBusMessage &message);
   bool stop(int mode, const QDBusMessage &message);
   bool stop(const QDBusMessage &message);
 
+protected:
+  QSharedPointer<ValhallaMapMatcher> get(int mode, const QString &caller);
+
 private:
-  QHash<QString, QPointer<ValhallaMapMatcher> > m_matchers;
+  /// \brief map matchers stored in a map
+  ///
+  /// For each client, a map matchers are organized according to
+  /// the mode. This allows to have multiple modes per one client
+  QHash< QString, QHash<int, QSharedPointer<ValhallaMapMatcher> > > m_matchers;
 };
 
 #endif // VALHALLAMAPMATCHERDBUS_H

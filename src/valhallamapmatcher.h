@@ -21,15 +21,12 @@ public:
   enum Mode { Auto=1, AutoShorter=2, Bicycle=3, Bus=4, Pedestrian=5, Unknown=-1 };
 
 public:
-  explicit ValhallaMapMatcher(QObject *parent = nullptr);
+  explicit ValhallaMapMatcher(int mode);
   virtual ~ValhallaMapMatcher();
 
-  bool start(const Mode mode);
-  bool stop(const Mode mode);
+  bool start();
+  bool stop();
   QString update(double lat, double lon, double accuracy);
-
-  static QString mode2str(Mode mode);
-  static Mode int2mode(int i);
 
 protected:
 
@@ -56,20 +53,25 @@ protected:
     Point(const QGeoCoordinate &c, double a): coordinate(c), accuracy(a) {}
   };
 
+  static QString mode2str(Mode mode);
+  static Mode int2mode(int i);
 
 protected:
 
-  void fillRequest(Mode mode, const QJsonArray &shape, double accuracy, QByteArray &request);
+  void preFillRequest();
+  void fillRequest(const QJsonArray &shape, double accuracy, QByteArray &request);
 
-  void setProperty(Mode mode, const QString &key, int value, QJsonObject &response);
-  void setProperty(Mode mode, const QString &key, double value, QJsonObject &response);
-  void setProperty(Mode mode, const QString &key, const QString &value, QJsonObject &response);
+  void setProperty(const QString &key, int value, QJsonObject &response);
+  void setProperty(const QString &key, double value, QJsonObject &response);
+  void setProperty(const QString &key, const QString &value, QJsonObject &response);
 
 protected:
   QList<Point> m_locations;
   Point m_last_position_info;
 
-  QHash<Mode, Properties > m_properties; // key=mode
+  Mode m_mode{Unknown};
+  Properties m_properties;
+  QJsonObject m_request_base;
 };
 
 

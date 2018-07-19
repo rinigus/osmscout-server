@@ -520,10 +520,12 @@ int main(int argc, char *argv[])
     QDBusConnection dbussession = QDBusConnection::sessionBus();
 
     // add d-bus interface
+#ifdef USE_VALHALLA
     QObject objValhallaMapMatcher; // dummy object used by DBus interface
     new ValhallaMapMatcherDBus(&objValhallaMapMatcher);
     if (!dbussession.registerObject(DBUS_PATH_MAPMATCHING, &objValhallaMapMatcher))
       InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
+#endif
 
     // register dbus service
     if (!dbussession.registerService(DBUS_SERVICE))

@@ -25,20 +25,32 @@ static const QString propDirection{"direction"};
 static const QString propDirectionValid{"direction_valid"};
 
 
-ValhallaMapMatcher::ValhallaMapMatcher(QObject *parent) : QObject(parent)
+ValhallaMapMatcher::ValhallaMapMatcher(int mode) :
+  QObject(),
+  m_mode(int2mode(mode))
 {
+  preFillRequest();
 }
 
 ValhallaMapMatcher::~ValhallaMapMatcher()
 {
 }
 
-bool ValhallaMapMatcher::start(const Mode mode)
+bool ValhallaMapMatcher::start()
 {
-  InfoHub::logInfo(tr("Map matching requested: mode=%1").arg(mode));
+  InfoHub::logInfo(tr("Map matching requested: mode=%1").arg(mode2str(m_mode)));
 
   // reset properties cache to force update
-  m_properties[mode] = Properties();
+  m_properties = Properties();
+  m_last_position_info = Point();
+
+  return true;
+}
+
+bool ValhallaMapMatcher::stop()
+{
+  // reset properties cache to force update
+  m_properties = Properties();
   m_last_position_info = Point();
 
   return true;
@@ -83,104 +95,96 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
 
   // map match for all requested modes
   QJsonObject response;
-  for (auto pmode = m_properties.keyBegin(); pmode != m_properties.keyEnd(); ++pmode)
+
+  QByteArray request;
+  fillRequest(shape, accuracy, request);
+
+  QByteArray res;
+  if ( valhallaMaster->callActor(ValhallaMaster::TraceAttributes, request, res) )
     {
-      const Mode mode = *pmode;
-      QByteArray request;
-      fillRequest(mode, shape, accuracy, request);
+      QJsonObject d = QJsonDocument::fromJson(res).object();
+      QJsonArray points = d.value("matched_points").toArray();
+      QJsonArray edges = d.value("edges").toArray();
 
-      qDebug() << "Request: " << request.toStdString().c_str();
-
-      QByteArray res;
-      QJsonObject rmode;
-      if ( valhallaMaster->callActor(ValhallaMaster::TraceAttributes, request, res) )
+      if (points.size() != shape.size())
         {
-          QJsonObject d = QJsonDocument::fromJson(res).object();
-          QJsonArray points = d.value("matched_points").toArray();
-          QJsonArray edges = d.value("edges").toArray();
+          // technical message, should not occure => no translation needed
+          InfoHub::logWarning("Something is wrong with map matching: mismatch of number of points");
+          return "{}";
+        }
 
-          if (points.size() != shape.size())
-            {
-              // technical message, should not occure => no translation needed
-              InfoHub::logWarning("Something is wrong with map matching: mismatch of number of points");
-              continue;
-            }
+      QJsonObject p = points.last().toObject();
 
-          QJsonObject p = points.last().toObject();
+      // check that we have all required keys in matched point
+      if ( !p.contains("distance_along_edge") ||
+           !p.contains("lat") ||
+           !p.contains("lon") ||
+           !p.contains("edge_index") ||
+           !p.contains("type") )
+        return "{}";
 
-          // check that we have all required keys in matched point
-          if ( !p.contains("distance_along_edge") ||
-               !p.contains("lat") ||
-               !p.contains("lon") ||
-               !p.contains("edge_index") ||
-               !p.contains("type") )
-            continue;
+      bool street_found = true;
+      QGeoCoordinate cmatch(c);
+      if ( p.value("type").toString() != "matched" )
+        street_found = false;
+      else
+        {
+          cmatch.setLatitude(p.value("lat").toDouble());
+          cmatch.setLongitude(p.value("lon").toDouble());
 
-          bool street_found = true;
-          QGeoCoordinate cmatch(c);
-          if ( p.value("type").toString() != "matched" )
+          double ed = p.value("distance_along_edge").toDouble();
+          int ei = p.value("edge_index").toInt();
+
+          if (ei<0 ||
+              edges.size() <= ei)
             street_found = false;
           else
             {
-              cmatch.setLatitude(p.value("lat").toDouble());
-              cmatch.setLongitude(p.value("lon").toDouble());
-
-              double ed = p.value("distance_along_edge").toDouble();
-              int ei = p.value("edge_index").toInt();
-
-              if (ei<0 ||
-                  edges.size() <= ei)
+              QJsonObject e = edges.at(ei).toObject();
+              if ( !e.contains("begin_heading") ||
+                   !e.contains("end_heading") )
                 street_found = false;
               else
                 {
-                  QJsonObject e = edges.at(ei).toObject();
-                  if ( !e.contains("begin_heading") ||
-                       !e.contains("end_heading") )
-                    street_found = false;
-                  else
+                  double a0 = e.value("begin_heading").toDouble() / 180.0 * M_PI;
+                  double a1 = e.value("end_heading").toDouble() / 180.0 * M_PI;
+                  double d0_x = cos(a0);
+                  double d0_y = sin(a0);
+                  double d1_x = cos(a1);
+                  double d1_y = sin(a1);
+                  double direction = atan2(d0_y*(1-ed)+d1_y*ed, d0_x*(1-ed)+d1_x*ed);
+
+                  QString street_name="";
+                  for (auto v: e.value("names").toArray())
                     {
-                      double a0 = e.value("begin_heading").toDouble() / 180.0 * M_PI;
-                      double a1 = e.value("end_heading").toDouble() / 180.0 * M_PI;
-                      double d0_x = cos(a0);
-                      double d0_y = sin(a0);
-                      double d1_x = cos(a1);
-                      double d1_y = sin(a1);
-                      double direction = atan2(d0_y*(1-ed)+d1_y*ed, d0_x*(1-ed)+d1_x*ed);
-
-                      QString street_name="";
-                      for (auto v: e.value("names").toArray())
-                        {
-                          if (street_name.length() > 0)
-                            street_name += "; ";
-                          street_name += v.toString();
-                        }
-
-                      double speed = e.value("speed").toDouble(-1);
-                      double speed_limit = e.value("speed_limit").toDouble(-1);
-
-                      setProperty(mode, propStreetName, street_name, rmode);
-                      setProperty(mode, propDirection, direction, rmode);
-                      setProperty(mode, propDirectionValid, 1, rmode);
-                      setProperty(mode, propStreetSpeedAssumed, speed, rmode);
-                      setProperty(mode, propStreetSpeedLimit, speed_limit, rmode);
+                      if (street_name.length() > 0)
+                        street_name += "; ";
+                      street_name += v.toString();
                     }
+
+                  double speed = e.value("speed").toDouble(-1);
+                  double speed_limit = e.value("speed_limit").toDouble(-1);
+
+                  setProperty(propStreetName, street_name, response);
+                  setProperty(propDirection, direction, response);
+                  setProperty(propDirectionValid, 1, response);
+                  setProperty(propStreetSpeedAssumed, speed, response);
+                  setProperty(propStreetSpeedLimit, speed_limit, response);
                 }
-            }
-
-          setProperty(mode, propLatitude, cmatch.latitude(), rmode);
-          setProperty(mode, propLongitude, cmatch.longitude(), rmode);
-
-          if (!street_found)
-            {
-              setProperty(mode, propStreetName, "", rmode);
-              setProperty(mode, propStreetSpeedAssumed, 0.0, rmode);
-              setProperty(mode, propStreetSpeedLimit, 0.0, rmode);
-              setProperty(mode, propDirection, 0.0, rmode);
-              setProperty(mode, propDirectionValid, 0, rmode);
             }
         }
 
-      response.insert(mode2str(mode), rmode);
+      setProperty(propLatitude, cmatch.latitude(), response);
+      setProperty(propLongitude, cmatch.longitude(), response);
+
+      if (!street_found)
+        {
+          setProperty(propStreetName, "", response);
+          setProperty(propStreetSpeedAssumed, 0.0, response);
+          setProperty(propStreetSpeedLimit, 0.0, response);
+          setProperty(propDirection, 0.0, response);
+          setProperty(propDirectionValid, 0, response);
+        }
     }
 
   // save last location
@@ -194,7 +198,7 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
   m_last_position_info = curr_point;
 
   QJsonDocument d(response);
-  return d.toJson();
+  return d.toJson(QJsonDocument::Compact);
 }
 
 QString ValhallaMapMatcher::mode2str(Mode mode)
@@ -216,17 +220,17 @@ ValhallaMapMatcher::Mode ValhallaMapMatcher::int2mode(int i)
   return Unknown;
 }
 
-void ValhallaMapMatcher::fillRequest(Mode mode, const QJsonArray &shape, double accuracy, QByteArray &request)
+void ValhallaMapMatcher::preFillRequest()
 {
   QJsonObject r;
-  switch (mode) {
+  switch (m_mode) {
     case Auto: r.insert("costing", "auto"); break;
     case AutoShorter: r.insert("costing", "auto_shorter"); break;
     case Bicycle: r.insert("costing", "bicycle"); break;
     case Bus: r.insert("costing", "bus"); break;
     case Pedestrian: r.insert("costing", "pedestrian"); break;
     default:
-      InfoHub::logWarning(tr("Map matching mode %1 is not supported").arg(mode));
+      InfoHub::logWarning(tr("Map matching mode %1 is not supported").arg(m_mode));
       return;
     }
 
@@ -240,6 +244,7 @@ void ValhallaMapMatcher::fillRequest(Mode mode, const QJsonArray &shape, double 
   att.append("edge.begin_heading");
   att.append("edge.end_heading");
   att.append("matched.point");
+  att.append("matched.type");
   att.append("matched.edge_index");
   att.append("matched.distance_along_edge");
 
@@ -253,28 +258,36 @@ void ValhallaMapMatcher::fillRequest(Mode mode, const QJsonArray &shape, double 
   r.insert("filters", filters);
   r.insert("direction_options", dopt);
 
+
+  m_request_base = r;
+}
+
+void ValhallaMapMatcher::fillRequest(const QJsonArray &shape, double accuracy, QByteArray &request)
+{
+  QJsonObject r(m_request_base);
+
   r.insert("shape", shape);
   r.insert("gps_accuracy", accuracy);
 
   QJsonDocument d(r);
-  request = d.toJson();
+  request = d.toJson(QJsonDocument::Compact);
 }
 
-void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, int value, QJsonObject &response)
+void ValhallaMapMatcher::setProperty(const QString &key, int value, QJsonObject &response)
 {
-  if (m_properties[mode].set(key, value))
+  if (m_properties.set(key, value))
     response.insert(key, value);
 }
 
-void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, double value, QJsonObject &response)
+void ValhallaMapMatcher::setProperty(const QString &key, double value, QJsonObject &response)
 {
-  if (m_properties[mode].set(key, value))
+  if (m_properties.set(key, value))
     response.insert(key, value);
 }
 
-void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, const QString &value, QJsonObject &response)
+void ValhallaMapMatcher::setProperty(const QString &key, const QString &value, QJsonObject &response)
 {
-  if (m_properties[mode].set(key, value))
+  if (m_properties.set(key, value))
     response.insert(key, value);
 }
 
