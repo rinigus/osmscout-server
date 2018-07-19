@@ -1,29 +1,34 @@
 #ifndef VALHALLAMAPMATCHERDBUS_H
 #define VALHALLAMAPMATCHERDBUS_H
 
-#include "config.h"
 #include "valhallamapmatcher.h"
 
 #include <QDBusAbstractAdaptor>
+#include <QDBusConnection>
 #include <QDBusMessage>
 #include <QHash>
 #include <QSharedPointer>
 
-class ValhallaMapMatcherDBus : public QDBusAbstractAdaptor
+class ValhallaMapMatcherDBus : public QObject
 {
   Q_OBJECT
-  Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_MAPMATCHING)
 
 public:
-  ValhallaMapMatcherDBus(QObject *parent);
+  ValhallaMapMatcherDBus(QObject *parent=nullptr);
   ~ValhallaMapMatcherDBus();
 
 public slots:
+  //////////////////////////////////////////////////////////////////////////////////////////
+  /// NB! when adding slots for DBus export, don't forget to add them in the adaptor as well
+
   QString update(int mode, double lat, double lon, double accuracy, const QDBusMessage &message);
 
   bool reset(int mode, const QDBusMessage &message);
   bool stop(int mode, const QDBusMessage &message);
   bool stop(const QDBusMessage &message);
+
+  // used to track lost clients - not for export on dbus
+  void onNameOwnerChanged(QString name, QString old_owner, QString new_owner);
 
 protected:
   QSharedPointer<ValhallaMapMatcher> get(int mode, const QString &caller);

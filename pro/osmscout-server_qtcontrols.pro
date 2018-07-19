@@ -83,7 +83,8 @@ SOURCES += src/dbmaster.cpp \
     src/util.cpp \
     src/mapboxglmaster.cpp \
     src/valhallamapmatcher.cpp \
-    src/valhallamapmatcherdbus.cpp
+    src/valhallamapmatcherdbus.cpp \
+    src/valhallamapmatcherdbusadaptor.cpp
     
 OTHER_FILES += \
     osmscout-server.desktop
@@ -116,7 +117,8 @@ HEADERS += \
     src/util.hpp \
     src/mapboxglmaster.h \
     src/valhallamapmatcher.h \
-    src/valhallamapmatcherdbus.h
+    src/valhallamapmatcherdbus.h \
+    src/valhallamapmatcherdbusadaptor.h
     
 use_osmscout {
     DEFINES += USE_OSMSCOUT

@@ -1,11 +1,11 @@
 #include "valhallamapmatcherdbus.h"
+#include "infohub.h"
 
 #include <QDebug>
 
 ValhallaMapMatcherDBus::ValhallaMapMatcherDBus(QObject *parent):
-  QDBusAbstractAdaptor(parent)
+  QObject(parent)
 {
-
 }
 
 ValhallaMapMatcherDBus::~ValhallaMapMatcherDBus()
@@ -47,4 +47,14 @@ bool ValhallaMapMatcherDBus::stop(const QDBusMessage &message)
   if (m_matchers.contains(caller))
     m_matchers.remove(caller);
   return true;
+}
+
+void ValhallaMapMatcherDBus::onNameOwnerChanged(QString name, QString /*old_owner*/, QString new_owner)
+{
+  if (new_owner.length() < 1 &&
+      m_matchers.contains(name))
+    {
+      InfoHub::logInfo(tr("Closing map matching service for DBus client %1").arg(name));
+      m_matchers.remove(name);
+    }
 }

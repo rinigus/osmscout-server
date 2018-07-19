@@ -41,6 +41,7 @@
 
 // DBus interface
 #include "valhallamapmatcherdbus.h"
+#include "valhallamapmatcherdbusadaptor.h"
 
 // LIB OSM Scout interface
 #include "dbmaster.h"
@@ -522,18 +523,21 @@ int main(int argc, char *argv[])
 #endif
 
     // establish d-bus connection
-    QDBusConnection dbussession = QDBusConnection::sessionBus();
+    QDBusConnection dbusconnection = QDBusConnection::sessionBus();
 
     // add d-bus interface
 #ifdef USE_VALHALLA
-    QObject objValhallaMapMatcher; // dummy object used by DBus interface
-    new ValhallaMapMatcherDBus(&objValhallaMapMatcher);
-    if (!dbussession.registerObject(DBUS_PATH_MAPMATCHING, &objValhallaMapMatcher))
+    ValhallaMapMatcherDBus valhallaMapMatcherDBus;
+    new ValhallaMapMatcherDBusAdaptor(&valhallaMapMatcherDBus);
+    if (!dbusconnection.registerObject(DBUS_PATH_MAPMATCHING, &valhallaMapMatcherDBus))
       InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
+    else
+      dbusconnection.connect(QString(), "/org/freedesktop/DBus", "org.freedesktop.DBus", "NameOwnerChanged",
+                             &valhallaMapMatcherDBus, SLOT(onNameOwnerChanged(QString,QString,QString)));
 #endif
 
     // register dbus service
-    if (!dbussession.registerService(DBUS_SERVICE))
+    if (!dbusconnection.registerService(DBUS_SERVICE))
       InfoHub::logWarning(app->tr("Failed to register DBus service: %1").arg(DBUS_SERVICE));
 
     return_code = app->exec();
