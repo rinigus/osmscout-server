@@ -512,8 +512,13 @@ int main(int argc, char *argv[])
     // enable idle timeout shutdown if started by systemd
 #ifdef USE_SYSTEMD
     if (parser.isSet(optionSystemD))
-      QObject::connect(&requests, &RequestMapper::idleTimeout,
-                       app.data(), QCoreApplication::quit );
+      {
+        QObject::connect(&infoHub, &InfoHub::activitySig,
+                         &requests, &RequestMapper::updateLastCall,
+                         Qt::QueuedConnection);
+        QObject::connect(&requests, &RequestMapper::idleTimeout,
+                         app.data(), QCoreApplication::quit );
+      }
 #endif
 
     // establish d-bus connection

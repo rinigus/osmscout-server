@@ -39,6 +39,7 @@ ValhallaMapMatcher::~ValhallaMapMatcher()
 bool ValhallaMapMatcher::start()
 {
   InfoHub::logInfo(tr("Map matching requested: mode=%1").arg(mode2str(m_mode)));
+  InfoHub::activity();
 
   // reset properties cache to force update
   m_properties = Properties();
@@ -58,6 +59,8 @@ bool ValhallaMapMatcher::stop()
 
 QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
 {
+  InfoHub::activity();
+
   // do we need to make update or the new point is
   // the same as the last one?
   QGeoCoordinate c(lat, lon);

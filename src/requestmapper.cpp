@@ -330,6 +330,12 @@ protected:
   QString m_error_message;
 };
 
+/// Update last call
+void RequestMapper::updateLastCall()
+{
+  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
+}
+
 /////////////////////////////////////////////////////////////////////////////
 /// Request mapper main service function
 /////////////////////////////////////////////////////////////////////////////
@@ -340,8 +346,7 @@ unsigned int RequestMapper::service(const char *url_c,
   QUrl url(url_c);
   QString path(url.path());
 
-  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
-
+  updateLastCall();
 
   //////////////////////////////////////////////////////////////////////
   /// TILES

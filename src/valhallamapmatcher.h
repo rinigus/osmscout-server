@@ -28,6 +28,9 @@ public:
   bool stop();
   QString update(double lat, double lon, double accuracy);
 
+signals:
+  void activity();
+
 protected:
 
   // helper class to keep earlier recorded map

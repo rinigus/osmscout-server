@@ -33,6 +33,8 @@ public:
   static void addJobToQueue();
   static void removeJobFromQueue();
 
+  static void activity();
+
   int queue();
 
 signals:
@@ -43,6 +45,8 @@ signals:
   void info(QString info);
   void warning(QString warning);
   void error(QString error);
+
+  void activitySig();
 
 public slots:
   void onSettingsChanged();
@@ -55,6 +59,7 @@ protected:
   void sessionLog(const QString &txt);
 
   void implChangeQueue(int delta);
+  void implActivity();
 
 protected:
   QMutex m_mutex;
