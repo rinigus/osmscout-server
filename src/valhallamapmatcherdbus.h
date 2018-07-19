@@ -2,9 +2,12 @@
 #define VALHALLAMAPMATCHERDBUS_H
 
 #include "config.h"
+#include "valhallamapmatcher.h"
 
 #include <QDBusAbstractAdaptor>
 #include <QDBusMessage>
+#include <QHash>
+#include <QPointer>
 
 class ValhallaMapMatcherDBus : public QDBusAbstractAdaptor
 {
@@ -16,12 +19,14 @@ public:
   ~ValhallaMapMatcherDBus();
 
 public slots:
-  void start(const QDBusMessage &message);
-//  bool start(int mode);
-//  bool stop(int mode);
-//  bool stop();
+  QString update(double lat, double lon, double accuracy, const QDBusMessage &message);
 
-protected:
+  bool start(int mode, const QDBusMessage &message);
+  bool stop(int mode, const QDBusMessage &message);
+  bool stop(const QDBusMessage &message);
+
+private:
+  QHash<QString, QPointer<ValhallaMapMatcher> > m_matchers;
 };
 
 #endif // VALHALLAMAPMATCHERDBUS_H

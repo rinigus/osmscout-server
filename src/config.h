@@ -48,7 +48,6 @@
 #include "mapboxglmaster.h"
 #include "mapnikmaster.h"
 #include "valhallamaster.h"
-#include "valhallamapmatcher.h"
 
 #include <atomic>
 
@@ -66,7 +65,6 @@ extern MapnikMaster *mapnikMaster;
 
 #ifdef USE_VALHALLA
 extern ValhallaMaster *valhallaMaster;
-extern ValhallaMapMatcher *valhallaMapMatcher;
 #endif
 
 extern std::atomic<bool> useGeocoderNLP;

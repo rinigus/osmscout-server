@@ -16,7 +16,8 @@ static const qreal const_min_distance_to_record = 10.0; // in meters
 static const int   const_max_recorded_points = 10; // max number of points in location cache
 
 // property key values
-static const QString propCoordinate{"coordinate"};
+static const QString propLatitude{"latitude"};
+static const QString propLongitude{"longitude"};
 static const QString propStreetName{"street_name"};
 static const QString propStreetSpeedAssumed{"street_speed_assumed"};
 static const QString propStreetSpeedLimit{"street_speed_limit"};
@@ -26,110 +27,48 @@ static const QString propDirectionValid{"direction_valid"};
 
 ValhallaMapMatcher::ValhallaMapMatcher(QObject *parent) : QObject(parent)
 {
-  m_source = QGeoPositionInfoSource::createDefaultSource(this);
-  if (m_source==nullptr)
-    {
-      InfoHub::logWarning("Failed to allocate GeoPositioning source");
-      return;
-    }
-
-  connect(m_source, &QGeoPositionInfoSource::positionUpdated, this, &ValhallaMapMatcher::onPositionUpdated);
-  connect(m_source, &QGeoPositionInfoSource::updateTimeout, this, &ValhallaMapMatcher::onUpdateTimeout);
-  connect(m_source, SIGNAL(error(QGeoPositionInfoSource::Error)),
-          this, SLOT(onPositioningError(QGeoPositionInfoSource::Error)));
-
-#ifdef VALHALLA_MAP_MATCHER_TESTING
-  startTimer(1000);
-#endif
 }
 
 ValhallaMapMatcher::~ValhallaMapMatcher()
 {
-  shutdown();
 }
 
-void ValhallaMapMatcher::shutdown()
-{
-  stopPositioning();
-  clearCache();
-  m_clients.clear();
-}
-
-void ValhallaMapMatcher::stopPositioning()
-{
-  if (m_source)
-    {
-      m_source->stopUpdates();
-      InfoHub::logInfo(tr("Positioning service stopped"));
-      m_positioning_active = false;
-      emit positioningActiveChanged(m_positioning_active);
-    }
-}
-
-void ValhallaMapMatcher::clearCache()
-{
-  m_properties.clear();
-  m_locations.clear();
-  m_last_position_info = QGeoPositionInfo();
-}
-
-bool ValhallaMapMatcher::start(const QString &id, const Mode mode)
+bool ValhallaMapMatcher::start(const Mode mode)
 {
   InfoHub::logInfo(tr("Map matching requested: mode=%1").arg(mode));
 
-  if (m_source == nullptr)
-    {
-      InfoHub::logWarning(tr("Geo-positioning service not available, cannot provide map matching"));
-      return false;
-    }
-
-  m_clients[mode] << id;
-
   // reset properties cache to force update
   m_properties[mode] = Properties();
-
-  if (!m_positioning_active)
-    {
-      InfoHub::logInfo(tr("Starting positioning service"));
-      clearCache();
-      m_source->startUpdates();
-      m_positioning_active = true;
-      emit positioningActiveChanged(m_positioning_active);
-    }
+  m_last_position_info = Point();
 
   return true;
 }
 
-void ValhallaMapMatcher::onPositionUpdated(const QGeoPositionInfo &info)
+QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
 {
-  qDebug() << "New position: " << info;
-
-  if (!info.isValid() || !info.hasAttribute(QGeoPositionInfo::HorizontalAccuracy))
-    return;
-
   // do we need to make update or the new point is
   // the same as the last one?
-  QGeoCoordinate c = info.coordinate();
-  if (m_last_position_info.isValid() &&
-      c.distanceTo(m_last_position_info.coordinate()) < const_min_coordinate_change)
-    return;
+  QGeoCoordinate c(lat, lon);
+  Point curr_point(c, accuracy);
+  if (m_last_position_info.coordinate.isValid() &&
+      c.distanceTo(m_last_position_info.coordinate) < const_min_coordinate_change)
+    return "{}";
 
   // check if there is at least one location
   // in the cache. map matching requires at least
   // two points
   if (m_locations.size() < 1)
     {
-      m_locations.append(info);
-      return;
+      m_locations.append(curr_point);
+      return "{}";
     }
 
   // compose coordinate array
   QJsonArray shape;
-  float accuracy = info.attribute(QGeoPositionInfo::HorizontalAccuracy);
-  for (const QGeoPositionInfo &p: m_locations)
+  for (const auto &p: m_locations)
     {
-      QGeoCoordinate c = p.coordinate();
-      accuracy = std::max(accuracy, (float)p.attribute(QGeoPositionInfo::HorizontalAccuracy));
+      const QGeoCoordinate &c = p.coordinate;
+      accuracy = std::max(accuracy, p.accuracy);
       QJsonObject o;
       o.insert("lat", c.latitude());
       o.insert("lon", c.longitude());
@@ -138,12 +77,13 @@ void ValhallaMapMatcher::onPositionUpdated(const QGeoPositionInfo &info)
 
   // insert the last recorded point
   QJsonObject o;
-  o.insert("lat", c.latitude());
-  o.insert("lon", c.longitude());
+  o.insert("lat", lat);
+  o.insert("lon", lon);
   shape.append(o);
 
   // map match for all requested modes
-  for (auto pmode = m_clients.keyBegin(); pmode != m_clients.keyEnd(); ++pmode)
+  QJsonObject response;
+  for (auto pmode = m_properties.keyBegin(); pmode != m_properties.keyEnd(); ++pmode)
     {
       const Mode mode = *pmode;
       QByteArray request;
@@ -152,6 +92,7 @@ void ValhallaMapMatcher::onPositionUpdated(const QGeoPositionInfo &info)
       qDebug() << "Request: " << request.toStdString().c_str();
 
       QByteArray res;
+      QJsonObject rmode;
       if ( valhallaMaster->callActor(ValhallaMaster::TraceAttributes, request, res) )
         {
           QJsonObject d = QJsonDocument::fromJson(res).object();
@@ -187,8 +128,6 @@ void ValhallaMapMatcher::onPositionUpdated(const QGeoPositionInfo &info)
               double ed = p.value("distance_along_edge").toDouble();
               int ei = p.value("edge_index").toInt();
 
-              setProperty(mode, propCoordinate, c);
-
               if (ei<0 ||
                   edges.size() <= ei)
                 street_found = false;
@@ -219,61 +158,62 @@ void ValhallaMapMatcher::onPositionUpdated(const QGeoPositionInfo &info)
                       double speed = e.value("speed").toDouble(-1);
                       double speed_limit = e.value("speed_limit").toDouble(-1);
 
-                      setProperty(mode, propStreetName, street_name);
-                      setProperty(mode, propDirection, direction);
-                      setProperty(mode, propDirectionValid, 1);
-                      setProperty(mode, propStreetSpeedAssumed, speed);
-                      setProperty(mode, propStreetSpeedLimit, speed_limit);
+                      setProperty(mode, propStreetName, street_name, rmode);
+                      setProperty(mode, propDirection, direction, rmode);
+                      setProperty(mode, propDirectionValid, 1, rmode);
+                      setProperty(mode, propStreetSpeedAssumed, speed, rmode);
+                      setProperty(mode, propStreetSpeedLimit, speed_limit, rmode);
                     }
                 }
             }
 
-          setProperty(mode, propCoordinate, cmatch);
+          setProperty(mode, propLatitude, cmatch.latitude(), rmode);
+          setProperty(mode, propLongitude, cmatch.longitude(), rmode);
 
           if (!street_found)
             {
-              setProperty(mode, propStreetName, "");
-              setProperty(mode, propStreetSpeedAssumed, 0.0);
-              setProperty(mode, propStreetSpeedLimit, 0.0);
-              setProperty(mode, propDirection, 0.0);
-              setProperty(mode, propDirectionValid, 0);
+              setProperty(mode, propStreetName, "", rmode);
+              setProperty(mode, propStreetSpeedAssumed, 0.0, rmode);
+              setProperty(mode, propStreetSpeedLimit, 0.0, rmode);
+              setProperty(mode, propDirection, 0.0, rmode);
+              setProperty(mode, propDirectionValid, 0, rmode);
             }
         }
+
+      response.insert(mode2str(mode), rmode);
     }
 
   // save last location
-  if (m_locations.back().coordinate().distanceTo(c) > const_min_distance_to_record)
+  if (m_locations.back().coordinate.distanceTo(c) > const_min_distance_to_record)
     {
-      m_locations.append(info);
+      m_locations.append(curr_point);
       if (m_locations.size() > const_max_recorded_points)
         m_locations.pop_front();
     }
 
-  m_last_position_info = info;
+  m_last_position_info = curr_point;
+
+  QJsonDocument d(response);
+  return d.toJson();
 }
 
-void ValhallaMapMatcher::onUpdateTimeout()
+QString ValhallaMapMatcher::mode2str(Mode mode)
 {
-  InfoHub::logInfo(tr("Geo positioning not available within expected timeout. Waiting for positioning fix"));
-  clearCache();
-}
-
-void ValhallaMapMatcher::onPositioningError(QGeoPositionInfoSource::Error positioningError)
-{
-  QString error;
-  bool e = true;
-  switch (positioningError) {
-    case QGeoPositionInfoSource::AccessError: error = tr("Lacking positioning access rights"); break;
-    case QGeoPositionInfoSource::ClosedError: error = tr("Connection to positioning source closed"); break;
-    case QGeoPositionInfoSource::UnknownSourceError: error = tr("Unknown error from positioning source"); break;
-    default: e = false;
+  switch (mode) {
+    case Auto: return "auto"; break;
+    case AutoShorter: return "auto_shorter";
+    case Bicycle: return "bicycle";
+    case Bus: return "bus";
+    case Pedestrian: return "pedestrian";
+    default: return "Unknown";
     }
+  return "Unknown";
+}
 
-  if (!e) return; // we can ignore noerror
-
-  InfoHub::logWarning(tr("Geo positioning error: %1").arg(error));
-
-  shutdown();
+ValhallaMapMatcher::Mode ValhallaMapMatcher::int2mode(int i)
+{
+  if (i>=1 && i<=5) return Mode(i);
+  return Unknown;
 }
 
 void ValhallaMapMatcher::fillRequest(Mode mode, const QJsonArray &shape, double accuracy, QByteArray &request)
@@ -320,28 +260,22 @@ void ValhallaMapMatcher::fillRequest(Mode mode, const QJsonArray &shape, double 
   request = d.toJson();
 }
 
-void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, int value)
+void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, int value, QJsonObject &response)
 {
   if (m_properties[mode].set(key, value))
-    emit propertyChanged(mode, key, value);
+    response.insert(key, value);
 }
 
-void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, double value)
+void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, double value, QJsonObject &response)
 {
   if (m_properties[mode].set(key, value))
-    emit propertyChanged(mode, key, value);
+    response.insert(key, value);
 }
 
-void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, const QString &value)
+void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, const QString &value, QJsonObject &response)
 {
   if (m_properties[mode].set(key, value))
-    emit propertyChanged(mode, key, value);
-}
-
-void ValhallaMapMatcher::setProperty(Mode mode, const QString &key, const QGeoCoordinate &value)
-{
-  if (m_properties[mode].set(key, value))
-    emit propertyChanged(mode, key, value);
+    response.insert(key, value);
 }
 
 bool ValhallaMapMatcher::Properties::set(const QString &key, int value)
@@ -370,32 +304,5 @@ bool ValhallaMapMatcher::Properties::set(const QString &key, const QString &valu
   m_property_string[key] = value;
   return true;
 }
-
-bool ValhallaMapMatcher::Properties::set(const QString &key, const QGeoCoordinate &value)
-{
-  if (m_property_coor.contains(key) &&
-      m_property_coor[key].distanceTo(value) < 1e-10)
-    return false;
-  m_property_coor[key] = value;
-  return true;
-}
-
-#ifdef VALHALLA_MAP_MATCHER_TESTING
-void ValhallaMapMatcher::timerEvent(QTimerEvent *)
-{
-  static double lat = 59.437;
-  static double lon = 24.7536;
-
-  QGeoPositionInfo p;
-  p.setCoordinate( QGeoCoordinate(lat, lon, 0) );
-  p.setTimestamp(QDateTime::currentDateTime());
-  p.setAttribute(QGeoPositionInfo::HorizontalAccuracy, 15);
-
-  onPositionUpdated(p);
-
-  lat += 1e-4;
-  lon -= 1e-4;
-}
-#endif
 
 #endif

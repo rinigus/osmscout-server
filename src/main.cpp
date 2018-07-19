@@ -342,13 +342,6 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
       return -5;
     }
-
-  valhallaMapMatcher = new ValhallaMapMatcher(app.data());
-  if (valhallaMapMatcher == nullptr)
-    {
-      std::cerr << "Failed to allocate ValhallaMapMatcher" << std::endl;
-      return -5;
-    }
 #endif
 
 #ifdef IS_SAILFISH_OS
@@ -527,8 +520,9 @@ int main(int argc, char *argv[])
     QDBusConnection dbussession = QDBusConnection::sessionBus();
 
     // add d-bus interface
-    new ValhallaMapMatcherDBus(valhallaMapMatcher);
-    if (!dbussession.registerObject(DBUS_PATH_MAPMATCHING, valhallaMapMatcher))
+    QObject objValhallaMapMatcher; // dummy object used by DBus interface
+    new ValhallaMapMatcherDBus(&objValhallaMapMatcher);
+    if (!dbussession.registerObject(DBUS_PATH_MAPMATCHING, &objValhallaMapMatcher))
       InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
 
     // register dbus service
