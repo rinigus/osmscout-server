@@ -17,6 +17,8 @@ public:
   ValhallaMapMatcherDBus(QObject *parent=nullptr);
   ~ValhallaMapMatcherDBus();
 
+  void activate();
+
 public slots:
   //////////////////////////////////////////////////////////////////////////////////////////
   /// NB! when adding slots for DBus export, don't forget to add them in the adaptor as well
@@ -29,6 +31,9 @@ public slots:
 
   // used to track lost clients - not for export on dbus
   void onNameOwnerChanged(QString name, QString old_owner, QString new_owner);
+
+signals:
+  void activeChanged(bool);
 
 protected:
   QSharedPointer<ValhallaMapMatcher> get(int mode, const QString &caller);

@@ -534,6 +534,7 @@ int main(int argc, char *argv[])
     else
       dbusconnection.connect(QString(), "/org/freedesktop/DBus", "org.freedesktop.DBus", "NameOwnerChanged",
                              &valhallaMapMatcherDBus, SLOT(onNameOwnerChanged(QString,QString,QString)));
+    valhallaMapMatcherDBus.activate();
 #endif
 
     // register dbus service

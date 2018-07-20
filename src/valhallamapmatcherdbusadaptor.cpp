@@ -3,24 +3,25 @@
 ValhallaMapMatcherDBusAdaptor::ValhallaMapMatcherDBusAdaptor(ValhallaMapMatcherDBus *p):
   QDBusAbstractAdaptor(p), m(p)
 {
+  setAutoRelaySignals(true);
 }
 
-QString ValhallaMapMatcherDBusAdaptor::update(int mode, double lat, double lon, double accuracy, const QDBusMessage &message)
+QString ValhallaMapMatcherDBusAdaptor::Update(int mode, double lat, double lon, double accuracy, const QDBusMessage &message)
 {
   return m->update(mode,lat,lon,accuracy,message);
 }
 
-bool ValhallaMapMatcherDBusAdaptor::reset(int mode, const QDBusMessage &message)
+bool ValhallaMapMatcherDBusAdaptor::Reset(int mode, const QDBusMessage &message)
 {
   return m->reset(mode,message);
 }
 
-bool ValhallaMapMatcherDBusAdaptor::stop(int mode, const QDBusMessage &message)
+bool ValhallaMapMatcherDBusAdaptor::Stop(int mode, const QDBusMessage &message)
 {
   return m->stop(mode,message);
 }
 
-bool ValhallaMapMatcherDBusAdaptor::stop(const QDBusMessage &message)
+bool ValhallaMapMatcherDBusAdaptor::Stop(const QDBusMessage &message)
 {
   return m->stop(message);
 }

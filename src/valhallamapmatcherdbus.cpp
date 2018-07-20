@@ -12,6 +12,11 @@ ValhallaMapMatcherDBus::~ValhallaMapMatcherDBus()
 {
 }
 
+void ValhallaMapMatcherDBus::activate()
+{
+  emit activeChanged(true);
+}
+
 QString ValhallaMapMatcherDBus::update(int mode, double lat, double lon, double accuracy, const QDBusMessage &message)
 {
   const QString caller = message.service();

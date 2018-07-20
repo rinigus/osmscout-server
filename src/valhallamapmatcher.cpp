@@ -168,6 +168,9 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
                   double speed = e.value("speed").toDouble(-1);
                   double speed_limit = e.value("speed_limit").toDouble(-1);
 
+                  if (speed > 0) speed *= 1e3/60/60;
+                  if (speed_limit > 0) speed_limit *= 1e3/60/60;
+
                   setProperty(propStreetName, street_name, response);
                   setProperty(propDirection, direction, response);
                   setProperty(propDirectionValid, 1, response);
@@ -183,8 +186,8 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
       if (!street_found)
         {
           setProperty(propStreetName, "", response);
-          setProperty(propStreetSpeedAssumed, 0.0, response);
-          setProperty(propStreetSpeedLimit, 0.0, response);
+          setProperty(propStreetSpeedAssumed, -1.0, response);
+          setProperty(propStreetSpeedLimit, -1.0, response);
           setProperty(propDirection, 0.0, response);
           setProperty(propDirectionValid, 0, response);
         }
