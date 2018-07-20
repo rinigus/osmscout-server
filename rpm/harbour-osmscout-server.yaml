@@ -29,6 +29,8 @@ PkgConfigBR:
   - Qt5Quick
   - Qt5Xml
   - Qt5Sql
+  - Qt5Positioning
+  - Qt5DBus
   - sqlite3
   - libsystemd-daemon
   - zlib
