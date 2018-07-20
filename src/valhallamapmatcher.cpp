@@ -155,7 +155,8 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
                   double d0_y = sin(a0);
                   double d1_x = cos(a1);
                   double d1_y = sin(a1);
-                  double direction = atan2(d0_y*(1-ed)+d1_y*ed, d0_x*(1-ed)+d1_x*ed);
+                  double direction = atan2(d0_y*(1-ed)+d1_y*ed, d0_x*(1-ed)+d1_x*ed) / M_PI*180;
+                  if (direction < 0) direction += 360;
 
                   QString street_name="";
                   for (auto v: e.value("names").toArray())
