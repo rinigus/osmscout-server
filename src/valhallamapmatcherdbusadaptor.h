@@ -12,9 +12,12 @@ class ValhallaMapMatcherDBusAdaptor : public QDBusAbstractAdaptor
 {
   Q_OBJECT
   Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_MAPMATCHING)
+  Q_PROPERTY(bool active READ active)
 
 public:
   ValhallaMapMatcherDBusAdaptor(ValhallaMapMatcherDBus *parent);
+
+  bool active() const { return true; }
 
 public slots:
   QString update(int mode, double lat, double lon, double accuracy, const QDBusMessage &message);
