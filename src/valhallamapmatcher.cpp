@@ -13,7 +13,7 @@
 // constants used in algorithm decisions
 static const qreal const_min_coordinate_change = 1.0; // in meters
 static const qreal const_min_distance_to_record = 10.0; // in meters
-static const int   const_max_recorded_points = 10; // max number of points in location cache
+static const int   const_max_recorded_points = 3; // max number of points in location cache
 
 // property key values
 static const QString propLatitude{"latitude"};
@@ -118,14 +118,6 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
 
       QJsonObject p = points.last().toObject();
 
-      // check that we have all required keys in matched point
-      if ( !p.contains("distance_along_edge") ||
-           !p.contains("lat") ||
-           !p.contains("lon") ||
-           !p.contains("edge_index") ||
-           !p.contains("type") )
-        return "{}";
-
       bool street_found = true;
       QGeoCoordinate cmatch(c);
       if ( p.value("type").toString() != "matched" )
@@ -136,7 +128,7 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
           cmatch.setLongitude(p.value("lon").toDouble());
 
           double ed = p.value("distance_along_edge").toDouble();
-          int ei = p.value("edge_index").toInt();
+          int ei = p.value("edge_index").toInt(-1);
 
           if (ei<0 ||
               edges.size() <= ei)
