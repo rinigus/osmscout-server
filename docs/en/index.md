@@ -43,12 +43,19 @@ guide is aimed at Sailfish OS users.
 
 ### Modules
 
-The server uses modular approach with two separate modules required
-for its operation. Please proceed to Jolla Store or OpenRepos and
-install _OSM Scout Server Module: Route_ and _OSM Scout Server Module:
-Fonts_. After installation of the modules, please restart the server,
-if instructed by the server. The modules are used automatically and
-don't have to be started by users.
+The server uses modular approach. While the current version of the
+server does not require any modules in default configuration, some of
+the modules maybe required for operation in user selected
+configuration. The modules, if needed, are checked for on each start
+of the server. If needed, the server will request the module
+installation. In this case, please proceed to Jolla Store or OpenRepos
+and install the corresponding module. After installation of the
+modules, please restart the server, if instructed by the server. The
+modules are used automatically and don't have to be started by users.
+
+Note that earlier used _OSM Scout Server Module: Route_ is now
+incorporated into the main server executable and can be uninstalled
+when using OSM Scout Server of version 1.8 or higher.
 
 ### Storage
 
@@ -85,6 +92,20 @@ To simplify configuration, OSM Scout Server uses profiles. You are
 asked to select profile on the first start. Later, you can select
 profile as shown in the [Profile selection tutorial](profiles.html).
 
+Clients using MapboxGL tiles (sometimes referred as vector tiles) are
+supported by the default OSM Scout Server configuration. At the moment
+of writing, its [WhoGo
+Maps](https://openrepos.net/content/otsaloma/whogo-maps) and sports
+application
+[Laufhelden](https://openrepos.net/content/jdrescher/laufhelden).
+
+Clients that request rendered tiles from the server, such as [Poor
+Maps](https://openrepos.net/content/otsaloma/poor-maps) and
+[modRana](https://openrepos.net/content/martink/modrana-0), would
+require selection of OSM Scout Server profile that includes _raster
+tiles_. Please adjust the profile if you want to use these clients.
+
+
 ### Settings
 
 There are multiple settings that can be useful to tune the operation
@@ -98,6 +119,10 @@ automatically. See some examples in
 
 After the server has been setup and the maps downloaded, the access to
 the server has to be configured in the client(s).
+
+For [WhoGo Maps](https://openrepos.net/content/otsaloma/poor-maps),
+please follow instructions below for Poor Maps. Just replace
+'Basemaps' selection with selection of 'Maps' in WhoGo Maps menu.
 
 For [Poor Maps](https://openrepos.net/content/otsaloma/poor-maps),
 instructions are [here](poor_maps.html).
