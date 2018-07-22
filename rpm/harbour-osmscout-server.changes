@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Jul 22 2018 rinigus <rinigus.git@gmail.com> 1.9.0-1
+- introduction of D-Bus API
+- map matching of the current position as D-Bus service
+- updated translations
+
 * Thu Jul 12 2018 rinigus <rinigus.git@gmail.com> 1.8.0-1
 - use Valhalla C++ API
 - expose multiple Valhalla's services
