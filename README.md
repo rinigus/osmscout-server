@@ -455,7 +455,7 @@ The main interaction with the server occurs via the following method:
   properties are supported:
 
   - `direction` direction of motion along the matched street or path, in degrees [0,360] from true north;
-  - `direction_valid` `1` if reported direction is valid, 0 otherwise;
+  - `direction_valid` equals to 1 if reported direction is valid, 0 otherwise;
   - `latitude` matched coordinate;
   - `longitude` matched coordinate;
   - `street_name` matched street name, empty if no data is available or no match was found;
