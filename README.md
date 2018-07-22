@@ -421,10 +421,10 @@ by default.
 
 For QML applications, there is a reference implementation that uses
 map matching API to provide just in time information. The
-implementation is available as a [QML PositionSourceMapMatched
-type](https://github.com/rinigus/positionsource-mapmatched-qml) and
-can be easily incorporated into application without consulting OSM
-Scout Server API.
+implementation is available as a [QML
+PositionSourceMapMatched](https://github.com/rinigus/positionsource-mapmatched-qml)
+type and can be easily incorporated into application without
+consulting OSM Scout Server API.
 
 Map matching is provided at path
 `/org/osm/scout/server1/mapmatching1`, interface
@@ -474,13 +474,13 @@ For maintaining the history, clients can call
 * **`Reset`**`(int32 mode)` drop the history and start a session for
   `mode` as new for the calling client.
 
-* **`Stop`**(int32 mode)` and **`Stop`**`()` stop session for `mode`
+* **`Stop`**`(int32 mode)` and **`Stop`**`()` stop session for `mode`
   or all modes for the calling client.
 
-See [QML PositionSourceMapMatched
-type](https://github.com/rinigus/positionsource-mapmatched-qml) for
-example implementation of the interaction with the server, including
-support for automatic start of the server via systemd socket
+See [QML
+PositionSourceMapMatched](https://github.com/rinigus/positionsource-mapmatched-qml)
+type for example implementation of the interaction with the server,
+including support for automatic start of the server via systemd socket
 activation.
 
 
