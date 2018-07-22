@@ -387,6 +387,18 @@ At the moment of writing (Jul 2018), elevation data is not imported in the distr
 opened (https://github.com/rinigus/osmscout-server/issues/244).
 
 
+## Activation URL
+
+When its needed to start the server that has been configured for
+autostarting using systemd socket activation, there is a convenience
+access path that will not trigger any error or further action
+
+`http://localhost:8553/v1/activate`
+
+When successful, it will return `{ "status": "active" }` as a
+response.
+
+
 ## Translations
 
 The translations were contributed by

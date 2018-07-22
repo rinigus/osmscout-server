@@ -997,7 +997,15 @@ unsigned int RequestMapper::service(const char *url_c,
       return MHD_HTTP_OK;
     }
 #endif
-
+  //////////////////////////////////////////////////////////////////////
+  /// Activation URL
+  else if (path == "/v1/activate")
+    {
+      QByteArray data = "{ \"status\": \"active\" }";
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json; charset=UTF-8");
+      MicroHTTP::ConnectionStore::setData(connection_id, data, false);
+      return MHD_HTTP_OK;
+    }
 
   // command unidentified. return help string
   errorText(response, connection_id, "Unknown URL path");
