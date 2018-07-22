@@ -2576,7 +2576,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/valhallamapmatcher.cpp" line="236"/>
+        <location filename="../src/valhallamapmatcher.cpp" line="232"/>
         <source>Map matching mode %1 is not supported</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2584,7 +2584,7 @@
 <context>
     <name>ValhallaMapMatcherDBus</name>
     <message>
-        <location filename="../src/valhallamapmatcherdbus.cpp" line="57"/>
+        <location filename="../src/valhallamapmatcherdbus.cpp" line="62"/>
         <source>Closing map matching service for DBus client %1</source>
         <translation type="unfinished"></translation>
     </message>

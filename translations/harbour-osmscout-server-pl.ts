@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -613,17 +615,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../src/infohub.cpp" line="101"/>
+        <location filename="../src/infohub.cpp" line="111"/>
         <source>ERROR: </source>
         <translation>BŁĄD:</translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="107"/>
+        <location filename="../src/infohub.cpp" line="117"/>
         <source>WARNING: </source>
         <translation>OSTRZEŻENIE:</translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="116"/>
+        <location filename="../src/infohub.cpp" line="126"/>
         <source>INFO: </source>
         <translation>INFO:</translation>
     </message>
@@ -1589,7 +1591,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="86"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="96"/>
         <source>motorway link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="94"/>
@@ -1613,7 +1615,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="118"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="128"/>
         <source>primary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="126"/>
@@ -1643,7 +1645,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="158"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="168"/>
         <source>secondary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="166"/>
@@ -1661,7 +1663,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="182"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="192"/>
         <source>tertiary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="190"/>
@@ -1673,7 +1675,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="198"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="208"/>
         <source>trunk link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="206"/>
@@ -1714,7 +1716,7 @@
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="68"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="64"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="51"/>
@@ -1754,33 +1756,33 @@
         <translation>Włącz odpowiednie backend(&apos;y) używając Profili.</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="353"/>
+        <location filename="../src/requestmapper.cpp" line="358"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Rastrowe kafelki są niedostępne odkąd Mapnik i libosmscout są wyłączone w ustawieniach lub poprzez wybrany profil. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="429"/>
+        <location filename="../src/requestmapper.cpp" line="434"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
         <translation>Backend Mapbox GL jest wyłączony w ustawieniach lub poprzez wybrany profil. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="597"/>
+        <location filename="../src/requestmapper.cpp" line="602"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Wyszukiwanie jest niedostępne odkąd GeocoderNLP i libosmscout są wyłączone w ustawieniach lub poprzez wybrany profil. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="644"/>
+        <location filename="../src/requestmapper.cpp" line="649"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Wyszukiwanie pobliskich POI jest niedostępne odkąd GeocoderNLP i libosmscout są wyłączone w ustawieniach lub poprzez wybrany profil. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="779"/>
-        <location filename="../src/requestmapper.cpp" line="936"/>
+        <location filename="../src/requestmapper.cpp" line="784"/>
+        <location filename="../src/requestmapper.cpp" line="941"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Wyznaczanie trasy jest niedostępne odkąd Valhalla i libosmscout są wyłączone w ustawieniach lub poprzez wybrany profil. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="880"/>
+        <location filename="../src/requestmapper.cpp" line="885"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
         <translation>Wytyczanie trasy i inne usługi Valhalla są niedostępne. Valhalla jest wyłączona w wybranym profilu lub ustawianiach. %1</translation>
     </message>
@@ -2568,6 +2570,27 @@
     </message>
 </context>
 <context>
+    <name>ValhallaMapMatcher</name>
+    <message>
+        <location filename="../src/valhallamapmatcher.cpp" line="41"/>
+        <source>Map matching requested: mode=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/valhallamapmatcher.cpp" line="232"/>
+        <source>Map matching mode %1 is not supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ValhallaMapMatcherDBus</name>
+    <message>
+        <location filename="../src/valhallamapmatcherdbus.cpp" line="62"/>
+        <source>Closing map matching service for DBus client %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ValhallaMaster</name>
     <message>
         <location filename="../src/valhallamaster.cpp" line="138"/>
@@ -2656,68 +2679,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="136"/>
+        <location filename="../src/main.cpp" line="141"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="141"/>
+        <location filename="../src/main.cpp" line="146"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Uruchom serwer bez GUI jako aplikację konsolową</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="145"/>
+        <location filename="../src/main.cpp" line="150"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Nie pokazuj logów kiedy uruchomione w trybie konsolowym</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="150"/>
+        <location filename="../src/main.cpp" line="155"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Uruchom serwer w trybie aktywacji gniazda SystemD</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="156"/>
+        <location filename="../src/main.cpp" line="161"/>
         <source>Start download of the maps</source>
         <translation>Uruchom ściąganie map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="160"/>
+        <location filename="../src/main.cpp" line="165"/>
         <source>Update list of available maps</source>
         <translation>Zaktualizuj listę dostępnych map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="164"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>List maps available on device</source>
         <translation>Lista map dostępnych na urządzeniu</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="168"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>List subscribed maps</source>
         <translation>Lista subskrybowanych map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="172"/>
+        <location filename="../src/main.cpp" line="177"/>
         <source>List maps provided for download</source>
         <translation>Lista map przeznaczonych do ściągnięcia</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="176"/>
+        <location filename="../src/main.cpp" line="181"/>
         <source>List missing maps</source>
         <translation>Lista brakujących map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="180"/>
+        <location filename="../src/main.cpp" line="185"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Subskrybuj zbiór danych dla &lt;country&gt;</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="181"/>
         <location filename="../src/main.cpp" line="186"/>
+        <location filename="../src/main.cpp" line="191"/>
         <source>country-id</source>
         <translation>id-państwa</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="185"/>
+        <location filename="../src/main.cpp" line="190"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Wypisz zbiór danych dla &lt;country&gt; </translation>
     </message>

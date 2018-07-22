@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nb" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="nb" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -613,17 +615,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../src/infohub.cpp" line="101"/>
+        <location filename="../src/infohub.cpp" line="111"/>
         <source>ERROR: </source>
         <translation>FEIL:</translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="107"/>
+        <location filename="../src/infohub.cpp" line="117"/>
         <source>WARNING: </source>
         <translation>ADVARSEL:</translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="116"/>
+        <location filename="../src/infohub.cpp" line="126"/>
         <source>INFO: </source>
         <translation>INFO: </translation>
     </message>
@@ -1754,35 +1756,35 @@
         <translation>Aktiver tilsvarende tjenest(er) ved hjelp av Profiler.</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="353"/>
+        <location filename="../src/requestmapper.cpp" line="358"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Raster fliser er ikke tilgjengelig siden Mapnik og libosmscout er deaktivert av den valgte profil eller innstillinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="429"/>
+        <location filename="../src/requestmapper.cpp" line="434"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
         <translation>Mapbox GL tjenesten er deaktivert av den valgte profil eller innstilinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="597"/>
+        <location filename="../src/requestmapper.cpp" line="602"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Søk er ikke tilgjengelig siden GeocoderNLP and libosmscout er deaktivert av den valgte profil eller innstilinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="644"/>
+        <location filename="../src/requestmapper.cpp" line="649"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation> Oppslag av POI i nærheten er ikke tilgjengelig siden GeocoderNLP og libosmscout er deaktivert av den valgte profil eller innstilinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="779"/>
-        <location filename="../src/requestmapper.cpp" line="936"/>
+        <location filename="../src/requestmapper.cpp" line="784"/>
+        <location filename="../src/requestmapper.cpp" line="941"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Ruting er ikke tilgjengelig siden Valhalla og libosmscout er deaktivert av den valgte profil eller innstilinger. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="880"/>
+        <location filename="../src/requestmapper.cpp" line="885"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2567,6 +2569,27 @@
     </message>
 </context>
 <context>
+    <name>ValhallaMapMatcher</name>
+    <message>
+        <location filename="../src/valhallamapmatcher.cpp" line="41"/>
+        <source>Map matching requested: mode=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/valhallamapmatcher.cpp" line="232"/>
+        <source>Map matching mode %1 is not supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ValhallaMapMatcherDBus</name>
+    <message>
+        <location filename="../src/valhallamapmatcherdbus.cpp" line="62"/>
+        <source>Closing map matching service for DBus client %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ValhallaMaster</name>
     <message>
         <location filename="../src/valhallamaster.cpp" line="138"/>
@@ -2581,7 +2604,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="172"/>
@@ -2655,68 +2678,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="136"/>
+        <location filename="../src/main.cpp" line="141"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="141"/>
+        <location filename="../src/main.cpp" line="146"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Kjør serveren uten brukergrensesnitt som et konsollprogram</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="145"/>
+        <location filename="../src/main.cpp" line="150"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Ikke skriv ut logger når du kjører i konsollmodus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="150"/>
+        <location filename="../src/main.cpp" line="155"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Kjør serveren i SystemD socket-aktivert modus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="156"/>
+        <location filename="../src/main.cpp" line="161"/>
         <source>Start download of the maps</source>
         <translation>Start nedlasting av kartene</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="160"/>
+        <location filename="../src/main.cpp" line="165"/>
         <source>Update list of available maps</source>
         <translation>Oppdater liste over tilgjengelige kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="164"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>List maps available on device</source>
         <translation>List kart som er tilgjengelig på enheten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="168"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>List subscribed maps</source>
         <translation>List abbonerte kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="172"/>
+        <location filename="../src/main.cpp" line="177"/>
         <source>List maps provided for download</source>
         <translation>List kart som er klare for nedlasting</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="176"/>
+        <location filename="../src/main.cpp" line="181"/>
         <source>List missing maps</source>
         <translation>Liste manglende kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="180"/>
+        <location filename="../src/main.cpp" line="185"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Abboner på &lt;country&gt; datasett</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="181"/>
         <location filename="../src/main.cpp" line="186"/>
+        <location filename="../src/main.cpp" line="191"/>
         <source>country-id</source>
         <translation>land-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="185"/>
+        <location filename="../src/main.cpp" line="190"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Avslutt abbonent på &lt;country&gt; datasett</translation>
     </message>

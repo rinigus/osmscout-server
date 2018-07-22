@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="de" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -614,17 +616,17 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../src/infohub.cpp" line="101"/>
+        <location filename="../src/infohub.cpp" line="111"/>
         <source>ERROR: </source>
         <translation>FEHLER:</translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="107"/>
+        <location filename="../src/infohub.cpp" line="117"/>
         <source>WARNING: </source>
         <translation>WARNUNG: </translation>
     </message>
     <message>
-        <location filename="../src/infohub.cpp" line="116"/>
+        <location filename="../src/infohub.cpp" line="126"/>
         <source>INFO: </source>
         <translation>INFO: </translation>
     </message>
@@ -1756,35 +1758,35 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
         <translation>Aktiviere die zugehörigen Backends über ein entsprechendes Profil.</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="353"/>
+        <location filename="../src/requestmapper.cpp" line="358"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Rasterkacheln sind nicht verfügbar, da Mapnik und libosmscout durch das aktive Profil oder bestimmte Einstellungen deaktivert wurden. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="429"/>
+        <location filename="../src/requestmapper.cpp" line="434"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
         <translation>Mapbox-GL wurde durch das aktive Profil oder bestimmte Einstellungen deaktivert. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="597"/>
+        <location filename="../src/requestmapper.cpp" line="602"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Keine Suche möglich, da GeocoderNLP und  libosmscout durch das aktive Profil oder bestimmte Einstellungen deaktiviert wurden. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="644"/>
+        <location filename="../src/requestmapper.cpp" line="649"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Suche in der näheren Umgebung nicht möglich, da GeocoderNLP und  libosmscout durch das aktive Profil oder bestimmte Einstellungen deaktiviert wurden. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="779"/>
-        <location filename="../src/requestmapper.cpp" line="936"/>
+        <location filename="../src/requestmapper.cpp" line="784"/>
+        <location filename="../src/requestmapper.cpp" line="941"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Routenberechnung ist nicht möglich, da Valhalla und libosmscout durch das aktive Profil oder bestimmte Einstellungen deaktivert wurden. %1</translation>
     </message>
     <message>
-        <location filename="../src/requestmapper.cpp" line="880"/>
+        <location filename="../src/requestmapper.cpp" line="885"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2571,6 +2573,27 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     </message>
 </context>
 <context>
+    <name>ValhallaMapMatcher</name>
+    <message>
+        <location filename="../src/valhallamapmatcher.cpp" line="41"/>
+        <source>Map matching requested: mode=%1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/valhallamapmatcher.cpp" line="232"/>
+        <source>Map matching mode %1 is not supported</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ValhallaMapMatcherDBus</name>
+    <message>
+        <location filename="../src/valhallamapmatcherdbus.cpp" line="62"/>
+        <source>Closing map matching service for DBus client %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ValhallaMaster</name>
     <message>
         <location filename="../src/valhallamaster.cpp" line="138"/>
@@ -2585,7 +2608,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="172"/>
@@ -2659,68 +2682,68 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="136"/>
+        <location filename="../src/main.cpp" line="141"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="141"/>
+        <location filename="../src/main.cpp" line="146"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Starte den Server ohne Oberfläche als Applikation in der Konsole</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="145"/>
+        <location filename="../src/main.cpp" line="150"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Kein Ausgabe Logs wenn der Server im Konsolenmodus läuft</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="150"/>
+        <location filename="../src/main.cpp" line="155"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Führen den Server im SystemD-Socket-aktivierten Modus aus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="156"/>
+        <location filename="../src/main.cpp" line="161"/>
         <source>Start download of the maps</source>
         <translation>Starte die Übertragung der Karten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="160"/>
+        <location filename="../src/main.cpp" line="165"/>
         <source>Update list of available maps</source>
         <translation>Aktualisiere die Liste der vorhandenen Karten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="164"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>List maps available on device</source>
         <translation>Karten auf dem Gerät auflisten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="168"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>List subscribed maps</source>
         <translation>Zeige abonnierte Karten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="172"/>
+        <location filename="../src/main.cpp" line="177"/>
         <source>List maps provided for download</source>
         <translation>Zeige Karten, die zum Herunterladen zur Verfügung stehen</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="176"/>
+        <location filename="../src/main.cpp" line="181"/>
         <source>List missing maps</source>
         <translation>Zeige fehlende Karten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="180"/>
+        <location filename="../src/main.cpp" line="185"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Abonnieren des &lt;country&gt; Datensatzes</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="181"/>
         <location filename="../src/main.cpp" line="186"/>
+        <location filename="../src/main.cpp" line="191"/>
         <source>country-id</source>
         <translation>country-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="185"/>
+        <location filename="../src/main.cpp" line="190"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Datensatz für &lt;country&gt; abbestellen </translation>
     </message>
