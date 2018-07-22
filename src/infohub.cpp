@@ -75,6 +75,16 @@ int InfoHub::queue()
     return m_queue;
 }
 
+void InfoHub::activity()
+{
+  infoHub.implActivity();
+}
+
+void InfoHub::implActivity()
+{
+  emit infoHub.activitySig();
+}
+
 static QString tstamp(const QString &txt)
 {
     return QDateTime::currentDateTime().toString("HH:mm:ss") + " " + txt;

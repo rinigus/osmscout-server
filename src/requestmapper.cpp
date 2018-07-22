@@ -330,6 +330,12 @@ protected:
   QString m_error_message;
 };
 
+/// Update last call
+void RequestMapper::updateLastCall()
+{
+  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
+}
+
 /////////////////////////////////////////////////////////////////////////////
 /// Request mapper main service function
 /////////////////////////////////////////////////////////////////////////////
@@ -340,8 +346,7 @@ unsigned int RequestMapper::service(const char *url_c,
   QUrl url(url_c);
   QString path(url.path());
 
-  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
-
+  updateLastCall();
 
   //////////////////////////////////////////////////////////////////////
   /// TILES
@@ -916,7 +921,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
       Task *task = new Task(connection_id,
                             std::bind(&ValhallaMaster::callActor, valhallaMaster,
-                                      actor, json, std::placeholders::_1),
+                                      actor, json.toLatin1(), std::placeholders::_1),
                             "Error while looking for route via Valhalla");
       m_pool.start(task);
 
@@ -992,7 +997,15 @@ unsigned int RequestMapper::service(const char *url_c,
       return MHD_HTTP_OK;
     }
 #endif
-
+  //////////////////////////////////////////////////////////////////////
+  /// Activation URL
+  else if (path == "/v1/activate")
+    {
+      QByteArray data = "{ \"status\": \"active\" }";
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json; charset=UTF-8");
+      MicroHTTP::ConnectionStore::setData(connection_id, data, false);
+      return MHD_HTTP_OK;
+    }
 
   // command unidentified. return help string
   errorText(response, connection_id, "Unknown URL path");

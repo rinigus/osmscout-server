@@ -123,11 +123,20 @@ that. Since, when client and the server are operating on the same
 device, network failure is not expected, such timeouts are, in
 general, not needed.
 
+## Access
+
+Server provides its functionality via HTTP or D-Bus. APIs on HTTP and
+D-Bus cover different functionality. HTTP has been available from the
+beginning and D-Bus has been added starting from version 1.9. Below,
+HTTP API is described, followed by [D-Bus API](#d-bus-api), when
+stated.
+
 
 ## Default port
 
-Default port is 8553 TCP and the server binds to 127.0.0.1 providing
-services to local apps only.
+Default port for HTTP access is 8553 TCP and the server binds to
+127.0.0.1 providing services to local apps only. Binding and the port
+can be changed in the configuration file manually.
 
 
 ## URL schema
@@ -141,7 +150,7 @@ specifying arguments. Here, order of query elements is not important.
 
 See `examples` folder for the example queries and their
 results. Below, just the results are referenced. For corresponding
-queries, see accompanying [README](examples/README.md). 
+queries, see accompanying [README](examples/README.md).
 
 
 ## Raster tiles
@@ -339,7 +348,7 @@ the routes. In this case, the server would consider limited subset of
 Valhalla's API. In particular, `costing` option would be used to
 select the transportation mode (`auto`, `bicycle`, or `pedestrian`)
 with the order of points found from `location`. The reply of the
-server will follow Version 1 protocol with an additional flag `API version` 
+server will follow Version 1 protocol with an additional flag `API version`
 set to `libosmscout V1` in the response of the server. Using
 this flag, the client application can determine whether version 1
 protocol response has been used.
@@ -355,7 +364,7 @@ URL schema for Valhalla's APIs is in the form
 
 `http://localhost:8553/v2/{api_name}?json={json}`
 
-where 
+where
 
 `{api_name}` - name of the used API, as specified below
 
@@ -366,25 +375,113 @@ calls. The following Valhalla's APIs are supported (with the link given describi
 
 * `route` - [routing instructions](https://github.com/valhalla/valhalla/blob/master/docs/api/turn-by-turn/api-reference.md)
 
-* `trace_attributes` - [map matching, trace attributes](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md), 
-  for obtaining road attributes as a result of matching the coordinate sequence, as fed from GPS device, with the road network. 
-  Can be used for just in time navigation information. 
+* `trace_attributes` - [map matching, trace attributes](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md),
+  for obtaining road attributes as a result of matching the coordinate sequence, as fed from GPS device, with the road network.
+  Can be used for just in time navigation information.
 
-* `trace_route` - [map matching, trace_route](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md), 
+* `trace_route` - [map matching, trace_route](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md),
   for creating navigation instructions on the basis of coordinate sequence. Can be used to share the used road.
-  
+
 * `locate` - [information about streets and intersections](https://github.com/valhalla/valhalla/blob/master/docs/api/locate/api-reference.md)
 
 * `matrix` - [time-distance matrix](https://github.com/valhalla/valhalla/blob/master/docs/api/matrix/api-reference.md)
-  
+
 * `optimized_route` - [optimized route between set of locations](https://github.com/valhalla/valhalla/blob/master/docs/api/optimized/api-reference.md)
 
 * `isochrone` - [reachability from a given point within a time limit](https://github.com/valhalla/valhalla/blob/master/docs/api/isochrone/api-reference.md)
 
 * `height` - [elevation data for a single location or a path](https://github.com/valhalla/valhalla/blob/master/docs/api/elevation/api-reference.md)
 
-At the moment of writing (Jul 2018), elevation data is not imported in the distributed maps. The corresponding issue has been 
+At the moment of writing (Jul 2018), elevation data is not imported in the distributed maps. The corresponding issue has been
 opened (https://github.com/rinigus/osmscout-server/issues/244).
+
+
+## Activation URL
+
+When its needed to start the server that has been configured for
+autostarting using systemd socket activation, there is a convenience
+access path that will not trigger any error or further action
+
+`http://localhost:8553/v1/activate`
+
+When successful, it will return `{ "status": "active" }` as a
+response.
+
+
+## D-Bus API
+
+D-Bus API is provided via service `org.osm.scout.server1`. At present,
+its used to provide map matching service for just in time navigation
+information. In future, D-Bus API can be extended on request.
+
+### Map matching via D-Bus
+
+D-Bus API is available only if Valhalla router is used, as configured
+by default.
+
+For QML applications, there is a reference implementation that uses
+map matching API to provide just in time information. The
+implementation is available as a [QML PositionSourceMapMatched
+type](https://github.com/rinigus/positionsource-mapmatched-qml) and
+can be easily incorporated into application without consulting OSM
+Scout Server API.
+
+Map matching is provided at path
+`/org/osm/scout/server1/mapmatching1`, interface
+`org.osm.scout.server1.mapmatching1`. On presence of the service,
+there is a boolean property `Active` which equals to `True`.
+
+The main interaction with the server occurs via the following method:
+
+* **`Update`**`(int32 mode, Double latitude, Double longitude, Double
+  accuracy) -> String`.  This is a method that should be called for
+  updating the current location, given by coordinates and
+  accuracy. Valhalla's map matching cost factor is given by `mode`
+  where it can have the following values
+
+  - 1 car, "auto" in Valhalla API
+  - 2 car along shorter distance, "auto_shorter" in Valhalla API
+  - 3 bicycle
+  - 4 bus
+  - 5 pedestrian
+
+  By repeatedly calling `Update`, OSM Scout Server builds trajectory
+  of the client and analyzes it to provide information regarding the
+  current location. The return value is given by JSON object in a
+  String form. Note that this object is filled _only_ with the
+  properties that have changed when compared to the previous call. For
+  example, if the street name is the same as during the last call, it
+  is not returned in the returned JSON object. The following
+  properties are supported:
+
+  - `direction` direction of motion along the matched street or path, in degrees [0,360] from true north;
+  - `direction_valid` `1` if reported direction is valid, 0 otherwise;
+  - `latitude` matched coordinate;
+  - `longitude` matched coordinate;
+  - `street_name` matched street name, empty if no data is available or no match was found;
+  - `street_speed_assumed` car speed assumed for the matched street section in meters/second, negative if no data or no match was found;
+  - `street_speed_limit` car speed limit for the matched street section in meters/second, negative if no data or no match was found.
+
+  On request, more data can be made available, as supported by
+  Valhalla `trace_attributes` API.
+
+Map matching is a D-Bus client specific, with each client having
+separate session (history of coordinates) for each of the used
+modes. Histories of the different clients are kept separately.
+
+For maintaining the history, clients can call
+
+* **`Reset`**`(int32 mode)` drop the history and start a session for
+  `mode` as new for the calling client.
+
+* **`Stop`**(int32 mode)` and **`Stop`**`()` stop session for `mode`
+  or all modes for the calling client.
+
+See [QML PositionSourceMapMatched
+type](https://github.com/rinigus/positionsource-mapmatched-qml) for
+example implementation of the interaction with the server, including
+support for automatic start of the server via systemd socket
+activation.
 
 
 ## Translations
@@ -440,4 +537,3 @@ Hosting of maps: Natural Language Processing Centre
 (https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
 University, Brno, Czech Republic) through modRana
 (http://modrana.org).
-

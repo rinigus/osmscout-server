@@ -37,6 +37,7 @@ signals:
 public slots:
   void onSettingsChanged();
   void checkIdle();
+  void updateLastCall();
 
 protected:
   QThreadPool m_pool;

@@ -180,7 +180,7 @@ void ValhallaMaster::stop()
 ///////////////////////////////////////////////////////////////////////////////
 /// Interaction with Valhalla service
 
-bool ValhallaMaster::callActor(ActorType atype, const QString &json, QByteArray &result)
+bool ValhallaMaster::callActor(ActorType atype, const QByteArray &json, QByteArray &result)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
   if (!m_actor) return false;

@@ -12,7 +12,7 @@
 # The name of your application
 TARGET = osmscout-server
 
-QT = core network sql xml quick gui
+QT = core network sql xml quick gui positioning dbus
 
 CONFIG += c++11 object_parallel_to_source
 
@@ -81,7 +81,10 @@ SOURCES += src/dbmaster.cpp \
     src/mapmanager_deleterthread.cpp \
     src/systemdservice.cpp \
     src/util.cpp \
-    src/mapboxglmaster.cpp
+    src/mapboxglmaster.cpp \
+    src/valhallamapmatcher.cpp \
+    src/valhallamapmatcherdbus.cpp \
+    src/valhallamapmatcherdbusadaptor.cpp
     
 OTHER_FILES += \
     osmscout-server.desktop
@@ -112,7 +115,10 @@ HEADERS += \
     src/mapmanager_deleterthread.h \
     src/systemdservice.h \
     src/util.hpp \
-    src/mapboxglmaster.h
+    src/mapboxglmaster.h \
+    src/valhallamapmatcher.h \
+    src/valhallamapmatcherdbus.h \
+    src/valhallamapmatcherdbusadaptor.h
     
 use_osmscout {
     DEFINES += USE_OSMSCOUT

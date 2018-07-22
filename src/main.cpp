@@ -39,6 +39,10 @@
 #include "microhttpserver.h"
 #include "requestmapper.h"
 
+// DBus interface
+#include "valhallamapmatcherdbus.h"
+#include "valhallamapmatcherdbusadaptor.h"
+
 // LIB OSM Scout interface
 #include "dbmaster.h"
 
@@ -52,8 +56,9 @@
 #include "systemdservice.h"
 #include "util.hpp"
 
-#include <QTranslator>
 #include <QCommandLineParser>
+#include <QDBusConnection>
+#include <QTranslator>
 
 #include <QDebug>
 
@@ -508,9 +513,33 @@ int main(int argc, char *argv[])
     // enable idle timeout shutdown if started by systemd
 #ifdef USE_SYSTEMD
     if (parser.isSet(optionSystemD))
-      QObject::connect(&requests, &RequestMapper::idleTimeout,
-                       app.data(), QCoreApplication::quit );
+      {
+        QObject::connect(&infoHub, &InfoHub::activitySig,
+                         &requests, &RequestMapper::updateLastCall,
+                         Qt::QueuedConnection);
+        QObject::connect(&requests, &RequestMapper::idleTimeout,
+                         app.data(), QCoreApplication::quit );
+      }
 #endif
+
+    // establish d-bus connection
+    QDBusConnection dbusconnection = QDBusConnection::sessionBus();
+
+    // add d-bus interface
+#ifdef USE_VALHALLA
+    ValhallaMapMatcherDBus valhallaMapMatcherDBus;
+    new ValhallaMapMatcherDBusAdaptor(&valhallaMapMatcherDBus);
+    if (!dbusconnection.registerObject(DBUS_PATH_MAPMATCHING, &valhallaMapMatcherDBus))
+      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
+    else
+      dbusconnection.connect(QString(), "/org/freedesktop/DBus", "org.freedesktop.DBus", "NameOwnerChanged",
+                             &valhallaMapMatcherDBus, SLOT(onNameOwnerChanged(QString,QString,QString)));
+    valhallaMapMatcherDBus.activate();
+#endif
+
+    // register dbus service
+    if (!dbusconnection.registerService(DBUS_SERVICE))
+      InfoHub::logWarning(app->tr("Failed to register DBus service: %1").arg(DBUS_SERVICE));
 
     return_code = app->exec();
   }
