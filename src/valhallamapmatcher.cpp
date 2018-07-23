@@ -120,7 +120,7 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
 
       bool street_found = true;
       QGeoCoordinate cmatch(c);
-      if ( p.value("type").toString() != "matched" )
+      if ( p.value("type").toString() == "unmatched" )
         street_found = false;
       else
         {
