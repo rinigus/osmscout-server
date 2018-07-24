@@ -1,3 +1,5 @@
+#ifdef USE_VALHALLA
+
 #ifndef VALHALLAMAPMATCHERDBUS_H
 #define VALHALLAMAPMATCHERDBUS_H
 
@@ -47,3 +49,5 @@ private:
 };
 
 #endif // VALHALLAMAPMATCHERDBUS_H
+
+#endif // USE_VALHALLA

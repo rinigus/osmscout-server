@@ -1,3 +1,5 @@
+#ifdef USE_VALHALLA
+
 #include "valhallamapmatcherdbus.h"
 #include "infohub.h"
 
@@ -63,3 +65,5 @@ void ValhallaMapMatcherDBus::onNameOwnerChanged(QString name, QString /*old_owne
       m_matchers.remove(name);
     }
 }
+
+#endif

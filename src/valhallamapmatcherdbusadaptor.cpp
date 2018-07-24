@@ -1,3 +1,5 @@
+#ifdef USE_VALHALLA
+
 #include "valhallamapmatcherdbusadaptor.h"
 
 ValhallaMapMatcherDBusAdaptor::ValhallaMapMatcherDBusAdaptor(ValhallaMapMatcherDBus *p):
@@ -25,3 +27,5 @@ bool ValhallaMapMatcherDBusAdaptor::Stop(const QDBusMessage &message)
 {
   return m->stop(message);
 }
+
+#endif
