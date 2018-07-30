@@ -160,6 +160,8 @@ void ValhallaMaster::generateConfig()
 /// interaction with valhalla route service process
 void ValhallaMaster::start()
 {
+  if (!useValhalla) return;
+
   m_idle_mode = false;
 
   std::stringstream ss;
@@ -182,6 +184,8 @@ void ValhallaMaster::stop()
 
 bool ValhallaMaster::callActor(ActorType atype, const QByteArray &json, QByteArray &result)
 {
+  if (!useValhalla) return false;
+
   std::unique_lock<std::mutex> lk(m_mutex);
   if (!m_actor) return false;
 
