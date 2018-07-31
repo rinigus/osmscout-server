@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="es" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -2569,22 +2571,22 @@
 <context>
     <name>ValhallaMapMatcher</name>
     <message>
-        <location filename="../src/valhallamapmatcher.cpp" line="41"/>
+        <location filename="../src/valhallamapmatcher.cpp" line="43"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/valhallamapmatcher.cpp" line="232"/>
+        <location filename="../src/valhallamapmatcher.cpp" line="239"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ValhallaMapMatcherDBus</name>
     <message>
-        <location filename="../src/valhallamapmatcherdbus.cpp" line="62"/>
+        <location filename="../src/valhallamapmatcherdbus.cpp" line="64"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2600,12 +2602,12 @@
         <translation>Error al leer la plantilla de configuración de Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="203"/>
+        <location filename="../src/valhallamaster.cpp" line="207"/>
         <source>Exception in Valhalla: %1</source>
         <translation>Excepción en Valhalla: %1</translation>
     </message>
     <message>
-        <location filename="../src/valhallamaster.cpp" line="172"/>
+        <location filename="../src/valhallamaster.cpp" line="174"/>
         <source>Valhalla routing engine started</source>
         <translation>El motor de cálculo de rutas Valhalla se ha iniciado</translation>
     </message>
