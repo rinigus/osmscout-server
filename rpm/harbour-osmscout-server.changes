@@ -5,6 +5,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Jul 31 2018 rinigus <rinigus.git@gmail.com> 1.9.1-1
+- fix crash when using libosmscout profile
+- fixes in map matching service
+- add ferries and oneway streets in MapboxGL styles
+- updated translations
+
 * Sun Jul 22 2018 rinigus <rinigus.git@gmail.com> 1.9.0-1
 - introduction of D-Bus API
 - map matching of the current position as D-Bus service
