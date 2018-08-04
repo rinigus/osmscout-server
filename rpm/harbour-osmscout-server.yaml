@@ -6,7 +6,7 @@ Release: 1
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
 URL: https://github.com/rinigus/osmscout-server
-License: LGPL
+License: GPLv3
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:

@@ -18,7 +18,7 @@ Summary:    OSM Scout Server
 Version:    1.9.1
 Release:    1
 Group:      Qt/Qt
-License:    LGPL
+License:    GPLv3
 URL:        https://github.com/rinigus/osmscout-server
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-osmscout-server.yaml
