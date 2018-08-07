@@ -36,7 +36,7 @@
 #include <systemd/sd-daemon.h>
 #endif
 
-#define DEBUG_CONNECTIONS
+//#define DEBUG_CONNECTIONS
 
 ///////////////////////////////////////////////////////////////////////////////////
 /// Helper functions
@@ -116,8 +116,6 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
           *upload_data_size = 0;
           return MHD_YES;
         }
-
-      std::cout << "POST: " << MicroHTTP::ConnectionStore::getPostData(connection_id).toStdString() << "\n";
     }
 
   // dealing with GET
@@ -129,7 +127,6 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
   // unsupported method
   else
     {
-      //std::cout << method << " -> not GET" << std::endl;
       return MHD_NO;
     }
 
