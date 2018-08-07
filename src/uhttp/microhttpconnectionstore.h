@@ -37,6 +37,9 @@ public:
 
     static Connection::State state(Connection::keytype key, Server* &server, MHD_Connection* &connection);
 
+    static void appendPostData(Connection::keytype key, const char *upload_data, size_t upload_data_size);
+    static QByteArray getPostData(Connection::keytype key);
+
     static void setData(Connection::keytype key, QByteArray &data, bool error);
 
     static bool dataToSend(Connection::keytype key, QByteArray &data);

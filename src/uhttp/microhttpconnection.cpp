@@ -19,9 +19,16 @@
 
 #include "microhttpconnection.h"
 
+const MicroHTTP::Connection::keytype MicroHTTP::Connection::empty = 0;
+
 MicroHTTP::Connection::Connection(MicroHTTP::Server *server, MHD_Connection *connection):
     m_server(server),
     m_connection(connection)
 {
 
+}
+
+void MicroHTTP::Connection::appendPostData(const char *upload_data, size_t upload_data_size)
+{
+  m_post_data.append(upload_data, upload_data_size);
 }
