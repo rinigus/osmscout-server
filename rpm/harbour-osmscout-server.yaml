@@ -1,12 +1,12 @@
 Name: harbour-osmscout-server
 Summary: OSM Scout Server
-Version: 1.4.0
+Version: 1.9.1
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
 URL: https://github.com/rinigus/osmscout-server
-License: LGPL
+License: GPLv3
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Sources:
@@ -29,21 +29,34 @@ PkgConfigBR:
   - Qt5Quick
   - Qt5Xml
   - Qt5Sql
+  - Qt5Positioning
+  - Qt5DBus
   - sqlite3
-  - libcurl
   - libsystemd-daemon
+  - zlib
+  - libcurl
 
 # Build dependencies without a pkgconfig setup can be listed here
 PkgBR:
   - libmarisa-devel
   - libmicrohttpd-devel
   - libosmscout-qt-devel
-  - libpostal-devel
-  - snappy-devel
+  - libpostal-devel >= 1.0.0
   - libkyotocabinet-devel
   - mapnik-devel
   - libicu52-devel
   - qt5-qttools-linguist
+  - valhalla-lite-devel
+  - protobuf-devel
+  - boost-devel >= 1.51
+  - boost-date-time >= 1.51
+  - boost-chrono >= 1.51
+  - boost-filesystem >= 1.51
+  - boost-iostreams >= 1.51
+  - boost-regex >= 1.51
+  - boost-system >= 1.51
+  - lz4-devel
+
 
 # Runtime dependencies which are not automatically detected
 Requires:

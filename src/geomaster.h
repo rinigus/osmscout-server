@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #ifndef GEOMASTER_H
 #define GEOMASTER_H
 
@@ -9,6 +28,8 @@
 #include <QString>
 #include <QStringList>
 #include <QHash>
+#include <QPair>
+#include <QSet>
 #include <QMutex>
 
 /////////////////////////////////////////
@@ -54,8 +75,16 @@ public:
 
   /// \brief Search for POI by its type or name near the given origin
   ///
-  bool guide(const QString &query,
-             double lat, double lon, double radius, size_t limit, QByteArray &result_data);
+  /// Has support for searching near point (if route is zero length), next
+  /// to route (non-zero length route array) either along full route (reference
+  /// accounting set to false) or starting from the reference (reference accounting
+  /// set to true).
+  bool guide(const QString &poitype, const QString &name,
+             bool accout_for_reference, double lat, double lon,
+             QJsonArray &route_lat, QJsonArray &route_lon,
+             double radius, size_t limit, QByteArray &result_data);
+
+  bool poiTypes(QByteArray &result); ///< Fill results with list of supported POI types
 
   bool warnLargeRamLangNotSpecified() const { return m_warnLargeRamLangNotSpecified; }
 
@@ -74,6 +103,10 @@ protected:
 
   void checkWarnings(bool lang_specified);
 
+  void loadTagAlias(const QStringList &lang_list);
+  QString normalize(const QString &str) const;
+  QString tag2alias(const QString &tag) const;
+
 protected:
   QMutex m_mutex;
 
@@ -91,6 +124,11 @@ protected:
   QStringList m_countries;
   QHash<QString, QString> m_postal_country_dirs;
   QHash<QString, QString> m_geocoder_dirs;
+
+  QStringList m_tag_alias_langs;
+  QHash<QString, QString> m_tag_to_alias;         ///< mapping from geocoder tags to preferred alias
+  QHash<QString, QSet<QString> > m_alias_to_tag;  ///< mapping from alias to geocoder tags
+  QStringList m_aliases;
 };
 
 #endif // GEOMASTER_H

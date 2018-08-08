@@ -5,6 +5,59 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Jul 31 2018 rinigus <rinigus.git@gmail.com> 1.9.1-1
+- fix crash when using libosmscout profile
+- fixes in map matching service
+- add ferries and oneway streets in MapboxGL styles
+- updated translations
+
+* Sun Jul 22 2018 rinigus <rinigus.git@gmail.com> 1.9.0-1
+- introduction of D-Bus API
+- map matching of the current position as D-Bus service
+- updated translations
+
+* Thu Jul 12 2018 rinigus <rinigus.git@gmail.com> 1.8.0-1
+- use Valhalla C++ API
+- expose multiple Valhalla's services
+- add Mapbox GL car styles
+- update translations
+- other small changes
+
+* Sat Jun 16 2018 rinigus <rinigus.git@gmail.com> 1.7.0-1
+- support for aliases in multiple languages in guide search
+- support for POIs without a name in guide search
+- extend API for guide search by specified type and/or name
+- provide the list of currently used aliases
+- sort guide results by distance
+- adjusted lists of imported types for geocoder-nlp
+- other enhancements and bugfixes in geocoder-nlp
+- Updated translations
+
+* Fri May 25 2018 rinigus <rinigus.git@gmail.com> 1.6.0-1
+- addition of QtQuick Controls GUI version
+- update geocoder to libpostal 1.1 API
+- adjust geocoder results sorting
+- changes in Valhalla packaging
+- added nl_BE translation
+- updated translations
+- moved Silica QML into separate folder
+- show map selection only if needed
+
+* Tue Apr 3 2018 rinigus <rinigus.git@gmail.com> 1.5.0-1
+- revise warning messages on missing backend data
+- notify about missing modules only if required by selected backends
+- source tree and compilation enhancements
+
+* Wed Feb 21 2018 rinigus <rinigus.git@gmail.com> 1.4.3-1
+- Updated translations
+- Fix Mapbox GL style to show rivers
+- Change SFOS packaging to introduce explicit systemd dependency
+
+* Sat Jan 20 2018 rinigus <rinigus.git@gmail.com> 1.4.1-1
+- Updated translations
+- Support for multiple Mapbox GL icon packs
+- Addition of Mapbox GL dark style
+
 * Sun Jan 14 2018 rinigus <rinigus.git@gmail.com> 1.4.0-1
 - Updated Mapbox GL tile schema
 - Mapbox GL style with English names

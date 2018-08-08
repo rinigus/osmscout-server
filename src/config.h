@@ -1,7 +1,29 @@
+/*
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #ifndef CONFIG_H
 #define CONFIG_H
 
 #ifdef IS_CONSOLE_QT
+#define APP_PREFIX ""
+#endif
+#ifdef IS_QTCONTROLS_QT
 #define APP_PREFIX ""
 #endif
 #ifdef IS_SAILFISH_OS
@@ -27,7 +49,15 @@
 
 #define REQUEST_MAPPER_SETTINGS "request-mapper/"
 
-#define GENERAL_APP_VERSION 2
+#define GENERAL_APP_VERSION 4
+
+// d-bus access
+#define DBUS_SERVICE "org.osm.scout.server1"
+#define DBUS_PATH_ROOT "/org/osm/scout/server1"
+#define DBUS_INTERFACE_ROOT "org.osm.scout.server1"
+
+#define DBUS_PATH_MAPMATCHING DBUS_PATH_ROOT "/mapmatching1"
+#define DBUS_INTERFACE_MAPMATCHING DBUS_INTERFACE_ROOT ".mapmatching1"
 
 //////////////////////////////////////////////
 /// global variables
@@ -40,7 +70,9 @@
 
 #include <atomic>
 
+#ifdef USE_OSMSCOUT
 extern DBMaster *osmScoutMaster;
+#endif
 
 extern GeoMaster *geoMaster;
 

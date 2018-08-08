@@ -48,8 +48,6 @@ In case if there is a new liboscmscout or geocoder-nlp version:
 
 * run ./prepare_backends.sh
 
-* update versions in the end of build.sh script
-
 * update versions in the end of build_mapnik.sh script
 
 * update version for Valhalla in valhalla_country_pack.py module
@@ -91,7 +89,7 @@ these scripts for instructions.
 
 ### Other scripts
 
-* build.sh - performs import for each PBF
+* build_{geocoder,osmscout}.sh - performs import for each PBF
 
 * get_base_from_geofabrik.py - used to build initial hierarchy
 

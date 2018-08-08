@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #ifndef REQUESTMAPPER_H
 #define REQUESTMAPPER_H
 
@@ -6,6 +25,7 @@
 #include <QThreadPool>
 #include <QTimer>
 #include <QObject>
+#include <QString>
 
 #include <time.h>
 
@@ -36,12 +56,22 @@ signals:
 public slots:
   void onSettingsChanged();
   void checkIdle();
+  void updateLastCall();
 
 protected:
   QThreadPool m_pool;
   QTimer m_timer;
   struct timespec m_last_call;
   double m_idle_timeout;
+
+  // availibility of different backends
+  bool m_available_geocodernlp{false};
+  bool m_available_mapboxgl{false};
+  bool m_available_mapnik{false};
+  bool m_available_osmscout{false};
+  bool m_available_valhalla{false};
+
+  QString m_info_enable_backends;
 };
 
 #endif // REQUESTMAPPER_H

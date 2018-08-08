@@ -13,3 +13,8 @@
 *.a
 
 /*.pro.user
+/*.pro.user.*
+/osmscout-server_console.pro*
+/osmscout-server_qtcontrols.pro*
+
+*~

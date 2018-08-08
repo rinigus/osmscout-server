@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
 
@@ -12,6 +31,9 @@ class AppSettings : public QSettings
 
   /// \brief true when profiles are used to select backends
   Q_PROPERTY(bool profilesUsed READ profilesUsed NOTIFY profilesUsedChanged)
+
+  /// \brief true if country selection has to be shown
+  Q_PROPERTY(bool countrySelectionNeeded READ countrySelectionNeeded NOTIFY countrySelectionNeededChanged)
 
   /// \brief true if the application has been run the first time
   Q_PROPERTY(bool firstTime READ firstTime)
@@ -41,6 +63,8 @@ public:
 
   bool profilesUsed() const { return m_profiles_used; }
 
+  bool countrySelectionNeeded() const { return m_country_selection_needed; }
+
   bool firstTime() const { return m_first_time; }
 
   bool lastRunVersion() const { return m_last_run_version; }
@@ -54,6 +78,7 @@ public:
 signals:
   void osmScoutSettingsChanged();
   void profilesUsedChanged(bool used);
+  void countrySelectionNeededChanged(bool selection);
 
 public slots:
   void fireOsmScoutSettingsChanged();
@@ -63,9 +88,12 @@ protected:
 
   void setProfile();
 
+  void checkCountrySelectionNeeded();
+
 protected:
   bool m_signal_osm_scout_changed_waiting = false;
   bool m_profiles_used = false;
+  bool m_country_selection_needed = true;
   bool m_first_time = false;
   int m_last_run_version{0};
 };

@@ -323,6 +323,99 @@
       }
     },
     {
+      "id": "waterway-other",
+      "type": "line",
+      "source": "osmscout",
+      "source-layer": "waterway",
+      "filter": [
+        "!in",
+        "class",
+        "canal",
+        "river",
+        "stream"
+      ],
+      "layout": {
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#A0C8F0",
+        "line-width": {
+          "base": 1.3,
+          "stops": [
+            [
+              13,
+              0.5
+            ],
+            [
+              20,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "waterway-stream-canal",
+      "type": "line",
+      "source": "osmscout",
+      "source-layer": "waterway",
+      "filter": [
+        "in",
+        "class",
+        "canal",
+        "stream"
+      ],
+      "layout": {
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#A0C8F0",
+        "line-width": {
+          "base": 1.3,
+          "stops": [
+            [
+              13,
+              0.5
+            ],
+            [
+              20,
+              6
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "waterway-river",
+      "type": "line",
+      "source": "osmscout",
+      "source-layer": "waterway",
+      "filter": [
+        "==",
+        "class",
+        "river"
+      ],
+      "layout": {
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "#A0C8F0",
+        "line-width": {
+          "base": 1.2,
+          "stops": [
+            [
+              10,
+              0.8
+            ],
+            [
+              20,
+              6
+            ]
+          ]
+        }
+      }
+    },
+    {
       "id": "building",
       "type": "fill",
       "source": "osmscout",
@@ -898,6 +991,32 @@
             ]
           ]
         },
+        "line-dasharray": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "ferry",
+      "type": "line",
+      "source": "osmscout",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "ferry"
+        ]
+      ],
+      "layout": {
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#607890",
+        "line-width": 1.1,
         "line-dasharray": [
           2,
           2
@@ -3360,6 +3479,7 @@
           0,
           0.6
         ],
+        "text-optional": true,
         "text-size": 12,
         "text-max-width": 9
       },
@@ -3409,6 +3529,7 @@
           0,
           0.6
         ],
+        "text-optional": true,
         "text-size": 12,
         "text-max-width": 9
       },
@@ -3457,6 +3578,7 @@
           0,
           0.6
         ],
+        "text-optional": true,
         "text-size": 12,
         "text-max-width": 9
       },
@@ -3465,6 +3587,104 @@
         "text-color": "#666",
         "text-halo-width": 1,
         "text-halo-color": "#ffffff"
+      }
+    },
+    {
+      "id": "road_oneway",
+      "type": "symbol",
+      "source": "osmscout",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "oneway",
+          1
+        ],
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "service"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "oneway",
+        "symbol-spacing": 75,
+        "icon-padding": 2,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": 90,
+        "icon-size": {
+          "stops": [
+            [
+              15,
+              0.5
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "icon-opacity": 0.4
+      }
+    },
+    {
+      "id": "road_oneway_opposite",
+      "type": "symbol",
+      "source": "osmscout",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "oneway",
+          -1
+        ],
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "service"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "oneway",
+        "symbol-spacing": 75,
+        "icon-padding": 2,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": -90,
+        "icon-size": {
+          "stops": [
+            [
+              15,
+              0.5
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "icon-opacity": 0.4
       }
     },
     {
@@ -3488,7 +3708,7 @@
             ],
             [
               14,
-              11
+              12
             ]
           ]
         },
@@ -3536,7 +3756,7 @@
             ],
             [
               14,
-              11
+              12
             ]
           ]
         },
@@ -3577,7 +3797,7 @@
             ],
             [
               14,
-              13
+              14
             ]
           ]
         },
@@ -3761,6 +3981,44 @@
       }
     },
     {
+      "id": "ferry-name",
+      "type": "symbol",
+      "source": "osmscout",
+      "source-layer": "ferry_name",
+      "minzoom": 12.2,
+      "filter": [
+        "==",
+        "class",
+        "ferry"
+      ],
+      "layout": {
+        "text-size": {
+          "base": 1,
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              14
+            ]
+          ]
+        },
+        "text-font": [
+          "Noto Sans Regular"
+        ],
+        "text-field": "{name_en}",
+        "symbol-placement": "line",
+        "text-rotation-alignment": "map"
+      },
+      "paint": {
+        "text-halo-color": "rgba(182, 213, 243, 0.75)",
+        "text-color": "#607890",
+        "text-halo-width": 1
+      }
+    },
+    {
       "id": "aerodrome-label-iata",
       "type": "symbol",
       "source": "osmscout",
@@ -3868,7 +4126,7 @@
           "stops": [
             [
               3,
-              11
+              12
             ],
             [
               7,
@@ -3917,7 +4175,7 @@
           "stops": [
             [
               5,
-              11
+              12
             ],
             [
               14,
@@ -3990,11 +4248,11 @@
           "stops": [
             [
               8,
-              11
+              12
             ],
             [
               12,
-              17
+              14
             ]
           ]
         },
@@ -4062,7 +4320,7 @@
           "stops": [
             [
               10,
-              14
+              12
             ],
             [
               15,

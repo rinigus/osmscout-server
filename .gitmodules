@@ -10,9 +10,3 @@
 [submodule "docs/fullPage.js"]
 	path = docs/assets/fullPage.js
 	url = https://github.com/alvarotrigo/fullPage.js.git
-[submodule "modules/route"]
-	path = modules/route
-	url = https://github.com/rinigus/osmscout-server-route.git
-[submodule "modules/fonts"]
-	path = modules/fonts
-	url = https://github.com/rinigus/osmscout-server-fonts.git

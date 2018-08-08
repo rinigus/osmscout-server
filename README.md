@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)
 [![Donate](https://img.shields.io/badge/donate-liberapay-yellow.svg)](https://liberapay.com/rinigus)
+[![Donate](https://img.shields.io/badge/donate-bitcoin-yellowgreen.svg)](http://rinigus.github.io/donate-bitcoin)
 
 OSM Scout server can be used as a drop-in replacement for online map
 services providing map tiles, search, and routing. As a result, an
@@ -12,7 +13,7 @@ At present, the server can be used to provide:
 * vector or raster tiles for other applications;
 * search for locations and free text search;
 * search for POIs next to a reference area;
-* calculating routes between given sequence of points.
+* calculating routes between given sequence of points;
 
 User's guide is available at https://rinigus.github.io/osmscout-server
 
@@ -29,10 +30,10 @@ JavaScript-based clients are provided under "example" folder. At
 present, Poor Maps and modRana include plugins already in the upstream
 and no additional configuration is needed.
 
-The server is written using Qt. The server can be used as a console or
-a Sailfish application. For console version, use
-osmscout-server_console.pro as a project, available in console
-subfolder. For Sailfish, use osmscout-server_silica.pro.
+The server is written using Qt. The server can be used as a console, a
+Sailfish, or a QtQuick application. For console and QtQuick versions,
+use the corresponding project file, available in pro subfolder. For
+Sailfish, use osmscout-server_silica.pro.
 
 
 ## Maps
@@ -122,23 +123,55 @@ that. Since, when client and the server are operating on the same
 device, network failure is not expected, such timeouts are, in
 general, not needed.
 
+## Access
+
+Server provides its functionality via HTTP or D-Bus. APIs on HTTP and
+D-Bus cover different functionality. HTTP has been available from the
+beginning and D-Bus has been added starting from version 1.9. Below,
+HTTP API is described, followed by [D-Bus API](#d-bus-api), when
+stated.
+
 
 ## Default port
 
-Default port is 8553 TCP and the server binds to 127.0.0.1 providing
-services to local apps only.
+Default port for HTTP access is 8553 TCP and the server binds to
+127.0.0.1 providing services to local apps only. Binding and the port
+can be changed in the configuration file manually.
 
 
-## URL scheme
+## URL schema
 
-Access to functionality is provided via path and query parts of
-URL. The path determines the module that is accessed with the query
-specifying arguments. Here, order of query elements is not important.
+Server provides access via GET and POST methods. Access to
+functionality is provided via path and query parts of URL. The path
+determines the module that is accessed with the query specifying
+arguments. Here, order of query elements is not important.
+
+When using GET, set the query parameters after `?` in the form
+`variable=value` and separate the parameters by `&`.
+
+When using POST, path must be specified as for GET method. However,
+when using POST, query parameters set by URL can be mixed with the
+parameters specified in the posted JSON object in the form:
+
+```json
+{
+   "variable1": 3,
+   "variable2": "value string"
+}
+```
+
+POSTed JSON object keys are checked first and used, if specified,
+ignoring the query settings specified in URL.
+
+In the description of the schema below, GET form is used, unless
+specified differently.
 
 
 ## Examples
 
-See `examples` folder for results of the example queries.
+See `examples` folder for the example queries and their
+results. Below, just the results are referenced. For corresponding
+queries, see accompanying [README](examples/README.md).
 
 
 ## Raster tiles
@@ -171,7 +204,7 @@ libosmscout backend, `styles` parameter is ignored.
 
 ## Mapbox GL vector tiles
 
-The vector tiles and associated styles, fonts and icons are provided
+The vector tiles, associated styles, fonts, and icons are provided
 via server.
 
 ### Tiles
@@ -232,30 +265,7 @@ where
 
 `{query}` - location and free text search
 
-Results are returned in JSON format. Example query:
-`http://localhost:8553/v1/search?limit=10&search=tartu mnt 1, tallinn`
-
-```
-[
-{
-"admin_region": "Tallinn, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-"lat": 59.434895,
-"lng": 24.758684,
-"object_id": "Node 631817",
-"title": "Tartu mnt 1, Tallinn",
-"type": "address"
-},
-{
-"admin_region": "Tallinn, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-"lat": 59.404687,
-"lng": 24.810360,
-"object_id": "Way 9670330",
-"title": "Tartu mnt, Tallinn",
-"type": "highway_trunk"
-},
-...
-]
-```
+Results are returned in JSON format ([example](examples/search_v1.json)).
 
 ### Location search: version 2
 
@@ -265,59 +275,7 @@ The location search is accessed by the following URL:
 
 where meaning of the query parameters is the same as for the version
 one. However, the result includes parsing feedback when geocoder-nlp
-is used. For example,
-`http://localhost:8553/v2/search?limit=3&search=tartu mnt 1, tallinn`:
-
-```
-{
-    "parsed": {
-        "city": "tallinn",
-        "house_number": "1",
-        "road": "tartu mnt"
-    },
-    "parsed_normalized": [
-        {
-            "city": "tallinn",
-            "house_number": "1",
-            "road": "tartu maantee"
-        },
-        {
-            "h-0": "tallinn",
-            "h-1": "tartu maantee 1"
-        }
-    ],
-    "query": "tartu mnt 1, tallinn",
-    "result": [
-        {
-            "admin_region": "1, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-            "lat": 59.434894989690889,
-            "levels_resolved": 3,
-            "lng": 24.758684372594075,
-            "object_id": 31299,
-            "title": "1, Tartu mnt",
-            "type": ""
-        },
-        {
-            "admin_region": "13, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-            "lat": 59.434417556482686,
-            "levels_resolved": 3,
-            "lng": 24.761235153386252,
-            "object_id": 31312,
-            "title": "13, Tartu mnt",
-            "type": ""
-        },
-        {
-            "admin_region": "14, Tartu mnt, Kesklinna linnaosa, Tallinna linn, Harju maakond, Eesti",
-            "lat": 59.433896537377663,
-            "levels_resolved": 3,
-            "lng": 24.761358535001861,
-            "object_id": 31314,
-            "title": "14, Tartu mnt",
-            "type": ""
-        }
-    ]
-}
-```
+is used, see [example](examples/search_v2.json).
 
 
 ## List of available POI types
@@ -326,13 +284,18 @@ List of available POI types is available via
 
 `http://localhost:8553/v1/poi_types`
 
+The list is given as JSON array. When using geocoder-nlp as a search
+backend, the list represents currently used aliases for the used tags.
+Shortened version of the response is given as an
+[example](examples/poi_types.json).
+
 
 ## POI search near a reference position
 
-To find POIs within a given radius from a specified reference
-position, server can be accessed via `/v1/guide` path:
+To find POIs within a given radius from a specified reference position
+and/or reference route, server can be accessed via `/v1/guide` path:
 
-`http://localhost:8553/v1/guide?radius={radius}&blimit={limit}&query={query}&search={search}&lng={lng}&lat={lat}`
+`http://localhost:8553/v1/guide?radius={radius}&limit={limit}&poitype={poitype}&name={name}&search={search}&lng={lng}&lat={lat}`
 
 where
 
@@ -340,121 +303,75 @@ where
 
 `{radius}` - distance from the reference in meters
 
-`{query}` - POI type name substring (checked against POI type name in case-insensitive manner) or name of the POI
+`{poitype}` - POI type name
+
+`{name}` - Name of POI to search
 
 `{search}` - a query that is run to find a reference point, the first result is used
 
 `{lng}`, `{lat}` - longitude and latidude, respectively.
 
-Query is considered as a substring that is looked for in all available
-POI types without taking into account the case of letters. For
-example, "Cafe" would match amenity_cafe_building and
-amenity_cafe.
+The reference route can be given only through POST JSON object in the form
+
+```json
+{
+  "route_lng": [longitude1, longitude2, longitude3, ...],
+  "route_lat": [latitude1, latitude2, latitude3, ...]
+}
+```
+
+Given POI type is considered either as an alias or imported POI
+type. Type comparison is done in a case-insensitive manner. POI types
+are formed from OSM tags in the form `tag_value`.
+
+List of the current tags and aliases, as used by geocoder-nlp, is given at
+[https://rinigus.github.io/osmscout-server/tags](https://rinigus.github.io/osmscout-server/tags).
 
 In addition, POI can be searched by its name. For example, you could
-search for the restaurant by its name. This is only supported by
-Geocoder-NLP backend. In Geocoder-NLP, all query requests are
-normalized using libpostal and, in case of the names, compared with
-the normalized names of POIs.
+search for the restaurant by its name. This parameter is only
+supported by Geocoder-NLP backend.
 
-For backward compatibility, `query` keyword can be replaced with
-`poitype`.
+It is required, that either POI type, POI name, or the type and name
+are specified in the query.
 
 The reference point can be given either as a query ("Paris") or as a
 location coordinates. If the both forms are given in URL, location
 coordinates are preferred.
 
-The result is given in JSON format. It returns a JSON object with
+When reference route is given, the search is along the route. It can
+be used to find POIs along the route starting, if given, from the
+reference point.
+
+The result is given in JSON format. It returns a JSON object with two
 keys: `"origin"` (coordinates of the reference point used in the
-search) and `"results"` (array with the POIs). See `examples` folder
-and Poor Maps implementation on how to process the results.
+search) and `"results"` (array with the POIs). See
+[example](examples/guide.json) for details.
 
 
 ## Routing
 
-There are two versions of routing protocol that have to be used in
-accordance with the used backend. Version 1 (`v1/route`) is used by
-libosmscout and is described below. Version 2 (`v2/route`) is used by
-Valhalla and uses Valhalla's API. Version 2 is supported, in part, by
-libosmscout as well.
-
-### Version 1: libosmscout
-
-The routing component allows to calculate routes between given
-points. Server can be accessed via `/v1/route` path:
-
-`http://localhost:8553/v1/route?radius={radius}&type={type}&gpx={gpx}&p[0][search]={search}&p[0][lng]={lng}&p[0][lat]={lat}& ... &p[n-1][search]={search}&p[n-1][lng]={lng}&p[n-1][lat]={lat}`
-
-where each point along the route can be given either by `{search}` or
-longitude and latitude with precise coordinates preferred if the both
-approaches are used. The number of points `n` should be at least two,
-with the counting starting from 0. The server looks for points in the
-query by starting from index 0 and incrementing it by one until the
-points with consecutive indexes are all found. Note that if you skip
-an index in the list (like having indexes 0, 1, 3, and 4), the points
-after the increment larger than one will be ignored (in the example,
-points 3 and 4).
-
-The query parameters are:
-
-`{type}` - type of the vehicle with `car`, `bicycle`, and `foot`
-supported (`car` is default);
-
-`{radius}` - distance from the points in meters where closest routing
-point is searched for (1000 meters by default);
-
-`{gpx}` - when 1 or larger integer, GPX trace of the route will be
-given in the response of the server instead of JSON reply;
-
-`{search}` - a query that is run to find a reference point, the first
-result is used;
-
-`{lng}`, `{lat}` - longitude and latidude, respectively.
-
-
-For example, the following request finds the route between two cities
-given by names:
-
-`http://localhost:8553/v1/route?p[0][search]=Tallinn&p[1][search]=Tartu`
-
-
-The result is given in JSON format. It returns a JSON object with
-several keys:
-
-`locations` - coordinates of the reference points used in the calculations;
-
-`language` - language of the maneuvers instructions;
-
-`lat` - array of latitudes with the calculated route;
-
-`lng` - array of longitudes with the calculated route;
-
-`maneuvers` - array of objects describing maneuvers;
-
-`summary` - object specifying length and duration of the route;
-
-`units_distance` - units of distances used in route description (kilometers for now);
-
-`units_time` - units of time used in route description (seconds for now).
-
-
-See included example under Examples and Poor Maps implementation on
-how to process the results.
-
-At present, the car speeds on different roads are inserted in the
-code. This will improve in future.
+The current protocol (version 2) is fully used by Valhalla's backend
+and is Valhalla's API for `route` call. In part, version 2 is
+supported, by libosmscout as well. Version 1 (`v1/route`) is used by
+libosmscout and is described in [OLD_API](README.older_api.md).
 
 
 ### Version 2: Valhalla
 
+Routing instructions calculations are only one of the several Valhalla
+APIs that are exposed by OSM Scout Server. For description of the URL
+schema, as used by Valhalla's backend, see below in a separate
+section. Valhalla is a recommended backend for routing and it is
+expected that the most of the users will be using it.
+
 This is the version that would be mainly supported in future. It uses
 Valhalla's API, as described in
-https://github.com/valhalla/valhalla-docs/blob/master/api-reference.md
+https://github.com/valhalla/valhalla-docs/blob/master/turn-by-turn/api-reference.md
 . Please note that there is no API key in the Valhalla's component
 used by OSM Scout Server.
 
 At present, all calls via `v2/route`, as
-`http://localhost:8553/v2/route?...` would be forwarded to Valhalla
+`http://localhost:8553/v2/route?...` would equivalent to Valhalla
 via `/route?...`.
 
 
@@ -465,10 +382,140 @@ the routes. In this case, the server would consider limited subset of
 Valhalla's API. In particular, `costing` option would be used to
 select the transportation mode (`auto`, `bicycle`, or `pedestrian`)
 with the order of points found from `location`. The reply of the
-server will follow Version 1 protocol with an additional flag `API
-version` set to `libosmscout V1` in the response of the server. Using
+server will follow Version 1 protocol with an additional flag `API version`
+set to `libosmscout V1` in the response of the server. Using
 this flag, the client application can determine whether version 1
 protocol response has been used.
+
+
+## Valhalla API for routing, map matching, and other services
+
+Valhalla is interfaced by OSM Scout Server through Valhalla's C++ API
+and it exposes most of Valhalla's functionality via different path
+components of the URL.
+
+URL schema for Valhalla's APIs is in the form
+
+`http://localhost:8553/v2/{api_name}?json={json}`
+
+where
+
+`{api_name}` - name of the used API, as specified below
+
+`{json}` - JSON query, as specified by the corresponding Valhalla's API.
+
+OSM Scout Server does not impose any API key to the Valhalla's
+calls. The following Valhalla's APIs are supported (with the link given describing the API):
+
+* `route` - [routing instructions](https://github.com/valhalla/valhalla/blob/master/docs/api/turn-by-turn/api-reference.md)
+
+* `trace_attributes` - [map matching, trace attributes](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md),
+  for obtaining road attributes as a result of matching the coordinate sequence, as fed from GPS device, with the road network.
+  Can be used for just in time navigation information.
+
+* `trace_route` - [map matching, trace_route](https://github.com/valhalla/valhalla/blob/master/docs/api/map-matching/api-reference.md),
+  for creating navigation instructions on the basis of coordinate sequence. Can be used to share the used road.
+
+* `locate` - [information about streets and intersections](https://github.com/valhalla/valhalla/blob/master/docs/api/locate/api-reference.md)
+
+* `matrix` - [time-distance matrix](https://github.com/valhalla/valhalla/blob/master/docs/api/matrix/api-reference.md)
+
+* `optimized_route` - [optimized route between set of locations](https://github.com/valhalla/valhalla/blob/master/docs/api/optimized/api-reference.md)
+
+* `isochrone` - [reachability from a given point within a time limit](https://github.com/valhalla/valhalla/blob/master/docs/api/isochrone/api-reference.md)
+
+* `height` - [elevation data for a single location or a path](https://github.com/valhalla/valhalla/blob/master/docs/api/elevation/api-reference.md)
+
+At the moment of writing (Jul 2018), elevation data is not imported in the distributed maps. The corresponding issue has been
+opened (https://github.com/rinigus/osmscout-server/issues/244).
+
+
+## Activation URL
+
+When its needed to start the server that has been configured for
+autostarting using systemd socket activation, there is a convenience
+access path that will not trigger any error or further action
+
+`http://localhost:8553/v1/activate`
+
+When successful, it will return `{ "status": "active" }` as a
+response.
+
+
+## D-Bus API
+
+D-Bus API is provided via service `org.osm.scout.server1`. At present,
+its used to provide map matching service for just in time navigation
+information. In future, D-Bus API can be extended on request.
+
+### Map matching via D-Bus
+
+D-Bus API is available only if Valhalla router is used, as configured
+by default.
+
+For QML applications, there is a reference implementation that uses
+map matching API to provide just in time information. The
+implementation is available as a [QML
+PositionSourceMapMatched](https://github.com/rinigus/positionsource-mapmatched-qml)
+type and can be easily incorporated into application without
+consulting OSM Scout Server API.
+
+Map matching is provided at path
+`/org/osm/scout/server1/mapmatching1`, interface
+`org.osm.scout.server1.mapmatching1`. On presence of the service,
+there is a boolean property `Active` which equals to `True`.
+
+The main interaction with the server occurs via the following method:
+
+* **`Update`**`(int32 mode, Double latitude, Double longitude, Double
+  accuracy) -> String`.  This is a method that should be called for
+  updating the current location, given by coordinates and
+  accuracy. Valhalla's map matching cost factor is given by `mode`
+  where it can have the following values
+
+  - 1 car, "auto" in Valhalla API
+  - 2 car along shorter distance, "auto_shorter" in Valhalla API
+  - 3 bicycle
+  - 4 bus
+  - 5 pedestrian
+
+  By repeatedly calling `Update`, OSM Scout Server builds trajectory
+  of the client and analyzes it to provide information regarding the
+  current location. The return value is given by JSON object in a
+  String form. Note that this object is filled _only_ with the
+  properties that have changed when compared to the previous call. For
+  example, if the street name is the same as during the last call, it
+  is not returned in the returned JSON object. The following
+  properties are supported:
+
+  - `direction` direction of motion along the matched street or path, in degrees [0,360] from true north;
+  - `direction_valid` equals to 1 if reported direction is valid, 0 otherwise;
+  - `latitude` matched coordinate;
+  - `longitude` matched coordinate;
+  - `street_name` matched street name, empty if no data is available or no match was found;
+  - `street_speed_assumed` car speed assumed for the matched street section in meters/second, negative if no data or no match was found;
+  - `street_speed_limit` car speed limit for the matched street section in meters/second, negative if no data or no match was found.
+
+  On request, more data can be made available, as supported by
+  Valhalla `trace_attributes` API.
+
+Map matching is a D-Bus client specific, with each client having
+separate session (history of coordinates) for each of the used
+modes. Histories of the different clients are kept separately.
+
+For maintaining the history, clients can call
+
+* **`Reset`**`(int32 mode)` drop the history and start a session for
+  `mode` as new for the calling client.
+
+* **`Stop`**`(int32 mode)` and **`Stop`**`()` stop session for `mode`
+  or all modes for the calling client.
+
+See [QML
+PositionSourceMapMatched](https://github.com/rinigus/positionsource-mapmatched-qml)
+type for example implementation of the interaction with the server,
+including support for automatic start of the server via systemd socket
+activation.
 
 
 ## Translations
@@ -479,7 +526,7 @@ The translations were contributed by
 - Lukáš Karas @Karry: Czech
 - Åke Engelbrektson @eson57: Swedish
 - Ricardo Breitkopf @monkeyisland: German
-- Nathan Follens @pljmn: Dutch
+- Nathan Follens @pljmn: Dutch (NL and BE)
 - @Sagittarii: French
 - Oleg Artobolevsky @XOleg: Russian
 - A @atlochowski: Polish
@@ -524,4 +571,3 @@ Hosting of maps: Natural Language Processing Centre
 (https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
 University, Brno, Czech Republic) through modRana
 (http://modrana.org).
-

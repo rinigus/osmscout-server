@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #include "mapmanagerfeature.h"
 #include "mapmanagerfeature_packtaskworker.h"
 #include "infohub.h"
@@ -232,20 +251,21 @@ QString FeatureGeocoderNLP::errorMissing() const
 ////////////////////////////////////////////////////////////
 /// libpostal support
 const static QStringList postal_global_files{
-  "address_expansions/address_dictionary.dat", "language_classifier/language_classifier.dat",
+  "address_expansions/address_dictionary.dat",
+  "language_classifier/language_classifier.dat",
   "numex/numex.dat", "transliteration/transliteration.dat" };
 
 const static QStringList postal_country_files{
-  "address_parser/address_parser.dat", "address_parser/address_parser_phrases.trie",
-  "address_parser/address_parser_vocab.trie", "geodb/geodb_feature_graph.dat",
-  "geodb/geodb_features.trie", "geodb/geodb_names.trie", "geodb/geodb_postal_codes.dat",
-  "geodb/geodb.spi", "geodb/geodb.spl" };
+  "address_parser/address_parser_crf.dat",
+  "address_parser/address_parser_phrases.dat",
+  "address_parser/address_parser_postal_codes.dat",
+  "address_parser/address_parser_vocab.trie" };
 
 FeaturePostalGlobal::FeaturePostalGlobal(PathProvider *path):
   Feature(path, "postal/global", "postal_global",
           QCoreApplication::translate("MapManagerFeature", "Address parsing language support"),
           postal_global_files,
-          1)
+          2)
 {
 }
 
@@ -265,7 +285,7 @@ FeaturePostalCountry::FeaturePostalCountry(PathProvider *path):
   Feature(path, "territory", "postal_country",
           QCoreApplication::translate("MapManagerFeature", "Address parsing country-specific support"),
           postal_country_files,
-          1)
+          2)
 {
 }
 
@@ -451,6 +471,11 @@ FeatureValhalla::FeatureValhalla(PathProvider *path):
 QString FeatureValhalla::errorMissing() const
 {
   return QCoreApplication::translate("MapManagerFeature", "Missing Valhalla tiles");
+}
+
+bool FeatureValhalla::unpacking() const
+{
+  return m_unpacking;
 }
 
 QString FeatureValhalla::packFileName(QString pack) const
@@ -656,6 +681,10 @@ void FeatureValhalla::handlePackTasks()
     {
       // should have been called after processing the last task
       emit availabilityChanged();
+
+      m_unpacking = false;
+      emit unpackingChanged(m_unpacking);
+
       return;
     }
 
@@ -675,6 +704,12 @@ void FeatureValhalla::handlePackTasks()
   connect(worker, &PackTaskWorker::errorDuringTask, this, &FeatureValhalla::onPackTaskError );
   connect(worker, &PackTaskWorker::finished, this, &FeatureValhalla::onPackTaskFinished );
   connect(worker, &PackTaskWorker::finished, worker, &QObject::deleteLater);
+
+  if (!m_unpacking)
+    {
+      m_unpacking = true;
+      emit unpackingChanged(m_unpacking);
+    }
 
   worker->start();
 }

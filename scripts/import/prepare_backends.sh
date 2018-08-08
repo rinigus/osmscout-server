@@ -15,9 +15,12 @@ rm $BNDINSTALL/bin/geocoder-importer || true
 rm $BNDINSTALL/bin/liboscmscout-version || true
 rm $BNDINSTALL/mapnik-styles-sqlite || true
 
-# libpostal
-#git clone https://github.com/openvenues/libpostal $BNDSRC/libpostal
-#( cd $BNDSRC/libpostal && ./bootstrap.sh && ./configure --datadir=$BNDINSTALL --prefix=$BNDINSTALL && make -j3 && make install )
+# libpostal: version specified by commit id
+# git clone https://github.com/openvenues/libpostal $BNDSRC/libpostal
+# ( cd $BNDSRC/libpostal && git checkout 7f7aada32ab1a65b94f880a45f9755bbd941eedc )
+git clone https://github.com/rinigus/libpostal $BNDSRC/libpostal
+( cd $BNDSRC/libpostal && git checkout 17eb4a63356aa1cc9aa073635f4952d6d4c2c54b )
+( cd $BNDSRC/libpostal && ./bootstrap.sh && ./configure --datadir=$BNDINSTALL --prefix=$BNDINSTALL && make -j3 && make install )
 
 # libosmscout
 git clone --recursive https://github.com/rinigus/libosmscout.git $BNDSRC/libosmscout
@@ -26,7 +29,7 @@ mkdir -p $BNDSRC/libosmscout/build
 
 # geocoder-nlp
 git clone --recursive https://github.com/rinigus/geocoder-nlp.git $BNDSRC/geocoder-nlp
-(cd $BNDSRC/geocoder-nlp/importer && make LIBPOSTAL_INCLUDE=-I$BNDINSTALL/include LIBPOSTAL_LIB="-L$BNDINSTALL/lib -lpostal" && ln -s `pwd`/importer $BNDINSTALL/bin/geocoder-importer )
+(cd $BNDSRC/geocoder-nlp/importer && ./install_deps.sh && make LIBPOSTAL_INCLUDE=-I$BNDINSTALL/include LIBPOSTAL_LIB="-L$BNDINSTALL/lib -lpostal" && ln -s -f `pwd`/import_pbf.sh $BNDINSTALL/bin/geocoder-importer-pbf && ln -s -f `pwd`/importer $BNDINSTALL/bin/geocoder-importer )
 
 # libosmscout version tool
 (cd libosmscout-version-tool && make clean && make INCLUDE=-I$BNDINSTALL/include LIBRARIES=-I$BNDINSTALL/lib && ln -s `pwd`/liboscmscout-version $BNDINSTALL/bin)

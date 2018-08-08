@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #ifndef MAPMANAGERFEATURE_H
 #define MAPMANAGERFEATURE_H
 
@@ -207,6 +226,8 @@ namespace MapManager {
   ///
   class FeatureValhalla: public Feature
   {
+    Q_OBJECT
+
   public:
     FeatureValhalla(PathProvider *path);
     virtual ~FeatureValhalla() {}
@@ -216,6 +237,11 @@ namespace MapManager {
     virtual bool isAvailable(const QJsonObject &request);
     virtual void checkMissingFiles(const QJsonObject &request, FilesToDownload &missing);
     virtual void fillWantedFiles(const QJsonObject &request, QSet<QString> &wanted);
+
+    bool unpacking() const;
+
+  signals:
+    void unpackingChanged(bool);
 
   protected:
     enum PackStateType { PackNotAvailable, PackDownloaded, PackUnpacked };
@@ -253,6 +279,7 @@ namespace MapManager {
 
     QQueue<PackTask> m_pack_tasks;
     PackTask m_pack_task_current;
+    bool m_unpacking{false};
 
     const QString const_valhalla_tiles_dirname{"valhalla/tiles"};
     const QString const_valhalla_tiles_timestamp{"valhalla/tiles/timestamp"};

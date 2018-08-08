@@ -7,7 +7,7 @@ D=`pwd`
 SCRIPT=$(readlink -f $0)
 SCRIPTPATH=`dirname $SCRIPT`
 
-STYLE=`readlink -f $SCRIPTPATH/../../mapnik`
+STYLE=`readlink -f $SCRIPTPATH/../../styles/mapnik`
 
 RSYNC_OPTIONS='-av --exclude "*.mss" --exclude "*.mml"'
 

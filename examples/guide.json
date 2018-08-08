@@ -1,57 +1,37 @@
 {
     "origin": {
-        "lat": 55.590141457245807,
-        "lng": 12.997187025824104
+        "lat": 59.43834699271878,
+        "lng": 24.746281838016813
     },
-    "query": "espresso",
+    "query_name": "kohvik",
+    "query_type": "cafe",
     "results": [
         {
-            "admin_region": "Espresso House, Rådmansvången, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
-            "lat": 55.59525642987532,
-            "lng": 13.001290805647443,
-            "object_id": 578503,
-            "title": "Espresso House, Rådmansvången",
-            "type": "amenity_cafe"
+            "admin_region": "Saiakangi Kohvik, Tallinna vanalinn, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+            "distance": 62.16437453663952,
+            "lat": 59.437968801244864,
+            "lng": 24.74547181088829,
+            "object_id": 42464,
+            "title": "Saiakangi Kohvik, Tallinna vanalinn",
+            "type": "Cafe"
         },
         {
-            "admin_region": "Espresso Maker, Rådmansvången, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
-            "lat": 55.59489835496916,
-            "lng": 13.003541179027707,
-            "object_id": 578513,
-            "title": "Espresso Maker, Rådmansvången",
-            "type": "amenity_cafe"
+            "admin_region": "Linnateatri Kohvik, Tallinna vanalinn, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+            "distance": 207.17074455432206,
+            "lat": 59.440172235967,
+            "lng": 24.745517408441884,
+            "object_id": 42604,
+            "title": "Linnateatri Kohvik, Tallinna vanalinn",
+            "type": "Cafe"
         },
         {
-            "admin_region": "Espresso House, Gamla Staden, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
-            "lat": 55.605232906380536,
-            "lng": 12.999257691199006,
-            "object_id": 578920,
-            "title": "Espresso House, Gamla Staden",
-            "type": "amenity_cafe"
-        },
-        {
-            "admin_region": "Espresso House, Gamla Staden, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
-            "lat": 55.606797975352379,
-            "lng": 12.999812908469238,
-            "object_id": 578987,
-            "title": "Espresso House, Gamla Staden",
-            "type": "amenity_cafe"
-        },
-        {
-            "admin_region": "Espresso House, Gamla Staden, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
-            "lat": 55.604538214240506,
-            "lng": 13.000724859541094,
-            "object_id": 578846,
-            "title": "Espresso House, Gamla Staden",
-            "type": "amenity_cafe"
-        },
-        {
-            "admin_region": "Nespresso, Gamla Staden, Norr, Malmö kommun, Skåne län, Götaland, Sverige",
-            "lat": 55.604679030214839,
-            "lng": 13.000011391937818,
-            "object_id": 578932,
-            "title": "Nespresso, Gamla Staden",
-            "type": "shop"
+            "admin_region": "Kohvik Sinilind, Tallinna vanalinn, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+            "distance": 210.67806364251723,
+            "lat": 59.437575857621255,
+            "lng": 24.74968287907305,
+            "object_id": 42561,
+            "title": "Kohvik Sinilind, Tallinna vanalinn",
+            "type": "Cafe"
         }
     ]
 }

@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #include "microhttpserver.h"
 #include "microhttpconnectionstore.h"
 #include "microhttpservicebase.h"
@@ -70,21 +89,55 @@ static ssize_t content_reader_callback (void *cls, uint64_t pos, char *buf, size
 
 static int answer_to_connection (void *cls, struct MHD_Connection *connection,
                                  const char *url, const char *method,
-                                 const char */*version*/, const char */*upload_data*/,
-                                 size_t */*upload_data_size*/, void **/*con_cls*/)
+                                 const char */*version*/, const char *upload_data,
+                                 size_t *upload_data_size, void **con_cls)
 {
-  //std::cout << "answer:" << url << " / " << method << " / version " << version  << std::endl;
+#ifdef DEBUG_CONNECTIONS
+  std::cout << "answer:" << url << " / " << method << std::endl;
+#endif
 
-  if (strcmp("GET", method))
+  MicroHTTP::Connection::keytype connection_id = MicroHTTP::Connection::empty;
+  MicroHTTP::Server *server = (MicroHTTP::Server*)cls;
+
+  // dealing with POST
+  if (strcmp("POST", method) == 0)
     {
-      //std::cout << method << " -> not GET" << std::endl;
+      if (*con_cls == NULL) // new connection
+        {
+          connection_id = MicroHTTP::ConnectionStore::next(server, connection);
+          *con_cls = connection_id;
+          return MHD_YES;
+        }
+
+      connection_id = MicroHTTP::Connection::keytype(*con_cls);
+      if (*upload_data_size != 0)
+        {
+          bool res = MicroHTTP::ConnectionStore::appendPostData(connection_id, upload_data, *upload_data_size);
+          if (!res)
+            {
+              std::cerr << "Dropping POST request due to its large size: " << url << std::endl;
+              MicroHTTP::ConnectionStore::serverDone(connection_id);
+              return MHD_NO;
+            }
+
+          *upload_data_size = 0;
+          return MHD_YES;
+        }
+    }
+
+  // dealing with GET
+  else if (strcmp("GET", method) == 0)
+    {
+      connection_id = MicroHTTP::ConnectionStore::next(server, connection);
+    }
+
+  // unsupported method
+  else
+    {
       return MHD_NO;
     }
 
   struct MHD_Response *response;
-  MicroHTTP::Server *server = (MicroHTTP::Server*)cls;
-  MicroHTTP::Connection::keytype
-      connection_id = MicroHTTP::ConnectionStore::next(server, connection);
 
   int ret;
 

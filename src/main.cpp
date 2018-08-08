@@ -1,36 +1,61 @@
 /*
-  Copyright (C) 2016 rinigus <rinigus.git@gmail.com>
-  License: LGPL
-*/
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
 
 #include "appsettings.h"
 #include "config.h"
 
 #ifdef IS_CONSOLE_QT
 
-#ifdef USE_OSMSCOUT_MAP_CAIRO
-#include <QCoreApplication>
-#endif
-#ifdef USE_OSMSCOUT_MAP_QT
+#if defined(USE_OSMSCOUT) && defined(USE_OSMSCOUT_MAP_QT)
 #include <QGuiApplication>
+#else
+#include <QCoreApplication>
 #endif
 
 #endif // of IS_CONSOLE_QT
+
+#ifdef IS_QTCONTROLS_QT
+#include <QGuiApplication>
+#endif
 
 #include "consolelogger.h"
 
 #ifdef IS_SAILFISH_OS
 #include <sailfishapp.h>
+#endif // of IS_SAILFISH_OS
+
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
 #include <QtQuick>
 #include <QtQml>
+#include <QQmlApplicationEngine>
 
 #include "rollinglogger.h"
 #include "filemodel.h"
-#endif // of IS_SAILFISH_OS
+#endif // of IS_SAILFISH_OS || IS_QTCONTROLS_QT
 
 // HTTP server
 #include "microhttpserver.h"
 #include "requestmapper.h"
+
+// DBus interface
+#include "valhallamapmatcherdbus.h"
+#include "valhallamapmatcherdbusadaptor.h"
 
 // LIB OSM Scout interface
 #include "dbmaster.h"
@@ -45,8 +70,9 @@
 #include "systemdservice.h"
 #include "util.hpp"
 
-#include <QTranslator>
 #include <QCommandLineParser>
+#include <QDBusConnection>
+#include <QTranslator>
 
 #include <QDebug>
 
@@ -66,7 +92,7 @@ int main(int argc, char *argv[])
 {
   bool has_logger_console = false;
 
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   bool has_logger_rolling = true;
 #endif
 
@@ -83,16 +109,20 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef IS_CONSOLE_QT
-#ifdef USE_OSMSCOUT_MAP_CAIRO
-  QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
-#endif
-#ifdef USE_OSMSCOUT_MAP_QT
+#if defined(USE_OSMSCOUT) && defined(USE_OSMSCOUT_MAP_QT)
   QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
+#else
+  QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
 #endif
 #endif
 
 #ifdef IS_SAILFISH_OS
   QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+#endif
+#ifdef IS_QTCONTROLS_QT
+  QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
+#endif
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
 #endif
 
@@ -180,7 +210,7 @@ int main(int argc, char *argv[])
   parser.process(*app);
 
   // check logger related options
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   if (parser.isSet(optionConsole)) // have to enable logger when running as GUI
     has_logger_rolling = false;
 
@@ -196,7 +226,7 @@ int main(int argc, char *argv[])
   if (has_logger_console)
     console_logger = new ConsoleLogger(app.data());
 
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   RollingLogger *rolling_logger = nullptr;
   if (has_logger_rolling)
     rolling_logger = new RollingLogger(app.data());
@@ -221,13 +251,9 @@ int main(int argc, char *argv[])
   if (!parser.isSet(optionSystemD))
     {
       int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
-      int valhalla_port = settings.valueInt(VALHALLA_MASTER_SETTINGS "route_port");
 
       if (!wait_till_port_is_free(http_port))
         std::cerr << "Port " << http_port << " is occupied\n";
-
-      if (!wait_till_port_is_free(valhalla_port))
-        std::cerr << "Port " << valhalla_port << " is occupied\n";
     }
 #endif
 
@@ -237,9 +263,11 @@ int main(int argc, char *argv[])
   // setup Map Manager
   MapManager::Manager manager(app.data());
 
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   if (rolling_logger) rolling_logger->onSettingsChanged();
+#endif
 
+#ifdef IS_SAILFISH_OS
   QScopedPointer<QQuickView> v;
   QQmlContext *rootContext = nullptr;
   if (!parser.isSet(optionConsole))
@@ -247,7 +275,13 @@ int main(int argc, char *argv[])
       v.reset(SailfishApp::createView());
       rootContext = v->rootContext();
     }
+#endif
+#ifdef IS_QTCONTROLS_QT
+  QQmlApplicationEngine engine;
+  QQmlContext *rootContext = engine.rootContext();
+#endif
 
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   if (rootContext)
     {
       rootContext->setContextProperty("programName", "OSM Scout Server");
@@ -272,6 +306,7 @@ int main(int argc, char *argv[])
     }
 #endif
 
+#ifdef USE_OSMSCOUT
   // setup OSM Scout
   osmScoutMaster = new DBMaster();
 
@@ -280,6 +315,7 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate DBMaster" << std::endl;
       return -1;
     }
+#endif
 
   // setup Geocoder-NLP
   geoMaster = new GeoMaster();
@@ -289,7 +325,7 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate GeoMaster" << std::endl;
       return -2;
     }
-#ifdef IS_SAILFISH_OS
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   if (rootContext) rootContext->setContextProperty("geocoder", geoMaster);
 #endif
 
@@ -323,16 +359,22 @@ int main(int argc, char *argv[])
     }
 #endif
 
-#ifdef IS_SAILFISH_OS  
+#ifdef IS_SAILFISH_OS
   if (v)
     {
-      v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
+      v->setSource(SailfishApp::pathTo("qml/silica/osmscout-server.qml"));
       v->show();
     }
 #endif
+#ifdef IS_QTCONTROLS_QT
+  qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/qml/qtcontrols/Theme.qml")), "osmscout.theme", 1, 0, "Theme");
+  engine.load(QUrl(QStringLiteral("qrc:/qml/qtcontrols/osmscout-server.qml")));
+#endif
 
+#ifdef USE_OSMSCOUT
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     osmScoutMaster, &DBMaster::onSettingsChanged );
+#endif
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     geoMaster, &GeoMaster::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -349,9 +391,13 @@ int main(int argc, char *argv[])
                     &infoHub, &InfoHub::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &manager, &MapManager::Manager::onSettingsChanged );
+  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                    &modules, &ModuleChecker::onSettingsChanged );
 
+#ifdef USE_OSMSCOUT
   QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,
                     osmScoutMaster, &DBMaster::onDatabaseChanged );
+#endif
 
   QObject::connect( &manager, &MapManager::Manager::databaseGeocoderNLPChanged,
                     geoMaster, &GeoMaster::onGeocoderNLPChanged);
@@ -446,7 +492,7 @@ int main(int argc, char *argv[])
   int return_code = 0;
 
 #ifdef USE_VALHALLA
-  valhallaMaster->start(true);
+  valhallaMaster->start();
 #endif
 
   // prepare server by processing all outstanding events
@@ -481,9 +527,33 @@ int main(int argc, char *argv[])
     // enable idle timeout shutdown if started by systemd
 #ifdef USE_SYSTEMD
     if (parser.isSet(optionSystemD))
-      QObject::connect(&requests, &RequestMapper::idleTimeout,
-                       app.data(), QCoreApplication::quit );
+      {
+        QObject::connect(&infoHub, &InfoHub::activitySig,
+                         &requests, &RequestMapper::updateLastCall,
+                         Qt::QueuedConnection);
+        QObject::connect(&requests, &RequestMapper::idleTimeout,
+                         app.data(), QCoreApplication::quit );
+      }
 #endif
+
+    // establish d-bus connection
+    QDBusConnection dbusconnection = QDBusConnection::sessionBus();
+
+    // add d-bus interface
+#ifdef USE_VALHALLA
+    ValhallaMapMatcherDBus valhallaMapMatcherDBus;
+    new ValhallaMapMatcherDBusAdaptor(&valhallaMapMatcherDBus);
+    if (!dbusconnection.registerObject(DBUS_PATH_MAPMATCHING, &valhallaMapMatcherDBus))
+      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
+    else
+      dbusconnection.connect(QString(), "/org/freedesktop/DBus", "org.freedesktop.DBus", "NameOwnerChanged",
+                             &valhallaMapMatcherDBus, SLOT(onNameOwnerChanged(QString,QString,QString)));
+    valhallaMapMatcherDBus.activate();
+#endif
+
+    // register dbus service
+    if (!dbusconnection.registerService(DBUS_SERVICE))
+      InfoHub::logWarning(app->tr("Failed to register DBus service: %1").arg(DBUS_SERVICE));
 
     return_code = app->exec();
   }

@@ -1,3 +1,22 @@
+/*
+ * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * 
+ * This file is part of OSM Scout Server.
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
 #include "appsettings.h"
 #include "config.h"
 
@@ -16,6 +35,10 @@
 #endif
 
 #ifdef IS_CONSOLE_QT
+#define DATA_PREFIX ""
+#endif
+
+#ifdef IS_QTCONTROLS_QT
 #define DATA_PREFIX ""
 #endif
 
@@ -78,8 +101,8 @@ void AppSettings::initDefaults()
   /// for multi-map handling is be ready
   CHECK(OSM_SETTINGS "map", "");
 
-  CHECK(OSM_SETTINGS "style", DATA_PREFIX "stylesheets/standard.oss");
-  CHECK(OSM_SETTINGS "icons", DATA_PREFIX "data/icons/28x28/standard");
+  CHECK(OSM_SETTINGS "style", DATA_PREFIX "styles/osmscout/stylesheets/standard.oss");
+  CHECK(OSM_SETTINGS "icons", DATA_PREFIX "styles/osmscout/icons/28x28/standard");
   CHECK(OSM_SETTINGS "fontSize", 5.0);
   CHECK(OSM_SETTINGS "renderSea", 1);
   CHECK(OSM_SETTINGS "drawBackground", 1);
@@ -140,7 +163,7 @@ void AppSettings::initDefaults()
   CHECK(MAPNIKMASTER_SETTINGS "scale", 1.0);
 #endif
   CHECK(MAPNIKMASTER_SETTINGS "buffer_size_in_pixels", 64);
-  CHECK(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "mapnik");
+  CHECK(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "styles/mapnik");
 
   /////////////////////////////////////////
   /// valhalla settings
@@ -184,8 +207,29 @@ void AppSettings::initDefaults()
         }
     }
 
+  /// location of styles changed in version 3
+  if (m_last_run_version < 3)
+  {
+      setValue(OSM_SETTINGS "style", DATA_PREFIX "styles/osmscout/stylesheets/standard.oss");
+      setValue(OSM_SETTINGS "icons", DATA_PREFIX "styles/osmscout/icons/28x28/standard");
+      setValue(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "styles/mapnik");
+  }
+
+  /// profiles changed from version 2 to version 4
+  if (m_last_run_version < 4)
+  {
+      int old_profile = valueInt(GENERAL_SETTINGS "profile");
+      int new_profile = old_profile;
+      if (old_profile == 0) new_profile = 1;
+      else if (old_profile == 1) new_profile = 0;
+      setValue(GENERAL_SETTINGS "profile", new_profile);
+  }
+
   /// set profile if specified (after all version checks)
   setProfile();
+
+  /// check if country selection is needed
+  checkCountrySelectionNeeded();
 }
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
@@ -216,6 +260,9 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
     {
       setProfile();
     }
+
+  // always check if country selection is needed
+  checkCountrySelectionNeeded();
 }
 
 void AppSettings::fireOsmScoutSettingsChanged()
@@ -312,20 +359,7 @@ void AppSettings::setProfile()
   int index = valueInt(GENERAL_SETTINGS "profile");
   bool profile_active = true;
 
-  if (index == 0) // default profile: Mapnik / GeocoderNLP / Valhalla
-    {
-      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
-      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
-      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
-      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
-      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
-      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
-
-      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
-      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
-      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
-    }
-  else if (index == 1) // Mapbox GL / GeocoderNLP / Valhalla
+  if (index == 0) // default profile: Mapbox GL / GeocoderNLP / Valhalla
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 0);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
@@ -336,6 +370,19 @@ void AppSettings::setProfile()
 
       setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+    }
+  else if (index == 1) // Mapnik / GeocoderNLP / Valhalla
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+      setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
+      setValue(MAPMANAGER_SETTINGS "postal_country", 1);
+      setValue(MAPMANAGER_SETTINGS "mapboxgl", 0);
+      setValue(MAPMANAGER_SETTINGS "mapnik", 1);
+      setValue(MAPMANAGER_SETTINGS "valhalla", 1);
+
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
     }
   else if (index == 2) // Mapbox GL + Mapnik / GeocoderNLP / Valhalla
@@ -399,4 +446,23 @@ QString AppSettings::preferredLanguage()
   int index = valueInt(GENERAL_SETTINGS "language");
   if ( index == 1 ) return "en";
   return QString();
+}
+
+
+void AppSettings::checkCountrySelectionNeeded()
+{
+  bool old = m_country_selection_needed;
+
+  if ( ( !valueBool(GEOMASTER_SETTINGS "search_all_maps") ) ||
+       ( valueBool(MAPMANAGER_SETTINGS "osmscout") &&
+         (!valueBool(GEOMASTER_SETTINGS "use_geocoder_nlp") ||
+          !valueBool(MAPNIKMASTER_SETTINGS "use_mapnik") ||
+          !valueBool(VALHALLA_MASTER_SETTINGS "use_valhalla") )
+          ) )
+    m_country_selection_needed = true;
+  else
+    m_country_selection_needed = false;
+
+  if (old != m_country_selection_needed)
+    emit countrySelectionNeededChanged(m_country_selection_needed);
 }

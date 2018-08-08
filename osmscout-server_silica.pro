@@ -12,30 +12,42 @@
 # The name of your application
 TARGET = harbour-osmscout-server
 
-QT += core gui network sql xml
+QT += core gui network sql xml positioning dbus
 
-CONFIG += c++11
+CONFIG += c++11 object_parallel_to_source
 CONFIG += sailfishapp sailfishapp_no_deploy_qml
 
-CONFIG += use_map_qt
-#CONFIG += use_map_cairo
+# selection of backends
+!disable_mapnik {
+    CONFIG += use_mapnik
+}
 
-CONFIG += use_mapnik
-CONFIG += use_valhalla
-CONFIG += use_systemd
+!disable_osmscout {
+    CONFIG += use_osmscout
+}
+
+!disable_valhalla {
+    CONFIG += use_valhalla
+}
+
+!disable_systemd {
+    CONFIG += use_systemd
+}
+
+# libosmscout settings
+!use_map_cairo {
+    CONFIG += use_map_qt
+}
+#CONFIG += use_map_cairo
 
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 
 # installs
-qml.files = qml
-qml.path = /usr/share/$${TARGET}
+qml.files = qml/silica
+qml.path = /usr/share/$${TARGET}/qml
 INSTALLS += qml
-
-stylesheets.files = stylesheets
-stylesheets.path = /usr/share/$${TARGET}
-INSTALLS += stylesheets
 
 data.files = data
 data.path = /usr/share/$${TARGET}
@@ -76,8 +88,10 @@ SOURCES += \
     src/mapmanager_deleterthread.cpp \
     src/systemdservice.cpp \
     src/util.cpp \
-    src/mapboxglmaster.cpp 
-#    src/sqlite/sqlite-amalgamation-3160200/sqlite3.c
+    src/mapboxglmaster.cpp \ 
+    src/valhallamapmatcher.cpp \
+    src/valhallamapmatcherdbus.cpp \
+    src/valhallamapmatcherdbusadaptor.cpp
 
 OTHER_FILES += rpm/osmscout-server.spec
 
@@ -107,31 +121,39 @@ HEADERS += \
     src/mapmanager_deleterthread.h \
     src/systemdservice.h \
     src/util.hpp \
-    src/mapboxglmaster.h
-#    src/sqlite/sqlite-amalgamation-3160200/sqlite3.h \
-#    src/sqlite/sqlite-amalgamation-3160200/sqlite3ext.h
+    src/mapboxglmaster.h \
+    src/valhallamapmatcher.h \
+    src/valhallamapmatcherdbus.h \
+    src/valhallamapmatcherdbusadaptor.h
 
-use_map_qt {
-    DEFINES += USE_OSMSCOUT_MAP_QT
-    LIBS += -losmscout_map_qt
+use_osmscout {
+    DEFINES += USE_OSMSCOUT
+
+    use_map_qt {
+        DEFINES += USE_OSMSCOUT_MAP_QT
+        QT += gui
+        LIBS += -losmscout_map_qt
+    }
+
+    use_map_cairo {
+        DEFINES += USE_OSMSCOUT_MAP_CAIRO
+        LIBS += -losmscout_map_cairo
+        PKGCONFIG += pango cairo
+    }
+
+    LIBS += -losmscout_map -losmscout
 }
 
-use_map_cairo {
-    DEFINES += USE_OSMSCOUT_MAP_CAIRO
-    LIBS += -losmscout_map_cairo
-    # those disappear if we use PKGCONFIG
-    LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
-    CONFIG += link_pkgconfig
-    PKGCONFIG += pango cairo
-}
+# geocoder-nlp is enabled always
+DEFINES += GEOCODERNLP_ALIASFILE=\\\"/usr/share/$${TARGET}/data/geocoder-npl-tag-aliases.json\\\"
 
-# mapbox gl is enabled by default
-DEFINES += MAPBOXGL_STYLEDIR=\\\"/usr/share/harbour-osmscout-server/styles/mapboxgl\\\"
+# mapbox gl is enabled always
+DEFINES += MAPBOXGL_STYLEDIR=\\\"/usr/share/$${TARGET}/styles/mapboxgl\\\"
 
 use_mapnik {
     DEFINES += USE_MAPNIK
     DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/share/harbour-osmscout-server-module-fonts/fonts\\\"
-    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/share/harbour-osmscout-server/lib/mapnik/input\\\"
+    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/share/$${TARGET}/lib/mapnik/input\\\"
     LIBS += -lmapnik -licuuc
 
     mapnik.files = mapnik
@@ -141,26 +163,24 @@ use_mapnik {
 
 use_valhalla {
     DEFINES += USE_VALHALLA
-    DEFINES += VALHALLA_EXECUTABLE=\\\"/usr/bin/harbour-osmscout-server-module-route\\\"
-    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server-module-route/data/valhalla.json\\\"
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"/usr/share/harbour-osmscout-server/data/valhalla.json\\\"
     CONFIG += use_curl
+    PKGCONFIG += libvalhalla
+    #LIBS += -l:libvalhalla.a -lprotobuf -llz4 -lz
+    #LIBS += -lboost_regex-mt -lboost_filesystem-mt -lboost_system-mt -lboost_iostreams-mt -lboost_thread-mt -lboost_date_time-mt -lboost_chrono-mt
 }
 
 use_systemd {
     DEFINES += USE_SYSTEMD
-    CONFIG += link_pkgconfig
     PKGCONFIG += libsystemd-daemon
 }
 
 use_curl {
     DEFINES += USE_LIBCURL
-    CONFIG += link_pkgconfig
-    # those disappear if we use PKGCONFIG
-    LIBS += -pie -rdynamic -L/usr/lib/ -lsailfishapp -lmdeclarativecache5
     PKGCONFIG += libcurl
 }
 
-LIBS += -losmscout_map -losmscout -lmarisa -lkyotocabinet -lz -ldl
+LIBS += -lmarisa -lkyotocabinet -lz -ldl
 LIBS += -lsqlite3
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
@@ -169,10 +189,7 @@ CONFIG(release, debug|release) {
     DEFINES += QT_NO_WARNING_OUTPUT QT_NO_DEBUG_OUTPUT
 }
 
-# German translation is enabled as an example. If you aren't
-# planning to localize your app, remember to comment out the
-# following TRANSLATIONS line. And also do not forget to
-# modify the localized app name in the the .desktop file.
+
 TRANSLATIONS += \
     translations/harbour-osmscout-server-cs.ts \
     translations/harbour-osmscout-server-de.ts \
@@ -183,7 +200,8 @@ TRANSLATIONS += \
     translations/harbour-osmscout-server-nl.ts \
     translations/harbour-osmscout-server-pl.ts \
     translations/harbour-osmscout-server-ru.ts \
-    translations/harbour-osmscout-server-sv.ts
+    translations/harbour-osmscout-server-sv.ts \
+    translations/harbour-osmscout-server-nl_BE.ts
 
 DISTFILES += \
     harbour-osmscout-server.desktop \
