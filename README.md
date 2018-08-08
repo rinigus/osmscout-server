@@ -155,8 +155,8 @@ parameters specified in the posted JSON object in the form:
 
 ```json
 {
-   "variable1": value1,
-   "variable2": value2
+   "variable1": 3,
+   "variable2": "value string"
 }
 ```
 
