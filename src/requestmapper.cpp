@@ -180,8 +180,45 @@ template <> QString qstring2value(const QString &s, bool &ok)
 }
 
 template <typename T>
-T q2value(const QString &key, T default_value, MHD_Connection *q, bool &ok)
+T qjval2value(const QJsonValue &, T d)
 {
+  // dummy function, implement the specific version for each type separately
+  T v = d;
+  return v;
+}
+
+template <> int qjval2value(const QJsonValue &v, int default_value)
+{
+  return v.toInt(default_value);
+}
+
+template <> size_t qjval2value(const QJsonValue &v, size_t default_value)
+{
+  return v.toInt(default_value);
+}
+
+template <> bool qjval2value(const QJsonValue &v, bool default_value)
+{
+  return v.toBool(default_value);
+}
+
+template <> double qjval2value(const QJsonValue &v, double default_value)
+{
+  return v.toDouble(default_value);
+}
+
+template <> QString qjval2value(const QJsonValue &v, QString default_value)
+{
+  return v.toString(default_value).trimmed();
+}
+
+
+template <typename T>
+T q2value(const QString &key, T default_value, QJsonObject &options, MHD_Connection *q, bool &ok)
+{
+  if (options.contains(key))
+    return qjval2value<T>(options.value(key), default_value);
+  
   const char *vstr = MHD_lookup_connection_value(q, MHD_GET_ARGUMENT_KIND, key.toStdString().c_str());
   if (vstr == NULL)
     return default_value;
@@ -194,9 +231,9 @@ T q2value(const QString &key, T default_value, MHD_Connection *q, bool &ok)
   return v;
 }
 
-static bool has(const char *key, MHD_Connection *q)
+static bool has(const char *key, QJsonObject &options, MHD_Connection *q)
 {
-  return ( MHD_lookup_connection_value(q, MHD_GET_ARGUMENT_KIND, key)!=nullptr );
+  return ( options.contains(key) || MHD_lookup_connection_value(q, MHD_GET_ARGUMENT_KIND, key)!=nullptr );
 }
 
 static bool has(const QString &key, MHD_Connection *q)
@@ -365,6 +402,21 @@ unsigned int RequestMapper::service(const char *url_c,
   QUrl url(url_c);
   QString path(url.path());
 
+  QByteArray post_data = MicroHTTP::ConnectionStore::getPostData(connection_id);
+  QJsonObject options;
+  if (post_data.size() > 0)
+    {
+      InfoHub::logInfo(tr("Loading posted data for request %1").arg(path));
+      QJsonDocument doc = QJsonDocument::fromJson(post_data);
+      if (doc.isNull() || !doc.isObject())
+        {
+          errorText(response, connection_id, "Error while parsing POST data");
+          return MHD_HTTP_BAD_REQUEST;
+        }
+
+      options = doc.object();
+    }
+
   updateLastCall();
 
   //////////////////////////////////////////////////////////////////////
@@ -384,13 +436,13 @@ unsigned int RequestMapper::service(const char *url_c,
       return MHD_HTTP_INTERNAL_SERVER_ERROR;
 #else
       bool ok = true;
-      QString style = q2value<QString>("style", "default", connection, ok);
-      bool daylight = q2value<bool>("daylight", true, connection, ok);
-      int shift = q2value<int>("shift", 0, connection, ok);
-      int scale = q2value<int>("scale", 1, connection, ok);
-      int x = q2value<int>("x", 0, connection, ok);
-      int y = q2value<int>("y", 0, connection, ok);
-      int z = q2value<int>("z", 0, connection, ok);
+      QString style = q2value<QString>("style", "default", options, connection, ok);
+      bool daylight = q2value<bool>("daylight", true, options, connection, ok);
+      int shift = q2value<int>("shift", 0, options, connection, ok);
+      int scale = q2value<int>("scale", 1, options, connection, ok);
+      int x = q2value<int>("x", 0, options, connection, ok);
+      int y = q2value<int>("y", 0, options, connection, ok);
+      int z = q2value<int>("z", 0, options, connection, ok);
 
       if (!ok)
         {
@@ -460,9 +512,9 @@ unsigned int RequestMapper::service(const char *url_c,
   else if (path == "/v1/mbgl/tile")
     {
       bool ok = true;
-      int x = q2value<int>("x", 0, connection, ok);
-      int y = q2value<int>("y", 0, connection, ok);
-      int z = q2value<int>("z", 0, connection, ok);
+      int x = q2value<int>("x", 0, options, connection, ok);
+      int y = q2value<int>("y", 0, options, connection, ok);
+      int z = q2value<int>("z", 0, options, connection, ok);
 
       if (ok && x>=0 && y>=0 && z>=0)
         {
@@ -547,8 +599,8 @@ unsigned int RequestMapper::service(const char *url_c,
   else if (path == "/v1/mbgl/glyphs")
     {
       bool ok = true;
-      QString stack = q2value<QString>("stack", QString(), connection, ok);
-      QString range = q2value<QString>("range", QString(), connection, ok);
+      QString stack = q2value<QString>("stack", QString(), options, connection, ok);
+      QString range = q2value<QString>("range", QString(), options, connection, ok);
 
       if (ok && !stack.isEmpty() && !range.isEmpty())
         {
@@ -587,7 +639,7 @@ unsigned int RequestMapper::service(const char *url_c,
   else if (path == "/v1/mbgl/style")
     {
       bool ok = true;
-      QString style = q2value<QString>("style", "osmbright", connection, ok);
+      QString style = q2value<QString>("style", "osmbright", options, connection, ok);
 
       if (ok)
         {
@@ -624,8 +676,8 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       bool ok = true;
-      size_t limit = q2value<size_t>("limit", 25, connection, ok);
-      QString search = q2value<QString>("search", "", connection, ok);
+      size_t limit = q2value<size_t>("limit", 25, options, connection, ok);
+      QString search = q2value<QString>("search", "", options, connection, ok);
 
       search = search.simplified();
 
@@ -671,14 +723,14 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       bool ok = true;
-      double radius = q2value<double>("radius", 1000.0, connection, ok);
-      size_t limit = q2value<size_t>("limit", 50, connection, ok);
-      QString poitype = q2value<QString>("poitype", QString(), connection, ok);
-      QString poitype_query = q2value<QString>("query", QString(), connection, ok); // backward compatibility
-      QString name_query = q2value<QString>("name", QString(), connection, ok);
-      QString search = q2value<QString>("search", QString(), connection, ok);
-      double lon = q2value<double>("lng", 0, connection, ok);
-      double lat = q2value<double>("lat", 0, connection, ok);
+      double radius = q2value<double>("radius", 1000.0, options, connection, ok);
+      size_t limit = q2value<size_t>("limit", 50, options, connection, ok);
+      QString poitype = q2value<QString>("poitype", QString(), options, connection, ok);
+      QString poitype_query = q2value<QString>("query", QString(), options, connection, ok); // backward compatibility
+      QString name_query = q2value<QString>("name", QString(), options, connection, ok);
+      QString search = q2value<QString>("search", QString(), options, connection, ok);
+      double lon = q2value<double>("lng", 0, options, connection, ok);
+      double lat = q2value<double>("lat", 0, options, connection, ok);
 
       if (poitype.isEmpty()) poitype = poitype_query;
 
@@ -690,7 +742,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
       search = search.simplified();
 
-      if ( has("lng", connection) && has("lat", connection) )
+      if ( has("lng", options, connection) && has("lat", options, connection) )
         {
           Task *task;
 
@@ -710,7 +762,7 @@ unsigned int RequestMapper::service(const char *url_c,
           m_pool.start(task);
         }
 
-      else if ( has("search", connection) && search.length() > 0 )
+      else if ( has("search", options, connection) && search.length() > 0 )
         {
           std::string name;
 
@@ -806,9 +858,9 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       bool ok = true;
-      QString type = q2value<QString>("type", "car", connection, ok);
-      double radius = q2value<double>("radius", 1000.0, connection, ok);
-      bool gpx = q2value<int>("gpx", 0, connection, ok);
+      QString type = q2value<QString>("type", "car", options, connection, ok);
+      double radius = q2value<double>("radius", 1000.0, options, connection, ok);
+      bool gpx = q2value<int>("gpx", 0, options, connection, ok);
 
       std::vector<osmscout::GeoCoord> points;
       std::vector< std::string > names;
@@ -817,7 +869,7 @@ unsigned int RequestMapper::service(const char *url_c,
       for (int i=0; !points_done && ok; ++i)
         {
           QString prefix = "p[" + QString::number(i) + "]";
-          if ( has(prefix + "[lng]", connection) && has(prefix + "[lat]", connection) )
+          if ( has(prefix + "[lng]", options, connection) && has(prefix + "[lat]", options, connection) )
             {
               double lon = q2value<double>(prefix + "[lng]", 0, connection, ok);
               double lat = q2value<double>(prefix + "[lat]", 0, connection, ok);
@@ -826,7 +878,7 @@ unsigned int RequestMapper::service(const char *url_c,
               names.push_back(std::string());
             }
 
-          else if ( has(prefix + "[search]", connection) )
+          else if ( has(prefix + "[search]", options, connection) )
             {
               QString search = q2value<QString>(prefix + "[search]", "", connection, ok);
               search = search.simplified();
@@ -924,7 +976,7 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       bool ok = true;
-      QString json = q2value<QString>("json", QString(), connection, ok);
+      QString json = q2value<QString>("json", QString(), options, connection, ok);
 
       if (json.isEmpty())
         {
@@ -963,7 +1015,7 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       bool ok = true;
-      QString json = q2value<QString>("json", "", connection, ok);
+      QString json = q2value<QString>("json", "", options, connection, ok);
       QJsonObject objreq = QJsonDocument::fromJson(json.toUtf8()).object();
 
       double radius = 1000.0;

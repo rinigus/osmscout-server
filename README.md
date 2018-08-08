@@ -141,9 +141,30 @@ can be changed in the configuration file manually.
 
 ## URL schema
 
-Access to functionality is provided via path and query parts of
-URL. The path determines the module that is accessed with the query
-specifying arguments. Here, order of query elements is not important.
+Server provides access via GET and POST methods. Access to
+functionality is provided via path and query parts of URL. The path
+determines the module that is accessed with the query specifying
+arguments. Here, order of query elements is not important.
+
+When using GET, set the query parameters after `?` in the form
+`variable=value` and separate the parameters by `&`.
+
+When using POST, path must be specified as for GET method. However,
+when using POST, query parameters set by URL can be mixed with the
+parameters specified in the posted JSON object in the form:
+
+```json
+{
+   "variable1": value1,
+   "variable2": value2
+}
+```
+
+POSTed JSON object keys are checked first and used, if specified,
+ignoring the query settings specified in URL.
+
+In the description of the schema below, GET form is used, unless
+specified differently.
 
 
 ## Examples
