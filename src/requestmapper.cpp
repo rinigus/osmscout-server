@@ -871,8 +871,8 @@ unsigned int RequestMapper::service(const char *url_c,
           QString prefix = "p[" + QString::number(i) + "]";
           if ( has(prefix + "[lng]", options, connection) && has(prefix + "[lat]", options, connection) )
             {
-              double lon = q2value<double>(prefix + "[lng]", 0, connection, ok);
-              double lat = q2value<double>(prefix + "[lat]", 0, connection, ok);
+              double lon = q2value<double>(prefix + "[lng]", 0, options, connection, ok);
+              double lat = q2value<double>(prefix + "[lat]", 0, options, connection, ok);
               osmscout::GeoCoord c(lat,lon);
               points.push_back(c);
               names.push_back(std::string());
@@ -880,7 +880,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
           else if ( has(prefix + "[search]", options, connection) )
             {
-              QString search = q2value<QString>(prefix + "[search]", "", connection, ok);
+              QString search = q2value<QString>(prefix + "[search]", "", options, connection, ok);
               search = search.simplified();
               if (search.length()<1)
                 {
