@@ -236,9 +236,9 @@ static bool has(const char *key, QJsonObject &options, MHD_Connection *q)
   return ( options.contains(key) || MHD_lookup_connection_value(q, MHD_GET_ARGUMENT_KIND, key)!=nullptr );
 }
 
-static bool has(const QString &key, MHD_Connection *q)
+static bool has(const QString &key, QJsonObject &options, MHD_Connection *q)
 {
-  return has(key.toStdString().c_str(), q);
+  return has(key.toStdString().c_str(), options, q);
 }
 
 //static int query_uri_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char *key, const char *value)
