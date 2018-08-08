@@ -535,7 +535,7 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
         }
 
       // search
-      m_geocoder.set_max_results(-1); // limit is enforced later
+      m_geocoder.set_max_results(0); // limit is enforced later
 
       if ( !m_geocoder.search_nearby(parsed_name,
                                      type_query,
