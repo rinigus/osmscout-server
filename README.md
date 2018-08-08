@@ -292,8 +292,8 @@ Shortened version of the response is given as an
 
 ## POI search near a reference position
 
-To find POIs within a given radius from a specified reference
-position, server can be accessed via `/v1/guide` path:
+To find POIs within a given radius from a specified reference position
+and/or reference route, server can be accessed via `/v1/guide` path:
 
 `http://localhost:8553/v1/guide?radius={radius}&limit={limit}&poitype={poitype}&name={name}&search={search}&lng={lng}&lat={lat}`
 
@@ -310,6 +310,15 @@ where
 `{search}` - a query that is run to find a reference point, the first result is used
 
 `{lng}`, `{lat}` - longitude and latidude, respectively.
+
+The reference route can be given only through POST JSON object in the form
+
+```json
+{
+  "route_lng": [longitude1, longitude2, longitude3, ...],
+  "route_lat": [latitude1, latitude2, latitude3, ...]
+}
+```
 
 Given POI type is considered either as an alias or imported POI
 type. Type comparison is done in a case-insensitive manner. POI types
@@ -328,6 +337,10 @@ are specified in the query.
 The reference point can be given either as a query ("Paris") or as a
 location coordinates. If the both forms are given in URL, location
 coordinates are preferred.
+
+When reference route is given, the search is along the route. It can
+be used to find POIs along the route starting, if given, from the
+reference point.
 
 The result is given in JSON format. It returns a JSON object with two
 keys: `"origin"` (coordinates of the reference point used in the

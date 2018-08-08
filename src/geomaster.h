@@ -75,8 +75,14 @@ public:
 
   /// \brief Search for POI by its type or name near the given origin
   ///
+  /// Has support for searching near point (if route is zero length), next
+  /// to route (non-zero length route array) either along full route (reference
+  /// accounting set to false) or starting from the reference (reference accounting
+  /// set to true).
   bool guide(const QString &poitype, const QString &name,
-             double lat, double lon, double radius, size_t limit, QByteArray &result_data);
+             bool accout_for_reference, double lat, double lon,
+             QJsonArray &route_lat, QJsonArray &route_lon,
+             double radius, size_t limit, QByteArray &result_data);
 
   bool poiTypes(QByteArray &result); ///< Fill results with list of supported POI types
 

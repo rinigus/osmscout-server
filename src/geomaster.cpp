@@ -476,7 +476,9 @@ bool GeoMaster::searchExposed(const QString &searchPattern, QByteArray &result, 
 
 
 bool GeoMaster::guide(const QString &poitype, const QString &name,
-                      double lat, double lon, double radius, size_t limit, QByteArray &result_data)
+                      bool accout_for_reference, double lat, double lon,
+                      QJsonArray &route_lat, QJsonArray &route_lon,
+                      double radius, size_t limit, QByteArray &result_data)
 {
   if (poitype.isEmpty() && name.isEmpty())
     return false;
@@ -486,6 +488,46 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
   std::vector<GeoNLP::Geocoder::GeoResult> search_result;
   std::map< std::string, std::vector<std::string> > postal_cache;
   std::string name_query = name.toStdString();
+
+  // fill route vectors
+  std::vector<double> line_lat, line_lon;
+  bool has_line = false;
+  size_t ignore_segments = 0;
+  if (route_lat.size() > 0 || route_lon.size())
+    {
+      has_line = true;
+
+      for (auto i: route_lat)
+        if (i.isDouble())
+          line_lat.push_back(i.toDouble());
+        else
+          {
+            // technical message
+            InfoHub::logWarning("In guide search: Error while converting route latitudes");
+            return false;
+          }
+
+      for (auto i: route_lon)
+        if (i.isDouble())
+          line_lon.push_back(i.toDouble());
+        else
+          {
+            // technical message
+            InfoHub::logWarning("In guide search: Error while converting route longitudes");
+            return false;
+          }
+
+      if (line_lon.size() != line_lat.size())
+        {
+          std::cout << line_lon.size() << " " << line_lat.size() << std::endl;
+          // technical message
+          InfoHub::logWarning("In guide search: route given by different number of longitudes and latitudes");
+          return false;
+        }
+
+      if (accout_for_reference)
+        ignore_segments = GeoNLP::Geocoder::closest_segment(line_lat, line_lon, lat, lon);
+    }
 
   // fill type query - for now just use as its a full query
   std::vector<std::string> type_query;
@@ -537,11 +579,21 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
       // search
       m_geocoder.set_max_results(0); // limit is enforced later
 
-      if ( !m_geocoder.search_nearby(parsed_name,
+      bool ok = false;
+      if (has_line)
+        ok = m_geocoder.search_nearby(parsed_name,
+                                      type_query,
+                                      line_lat, line_lon, radius,
+                                      search_result,
+                                      m_postal,
+                                      ignore_segments);
+      else
+        ok = m_geocoder.search_nearby(parsed_name,
                                      type_query,
                                      lat, lon, radius,
                                      search_result,
-                                     m_postal) )
+                                     m_postal);
+      if (!ok)
         {
           InfoHub::logError(tr("Error while searching with geocoder-nlp"));
           return false;

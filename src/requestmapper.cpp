@@ -706,7 +706,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
       m_pool.start(task);
 
-      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json; charset=UTF-8");
       return MHD_HTTP_OK;
     }
 
@@ -732,6 +732,10 @@ unsigned int RequestMapper::service(const char *url_c,
       double lon = q2value<double>("lng", 0, options, connection, ok);
       double lat = q2value<double>("lat", 0, options, connection, ok);
 
+      // get route if available
+      QJsonArray route_lon = options.value("route_lng").toArray();
+      QJsonArray route_lat = options.value("route_lat").toArray();
+
       if (poitype.isEmpty()) poitype = poitype_query;
 
       if (!ok || (name_query.isEmpty() && poitype.isEmpty()) )
@@ -756,7 +760,7 @@ unsigned int RequestMapper::service(const char *url_c,
 #endif
             task = new Task(connection_id,
                             std::bind(&GeoMaster::guide, geoMaster,
-                                      poitype, name_query, lat, lon, radius, limit, std::placeholders::_1),
+                                      poitype, name_query, true, lat, lon, route_lat, route_lon, radius, limit, std::placeholders::_1),
                             "Error while looking for POIs in guide");
 
           m_pool.start(task);
@@ -791,7 +795,7 @@ unsigned int RequestMapper::service(const char *url_c,
                 {
                   Task *task = new Task(connection_id,
                                         std::bind(&GeoMaster::guide, geoMaster,
-                                                  poitype, name_query, lat, lon, radius, limit, std::placeholders::_1),
+                                                  poitype, name_query, true, lat, lon, route_lat, route_lon, radius, limit, std::placeholders::_1),
                                         "Error while looking for POIs in guide");
                   m_pool.start(task);
                 }
@@ -804,13 +808,23 @@ unsigned int RequestMapper::service(const char *url_c,
             }
         }
 
+      // check if only route was specified
+      else if (useGeocoderNLP && route_lat.size() > 0)
+        {
+          Task *task = new Task(connection_id,
+                                std::bind(&GeoMaster::guide, geoMaster,
+                                          poitype, name_query, false, lat, lon, route_lat, route_lon, radius, limit, std::placeholders::_1),
+                                "Error while looking for POIs in guide");
+          m_pool.start(task);
+        }
+
       else
         {
           errorText(response, connection_id, "Error in guide query parameters");
           return MHD_HTTP_BAD_REQUEST;
         }
 
-      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "text/plain; charset=UTF-8");
+      MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "application/json; charset=UTF-8");
       return MHD_HTTP_OK;
     }
 
