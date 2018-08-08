@@ -49,7 +49,7 @@ namespace MicroHTTP {
 
     void setState(State s) { m_state = s; }
     void setData(QByteArray &data) { m_data = data; }
-    void appendPostData(const char *upload_data, size_t upload_data_size);
+    bool appendPostData(const char *upload_data, size_t upload_data_size);
 
   protected:
     Server *m_server = NULL;

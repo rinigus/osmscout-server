@@ -19,6 +19,8 @@
 
 #include "microhttpconnection.h"
 
+#define POST_LIMIT (100L*1024*1024)
+
 const MicroHTTP::Connection::keytype MicroHTTP::Connection::empty = 0;
 
 MicroHTTP::Connection::Connection(MicroHTTP::Server *server, MHD_Connection *connection):
@@ -28,7 +30,8 @@ MicroHTTP::Connection::Connection(MicroHTTP::Server *server, MHD_Connection *con
 
 }
 
-void MicroHTTP::Connection::appendPostData(const char *upload_data, size_t upload_data_size)
+bool MicroHTTP::Connection::appendPostData(const char *upload_data, size_t upload_data_size)
 {
   m_post_data.append(upload_data, upload_data_size);
+  return m_post_data.size() < POST_LIMIT;
 }

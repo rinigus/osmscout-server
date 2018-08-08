@@ -95,14 +95,14 @@ bool ConnectionStore::dataToSend(Connection::keytype key, QByteArray &data)
     return true;
 }
 
-void ConnectionStore::appendPostData(Connection::keytype key, const char *upload_data, size_t upload_data_size)
+bool ConnectionStore::appendPostData(Connection::keytype key, const char *upload_data, size_t upload_data_size)
 {
   QMutexLocker lk(&mutex);
   auto iter = store_data.find(key);
   if (iter == store_data.end())
-      return;
+      return false;
 
-  iter->appendPostData(upload_data, upload_data_size);
+  return iter->appendPostData(upload_data, upload_data_size);
 }
 
 QByteArray ConnectionStore::getPostData(Connection::keytype key)

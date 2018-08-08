@@ -112,7 +112,14 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
       connection_id = MicroHTTP::Connection::keytype(*con_cls);
       if (*upload_data_size != 0)
         {
-          MicroHTTP::ConnectionStore::appendPostData(connection_id, upload_data, *upload_data_size);
+          bool res = MicroHTTP::ConnectionStore::appendPostData(connection_id, upload_data, *upload_data_size);
+          if (!res)
+            {
+              std::cerr << "Dropping POST request due to its large size: " << url << std::endl;
+              MicroHTTP::ConnectionStore::serverDone(connection_id);
+              return MHD_NO;
+            }
+
           *upload_data_size = 0;
           return MHD_YES;
         }
