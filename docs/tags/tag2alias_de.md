@@ -49,6 +49,7 @@ Tag | Alias
 [amenity\_motorcycle\_parking](https://taginfo.openstreetmap.org/tags/amenity=motorcycle_parking) | Motorradparkplatz
 [amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub) | Nachtklub
 [amenity\_nursing\_home](https://taginfo.openstreetmap.org/tags/amenity=nursing_home) | Pflegeheim
+[amenity\_parking](https://taginfo.openstreetmap.org/tags/amenity=parking) | Parkplatz
 [amenity\_pharmacy](https://taginfo.openstreetmap.org/tags/amenity=pharmacy) | Apotheke
 [amenity\_place\_of\_worship](https://taginfo.openstreetmap.org/tags/amenity=place_of_worship) | Andachtsstätte
 [amenity\_police](https://taginfo.openstreetmap.org/tags/amenity=police) | Polizei
@@ -340,7 +341,7 @@ Tag | Alias
 [tourism\_artwork](https://taginfo.openstreetmap.org/tags/tourism=artwork) | Kunstwerk
 [tourism\_attraction](https://taginfo.openstreetmap.org/tags/tourism=attraction) | Attraktion
 [tourism\_camp\_site](https://taginfo.openstreetmap.org/tags/tourism=camp_site) | Campingplatz
-[tourism\_caravan\_site](https://taginfo.openstreetmap.org/tags/tourism=caravan_site) | Wohnwagen-Stellplatz
+[tourism\_caravan\_site](https://taginfo.openstreetmap.org/tags/tourism=caravan_site) | Wohnmobil-Stellplatz
 [tourism\_chalet](https://taginfo.openstreetmap.org/tags/tourism=chalet) | Almhütte
 [tourism\_guest\_house](https://taginfo.openstreetmap.org/tags/tourism=guest_house) | Pension
 [tourism\_hostel](https://taginfo.openstreetmap.org/tags/tourism=hostel) | Jugendherberge

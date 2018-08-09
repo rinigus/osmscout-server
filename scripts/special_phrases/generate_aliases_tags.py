@@ -29,10 +29,10 @@ findex.write('Language | Aliases | Geocoder Tags \n --- | ---:| ---: \n')
 for language in [ "af","ar","br","ca","cs","de","de_at","en","es","et","eu","fa","fi","fr","gl","hr","hu",
                  "ia","is","it","ja","mk","nl","no","pl","ps","pt","ru","sk","sl","sv","uk","vi" ]:
 
-#for language in [ "af" ]:
+# for language in [ "en" ]:
 
     print("Language", language)
-    alias2tag = collections.defaultdict(list)
+    alias2tag = collections.defaultdict(set)
     tag2alias = {}
 
     r = str(requests.get('https://wiki.openstreetmap.org/wiki/Special:Export/Nominatim/Special_Phrases/' + language.upper()).text)
@@ -55,13 +55,18 @@ for language in [ "af","ar","br","ca","cs","de","de_at","en","es","et","eu","fa"
             singular = (k[-1] == 'N')
             if geotag in geotags_to_ignore: continue
 
-            alias2tag[k[0]].append( geotag )
+            alias2tag[k[0]].add( geotag )
 
             if singular and geotag not in tag2alias:
                 tag2alias[geotag] = k[0]
 
             Geo2OSM[geotag] = k[1] + '=' + k[2]
 
+    # convert alias2tag sets into lists
+    for k in alias2tag:
+        alias2tag[k] = list(alias2tag[k])
+        alias2tag[k].sort()
+        
     A2T[language] = alias2tag
     T2A[language] = tag2alias
 
