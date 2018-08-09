@@ -4,7 +4,7 @@ Tag | Alias
 --- | --- 
 [aeroway\_aerodrome](https://taginfo.openstreetmap.org/tags/aeroway=aerodrome) | Aéroport
 [amenity\_arts\_centre](https://taginfo.openstreetmap.org/tags/amenity=arts_centre) | Centre artistique
-[amenity\_atm](https://taginfo.openstreetmap.org/tags/amenity=atm) | Distributeur automatique de billets
+[amenity\_atm](https://taginfo.openstreetmap.org/tags/amenity=atm) | Dab
 [amenity\_bank](https://taginfo.openstreetmap.org/tags/amenity=bank) | Banque
 [amenity\_bar](https://taginfo.openstreetmap.org/tags/amenity=bar) | Bar
 [amenity\_bench](https://taginfo.openstreetmap.org/tags/amenity=bench) | Banc
@@ -26,7 +26,7 @@ Tag | Alias
 [amenity\_dentist](https://taginfo.openstreetmap.org/tags/amenity=dentist) | Dentiste
 [amenity\_doctors](https://taginfo.openstreetmap.org/tags/amenity=doctors) | Docteur
 [amenity\_drinking\_water](https://taginfo.openstreetmap.org/tags/amenity=drinking_water) | Eau potable
-[amenity\_driving\_school](https://taginfo.openstreetmap.org/tags/amenity=driving_school) | École de conduite
+[amenity\_driving\_school](https://taginfo.openstreetmap.org/tags/amenity=driving_school) | Auto-école
 [amenity\_embassy](https://taginfo.openstreetmap.org/tags/amenity=embassy) | Ambassade
 [amenity\_emergency\_phone](https://taginfo.openstreetmap.org/tags/amenity=emergency_phone) | Téléphone d'urgence
 [amenity\_fast\_food](https://taginfo.openstreetmap.org/tags/amenity=fast_food) | Restauration rapide
@@ -51,7 +51,7 @@ Tag | Alias
 [amenity\_prison](https://taginfo.openstreetmap.org/tags/amenity=prison) | Prison
 [amenity\_pub](https://taginfo.openstreetmap.org/tags/amenity=pub) | Bar
 [amenity\_public\_building](https://taginfo.openstreetmap.org/tags/amenity=public_building) | Bâtiment public
-[amenity\_recycling](https://taginfo.openstreetmap.org/tags/amenity=recycling) | Bulle à verre
+[amenity\_recycling](https://taginfo.openstreetmap.org/tags/amenity=recycling) | Bulle
 [amenity\_restaurant](https://taginfo.openstreetmap.org/tags/amenity=restaurant) | Restaurant
 [amenity\_retirement\_home](https://taginfo.openstreetmap.org/tags/amenity=retirement_home) | Maison de retraite
 [amenity\_sauna](https://taginfo.openstreetmap.org/tags/amenity=sauna) | Sauna
@@ -62,7 +62,7 @@ Tag | Alias
 [amenity\_telephone](https://taginfo.openstreetmap.org/tags/amenity=telephone) | Téléphone public
 [amenity\_theatre](https://taginfo.openstreetmap.org/tags/amenity=theatre) | Théâtre
 [amenity\_toilets](https://taginfo.openstreetmap.org/tags/amenity=toilets) | Toilettes
-[amenity\_townhall](https://taginfo.openstreetmap.org/tags/amenity=townhall) | Hôtel de ville
+[amenity\_townhall](https://taginfo.openstreetmap.org/tags/amenity=townhall) | Mairie
 [amenity\_university](https://taginfo.openstreetmap.org/tags/amenity=university) | Université
 [amenity\_vending\_machine](https://taginfo.openstreetmap.org/tags/amenity=vending_machine) | Distributeur automatique
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Vétérinaire
@@ -99,7 +99,7 @@ Tag | Alias
 [building\_tower](https://taginfo.openstreetmap.org/tags/building=tower) | Tour
 [building\_train\_station](https://taginfo.openstreetmap.org/tags/building=train_station) | Gare ferroviaire
 [building\_university](https://taginfo.openstreetmap.org/tags/building=university) | Bâtiment d'université
-[emergency\_defibrillator](https://taginfo.openstreetmap.org/tags/emergency=defibrillator) | Défibrillateur
+[emergency\_defibrillator](https://taginfo.openstreetmap.org/tags/emergency=defibrillator) | DAE
 [emergency\_fire\_hydrant](https://taginfo.openstreetmap.org/tags/emergency=fire_hydrant) | Bouche d'incendie
 [highway\_bridleway](https://taginfo.openstreetmap.org/tags/highway=bridleway) | Chemin pour cavaliers
 [highway\_bus\_guideway](https://taginfo.openstreetmap.org/tags/highway=bus_guideway) | Voie de bus guidée
@@ -148,7 +148,7 @@ Tag | Alias
 [historic\_mine](https://taginfo.openstreetmap.org/tags/historic=mine) | Mine
 [historic\_monument](https://taginfo.openstreetmap.org/tags/historic=monument) | Monument
 [historic\_ruins](https://taginfo.openstreetmap.org/tags/historic=ruins) | Ruines
-[historic\_wayside\_cross](https://taginfo.openstreetmap.org/tags/historic=wayside_cross) | Croix de chemin
+[historic\_wayside\_cross](https://taginfo.openstreetmap.org/tags/historic=wayside_cross) | Calvaire
 [historic\_wayside\_shrine](https://taginfo.openstreetmap.org/tags/historic=wayside_shrine) | Oratoire
 [historic\_wreck](https://taginfo.openstreetmap.org/tags/historic=wreck) | Épave
 [landuse\_allotments](https://taginfo.openstreetmap.org/tags/landuse=allotments) | Jardins familiaux
@@ -269,7 +269,7 @@ Tag | Alias
 [shop\_butcher](https://taginfo.openstreetmap.org/tags/shop=butcher) | Boucher
 [shop\_car](https://taginfo.openstreetmap.org/tags/shop=car) | Magasin de voitures
 [shop\_car\_parts](https://taginfo.openstreetmap.org/tags/shop=car_parts) | Pièces d'automobile
-[shop\_car\_repair](https://taginfo.openstreetmap.org/tags/shop=car_repair) | Réparation de voitures
+[shop\_car\_repair](https://taginfo.openstreetmap.org/tags/shop=car_repair) | Garage Automobile
 [shop\_carpet](https://taginfo.openstreetmap.org/tags/shop=carpet) | Magasin de tapis
 [shop\_charity](https://taginfo.openstreetmap.org/tags/shop=charity) | Magasin de bienfaisance
 [shop\_chemist](https://taginfo.openstreetmap.org/tags/shop=chemist) | Magasin de produits d'hygiène
@@ -299,7 +299,7 @@ Tag | Alias
 [shop\_hifi](https://taginfo.openstreetmap.org/tags/shop=hifi) | Magasin Hi-Fi
 [shop\_jewelry](https://taginfo.openstreetmap.org/tags/shop=jewelry) | Bijouterie
 [shop\_kiosk](https://taginfo.openstreetmap.org/tags/shop=kiosk) | Kiosque
-[shop\_laundry](https://taginfo.openstreetmap.org/tags/shop=laundry) | Laverie
+[shop\_laundry](https://taginfo.openstreetmap.org/tags/shop=laundry) | Blanchisserie
 [shop\_mall](https://taginfo.openstreetmap.org/tags/shop=mall) | Galerie marchande
 [shop\_mobile\_phone](https://taginfo.openstreetmap.org/tags/shop=mobile_phone) | Magasin de téléphones mobiles
 [shop\_motorcycle](https://taginfo.openstreetmap.org/tags/shop=motorcycle) | Magasin de moto
