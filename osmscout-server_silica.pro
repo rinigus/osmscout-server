@@ -201,7 +201,8 @@ TRANSLATIONS += \
     translations/harbour-osmscout-server-pl.ts \
     translations/harbour-osmscout-server-ru.ts \
     translations/harbour-osmscout-server-sv.ts \
-    translations/harbour-osmscout-server-nl_BE.ts
+    translations/harbour-osmscout-server-nl_BE.ts \
+    translations/harbour-osmscout-server-it_IT.ts
 
 DISTFILES += \
     harbour-osmscout-server.desktop \
