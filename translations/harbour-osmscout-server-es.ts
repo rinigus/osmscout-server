@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -2573,12 +2571,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="43"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Coincidencia de mapa solicitada: modo=%1</translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="239"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo coincidencia de mapa %1 no soportado</translation>
     </message>
 </context>
 <context>
@@ -2586,7 +2584,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="64"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrando servicio de coincidencia de mapa para cliente DBus %1</translation>
     </message>
 </context>
 <context>
