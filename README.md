@@ -550,6 +550,7 @@ The translations were contributed by
 - A @atlochowski: Polish
 - Peer-Atle Motland @Pam: Norwegian Bokmål
 - Matti Lehtimäki @mal: Finnish
+- @Watchmaker: Italian
 
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README

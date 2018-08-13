@@ -53,7 +53,8 @@ Dialog {
                               "A @atlochowski: Polish<br>" +
                               "Peer-Atle Motland @Pam: Norwegian Bokmål<br>" +
                               "Matti Lehtimäki @mal: Finnish<br>" +
-
+                              "@Watchmaker: Italian<br>" +
+        
                               "<br><b>" + qsTr("Maps") + "</b><br>" +
                               "<p>" +
                               qsTr("Maps are hosted by " +
