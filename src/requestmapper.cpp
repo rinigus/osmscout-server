@@ -491,9 +491,6 @@ unsigned int RequestMapper::service(const char *url_c,
 
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "image/png");
       return MHD_HTTP_OK;
-
-      errorText(response, connection_id, "Error allocating raster tile generation task, possible misconfiguration of the server");
-      return MHD_HTTP_INTERNAL_SERVER_ERROR;
 #endif
     }
 
