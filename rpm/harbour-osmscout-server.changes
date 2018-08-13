@@ -5,6 +5,14 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Aug 13 2018 rinigus <rinigus.git@gmail.com> 1.10.0-1
+- changing license to GPLv3
+- add support for POST requests
+- add search along route
+- cleanup POI aliases handling
+- added Italian translation [wip]
+- updated translations
+
 * Tue Jul 31 2018 rinigus <rinigus.git@gmail.com> 1.9.1-1
 - fix crash when using libosmscout profile
 - fixes in map matching service
