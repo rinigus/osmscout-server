@@ -524,7 +524,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="297"/>
-        <location filename="../src/geomaster.cpp" line="551"/>
+        <location filename="../src/geomaster.cpp" line="558"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Kann die Geocoding Datenbank nicht öffnen: %1</translation>
     </message>
@@ -540,7 +540,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="370"/>
-        <location filename="../src/geomaster.cpp" line="598"/>
+        <location filename="../src/geomaster.cpp" line="605"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Fehler beim Suchen mit geocoder-nlp</translation>
     </message>
