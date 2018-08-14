@@ -618,8 +618,8 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
   result.insert("query_name", name);
   {
     QJsonObject origin;
-    origin.insert("lng", line_lon[ignore_segments]);
-    origin.insert("lat", line_lat[ignore_segments]);
+    origin.insert("lng", has_line ? line_lon[ignore_segments] : lon);
+    origin.insert("lat", has_line ? line_lat[ignore_segments] : lat);
     result.insert("origin", origin);
   }
 
