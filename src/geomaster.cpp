@@ -492,7 +492,7 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
   // fill route vectors
   std::vector<double> line_lat, line_lon;
   bool has_line = false;
-  size_t ignore_segments = 0;
+  int ignore_segments = 0;
   if (route_lat.size() > 0 || route_lon.size())
     {
       has_line = true;
@@ -519,14 +519,21 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
 
       if (line_lon.size() != line_lat.size())
         {
-          std::cout << line_lon.size() << " " << line_lat.size() << std::endl;
           // technical message
-          InfoHub::logWarning("In guide search: route given by different number of longitudes and latitudes");
+          InfoHub::logWarning(QString("In guide search: route given by different number of longitudes (%1) and latitudes (%2)").
+                              arg(line_lon.size()).arg(line_lat.size()));
           return false;
         }
 
       if (accout_for_reference)
         ignore_segments = GeoNLP::Geocoder::closest_segment(line_lat, line_lon, lat, lon);
+
+      if (ignore_segments < 0 || ignore_segments >= (int)line_lon.size())
+        {
+          // technical message
+          InfoHub::logWarning("In guide search: error in finding the closest segment to the route");
+          return false;
+        }
     }
 
   // fill type query - for now just use as its a full query
@@ -611,8 +618,8 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
   result.insert("query_name", name);
   {
     QJsonObject origin;
-    origin.insert("lng", lon);
-    origin.insert("lat", lat);
+    origin.insert("lng", line_lon[ignore_segments]);
+    origin.insert("lat", line_lat[ignore_segments]);
     result.insert("origin", origin);
   }
 
