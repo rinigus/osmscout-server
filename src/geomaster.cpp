@@ -251,6 +251,11 @@ void GeoMaster::loadTagAlias(const QStringList &lang_list)
   m_aliases = QStringList::fromSet(aliases);
   m_aliases.sort();
 
+  // add "any" as an alias to an empty type
+  QString any = tr("Any");
+  m_aliases.push_front(any);
+  m_alias_to_tag[GeoMaster::normalize(any)] = QSet<QString>();
+
   m_tag_alias_langs = langs;
 }
 
