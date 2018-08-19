@@ -523,29 +523,34 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <translation>libpostal nutzt alle verfügbaren Sprachen</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="297"/>
-        <location filename="../src/geomaster.cpp" line="558"/>
+        <location filename="../src/geomaster.cpp" line="255"/>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="302"/>
+        <location filename="../src/geomaster.cpp" line="563"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Kann die Geocoding Datenbank nicht öffnen: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="323"/>
+        <location filename="../src/geomaster.cpp" line="328"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Fehler beim Analysieren von libpostal. Vielleicht sind keine libpostal-Datenbanken verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="359"/>
+        <location filename="../src/geomaster.cpp" line="364"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Analysierte Abfrage [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="370"/>
-        <location filename="../src/geomaster.cpp" line="605"/>
+        <location filename="../src/geomaster.cpp" line="375"/>
+        <location filename="../src/geomaster.cpp" line="610"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Fehler beim Suchen mit geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="449"/>
+        <location filename="../src/geomaster.cpp" line="454"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Suche nach Referenzpunkt fehlgeschlagen: nicht gefunden</translation>
     </message>

@@ -522,29 +522,34 @@
         <translation>libpostal userà tutte le lingue coperte</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="297"/>
-        <location filename="../src/geomaster.cpp" line="558"/>
+        <location filename="../src/geomaster.cpp" line="255"/>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="302"/>
+        <location filename="../src/geomaster.cpp" line="563"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Impossibile aprire database di geocoding: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="323"/>
+        <location filename="../src/geomaster.cpp" line="328"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Errore di libpostal, i database potrebbero non essere disponibili</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="359"/>
+        <location filename="../src/geomaster.cpp" line="364"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Stringa analizzata [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="370"/>
-        <location filename="../src/geomaster.cpp" line="605"/>
+        <location filename="../src/geomaster.cpp" line="375"/>
+        <location filename="../src/geomaster.cpp" line="610"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Errore durante la ricerca con geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="449"/>
+        <location filename="../src/geomaster.cpp" line="454"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Ricerca per punti di interesse fallita: non trovato</translation>
     </message>
@@ -1184,42 +1189,42 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="215"/>
         <source>Malformed Mapbox GL file request: %1/%2 [%3] [%4]</source>
-        <translation type="unfinished"></translation>
+        <translation>Richiesta file Mapbox GL malformata: %1/%2 [%3] [%4]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="221"/>
         <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>Il file Mapbox GL richiesto non esiste: %1 [%2]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="240"/>
         <source>Error opening Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore apertura tempalte stile Mapbox GL %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="248"/>
         <source>Error reading Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore lettura template stile Mapbox GL %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="267"/>
         <source>Error opening Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore apertura sprite JSON Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="275"/>
         <source>Error reading Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore lettura sprite JSON Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="293"/>
         <source>Error opening Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore apertura immagine sprite Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="300"/>
         <source>Error reading Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore lettura immagine sprite Mapbox GL</translation>
     </message>
 </context>
 <context>
@@ -1227,22 +1232,22 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="143"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Problemi nella rimozione della cartella di configurazione usata da Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="149"/>
         <source>Cannot create configuration directory for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile creare cartella di configurazione di Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="168"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile create link simbolico alla configurazione di Mapnik (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="215"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposibile caricare la configurazione di Mapnik: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="273"/>

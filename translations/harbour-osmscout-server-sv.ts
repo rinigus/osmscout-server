@@ -67,7 +67,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="39"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="34"/>
         <source>License: GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Licens: GPLv3</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="104"/>
@@ -522,29 +522,34 @@
         <translation>libpostal använder alla språk som stöds</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="297"/>
-        <location filename="../src/geomaster.cpp" line="558"/>
+        <location filename="../src/geomaster.cpp" line="255"/>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="302"/>
+        <location filename="../src/geomaster.cpp" line="563"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Kan inte öppna geocoding-databas: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="323"/>
+        <location filename="../src/geomaster.cpp" line="328"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Fel vid tolkning av libpostal. libpostal-databaserna kanske inte är tillgängliga</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="359"/>
+        <location filename="../src/geomaster.cpp" line="364"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Analyserad fråga [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="370"/>
-        <location filename="../src/geomaster.cpp" line="605"/>
+        <location filename="../src/geomaster.cpp" line="375"/>
+        <location filename="../src/geomaster.cpp" line="610"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Fel vid sökning med geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="449"/>
+        <location filename="../src/geomaster.cpp" line="454"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Sökning efter referenspunkt misslyckades. kan inte hitta</translation>
     </message>
@@ -1716,7 +1721,7 @@
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="87"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="83"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Standardprofilen&lt;/i&gt; stödjer kartprogram som använder insticksprogrammen &lt;i&gt;Mapbox GL&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; för att söka efter platser och &lt;i&gt;Valhalla&lt;/i&gt; för att beräkna rutter. Detta är den profil som rekommenderas för nya vektorbaserade kartklienter.&lt;br&gt;&lt;br&gt;För användare med traditionella rasterbaserade kartprogram, rekommenderas profilen för rasterbaserade kartrutor som inkluderar &lt;i&gt;Mapniks&lt;/i&gt; datauppsättningar och samma sök- och ruttberäkningsinstick som &lt;i&gt;standardprofilen&lt;/i&gt;.&lt;br&gt;&lt;br&gt;För användare som vill använda både raster- och vektorbaserade kartprogram, rekommenderas profilen som kombinerar vektor- och rasterkartrutor, vilken inkluderar &lt;i&gt;Mapbox GL&lt;/i&gt; datauppsättningar, stöder kartrendering i rasterbaserade kartrutor från &lt;i&gt;Mapnik&lt;/i&gt; och använder samma sök- och ruttberäkningsinstick som &lt;i&gt;standardprofilen&lt;/i&gt;. Eftersom denna profil innehåller data för flera renderingsprogram har den det största lagringskravet.&lt;br&gt;&lt;br&gt;Profilen där &lt;i&gt;libosmscout&lt;/i&gt; kombineras med &lt;i&gt;Geocoder-NLP&lt;/i&gt; har mindre lagringskrav jämfört med standardprofilen, men rendering av kartor och ruttberäkning begränsas till endast ett territorium. Dessutom är renderingskvaliteten sämre och ruttberäkningshastigheten långsammare, jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout-profilen&lt;/i&gt; har de minsta lagringskraven bland alla profiler, men rendering av kartor och ruttberäkning begränsas också här till endast ett territorium. Dessutom är renderingskvalitet och sökning sämre, och ruttberäkningshastigheten långsammare jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;Vid användning av &lt;i&gt;Anpassad&lt;/i&gt; profil, bestäms inte inställningar och lagringsutrymme av profilen utan måste anges av användaren. Denna profil låter dig välja rendering-, sök- och ruttberäkningskomponenter individuellt. Observera att användaren är ansvarig för att justera inställningarna för att göra dem konsekventa mellan kraven i använda implementationer och lagring.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="70"/>
@@ -1758,7 +1763,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hämtar postad data för förfrågan %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>

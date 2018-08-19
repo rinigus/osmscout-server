@@ -67,7 +67,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="39"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="34"/>
         <source>License: GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencia: GPLv3</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="104"/>
@@ -522,29 +522,34 @@
         <translation>libpostal usará todos los idiomas cubiertos</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="297"/>
-        <location filename="../src/geomaster.cpp" line="558"/>
+        <location filename="../src/geomaster.cpp" line="255"/>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="302"/>
+        <location filename="../src/geomaster.cpp" line="563"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>No es posible abrir la base de datos de geocodificación: %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="323"/>
+        <location filename="../src/geomaster.cpp" line="328"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Error de análisis de libpostal, quizás la base de datos de libpostal no está disponible</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="359"/>
+        <location filename="../src/geomaster.cpp" line="364"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Consulta analizada [%1]: %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="370"/>
-        <location filename="../src/geomaster.cpp" line="605"/>
+        <location filename="../src/geomaster.cpp" line="375"/>
+        <location filename="../src/geomaster.cpp" line="610"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Error al buscar con geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="449"/>
+        <location filename="../src/geomaster.cpp" line="454"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Error en la búsqueda del punto de referencia: no se pudo encontrar</translation>
     </message>
@@ -1758,7 +1763,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Cargando datos publicados de la solicitud %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>

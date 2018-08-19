@@ -522,29 +522,34 @@
         <translation>libpostal va utiliser toutes les langues</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="297"/>
-        <location filename="../src/geomaster.cpp" line="558"/>
+        <location filename="../src/geomaster.cpp" line="255"/>
+        <source>Any</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/geomaster.cpp" line="302"/>
+        <location filename="../src/geomaster.cpp" line="563"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Impossible de charger la base de données geocoding : %1</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="323"/>
+        <location filename="../src/geomaster.cpp" line="328"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Erreur de décodage par libpostal : les bases de données libpostal ne sont peut-être pas disponibles</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="359"/>
+        <location filename="../src/geomaster.cpp" line="364"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Requête analysée [%1]  : %2</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="370"/>
-        <location filename="../src/geomaster.cpp" line="605"/>
+        <location filename="../src/geomaster.cpp" line="375"/>
+        <location filename="../src/geomaster.cpp" line="610"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Erreur lors de la recherche avec geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="449"/>
+        <location filename="../src/geomaster.cpp" line="454"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Point de référence impossible à trouver</translation>
     </message>
