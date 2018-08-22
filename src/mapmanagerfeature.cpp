@@ -23,8 +23,10 @@
 #include "appsettings.h"
 #include "config.h"
 
+#ifdef USE_OSMSCOUT
 // for libosmscout file version
 #include <osmscout/TypeConfig.h>
+#endif
 
 #include <QDir>
 #include <QCoreApplication>
@@ -220,7 +222,12 @@ FeatureOsmScout::FeatureOsmScout(PathProvider *path):
   Feature(path, "territory", "osmscout",
           QCoreApplication::translate("MapManagerFeature", "OSM Scout library"),
           osmscout_files,
-          osmscout::FILE_FORMAT_VERSION)
+#ifdef USE_OSMSCOUT
+          osmscout::FILE_FORMAT_VERSION
+#else
+          1 // placeholder
+#endif
+          )
 {
 }
 

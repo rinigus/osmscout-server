@@ -17,6 +17,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#ifdef USE_OSMSCOUT
+
 #ifndef ROUTINGFORHUMAN_H
 #define ROUTINGFORHUMAN_H
 
@@ -86,3 +88,5 @@ public:
 };
 
 #endif // ROUTINGFORHUMAN_H
+
+#endif // USE_OSMSCOUT
