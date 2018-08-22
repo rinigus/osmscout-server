@@ -17,6 +17,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#ifdef USE_OSMSCOUT
+
 #ifndef SEARCHRESULTS_H
 #define SEARCHRESULTS_H
 
@@ -64,3 +66,5 @@ protected:
 };
 
 #endif // SEARCHRESULTS_H
+
+#endif // USE_OSMSCOUT
