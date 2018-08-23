@@ -120,7 +120,8 @@ automatically. See some examples in
 After the server has been setup and the maps downloaded, the access to
 the server has to be configured in the client(s).
 
-For [WhoGo Maps](https://openrepos.net/content/otsaloma/poor-maps),
+For [Pure Maps](https://openrepos.net/content/rinigus/pure-maps) and 
+[WhoGo Maps](https://openrepos.net/content/otsaloma/poor-maps),
 please follow instructions below for Poor Maps. Just replace
 'Basemaps' selection with selection of 'Maps' in WhoGo Maps menu.
 
