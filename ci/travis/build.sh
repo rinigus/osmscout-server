@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 
@@ -8,19 +8,19 @@ CFG=""
 
 if [ -z ${OSMSCOUT+x} ];
 then
-    CFG+="disable_osmscout "
+    CFG="$CFG disable_osmscout"
 fi
 if [ -z ${MAPNIK+x} ];
 then
-    CFG+="disable_mapnik "
+    CFG="$CFG disable_mapnik"
 fi
 if [ -z ${SYSTEMD+x} ];
 then
-    CFG+="disable_systemd "
+    CFG="$CFG disable_systemd"
 fi
 if [ -z ${VALHALLA+x} ];
 then
-    CFG+="disable_valhalla "
+    CFG="$CFG disable_valhalla"
 fi
 
 echo "Configuration:" $CFG
