@@ -25,8 +25,17 @@ fi
 
 echo "Configuration:" $CFG
 
-ln -s pro/osmscout-server_console.pro .
-qmake CONFIG+="$CFG" osmscout-server_console.pro
+if [ -z ${GUI+x} ];
+then
+    PRO=osmscout-server_console.pro
+else
+    PRO=osmscout-server_qtcontrols.pro
+fi
+
+echo "Building for" $PRO
+
+ln -s pro/$PRO .
+qmake CONFIG+="$CFG" $PRO
 make
 
 echo "Build end time: `date`"
