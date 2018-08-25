@@ -10,10 +10,13 @@ cd $PROGPATH
 rm -rf tiles *.bin
 mkdir tiles
 
-install/bin/valhalla_build_timezones valhalla.json
+install/valhalla_build_timezones valhalla.json
 
-install/bin/valhalla_build_admins --config valhalla.json $PLANET
-install/bin/valhalla_build_tiles --config valhalla.json $PLANET
+# should be set after timezones
+export LD_LIBRARY_PATH=$PROGPATH/install
+
+install/valhalla_build_admins --config valhalla.json $PLANET
+install/valhalla_build_tiles --config valhalla.json $PLANET
 
 # gzip all tiles
 gzip -r tiles/?
