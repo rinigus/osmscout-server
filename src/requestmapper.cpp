@@ -1037,7 +1037,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
       osmscout::Vehicle vehicle;
       QString type = objreq.value("costing").toString();
-      if (type == "auto") vehicle = osmscout::vehicleCar;
+      if (type == "auto" || type == "auto_shorter") vehicle = osmscout::vehicleCar;
       else if (type == "bicycle") vehicle = osmscout::vehicleBicycle;
       else if (type == "pedestrian") vehicle = osmscout::vehicleFoot;
       else
