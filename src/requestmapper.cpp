@@ -320,7 +320,7 @@ static void makeEmptyJson(QByteArray &result)
 
 void RequestMapper::loguri(const char *uri)
 {
-  InfoHub::logInfo("Request: " + QString(uri));
+  InfoHub::logInfo("Request: " + QUrl::fromPercentEncoding(uri));
 }
 
 /////////////////////////////////////////////////////////////////////////////
