@@ -909,102 +909,102 @@
         <translation>Tarpeettomien tiedostojen poisto epäonnistui: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="229"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="236"/>
         <source>Missing libosmscout maps</source>
         <translation>libosmscout kartat puuttuvat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="240"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="247"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="248"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="255"/>
         <source>Missing geocoder-nlp dataset</source>
         <translation>Puuttuva geocoder-nlp datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="266"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="273"/>
         <source>Address parsing language support</source>
         <translation>Osoitteiden tulkinnan kielituki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="286"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="293"/>
         <source>Address parsing country-specific support</source>
         <translation>Osoitteiden tulkinnan maakohtainen tuki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="319"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="326"/>
         <source>Mapnik World coastlines</source>
         <translation>Mapnik maailman rantaviivat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="327"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="334"/>
         <source>Missing Mapnik World coastlines</source>
         <translation>Puuttuvat Mapnik maailman rantaviivat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="339"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="346"/>
         <source>Mapnik country-specific support</source>
         <translation>Mapnik maakohtainen tuki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="347"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="354"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation>Puuttuva maakohtainen Mapnik-datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="366"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="373"/>
         <source>Mapbox GL World overlay</source>
         <translation>Mapbox GL maailman overlay</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="374"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="381"/>
         <source>Missing Mapbox GL World overlay</source>
         <translation>Puuttuva Mapbox GL maailman overlay</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="391"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="398"/>
         <source>Mapbox GL fonts</source>
         <translation>Mapbox GL fontit</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="399"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="406"/>
         <source>Missing Mapbox GL fonts</source>
         <translation>Puuttuvat Mapbox GL fontit</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="412"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="419"/>
         <source>Mapbox GL country-specific support</source>
         <translation>Mapbox GL maakohtainen tuki</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="420"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="427"/>
         <source>Missing country-specific Mapbox GL dataset</source>
         <translation>Puuttuvat maakohtaiset Mapbox GL datasetit</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="465"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="472"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="473"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="480"/>
         <source>Missing Valhalla tiles</source>
         <translation>Puuttuvat Valhallan tiedostot</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="274"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="281"/>
         <source>Missing address language parsing dataset</source>
         <translation>Puuttuva osoitteiden kielen tulkinnan datasetti</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="221"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="223"/>
         <source>OSM Scout library</source>
         <translation>OSM Scout -kirjasto</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="294"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="301"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation>Puuttuva maakohtainen osoitteiden tulkinnan datasetti</translation>
     </message>

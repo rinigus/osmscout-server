@@ -909,102 +909,102 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="229"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="236"/>
         <source>Missing libosmscout maps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="240"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="247"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="248"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="255"/>
         <source>Missing geocoder-nlp dataset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="266"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="273"/>
         <source>Address parsing language support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="286"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="293"/>
         <source>Address parsing country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="319"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="326"/>
         <source>Mapnik World coastlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="327"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="334"/>
         <source>Missing Mapnik World coastlines</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="339"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="346"/>
         <source>Mapnik country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="347"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="354"/>
         <source>Missing country-specific Mapnik dataset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="366"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="373"/>
         <source>Mapbox GL World overlay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="374"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="381"/>
         <source>Missing Mapbox GL World overlay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="391"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="398"/>
         <source>Mapbox GL fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="399"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="406"/>
         <source>Missing Mapbox GL fonts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="412"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="419"/>
         <source>Mapbox GL country-specific support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="420"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="427"/>
         <source>Missing country-specific Mapbox GL dataset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="465"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="472"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="473"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="480"/>
         <source>Missing Valhalla tiles</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="274"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="281"/>
         <source>Missing address language parsing dataset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="221"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="223"/>
         <source>OSM Scout library</source>
         <translation>Knihovna OSM Scout</translation>
     </message>
     <message>
-        <location filename="../src/mapmanagerfeature.cpp" line="294"/>
+        <location filename="../src/mapmanagerfeature.cpp" line="301"/>
         <source>Missing country-specific address parsing dataset</source>
         <translation type="unfinished"></translation>
     </message>
