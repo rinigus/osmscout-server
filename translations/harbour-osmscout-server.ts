@@ -91,22 +91,22 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="326"/>
+        <location filename="../src/appsettings.cpp" line="327"/>
         <source>mph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="326"/>
+        <location filename="../src/appsettings.cpp" line="327"/>
         <source>mi.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="328"/>
+        <location filename="../src/appsettings.cpp" line="329"/>
         <source>km/h</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="328"/>
+        <location filename="../src/appsettings.cpp" line="329"/>
         <source>km</source>
         <translation type="unfinished"></translation>
     </message>
@@ -492,64 +492,64 @@
 <context>
     <name>GeoMaster</name>
     <message>
-        <location filename="../src/geomaster.cpp" line="105"/>
+        <location filename="../src/geomaster.cpp" line="106"/>
         <source>Cannot open geocoder database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="109"/>
+        <location filename="../src/geomaster.cpp" line="110"/>
         <source>Opened geocoder database</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="78"/>
+        <location filename="../src/geomaster.cpp" line="79"/>
         <source>Selected country not available for geocoder: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="91"/>
+        <location filename="../src/geomaster.cpp" line="92"/>
         <source>Countries used in search: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="128"/>
+        <location filename="../src/geomaster.cpp" line="129"/>
         <source>libpostal using languages: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="133"/>
+        <location filename="../src/geomaster.cpp" line="134"/>
         <source>libpostal will use all covered languages</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="255"/>
+        <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="302"/>
-        <location filename="../src/geomaster.cpp" line="563"/>
+        <location filename="../src/geomaster.cpp" line="303"/>
+        <location filename="../src/geomaster.cpp" line="564"/>
         <source>Cannot open geocoding database: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="328"/>
+        <location filename="../src/geomaster.cpp" line="329"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="364"/>
+        <location filename="../src/geomaster.cpp" line="365"/>
         <source>Parsed query [%1]: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="375"/>
-        <location filename="../src/geomaster.cpp" line="610"/>
+        <location filename="../src/geomaster.cpp" line="376"/>
+        <location filename="../src/geomaster.cpp" line="611"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="454"/>
+        <location filename="../src/geomaster.cpp" line="455"/>
         <source>Search for reference point failed: cannot find</source>
         <translation type="unfinished"></translation>
     </message>
@@ -595,24 +595,36 @@
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="73"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
-        <source>Use primitive parser</source>
+        <source>Use libpostal parser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="81"/>
-        <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
+        <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="82"/>
+        <location filename="../qml/silica/pages/GeocoderPage.qml" line="89"/>
+        <source>Use primitive parser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="83"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="90"/>
+        <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="92"/>
+        <location filename="../qml/silica/pages/GeocoderPage.qml" line="99"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="84"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="91"/>
+        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="93"/>
+        <location filename="../qml/silica/pages/GeocoderPage.qml" line="100"/>
         <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
         <translation type="unfinished"></translation>
     </message>
