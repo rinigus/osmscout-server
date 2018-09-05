@@ -528,7 +528,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
-        <location filename="../src/geomaster.cpp" line="564"/>
+        <location filename="../src/geomaster.cpp" line="561"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Kan ikke åpne geocoding database: %1</translation>
     </message>
@@ -544,7 +544,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="376"/>
-        <location filename="../src/geomaster.cpp" line="611"/>
+        <location filename="../src/geomaster.cpp" line="608"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Feil ved søking med geocoder-nlp</translation>
     </message>
