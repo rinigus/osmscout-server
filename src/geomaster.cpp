@@ -486,9 +486,6 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
                       QJsonArray &route_lat, QJsonArray &route_lon,
                       double radius, size_t limit, QByteArray &result_data)
 {
-  if (poitype.isEmpty() && name.isEmpty())
-    return false;
-
   QMutexLocker lk(&m_mutex);
 
   std::vector<GeoNLP::Geocoder::GeoResult> search_result;
