@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Sep 5 2018 rinigus <rinigus.git@gmail.com> 1.11.0-1
+- update translations
+- allow searching without libpostal parsing
+- allow nearby search without type and name
+
 * Mon Aug 27 2018 rinigus <rinigus.git@gmail.com> 1.10.5-1
 - update translations
 - update Valhalla configuration and bumping Valhalla to 2.6.3
