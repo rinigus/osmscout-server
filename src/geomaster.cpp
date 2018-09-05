@@ -58,6 +58,7 @@ void GeoMaster::onSettingsChanged()
 
   // apply new settings
   m_postal.set_initialize_every_call(settings.valueBool(GEOMASTER_SETTINGS "initialize_every_call"));
+  m_postal.set_use_postal(settings.valueBool(GEOMASTER_SETTINGS "use_postal"));
   m_postal.set_use_primitive(settings.valueBool(GEOMASTER_SETTINGS "use_primitive"));
 
   m_search_all_maps = settings.valueBool(GEOMASTER_SETTINGS "search_all_maps");

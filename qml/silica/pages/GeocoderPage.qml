@@ -1,18 +1,18 @@
 /*
  * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
- * 
+ *
  * This file is part of OSM Scout Server.
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -75,6 +75,15 @@ Dialog {
             }
 
             ElementSwitch {
+                id: eGeoPostal
+                key: settingsGeomasterPrefix + "use_postal"
+                mainLabel: qsTr("Use libpostal parser")
+                secondaryLabel: qsTr("This is the main address parser of the geocoder. It is recommended to enable " +
+                                     "<i>libpostal</i> parser, unless the hardware does not allow to use it and the limitations " +
+                                     "primitive parser are taken into account. Note that at least one parser has to be specified.")
+            }
+
+            ElementSwitch {
                 id: eGeoPrimitive
                 key: settingsGeomasterPrefix + "use_primitive"
                 mainLabel: qsTr("Use primitive parser")
@@ -98,9 +107,10 @@ Dialog {
     }
 
     onAccepted: {
-        eGeoInitEveryCall.apply()
-        eGeoSearchAllMaps.apply()
-        eGeoPrimitive.apply()
-        eGeoLanguages.apply()
+        eGeoInitEveryCall.apply();
+        eGeoSearchAllMaps.apply();
+        eGeoPostal.apply();
+        eGeoPrimitive.apply();
+        eGeoLanguages.apply();
     }
 }
