@@ -93,3 +93,8 @@ class Hierarchy(object):
         return Hierarchy.get_value(d, "postal_country",
                                    parent=True)
         
+    @staticmethod
+    def get_postcodes(d):
+        return Hierarchy.get_value(d, "postcodes",
+                                   parent=True)
+        
