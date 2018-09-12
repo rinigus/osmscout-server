@@ -26,6 +26,6 @@ SQLDIR="$BASE_DIR/geocoder-nlp/$CONTINENT_COUNTRY"
 rm -rf "$SQLDIR"
 mkdir -p "$SQLDIR"
 
-"$IMPORTER" "$PBF" "$SQLDIR" "$COUNTRY_CODE" "$POSTCODES"
+"$IMPORTER" "$PBF" "$SQLDIR" "$POSTCODES" "$COUNTRY_CODE"
 
 ./pack.sh "$SQLDIR" `backends-install/bin/geocoder-importer --version`

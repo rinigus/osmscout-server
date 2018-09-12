@@ -60,7 +60,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
         all_countries += country_target + " "
         fmake.write(country_target + ": $(BASE_DIR)/geocoder-nlp/.directory " + pbf +
                     "\n\t$(BUILDER_GEOCODER) $(PBF_DIR)/" + pbfname(cid) + " $(BASE_DIR) " +
-                    spath(cid) + " " + Hierarchy.get_postal(root) + " " + Hierarchy.get_postcodes(root) + "\n\n")
+                    spath(cid) + " " + Hierarchy.get_postal(root) + ' "' + Hierarchy.get_postcodes(root) + '"\n\n')
 
         # mapnik
         country_target = "$(BASE_DIR)/mapnik/countries/" + spath(cid) + ".timestamp"

@@ -2,11 +2,11 @@
 
 set -e
 
-#rm -f planet/planet-latest.osm.pbf planet/planet-latest.osm.pbf.md5
-#(cd planet && wget http://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/pbf/planet-latest.osm{.pbf,.pbf.md5} && md5sum -c *.md5)
+rm -f planet/planet-latest.osm.pbf planet/planet-latest.osm.pbf.md5
+(cd planet && wget http://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/pbf/planet-latest.osm{.pbf,.pbf.md5} && md5sum -c *.md5)
 
 # UK postcodes
-rm -rf postcodes
+rm -rf postcodes && mkdir postcodes
 (cd postcodes && wget https://www.freemaptools.com/download/full-postcodes/ukpostcodes.zip && unzip ukpostcodes.zip)
 
 # Mapbox GL import

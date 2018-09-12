@@ -14,16 +14,16 @@ url_base = "http://data.modrana.org/osm_scout_server"
 url_specs = {
     "base": url_base,
     "type": "url",
-    "osmscout": "osmscout-15",
-    "geocoder_nlp": "geocoder-nlp-15",
+    "osmscout": "osmscout-17",
+    "geocoder_nlp": "geocoder-nlp-19",
     "postal_global": "postal-global-2",
     "postal_country": "postal-country-2",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-11",
-    "mapboxgl_country": "mapboxgl-4",
-    "mapboxgl_global": "mapboxgl-4",
-    "mapboxgl_glyphs": "mapboxgl-4",
-    "valhalla": "valhalla-9",
+    "mapnik_country": "mapnik-country-14",
+    "mapboxgl_country": "mapboxgl-6",
+    "mapboxgl_global": "mapboxgl-6",
+    "mapboxgl_glyphs": "mapboxgl-6",
+    "valhalla": "valhalla-11",
 }
 
 dist = json.loads( open("countries.json", "r").read() )

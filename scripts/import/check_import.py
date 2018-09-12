@@ -2,7 +2,7 @@
 import sys, json, tabulate
 
 cutoff_less = 0.8
-cutoff_more = 1.3
+cutoff_more = 1.5
 
 json_reference_fname = "provided/countries_provided.reference.json"
 json_tocheck_fname = "provided/countries_provided.json"

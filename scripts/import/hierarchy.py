@@ -95,6 +95,8 @@ class Hierarchy(object):
         
     @staticmethod
     def get_postcodes(d):
-        return Hierarchy.get_value(d, "postcodes",
-                                   parent=True)
+        v = Hierarchy.get_value(d, "postcodes",
+                                parent=True)
+        if v is not None: return v
+        return ""
         
