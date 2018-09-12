@@ -412,14 +412,17 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
       {
         QJsonObject r;
 
+        r.insert("admin_levels", (int)sr.admin_levels);
         r.insert("admin_region", QString::fromStdString(sr.address));
-        r.insert("title", QString::fromStdString(sr.title));
         r.insert("lat", sr.latitude);
         r.insert("lng", sr.longitude);
-        r.insert("object_id", sr.id);
-        r.insert("type", tag2alias(QString::fromStdString(sr.type)));
         r.insert("levels_resolved", (int)sr.levels_resolved);
-        r.insert("admin_levels", (int)sr.admin_levels);
+        r.insert("object_id", sr.id);
+        r.insert("phone", QString::fromStdString(sr.phone));
+        r.insert("postal_code", QString::fromStdString(sr.postal_code));
+        r.insert("title", QString::fromStdString(sr.title));
+        r.insert("type", tag2alias(QString::fromStdString(sr.type)));
+        r.insert("website", QString::fromStdString(sr.website));
 
         arr.push_back(r);
       }
@@ -632,13 +635,17 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
       {
         QJsonObject r;
 
+        r.insert("admin_levels", (int)sr.admin_levels);
         r.insert("admin_region", QString::fromStdString(sr.address));
-        r.insert("title", QString::fromStdString(sr.title));
         r.insert("lat", sr.latitude);
         r.insert("lng", sr.longitude);
-        r.insert("distance", sr.distance);
+        r.insert("levels_resolved", (int)sr.levels_resolved);
         r.insert("object_id", sr.id);
+        r.insert("phone", QString::fromStdString(sr.phone));
+        r.insert("postal_code", QString::fromStdString(sr.postal_code));
+        r.insert("title", QString::fromStdString(sr.title));
         r.insert("type", tag2alias(QString::fromStdString(sr.type)));
+        r.insert("website", QString::fromStdString(sr.website));
 
         arr.push_back(r);
       }
