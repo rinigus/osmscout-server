@@ -42,24 +42,30 @@
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="69"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="64"/>
+        <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="75"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="71"/>
         <source>Libpostal</source>
         <translation>libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="71"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="66"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="77"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="73"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Notez que &lt;i&gt;libpostal&lt;/i&gt; a surtout été développé/ajusté pour être utilisé avec un modèle couvrant le monde entier. Les modèles se limitant aux frontières d&apos;un pays ont été développés pour les périphériques mobiles, ils ne sont donc pas nécessairement ajustés. Merci de signaler tout problème de performance via les projets GitHub &lt;i&gt;OSM Scout Server&lt;/i&gt; ou &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="78"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="73"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="84"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="80"/>
         <source>Acknowledgments</source>
         <translation>Remerciements</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="29"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="101"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="108"/>
         <source>About</source>
         <translation>À propos</translation>
     </message>
@@ -70,20 +76,20 @@
         <translation>License : GPLv3</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="104"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="105"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="110"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="112"/>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="109"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="111"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="115"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="118"/>
         <source>is a server that provides offline map services</source>
         <translation>est un serveur fournissant un service de cartographie hors connexion. Accessible n&apos;importe où, n&apos;importe quand.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="115"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="118"/>
+        <location filename="../qml/qtcontrols/AboutPage.qml" line="121"/>
+        <location filename="../qml/silica/pages/AboutPage.qml" line="125"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Manuel d&apos;utilisation disponible &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;ici&lt;/a&gt; !</translation>
     </message>
@@ -528,7 +534,7 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
-        <location filename="../src/geomaster.cpp" line="561"/>
+        <location filename="../src/geomaster.cpp" line="564"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Impossible de charger la base de données geocoding : %1</translation>
     </message>
@@ -544,12 +550,12 @@
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="376"/>
-        <location filename="../src/geomaster.cpp" line="608"/>
+        <location filename="../src/geomaster.cpp" line="611"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Erreur lors de la recherche avec geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../src/geomaster.cpp" line="455"/>
+        <location filename="../src/geomaster.cpp" line="458"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Point de référence impossible à trouver</translation>
     </message>

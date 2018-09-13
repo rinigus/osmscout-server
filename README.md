@@ -62,6 +62,12 @@ Map data from OpenStreetMap, Open Database License 1.0. Maps are
 converted to a suitable format from downloaded extracts and/or using
 polygons as provided by Geofabrik GmbH.
 
+UK postal codes downloaded from https://www.freemaptools.com. These
+data contain: Ordnance Survey data © Crown copyright and database
+right 2017; Royal Mail data © Royal Mail copyright and database right
+2017; National Statistics data © Crown copyright and database right
+2017.
+
 
 ## Settings
 
