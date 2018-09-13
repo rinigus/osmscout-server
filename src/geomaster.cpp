@@ -639,7 +639,7 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
         r.insert("admin_region", QString::fromStdString(sr.address));
         r.insert("lat", sr.latitude);
         r.insert("lng", sr.longitude);
-        r.insert("levels_resolved", (int)sr.levels_resolved);
+        r.insert("distance", sr.distance);
         r.insert("object_id", sr.id);
         r.insert("phone", QString::fromStdString(sr.phone));
         r.insert("postal_code", QString::fromStdString(sr.postal_code));
