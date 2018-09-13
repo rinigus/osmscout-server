@@ -1,52 +1,96 @@
 {
     "parsed": {
         "europe/estonia": {
+            "city": "{tallinn}",
             "house_number": "{1}",
             "road": "{tartu mnt}"
+        },
+        "europe/great-britain/england/cornwall": {
+            "house": "{tartu mnt}",
+            "house_number": "{1}",
+            "road": "{tallinn}"
+        },
+        "europe/sweden": {
+            "house": "{tartu}",
+            "house_number": "{1}",
+            "road": "{tallinn}"
         }
     },
     "parsed_normalized": {
         "europe/estonia": [
             {
+                "city": "{tallinn}",
                 "house_number": "{1}",
                 "road": "{tartu mount, tartu maantee}"
             },
             {
-                "h-0": "{tartu mount 1, tartu maantee 1}"
+                "h-0": "{tallinn}",
+                "h-1": "{tartu mount 1, tartu maantee 1}"
+            }
+        ],
+        "europe/great-britain/england/cornwall": [
+            {
+                "house": "{tartu mount, tartu maantee}",
+                "house_number": "{1}",
+                "road": "{tallinn}"
+            },
+            {
+                "h-0": "{tallinn}",
+                "h-1": "{tartu mount 1, tartu maantee 1}"
+            }
+        ],
+        "europe/sweden": [
+            {
+                "house": "{tartu}",
+                "house_number": "{1}",
+                "road": "{tallinn}"
+            },
+            {
+                "h-0": "{tallinn}",
+                "h-1": "{tartu mount 1, tartu maantee 1}"
             }
         ]
     },
-    "query": "tartu mnt 1",
+    "query": "tartu mnt 1, tallinn",
     "result": [
         {
             "admin_levels": 6,
-            "admin_region": "10, Tartu mnt, Kose alevik, Kose vald, Harju maakond, Eesti",
-            "lat": 59.16627846037058,
-            "levels_resolved": 2,
-            "lng": 25.176606067840794,
-            "object_id": 72066,
-            "title": "10, Tartu mnt",
-            "type": "Building"
-        },
-        {
-            "admin_levels": 6,
-            "admin_region": "10a, Tartu mnt, Kose alevik, Kose vald, Harju maakond, Eesti",
-            "lat": 59.16641391192685,
-            "levels_resolved": 2,
-            "lng": 25.17635125798249,
-            "object_id": 72065,
-            "title": "10a, Tartu mnt",
-            "type": "Building"
-        },
-        {
-            "admin_levels": 6,
-            "admin_region": "1, Tartu mnt, Puka alevik, Otep‰‰ vald, Valga maakond, Eesti",
-            "lat": 58.058145255283605,
-            "levels_resolved": 2,
-            "lng": 26.22730378975946,
-            "object_id": 164821,
+            "admin_region": "1, Tartu mnt, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+            "lat": 59.43489498969089,
+            "levels_resolved": 3,
+            "lng": 24.758684372594075,
+            "object_id": 39412,
+            "phone": "",
+            "postal_code": "",
             "title": "1, Tartu mnt",
-            "type": "Building"
+            "type": "address",
+            "website": ""
+        },
+        {
+            "admin_levels": 6,
+            "admin_region": "13, Tartu mnt, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+            "lat": 59.434417556482686,
+            "levels_resolved": 3,
+            "lng": 24.761235153386252,
+            "object_id": 39424,
+            "phone": "",
+            "postal_code": "",
+            "title": "13, Tartu mnt",
+            "type": "Building",
+            "website": ""
+        },
+        {
+            "admin_levels": 6,
+            "admin_region": "14, Tartu mnt, Kesklinna linnaosa, Tallinn, Harju maakond, Eesti",
+            "lat": 59.43389653737766,
+            "levels_resolved": 3,
+            "lng": 24.76135853500186,
+            "object_id": 39426,
+            "phone": "",
+            "postal_code": "",
+            "title": "14, Tartu mnt",
+            "type": "Building",
+            "website": ""
         }
     ]
 }
