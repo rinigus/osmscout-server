@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -524,7 +522,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation>Любой</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
@@ -596,13 +594,13 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="73"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать парсер libpostal</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="81"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Это основной парсер адресов geocoder-а. Рекомендуется разрешить парсер &lt;i&gt;libpostal&lt;/i&gt;, если только аппаратные средства не допускают его использование и учитывают ограничения примитивного парсера. Внимание! По крайней мере должен быть выбран один из парсеров.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="82"/>
@@ -1775,7 +1773,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Загрузка опубликованных данных для запроса %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
@@ -2595,12 +2593,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Совмещение карт запрошено: режим=%1</translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим=%1 совмещения карт не поддерживается</translation>
     </message>
 </context>
 <context>
@@ -2608,7 +2606,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Служба совмещения смыкания карт для DBus клиента %1</translation>
     </message>
 </context>
 <context>

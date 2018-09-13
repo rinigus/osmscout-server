@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -596,13 +594,13 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="73"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"></translation>
+        <translation>libpostal-verwerker gebruiken</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="81"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dit is de hoofdadresverwerker van de geocoder. Het is aanbevolen de &lt;i&gt;libpostal&lt;/i&gt;-verwerker in te schakelen, tenzij de hardware niet toestaat deze te gebruiken, en de beperkingen van de verwerker worden in acht genomen. Let op: minstens één verwerker moet worden opgegeven.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="82"/>

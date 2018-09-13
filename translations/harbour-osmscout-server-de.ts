@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="32"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="27"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Der Server muss mit einem Client-Programm verwendet werden, das in der Lage ist Karten darzustellen, Suchanfragen zu stellen und ausgewählte Routen anzuzeigen. Dieser Server ist ein Zwischenglied für den Zugriff auf die Funktionen von &lt;i&gt;libsosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;  und &lt;i&gt;geocoder-nlp&lt;/i&gt; sowie von Daten aus dem Webdienst &lt;i&gt;Mapbox GL &lt;/i&gt;. Er kann als gleichwertiger Ersatz für Online-Kartendienste dienen.</translation>
+        <translation>Der Server muss mit einem Client-Programm verwendet werden, das in der Lage ist Karten darzustellen, Suchanfragen zu stellen und ausgewählte Routen anzuzeigen. Dieser Server ist ein Zwischenglied für den Zugriff auf die Funktionen von &lt;i&gt;libsosmscout&lt;/i&gt;, &lt;i&gt;mapnik&lt;/i&gt;, &lt;i&gt;valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; und &lt;i&gt;geocoder-nlp&lt;/i&gt; sowie von Daten aus dem Webdienst &lt;i&gt;Mapbox GL &lt;/i&gt;. Er kann als gleichwertiger Ersatz für Online-Kartendienste dienen.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="38"/>
@@ -67,7 +65,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="39"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="34"/>
         <source>License: GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Lizenz: GPLv3</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="104"/>
@@ -525,7 +523,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
@@ -597,13 +595,13 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="73"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Verwende libpostal-Parser</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="81"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dies ist der Hauptadressparser des Geocodierers. Es wird empfohlen, den &lt;i&gt;libpostal&lt;/i&gt; Parser zu aktivieren, es sei denn, die Hardware erlaubt es nicht, ihn zu verwenden, und der primitive Parser für Einschränkungen wird berücksichtigt. Beachte, dass mindestens ein Parser angegeben werden muss.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="82"/>
@@ -1777,7 +1775,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lade Daten für Anfrage %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
@@ -1808,7 +1806,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../src/requestmapper.cpp" line="967"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Routing und andere Valhalla-Dienste sind nicht verfügbar, da Valhalla durch ausgewählte Profile oder Einstellungen deaktiviert wurde. %1</translation>
     </message>
 </context>
 <context>
@@ -2599,12 +2597,12 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartenabgleich angefordert: mode=%1</translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Kartenabgleichmodus %1 wird nicht unterstützt</translation>
     </message>
 </context>
 <context>
@@ -2612,7 +2610,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Beende Kartenabgleich für den DBus-Client %1</translation>
     </message>
 </context>
 <context>
@@ -2630,7 +2628,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/valhallamaster.cpp" line="226"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausnahmefall Valhalla: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="193"/>
