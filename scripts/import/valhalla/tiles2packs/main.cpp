@@ -65,7 +65,7 @@ int main()
   std::ostringstream ss;
   ss << "[ ";
 
-  for (int hier=1; hier < 2; hier++)
+  for (int hier=0; hier < 2; hier++)
     {
       std::vector<int> levels;
       std::deque<double> steps;
