@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Oct 1 2018 rinigus <rinigus.git@gmail.com> 1.12.1-1
+- update translations
+- import bugfixes
+
 * Fri Sep 14 2018 rinigus <rinigus.git@gmail.com> 1.12.0-1
 - geocoder: add support for search by postal codes
 - geocoder: return postal codes, phone, and webpage when available
