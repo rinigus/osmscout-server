@@ -73,7 +73,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="39"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="34"/>
         <source>License: GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Licencja: GPLv3</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="110"/>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation>jakikolwiek</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
@@ -602,7 +602,7 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="73"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj parsera libpostal</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>

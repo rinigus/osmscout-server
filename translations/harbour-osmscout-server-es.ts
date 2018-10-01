@@ -43,7 +43,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="69"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="64"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los códigos postales de GB se han descargado de  &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Estos datos contienen: Ordnance Survey data © Crown derechos de autor y de las bases de datos 2017; Royal Mail data © Royal Mail derechos de autor y de las bases de datos 2017; National Statistics data © Crown derechos de autor y de las bases de datos 2017.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="75"/>

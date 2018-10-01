@@ -43,7 +43,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="69"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="64"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistyneiden kuningaskuntien postikoodit ladattu &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools:sta&lt;/a&gt;. Nämä tiedot sisältävät: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="75"/>
@@ -73,7 +73,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="39"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="34"/>
         <source>License: GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisenssi: GPLv3</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="110"/>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaikki</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
@@ -602,13 +602,13 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="73"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä libpostal parseria</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="81"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tämä on pääasiallinen geokooderin postiosoitetulkki. On suositeltavaa aktivoida &lt;i&gt;libpostal&lt;/i&gt;-tulkki, ellei laite estä sen käyttöä ja primitiivitulkin rajoitukset on otettu huomioon. Huomioi että ainakin yksi tulkki pitää olla määritettynä.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="82"/>
@@ -1781,7 +1781,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladataan lähetetty data haulle %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
@@ -1812,7 +1812,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="967"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Reititys ja muut Valhallan palvelut eivät ole saatavilla koska Valhalla on poistettu käytöstä joko valitussa profiilissa tai asetuksissa. %1</translation>
     </message>
 </context>
 <context>
@@ -2601,12 +2601,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Pyydetty karttahaku: tila=%1</translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Karttahakutila %1 ei ole tuettu</translation>
     </message>
 </context>
 <context>
@@ -2614,7 +2614,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Suljetaan karttahakupalvelu DBus-asiakkaalle %1</translation>
     </message>
 </context>
 <context>
@@ -2632,7 +2632,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="226"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Poikkeus Valhallassa: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="193"/>

@@ -7,13 +7,13 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="32"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="27"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation type="unfinished"></translation>
+        <translation>Server musí být použit s klientským programem, který je schopen zobrazit mapy, dotazovat na vyhledávání a zobrazovat vybrané trasy. Server je tenká vrstva, která odhaluje funkce &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; a poskytuje data pro &lt;i&gt;Mapbox GL&lt;/i&gt; prostřednictvím webové služby. Tento server lze použít jako náhradu za online služby poskytující mapy.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="38"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="33"/>
         <source>Copyright:</source>
-        <translation type="unfinished"></translation>
+        <translation>Copyright:</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="45"/>
@@ -31,19 +31,19 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="60"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="55"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapy jsou umístěny v Centru pro zpracování přirozeného jazyka (Fakulta informatiky Masarykovy univerzity, Brno, Česká republika) prostřednictvím úložiště dat modRana.org.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="65"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="60"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapová data z OpenStreetMap, Open Database License 1.0. Mapy jsou přeměněny na vhodný formát ze stažených výtažků a / nebo pomocí polygonů, které poskytuje Geofabrik GmbH.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="69"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="64"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation type="unfinished"></translation>
+        <translation>Britská poštovní směrovací čísla staženy z &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Tato data obsahují: Údaje o Ordnance Survey © Crown copyright and database right 2017. Royal Mail data © copyright Royal Mail a databáze práva 2017; Údaje o národních statistikách © Crown copyright and database right 2017.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="75"/>
@@ -55,7 +55,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="77"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="73"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vezměte prosím na vědomí, že &lt;i&gt;libpostal&lt;/i&gt; je vyvinut pro použití s jemně vyladěným modelem pokrývajícím svět. Modely založené na jednotlivých zemích byly vyvinuty pro použití &lt;i&gt;libpostalu&lt;/i&gt; v mobilních zařízeních a nebyly speciálně naladěny. Problémy s výkonem libpostal uveďte na modelech založených na zemi na projekty &lt;i&gt;OSM Scout Server&lt;/i&gt; nebo &lt;i&gt;geocoder-nlp&lt;/i&gt; github.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="84"/>
@@ -73,7 +73,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="39"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="34"/>
         <source>License: GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Licence: GPLv3</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="110"/>
@@ -91,7 +91,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="121"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="125"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Uživatelská příručka je k dispozici &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -129,19 +129,19 @@
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="45"/>
         <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="43"/>
         <source>All datasets covering selected features are available</source>
-        <translation type="unfinished"></translation>
+        <translation>K dispozici jsou všechny datové sady zahrnující vybrané funkce</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="47"/>
         <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="45"/>
         <source>Some datasets are missing. You would have to start downloads to get them.</source>
-        <translation type="unfinished"></translation>
+        <translation>Některé datové sady chybí. Budete muset začít stahovat, abyste je získali.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="49"/>
         <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="47"/>
         <source>Some or all datasets are incompatible with this version. You would have to update list of provided maps, the maps, and/or install the latest release of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Některé nebo všechny datové sady jsou s touto verzí nekompatibilní. Budete muset aktualizovat seznam poskytnutých map, mapy a / nebo nainstalovat nejnovější verzi serveru OSM Scout.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="56"/>
@@ -165,13 +165,13 @@
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="141"/>
         <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="146"/>
         <source>Selected datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Vybrané datové sady</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="159"/>
         <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="166"/>
         <source>All datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechny datové sady</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="195"/>
@@ -246,12 +246,12 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="103"/>
         <source>Opened OSM Scout database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Otevřená databáze OSM Scout:: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="105"/>
         <source>Cannot open OSM Scout database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze otevřít databázi OSM Scout: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="130"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/dbmaster_route.cpp" line="121"/>
         <source>Cannot open routing database</source>
-        <translation>Nemohu otevřít routovací databázi</translation>
+        <translation>Nemohu otevřít databázi hledání trasy</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="158"/>
@@ -412,19 +412,19 @@
         <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="30"/>
         <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="28"/>
         <source>List of languages used for parsing addresses</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam jazyků používaných pro parsování adres</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="31"/>
         <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="29"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte prosím jazyky používané pro parsování adres.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="32"/>
         <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="30"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud v tomto formuláři není vybrán žádný z těchto jazyků, předpokládá se, že pro parsování by měly být použity všechny podporované jazyky. &lt;br&gt;Poznamenejme, že při použití všech podporovaných jazyků mohou být velké požadavky RAM.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="55"/>
@@ -458,7 +458,7 @@
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation type="unfinished"></translation>
+        <translation>Všimněte si, že pokud se stahování nezdaří kvůli chybějícímu souboru na serveru, zvažte zkontrolování aktualizací v aplikaci Správce map. Při nahrávání nových map se změní adresa URL pro každou databázi, která může vést k takové chybě, dokud místní manažer mapy neaktualizuje místní seznam dostupných map.</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="391"/>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation>Jakýkoli</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
@@ -566,7 +566,7 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="49"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="55"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Odmítnutí odpovědnosti: Informace o hlášení problémů s parsováním adres naleznete na straně Více o...</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="29"/>
@@ -578,13 +578,13 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="41"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="45"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder je zodpovědný za vyřešení žádostí o vyhledávání. Za tímto účelem analyzuje vyhledávací řetězec a na mapě nalezne odpovídající objekty.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="59"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="66"/>
         <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam jazyků používaných pro parsování adres. Všimněte si, že při použití všech podporovaných jazyků mohou být požadavky RAM velké</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="66"/>
@@ -596,43 +596,43 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="67"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="74"/>
         <source>When enabled, each search will be performed using all available maps on the device</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud je povoleno, bude každé vyhledávání provedeno pomocí všech dostupných map v zařízení</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="73"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Použijte parser libpostal</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="81"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toto je hlavní analyzátor adresy geocoderu. Doporučuje se povolit analyzátor &lt;i&gt;libpostal&lt;/i&gt;, pokud hardware neumožňuje jeho použití a jsou zohledněny limity primitivního analyzátoru. Všimněte si, že musí být zadán alespoň jeden analyzátor.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="82"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="89"/>
         <source>Use primitive parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Použijte primitivní parser</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="83"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="90"/>
         <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kromě knihovny &lt;i&gt;libpostal&lt;/i&gt; umožňuje primitivní syntaktický analyzátor určovat správcovskou hierarchii hledaného objektu tak, že odděluje komponenty čárkou. Někdy, když knihovna libpostal nesprávně analyzuje požadavek, tento parser vám umožní překonat problém. &lt;br&gt;Příklad: číslo domu, ulice, město.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="92"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="99"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
-        <translation type="unfinished"></translation>
+        <translation>Při každém volání načíst &lt;i&gt;libpostal&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="93"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="100"/>
         <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po výběru budou databáze &lt;i&gt;libpostal&lt;/i&gt; načteny do paměti pouze při analýze požadavku. Výsledkem je, že při vyhledávání bude trvat delší čas, paměťová režie libpostal je při nečinnosti malá.</translation>
     </message>
 </context>
 <context>
@@ -658,7 +658,7 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="30"/>
         <source>Cleanup: %1 files to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyčištění: %1 souborů, které chcete smazat</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="36"/>
@@ -668,17 +668,17 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="37"/>
         <source>Cancelling the removal of remaining files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zrušení odstranění zbývajících souborů.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="46"/>
         <source>Files left to remove: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zbývá odstranit souborů: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="51"/>
         <source>Cleanup finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyčištění bylo dokončeno</translation>
     </message>
 </context>
 <context>
@@ -686,101 +686,101 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="70"/>
         <source>Could not allocate Map Manager features</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze přidělit funkce Map Manageru</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="116"/>
         <source>Storage folder changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Úložiště bylo změněno na %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="123"/>
         <source>Maps storage folder does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Složka úložiště mapy neexistuje: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="126"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Cesta složky pro ukládání map není odkazem na adresář: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="132"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Složka pro ukládání map není zapisovatelná, upravte oprávnění pro %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="185"/>
         <location filename="../src/mapmanager.cpp" line="187"/>
         <source>Failed to open the database for tracking downloaded files</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se otevřít databázi pro sledování stažených souborů</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="188"/>
         <source>Map Manager functionality would be disturbed</source>
-        <translation type="unfinished"></translation>
+        <translation>Funkce Map Manageru může být narušena</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="250"/>
         <source>Cannot create directory without any name</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresář nelze vytvořit bez názvu</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="257"/>
         <source>Error creating directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při vytváření adresáře %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="304"/>
         <source>Address parsing language support</source>
-        <translation type="unfinished"></translation>
+        <translation>Jazyková podpora analýzy adres</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="337"/>
         <location filename="../src/mapmanager.cpp" line="808"/>
         <location filename="../src/mapmanager.cpp" line="937"/>
         <source>Maps storage folder does not exist: </source>
-        <translation type="unfinished"></translation>
+        <translation>Složka úložiště mapy neexistuje:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="346"/>
         <location filename="../src/mapmanager.cpp" line="815"/>
         <source>No maps were requested</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebyly vyžádány žádné mapy</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="367"/>
         <source>No maps loaded: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné načtené mapy: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="842"/>
         <source>%1: version of dataset for %2 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: verze datové sady pro %2 není podporována</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="393"/>
         <source>Missing dataset for %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybějící dataset pro %1: %2</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="306"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Pobřeží světa z databáze Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="308"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL World overlay</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="310"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL písma</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="440"/>
         <source>Available country or territory: </source>
-        <translation type="unfinished"></translation>
+        <translation>Dostupná země nebo území:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="641"/>
@@ -790,7 +790,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="705"/>
         <source>Removing country from requested list: </source>
-        <translation type="unfinished"></translation>
+        <translation>Odstranění země z požadovaného seznamu:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="863"/>
@@ -800,12 +800,12 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="943"/>
         <source>No servers found to download the data from</source>
-        <translation type="unfinished"></translation>
+        <translation>Nebyly nalezeny žádné servery ke stažení dat</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="966"/>
         <source>Error starting the download of</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při spuštění stahování</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="983"/>
@@ -815,7 +815,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="1011"/>
         <source>Could not register downloaded file in the tracking database</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze nahrát stažený soubor do sledovací databáze</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1012"/>
@@ -826,77 +826,77 @@
         <location filename="../src/mapmanager.cpp" line="1035"/>
         <location filename="../src/mapmanager.cpp" line="1036"/>
         <source>Could not retrieve server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze načíst adresu URL serveru</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1067"/>
         <source>Download failed from %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Stažení se nezdařilo od %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1103"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam zemí: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1044"/>
         <source>Downloading the list of countries</source>
-        <translation type="unfinished"></translation>
+        <translation>Stažení seznamu zemí</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1376"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze zkontrolovat aktualizace kvůli chybějícímu seznamu poskytnutých zemí. Stáhněte si seznam před kontrolou aktualizací.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1114"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="678"/>
         <source>Add country or feature to requested list</source>
-        <translation type="unfinished"></translation>
+        <translation>Přidat zemi nebo funkce do požadovaného seznamu</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1078"/>
         <source>Download failed, dropping all downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Stahování se nezdařilo, všechna stahování zrušena</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1107"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam zemí: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1127"/>
         <source>Unpacking files</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozbalení souborů</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1129"/>
         <source>%1; Unpacking files</source>
-        <translation type="unfinished"></translation>
+        <translation>%1; Rozbalování souborů</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1159"/>
         <source>Stopping downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Zastavování stahování</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1319"/>
         <source>Updating the distribution server URL</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizace adresy URL distribučního serveru</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1372"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze zkontrolovat aktualizace kvůli chybějící složce pro ukládání map</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1374"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze zkontrolovat aktualizace kvůli chybějícímu seznamu požadovaných zemí. Před kontrolou aktualizací vyberte země.</translation>
     </message>
 </context>
 <context>
@@ -904,32 +904,32 @@
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="36"/>
         <source>Error deleting Valhalla&apos;s tile directory %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při mazání adresáře dlaždic Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="52"/>
         <source>Error while starting unpacking program</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při spuštění rozbalování programu</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="63"/>
         <source>Error during unpacking Valhalla&apos;s package</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při rozbalování balíčku společnosti Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="70"/>
         <source>Unpacked Valhalla&apos;s package: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Rozbalený balíček Valhally: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="76"/>
         <source>Failed to remove unnecessary file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se odstranit nepotřebný soubor: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="236"/>
         <source>Missing libosmscout maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí libosmscout mapy</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="247"/>
@@ -939,67 +939,67 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="255"/>
         <source>Missing geocoder-nlp dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí datová sada geocoder-nlp</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="273"/>
         <source>Address parsing language support</source>
-        <translation type="unfinished"></translation>
+        <translation>Jazyková podpora analýzy adres</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="293"/>
         <source>Address parsing country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresa analyzovat podporu specifickou pro jednotlivé země</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="326"/>
         <source>Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Pobřeží světa z databáze Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="334"/>
         <source>Missing Mapnik World coastlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí Mapnik Světové pobřeží</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="346"/>
         <source>Mapnik country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik podpora pro jednotlivé země</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="354"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí datová sada Mapnik pro konkrétní zemi</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="373"/>
         <source>Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL World overlay</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="381"/>
         <source>Missing Mapbox GL World overlay</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí překryvná mapa Mapbox GL World</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="398"/>
         <source>Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL písma</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="406"/>
         <source>Missing Mapbox GL fonts</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí písma Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="419"/>
         <source>Mapbox GL country-specific support</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpora Mapbox GL pro jednotlivé země</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="427"/>
         <source>Missing country-specific Mapbox GL dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí datová sada Mapbox GL specifická pro danou zemi</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="472"/>
@@ -1009,12 +1009,12 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="480"/>
         <source>Missing Valhalla tiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí dlaždice Valhalla</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="281"/>
         <source>Missing address language parsing dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí datový adresář pro analýzu jazyků adresy</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="223"/>
@@ -1024,7 +1024,7 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="301"/>
         <source>Missing country-specific address parsing dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybí datový soubor pro analýzu adres specifickou pro danou zemi</translation>
     </message>
 </context>
 <context>
@@ -1039,55 +1039,55 @@
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="45"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation type="unfinished"></translation>
+        <translation>Správce map zpracovává ukládání map offline a souvisejících datových sad v zařízení. Zde můžete vybrat funkce a země, které budou ze zařízení uloženy, aktualizovány nebo odstraněny</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="251"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="268"/>
         <source>Storage settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení úložiště</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="255"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="272"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení úložiště jsou nastaveny podle profilu. Chcete-li změnit nastavení úložiště, nastavte příslušný profil nebo nastavte profil na hodnotu &lt;i&gt;Vlastní&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="286"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="305"/>
         <source>Store datasets for Mapbox GL</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukládat datové sady pro Mapbox GL</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="296"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="315"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukládat datové sady pro geocoder-nlp s libpostal</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="307"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="326"/>
         <source>Store datasets for Valhalla routing engine</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukládat datové sady pro engine na hledání trasy Valhalla</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="308"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="327"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
-        <translation type="unfinished"></translation>
+        <translation>Když je vybrána, datové sady Valhalla budou po jejich stažení uloženy do zařízení. Tyto datové sady jsou vyžadovány pro použití Valhally jako engine k vyhledání trasy.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="317"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="336"/>
         <source>Store datasets for libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukládat datové sady pro libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="318"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="337"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
-        <translation type="unfinished"></translation>
+        <translation>Když je vybrána, datové sady libosmscout budou po jejich stažení uloženy do zařízení. Tyto datové sady jsou vyžadovány pro vykreslování, vyhledávání nebo hledání trasy pomocí libosmscout backendu.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="54"/>
@@ -1099,43 +1099,43 @@
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="100"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="104"/>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Stahování</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="115"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="121"/>
         <source>Missing data:&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Chybějící data:&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="132"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="138"/>
         <source>Start download</source>
-        <translation type="unfinished"></translation>
+        <translation>Začít stahovat</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="156"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="163"/>
         <source>Stop download</source>
-        <translation type="unfinished"></translation>
+        <translation>Zastavit stahování</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="166"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="174"/>
         <source>Provided maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Poskytnuté mapy</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="205"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="216"/>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrola aktualizací</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="214"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="226"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizujte seznam aktuálně dostupných map a datových sad a zkontrolujte, zda lze nainstalované mapy aktualizovat</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="223"/>
@@ -1147,13 +1147,13 @@
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="232"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="246"/>
         <source>Start cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Začít čištění</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="242"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="257"/>
         <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkontrolujte, zda existují soubory, které již nejsou používány v předchozích odběrech</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="175"/>
@@ -1165,31 +1165,31 @@
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="287"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
         <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation type="unfinished"></translation>
+        <translation>Po výběru budou datové sady s vektorovými dlaždicemi ve formátu Mabox GL uloženy po stažení ze zařízení. Tyto datové sady se skládají z celosvětových pobřežních oblastí (přibližně 12 MB), písem (asi 80 MB) a v datových sadách specifických pro jednotlivé země</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="297"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="316"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po výběru a stažení budou datové sady libpostal geocoder uloženy v zařízení. Tyto datové sady se skládají z datové sady jazykových parsování (zhruba 700 MB) a datových souborů specifických pro jednotlivé země. Jsou použitelné pro analýzu a vyhledávání adres.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="269"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="288"/>
         <source>Store datasets for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukládat datové sady pro Mapnik</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="270"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation type="unfinished"></translation>
+        <translation>Když je vybráno, datové sady, které umožňují vykreslování map s Mapnikem, budou uloženy na zařízení po jejich stažení. Tyto datové sady se skládají z celosvětových pobřežních oblastí (přibližně 700 MB) a datových souborů specifických pro jednotlivé země, které se používají pro vykreslování</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="186"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="195"/>
         <source>Select the countries or territories that you want to keep on device</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte země nebo oblasti, které chcete zachovat v zařízení</translation>
     </message>
 </context>
 <context>
@@ -1197,52 +1197,52 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="136"/>
         <source>Failed to run query in Mapbox GL database</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se spustit dotaz v databázi Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="188"/>
         <source>Failed to run query in Mapbox GL fonts database</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se spustit dotaz v databázi písem Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="215"/>
         <source>Malformed Mapbox GL file request: %1/%2 [%3] [%4]</source>
-        <translation type="unfinished"></translation>
+        <translation>Malformovaný požadavek souboru Mapbox GL: %1/%2 [%3] [%4]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="221"/>
         <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>Požadovaný soubor Mapbox GL neexistuje: %1 [%2]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="240"/>
         <source>Error opening Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při otevření šablony stylu Mapbox GL %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="248"/>
         <source>Error reading Mapbox GL style template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při čtení šablony stylu Mapbox GL %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="267"/>
         <source>Error opening Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při otevření Mapbox GL sprite JSON</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="275"/>
         <source>Error reading Mapbox GL sprite JSON</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při čtení Mapbox GL sprite JSON</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="293"/>
         <source>Error opening Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba otevření obrázku Mapbox GL sprite</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="300"/>
         <source>Error reading Mapbox GL sprite image</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při čtení obrázku Mapbox GL sprite</translation>
     </message>
 </context>
 <context>
@@ -1250,42 +1250,42 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="143"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Problémy s odebráním konfiguračního adresáře, který používá Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="149"/>
         <source>Cannot create configuration directory for Mapnik</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze vytvořit konfigurační adresář pro Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="168"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se vytvořit symbolické spojení s konfigurací Mapniku (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="215"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se načíst konfiguraci Mapnik: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="273"/>
         <source>Cannot write Mapnik configuration file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze zapsat konfigurační soubor Mapniku: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="284"/>
         <source>Mapnik: adding %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: přidání %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="362"/>
         <source>Mapnik: failed to transform coordinates</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik: Nepodařilo se změnit souřadnice</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="378"/>
         <source>Mapnik not available</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik není k dispozici</translation>
     </message>
 </context>
 <context>
@@ -1300,31 +1300,31 @@
         <location filename="../qml/qtcontrols/MapnikPage.qml" line="39"/>
         <location filename="../qml/silica/pages/MapnikPage.qml" line="45"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik lze použít jako záložní backend pro poskytnutí mapových dlaždic klientským programům</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapnikPage.qml" line="48"/>
         <location filename="../qml/silica/pages/MapnikPage.qml" line="56"/>
         <source>Scale factor</source>
-        <translation type="unfinished"></translation>
+        <translation>Měřítko</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapnikPage.qml" line="49"/>
         <location filename="../qml/silica/pages/MapnikPage.qml" line="57"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
-        <translation type="unfinished"></translation>
+        <translation>Měřítko použito k kreslení rysů na mapě. U displejů s vysokým rozlišením, jako jsou telefony, je výhodné použít měřítko větší než 1. Jako první odhad je doporučeno používat na mobilních zařízeních měřítko 3-5.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapnikPage.qml" line="59"/>
         <location filename="../qml/silica/pages/MapnikPage.qml" line="67"/>
         <source>Buffer size in pixels</source>
-        <translation type="unfinished"></translation>
+        <translation>Velikost vyrovnávací paměti v pixelech</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapnikPage.qml" line="60"/>
         <location filename="../qml/silica/pages/MapnikPage.qml" line="68"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zvýšením velikosti oblasti, která slouží k načtení dat při vykreslování dlaždice, může vykreslování zlepšit vykreslování štítků při zohlednění dat ze sousedních dlaždic. Pokud vidíte příliš mnoho štítků řezu, zkuste zvýšit velikost vyrovnávací paměti. Mějte na paměti, že velká velikost vyrovnávací paměti by zpomalovala vykreslování. Velikost vyrovnávací paměti se měří podle faktoru měřítka a upraví se tak pro zvýšení velikosti štítků.</translation>
     </message>
 </context>
 <context>
@@ -1333,30 +1333,30 @@
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="29"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="49"/>
         <source>Unused files</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepoužité soubory</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="104"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="113"/>
         <source>Delete files</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazat soubory</translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="118"/>
         <source>Deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>Smazání</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="113"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="127"/>
         <source>Delete unused files and free the occupied space</source>
-        <translation type="unfinished"></translation>
+        <translation>Odstraňte nepoužívané soubory a uvolněte obsazený prostor</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="146"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="164"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
-        <translation type="unfinished"></translation>
+        <translation>Všechny uložené soubory jsou používány serverem OSM Scout. Nelze vymazat nic.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="139"/>
@@ -1368,7 +1368,7 @@
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="58"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="63"/>
         <source>WARNING: While care has been taken to ensure deleting of the found unused files only, the software has not been tested by many users yet. Use at your own risk and please report if there are any problems.</source>
-        <translation type="unfinished"></translation>
+        <translation>UPOZORNĚNÍ: Zatímco byla věnována pozornost tomu, aby se odstranily pouze nalezené nepoužívané soubory, software nebyl ještě testován mnoha uživateli. Použijte na vlastní nebezpečí a prosím oznamte nám, pokud jsou nějaké problémy.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="65"/>
@@ -1380,13 +1380,13 @@
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="72"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="79"/>
         <source>Directories containing files that will be deleted during cleanup:</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresáře obsahující soubory, které budou vymazány během vyčištění:</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="93"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="102"/>
         <source>Cleanup</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyčištění</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="139"/>
@@ -1398,7 +1398,7 @@
         <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="144"/>
         <location filename="../qml/silica/pages/NonNeededFiles.qml" line="162"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se zkontrolovat nepotřebné soubory. Mohlo by to být například kvůli aktivnímu stahování</translation>
     </message>
 </context>
 <context>
@@ -1413,7 +1413,7 @@
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="41"/>
         <location filename="../qml/silica/pages/OSMScoutPage.qml" line="45"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
-        <translation type="unfinished"></translation>
+        <translation>Knihovna OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) může být použita pro kreslení mapy, vyhledávání a hledání trasy</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="49"/>
@@ -1467,7 +1467,7 @@
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="89"/>
         <location filename="../qml/silica/pages/OSMScoutPage.qml" line="94"/>
         <source>Routing</source>
-        <translation>Navigace</translation>
+        <translation>Hledání trasy</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="93"/>
@@ -1509,7 +1509,7 @@
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="137"/>
         <location filename="../qml/silica/pages/OSMScoutPage.qml" line="144"/>
         <source>Speeds for different transportation modes (car, bicycle, walk) and at different road surfaces used when finding an optimal route</source>
-        <translation type="unfinished"></translation>
+        <translation>Rychlost pro různé druhy dopravy (automobil, kolo, chůze) a na různých silnicích používaných při hledání optimální trasy</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="147"/>
@@ -1554,7 +1554,7 @@
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="39"/>
         <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="45"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation type="unfinished"></translation>
+        <translation>Dopravní rychlost používaná knihovnou OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;) při výpočtu tras</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="46"/>
@@ -1715,55 +1715,55 @@
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="42"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="59"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="41"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="46"/>
         <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.&lt;br&gt;&lt;br&gt;Please select active profile.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server používá profily pro zjednodušení výběru backendů a souborů stažených databází. &lt;br&gt;&lt;br&gt;Zvolte prosím aktivní profil.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="68"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="63"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="69"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="64"/>
         <source>Recommended for raster tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Doporučeno pro mapování rastrových dlaždic</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="87"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="83"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Výchozí&lt;/i&gt; profil podporuje mapové aplikace pomocí pluginu &lt;i&gt;Mapbox GL&lt;/i&gt;, pomocí &lt;i&gt;Geocoder-NLP&lt;/i&gt; vyhledává místa a &lt;i&gt;Valhalla&lt;/i&gt; pro výpočet tras. Tento profil je doporučen pro nové klientské mapy mapových dlaždic. &lt;br&gt;&lt;br&gt;Pro uživatele s mapovými aplikacemi používajícími tradiční rastrové dlaždice doporučený profil pro mapy rastrových dlaždic obsahuje datové sady &lt;i&gt;Mapnik&lt;/i&gt; a používá stejné vyhledávací a směrovací pluginy jako &lt;i&gt;výchozí&lt;/i&gt; profil. &lt;br&gt;&lt;br&gt;Pro uživatele, kteří chtějí používat klienty na rastrové a vektorové dlaždice map, doporučený profil kombinující vektorové a rastrové dlaždice obsahuje datové množiny &lt;i&gt;Mapbox GL&lt;/i&gt;, podporuje mapování do rastrových dlaždic &lt;i&gt;Mapnikem&lt;/i&gt; a používá stejné vyhledávací a směrovací pluginy jako &lt;i&gt;výchozí&lt;/i&gt; profil. Vzhledem k tomu, že tento profil obsahuje data pro vícenásobné vykreslování backendů, má největší požadavky na ukládání dat. &lt;br&gt;&lt;br&gt;Profil s &lt;i&gt;libosmscout&lt;/i&gt; v kombinaci s &lt;i&gt;Geocoder-NLP&lt;/i&gt; má menší požadavky na ukládání než standardní. Vykreslování map a směrování by však bylo omezeno pouze na jedno území. Kvalita vykreslování je navíc horší a rychlost směrování je pomalejší ve srovnání s výchozím profilem. &lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; má nejmenší požadavky na ukládání mezi všemi profily. Vykreslování map, vyhledávání a směrování by však bylo omezeno pouze na jedno území. Kromě toho je kvalita vykreslování a vyhledávání špatná, stejně jako rychlost směrování je pomalejší v porovnání s výchozím profilem. &lt;br&gt;&lt;br&gt;Při použití &lt;i&gt;uživatelského&lt;/i&gt; profilu nejsou nastavení a nastavení Správce map nastaveny podle profilů a měly by být zadány uživatelem. Tento profil umožňuje samostatně vybírat komponenty pro vykreslování, vyhledávání a hledání trasy. Všimněte si, že uživatel je zodpovědný za úpravu nastavení tak, aby byly v souladu s požadavky použitých backendů a úložišť.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="70"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="65"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Doporučeno pro mapy vektorových a rastrových dlaždic.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="71"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="66"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; s &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="72"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="67"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="73"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="68"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlastní</translation>
     </message>
 </context>
 <context>
@@ -1771,48 +1771,48 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="69"/>
         <source>Number of parallel worker threads: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Počet paralelních pracovních podprocesů: %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="74"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Povolit odpovídající backend(y) s pomocí profilů.</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Načítání odeslaných dat na vyžádání %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Raster dlaždice nejsou k dispozici, protože Mapnik a libosmscout jsou zakázány zvoleným profilem nebo nastavením. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="502"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Backend Mapbox GL je zakázán zvoleným profilem nebo nastavením. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="670"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyhledávání není k dispozici, protože GeocoderNLP a libosmscout jsou zakázány zvoleným profilem nebo nastavením. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="717"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyhledání blízkých bodů POI není k dispozici, protože GeocoderNLP a libosmscout jsou zakázány zvoleným profilem nebo nastavením. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="866"/>
         <location filename="../src/requestmapper.cpp" line="1023"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledání trasy není dostupné, jelikož Valhalla a libosmscout jsou zakázány zvoleným profilem nebo nastavením. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="967"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Hledání trasy a další služby Valhalla nejsou k dispozici, protože Valhalla je zakázán zvoleným profilem nebo nastavením. %1</translation>
     </message>
 </context>
 <context>
@@ -2047,31 +2047,31 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="93"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="80"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Jazyk</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="103"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="84"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>Výchozí</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="104"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="85"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation>Angličtina</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="114"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="94"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferovaný jazyk pro názvy míst zobrazených na vykreslených mapách nebo v vrácených výsledcích vyhledávání. Pokud je to možné, použije se tento jazyk. Pokud je nastavena možnost &lt;i&gt;Výchozí&lt;/i&gt;, bude použit název OpenStreetMap, který je obvykle výchozí pro místní jazyk zobrazené země.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="155"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="136"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po aktivaci bude server OSM Scout automaticky aktivován jakýmkoli klientem, který k němu přistupuje. Automaticky spuštěný server bude pracovat na pozadí.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="128"/>
@@ -2083,85 +2083,85 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="129"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="110"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Složka pro ukládání map.&lt;br&gt; &lt;b&gt;Pozor!&lt;/b&gt; Tento adresář bude plně spravován serverem OSM Scout. Prosím &lt;b&gt;přiřaďte samostatnou prázdnou složku&lt;/b&gt;, kterou by mohl OSM Scout Server použít. To zahrnuje smazání všech souborů v dané složce, když o to požádáte během vyčištění nebo aktualizací map. &lt;br&gt;&lt;i&gt;Příklad:&lt;/i&gt; Mapy pod &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="146"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="127"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatická aktivace</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="165"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="147"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Doporučuje se povolit automatickou aktivaci pro zjednodušení přístupu k serveru.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="173"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="156"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Technické informace, vytvořené soubory a způsob jejich odebrání v případě potřeby naleznete v příslušné části &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Uživatelské příručky&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="189"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="169"/>
         <source>Idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Časový limit nečinnosti</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="199"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="173"/>
         <source>15 minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>15 minut</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="200"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="174"/>
         <source>30 minutes</source>
-        <translation type="unfinished"></translation>
+        <translation>30 minut</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="201"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="175"/>
         <source>1 hour</source>
-        <translation type="unfinished"></translation>
+        <translation>1 hodina</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="202"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="176"/>
         <source>2 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>2 hodiny</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="203"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="177"/>
         <source>4 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>4 hodiny</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="204"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="178"/>
         <source>8 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>8 hodin</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="205"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="179"/>
         <source>24 hours</source>
-        <translation type="unfinished"></translation>
+        <translation>24 hodin</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="206"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="180"/>
         <source>No timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádný časový limit</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="266"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="235"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivní pozadí jsou nastaveny podle profilu. Chcete-li změnit volbu pozadí, nastavte příslušný profil nebo nastavte profil na hodnotu &lt;i&gt;Vlastní&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="276"/>
@@ -2173,7 +2173,7 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="280"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="251"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tento server umožňuje vybrat mezi dvěma backendy pro kreslení map: &lt;i&gt;libosmscout&lt;/i&gt; a &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="291"/>
@@ -2185,7 +2185,7 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="292"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="264"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Po výběru bude aplikace Mapnik použita k vykreslení map. Všimněte si, že to vyžaduje další databáze pro světové pobřeží a země.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="297"/>
@@ -2197,7 +2197,7 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="301"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="273"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder je zodpovědný za vyřešení žádostí o vyhledávání. Za tímto účelem analyzuje vyhledávací řetězec a na mapě nalezne odpovídající objekty. Tento server umožňuje vybrat mezi dvěma backendy geocoderu: &lt;i&gt;geocoder-nlp&lt;/i&gt; a &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="315"/>
@@ -2209,31 +2209,31 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="316"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="289"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po výběru se k vyřešení všech žádostí o vyhledávání použije geokodér založený na libcostal. Všimněte si, že vyžaduje další databáze pro jazyk, parsování vstupů uživatele a geokódování. &lt;br&gt;Pozor! Pokud vyberete &lt;i&gt;geocoder-nlp&lt;/i&gt;, uveďte prosím jazyky, které by měly být použity pro analýzu adres v níže uvedených nastaveních backendu. V opačném případě může server použít velké množství paměti RAM.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="323"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="296"/>
         <source>Routing Engine</source>
-        <translation>Navigační služba</translation>
+        <translation>Engine hledání trasy</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="327"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="300"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation type="unfinished"></translation>
+        <translation>Engine na hledání trasy je zodpovědný za výpočet tras mezi počátkem a cílovým místem. Tento server umožňuje vybrat mezi dvěma směrovacími enginy: &lt;i&gt;Valhalla&lt;/i&gt; a &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="340"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="314"/>
         <source>Use Valhalla as routing engine</source>
-        <translation>Použít Valhallu jako navigační službu</translation>
+        <translation>Použít Valhallu jako navigační službu k hledání trasy</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="341"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="315"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Po vybrání bude Valhalla použita pro výpočet navigačních instrukcí.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="345"/>
@@ -2251,7 +2251,7 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="412"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="391"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení engine pro hledání trasy pro backend &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="432"/>
@@ -2269,7 +2269,7 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="386"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="363"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Výběr jazyků používaných pro analýzu adres a další nastavení backendu &lt;i&gt;geocoder-nlp&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="354"/>
@@ -2281,25 +2281,25 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="249"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="217"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Při automatickém spuštění se server sám vypne poté, co neobdrží žádnou žádost delší než časový limit nečinnosti</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="261"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="230"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>Profily</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="360"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="335"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení vykreslování mapy pro backend &lt;i&gt;mapnik&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="438"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="419"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavení knihovny OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). Knihovnu lze použít pro kreslení map, vyhledávání a hledání trasy.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="448"/>
@@ -2317,7 +2317,7 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="455"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="437"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokud je tato funkce deaktivována, zprávy INFO nebudou zaznamenány do protokolu událostí. Výjimkou je načítání databáze, která se zobrazuje vždy.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="462"/>
@@ -2354,7 +2354,7 @@
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="44"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="50"/>
@@ -2382,24 +2382,24 @@
         <location filename="../qml/qtcontrols/StartPage.qml" line="64"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="93"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s) that are required by the current profile:&lt;ul&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; používá několik modulů, které musí být nainstalovány samostatně pro plnou funkčnost. &lt;br&gt;&lt;br&gt;Na vašem zařízení chybí následující modul(y), které jsou vyžadovány v aktuálním profilu:&lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="69"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="98"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;Modul OS Scout Server: Písma&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="71"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="100"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;li&gt;Modul OS Scout Server: Trasa&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="102"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Instalujte prosím chybějící moduly přes Harbor nebo OpenRepos. Po instalaci modulu(ů) prosím restartujte OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="103"/>
@@ -2422,34 +2422,34 @@
         <location filename="../qml/qtcontrols/StartPage.qml" line="140"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="173"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvoří adresář &lt;br&gt;%1&lt;br&gt; a nakonfiguruje ho pro uložení map</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="142"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="175"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation type="unfinished"></translation>
+        <translation>Předpokládá se, že &lt;i&gt;OSM Scout Server&lt;/i&gt; bude použit se staženými mapami. Chcete-li spravovat mapy, server vyžaduje samostatnou složku. Soubory v této složce by měly být spravovány pouze serverem. To zahrnuje smazání všech souborů v dané složce, když o to požádáte během vyčištění nebo aktualizací map.&lt;br&gt; &lt;br&gt;Prosím &lt;b&gt;přidělte samostatnou prázdnou složku&lt;/b&gt; pro OSM Scout Server. Za tímto účelem vytvořte novou složku v správci souborů nebo pomocí příkazového řádku a poté vyberte tuto složku v nabídce &lt;i&gt;Nastavení&lt;/i&gt; (stahovací menu) .&lt;br&gt;&lt;br&gt;Alternativně lze adresář vytvořit a nastavit automaticky na &lt;br&gt;%1&lt;br&gt; stisknutím tlačítka níže</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="166"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="199"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>S vybranou a dostupnou složkou úložiště je dalším krokem získání některých map. Můžete si vybrat a stáhnout mapy pomocí Správce map (stahovací nabídka).</translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="238"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejsou k dispozici žádné mapy. Po přihlášení je musíte začít stahovat. Stahování lze spustit pomocí aplikace &lt;i&gt;Správce map&lt;/i&gt;  (stahovací nabídka).</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="73"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Instalujte prosím chybějící moduly přes Harbour, OpenRepos nebo jiný způsob, který odpovídá vašemu operačnímu systému. Po instalaci modulu(ů) prosím restartujte OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="203"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nejsou k dispozici žádné mapy. Po přihlášení k němu musíte začít stahovat. Stahování lze spustit pomocí Správce map.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="253"/>
@@ -2461,7 +2461,7 @@
         <location filename="../qml/qtcontrols/StartPage.qml" line="257"/>
         <location filename="../qml/silica/pages/StartPage.qml" line="294"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neurčili jste jazyky používané pro analýzu adres Geocoder-NLP. V důsledku toho se používají všechny známé jazyky a můžete zaznamenat velkou spotřebu paměti RAM. Takové velké využití paměti RAM by mohlo způsobit, že kernel ukončí OSM Scout server .&lt;br&gt;&lt;br&gt; Chcete-li zadat jazyky používané pro analýzu adres, vyberte níže uvedené jazyky nebo přejděte do nabídky &lt;i&gt;Nastavení&lt;/i&gt; (stahovací nabídka) a vyberte jazyky jako součást nastavení &lt;i&gt;Geocoder-NLP&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/StartPage.qml" line="288"/>
@@ -2502,17 +2502,17 @@
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="451"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>Další</translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="452"/>
         <source>Skip</source>
-        <translation type="unfinished"></translation>
+        <translation>Přeskočit</translation>
     </message>
     <message>
         <location filename="../qml/silica/pages/StartPage.qml" line="456"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server je součástí řešení umožňující mít na zařízení offline mapy. S tímto serverem můžete stahovat mapy do přístroje a používat stažené data pro lokální vykreslování map, vyhledání adres a POI a výpočet tras. Takové operace vyžadují, aby server a další klient přistupovali k serveru a současně probíhali v zařízení.&lt;br&gt;&lt;br&gt; Tento průvodce vám pomůže vybrat zálohy používané serverem a zadat jazyky pro analýzu vašich požadavků na vyhledávání.&lt;br&gt;&lt;br&gt; Zvolte &quot;Další&quot; pro spuštění konfigurace.</translation>
     </message>
 </context>
 <context>
@@ -2520,12 +2520,12 @@
     <message>
         <location filename="../src/systemdservice.cpp" line="98"/>
         <source>Cannot create or change to directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze vytvořit nebo změnit adresář: %1</translation>
     </message>
     <message>
         <location filename="../src/systemdservice.cpp" line="108"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze najít OSM Scout Server v PATH</translation>
     </message>
 </context>
 <context>
@@ -2536,37 +2536,37 @@
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="41"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="65"/>
         <source>Automatic activation</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatická aktivace</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="39"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="45"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
-        <translation type="unfinished"></translation>
+        <translation>OSM Scout Server lze aktivovat automaticky, když k nim přistupují klienti. Při automatickém spuštění se po uplynutí daného časového intervalu zastaví.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="47"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="55"/>
         <source>Do you want to enable automatic activation?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcete povolit automatickou aktivaci?</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="62"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="72"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Doporučuje se povolit automatickou aktivaci pro zjednodušení přístupu k serveru.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="70"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="81"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Všimněte si, že při automatickém aktivaci běží server bez uživatelského rozhraní. Automatická aktivace a odpovídající časový limit volnoběhu lze později nakonfigurovat v Nastavení.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="79"/>
         <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="91"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>Technické informace, vytvořené soubory a způsob jejich odebrání v případě potřeby naleznete v příslušné části &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Uživatelské příručky&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -2587,13 +2587,13 @@
         <location filename="../qml/qtcontrols/UpdatesFound.qml" line="56"/>
         <location filename="../qml/silica/pages/UpdatesFound.qml" line="60"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Vezměte prosím na vědomí, že jakmile spustíte aktualizace, mapy budou k dispozici až po dokončení aktualizace</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/UpdatesFound.qml" line="64"/>
         <location filename="../qml/silica/pages/UpdatesFound.qml" line="69"/>
         <source>List of countries and features with the found updates</source>
-        <translation type="unfinished"></translation>
+        <translation>Seznam zemí a funkcí s nalezenými aktualizacemi</translation>
     </message>
 </context>
 <context>
@@ -2601,12 +2601,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Požadovaná shoda mapy: mode=%1</translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Režim shody map %1 není podporován</translation>
     </message>
 </context>
 <context>
@@ -2614,7 +2614,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Uzavření služby shody map pro DBus klienta %1</translation>
     </message>
 </context>
 <context>
@@ -2622,22 +2622,22 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="157"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba otevření konfigurační šablony aplikace Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="165"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba při čtení šablony konfigurace společnosti Valhalla</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="226"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Výjimka ve Valhalla: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="193"/>
         <source>Valhalla routing engine started</source>
-        <translation type="unfinished"></translation>
+        <translation>Spuštěn engine na hledání trasy Valhalla</translation>
     </message>
 </context>
 <context>
@@ -2652,7 +2652,7 @@
         <location filename="../qml/qtcontrols/ValhallaPage.qml" line="40"/>
         <location filename="../qml/silica/pages/ValhallaPage.qml" line="45"/>
         <source>Valhalla can be used as a routing engine to calculate routes and the routing instructions</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla může být použita jako engine pro výpočet tras a navigačních instrukcí</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ValhallaPage.qml" line="47"/>
@@ -2664,13 +2664,13 @@
         <location filename="../qml/qtcontrols/ValhallaPage.qml" line="53"/>
         <location filename="../qml/silica/pages/ValhallaPage.qml" line="60"/>
         <source>Cache for storing tiles, MB</source>
-        <translation type="unfinished"></translation>
+        <translation>Cache pro ukládání dlaždic, MB</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ValhallaPage.qml" line="54"/>
         <location filename="../qml/silica/pages/ValhallaPage.qml" line="61"/>
         <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyrovnávací paměť, která slouží k uchování dlaždic Valhally v RAM.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ValhallaPage.qml" line="60"/>
@@ -2682,7 +2682,7 @@
         <location filename="../qml/qtcontrols/ValhallaPage.qml" line="64"/>
         <location filename="../qml/silica/pages/ValhallaPage.qml" line="71"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Mezní vzdálenosti pro výpočty trasy. Lze vypočítat pouze trasy s vzdáleností mezi místy, která jsou menší než uvedené limity. Tím, že omezíte maximální vzdálenosti mezi místy, můžete zabránit náhodným výpočtům, které by vedly k příliš velkým cestám a v zařízení by se používalo nadměrné množství paměti RAM.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ValhallaPage.qml" line="77"/>
@@ -2713,17 +2713,17 @@
     <message>
         <location filename="../src/main.cpp" line="160"/>
         <source>Run the server without GUI as a console application</source>
-        <translation type="unfinished"></translation>
+        <translation>Spusťte server bez GUI jako konzolovou aplikaci</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="164"/>
         <source>Do not output logs when running in console mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Při spuštění v režimu konzoly nevypínejte protokoly</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="169"/>
         <source>Run the server in SystemD socket-activated mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Spustit server v režimu aktivovaném socketem SystemD</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="175"/>
@@ -2758,18 +2758,18 @@
     <message>
         <location filename="../src/main.cpp" line="199"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Přihlaste se k &lt;country&gt; datové sadě</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="200"/>
         <location filename="../src/main.cpp" line="205"/>
         <source>country-id</source>
-        <translation type="unfinished"></translation>
+        <translation>country-id</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="204"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation type="unfinished"></translation>
+        <translation>Zrušit odběr &lt;country&gt; datové sady</translation>
     </message>
 </context>
 <context>
@@ -2782,7 +2782,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="86"/>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Domů</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="93"/>
@@ -2792,7 +2792,7 @@
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="100"/>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/osmscout-server.qml" line="107"/>

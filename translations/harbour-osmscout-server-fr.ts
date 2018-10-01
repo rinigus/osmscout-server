@@ -43,7 +43,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="69"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="64"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation type="unfinished"></translation>
+        <translation>Codes postaux UK téléchargés de &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Ces données contiennent : Ordnance Survey data © droits d&apos;auteur Crown et  droits sur base de donnée 2017; données Royal Mail © droits d&apos;auteur Royal Mail et droits sur base de donnés 2017; données National Statistics © droits d&apos;auteur Crown et droits sur base de données 2017.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="75"/>
@@ -530,7 +530,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation>N&apos;importe lequel</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
@@ -602,7 +602,7 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="73"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser l&apos;analyseur libpostal</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>
