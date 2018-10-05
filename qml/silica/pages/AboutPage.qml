@@ -33,8 +33,8 @@ Page {
                               "<p>" + qsTr("Copyright:") + " 2016-2018 <a href='https://github.com/rinigus'>Rinigus</a><br></p>" +
                               qsTr("License: GPLv3") + "<br><br>" +
 
-                              "Donations: <a href='https://liberapay.com/rinigus'>Liberapay</a> " +
-                              "<a href='http://rinigus.github.io/donate-bitcoin'>Bitcoin</a>" +
+                              "Donations: " +
+                              "<a href='http://rinigus.github.io/donate'>http://rinigus.github.io/donate</a>" +
                               "<br><br>" +
 
                               "<b>" + qsTr("Translations") + "</b><br><br>" +

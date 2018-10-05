@@ -1,8 +1,6 @@
 # OSM Scout Server
 
 [![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)
-[![Donate](https://img.shields.io/badge/donate-liberapay-yellow.svg)](https://liberapay.com/rinigus)
-[![Donate](https://img.shields.io/badge/donate-bitcoin-yellowgreen.svg)](http://rinigus.github.io/donate-bitcoin)
 
 OSM Scout server can be used as a drop-in replacement for online map
 services providing map tiles, search, and routing. As a result, an
