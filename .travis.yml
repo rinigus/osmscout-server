@@ -13,6 +13,39 @@ matrix:
       dist: trusty
       sudo: required
       compiler: gcc
+    - os: linux
+      dist: trusty
+      sudo: required
+      compiler: gcc
+      env:
+        - OSMSCOUT=y
+    - os: linux
+      dist: trusty
+      sudo: required
+      compiler: gcc
+      env:
+        - GUI=y
+    - os: linux
+      dist: trusty
+      sudo: required
+      compiler: gcc
+      env:
+        - GUI=y
+        - OSMSCOUT=y
+    # # wait until travis gets updated to 1604
+    # - os: linux
+    #   dist: trusty
+    #   sudo: required
+    #   compiler: gcc
+    #   env:
+    #     - VALHALLA=y
+    # - os: linux
+    #   dist: trusty
+    #   sudo: required
+    #   compiler: gcc
+    #   env:
+    #     - OSMSCOUT=y
+    #     - VALHALLA=y
 
 before_install:
   - $TRAVIS_BUILD_DIR/ci/travis/install.sh

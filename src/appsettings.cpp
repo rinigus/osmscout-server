@@ -147,6 +147,7 @@ void AppSettings::initDefaults()
 
   CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
   CHECK(GEOMASTER_SETTINGS "initialize_every_call", 0);
+  CHECK(GEOMASTER_SETTINGS "use_postal", 1);
   CHECK(GEOMASTER_SETTINGS "use_primitive", 1);
   CHECK(GEOMASTER_SETTINGS "max_queries_per_hierarchy", 30);
   CHECK(GEOMASTER_SETTINGS "languages", "");

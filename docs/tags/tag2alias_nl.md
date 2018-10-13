@@ -15,7 +15,7 @@ Tag | Alias
 [amenity\_cafe](https://taginfo.openstreetmap.org/tags/amenity=cafe) | Café
 [amenity\_car\_rental](https://taginfo.openstreetmap.org/tags/amenity=car_rental) | Autoverhuur
 [amenity\_car\_sharing](https://taginfo.openstreetmap.org/tags/amenity=car_sharing) | Autodelen
-[amenity\_car\_wash](https://taginfo.openstreetmap.org/tags/amenity=car_wash) | carwash
+[amenity\_car\_wash](https://taginfo.openstreetmap.org/tags/amenity=car_wash) | Autowasstraat
 [amenity\_casino](https://taginfo.openstreetmap.org/tags/amenity=casino) | Casino
 [amenity\_cinema](https://taginfo.openstreetmap.org/tags/amenity=cinema) | Bioscoop
 [amenity\_clinic](https://taginfo.openstreetmap.org/tags/amenity=clinic) | Kliniek
@@ -33,7 +33,7 @@ Tag | Alias
 [amenity\_ferry\_terminal](https://taginfo.openstreetmap.org/tags/amenity=ferry_terminal) | Veerterminal
 [amenity\_fire\_station](https://taginfo.openstreetmap.org/tags/amenity=fire_station) | Brandweer
 [amenity\_fountain](https://taginfo.openstreetmap.org/tags/amenity=fountain) | Fontein
-[amenity\_fuel](https://taginfo.openstreetmap.org/tags/amenity=fuel) | Brandstof
+[amenity\_fuel](https://taginfo.openstreetmap.org/tags/amenity=fuel) | Benzine pomp
 [amenity\_grave\_yard](https://taginfo.openstreetmap.org/tags/amenity=grave_yard) | Begraafplaats
 [amenity\_gym](https://taginfo.openstreetmap.org/tags/amenity=gym) | Fitnesscentrum
 [amenity\_hospital](https://taginfo.openstreetmap.org/tags/amenity=hospital) | Ziekenhuis
@@ -41,8 +41,8 @@ Tag | Alias
 [amenity\_ice\_cream](https://taginfo.openstreetmap.org/tags/amenity=ice_cream) | IJs
 [amenity\_kindergarten](https://taginfo.openstreetmap.org/tags/amenity=kindergarten) | Kleuterschool
 [amenity\_library](https://taginfo.openstreetmap.org/tags/amenity=library) | Bibliotheek
-[amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub) | Nachtclub
-[amenity\_nursing\_home](https://taginfo.openstreetmap.org/tags/amenity=nursing_home) | Verpleeghuis
+[amenity\_nightclub](https://taginfo.openstreetmap.org/tags/amenity=nightclub) | Disco
+[amenity\_nursing\_home](https://taginfo.openstreetmap.org/tags/amenity=nursing_home) | RVT
 [amenity\_pharmacy](https://taginfo.openstreetmap.org/tags/amenity=pharmacy) | Apotheek
 [amenity\_place\_of\_worship](https://taginfo.openstreetmap.org/tags/amenity=place_of_worship) | Gebedsplaats
 [amenity\_police](https://taginfo.openstreetmap.org/tags/amenity=police) | Politie
@@ -51,7 +51,7 @@ Tag | Alias
 [amenity\_prison](https://taginfo.openstreetmap.org/tags/amenity=prison) | Gevangenis
 [amenity\_pub](https://taginfo.openstreetmap.org/tags/amenity=pub) | Café
 [amenity\_public\_building](https://taginfo.openstreetmap.org/tags/amenity=public_building) | Openbaar gebouw
-[amenity\_recycling](https://taginfo.openstreetmap.org/tags/amenity=recycling) | Recyclingpunt
+[amenity\_recycling](https://taginfo.openstreetmap.org/tags/amenity=recycling) | Recyclage
 [amenity\_restaurant](https://taginfo.openstreetmap.org/tags/amenity=restaurant) | Restaurant
 [amenity\_retirement\_home](https://taginfo.openstreetmap.org/tags/amenity=retirement_home) | Bejaardentehuis
 [amenity\_sauna](https://taginfo.openstreetmap.org/tags/amenity=sauna) | Sauna
@@ -126,7 +126,7 @@ Tag | Alias
 [highway\_steps](https://taginfo.openstreetmap.org/tags/highway=steps) | Trap
 [highway\_stile](https://taginfo.openstreetmap.org/tags/highway=stile) | Overstap
 [highway\_tertiary](https://taginfo.openstreetmap.org/tags/highway=tertiary) | Tertiaire weg
-[highway\_track](https://taginfo.openstreetmap.org/tags/highway=track) | Pad
+[highway\_track](https://taginfo.openstreetmap.org/tags/highway=track) | Slag
 [highway\_trail](https://taginfo.openstreetmap.org/tags/highway=trail) | Pad
 [highway\_trunk](https://taginfo.openstreetmap.org/tags/highway=trunk) | Autoweg
 [highway\_trunk\_link](https://taginfo.openstreetmap.org/tags/highway=trunk_link) | Autoweg
@@ -140,7 +140,7 @@ Tag | Alias
 [historic\_manor](https://taginfo.openstreetmap.org/tags/historic=manor) | Landgoed
 [historic\_memorial](https://taginfo.openstreetmap.org/tags/historic=memorial) | Monument
 [historic\_mine](https://taginfo.openstreetmap.org/tags/historic=mine) | Mijn
-[historic\_monument](https://taginfo.openstreetmap.org/tags/historic=monument) | Monoment
+[historic\_monument](https://taginfo.openstreetmap.org/tags/historic=monument) | Groot Monoment
 [historic\_ruins](https://taginfo.openstreetmap.org/tags/historic=ruins) | Ruïne
 [historic\_wayside\_cross](https://taginfo.openstreetmap.org/tags/historic=wayside_cross) | Kruis
 [historic\_wayside\_shrine](https://taginfo.openstreetmap.org/tags/historic=wayside_shrine) | Altaar
@@ -190,7 +190,7 @@ Tag | Alias
 [leisure\_stadium](https://taginfo.openstreetmap.org/tags/leisure=stadium) | Stadion
 [leisure\_swimming\_pool](https://taginfo.openstreetmap.org/tags/leisure=swimming_pool) | Zwembad
 [leisure\_track](https://taginfo.openstreetmap.org/tags/leisure=track) | Atletiekbaan
-[leisure\_water\_park](https://taginfo.openstreetmap.org/tags/leisure=water_park) | Waterspeelpark
+[leisure\_water\_park](https://taginfo.openstreetmap.org/tags/leisure=water_park) | Waterpark
 [natural\_bay](https://taginfo.openstreetmap.org/tags/natural=bay) | Baai
 [natural\_beach](https://taginfo.openstreetmap.org/tags/natural=beach) | Strand
 [natural\_cape](https://taginfo.openstreetmap.org/tags/natural=cape) | Kaap

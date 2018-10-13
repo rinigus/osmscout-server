@@ -33,8 +33,8 @@ Page {
                               "<p>" + qsTr("Copyright:") + " 2016-2018 <a href='https://github.com/rinigus'>Rinigus</a><br></p>" +
                               qsTr("License: GPLv3") + "<br><br>" +
 
-                              "Donations: <a href='https://liberapay.com/rinigus'>Liberapay</a> " +
-                              "<a href='http://rinigus.github.io/donate-bitcoin'>Bitcoin</a>" +
+                              "Donations: " +
+                              "<a href='http://rinigus.github.io/donate'>http://rinigus.github.io/donate</a>" +
                               "<br><br>" +
 
                               "<b>" + qsTr("Translations") + "</b><br><br>" +
@@ -48,6 +48,7 @@ Page {
                               "A @atlochowski: Polish<br>" +
                               "Peer-Atle Motland @Pam: Norwegian Bokmål<br>" +
                               "Matti Lehtimäki @mal: Finnish<br>" +
+                              "@Watchmaker: Italian<br>" +
 
                               "<br><b>" + qsTr("Maps") + "</b><br>" +
                               "<p>" +
@@ -58,6 +59,13 @@ Page {
                               "<p>" +
                               qsTr("Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format " +
                                    "from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.") +
+                              "</p><br>" +
+                              "<p>" +
+                              qsTr("UK postal codes downloaded from " +
+                                   "<a href='https://www.freemaptools.com/download-uk-postcode-lat-lng.htm'>FreeMapTools</a>. These " +
+                                   "data contain: Ordnance Survey data © Crown copyright and database " +
+                                   "right 2017; Royal Mail data © Royal Mail copyright and database right " +
+                                   "2017; National Statistics data © Crown copyright and database right 2017.") +
                               "</p>" +
 
                               "<br><b>" + qsTr("Libpostal") + "</b><br>" +

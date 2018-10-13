@@ -1,21 +1,19 @@
 # OSM Scout Server
 
 [![Build Status](https://travis-ci.org/rinigus/osmscout-server.svg?branch=master)](https://travis-ci.org/rinigus/osmscout-server)
-[![Donate](https://img.shields.io/badge/donate-liberapay-yellow.svg)](https://liberapay.com/rinigus)
-[![Donate](https://img.shields.io/badge/donate-bitcoin-yellowgreen.svg)](http://rinigus.github.io/donate-bitcoin)
 
 OSM Scout server can be used as a drop-in replacement for online map
 services providing map tiles, search, and routing. As a result, an
 offline operation is possible if the device has a server and map
 client programs installed and running.
 
-At present, the server can be used to provide:
+Among other services, the server can be used to provide:
 * vector or raster tiles for other applications;
 * search for locations and free text search;
-* search for POIs next to a reference area;
+* search for POIs next to a reference point or route;
 * calculating routes between given sequence of points;
 
-User's guide is available at https://rinigus.github.io/osmscout-server
+User's guide is available at https://rinigus.github.io/osmscout-server .
 
 The server supports:
 * map rendering via Mapnik (https://github.com/mapnik/mapnik);
@@ -27,8 +25,8 @@ The server supports:
 To use the server, you have to start it and configure the client to
 access it. An example configurations for Poor Maps, modRana, and
 JavaScript-based clients are provided under "example" folder. At
-present, Poor Maps and modRana include plugins already in the upstream
-and no additional configuration is needed.
+present, WhoGo Maps, Poor Maps and modRana include plugins already in
+the upstream and no additional configuration is needed.
 
 The server is written using Qt. The server can be used as a console, a
 Sailfish, or a QtQuick application. For console and QtQuick versions,
@@ -61,6 +59,12 @@ data repository.
 Map data from OpenStreetMap, Open Database License 1.0. Maps are
 converted to a suitable format from downloaded extracts and/or using
 polygons as provided by Geofabrik GmbH.
+
+UK postal codes downloaded from https://www.freemaptools.com. These
+data contain: Ordnance Survey data © Crown copyright and database
+right 2017; Royal Mail data © Royal Mail copyright and database right
+2017; National Statistics data © Crown copyright and database right
+2017.
 
 
 ## Settings
@@ -290,7 +294,7 @@ Shortened version of the response is given as an
 [example](examples/poi_types.json).
 
 
-## POI search near a reference position
+## POI search near a reference position or route
 
 To find POIs within a given radius from a specified reference position
 and/or reference route, server can be accessed via `/v1/guide` path:
@@ -338,9 +342,27 @@ The reference point can be given either as a query ("Paris") or as a
 location coordinates. If the both forms are given in URL, location
 coordinates are preferred.
 
-When reference route is given, the search is along the route. It can
-be used to find POIs along the route starting, if given, from the
-reference point.
+When reference route is given, the search is performed along the
+route. It can be used to find POIs along the whole route or its
+fraction. To search along a fraction of the reference route, the route
+has to be specified as well as the reference point (via `search` or
+the pair of `lng`, `lat`). With the reference point specified, the
+fraction is determined by finding the closest section of the route to
+the reference point and starting search from that section. Such search
+for a fraction of the route allows to specify the full route and the
+current position to find all POIs of interest along the remaining
+route, for example.
+
+Search along the route is performed from its start (full route or
+fraction) and until either the number of POIs has reached the `limit`
+or the full route has been searched along. The `distance` returned for
+each POI is in this form of the search as the distance along the route
+till the point of the first section satisfying the specified `radius`
+to the object. As such, the returned `distance` can be not till the
+closest section of the route nor it takes into account the underlying
+route network required to reach POI when moving along the
+route. However, it should give a reasonable estimate for the distance
+in question.
 
 The result is given in JSON format. It returns a JSON object with two
 keys: `"origin"` (coordinates of the reference point used in the
@@ -532,6 +554,7 @@ The translations were contributed by
 - A @atlochowski: Polish
 - Peer-Atle Motland @Pam: Norwegian Bokmål
 - Matti Lehtimäki @mal: Finnish
+- @Watchmaker: Italian
 
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README

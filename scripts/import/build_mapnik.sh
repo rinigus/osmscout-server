@@ -3,6 +3,7 @@
 set -e
 
 BNDINSTALL=`pwd`/backends-install
+PATH=$BNDINSTALL/bin:$PATH
 
 if [ $# -lt 3 ] ; then
 	echo "Usage: $0 mapfile_pbf base_dir continent_country"

@@ -11,13 +11,13 @@ Tag | Alias
 [amenity\_bench](https://taginfo.openstreetmap.org/tags/amenity=bench) | Panchina
 [amenity\_bicycle\_parking](https://taginfo.openstreetmap.org/tags/amenity=bicycle_parking) | Parcheggio per biciclette
 [amenity\_bicycle\_rental](https://taginfo.openstreetmap.org/tags/amenity=bicycle_rental) | Stazione del bikesharing
-[amenity\_bureau\_de\_change](https://taginfo.openstreetmap.org/tags/amenity=bureau_de_change) | Cambiavalute
+[amenity\_bureau\_de\_change](https://taginfo.openstreetmap.org/tags/amenity=bureau_de_change) | Cambia valute
 [amenity\_cafe](https://taginfo.openstreetmap.org/tags/amenity=cafe) | Caffè
 [amenity\_car\_rental](https://taginfo.openstreetmap.org/tags/amenity=car_rental) | Autonoleggio
 [amenity\_car\_sharing](https://taginfo.openstreetmap.org/tags/amenity=car_sharing) | Stazione del carsharing
 [amenity\_car\_wash](https://taginfo.openstreetmap.org/tags/amenity=car_wash) | Autolavaggio
 [amenity\_casino](https://taginfo.openstreetmap.org/tags/amenity=casino) | Casinò
-[amenity\_charging\_station](https://taginfo.openstreetmap.org/tags/amenity=charging_station) | Stazione di ricarica elettrica
+[amenity\_charging\_station](https://taginfo.openstreetmap.org/tags/amenity=charging_station) | Colonnina di ricarica
 [amenity\_cinema](https://taginfo.openstreetmap.org/tags/amenity=cinema) | Cinema
 [amenity\_college](https://taginfo.openstreetmap.org/tags/amenity=college) | Scuola superiore
 [amenity\_courthouse](https://taginfo.openstreetmap.org/tags/amenity=courthouse) | Tribunale
@@ -29,8 +29,8 @@ Tag | Alias
 [amenity\_emergency\_phone](https://taginfo.openstreetmap.org/tags/amenity=emergency_phone) | Colonnina SOS
 [amenity\_fast\_food](https://taginfo.openstreetmap.org/tags/amenity=fast_food) | Fast food
 [amenity\_ferry\_terminal](https://taginfo.openstreetmap.org/tags/amenity=ferry_terminal) | Terminal traghetto
-[amenity\_fire\_station](https://taginfo.openstreetmap.org/tags/amenity=fire_station) | Vigili del fuoco
-[amenity\_fuel](https://taginfo.openstreetmap.org/tags/amenity=fuel) | Stazione di rifornimento
+[amenity\_fire\_station](https://taginfo.openstreetmap.org/tags/amenity=fire_station) | Pompieri
+[amenity\_fuel](https://taginfo.openstreetmap.org/tags/amenity=fuel) | Benzinaio
 [amenity\_grave\_yard](https://taginfo.openstreetmap.org/tags/amenity=grave_yard) | Cimitero
 [amenity\_hospital](https://taginfo.openstreetmap.org/tags/amenity=hospital) | Ospedale
 [amenity\_hunting\_stand](https://taginfo.openstreetmap.org/tags/amenity=hunting_stand) | Postazione di caccia
@@ -40,7 +40,7 @@ Tag | Alias
 [amenity\_pharmacy](https://taginfo.openstreetmap.org/tags/amenity=pharmacy) | Farmacia
 [amenity\_place\_of\_worship](https://taginfo.openstreetmap.org/tags/amenity=place_of_worship) | Luogo di culto
 [amenity\_police](https://taginfo.openstreetmap.org/tags/amenity=police) | Polizia
-[amenity\_post\_box](https://taginfo.openstreetmap.org/tags/amenity=post_box) | Cassetta postale
+[amenity\_post\_box](https://taginfo.openstreetmap.org/tags/amenity=post_box) | Cassetta delle lettere
 [amenity\_post\_office](https://taginfo.openstreetmap.org/tags/amenity=post_office) | Ufficio postale
 [amenity\_prison](https://taginfo.openstreetmap.org/tags/amenity=prison) | Prigione
 [amenity\_pub](https://taginfo.openstreetmap.org/tags/amenity=pub) | Pub

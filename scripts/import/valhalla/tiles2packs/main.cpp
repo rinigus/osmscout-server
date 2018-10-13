@@ -9,7 +9,7 @@ using namespace valhalla;
 
 const double tol = 1e-3;
 
-std::string leaf(std::vector<int> levels, double lng, double lat, std::deque<double> steps)
+std::string leaf(std::vector<int> levels, bool transit, double lng, double lat, std::deque<double> steps)
 {
   std::ostringstream ss;
   double step = steps.front();
@@ -21,16 +21,23 @@ std::string leaf(std::vector<int> levels, double lng, double lat, std::deque<dou
 
   midgard::AABB2<midgard::PointLL> bbox(lng+tol, lat+tol, lng+step-tol, lat+step-tol);
   std::vector<baldr::GraphId> ids;
+  std::vector<baldr::GraphId> transit_ids;
   for (int i: levels)
     {
       std::vector<baldr::GraphId> a = baldr::TileHierarchy::GetGraphIds(bbox, i);
       ids.insert( ids.end(), a.begin(), a.end() );
+      if (transit && i == 2) transit_ids.insert( transit_ids.end(), a.begin(), a.end() );
     }
 
   {
     std::ostringstream s1;
     for (const baldr::GraphId &gid: ids)
       s1 << "\"" << baldr::GraphTile::FileSuffix(gid) << "\", ";
+    for (const baldr::GraphId &gid: transit_ids) {
+      std::string t = baldr::GraphTile::FileSuffix(gid);
+      s1 << "\"" << 3 << t.substr(1) << "\", ";
+    }
+    
     std::string s = s1.str();
 
     ss << s.substr(0, s.length()-2) << " ]";
@@ -43,7 +50,7 @@ std::string leaf(std::vector<int> levels, double lng, double lat, std::deque<dou
       double nstep = steps.front();
       for (double nlat=lat; nlat < lat+step-tol; nlat += nstep)
         for (double nlng=lng; nlng < lng+step-tol; nlng += nstep)
-          s1 << leaf(levels, nlng, nlat, steps) << ", ";
+          s1 << leaf(levels, transit, nlng, nlat, steps) << ", ";
       std::string s = s1.str();
       ss << s.substr(0, s.length()-2) << " ]";
     }
@@ -62,9 +69,11 @@ int main()
     {
       std::vector<int> levels;
       std::deque<double> steps;
+      bool transit = false;
       if (hier > 0) {
         steps = {36,12,4,2,1};
         levels = {1,2};
+        transit = true;
       }
       else {
         steps = {36,12,4};
@@ -75,7 +84,7 @@ int main()
       for (double lat=-90; lat < 90-tol; lat += step)
         for (double lng=-180; lng < 180-tol; lng += step)
           {
-            ss << leaf(levels, lng, lat, steps) << ",\n";
+            ss << leaf(levels, transit, lng, lat, steps) << ",\n";
           }
     }
 

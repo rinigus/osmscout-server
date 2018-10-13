@@ -38,7 +38,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
     if "name" in files and not Hierarchy.ignore(root):
         name = Hierarchy.get_full_name(root)
         poly = root + "/poly"
-        print Hierarchy.get_id(root), name, Hierarchy.get_postal(root)
+        print Hierarchy.get_id(root), name, Hierarchy.get_postal(root), Hierarchy.get_postcodes(root)
 
         cid = Hierarchy.get_id(root)
         provided_countries[cid] = { "id": cid,
@@ -60,7 +60,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
         all_countries += country_target + " "
         fmake.write(country_target + ": $(BASE_DIR)/geocoder-nlp/.directory " + pbf +
                     "\n\t$(BUILDER_GEOCODER) $(PBF_DIR)/" + pbfname(cid) + " $(BASE_DIR) " +
-                    spath(cid) + " " + Hierarchy.get_postal(root) + "\n\n")
+                    spath(cid) + " " + Hierarchy.get_postal(root) + ' "' + Hierarchy.get_postcodes(root) + '"\n\n')
 
         # mapnik
         country_target = "$(BASE_DIR)/mapnik/countries/" + spath(cid) + ".timestamp"

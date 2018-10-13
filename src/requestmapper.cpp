@@ -320,7 +320,7 @@ static void makeEmptyJson(QByteArray &result)
 
 void RequestMapper::loguri(const char *uri)
 {
-  InfoHub::logInfo("Request: " + QString(uri));
+  InfoHub::logInfo("Request: " + QUrl::fromPercentEncoding(uri));
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -491,9 +491,6 @@ unsigned int RequestMapper::service(const char *url_c,
 
       MHD_add_response_header(response, MHD_HTTP_HEADER_CONTENT_TYPE, "image/png");
       return MHD_HTTP_OK;
-
-      errorText(response, connection_id, "Error allocating raster tile generation task, possible misconfiguration of the server");
-      return MHD_HTTP_INTERNAL_SERVER_ERROR;
 #endif
     }
 
@@ -1040,7 +1037,7 @@ unsigned int RequestMapper::service(const char *url_c,
 
       osmscout::Vehicle vehicle;
       QString type = objreq.value("costing").toString();
-      if (type == "auto") vehicle = osmscout::vehicleCar;
+      if (type == "auto" || type == "auto_shorter") vehicle = osmscout::vehicleCar;
       else if (type == "bicycle") vehicle = osmscout::vehicleBicycle;
       else if (type == "pedestrian") vehicle = osmscout::vehicleFoot;
       else

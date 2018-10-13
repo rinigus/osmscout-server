@@ -5,6 +5,41 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Oct 1 2018 rinigus <rinigus.git@gmail.com> 1.12.1-1
+- update translations
+- import bugfixes
+
+* Fri Sep 14 2018 rinigus <rinigus.git@gmail.com> 1.12.0-1
+- geocoder: add support for search by postal codes
+- geocoder: return postal codes, phone, and webpage when available
+- geocoder: load libpostal language classifier and parser only if needed
+- update translations
+
+* Wed Sep 5 2018 rinigus <rinigus.git@gmail.com> 1.11.0-1
+- update translations
+- allow searching without libpostal parsing
+- allow nearby search without type and name
+
+* Mon Aug 27 2018 rinigus <rinigus.git@gmail.com> 1.10.5-1
+- update translations
+- update Valhalla configuration and bumping Valhalla to 2.6.3
+- other small changes
+
+* Mon Aug 20 2018 rinigus <rinigus.git@gmail.com> 1.10.2-1
+- update translations
+- geocoder bugfixes
+
+* Mon Aug 14 2018 rinigus <rinigus.git@gmail.com> 1.10.1-1
+- specify origin in the results of the search along route
+
+* Mon Aug 13 2018 rinigus <rinigus.git@gmail.com> 1.10.0-1
+- changing license to GPLv3
+- add support for POST requests
+- add search along route
+- cleanup POI aliases handling
+- added Italian translation [wip]
+- updated translations
+
 * Tue Jul 31 2018 rinigus <rinigus.git@gmail.com> 1.9.1-1
 - fix crash when using libosmscout profile
 - fixes in map matching service

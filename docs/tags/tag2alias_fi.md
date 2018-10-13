@@ -53,7 +53,7 @@ Tag | Alias
 [amenity\_taxi](https://taginfo.openstreetmap.org/tags/amenity=taxi) | Taksi
 [amenity\_telephone](https://taginfo.openstreetmap.org/tags/amenity=telephone) | Puhelinkoppi
 [amenity\_theatre](https://taginfo.openstreetmap.org/tags/amenity=theatre) | Teatteri
-[amenity\_toilets](https://taginfo.openstreetmap.org/tags/amenity=toilets) | WC
+[amenity\_toilets](https://taginfo.openstreetmap.org/tags/amenity=toilets) | Vessa
 [amenity\_townhall](https://taginfo.openstreetmap.org/tags/amenity=townhall) | Kaupungintalo
 [amenity\_university](https://taginfo.openstreetmap.org/tags/amenity=university) | Yliopisto
 [amenity\_vending\_machine](https://taginfo.openstreetmap.org/tags/amenity=vending_machine) | Myyntiautomaatti
@@ -85,7 +85,7 @@ Tag | Alias
 [highway\_construction](https://taginfo.openstreetmap.org/tags/highway=construction) | Rakenteilla oleva tie
 [highway\_cycleway](https://taginfo.openstreetmap.org/tags/highway=cycleway) | Pyörätie
 [highway\_distance\_marker](https://taginfo.openstreetmap.org/tags/highway=distance_marker) | Etäisyysmerkki
-[highway\_footway](https://taginfo.openstreetmap.org/tags/highway=footway) | Polku
+[highway\_footway](https://taginfo.openstreetmap.org/tags/highway=footway) | Jalkakäytävä
 [highway\_gate](https://taginfo.openstreetmap.org/tags/highway=gate) | Portti
 [highway\_living\_street](https://taginfo.openstreetmap.org/tags/highway=living_street) | Asuinkatu
 [highway\_motorway](https://taginfo.openstreetmap.org/tags/highway=motorway) | Moottoritie
@@ -157,7 +157,7 @@ Tag | Alias
 [natural\_tree](https://taginfo.openstreetmap.org/tags/natural=tree) | Puu
 [natural\_valley](https://taginfo.openstreetmap.org/tags/natural=valley) | Laakso
 [natural\_volcano](https://taginfo.openstreetmap.org/tags/natural=volcano) | Tulivuori
-[natural\_water](https://taginfo.openstreetmap.org/tags/natural=water) | Vesi
+[natural\_water](https://taginfo.openstreetmap.org/tags/natural=water) | Järvi
 [natural\_wetland](https://taginfo.openstreetmap.org/tags/natural=wetland) | Kosteikko
 [natural\_wood](https://taginfo.openstreetmap.org/tags/natural=wood) | Metsä
 [place\_city](https://taginfo.openstreetmap.org/tags/place=city) | Kaupunki
@@ -208,7 +208,7 @@ Tag | Alias
 [shop\_furniture](https://taginfo.openstreetmap.org/tags/shop=furniture) | Huonekaluliike
 [shop\_gift](https://taginfo.openstreetmap.org/tags/shop=gift) | Lahjakauppa
 [shop\_hairdresser](https://taginfo.openstreetmap.org/tags/shop=hairdresser) | Kampaamo
-[shop\_jewelry](https://taginfo.openstreetmap.org/tags/shop=jewelry) | Kultaseppä
+[shop\_jewelry](https://taginfo.openstreetmap.org/tags/shop=jewelry) | Korukauppa
 [shop\_kiosk](https://taginfo.openstreetmap.org/tags/shop=kiosk) | Kioski
 [shop\_laundry](https://taginfo.openstreetmap.org/tags/shop=laundry) | Pesula
 [shop\_mall](https://taginfo.openstreetmap.org/tags/shop=mall) | Ostoskeskus
@@ -242,7 +242,7 @@ Tag | Alias
 [waterway\_canal](https://taginfo.openstreetmap.org/tags/waterway=canal) | Kanaali
 [waterway\_dam](https://taginfo.openstreetmap.org/tags/waterway=dam) | Pato
 [waterway\_ditch](https://taginfo.openstreetmap.org/tags/waterway=ditch) | Oja
-[waterway\_dock](https://taginfo.openstreetmap.org/tags/waterway=dock) | Telakka
+[waterway\_dock](https://taginfo.openstreetmap.org/tags/waterway=dock) | Märkätelakka
 [waterway\_drain](https://taginfo.openstreetmap.org/tags/waterway=drain) | Oja
 [waterway\_rapids](https://taginfo.openstreetmap.org/tags/waterway=rapids) | Koski
 [waterway\_river](https://taginfo.openstreetmap.org/tags/waterway=river) | Joki

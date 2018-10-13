@@ -91,7 +91,7 @@
     "verbose": false
   },
   "mjolnir": {
-    "admin": "/data/valhalla/admin.sqlite",
+    "admin": "tiles/admin.sqlite",
     "hierarchy": true,
     "include_driveways": true,
     "logging": {
@@ -102,9 +102,9 @@
     "max_cache_size": MAXIMAL_CACHE_SIZE,
     "shortcuts": true,
     "tile_dir": "VALHALLA_TILE_DIRECTORY",
-    "tile_extract": "/data/valhalla/tiles.tar",
-    "timezone": "/data/valhalla/tz_world.sqlite",
-    "transit_dir": "/data/valhalla/transit"
+    "tile_extract": "tiles.tar",
+    "timezone": "tiles/tz_world.sqlite",
+    "transit_dir": "transit"
   },
   "odin": {
     "logging": {
@@ -136,13 +136,13 @@
       "max_matrix_locations": 50
     },
     "bus": {
-      "max_distance": 5000000.0,
+      "max_distance": LIMIT_MAX_DISTANCE_AUTO,
       "max_locations": 50,
       "max_matrix_distance": 400000.0,
       "max_matrix_locations": 50
     },
     "hov": {
-      "max_distance": 5000000.0,
+      "max_distance": LIMIT_MAX_DISTANCE_AUTO,
       "max_locations": 20,
       "max_matrix_distance": 400000.0,
       "max_matrix_locations": 50
@@ -157,7 +157,13 @@
     "max_radius": 200,
     "max_reachability": 100,
     "motor_scooter": {
-      "max_distance": 500000.0,
+      "max_distance": LIMIT_MAX_DISTANCE_BICYCLE,
+      "max_locations": 50,
+      "max_matrix_distance": 200000.0,
+      "max_matrix_locations": 50
+    },
+    "motorcycle": {
+      "max_distance": LIMIT_MAX_DISTANCE_AUTO,
       "max_locations": 50,
       "max_matrix_distance": 200000.0,
       "max_matrix_locations": 50

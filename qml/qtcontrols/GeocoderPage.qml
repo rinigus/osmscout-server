@@ -68,6 +68,15 @@ Dialog {
         }
 
         ElementSwitch {
+            id: eGeoPostal
+            key: settingsGeomasterPrefix + "use_postal"
+            mainLabel: qsTr("Use libpostal parser")
+            secondaryLabel: qsTr("This is the main address parser of the geocoder. It is recommended to enable " +
+                                 "<i>libpostal</i> parser, unless the hardware does not allow to use it and the limitations " +
+                                 "primitive parser are taken into account. Note that at least one parser has to be specified.")
+        }
+
+        ElementSwitch {
             id: eGeoPrimitive
             key: settingsGeomasterPrefix + "use_primitive"
             mainLabel: qsTr("Use primitive parser")
@@ -90,6 +99,7 @@ Dialog {
     function onAccepted() {
         eGeoInitEveryCall.apply()
         eGeoSearchAllMaps.apply()
+        eGeoPostal.apply()
         eGeoPrimitive.apply()
         eGeoLanguages.apply()
     }

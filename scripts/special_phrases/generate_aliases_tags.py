@@ -29,11 +29,11 @@ findex.write('Language | Aliases | Geocoder Tags \n --- | ---:| ---: \n')
 for language in [ "af","ar","br","ca","cs","de","de_at","en","es","et","eu","fa","fi","fr","gl","hr","hu",
                  "ia","is","it","ja","mk","nl","no","pl","ps","pt","ru","sk","sl","sv","uk","vi" ]:
 
-#for language in [ "af" ]:
+# for language in [ "en" ]:
 
     print("Language", language)
-    alias2tag = collections.defaultdict(list)
-    tag2alias = {}
+    alias2tag = collections.defaultdict(set)
+    tag2alias = collections.defaultdict(set)
 
     r = str(requests.get('https://wiki.openstreetmap.org/wiki/Special:Export/Nominatim/Special_Phrases/' + language.upper()).text)
     r = r[ r.find('{| '): ]
@@ -55,13 +55,30 @@ for language in [ "af","ar","br","ca","cs","de","de_at","en","es","et","eu","fa"
             singular = (k[-1] == 'N')
             if geotag in geotags_to_ignore: continue
 
-            alias2tag[k[0]].append( geotag )
+            alias2tag[k[0]].add( geotag )
 
-            if singular and geotag not in tag2alias:
-                tag2alias[geotag] = k[0]
+            if singular:
+                tag2alias[geotag].add(k[0])
 
             Geo2OSM[geotag] = k[1] + '=' + k[2]
 
+    # convert alias2tag sets into lists
+    for k in alias2tag:
+        alias2tag[k] = list(alias2tag[k])
+        alias2tag[k].sort()
+
+    # select the most specific alias for tag
+    for k in tag2alias:
+        a = None
+        l = 0
+        tag2alias[k] = list(tag2alias[k])
+        tag2alias[k].sort()
+        for i in tag2alias[k]:
+            if a is None or len(alias2tag[i]) < l:
+                l = len(alias2tag[i])
+                a = i
+        tag2alias[k] = a
+        
     A2T[language] = alias2tag
     T2A[language] = tag2alias
 

@@ -51,7 +51,7 @@ Tag | Alias
 [amenity\_telephone](https://taginfo.openstreetmap.org/tags/amenity=telephone) | Budka telefoniczna
 [amenity\_theatre](https://taginfo.openstreetmap.org/tags/amenity=theatre) | Teatr
 [amenity\_toilets](https://taginfo.openstreetmap.org/tags/amenity=toilets) | Toaleta publiczna
-[amenity\_townhall](https://taginfo.openstreetmap.org/tags/amenity=townhall) | Urząd miejski
+[amenity\_townhall](https://taginfo.openstreetmap.org/tags/amenity=townhall) | Urząd gminy
 [amenity\_university](https://taginfo.openstreetmap.org/tags/amenity=university) | Uniwersytet
 [amenity\_veterinary](https://taginfo.openstreetmap.org/tags/amenity=veterinary) | Weterynarz
 [building\_apartments](https://taginfo.openstreetmap.org/tags/building=apartments) | Blok mieszkalny

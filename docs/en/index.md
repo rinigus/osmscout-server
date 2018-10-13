@@ -120,7 +120,8 @@ automatically. See some examples in
 After the server has been setup and the maps downloaded, the access to
 the server has to be configured in the client(s).
 
-For [WhoGo Maps](https://openrepos.net/content/otsaloma/poor-maps),
+For [Pure Maps](https://openrepos.net/content/rinigus/pure-maps) and 
+[WhoGo Maps](https://openrepos.net/content/otsaloma/poor-maps),
 please follow instructions below for Poor Maps. Just replace
 'Basemaps' selection with selection of 'Maps' in WhoGo Maps menu.
 
@@ -150,7 +151,25 @@ If you enabled automatic activation then all you have to do is to start the clie
 * When finished, close the server and the client.
 
 
-## Geocoder tags and aliases
+## Geocoder 
+
+### Parsers
+
+Parsers are responsible for splitting the entered search string into the address. Geocoder works using libpostal for parsing entered search string and is expected to parse the address in its natural form for the used language/country combination. In addition to automatic parsing by libpostal, one can use "primitive" parser that takes a search string, splits it by comma, and constructs the hierarchy assuming that the search string was entered by listing the address or POI from the finest details to the region. For example,
+
+```
+house_number, street, city
+```
+
+As libpostal, primitive parser supports postal codes. For that, enter postal code using `post:` prefix for the code in any part of the hierarchy or just alone to search by the postal code. For example,
+
+```
+house_number, street, city, post: 12345
+```
+
+or `post:12345`. Note that spaces between keyword `post:` and the postal code are ignored.
+
+### Tags and aliases
 
 To distinguish types of objects, the geocoder uses tags that are imported from OpenStreetMap. Tags are also associated with aliases in a language-dependent manner. The tags and their aliases are listed in [tags](../tags).
 

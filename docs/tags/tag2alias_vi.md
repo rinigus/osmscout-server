@@ -2,7 +2,7 @@
 
 Tag | Alias 
 --- | --- 
-[aeroway\_aerodrome](https://taginfo.openstreetmap.org/tags/aeroway=aerodrome) | Sân bay
+[aeroway\_aerodrome](https://taginfo.openstreetmap.org/tags/aeroway=aerodrome) | Phi trường
 [amenity\_atm](https://taginfo.openstreetmap.org/tags/amenity=atm) | Máy Rút tiền Tự động
 [amenity\_bank](https://taginfo.openstreetmap.org/tags/amenity=bank) | Ngân hàng
 [amenity\_bar](https://taginfo.openstreetmap.org/tags/amenity=bar) | Quán Rượu

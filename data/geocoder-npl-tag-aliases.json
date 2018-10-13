@@ -1903,7 +1903,6 @@
 "amenity_bicycle_rental"
 ],
 "\u062a\u0623\u062c\u064a\u0631 \u0633\u064a\u0627\u0631\u0627\u062a": [
-"amenity_car_rental",
 "amenity_car_rental"
 ],
 "\u062a\u0642\u0627\u0637\u0639 \u0633\u0643\u0643 \u062d\u062f\u064a\u062f\u064a\u0629": [
@@ -2267,7 +2266,6 @@
 "amenity_taxi"
 ],
 "\u0633\u064a\u0646\u0645\u0627": [
-"amenity_cinema",
 "amenity_cinema"
 ],
 "\u0634\u0627\u0631\u0639 \u0633\u0643\u0646\u064a": [
@@ -2301,7 +2299,6 @@
 "natural_tree"
 ],
 "\u0634\u0631\u0637\u0629": [
-"amenity_police",
 "amenity_police"
 ],
 "\u0634\u0642\u0642": [
@@ -2519,7 +2516,6 @@
 "landuse_forest"
 ],
 "\u063a\u0633\u064a\u0644 \u0633\u064a\u0627\u0631\u0627\u062a": [
-"amenity_car_wash",
 "amenity_car_wash"
 ],
 "\u0641\u0646\u0627\u0621 \u0645\u0632\u0631\u0639\u0629": [
@@ -2948,7 +2944,6 @@
 "tourism_museum"
 ],
 "\u0645\u062b\u0644\u062c\u0627\u062a": [
-"amenity_ice_cream",
 "amenity_ice_cream"
 ],
 "\u0645\u062c\u0645\u0639 \u0645\u0628\u0627\u0646\u064a": [
@@ -3244,7 +3239,6 @@
 "highway_bridleway"
 ],
 "\u0645\u0634\u0627\u0631\u0643\u0629 \u0633\u064a\u0627\u0631\u0627\u062a": [
-"amenity_car_sharing",
 "amenity_car_sharing"
 ],
 "\u0645\u0635\u0627\u0631\u0641": [
@@ -3488,7 +3482,6 @@
 "place_region"
 ],
 "\u0645\u0648\u0627\u062f \u0645\u0643\u0627\u0641\u062d\u0629 \u062d\u0631\u0627\u0626\u0642": [
-"emergency_fire_hydrant",
 "emergency_fire_hydrant"
 ],
 "\u0645\u0648\u0627\u0642\u0641 \u062f\u0631\u0627\u062c\u0627\u062a": [
@@ -3552,7 +3545,6 @@
 "natural_shoal"
 ],
 "\u0645\u064a\u0627\u0647 \u0639\u0630\u0628\u0629": [
-"amenity_drinking_water",
 "amenity_drinking_water"
 ],
 "\u0645\u064a\u062f\u0627\u0646 \u0623\u0644\u0639\u0627\u0628": [
@@ -3662,7 +3654,6 @@
 "waterway_wadi"
 ],
 "\u0648\u062c\u0628\u0627\u062a \u0633\u0631\u064a\u0639\u0629": [
-"amenity_fast_food",
 "amenity_fast_food"
 ],
 "\u0648\u062d\u0644": [
@@ -3678,7 +3669,6 @@
 "landuse_construction"
 ],
 "\u0648\u0642\u0648\u062f": [
-"amenity_fuel",
 "amenity_fuel"
 ],
 "\u0648\u0643\u0627\u0644\u0629 \u0623\u0646\u0628\u0627\u0621": [
@@ -6876,7 +6866,6 @@
 "place_farm"
 ],
 "Golfov\u00e9 h\u0159i\u0161t\u011b": [
-"leisure_golf_course",
 "leisure_golf_course"
 ],
 "Hostel": [
@@ -6898,11 +6887,9 @@
 "landuse_cemetery"
 ],
 "H\u0159i\u0161t\u011b": [
-"leisure_pitch",
 "leisure_pitch"
 ],
 "Kade\u0159nictv\u00ed": [
-"shop_hairdresser",
 "shop_hairdresser"
 ],
 "Kina": [
@@ -6912,7 +6899,6 @@
 "amenity_cinema"
 ],
 "Kluzi\u0161t\u011b": [
-"leisure_ice_rink",
 "leisure_ice_rink"
 ],
 "Kraj": [
@@ -6928,7 +6914,6 @@
 "natural_glacier"
 ],
 "Leti\u0161t\u011b": [
-"aeroway_aerodrome",
 "aeroway_aerodrome"
 ],
 "Minigolf": [
@@ -6944,7 +6929,6 @@
 "tourism_motel"
 ],
 "Mo\u0159e": [
-"place_sea",
 "place_sea"
 ],
 "Muzea": [
@@ -7026,18 +7010,15 @@
 "amenity_post_office"
 ],
 "P\u0159\u00edrodn\u00ed rezervace": [
-"leisure_nature_reserve",
 "leisure_nature_reserve"
 ],
 "Schodi\u0161t\u011b": [
 "highway_steps"
 ],
 "Schody": [
-"highway_steps",
 "highway_steps"
 ],
 "Silnice II. t\u0159\u00eddy": [
-"highway_secondary",
 "highway_secondary"
 ],
 "Stadion": [
@@ -7047,11 +7028,9 @@
 "leisure_stadium"
 ],
 "Stanice metra": [
-"railway_subway",
 "railway_subway"
 ],
 "Staveni\u0161t\u011b": [
-"landuse_construction",
 "landuse_construction"
 ],
 "Strom": [
@@ -7069,7 +7048,6 @@
 "place_state"
 ],
 "Toalety": [
-"amenity_toilets",
 "amenity_toilets"
 ],
 "Turistick\u00e1 atrakce": [
@@ -7079,7 +7057,6 @@
 "tourism_attraction"
 ],
 "Turistick\u00e9 informace": [
-"tourism_information",
 "tourism_information"
 ],
 "T\u00e1bo\u0159i\u0161t\u011b, kemp": [
@@ -7089,7 +7066,6 @@
 "tourism_camp_site"
 ],
 "Ulice": [
-"highway_residential",
 "highway_residential"
 ],
 "Velkom\u011bsta": [
@@ -7105,11 +7081,9 @@
 "tourism_chalet"
 ],
 "Vesnice": [
-"place_village",
 "place_village"
 ],
 "Vinice": [
-"landuse_vineyard",
 "landuse_vineyard"
 ],
 "Vysokohorsk\u00e1 chata": [
@@ -7125,7 +7099,6 @@
 "leisure_garden"
 ],
 "Zoo": [
-"tourism_zoo",
 "tourism_zoo"
 ],
 "Z\u00e1bavn\u00ed park": [
@@ -7135,11 +7108,9 @@
 "tourism_theme_park"
 ],
 "\u00dadol\u00ed": [
-"natural_valley",
 "natural_valley"
 ],
 "\u017delezni\u010dn\u00ed stanice": [
-"building_train_station",
 "building_train_station"
 ],
 "\u017delezni\u010dn\u00ed zast\u00e1vka": [
@@ -7208,7 +7179,6 @@
 "waterway_derelict_canal"
 ],
 "Ausbildungsgeb\u00e4ude": [
-"building_faculty",
 "building_faculty"
 ],
 "Ausgrabungsst\u00e4tte": [
@@ -7343,7 +7313,6 @@
 "landuse_construction"
 ],
 "Becken": [
-"landuse_basin",
 "landuse_basin"
 ],
 "Bekleidungsgesch\u00e4ft": [
@@ -7359,7 +7328,6 @@
 "tourism_alpine_hut"
 ],
 "Bestattungsunternehmen": [
-"shop_funeral_directors",
 "shop_funeral_directors"
 ],
 "Bezirk": [
@@ -7405,7 +7373,6 @@
 "amenity_post_box"
 ],
 "Brunnen": [
-"man_made_water_well",
 "man_made_water_well"
 ],
 "Buchgesch\u00e4ft": [
@@ -7433,7 +7400,6 @@
 "place_state"
 ],
 "Bunker": [
-"building_bunker",
 "building_bunker"
 ],
 "Burg": [
@@ -7488,7 +7454,6 @@
 "amenity_library"
 ],
 "B\u00fcrogeb\u00e4ude": [
-"building_office",
 "building_office"
 ],
 "B\u00fcsche": [
@@ -7543,7 +7508,6 @@
 "waterway_dock"
 ],
 "Dojang": [
-"amenity_dojo",
 "amenity_dojo"
 ],
 "Dojo": [
@@ -7588,7 +7552,6 @@
 "landuse_retail"
 ],
 "Einzelhandelsgeb\u00e4ude": [
-"building_retail",
 "building_retail"
 ],
 "Eisdiele": [
@@ -7727,7 +7690,6 @@
 "waterway_river"
 ],
 "Flussufer": [
-"waterway_riverbank",
 "waterway_riverbank"
 ],
 "Fl\u00fcsse": [
@@ -7817,7 +7779,6 @@
 "mountain_pass"
 ],
 "Geb\u00e4ude": [
-"building",
 "building"
 ],
 "Geb\u00e4udeblock": [
@@ -7908,7 +7869,6 @@
 "landuse_commercial"
 ],
 "Gewerbegeb\u00e4ude": [
-"building_commercial",
 "building_commercial"
 ],
 "Gipfel": [
@@ -8011,17 +7971,14 @@
 "tourism_hotel"
 ],
 "Hydrant": [
-"emergency_fire_hydrant",
 "emergency_fire_hydrant"
 ],
 "Hydranten": [
-"emergency_fire_hydrant",
 "emergency_fire_hydrant"
 ],
 "H\u00e4user": [
 "building_house",
 "place_house",
-"place_houses",
 "place_houses"
 ],
 "H\u00f6fe": [
@@ -8052,7 +8009,6 @@
 "landuse_industrial"
 ],
 "Industriegeb\u00e4ude": [
-"building_industrial",
 "building_industrial"
 ],
 "Insel": [
@@ -8317,7 +8273,6 @@
 "shop_furniture"
 ],
 "M\u00fclleimer": [
-"amenity_waste_basket",
 "amenity_waste_basket"
 ],
 "M\u00fcllhalde": [
@@ -8373,7 +8328,6 @@
 "shop_greengrocer"
 ],
 "Optiker": [
-"shop_optician",
 "shop_optician"
 ],
 "Ortschaft": [
@@ -8396,6 +8350,12 @@
 ],
 "Park": [
 "leisure_park"
+],
+"Parkplatz": [
+"amenity_parking"
+],
+"Parkpl\u00e4tze": [
+"amenity_parking"
 ],
 "Parks": [
 "leisure_park"
@@ -8442,7 +8402,6 @@
 "highway_platform"
 ],
 "Polizei": [
-"amenity_police",
 "amenity_police"
 ],
 "Postamt": [
@@ -8631,7 +8590,6 @@
 "amenity_school"
 ],
 "Schulgeb\u00e4ude": [
-"building_school",
 "building_school"
 ],
 "Schutzh\u00fctte": [
@@ -8641,7 +8599,6 @@
 "amenity_shelter"
 ],
 "Schwimmbecken": [
-"leisure_swimming_pool",
 "leisure_swimming_pool"
 ],
 "Seilbahn": [
@@ -8723,7 +8680,6 @@
 "leisure_sports_centre"
 ],
 "Springbrunnen": [
-"amenity_fountain",
 "amenity_fountain"
 ],
 "Stadien": [
@@ -8798,11 +8754,9 @@
 "railway_tram"
 ],
 "Streugutcontainer": [
-"amenity_grit_bin",
 "amenity_grit_bin"
 ],
 "Stromschnellen": [
-"waterway_rapids",
 "waterway_rapids"
 ],
 "Str\u00e4nde": [
@@ -8906,7 +8860,6 @@
 "shop_dry_cleaning"
 ],
 "Theater": [
-"amenity_theatre",
 "amenity_theatre"
 ],
 "Tierarzt": [
@@ -8958,7 +8911,6 @@
 "highway_steps"
 ],
 "Trinkwasser": [
-"amenity_drinking_water",
 "amenity_drinking_water"
 ],
 "Trockental": [
@@ -9007,7 +8959,6 @@
 "amenity_university"
 ],
 "Universit\u00e4tsgeb\u00e4ude": [
-"building_university",
 "building_university"
 ],
 "Unterhaltungselektronikladen": [
@@ -9071,8 +9022,6 @@
 ],
 "Warenh\u00e4user": [
 "building_store",
-"building_store",
-"shop_department_store",
 "shop_department_store"
 ],
 "Waschsalon": [
@@ -9184,8 +9133,13 @@
 "landuse_residential"
 ],
 "Wohngeb\u00e4ude": [
-"building_residential",
 "building_residential"
+],
+"Wohnmobil-Stellplatz": [
+"tourism_caravan_site"
+],
+"Wohnmobil-Stellpl\u00e4tze": [
+"tourism_caravan_site"
 ],
 "Wohnstra\u00dfe": [
 "highway_residential"
@@ -9198,12 +9152,6 @@
 ],
 "Wohnungen": [
 "building_flats"
-],
-"Wohnwagen-Stellplatz": [
-"tourism_caravan_site"
-],
-"Wohnwagen-Stellpl\u00e4tze": [
-"tourism_caravan_site"
 ],
 "W\u00e4lder": [
 "landuse_forest",
@@ -9632,7 +9580,6 @@
 "natural_cape"
 ],
 "Car Parts": [
-"shop_car_parts",
 "shop_car_parts"
 ],
 "Car Rental": [
@@ -9980,7 +9927,6 @@
 "amenity_doctors"
 ],
 "Dojang": [
-"amenity_dojo",
 "amenity_dojo"
 ],
 "Dojo": [
@@ -10121,12 +10067,12 @@
 "amenity_fire_station"
 ],
 "Fish Shop": [
-"shop_seafood",
-"shop_fish"
+"shop_fish",
+"shop_seafood"
 ],
 "Fish Shops": [
-"shop_seafood",
-"shop_fish"
+"shop_fish",
+"shop_seafood"
 ],
 "Fishing Area": [
 "leisure_fishing"
@@ -10147,7 +10093,6 @@
 "amenity_gym"
 ],
 "Flats": [
-"building_flats",
 "building_flats"
 ],
 "Florist": [
@@ -10157,10 +10102,8 @@
 "shop_florist"
 ],
 "Food": [
-"amenity_restaurant",
 "amenity_fast_food",
-"amenity_restaurant",
-"amenity_fast_food"
+"amenity_restaurant"
 ],
 "Food Shop": [
 "shop_food"
@@ -10247,7 +10190,6 @@
 "leisure_garden"
 ],
 "Gas": [
-"amenity_fuel",
 "amenity_fuel"
 ],
 "Gas Station": [
@@ -10415,7 +10357,6 @@
 "Houses": [
 "building_house",
 "place_house",
-"place_houses",
 "place_houses"
 ],
 "Hunting Stand": [
@@ -10572,7 +10513,6 @@
 "natural_marsh"
 ],
 "Martial Arts": [
-"amenity_dojo",
 "amenity_dojo"
 ],
 "Massage Shop": [
@@ -10675,7 +10615,6 @@
 "highway_motorway_link"
 ],
 "Motorway Services": [
-"highway_services",
 "highway_services"
 ],
 "Motorways": [
@@ -10951,7 +10890,6 @@
 "railway_platform"
 ],
 "Railway Points": [
-"railway_switch",
 "railway_switch"
 ],
 "Railway Station": [
@@ -10972,7 +10910,6 @@
 "landuse_railway"
 ],
 "Rapids": [
-"waterway_rapids",
 "waterway_rapids"
 ],
 "Recreation Ground": [
@@ -11220,7 +11157,6 @@
 "leisure_sports_centre"
 ],
 "Sports Centre": [
-"leisure_sports_centre",
 "leisure_sports_centre"
 ],
 "Sports Centres": [
@@ -11273,7 +11209,6 @@
 "railway_station"
 ],
 "Steps": [
-"highway_steps",
 "highway_steps"
 ],
 "Stile": [
@@ -11648,7 +11583,6 @@
 "tourism_zoo"
 ],
 "cash": [
-"amenity_atm",
 "amenity_atm"
 ],
 "cash machine": [
@@ -11658,7 +11592,6 @@
 "amenity_atm"
 ],
 "delicatessen": [
-"shop_deli",
 "shop_deli"
 ]
 },
@@ -11796,7 +11729,6 @@
 "office_insurance"
 ],
 "Aseos": [
-"amenity_toilets",
 "amenity_toilets"
 ],
 "Astillero": [
@@ -12674,7 +12606,6 @@
 "leisure_slipway"
 ],
 "Grandes almacenes": [
-"shop_department_store",
 "shop_department_store"
 ],
 "Granja": [
@@ -13296,7 +13227,6 @@
 "waterway_weir"
 ],
 "Repuestos automotrices": [
-"shop_car_parts",
 "shop_car_parts"
 ],
 "Reserva natural": [
@@ -13342,7 +13272,6 @@
 "natural_rock"
 ],
 "Ruinas": [
-"historic_ruins",
 "historic_ruins"
 ],
 "Ruta de tranv\u00eda": [
@@ -13358,7 +13287,6 @@
 "highway_cycleway"
 ],
 "R\u00e1pidos": [
-"waterway_rapids",
 "waterway_rapids"
 ],
 "R\u00edo": [
@@ -14222,7 +14150,6 @@
 ],
 "Majad": [
 "place_house",
-"place_houses",
 "place_houses"
 ],
 "Mets": [
@@ -14584,7 +14511,6 @@
 "amenity_prison"
 ],
 "Varemed": [
-"historic_ruins",
 "historic_ruins"
 ],
 "Veed": [
@@ -16400,7 +16326,6 @@
 "shop_car_repair"
 ],
 "Auton osia": [
-"shop_car_parts",
 "shop_car_parts"
 ],
 "Autopesu": [
@@ -17618,7 +17543,6 @@
 ],
 "Taloja": [
 "place_house",
-"place_houses",
 "place_houses"
 ],
 "Talot": [
@@ -17855,7 +17779,6 @@
 "amenity_embassy"
 ],
 "Appartements": [
-"building_flats",
 "building_flats"
 ],
 "Arbre": [
@@ -17977,7 +17900,6 @@
 "shop_laundry"
 ],
 "Bois": [
-"landuse_wood",
 "landuse_wood"
 ],
 "Borne fronti\u00e8re": [
@@ -18044,7 +17966,6 @@
 "amenity_nightclub"
 ],
 "Bo\u00eetes aux lettres": [
-"amenity_post_box",
 "amenity_post_box"
 ],
 "Bo\u00eetes de nuit": [
@@ -18063,7 +17984,6 @@
 "highway_trunk_link"
 ],
 "Broussailles": [
-"natural_scrub",
 "natural_scrub"
 ],
 "Bruy\u00e8re": [
@@ -18153,7 +18073,6 @@
 "building_faculty"
 ],
 "B\u00e2timents de ferme": [
-"landuse_farmyard",
 "landuse_farmyard"
 ],
 "B\u00e2timents de fermes": [
@@ -18397,7 +18316,6 @@
 "amenity_car_sharing"
 ],
 "Croix de chemin": [
-"historic_wayside_cross",
 "historic_wayside_cross"
 ],
 "Cr\u00e8me glac\u00e9e": [
@@ -18536,7 +18454,6 @@
 "place_farm"
 ],
 "Fitness": [
-"amenity_gym",
 "amenity_gym"
 ],
 "Fleuriste": [
@@ -18658,7 +18575,6 @@
 "building_block"
 ],
 "Informations": [
-"tourism_information",
 "tourism_information"
 ],
 "Jardin": [
@@ -18680,7 +18596,6 @@
 "amenity_kindergarten"
 ],
 "Jardins familiaux": [
-"landuse_allotments",
 "landuse_allotments"
 ],
 "Jonction d'autoroutes": [
@@ -18967,7 +18882,6 @@
 "Maisons": [
 "building_house",
 "place_house",
-"place_houses",
 "place_houses"
 ],
 "Maisons d'h\u00f4te": [
@@ -19094,7 +19008,6 @@
 "waterway_wadi"
 ],
 "Palais de justice": [
-"amenity_courthouse",
 "amenity_courthouse"
 ],
 "Papeterie": [
@@ -19140,7 +19053,6 @@
 "leisure_ice_rink"
 ],
 "Pays": [
-"place_country",
 "place_country"
 ],
 "Petite voie ferr\u00e9e": [
@@ -19184,7 +19096,6 @@
 "highway_cycleway"
 ],
 "Pi\u00e8ces d'automobile": [
-"shop_car_parts",
 "shop_car_parts"
 ],
 "Plage": [
@@ -19242,7 +19153,6 @@
 "amenity_police"
 ],
 "Pompes fun\u00e8bres": [
-"shop_funeral_directors",
 "shop_funeral_directors"
 ],
 "Port de plaisance": [
@@ -19294,7 +19204,6 @@
 "shop_hardware"
 ],
 "Rapides": [
-"waterway_rapids",
 "waterway_rapids"
 ],
 "Refuge": [
@@ -19392,7 +19301,6 @@
 "highway_living_street"
 ],
 "Ruines": [
-"historic_ruins",
 "historic_ruins"
 ],
 "Ruisseau": [
@@ -19554,11 +19462,9 @@
 "landuse_brownfield"
 ],
 "Terrains agricoles": [
-"landuse_farmland",
 "landuse_farmland"
 ],
 "Terrains communaux": [
-"leisure_common",
 "leisure_common"
 ],
 "Terrains de golf": [
@@ -19592,7 +19498,6 @@
 "amenity_theatre"
 ],
 "Toilettes": [
-"amenity_toilets",
 "amenity_toilets"
 ],
 "Tour": [
@@ -19802,7 +19707,6 @@
 "tourism_zoo"
 ],
 "\u00c9boulis": [
-"natural_scree",
 "natural_scree"
 ],
 "\u00c9chalier": [
@@ -19824,12 +19728,12 @@
 "amenity_driving_school"
 ],
 "\u00c9glise": [
-"building_church",
-"amenity_place_of_worship"
+"amenity_place_of_worship",
+"building_church"
 ],
 "\u00c9glises": [
-"building_church",
-"amenity_place_of_worship"
+"amenity_place_of_worship",
+"building_church"
 ],
 "\u00c9pave": [
 "historic_wreck"
@@ -25530,7 +25434,6 @@
 "amenity_dentist"
 ],
 "Detrito cadite": [
-"natural_scree",
 "natural_scree"
 ],
 "Dica": [
@@ -25638,7 +25541,6 @@
 "natural_mud"
 ],
 "Fast food": [
-"amenity_fast_food",
 "amenity_fast_food"
 ],
 "Ferma": [
@@ -25712,7 +25614,6 @@
 "highway_bus_stop"
 ],
 "Hi-fi": [
-"shop_hifi",
 "shop_hifi"
 ],
 "Hospital": [
@@ -26127,7 +26028,6 @@
 "tourism_theme_park"
 ],
 "Partes de automobiles": [
-"shop_car_parts",
 "shop_car_parts"
 ],
 "Patinatorio": [
@@ -26276,7 +26176,6 @@
 "leisure_slipway"
 ],
 "Rapidos": [
-"waterway_rapids",
 "waterway_rapids"
 ],
 "Refugio": [
@@ -26292,7 +26191,6 @@
 "place_region"
 ],
 "Reparation de automobiles": [
-"shop_car_repair",
 "shop_car_repair"
 ],
 "Repartition de autos": [
@@ -26311,7 +26209,6 @@
 "amenity_retirement_home"
 ],
 "Residential": [
-"highway_residential",
 "highway_residential"
 ],
 "Residentias pro vetere personas": [
@@ -26716,7 +26613,6 @@
 },
 "is": {
 "Bakar\u00ed": [
-"shop_bakery",
 "shop_bakery"
 ],
 "Bar": [
@@ -26780,7 +26676,6 @@
 "amenity_library"
 ],
 "B\u00f3ndab\u00fdli": [
-"place_farm",
 "place_farm"
 ],
 "Dalir": [
@@ -26808,7 +26703,6 @@
 "place_island"
 ],
 "Fangelsi": [
-"amenity_prison",
 "amenity_prison"
 ],
 "Fars\u00edmaverslanir": [
@@ -26824,7 +26718,6 @@
 "shop_clothes"
 ],
 "Fell": [
-"natural_fell",
 "natural_fell"
 ],
 "Fer\u00f0askrifstofa": [
@@ -26879,11 +26772,9 @@
 "place_sea"
 ],
 "Hellisop": [
-"natural_cave_entrance",
 "natural_cave_entrance"
 ],
 "Hersv\u00e6\u00f0i": [
-"landuse_military",
 "landuse_military"
 ],
 "Hj\u00f3lab\u00fa\u00f0": [
@@ -26905,18 +26796,15 @@
 "amenity_atm"
 ],
 "Hverfi": [
-"place_suburb",
 "place_suburb"
 ],
 "H\u00f3tel": [
-"tourism_hotel",
 "tourism_hotel"
 ],
 "H\u00f6f": [
 "place_sea"
 ],
 "H\u00fas": [
-"place_house",
 "place_house"
 ],
 "H\u00fasgagnaverslanir": [
@@ -26932,7 +26820,6 @@
 "natural_glacier"
 ],
 "Kaffih\u00fas": [
-"amenity_cafe",
 "amenity_cafe"
 ],
 "Kapella": [
@@ -26954,7 +26841,6 @@
 "building_church"
 ],
 "Kvikmyndarh\u00fas": [
-"amenity_cinema",
 "amenity_cinema"
 ],
 "Land": [
@@ -26967,11 +26853,9 @@
 "shop_toys"
 ],
 "Leikh\u00fas": [
-"amenity_theatre",
 "amenity_theatre"
 ],
 "Listaverk": [
-"tourism_artwork",
 "tourism_artwork"
 ],
 "L\u00e6kir": [
@@ -26996,7 +26880,6 @@
 "shop_video"
 ],
 "P\u00f3sth\u00fas": [
-"amenity_post_office",
 "amenity_post_office"
 ],
 "P\u00f3stkassar": [
@@ -27024,14 +26907,12 @@
 "amenity_bicycle_rental"
 ],
 "Rif": [
-"natural_reef",
 "natural_reef"
 ],
 "Safn": [
 "tourism_museum"
 ],
 "Sendir\u00e1\u00f0": [
-"amenity_embassy",
 "amenity_embassy"
 ],
 "Skyndibitasta\u00f0ir": [
@@ -27071,7 +26952,6 @@
 "leisure_swimming_pool"
 ],
 "Sv\u00e6\u00f0i": [
-"place_region",
 "place_region"
 ],
 "S\u00f6fn": [
@@ -27102,7 +26982,6 @@
 "natural_peak"
 ],
 "Tr\u00e9": [
-"natural_tree",
 "natural_tree"
 ],
 "T\u00f6lvub\u00fa\u00f0": [
@@ -27172,7 +27051,6 @@
 "shop_outdoor"
 ],
 "\u00deorp": [
-"place_village",
 "place_village"
 ]
 },
@@ -27223,7 +27101,6 @@
 "natural_tree"
 ],
 "Alimentari": [
-"shop_food",
 "shop_food"
 ],
 "Ambasciata": [
@@ -27281,7 +27158,6 @@
 "amenity_kindergarten"
 ],
 "Assicurazioni": [
-"office_insurance",
 "office_insurance"
 ],
 "Attrazione turistica": [
@@ -27327,11 +27203,9 @@
 "amenity_bank"
 ],
 "Bancomat": [
-"amenity_atm",
 "amenity_atm"
 ],
 "Bar": [
-"amenity_bar",
 "amenity_bar"
 ],
 "Benzinai": [
@@ -27371,19 +27245,15 @@
 "natural_heath"
 ],
 "Byway (UK)": [
-"highway_byway",
 "highway_byway"
 ],
 "Caff\u00e8": [
-"amenity_cafe",
 "amenity_cafe"
 ],
 "Cambia valute": [
-"amenity_bureau_de_change",
 "amenity_bureau_de_change"
 ],
 "Cambiavalute": [
-"amenity_bureau_de_change",
 "amenity_bureau_de_change"
 ],
 "Campeggi": [
@@ -27432,7 +27302,6 @@
 "tourism_chalet"
 ],
 "Casin\u00f2": [
-"amenity_casino",
 "amenity_casino"
 ],
 "Cassetta delle lettere": [
@@ -27474,11 +27343,9 @@
 "landuse_cemetery"
 ],
 "Cinema": [
-"amenity_cinema",
 "amenity_cinema"
 ],
 "Citt\u00e0": [
-"place_city",
 "place_city"
 ],
 "Colonnina SOS": [
@@ -27571,7 +27438,6 @@
 "amenity_pharmacy"
 ],
 "Fast food": [
-"amenity_fast_food",
 "amenity_fast_food"
 ],
 "Fermata autobus": [
@@ -27656,14 +27522,12 @@
 "highway_ford"
 ],
 "Guest house": [
-"tourism_guest_house",
 "tourism_guest_house"
 ],
 "Hotel": [
 "tourism_hotel"
 ],
 "Informazioni": [
-"tourism_information",
 "tourism_information"
 ],
 "Isola": [
@@ -27703,7 +27567,6 @@
 "natural_coastline"
 ],
 "Localit\u00e0": [
-"place_locality",
 "place_locality"
 ],
 "Luoghi di culto": [
@@ -27731,7 +27594,6 @@
 "historic_mine"
 ],
 "Minigolf": [
-"leisure_miniature_golf",
 "leisure_miniature_golf"
 ],
 "Monumenti": [
@@ -27741,7 +27603,6 @@
 "historic_monument"
 ],
 "Motel": [
-"tourism_motel",
 "tourism_motel"
 ],
 "Municipi": [
@@ -27918,7 +27779,6 @@
 "emergency_fire_hydrant"
 ],
 "Pompieri": [
-"amenity_fire_station",
 "amenity_fire_station"
 ],
 "Porti turistici": [
@@ -27958,7 +27818,6 @@
 "place_region"
 ],
 "Pub": [
-"amenity_pub",
 "amenity_pub"
 ],
 "Punti panoramici": [
@@ -27992,7 +27851,6 @@
 "tourism_alpine_hut"
 ],
 "Rifugio per animali": [
-"amenity_animal_shelter",
 "amenity_animal_shelter"
 ],
 "Riserva di pesca": [
@@ -28020,7 +27878,6 @@
 "natural_rock"
 ],
 "Rovine": [
-"historic_ruins",
 "historic_ruins"
 ],
 "Rupe": [
@@ -28196,7 +28053,6 @@
 "highway_motorway_junction"
 ],
 "Taxi": [
-"amenity_taxi",
 "amenity_taxi"
 ],
 "Teatri": [
@@ -28230,7 +28086,6 @@
 "amenity_post_office"
 ],
 "Universit\u00e0": [
-"amenity_university",
 "amenity_university"
 ],
 "Valle": [
@@ -28246,7 +28101,6 @@
 "amenity_veterinary"
 ],
 "Vigili del fuoco": [
-"amenity_fire_station",
 "amenity_fire_station"
 ],
 "Vulcani": [
@@ -28274,7 +28128,6 @@
 "natural_wetland"
 ],
 "Zoo": [
-"tourism_zoo",
 "tourism_zoo"
 ]
 },
@@ -30669,7 +30522,6 @@
 "natural_wood"
 ],
 "Bouwgrond": [
-"landuse_greenfield",
 "landuse_greenfield"
 ],
 "Braakliggend terrein": [
@@ -30685,11 +30537,9 @@
 "emergency_fire_hydrant"
 ],
 "Brandstof": [
-"amenity_fuel",
 "amenity_fuel"
 ],
 "Brandweer": [
-"amenity_fire_station",
 "amenity_fire_station"
 ],
 "Brievenbus": [
@@ -30880,7 +30730,6 @@
 "place_village"
 ],
 "Drinkwater": [
-"amenity_drinking_water",
 "amenity_drinking_water"
 ],
 "Eenkamerappartement": [
@@ -30959,7 +30808,6 @@
 "amenity_gym"
 ],
 "Fjell": [
-"natural_fell",
 "natural_fell"
 ],
 "Flat": [
@@ -31118,7 +30966,6 @@
 "building_hall"
 ],
 "Heide": [
-"natural_heath",
 "natural_heath"
 ],
 "Hi-fi": [
@@ -31154,7 +31001,6 @@
 "tourism_hotel"
 ],
 "Houtland": [
-"landuse_wood",
 "landuse_wood"
 ],
 "Huis": [
@@ -31172,7 +31018,6 @@
 "place_houses"
 ],
 "IJs": [
-"amenity_ice_cream",
 "amenity_ice_cream"
 ],
 "IJsbaan": [
@@ -31188,7 +31033,6 @@
 "leisure_ice_rink"
 ],
 "In aanbouw": [
-"landuse_construction",
 "landuse_construction"
 ],
 "Industrieel gebied": [
@@ -31374,7 +31218,6 @@
 "natural_land"
 ],
 "Landgoed": [
-"historic_manor",
 "historic_manor"
 ],
 "Landweg": [
@@ -31450,7 +31293,6 @@
 "landuse_military"
 ],
 "Minigolf": [
-"leisure_miniature_golf",
 "leisure_miniature_golf"
 ],
 "Mobiele telefoons": [
@@ -31460,7 +31302,6 @@
 "shop_mobile_phone"
 ],
 "Modder": [
-"natural_mud",
 "natural_mud"
 ],
 "Moeras": [
@@ -31520,7 +31361,6 @@
 "amenity_nightclub"
 ],
 "Natuurbehoud": [
-"landuse_conservation",
 "landuse_conservation"
 ],
 "Natuurreservaat": [
@@ -31642,7 +31482,6 @@
 "place_locality"
 ],
 "Politie": [
-"amenity_police",
 "amenity_police"
 ],
 "Postkantoor": [
@@ -31666,7 +31505,6 @@
 "highway_primary_link"
 ],
 "Puin": [
-"natural_scree",
 "natural_scree"
 ],
 "RVT": [
@@ -31696,7 +31534,6 @@
 "leisure_recreation_ground"
 ],
 "Recyclage": [
-"amenity_recycling",
 "amenity_recycling"
 ],
 "Recyclingpunt": [
@@ -31990,7 +31827,6 @@
 "place_town"
 ],
 "Stadsgroen": [
-"landuse_village_green",
 "landuse_village_green"
 ],
 "Steengroeve": [
@@ -32278,7 +32114,6 @@
 "shop_laundry"
 ],
 "Water": [
-"natural_water",
 "natural_water"
 ],
 "Waterbekken": [
@@ -32348,7 +32183,6 @@
 "Winkels": [
 "building_shop",
 "building_store",
-"landuse_retail",
 "landuse_retail"
 ],
 "Wisselkantoor": [
@@ -33166,7 +33000,6 @@
 "leisure_garden"
 ],
 "Ogr\u00f3dki dzia\u0142kowe": [
-"landuse_allotments",
 "landuse_allotments"
 ],
 "Ogr\u00f3ds": [
@@ -33916,7 +33749,6 @@
 "amenity_veterinary"
 ],
 "WiFi": [
-"internet_access_wlan",
 "internet_access_wlan"
 ],
 "Wie\u015b": [
@@ -34596,7 +34428,6 @@
 "amenity_bus_station"
 ],
 "\u0410\u0432\u0442\u043e\u0437\u0430\u043f\u0447\u0430\u0441\u0442\u0438": [
-"shop_car_parts",
 "shop_car_parts"
 ],
 "\u0410\u0432\u0442\u043e\u043c\u0430\u0433\u0430\u0437\u0438\u043d": [
@@ -34648,11 +34479,9 @@
 "amenity_pharmacy"
 ],
 "\u0410\u0440\u0435\u043d\u0434\u0430 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0435\u0439": [
-"amenity_car_rental",
 "amenity_car_rental"
 ],
 "\u0410\u0442\u0442\u0440\u0430\u043a\u0446\u0438\u043e\u043d\u044b": [
-"tourism_theme_park",
 "tourism_theme_park"
 ],
 "\u0410\u044d\u0440\u043e\u043f\u043e\u0440\u0442": [
@@ -34810,7 +34639,6 @@
 "landuse_military"
 ],
 "\u0412\u043e\u0440\u043e\u0442\u0430": [
-"highway_gate",
 "highway_gate"
 ],
 "\u0412\u0440\u0430\u0447": [
@@ -34898,7 +34726,6 @@
 "place_town"
 ],
 "\u0413\u043e\u0440\u043e\u0434\u0441\u043a\u0430\u044f \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f": [
-"amenity_townhall",
 "amenity_townhall"
 ],
 "\u0413\u043e\u0441\u043f\u0438\u0442\u0430\u043b\u0438": [
@@ -34995,7 +34822,6 @@
 "\u0414\u043e\u043c\u0430": [
 "building_house",
 "place_house",
-"place_houses",
 "place_houses"
 ],
 "\u0414\u043e\u043c\u0430 \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432": [
@@ -35192,7 +35018,6 @@
 "tourism_zoo"
 ],
 "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f": [
-"tourism_information",
 "tourism_information"
 ],
 "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0436.\u0434.": [
@@ -35202,7 +35027,6 @@
 "railway_preserved"
 ],
 "\u041a\u0430\u0437\u0438\u043d\u043e": [
-"amenity_casino",
 "amenity_casino"
 ],
 "\u041a\u0430\u043d\u0430\u043b": [
@@ -35230,11 +35054,9 @@
 "leisure_ice_rink"
 ],
 "\u041a\u0430\u0444\u0435": [
-"amenity_cafe",
 "amenity_cafe"
 ],
 "\u041a\u0432\u0430\u0440\u0442\u0438\u0440\u044b": [
-"building_flats",
 "building_flats"
 ],
 "\u041a\u0438\u043b\u043e\u043c\u0435\u0442\u0440\u043e\u0432\u044b\u0435 \u0441\u0442\u043e\u043b\u0431\u044b": [
@@ -35268,7 +35090,6 @@
 "shop_books"
 ],
 "\u041a\u043e\u0432\u0440\u044b": [
-"shop_carpet",
 "shop_carpet"
 ],
 "\u041a\u043e\u043b\u043b\u0435\u0434\u0436": [
@@ -35326,7 +35147,6 @@
 "shop_convenience"
 ],
 "\u041b\u0435\u0433\u043a\u043e\u0440\u0435\u043b\u044c\u0441\u043e\u0432\u044b\u0439 \u0436.\u0434. \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442": [
-"railway_light_rail",
 "railway_light_rail"
 ],
 "\u041b\u0435\u0434\u043d\u0438\u043a": [
@@ -35496,7 +35316,6 @@
 "shop_mall"
 ],
 "\u041c\u043e\u043d\u043e\u0440\u0435\u043b\u044c\u0441": [
-"railway_monorail",
 "railway_monorail"
 ],
 "\u041c\u043e\u043d\u0443\u043c\u0435\u043d\u0442": [
@@ -35509,7 +35328,6 @@
 "place_sea"
 ],
 "\u041c\u043e\u0440\u043e\u0436\u0435\u043d\u043d\u043e\u0435": [
-"amenity_ice_cream",
 "amenity_ice_cream"
 ],
 "\u041c\u043e\u0440\u044f": [
@@ -35582,7 +35400,6 @@
 "place_state"
 ],
 "\u041e\u0431\u043c\u0435\u043d \u0432\u0430\u043b\u044e\u0442": [
-"amenity_bureau_de_change",
 "amenity_bureau_de_change"
 ],
 "\u041e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u0435\u043c\u044b\u0435 \u043b\u0435\u0441\u0430": [
@@ -35711,7 +35528,6 @@
 "waterway_derelict_canal"
 ],
 "\u041f\u0438\u0442\u044c\u0435\u0432\u0430\u044f \u0432\u043e\u0434\u0430": [
-"amenity_drinking_water",
 "amenity_drinking_water"
 ],
 "\u041f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430": [
@@ -35751,7 +35567,6 @@
 "highway_service"
 ],
 "\u041f\u043e\u0436\u0430\u0440\u043d\u0430\u044f \u043e\u0445\u0440\u0430\u043d\u0430": [
-"amenity_fire_station",
 "amenity_fire_station"
 ],
 "\u041f\u043e\u0436\u0430\u0440\u043d\u044b\u0435 \u0433\u0438\u0434\u0440\u0430\u043d\u0442\u044b": [
@@ -35773,7 +35588,6 @@
 "amenity_clinic"
 ],
 "\u041f\u043e\u043b\u0438\u0446\u0438\u044f": [
-"amenity_police",
 "amenity_police"
 ],
 "\u041f\u043e\u043b\u044f \u0431\u043e\u0451\u0432": [
@@ -35849,7 +35663,6 @@
 "historic_wayside_cross"
 ],
 "\u041f\u0440\u0438\u0434\u043e\u0440\u043e\u0436\u043d\u044b\u0439 \u0441\u0435\u0440\u0432\u0438\u0441": [
-"highway_services",
 "highway_services"
 ],
 "\u041f\u0440\u0438\u043c\u044b\u043a\u0430\u044e\u0449\u0430\u044f \u0434\u043e\u0440\u043e\u0433\u0430": [
@@ -35871,15 +35684,12 @@
 "shop_food"
 ],
 "\u041f\u0440\u043e\u0438\u0437\u0432\u0435\u0434\u0435\u043d\u0438\u044f \u0438\u0441\u043a\u0443\u0441\u0441\u0442\u0432\u0430": [
-"tourism_artwork",
 "tourism_artwork"
 ],
 "\u041f\u0440\u043e\u043a\u0430\u0442 \u0430\u0432\u0442\u043e\u043c\u043e\u0431\u0438\u043b\u0435\u0439": [
-"amenity_car_sharing",
 "amenity_car_sharing"
 ],
 "\u041f\u0440\u043e\u043a\u0430\u0442 \u0432\u0435\u043b\u043e\u0441\u0438\u043f\u0435\u0434\u043e\u0432": [
-"amenity_bicycle_rental",
 "amenity_bicycle_rental"
 ],
 "\u041f\u0440\u043e\u043c\u0437\u043e\u043d\u0430": [
@@ -35913,7 +35723,6 @@
 "natural_heath"
 ],
 "\u0420\u0430\u0437\u0432\u0430\u043b\u0438\u043d\u044b": [
-"historic_ruins",
 "historic_ruins"
 ],
 "\u0420\u0430\u0437\u0432\u044f\u0437\u043a\u0430": [
@@ -35929,11 +35738,9 @@
 "highway_motorway_link"
 ],
 "\u0420\u0430\u0437\u043e\u0431\u0440\u0430\u043d\u043d\u044b\u0435 \u0436\u0435\u043b\u0435\u0437\u043d\u043e\u0434\u043e\u0440\u043e\u0436\u043d\u044b\u0435 \u043f\u0443\u0442\u0438": [
-"railway_abandoned",
 "railway_abandoned"
 ],
 "\u0420\u0430\u0441\u043a\u043e\u043f\u043a\u0438": [
-"historic_archaeological_site",
 "historic_archaeological_site"
 ],
 "\u0420\u0435\u0433\u0438\u043e\u043d": [
@@ -35955,7 +35762,6 @@
 "highway_construction"
 ],
 "\u0420\u0435\u043c\u043e\u043d\u0442 \u0436.\u0434. \u043f\u0443\u0442\u0435\u0439": [
-"railway_construction",
 "railway_construction"
 ],
 "\u0420\u0435\u0441\u0442\u043e\u0440\u0430\u043d": [
@@ -36001,7 +35807,6 @@
 "waterway_stream"
 ],
 "\u0420\u044b\u0431\u0430\u043b\u043a\u0430": [
-"leisure_fishing",
 "leisure_fishing"
 ],
 "\u0420\u044b\u0431\u043d\u044b\u0435 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u044b": [
@@ -36035,7 +35840,6 @@
 "leisure_garden"
 ],
 "\u0421\u0430\u0434\u044b-\u043e\u0433\u043e\u0440\u043e\u0434\u044b": [
-"landuse_allotments",
 "landuse_allotments"
 ],
 "\u0421\u0430\u043b\u043e\u043d": [
@@ -36063,7 +35867,6 @@
 "landuse_landfill"
 ],
 "\u0421\u0434\u0435\u043b\u0430\u0439-\u0421\u0430\u043c": [
-"shop_doityourself",
 "shop_doityourself"
 ],
 "\u0421\u0435\u043a\u043e\u043d\u0434-\u0445\u044d\u043d\u0434": [
@@ -36079,7 +35882,6 @@
 "landuse_farmyard"
 ],
 "\u0421\u0435\u043b\u044c\u0445\u043e\u0437\u0443\u0433\u043e\u0434\u044c\u044f": [
-"landuse_farmland",
 "landuse_farmland"
 ],
 "\u0421\u043a\u0430\u043b\u0430": [
@@ -36181,7 +35983,6 @@
 "amenity_studio"
 ],
 "\u0421\u0442\u0443\u043f\u0435\u043d\u044c\u043a\u0438": [
-"highway_steps",
 "highway_steps"
 ],
 "\u0421\u0443\u043f\u0435\u0440\u043c\u0430\u0440\u043a\u0435\u0442": [
@@ -36191,7 +35992,6 @@
 "shop_supermarket"
 ],
 "\u0422\u0430\u043a\u0441\u0438": [
-"amenity_taxi",
 "amenity_taxi"
 ],
 "\u0422\u0435\u0430\u0442\u0440": [
@@ -36296,7 +36096,6 @@
 "place_county"
 ],
 "\u0423\u0437\u043a\u043e\u043a\u043e\u043b\u0435\u0439\u043a\u0430": [
-"railway_narrow_gauge",
 "railway_narrow_gauge"
 ],
 "\u0423\u043a\u0440\u044b\u0442\u0438\u0435": [
@@ -36326,7 +36125,6 @@
 "building_university"
 ],
 "\u0423\u0441\u043b\u0443\u0433\u0438 \u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f": [
-"shop_copyshop",
 "shop_copyshop"
 ],
 "\u0424\u0430\u043a\u0443\u043b\u044c\u0442\u0435\u0442\u0441\u043a\u0438\u0435 \u0437\u0434\u0430\u043d\u0438\u044f": [
@@ -36420,7 +36218,6 @@
 "building_church"
 ],
 "\u0428\u0430\u043b\u0435": [
-"tourism_chalet",
 "tourism_chalet"
 ],
 "\u0428\u043a\u043e\u043b\u0430": [
@@ -38427,12 +38224,10 @@
 ],
 "Avtobusna postaja": [
 "amenity_bus_station",
-"highway_bus_stop",
 "highway_bus_stop"
 ],
 "Avtobusne postaje": [
 "amenity_bus_station",
-"highway_bus_stop",
 "highway_bus_stop"
 ],
 "Avtocesta": [
@@ -38757,7 +38552,6 @@
 "amenity_gym"
 ],
 "Fotograf": [
-"shop_photo",
 "shop_photo"
 ],
 "Fotografska oprema": [
@@ -38910,8 +38704,8 @@
 "tourism_hotel"
 ],
 "Hrana": [
-"amenity_restaurant",
-"amenity_fast_food"
+"amenity_fast_food",
+"amenity_restaurant"
 ],
 "Igralnica": [
 "amenity_casino"
@@ -39176,12 +38970,12 @@
 "shop_beauty"
 ],
 "Ko\u010da": [
-"tourism_alpine_hut",
-"building_hut"
+"building_hut",
+"tourism_alpine_hut"
 ],
 "Ko\u010de": [
-"tourism_alpine_hut",
-"building_hut"
+"building_hut",
+"tourism_alpine_hut"
 ],
 "Ko\u0161": [
 "amenity_waste_basket"
@@ -39322,7 +39116,6 @@
 ],
 "Mesto": [
 "place_city",
-"place_town",
 "place_town"
 ],
 "Minigolf": [
@@ -39464,7 +39257,6 @@
 "place_region"
 ],
 "Obmo\u010dje za ribolov": [
-"leisure_fishing",
 "leisure_fishing"
 ],
 "Ob\u010dina": [
@@ -39610,7 +39402,6 @@
 ],
 "Pitna voda": [
 "amenity_drinking_water",
-"waterway_water_point",
 "waterway_water_point"
 ],
 "Pivnica": [
@@ -39845,11 +39636,9 @@
 "natural_moor"
 ],
 "Rampa": [
-"leisure_slipway",
 "leisure_slipway"
 ],
 "Rampe": [
-"leisure_slipway",
 "leisure_slipway"
 ],
 "Razgledna to\u010dka": [
@@ -40232,11 +40021,9 @@
 "shop_toys"
 ],
 "Trgovina mobilnih telefonov": [
-"shop_mobile_phone",
 "shop_mobile_phone"
 ],
 "Trgovina prenosnih telefonov": [
-"shop_mobile_phone",
 "shop_mobile_phone"
 ],
 "Trgovina s kolesi": [
@@ -40282,14 +40069,12 @@
 "shop_curtain"
 ],
 "Trgovina za dejavnosti na prostem": [
-"shop_outdoor",
 "shop_outdoor"
 ],
 "Trgovina za dobrodelne namene": [
 "shop_charity"
 ],
 "Trgovina za male \u017eivali": [
-"shop_pet",
 "shop_pet"
 ],
 "Trgovine": [
@@ -40548,7 +40333,6 @@
 "highway_guided_bus_lane"
 ],
 "Vrata": [
-"highway_gate",
 "highway_gate"
 ],
 "Vrh": [
@@ -40825,7 +40609,6 @@
 "railway_station"
 ],
 "\u017delezni\u0161ki prehod": [
-"railway_level_crossing",
 "railway_level_crossing"
 ],
 "\u017divalski vrt": [
@@ -40836,16 +40619,16 @@
 ],
 "\u017di\u010dnica": [
 "aerialway_cable_car",
-"aerialway_gondola",
 "aerialway_chair_lift",
 "aerialway_drag_lift",
+"aerialway_gondola",
 "aerialway_platter"
 ],
 "\u017di\u010dnice": [
 "aerialway_cable_car",
-"aerialway_gondola",
 "aerialway_chair_lift",
 "aerialway_drag_lift",
+"aerialway_gondola",
 "aerialway_platter"
 ]
 },
@@ -40863,7 +40646,6 @@
 "amenity_embassy"
 ],
 "Apotek": [
-"amenity_pharmacy",
 "amenity_pharmacy"
 ],
 "Arkeologisk plats": [
@@ -40929,11 +40711,9 @@
 "railway_funicular"
 ],
 "Bibliotek": [
-"amenity_library",
 "amenity_library"
 ],
 "Bildelar": [
-"shop_car_parts",
 "shop_car_parts"
 ],
 "Bilpool": [
@@ -40967,7 +40747,6 @@
 "amenity_cinema"
 ],
 "Blommor": [
-"shop_florist",
 "shop_florist"
 ],
 "Bokhandel": [
@@ -41063,7 +40842,6 @@
 "amenity_bicycle_parking"
 ],
 "Cykelsp\u00e5r": [
-"highway_cycleway",
 "highway_cycleway"
 ],
 "Cykeluthyrning": [
@@ -41073,7 +40851,6 @@
 "amenity_bicycle_rental"
 ],
 "Dagis": [
-"amenity_kindergarten",
 "amenity_kindergarten"
 ],
 "Dal": [
@@ -41101,11 +40878,9 @@
 "tourism_zoo"
 ],
 "Dricksvatten": [
-"amenity_drinking_water",
 "amenity_drinking_water"
 ],
 "Fiskevatten": [
-"leisure_fishing",
 "leisure_fishing"
 ],
 "Fj\u00e4llbod": [
@@ -41163,7 +40938,6 @@
 "office_insurance"
 ],
 "Garage": [
-"building_garage",
 "building_garage"
 ],
 "Glaci\u00e4r": [
@@ -41173,7 +40947,6 @@
 "natural_glacier"
 ],
 "Glass": [
-"amenity_ice_cream",
 "amenity_ice_cream"
 ],
 "Golfbana": [
@@ -41221,7 +40994,6 @@
 "highway_pedestrian"
 ],
 "Hav": [
-"place_sea",
 "place_sea"
 ],
 "Hed": [
@@ -41238,16 +41010,11 @@
 ],
 "Hotell": [
 "building_hotel",
-"building_hotel",
-"tourism_hotel",
 "tourism_hotel"
 ],
 "Hus": [
 "building_house",
-"building_house",
 "place_house",
-"place_house",
-"place_houses",
 "place_houses"
 ],
 "Husvagnsuppst\u00e4llningsplats": [
@@ -41281,7 +41048,6 @@
 "waterway_canal"
 ],
 "Kapell": [
-"building_chapel",
 "building_chapel"
 ],
 "Kemtv\u00e4tt": [
@@ -41317,7 +41083,6 @@
 "place_municipality"
 ],
 "Konstverk": [
-"tourism_artwork",
 "tourism_artwork"
 ],
 "Kontorsbyggnad": [
@@ -41351,7 +41116,6 @@
 "natural_spring"
 ],
 "K\u00f6pcentrum": [
-"shop_mall",
 "shop_mall"
 ],
 "K\u00f6rskola": [
@@ -41382,11 +41146,9 @@
 "natural_mud"
 ],
 "L\u00e4kare": [
-"amenity_doctors",
 "amenity_doctors"
 ],
 "L\u00e4n": [
-"place_county",
 "place_county"
 ],
 "L\u00e4nder": [
@@ -41417,15 +41179,12 @@
 "place_village"
 ],
 "Minigolf": [
-"leisure_miniature_golf",
 "leisure_miniature_golf"
 ],
 "Monument": [
-"historic_monument",
 "historic_monument"
 ],
 "Motell": [
-"tourism_motel",
 "tourism_motel"
 ],
 "Motorv\u00e4g": [
@@ -41447,11 +41206,9 @@
 "amenity_nightclub"
 ],
 "Naturreservat": [
-"leisure_nature_reserve",
 "leisure_nature_reserve"
 ],
 "N\u00e4rk\u00f6p": [
-"shop_convenience",
 "shop_convenience"
 ],
 "N\u00f6dtelefon": [
@@ -41479,7 +41236,6 @@
 "amenity_public_building"
 ],
 "Optiker": [
-"shop_optician",
 "shop_optician"
 ],
 "Ort": [
@@ -41525,7 +41281,6 @@
 "amenity_police"
 ],
 "Postkontor": [
-"amenity_post_office",
 "amenity_post_office"
 ],
 "Pub": [
@@ -41553,7 +41308,6 @@
 "amenity_restaurant"
 ],
 "Rev": [
-"natural_reef",
 "natural_reef"
 ],
 "Ruin": [
@@ -41575,7 +41329,6 @@
 "natural_shoal"
 ],
 "Sjukhus": [
-"amenity_hospital",
 "amenity_hospital"
 ],
 "Sjukhusbyggnad": [
@@ -41611,15 +41364,12 @@
 "amenity_school"
 ],
 "Slagf\u00e4lt": [
-"historic_battlefield",
 "historic_battlefield"
 ],
 "Slaktare": [
-"shop_butcher",
 "shop_butcher"
 ],
 "Slott": [
-"historic_castle",
 "historic_castle"
 ],
 "Smalsp\u00e5rsj\u00e4rnv\u00e4g": [
@@ -41629,7 +41379,6 @@
 "railway_narrow_gauge"
 ],
 "Snabbmat": [
-"amenity_fast_food",
 "amenity_fast_food"
 ],
 "Sporthall": [
@@ -41669,7 +41418,6 @@
 "natural_scree"
 ],
 "Tandl\u00e4kare": [
-"amenity_dentist",
 "amenity_dentist"
 ],
 "Taxi": [
@@ -41709,7 +41457,6 @@
 "highway_steps"
 ],
 "Tr\u00e4d": [
-"natural_tree",
 "natural_tree"
 ],
 "Tr\u00e4dg\u00e5rd": [
@@ -41719,7 +41466,6 @@
 "leisure_garden"
 ],
 "Tr\u00e4sk": [
-"natural_marsh",
 "natural_marsh"
 ],
 "Tunnelbaneing\u00e5ng": [
@@ -41759,7 +41505,6 @@
 "tourism_viewpoint"
 ],
 "Vandrarhem": [
-"tourism_hostel",
 "tourism_hostel"
 ],
 "Vandringsled": [
@@ -41775,11 +41520,9 @@
 "amenity_vending_machine"
 ],
 "Vatten": [
-"natural_water",
 "natural_water"
 ],
 "Vattenfall": [
-"waterway_waterfall",
 "waterway_waterfall"
 ],
 "Vattenpark": [
@@ -41801,7 +41544,6 @@
 "landuse_vineyard"
 ],
 "Vrak": [
-"historic_wreck",
 "historic_wreck"
 ],
 "Vulkan": [
@@ -41823,7 +41565,6 @@
 "highway_construction"
 ],
 "V\u00e4xlingskontor": [
-"amenity_bureau_de_change",
 "amenity_bureau_de_change"
 ],
 "V\u00e5tmark": [
@@ -46575,26 +46316,26 @@
 "amenity_biergarten": "Biergarten",
 "amenity_bureau_de_change": "Wechselstube",
 "amenity_bus_station": "Busbahnhof",
-"amenity_cafe": "Caf\u00e9",
+"amenity_cafe": "Cafe",
 "amenity_car_rental": "Autovermietung",
 "amenity_car_sharing": "Carsharing",
 "amenity_car_wash": "Autowaschanlage",
 "amenity_casino": "Casino",
 "amenity_charging_station": "Lades\u00e4ule",
 "amenity_cinema": "Kino",
-"amenity_clinic": "\u00c4rztehaus",
+"amenity_clinic": "Klinik",
 "amenity_college": "Hochschule",
 "amenity_community_centre": "Gemeinschaftszentrum",
 "amenity_courthouse": "Gericht",
 "amenity_crematorium": "Krematorium",
 "amenity_dentist": "Zahnarzt",
 "amenity_doctors": "Arzt",
-"amenity_dojo": "Dojo",
+"amenity_dojo": "Dojang",
 "amenity_drinking_water": "Trinkwasser",
 "amenity_driving_school": "Fahrschule",
 "amenity_embassy": "Botschaft",
 "amenity_emergency_phone": "Notrufs\u00e4ule",
-"amenity_fast_food": "Schnellimbiss",
+"amenity_fast_food": "Imbiss",
 "amenity_ferry_terminal": "F\u00e4hranlegestelle",
 "amenity_fire_station": "Feuerwehr",
 "amenity_fountain": "Springbrunnen",
@@ -46610,6 +46351,7 @@
 "amenity_motorcycle_parking": "Motorradparkplatz",
 "amenity_nightclub": "Nachtklub",
 "amenity_nursing_home": "Pflegeheim",
+"amenity_parking": "Parkplatz",
 "amenity_pharmacy": "Apotheke",
 "amenity_place_of_worship": "Andachtsst\u00e4tte",
 "amenity_police": "Polizei",
@@ -46620,7 +46362,7 @@
 "amenity_public_building": "\u00f6ffentliches Geb\u00e4ude",
 "amenity_recycling": "Recyclingeinrichtung",
 "amenity_register_office": "Standesamt",
-"amenity_restaurant": "Restaurant",
+"amenity_restaurant": "Gasthaus",
 "amenity_retirement_home": "Altersheim",
 "amenity_sauna": "Sauna",
 "amenity_school": "Schule",
@@ -46630,7 +46372,7 @@
 "amenity_taxi": "Taxistand",
 "amenity_telephone": "Telefonzelle",
 "amenity_theatre": "Theater",
-"amenity_toilets": "WC",
+"amenity_toilets": "Toilette",
 "amenity_townhall": "Rathaus",
 "amenity_university": "Universit\u00e4t",
 "amenity_vending_machine": "Automat",
@@ -46685,7 +46427,7 @@
 "highway_motorway": "Autobahn",
 "highway_motorway_junction": "Autobahnkreuz",
 "highway_motorway_link": "Autobahnauffahrt",
-"highway_path": "Pfad",
+"highway_path": "Trampelpfad",
 "highway_pedestrian": "Fu\u00dfg\u00e4ngerzone",
 "highway_platform": "Plattform",
 "highway_primary": "Prim\u00e4rstra\u00dfe",
@@ -46711,7 +46453,7 @@
 "historic_battlefield": "Kampfgebiet",
 "historic_boundary_stone": "Grenzstein",
 "historic_building": "historisches Geb\u00e4ude",
-"historic_castle": "Schloss",
+"historic_castle": "Burg",
 "historic_manor": "Gut",
 "historic_memorial": "Gedenkst\u00e4tte",
 "historic_mine": "historisches Bergwerk",
@@ -46728,7 +46470,7 @@
 "landuse_conservation": "Naturschutzgebiet",
 "landuse_construction": "Baustelle",
 "landuse_farm": "Bauernhof",
-"landuse_farmland": "Ackerland",
+"landuse_farmland": "Acker",
 "landuse_farmyard": "Hof",
 "landuse_forest": "Wald",
 "landuse_grass": "Rasenfl\u00e4che",
@@ -46757,7 +46499,7 @@
 "leisure_miniature_golf": "Minigolf",
 "leisure_nature_reserve": "Naturschutzgebiet",
 "leisure_park": "Park",
-"leisure_pitch": "Sportplatz",
+"leisure_pitch": "Spielfeld",
 "leisure_playground": "Spielplatz",
 "leisure_recreation_ground": "Naherholungsgebiet",
 "leisure_slipway": "Slipanlage",
@@ -46768,7 +46510,7 @@
 "leisure_water_park": "Wasserpark",
 "man_made_water_well": "Brunnen",
 "man_made_windmill": "Windm\u00fchle",
-"mountain_pass": "Pass",
+"mountain_pass": "Gebirgspass",
 "natural_bay": "Bucht",
 "natural_beach": "Strand",
 "natural_cape": "Kap",
@@ -46832,7 +46574,7 @@
 "railway_tram": "Stra\u00dfenbahn",
 "railway_tram_stop": "Stra\u00dfenbahn-Haltestelle",
 "shop_alcohol": "Spirituosenladen",
-"shop_art": "Kunstladen",
+"shop_art": "Galerie",
 "shop_bakery": "B\u00e4cker",
 "shop_beauty": "Parf\u00fcmerie",
 "shop_beverages": "Getr\u00e4nkemarkt",
@@ -46901,7 +46643,7 @@
 "tourism_artwork": "Kunstwerk",
 "tourism_attraction": "Attraktion",
 "tourism_camp_site": "Campingplatz",
-"tourism_caravan_site": "Wohnwagen-Stellplatz",
+"tourism_caravan_site": "Wohnmobil-Stellplatz",
 "tourism_chalet": "Almh\u00fctte",
 "tourism_guest_house": "Pension",
 "tourism_hostel": "Jugendherberge",
@@ -46936,13 +46678,13 @@
 "aeroway_aerodrome": "Airport",
 "amenity_animal_boarding": "Animal boarding facility",
 "amenity_animal_shelter": "Animal shelter",
-"amenity_arts_centre": "Arts Centre",
+"amenity_arts_centre": "Arts Center",
 "amenity_atm": "ATM",
 "amenity_bank": "Bank",
 "amenity_bar": "Bar",
 "amenity_bench": "Bench",
-"amenity_bicycle_parking": "Cycle Parking",
-"amenity_bicycle_rental": "Cycle Rental",
+"amenity_bicycle_parking": "Bicycle Parking",
+"amenity_bicycle_rental": "Bicycle Rental",
 "amenity_biergarten": "Beer garden",
 "amenity_bureau_de_change": "Bureau de Change",
 "amenity_bus_station": "Bus Station",
@@ -46955,12 +46697,12 @@
 "amenity_cinema": "Cinema",
 "amenity_clinic": "Clinic",
 "amenity_college": "College",
-"amenity_community_centre": "Community Centre",
+"amenity_community_centre": "Community Center",
 "amenity_courthouse": "Courthouse",
 "amenity_crematorium": "Crematorium",
 "amenity_dentist": "Dentist",
 "amenity_doctors": "Doctor",
-"amenity_dojo": "Martial Arts",
+"amenity_dojo": "Dojang",
 "amenity_drinking_water": "Drinking Water",
 "amenity_driving_school": "Driving School",
 "amenity_embassy": "Embassy",
@@ -46972,7 +46714,7 @@
 "amenity_fuel": "Fuel",
 "amenity_grave_yard": "Grave Yard",
 "amenity_grit_bin": "Grit bin",
-"amenity_gym": "Fitness Centre",
+"amenity_gym": "Fitness Center",
 "amenity_hospital": "Hospital",
 "amenity_hunting_stand": "Hunting Stand",
 "amenity_ice_cream": "Ice Cream",
@@ -46983,7 +46725,7 @@
 "amenity_nursing_home": "Nursing Home",
 "amenity_parking": "Parking",
 "amenity_pharmacy": "Pharmacy",
-"amenity_place_of_worship": "Church",
+"amenity_place_of_worship": "Place of Worship",
 "amenity_police": "Police",
 "amenity_post_box": "Post Box",
 "amenity_post_office": "Post Office",
@@ -46991,7 +46733,7 @@
 "amenity_pub": "Bar",
 "amenity_public_building": "Public Building",
 "amenity_recycling": "Recycling Point",
-"amenity_restaurant": "Food",
+"amenity_restaurant": "Restaurant",
 "amenity_retirement_home": "Retirement Home",
 "amenity_sauna": "Sauna",
 "amenity_school": "School",
@@ -46999,14 +46741,14 @@
 "amenity_studio": "Studio",
 "amenity_swingerclub": "Swinger Club",
 "amenity_taxi": "Taxi",
-"amenity_telephone": "Telephone",
+"amenity_telephone": "Phone Booth",
 "amenity_theatre": "Theatre",
 "amenity_toilets": "Toilet",
 "amenity_townhall": "Town Hall",
 "amenity_university": "University",
 "amenity_vending_machine": "Vending Machine",
 "amenity_veterinary": "Veterinary Surgery",
-"amenity_waste_basket": "Waste Basket",
+"amenity_waste_basket": "Bin",
 "building": "Building",
 "building_apartments": "Apartment Block",
 "building_block": "Building Block",
@@ -47067,7 +46809,7 @@
 "highway_secondary": "Secondary Road",
 "highway_secondary_link": "Secondary Road",
 "highway_service": "Service Road",
-"highway_services": "Service Area",
+"highway_services": "Motorway Services",
 "highway_steps": "Steps",
 "highway_stile": "Stile",
 "highway_tertiary": "Tertiary Road",
@@ -47131,7 +46873,7 @@
 "leisure_pitch": "Sports Pitch",
 "leisure_playground": "Playground",
 "leisure_recreation_ground": "Recreation Ground",
-"leisure_slipway": "Slipway",
+"leisure_slipway": "Boat Ramp",
 "leisure_sports_centre": "Sports Centre",
 "leisure_stadium": "Stadium",
 "leisure_swimming_pool": "Swimming Pool",
@@ -47233,7 +46975,7 @@
 "shop_food": "Food Shop",
 "shop_funeral_directors": "Funeral Director",
 "shop_furniture": "Furniture",
-"shop_garden_centre": "Garden Centre",
+"shop_garden_centre": "Garden Center",
 "shop_general": "General Store",
 "shop_gift": "Gift Shop",
 "shop_greengrocer": "Greengrocer",
@@ -47255,9 +46997,9 @@
 "shop_pet": "Pet Shop",
 "shop_photo": "Photo Shop",
 "shop_salon": "Salon",
-"shop_seafood": "Fish Shop",
+"shop_seafood": "Seafood Shop",
 "shop_shoes": "Shoe Shop",
-"shop_shopping_centre": "Shopping Centre",
+"shop_shopping_centre": "Shopping Center",
 "shop_sports": "Sports Shop",
 "shop_stationery": "Stationery Shop",
 "shop_supermarket": "Supermarket",
@@ -47316,13 +47058,13 @@
 "amenity_car_wash": "Autolavado",
 "amenity_casino": "Casino",
 "amenity_cinema": "Cine",
-"amenity_clinic": "Cl\u00ednica",
+"amenity_clinic": "Centro de salud",
 "amenity_college": "Universidad o instituto",
 "amenity_community_centre": "Centro comunitario",
 "amenity_courthouse": "Juzgado",
 "amenity_crematorium": "Crematorio",
 "amenity_dentist": "Dentista",
-"amenity_doctors": "Consultorio m\u00e9dico",
+"amenity_doctors": "Centro m\u00e9dico",
 "amenity_drinking_water": "Agua potable",
 "amenity_driving_school": "Autoescuela",
 "amenity_embassy": "Embajada",
@@ -47353,7 +47095,7 @@
 "amenity_restaurant": "Restaurante",
 "amenity_retirement_home": "Residencia de jubilados",
 "amenity_sauna": "Sauna",
-"amenity_school": "Escuela",
+"amenity_school": "Colegio",
 "amenity_shelter": "Refugio",
 "amenity_studio": "Estudio",
 "amenity_taxi": "Taxi",
@@ -47374,7 +47116,7 @@
 "building_church": "Iglesia",
 "building_city_hall": "Ayuntamiento",
 "building_commercial": "Edificio comercial",
-"building_dormitory": "Residencia de estudiantes",
+"building_dormitory": "Colegio mayor",
 "building_entrance": "Entrada a edificio",
 "building_faculty": "Edificio de facultad",
 "building_farm": "Granja",
@@ -47403,7 +47145,7 @@
 "highway_bus_stop": "Parada de autobuses",
 "highway_byway": "Camino",
 "highway_construction": "V\u00eda en construcci\u00f3n",
-"highway_cycleway": "Ruta para bicicletas",
+"highway_cycleway": "Carril bici",
 "highway_distance_marker": "Hito kilom\u00e9trico",
 "highway_emergency_access_point": "Acceso de emergencia",
 "highway_footway": "Sendero",
@@ -47446,23 +47188,23 @@
 "historic_monument": "Monumento",
 "historic_ruins": "Ruinas",
 "historic_wayside_cross": "Cruz de t\u00e9rmino",
-"historic_wayside_shrine": "Sepulcro",
-"historic_wreck": "Pecio",
+"historic_wayside_shrine": "Altar de carretera",
+"historic_wreck": "Naufragio",
 "landuse_allotments": "Huerto",
 "landuse_basin": "Cuenca",
-"landuse_brownfield": "Terreno bald\u00edo",
+"landuse_brownfield": "Bald\u00edo",
 "landuse_cemetery": "Cementerio",
 "landuse_commercial": "\u00c1rea de oficinas",
 "landuse_conservation": "\u00c1rea de reserva",
 "landuse_construction": "Construcci\u00f3n",
-"landuse_farm": "Granja",
+"landuse_farm": "Finca",
 "landuse_farmland": "Tierra de labranza",
 "landuse_farmyard": "Corral",
 "landuse_forest": "Bosque",
 "landuse_grass": "C\u00e9sped",
 "landuse_greenfield": "Terreno urbanizable",
 "landuse_industrial": "Zona industrial",
-"landuse_landfill": "Relleno",
+"landuse_landfill": "Basurero",
 "landuse_meadow": "Pradera",
 "landuse_military": "Zona militar",
 "landuse_piste": "Pista de esqu\u00ed",
@@ -47477,7 +47219,7 @@
 "landuse_wood": "Bosque",
 "leisure_beach_resort": "Balneario",
 "leisure_common": "Terreno com\u00fan",
-"leisure_fishing": "\u00c1rea de pesca",
+"leisure_fishing": "Pesca deportiva",
 "leisure_garden": "Jard\u00edn",
 "leisure_golf_course": "Campo de golf",
 "leisure_ice_rink": "Pista de patinaje sobre hielo",
@@ -47489,7 +47231,7 @@
 "leisure_playground": "Parque infantil",
 "leisure_recreation_ground": "\u00c1rea recreativa",
 "leisure_slipway": "Grada",
-"leisure_sports_centre": "Polideportivo",
+"leisure_sports_centre": "Centro deportivo",
 "leisure_stadium": "Estadio",
 "leisure_swimming_pool": "Piscina",
 "leisure_track": "Pista de carreras",
@@ -47509,12 +47251,12 @@
 "natural_mud": "Lodo",
 "natural_peak": "Cumbre",
 "natural_reef": "Arrecife",
-"natural_ridge": "Cuchilla",
+"natural_ridge": "Cresta",
 "natural_rock": "Piedra",
 "natural_scree": "Pedregal",
 "natural_scrub": "Matorral",
 "natural_shoal": "Banco de arena",
-"natural_spring": "Nacimiento",
+"natural_spring": "Manantial",
 "natural_tree": "\u00c1rbol",
 "natural_valley": "Valle",
 "natural_volcano": "Volc\u00e1n",
@@ -47535,10 +47277,10 @@
 "place_municipality": "Municipio",
 "place_region": "Regi\u00f3n",
 "place_sea": "Mar",
-"place_state": "Estado",
-"place_suburb": "Suburbio",
-"place_town": "Pueblo",
-"place_village": "Villa",
+"place_state": "Departamento",
+"place_suburb": "Comuna",
+"place_town": "Parroquia",
+"place_village": "Corregimiento",
 "railway_abandoned": "Carrilera abandonada",
 "railway_construction": "V\u00eda ferroviaria en construcci\u00f3n",
 "railway_disused": "V\u00eda ferroviaria en desuso",
@@ -48130,7 +47872,7 @@
 "amenity_taxi": "Taksi",
 "amenity_telephone": "Puhelinkoppi",
 "amenity_theatre": "Teatteri",
-"amenity_toilets": "WC",
+"amenity_toilets": "Vessa",
 "amenity_townhall": "Kaupungintalo",
 "amenity_university": "Yliopisto",
 "amenity_vending_machine": "Myyntiautomaatti",
@@ -48162,7 +47904,7 @@
 "highway_construction": "Rakenteilla oleva tie",
 "highway_cycleway": "Py\u00f6r\u00e4tie",
 "highway_distance_marker": "Et\u00e4isyysmerkki",
-"highway_footway": "Polku",
+"highway_footway": "Jalkak\u00e4yt\u00e4v\u00e4",
 "highway_gate": "Portti",
 "highway_living_street": "Asuinkatu",
 "highway_motorway": "Moottoritie",
@@ -48234,7 +47976,7 @@
 "natural_tree": "Puu",
 "natural_valley": "Laakso",
 "natural_volcano": "Tulivuori",
-"natural_water": "Vesi",
+"natural_water": "J\u00e4rvi",
 "natural_wetland": "Kosteikko",
 "natural_wood": "Mets\u00e4",
 "place_city": "Kaupunki",
@@ -48285,7 +48027,7 @@
 "shop_furniture": "Huonekaluliike",
 "shop_gift": "Lahjakauppa",
 "shop_hairdresser": "Kampaamo",
-"shop_jewelry": "Kultasepp\u00e4",
+"shop_jewelry": "Korukauppa",
 "shop_kiosk": "Kioski",
 "shop_laundry": "Pesula",
 "shop_mall": "Ostoskeskus",
@@ -48319,7 +48061,7 @@
 "waterway_canal": "Kanaali",
 "waterway_dam": "Pato",
 "waterway_ditch": "Oja",
-"waterway_dock": "Telakka",
+"waterway_dock": "M\u00e4rk\u00e4telakka",
 "waterway_drain": "Oja",
 "waterway_rapids": "Koski",
 "waterway_river": "Joki",
@@ -48330,7 +48072,7 @@
 "fr": {
 "aeroway_aerodrome": "A\u00e9roport",
 "amenity_arts_centre": "Centre artistique",
-"amenity_atm": "Distributeur automatique de billets",
+"amenity_atm": "Dab",
 "amenity_bank": "Banque",
 "amenity_bar": "Bar",
 "amenity_bench": "Banc",
@@ -48352,7 +48094,7 @@
 "amenity_dentist": "Dentiste",
 "amenity_doctors": "Docteur",
 "amenity_drinking_water": "Eau potable",
-"amenity_driving_school": "\u00c9cole de conduite",
+"amenity_driving_school": "Auto-\u00e9cole",
 "amenity_embassy": "Ambassade",
 "amenity_emergency_phone": "T\u00e9l\u00e9phone d'urgence",
 "amenity_fast_food": "Restauration rapide",
@@ -48377,7 +48119,7 @@
 "amenity_prison": "Prison",
 "amenity_pub": "Bar",
 "amenity_public_building": "B\u00e2timent public",
-"amenity_recycling": "Bulle \u00e0 verre",
+"amenity_recycling": "Bulle",
 "amenity_restaurant": "Restaurant",
 "amenity_retirement_home": "Maison de retraite",
 "amenity_sauna": "Sauna",
@@ -48388,7 +48130,7 @@
 "amenity_telephone": "T\u00e9l\u00e9phone public",
 "amenity_theatre": "Th\u00e9\u00e2tre",
 "amenity_toilets": "Toilettes",
-"amenity_townhall": "H\u00f4tel de ville",
+"amenity_townhall": "Mairie",
 "amenity_university": "Universit\u00e9",
 "amenity_vending_machine": "Distributeur automatique",
 "amenity_veterinary": "V\u00e9t\u00e9rinaire",
@@ -48425,7 +48167,7 @@
 "building_tower": "Tour",
 "building_train_station": "Gare ferroviaire",
 "building_university": "B\u00e2timent d'universit\u00e9",
-"emergency_defibrillator": "D\u00e9fibrillateur",
+"emergency_defibrillator": "DAE",
 "emergency_fire_hydrant": "Bouche d'incendie",
 "highway_bridleway": "Chemin pour cavaliers",
 "highway_bus_guideway": "Voie de bus guid\u00e9e",
@@ -48474,7 +48216,7 @@
 "historic_mine": "Mine",
 "historic_monument": "Monument",
 "historic_ruins": "Ruines",
-"historic_wayside_cross": "Croix de chemin",
+"historic_wayside_cross": "Calvaire",
 "historic_wayside_shrine": "Oratoire",
 "historic_wreck": "\u00c9pave",
 "landuse_allotments": "Jardins familiaux",
@@ -48595,7 +48337,7 @@
 "shop_butcher": "Boucher",
 "shop_car": "Magasin de voitures",
 "shop_car_parts": "Pi\u00e8ces d'automobile",
-"shop_car_repair": "R\u00e9paration de voitures",
+"shop_car_repair": "Garage Automobile",
 "shop_carpet": "Magasin de tapis",
 "shop_charity": "Magasin de bienfaisance",
 "shop_chemist": "Magasin de produits d'hygi\u00e8ne",
@@ -48625,7 +48367,7 @@
 "shop_hifi": "Magasin Hi-Fi",
 "shop_jewelry": "Bijouterie",
 "shop_kiosk": "Kiosque",
-"shop_laundry": "Laverie",
+"shop_laundry": "Blanchisserie",
 "shop_mall": "Galerie marchande",
 "shop_mobile_phone": "Magasin de t\u00e9l\u00e9phones mobiles",
 "shop_motorcycle": "Magasin de moto",
@@ -49972,13 +49714,13 @@
 "amenity_bench": "Panchina",
 "amenity_bicycle_parking": "Parcheggio per biciclette",
 "amenity_bicycle_rental": "Stazione del bikesharing",
-"amenity_bureau_de_change": "Cambiavalute",
+"amenity_bureau_de_change": "Cambia valute",
 "amenity_cafe": "Caff\u00e8",
 "amenity_car_rental": "Autonoleggio",
 "amenity_car_sharing": "Stazione del carsharing",
 "amenity_car_wash": "Autolavaggio",
 "amenity_casino": "Casin\u00f2",
-"amenity_charging_station": "Stazione di ricarica elettrica",
+"amenity_charging_station": "Colonnina di ricarica",
 "amenity_cinema": "Cinema",
 "amenity_college": "Scuola superiore",
 "amenity_courthouse": "Tribunale",
@@ -49990,8 +49732,8 @@
 "amenity_emergency_phone": "Colonnina SOS",
 "amenity_fast_food": "Fast food",
 "amenity_ferry_terminal": "Terminal traghetto",
-"amenity_fire_station": "Vigili del fuoco",
-"amenity_fuel": "Stazione di rifornimento",
+"amenity_fire_station": "Pompieri",
+"amenity_fuel": "Benzinaio",
 "amenity_grave_yard": "Cimitero",
 "amenity_hospital": "Ospedale",
 "amenity_hunting_stand": "Postazione di caccia",
@@ -50001,7 +49743,7 @@
 "amenity_pharmacy": "Farmacia",
 "amenity_place_of_worship": "Luogo di culto",
 "amenity_police": "Polizia",
-"amenity_post_box": "Cassetta postale",
+"amenity_post_box": "Cassetta delle lettere",
 "amenity_post_office": "Ufficio postale",
 "amenity_prison": "Prigione",
 "amenity_pub": "Pub",
@@ -50536,7 +50278,7 @@
 "amenity_cafe": "Caf\u00e9",
 "amenity_car_rental": "Autoverhuur",
 "amenity_car_sharing": "Autodelen",
-"amenity_car_wash": "carwash",
+"amenity_car_wash": "Autowasstraat",
 "amenity_casino": "Casino",
 "amenity_cinema": "Bioscoop",
 "amenity_clinic": "Kliniek",
@@ -50554,7 +50296,7 @@
 "amenity_ferry_terminal": "Veerterminal",
 "amenity_fire_station": "Brandweer",
 "amenity_fountain": "Fontein",
-"amenity_fuel": "Brandstof",
+"amenity_fuel": "Benzine pomp",
 "amenity_grave_yard": "Begraafplaats",
 "amenity_gym": "Fitnesscentrum",
 "amenity_hospital": "Ziekenhuis",
@@ -50562,8 +50304,8 @@
 "amenity_ice_cream": "IJs",
 "amenity_kindergarten": "Kleuterschool",
 "amenity_library": "Bibliotheek",
-"amenity_nightclub": "Nachtclub",
-"amenity_nursing_home": "Verpleeghuis",
+"amenity_nightclub": "Disco",
+"amenity_nursing_home": "RVT",
 "amenity_pharmacy": "Apotheek",
 "amenity_place_of_worship": "Gebedsplaats",
 "amenity_police": "Politie",
@@ -50572,7 +50314,7 @@
 "amenity_prison": "Gevangenis",
 "amenity_pub": "Caf\u00e9",
 "amenity_public_building": "Openbaar gebouw",
-"amenity_recycling": "Recyclingpunt",
+"amenity_recycling": "Recyclage",
 "amenity_restaurant": "Restaurant",
 "amenity_retirement_home": "Bejaardentehuis",
 "amenity_sauna": "Sauna",
@@ -50647,7 +50389,7 @@
 "highway_steps": "Trap",
 "highway_stile": "Overstap",
 "highway_tertiary": "Tertiaire weg",
-"highway_track": "Pad",
+"highway_track": "Slag",
 "highway_trail": "Pad",
 "highway_trunk": "Autoweg",
 "highway_trunk_link": "Autoweg",
@@ -50661,7 +50403,7 @@
 "historic_manor": "Landgoed",
 "historic_memorial": "Monument",
 "historic_mine": "Mijn",
-"historic_monument": "Monoment",
+"historic_monument": "Groot Monoment",
 "historic_ruins": "Ru\u00efne",
 "historic_wayside_cross": "Kruis",
 "historic_wayside_shrine": "Altaar",
@@ -50711,7 +50453,7 @@
 "leisure_stadium": "Stadion",
 "leisure_swimming_pool": "Zwembad",
 "leisure_track": "Atletiekbaan",
-"leisure_water_park": "Waterspeelpark",
+"leisure_water_park": "Waterpark",
 "natural_bay": "Baai",
 "natural_beach": "Strand",
 "natural_cape": "Kaap",
@@ -50922,7 +50664,7 @@
 "amenity_telephone": "Budka telefoniczna",
 "amenity_theatre": "Teatr",
 "amenity_toilets": "Toaleta publiczna",
-"amenity_townhall": "Urz\u0105d miejski",
+"amenity_townhall": "Urz\u0105d gminy",
 "amenity_university": "Uniwersytet",
 "amenity_veterinary": "Weterynarz",
 "building_apartments": "Blok mieszkalny",
@@ -51201,13 +50943,13 @@
 "amenity_atm": "Caixa Eletr\u00f4nico",
 "amenity_bank": "Ag\u00eancia Banc\u00e1ria",
 "amenity_bar": "Bar",
-"amenity_bureau_de_change": "C\u00e2mbio",
-"amenity_bus_station": "Esta\u00e7\u00e3o de Autocarros",
+"amenity_bureau_de_change": "Cambista",
+"amenity_bus_station": "Esta\u00e7\u00e3o Rodovi\u00e1ria",
 "amenity_pub": "Bar",
 "amenity_school": "Escola",
 "amenity_townhall": "C\u00e2mara Municipal",
 "amenity_university": "Universidade",
-"highway_bus_stop": "Paragem de Autocarro",
+"highway_bus_stop": "Parada de \u00f4nibus",
 "highway_road": "Estrada",
 "historic_castle": "Castelo",
 "historic_ruins": "Ru\u00edna",
@@ -51903,7 +51645,7 @@
 "aerialway_gondola": "Kabinska \u017ei\u010dnica",
 "aerialway_magic_carpet": "Trak",
 "aerialway_platter": "Vle\u010dnica",
-"aeroway_aerodrome": "Letali\u0161\u010de",
+"aeroway_aerodrome": "Aerodrom",
 "amenity_animal_boarding": "Oskrba \u017eivali",
 "amenity_animal_shelter": "Zaveti\u0161\u010de za \u017eivali",
 "amenity_arts_centre": "Umetnostni center",
@@ -51916,7 +51658,7 @@
 "amenity_bureau_de_change": "Menjalnica",
 "amenity_bus_station": "Avtobusna postaja",
 "amenity_cafe": "Kavarna",
-"amenity_car_rental": "Rent-a-car",
+"amenity_car_rental": "Najem avtomobila",
 "amenity_car_sharing": "Souporaba avtomobila",
 "amenity_car_wash": "Avtopralnica",
 "amenity_casino": "Igralnica",
@@ -51928,7 +51670,7 @@
 "amenity_courthouse": "Sodi\u0161\u010de",
 "amenity_crematorium": "Krematorij",
 "amenity_dentist": "Zobozdravnik",
-"amenity_doctors": "Zdravnik",
+"amenity_doctors": "Doktor",
 "amenity_dojo": "Borilne ve\u0161\u010dine",
 "amenity_drinking_water": "Pitna voda",
 "amenity_driving_school": "Avto\u0161ola",
@@ -51938,41 +51680,41 @@
 "amenity_ferry_terminal": "Trajekt",
 "amenity_fire_station": "Gasilska postaja",
 "amenity_fountain": "Vodomet",
-"amenity_fuel": "Gorivo",
+"amenity_fuel": "Bencin",
 "amenity_grave_yard": "Pokopali\u0161\u010de",
 "amenity_gym": "Fitnes",
-"amenity_hospital": "Bolni\u0161nica",
+"amenity_hospital": "Bolnica",
 "amenity_hunting_stand": "Lovska opazovalnica",
 "amenity_ice_cream": "Sladoled",
 "amenity_kindergarten": "Vrtec",
 "amenity_library": "Knji\u017enica",
 "amenity_monastery": "Samostan",
 "amenity_nightclub": "No\u010dni klub",
-"amenity_nursing_home": "Dom za starej\u0161e",
+"amenity_nursing_home": "Dom starej\u0161ih",
 "amenity_pharmacy": "Lekarna",
-"amenity_place_of_worship": "Cerkev",
+"amenity_place_of_worship": "Verski hram",
 "amenity_police": "Policija",
 "amenity_post_box": "Po\u0161tni nabiralnik",
 "amenity_post_office": "Po\u0161ta",
 "amenity_prison": "Zapor",
-"amenity_pub": "Bar",
-"amenity_public_building": "Javna zgradba",
+"amenity_pub": "Pivnica",
+"amenity_public_building": "Javna stavba",
 "amenity_recycling": "Recikliranje",
-"amenity_restaurant": "Hrana",
-"amenity_retirement_home": "Dom za starej\u0161e",
+"amenity_restaurant": "Restavracija",
+"amenity_retirement_home": "Dom starej\u0161ih",
 "amenity_sauna": "Savna",
 "amenity_school": "\u0160ola",
 "amenity_shelter": "Zaveti\u0161\u010de",
 "amenity_studio": "Studio",
 "amenity_taxi": "Taksi",
-"amenity_telephone": "Telefon",
+"amenity_telephone": "Javni telefon",
 "amenity_theatre": "Gledali\u0161\u010de",
 "amenity_toilets": "Strani\u0161\u010de",
 "amenity_townhall": "Mestna hi\u0161a",
 "amenity_university": "Univerza",
 "amenity_vending_machine": "Avtomat",
-"amenity_veterinary": "Veterinarska klinika",
-"amenity_waste_basket": "Ko\u0161 za smeti",
+"amenity_veterinary": "Veterinar",
+"amenity_waste_basket": "Ko\u0161",
 "building": "Zgradba",
 "building_apartments": "Stanovanjski blok",
 "building_block": "Blok",
@@ -51982,31 +51724,31 @@
 "building_city_hall": "Mestna hi\u0161a",
 "building_commercial": "Poslovna zgradba",
 "building_dormitory": "\u0160tudenski dom",
-"building_entrance": "Vhod v zgradbo",
+"building_entrance": "Vhod",
 "building_faculty": "Fakulteta",
 "building_farm": "Kmetijska zgradba",
 "building_flats": "Stanovanje",
 "building_garage": "Gara\u017ea",
 "building_hall": "Dvorana",
-"building_hospital": "Bolni\u0161ni\u010dna zgradba",
+"building_hospital": "Bolni\u0161ni\u010dna stavba",
 "building_hotel": "Hotel",
 "building_house": "Hi\u0161a",
 "building_hut": "Ko\u010da",
-"building_industrial": "Industrijska zgradba",
-"building_office": "Poslovna zgradba",
-"building_public": "Javna zgradba",
-"building_residential": "Stanovanjska zgradba",
-"building_retail": "Trgovska zgradba",
+"building_industrial": "Industrijska stavba",
+"building_office": "Poslovna stavba",
+"building_public": "Javna stavba",
+"building_residential": "Stanovanjska stavba",
+"building_retail": "Trgovska stavba",
 "building_school": "\u0160olsko poslopje",
 "building_shop": "Trgovina",
 "building_stadium": "Stadion",
 "building_store": "Trgovina",
 "building_terrace": "Vrstna hi\u0161a",
 "building_tower": "Stolp",
-"building_train_station": "\u017delezni\u0161ka postaja",
+"building_train_station": "Postaja",
 "building_university": "Univerzitetna zgradba",
 "craft_beekeeper": "\u010cebelarstvo",
-"cuisine_pizza": "Picerija",
+"cuisine_pizza": "Pica",
 "emergency_fire_hydrant": "Hidrant",
 "highway_bridleway": "Jahalna pot",
 "highway_bus_stop": "Avtobusna postaja",
@@ -52048,7 +51790,7 @@
 "historic_archaeological_site": "Arheolo\u0161ko najdi\u0161\u010de",
 "historic_battlefield": "Boji\u0161\u010de",
 "historic_boundary_stone": "Mejni kamen",
-"historic_building": "Zgradba",
+"historic_building": "Stavba",
 "historic_castle": "Grad",
 "historic_manor": "Fevdalno posestvo",
 "historic_memorial": "Spomenik",
@@ -52063,34 +51805,34 @@
 "landuse_basin": "Kotanja",
 "landuse_brownfield": "Zemji\u0161\u010de za ponovno pozidavo",
 "landuse_cemetery": "Pokopali\u0161\u010de",
-"landuse_commercial": "Poslovno podro\u010dje",
-"landuse_conservation": "Za\u0161\u010diteno podro\u010dje",
+"landuse_commercial": "Poslovno obmo\u010dje",
+"landuse_conservation": "Za\u0161\u010diteno obmo\u010dje",
 "landuse_construction": "Gradbi\u0161\u010de",
 "landuse_farm": "Kmetija",
-"landuse_farmland": "Obdelovalna zemlja",
+"landuse_farmland": "Kmetijsko zemlji\u0161\u010de",
 "landuse_farmyard": "Kmetija",
 "landuse_forest": "Gozd",
 "landuse_grass": "Travnata povr\u0161ina",
 "landuse_greenfield": "Zemlji\u0161\u010de za pozidavo",
-"landuse_industrial": "Industrijsko podro\u010dje",
-"landuse_landfill": "Smeti\u0161\u010de",
+"landuse_industrial": "Industrijska cona",
+"landuse_landfill": "Odlagali\u0161\u010de",
 "landuse_meadow": "Travnik",
-"landuse_military": "Voja\u0161ko podro\u010dje",
+"landuse_military": "Voja\u0161ko obmo\u010dje",
 "landuse_piste": "Steza",
 "landuse_quarry": "Kamnolom",
 "landuse_railway": "\u017deleznica",
 "landuse_recreation_ground": "Zemlji\u0161\u010de za rekreacijo",
 "landuse_reservoir": "Vodni zbiralnik",
-"landuse_residential": "Stanovanjsko podro\u010dje",
+"landuse_residential": "Stanovanjsko obmo\u010dje",
 "landuse_retail": "Nakupovalno podro\u010dje",
 "landuse_village_green": "Va\u0161ka zelenica",
 "landuse_vineyard": "Vinograd",
 "landuse_wood": "Pragozd",
 "leisure_beach_resort": "Pla\u017ea",
 "leisure_common": "Skupnostno zemlji\u0161\u010de",
-"leisure_fishing": "Podro\u010dje za ribolov",
+"leisure_fishing": "Obmo\u010dje za ribolov",
 "leisure_garden": "Vrt",
-"leisure_golf_course": "Igri\u0161\u010de za golf",
+"leisure_golf_course": "Golfi\u0161\u010de",
 "leisure_hackerspace": "Heklab",
 "leisure_ice_rink": "Drsali\u0161\u010de",
 "leisure_marina": "Marina",
@@ -52103,7 +51845,7 @@
 "leisure_slipway": "Rampa",
 "leisure_sports_centre": "\u0160portni center",
 "leisure_stadium": "\u0160tadion",
-"leisure_swimming_pool": "Plavalni bazen",
+"leisure_swimming_pool": "Bazen",
 "leisure_track": "Atletska steza",
 "leisure_water_park": "Vodni park",
 "man_made_windmill": "Mlin na veter",
@@ -52117,7 +51859,7 @@
 "natural_glacier": "Ledenik",
 "natural_heath": "Ru\u0161evje",
 "natural_land": "Zemlji\u0161\u010de",
-"natural_marsh": "Mo\u010dvirje",
+"natural_marsh": "Barje",
 "natural_moor": "Pu\u0161\u010da",
 "natural_mud": "Blato",
 "natural_peak": "Vrh",
@@ -52134,7 +51876,7 @@
 "natural_water": "Voda",
 "natural_wetland": "Mokri\u0161\u010de",
 "natural_wood": "Pragozd",
-"office_accountant": "Ra\u010dunovodja",
+"office_accountant": "Finan\u010dno svetovanje",
 "office_government": "Vladni urad",
 "office_tax_advisor": "Dav\u010dno svetovanje",
 "place_city": "Mesto",
@@ -52165,7 +51907,7 @@
 "railway_narrow_gauge": "Ozkotirna \u017eeleznica",
 "railway_platform": "Peron",
 "railway_preserved": "Ohranjena \u017eeleznica",
-"railway_station": "\u017delezni\u0161ka postaja",
+"railway_station": "Postaja",
 "railway_subway": "Postaja podzemne \u017eeleznice",
 "railway_subway_entrance": "Vhod v podzemno \u017eeleznico",
 "railway_switch": "Kretnica",
@@ -52179,7 +51921,7 @@
 "shop_bicycle": "Kolesarska trgovina",
 "shop_books": "Knjigarna",
 "shop_butcher": "Mesar",
-"shop_car": "Prodaja avtomobilov",
+"shop_car": "Avtohi\u0161a",
 "shop_car_parts": "Avtomobilski deli",
 "shop_car_repair": "Avtomehanik",
 "shop_carpet": "Trgovina s preprogami",
@@ -52190,7 +51932,7 @@
 "shop_confectionery": "Sla\u0161\u010di\u010darna",
 "shop_convenience": "Minimarket",
 "shop_copyshop": "Kopirnica",
-"shop_curtain": "Trgovina z zavesami",
+"shop_curtain": "Sen\u010dila",
 "shop_department_store": "Trgovska hi\u0161a",
 "shop_doityourself": "Orodjarna",
 "shop_dry_cleaning": "Kemi\u010dna \u010distilnica",
@@ -52208,7 +51950,7 @@
 "shop_gift": "Prodajalna daril",
 "shop_greengrocer": "Sadje in zelenjava",
 "shop_hairdresser": "Frizerski salon",
-"shop_hardware": "\u017deleznina",
+"shop_hardware": "Orodje",
 "shop_hifi": "Trgovina z avdio opremo",
 "shop_insurance": "Zavarovalnica",
 "shop_jewelry": "Draguljarna",
@@ -52228,7 +51970,7 @@
 "shop_photo": "Fotograf",
 "shop_salon": "Lepotilni salon",
 "shop_shoes": "Trgovina s \u010devlji",
-"shop_shopping_centre": "Nakupovalno sredi\u0161\u010de",
+"shop_shopping_centre": "Nakupovalni center",
 "shop_sports": "\u0160portna trgovina",
 "shop_stationery": "Papirnica",
 "shop_supermarket": "Supermarket",
@@ -52236,7 +51978,7 @@
 "shop_toys": "Trgovina igra\u010d",
 "shop_travel_agency": "Potovalna agencija",
 "shop_video": "Videoteka",
-"shop_wine": "Vinoteka",
+"shop_wine": "Trgovina alkoholnih pija\u010d",
 "tourism_alpine_hut": "Ko\u010da",
 "tourism_apartment": "Apartma",
 "tourism_apartments": "Apartma",
@@ -52244,7 +51986,7 @@
 "tourism_attraction": "Zanimivost",
 "tourism_camp_site": "Kamp",
 "tourism_caravan_site": "Kamp",
-"tourism_chalet": "Apartma",
+"tourism_chalet": "Po\u010ditni\u0161ka hi\u0161ica",
 "tourism_guest_house": "Penzion",
 "tourism_hostel": "Hostel",
 "tourism_hotel": "Hotel",
@@ -52808,7 +52550,7 @@
 "waterway_weir": "\u0421\u0442\u0430\u0432\u043e\u043a"
 },
 "vi": {
-"aeroway_aerodrome": "S\u00e2n bay",
+"aeroway_aerodrome": "Phi tr\u01b0\u1eddng",
 "amenity_atm": "M\u00e1y R\u00fat ti\u1ec1n T\u1ef1 \u0111\u1ed9ng",
 "amenity_bank": "Ng\u00e2n h\u00e0ng",
 "amenity_bar": "Qu\u00e1n R\u01b0\u1ee3u",
