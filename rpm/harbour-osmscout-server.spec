@@ -15,7 +15,7 @@ Name:       harbour-osmscout-server
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server
-Version:    1.12.1
+Version:    1.12.2
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
@@ -101,6 +101,7 @@ cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/libboost_filesystem-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_filesystem.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_regex-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_regex.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_system-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
