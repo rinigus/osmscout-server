@@ -61,6 +61,9 @@ INSTALLS += styles
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += IS_SAILFISH_OS
 
+# default prefix for data
+DEFINES += DEFAULT_DATA_PREFIX=\\\"/usr/share/harbour-osmscout-server/\\\"
+
 SOURCES += \
     src/dbmaster.cpp \
     src/main.cpp \

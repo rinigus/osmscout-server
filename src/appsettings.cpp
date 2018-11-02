@@ -30,17 +30,7 @@
 
 #include <QDebug>
 
-#ifdef IS_SAILFISH_OS
-#define DATA_PREFIX "/usr/share/harbour-osmscout-server/"
-#endif
-
-#ifdef IS_CONSOLE_QT
-#define DATA_PREFIX ""
-#endif
-
-#ifdef IS_QTCONTROLS_QT
-#define DATA_PREFIX ""
-#endif
+#define DATA_PREFIX DEFAULT_DATA_PREFIX
 
 AppSettings::AppSettings():
   QSettings()

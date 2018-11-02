@@ -39,15 +39,28 @@ CONFIG += c++11 object_parallel_to_source
 }
 #CONFIG += use_map_cairo
 
+isEmpty(PREFIX) {
+ PREFIX = /usr/local
+}
 
 # installs
 styles.files = styles
-styles.path = /usr/share/$${TARGET}
+styles.path = $$PREFIX/share/$${TARGET}
 INSTALLS += styles
+
+data.files = data
+data.path = $${PREFIX}/share/$${TARGET}
+INSTALLS += data
+
+target.path = $$PREFIX/bin
+INSTALLS += target
 
 # defines
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += IS_CONSOLE_QT
+
+# default prefix for data
+DEFINES += DEFAULT_DATA_PREFIX=\\\"$${PREFIX}/share/$${TARGET}/\\\"
 
 SOURCES += src/dbmaster.cpp \
     src/main.cpp \
@@ -131,22 +144,22 @@ use_osmscout {
 }
 
 # geocoder-nlp is enabled always
-DEFINES += GEOCODERNLP_ALIASFILE=\\\"data/geocoder-npl-tag-aliases.json\\\"
+DEFINES += GEOCODERNLP_ALIASFILE=\\\"$${PREFIX}/share/$${TARGET}/data/geocoder-npl-tag-aliases.json\\\"
 
 # mapbox gl is enabled always
-DEFINES += MAPBOXGL_STYLEDIR=\\\"styles/mapboxgl\\\"
+DEFINES += MAPBOXGL_STYLEDIR=\\\"$${PREFIX}/share/$${TARGET}/styles/mapboxgl\\\"
 
 use_mapnik {
     DEFINES += USE_MAPNIK
     #DEFINES += MAPNIK_FONTS_DIR=\\\"$$system(mapnik-config --fonts)\\\"
-    DEFINES += MAPNIK_FONTS_DIR=\\\"../osmscout-server-fonts/fonts\\\"
+    DEFINES += MAPNIK_FONTS_DIR=\\\"$${PREFIX}/share/osmscout-server-fonts/fonts\\\"
     DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
     LIBS += -lmapnik -licuuc
 }
 
 use_valhalla {
     DEFINES += USE_VALHALLA
-    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"data/valhalla.json\\\"
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"$${PREFIX}/share/$${TARGET}/data/valhalla.json\\\"
     PKGCONFIG += libvalhalla
 }
 
