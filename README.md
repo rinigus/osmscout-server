@@ -557,7 +557,7 @@ The translations were contributed by
 - @Watchmaker: Italian
 
 
-For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README
+For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README.md
 
 
 ## Libpostal
