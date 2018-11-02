@@ -6,7 +6,7 @@
         <file>qml/qtcontrols/StartPage.qml</file>
         <file>qml/qtcontrols/ElementLanguageSelector.qml</file>
         <file>qml/qtcontrols/ElementDownloads.qml</file>
-        <file>qml/qtcontrols/Theme.qml</file>
+        <file>qml/qtcontrols/ThemeImpl.qml</file>
         <file>qml/qtcontrols/Label.qml</file>
         <file>qml/qtcontrols/LanguageSelector.qml</file>
         <file>qml/qtcontrols/MessagePage.qml</file>

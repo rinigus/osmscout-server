@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.0
+import osmscout.theme 1.0
 
 Label {
     id: activeDownloadText

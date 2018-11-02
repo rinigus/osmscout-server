@@ -20,7 +20,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.0
-
+import osmscout.theme 1.0
 import "."
 
 Column {
