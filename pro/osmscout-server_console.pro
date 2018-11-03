@@ -12,9 +12,11 @@
 # The name of your application
 TARGET = osmscout-server
 
-QT = core network sql xml positioning dbus
+QT += core network sql xml positioning dbus
 
 CONFIG += c++11 object_parallel_to_source
+
+CONFIG += link_pkgconfig
 
 # selection of backends
 !disable_mapnik {
@@ -136,7 +138,6 @@ use_osmscout {
     use_map_cairo {
         DEFINES += USE_OSMSCOUT_MAP_CAIRO
         LIBS += -losmscout_map_cairo
-        CONFIG += link_pkgconfig
         PKGCONFIG += pango cairo
     }
 
@@ -165,7 +166,6 @@ use_valhalla {
 
 use_curl {
     DEFINES += USE_LIBCURL
-    CONFIG += link_pkgconfig
     PKGCONFIG += libcurl
 }
 
@@ -175,7 +175,7 @@ use_systemd {
     PKGCONFIG += libsystemd
 }
 
-LIBS += -lmarisa -lkyotocabinet -lz -lsqlite3
+LIBS += -L$${PREFIX}/lib -lmarisa -lkyotocabinet -lz -lsqlite3
 
 QMAKE_CXXFLAGS += -fopenmp
 LIBS += -fopenmp
