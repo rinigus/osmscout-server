@@ -238,10 +238,10 @@ int main(int argc, char *argv[])
 
   infoHub.onSettingsChanged();
 
-#ifdef USE_SYSTEMD
   // enable systemd interaction
   SystemDService systemd_service;
 
+#ifdef USE_SYSTEMD
   // stop systemD service and socket if running as a separate application
   if (!parser.isSet(optionSystemD))
     systemd_service.stop();
@@ -300,9 +300,7 @@ int main(int argc, char *argv[])
       if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
       rootContext->setContextProperty("manager", &manager);
       rootContext->setContextProperty("modules", &modules);
-#ifdef USE_SYSTEMD
       rootContext->setContextProperty("systemd_service", &systemd_service);
-#endif
     }
 #endif
 
