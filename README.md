@@ -31,7 +31,8 @@ the upstream and no additional configuration is needed.
 The server is written using Qt. The server can be used as a console, a
 Sailfish, or a QtQuick application. For console and QtQuick versions,
 use the corresponding project file, available in pro subfolder. For
-Sailfish, use osmscout-server_silica.pro.
+Sailfish, use osmscout-server_silica.pro. Compilation instructions are
+given in [INSTALL](INSTALL.md).
 
 
 ## Maps

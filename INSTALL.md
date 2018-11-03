@@ -1,7 +1,5 @@
 # Installation instructions
 
-Available channels are Sailfish OS OpenRepos.net ... 
-
 ## Compilation from source
 
 ### Ubuntu 18.04
@@ -16,7 +14,7 @@ sudo apt-get install git libsystemd-dev libmarisa-dev libmicrohttpd-dev libkyoto
 
 Build the following libraries
 
-Mapnik: (used 3.0.21, have to update git repo)
+Mapnik:
 
 ```
 git clone --recursive https://github.com/rinigus/pkg-mapnik
