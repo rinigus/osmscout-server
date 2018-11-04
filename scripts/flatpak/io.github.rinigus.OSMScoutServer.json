@@ -5,6 +5,7 @@
     "sdk": "org.kde.Sdk",
     "command": "osmscout-server",
     "finish-args": [
+        "--filesystem=host",
         "--device=dri",
         "--share=ipc",
         "--socket=x11",
@@ -12,6 +13,16 @@
         "--share=network",
         "--talk-name=org.freedesktop.DBus"
     ],
+    "cleanup": ["/include", "/lib/mapnik", "/lib/pkgconfig",
+                "/lib/*.a", "/share/doc", "/share/info", "/share/man",
+                "/share/stylesheets",
+                "/bin/cct", "/bin/cs2cs", "/bin/geod", "/bin/gie", "/bin/invgeod", "/bin/invproj",
+                "/bin/kc*", "/bin/libpostal_data", "/bin/lua", "/bin/luac",
+                "/bin/mapnik-config", "/bin/marisa*",
+                "/bin/marisa-predictive-search", "/bin/marisa-reverse-lookup", "/bin/nad2bin", "/bin/proj",
+                "/bin/protoc", "/bin/shapeindex", "/bin/valhalla*"
+               ],
+    "rename-icon": "harbour-osmscout-server",
     "modules": [
         {
             "name": "marisa",
@@ -180,7 +191,8 @@
                 "ln -s pro/osmscout-server_qtcontrols.pro . || true",
                 "qmake PREFIX=/app CONFIG+=\"disable_systemd\" osmscout-server_qtcontrols.pro",
                 "make -j$(nproc) install",
-                "mkdir -p /app/share/applications"
+                "mkdir -p /app/share/applications",
+                "install -D scripts/flatpak/io.github.rinigus.OSMScoutServer.desktop /app/share/applications"
             ],
             "sources": [
                 {

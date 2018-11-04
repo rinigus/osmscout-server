@@ -57,6 +57,19 @@ INSTALLS += data
 target.path = $$PREFIX/bin
 INSTALLS += target
 
+icons108.path = $$PREFIX/share/icons/hicolor/108x108/apps
+icons108.files = icons/108x108/harbour-osmscout-server.png
+INSTALLS += icons108
+icons128.path = $$PREFIX/share/icons/hicolor/128x128/apps
+icons128.files = icons/128x128/harbour-osmscout-server.png
+INSTALLS += icons128
+icons256.path = $$PREFIX/share/icons/hicolor/256x256/apps
+icons256.files = icons/256x256/harbour-osmscout-server.png
+INSTALLS += icons256
+icons86.path = $$PREFIX/share/icons/hicolor/86x86/apps
+icons86.files = icons/86x86/harbour-osmscout-server.png
+INSTALLS += icons86
+
 # defines
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 DEFINES += IS_QTCONTROLS_QT

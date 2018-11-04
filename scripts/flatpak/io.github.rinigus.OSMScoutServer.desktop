@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=OSM Scout Server
+Exec=osmscout-server
+Type=Application
+Icon=io.github.rinigus.OSMScoutServer
+Categories=Science;Maps;Qt;
