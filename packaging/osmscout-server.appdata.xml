@@ -1,37 +1,41 @@
-<xml version="1.0" encoding="UTF-8">
- <component type="desktop-application">
-  <id>io.github.rinigus.OSMScoutServer</id>
-  <name>OSM Scout Server</name>
-  <summary>Maps server providing tiles, geocoder, and router</summary>
-  <description>OSM Scout Server can be used as a drop-in replacement for online map services providing map tiles, search, and routing. As a result, an offline operation is possible if the device has a server and map client programs installed and running.
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+ <id>io.github.rinigus.OSMScoutServer.desktop</id>
+ <name>OSM Scout Server</name>
+ <summary>Maps server providing tiles, geocoder, and router</summary>
+ <description>OSM Scout Server can be used as a drop-in replacement for online map services providing map tiles, search, and routing. As a result, an offline operation is possible if the device has a server and map client programs installed and running.
 
 To use the server, you have to start it and configure the client to access it. An example pages with JavaScript-based clients are provided. The server is supported by such clients as Pure Maps and modRana.
 
 </description>
-  <categories>
-   <category>Science</category>
-   <category>Maps</category>
-   <category>Qt</category>
-  </categories>
-  <url homepage="https://rinigus.github.io/osmscout-server" bugtracker="https://github.com/rinigus/osmscout-server/issues" donation="https://rinigus.github.io/donate" translate="https://github.com/rinigus/osmscout-server/tree/master/translations"/>
-  <launchable desktop-id="io.github.rinigus.OSMScoutServer"/>
-  <provides><binary>osmscout-server</binary>
-   <dbus type="user">org.osm.scout.server1</dbus>
-  </provides>
-  <project_license>GPL-3.0+</project_license>
-  <screenshots>
-   <screenshot type="default">
-    <caption>Main screen of the application</caption>
-    <image>https://raw.githubusercontent.com/rinigus/osmscout-server/master/examples/screenshots/main.png</image>
-   </screenshot>
-   <screenshot>
-    <caption>Selection of profiles</caption>
-    <image>https://raw.githubusercontent.com/rinigus/osmscout-server/master/examples/screenshots/profiles.png</image>
-   </screenshot>
-   <screenshot>
-    <capion>Support for languages by address parser</capion>
-    <image>https://raw.githubusercontent.com/rinigus/osmscout-server/master/examples/screenshots/languages.png</image>
-   </screenshot>
-  </screenshots>
- </component>
-</xml>
+ <categories>
+  <category>Science</category>
+  <category>Maps</category>
+  <category>Qt</category>
+ </categories>
+ <url type="homepage">https://rinigus.github.io/osmscout-server</url>
+ <url type="bugtracker">https://github.com/rinigus/osmscout-server/issues</url>
+ <url type="donation">https://rinigus.github.io/donate</url>
+ <url type="translate">https://github.com/rinigus/osmscout-server/tree/master/translations</url>
+ <launchable desktop-id="io.github.rinigus.OSMScoutServer"/>
+ <provides>
+  <binary>osmscout-server</binary>
+  <dbus type="user">org.osm.scout.server1</dbus>
+ </provides>
+ <project_license>GPL-3.0+</project_license>
+ <screenshots>
+  <screenshot type="default">
+   <caption>Main screen of the application</caption>
+   <image>https://raw.githubusercontent.com/rinigus/osmscout-server/master/examples/screenshots/main.png</image>
+  </screenshot>
+  <screenshot>
+   <caption>Selection of profiles</caption>
+   <image>https://raw.githubusercontent.com/rinigus/osmscout-server/master/examples/screenshots/profiles.png</image>
+  </screenshot>
+  <screenshot>
+   <capion>Support for languages by address parser</capion>
+   <image>https://raw.githubusercontent.com/rinigus/osmscout-server/master/examples/screenshots/languages.png</image>
+  </screenshot>
+ </screenshots>
+ <metadata_license>CC-BY-SA-3.0</metadata_license>
+</component>
