@@ -13,6 +13,7 @@
         "--share=network",
         "--talk-name=org.freedesktop.DBus"
     ],
+    "rename-icon": "osmscout-server",
     "cleanup": ["/include", "/lib/mapnik", "/lib/pkgconfig",
                 "/lib/*.a", "/share/doc", "/share/info", "/share/man",
                 "/share/stylesheets",
@@ -22,7 +23,6 @@
                 "/bin/marisa-predictive-search", "/bin/marisa-reverse-lookup", "/bin/nad2bin", "/bin/proj",
                 "/bin/protoc", "/bin/shapeindex", "/bin/valhalla*"
                ],
-    "rename-icon": "harbour-osmscout-server",
     "modules": [
         {
             "name": "marisa",
@@ -192,12 +192,12 @@
                 "qmake PREFIX=/app CONFIG+=\"disable_systemd\" osmscout-server_qtcontrols.pro",
                 "make -j$(nproc) install",
                 "mkdir -p /app/share/applications",
-                "install -D scripts/flatpak/io.github.rinigus.OSMScoutServer.desktop /app/share/applications"
+                "install -D packaging/flatpak/io.github.rinigus.OSMScoutServer.desktop /app/share/applications"
             ],
             "sources": [
                 {
-                    "type": "dir",
-                    "path": "../.."
+                    "type": "git",
+                    "url": "https://github.com/rinigus/osmscout-server.git"
                 }
             ]
         },
