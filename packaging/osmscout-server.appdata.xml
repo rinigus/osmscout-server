@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
- <id>io.github.rinigus.OSMScoutServer.desktop</id>
+ <id>io.github.rinigus.OSMScoutServer</id>
  <name>OSM Scout Server</name>
  <summary>Maps server providing tiles, geocoder, and router</summary>
  <description>OSM Scout Server can be used as a drop-in replacement for online map services providing map tiles, search, and routing. As a result, an offline operation is possible if the device has a server and map client programs installed and running.
