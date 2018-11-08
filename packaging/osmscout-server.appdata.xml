@@ -3,11 +3,10 @@
  <id>io.github.rinigus.OSMScoutServer</id>
  <name>OSM Scout Server</name>
  <summary>Maps server providing tiles, geocoder, and router</summary>
- <description>OSM Scout Server can be used as a drop-in replacement for online map services providing map tiles, search, and routing. As a result, an offline operation is possible if the device has a server and map client programs installed and running.
-
-To use the server, you have to start it and configure the client to access it. An example pages with JavaScript-based clients are provided. The server is supported by such clients as Pure Maps and modRana.
-
-</description>
+ <description>
+   <p>OSM Scout Server can be used as a drop-in replacement for online map services providing map tiles, search, and routing. As a result, an offline operation is possible if the device has a server and map client programs installed and running.</p>
+   <p>To use the server, you have to start it and configure the client to access it. An example pages with JavaScript-based clients are provided. The server is supported by such clients as Pure Maps and modRana.</p>
+ </description>
  <categories>
   <category>Science</category>
   <category>Maps</category>
