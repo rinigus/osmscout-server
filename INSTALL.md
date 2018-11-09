@@ -1,5 +1,13 @@
 # Installation instructions
 
+## Distributions
+
+OSM Scout Server can be installed using the following channels:
+
+* Sailfish OS: https://openrepos.net/content/rinigus/osm-scout-server
+* Desktop Linux through Flathub: https://flathub.org/apps/details/io.github.rinigus.OSMScoutServer
+
+
 ## Compilation from source
 
 ### Ubuntu 18.04
