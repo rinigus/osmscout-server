@@ -10,3 +10,5 @@ of flatpak bundle file, run
 ```
 flatpak build-bundle ../flatpak osmscout-server.flatpak io.github.rinigus.OSMScoutServer
 ```
+
+Flatpak build script is available at the dedicated project: https://github.com/flathub/io.github.rinigus.OSMScoutServer 
