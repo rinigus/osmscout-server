@@ -33,6 +33,7 @@
 #include <algorithm>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
+#include <exception>
 
 #include <valhalla/midgard/logging.h>
 
@@ -182,13 +183,22 @@ void ValhallaMaster::start()
   if (!useValhalla) return;
 
   m_idle_mode = false;
+  m_actor.release();
 
   std::stringstream ss;
   ss << m_config_json;
   boost::property_tree::ptree pt;
-  boost::property_tree::read_json(ss, pt);
 
-  m_actor.release();
+  try
+  {
+    boost::property_tree::read_json(ss, pt);
+  }
+  catch (std::exception& e)
+  {
+    InfoHub::logWarning(tr("Vailed to load Valhalla configuration: %1").arg(e.what()));
+    return;
+  }
+
   m_actor.reset(new valhalla::tyr::actor_t(pt, true)); // with autoclean
   InfoHub::logInfo(tr("Valhalla routing engine started"));
 }
