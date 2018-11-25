@@ -52,7 +52,6 @@ ApplicationWindow {
 
             Label {
                 text: pageStack.currentItem.title
-                anchors.centerIn: parent
                 elide: Label.ElideRight
                 horizontalAlignment: Qt.AlignHCenter
                 verticalAlignment: Qt.AlignVCenter
