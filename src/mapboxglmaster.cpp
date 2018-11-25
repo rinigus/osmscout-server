@@ -1,18 +1,18 @@
 /*
  * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
- * 
+ *
  * This file is part of OSM Scout Server.
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -23,8 +23,6 @@
 #include "config.h"
 #include "infohub.h"
 
-#include <QSqlDatabase>
-#include <QSqlQuery>
 #include <QVariant>
 #include <QFileInfo>
 #include <QDir>
@@ -49,6 +47,12 @@ void MapboxGLMaster::onSettingsChanged()
 {
 }
 
+void MapboxGLMaster::addConnection(const QString &connection, const QString &fname)
+{
+  m_db_connection[connection] = nullptr;
+  m_db_connection_fname[connection] = fname;
+}
+
 void MapboxGLMaster::onMapboxGLChanged(QString world_database, QString glyphs_database, QSet<QString> country_databases)
 {
   std::unique_lock<std::mutex> lk(m_mutex);
@@ -61,28 +65,20 @@ void MapboxGLMaster::onMapboxGLChanged(QString world_database, QString glyphs_da
   m_country_fnames = country_databases;
 
   // close all previous connections
-  for (const QString &c: m_db_connections)
-    QSqlDatabase::removeDatabase(c);
-  m_db_connections.clear();
+  m_db_connection.clear();
+  m_db_connection_fname.clear();
 
   ////////////////////////////////////
-  /// open database connections
+  /// register database connections
+  /// and corresponding file names
 
   // world
   if (!world_database.isEmpty())
-    {
-      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", const_conn_world);
-      db.setDatabaseName(world_database);
-      m_db_connections.insert(const_conn_world);
-    }
+    addConnection(const_conn_world, world_database);
 
   // glyphs
   if (!glyphs_database.isEmpty())
-    {
-      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", const_conn_glyphs);
-      db.setDatabaseName(glyphs_database);
-      m_db_connections.insert(const_conn_glyphs);
-    }
+    addConnection(const_conn_glyphs, glyphs_database);
 
   // sections
   for (const QString &current: country_databases)
@@ -91,11 +87,32 @@ void MapboxGLMaster::onMapboxGLChanged(QString world_database, QString glyphs_da
       /// /dir/dir.../tiles-section-7-71-38.sqlite
       QFileInfo fi(current);
       QString connection = const_conn_prefix + fi.baseName().mid(14);
-
-      QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE", connection);
-      db.setDatabaseName(current);
-      m_db_connections.insert(connection);
+      addConnection(connection, current);
     }
+}
+
+std::shared_ptr<sqlite3pp::database> MapboxGLMaster::getDatabase(const QString &connection)
+{
+  auto dbc = m_db_connection.find(connection);
+  if (dbc == m_db_connection.end()) return nullptr;
+
+  if (dbc.value()) return dbc.value();
+
+  // allocate new database connection
+  auto nmc = m_db_connection_fname.find(connection);
+  if (nmc == m_db_connection_fname.end()) return nullptr;
+
+  try {
+    std::shared_ptr<sqlite3pp::database> db(new sqlite3pp::database(nmc.value().toStdString().c_str(),
+                                                                    SQLITE_OPEN_READONLY));
+    m_db_connection[connection] = db;
+    return db;
+  }
+  catch (sqlite3pp::database_error e) {
+    InfoHub::logWarning(tr("Failed to open Mapbox GL database: %1").arg(e.what()));
+  }
+
+  return nullptr;
 }
 
 bool MapboxGLMaster::getTile(int x, int y, int z, QByteArray &result, bool &compressed, bool &found)
@@ -114,36 +131,36 @@ bool MapboxGLMaster::getTile(int x, int y, int z, QByteArray &result, bool &comp
       connection = const_conn_prefix + QString("7-%1-%2").arg(xx).arg(yy);
     }
 
-  if (!m_db_connections.contains(connection))
+  std::shared_ptr<sqlite3pp::database> db = getDatabase(connection);
+  if (!db)
     {
       found = false;
       return true;
     }
 
-  QSqlDatabase db = QSqlDatabase::database(connection, true);
+  try
+  {
+    sqlite3pp::query query(*db,
+                           "SELECT tile_data FROM tiles WHERE "
+                           "(zoom_level=:z AND tile_column=:x AND tile_row=:y)");
+    query.bind(":x", x);
+    query.bind(":y", (1 << z) - 1 - y); // conversion between XYZ and TMS
+    query.bind(":z", z);
 
-  if (!db.isOpen()) return false;
-
-  QSqlQuery query(db);
-  query.setForwardOnly(true);
-  query.prepare("SELECT tile_data FROM tiles WHERE (zoom_level=:z AND tile_column=:x AND tile_row=:y)");
-  query.bindValue(":x", x);
-  query.bindValue(":y", (1 << z) - 1 - y); // conversion between XYZ and TMS
-  query.bindValue(":z", z);
-
-  if (!query.exec())
-    {
-      InfoHub::logWarning(tr("Failed to run query in Mapbox GL database"));
-      return false;
-    }
-
-  while (query.next())
-    {
-      // will be called only once since there is only one tile matching it
-      result = query.value(0).toByteArray();
-      found = true;
-      return true;
-    }
+    for (auto v: query)
+      {
+        // will be called only once since there is only one tile matching it
+        void const *blob = v.get<void const*>(0);
+        int sz = v.column_bytes(0);
+        result = QByteArray((const char*)blob, sz);
+        return true;
+      }
+  }
+  catch (sqlite3pp::database_error &e)
+  {
+    InfoHub::logWarning(tr("Failed to run query in Mapbox GL database: %1").arg(e.what()));
+    return false;
+  }
 
   found = false;
   return true;
@@ -155,16 +172,12 @@ bool MapboxGLMaster::getGlyphs(QString stackstr, QString range, QByteArray &resu
 
   compressed = false; // maybe would be flexible in future, for now just assume its not compressed
 
-  const QString connection = const_conn_glyphs;
-  if (!m_db_connections.contains(connection))
+  std::shared_ptr<sqlite3pp::database> db = getDatabase(const_conn_glyphs);
+  if (!db)
     {
       found = false;
       return true;
     }
-
-  QSqlDatabase db = QSqlDatabase::database(connection, true);
-
-  if (!db.isOpen()) return false;
 
   QStringList stacks = stackstr.split(",");
 
@@ -175,27 +188,30 @@ bool MapboxGLMaster::getGlyphs(QString stackstr, QString range, QByteArray &resu
        stackstr.contains("Noto Sans Italic") )
     stacks.append("Noto Sans Regular");
 
+  std::string str_range = range.toStdString();
   for (QString stack: stacks)
     {
-      QSqlQuery query(db);
-      query.setForwardOnly(true);
-      query.prepare("SELECT pbf FROM fonts WHERE (stack=:stack AND range=:range)");
-      query.bindValue(":stack", stack);
-      query.bindValue(":range", range);
+      try
+      {
+        std::string str_stack = stack.toStdString();
+        sqlite3pp::query query(*db, "SELECT pbf FROM fonts WHERE (stack=:stack AND range=:range)");
+        query.bind(":stack", str_stack, sqlite3pp::nocopy);
+        query.bind(":range", str_range, sqlite3pp::nocopy);
 
-      if (!query.exec())
-        {
-          InfoHub::logWarning(tr("Failed to run query in Mapbox GL fonts database"));
-          return false;
-        }
-
-      while (query.next())
-        {
-          // will be called only once since there is only one tile matching it
-          result = query.value(0).toByteArray();
-          found = true;
-          return true;
-        }
+        for (auto v: query)
+          {
+            // will be called only once since there is only one tile matching it
+            void const *blob = v.get<void const*>(0);
+            int sz = v.column_bytes(0);
+            result = QByteArray((const char*)blob, sz);
+            return true;
+          }
+      }
+      catch (sqlite3pp::database_error &e)
+      {
+        InfoHub::logWarning(tr("Failed to run query in Mapbox GL fonts database: %1").arg(e.what()));
+        return false;
+      }
     }
 
   found = false;
