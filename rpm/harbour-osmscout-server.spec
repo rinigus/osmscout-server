@@ -100,22 +100,22 @@ cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
 
-cp /usr/lib/libboost_filesystem-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_filesystem.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_regex-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_regex.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_system-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_system.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_iostreams-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_date_time-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_chrono-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_thread-mt.so.1.51.0 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_filesystem-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_filesystem.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_regex-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_regex.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_system-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_system.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_iostreams-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_date_time-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_chrono-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libboost_thread-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/libprotobuf.so.8  %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/liblz4.so.1.8.1 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/liblz4.so.1 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libz.so.1.2.8 %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libz.so.1.* %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libz.so.1 %{buildroot}%{_datadir}/%{name}/lib
 
 # mapnik fonts and input plugins
