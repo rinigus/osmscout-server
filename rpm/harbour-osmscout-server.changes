@@ -5,6 +5,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Dec 3 2018 rinigus <rinigus.git@gmail.com> 1.13.0-1
+- add postal code as a name for some search results
+- docs: update Spanish User's manual
+- docs: add Linux install instructions
+- mapboxgl backend: use sqlite3pp instead of Qt SQL
+- flatpak: update build scripts and move them to flathub
+
 * Mon Oct 1 2018 rinigus <rinigus.git@gmail.com> 1.12.1-1
 - update translations
 - import bugfixes

@@ -38,6 +38,14 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.13.0" date="2018-12-03">
+     <description>
+       <p>Add postal code as a name for some search results</p>
+       <p>Docs: update Spanish User's manual</p>
+       <p>Docs: add Linux install instructions</p>
+       <p>MapboxGL backend: use sqlite3pp instead of Qt SQL</p>
+     </description>
+   </release>
   <release version="1.12.3" date="2018-11-04"/>
  </releases>
 </component>
