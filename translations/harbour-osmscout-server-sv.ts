@@ -1038,7 +1038,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
         <translation>Karthanteraren sköter lagringen av offline-kartor och relaterade datamängder på enheten. Här kan du välja de funktioner och länder som skall lagras, uppdateras eller tas bort från enheten.</translation>
     </message>
     <message>
@@ -1164,7 +1164,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
         <translation>Vid aktivering lagras datauppsättningar med vektorrutor på enheten, efter nerladdning. Dessa datauppsättningar innehåller världskustlinjer (ca: 12 MB), teckensnitt (ca: 80 MB) och landsspecifika datauppsättningar.</translation>
     </message>
     <message>
@@ -1182,7 +1182,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
         <translation>Vid aktivering, kommer datamängder för rendering av kartor med Mapnik att lagras på enheten efter nerladdning. Dessa datamängder består av världskustlinjer (omkring 700 MB) och landsspecifik data för rendering.</translation>
     </message>
     <message>
