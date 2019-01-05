@@ -1038,7 +1038,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
         <translation>Karttamanageri hallinnoi offline-karttojen ja niihin liittyvien datasettien varastoinnin laitteella. Tässä voit valita laitteelle tallennettavat, päivitettävät tai poistettavat ominaisuudet ja maat.</translation>
     </message>
     <message>
@@ -1164,8 +1164,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation>Kun valittuna, Mabox GL formaatin vektorilaattoja sisältävät datasetit tallennetaan laitteen niiden lataamisen jälkeen. Nämä datasetit sisältävät maailman rantaviivat (noin 12 MB), fontit (noin 80 MB), ja maakohtaiset datasetit</translation>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
+        <translation>Kun valittuna, Mapbox GL formaatin vektorilaattoja sisältävät datasetit tallennetaan laitteen niiden lataamisen jälkeen. Nämä datasetit sisältävät maailman rantaviivat (noin 12 MB), fontit (noin 80 MB), ja maakohtaiset datasetit.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="298"/>
@@ -1182,8 +1182,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation>Kun valittuna, karttojen piirtoon Mapnikilla tarvittavat datasetit tallennetaan laitteelle latauksen jälkeen. Nämä datasetit koostuvat maailman rantaviivoista (noin 700 MB) ja maakohtaisista piirtoon käytettävistä dataseteistä</translation>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
+        <translation>Kun valittuna, karttojen piirtoon Mapnikilla tarvittavat datasetit tallennetaan laitteelle latauksen jälkeen. Nämä datasetit koostuvat maailman rantaviivoista (noin 700 MB) ja maakohtaisista piirtoon käytettävistä dataseteistä.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="187"/>
