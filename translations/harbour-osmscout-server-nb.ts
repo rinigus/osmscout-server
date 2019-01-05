@@ -1038,8 +1038,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation>Kart Behandler håndterer lagring av offline kart og relaterte datasett på enheten. Her kan du velge funksjoner og land som vil bli lagret, oppdateret eller fjernet fra enheten</translation>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
+        <translation>Kart Behandler håndterer lagring av offline kart og relaterte datasett på enheten. Her kan du velge funksjoner og land som vil bli lagret, oppdateret eller fjernet fra enheten.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="252"/>
@@ -1164,8 +1164,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation>Når valgt, vil datasett med vektorfliser i Mabox GL format lagres på enheten etter at de er lastet ned. Disse datasettene består av verdens kystlinjer (ca. 12 MB), fonter (ca. 80 MB) og landsspesifikke datasett</translation>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
+        <translation>Når valgt, vil datasett med vektorfliser i Mapbox GL format lagres på enheten etter at de er lastet ned. Disse datasettene består av verdens kystlinjer (ca. 12 MB), fonter (ca. 80 MB) og landsspesifikke datasett.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="298"/>
@@ -1182,8 +1182,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation>Når valgt, vil datasett som tillater gjengivelse av kart med Mapnik bli lagret på enheten etter at de er lastet ned. Disse datasettene består av verdens kystlinjer (ca. 700 MB) og landsspesifikke datasett som brukes til gjengivelse</translation>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
+        <translation>Når valgt, vil datasett som tillater gjengivelse av kart med Mapnik bli lagret på enheten etter at de er lastet ned. Disse datasettene består av verdens kystlinjer (ca. 700 MB) og landsspesifikke datasett som brukes til gjengivelse.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="187"/>
