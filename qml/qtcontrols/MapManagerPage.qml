@@ -45,7 +45,7 @@ Dialog {
         Label {
             text: qsTr("Map Manager handles the storage of offline maps and " +
                        "related datasets on the device. Here you can select the " +
-                       "features and countries that will be stored, updated or removed from the device")
+                       "features and countries that will be stored, updated or removed from the device.")
             x: Theme.horizontalPageMargin
             width: parent.width-2*x
             wrapMode: Text.WordWrap
