@@ -1164,8 +1164,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation>Po výběru budou datové sady s vektorovými dlaždicemi ve formátu Mabox GL uloženy po stažení ze zařízení. Tyto datové sady se skládají z celosvětových pobřežních oblastí (přibližně 12 MB), písem (asi 80 MB) a v datových sadách specifických pro jednotlivé země</translation>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
+        <translation>Po výběru budou datové sady s vektorovými dlaždicemi ve formátu Mapbox GL uloženy po stažení ze zařízení. Tyto datové sady se skládají z celosvětových pobřežních oblastí (přibližně 12 MB), písem (asi 80 MB) a v datových sadách specifických pro jednotlivé země.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="298"/>
@@ -1182,8 +1182,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation>Když je vybráno, datové sady, které umožňují vykreslování map s Mapnikem, budou uloženy na zařízení po jejich stažení. Tyto datové sady se skládají z celosvětových pobřežních oblastí (přibližně 700 MB) a datových souborů specifických pro jednotlivé země, které se používají pro vykreslování</translation>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
+        <translation>Když je vybráno, datové sady, které umožňují vykreslování map s Mapnikem, budou uloženy na zařízení po jejich stažení. Tyto datové sady se skládají z celosvětových pobřežních oblastí (přibližně 700 MB) a datových souborů specifických pro jednotlivé země, které se používají pro vykreslování.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="187"/>
