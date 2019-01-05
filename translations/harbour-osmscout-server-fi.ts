@@ -1165,7 +1165,7 @@
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
         <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
-        <translation>Kun valittuna, Mapbox GL formaatin vektorilaattoja sisältävät datasetit tallennetaan laitteen niiden lataamisen jälkeen. Nämä datasetit sisältävät maailman rantaviivat (noin 12 MB), fontit (noin 80 MB), ja maakohtaiset datasetit.</translation>
+        <translation>Kun valittuna, Mapbox GL formaatin vektorilaattoja sisältävät datasetit tallennetaan laitteen niiden lataamisen jälkeen. Nämä datasetit sisältävät maailman rantaviivat (noin 12 MB), fontit (noin 80 MB) ja maakohtaiset datasetit.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="298"/>
