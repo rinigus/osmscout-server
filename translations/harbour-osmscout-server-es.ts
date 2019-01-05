@@ -1038,8 +1038,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation>El Gestor de mapas gestiona el almacenamiento en el dispositivo de los mapas sin conexión y del conjunto de datos relacionados. Aquí puedes seleccionar las funcionalidades y los países que se almacenarán, actualizarán o eliminarán en el dispositivo</translation>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
+        <translation>El Gestor de mapas gestiona el almacenamiento en el dispositivo de los mapas sin conexión y del conjunto de datos relacionados. Aquí puedes seleccionar las funcionalidades y los países que se almacenarán, actualizarán o eliminarán en el dispositivo.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="252"/>
@@ -1164,7 +1164,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
         <translation>Cuando se activa, los conjuntos de datos de teselas vectoriales en formato Mapbox GL se almacenarán en el dispositivo tras su descarga. Estos conjuntos de datos comprenden las costas del mundo (aprox. 12 MB), fuentes (aprox. 80 MB) y el conjunto de datos del país indicado.</translation>
     </message>
     <message>
