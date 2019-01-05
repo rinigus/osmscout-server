@@ -1038,7 +1038,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
         <translation>Le Gestionnaire s&apos;occupe du stockage des cartes hors connexion + jeux de données associés sur ce périphérique. Vous pouvez notamment sélectionner les fonctionnalités et pays qui doivent être stockés, mis à jour ou supprimés de ce périphérique.</translation>
     </message>
     <message>
@@ -1164,7 +1164,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
         <translation>Lorsque sélectionné, un jeu de données de tuiles vectorielles au format Mapbox GL sera stocké sur cet appareil après l&apos;avoir téléchargé. Ce jeu de données contient les littoraux mondiaux (environ 12 Mo), des polices (environ 80 Mo) et des données spécifiques aux pays.</translation>
     </message>
     <message>
@@ -1182,7 +1182,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
         <translation>Lorsque sélectionné, un jeu de données permettant d&apos;afficher les cartes avec Mapnik sera stocké sur cet appareil après l&apos;avoir téléchargé. Ce jeu de données contient les littoraux mondiaux (environ 700 Mo) et des données spécifiques aux pays utilisés pour l&apos;affichage.</translation>
     </message>
     <message>
