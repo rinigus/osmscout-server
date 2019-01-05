@@ -1038,7 +1038,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
         <translation>Il Gestore delle Mappe gestisce l&apos;archiviazione delle mappe non in linea e i relativi set di dati sul dispositivo. Qui puoi selezionare gli elementi e i paesi che verranno archiviati, aggiornati o rimossi dal dispositivo.</translation>
     </message>
     <message>
@@ -1164,7 +1164,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
         <translation>Quando selezionato, i set di dati con tile vettoriali nel formato di Mapbox GL verranno archiviati sul dispositivo dopo averli scaricati. Quest set di dati consistono nelle linee costiere globali (circa 12 MB), nei caratteri (circa 80 MB) e nei set di dati paese-specifici.</translation>
     </message>
     <message>
@@ -1182,7 +1182,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
         <translation>Quando selezionato, i set di dadi che permettono il render delle mappe con Mapnik saranno archiviate sul dispositivo dopo averle scaricate. Questi set di dati consistono nelle linee costiere globali (circa 700 MB) e nei set di dati paese-specifici usate per il render.</translation>
     </message>
     <message>
