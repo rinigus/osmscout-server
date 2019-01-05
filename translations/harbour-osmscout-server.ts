@@ -1038,7 +1038,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
