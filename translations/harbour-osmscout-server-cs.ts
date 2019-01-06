@@ -1036,6 +1036,12 @@
         <translation>Správce map</translation>
     </message>
     <message>
+        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
+        <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
+        <translation>Správce map zpracovává ukládání map offline a souvisejících datových sad v zařízení. Zde můžete vybrat funkce a země, které budou ze zařízení uloženy, aktualizovány nebo odstraněny</translation>
+    </message>
+    <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="252"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="268"/>
         <source>Storage settings</source>
@@ -1088,12 +1094,6 @@
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="58"/>
         <source>Subscribed</source>
         <translation>Odebírané</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
-        <translation>Správce map zpracovává ukládání map offline a souvisejících datových sad v zařízení. Zde můžete vybrat funkce a země, které budou ze zařízení uloženy, aktualizovány nebo odstraněny</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="101"/>
@@ -2636,7 +2636,7 @@
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
-        <source>Vailed to load Valhalla configuration: %1</source>
+        <source>Failed to load Valhalla configuration: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

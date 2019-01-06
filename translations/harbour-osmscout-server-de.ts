@@ -2640,7 +2640,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
-        <source>Vailed to load Valhalla configuration: %1</source>
+        <source>Failed to load Valhalla configuration: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

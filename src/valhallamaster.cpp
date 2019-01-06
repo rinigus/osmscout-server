@@ -195,7 +195,7 @@ void ValhallaMaster::start()
   }
   catch (std::exception& e)
   {
-    InfoHub::logWarning(tr("Vailed to load Valhalla configuration: %1").arg(e.what()));
+    InfoHub::logWarning(tr("Failed to load Valhalla configuration: %1").arg(e.what()));
     return;
   }
 
