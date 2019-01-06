@@ -1039,7 +1039,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
         <translation>Die Kartenverwaltung verwaltet Offline-Karten und zugehörige Datensätze auf dem Gerät. Hier kannst du Karten herunterladen, aktualisieren oder löschen.</translation>
     </message>
     <message>
@@ -1165,7 +1165,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
         <translation> 78% match
 Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format enthalten nach dem Herunterladen auf dem Gerät gespeichert. Diese Datensätze bestehen aus den Küstenlinien der Welt (ca. 12 MB), Schriftarten (ca. 80 MB) und länderspezifischen Datensätzen.</translation>
     </message>
@@ -1184,7 +1184,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
         <translation>Wenn ausgewählt, werden Datensätze, die das Darstellen von Karten mit Mapnik ermöglichen, nach dem Herunterladen auf dem Gerät gespeichert. Diese Datensätze bestehen aus den Küstenlinien der Welt (ca. 700 MB) und länderspezifischen Datensätzen für das Rendering.</translation>
     </message>
     <message>

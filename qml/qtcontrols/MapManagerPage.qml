@@ -45,7 +45,7 @@ Dialog {
         Label {
             text: qsTr("Map Manager handles the storage of offline maps and " +
                        "related datasets on the device. Here you can select the " +
-                       "features and countries that will be stored, updated or removed from the device")
+                       "features and countries that will be stored, updated or removed from the device.")
             x: Theme.horizontalPageMargin
             width: parent.width-2*x
             wrapMode: Text.WordWrap
@@ -269,7 +269,7 @@ Dialog {
             autoApply: true
             mainLabel: qsTr("Store datasets for Mapnik")
             secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
-                                 "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering")
+                                 "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.")
 
             onSwitchChanged: {
                 // ensure that we have the same value for geocoder-nlp as postal
@@ -285,8 +285,8 @@ Dialog {
             key: settingsMapManagerPrefix + "mapboxgl"
             autoApply: true
             mainLabel: qsTr("Store datasets for Mapbox GL")
-            secondaryLabel: qsTr("When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. " +
-                                 "These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets")
+            secondaryLabel: qsTr("When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. " +
+                                 "These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.")
         }
 
         ElementSwitch {

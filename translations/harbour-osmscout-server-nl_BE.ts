@@ -1038,7 +1038,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
         <translation>Kaartbeheerder beheert den opslag van offline kaarten en gerelateerde gegevenssets op het apparaat. Hier kunt ge de functionaliteit en landen selecteren die worden opgeslagen, bijgewerkt of verwijderd van het apparaat.</translation>
     </message>
     <message>
@@ -1164,8 +1164,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation>Indien ingeschakeld worden gegevenssets met vectortegels in Mapnik-formaat opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 12MB), lettertypen (ongeveer 80MB) en landspecifieke gegevenssets</translation>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
+        <translation>Indien ingeschakeld worden gegevenssets met vectortegels in Mapbox GL formaat opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 12MB), lettertypen (ongeveer 80MB) en landspecifieke gegevenssets.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="298"/>
@@ -1182,8 +1182,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
-        <translation>Indien ingeschakeld worden gegevenssets die kaarten laten renderen met Mapnik opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 700MB) en landspecifieke gegevenssets voor het renderen</translation>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
+        <translation>Indien ingeschakeld worden gegevenssets die kaarten laten renderen met Mapnik opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 700MB) en landspecifieke gegevenssets voor het renderen.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="187"/>

@@ -1038,8 +1038,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
-        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device</source>
-        <translation>Диспетчер Карт управляет хранением оффлайновых карт и соответствующих наборов данных на устройстве. Здесь можно выбрать параметры и страны, которые будут сохранены, обновлены или удалены с устройства</translation>
+        <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
+        <translation>Диспетчер Карт управляет хранением оффлайновых карт и соответствующих наборов данных на устройстве. Здесь можно выбрать параметры и страны, которые будут сохранены, обновлены или удалены с устройства.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="252"/>
@@ -1164,8 +1164,8 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
-        <source>When selected, datasets with vector tiles in Mabox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB), and country-specific datasets</source>
-        <translation>Выбранные наборы данных с векторными тайлами в формате Mapbox GL будут сохранены на устройстве после загрузки. Эти наборы данных состоят из береговых линий земного шара(около 12 МБ), шрифтов(около 80МБ) и зависящих от страны наборов данных</translation>
+        <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
+        <translation>Выбранные наборы данных с векторными тайлами в формате Mapbox GL будут сохранены на устройстве после загрузки. Эти наборы данных состоят из береговых линий земного шара(около 12 МБ), шрифтов(около 80МБ) и зависящих от страны наборов данных.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="298"/>
@@ -1182,7 +1182,7 @@
     <message>
         <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
         <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
-        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering</source>
+        <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
         <translation>После выбора наборы данных для отрисовки карт с помощью Mapnik будут сохранены на устройстве после загрузки. Эти наборы данных состоят из береговых линий Земли(около 700 МБ) и специфических для стран наборов данных, которые используются для отрисовки.</translation>
     </message>
     <message>
