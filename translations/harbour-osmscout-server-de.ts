@@ -1199,17 +1199,17 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffnen der Mapbox GL Datenbank fehlgeschlagen: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Abfrage der Mapbox GL Datenbank fehlgeschlagen: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Abfrage der Mapbox GL Schriftarten-Datenbank fehlgeschlagen: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -2641,7 +2641,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Laden der Konfiguration von Valhalla fehlgeschlagen: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>

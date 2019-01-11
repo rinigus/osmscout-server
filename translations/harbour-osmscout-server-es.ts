@@ -1197,17 +1197,17 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al abrir base de datos de Mapbox GL: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al ejecutar consulta en base de datos de Mapbox GL: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al ejecutar consulta en base de datos de fuentes de Mapbox GL: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -2340,7 +2340,7 @@
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="472"/>
         <location filename="../qml/silica/pages/SettingsPage.qml" line="453"/>
         <source>Log messages into session log file</source>
-        <translation>Mensajes de registro dentro del fichero de registro de sesión</translation>
+        <translation>Mensajes en archivo de registro de sesión</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/SettingsPage.qml" line="473"/>
@@ -2637,7 +2637,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al cargar configuración de Valhalla: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>

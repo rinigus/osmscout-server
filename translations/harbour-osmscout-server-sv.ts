@@ -1781,7 +1781,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="74"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation>Aktivera motsvarande servergränssnitt med hjälp av profiler. </translation>
+        <translation>Aktivera motsvarande servergränssnitt med hjälp av profiler.</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
@@ -2637,7 +2637,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte läsa in Valhallas konfiguration: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>
