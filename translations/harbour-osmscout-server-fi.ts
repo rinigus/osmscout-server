@@ -1197,17 +1197,17 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapbox GL -tietokannan avaaminen epäonnistui: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Haku Mapbox GL -tietokannasta epäonnistui: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Haku Mapbox GL fonttien tietokannasta epäonnistui: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -2637,7 +2637,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhallan asetustiedostoa ei voitu ladata: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>

@@ -43,7 +43,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="69"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="64"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kody pocztowe w Wielkiej Brytanii pobrane z &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Dane te zawierają: Dane z ankiety Ordnance © Crown copyright and database right 2017; Dane Royal Mail © Royal Mail copyright i database right 2017; Dane statystyki krajowej © Crown copyright and database right 2017.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="75"/>
@@ -608,7 +608,7 @@
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="75"/>
         <location filename="../qml/silica/pages/GeocoderPage.qml" line="81"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>To jest główny analizator adresów geokodera. Zaleca się włączenie parser składni &lt;i&gt;libpostal&lt;/i&gt;, chyba że sprzęt nie pozwala na jego użycie, w innym przypadku zostanie użyty prymitywny parser wraz ze swoimi ograniczeniami. Zauważ, że musisz wybrać co najmniej jeden parser składni.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/GeocoderPage.qml" line="83"/>
@@ -1197,17 +1197,17 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd otwarcia bazy danych Mapbox GL: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd zapytania do bazy danych Mapbox GL: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd zapytania do bazy danych czcionek Mapbox GL: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -1744,7 +1744,7 @@
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="88"/>
         <location filename="../qml/silica/pages/ProfilesPage.qml" line="83"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Domyślny&lt;/i&gt; profil obsługuje aplikacje mapowe używając wtyczki &lt;i&gt;Mapbox GL&lt;/i&gt;, wykorzystuje &lt;i&gt;Geocoder-NLP&lt;/i&gt; do wyszukiwania lokalizacji, a &lt;i&gt;Valhalla&lt;/i&gt; do obliczania tras. Ten profil jest zalecany dla nowych klientów map wektorowych.&lt;br&gt;&lt;br&gt; Dla użytkowników aplikacji mapowych wykorzystujących tradycyjne płytki rastrowe zalecany profil dla map płytek rastrowych zawierający zestawy danych &lt;i&gt;Mapnik&lt;/i&gt; i używający tych samych wtyczek wyszukiwania i routingu, co profil &lt;i&gt;Domyślny&lt;/i&gt;.&lt;br&gt;&lt;br&gt; Dla użytkowników, którzy chcą korzystaj z klientów map rastrowych i wektorowych, zalecany profil łączący płytki wektorowe i rastrowe zawiera zestawy danych &lt;i&gt;Mapbox GL&lt;/i&gt;, obsługuje renderowanie map na płytki rastrowe &lt;i&gt;Mapnika&lt;/i&gt; i używa tych samych wtyczek wyszukiwania i routingu, co profil &lt;i&gt;domyślny&lt;/i&gt;. Ponieważ ten profil zawiera dane dla wielu backendów renderowania, ma największe wymagania dotyczące przechowywania.&lt;br&gt;&lt;br&gt; Profil, w którym &lt;i&gt;libosmscout&lt;/i&gt; jest połączony z &lt;i&gt;Geocoder-NLP&lt;/i&gt;, ma mniejsze wymagania w zakresie pamięci w porównaniu z domyślnym. Jednak renderowanie map i trasowanie będzie ograniczone tylko do jednego terytorium. Ponadto jakość renderowania jest gorsza, a szybkość rutowania jest niższa w porównaniu do domyślnego profilu profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt;, który ma najmniejsze wymagania dotyczące pamięci masowej wśród wszystkich profili. Jednak renderowanie map, wyszukiwania i routingu będzie ograniczone tylko do jednego terytorium. Ponadto jakość renderowania i wyszukiwanie są gorsze, a szybkość rutowania jest mniejsza w porównaniu z profilem domyślnym.&lt;br&gt;&lt;br&gt; Podczas korzystania z profilu &lt;i&gt;niestandardowego&lt;/i&gt; ustawienia i pamięć menedżera map nie są ustawiane według profili i powinny być określone przez użytkownika. Ten profil pozwala indywidualnie wybrać elementy renderowania, wyszukiwania i trasowania. Należy pamiętać, że użytkownik jest odpowiedzialny za dostosowanie ustawień, tak aby były spójne z wymaganiami używanego zaplecza i pamięci.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/ProfilesPage.qml" line="71"/>
@@ -1786,7 +1786,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ładowanie danych dla żądania %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
@@ -2607,12 +2607,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Żądanie dopasowania map: tryb=%1</translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Tryb dopasowywania map %1 jest niewspierany</translation>
     </message>
 </context>
 <context>
@@ -2620,7 +2620,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamykanie usługi dopasowywania map dla klinta DBus %1</translation>
     </message>
 </context>
 <context>
@@ -2638,7 +2638,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd ładowania konfiguracji Valhala: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>

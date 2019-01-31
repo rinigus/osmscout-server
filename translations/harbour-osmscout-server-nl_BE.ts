@@ -55,7 +55,7 @@
         <location filename="../qml/qtcontrols/AboutPage.qml" line="77"/>
         <location filename="../qml/silica/pages/AboutPage.qml" line="73"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Let op: &lt;i&gt;libpostal&lt;/i&gt; is ontwikkeld voor gebruikt te worden met het verfijnde model dat de wereld omvat. De landspecifieke modellen zijn ontwikkeld voor het gebruik van &lt;i&gt;libpostal&lt;/i&gt; op mobiele apparaten en zijn niet specifiek afgestemd. Meld problemen met prestaties van libpostal m.b.t. landspecifieke modellen op de GitHub-pagina’s van &lt;i&gt;OSM Scout Server&lt;/i&gt; of &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation>Let op: &lt;i&gt;libpostal&lt;/i&gt; is ontwikkeld voor gebruikt te worden met het verfijnde model dat de wereld omvat. De landspecifieke modellen zijn ontwikkeld voor het gebruik van &lt;i&gt;libpostal&lt;/i&gt; op mobiele apparaten en zijn niet specifiek afgestemd. Meldt problemen met prestaties van libpostal m.b.t. landspecifieke modellen op de GitHub-pagina’s van &lt;i&gt;OSM Scout Server&lt;/i&gt; of &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/qtcontrols/AboutPage.qml" line="84"/>
@@ -1197,17 +1197,17 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Openen van Mapbox GL-databank mislukt: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoeren van zoekopdracht in Mapbox GL-databank mislukt: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Uitvoeren van zoekopdrahct in Mapbox GL-lettertypendatabank mislukt: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -2637,7 +2637,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Laden van Valhalla-configuratie mislukt: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>
