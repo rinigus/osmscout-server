@@ -209,6 +209,7 @@ LIBS += -L$${PREFIX}/lib -lmarisa -lkyotocabinet -lz -lsqlite3
 QMAKE_CXXFLAGS += -fopenmp
 LIBS += -fopenmp
 
+RESOURCES += qml_main.qrc
 RESOURCES += qml_qtcontrols.qrc
 
 CONFIG(release, debug|release) {

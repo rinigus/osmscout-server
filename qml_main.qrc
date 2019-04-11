@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/osmscout-server.qml</file>
+        <file>qml/AboutPage.qml</file>
+        <file>qml/TruncationModes.qml</file>
+        <file>qml/StartPage.qml</file>
+        <file>qml/ElementLanguageSelector.qml</file>
+        <file>qml/ElementDownloads.qml</file>
+        <file>qml/MainMenu.qml</file>
+        <file>qml/IconListItem.qml</file>
+        <file>qml/LanguageSelector.qml</file>
+        <file>qml/SettingsPage.qml</file>
+        <file>qml/ElementSelector.qml</file>
+        <file>qml/ElementSwitch.qml</file>
+        <file>qml/ElementEntry.qml</file>
+    </qresource>
+</RCC>
