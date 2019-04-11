@@ -5,6 +5,7 @@
         <file alias="qml/platform/ComboBoxPL.qml">qml/platform.qtcontrols/ComboBoxPL.qml</file>
         <file alias="qml/platform/DialogPL.qml">qml/platform.qtcontrols/DialogPL.qml</file>
         <file alias="qml/platform/FileSelectorPL.qml">qml/platform.qtcontrols/FileSelectorPL.qml</file>
+        <file alias="qml/platform/FormLayoutPL.qml">qml/platform.qtcontrols/FormLayoutPL.qml</file>
         <file alias="qml/platform/HeaderBarImpl.qml">qml/platform.qtcontrols/HeaderBarImpl.qml</file>
         <file alias="qml/platform/IconButtonPL.qml">qml/platform.qtcontrols/IconButtonPL.qml</file>
         <file alias="qml/platform/IconPL.qml">qml/platform.qtcontrols/IconPL.qml</file>

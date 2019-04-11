@@ -107,13 +107,13 @@ Column {
     }
 
     function select() {
-        app.pushMain(Qt.resolvedUrl("LanguageSelector.qml"), {
-                         value: value,
-                         title: mainLabel,
-                         callback: setValue,
-                         comment: selectorComment,
-                         note: selectorNote
-                     })
+        app.push(Qt.resolvedUrl("LanguageSelector.qml"), {
+                     value: value,
+                     title: mainLabel,
+                     callback: setValue,
+                     comment: selectorComment,
+                     note: selectorNote
+                 })
     }
 }
 

@@ -13,5 +13,15 @@
         <file>qml/ElementSelector.qml</file>
         <file>qml/ElementSwitch.qml</file>
         <file>qml/ElementEntry.qml</file>
+        <file>qml/ProfilesPage.qml</file>
+        <file>qml/GeocoderPage.qml</file>
+        <file>qml/MapnikPage.qml</file>
+        <file>qml/OSMScoutPage.qml</file>
+        <file>qml/OSMSpeedPage.qml</file>
+        <file>qml/ValhallaPage.qml</file>
+        <file>qml/MapManagerPage.qml</file>
+        <file>qml/ElementCountryListItem.qml</file>
+        <file>qml/MessagePage.qml</file>
+        <file>qml/CountryDetailsPage.qml</file>
     </qresource>
 </RCC>

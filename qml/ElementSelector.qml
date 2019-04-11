@@ -55,6 +55,12 @@ Column {
             width: parent.width
             spacing: styler.themePaddingSmall
 
+            Rectangle {
+                width: parent.width
+                height: styler.themePaddingSmall
+                color: "transparent"
+            }
+
             LabelPL {
                 id: textInput
                 text: ""
@@ -76,6 +82,12 @@ Column {
                 color: listItem.highlighted ? styler.themeHighlightColor : styler.themePrimaryColor
                 font.pixelSize: styler.themeFontSizeExtraSmall
                 truncMode: truncModes.fade
+            }
+
+            Rectangle {
+                width: parent.width
+                height: styler.themePaddingSmall
+                color: "transparent"
             }
         }
 

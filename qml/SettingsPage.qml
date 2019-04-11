@@ -27,7 +27,7 @@ DialogPL {
 
     property bool backendSelectionPossible: false
 
-    Column {
+    FormLayoutPL {
         id: column
 
         spacing: styler.themePaddingLarge
@@ -66,7 +66,7 @@ DialogPL {
 
         ///////////////////////////////////////
         /// systemd support
-        Column {
+        FormLayoutPL {
             width: parent.width
             spacing: styler.themePaddingMedium
 

@@ -383,9 +383,8 @@ PagePL {
         target: manager
 
         onErrorMessage: {
-            pageStack.completeAnimation()
-            pageStack.push( Qt.resolvedUrl("MessagePage.qml"),
-                           {"header": qsTr("Error"), "message": info} )
+            app.push( Qt.resolvedUrl("MessagePage.qml"),
+                     {"title": qsTr("Error"), "message": info} )
         }
     }
 
@@ -469,7 +468,7 @@ PagePL {
 //            if (status === PageStatus.Active)
 //            {
 //                rootPage.statusChanged.disconnect(openWelcomeWizard)
-//                pageStack.push(firstWelcomeWizardPage)
+//                app.push(firstWelcomeWizardPage)
 //            }
 //        }
 
@@ -478,7 +477,7 @@ PagePL {
 //            if (status === PageStatus.Active)
 //            {
 //                rootPage.statusChanged.disconnect(openSystemdActivation)
-//                pageStack.push(fourthWelcomeWizardPage)
+//                app.push(fourthWelcomeWizardPage)
 //            }
 //        }
 
