@@ -33,8 +33,8 @@ DialogPL {
         spacing: styler.themePaddingLarge
 
         LabelPL {
-            color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeMedium
+            color: styler.themeHighlightColor
+            font.pixelSize: styler.themeFontSizeMedium
             text: qsTr("OSM Scout Server uses profiles to simplify the selection " +
                        "of backends and the sets of downloaded databases.<br><br>" +
                        "Please select active profile."
@@ -61,8 +61,8 @@ DialogPL {
         }
 
         LabelPL {
-            color: Theme.highlightColor
-            font.pixelSize: Theme.fontSizeSmall
+            color: styler.themeHighlightColor
+            font.pixelSize: styler.themeFontSizeMedium
             x: styler.themeHorizontalPageMargin
             width: parent.width-2*x
             wrapMode: Text.WordWrap

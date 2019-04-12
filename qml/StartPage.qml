@@ -388,104 +388,83 @@ PagePL {
         }
     }
 
-//    ///////////////////////////////////////////////////////////
-//    /// welcome wizard
-//    Component {
-//        id: firstWelcomeWizardPage
+    ///////////////////////////////////////////////////////////
+    /// welcome wizard
+    Component {
+        id: firstWelcomeWizardPage
 
-//        Dialog {
+        DialogPL {
+            title: qsTr("Welcome")
+            acceptText: qsTr("Next")
 
-//            acceptDestination: secondWelcomeWizardPage
+            Column {
+                id: column
+                width: parent.width
 
-//            SilicaFlickable {
-//                anchors.fill: parent
-//                contentHeight: column.height + styler.themePaddingLarge
+                LabelPL {
+                    color: styler.themeHighlightColor
+                    text: qsTr("OSM Scout Server is a part of the solution allowing you to have offline maps on device. " +
+                               "With this server, you could download the maps to your device and use the " +
+                               "downloaded data to locally render maps, search for addresses and POIs, and " +
+                               "calculate the routes. Such operations requires server and an additional client " +
+                               "accessing the server to run simultaneously on the device.<br><br>" +
+                               "This wizard will help you to select the backends used by the server and " +
+                               "the specify languages for parsing your search requests.<br><br>" +
+                               "Please choose 'Next' to start configuration."
+                               )
+                    x: styler.themeHorizontalPageMargin
+                    width: parent.width-2*x
+                    wrapMode: Text.WordWrap
+                }
+            }
+            onAccepted: app.push(secondWelcomeWizardPage)
+        }
+    }
 
-//                Column {
-//                    id: column
-//                    width: parent.width
+    Component {
+        id: secondWelcomeWizardPage
 
-//                    DialogHeader {
-//                        title: qsTr("Welcome")
-//                        acceptText: qsTr("Next")
-//                        cancelText: qsTr("Skip")
-//                    }
+        ProfilesPage {
+            acceptText: qsTr("Next")
+            onAccepted: app.push(thirdWelcomeWizardPage)
+        }
+    }
 
-//                    Label {
-//                        text: qsTr("OSM Scout Server is a part of the solution allowing you to have offline maps on device. " +
-//                                   "With this server, you could download the maps to your device and use the " +
-//                                   "downloaded data to locally render maps, search for addresses and POIs, and " +
-//                                   "calculate the routes. Such operations requires server and an additional client " +
-//                                   "accessing the server to run simultaneously on the device.<br><br>" +
-//                                   "This wizard will help you to select the backends used by the server and " +
-//                                   "the specify languages for parsing your search requests.<br><br>" +
-//                                   "Please choose 'Next' to start configuration."
-//                                   )
-//                        x: styler.themeHorizontalPageMargin
-//                        width: parent.width-2*x
-//                        wrapMode: Text.WordWrap
-//                        color: styler.themeHighlightColor
-//                    }
-//                }
+    Component {
+        id: thirdWelcomeWizardPage
 
-//                VerticalScrollDecorator {}
-//            }
-//        }
+        LanguageSelector {
+            acceptText: qsTr("Next")
+            callback: eGeoLanguages.setValue
+            title: eGeoLanguages.mainLabel
+            value: eGeoLanguages.value
+            comment: eGeoLanguages.selectorComment
+            note: eGeoLanguages.selectorNote
+            onAccepted: app.push(fourthWelcomeWizardPage)
+        }
+    }
 
-//        Component {
-//            id: secondWelcomeWizardPage
+    Component {
+        id: fourthWelcomeWizardPage
 
-//            ProfilesPage {
-//                acceptDestination: thirdWelcomeWizardPage
-//            }
-//        }
+        SystemdActivationPage {
+        }
+    }
 
-//        Component {
-//            id: thirdWelcomeWizardPage
+    function openWelcomeWizard() {
+        rootPage.pageStatusActive.disconnect(openWelcomeWizard)
+        app.push(firstWelcomeWizardPage)
+    }
 
-//            LanguageSelector {
-//                acceptDestination: fourthWelcomeWizardPage
+    function openSystemdActivation() {
+        rootPage.pageStatusActive.disconnect(openSystemdActivation)
+        app.push(fourthWelcomeWizardPage)
+    }
 
-//                value: eGeoLanguages.value
-//                callback: eGeoLanguages.setValue
-//                title: eGeoLanguages.mainLabel
-//                comment: eGeoLanguages.selectorComment
-//                note: eGeoLanguages.selectorNote
-//            }
-//        }
-
-//        Component {
-//            id: fourthWelcomeWizardPage
-
-//            SystemdActivationPage {
-//                acceptDestination: rootPage
-//                acceptDestinationAction: PageStackAction.Pop
-//            }
-//        }
-
-//        function openWelcomeWizard()
-//        {
-//            if (status === PageStatus.Active)
-//            {
-//                rootPage.statusChanged.disconnect(openWelcomeWizard)
-//                app.push(firstWelcomeWizardPage)
-//            }
-//        }
-
-//        function openSystemdActivation()
-//        {
-//            if (status === PageStatus.Active)
-//            {
-//                rootPage.statusChanged.disconnect(openSystemdActivation)
-//                app.push(fourthWelcomeWizardPage)
-//            }
-//        }
-
-//        Component.onCompleted: {
-//            if (settings.firstTime)
-//                rootPage.statusChanged.connect(openWelcomeWizard)
-//            else if (settings.lastRunVersion === 0)
-//                rootPage.statusChanged.connect(openSystemdActivation)
-//        }
-//    }
+    Component.onCompleted: {
+        if (settings.firstTime)
+            rootPage.pageStatusActive.connect(openWelcomeWizard)
+        else if (settings.lastRunVersion === 0)
+            rootPage.pageStatusActive.connect(openSystemdActivation)
+    }
 }

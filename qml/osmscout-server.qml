@@ -24,7 +24,7 @@ import "platform"
 
 ApplicationWindowPL {
     id: app
-    initialPage: StartPage { }
+    initialPage: PagePL { title: "OSM Scout Server" }
     menuPageUrl: Qt.resolvedUrl("MainMenu.qml")
     title: qsTr("OSM Scout Server")
 
@@ -36,6 +36,10 @@ ApplicationWindowPL {
 
     TruncationModes {
         id: truncModes
+    }
+
+    Component.onCompleted: {
+        app.pages.replace( Qt.resolvedUrl("StartPage.qml") )
     }
 
     function push(pagefile, options, clearAll) {
