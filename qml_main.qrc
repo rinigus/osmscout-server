@@ -25,5 +25,7 @@
         <file>qml/CountryDetailsPage.qml</file>
         <file>qml/NonNeededFiles.qml</file>
         <file>qml/DownloadCountriesPage.qml</file>
+        <file>qml/UpdatesFound.qml</file>
+        <file>qml/SystemdActivationPage.qml</file>
     </qresource>
 </RCC>
