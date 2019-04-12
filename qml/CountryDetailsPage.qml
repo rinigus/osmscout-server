@@ -38,7 +38,7 @@ PagePL {
         LabelPL {
             id: fullName
             color: styler.themeHighlightColor
-            font.pixelSize: styler.themeFontSizeTiny
+            font.pixelSize: styler.themeFontSizeExtraSmall
             horizontalAlignment: Text.AlignRight
             text: ""
             truncMode: truncModes.elide
@@ -91,46 +91,53 @@ PagePL {
         }
 
         Row {
-            x: Theme.horizontalPageMargin
+            spacing: styler.themePaddingLarge
+            x: styler.themeHorizontalPageMargin
             width: parent.width-2*x
-            spacing: Theme.paddingLarge
 
-            Label {
+            LabelPL {
+                color: styler.themeHighlightColor
+                font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("All datasets")
-                width: parent.width*2/3 - Theme.paddingLarge/2
+                width: parent.width*2/3 - styler.themePaddingLarge/2
                 wrapMode: Text.WordWrap
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
             }
 
-            Label {
+            LabelPL {
                 id: size_full
-                width: parent.width/3 - Theme.paddingLarge/2
+                color: styler.themeHighlightColor
                 horizontalAlignment: Text.AlignRight
-                font.pixelSize: Theme.fontSizeSmall
-                color: Theme.highlightColor
+                font.pixelSize: styler.themeFontSizeSmall
+                width: parent.width/3 - styler.themePaddingLarge/2
             }
         }
 
         Column {
             width: parent.width
-            spacing: Theme.paddingMedium
+            spacing: styler.themePaddingMedium
             Repeater {
                 width: parent.width
                 model: nFeatures
                 delegate: Row {
-                    spacing: Theme.paddingMedium
-                    x: Theme.horizontalPageMargin
+                    spacing: styler.themePaddingMedium
+                    x: styler.themeHorizontalPageMargin
                     width: parent.width-2*x
 
                     property double split_prop: 0.6
 
-                    Label {
+                    LabelPL {
                         id: feature_name
-                        width: parent.width*split_prop - Theme.paddingMedium/2
-                        font.pixelSize: Theme.fontSizeExtraSmall
-                        color: Theme.secondaryHighlightColor
+                        color: styler.themeSecondaryHighlightColor
+                        font.pixelSize: styler.themeFontSizeExtraSmall
+                        width: parent.width*split_prop - styler.themePaddingMedium/2
                         wrapMode: Text.WordWrap
+
+                        Connections {
+                            target: page
+                            onDataChanged: feature_name.updateData()
+                        }
+
+                        Component.onCompleted: updateData()
 
                         function updateData() {
                             var txt = features[index].name + "<br>" + features[index].date
@@ -138,21 +145,22 @@ PagePL {
                                 txt = txt + "<br><b>" + qsTr("incompatible version") + "</b>"
                             text = txt
                         }
+                    }
 
-                        Component.onCompleted: updateData()
+                    LabelPL {
+                        id: feature_size
+                        color: styler.themeSecondaryHighlightColor
+                        horizontalAlignment: Text.AlignRight
+                        font.pixelSize: styler.themeFontSizeExtraSmall
+                        width: parent.width*(1-split_prop) - styler.themePaddingMedium/2
+                        wrapMode: Text.WordWrap
+
                         Connections {
                             target: page
                             onDataChanged: feature_name.updateData()
                         }
-                    }
 
-                    Label {
-                        id: feature_size
-                        width: parent.width*(1-split_prop) - Theme.paddingMedium/2
-                        font.pixelSize: Theme.fontSizeExtraSmall
-                        horizontalAlignment: Text.AlignRight
-                        color: Theme.secondaryHighlightColor
-                        wrapMode: Text.WordWrap
+                        Component.onCompleted: updateData()
 
                         function updateData() {
                             var txt = features[index].size + " " + qsTr("MB")
@@ -160,37 +168,31 @@ PagePL {
                                 txt = txt + "<br>" + qsTr("disabled")
                             feature_size.text = txt
                         }
-
-                        Component.onCompleted: updateData()
-                        Connections {
-                            target: page
-                            onDataChanged: feature_name.updateData()
-                        }
                     }
                 }
             }
         }
 
-        SectionHeader {
+        SectionHeaderPL {
             text: qsTr("Subscription")
         }
 
-        Button {
+        ButtonPL {
             id: subscribe
-            text: qsTr("Subscribe")
-            preferredWidth: Theme.buttonWidthLarge
             anchors.horizontalCenter: parent.horizontalCenter
+            preferredWidth: styler.themeButtonWidthLarge
+            text: qsTr("Subscribe")
             onClicked: {
                 manager.addCountry(countryId)
                 checkSubs()
             }
         }
 
-        Button {
+        ButtonPL {
             id: unsubscribe
-            text: qsTr("Unsubscribe")
-            preferredWidth: Theme.buttonWidthLarge
             anchors.horizontalCenter: parent.horizontalCenter
+            preferredWidth: styler.themeButtonWidthLarge
+            text: qsTr("Unsubscribe")
             onClicked: {
                 manager.rmCountry(countryId)
                 checkSubs()

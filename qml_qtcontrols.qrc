@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file alias="qml/platform/ApplicationWindowPL.qml">qml/platform.qtcontrols/ApplicationWindowPL.qml</file>
+        <file alias="qml/platform/BusyIndicatorPL.qml">qml/platform.qtcontrols/BusyIndicatorPL.qml</file>
         <file alias="qml/platform/ButtonPL.qml">qml/platform.qtcontrols/ButtonPL.qml</file>
         <file alias="qml/platform/ComboBoxPL.qml">qml/platform.qtcontrols/ComboBoxPL.qml</file>
         <file alias="qml/platform/DialogPL.qml">qml/platform.qtcontrols/DialogPL.qml</file>
@@ -13,7 +14,9 @@
         <file alias="qml/platform/ListItemPL.qml">qml/platform.qtcontrols/ListItemPL.qml</file>
         <file alias="qml/platform/MenuDrawerItemPL.qml">qml/platform.qtcontrols/MenuDrawerItemPL.qml</file>
         <file alias="qml/platform/MenuDrawerPL.qml">qml/platform.qtcontrols/MenuDrawerPL.qml</file>
+        <file alias="qml/platform/PageListPL.qml">qml/platform.qtcontrols/PageListPL.qml</file>
         <file alias="qml/platform/PagePL.qml">qml/platform.qtcontrols/PagePL.qml</file>
+        <file alias="qml/platform/RemorsePopupPL.qml">qml/platform.qtcontrols/RemorsePopupPL.qml</file>
         <file alias="qml/platform/SectionHeaderPL.qml">qml/platform.qtcontrols/SectionHeaderPL.qml</file>
         <file alias="qml/platform/StackPL.qml">qml/platform.qtcontrols/StackPL.qml</file>
         <file alias="qml/platform/StylerPL.qml">qml/platform.qtcontrols/StylerPL.qml</file>

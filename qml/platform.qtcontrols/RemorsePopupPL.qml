@@ -1,7 +1,6 @@
-/*
- * Copyright (C) 2016-2019 Rinigus https://github.com/rinigus
+/* -*- coding: utf-8-unix -*-
  *
- * This file is part of OSM Scout Server.
+ * Copyright (C) 2018 Rinigus
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,26 +13,14 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 import QtQuick 2.0
-import "platform"
 
-PagePL {
-    id: page
-
-    property string message: ""
-
-    LabelPL {
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.margins: styler.themeHorizontalPageMargin
-        color: styler.themeHighlightColor
-        text: message
-        textFormat: Text.RichText
-        x: styler.themeHorizontalPageMargin
-        width: page.width - 2*x
-        wrapMode: Text.WordWrap
+Item {
+    function execute(title, callback, timeout) {
+        console.log("TODO: RemorsePopup not implemented. Called with " + title + " and timeout " + timeout);
+        callback.call();
     }
 }

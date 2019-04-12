@@ -23,5 +23,7 @@
         <file>qml/ElementCountryListItem.qml</file>
         <file>qml/MessagePage.qml</file>
         <file>qml/CountryDetailsPage.qml</file>
+        <file>qml/NonNeededFiles.qml</file>
+        <file>qml/DownloadCountriesPage.qml</file>
     </qresource>
 </RCC>
