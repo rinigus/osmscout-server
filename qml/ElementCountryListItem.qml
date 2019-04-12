@@ -42,9 +42,7 @@ ListItemPL {
 
             IconPL {
                 anchors.centerIn: parent
-                source: {
-                    return iconSource + (highlighted || !active ? "?" + styler.themeHighlightColor : "")
-                }
+                source: iconSource
             }
         }
 
