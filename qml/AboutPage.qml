@@ -92,44 +92,49 @@ PagePL {
                               "Fonts: <a href='https://www.google.com/get/noto/'>Noto fonts</a> (SIL Open Font License, Version 1.1)<br>"
 
 
-    Column {
-        id: column
+    Item {
+        height: column.height
+        width: page.width
 
-        spacing: styler.themePaddingLarge
-        x: styler.themeHorizontalPageMargin
-        width: page.width - 2*x
+        Column {
+            id: column
 
-        LabelPL {
-            text: qsTr("version") + ": " + programVersion
-            anchors.horizontalCenter: parent.horizontalCenter
-            color: styler.themeHighlightColor
-        }
+            spacing: styler.themePaddingLarge
+            x: styler.themeHorizontalPageMargin
+            width: parent.width - 2*x
 
-        LabelPL {
-            text: programName + " " + qsTr("is a server that provides offline map services")
-            wrapMode: Text.WordWrap
-            width: column.width
-            color: styler.themeHighlightColor
-        }
+            LabelPL {
+                text: qsTr("version") + ": " + programVersion
+                anchors.horizontalCenter: parent.horizontalCenter
+                color: styler.themeHighlightColor
+            }
 
-        LabelPL {
-            text: qsTr("User's guide is available <a href='https://rinigus.github.io/osmscout-server'>online</a>")
-            wrapMode: Text.WordWrap
-            width: column.width
-            color: styler.themeHighlightColor
-            linkColor: styler.themePrimaryColor
-            onLinkActivated: Qt.openUrlExternally(link)
-        }
+            LabelPL {
+                text: programName + " " + qsTr("is a server that provides offline map services")
+                wrapMode: Text.WordWrap
+                width: column.width
+                color: styler.themeHighlightColor
+            }
 
-        LabelPL {
-            text: mainText
-            wrapMode: Text.WordWrap
-            width: column.width
-            font.pixelSize: styler.themeFontSizeSmall
-            color: styler.themeHighlightColor
-            linkColor: styler.themePrimaryColor
-            onLinkActivated: Qt.openUrlExternally(link)
-            //textFormat: Text.RichText
+            LabelPL {
+                text: qsTr("User's guide is available <a href='https://rinigus.github.io/osmscout-server'>online</a>")
+                wrapMode: Text.WordWrap
+                width: column.width
+                color: styler.themeHighlightColor
+                linkColor: styler.themePrimaryColor
+                onLinkActivated: Qt.openUrlExternally(link)
+            }
+
+            LabelPL {
+                text: mainText
+                wrapMode: Text.WordWrap
+                width: column.width
+                font.pixelSize: styler.themeFontSizeSmall
+                color: styler.themeHighlightColor
+                linkColor: styler.themePrimaryColor
+                onLinkActivated: Qt.openUrlExternally(link)
+                //textFormat: Text.RichText
+            }
         }
     }
 }
