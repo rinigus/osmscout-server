@@ -31,7 +31,7 @@
 #endif // of IS_CONSOLE_QT
 
 #ifdef IS_QTCONTROLS_QT
-#include <QGuiApplication>
+#include <QApplication>
 #endif
 
 #include "consolelogger.h"
@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
   QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
 #endif
 #ifdef IS_QTCONTROLS_QT
-  QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
+  QScopedPointer<QApplication> app(new QApplication(argc,argv));
 #endif
 #if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");

@@ -27,29 +27,31 @@ DialogPL {
 
     property bool backendSelectionPossible: false
 
-    FormLayoutPL {
-        id: column
-
+    Column {
         spacing: styler.themePaddingLarge
         width: dialog.width
 
-        ComboBoxPL {
-            id: unitsBox
-            description: qsTr("Units used in the graphical user interface of the server. The units will change only after you apply the settings.")
-            label: qsTr("Units")
-            model: [ qsTr("Metric"), qsTr("Imperial") ]
-            Component.onCompleted: unitsBox.currentIndex = settings.unitIndex();
-        }
+        FormLayoutPL {
+            spacing: styler.themePaddingLarge
 
-        ComboBoxPL {
-            id: preferredLanguageSelection
-            description: qsTr("Preferred language for location names shown in rendered maps or in the returned search results. " +
-                              "When possible, this language will be used. When set to <i>Default</i>, OpenStreetMap name will be used " +
-                              "which usually defaults to local language of the displayed country.")
-            enabled: manager.ready
-            label: qsTr("Language")
-            model: [ qsTr("Default"), qsTr("English") ]
-            Component.onCompleted: currentIndex = settings.valueInt(settingsGeneralPrefix + "language")
+            ComboBoxPL {
+                id: unitsBox
+                description: qsTr("Units used in the graphical user interface of the server. The units will change only after you apply the settings.")
+                label: qsTr("Units")
+                model: [ qsTr("Metric"), qsTr("Imperial") ]
+                Component.onCompleted: unitsBox.currentIndex = settings.unitIndex();
+            }
+
+            ComboBoxPL {
+                id: preferredLanguageSelection
+                description: qsTr("Preferred language for location names shown in rendered maps or in the returned search results. " +
+                                  "When possible, this language will be used. When set to <i>Default</i>, OpenStreetMap name will be used " +
+                                  "which usually defaults to local language of the displayed country.")
+                enabled: manager.ready
+                label: qsTr("Language")
+                model: [ qsTr("Default"), qsTr("English") ]
+                Component.onCompleted: currentIndex = settings.valueInt(settingsGeneralPrefix + "language")
+            }
         }
 
         ElementSelector {
@@ -66,7 +68,7 @@ DialogPL {
 
         ///////////////////////////////////////
         /// systemd support
-        FormLayoutPL {
+        Column {
             width: parent.width
             spacing: styler.themePaddingMedium
 
@@ -387,15 +389,15 @@ DialogPL {
                                  "settings above. This allows you to temporary enable full logging and disable it " +
                                  "when the required session log file was produced." )
         }
+
+        Connections {
+            target: settings
+            onProfilesUsedChanged: checkState()
+        }
     }
 
     Component.onCompleted: {
         checkState()
-    }
-
-    Connections {
-        target: settings
-        onProfilesUsedChanged: checkState()
     }
 
     onAccepted: {

@@ -24,7 +24,10 @@ import "platform"
 
 ApplicationWindowPL {
     id: app
-    initialPage: PagePL { title: "OSM Scout Server" }
+    initialPage: PagePL {
+        title: "OSM Scout Server"
+        Item { height: 10; width: 10; }
+    }
     menuPageUrl: Qt.resolvedUrl("MainMenu.qml")
     title: qsTr("OSM Scout Server")
 
@@ -48,7 +51,7 @@ ApplicationWindowPL {
 
     function pushMain(pagefile, options) {
         // replace the current main with the new stack
-        app.pages.pop(initialPage);
+        app.pages.pop(app.pages.ps.get(0));
         return app.pages.push(pagefile, options);
     }
 }

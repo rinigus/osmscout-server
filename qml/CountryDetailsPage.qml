@@ -198,28 +198,28 @@ PagePL {
                 checkSubs()
             }
         }
+
+        Connections {
+            target: manager
+            onReadyChanged: {
+                page.activeState = (manager.ready && canBeActive())
+                checkSubs()
+            }
+
+            onSubscriptionChanged: {
+                fillData()
+                checkSubs()
+            }
+            onAvailabilityChanged: {
+                fillData()
+                checkSubs()
+            }
+        }
     }
 
     Component.onCompleted: {
         fillData()
         checkSubs()
-    }
-
-    Connections {
-        target: manager
-        onReadyChanged: {
-            page.activeState = (manager.ready && canBeActive())
-            checkSubs()
-        }
-
-        onSubscriptionChanged: {
-            fillData()
-            checkSubs()
-        }
-        onAvailabilityChanged: {
-            fillData()
-            checkSubs()
-        }
     }
 
     function checkSubs() {

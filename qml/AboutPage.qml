@@ -95,11 +95,9 @@ PagePL {
     Column {
         id: column
 
-        anchors.margins: styler.themeHorizontalPageMargin
-        anchors.left: parent.left
-        anchors.right: parent.right
-
         spacing: styler.themePaddingLarge
+        x: styler.themeHorizontalPageMargin
+        width: page.width - 2*x
 
         LabelPL {
             text: qsTr("version") + ": " + programVersion

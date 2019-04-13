@@ -314,21 +314,21 @@ PagePL {
             secondaryLabel: qsTr("When selected, libosmscout datasets will be stored on device after downloading them. " +
                                  "These datasets are required for rendering, search, or routing by libosmscout backend.")
         }
-    }
 
-    Connections {
-        target: manager
-        onReadyChanged: checkState()
-        onUpdatesForDataFound: {
-            var clist = JSON.parse( info )
-            app.push(Qt.resolvedUrl("UpdatesFound.qml"),
-                     {"foundUpdates": clist})
+        Connections {
+            target: manager
+            onReadyChanged: checkState()
+            onUpdatesForDataFound: {
+                var clist = JSON.parse( info )
+                app.push(Qt.resolvedUrl("UpdatesFound.qml"),
+                         {"foundUpdates": clist})
+            }
         }
-    }
 
-    Connections {
-        target: settings
-        onProfilesUsedChanged: checkState()
+        Connections {
+            target: settings
+            onProfilesUsedChanged: checkState()
+        }
     }
 
     Component.onCompleted: {
