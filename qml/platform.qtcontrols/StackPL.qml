@@ -32,6 +32,10 @@ QtObject {
         return ps.currentItem;
     }
 
+    function get(i) {
+        return ps.get(i);
+    }
+
     function navigateForward(immediate) {
         if (attached && (!ps.currentItem || ps.currentItem.canNavigateForward)) return push(attached);
         console.log("There is no page attached to the stack or navigation forward is not allowed, cannot navigateForward");

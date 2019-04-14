@@ -45,6 +45,10 @@ Item {
         return ps.currentItem;
     }
 
+    function get(i) {
+        return ps.get(i);
+    }
+
     function hasAttached(page) {
         return attachedTo && attached && page === attachedTo ? true : false
     }
