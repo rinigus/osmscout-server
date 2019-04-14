@@ -27,7 +27,6 @@ TextFieldPL {
     text: ""
     label: mainLabel
     placeholderText: mainLabel
-    width: parent.width
 
     property string key
     property string mainLabel

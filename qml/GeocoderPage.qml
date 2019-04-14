@@ -18,34 +18,25 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 DialogPL {
     id: dialog
     title: qsTr("Geocoder-NLP")
 
-    FormLayoutPL {
-        id: column
-
-        width: parent.width
+    Column {
         spacing: styler.themePaddingLarge
+        width: parent.width
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("Geocoder is responsible for resolving search requests. " +
                        "For that, it parses the search string and finds the corresponding objects on a map.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             font.pixelSize: styler.themeFontSizeSmall
             text: qsTr("Disclaimer: Please see About regarding reporting of the issues with the address parsing.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
         ElementLanguageSelector {

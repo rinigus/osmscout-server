@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 PagePL {
@@ -25,15 +26,8 @@ PagePL {
 
     property string message: ""
 
-    LabelPL {
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.margins: styler.themeHorizontalPageMargin
-        color: styler.themeHighlightColor
+    ListItemLabel {
         text: message
         textFormat: Text.RichText
-        x: styler.themeHorizontalPageMargin
-        width: page.width - 2*x
-        wrapMode: Text.WordWrap
     }
 }

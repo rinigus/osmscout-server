@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 PagePL {
@@ -98,10 +99,8 @@ PagePL {
 
         Column {
             id: column
-
             spacing: styler.themePaddingLarge
-            x: styler.themeHorizontalPageMargin
-            width: parent.width - 2*x
+            width: parent.width
 
             LabelPL {
                 text: qsTr("version") + ": " + programVersion
@@ -109,31 +108,17 @@ PagePL {
                 color: styler.themeHighlightColor
             }
 
-            LabelPL {
+            ListItemLabel {
                 text: programName + " " + qsTr("is a server that provides offline map services")
-                wrapMode: Text.WordWrap
-                width: column.width
-                color: styler.themeHighlightColor
             }
 
-            LabelPL {
+            ListItemLabel {
                 text: qsTr("User's guide is available <a href='https://rinigus.github.io/osmscout-server'>online</a>")
-                wrapMode: Text.WordWrap
-                width: column.width
-                color: styler.themeHighlightColor
-                linkColor: styler.themePrimaryColor
-                onLinkActivated: Qt.openUrlExternally(link)
             }
 
-            LabelPL {
+            ListItemLabel {
                 text: mainText
-                wrapMode: Text.WordWrap
-                width: column.width
                 font.pixelSize: styler.themeFontSizeSmall
-                color: styler.themeHighlightColor
-                linkColor: styler.themePrimaryColor
-                onLinkActivated: Qt.openUrlExternally(link)
-                //textFormat: Text.RichText
             }
         }
     }

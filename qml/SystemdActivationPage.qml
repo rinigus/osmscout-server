@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 DialogPL {
@@ -30,21 +31,13 @@ DialogPL {
         width: parent.width
         spacing: styler.themePaddingLarge
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("OSM Scout Server can be activated automatically when the clients access it. " +
                        "When started automatically, it will be stopped if idle after given period of time.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("Do you want to enable automatic activation?")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
         TextSwitchPL {
@@ -55,35 +48,21 @@ DialogPL {
             }
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             font.pixelSize: styler.themeFontSizeSmall
             text: qsTr("It is recommended to enable automatic activation to simplify the access to the server.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             font.pixelSize: styler.themeFontSizeSmall
             text: qsTr("Note that when automatically activated, the server runs without any user interface. " +
                        "Automatic activation and the corresponding idle timeout can be later configured in Settings.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             font.pixelSize: styler.themeFontSizeSmall
-            linkColor: styler.themePrimaryColor
             text: qsTr("For technical details, created files, and how to remove them if needed, see corresponding section " +
                        "of the <a href='https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation'>User's Guide</a>.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
-            onLinkActivated: Qt.openUrlExternally(link)
         }
     }
 

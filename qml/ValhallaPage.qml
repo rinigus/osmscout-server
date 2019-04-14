@@ -18,24 +18,21 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
+
 
 DialogPL {
 
     id: dialog
     title: qsTr("Valhalla")
 
-    FormLayoutPL {
-        id: column
+    Column {
         spacing: styler.themePaddingLarge
-        width: parent.width
+        width: dialog.width
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("Valhalla can be used as a routing engine to calculate routes and the routing instructions")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
         SectionHeaderPL {
@@ -45,50 +42,50 @@ DialogPL {
         ElementEntry {
             id: eCache
             key: settingsValhallaPrefix + "cache_in_mb"
+            inputMethodHints: Qt.ImhFormattedNumbersOnly
             mainLabel: qsTr("Cache for storing tiles, MB")
             secondaryLabel: qsTr("Memory cache that is used to keep Valhalla's tiles in RAM.")
             validator: DoubleValidator { bottom: 16; top: 1024; decimals: 0; }
-            inputMethodHints: Qt.ImhFormattedNumbersOnly
         }
 
         SectionHeaderPL {
             text: qsTr("Limits")
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             font.pixelSize: styler.themeFontSizeSmall
             text: qsTr("Distance limits for route calculations. Only routes with the distances between locations " +
                        "that are smaller than the given limits will be calculated. By limiting the maximal distances " +
                        "between locations, you can prevent accidental calculations that would lead to too large " +
                        "routes and would use excessive amounts of RAM on your device.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        ElementEntry {
-            id:  eCar
-            key: settingsValhallaPrefix + "limit_max_distance_auto"
-            mainLabel: qsTr("Limit for route by car")
-            validator: DoubleValidator { bottom: 10; top:10000; decimals: 0; }
-            inputMethodHints: Qt.ImhFormattedNumbersOnly
-        }
+        FormLayoutPL {
+            spacing: styler.themePaddingLarge
 
-        ElementEntry {
-            id:  eBicycle
-            key: settingsValhallaPrefix + "limit_max_distance_bicycle"
-            mainLabel: qsTr("Limit for route by bicycle")
-            validator: DoubleValidator { bottom: 10; top: 1000; decimals: 0; }
-            inputMethodHints: Qt.ImhFormattedNumbersOnly
-        }
+            ElementEntry {
+                id:  eCar
+                key: settingsValhallaPrefix + "limit_max_distance_auto"
+                mainLabel: qsTr("Limit for route by car")
+                validator: DoubleValidator { bottom: 10; top:10000; decimals: 0; }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            }
 
-        ElementEntry {
-            id:  ePedestrian
-            key: settingsValhallaPrefix + "limit_max_distance_pedestrian"
-            mainLabel: qsTr("Limit for route by foot")
-            validator: DoubleValidator { bottom: 10; top: 1000; decimals: 0; }
-            inputMethodHints: Qt.ImhFormattedNumbersOnly
+            ElementEntry {
+                id:  eBicycle
+                key: settingsValhallaPrefix + "limit_max_distance_bicycle"
+                mainLabel: qsTr("Limit for route by bicycle")
+                validator: DoubleValidator { bottom: 10; top: 1000; decimals: 0; }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            }
+
+            ElementEntry {
+                id:  ePedestrian
+                key: settingsValhallaPrefix + "limit_max_distance_pedestrian"
+                mainLabel: qsTr("Limit for route by foot")
+                validator: DoubleValidator { bottom: 10; top: 1000; decimals: 0; }
+                inputMethodHints: Qt.ImhFormattedNumbersOnly
+            }
         }
     }
 

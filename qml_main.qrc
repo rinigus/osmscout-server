@@ -27,5 +27,6 @@
         <file>qml/DownloadCountriesPage.qml</file>
         <file>qml/UpdatesFound.qml</file>
         <file>qml/SystemdActivationPage.qml</file>
+        <file>qml/ListItemLabel.qml</file>
     </qresource>
 </RCC>

@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 PagePL {
@@ -40,25 +41,8 @@ PagePL {
             spacing: styler.themePaddingLarge
             width: page.width
 
-            LabelPL {
+            ListItemLabel {
                 id: mainLabel
-                color: styler.themeHighlightColor
-                x: styler.themeHorizontalPageMargin
-                width: parent.width - 2*x
-                wrapMode: Text.WordWrap
-            }
-
-            LabelPL {
-                id: warning
-                color: styler.themeHighlightColor
-                font.pixelSize: styler.themeFontSizeSmall
-                text: qsTr("WARNING: While care has been taken to ensure deleting of the found unused files only, " +
-                           "the software has not been tested by many users yet. Use at your own risk and please " +
-                           "report if there are any problems.")
-                visible: anythingToDelete
-                x: styler.themeHorizontalPageMargin
-                width: parent.width - 2*x
-                wrapMode: Text.WordWrap
             }
 
             SectionHeaderPL {
@@ -66,13 +50,9 @@ PagePL {
                 visible: anythingToDelete
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 text: qsTr("Directories containing files that will be deleted during cleanup:")
                 visible: anythingToDelete
-                x: styler.themeHorizontalPageMargin
-                width: parent.width - 2*x
-                wrapMode: Text.WordWrap
             }
 
             Column {
@@ -82,12 +62,9 @@ PagePL {
                 width: parent.width - 2*x
                 Repeater {
                     model: nDirs
-                    delegate: LabelPL {
-                        color: styler.themeHighlightColor
+                    delegate: ListItemLabel {
                         font.pixelSize: styler.themeFontSizeSmall
                         text: dirNames[index]
-                        width: parent.width
-                        wrapMode: Text.WrapAtWordBoundaryOrAnywhere
                     }
                 }
             }
@@ -116,13 +93,9 @@ PagePL {
                     }
                 }
 
-                LabelPL {
-                    color: styler.themeHighlightColor
+                ListItemLabel {
                     font.pixelSize: styler.themeFontSizeSmall
                     text: qsTr("Delete unused files and free the occupied space")
-                    x: styler.themeHorizontalPageMargin
-                    width: parent.width - 2*x
-                    wrapMode: Text.WordWrap
                 }
             }
         }

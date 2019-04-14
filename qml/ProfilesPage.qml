@@ -19,6 +19,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 DialogPL {
@@ -32,16 +33,12 @@ DialogPL {
         width: dialog.width
         spacing: styler.themePaddingLarge
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             font.pixelSize: styler.themeFontSizeMedium
             text: qsTr("OSM Scout Server uses profiles to simplify the selection " +
                        "of backends and the sets of downloaded databases.<br><br>" +
                        "Please select active profile."
                        )
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
         ComboBoxPL {
@@ -60,13 +57,8 @@ DialogPL {
             Component.onCompleted: currentIndex = settings.valueInt(settingsGeneralPrefix + "profile")
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             font.pixelSize: styler.themeFontSizeMedium
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
-
             text: qsTr("<i>Default</i> profile supports map applications using <i>Mapbox GL</i> plugin, uses " +
                        "<i>Geocoder-NLP</i> to search for locations, " +
                        "and <i>Valhalla</i> to calculate the routes. " +

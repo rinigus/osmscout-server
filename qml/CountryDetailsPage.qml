@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 PagePL {
@@ -50,20 +51,12 @@ PagePL {
             text: qsTr("Availability on device")
         }
 
-        LabelPL {
+        ListItemLabel {
             id: subscribed
-            color: styler.themeHighlightColor
-            x: styler.themeHorizontalPageMargin
-            width: page.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        LabelPL {
+        ListItemLabel {
             id: available
-            color: styler.themeHighlightColor
-            x: styler.themeHorizontalPageMargin
-            width: page.width-2*x
-            wrapMode: Text.WordWrap
         }
 
         SectionHeaderPL {

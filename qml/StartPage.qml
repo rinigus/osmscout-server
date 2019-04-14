@@ -51,12 +51,8 @@ PagePL {
                     text: qsTr("Missing modules")
                 }
 
-                LabelPL {
+                ListItemLabel {
                     id: noModuleText
-                    x: styler.themeHorizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
-                    color: styler.themeHighlightColor
                 }
 
                 Connections {
@@ -104,12 +100,8 @@ PagePL {
                     text: qsTr("Welcome")
                 }
 
-                LabelPL {
+                ListItemLabel {
                     id: notAvailableText
-                    x: styler.themeHorizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
-                    color: styler.themeHighlightColor
                 }
 
                 ButtonPL {
@@ -124,13 +116,9 @@ PagePL {
                     }
                 }
 
-                LabelPL {
+                ListItemLabel {
                     id: notAvailableDirCreation
-                    x: styler.themeHorizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
                     font.pixelSize: styler.themeFontSizeSmall
-                    color: styler.themeHighlightColor
                 }
 
                 Connections {
@@ -166,13 +154,9 @@ PagePL {
                     text: qsTr("Welcome")
                 }
 
-                LabelPL {
+                ListItemLabel {
                     text: qsTr("With the storage folder selected and available, the next step is to get some maps. " +
                                "For that, you can select and download maps using <i>Map Manager</i>  (pulley menu).")
-                    x: styler.themeHorizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
-                    color: styler.themeHighlightColor
                 }
 
                 Rectangle { // just extra space to highlight the message
@@ -205,13 +189,9 @@ PagePL {
                     text: qsTr("Welcome")
                 }
 
-                LabelPL {
+                ListItemLabel {
                     text: qsTr("There are no maps available yet. After subscribing them, you have to start downloads. " +
                                "Downloads can be started using <i>Map Manager</i>  (pulley menu).")
-                    x: styler.themeHorizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
-                    color: styler.themeHighlightColor
                 }
 
                 Rectangle { // just extra space to highlight the message
@@ -260,7 +240,7 @@ PagePL {
                     text: qsTr("Warning")
                 }
 
-                LabelPL {
+                ListItemLabel {
                     text: qsTr("You have not specified languages used for parsing addresses by Geocoder-NLP. " +
                                "As a result, all known languages are used and " +
                                "you could experience very large RAM consumption. Such large RAM usage could " +
@@ -268,10 +248,6 @@ PagePL {
                                "To specify languages used for address parsing, either select languages below or " +
                                "go to <i>Settings</i> (pulley menu) and " +
                                "select languages as a part of <i>Geocoder-NLP</i> settings.")
-                    x: styler.themeHorizontalPageMargin
-                    width: parent.width-2*x
-                    wrapMode: Text.WordWrap
-                    color: styler.themeHighlightColor
                 }
 
                 Rectangle { // just extra space to highlight the message
@@ -330,15 +306,10 @@ PagePL {
                 visible: manager.storageAvailable
             }
 
-            LabelPL {
+            ListItemLabel {
                 id: queueLength
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*styler.themeHorizontalPageMargin
-                color: styler.themeHighlightColor
                 font.pixelSize: styler.themeFontSizeSmall
                 visible: manager.storageAvailable
-
-                text: ""
 
                 Connections {
                     target: infohub;
@@ -364,16 +335,10 @@ PagePL {
                 visible: manager.storageAvailable
             }
 
-            LabelPL {
+            ListItemLabel {
                 id: log
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*styler.themeHorizontalPageMargin
-                color: styler.themeHighlightColor
                 font.pixelSize: styler.themeFontSizeSmall
-                wrapMode: Text.Wrap
                 visible: manager.storageAvailable
-
-                text: ""
 
                 Component.onCompleted: { setText() }
                 Connections { target: logger; onLogChanged: log.setText() }
@@ -397,8 +362,7 @@ PagePL {
                     id: column
                     width: parent.width
 
-                    LabelPL {
-                        color: styler.themeHighlightColor
+                    ListItemLabel {
                         text: qsTr("OSM Scout Server is a part of the solution allowing you to have offline maps on device. " +
                                    "With this server, you could download the maps to your device and use the " +
                                    "downloaded data to locally render maps, search for addresses and POIs, and " +
@@ -408,9 +372,6 @@ PagePL {
                                    "the specify languages for parsing your search requests.<br><br>" +
                                    "Please choose 'Next' to start configuration."
                                    )
-                        x: styler.themeHorizontalPageMargin
-                        width: parent.width-2*x
-                        wrapMode: Text.WordWrap
                     }
                 }
                 onAccepted: app.push(secondWelcomeWizardPage)

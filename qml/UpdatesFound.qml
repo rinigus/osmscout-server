@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 DialogPL {
@@ -36,29 +37,17 @@ DialogPL {
 
         spacing: styler.themePaddingLarge
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("Do you want to start the update?")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             font.pixelSize: styler.themeFontSizeSmall
             text: qsTr("Please note that as soon as you start the updates, the maps will not be available until the update is finished")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("List of countries and features with the found updates")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
         Column {
