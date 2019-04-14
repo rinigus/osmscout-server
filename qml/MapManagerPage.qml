@@ -18,6 +18,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 PagePL {
@@ -34,14 +35,10 @@ PagePL {
         width: parent.width
         spacing: styler.themePaddingLarge
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("Map Manager handles the storage of offline maps and " +
                        "related datasets on the device. Here you can select the " +
                        "features and countries that will be stored, updated or removed from the device.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
         SectionHeaderPL {
@@ -96,15 +93,11 @@ PagePL {
         ElementDownloads {
         }
 
-        LabelPL {
+        ListItemLabel {
             id: missingInfo
 
-            color: styler.themeHighlightColor
             font.pixelSize: styler.themeFontSizeSmall
             visible: manager.missing
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
 
             Connections {
                 target: manager
@@ -173,13 +166,9 @@ PagePL {
                 }
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Select the countries or territories that you want to keep on device")
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
         }
 
@@ -201,14 +190,10 @@ PagePL {
                 onClicked: manager.updateProvided()
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Update the list of currently available maps and datasets and check " +
                            "if the installed maps can be updated")
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
         }
 
@@ -231,14 +216,10 @@ PagePL {
                 }
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Check whether there are files that are not used anymore from the " +
                            "earlier subscriptions")
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
         }
 
@@ -246,73 +227,75 @@ PagePL {
             text: qsTr("Storage settings")
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("Storage settings are set by the profile. " +
                        "If you wish to change storage settings, please set the corresponding profile " +
                        "or set profile to <i>Custom</i>.")
             visible: settings.profilesUsed
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        ElementSwitch {
-            id: eManagerMapnik
-            activeState: page.backendSelectionPossible
-            key: settingsMapManagerPrefix + "mapnik"
-            autoApply: true
-            mainLabel: qsTr("Store datasets for Mapnik")
-            secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
-                                 "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.")
+        Column{
+            width: parent.width
+            spacing: styler.themePaddingLarge
+            visible: !settings.profilesUsed
 
-            onSwitchChanged: {
-                // ensure that we have the same value for geocoder-nlp as postal
-                // on mobile device
-                settings.setValue( settingsMapManagerPrefix + "mapnik",
-                                  settings.valueInt(settingsMapManagerPrefix + "mapnik") )
+            ElementSwitch {
+                id: eManagerMapnik
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "mapnik"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Mapnik")
+                secondaryLabel: qsTr("When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. " +
+                                     "These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.")
+
+                onSwitchChanged: {
+                    // ensure that we have the same value for geocoder-nlp as postal
+                    // on mobile device
+                    settings.setValue( settingsMapManagerPrefix + "mapnik",
+                                      settings.valueInt(settingsMapManagerPrefix + "mapnik") )
+                }
             }
-        }
 
-        ElementSwitch {
-            id: eManagerMapbox
-            activeState: page.backendSelectionPossible
-            key: settingsMapManagerPrefix + "mapboxgl"
-            autoApply: true
-            mainLabel: qsTr("Store datasets for Mapbox GL")
-            secondaryLabel: qsTr("When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. " +
-                                 "These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.")
-        }
+            ElementSwitch {
+                id: eManagerMapbox
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "mapboxgl"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Mapbox GL")
+                secondaryLabel: qsTr("When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. " +
+                                     "These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.")
+            }
 
-        ElementSwitch {
-            id: eManagerGeocoderNLP
-            activeState: page.backendSelectionPossible
-            key: settingsMapManagerPrefix + "geocoder_nlp"
-            autoApply: true
-            mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
-            secondaryLabel: qsTr("When selected, libpostal-based geocoder datasets will be stored on device after downloading them. " +
-                                 "These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for " +
-                                 "address parsing and lookup.")
-        }
+            ElementSwitch {
+                id: eManagerGeocoderNLP
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "geocoder_nlp"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for geocoder-nlp with libpostal")
+                secondaryLabel: qsTr("When selected, libpostal-based geocoder datasets will be stored on device after downloading them. " +
+                                     "These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for " +
+                                     "address parsing and lookup.")
+            }
 
-        ElementSwitch {
-            id: eManagerValhalla
-            activeState: page.backendSelectionPossible
-            key: settingsMapManagerPrefix + "valhalla"
-            autoApply: true
-            mainLabel: qsTr("Store datasets for Valhalla routing engine")
-            secondaryLabel: qsTr("When selected, Valhalla datasets will be stored on device after downloading them. " +
-                                 "These datasets are required for using Valhalla as a routing engine.")
-        }
+            ElementSwitch {
+                id: eManagerValhalla
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "valhalla"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for Valhalla routing engine")
+                secondaryLabel: qsTr("When selected, Valhalla datasets will be stored on device after downloading them. " +
+                                     "These datasets are required for using Valhalla as a routing engine.")
+            }
 
-        ElementSwitch {
-            id: eManagerOSMScout
-            activeState: page.backendSelectionPossible
-            key: settingsMapManagerPrefix + "osmscout"
-            autoApply: true
-            mainLabel: qsTr("Store datasets for libosmscout")
-            secondaryLabel: qsTr("When selected, libosmscout datasets will be stored on device after downloading them. " +
-                                 "These datasets are required for rendering, search, or routing by libosmscout backend.")
+            ElementSwitch {
+                id: eManagerOSMScout
+                activeState: page.backendSelectionPossible
+                key: settingsMapManagerPrefix + "osmscout"
+                autoApply: true
+                mainLabel: qsTr("Store datasets for libosmscout")
+                secondaryLabel: qsTr("When selected, libosmscout datasets will be stored on device after downloading them. " +
+                                     "These datasets are required for rendering, search, or routing by libosmscout backend.")
+            }
         }
 
         Connections {

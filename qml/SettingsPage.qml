@@ -19,6 +19,7 @@
  */
 
 import QtQuick 2.0
+import "."
 import "platform"
 
 DialogPL {
@@ -79,36 +80,22 @@ DialogPL {
                 Component.onCompleted: checked = systemd_service.enabled
             }
 
-            LabelPL {
+            ListItemLabel {
+                font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("When enabled, OSM Scout Server will be activated automatically by any client accessing it. " +
                            "Automatically started server will work in the background."
                            )
-                color: styler.themeHighlightColor
-                font.pixelSize: styler.themeFontSizeSmall
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
 
-            LabelPL {
+            ListItemLabel {
+                font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("It is recommended to enable automatic activation to simplify the access to the server.")
-                color: styler.themeHighlightColor
-                font.pixelSize: styler.themeFontSizeSmall
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
 
-            LabelPL {
+            ListItemLabel {
+                font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("For technical details, created files, and how to remove them if needed, see corresponding section " +
                            "of the <a href='https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation'>User's Guide</a>.")
-                color: styler.themeHighlightColor
-                font.pixelSize: styler.themeFontSizeSmall
-                linkColor: styler.themePrimaryColor
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
-                onLinkActivated: Qt.openUrlExternally(link)
             }
 
             ComboBoxPL {
@@ -149,14 +136,10 @@ DialogPL {
                 }
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("When started automatically, the server will shutdown itself after " +
                            "not receiving any requests for longer than the idle timeout")
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
         }
 
@@ -167,87 +150,77 @@ DialogPL {
             visible: settings.profilesUsed
         }
 
-        LabelPL {
-            color: styler.themeHighlightColor
+        ListItemLabel {
             text: qsTr("Active backends are set by the profile. " +
                        "If you wish to change the backend selection, please set the corresponding profile " +
                        "or set profile to <i>Custom</i>.")
             visible: settings.profilesUsed
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
         }
 
-        SectionHeaderPL {
-            text: qsTr("Rendering")
-        }
+        Column {
+            spacing: styler.themePaddingLarge
+            visible: !settings.profilesUsed
+            width: dialog.width
 
-        LabelPL {
-            color: styler.themeHighlightColor
-            font.pixelSize: styler.themeFontSizeSmall
-            text: qsTr("This server allows you to select between two backends to draw the maps: <i>libosmscout</i> and <i>mapnik</i>.")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
-        }
+            SectionHeaderPL {
+                text: qsTr("Rendering")
+            }
 
-        ElementSwitch {
-            id: eMapnik
-            activeState: dialog.backendSelectionPossible
-            key: settingsMapnikPrefix + "use_mapnik"
-            mainLabel: qsTr("Use Mapnik for rendering maps")
-            secondaryLabel: qsTr("When selected, Mapnik will be used to render maps. " +
-                                 "Note that it requires additional databases for World coastlines and countries.<br>")
-        }
+            ListItemLabel {
+                font.pixelSize: styler.themeFontSizeSmall
+                text: qsTr("This server allows you to select between two backends to draw the maps: <i>libosmscout</i> and <i>mapnik</i>.")
+            }
 
-        SectionHeaderPL {
-            text: qsTr("Geocoder")
-        }
+            ElementSwitch {
+                id: eMapnik
+                activeState: dialog.backendSelectionPossible
+                key: settingsMapnikPrefix + "use_mapnik"
+                mainLabel: qsTr("Use Mapnik for rendering maps")
+                secondaryLabel: qsTr("When selected, Mapnik will be used to render maps. " +
+                                     "Note that it requires additional databases for World coastlines and countries.<br>")
+            }
 
-        LabelPL {
-            color: styler.themeHighlightColor
-            font.pixelSize: styler.themeFontSizeSmall
-            text: qsTr("Geocoder is responsible for resolving search requests. " +
-                       "For that, it parses the search string and finds the corresponding objects on a map. " +
-                       "This server allows you to select between two geocoder backends: <i>geocoder-nlp</i> and " +
-                       "<i>libosmscout</i>. ")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
-        }
+            SectionHeaderPL {
+                text: qsTr("Geocoder")
+            }
 
-        ElementSwitch {
-            id: eGeocoderNLP
-            activeState: dialog.backendSelectionPossible
-            key: settingsGeomasterPrefix + "use_geocoder_nlp"
-            mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
-            secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
-                                 "Note that it requires additional databases for language, user input parsing, and geocoding.<br>" +
-                                 "NB! If you select <i>geocoder-nlp</i>, please specify languages that should be used for " +
-                                 "address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.")
-        }
+            ListItemLabel {
+                font.pixelSize: styler.themeFontSizeSmall
+                text: qsTr("Geocoder is responsible for resolving search requests. " +
+                           "For that, it parses the search string and finds the corresponding objects on a map. " +
+                           "This server allows you to select between two geocoder backends: <i>geocoder-nlp</i> and " +
+                           "<i>libosmscout</i>. ")
+            }
 
-        SectionHeaderPL {
-            text: qsTr("Routing Engine")
-        }
+            ElementSwitch {
+                id: eGeocoderNLP
+                activeState: dialog.backendSelectionPossible
+                key: settingsGeomasterPrefix + "use_geocoder_nlp"
+                mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
+                secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
+                                     "Note that it requires additional databases for language, user input parsing, and geocoding.<br>" +
+                                     "NB! If you select <i>geocoder-nlp</i>, please specify languages that should be used for " +
+                                     "address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.")
+            }
 
-        LabelPL {
-            color: styler.themeHighlightColor
-            font.pixelSize: styler.themeFontSizeSmall
-            text: qsTr("Routing engine is responsible for calculating routes between origin and destination. " +
-                       "This server allows you to select between two routing engines: <i>Valhalla</i> and " +
-                       "<i>libosmscout</i>. ")
-            x: styler.themeHorizontalPageMargin
-            width: parent.width-2*x
-            wrapMode: Text.WordWrap
-        }
+            SectionHeaderPL {
+                text: qsTr("Routing Engine")
+            }
 
-        ElementSwitch {
-            id: eValhalla
-            activeState: dialog.backendSelectionPossible
-            key: settingsValhallaPrefix + "use_valhalla"
-            mainLabel: qsTr("Use Valhalla as routing engine")
-            secondaryLabel: qsTr("When selected, Valhalla will be used to calculate the routing instructions.")
+            ListItemLabel {
+                font.pixelSize: styler.themeFontSizeSmall
+                text: qsTr("Routing engine is responsible for calculating routes between origin and destination. " +
+                           "This server allows you to select between two routing engines: <i>Valhalla</i> and " +
+                           "<i>libosmscout</i>. ")
+            }
+
+            ElementSwitch {
+                id: eValhalla
+                activeState: dialog.backendSelectionPossible
+                key: settingsValhallaPrefix + "use_valhalla"
+                mainLabel: qsTr("Use Valhalla as routing engine")
+                secondaryLabel: qsTr("When selected, Valhalla will be used to calculate the routing instructions.")
+            }
         }
 
         SectionHeaderPL {
@@ -265,13 +238,9 @@ DialogPL {
                 onClicked: app.push(Qt.resolvedUrl("MapnikPage.qml"))
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Map rendering settings for <i>mapnik</i> backend")
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
         }
 
@@ -292,13 +261,9 @@ DialogPL {
                 onClicked: app.push(Qt.resolvedUrl("GeocoderPage.qml"))
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Selection of languages used for address parsing and other settings of <i>geocoder-nlp</i> backend")
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
         }
 
@@ -319,13 +284,9 @@ DialogPL {
                 onClicked: app.push(Qt.resolvedUrl("ValhallaPage.qml"))
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Routing engine settings for <i>Valhalla</i> backend")
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
         }
 
@@ -346,14 +307,10 @@ DialogPL {
                 onClicked: app.push(Qt.resolvedUrl("OSMScoutPage.qml"))
             }
 
-            LabelPL {
-                color: styler.themeHighlightColor
+            ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("OSM Scout library (<i>libosmscout</i>) settings. " +
                            "The library can be used for drawing maps, search, and routing.")
-                x: styler.themeHorizontalPageMargin
-                width: parent.width-2*x
-                wrapMode: Text.WordWrap
             }
         }
 
