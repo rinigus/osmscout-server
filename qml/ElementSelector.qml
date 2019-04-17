@@ -31,11 +31,10 @@ Column {
     property string key
     property string mainLabel
     property string secondaryLabel
-    property bool directory: false
-    property string directory_file: ""
+    property bool   directory: false
 
     property alias value: fullPath.text
-    property alias display_value: textInput.text
+    property alias displayValue: textInput.text
 
     LabelPL {
         text: parent.mainLabel
@@ -117,9 +116,9 @@ Column {
     }
 
     function display() {
-        display_value = value.split("/").pop()
+        displayValue = value.split("/").pop()
         if (value.length < 1)
-            display_value = qsTr("<Not selected>")
+            displayValue = qsTr("<Not selected>")
     }
 
     function setPath(path) {
@@ -128,13 +127,11 @@ Column {
     }
 
     function select() {
-        app.push(Qt.resolvedUrl("FileSelectorPL.qml"), {
+        app.push(Qt.resolvedUrl("platform/FileSelectorPL.qml"), {
                      homePath: value,
-                     showFormat: true,
                      title: "Select " + mainLabel,
                      callback: setPath,
-                     directory: directory,
-                     directory_file: directory_file
+                     directory: directory
                  })
     }
 }

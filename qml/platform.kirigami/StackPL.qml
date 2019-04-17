@@ -103,6 +103,19 @@ Item {
     }
 
     function push(page, options, immediate) {
+        // handle file selector as a dialog opened using 'open'
+        if (typeof page === 'string' && page.includes('FileSelectorPL.qml')) {
+            var pc = Qt.createComponent(page);
+            if (pc.status === Component.Error) {
+                console.log('Error while creating component');
+                console.log(pc.errorString());
+                return null;
+            }
+            var fs = pc.createObject(app, options ? options : {})
+            fs.open();
+            return fs;
+        }
+
         _locked = true;
         if (ps.currentIndex !== ps.depth-1 && ps.currentIndex > 0) {
             var ci = ps.get(ps.currentIndex);
