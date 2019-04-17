@@ -60,6 +60,18 @@ QtObject {
     }
 
     function push(page, options, immediate) {
+        // handle file selector as a dialog opened using 'open'
+        if (typeof page === 'string' && page.includes('FileSelectorPL.qml')) {
+            var pc = Qt.createComponent(page);
+            if (pc.status === Component.Error) {
+                console.log('Error while creating component');
+                console.log(pc.errorString());
+                return null;
+            }
+            var fs = pc.createObject(app, options ? options : {})
+            fs.open();
+            return fs;
+        }
         var p = ps.push(page, options ? options : {}, immediate ? StackView.Immediate.Immediate : StackView.Animated);
         if (attached !== page && !p.isDialog) attached = undefined;
         if (attached === page) hasAttached = false;
