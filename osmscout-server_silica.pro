@@ -45,9 +45,13 @@ CONFIG += sailfishapp sailfishapp_no_deploy_qml
 CONFIG += sailfishapp_i18n
 
 # installs
-qml.files = qml/silica
+qml.files = qml/*.qml
 qml.path = /usr/share/$${TARGET}/qml
 INSTALLS += qml
+
+qmlplatform.files = qml/platform.silica/*.qml
+qmlplatform.path = /usr/share/$${TARGET}/qml/platform
+INSTALLS += qmlplatform
 
 data.files = data
 data.path = /usr/share/$${TARGET}
@@ -97,6 +101,8 @@ SOURCES += \
     src/valhallamapmatcherdbusadaptor.cpp
 
 OTHER_FILES += rpm/osmscout-server.spec
+OTHER_FILES += qml/*.qml
+OTHER_FILES += qml/platform.silica/*.qml
 
 include(src/uhttp/uhttp.pri)
 include(src/fileselector/fileselector.pri)

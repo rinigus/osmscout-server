@@ -38,11 +38,6 @@ Kirigami.ApplicationWindow {
     property var    initialPage
     property string menuPageUrl
     property var    pages: StackPL { }
-    property bool   running: visible
-    property int    screenHeight: height
-    property bool   screenLarge: true
-    property int    screenWidth: width
-    property bool   keepAlive: false // not used - desktop is not expected to be falling asleep
 
     // hide from Kirigami
     default property var _content
