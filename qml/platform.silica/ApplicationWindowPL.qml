@@ -32,7 +32,6 @@ ApplicationWindow {
 
     Component.onCompleted: {
         pages.ps = pageStack;
-        updateOrientation()
     }
 
 
