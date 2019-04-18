@@ -360,7 +360,7 @@ int main(int argc, char *argv[])
 #ifdef IS_SAILFISH_OS
   if (v)
     {
-      v->setSource(SailfishApp::pathTo("qml/silica/osmscout-server.qml"));
+      v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
       v->show();
     }
 #endif
