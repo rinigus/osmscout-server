@@ -62,4 +62,8 @@ Kirigami.ScrollablePage {
             pageStatusActive();
         } else pageStatusInactive();
     }
+
+    function scrollToTop() {
+        flickable.contentY = 0;
+    }
 }

@@ -82,7 +82,7 @@ PagePL {
                     if (!modules.valhallaRoute)
                         noModuleText.text += qsTr("<li>OSM Scout Server Module: Route</li>")
 
-                    noModuleText.text += qsTr("</ul><br>Please install missing modules via Harbour or OpenRepos. " +
+                    noModuleText.text += qsTr("</ul><br>Please install missing modules. " +
                                               "After installation of the module(s), please restart OSM Scout Server.")
                 }
             }
@@ -113,7 +113,7 @@ PagePL {
                     onClicked: {
                         if (manager.createDirectory(storageNotAvailable.dname)) {
                             settings.setValue(settingsMapManagerPrefix + "root", storageNotAvailable.dname)
-                            mainFlickable.scrollToTop()
+                            rootPage.scrollToTop()
                         }
                     }
                 }

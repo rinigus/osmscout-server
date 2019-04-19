@@ -80,4 +80,8 @@ Page {
         else if (page.status === PageStatus.Active) pageStatusActive();
         else if (page.status === PageStatus.Inactive) pageStatusInactive()
     }
+
+    function scrollToTop() {
+        flickable.scrollToTop();
+    }
 }
