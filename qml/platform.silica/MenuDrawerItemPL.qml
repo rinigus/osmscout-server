@@ -17,10 +17,8 @@
  */
 
 import QtQuick 2.0
-import ".."
+import Sailfish.Silica 1.0
 
-IconListItem {
-    id: item
-    property alias iconName: item.icon
-    property alias text: item.label
+MenuItem {
+    property string iconName // added for compatibility
 }

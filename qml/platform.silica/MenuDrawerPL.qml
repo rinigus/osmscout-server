@@ -17,17 +17,12 @@
  */
 
 import QtQuick 2.0
-import "."
+import Sailfish.Silica 1.0
 
-PagePL {
+PullDownMenu {
     id: menu
 
-    property string         banner // added for compatibility
-    default property alias  content: column.data
-    property string         titleIcon // added for compatibility
-
-    Column {
-        id: column
-        width: parent.width
-    }
+    property string banner // added for compatibility
+    property string title  // added for compatibility
+    property string titleIcon // added for compatibility
 }

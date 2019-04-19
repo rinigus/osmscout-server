@@ -45,10 +45,6 @@ Item {
         return ps.currentItem;
     }
 
-    function get(i) {
-        return ps.get(i);
-    }
-
     function hasAttached(page) {
         return attachedTo && attached && page === attachedTo ? true : false
     }
@@ -105,13 +101,7 @@ Item {
     function push(page, options, immediate) {
         // handle file selector as a dialog opened using 'open'
         if (typeof page === 'string' && page.includes('FileSelectorPL.qml')) {
-            var pc = Qt.createComponent(page);
-            if (pc.status === Component.Error) {
-                console.log('Error while creating component');
-                console.log(pc.errorString());
-                return null;
-            }
-            var fs = pc.createObject(app, options ? options : {})
+            var fs = app.createObject(page, options ? options : {})
             fs.open();
             return fs;
         }
@@ -147,13 +137,7 @@ Item {
         attachedTo = currentItem;
         attached = page;
         if (typeof page === 'string') {
-            var pc = Qt.createComponent(page);
-            if (pc.status === Component.Error) {
-                console.log('Error while creating component');
-                console.log(pc.errorString());
-                return null;
-            }
-            attached = pc.createObject(app, options ? options : {})
+            attached = app.createObject(page, options ? options : {})
         }
         attached.visible = false;
         return attached;

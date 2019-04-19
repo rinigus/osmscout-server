@@ -32,10 +32,6 @@ QtObject {
         return ps.currentItem;
     }
 
-    function get(i) {
-        return ps.get(i);
-    }
-
     function navigateForward(immediate) {
         if (attached && (!ps.currentItem || ps.currentItem.canNavigateForward)) return push(attached);
         console.log("There is no page attached to the stack or navigation forward is not allowed, cannot navigateForward");
@@ -62,13 +58,7 @@ QtObject {
     function push(page, options, immediate) {
         // handle file selector as a dialog opened using 'open'
         if (typeof page === 'string' && page.includes('FileSelectorPL.qml')) {
-            var pc = Qt.createComponent(page);
-            if (pc.status === Component.Error) {
-                console.log('Error while creating component');
-                console.log(pc.errorString());
-                return null;
-            }
-            var fs = pc.createObject(app, options ? options : {})
+            var fs = app.createObject(page, options ? options : {})
             fs.open();
             return fs;
         }
@@ -82,13 +72,7 @@ QtObject {
     function pushAttached(page, options) {
         attached = page;
         if (typeof page === 'string') {
-            var pc = Qt.createComponent(page);
-            if (pc.status === Component.Error) {
-                console.log('Error while creating component');
-                console.log(pc.errorString());
-                return null;
-            }
-            attached = pc.createObject(app, options ? options : {})
+            attached = app.createObject(page, options ? options : {})
         }
         attached.visible = false;
         hasAttached = true;

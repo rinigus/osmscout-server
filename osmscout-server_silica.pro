@@ -15,7 +15,7 @@ TARGET = harbour-osmscout-server
 QT += core gui network sql xml positioning dbus
 
 CONFIG += c++11 object_parallel_to_source
-CONFIG += sailfishapp sailfishapp_no_deploy_qml
+CONFIG += sailfishapp # sailfishapp_no_deploy_qml
 
 # selection of backends
 !disable_mapnik {

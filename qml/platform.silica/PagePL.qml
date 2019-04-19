@@ -61,6 +61,18 @@ Page {
         }
 
         VerticalScrollDecorator { flickable: flickable }
+
+        Component.onCompleted: {
+            if (page.menuPage && app.menuPageUrl) {
+                var pc = Qt.createComponent(app.menuPageUrl);
+                if (pc.status === Component.Error) {
+                    console.log('Error while creating component');
+                    console.log(pc.errorString());
+                    return null;
+                }
+                menuLoader.sourceComponent = pc;
+            }
+        }
     }
 
     onStatusChanged: {

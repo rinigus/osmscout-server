@@ -50,13 +50,7 @@ ApplicationWindow {
         updateOrientation();
 
         // add drawer
-        var pc = Qt.createComponent(menuPageUrl);
-        if (pc.status === Component.Error) {
-            console.log('Error while creating component');
-            console.log(pc.errorString());
-            return null;
-        }
-        drawer = pc.createObject(appWindow);
+        drawer = app.createObject(menuPageUrl);
         appWindow.data.push(drawer);
     }
 

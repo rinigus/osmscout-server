@@ -31,7 +31,7 @@ ApplicationWindowPL {
     menuPageUrl: Qt.resolvedUrl("MainMenu.qml")
     title: qsTr("OSM Scout Server")
 
-    //property var styler
+    property var rootPage
 
     StylerPL {
         id: styler
@@ -42,8 +42,17 @@ ApplicationWindowPL {
     }
 
     Component.onCompleted: {
-        //app.pages.replace( Qt.resolvedUrl("MapnikPage.qml") )
         app.pages.replace( Qt.resolvedUrl("StartPage.qml") )
+    }
+
+    function createObject(page, options) {
+        var pc = Qt.createComponent(page);
+        if (pc.status === Component.Error) {
+            console.log('Error while creating component');
+            console.log(pc.errorString());
+            return null;
+        }
+        return pc.createObject(app, options ? options : {})
     }
 
     function push(pagefile, options, clearAll) {
@@ -52,7 +61,7 @@ ApplicationWindowPL {
 
     function pushMain(pagefile, options) {
         // replace the current main with the new stack
-        app.pages.pop(app.pages.get(0));
+        app.pages.pop(app.rootPage);
         return app.pages.push(pagefile, options);
     }
 }

@@ -26,6 +26,8 @@ PagePL {
     id: rootPage
     title: qsTr("OSM Scout Server")
 
+    property bool menuPage: true // used by Silica backend
+
     Item {
         // wrapper to keep Kirigami happy (it handles only up to one
         // item as a contents)
@@ -356,6 +358,7 @@ PagePL {
 
             DialogPL {
                 title: qsTr("Welcome")
+                acceptDestination: secondWelcomeWizardPage
                 acceptText: qsTr("Next")
 
                 Column {
@@ -374,7 +377,6 @@ PagePL {
                                    )
                     }
                 }
-                onAccepted: app.push(secondWelcomeWizardPage)
             }
         }
 
@@ -382,8 +384,8 @@ PagePL {
             id: secondWelcomeWizardPage
 
             ProfilesPage {
+                acceptDestination: thirdWelcomeWizardPage
                 acceptText: qsTr("Next")
-                onAccepted: app.push(thirdWelcomeWizardPage)
             }
         }
 
@@ -391,13 +393,13 @@ PagePL {
             id: thirdWelcomeWizardPage
 
             LanguageSelector {
+                acceptDestination: fourthWelcomeWizardPage
                 acceptText: qsTr("Next")
                 callback: eGeoLanguages.setValue
                 title: eGeoLanguages.mainLabel
                 value: eGeoLanguages.value
                 comment: eGeoLanguages.selectorComment
                 note: eGeoLanguages.selectorNote
-                onAccepted: app.push(fourthWelcomeWizardPage)
             }
         }
 
@@ -405,6 +407,8 @@ PagePL {
             id: fourthWelcomeWizardPage
 
             SystemdActivationPage {
+                acceptDestination: rootPage
+                acceptDestinationPop: true
             }
         }
 
@@ -429,6 +433,7 @@ PagePL {
     }
 
     Component.onCompleted: {
+        app.rootPage = rootPage
         if (settings.firstTime)
             rootPage.pageStatusActive.connect(openWelcomeWizard)
         else if (settings.lastRunVersion === 0)
