@@ -24,11 +24,25 @@ import "platform"
 
 ApplicationWindowPL {
     id: app
-    initialPage: PagePL {
-        title: "OSM Scout Server"
-        Item { height: 10; width: 10; }
+    initialPage: Component {
+        PageEmptyPL {
+            title: "OSM Scout Server"
+            BusyIndicatorPL {
+                id: busy
+                running: true
+            }
+            LabelPL {
+                anchors.bottom: busy.top
+                anchors.bottomMargin: Math.round(busy.height/4)
+                color: styler.themeHighlightColor
+                font.pixelSize: styler.themeFontSizeLarge
+                horizontalAlignment: Text.AlignHCenter
+                text: qsTr("Initializing")
+                width: parent.width
+            }
+        }
     }
-    menuPageUrl: Qt.resolvedUrl("MainMenu.qml")
+    menuPageUrl: reverseMainMenu ? Qt.resolvedUrl("MainMenuReversed.qml") : Qt.resolvedUrl("MainMenu.qml")
     title: qsTr("OSM Scout Server")
 
     property var rootPage

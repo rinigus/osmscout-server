@@ -158,7 +158,7 @@ PagePL {
 
                 ListItemLabel {
                     text: qsTr("With the storage folder selected and available, the next step is to get some maps. " +
-                               "For that, you can select and download maps using <i>Map Manager</i>  (pulley menu).")
+                               "For that, you can select and download maps using <i>Map Manager</i>  (see menu).")
                 }
 
                 Rectangle { // just extra space to highlight the message

@@ -13,6 +13,7 @@
         <file alias="qml/platform/ListItemPL.qml">qml/platform.kirigami/ListItemPL.qml</file>
         <file alias="qml/platform/MenuDrawerItemPL.qml">qml/platform.kirigami/MenuDrawerItemPL.qml</file>
         <file alias="qml/platform/MenuDrawerPL.qml">qml/platform.kirigami/MenuDrawerPL.qml</file>
+        <file alias="qml/platform/PageEmptyPL.qml">qml/platform.kirigami/PageEmptyPL.qml</file>
         <file alias="qml/platform/PageListPL.qml">qml/platform.kirigami/PageListPL.qml</file>
         <file alias="qml/platform/PagePL.qml">qml/platform.kirigami/PagePL.qml</file>
         <file alias="qml/platform/RemorsePopupPL.qml">qml/platform.kirigami/RemorsePopupPL.qml</file>

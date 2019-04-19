@@ -21,6 +21,9 @@
 import QtQuick 2.0
 import "platform"
 
+// NB! When making changes here, make corresponding changes in
+// MainMenuReversed.qml
+
 MenuDrawerPL {
     banner: "icons/banner.jpg"
     title: "OSM Scout Server"

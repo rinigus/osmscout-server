@@ -301,6 +301,12 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("manager", &manager);
       rootContext->setContextProperty("modules", &modules);
       rootContext->setContextProperty("systemd_service", &systemd_service);
+
+#if defined(IS_SAILFISH_OS)
+      // hack to make main menu consistent with expectations
+      // at Sailfish OS.
+      rootContext->setContextProperty("reverseMainMenu", true);
+#endif
     }
 #endif
 
