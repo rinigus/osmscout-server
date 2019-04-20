@@ -306,6 +306,8 @@ int main(int argc, char *argv[])
       // hack to make main menu consistent with expectations
       // at Sailfish OS.
       rootContext->setContextProperty("reverseMainMenu", true);
+#else
+      rootContext->setContextProperty("reverseMainMenu", false);
 #endif
     }
 #endif
