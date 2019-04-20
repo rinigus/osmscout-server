@@ -27,15 +27,14 @@ echo "Configuration:" $CFG
 
 if [ -z ${GUI+x} ];
 then
-    PRO=osmscout-server_console.pro
+    FLAVOR=console
 else
-    PRO=osmscout-server_qtcontrols.pro
+    FLAVOR=qtcontrols
 fi
 
-echo "Building for" $PRO
+echo "Building for" $FLAVOR
 
-ln -s pro/$PRO .
-qmake CONFIG+="$CFG" $PRO
+qmake CONFIG+="$CFG" SCOUT_FLAVOR=$FLAVOR
 make
 
 echo "Build end time: `date`"

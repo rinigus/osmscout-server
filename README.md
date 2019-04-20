@@ -29,11 +29,8 @@ present, WhoGo Maps, Poor Maps and modRana include plugins already in
 the upstream and no additional configuration is needed.
 
 The server is written using Qt. The server can be used as a console, a
-Sailfish, Kirigami, or a QtQuick application. For console, Kirigami,
-and QtQuick versions, use the corresponding project file, available in
-pro subfolder. For Sailfish, use osmscout-server_silica.pro.
-
-Installation instructions are given in [INSTALL](INSTALL.md).
+Sailfish, Kirigami, or a QtQuick application. Installation
+instructions are given in [INSTALL](INSTALL.md).
 
 
 ## Maps

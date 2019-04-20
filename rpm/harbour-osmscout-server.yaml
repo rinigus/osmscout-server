@@ -18,7 +18,7 @@ Configure: none
 # control over qmake/make execution
 Builder: qtc5
 QMakeOptions:
-- VERSION='%{version}-%{release}'
+- VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
 
 # This section specifies build dependencies that are resolved using pkgconfig.
 # This is the preferred way of specifying build dependencies for your package.

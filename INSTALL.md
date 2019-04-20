@@ -7,8 +7,13 @@ OSM Scout Server can be installed using the following channels:
 * Sailfish OS: https://openrepos.net/content/rinigus/osm-scout-server
 * Desktop Linux through Flathub: https://flathub.org/apps/details/io.github.rinigus.OSMScoutServer
 
-
 ## Compilation from source
+
+The server can be used as a console, a Sailfish, Kirigami, or a
+QtQuick application. Corresponding configuration is selected by a
+configuration variable `SCOUT_FLAVOR` passed to `qmake` during a
+build. See beginning of `osmscout-server.pro` for currently supported
+flavors.
 
 ### Ubuntu 18.04
 
@@ -75,9 +80,8 @@ OSM Scout Server:
 ```
 git clone --recursive https://github.com/rinigus/osmscout-server.git
 cd osmscout-server
-ln -s pro/osmscout-server_qtcontrols.pro .
 mkdir build && cd build
-qmake PREFIX=/usr/local ../osmscout-server_qtcontrols.pro
+qmake PREFIX=/usr/local SCOUT_FLAVOR=qtcontrols ../osmscout-server.pro
 make -j$(nproc)
 sudo make install
 ```
