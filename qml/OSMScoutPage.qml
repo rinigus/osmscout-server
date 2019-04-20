@@ -58,7 +58,7 @@ DialogPL {
             mainLabel: qsTr("Icons")
             secondaryLabel: qsTr("Icons used to mark features on the map")
             directory: true
-            directory_file: "parking.png"
+            directoryFile: "parking.png"
         }
 
         ElementSwitch {

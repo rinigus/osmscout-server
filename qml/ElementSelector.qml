@@ -35,6 +35,7 @@ Column {
 
     property alias value: fullPath.text
     property alias displayValue: textInput.text
+    property string directoryFile: ""
 
     LabelPL {
         text: parent.mainLabel
@@ -131,7 +132,8 @@ Column {
                      homePath: value,
                      title: "Select " + mainLabel,
                      callback: setPath,
-                     directory: directory
+                     directory: directory,
+                     directoryFile: directoryFile
                  })
     }
 }

@@ -32,12 +32,11 @@ Page {
 
     property var callback
     property bool directory: false
+    property string directoryFile: ""
     property string homePath
     property string title
     property alias path: fileModel.path
 
-    // internal property
-    property string directory_file: ""
 
     signal formatClicked
 
@@ -86,7 +85,7 @@ Page {
                 text: qsTr("To select a folder, press and hold the folder and choose 'Select' in the context menu")
                 x: Theme.horizontalPageMargin
                 width: page.width-2*x
-                visible: page.directory && page.directory_file.length < 1
+                visible: page.directory && page.directoryFile.length < 1
                 font.pixelSize: Theme.fontSizeMedium
                 color: Theme.highlightColor
                 wrapMode: Text.WordWrap
@@ -201,7 +200,7 @@ Page {
 
             onClicked: {
                 if (!model.isDir ||
-                        (page.directory && page.directory_file.length > 0 && fileModel.hasFile(model.fileName + "/" + page.directory_file) ) )
+                        (page.directory && page.directoryFile.length > 0 && fileModel.hasFile(model.fileName + "/" + page.directoryFile) ) )
                 {
                     var filePath = fileModel.appendPath(model.fileName)
                     if (typeof callback == "function")
@@ -243,8 +242,8 @@ Page {
     Component.onCompleted: {
         if (directory)
         {
-            if ( (directory_file.length<1 && fileModel.hasFile(".") && fileModel.path === homePath) ||
-                    (directory_file.length>=1 && fileModel.hasFile(directory_file)) )
+            if ( (directoryFile.length<1 && fileModel.hasFile(".") && fileModel.path === homePath) ||
+                    (directoryFile.length>=1 && fileModel.hasFile(directoryFile)) )
                 fileModel.path = fileModel.appendPath("..")
         }
     }

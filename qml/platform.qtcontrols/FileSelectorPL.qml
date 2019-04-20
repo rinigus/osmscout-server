@@ -28,6 +28,7 @@ FileDialog {
 
     property var    callback
     property alias  directory: fs.selectFolder
+    property string directoryFile: "" // not used in this implementation
     property string homePath
 
     onAccepted: {
