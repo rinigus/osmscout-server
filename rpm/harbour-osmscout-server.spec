@@ -71,7 +71,7 @@ Server providing map tiles, search, and routing
 # << build pre
 
 %qtc_qmake5  \
-    VERSION='%{version}-%{release}'
+    VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
 
 %qtc_make %{?_smp_mflags}
 

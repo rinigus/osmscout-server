@@ -31,7 +31,7 @@
 #endif // of IS_CONSOLE_QT
 
 #ifdef IS_QTCONTROLS_QT
-#include <QGuiApplication>
+#include <QApplication>
 #endif
 
 #include "consolelogger.h"
@@ -120,7 +120,7 @@ int main(int argc, char *argv[])
   QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
 #endif
 #ifdef IS_QTCONTROLS_QT
-  QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
+  QScopedPointer<QApplication> app(new QApplication(argc,argv));
 #endif
 #if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
   qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
@@ -301,6 +301,14 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("manager", &manager);
       rootContext->setContextProperty("modules", &modules);
       rootContext->setContextProperty("systemd_service", &systemd_service);
+
+#if defined(IS_SAILFISH_OS)
+      // hack to make main menu consistent with expectations
+      // at Sailfish OS.
+      rootContext->setContextProperty("reverseMainMenu", true);
+#else
+      rootContext->setContextProperty("reverseMainMenu", false);
+#endif
     }
 #endif
 
@@ -360,13 +368,12 @@ int main(int argc, char *argv[])
 #ifdef IS_SAILFISH_OS
   if (v)
     {
-      v->setSource(SailfishApp::pathTo("qml/silica/osmscout-server.qml"));
+      v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
       v->show();
     }
 #endif
 #ifdef IS_QTCONTROLS_QT
-  qmlRegisterSingletonType(QUrl(QStringLiteral("qrc:/qml/qtcontrols/ThemeImpl.qml")), "osmscout.theme", 1, 0, "Theme");
-  engine.load(QUrl(QStringLiteral("qrc:/qml/qtcontrols/osmscout-server.qml")));
+  engine.load(QUrl(QStringLiteral("qrc:/qml/osmscout-server.qml")));
 #endif
 
 #ifdef USE_OSMSCOUT

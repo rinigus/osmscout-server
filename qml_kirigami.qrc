@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="qml/platform/ApplicationWindowPL.qml">qml/platform.kirigami/ApplicationWindowPL.qml</file>
+        <file alias="qml/platform/BusyIndicatorPL.qml">qml/platform.kirigami/BusyIndicatorPL.qml</file>
+        <file alias="qml/platform/ButtonPL.qml">qml/platform.kirigami/ButtonPL.qml</file>
+        <file alias="qml/platform/ComboBoxPL.qml">qml/platform.kirigami/ComboBoxPL.qml</file>
+        <file alias="qml/platform/DialogPL.qml">qml/platform.kirigami/DialogPL.qml</file>
+        <file alias="qml/platform/FileSelectorPL.qml">qml/platform.kirigami/FileSelectorPL.qml</file>
+        <file alias="qml/platform/FormLayoutPL.qml">qml/platform.kirigami/FormLayoutPL.qml</file>
+        <file alias="qml/platform/IconButtonPL.qml">qml/platform.kirigami/IconButtonPL.qml</file>
+        <file alias="qml/platform/IconPL.qml">qml/platform.kirigami/IconPL.qml</file>
+        <file alias="qml/platform/LabelPL.qml">qml/platform.kirigami/LabelPL.qml</file>
+        <file alias="qml/platform/ListItemPL.qml">qml/platform.kirigami/ListItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerItemPL.qml">qml/platform.kirigami/MenuDrawerItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerPL.qml">qml/platform.kirigami/MenuDrawerPL.qml</file>
+        <file alias="qml/platform/PageEmptyPL.qml">qml/platform.kirigami/PageEmptyPL.qml</file>
+        <file alias="qml/platform/PageListPL.qml">qml/platform.kirigami/PageListPL.qml</file>
+        <file alias="qml/platform/PagePL.qml">qml/platform.kirigami/PagePL.qml</file>
+        <file alias="qml/platform/RemorsePopupPL.qml">qml/platform.kirigami/RemorsePopupPL.qml</file>
+        <file alias="qml/platform/SectionHeaderPL.qml">qml/platform.kirigami/SectionHeaderPL.qml</file>
+        <file alias="qml/platform/StackPL.qml">qml/platform.kirigami/StackPL.qml</file>
+        <file alias="qml/platform/StylerPL.qml">qml/platform.kirigami/StylerPL.qml</file>
+        <file alias="qml/platform/TextFieldPL.qml">qml/platform.kirigami/TextFieldPL.qml</file>
+        <file alias="qml/platform/TextSwitchPL.qml">qml/platform.kirigami/TextSwitchPL.qml</file>
+    </qresource>
+</RCC>

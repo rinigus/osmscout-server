@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/osmscout-server.qml</file>
+        <file>qml/AboutPage.qml</file>
+        <file>qml/TruncationModes.qml</file>
+        <file>qml/StartPage.qml</file>
+        <file>qml/ElementLanguageSelector.qml</file>
+        <file>qml/ElementDownloads.qml</file>
+        <file>qml/MainMenu.qml</file>
+        <file>qml/IconListItem.qml</file>
+        <file>qml/LanguageSelector.qml</file>
+        <file>qml/SettingsPage.qml</file>
+        <file>qml/ElementSelector.qml</file>
+        <file>qml/ElementSwitch.qml</file>
+        <file>qml/ElementEntry.qml</file>
+        <file>qml/ProfilesPage.qml</file>
+        <file>qml/GeocoderPage.qml</file>
+        <file>qml/MapnikPage.qml</file>
+        <file>qml/OSMScoutPage.qml</file>
+        <file>qml/OSMSpeedPage.qml</file>
+        <file>qml/ValhallaPage.qml</file>
+        <file>qml/MapManagerPage.qml</file>
+        <file>qml/ElementCountryListItem.qml</file>
+        <file>qml/MessagePage.qml</file>
+        <file>qml/CountryDetailsPage.qml</file>
+        <file>qml/NonNeededFiles.qml</file>
+        <file>qml/DownloadCountriesPage.qml</file>
+        <file>qml/UpdatesFound.qml</file>
+        <file>qml/SystemdActivationPage.qml</file>
+        <file>qml/ListItemLabel.qml</file>
+    </qresource>
+</RCC>

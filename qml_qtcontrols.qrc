@@ -1,33 +1,27 @@
 <RCC>
     <qresource prefix="/">
-        <file>qml/qtcontrols/osmscout-server.qml</file>
-        <file>qtquickcontrols2.conf</file>
-        <file>qml/qtcontrols/SectionHeader.qml</file>
-        <file>qml/qtcontrols/StartPage.qml</file>
-        <file>qml/qtcontrols/ElementLanguageSelector.qml</file>
-        <file>qml/qtcontrols/ElementDownloads.qml</file>
-        <file>qml/qtcontrols/ThemeImpl.qml</file>
-        <file>qml/qtcontrols/Label.qml</file>
-        <file>qml/qtcontrols/LanguageSelector.qml</file>
-        <file>qml/qtcontrols/MessagePage.qml</file>
-        <file>qml/qtcontrols/AboutPage.qml</file>
-        <file>qml/qtcontrols/CountryDetailsPage.qml</file>
-        <file>qml/qtcontrols/DownloadCountriesPage.qml</file>
-        <file>qml/qtcontrols/ElementCountryListItem.qml</file>
-        <file>qml/qtcontrols/ElementEntry.qml</file>
-        <file>qml/qtcontrols/ElementSelector.qml</file>
-        <file>qml/qtcontrols/ElementSwitch.qml</file>
-        <file>qml/qtcontrols/GeocoderPage.qml</file>
-        <file>qml/qtcontrols/MapManagerPage.qml</file>
-        <file>qml/qtcontrols/MapnikPage.qml</file>
-        <file>qml/qtcontrols/NonNeededFiles.qml</file>
-        <file>qml/qtcontrols/OSMScoutPage.qml</file>
-        <file>qml/qtcontrols/OSMSpeedPage.qml</file>
-        <file>qml/qtcontrols/ProfilesPage.qml</file>
-        <file>qml/qtcontrols/SettingsPage.qml</file>
-        <file>qml/qtcontrols/SystemdActivationPage.qml</file>
-        <file>qml/qtcontrols/UpdatesFound.qml</file>
-        <file>qml/qtcontrols/ValhallaPage.qml</file>
-        <file>qml/qtcontrols/Dialog.qml</file>
+        <file alias="qml/platform/ApplicationWindowPL.qml">qml/platform.qtcontrols/ApplicationWindowPL.qml</file>
+        <file alias="qml/platform/BusyIndicatorPL.qml">qml/platform.qtcontrols/BusyIndicatorPL.qml</file>
+        <file alias="qml/platform/ButtonPL.qml">qml/platform.qtcontrols/ButtonPL.qml</file>
+        <file alias="qml/platform/ComboBoxPL.qml">qml/platform.qtcontrols/ComboBoxPL.qml</file>
+        <file alias="qml/platform/DialogPL.qml">qml/platform.qtcontrols/DialogPL.qml</file>
+        <file alias="qml/platform/FileSelectorPL.qml">qml/platform.qtcontrols/FileSelectorPL.qml</file>
+        <file alias="qml/platform/FormLayoutPL.qml">qml/platform.qtcontrols/FormLayoutPL.qml</file>
+        <file alias="qml/platform/HeaderBarImpl.qml">qml/platform.qtcontrols/HeaderBarImpl.qml</file>
+        <file alias="qml/platform/IconButtonPL.qml">qml/platform.qtcontrols/IconButtonPL.qml</file>
+        <file alias="qml/platform/IconPL.qml">qml/platform.qtcontrols/IconPL.qml</file>
+        <file alias="qml/platform/LabelPL.qml">qml/platform.qtcontrols/LabelPL.qml</file>
+        <file alias="qml/platform/ListItemPL.qml">qml/platform.qtcontrols/ListItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerItemPL.qml">qml/platform.qtcontrols/MenuDrawerItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerPL.qml">qml/platform.qtcontrols/MenuDrawerPL.qml</file>
+        <file alias="qml/platform/PageEmptyPL.qml">qml/platform.qtcontrols/PageEmptyPL.qml</file>
+        <file alias="qml/platform/PageListPL.qml">qml/platform.qtcontrols/PageListPL.qml</file>
+        <file alias="qml/platform/PagePL.qml">qml/platform.qtcontrols/PagePL.qml</file>
+        <file alias="qml/platform/RemorsePopupPL.qml">qml/platform.qtcontrols/RemorsePopupPL.qml</file>
+        <file alias="qml/platform/SectionHeaderPL.qml">qml/platform.qtcontrols/SectionHeaderPL.qml</file>
+        <file alias="qml/platform/StackPL.qml">qml/platform.qtcontrols/StackPL.qml</file>
+        <file alias="qml/platform/StylerPL.qml">qml/platform.qtcontrols/StylerPL.qml</file>
+        <file alias="qml/platform/TextFieldPL.qml">qml/platform.qtcontrols/TextFieldPL.qml</file>
+        <file alias="qml/platform/TextSwitchPL.qml">qml/platform.qtcontrols/TextSwitchPL.qml</file>
     </qresource>
 </RCC>
