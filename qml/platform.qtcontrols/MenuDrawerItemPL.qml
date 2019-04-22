@@ -22,5 +22,5 @@ import QtQuick.Controls 2.2
 ItemDelegate {
     id: item
     width: parent.width
-    onClicked: appWindow.drawer.close()
+    onClicked: app.drawer.close()
 }
