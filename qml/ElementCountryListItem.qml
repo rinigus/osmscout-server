@@ -22,7 +22,7 @@ import "platform"
 
 ListItemPL {
     id: listItem
-    contentHeight: clist.height + styler.themePaddingLarge
+    contentHeight: Math.max(icon.height,clist.height) + styler.themePaddingLarge
     width: parent.width
 
     property var country
@@ -31,25 +31,27 @@ ListItemPL {
 
     Row {
         anchors.verticalCenter: parent.verticalCenter
-        spacing: styler.themePaddingLarge
+        spacing: styler.themePaddingMedium
         x: styler.themeHorizontalPageMargin
         width: parent.width-2*x
 
         Rectangle {
-            width: styler.themeIconSizeMedium
-            height: styler.themeIconSizeMedium
+            id: icon
             color: "transparent"
+            height: styler.themeItemSizeSmall*0.75
+            width: styler.themeItemSizeSmall*0.75
 
             IconPL {
                 anchors.centerIn: parent
-                source: iconSource
+                iconHeight: parent.height
+                name: listItem.iconSource
             }
         }
 
         Column {
             id: clist
             spacing: styler.themePaddingSmall
-            width: parent.width - styler.themeIconSizeMedium - styler.themePaddingLarge
+            width: parent.width - icon.width - parent.spacing
 
             LabelPL {
                 id: label
@@ -104,33 +106,33 @@ ListItemPL {
         label.text = c.name
         if (c.type === "dir") {
             prop.text = qsTr("%1 territories").arg(c.children.length)
-            iconSource = "image://theme/icon-m-file-folder"
+            iconSource = styler.iconFolder
         }
         else {
             var info = ""
             if (manager.isCountryAvailable(c.id) && c.id==="postal/global") {
-                iconSource = "image://theme/icon-m-chat"
+                iconSource = styler.iconCountryAvailable
                 info = qsTr("Available") + "; "
             }
             else if (manager.isCountryAvailable(c.id) && c.id==="mapnik/global") {
-                iconSource = "image://theme/icon-m-image"
+                iconSource = styler.iconMapnikGlobal
                 info = qsTr("Available") + "; "
             }
             else if (manager.isCountryAvailable(c.id)) {
-                iconSource = "image://theme/icon-m-location"
+                iconSource = styler.iconCountryAvailable
                 info = qsTr("Available") + "; "
             }
             else if (manager.isCountryRequested(c.id) &&
                      !manager.isCountryCompatible(c.id)) {
-                iconSource = "image://theme/icon-m-sync"
+                iconSource = styler.iconIncompatibleVersion
                 info = qsTr("Incompatible version") + "; "
             }
             else if (manager.isCountryRequested(c.id)) {
-                iconSource = "image://theme/icon-m-cloud-download"
+                iconSource = styler.iconCountryRequested
                 info = qsTr("Subscribed") + "; "
             }
             else
-                iconSource = "image://theme/icon-m-region"
+                iconSource = styler.iconRegion
 
             prop.text = info + qsTr("Size: %1 MB").arg( c.size )
         }

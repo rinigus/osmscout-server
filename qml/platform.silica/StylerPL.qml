@@ -58,37 +58,14 @@ QtObject {
 
     // used icons
     property string iconAbout: "image://theme/icon-m-about"
-    property string iconBack: "image://theme/icon-m-back"
-    property string iconClear: "image://theme/icon-m-clear"
-    property string iconClose: "image://theme/icon-m-dismiss"
-    property string iconDelete: "image://theme/icon-m-delete"
-    property string iconDot: Theme.colorScheme ? Qt.resolvedUrl("../icons/sailfishos/center-black.svg") : Qt.resolvedUrl("../icons/sailfishos/center-white.svg")
-    property string iconEdit: "image://theme/icon-m-edit"
-    property string iconEditClear: "image://theme/icon-m-clear"
-    property string iconFavorite: "image://theme/icon-m-favorite"
-    property string iconFavoriteSelected: "image://theme/icon-m-favorite-selected"
-    property string iconManeuvers: "image://theme/icon-m-shuffle"
-    property string iconMaps: "image://theme/icon-m-levels"
-    property string iconMenu: "image://theme/icon-m-menu"
-    property string iconNavigate: Theme.colorScheme ? Qt.resolvedUrl("../icons/sailfishos/route-to-black.svg") : Qt.resolvedUrl("../icons/sailfishos/route-to-white.svg")
-    property string iconNavigateTo: iconNavigate
-    property string iconNavigateFrom: Theme.colorScheme ? Qt.resolvedUrl("../icons/sailfishos/route-from-black.svg") : Qt.resolvedUrl("../icons/sailfishos/route-from-white.svg")
-    property string iconNearby: Theme.colorScheme ? Qt.resolvedUrl("../icons/sailfishos/nearby-search-black.svg") : Qt.resolvedUrl("../icons/sailfishos/nearby-search-white.svg")
-    property string iconPause: "image://theme/icon-m-pause"
-    property string iconPhone: "image://theme/icon-m-phone"
-    property string iconPreferences: "image://theme/icon-m-developer-mode"
-    property string iconProfileMixed: Theme.colorScheme ? Qt.resolvedUrl("../icons/sailfishos/profile-mixed-black.svg") : Qt.resolvedUrl("../icons/sailfishos/profile-mixed-white.svg")
-    property string iconProfileOffline: Theme.colorScheme ? Qt.resolvedUrl("../icons/sailfishos/profile-offline-black.svg") : Qt.resolvedUrl("../icons/sailfishos/profile-offline-white.svg")
-    property string iconProfileOnline: Theme.colorScheme ? Qt.resolvedUrl("../icons/sailfishos/profile-online-black.svg") : Qt.resolvedUrl("../icons/sailfishos/profile-online-white.svg")
-    property string iconRefresh: "image://theme/icon-m-refresh"
-    property string iconSave: "image://theme/icon-m-acknowledge"
-    property string iconSearch: "image://theme/icon-m-search"
-    property string iconShare: "image://theme/icon-m-share"
-    property string iconShortlisted: "image://theme/icon-m-annotation"
-    property string iconShortlistedSelected: "image://theme/icon-m-annotation-selected"
-    property string iconStart: "image://theme/icon-m-play"
-    property string iconStop: "image://theme/icon-m-clear"
-    property string iconWebLink: "image://theme/icon-m-link"
+    property string iconCountryAvailable: "image://theme/icon-m-location"
+    property string iconCountryRequested: "image://theme/icon-m-cloud-download"
+    property string iconFolder: "image://theme/icon-m-file-folder"
+    property string iconIncompatibleVersion: "image://theme/icon-m-sync"
+    property string iconMapnikGlobal: "image://theme/icon-m-image"
+    property string iconPostalGlobal: "image://theme/icon-m-chat"
+    property string iconRegion: "image://theme/icon-m-region"
+
 
     // item sizes
     property real themeItemSizeLarge: Theme.itemSizeLarge
