@@ -21,9 +21,9 @@ import QtQuick.Controls 2.2
 
 Drawer {
     id: menu
-    height: appWindow.height
+    height: app.height
     width: {
-        var w = appWindow.width / 3;
+        var w = app.width / 3;
         for (var i=0; i < content.length; i++)
             w = Math.max(w, content[i].implicitWidth)
         return w;
