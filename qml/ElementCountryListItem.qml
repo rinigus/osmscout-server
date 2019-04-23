@@ -44,7 +44,7 @@ ListItemPL {
             IconPL {
                 anchors.centerIn: parent
                 iconHeight: parent.height
-                name: listItem.iconSource
+                iconName: listItem.iconSource
             }
         }
 
