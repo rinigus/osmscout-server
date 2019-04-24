@@ -302,6 +302,7 @@ scout_silica {
 
 scout_kirigami|scout_qtcontrols {
     RESOURCES += qml_main.qrc
+    RESOURCES += icons.qrc
 }
 scout_kirigami: RESOURCES += qml_kirigami.qrc
 scout_qtcontrols: RESOURCES += qml_qtcontrols.qrc

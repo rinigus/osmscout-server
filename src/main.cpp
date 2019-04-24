@@ -150,6 +150,11 @@ int main(int argc, char *argv[])
       }
   }
 
+  // set fallback icons for platforms that need it
+#ifdef IS_QTCONTROLS_QT
+  QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/icons/fallback");
+#endif
+
   // deal with command line options
   QCommandLineParser parser;
   parser.setApplicationDescription(QCoreApplication::translate("main", "OSM Scout Server"));

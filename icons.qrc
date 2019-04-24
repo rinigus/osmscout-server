@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/fallback/application-menu.svg</file>
+        <file>icons/fallback/go-next-symbolic-rtl.svg</file>
+        <file>icons/fallback/go-next-symbolic.svg</file>
+        <file>icons/fallback/go-previous-symbolic-rtl.svg</file>
+        <file>icons/fallback/go-previous-symbolic.svg</file>
+        <file>icons/fallback/open-menu-symbolic.svg</file>
+        <file>icons/fallback/emblem-synchronizing-symbolic.svg</file>
+        <file>icons/fallback/folder-documents-symbolic.svg</file>
+        <file>icons/fallback/folder-download-symbolic.svg</file>
+        <file>icons/fallback/folder-symbolic.svg</file>
+        <file>icons/fallback/image-x-generic-symbolic.svg</file>
+        <file>icons/fallback/mark-location-symbolic.svg</file>
+        <file>icons/fallback/preferences-desktop-locale-symbolic.svg</file>
+    </qresource>
+    <qresource prefix="/icons"/>
+</RCC>
