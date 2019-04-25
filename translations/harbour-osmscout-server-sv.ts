@@ -4,92 +4,77 @@
 <context>
     <name>AboutPage</name>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="32"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="27"/>
+        <location filename="../qml/AboutPage.qml" line="29"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
         <translation>Servern måste användas med ett klientprogram som kan visa kartor, utföra sökningar och visa beräknade rutter. Servern är ett tunt lager som exponerar funktionaliteten i &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt; och &lt;i&gt;Geocoder-NLP&lt;/i&gt; och tillhandahåller data för &lt;i&gt;Mapbox GL&lt;/i&gt; genom webbtjänst. Denna server kan användas som ersättning för de online-tjänster som tillhandahåller kartor.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="38"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="33"/>
+        <location filename="../qml/AboutPage.qml" line="35"/>
         <source>Copyright:</source>
         <translation>Copyright:</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="45"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="40"/>
+        <location filename="../qml/AboutPage.qml" line="42"/>
         <source>Translations</source>
         <translation>Översättningar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="58"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="53"/>
+        <location filename="../qml/AboutPage.qml" line="55"/>
         <source>Maps</source>
         <translation>Kartor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="60"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="55"/>
+        <location filename="../qml/AboutPage.qml" line="57"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
         <translation>Kartorna tillhandahålls av Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Tjeckiska republiken) genom modRana.org dataarkiv.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="65"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="60"/>
+        <location filename="../qml/AboutPage.qml" line="62"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
         <translation>Kartdata från OpenStreetMap, Open Database License 1.0. Kartorna konverteras till passande format från nerladdade extrakt och/eller använder polygonfiler tillhandahållna av Geofabrik GmbH.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="69"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="64"/>
+        <location filename="../qml/AboutPage.qml" line="66"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
         <translation>Engelska postnummer nerladdade från &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Dessa data innehåller: Ordnance Survey data © Crown copyright och databasrättighet 2017; Royal Mail data © Royal Mail copyright och databasrättighet 2017; National Statistics data © Crown copyright och databasrättighet 2017.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="75"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="71"/>
+        <location filename="../qml/AboutPage.qml" line="73"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="77"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="73"/>
+        <location filename="../qml/AboutPage.qml" line="75"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Notera att &lt;i&gt;libpostal&lt;/i&gt; utvecklats för att användas med den finavstämda modell som täcker hela världen. De landbaserade modellerna, utvecklades för att användas på mobila enheter och har inte trimmats speciellt. Posta frågor angående libpostal-prestanda på landbaserade modeller hos GitHub-projektet för &lt;i&gt;OSM Scout Server&lt;/i&gt; eller &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="84"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="80"/>
+        <location filename="../qml/AboutPage.qml" line="82"/>
         <source>Acknowledgments</source>
         <translation>Erkännanden</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="29"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="108"/>
+        <location filename="../qml/AboutPage.qml" line="26"/>
         <source>About</source>
         <translation>Om</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="39"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="34"/>
+        <location filename="../qml/AboutPage.qml" line="36"/>
         <source>License: GPLv3</source>
         <translation>Licens: GPLv3</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="110"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="112"/>
+        <location filename="../qml/AboutPage.qml" line="106"/>
         <source>version</source>
         <translation>version</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="115"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="118"/>
+        <location filename="../qml/AboutPage.qml" line="112"/>
         <source>is a server that provides offline map services</source>
         <translation>är en server som tillhandahåller karttjänster offline.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/AboutPage.qml" line="121"/>
-        <location filename="../qml/silica/pages/AboutPage.qml" line="125"/>
+        <location filename="../qml/AboutPage.qml" line="116"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Användarmanual finns tillgänglig &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</translation>
     </message>
@@ -120,120 +105,103 @@
 <context>
     <name>CountryDetailsPage</name>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="42"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="39"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="222"/>
         <source>Subscribed</source>
         <translation>Prenumererad</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="46"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="43"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="226"/>
         <source>All datasets covering selected features are available</source>
         <translation>Alla datamängder som täcker de valda funktionerna, finns tillgängliga.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="48"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="45"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="228"/>
         <source>Some datasets are missing. You would have to start downloads to get them.</source>
         <translation>Vissa datamängder saknas, du måste starta nerladdningen för att hämta dem.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="50"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="47"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="230"/>
         <source>Some or all datasets are incompatible with this version. You would have to update list of provided maps, the maps, and/or install the latest release of OSM Scout Server.</source>
         <translation>Några eller alla datamängder är inkompatibla med denna version. Du måste uppdatera listan över tillhandahållna kartor, kartorna och/eller installera senaste version av OSM Scout Server.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="57"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="54"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="237"/>
         <source>No subscription</source>
         <translation>Ingen prenumeration</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="115"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="117"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="51"/>
         <source>Availability on device</source>
         <translation>Tillgänglighet på enheten</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="133"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="137"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="63"/>
         <source>Size</source>
         <translation>Storlek</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="142"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="146"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="72"/>
         <source>Selected datasets</source>
         <translation>Valda datamängder</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="160"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="166"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="94"/>
         <source>All datasets</source>
         <translation>Alla datamängder</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="196"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="205"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="138"/>
         <source>incompatible version</source>
         <translation>inkompatibel version</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="215"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="225"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="159"/>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="217"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="227"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="161"/>
         <source>disabled</source>
         <translation>inaktiverad</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="232"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="242"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="170"/>
         <source>Subscription</source>
         <translation>Prenumeration</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="237"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="247"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="177"/>
         <source>Subscribe</source>
         <translation>Prenumerera</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="247"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="258"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="188"/>
         <source>Unsubscribe</source>
         <translation>Sluta prenumerera</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="71"/>
-        <location filename="../qml/qtcontrols/CountryDetailsPage.qml" line="72"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="68"/>
-        <location filename="../qml/silica/pages/CountryDetailsPage.qml" line="69"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="251"/>
+        <location filename="../qml/CountryDetailsPage.qml" line="252"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
 </context>
 <context>
-    <name>CoverPage</name>
+    <name>Cover</name>
     <message>
-        <location filename="../qml/silica/cover/CoverPage.qml" line="48"/>
+        <location filename="../qml/platform.silica/Cover.qml" line="48"/>
         <source>OSM Scout Server</source>
-        <translation>OSM Scout Server</translation>
+        <translation type="unfinished">OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../qml/silica/cover/CoverPage.qml" line="51"/>
+        <location filename="../qml/platform.silica/Cover.qml" line="51"/>
         <source>Jobs</source>
-        <translation>Jobb</translation>
+        <translation type="unfinished">Jobb</translation>
     </message>
     <message>
-        <location filename="../qml/silica/cover/CoverPage.qml" line="52"/>
+        <location filename="../qml/platform.silica/Cover.qml" line="52"/>
         <source>Idle</source>
-        <translation>Vänteläge</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -340,10 +308,18 @@
     </message>
 </context>
 <context>
+    <name>DialogPL</name>
+    <message>
+        <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
+        <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>DownloadCountriesPage</name>
     <message>
-        <location filename="../qml/qtcontrols/DownloadCountriesPage.qml" line="78"/>
-        <location filename="../qml/silica/pages/DownloadCountriesPage.qml" line="76"/>
+        <location filename="../qml/DownloadCountriesPage.qml" line="54"/>
         <source>Select country or territory</source>
         <translation>Välj land eller område</translation>
     </message>
@@ -351,36 +327,29 @@
 <context>
     <name>ElementCountryListItem</name>
     <message>
-        <location filename="../qml/qtcontrols/ElementCountryListItem.qml" line="40"/>
-        <location filename="../qml/silica/pages/ElementCountryListItem.qml" line="37"/>
+        <location filename="../qml/ElementCountryListItem.qml" line="108"/>
         <source>%1 territories</source>
         <translation>%1 områden</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementCountryListItem.qml" line="47"/>
-        <location filename="../qml/qtcontrols/ElementCountryListItem.qml" line="51"/>
-        <location filename="../qml/qtcontrols/ElementCountryListItem.qml" line="55"/>
-        <location filename="../qml/silica/pages/ElementCountryListItem.qml" line="44"/>
-        <location filename="../qml/silica/pages/ElementCountryListItem.qml" line="48"/>
-        <location filename="../qml/silica/pages/ElementCountryListItem.qml" line="52"/>
+        <location filename="../qml/ElementCountryListItem.qml" line="115"/>
+        <location filename="../qml/ElementCountryListItem.qml" line="119"/>
+        <location filename="../qml/ElementCountryListItem.qml" line="123"/>
         <source>Available</source>
         <translation>Tillgänglig</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementCountryListItem.qml" line="60"/>
-        <location filename="../qml/silica/pages/ElementCountryListItem.qml" line="57"/>
+        <location filename="../qml/ElementCountryListItem.qml" line="128"/>
         <source>Incompatible version</source>
         <translation>Inkompatibel version</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementCountryListItem.qml" line="64"/>
-        <location filename="../qml/silica/pages/ElementCountryListItem.qml" line="61"/>
+        <location filename="../qml/ElementCountryListItem.qml" line="132"/>
         <source>Subscribed</source>
         <translation>Prenumererad</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementCountryListItem.qml" line="69"/>
-        <location filename="../qml/silica/pages/ElementCountryListItem.qml" line="66"/>
+        <location filename="../qml/ElementCountryListItem.qml" line="137"/>
         <source>Size: %1 MB</source>
         <translation>Storlek: %1 MB</translation>
     </message>
@@ -388,14 +357,12 @@
 <context>
     <name>ElementDownloads</name>
     <message>
-        <location filename="../qml/qtcontrols/ElementDownloads.qml" line="32"/>
-        <location filename="../qml/silica/pages/ElementDownloads.qml" line="35"/>
+        <location filename="../qml/ElementDownloads.qml" line="48"/>
         <source>No downloads active</source>
         <translation>Inga aktiva nerladdningar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementDownloads.qml" line="33"/>
-        <location filename="../qml/silica/pages/ElementDownloads.qml" line="36"/>
+        <location filename="../qml/ElementDownloads.qml" line="49"/>
         <source>Download active</source>
         <translation>Nerladdning aktiv</translation>
     </message>
@@ -403,32 +370,27 @@
 <context>
     <name>ElementLanguageSelector</name>
     <message>
-        <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="30"/>
-        <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="27"/>
+        <location filename="../qml/ElementLanguageSelector.qml" line="32"/>
         <source>Languages</source>
         <translation>Språk</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="31"/>
-        <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="28"/>
+        <location filename="../qml/ElementLanguageSelector.qml" line="33"/>
         <source>List of languages used for parsing addresses</source>
         <translation>Lista över språk som används för adresstolkning</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="32"/>
-        <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="29"/>
+        <location filename="../qml/ElementLanguageSelector.qml" line="34"/>
         <source>Please select languages used for parsing addresses.</source>
         <translation>Välj språk att använda för adresstolkning.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="33"/>
-        <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="30"/>
+        <location filename="../qml/ElementLanguageSelector.qml" line="35"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
         <translation>Om inget språk väljs i denna inställning, antas det att alla språk skall användas för adresstolkning.&lt;br&gt;Notera, att när alla språk används kan RAM-belastningen bli hög.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ElementLanguageSelector.qml" line="56"/>
-        <location filename="../qml/silica/pages/ElementLanguageSelector.qml" line="53"/>
+        <location filename="../qml/ElementLanguageSelector.qml" line="100"/>
         <source>All supported languages</source>
         <translation>Alla språk som stöds</translation>
     </message>
@@ -436,8 +398,7 @@
 <context>
     <name>ElementSelector</name>
     <message>
-        <location filename="../qml/qtcontrols/ElementSelector.qml" line="51"/>
-        <location filename="../qml/silica/pages/ElementSelector.qml" line="49"/>
+        <location filename="../qml/ElementSelector.qml" line="122"/>
         <source>&lt;Not selected&gt;</source>
         <translation>&lt;Ej vald&gt;</translation>
     </message>
@@ -478,21 +439,21 @@
     </message>
 </context>
 <context>
-    <name>FileSelector</name>
+    <name>FileSelectorPL</name>
     <message>
-        <location filename="../qml/silica/pages/FileSelector.qml" line="86"/>
+        <location filename="../qml/platform.silica/FileSelectorPL.qml" line="85"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation>Långtryck på önskad mapp och tryck &quot;Välj&quot; i kontextmenyn, för att välja en lagringsmapp</translation>
+        <translation type="unfinished">Långtryck på önskad mapp och tryck &quot;Välj&quot; i kontextmenyn, för att välja en lagringsmapp</translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/FileSelector.qml" line="221"/>
+        <location filename="../qml/platform.silica/FileSelectorPL.qml" line="220"/>
         <source>Select</source>
-        <translation>Välj</translation>
+        <translation type="unfinished">Välj</translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/FileSelector.qml" line="237"/>
+        <location filename="../qml/platform.silica/FileSelectorPL.qml" line="236"/>
         <source>Empty directory</source>
-        <translation>Tom mapp</translation>
+        <translation type="unfinished">Tom mapp</translation>
     </message>
 </context>
 <context>
@@ -563,74 +524,62 @@
 <context>
     <name>GeocoderPage</name>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="50"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="55"/>
+        <location filename="../qml/GeocoderPage.qml" line="39"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
         <translation>OBS! Se &quot;Om&quot;, angående rapportering kring frågor om adresstolkning.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="30"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="41"/>
+        <location filename="../qml/GeocoderPage.qml" line="26"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="42"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="45"/>
+        <location filename="../qml/GeocoderPage.qml" line="33"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
         <translation>Geocoder ansvarar för att lösa sökförfrågningar. För det, tolkar den söksträngen och identifierar motsvarande objekt på en karta.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="60"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="66"/>
+        <location filename="../qml/GeocoderPage.qml" line="45"/>
         <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
         <translation>Lista över språk som används för att tolka adresser. Notera att när &quot;Alla språk som stöds&quot; används, kan RAM-användningen bli stor.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="67"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="73"/>
+        <location filename="../qml/GeocoderPage.qml" line="52"/>
         <source>Search all available maps</source>
         <translation>Sök i alla tillgängliga kartor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="68"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="74"/>
+        <location filename="../qml/GeocoderPage.qml" line="53"/>
         <source>When enabled, each search will be performed using all available maps on the device</source>
         <translation>Vid aktivering genomsöks alla tillgängliga kartor, på enheten</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="74"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="80"/>
+        <location filename="../qml/GeocoderPage.qml" line="59"/>
         <source>Use libpostal parser</source>
         <translation>Använd libpostal-tolken</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="75"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="81"/>
+        <location filename="../qml/GeocoderPage.qml" line="60"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
         <translation>Detta är standardadresstolken för geokodaren. Det rekommenderas att aktivera &lt;i&gt;libpostal&lt;/i&gt;-tolken, om inte maskinvaran inte tillåter att  den används och hänsyn tas till den primitiva tolkens begränsningar. Notera att minst en tolk måste specificeras.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="83"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="89"/>
+        <location filename="../qml/GeocoderPage.qml" line="68"/>
         <source>Use primitive parser</source>
         <translation>Använd primitiv tolk</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="84"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="90"/>
+        <location filename="../qml/GeocoderPage.qml" line="69"/>
         <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
         <translation>Som tillägg till &lt;i&gt;libpostal&lt;/i&gt;, kan du med primitiv tolk specificera administrativ hierarki för sökobjektet, genom att separera komponenter med kommatecken. Ibland, om libpostal inte kan tolka förfrågan korrekt, låter tolken dig överbrygga det problemet.&lt;br&gt;Exempel: husnummer, gata, stad</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="93"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="99"/>
+        <location filename="../qml/GeocoderPage.qml" line="78"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
         <translation>Läs in &lt;i&gt;libpostal&lt;/i&gt; vid varje anrop</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/GeocoderPage.qml" line="94"/>
-        <location filename="../qml/silica/pages/GeocoderPage.qml" line="100"/>
+        <location filename="../qml/GeocoderPage.qml" line="79"/>
         <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
         <translation>Vid aktivering, kommer &lt;i&gt;libpostal&lt;/i&gt;-databaser att läsas in i minnet, endast under tolkning av förfrågan. Som ett resultat av detta, kommer minnesanvändningen för libpostal i vänteläge att vara liten, medan sökningar tar längre tid.</translation>
     </message>
@@ -651,6 +600,52 @@
         <location filename="../src/infohub.cpp" line="145"/>
         <source>INFO: </source>
         <translation>INFO: </translation>
+    </message>
+</context>
+<context>
+    <name>MainMenu</name>
+    <message>
+        <location filename="../qml/MainMenu.qml" line="33"/>
+        <source>Map Manager</source>
+        <translation type="unfinished">Karthanterare</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenu.qml" line="39"/>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenu.qml" line="44"/>
+        <source>Settings</source>
+        <translation type="unfinished">Inställningar</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenu.qml" line="49"/>
+        <source>About OSM Scout Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MainMenuReversed</name>
+    <message>
+        <location filename="../qml/MainMenuReversed.qml" line="33"/>
+        <source>About OSM Scout Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuReversed.qml" line="38"/>
+        <source>Settings</source>
+        <translation type="unfinished">Inställningar</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuReversed.qml" line="43"/>
+        <source>Profile</source>
+        <translation type="unfinished">Profil</translation>
+    </message>
+    <message>
+        <location filename="../qml/MainMenuReversed.qml" line="48"/>
+        <source>Map Manager</source>
+        <translation type="unfinished">Karthanterare</translation>
     </message>
 </context>
 <context>
@@ -1030,164 +1025,137 @@
 <context>
     <name>MapManagerPage</name>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="30"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="43"/>
+        <location filename="../qml/MapManagerPage.qml" line="27"/>
         <source>Map Manager</source>
         <translation>Karthanterare</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="46"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="47"/>
+        <location filename="../qml/MapManagerPage.qml" line="39"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
         <translation>Karthanteraren sköter lagringen av offline-kartor och relaterade datamängder på enheten. Här kan du välja de funktioner och länder som skall lagras, uppdateras eller tas bort från enheten.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="252"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="268"/>
+        <location filename="../qml/MapManagerPage.qml" line="227"/>
         <source>Storage settings</source>
         <translation>Lagringsinställningar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="256"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="272"/>
+        <location filename="../qml/MapManagerPage.qml" line="231"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Lagringsinställningar anges efter profil. Om du vill ändra lagringsinställningar, måste du ange motsvarande profil eller ange profilen som &lt;i&gt;Anpassad&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="287"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="305"/>
+        <location filename="../qml/MapManagerPage.qml" line="264"/>
         <source>Store datasets for Mapbox GL</source>
         <translation>Lagra datauppsättning för Mapbox GL</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="297"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="315"/>
+        <location filename="../qml/MapManagerPage.qml" line="274"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
         <translation>Lagra dataupsättningar för geocoder-nlp med libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="308"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="326"/>
+        <location filename="../qml/MapManagerPage.qml" line="285"/>
         <source>Store datasets for Valhalla routing engine</source>
         <translation>Lagra datamängder för Valhallas ruttmotor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="309"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="327"/>
+        <location filename="../qml/MapManagerPage.qml" line="286"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
         <translation>Vid aktivering kommer datamängder för Valhalla att lagras på enheten efter nerladdning. Dessa datamängder krävs för att använda Valhalla som ruttmotor.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="318"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="336"/>
+        <location filename="../qml/MapManagerPage.qml" line="295"/>
         <source>Store datasets for libosmscout</source>
         <translation>Lagra datamängder för libosmscout</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="319"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="337"/>
+        <location filename="../qml/MapManagerPage.qml" line="296"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
         <translation>Vid aktivering kommer datamängder för libosmscout att lagras på enheten efter nerladdning. Dessa datamängder krävs för rendering, sökning eller ruttberäkning med libosmscout-gränssnittet.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="55"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="58"/>
+        <location filename="../qml/MapManagerPage.qml" line="45"/>
         <source>Subscribed</source>
         <translation>Prenumererade</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="101"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="104"/>
+        <location filename="../qml/MapManagerPage.qml" line="90"/>
         <source>Downloads</source>
         <translation>Nerladdningar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="116"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="121"/>
+        <location filename="../qml/MapManagerPage.qml" line="114"/>
         <source>Missing data:&lt;br&gt;</source>
         <translation>Saknad data:&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="133"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="138"/>
+        <location filename="../qml/MapManagerPage.qml" line="123"/>
         <source>Start download</source>
         <translation>Starta nerladdning</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="157"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="163"/>
+        <location filename="../qml/MapManagerPage.qml" line="144"/>
         <source>Stop download</source>
         <translation>Stoppa nerladdning</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="167"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="174"/>
+        <location filename="../qml/MapManagerPage.qml" line="150"/>
         <source>Provided maps</source>
         <translation>Tillhandahållna kartor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="206"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="216"/>
+        <location filename="../qml/MapManagerPage.qml" line="189"/>
         <source>Check for updates</source>
         <translation>Sök efter uppdateringar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="215"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="226"/>
+        <location filename="../qml/MapManagerPage.qml" line="195"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
         <translation>Uppdatera listan över nu tillgängliga kartor och datamängder, och kontrollera om kartorna kan uppdateras</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="224"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="237"/>
+        <location filename="../qml/MapManagerPage.qml" line="201"/>
         <source>Storage</source>
         <translation>Lagring</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="233"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="246"/>
+        <location filename="../qml/MapManagerPage.qml" line="212"/>
         <source>Start cleanup</source>
         <translation>Starta rensning</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="243"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="257"/>
+        <location filename="../qml/MapManagerPage.qml" line="221"/>
         <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
         <translation>Kontrollera om det finns filer från tidigare prenumerationer, som inte används längre.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="176"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="183"/>
+        <location filename="../qml/MapManagerPage.qml" line="161"/>
         <source>Subscribe</source>
         <translation>Prenumerera</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="288"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="306"/>
+        <location filename="../qml/MapManagerPage.qml" line="265"/>
         <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
         <translation>Vid aktivering lagras datauppsättningar med vektorrutor på enheten, efter nerladdning. Dessa datauppsättningar innehåller världskustlinjer (ca: 12 MB), teckensnitt (ca: 80 MB) och landsspecifika datauppsättningar.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="298"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="316"/>
+        <location filename="../qml/MapManagerPage.qml" line="275"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
         <translation>Vid aktivering, kommer &lt;i&gt;libpostal&lt;/i&gt;-baserade datamängder att lagras på enheten efter nerladdning. Dessa datamängder består av språktolkningsdata (omkring 700 MB) och landsspecifik data för adresstolkning och uppslagning.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="270"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="288"/>
+        <location filename="../qml/MapManagerPage.qml" line="247"/>
         <source>Store datasets for Mapnik</source>
         <translation>Lagra datamängder för Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="271"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="289"/>
+        <location filename="../qml/MapManagerPage.qml" line="248"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
         <translation>Vid aktivering, kommer datamängder för rendering av kartor med Mapnik att lagras på enheten efter nerladdning. Dessa datamängder består av världskustlinjer (omkring 700 MB) och landsspecifik data för rendering.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapManagerPage.qml" line="187"/>
-        <location filename="../qml/silica/pages/MapManagerPage.qml" line="195"/>
+        <location filename="../qml/MapManagerPage.qml" line="171"/>
         <source>Select the countries or territories that you want to keep on device</source>
         <translation>Välj de länder och områden som du vill spara på enheten</translation>
     </message>
@@ -1296,38 +1264,32 @@
 <context>
     <name>MapnikPage</name>
     <message>
-        <location filename="../qml/qtcontrols/MapnikPage.qml" line="29"/>
-        <location filename="../qml/silica/pages/MapnikPage.qml" line="41"/>
+        <location filename="../qml/MapnikPage.qml" line="26"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapnikPage.qml" line="40"/>
-        <location filename="../qml/silica/pages/MapnikPage.qml" line="45"/>
+        <location filename="../qml/MapnikPage.qml" line="33"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
         <translation>Mapnik kan användas som renderingsimplementation för att tillhandahålla kartrutor i klientprogram</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapnikPage.qml" line="49"/>
-        <location filename="../qml/silica/pages/MapnikPage.qml" line="56"/>
+        <location filename="../qml/MapnikPage.qml" line="42"/>
         <source>Scale factor</source>
         <translation>Skalningsfaktor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapnikPage.qml" line="50"/>
-        <location filename="../qml/silica/pages/MapnikPage.qml" line="57"/>
+        <location filename="../qml/MapnikPage.qml" line="43"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
         <translation>Skalningsfaktor för att rita upp funktioner på en karta. På högupplösta skärmar, som telefoner, är det en fördel att använda en skalningsfaktor större än 1. För en första utvärdering, föreslås en skalfaktor på 3-5 på mobila enheter.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapnikPage.qml" line="60"/>
-        <location filename="../qml/silica/pages/MapnikPage.qml" line="67"/>
+        <location filename="../qml/MapnikPage.qml" line="53"/>
         <source>Buffer size in pixels</source>
         <translation>Buffertstorlek i pixel</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/MapnikPage.qml" line="61"/>
-        <location filename="../qml/silica/pages/MapnikPage.qml" line="68"/>
+        <location filename="../qml/MapnikPage.qml" line="54"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
         <translation>Genom att öka storleken på området som används för att läsa in data vid rendering av en kartruta, kan renderingsstillägget förbättra återgivningen genom att ta hänsyn till uppgifter från närliggande kartrutor. Om du ser alltför många avskurna etiketter, kan du försöka öka buffertstorleken. Notera att stor buffertstorlek bromsar renderingen. Buffertstorleken är skalad med skalningsfaktorn för att kompensera för ökningen av etikettstorlek.</translation>
     </message>
@@ -1335,73 +1297,57 @@
 <context>
     <name>NonNeededFiles</name>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="30"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="49"/>
+        <location filename="../qml/NonNeededFiles.qml" line="26"/>
         <source>Unused files</source>
         <translation>Oanvända filer</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="105"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="113"/>
+        <location filename="../qml/NonNeededFiles.qml" line="86"/>
         <source>Delete files</source>
         <translation>Ta bort filer</translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="118"/>
+        <location filename="../qml/NonNeededFiles.qml" line="88"/>
         <source>Deleting</source>
         <translation>Tar bort</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="114"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="127"/>
+        <location filename="../qml/NonNeededFiles.qml" line="98"/>
         <source>Delete unused files and free the occupied space</source>
         <translation>Ta bort oanvända filer och återfå lagringsutrymmet</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="147"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="164"/>
+        <location filename="../qml/NonNeededFiles.qml" line="145"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
         <translation>Alla lagrade filer används av OSM Scout Server. Det finns inget att ta bort.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="140"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="157"/>
+        <location filename="../qml/NonNeededFiles.qml" line="138"/>
         <source>MB</source>
         <translation>MB</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="59"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="63"/>
-        <source>WARNING: While care has been taken to ensure deleting of the found unused files only, the software has not been tested by many users yet. Use at your own risk and please report if there are any problems.</source>
-        <translation>VARNING! Även om det säkerställts att endast oanvända filer tas bort, har appen ännu inte testats av många användare. Använd funktionen på egen risk och rapportera gärna om problem uppstår.</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="66"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="72"/>
+        <location filename="../qml/NonNeededFiles.qml" line="49"/>
         <source>Directories</source>
         <translation>Mappar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="73"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="79"/>
+        <location filename="../qml/NonNeededFiles.qml" line="54"/>
         <source>Directories containing files that will be deleted during cleanup:</source>
         <translation>Mappar innehållandes filer som tas bort under städning:</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="94"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="102"/>
+        <location filename="../qml/NonNeededFiles.qml" line="73"/>
         <source>Cleanup</source>
         <translation>Städa</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="140"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="157"/>
+        <location filename="../qml/NonNeededFiles.qml" line="138"/>
         <source>Occupied space</source>
         <translation>Använt lagringsutrymme</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/NonNeededFiles.qml" line="145"/>
-        <location filename="../qml/silica/pages/NonNeededFiles.qml" line="162"/>
+        <location filename="../qml/NonNeededFiles.qml" line="143"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
         <translation>Kunde inte kontrollera oanvända filer. Detta kan t.ex. bero på aktiva nerladdningar</translation>
     </message>
@@ -1409,140 +1355,117 @@
 <context>
     <name>OSMScoutPage</name>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="29"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="41"/>
+        <location filename="../qml/OSMScoutPage.qml" line="26"/>
         <source>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</source>
         <translation>OSM Scout &lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="42"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="45"/>
+        <location filename="../qml/OSMScoutPage.qml" line="33"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
         <translation>OSM Scout bibliotek (&lt;i&gt;libosmscout&lt;/i&gt;) kan användas för att rita upp kartor, söka och beräkna rutter</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="50"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="54"/>
+        <location filename="../qml/OSMScoutPage.qml" line="37"/>
         <source>Rendering</source>
         <translation>Rendering</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="56"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="60"/>
+        <location filename="../qml/OSMScoutPage.qml" line="43"/>
         <source>Font size</source>
         <translation>Teckenstorlek</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="64"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="68"/>
+        <location filename="../qml/OSMScoutPage.qml" line="51"/>
         <source>Style Sheet</source>
         <translation>Stilmall</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="65"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="69"/>
+        <location filename="../qml/OSMScoutPage.qml" line="52"/>
         <source>Style sheet used to render the map tiles</source>
         <translation>Stilmall för att återge kartor.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="71"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="75"/>
+        <location filename="../qml/OSMScoutPage.qml" line="58"/>
         <source>Icons</source>
         <translation>Ikoner</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="72"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="76"/>
+        <location filename="../qml/OSMScoutPage.qml" line="59"/>
         <source>Icons used to mark features on the map</source>
         <translation>Ikoner för att märka funktioner på kartan.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="80"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="84"/>
+        <location filename="../qml/OSMScoutPage.qml" line="67"/>
         <source>Render sea</source>
         <translation>Återge sjö</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="86"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="90"/>
+        <location filename="../qml/OSMScoutPage.qml" line="73"/>
         <source>Draw background</source>
         <translation>Rita bakgrund</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="90"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="94"/>
+        <location filename="../qml/OSMScoutPage.qml" line="77"/>
         <source>Routing</source>
         <translation>Ruttberäkning</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="94"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="98"/>
+        <location filename="../qml/OSMScoutPage.qml" line="82"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
         <translation>Ruttberäkning sker mellan de möjliga rutter som stämmer med kostnadsbegränsningen.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="104"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="109"/>
+        <location filename="../qml/OSMScoutPage.qml" line="91"/>
         <source>Cost factor</source>
         <translation>Kostnadsfaktor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="105"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="110"/>
+        <location filename="../qml/OSMScoutPage.qml" line="92"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
         <translation>Kostnadsfaktorn är en komponent i kostnadsgränsen som är proportionell mot det geodetiska avståndet mellan ruttens startpunkt och målet</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="114"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="119"/>
+        <location filename="../qml/OSMScoutPage.qml" line="101"/>
         <source>Cost distance</source>
         <translation>Kostnadsavstånd</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="115"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="120"/>
+        <location filename="../qml/OSMScoutPage.qml" line="102"/>
         <source>Cost distance is an offset of a cost limit</source>
         <translation>Kostnadsavståndet är en förskjutning av kostnadsgränsen</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="132"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="137"/>
+        <location filename="../qml/OSMScoutPage.qml" line="121"/>
         <source>Routing speeds</source>
         <translation>Färdhastigheter</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="138"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="144"/>
+        <location filename="../qml/OSMScoutPage.qml" line="127"/>
         <source>Speeds for different transportation modes (car, bicycle, walk) and at different road surfaces used when finding an optimal route</source>
         <translation>Hastigheter för olika transportmedel (bil, cykel, gång) och olika vägtyper, vid beräkning av en optimal rutt</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="148"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="155"/>
+        <location filename="../qml/OSMScoutPage.qml" line="133"/>
         <source>Advanced rendering settings</source>
         <translation>Avancerade renderingsinställningar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="154"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="161"/>
+        <location filename="../qml/OSMScoutPage.qml" line="142"/>
         <source>Loaded area factor</source>
         <translation>Inläst områdesfaktor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="155"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="162"/>
+        <location filename="../qml/OSMScoutPage.qml" line="143"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
         <translation>Genom att öka storleken på området som används för att läsa in data vid kartåtergivning, kan renderingstillägget förbättra återgivningen genom att ta hänsyn till uppgifter från närliggande kartrutor. Faktorvärdet 1,0 motsvarar inläsning av data som hämtas endast från återgiven ruta. Ett högre faktorvärde minskar renderingshastigheten och ökar RAM-användningen för servern. På grund av denna inverkan på RAM, beroende på rutstorlek kan en faktor så liten som 2, leda till att fylla upp enhetens RAM.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="168"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="175"/>
+        <location filename="../qml/OSMScoutPage.qml" line="156"/>
         <source>Cutoff zoom level</source>
         <translation>Zoomnivåstopp</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMScoutPage.qml" line="169"/>
-        <location filename="../qml/silica/pages/OSMScoutPage.qml" line="176"/>
+        <location filename="../qml/OSMScoutPage.qml" line="157"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
         <translation>Vid specificerad zoomnivå, kommer kartrenderingsalgoritmen att sluta söka efter etiketter i angränsande kartrutor. 14 används ofta som stoppzoomnivå. Genom att ange ett högre värde, kan du få en mer korrekt återgivning på högre zoomnivåer. Observera att etikettrendering kan fördröja kartåtergivningen avsevärt.</translation>
     </message>
@@ -1550,223 +1473,202 @@
 <context>
     <name>OSMSpeedPage</name>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="29"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="41"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="26"/>
         <source>Routing speeds</source>
         <translation>Färdhastigheter</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="40"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="45"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="33"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
         <translation>Transporthastigheter som används av OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) vid ruttberäkning</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="47"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="54"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="40"/>
         <source>Modes of transportation</source>
         <translation>Transportlägen</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="53"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="61"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="46"/>
         <source>Maximal car speed</source>
         <translation>Maximal bilhastighet</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="54"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="62"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="47"/>
         <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
         <translation>Denna hastighet förväntas aldrig överskridas under ruttberäkning.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="62"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="70"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="55"/>
         <source>Expected speed of a bicycle</source>
         <translation>Förväntad cykelhastighet</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="70"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="78"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="63"/>
         <source>Expected speed while walking</source>
         <translation>Förväntad gånghastighet</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="76"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="84"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="69"/>
         <source>Car speed on different roads</source>
         <translation>Bilhastighet på olika vägar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="82"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="91"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="75"/>
         <source>living street</source>
         <translation>bostadsområde</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="90"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="99"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="83"/>
         <source>motorway</source>
         <translation>motorväg</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="98"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="107"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="91"/>
         <source>motorway junction</source>
         <translation>motorvägsavfart</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="106"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="115"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="99"/>
         <source>motorway link</source>
         <translation>motorvägspåfart</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="114"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="123"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="107"/>
         <source>motorway primary</source>
         <translation>primär motorväg</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="122"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="131"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="115"/>
         <source>motorway trunk</source>
         <translation>motortrafikled</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="130"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="139"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="123"/>
         <source>primary</source>
         <translation>primär</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="138"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="147"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="131"/>
         <source>primary link</source>
         <translation>primär på-/avfart</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="146"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="155"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="139"/>
         <source>residential</source>
         <translation>tillfartsgata</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="154"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="163"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="147"/>
         <source>road</source>
         <translation>gata</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="162"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="171"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="155"/>
         <source>roundabout</source>
         <translation>rondell</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="170"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="179"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="163"/>
         <source>secondary</source>
         <translation>sekundär</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="178"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="187"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="171"/>
         <source>secondary link</source>
         <translation>sekundär på-/avfart</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="186"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="195"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="179"/>
         <source>service</source>
         <translation>serviceväg</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="194"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="203"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="187"/>
         <source>tertiary</source>
         <translation>tertiär</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="202"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="211"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="195"/>
         <source>tertiary link</source>
         <translation>tertiär på-/avfart</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="210"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="219"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="203"/>
         <source>trunk</source>
         <translation>riksväg</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="218"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="227"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="211"/>
         <source>trunk link</source>
         <translation>motortrafikled på-/avfart</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/OSMSpeedPage.qml" line="226"/>
-        <location filename="../qml/silica/pages/OSMSpeedPage.qml" line="235"/>
+        <location filename="../qml/OSMSpeedPage.qml" line="219"/>
         <source>unclassified</source>
         <translation>oklassificerad</translation>
     </message>
 </context>
 <context>
+    <name>PageListPL</name>
+    <message>
+        <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PagePL</name>
+    <message>
+        <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
+        <source>Accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ProfilesPage</name>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="30"/>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="59"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="42"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="59"/>
+        <location filename="../qml/ProfilesPage.qml" line="28"/>
+        <location filename="../qml/ProfilesPage.qml" line="47"/>
         <source>Profile</source>
         <translation>Profil</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="42"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="46"/>
+        <location filename="../qml/ProfilesPage.qml" line="38"/>
         <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.&lt;br&gt;&lt;br&gt;Please select active profile.</source>
         <translation>OSM Scout Server använder profiler, för att förenkla valet av gränssnitt och nerladdade databasuppsättningar.&lt;br&gt;&lt;br&gt;Välj aktiv profil.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="69"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="63"/>
+        <location filename="../qml/ProfilesPage.qml" line="49"/>
         <source>Default</source>
         <translation>Standard</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="70"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="64"/>
+        <location filename="../qml/ProfilesPage.qml" line="50"/>
         <source>Recommended for raster tiles maps</source>
         <translation>Rekommenderas för rasterkartor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="88"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="83"/>
+        <location filename="../qml/ProfilesPage.qml" line="62"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
         <translation>&lt;i&gt;Standardprofilen&lt;/i&gt; stödjer kartprogram som använder insticksprogrammen &lt;i&gt;Mapbox GL&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; för att söka efter platser och &lt;i&gt;Valhalla&lt;/i&gt; för att beräkna rutter. Detta är den profil som rekommenderas för nya vektorbaserade kartklienter.&lt;br&gt;&lt;br&gt;För användare med traditionella rasterbaserade kartprogram, rekommenderas profilen för rasterbaserade kartrutor som inkluderar &lt;i&gt;Mapniks&lt;/i&gt; datauppsättningar och samma sök- och ruttberäkningsinstick som &lt;i&gt;standardprofilen&lt;/i&gt;.&lt;br&gt;&lt;br&gt;För användare som vill använda både raster- och vektorbaserade kartprogram, rekommenderas profilen som kombinerar vektor- och rasterkartrutor, vilken inkluderar &lt;i&gt;Mapbox GL&lt;/i&gt; datauppsättningar, stöder kartrendering i rasterbaserade kartrutor från &lt;i&gt;Mapnik&lt;/i&gt; och använder samma sök- och ruttberäkningsinstick som &lt;i&gt;standardprofilen&lt;/i&gt;. Eftersom denna profil innehåller data för flera renderingsprogram har den det största lagringskravet.&lt;br&gt;&lt;br&gt;Profilen där &lt;i&gt;libosmscout&lt;/i&gt; kombineras med &lt;i&gt;Geocoder-NLP&lt;/i&gt; har mindre lagringskrav jämfört med standardprofilen, men rendering av kartor och ruttberäkning begränsas till endast ett territorium. Dessutom är renderingskvaliteten sämre och ruttberäkningshastigheten långsammare, jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout-profilen&lt;/i&gt; har de minsta lagringskraven bland alla profiler, men rendering av kartor och ruttberäkning begränsas också här till endast ett territorium. Dessutom är renderingskvalitet och sökning sämre, och ruttberäkningshastigheten långsammare jämfört med standardprofilen.&lt;br&gt;&lt;br&gt;Vid användning av &lt;i&gt;Anpassad&lt;/i&gt; profil, bestäms inte inställningar och lagringsutrymme av profilen utan måste anges av användaren. Denna profil låter dig välja rendering-, sök- och ruttberäkningskomponenter individuellt. Observera att användaren är ansvarig för att justera inställningarna för att göra dem konsekventa mellan kraven i använda implementationer och lagring.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="71"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="65"/>
+        <location filename="../qml/ProfilesPage.qml" line="51"/>
         <source>Recommended for vector and raster tiles maps</source>
         <translation>Rekommenderas för vektor- och rasterbaserade kartrutor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="72"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="66"/>
+        <location filename="../qml/ProfilesPage.qml" line="52"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
         <translation>&lt;i&gt;libosmscout&lt;/i&gt; med &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="73"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="67"/>
+        <location filename="../qml/ProfilesPage.qml" line="53"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
         <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ProfilesPage.qml" line="74"/>
-        <location filename="../qml/silica/pages/ProfilesPage.qml" line="68"/>
+        <location filename="../qml/ProfilesPage.qml" line="54"/>
         <source>Custom</source>
         <translation>Anpassad</translation>
     </message>
@@ -2019,332 +1921,277 @@
 <context>
     <name>SettingsPage</name>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="28"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="43"/>
+        <location filename="../qml/SettingsPage.qml" line="27"/>
         <source>Settings</source>
         <translation>Inställningar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="53"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="53"/>
+        <location filename="../qml/SettingsPage.qml" line="41"/>
         <source>Units</source>
         <translation>Enheter</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="63"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="55"/>
+        <location filename="../qml/SettingsPage.qml" line="42"/>
         <source>Metric</source>
         <translation>Meter</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="64"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="56"/>
+        <location filename="../qml/SettingsPage.qml" line="42"/>
         <source>Imperial</source>
         <translation>Imperial</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="74"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="64"/>
+        <location filename="../qml/SettingsPage.qml" line="40"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
         <translation>Enheter som används i det grafiska gränsnittet på servern. Enheterna ändras först efter att du verkställer inställningarna.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="94"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="80"/>
+        <location filename="../qml/SettingsPage.qml" line="52"/>
         <source>Language</source>
         <translation>Språk</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="104"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="84"/>
+        <location filename="../qml/SettingsPage.qml" line="53"/>
         <source>Default</source>
         <translation>Standard</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="105"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="85"/>
+        <location filename="../qml/SettingsPage.qml" line="53"/>
         <source>English</source>
         <translation>English</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="115"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="94"/>
+        <location filename="../qml/SettingsPage.qml" line="48"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
         <translation>Önskat språk för platsnamn som visas på kartor och i sökresultat. Detta språk kommer att användas om möjligt. Om &lt;i&gt;Standard&lt;/i&gt; anges, kommer  OpenStreetMap-namn att användas, vilket oftast innebär det lokala språket i det visade landet.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="156"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="136"/>
+        <location filename="../qml/SettingsPage.qml" line="85"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
         <translation>Vid aktivering kommer OSM Scout Server att aktiveras automatiskt, av valfri kompatibel klient. Automatiskt startad server arbetar i bakgrunden.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="129"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="109"/>
+        <location filename="../qml/SettingsPage.qml" line="62"/>
         <source>Maps storage</source>
         <translation>Kartlagring</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="130"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="110"/>
+        <location filename="../qml/SettingsPage.qml" line="63"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
         <translation>Mapp för kartlagring.&lt;br&gt;&lt;b&gt;OBS!&lt;/b&gt; Denna mapp hanteras till fullo av OSM Scout Server. &lt;b&gt;Tilldela en separat, tom mapp&lt;/b&gt; som OSM Scout Server kan använda. Detta inkluderar borttagning av alla filer i mappen vid din begäran om rensning, eller kartuppdatering.&lt;br&gt;&lt;i&gt;Exempel:&lt;/i&gt; Kartor under &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="147"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="127"/>
+        <location filename="../qml/SettingsPage.qml" line="79"/>
         <source>Automatic activation</source>
         <translation>Automatisk aktivering</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="166"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="147"/>
+        <location filename="../qml/SettingsPage.qml" line="92"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
         <translation>Automatisk aktivering rekommenderas, för att förenkla åtkomst till servern.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="174"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="156"/>
+        <location filename="../qml/SettingsPage.qml" line="97"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
         <translation>Se motsvarande sektion i &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;användarmanualen&lt;/a&gt;, för detaljerad teknisk information, skapade filer och hur man tar bort dem vid behov.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="190"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="169"/>
+        <location filename="../qml/SettingsPage.qml" line="104"/>
         <source>Idle timeout</source>
         <translation>Tidsgräns för inaktivitet</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="200"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="173"/>
+        <location filename="../qml/SettingsPage.qml" line="108"/>
         <source>15 minutes</source>
         <translation>15 minuter</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="201"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="174"/>
+        <location filename="../qml/SettingsPage.qml" line="109"/>
         <source>30 minutes</source>
         <translation>30 minuter</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="202"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="175"/>
+        <location filename="../qml/SettingsPage.qml" line="110"/>
         <source>1 hour</source>
         <translation>1 timma</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="203"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="176"/>
+        <location filename="../qml/SettingsPage.qml" line="111"/>
         <source>2 hours</source>
         <translation>2 timmar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="204"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="177"/>
+        <location filename="../qml/SettingsPage.qml" line="112"/>
         <source>4 hours</source>
         <translation>4 timmar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="205"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="178"/>
+        <location filename="../qml/SettingsPage.qml" line="113"/>
         <source>8 hours</source>
         <translation>8 timmar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="206"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="179"/>
+        <location filename="../qml/SettingsPage.qml" line="114"/>
         <source>24 hours</source>
         <translation>24 timmar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="207"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="180"/>
+        <location filename="../qml/SettingsPage.qml" line="115"/>
         <source>No timeout</source>
         <translation>Ingen tidsgräns</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="267"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="235"/>
+        <location filename="../qml/SettingsPage.qml" line="154"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Aktiv implementering fastställs av profilen. Om du vill ändra gränssnittsvalet, måste du ange motsvarande profil, eller &lt;i&gt;Anpassad&lt;/i&gt; profil.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="277"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="247"/>
+        <location filename="../qml/SettingsPage.qml" line="166"/>
         <source>Rendering</source>
         <translation>Rendering</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="281"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="251"/>
+        <location filename="../qml/SettingsPage.qml" line="171"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
         <translation>Denna server låter dig välja mellan två olika gränssnitt för att rita upp kartorna. &lt;i&gt;libosmscout&lt;/i&gt; och &lt;i&gt;Mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="292"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="263"/>
+        <location filename="../qml/SettingsPage.qml" line="178"/>
         <source>Use Mapnik for rendering maps</source>
         <translation>Använd Mapnik för kartrendering</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="293"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="264"/>
+        <location filename="../qml/SettingsPage.qml" line="179"/>
         <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
         <translation>Vid aktivering, kommer Mapnik att användas för kartrendering. Notera att det krävs ytterligare databaser för världskustlinjer och länder.&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="298"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="269"/>
+        <location filename="../qml/SettingsPage.qml" line="184"/>
         <source>Geocoder</source>
         <translation>Geocoder</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="302"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="273"/>
+        <location filename="../qml/SettingsPage.qml" line="189"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Geocoder ansvarar för att slå upp sökförfrågningar. För det, tolkar den söksträngen och identifierar motsvarande objekt på en karta. Denna server låter dig välja mellan två geokodare, &lt;i&gt;geocoder-nlp&lt;/i&gt; och &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="316"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="288"/>
+        <location filename="../qml/SettingsPage.qml" line="199"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
         <translation>Använd geocoder-nlp med libpostal som geokodare</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="317"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="289"/>
+        <location filename="../qml/SettingsPage.qml" line="200"/>
         <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
         <translation>Vid aktivering, kommer en libpostal-baserad geokodare att användas för att slå upp alla sökförfrågningar. Notera att det krävs ytterligare databaser för språk, tolkning av användarens indata och geokodning.&lt;br&gt;OBS! Om du väljer &lt;i&gt;geocoder-nlp&lt;/i&gt;, bör du specificera vilka språk som skall användas för adresstolkning, i serverinställningarna nedan. Annars kan servern använda stora mängder RAM.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="324"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="296"/>
+        <location filename="../qml/SettingsPage.qml" line="207"/>
         <source>Routing Engine</source>
         <translation>Ruttmotor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="328"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="300"/>
+        <location filename="../qml/SettingsPage.qml" line="212"/>
         <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
         <translation>Ruttmotorn ansvarar för beräkning av rutter mellan utgångspunkt och destination. Denna server låter dig välja mellan två ruttmotorer, &lt;i&gt;Valhalla&lt;/i&gt; och &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="341"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="314"/>
+        <location filename="../qml/SettingsPage.qml" line="221"/>
         <source>Use Valhalla as routing engine</source>
         <translation>Använ Valhalla som ruttmotor</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="342"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="315"/>
+        <location filename="../qml/SettingsPage.qml" line="222"/>
         <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
         <translation>Vid aktivering kommer Valhalla att användas för beräkning av rutter.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="346"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="319"/>
+        <location filename="../qml/SettingsPage.qml" line="227"/>
         <source>Backend settings</source>
         <translation>Serverinställningar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="407"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="384"/>
+        <location filename="../qml/SettingsPage.qml" line="283"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="413"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="391"/>
+        <location filename="../qml/SettingsPage.qml" line="289"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>Ruttmotorinställningar för &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="433"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="412"/>
+        <location filename="../qml/SettingsPage.qml" line="306"/>
         <source>OSM Scout library</source>
         <translation>OSM Scout bibliotek</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="381"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="356"/>
+        <location filename="../qml/SettingsPage.qml" line="260"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="387"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="363"/>
+        <location filename="../qml/SettingsPage.qml" line="266"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Val av språk för adresstolkning och andra inställningar i serverdelen för &lt;i&gt;geocoder-nlp&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="355"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="328"/>
+        <location filename="../qml/SettingsPage.qml" line="237"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="250"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="217"/>
+        <location filename="../qml/SettingsPage.qml" line="141"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
         <translation>Vid automatisk start, stängs servern av efter inaktivitetstid som överstiger tidsgränsen</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="262"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="230"/>
+        <location filename="../qml/SettingsPage.qml" line="149"/>
         <source>Profiles</source>
         <translation>Profiler</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="361"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="335"/>
+        <location filename="../qml/SettingsPage.qml" line="243"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>Kartrenderingsinställningar för Mapnik-implementationen</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="439"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="419"/>
+        <location filename="../qml/SettingsPage.qml" line="312"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>OSM Scout biblioteksinställningar. Biblioteket kan användas för att rita upp kartor, söka och beräkna rutter.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="449"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="430"/>
+        <location filename="../qml/SettingsPage.qml" line="318"/>
         <source>Miscellaneous</source>
         <translation>Diverse</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="455"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="436"/>
+        <location filename="../qml/SettingsPage.qml" line="324"/>
         <source>Log info messages</source>
         <translation>Logga infomeddelanden</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="456"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="437"/>
+        <location filename="../qml/SettingsPage.qml" line="325"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Vid inaktivering, kommer inga INFO-meddelanden att loggas i händelseloggen. Undantaget är inläsning av databasen, vilket alltid visas.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="463"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="444"/>
+        <location filename="../qml/SettingsPage.qml" line="333"/>
         <source>Events log size</source>
         <translation>Händelseloggens storlek</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="464"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="445"/>
+        <location filename="../qml/SettingsPage.qml" line="334"/>
         <source>Number of events shown in the main page</source>
         <translation>Antal händelser som visas på huvudsidan</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="472"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="453"/>
+        <location filename="../qml/SettingsPage.qml" line="341"/>
         <source>Log messages into session log file</source>
         <translation>Logga meddelanden i sessionsloggfilen</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SettingsPage.qml" line="473"/>
-        <location filename="../qml/silica/pages/SettingsPage.qml" line="454"/>
+        <location filename="../qml/SettingsPage.qml" line="342"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Vid aktivering, loggas meddelanden i en sessionsloggfil. Loggfilen finns i .cache/harbour-osmscout-server. Använd den här inställningen endast för felsökning. Med denna inställning aktiverad, kommer infomeddelanden att loggas och visas i händelser oavsett ovanstående inställningar. Detta låter dig aktivera fullständig loggning tillfälligt, och inaktivera det när den eftersökta sessionsloggfilen producerats.</translation>
     </message>
@@ -2352,172 +2199,119 @@
 <context>
     <name>StartPage</name>
     <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="34"/>
-        <source>About</source>
-        <translation>Om</translation>
-    </message>
-    <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="44"/>
-        <source>Profile</source>
-        <translation>Profil</translation>
-    </message>
-    <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="50"/>
-        <source>Map Manager</source>
-        <translation>Karthanterare</translation>
-    </message>
-    <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="39"/>
-        <source>Settings</source>
-        <translation>Inställningar</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="27"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="65"/>
+        <location filename="../qml/StartPage.qml" line="27"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="51"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="78"/>
+        <location filename="../qml/StartPage.qml" line="53"/>
         <source>Missing modules</source>
         <translation>Saknade moduler</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="64"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="93"/>
+        <location filename="../qml/StartPage.qml" line="76"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s) that are required by the current profile:&lt;ul&gt;</source>
         <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; använder flera moduler som måste installeras separat för full funktionalitet.&lt;br&gt;&lt;br&gt;Din enhet saknar följande modul(er), som krävs av aktuell profil:&lt;ul&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="69"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="98"/>
+        <location filename="../qml/StartPage.qml" line="81"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
         <translation>&lt;li&gt;OSM Scout Server-modul: Fonts&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="71"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="100"/>
+        <location filename="../qml/StartPage.qml" line="83"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
         <translation>&lt;li&gt;OSM Scout Server-modul: Route&lt;/li&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="102"/>
-        <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour or OpenRepos. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation>&lt;/ul&gt;&lt;br&gt;Installera saknade moduler via Jolla Store eller OpenRepos. Starta om OSM Scout Server efter installation av modul(er).</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="103"/>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="162"/>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="199"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="132"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="195"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="234"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="450"/>
+        <location filename="../qml/StartPage.qml" line="102"/>
+        <location filename="../qml/StartPage.qml" line="156"/>
+        <location filename="../qml/StartPage.qml" line="191"/>
+        <location filename="../qml/StartPage.qml" line="360"/>
         <source>Welcome</source>
         <translation>Välkommen</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="119"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="150"/>
+        <location filename="../qml/StartPage.qml" line="110"/>
         <source>Create default directory</source>
         <translation>Skapa standardmapp</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="140"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="173"/>
+        <location filename="../qml/StartPage.qml" line="134"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
         <translation>Skapar mappen&lt;br&gt;%1&lt;br&gt;och konfigurerar den för kartlagring</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="142"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="175"/>
+        <location filename="../qml/StartPage.qml" line="136"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
         <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; förväntas användas tillsammans med nerladdade kartor. För att hantera kartorna, kräver servern en separat mapp. Filerna i denna mapp skall endast hanteras av servern. Detta inkluderar borttagning av alla filer i mappen på din begäran om rensning, eller kartuppdatering.&lt;br&gt;&lt;br&gt;&lt;b&gt;Tilldela en separat, tom mapp&lt;/b&gt; för OSM Scout Server. För det kan du skapa en ny mapp i filhanterare eller terminal och sedan välja mappen i &lt;i&gt;Inställningar&lt;/i&gt; (toppmenyn).&lt;br&gt;&lt;br&gt;Alternativt kan mappen skapas och konfigureras automatiskt i&lt;br&gt;%1&lt;br&gt;genom att trycka på knappen nedan</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="166"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="199"/>
-        <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation>Med lagringsmappen vald och tillgänglig, är nästa steg att hämta några kartor. Du kan välja, och ladda ner kartor med &lt;i&gt;Karthanteraren&lt;/i&gt;  (toppmenyn).</translation>
-    </message>
-    <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="238"/>
+        <location filename="../qml/StartPage.qml" line="195"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
         <translation>Det finns ännu inga kartor tillgängliga. Efter prenumeration på kartor, måste du starta nerladdning. Nerladdningen kan startas i &lt;i&gt;Karthanteraren&lt;/i&gt; (toppmenyn).</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="73"/>
-        <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules via Harbour, OpenRepos, or any other way corresponding to your OS. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation>&lt;/ul&gt;&lt;br&gt;Installera saknade moduler via Harbour, OpenRepos eller annat sätt, avsett för ditt operativsystem. Starta om OSM Scout Server efter installation av modul(er).</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="203"/>
-        <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;.</source>
-        <translation>Det finns ännu inga kartor tillgängliga. Efter prenumeration av kartor, måste du starta nerladdning. Nerladdningen kan startas i &lt;i&gt;Karthanteraren&lt;/i&gt;.</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="253"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="290"/>
+        <location filename="../qml/StartPage.qml" line="242"/>
         <source>Warning</source>
         <translation>Varning!</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="257"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="294"/>
+        <location filename="../qml/StartPage.qml" line="246"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
         <translation>Du har inte specificerat något språk att använda för adresstolkning med Geocoder-NLP. Därför används alla kända språk, vilket kan resultera i mycket stor RAM-belastning. Sådan stor RAM-användning kan leda till att OSM Scout Server dödas av kärnan. &lt;br&gt;&lt;br&gt;För att specificera språk för adresstolkning, kan du antingen välja språk nedan, eller gå till &lt;i&gt;Inställningar&lt;/i&gt; (toppmenyn) och välj språk som en del av inställningarna för &lt;i&gt;Geocoder-NLP&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="288"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="320"/>
+        <location filename="../qml/StartPage.qml" line="267"/>
         <source>Map</source>
         <translation>Karta</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="331"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="361"/>
+        <location filename="../qml/StartPage.qml" line="307"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="344"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="376"/>
+        <location filename="../qml/StartPage.qml" line="326"/>
         <source>Jobs in a queue</source>
         <translation>Jobb i kö</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="345"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="377"/>
+        <location filename="../qml/StartPage.qml" line="327"/>
         <source>Idle</source>
         <translation>Väntar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="363"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="395"/>
+        <location filename="../qml/StartPage.qml" line="336"/>
         <source>Events</source>
         <translation>Händelser</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/StartPage.qml" line="391"/>
-        <location filename="../qml/silica/pages/StartPage.qml" line="428"/>
+        <location filename="../qml/StartPage.qml" line="420"/>
         <source>Error</source>
         <translation>Fel</translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="451"/>
+        <location filename="../qml/StartPage.qml" line="362"/>
+        <location filename="../qml/StartPage.qml" line="388"/>
+        <location filename="../qml/StartPage.qml" line="397"/>
         <source>Next</source>
         <translation>Nästa</translation>
     </message>
     <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="452"/>
-        <source>Skip</source>
-        <translation>Hoppa över</translation>
-    </message>
-    <message>
-        <location filename="../qml/silica/pages/StartPage.qml" line="456"/>
+        <location filename="../qml/StartPage.qml" line="369"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
         <translation>OSM Scout Server är en del av lösningen för att få offline-kartor till din enhet. Med denna server kan du ladda ner kartor till enheten och använda nerladdad data till att rendera kartor lokalt, söka efter adresser, intressepunkter (POI) och beräkna rutter. Sådan verksamhet kräver servern och en klient som ansluter till servern för att köras samtidigt på enheten.&lt;br&gt;&lt;br&gt;Den här guiden hjälper dig att välja de implementationer som används av servern och att ange språk för att analysera dina sökningar.&lt;br&gt;&lt;br&gt;Tryck &quot;Nästa&quot; för att starta konfigurationen.</translation>
+    </message>
+    <message>
+        <location filename="../qml/StartPage.qml" line="85"/>
+        <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/StartPage.qml" line="160"/>
+        <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2536,40 +2330,33 @@
 <context>
     <name>SystemdActivationPage</name>
     <message>
-        <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="29"/>
-        <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="56"/>
-        <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="41"/>
-        <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="65"/>
+        <location filename="../qml/SystemdActivationPage.qml" line="26"/>
+        <location filename="../qml/SystemdActivationPage.qml" line="45"/>
         <source>Automatic activation</source>
         <translation>Automatisk aktivering</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="40"/>
-        <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="45"/>
+        <location filename="../qml/SystemdActivationPage.qml" line="35"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
         <translation>OSM Scout Server kan aktiveras automatiskt när klienten begär åtkomst till den. Vid automatisk start, kommer den att stoppas vid inaktivitet överstigande uppgiven tidsgräns.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="48"/>
-        <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="55"/>
+        <location filename="../qml/SystemdActivationPage.qml" line="40"/>
         <source>Do you want to enable automatic activation?</source>
         <translation>Vill du aktivera automatisk aktivering?</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="63"/>
-        <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="72"/>
+        <location filename="../qml/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
         <translation>Automatisk aktivering rekommenderas, för att förenkla åtkomst till servern.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="71"/>
-        <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="81"/>
+        <location filename="../qml/SystemdActivationPage.qml" line="58"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
         <translation>Notera att servern körs utan användargränssnitt, vid automatisk aktivering. Automatisk aktivering och motsvarande tidsgräns för inaktivitet, kan konfigureras senare i inställningarna.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/SystemdActivationPage.qml" line="80"/>
-        <location filename="../qml/silica/pages/SystemdActivationPage.qml" line="91"/>
+        <location filename="../qml/SystemdActivationPage.qml" line="64"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
         <translation>Se motsvarande sektion i &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;användarmanualen&lt;/a&gt;, för detaljerad teknisk information, skapade filer och hur man tar bort dem vid behov.</translation>
     </message>
@@ -2577,26 +2364,22 @@
 <context>
     <name>UpdatesFound</name>
     <message>
-        <location filename="../qml/qtcontrols/UpdatesFound.qml" line="29"/>
-        <location filename="../qml/silica/pages/UpdatesFound.qml" line="44"/>
+        <location filename="../qml/UpdatesFound.qml" line="27"/>
         <source>Updates</source>
         <translation>Uppdateringar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/UpdatesFound.qml" line="50"/>
-        <location filename="../qml/silica/pages/UpdatesFound.qml" line="52"/>
+        <location filename="../qml/UpdatesFound.qml" line="41"/>
         <source>Do you want to start the update?</source>
         <translation>Vill du starta uppdateringen?</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/UpdatesFound.qml" line="57"/>
-        <location filename="../qml/silica/pages/UpdatesFound.qml" line="60"/>
+        <location filename="../qml/UpdatesFound.qml" line="46"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
         <translation>Notera att när du startat uppdateringen, kommer kartorna inte att finnas tillgängliga förrän uppdateringen slutförts</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/UpdatesFound.qml" line="65"/>
-        <location filename="../qml/silica/pages/UpdatesFound.qml" line="69"/>
+        <location filename="../qml/UpdatesFound.qml" line="50"/>
         <source>List of countries and features with the found updates</source>
         <translation>Lista över länder och funktioner med funna uppdateringar</translation>
     </message>
@@ -2653,62 +2436,52 @@
 <context>
     <name>ValhallaPage</name>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="29"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="41"/>
+        <location filename="../qml/ValhallaPage.qml" line="28"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="41"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="45"/>
+        <location filename="../qml/ValhallaPage.qml" line="35"/>
         <source>Valhalla can be used as a routing engine to calculate routes and the routing instructions</source>
         <translation>Valhalla kan användas som ruttmotor för att beräkna rutter och ruttinstruktioner</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="48"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="54"/>
+        <location filename="../qml/ValhallaPage.qml" line="39"/>
         <source>Memory</source>
         <translation>Minne</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="54"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="60"/>
+        <location filename="../qml/ValhallaPage.qml" line="46"/>
         <source>Cache for storing tiles, MB</source>
         <translation>Cache-lagring för kartrutor, MB</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="55"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="61"/>
+        <location filename="../qml/ValhallaPage.qml" line="47"/>
         <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
         <translation>Utrymme som används för att hålla Valhallas kartor i RAM.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="61"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="67"/>
+        <location filename="../qml/ValhallaPage.qml" line="52"/>
         <source>Limits</source>
         <translation>Begränsningar</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="65"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="71"/>
+        <location filename="../qml/ValhallaPage.qml" line="57"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
         <translation>Distansbegränsning vid ruttberäkning. Endast rutter med distanser kortare än angivna begränsningar kommer att beräknas. Genom att begränsa det maximala avståndet mellan platser, kan du förhindra oavsiktlig beräkning som skulle leda till alltför långa rutter och använda stora mängder RAM-minne på enheten.</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="78"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="85"/>
+        <location filename="../qml/ValhallaPage.qml" line="69"/>
         <source>Limit for route by car</source>
         <translation>Begränsning för rutt med bil</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="86"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="93"/>
+        <location filename="../qml/ValhallaPage.qml" line="77"/>
         <source>Limit for route by bicycle</source>
         <translation>Begränsning för rutt med cykel</translation>
     </message>
     <message>
-        <location filename="../qml/qtcontrols/ValhallaPage.qml" line="94"/>
-        <location filename="../qml/silica/pages/ValhallaPage.qml" line="101"/>
+        <location filename="../qml/ValhallaPage.qml" line="85"/>
         <source>Limit for route by foot</source>
         <translation>Begränsning för rutt till fots</translation>
     </message>
@@ -2716,68 +2489,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="155"/>
+        <location filename="../src/main.cpp" line="160"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="160"/>
+        <location filename="../src/main.cpp" line="165"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Kör servern som konsolprogram, utan GUI</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="164"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Visa inte utdata från loggar, vid körning i konsolläge</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="174"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Kör servern i systemd, socket-aktiverat läge</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="175"/>
+        <location filename="../src/main.cpp" line="180"/>
         <source>Start download of the maps</source>
         <translation>Starta nerladdning av kartorna</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="179"/>
+        <location filename="../src/main.cpp" line="184"/>
         <source>Update list of available maps</source>
         <translation>Uppdatera listan över tillgängliga kartor</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="183"/>
+        <location filename="../src/main.cpp" line="188"/>
         <source>List maps available on device</source>
         <translation>Lista kartor, tillgängliga på enheten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="187"/>
+        <location filename="../src/main.cpp" line="192"/>
         <source>List subscribed maps</source>
         <translation>Lista prenumererade kartor</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="191"/>
+        <location filename="../src/main.cpp" line="196"/>
         <source>List maps provided for download</source>
         <translation>Lista kartor, tillhandahållna för nerladdning</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="195"/>
+        <location filename="../src/main.cpp" line="200"/>
         <source>List missing maps</source>
         <translation>Lista saknade kartor</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="199"/>
+        <location filename="../src/main.cpp" line="204"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Prenumerera på en &lt;country&gt; datamängd</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="200"/>
         <location filename="../src/main.cpp" line="205"/>
+        <location filename="../src/main.cpp" line="210"/>
         <source>country-id</source>
         <translation>lands-ID</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="204"/>
+        <location filename="../src/main.cpp" line="209"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Sluta prenumerera på &lt;country&gt; datamängd</translation>
     </message>
@@ -2785,34 +2558,14 @@
 <context>
     <name>osmscout-server</name>
     <message>
-        <location filename="../qml/qtcontrols/osmscout-server.qml" line="32"/>
+        <location filename="../qml/osmscout-server.qml" line="40"/>
+        <source>Initializing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/osmscout-server.qml" line="46"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/osmscout-server.qml" line="86"/>
-        <source>Home</source>
-        <translation>Hem</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/osmscout-server.qml" line="93"/>
-        <source>Map Manager</source>
-        <translation>Karthanterare</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/osmscout-server.qml" line="100"/>
-        <source>Profile</source>
-        <translation>Profil</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/osmscout-server.qml" line="107"/>
-        <source>Settings</source>
-        <translation>Inställningar</translation>
-    </message>
-    <message>
-        <location filename="../qml/qtcontrols/osmscout-server.qml" line="114"/>
-        <source>About</source>
-        <translation>Om</translation>
     </message>
 </context>
 </TS>
