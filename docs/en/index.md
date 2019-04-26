@@ -120,7 +120,7 @@ automatically. See some examples in
 After the server has been setup and the maps downloaded, the access to
 the server has to be configured in the client(s).
 
-For [Pure Maps](https://openrepos.net/content/rinigus/pure-maps),
+For [Pure Maps](https://github.com/rinigus/pure-maps),
 select "Offline" profile in main menu of Pure Maps. This will
 configure all services to access OSM Scout Server.
  
@@ -153,6 +153,9 @@ If you enabled automatic activation then all you have to do is to start the clie
 * Start the client (Poor Maps, modRana, or any other client)
 * When finished, close the server and the client.
 
+### Debugging issues
+
+If you have issues with running OSM Scout Server, such as problems with accessing it from the client, consider enabling logging of _info_ messages. This can be done in the Settings.
 
 ## Geocoder 
 
