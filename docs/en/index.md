@@ -120,8 +120,11 @@ automatically. See some examples in
 After the server has been setup and the maps downloaded, the access to
 the server has to be configured in the client(s).
 
-For [Pure Maps](https://openrepos.net/content/rinigus/pure-maps) and 
-[WhoGo Maps](https://openrepos.net/content/otsaloma/whogo-maps),
+For [Pure Maps](https://openrepos.net/content/rinigus/pure-maps),
+select "Offline" profile in main menu of Pure Maps. This will
+configure all services to access OSM Scout Server.
+ 
+For [WhoGo Maps](https://openrepos.net/content/otsaloma/whogo-maps),
 please follow instructions below for Poor Maps. Just replace
 'Basemaps' selection with selection of 'Maps' in WhoGo Maps menu.
 
