@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fi" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fi" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -191,17 +189,17 @@
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="48"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="51"/>
         <source>Jobs</source>
-        <translation type="unfinished">Työt</translation>
+        <translation>Työt</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="52"/>
         <source>Idle</source>
-        <translation type="unfinished">Odotustila</translation>
+        <translation>Odotustila</translation>
     </message>
 </context>
 <context>
@@ -313,7 +311,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -443,17 +441,17 @@
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="85"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation type="unfinished">Valitaksesi kansio, paina pitkään haluttua kansiota ja paina &apos;Valitse&apos; kontekstivalikossa</translation>
+        <translation>Valitaksesi kansio, paina pitkään haluttua kansiota ja paina &apos;Valitse&apos; kontekstivalikossa</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="220"/>
         <source>Select</source>
-        <translation type="unfinished">Valitse</translation>
+        <translation>Valitse</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="236"/>
         <source>Empty directory</source>
-        <translation type="unfinished">Tyhjä hakemisto</translation>
+        <translation>Tyhjä hakemisto</translation>
     </message>
 </context>
 <context>
@@ -607,22 +605,22 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="33"/>
         <source>Map Manager</source>
-        <translation type="unfinished">Karttamanageri</translation>
+        <translation>Karttamanageri</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="39"/>
         <source>Profile</source>
-        <translation type="unfinished">Profiili</translation>
+        <translation>Profiili</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="44"/>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -630,22 +628,22 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="43"/>
         <source>Profile</source>
-        <translation type="unfinished">Profiili</translation>
+        <translation>Profiili</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="48"/>
         <source>Map Manager</source>
-        <translation type="unfinished">Karttamanageri</translation>
+        <translation>Karttamanageri</translation>
     </message>
 </context>
 <context>
@@ -1613,7 +1611,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1621,7 +1619,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2306,12 +2304,12 @@
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2560,7 +2558,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>

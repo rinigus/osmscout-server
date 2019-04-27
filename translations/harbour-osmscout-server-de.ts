@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="de" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="de" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -191,17 +189,17 @@
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="48"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="51"/>
         <source>Jobs</source>
-        <translation type="unfinished">Aufgaben</translation>
+        <translation>Aufgaben</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="52"/>
         <source>Idle</source>
-        <translation type="unfinished">Inaktiv</translation>
+        <translation>Inaktiv</translation>
     </message>
 </context>
 <context>
@@ -313,7 +311,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -377,17 +375,17 @@
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="33"/>
         <source>List of languages used for parsing addresses</source>
-        <translation>Liste der Sprachen für das suchen von Adressen</translation>
+        <translation>Liste der Sprachen für die Analyse von Adressen</translation>
     </message>
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="34"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation>Bitte Sprachen wählen für die Addresssuche</translation>
+        <translation>Bitte Sprachen für die Analyse von Adressen auswählen</translation>
     </message>
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="35"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
-        <translation>Bei Auswahl keiner Sprache, wird davon ausgangen, dass alle unterstützten Sprachen für das Parsing verwendet werden sollen.&lt;br&gt;Hinweis, dass bei der Verwendung aller unterstützten Sprachen die RAM-Anforderungen groß sein könnten.</translation>
+        <translation>Wenn keine Sprache ausgewählt ist, wird davon ausgangen, dass alle unterstützten Sprachen für die Adresssuche verwendet werden sollen.&lt;br&gt;Hinweis, dass bei der Verwendung aller unterstützten Sprachen die RAM-Anforderungen groß sein könnten.</translation>
     </message>
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="100"/>
@@ -425,7 +423,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/filedownloader.cpp" line="391"/>
         <source>Timeout</source>
-        <translation>Zeit-Überschreitung </translation>
+        <translation>Zeitüberschreitung </translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="425"/>
@@ -444,17 +442,17 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="85"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation type="unfinished">Um einen Ordner auszuwählen, halte ihn gedrückt und wähle im Kontextmenü die Option &apos;Auswählen&apos; </translation>
+        <translation>Um einen Ordner auszuwählen, halte ihn gedrückt und wähle im Kontextmenü die Option &apos;Auswählen&apos; </translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="220"/>
         <source>Select</source>
-        <translation type="unfinished">Auswählen</translation>
+        <translation>Auswählen</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="236"/>
         <source>Empty directory</source>
-        <translation type="unfinished">Leeres Verzeichnis</translation>
+        <translation>Leeres Verzeichnis</translation>
     </message>
 </context>
 <context>
@@ -467,7 +465,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/geomaster.cpp" line="110"/>
         <source>Opened geocoder database</source>
-        <translation>Geöffente Geocoder-Datenbank</translation>
+        <translation>Geöffnete Geocoder-Datenbank</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="79"/>
@@ -503,7 +501,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/geomaster.cpp" line="329"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
-        <translation>Fehler beim Analysieren von libpostal. Vielleicht sind keine libpostal-Datenbanken verfügbar</translation>
+        <translation>Fehler beim Analysieren durch libpostal. Vielleicht sind keine libpostal-Datenbanken verfügbar</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="365"/>
@@ -527,7 +525,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/GeocoderPage.qml" line="39"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation>Achtung: Bitte lies die Hinweise zum Melden von Problemen mit der Adressensuche in &apos;Über&apos;</translation>
+        <translation>Achtung: Bitte lies die Hinweise zum Melden von Problemen mit der Analyse von Adressen in &apos;Über&apos;.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="26"/>
@@ -537,7 +535,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/GeocoderPage.qml" line="33"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
-        <translation>Geocoder übernimmt die Verarbeitung von Suchanfragen. Dafür analysiert er die Suchbegriffe und findet die passenden Objekte auf der Karte.</translation>
+        <translation>Geocoder übernimmt die Verarbeitung von Suchanfragen. Dazu analysiert er die Suchbegriffe und findet die passenden Objekte auf der Karte.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="45"/>
@@ -608,22 +606,22 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/MainMenu.qml" line="33"/>
         <source>Map Manager</source>
-        <translation type="unfinished">Kartenverwaltung</translation>
+        <translation>Kartenverwaltung</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="39"/>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="44"/>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -631,22 +629,22 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="43"/>
         <source>Profile</source>
-        <translation type="unfinished">Profil</translation>
+        <translation>Profil</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="48"/>
         <source>Map Manager</source>
-        <translation type="unfinished">Kartenverwaltung</translation>
+        <translation>Kartenverwaltung</translation>
     </message>
 </context>
 <context>
@@ -697,7 +695,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="126"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
-        <translation>Maps Speicherordner Pfad verweistt nicht auf ein Verzeichnis: %1</translation>
+        <translation>Maps Speicherordner Pfad verweist nicht auf ein Verzeichnis: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="132"/>
@@ -771,7 +769,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="310"/>
         <source>Mapbox GL fonts</source>
-        <translation>Schriften für Mapbox GL</translation>
+        <translation>Schriftarten für Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="440"/>
@@ -832,7 +830,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanager.cpp" line="1103"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
-        <translation>Liste der Länder:%L1 (D) / %L2 (W) MB</translation>
+        <translation>Liste der Länder: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1044"/>
@@ -980,12 +978,12 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="398"/>
         <source>Mapbox GL fonts</source>
-        <translation>Schriften für Mapbox GL</translation>
+        <translation>Schriftarten für Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="406"/>
         <source>Missing Mapbox GL fonts</source>
-        <translation>Schriften für Mapbox GL fehlen</translation>
+        <translation>Schriftarten für Mapbox GL fehlen</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="419"/>
@@ -1615,7 +1613,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1623,7 +1621,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1657,7 +1655,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../qml/ProfilesPage.qml" line="51"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation>Emfehlung für Vektor- und Rasterkacheln Karten</translation>
+        <translation>Empfohlen für Vektor- und Rasterkacheln Karten</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="52"/>
@@ -2056,7 +2054,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
     <message>
         <location filename="../qml/SettingsPage.qml" line="171"/>
         <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation>Zur Kartendarstellung kannst du zwischen zwei Backends wählen: &lt;i&gt;libosmscout&lt;/i&gt; und &lt;i&gt;mapnik&lt;/i&gt;.</translation>
+        <translation>Zur Kartendarstellung kannst du zwischen zwei &quot;Backends&quot; wählen: &lt;i&gt;libosmscout&lt;/i&gt; und &lt;i&gt;mapnik&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="178"/>
@@ -2071,7 +2069,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
     <message>
         <location filename="../qml/SettingsPage.qml" line="184"/>
         <source>Geocoder</source>
-        <translation>Geocoder</translation>
+        <translation>&quot;Geocoder&quot;</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="189"/>
@@ -2081,7 +2079,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
     <message>
         <location filename="../qml/SettingsPage.qml" line="199"/>
         <source>Use geocoder-nlp with libpostal as a geocoder</source>
-        <translation>Verwende geocoder-nlp mit libpostal als Geocoder</translation>
+        <translation>Verwende geocoder-nlp mit libpostal als &quot;Geocoder&quot;</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="200"/>
@@ -2111,7 +2109,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
     <message>
         <location filename="../qml/SettingsPage.qml" line="227"/>
         <source>Backend settings</source>
-        <translation>Backend-Einstellungen</translation>
+        <translation>&quot;Backend&quot;-Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="283"/>
@@ -2310,12 +2308,12 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2414,7 +2412,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/valhallamaster.cpp" line="158"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
-        <translation>Fehler beim Öffnen der Konfigurationsvorlage von Valhalla %1</translation>
+        <translation>Fehler beim Öffnen der Konfigurations-Vorlage von Valhalla %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="166"/>
@@ -2429,7 +2427,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>
         <source>Exception in Valhalla: %1</source>
-        <translation>Ausnahmefall Valhalla: %1</translation>
+        <translation>&quot;Exception&quot; in Valhalla: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
@@ -2564,7 +2562,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>

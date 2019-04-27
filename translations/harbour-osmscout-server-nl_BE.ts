@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="nl_BE" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl_BE" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -132,7 +130,7 @@
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="51"/>
         <source>Availability on device</source>
-        <translation>Beschikbaarheid op apparaat</translation>
+        <translation>Beschikbaarheid op toestel</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="63"/>
@@ -191,17 +189,17 @@
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="48"/>
         <source>OSM Scout Server</source>
-        <translation type="unfinished">OSM Scout Server</translation>
+        <translation>OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="51"/>
         <source>Jobs</source>
-        <translation type="unfinished">Processen</translation>
+        <translation>Processen</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="52"/>
         <source>Idle</source>
-        <translation type="unfinished">Inactief</translation>
+        <translation>Inactief</translation>
     </message>
 </context>
 <context>
@@ -313,7 +311,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanvaarden</translation>
     </message>
 </context>
 <context>
@@ -443,17 +441,17 @@
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="85"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation type="unfinished">Houdt ingedrukt op een map en kiest ‘Selecteren’ in het contextmenu voor de map te selecteren.</translation>
+        <translation>Houdt ingedrukt op een map en kiest ‘Selecteren’ in het contextmenu voor de map te selecteren.</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="220"/>
         <source>Select</source>
-        <translation type="unfinished">Selecteren</translation>
+        <translation>Selecteren</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="236"/>
         <source>Empty directory</source>
-        <translation type="unfinished">Lege map</translation>
+        <translation>Lege map</translation>
     </message>
 </context>
 <context>
@@ -551,7 +549,7 @@
     <message>
         <location filename="../qml/GeocoderPage.qml" line="53"/>
         <source>When enabled, each search will be performed using all available maps on the device</source>
-        <translation>Indien ingeschakeld wordt elke zoekopdracht uitgevoerd op alle kaarten beschikbaar op het apparaat</translation>
+        <translation>Indien ingeschakeld wordt elke zoekopdracht uitgevoerd op alle kaarten beschikbaar op het toestel</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="59"/>
@@ -607,22 +605,22 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="33"/>
         <source>Map Manager</source>
-        <translation type="unfinished">Kaartbeheerder</translation>
+        <translation>Kaartbeheerder</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="39"/>
         <source>Profile</source>
-        <translation type="unfinished">Profiel</translation>
+        <translation>Profiel</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="44"/>
         <source>Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Over OSM Scout Server</translation>
     </message>
 </context>
 <context>
@@ -630,22 +628,22 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Over OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
         <source>Settings</source>
-        <translation type="unfinished">Instellingen</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="43"/>
         <source>Profile</source>
-        <translation type="unfinished">Profiel</translation>
+        <translation>Profiel</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="48"/>
         <source>Map Manager</source>
-        <translation type="unfinished">Kaartbeheerder</translation>
+        <translation>Kaartbeheerder</translation>
     </message>
 </context>
 <context>
@@ -1032,7 +1030,7 @@
     <message>
         <location filename="../qml/MapManagerPage.qml" line="39"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
-        <translation>Kaartbeheerder beheert den opslag van offline kaarten en gerelateerde gegevenssets op het apparaat. Hier kunt ge de functionaliteit en landen selecteren die worden opgeslagen, bijgewerkt of verwijderd van het apparaat.</translation>
+        <translation>Kaartbeheerder beheert den opslag van offline kaarten en gerelateerde gegevenssets op het toestel. Hier kunt ge de functionaliteit en landen selecteren die worden opgeslagen, bijgewerkt of verwijderd van het toestel.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="227"/>
@@ -1062,7 +1060,7 @@
     <message>
         <location filename="../qml/MapManagerPage.qml" line="286"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
-        <translation>Indien ingeschakeld worden Valhalla-gegevenssets opgeslagen op het apparaat na downloaden. Deze gegevenssets zijn vereist voor het gebruik van Valhalla als routeberekeningsdienst.</translation>
+        <translation>Indien ingeschakeld worden Valhalla-gegevenssets opgeslagen op het toestel na downloaden. Deze gegevenssets zijn vereist voor het gebruik van Valhalla als routeberekeningsdienst.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="295"/>
@@ -1072,7 +1070,7 @@
     <message>
         <location filename="../qml/MapManagerPage.qml" line="296"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
-        <translation>Indien ingeschakeld worden libosmscout-gegevenssets opgeslagen op het apparaat na downloaden. Deze gegevenssets zijn vereist voor renderen, zoeken en routeberekening door de libosmscout-back-end.</translation>
+        <translation>Indien ingeschakeld worden libosmscout-gegevenssets opgeslagen op het toestel na downloaden. Deze gegevenssets zijn vereist voor renderen, zoeken en routeberekening door de libosmscout-back-end.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="45"/>
@@ -1137,12 +1135,12 @@
     <message>
         <location filename="../qml/MapManagerPage.qml" line="265"/>
         <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
-        <translation>Indien ingeschakeld worden gegevenssets met vectortegels in Mapbox GL formaat opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 12MB), lettertypen (ongeveer 80MB) en landspecifieke gegevenssets.</translation>
+        <translation>Indien ingeschakeld worden gegevenssets met vectortegels in Mapbox GL formaat opgeslagen op het toestel na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 12MB), lettertypen (ongeveer 80MB) en landspecifieke gegevenssets.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="275"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation>Indien ingeschakeld worden geocoder-gegevenssets gebaseerd op libpostal opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de taalverwerkingsgegevensset (ongeveer 700MB) en landspecifieke gegevenssets voor het verwerken en opzoeken van adressen.</translation>
+        <translation>Indien ingeschakeld worden geocoder-gegevenssets gebaseerd op libpostal opgeslagen op het toestel na downloaden. Deze gegevenssets bevatten de taalverwerkingsgegevensset (ongeveer 700MB) en landspecifieke gegevenssets voor het verwerken en opzoeken van adressen.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="247"/>
@@ -1152,12 +1150,12 @@
     <message>
         <location filename="../qml/MapManagerPage.qml" line="248"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
-        <translation>Indien ingeschakeld worden gegevenssets die kaarten laten renderen met Mapnik opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 700MB) en landspecifieke gegevenssets voor het renderen.</translation>
+        <translation>Indien ingeschakeld worden gegevenssets die kaarten laten renderen met Mapnik opgeslagen op het toestel na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 700MB) en landspecifieke gegevenssets voor het renderen.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="171"/>
         <source>Select the countries or territories that you want to keep on device</source>
-        <translation>Selecteert de landen of territoria die ge op het apparaat wilt houden</translation>
+        <translation>Selecteert de landen of territoria die ge op het toestel wilt houden</translation>
     </message>
 </context>
 <context>
@@ -1457,7 +1455,7 @@
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="143"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation>Door het gebied dat wordt gebruikt voor de gegevens te laden bij het renderen van een tegel te vergroten, kan de renderer het renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Factorwaarde 1.0 komt overeen met het laden van gegevens enkel van de gerenderden tegel. De grote waarde van de factor zou leiden tot vertraagd renderen en zou het RAM-gebruik van de server verhogen. Door den impact op het RAM-geheugen kunnen, afhankelijk van uw tegelgrootte, zelfs kleine factoren gelijk 2 leiden tot het opvullen van het RAM-geheugen van het apparaat.</translation>
+        <translation>Door het gebied dat wordt gebruikt voor de gegevens te laden bij het renderen van een tegel te vergroten, kan de renderer het renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Factorwaarde 1.0 komt overeen met het laden van gegevens enkel van de gerenderden tegel. De grote waarde van de factor zou leiden tot vertraagd renderen en zou het RAM-gebruik van de server verhogen. Door den impact op het RAM-geheugen kunnen, afhankelijk van uw tegelgrootte, zelfs kleine factoren gelijk 2 leiden tot het opvullen van het RAM-geheugen van het toestel.</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="156"/>
@@ -1613,7 +1611,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanvaarden</translation>
     </message>
 </context>
 <context>
@@ -1621,7 +1619,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Aanvaarden</translation>
     </message>
 </context>
 <context>
@@ -2211,7 +2209,7 @@
     <message>
         <location filename="../qml/StartPage.qml" line="76"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s) that are required by the current profile:&lt;ul&gt;</source>
-        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; gebruikt voor volledige functionaliteit verschillende modules die apart moeten geïnstalleerd worden.&lt;br&gt;&lt;br&gt;Volgende module(s), vereist door het huidige profiel, ontbreekt/ontbreken op uw apparaat:&lt;ul&gt;</translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; gebruikt voor volledige functionaliteit verschillende modules die apart moeten geïnstalleerd worden.&lt;br&gt;&lt;br&gt;Volgende module(s), vereist door het huidige profiel, ontbreekt/ontbreken op uw toestel:&lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="81"/>
@@ -2301,17 +2299,17 @@
     <message>
         <location filename="../qml/StartPage.qml" line="369"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation>OSM Scout Server is een deel van de oplossing voor offline kaarten op uw apparaat. Met deze server kunt ge kaarten downloaden en de gedownloade gegevens gebruiken voor lokaal kaarten te renderen, te zoeken naar adressen en NP’s, en voor routeberekening. Deze handelingen vereisen dat de server en ne cliënt dervan tegelijk worden uitgevoerd op het apparaat.&lt;br&gt;&lt;br&gt;Deze configuratiewizard gaat u helpen bij het selecteren van de door de server gebruikte back-ends en de talen voor het parseren van uw zoekopdrachten.&lt;br&gt;&lt;br&gt;Tikt op ‘Volgende’ voor te beginnen met de configuratie.</translation>
+        <translation>OSM Scout Server is een deel van de oplossing voor offline kaarten op uw toestel. Met deze server kunt ge kaarten downloaden en de gedownloade gegevens gebruiken voor lokaal kaarten te renderen, te zoeken naar adressen en NP’s, en voor routeberekening. Deze handelingen vereisen dat de server en ne cliënt dervan tegelijk worden uitgevoerd op het toestel.&lt;br&gt;&lt;br&gt;Deze configuratiewizard gaat u helpen bij het selecteren van de door de server gebruikte back-ends en de talen voor het parseren van uw zoekopdrachten.&lt;br&gt;&lt;br&gt;Tikt op ‘Volgende’ voor te beginnen met de configuratie.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Installeert de ontbrekende module(s). Herstart vervolgens OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu dat de opslagmap geselecteerd en beschikbaar is, is de volgende stap het ophalen van kaarten. Ge kunt kaarten selecteren en downloaden via de &lt;i&gt;kaartbeheerder&lt;/i&gt; (zie menu).</translation>
     </message>
 </context>
 <context>
@@ -2468,7 +2466,7 @@
     <message>
         <location filename="../qml/ValhallaPage.qml" line="57"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
-        <translation>Afstandslimieten voor routeberekeningen. Enkel routes waarbij dat de afstanden tussen locaties kleiner zijn dan de opgegeven limieten zullen berekend worden. Door de maximale afstanden tussen locaties te beperken, kunt ge accidentele berekeningen, die tot te lange routes en buitensporig RAM-gebruik op uw apparaat zouden leiden, vermijden.</translation>
+        <translation>Afstandslimieten voor routeberekeningen. Enkel routes waarbij dat de afstanden tussen locaties kleiner zijn dan de opgegeven limieten zullen berekend worden. Door de maximale afstanden tussen locaties te beperken, kunt ge accidentele berekeningen, die tot te lange routes en buitensporig RAM-gebruik op uw toestel zouden leiden, vermijden.</translation>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="69"/>
@@ -2521,7 +2519,7 @@
     <message>
         <location filename="../src/main.cpp" line="188"/>
         <source>List maps available on device</source>
-        <translation>Lijst van op apparaat beschikbare kaarten</translation>
+        <translation>Lijst van op toestel beschikbare kaarten</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="192"/>
@@ -2560,7 +2558,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezig met initialiseren</translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>
