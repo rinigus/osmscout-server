@@ -11,7 +11,7 @@
 
 # set version
 isEmpty(VERSION) {
-    VERSION = 1.14.0
+    VERSION = 1.14.1
 }
 
 # Find out flavor and add it to CONFIG for simple testing
@@ -252,8 +252,13 @@ DEFINES += MAPBOXGL_STYLEDIR=\\\"$${PREFIX}/share/$${TARGET}/styles/mapboxgl\\\"
 use_mapnik {
     DEFINES += USE_MAPNIK
     #DEFINES += MAPNIK_FONTS_DIR=\\\"$$system(mapnik-config --fonts)\\\"
-    DEFINES += MAPNIK_FONTS_DIR=\\\"$${PREFIX}/share/osmscout-server-fonts/fonts\\\"
-    DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
+    scout_silica {
+        DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/share/harbour-osmscout-server-module-fonts/fonts\\\"
+        DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/share/$${TARGET}/lib/mapnik/input\\\"
+    } else {
+        DEFINES += MAPNIK_FONTS_DIR=\\\"$${PREFIX}/share/osmscout-server-fonts/fonts\\\"
+        DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
+    }
     LIBS += -lmapnik -licuuc
 }
 
