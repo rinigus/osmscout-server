@@ -5,6 +5,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Apr 27 2019 rinigus <rinigus.git@gmail.com> 1.14.0-1
+- rewrite of QML frontend in cross-platform manner
+- add support for Kirigami
+- update translations
+- other changes to make cross-platform development easier
+
 * Mon Dec 3 2018 rinigus <rinigus.git@gmail.com> 1.13.0-1
 - add postal code as a name for some search results
 - docs: update Spanish User's manual

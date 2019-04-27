@@ -9,6 +9,11 @@
 #   - icon definition filename in desktop file must be changed
 #   - translation filenames have to be changed
 
+# set version
+isEmpty(VERSION) {
+    VERSION = 1.14.0
+}
+
 # Find out flavor and add it to CONFIG for simple testing
 equals(SCOUT_FLAVOR, "silica") {
     CONFIG += scout_silica
