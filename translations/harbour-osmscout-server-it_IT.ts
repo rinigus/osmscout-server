@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="it_IT" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="it_IT" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -34,7 +36,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="66"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="73"/>
@@ -311,7 +313,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -554,12 +556,12 @@
     <message>
         <location filename="../qml/GeocoderPage.qml" line="59"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="60"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="68"/>
@@ -620,7 +622,7 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -628,7 +630,7 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
@@ -1163,17 +1165,17 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -1611,7 +1613,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1619,7 +1621,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2304,12 +2306,12 @@
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2418,7 +2420,7 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>
@@ -2558,7 +2560,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>

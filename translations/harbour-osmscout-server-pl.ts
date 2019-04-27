@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -311,7 +313,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -620,7 +622,7 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -628,7 +630,7 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
@@ -1528,7 +1530,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="99"/>
         <source>motorway link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="107"/>
@@ -1548,7 +1550,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="131"/>
         <source>primary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="139"/>
@@ -1573,7 +1575,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="171"/>
         <source>secondary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="179"/>
@@ -1588,7 +1590,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="195"/>
         <source>tertiary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="203"/>
@@ -1598,7 +1600,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="211"/>
         <source>trunk link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="219"/>
@@ -1611,7 +1613,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1619,7 +1621,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2305,12 +2307,12 @@
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2559,7 +2561,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>

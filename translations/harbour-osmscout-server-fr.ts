@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="fr" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -311,7 +313,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -559,7 +561,7 @@
     <message>
         <location filename="../qml/GeocoderPage.qml" line="60"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="68"/>
@@ -620,7 +622,7 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -628,7 +630,7 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
@@ -1163,17 +1165,17 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -1611,7 +1613,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1619,7 +1621,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1648,7 +1650,7 @@
     <message>
         <location filename="../qml/ProfilesPage.qml" line="62"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="51"/>
@@ -1681,43 +1683,43 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="74"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="502"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="670"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="717"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="866"/>
         <location filename="../src/requestmapper.cpp" line="1023"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="967"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2304,12 +2306,12 @@
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2387,12 +2389,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2400,7 +2402,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2418,12 +2420,12 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
@@ -2558,7 +2560,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>
