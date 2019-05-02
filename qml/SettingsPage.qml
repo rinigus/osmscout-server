@@ -168,16 +168,23 @@ DialogPL {
 
             ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
-                text: qsTr("This server allows you to select between two backends to draw the maps: <i>libosmscout</i> and <i>mapnik</i>.")
+                text: qsTr("This server allows you to select between two backends to draw the maps: <i>libosmscout</i> and <i>Mapnik</i>.")
             }
 
-            ElementSwitch {
-                id: eMapnik
-                activeState: dialog.backendSelectionPossible
-                key: settingsMapnikPrefix + "use_mapnik"
-                mainLabel: qsTr("Use Mapnik for rendering maps")
-                secondaryLabel: qsTr("When selected, Mapnik will be used to render maps. " +
-                                     "Note that it requires additional databases for World coastlines and countries.<br>")
+            ComboBoxPL {
+                id: cbMapnik
+                enabled: dialog.backendSelectionPossible
+                label: qsTr("Renderer")
+                model: [
+                    qsTr("Mapnik (default)"),
+                    qsTr("libosmscout")
+                ]
+                Component.onCompleted: {
+                    if (settings.valueInt(settingsMapnikPrefix + "use_mapnik") > 0)
+                        currentIndex = 0;
+                    else
+                        currentIndex = 1;
+                }
             }
 
             SectionHeaderPL {
@@ -188,19 +195,31 @@ DialogPL {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Geocoder is responsible for resolving search requests. " +
                            "For that, it parses the search string and finds the corresponding objects on a map. " +
-                           "This server allows you to select between two geocoder backends: <i>geocoder-nlp</i> and " +
+                           "This server allows you to select between two geocoder backends: <i>Geocoder-NLP</i> and " +
                            "<i>libosmscout</i>. ")
             }
 
-            ElementSwitch {
-                id: eGeocoderNLP
-                activeState: dialog.backendSelectionPossible
-                key: settingsGeomasterPrefix + "use_geocoder_nlp"
-                mainLabel: qsTr("Use geocoder-nlp with libpostal as a geocoder")
-                secondaryLabel: qsTr("When selected, a libpostal-based geocoder will be used to resolve all search requests. " +
-                                     "Note that it requires additional databases for language, user input parsing, and geocoding.<br>" +
-                                     "NB! If you select <i>geocoder-nlp</i>, please specify languages that should be used for " +
-                                     "address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.")
+            ComboBoxPL {
+                id: cbGeocoder
+                enabled: dialog.backendSelectionPossible
+                label: qsTr("Geocoder")
+                model: [
+                    qsTr("Geocoder-NLP (default)"),
+                    qsTr("libosmscout")
+                ]
+                Component.onCompleted: {
+                    if (settings.valueInt(settingsGeomasterPrefix + "use_geocoder_nlp") > 0)
+                        currentIndex = 0;
+                    else
+                        currentIndex = 1;
+                }
+            }
+
+            ListItemLabel {
+                font.pixelSize: styler.themeFontSizeSmall
+                text: qsTr("NB! If you select <i>Geocoder-NLP</i>, please specify languages that should be used for " +
+                           "address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.")
+                visible: cbGeocoder.currentIndex === 0
             }
 
             SectionHeaderPL {
@@ -214,12 +233,20 @@ DialogPL {
                            "<i>libosmscout</i>. ")
             }
 
-            ElementSwitch {
-                id: eValhalla
-                activeState: dialog.backendSelectionPossible
-                key: settingsValhallaPrefix + "use_valhalla"
-                mainLabel: qsTr("Use Valhalla as routing engine")
-                secondaryLabel: qsTr("When selected, Valhalla will be used to calculate the routing instructions.")
+            ComboBoxPL {
+                id: cbRouter
+                enabled: dialog.backendSelectionPossible
+                label: qsTr("Routing Engine")
+                model: [
+                    qsTr("Valhalla (default)"),
+                    qsTr("libosmscout")
+                ]
+                Component.onCompleted: {
+                    if (settings.valueInt(settingsValhallaPrefix + "use_valhalla") > 0)
+                        currentIndex = 0;
+                    else
+                        currentIndex = 1;
+                }
             }
         }
 
@@ -366,11 +393,10 @@ DialogPL {
         settings.setValue(settingsGeneralPrefix + "language", preferredLanguageSelection.currentIndex)
 
         eMapsRoot.apply()
-        eGeocoderNLP.apply()
-        eMapnik.apply()
-        eValhalla.apply()
+        settings.setValue(settingsMapnikPrefix + "use_mapnik", cbMapnik.currentIndex ? 0 : 1)
+        settings.setValue(settingsGeomasterPrefix + "use_geocoder_nlp", cbGeocoder.currentIndex ? 0 : 1)
+        settings.setValue(settingsValhallaPrefix + "use_valhalla", cbRouter.currentIndex ? 0 : 1)
 
-        /// units are done by combo box, have to apply manually
         /// units are changed the last
         settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
 
