@@ -168,7 +168,7 @@ DialogPL {
 
             ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
-                text: qsTr("This server allows you to select between two backends to draw the maps: <i>libosmscout</i> and <i>Mapnik</i>.")
+                text: qsTr("Rendering backend is responsible for drawing the maps on raster tiles.")
             }
 
             ComboBoxPL {
@@ -194,9 +194,7 @@ DialogPL {
             ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Geocoder is responsible for resolving search requests. " +
-                           "For that, it parses the search string and finds the corresponding objects on a map. " +
-                           "This server allows you to select between two geocoder backends: <i>Geocoder-NLP</i> and " +
-                           "<i>libosmscout</i>. ")
+                           "For that, it parses the search string and finds the corresponding objects on a map.")
             }
 
             ComboBoxPL {
@@ -228,9 +226,7 @@ DialogPL {
 
             ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
-                text: qsTr("Routing engine is responsible for calculating routes between origin and destination. " +
-                           "This server allows you to select between two routing engines: <i>Valhalla</i> and " +
-                           "<i>libosmscout</i>. ")
+                text: qsTr("Routing engine is responsible for calculating routes between origin and destination.")
             }
 
             ComboBoxPL {
