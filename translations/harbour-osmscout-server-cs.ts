@@ -15,41 +15,51 @@
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="42"/>
+        <source>Artwork</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutPage.qml" line="43"/>
+        <source>Icons by %1.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutPage.qml" line="45"/>
         <source>Translations</source>
         <translation>Překlady</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="55"/>
+        <location filename="../qml/AboutPage.qml" line="58"/>
         <source>Maps</source>
         <translation>Mapy</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="57"/>
+        <location filename="../qml/AboutPage.qml" line="60"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
         <translation>Mapy jsou umístěny v Centru pro zpracování přirozeného jazyka (Fakulta informatiky Masarykovy univerzity, Brno, Česká republika) prostřednictvím úložiště dat modRana.org.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="62"/>
+        <location filename="../qml/AboutPage.qml" line="65"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
         <translation>Mapová data z OpenStreetMap, Open Database License 1.0. Mapy jsou přeměněny na vhodný formát ze stažených výtažků a / nebo pomocí polygonů, které poskytuje Geofabrik GmbH.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="66"/>
+        <location filename="../qml/AboutPage.qml" line="69"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
         <translation>Britská poštovní směrovací čísla staženy z &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Tato data obsahují: Údaje o Ordnance Survey © Crown copyright and database right 2017. Royal Mail data © copyright Royal Mail a databáze práva 2017; Údaje o národních statistikách © Crown copyright and database right 2017.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="73"/>
+        <location filename="../qml/AboutPage.qml" line="76"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="75"/>
+        <location filename="../qml/AboutPage.qml" line="78"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>Vezměte prosím na vědomí, že &lt;i&gt;libpostal&lt;/i&gt; je vyvinut pro použití s jemně vyladěným modelem pokrývajícím svět. Modely založené na jednotlivých zemích byly vyvinuty pro použití &lt;i&gt;libpostalu&lt;/i&gt; v mobilních zařízeních a nebyly speciálně naladěny. Problémy s výkonem libpostal uveďte na modelech založených na zemi na projekty &lt;i&gt;OSM Scout Server&lt;/i&gt; nebo &lt;i&gt;geocoder-nlp&lt;/i&gt; github.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="82"/>
+        <location filename="../qml/AboutPage.qml" line="85"/>
         <source>Acknowledgments</source>
         <translation>Poděkování</translation>
     </message>
@@ -64,17 +74,17 @@
         <translation>Licence: GPLv3</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="106"/>
+        <location filename="../qml/AboutPage.qml" line="109"/>
         <source>version</source>
         <translation>verze</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="112"/>
+        <location filename="../qml/AboutPage.qml" line="115"/>
         <source>is a server that provides offline map services</source>
         <translation>je server poskytující offline mapové služby</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="116"/>
+        <location filename="../qml/AboutPage.qml" line="119"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Uživatelská příručka je k dispozici &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</translation>
     </message>
@@ -2051,92 +2061,49 @@
         <translation>Vykreslování</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="171"/>
-        <source>This server allows you to select between two backends to draw the maps: &lt;i&gt;libosmscout&lt;/i&gt; and &lt;i&gt;mapnik&lt;/i&gt;.</source>
-        <translation>Tento server umožňuje vybrat mezi dvěma backendy pro kreslení map: &lt;i&gt;libosmscout&lt;/i&gt; a &lt;i&gt;mapnik&lt;/i&gt;.</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="178"/>
-        <source>Use Mapnik for rendering maps</source>
-        <translation>Použít Mapnik pro vykreslování map</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="179"/>
-        <source>When selected, Mapnik will be used to render maps. Note that it requires additional databases for World coastlines and countries.&lt;br&gt;</source>
-        <translation>Po výběru bude aplikace Mapnik použita k vykreslení map. Všimněte si, že to vyžaduje další databáze pro světové pobřeží a země.&lt;br&gt;</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="184"/>
+        <location filename="../qml/SettingsPage.qml" line="191"/>
+        <location filename="../qml/SettingsPage.qml" line="203"/>
         <source>Geocoder</source>
         <translation>Geokodér</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="189"/>
-        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map. This server allows you to select between two geocoder backends: &lt;i&gt;geocoder-nlp&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation>Geocoder je zodpovědný za vyřešení žádostí o vyhledávání. Za tímto účelem analyzuje vyhledávací řetězec a na mapě nalezne odpovídající objekty. Tento server umožňuje vybrat mezi dvěma backendy geocoderu: &lt;i&gt;geocoder-nlp&lt;/i&gt; a &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="199"/>
-        <source>Use geocoder-nlp with libpostal as a geocoder</source>
-        <translation>Použít geocoder-nlp s libpostal jako geokodér</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="200"/>
-        <source>When selected, a libpostal-based geocoder will be used to resolve all search requests. Note that it requires additional databases for language, user input parsing, and geocoding.&lt;br&gt;NB! If you select &lt;i&gt;geocoder-nlp&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation>Po výběru se k vyřešení všech žádostí o vyhledávání použije geokodér založený na libcostal. Všimněte si, že vyžaduje další databáze pro jazyk, parsování vstupů uživatele a geokódování. &lt;br&gt;Pozor! Pokud vyberete &lt;i&gt;geocoder-nlp&lt;/i&gt;, uveďte prosím jazyky, které by měly být použity pro analýzu adres v níže uvedených nastaveních backendu. V opačném případě může server použít velké množství paměti RAM.</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="207"/>
+        <location filename="../qml/SettingsPage.qml" line="224"/>
+        <location filename="../qml/SettingsPage.qml" line="235"/>
         <source>Routing Engine</source>
         <translation>Engine hledání trasy</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="212"/>
-        <source>Routing engine is responsible for calculating routes between origin and destination. This server allows you to select between two routing engines: &lt;i&gt;Valhalla&lt;/i&gt; and &lt;i&gt;libosmscout&lt;/i&gt;. </source>
-        <translation>Engine na hledání trasy je zodpovědný za výpočet tras mezi počátkem a cílovým místem. Tento server umožňuje vybrat mezi dvěma směrovacími enginy: &lt;i&gt;Valhalla&lt;/i&gt; a &lt;i&gt;libosmscout&lt;/i&gt;.</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="221"/>
-        <source>Use Valhalla as routing engine</source>
-        <translation>Použít Valhallu jako navigační službu k hledání trasy</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="222"/>
-        <source>When selected, Valhalla will be used to calculate the routing instructions.</source>
-        <translation>Po vybrání bude Valhalla použita pro výpočet navigačních instrukcí.</translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="227"/>
+        <location filename="../qml/SettingsPage.qml" line="250"/>
         <source>Backend settings</source>
         <translation>Nastavení backendu</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="283"/>
+        <location filename="../qml/SettingsPage.qml" line="306"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="289"/>
+        <location filename="../qml/SettingsPage.qml" line="312"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>Nastavení engine pro hledání trasy pro backend &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="306"/>
+        <location filename="../qml/SettingsPage.qml" line="329"/>
         <source>OSM Scout library</source>
         <translation>Knihovna OSM Scout</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="260"/>
+        <location filename="../qml/SettingsPage.qml" line="283"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="266"/>
+        <location filename="../qml/SettingsPage.qml" line="289"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Výběr jazyků používaných pro analýzu adres a další nastavení backendu &lt;i&gt;geocoder-nlp&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="237"/>
+        <location filename="../qml/SettingsPage.qml" line="260"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
@@ -2151,47 +2118,94 @@
         <translation>Profily</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="243"/>
+        <location filename="../qml/SettingsPage.qml" line="171"/>
+        <source>Rendering backend is responsible for drawing the maps on raster tiles.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="177"/>
+        <source>Renderer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="179"/>
+        <source>Mapnik (default)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="180"/>
+        <location filename="../qml/SettingsPage.qml" line="206"/>
+        <location filename="../qml/SettingsPage.qml" line="238"/>
+        <source>libosmscout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="196"/>
+        <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
+        <translation type="unfinished">Geocoder je zodpovědný za vyřešení žádostí o vyhledávání. Za tímto účelem analyzuje vyhledávací řetězec a na mapě nalezne odpovídající objekty.</translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="205"/>
+        <source>Geocoder-NLP (default)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="218"/>
+        <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="229"/>
+        <source>Routing engine is responsible for calculating routes between origin and destination.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="237"/>
+        <source>Valhalla (default)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="266"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>Nastavení vykreslování mapy pro backend &lt;i&gt;mapnik&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="312"/>
+        <location filename="../qml/SettingsPage.qml" line="335"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>Nastavení knihovny OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). Knihovnu lze použít pro kreslení map, vyhledávání a hledání trasy.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="318"/>
+        <location filename="../qml/SettingsPage.qml" line="341"/>
         <source>Miscellaneous</source>
         <translation>Různé</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="324"/>
+        <location filename="../qml/SettingsPage.qml" line="347"/>
         <source>Log info messages</source>
         <translation>Logovat informační zprávy</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="325"/>
+        <location filename="../qml/SettingsPage.qml" line="348"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Pokud je tato funkce deaktivována, zprávy INFO nebudou zaznamenány do protokolu událostí. Výjimkou je načítání databáze, která se zobrazuje vždy.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="333"/>
+        <location filename="../qml/SettingsPage.qml" line="356"/>
         <source>Events log size</source>
         <translation>Velikost logu</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="334"/>
+        <location filename="../qml/SettingsPage.qml" line="357"/>
         <source>Number of events shown in the main page</source>
         <translation>Počet událostí viditelných na hlavní stránce</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="341"/>
+        <location filename="../qml/SettingsPage.qml" line="364"/>
         <source>Log messages into session log file</source>
         <translation>Logovat zprávy do logu sezení</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="342"/>
+        <location filename="../qml/SettingsPage.qml" line="365"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Pokud je povoleno, zprávy jsou logovány do logu sezení. Log se nachází ve složce &quot;.cache/harbour-osmscout-server&quot;. Používejte toto nastavení pouze pro ladění. S tímto nastavením budou logovány i informativní zprávy nezávisle na nastavení výše. To umožňuje dočasně zapnout plné logování a vypnout jej v okamžiku kdy je potřebný log vygenerován.</translation>
     </message>
