@@ -56,13 +56,13 @@ QtObject {
     property real themeIconSizeSmall: 1.5*themeFontSizeLarge
 
     // used icons
-    property string iconCountryAvailable: "mark-location-symbolic"
-    property string iconCountryRequested: "folder-download-symbolic"
+    property string iconCountryAvailable: "country-on-device"
+    property string iconCountryRequested: "country-download"
     property string iconFolder: "folder-symbolic"
-    property string iconIncompatibleVersion: "emblem-synchronizing-symbolic"
-    property string iconMapnikGlobal: "image-x-generic-symbolic" // tmp
-    property string iconPostalGlobal: "preferences-desktop-locale-symbolic" // tmp
-    property string iconRegion: "folder-documents-symbolic" // tmp
+    property string iconIncompatibleVersion: "incompatible-version"
+    property string iconMapnikGlobal: "globe"
+    property string iconPostalGlobal: "language"
+    property string iconRegion: "country-available"
 
     property string iconBack: "go-previous-symbolic"
     property string iconEditClear: "edit-clear-symbolic"

@@ -32,12 +32,15 @@ PagePL {
                                    "<i>Mapbox GL</i> through web service. " +
                                    "This server can be used as a drop-in replacement for " +
                                    "online services providing maps.") + "</p><br>" +
-                              "<p>" + qsTr("Copyright:") + " 2016-2018 <a href='https://github.com/rinigus'>Rinigus</a><br></p>" +
+                              "<p>" + qsTr("Copyright:") + " 2016-2019 <a href='https://github.com/rinigus'>Rinigus</a><br></p>" +
                               qsTr("License: GPLv3") + "<br><br>" +
 
                               "Donations: " +
                               "<a href='http://rinigus.github.io/donate'>http://rinigus.github.io/donate</a>" +
                               "<br><br>" +
+
+                              "<b>" + qsTr("Artwork") + "</b><br><br>" +
+                              qsTr("Icons by %1.").arg("Fellfrosch") + "<br><br>" +
 
                               "<b>" + qsTr("Translations") + "</b><br><br>" +
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +

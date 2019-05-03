@@ -539,6 +539,12 @@ including support for automatic start of the server via systemd socket
 activation.
 
 
+## Artwork
+
+Custom icons used by the application were contributed by Fellfrosch
+(from talk.maemo.org).
+
+
 ## Translations
 
 The translations were contributed by

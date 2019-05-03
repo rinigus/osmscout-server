@@ -13,6 +13,12 @@
         <file>icons/fallback/image-x-generic-symbolic.svg</file>
         <file>icons/fallback/mark-location-symbolic.svg</file>
         <file>icons/fallback/preferences-desktop-locale-symbolic.svg</file>
+        <file>icons/fallback/country-available.svg</file>
+        <file>icons/fallback/country-download.svg</file>
+        <file>icons/fallback/country-on-device.svg</file>
+        <file>icons/fallback/globe.svg</file>
+        <file>icons/fallback/incompatible-version.svg</file>
+        <file>icons/fallback/language.svg</file>
     </qresource>
     <qresource prefix="/icons"/>
 </RCC>
