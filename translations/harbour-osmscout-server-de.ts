@@ -2145,7 +2145,7 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
     <message>
         <location filename="../qml/SettingsPage.qml" line="196"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
-        <translation type="unfinished">Geocoder übernimmt die Verarbeitung von Suchanfragen. Dazu analysiert er die Suchbegriffe und findet die passenden Objekte auf der Karte.</translation>
+        <translation>Geocoder übernimmt die Verarbeitung von Suchanfragen. Dazu analysiert er die Suchbegriffe und findet die passenden Objekte auf der Karte.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="205"/>

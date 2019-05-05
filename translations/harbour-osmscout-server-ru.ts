@@ -16,12 +16,12 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="42"/>
         <source>Artwork</source>
-        <translation type="unfinished"></translation>
+        <translation>Оформление</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Иконки по %1</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="45"/>
@@ -2120,49 +2120,49 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="171"/>
         <source>Rendering backend is responsible for drawing the maps on raster tiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Рендеринг-бэкенд отвечает за отрисовку карт на растровых тайлах.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="177"/>
         <source>Renderer</source>
-        <translation type="unfinished"></translation>
+        <translation>Рендерер</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="179"/>
         <source>Mapnik (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik (по умолчанию)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="180"/>
         <location filename="../qml/SettingsPage.qml" line="206"/>
         <location filename="../qml/SettingsPage.qml" line="238"/>
         <source>libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="196"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
-        <translation type="unfinished">Геокодер отвечает за ответы на поисковые запросы. Для этого он анализирует поисковую строку и ищет соответствующий объект на карте.</translation>
+        <translation>Геокодер отвечает за ответы на поисковые запросы. Для этого он анализирует поисковую строку и ищет соответствующий объект на карте.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="205"/>
         <source>Geocoder-NLP (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP (по умолчанию)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="218"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>NB! При выборе &lt;i&gt;Geocoder-NLP&lt;/i&gt;необходимо в настройках бэкэнда ниже указать языки, которые должны использоваться для анализа адресов. В противном случае сервер может использовать большое количество ОЗУ. </translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="229"/>
         <source>Routing engine is responsible for calculating routes between origin and destination.</source>
-        <translation type="unfinished"></translation>
+        <translation>Движок маршрутизации отвечает за расчет маршрутов между пунктами отправления и назначения.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="237"/>
         <source>Valhalla (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla (по умолчанию)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="266"/>

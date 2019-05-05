@@ -2142,7 +2142,7 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="196"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
-        <translation type="unfinished">Geocoder er ansvarlig for å løse søkeforespørsler . Til dette, analyserer den søkestrengen og finner de tilsvarende objekter på et kart.</translation>
+        <translation>Geocoder er ansvarlig for å løse søkeforespørsler . Til dette, analyserer den søkestrengen og finner de tilsvarende objekter på et kart.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="205"/>

@@ -323,7 +323,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Přijmout</translation>
     </message>
 </context>
 <context>
@@ -632,7 +632,7 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>O serveru OSM Scout Server</translation>
     </message>
 </context>
 <context>
@@ -640,7 +640,7 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>O serveru OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
@@ -1623,7 +1623,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Přijmout</translation>
     </message>
 </context>
 <context>
@@ -1631,7 +1631,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Přijmout</translation>
     </message>
 </context>
 <context>
@@ -2142,7 +2142,7 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="196"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
-        <translation type="unfinished">Geocoder je zodpovědný za vyřešení žádostí o vyhledávání. Za tímto účelem analyzuje vyhledávací řetězec a na mapě nalezne odpovídající objekty.</translation>
+        <translation>Geocoder je zodpovědný za vyřešení žádostí o vyhledávání. Za tímto účelem analyzuje vyhledávací řetězec a na mapě nalezne odpovídající objekty.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="205"/>
@@ -2320,12 +2320,12 @@
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Nainstalujte chybějící moduly. Po instalaci modulu(ů) restartujte OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>S vybranou a dostupnou složkou úložiště je dalším krokem získání některých map. K tomu si můžete vybrat a stahovat mapy pomocí &lt;i&gt;Správce map&lt;/i&gt; (viz menu).</translation>
     </message>
 </context>
 <context>
@@ -2574,7 +2574,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation>Inicializace</translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>
