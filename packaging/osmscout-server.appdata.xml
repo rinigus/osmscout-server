@@ -38,6 +38,13 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.14.2" date="2019-05-05">
+     <description>
+       <p>[kirigami,qtcontrols] Add icons for Map Manager (Fellfrosch)</p>
+       <p>Update translations</p>
+       <p>Improve backend selection in custom mode</p>
+     </description>
+   </release>
    <release version="1.14.1" date="2019-04-27">
      <description>
        <p>Rewrite of QML frontend in cross-platform manner</p>

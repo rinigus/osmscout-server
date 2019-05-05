@@ -5,6 +5,11 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun May 5 2019 rinigus <rinigus.git@gmail.com> 1.14.2-1
+- update translations
+- [kirigami,qtcontrols] Add icons for Map Manager (Fellfrosch)
+- Improve backend selection in custom mode
+
 * Sat Apr 27 2019 rinigus <rinigus.git@gmail.com> 1.14.0-1
 - rewrite of QML frontend in cross-platform manner
 - add support for Kirigami
