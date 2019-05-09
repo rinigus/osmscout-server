@@ -88,13 +88,14 @@ Item {
     }
 
     function processCurrentIndex() {
-        if (ps.currentIndex === 0 && ps.depth > 1) {
-            ps.pop(ps.get(0));
-            attached = undefined;
-            attachedTo = undefined;
-        } else if (ps.currentIndex+1 < ps.depth && ps.get(ps.currentIndex+1)===attached) {
+        if (ps.currentIndex+1 < ps.depth && ps.get(ps.currentIndex+1)===attached) {
             // remove attached page from stack when navigaing away from it
             ps.pop(ps.get(ps.currentIndex));
+        } else if (ps.currentIndex+1 < ps.depth) {
+            ps.pop(ps.get(ps.currentIndex));
+            attached = undefined;
+            attachedTo = undefined;
+
         }
     }
 
