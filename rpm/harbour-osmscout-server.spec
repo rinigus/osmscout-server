@@ -7,7 +7,7 @@ Name:       harbour-osmscout-server
 
 # >> macros
 %define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libboost_iostreams|libboost_chrono|libboost_thread|libboost_date_time|libprotobuf|libz|liblz4|libfreetype|libharfbuzz|libicudata|libicui18n|libicuuc|libjpeg|libmapnik|libproj|libtiff.*$
+%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libboost_iostreams|libboost_chrono|libboost_thread|libboost_date_time|libprotobuf|liblz4|libfreetype|libharfbuzz|libjpeg|libmapnik|libproj|libtiff.*$
 # << macros
 
 %{!?qtc_qmake:%define qtc_qmake %qmake}
@@ -16,7 +16,7 @@ Name:       harbour-osmscout-server
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server
 Version:    1.14.2
-Release:    1
+Release:    2
 Group:      Qt/Qt
 License:    GPLv3
 URL:        https://github.com/rinigus/osmscout-server
@@ -32,6 +32,7 @@ BuildRequires:  pkgconfig(Qt5Xml)
 BuildRequires:  pkgconfig(Qt5Sql)
 BuildRequires:  pkgconfig(Qt5Positioning)
 BuildRequires:  pkgconfig(Qt5DBus)
+BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(libsystemd-daemon)
 BuildRequires:  pkgconfig(zlib)
@@ -42,7 +43,6 @@ BuildRequires:  libosmscout-qt-devel
 BuildRequires:  libpostal-devel >= 1.0.0
 BuildRequires:  libkyotocabinet-devel
 BuildRequires:  mapnik-devel
-BuildRequires:  libicu52-devel
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  valhalla-lite-devel
 BuildRequires:  protobuf-devel
@@ -96,9 +96,9 @@ cp /usr/lib/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libharfbuzz.so.0 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libjpeg.so.62 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libfreetype.so.6 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
+#cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
+#cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
+#cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/libboost_filesystem-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_filesystem.so.* %{buildroot}%{_datadir}/%{name}/lib
@@ -115,8 +115,6 @@ cp /usr/lib/libprotobuf.so.8  %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/liblz4.so.1.8.1 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/liblz4.so.1 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libz.so.1.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libz.so.1 %{buildroot}%{_datadir}/%{name}/lib
 
 # mapnik fonts and input plugins
 # not needed anymore since input plugins are linked
@@ -125,7 +123,7 @@ cp /usr/lib/libz.so.1 %{buildroot}%{_datadir}/%{name}/lib
 #cp -r /usr/lib/mapnik %{buildroot}%{_datadir}/%{name}/lib
 
 strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.3.0
-strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
+#strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
 
 # strip executable bit from all libraries
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*

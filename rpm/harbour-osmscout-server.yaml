@@ -2,7 +2,7 @@ Name: harbour-osmscout-server
 Summary: OSM Scout Server
 # don't forget to set the version in osmscout-server.pro as well
 Version: 1.14.2
-Release: 1
+Release: 2
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
 Group: Qt/Qt
@@ -32,6 +32,7 @@ PkgConfigBR:
   - Qt5Sql
   - Qt5Positioning
   - Qt5DBus
+  - icu-uc
   - sqlite3
   - libsystemd-daemon
   - zlib
@@ -45,7 +46,6 @@ PkgBR:
   - libpostal-devel >= 1.0.0
   - libkyotocabinet-devel
   - mapnik-devel
-  - libicu52-devel
   - qt5-qttools-linguist
   - valhalla-lite-devel
   - protobuf-devel
