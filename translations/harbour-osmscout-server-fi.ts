@@ -16,12 +16,12 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="42"/>
         <source>Artwork</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvitus</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kuvakkeet: %1.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="45"/>
@@ -323,7 +323,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyväksy</translation>
     </message>
 </context>
 <context>
@@ -632,7 +632,7 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja OSM Scout Serveristä</translation>
     </message>
 </context>
 <context>
@@ -640,7 +640,7 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietoja OSM Scout Serveristä</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
@@ -1623,7 +1623,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyväksy</translation>
     </message>
 </context>
 <context>
@@ -1631,7 +1631,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyväksy</translation>
     </message>
 </context>
 <context>
@@ -2120,24 +2120,24 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="171"/>
         <source>Rendering backend is responsible for drawing the maps on raster tiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Piirron taustapalvelu piirtää kartat rasterilaatoille.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="177"/>
         <source>Renderer</source>
-        <translation type="unfinished"></translation>
+        <translation>Piirtäjä</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="179"/>
         <source>Mapnik (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik (oletus)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="180"/>
         <location filename="../qml/SettingsPage.qml" line="206"/>
         <location filename="../qml/SettingsPage.qml" line="238"/>
         <source>libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="196"/>
@@ -2147,22 +2147,22 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="205"/>
         <source>Geocoder-NLP (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP (oletus)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="218"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>HUOM! Jos valitset &lt;i&gt;Geocoder-NLP:n&lt;/i&gt;, määritä myös osoitteiden tulkintaan käytettävät kielet taustapalvelun asetuksissa alempana. Muutoin palvelin voi käyttää paljon muistia.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="229"/>
         <source>Routing engine is responsible for calculating routes between origin and destination.</source>
-        <translation type="unfinished"></translation>
+        <translation>Reititysmoottori vastaa reittien laskemisesta lähtöpisteen ja kohteen välille.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="237"/>
         <source>Valhalla (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla (oletus)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="266"/>
@@ -2320,12 +2320,12 @@
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Asenna puuttuvat moduulit. Moduuli(e)n asennuksen jälkeen uudelleenkäynnistä OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallennuskansion ollessa valittuna ja saatavilla, seuraava vaihe on hankkia karttoja. Voit valita ja ladata karttoja &lt;i&gt;Karttamanagerin&lt;/i&gt;  (katso vetovalikko).</translation>
     </message>
 </context>
 <context>
@@ -2574,7 +2574,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation>Valmistellaan</translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>
