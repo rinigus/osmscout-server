@@ -32,8 +32,8 @@ DialogPL {
     Column {
         id: column
 
-        anchors.left: parent.left
-        anchors.right: parent.right
+        anchors.left: page.left
+        anchors.right: page.right
 
         spacing: styler.themePaddingLarge
 
@@ -58,6 +58,7 @@ DialogPL {
                 delegate: ElementCountryListItem {
                     country: foundUpdates[index]
                     active: false
+                    width: parent.width
                 }
                 width: parent.width
             }
