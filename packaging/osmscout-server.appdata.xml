@@ -12,6 +12,7 @@
   <category>Maps</category>
   <category>Qt</category>
  </categories>
+ <content_rating type="oars-1.0" />
  <url type="homepage">https://rinigus.github.io/osmscout-server</url>
  <url type="bugtracker">https://github.com/rinigus/osmscout-server/issues</url>
  <url type="donation">https://rinigus.github.io/donate</url>
@@ -38,6 +39,11 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.14.4" date="2019-05-18">
+     <description>
+       <p>Update translations</p>
+     </description>
+   </release>
    <release version="1.14.2" date="2019-05-05">
      <description>
        <p>[kirigami,qtcontrols] Add icons for Map Manager (Fellfrosch)</p>
