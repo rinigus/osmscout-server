@@ -24,42 +24,47 @@
         <translation>Ikony stworzone przez %1.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="45"/>
+        <location filename="../qml/AboutPage.qml" line="44"/>
+        <source>Banner photo by %1 (%2 licanse).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutPage.qml" line="46"/>
         <source>Translations</source>
         <translation>Tłumaczenia</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="58"/>
+        <location filename="../qml/AboutPage.qml" line="59"/>
         <source>Maps</source>
         <translation>Mapy</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="60"/>
+        <location filename="../qml/AboutPage.qml" line="61"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
         <translation>Mapy są hostowane w Centrum Procesowania Języka Naturalnego (Wydział informatyki Uniwersytetu Masaryk, Brno, Czeska Republika) w repozytoriach danych modRana.org</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="65"/>
+        <location filename="../qml/AboutPage.qml" line="66"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
         <translation>Dane mapy z OpenStreetMap, Open Database License 1.0. Mapy są skonwertowane do odpowiedniego formatu z pobranych fragmentów i/lub używają wielokątów dostarczonych przez Geofabrik GmbH.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="69"/>
+        <location filename="../qml/AboutPage.qml" line="70"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
         <translation>Kody pocztowe w Wielkiej Brytanii pobrane z &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Dane te zawierają: Dane z ankiety Ordnance © Crown copyright and database right 2017; Dane Royal Mail © Royal Mail copyright i database right 2017; Dane statystyki krajowej © Crown copyright and database right 2017.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="76"/>
+        <location filename="../qml/AboutPage.qml" line="77"/>
         <source>Libpostal</source>
         <translation>Libpostal</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="78"/>
+        <location filename="../qml/AboutPage.qml" line="79"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
         <translation>&lt;i&gt;libpostal&lt;/i&gt; został stworzony aby wykorzystywać go z dokładnym modelem obejmującym Świat. Modele oparte na państwach zostały stworzone do użytku z &lt;i&gt;libpostal&lt;/i&gt; na urządzeniach mobilnych i nie zostały zoptymalizowane. Proszę o zgłaszanie błędów z wydajnością libpostal, w modelach opartych na państwach, na stronach githuba &lt;i&gt;OSM Scout Server&lt;/i&gt; oraz &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="85"/>
+        <location filename="../qml/AboutPage.qml" line="86"/>
         <source>Acknowledgments</source>
         <translation>Podziękowania</translation>
     </message>
@@ -74,17 +79,17 @@
         <translation>Licencja: GPLv3</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="109"/>
+        <location filename="../qml/AboutPage.qml" line="133"/>
         <source>version</source>
         <translation>wersja</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="115"/>
+        <location filename="../qml/AboutPage.qml" line="139"/>
         <source>is a server that provides offline map services</source>
         <translation>jest serwerem dostarczającym serwisu map offline</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="119"/>
+        <location filename="../qml/AboutPage.qml" line="143"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Instrukcja obsługi jest &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;dostępna&lt;/a&gt;</translation>
     </message>
@@ -2384,17 +2389,17 @@
         <translation>Aktualizacje</translation>
     </message>
     <message>
-        <location filename="../qml/UpdatesFound.qml" line="41"/>
+        <location filename="../qml/UpdatesFound.qml" line="39"/>
         <source>Do you want to start the update?</source>
         <translation>Czy chcesz uruchomić aktualizację?</translation>
     </message>
     <message>
-        <location filename="../qml/UpdatesFound.qml" line="46"/>
+        <location filename="../qml/UpdatesFound.qml" line="44"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
         <translation>W trakcie aktualizacji, aż do jej zakończenia, mapy nie będą dostępne.</translation>
     </message>
     <message>
-        <location filename="../qml/UpdatesFound.qml" line="50"/>
+        <location filename="../qml/UpdatesFound.qml" line="48"/>
         <source>List of countries and features with the found updates</source>
         <translation>Lista krajów i funkcji z uaktualnieniami</translation>
     </message>
