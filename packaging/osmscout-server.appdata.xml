@@ -41,29 +41,37 @@
  <releases>
    <release version="1.14.4" date="2019-05-18">
      <description>
-       <p>Update translations</p>
+       <ul>
+         <li>Update translations</li>
+       </ul>
      </description>
    </release>
    <release version="1.14.2" date="2019-05-05">
      <description>
-       <p>[kirigami,qtcontrols] Add icons for Map Manager (Fellfrosch)</p>
-       <p>Update translations</p>
-       <p>Improve backend selection in custom mode</p>
+       <ul>
+         <li>[kirigami,qtcontrols] Add icons for Map Manager (Fellfrosch)</li>
+         <li>Update translations</li>
+         <li>Improve backend selection in custom mode</li>
+       </ul>
      </description>
    </release>
    <release version="1.14.1" date="2019-04-27">
      <description>
-       <p>Rewrite of QML frontend in cross-platform manner</p>
-       <p>Add support for Kirigami</p>
-       <p>Update translations</p>
+       <ul>
+         <li>Rewrite of QML frontend in cross-platform manner</li>
+         <li>Add support for Kirigami</li>
+         <li>Update translations</li>
+       </ul>
      </description>
    </release>
    <release version="1.13.0" date="2018-12-03">
      <description>
-       <p>Add postal code as a name for some search results</p>
-       <p>Docs: update Spanish User's manual</p>
-       <p>Docs: add Linux install instructions</p>
-       <p>MapboxGL backend: use sqlite3pp instead of Qt SQL</p>
+       <ul>
+         <li>Add postal code as a name for some search results</li>
+         <li>Docs: update Spanish User's manual</li>
+         <li>Docs: add Linux install instructions</li>
+         <li>MapboxGL backend: use sqlite3pp instead of Qt SQL</li>
+       </ul>
      </description>
    </release>
   <release version="1.12.3" date="2018-11-04"/>
