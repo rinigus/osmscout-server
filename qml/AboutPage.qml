@@ -40,7 +40,8 @@ PagePL {
                               "<br><br>" +
 
                               "<b>" + qsTr("Artwork") + "</b><br><br>" +
-                              qsTr("Icons by %1.").arg("Fellfrosch") + "<br><br>" +
+                              qsTr("Icons by %1.").arg("Fellfrosch") + "<br>" +
+                              qsTr("Banner photo by %1 (%2 licanse).").arg("Aksonsat Uanthoeng").arg("Pixels") + "<br><br>" +
 
                               "<b>" + qsTr("Translations") + "</b><br><br>" +
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +
@@ -104,6 +105,29 @@ PagePL {
             id: column
             spacing: styler.themePaddingLarge
             width: parent.width
+
+            Image {
+                // Banner
+                anchors.horizontalCenter: parent.horizontalCenter
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+                source: "../icons/banner.jpg"
+                width: column.width
+
+                Image {
+                    // Logo
+                    anchors.left: parent.left
+                    anchors.leftMargin: styler.themeHorizontalPageMargin
+                    anchors.top: parent.top
+                    anchors.topMargin: Math.min(parent.height/4, styler.themePaddingMedium)
+                    height: parent.height / 4
+                    smooth: true
+                    source: "../icons/osmscout-server.svg"
+                    sourceSize.height: height
+                    sourceSize.width: height
+                    width: height
+                }
+            }
 
             LabelPL {
                 text: qsTr("version") + ": " + programVersion

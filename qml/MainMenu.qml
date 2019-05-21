@@ -25,9 +25,9 @@ import "platform"
 // MainMenuReversed.qml
 
 MenuDrawerPL {
-    banner: "icons/banner.jpg"
+    banner: "../icons/banner.jpg"
     title: "OSM Scout Server"
-    titleIcon: "osm-scout-server"
+    titleIcon: Qt.resolvedUrl("../icons/osmscout-server.svg")
 
     MenuDrawerItemPL {
         text: qsTr("Map Manager")

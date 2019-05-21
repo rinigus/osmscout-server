@@ -104,6 +104,10 @@ scout_silica {
     qmlplatform.files = qml/platform.silica/*.qml
     qmlplatform.path = /usr/share/$${TARGET}/qml/platform
     INSTALLS += qmlplatform
+
+    extra_icons.files = icons/banner.jpg icons/osmscout-server.svg
+    extra_icons.path = /usr/share/$${TARGET}/icons
+    INSTALLS += extra_icons
 }
 
 scout_kirigami|scout_qtcontrols {

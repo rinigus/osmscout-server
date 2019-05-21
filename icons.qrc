@@ -13,6 +13,8 @@
         <file>icons/fallback/globe.svg</file>
         <file>icons/fallback/incompatible-version.svg</file>
         <file>icons/fallback/language.svg</file>
+        <file>icons/banner.jpg</file>
+        <file>icons/osmscout-server.svg</file>
     </qresource>
     <qresource prefix="/icons"/>
 </RCC>
