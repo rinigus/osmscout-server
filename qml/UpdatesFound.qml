@@ -32,10 +32,8 @@ DialogPL {
     Column {
         id: column
 
-        anchors.left: page.left
-        anchors.right: page.right
-
         spacing: styler.themePaddingLarge
+        width: page.width
 
         ListItemLabel {
             text: qsTr("Do you want to start the update?")
