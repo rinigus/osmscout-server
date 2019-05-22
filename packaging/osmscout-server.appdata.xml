@@ -39,6 +39,14 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.14.5" date="2019-05-22">
+     <description>
+       <ul>
+         <li>Update translations</li>
+         <li>Bugfix, smaller changes</li>
+       </ul>
+     </description>
+   </release>
    <release version="1.14.4" date="2019-05-18">
      <description>
        <ul>

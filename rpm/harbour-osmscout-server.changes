@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat May 22 2019 rinigus <rinigus.git@gmail.com> 1.14.5-1
+- update translations
+- bugfix and small changes
+
 * Sat May 18 2019 rinigus <rinigus.git@gmail.com> 1.14.4-1
 - update translations
 - [kirigami] bugfix
