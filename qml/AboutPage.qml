@@ -120,7 +120,7 @@ PagePL {
                     anchors.leftMargin: styler.themeHorizontalPageMargin
                     anchors.top: parent.top
                     anchors.topMargin: Math.min(parent.height/4, styler.themePaddingMedium)
-                    height: parent.height / 4
+                    height: parent.height / 3
                     smooth: true
                     source: "../icons/osmscout-server.svg"
                     sourceSize.height: height
