@@ -108,7 +108,7 @@ std::shared_ptr<sqlite3pp::database> MapboxGLMaster::getDatabase(const QString &
     m_db_connection[connection] = db;
     return db;
   }
-  catch (sqlite3pp::database_error e) {
+  catch (sqlite3pp::database_error &e) {
     InfoHub::logWarning(tr("Failed to open Mapbox GL database: %1").arg(e.what()));
   }
 
