@@ -20,14 +20,8 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#ifdef IS_CONSOLE_QT
-#define APP_PREFIX ""
-#endif
-#ifdef IS_QTCONTROLS_QT
-#define APP_PREFIX ""
-#endif
-#ifdef IS_SAILFISH_OS
-#define APP_PREFIX "harbour-"
+#ifndef APP_NAME
+#define APP_NAME "osmscout-server"
 #endif
 
 // global configuration settings

@@ -126,8 +126,9 @@ int main(int argc, char *argv[])
   qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
 #endif
 
-  app->setApplicationName(APP_PREFIX "osmscout-server");
-  app->setOrganizationName(APP_PREFIX "osmscout-server");
+  app->setApplicationName(APP_NAME);
+  app->setOrganizationName(APP_NAME);
+  app->setDesktopFileName(APP_NAME ".desktop");
   app->setApplicationVersion(APP_VERSION);
 
   {
@@ -141,7 +142,7 @@ int main(int argc, char *argv[])
         QString locale = QLocale::system().name();
         QTranslator *translator = new QTranslator();
 
-        if ( !translator->load(QLocale(), APP_PREFIX "osmscout-server", "-",
+        if ( !translator->load(QLocale(), APP_NAME, "-",
                                tr_path) )
           qWarning() << "Failed to load translation for " << locale
                      << " " << tr_path;

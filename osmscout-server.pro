@@ -52,11 +52,15 @@ equals(SCOUT_FLAVOR, "silica") {
 # of the options specified above
 
 # The name of the application
-scout_silica {
-    TARGET = harbour-osmscout-server
-} else {
-    TARGET = osmscout-server
+isEmpty(APP_NAME) {
+    scout_silica {
+        APP_NAME = harbour-osmscout-server
+    } else {
+        APP_NAME = osmscout-server
+    }
 }
+
+TARGET=$${APP_NAME}
 
 # Overall QT options
 QT += core network sql xml positioning dbus
@@ -134,6 +138,7 @@ scout_kirigami|scout_qtcontrols {
 }
 
 # defines
+DEFINES += APP_NAME=\\\"$$APP_NAME\\\"
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 scout_silica {
     DEFINES += IS_SAILFISH_OS
