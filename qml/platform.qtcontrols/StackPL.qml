@@ -58,10 +58,12 @@ QtObject {
     function push(page, options, immediate) {
         // handle file selector as a dialog opened using 'open'
         if (typeof page === 'string' && page.includes('FileSelectorPL.qml')) {
-            var fs = app.createObject(page, options ? options : {})
+            var fs = app.createObject(page, options ? options : {});
+            if (!fs) return null;
             fs.open();
             return fs;
         }
+
         var p = ps.push(page, options ? options : {}, immediate ? StackView.Immediate.Immediate : StackView.Animated);
         if (attached !== page && !p.isDialog) attached = undefined;
         if (attached === page) hasAttached = false;
@@ -72,7 +74,8 @@ QtObject {
     function pushAttached(page, options) {
         attached = page;
         if (typeof page === 'string') {
-            attached = app.createObject(page, options ? options : {})
+            attached = app.createObject(page, options ? options : {});
+            if (!attached) return null;
         }
         attached.visible = false;
         hasAttached = true;
