@@ -11,8 +11,8 @@ import hashlib, requests, os, sys, time
 
 url_base = open("mirror_url").read().strip()
 mirror_root = open("mirror_path").read().strip()
-max_retries = 1 				 	# times to retry to download the file
-sleep_between_retries = 1.0				# time between retries in seconds
+max_retries = 5                                         # times to retry to download the file
+sleep_between_retries = 15.0				# time between retries in seconds
 sleep_before_delete = 5.0				# time before deleting files after sync is finished
 
 digest_name = "digest.md5"
@@ -37,34 +37,58 @@ def md5(fname):
 # retrieve a file and return true if it satisfies given md5 hash. to
 # skip md5 checking, set md5expected to None. this function would
 # create required directories if needed
-def get(path_relative, md5expected, path_relative_new = None, retry = 0):
+def get(path_relative, md5expected, path_relative_new = None, retry = 0, force_full = False):
     if path_relative_new is None:
         path_relative_new = path_relative
 
     path = os.path.join(mirror_root, path_relative_new)
+    if os.path.exists(path) and md5(path) == md5expected:
+        print "File %s available already, skipping" % path
+        return True
+
     path_download = path + ".download"
-    url = url_base + "/" + path_relative    
+    url = url_base + "/" + path_relative
 
     dn = os.path.dirname(path)
     if not os.path.exists(dn):
         os.makedirs(dn)
 
-    r = requests.get(url)    
-    with open(path_download, 'wb') as fd:
-        for chunk in r.iter_content(chunk_size=1024*1024):
-            fd.write(chunk)
-            
-    if r.status_code == 200:
-        if md5expected is None or md5(path_download) == md5expected:
-            os.rename(path_download, path)
-            return True
-        else:
-            print "MD5 mismatch:", url, md5(path_download), md5expected
-        
-    if retry < max_retries:
-        time.sleep(sleep_between_retries)
-        print "Trying again:", url
-        return get(path_relative, md5expected, path_relative_new, retry+1)
+    block_size = 1000 * 1000 # 1MB
+    first_byte = os.path.getsize(path_download) if not force_full and os.path.exists(path_download) else 0
+    file_mode = 'ab' if first_byte else 'wb'
+    if retry or first_byte > 0: print 'Starting download at %.1fMB' % (first_byte / 1e6)
+    file_size = -1
+    try:
+        file_size = int(requests.head(url).headers['Content-length'])
+        if retry or first_byte > 0: print 'File size is %s' % file_size
+        headers = {"Range": "bytes=%s-" % first_byte}
+        r = requests.get(url, headers=headers, stream=True)
+        with open(path_download, file_mode) as f:
+            for chunk in r.iter_content(chunk_size=block_size):
+                if chunk: # filter out keep-alive new chunks
+                    f.write(chunk)
+    except IOError as e:
+        print 'IO Error - %s' % e
+    finally:
+        # rename the temp download file to the correct name if fully downloaded
+        if file_size == os.path.getsize(path_download):
+            # if there's a hash value, validate the file
+            if md5expected is None or md5(path_download) == md5expected:
+                os.rename(path_download, path)
+                return True
+            else:
+                print "MD5 mismatch:", url, md5(path_download), md5expected
+                if first_byte > 0:
+                    print "Retry full download"
+                    return get(path_relative, md5expected, path_relative_new, retry, True)
+
+        if retry < max_retries:
+            time.sleep(sleep_between_retries)
+            print "Trying again:", url
+            return get(path_relative, md5expected, path_relative_new, retry + 1)
+
+        if file_size == -1:
+            print 'Error getting Content-Length from server: %s' % url
 
     print "Download failed:", url
     return False
@@ -102,7 +126,7 @@ def files_to_get(digest_old, digest_new):
 # get md5 of a digest
 if not get( digest_name + ".bz2.md5", None, digest_new_name + ".bz2.md5" ):
     sys.exit(-1)
-    
+
 digest_md5_old = load_digest( digest_name + ".bz2.md5" )
 digest_md5_new = load_digest( digest_new_name + ".bz2.md5" )
 
@@ -145,9 +169,9 @@ print "\nAll files downloaded"
 # cleanup
 
 # to ensure that we don't delete digest, its compressed form and its own digest during cleanup
-digest_new_dict[digest_name] = {} 
-digest_new_dict[digest_name + ".bz2"] = {} 
-digest_new_dict[digest_name + ".bz2.md5"] = {} 
+digest_new_dict[digest_name] = {}
+digest_new_dict[digest_name + ".bz2"] = {}
+digest_new_dict[digest_name + ".bz2.md5"] = {}
 
 toremove = []
 for root, dirs, files in os.walk(mirror_root, followlinks=False):
@@ -156,7 +180,7 @@ for root, dirs, files in os.walk(mirror_root, followlinks=False):
     for f in files:
         if r + f not in digest_new_dict:
             if len(r) > 0: relname = os.path.join(r, f)
-            else: relname = f            
+            else: relname = f
             toremove.append( os.path.join( mirror_root, relname) )
 
 if len(toremove) > 0:
@@ -175,4 +199,3 @@ if len(toremove) > 0:
 
 
 print "\nAll Done\n"
-
