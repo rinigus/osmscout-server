@@ -187,7 +187,8 @@ SOURCES += src/dbmaster.cpp \
     src/mapmanager_urlcollection.cpp \
     src/valhallamapmatcher.cpp \
     src/valhallamapmatcherdbus.cpp \
-    src/valhallamapmatcherdbusadaptor.cpp
+    src/valhallamapmatcherdbusadaptor.cpp \
+    src/dbusroot.cpp
 
 HEADERS += \
     src/dbmaster.h \
@@ -214,7 +215,8 @@ HEADERS += \
     src/mapmanager_urlcollection.h \
     src/valhallamapmatcher.h \
     src/valhallamapmatcherdbus.h \
-    src/valhallamapmatcherdbusadaptor.h
+    src/valhallamapmatcherdbusadaptor.h \
+    src/dbusroot.h
 
 OTHER_FILES += rpm/osmscout-server.spec
 OTHER_FILES += qml/*.qml

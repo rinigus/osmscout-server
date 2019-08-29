@@ -54,6 +54,7 @@
 #include "requestmapper.h"
 
 // DBus interface
+#include "dbusroot.h"
 #include "valhallamapmatcherdbus.h"
 #include "valhallamapmatcherdbusadaptor.h"
 
@@ -561,6 +562,11 @@ int main(int argc, char *argv[])
                              &valhallaMapMatcherDBus, SLOT(onNameOwnerChanged(QString,QString,QString)));
     valhallaMapMatcherDBus.activate();
 #endif
+
+    DBusRoot dbusRoot(host, port);
+    if (!dbusconnection.registerObject(DBUS_PATH_ROOT, &dbusRoot,
+                                       QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties))
+      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_ROOT));
 
     // register dbus service
     if (!dbusconnection.registerService(DBUS_SERVICE))
