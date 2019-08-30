@@ -26,17 +26,17 @@ DBusRoot::DBusRoot(QString host, int port, QObject *parent):
   m_url = QString("http://%1:%2").arg(host).arg(port);
 }
 
-void DBusRoot::Activate(QMap<QString, QVariant> platform_data)
+void DBusRoot::Activate(QMap<QString, QVariant> /*platform_data*/)
 {
   InfoHub::logInfo("DBus Activate called");
 }
 
-void DBusRoot::Open(QStringList uris, QMap<QString, QVariant> platform_data)
+void DBusRoot::Open(QStringList /*uris*/, QMap<QString, QVariant> /*platform_data*/)
 {
   InfoHub::logInfo("DBus Open called");
 }
 
-void DBusRoot::ActivateAction(QString action_name, QVariantList parameter, QMap<QString, QVariant> platform_data)
+void DBusRoot::ActivateAction(QString /*action_name*/, QVariantList /*parameter*/, QMap<QString, QVariant> /*platform_data*/)
 {
   InfoHub::logInfo("DBus ActivateAction called");
 }
