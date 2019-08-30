@@ -26,6 +26,7 @@
 #include <QStandardPaths>
 #include <QFile>
 #include <QDir>
+#include <QCoreApplication>
 
 #include <QDebug>
 
@@ -62,7 +63,8 @@ void SystemDService::setEnabled(bool e)
   if (e)
     {
       AppSettings settings;
-      QString exe_path = QStandardPaths::findExecutable(APP_NAME);
+      QString exe_path = QCoreApplication::applicationFilePath();
+      if (exe_path.isEmpty()) exe_path = QStandardPaths::findExecutable(APP_NAME);
       if (!exe_path.isEmpty())
         {
           // create socket and service files at home directory
@@ -78,7 +80,7 @@ void SystemDService::setEnabled(bool e)
               "[Unit]\n"
               "Description=OSM Scout Server\n\n"
               "[Service]\n"
-              "ExecStart=/usr/bin/" APP_NAME " --console --systemd --quiet\n";
+              "ExecStart=" + exe_path + " --console --systemd --quiet\n";
 
           QDir dir;
           QString path = QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/systemd/user";
