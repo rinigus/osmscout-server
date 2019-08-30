@@ -20,8 +20,6 @@
 #include "dbusroot.h"
 #include "infohub.h"
 
-#include <QDebug>
-
 DBusRoot::DBusRoot(QString host, int port, QObject *parent):
   QObject(parent)
 {
@@ -30,15 +28,15 @@ DBusRoot::DBusRoot(QString host, int port, QObject *parent):
 
 void DBusRoot::Activate(QMap<QString, QVariant> platform_data)
 {
-  qDebug() << "Activate call: " << platform_data;
+  InfoHub::logInfo("DBus Activate called");
 }
 
 void DBusRoot::Open(QStringList uris, QMap<QString, QVariant> platform_data)
 {
-    qDebug() << "Open call: " << uris << " " << platform_data;
+  InfoHub::logInfo("DBus Open called");
 }
 
 void DBusRoot::ActivateAction(QString action_name, QVariantList parameter, QMap<QString, QVariant> platform_data)
 {
-  qDebug() << "ActivateAction call: " << action_name << " " << parameter << " " << platform_data;
+  InfoHub::logInfo("DBus ActivateAction called");
 }
