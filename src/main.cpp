@@ -285,7 +285,8 @@ int main(int argc, char *argv[])
 #endif
 #ifdef IS_QTCONTROLS_QT
   QQmlApplicationEngine engine;
-  QQmlContext *rootContext = engine.rootContext();
+  QQmlContext *rootContext = nullptr;
+  if (!parser.isSet(optionConsole)) rootContext = engine.rootContext();
 #endif
 
 #if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
@@ -380,7 +381,7 @@ int main(int argc, char *argv[])
     }
 #endif
 #ifdef IS_QTCONTROLS_QT
-  engine.load(QUrl(QStringLiteral("qrc:/qml/osmscout-server.qml")));
+  if (!parser.isSet(optionConsole)) engine.load(QUrl(QStringLiteral("qrc:/qml/osmscout-server.qml")));
 #endif
 
 #ifdef USE_OSMSCOUT
