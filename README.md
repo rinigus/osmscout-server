@@ -469,6 +469,17 @@ D-Bus API is provided via service `org.osm.scout.server1`. At present,
 its used to provide map matching service for just in time navigation
 information. In future, D-Bus API can be extended on request.
 
+### Root
+
+At path `/org/osm/scout/server1`, interface `org.osm.scout.server1`,
+currently the following is supported:
+
+**`Url`** string property with the URL base that can be used to
+generate url's for access via HTTP API. For example, by default, its
+`http://127.0.0.1:8553`.
+
+There is also an API for D-Bus activation on at the root location. 
+
 ### Map matching via D-Bus
 
 D-Bus API is available only if Valhalla router is used, as configured
