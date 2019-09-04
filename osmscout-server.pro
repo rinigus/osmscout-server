@@ -116,20 +116,16 @@ scout_silica {
 
 scout_kirigami|scout_qtcontrols {
     icons108.path = $$PREFIX/share/icons/hicolor/108x108/apps
-    icons108.extra = cp icons/108x108/harbour-osmscout-server.png $$PREFIX/share/icons/hicolor/108x108/apps/$${TARGET}.png
-    icons108.files = icons/108x108/$${TARGET}.png
+    icons108.extra = cp $$PWD/icons/108x108/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/108x108/apps/$${TARGET}.png
     INSTALLS += icons108
     icons128.path = $$PREFIX/share/icons/hicolor/128x128/apps
-    icons128.extra = cp icons/128x128/harbour-osmscout-server.png $$PREFIX/share/icons/hicolor/128x128/apps/$${TARGET}.png
-    icons128.files = icons/128x128/$${TARGET}.png
+    icons128.extra = cp $$PWD/icons/128x128/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/128x128/apps/$${TARGET}.png
     INSTALLS += icons128
     icons256.path = $$PREFIX/share/icons/hicolor/256x256/apps
-    icons256.extra = cp icons/256x256/harbour-osmscout-server.png $$PREFIX/share/icons/hicolor/256x256/apps/$${TARGET}.png
-    icons256.files = icons/256x256/$${TARGET}.png
+    icons256.extra = cp $$PWD/icons/256x256/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/256x256/apps/$${TARGET}.png
     INSTALLS += icons256
     icons86.path = $$PREFIX/share/icons/hicolor/86x86/apps
-    icons86.extra = cp icons/86x86/harbour-osmscout-server.png $$PREFIX/share/icons/hicolor/86x86/apps/$${TARGET}.png
-    icons86.files = icons/86x86/$${TARGET}.png
+    icons86.extra = cp $$PWD/icons/86x86/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/86x86/apps/$${TARGET}.png
     INSTALLS += icons86
 
     appdata.path =$$PREFIX/share/metainfo
