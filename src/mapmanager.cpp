@@ -743,7 +743,7 @@ QString Manager::getCountryDetails(QString id)
       QJsonArray features;
       for (const Feature *f: m_features)
         {
-          u_int64_t s = f->getSize(country, true);
+          uint64_t s = f->getSize(country, true);
           sz_tot += s;
           if (f->enabled()) sz += s;
 
