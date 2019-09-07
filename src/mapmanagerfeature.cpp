@@ -471,7 +471,7 @@ FeatureValhalla::FeatureValhalla(PathProvider *path):
   Feature(path, "territory", "valhalla",
           QCoreApplication::translate("MapManagerFeature", "Valhalla"),
           QStringList(),
-          1)
+          2)
 {
 }
 

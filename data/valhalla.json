@@ -31,8 +31,12 @@
       "proxy": "ipc:///tmp/osmscout_server_valhalla_loki"
     },
     "service_defaults": {
+      "heading_tolerance": 60,
       "minimum_reachability": 50,
-      "radius": 0
+      "node_snap_tolerance": 5,
+      "radius": 0,
+      "search_cutoff": 35000,
+      "street_side_tolerance": 5
     },
     "use_connectivity": true
   },
@@ -49,6 +53,7 @@
       "search_radius",
       "turn_penalty_factor",
       "gps_accuracy",
+      "interpolation_distance",
       "sigma_z",
       "beta",
       "max_route_distance_factor",
@@ -92,8 +97,12 @@
   },
   "mjolnir": {
     "admin": "tiles/admin.sqlite",
+    "global_synchronized_cache": false,
     "hierarchy": true,
+    "include_bicycle": true,
     "include_driveways": true,
+    "include_driving": true,
+    "include_pedestrian": true,
     "logging": {
       "color": false,
       "file_name": "path_to_some_file.log",
@@ -153,9 +162,11 @@
       "max_locations": 1,
       "max_time": 120
     },
+    "max_alternates": 2,
     "max_avoid_locations": 50,
     "max_radius": 200,
     "max_reachability": 100,
+    "max_timedep_distance": LIMIT_MAX_DISTANCE_AUTO,
     "motor_scooter": {
       "max_distance": LIMIT_MAX_DISTANCE_BICYCLE,
       "max_locations": 50,
@@ -185,6 +196,12 @@
     "skadi": {
       "max_shape": 750000,
       "min_resample": 10.0
+    },
+    "taxi": {
+      "max_distance": LIMIT_MAX_DISTANCE_AUTO,
+      "max_locations": 20,
+      "max_matrix_distance": 400000.0,
+      "max_matrix_locations": 50
     },
     "trace": {
       "max_best_paths": 4,
