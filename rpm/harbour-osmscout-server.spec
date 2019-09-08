@@ -69,13 +69,10 @@ Server providing map tiles, search, and routing
 
 %build
 # >> build pre
-export CXX=/opt/gcc6/bin/g++
-export CC=/opt/gcc6/bin/gcc
-export LINK=/opt/gcc6/bin/g++
 # << build pre
 
 %qtc_qmake5  \
-    VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
+    VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica' CXX=/opt/gcc6/bin/g++ CC=/opt/gcc6/bin/gcc LINK=/opt/gcc6/bin/g++
 
 %qtc_make %{?_smp_mflags}
 
