@@ -54,6 +54,7 @@ BuildRequires:  boost-iostreams >= 1.51
 BuildRequires:  boost-regex >= 1.51
 BuildRequires:  boost-system >= 1.51
 BuildRequires:  lz4-devel
+BuildRequires:  opt-gcc6
 BuildRequires:  desktop-file-utils
 
 %description
@@ -68,6 +69,9 @@ Server providing map tiles, search, and routing
 
 %build
 # >> build pre
+export CXX=/opt/gcc6/bin/g++
+export CC=/opt/gcc6/bin/gcc
+export LINK=/opt/gcc6/bin/g++
 # << build pre
 
 %qtc_qmake5  \
