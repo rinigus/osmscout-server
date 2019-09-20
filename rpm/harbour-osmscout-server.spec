@@ -15,7 +15,7 @@ Name:       harbour-osmscout-server
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    OSM Scout Server
-Version:    1.14.5
+Version:    1.15.0
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
@@ -72,7 +72,7 @@ Server providing map tiles, search, and routing
 # << build pre
 
 %qtc_qmake5  \
-    VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica' CXX=/opt/gcc6/bin/g++ CC=/opt/gcc6/bin/gcc LINK=/opt/gcc6/bin/g++
+    VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
 
 %qtc_make %{?_smp_mflags}
 

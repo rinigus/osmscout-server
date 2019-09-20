@@ -5,6 +5,15 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Sep 20 2019 rinigus <rinigus.git@gmail.com> 1.15.0-1
+- update Valhalla to 3.0.x
+- support for DBus activation
+- add root DBus API
+- specuify full path in systemd service invocation
+- update translations
+- bugfixes
+- [silica] use gcc6 for Sailfish
+
 * Sat May 22 2019 rinigus <rinigus.git@gmail.com> 1.14.5-1
 - update translations
 - bugfix and small changes
