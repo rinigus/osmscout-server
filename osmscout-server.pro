@@ -328,5 +328,6 @@ scout_qtcontrols: RESOURCES += qml_qtcontrols.qrc
 # misc options
 scout_silica {
     SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
+    LIBS += -L/opt/gcc6/lib -static-libstdc++
 }
 

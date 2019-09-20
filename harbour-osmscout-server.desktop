@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-X-Nemo-Application-Type=silica-qt5
+X-Nemo-Application-Type=no-invoker
 Icon=harbour-osmscout-server
 Exec=harbour-osmscout-server
 Name=OSM Scout Server

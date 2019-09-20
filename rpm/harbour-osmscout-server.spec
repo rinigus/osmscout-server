@@ -54,6 +54,7 @@ BuildRequires:  boost-iostreams >= 1.51
 BuildRequires:  boost-regex >= 1.51
 BuildRequires:  boost-system >= 1.51
 BuildRequires:  lz4-devel
+BuildRequires:  opt-gcc6
 BuildRequires:  desktop-file-utils
 
 %description
@@ -71,7 +72,7 @@ Server providing map tiles, search, and routing
 # << build pre
 
 %qtc_qmake5  \
-    VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
+    VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica' CXX=/opt/gcc6/bin/g++ CC=/opt/gcc6/bin/gcc LINK=/opt/gcc6/bin/g++
 
 %qtc_make %{?_smp_mflags}
 
