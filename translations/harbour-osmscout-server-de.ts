@@ -16,12 +16,12 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="42"/>
         <source>Artwork</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafik-Design</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbole von %1.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
@@ -328,7 +328,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Akzeptieren</translation>
     </message>
 </context>
 <context>
@@ -638,7 +638,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Über OSM Scout Server</translation>
     </message>
 </context>
 <context>
@@ -646,7 +646,7 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Über OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
@@ -1630,7 +1630,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Akzeptieren</translation>
     </message>
 </context>
 <context>
@@ -1638,7 +1638,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Akzeptieren</translation>
     </message>
 </context>
 <context>
@@ -2128,24 +2128,24 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
     <message>
         <location filename="../qml/SettingsPage.qml" line="171"/>
         <source>Rendering backend is responsible for drawing the maps on raster tiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Rendern des Backends ist für das Zeichnen der Karten auf Rasterkacheln verantwortlich.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="177"/>
         <source>Renderer</source>
-        <translation type="unfinished"></translation>
+        <translation>Renderer</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="179"/>
         <source>Mapnik (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik (Standard)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="180"/>
         <location filename="../qml/SettingsPage.qml" line="206"/>
         <location filename="../qml/SettingsPage.qml" line="238"/>
         <source>libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="196"/>
@@ -2155,22 +2155,22 @@ oder einer Bereinigung. Bitte erstelle einen  &lt;b&gt;eigenen, leeren Ordner&lt
     <message>
         <location filename="../qml/SettingsPage.qml" line="205"/>
         <source>Geocoder-NLP (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP (Standard)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="218"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>NB! Wenn Du Geocoder-NLP auswählst, gebe in den folgenden Backend-Einstellungen die Sprachen an, die für die Adressanalyse verwendet werden sollen. Andernfalls könnte der Server viel RAM verbrauchen.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="229"/>
         <source>Routing engine is responsible for calculating routes between origin and destination.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Routingmodul ist für die Berechnung der Routen zwischen Start und Ziel verantwortlich.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="237"/>
         <source>Valhalla (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla (Standard)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="266"/>
@@ -2329,23 +2329,23 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Bitte installiere die fehlenden Module. Starte nach der Installation der Module den OSM Scout Server neu.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn der Speicherordner ausgewählt und verfügbar ist, sollten im nächsten Schritt einige Karten abgerufen werden. Dazu kannst Du mit dem Map Manager Karten auswählen und herunterladen (siehe Menü).</translation>
     </message>
 </context>
 <context>
     <name>SystemDService</name>
     <message>
-        <location filename="../src/systemdservice.cpp" line="98"/>
+        <location filename="../src/systemdservice.cpp" line="100"/>
         <source>Cannot create or change to directory: %1</source>
         <translation>Kann Verzeichnis nicht erstellen oder zu ihm wechseln: %1</translation>
     </message>
     <message>
-        <location filename="../src/systemdservice.cpp" line="108"/>
+        <location filename="../src/systemdservice.cpp" line="110"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
         <translation>Konnte OSM Scout Server nicht in Pfadvariable finden</translation>
     </message>
@@ -2512,68 +2512,68 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="160"/>
+        <location filename="../src/main.cpp" line="164"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="165"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Starte den Server ohne Oberfläche als Applikation in der Konsole</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Kein Ausgabe Logs wenn der Server im Konsolenmodus läuft</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="174"/>
+        <location filename="../src/main.cpp" line="178"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Führen den Server im SystemD-Socket-aktivierten Modus aus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="180"/>
+        <location filename="../src/main.cpp" line="184"/>
         <source>Start download of the maps</source>
         <translation>Starte die Übertragung der Karten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="184"/>
+        <location filename="../src/main.cpp" line="188"/>
         <source>Update list of available maps</source>
         <translation>Aktualisiere die Liste der vorhandenen Karten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="188"/>
+        <location filename="../src/main.cpp" line="192"/>
         <source>List maps available on device</source>
         <translation>Karten auf dem Gerät auflisten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="192"/>
+        <location filename="../src/main.cpp" line="196"/>
         <source>List subscribed maps</source>
         <translation>Zeige abonnierte Karten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="196"/>
+        <location filename="../src/main.cpp" line="200"/>
         <source>List maps provided for download</source>
         <translation>Zeige Karten, die zum Herunterladen zur Verfügung stehen</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="200"/>
+        <location filename="../src/main.cpp" line="204"/>
         <source>List missing maps</source>
         <translation>Zeige fehlende Karten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="204"/>
+        <location filename="../src/main.cpp" line="208"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Abonnieren des &lt;country&gt; Datensatzes</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="205"/>
-        <location filename="../src/main.cpp" line="210"/>
+        <location filename="../src/main.cpp" line="209"/>
+        <location filename="../src/main.cpp" line="214"/>
         <source>country-id</source>
         <translation>country-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="209"/>
+        <location filename="../src/main.cpp" line="213"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Datensatz für &lt;country&gt; abbestellen </translation>
     </message>
@@ -2583,7 +2583,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisierung</translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>

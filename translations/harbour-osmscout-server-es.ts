@@ -2336,12 +2336,12 @@
 <context>
     <name>SystemDService</name>
     <message>
-        <location filename="../src/systemdservice.cpp" line="98"/>
+        <location filename="../src/systemdservice.cpp" line="100"/>
         <source>Cannot create or change to directory: %1</source>
         <translation>No es posible crear o cambiar al directorio: %1</translation>
     </message>
     <message>
-        <location filename="../src/systemdservice.cpp" line="108"/>
+        <location filename="../src/systemdservice.cpp" line="110"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
         <translation>No es posible encontrar OSM Scout Server en la ruta</translation>
     </message>
@@ -2508,68 +2508,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="160"/>
+        <location filename="../src/main.cpp" line="164"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="165"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Ejecutar el servidor sin GUI como una aplicación de consola</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>Do not output logs when running in console mode</source>
         <translation>No generar registros cuando se está ejecutándo en modo consola</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="174"/>
+        <location filename="../src/main.cpp" line="178"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Ejecutar el servidor en modo SystemD socket-activado</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="180"/>
+        <location filename="../src/main.cpp" line="184"/>
         <source>Start download of the maps</source>
         <translation>Iniciar la descarga de mapas</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="184"/>
+        <location filename="../src/main.cpp" line="188"/>
         <source>Update list of available maps</source>
         <translation>Actualizar lista de mapas disponibles</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="188"/>
+        <location filename="../src/main.cpp" line="192"/>
         <source>List maps available on device</source>
         <translation>Lista de mapas disponibles en el dispositivo</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="192"/>
+        <location filename="../src/main.cpp" line="196"/>
         <source>List subscribed maps</source>
         <translation>Lista de mapas suscritos</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="196"/>
+        <location filename="../src/main.cpp" line="200"/>
         <source>List maps provided for download</source>
         <translation>Lista de mapas provistos para descargar</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="200"/>
+        <location filename="../src/main.cpp" line="204"/>
         <source>List missing maps</source>
         <translation>Lista de mapas que faltan</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="204"/>
+        <location filename="../src/main.cpp" line="208"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Suscribirse al conjunto de datos de &lt;country&gt;</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="205"/>
-        <location filename="../src/main.cpp" line="210"/>
+        <location filename="../src/main.cpp" line="209"/>
+        <location filename="../src/main.cpp" line="214"/>
         <source>country-id</source>
         <translation>id-pais</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="209"/>
+        <location filename="../src/main.cpp" line="213"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Anular suscripción del conjunto de datos de &lt;counrty&gt;</translation>
     </message>

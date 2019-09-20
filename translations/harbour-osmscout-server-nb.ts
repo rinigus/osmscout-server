@@ -16,12 +16,12 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="42"/>
         <source>Artwork</source>
-        <translation type="unfinished"></translation>
+        <translation>Grafikk</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikoner ved %1.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="70"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation type="unfinished"></translation>
+        <translation>Storbritannias postnumre lastet ned fra FreeMapTools. Disse dataene inneholder: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail-data © Royal Mail copyright og database right 2017; Nasjonale statistics data © Crown copyright and database right 2017.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="77"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="79"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Vær oppmerksom på at &lt;i&gt; libpostal &lt;/ i&gt; er utviklet for å brukes sammen med den finjustert modellen som dekker hele verden. De landbaserte modellene ble utviklet for å bruke &lt;i&gt; libpostal &lt;/ i&gt; på mobile enheter og har ikke blitt spesielt optimalisert. Vennligst send problemene med libpostal ytelse på landsbaserte modeller til &lt;i&gt; OSM Scout Server &lt;/i&gt; eller &lt;i&gt; geocoder-nlp &lt;/i&gt; GitHub prosjekter.</translation>
+        <translation>Vær oppmerksom på at &lt;i&gt;libpostal&lt;/i&gt; er utviklet for å brukes sammen med den finjustert modellen som dekker hele verden. De landbaserte modellene ble utviklet for å bruke &lt;i&gt;libpostal&lt;/i&gt; på mobile enheter og har ikke blitt spesielt optimalisert. Vennligst send problemene med libpostal ytelse på landsbaserte modeller til &lt;i&gt;OSM Scout Server&lt;/i&gt; eller &lt;i&gt;geocoder-nlp&lt;/i&gt; GitHub prosjekter.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="86"/>
@@ -76,7 +76,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="36"/>
         <source>License: GPLv3</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisens: GPLv3</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>
@@ -328,7 +328,7 @@
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Godta</translation>
     </message>
 </context>
 <context>
@@ -415,7 +415,7 @@
     <message>
         <location filename="../qml/ElementSelector.qml" line="122"/>
         <source>&lt;Not selected&gt;</source>
-        <translation>&lt;Ikke valgt&gt;</translation>
+        <translation>&lt;Not selected&gt;</translation>
     </message>
 </context>
 <context>
@@ -506,7 +506,7 @@
     <message>
         <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
-        <translation type="unfinished"></translation>
+        <translation>noen</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
@@ -571,32 +571,32 @@
     <message>
         <location filename="../qml/GeocoderPage.qml" line="59"/>
         <source>Use libpostal parser</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk libpostal parser</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="60"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette er hoved adresse-oparseren til geokoderen. Det anbefales å aktivere &lt;i&gt; libpostal &lt;/i&gt; parser, med mindre maskinvaren ikke tillater å bruke den og begrensningene til primitiv parser er tatt i betraktning. Merk at minst en parser må spesifiseres.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="68"/>
         <source>Use primitive parser</source>
-        <translation>Bruk primitiv oppdeling</translation>
+        <translation>Bruk primitiv parser</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="69"/>
         <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
-        <translation>I tillegg til &lt;i&gt; libpostal &lt;/ i&gt;, primitive oppdeling lar deg administrative hierarki av det søkte objektet ved å skille komponenter med komma. Noen ganger, når libpostal ikke klarer å analysere forespørselen på riktig måte, dette søket lar deg overvinne problemet &lt;br&gt; Eksempel:. husnummer, gate, by.</translation>
+        <translation>I tillegg til &lt;i&gt; libpostal &lt;/i&gt; lar primitive parser deg angi administrativt hierarki av et søkt objektet ved å skille komponenter med komma. Noen ganger, når libpostal ikke klarer å analysere forespørselen riktig, lar denne parseren deg overvinne problemet &lt;br&gt; Eksempel:. husnummer, gate, by.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="78"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
-        <translation>Last &lt;i&gt; libpostal &lt;/ i&gt; ved hvert kall</translation>
+        <translation>Last &lt;i&gt; libpostal&lt;/i&gt; ved hvert kall</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="79"/>
         <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation>Når dette er valgt, &lt;i&gt; libpostal &lt;/ i&gt; databaser vil bli lastet til minnet bare ved analyse av forespørselen. Som et resultat, mens søk vil ta lengre tid, vil minnetbruken av libpostal være lite ved tomgang.</translation>
+        <translation>Når dette er valgt, &lt;i&gt; libpostal&lt;/i&gt; databaser vil bli lastet til minnet bare ved analyse av forespørselen. Som et resultat, mens søk vil ta lengre tid, vil minnetbruken av libpostal være lite ved tomgang.</translation>
     </message>
 </context>
 <context>
@@ -637,7 +637,7 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Om OSM Scout Server</translation>
     </message>
 </context>
 <context>
@@ -645,7 +645,7 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Om OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
@@ -760,7 +760,7 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="367"/>
         <source>No maps loaded: %1</source>
-        <translation>Ingen kart lastet:%1</translation>
+        <translation>Ingen kart lastet: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="842"/>
@@ -1180,17 +1180,17 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke åpne Mapbox GL-database: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke kjøre spørring mot Mapbox GL-database: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke kjøre spørring mot Mapbox GL-fontdatabase: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -1225,12 +1225,12 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="309"/>
         <source>Error opening Mapbox GL sprite image</source>
-        <translation>Feil ved åpning av Mapbox GL sprite image</translation>
+        <translation>Feil ved åpning av Mapbox GL sprite bilde</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="316"/>
         <source>Error reading Mapbox GL sprite image</source>
-        <translation>Feil ved lesing av Mapbox GL sprite image</translation>
+        <translation>Feil ved lesing av Mapbox GL sprite bilde</translation>
     </message>
 </context>
 <context>
@@ -1377,7 +1377,7 @@
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="33"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
-        <translation>OSM Scout bibliotek (&lt;i&gt; libosmscout &lt;/ i&gt;) kan brukes til å tegne kart, søk og ruting</translation>
+        <translation>OSM Scout bibliotek (&lt;i&gt;libosmscout&lt;/i&gt;) kan brukes til å tegne kart, søk og ruting</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="37"/>
@@ -1628,7 +1628,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Godta</translation>
     </message>
 </context>
 <context>
@@ -1636,7 +1636,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Godta</translation>
     </message>
 </context>
 <context>
@@ -1703,7 +1703,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Laster inn postede data for forespørsel %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
@@ -1734,7 +1734,7 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="967"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruting og andre Valhalla&apos;s tjenester er ikke tilgjengelige siden Valhalla er deaktivert av valgt profil eller innstillinger. %1</translation>
     </message>
 </context>
 <context>
@@ -1993,7 +1993,7 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="63"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
-        <translation>Mappen for lagring av kart. &lt;br&gt; &lt;B&gt; NB! &lt;/ B&gt; Denne mappen vil bli fullstendig styrt av OSM Scout Server. Vennligst &lt;b&gt; tildel en separat, tom mappe &lt;/ b&gt; som OSM Scout Server kan bruke. Dette inkluderer å slette alle filene i den mappen når du ber om det under opprydding eller kartoppdateringer &lt;br&gt; &lt;i&gt; Eksempel:. &lt;/ I&gt; Maps under &lt;i&gt; ~ nemo &lt;/ i&gt;</translation>
+        <translation>Mappen for lagring av kart. &lt;br&gt; &lt;b&gt;NB!&lt;/b&gt; Denne mappen vil bli fullstendig styrt av OSM Scout Server. Vennligst &lt;b&gt; tildel en separat, tom mappe&lt;/b&gt; som OSM Scout Server kan bruke. Dette inkluderer å slette alle filene i den mappen når du ber om det under opprydding eller kartoppdateringer.&lt;br&gt; &lt;i&gt;Eksempel:&lt;/i&gt; Kart under &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="79"/>
@@ -2105,7 +2105,7 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="289"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
-        <translation>Valg av språk som brukes for tolkning av adressen og andre innstillinger for &lt;i&gt; geocoder-nlp &lt;/ i&gt; server</translation>
+        <translation>Valg av språk som brukes for tolkning av adressen og andre innstillinger for &lt;i&gt;geocoder-nlp&lt;/i&gt; server</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="260"/>
@@ -2125,24 +2125,24 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="171"/>
         <source>Rendering backend is responsible for drawing the maps on raster tiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjenngivelse bakgunnsprosessen er ansvarlig for å tegne kartene på raster fliser.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="177"/>
         <source>Renderer</source>
-        <translation type="unfinished"></translation>
+        <translation>Renderer</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="179"/>
         <source>Mapnik (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik (standard)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="180"/>
         <location filename="../qml/SettingsPage.qml" line="206"/>
         <location filename="../qml/SettingsPage.qml" line="238"/>
         <source>libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="196"/>
@@ -2152,27 +2152,27 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="205"/>
         <source>Geocoder-NLP (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP (standard)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="218"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>NB! Hvis du velger &lt;i&gt;Geocoder-NLP&lt;/i&gt;, vennligst spesifiser språk som skal brukes for adresseoppdeling i backend-innstillingene nedenfor. Ellers kan serveren bruke store mengder RAM.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="229"/>
         <source>Routing engine is responsible for calculating routes between origin and destination.</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutemotor er ansvarlig for å beregne ruter mellom opprinnelse og destinasjon.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="237"/>
         <source>Valhalla (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla (standard)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="266"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation>Innstillinger av kart gjengivelse for &lt;i&gt;mapnik&lt;/i&gt; backend</translation>
+        <translation>Innstillinger av kart gjengivelse for &lt;i&gt;mapnik&lt;/i&gt; bakrunnsprosess</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="335"/>
@@ -2263,12 +2263,12 @@
     <message>
         <location filename="../qml/StartPage.qml" line="136"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation>&lt;I&gt; OSM Scout Server &lt;/ i&gt; er forventet å brukes sammen med de nedlastede kart. For å administrere kart, krever Serveren en egen mappe. Filene i den mappen skal forvaltes av bare Serveren. Dette inkluderer å slette alle filene i mappen når du ber om det under opprydding eller kartoppdateringer . &lt;br&gt; Vennligst &lt;b&gt; klargjør en separat, tom mappe &lt;/ b&gt; for OSM Scout Server. For det, opprette en ny mappe i en filbehandler eller ved hjelp av kommandolinjen , og velg deretter mappen i &lt;i&gt; Innstillinger &lt;/ i&gt; (nedtreksmenyen). &lt;br&gt; Alternativt katalogen kan opprettes og konfigureres automatisk i &lt;br&gt;%1 &lt;br&gt; ved å trykke på knappen under</translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; er forventet å brukes sammen med de nedlastede kart. For å administrere kart, krever Serveren en egen mappe. Filene i den mappen skal forvaltes av bare Serveren. Dette inkluderer å slette alle filene i mappen når du ber om det under opprydding eller kartoppdateringer . &lt;br&gt;&lt;br&gt;Vennligst &lt;b&gt; klargjør en separat, tom mappe &lt;/b&gt; for OSM Scout Server. For det, opprette en ny mappe i en filbehandler eller ved hjelp av kommandolinjen , og velg deretter mappen i &lt;i&gt;Innstillinger&lt;/i&gt; (nedtrekksmenyen). &lt;br&gt;&lt;br&gt;Alternativt katalogen kan opprettes og konfigureres automatisk i &lt;br&gt;%1 &lt;br&gt; ved å trykke på knappen under</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="195"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation>Det er ingen kart tilgjengelig ennå. Etter å ha abonnert på dem, må du starte nedlastinger. Nedlastinger kan startes ved hjelp av &lt;i&gt; Kart Behandler &lt;/ i&gt; (nedtrekksmenyen).</translation>
+        <translation>Det er ingen kart tilgjengelig ennå. Etter å ha abonnert på dem, må du starte nedlastinger. Nedlastinger kan startes ved hjelp av &lt;i&gt;Kart Behandler&lt;/i&gt; (nedtrekksmenyen).</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="242"/>
@@ -2325,23 +2325,23 @@
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Vennligst installer manglende moduler. Etter installering av modulen (e) må du starte OSM Scout Server på nytt.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Når lagringsmappen er valgt og tilgjengelig, er neste trinn å få noen kart. For det kan du velge og laste ned kart ved hjelp av &lt;i&gt;Kart behandler&lt;/i&gt; (se meny).</translation>
     </message>
 </context>
 <context>
     <name>SystemDService</name>
     <message>
-        <location filename="../src/systemdservice.cpp" line="98"/>
+        <location filename="../src/systemdservice.cpp" line="100"/>
         <source>Cannot create or change to directory: %1</source>
         <translation>Kan ikke opprette eller bytte til katalog: %1</translation>
     </message>
     <message>
-        <location filename="../src/systemdservice.cpp" line="108"/>
+        <location filename="../src/systemdservice.cpp" line="110"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
         <translation>Kan ikke finne OSM Scout Server i PATH</translation>
     </message>
@@ -2408,12 +2408,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kart samsvaring forespurt: modus=%1</translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Kart samsvarings modus %1 støttes ikke</translation>
     </message>
 </context>
 <context>
@@ -2421,7 +2421,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukking av samsvarstjenesten for DBus-klient %1</translation>
     </message>
 </context>
 <context>
@@ -2439,12 +2439,12 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke laste Valhalla konfigurasjonen: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Unntaks feil i Valhalla: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
@@ -2508,68 +2508,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="160"/>
+        <location filename="../src/main.cpp" line="164"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="165"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Kjør serveren uten brukergrensesnitt som et konsollprogram</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Ikke skriv ut logger når du kjører i konsollmodus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="174"/>
+        <location filename="../src/main.cpp" line="178"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Kjør serveren i SystemD socket-aktivert modus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="180"/>
+        <location filename="../src/main.cpp" line="184"/>
         <source>Start download of the maps</source>
         <translation>Start nedlasting av kartene</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="184"/>
+        <location filename="../src/main.cpp" line="188"/>
         <source>Update list of available maps</source>
         <translation>Oppdater liste over tilgjengelige kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="188"/>
+        <location filename="../src/main.cpp" line="192"/>
         <source>List maps available on device</source>
         <translation>List kart som er tilgjengelig på enheten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="192"/>
+        <location filename="../src/main.cpp" line="196"/>
         <source>List subscribed maps</source>
         <translation>List abbonerte kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="196"/>
+        <location filename="../src/main.cpp" line="200"/>
         <source>List maps provided for download</source>
         <translation>List kart som er klare for nedlasting</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="200"/>
+        <location filename="../src/main.cpp" line="204"/>
         <source>List missing maps</source>
         <translation>Liste manglende kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="204"/>
+        <location filename="../src/main.cpp" line="208"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Abboner på &lt;country&gt; datasett</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="205"/>
-        <location filename="../src/main.cpp" line="210"/>
+        <location filename="../src/main.cpp" line="209"/>
+        <location filename="../src/main.cpp" line="214"/>
         <source>country-id</source>
         <translation>land-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="209"/>
+        <location filename="../src/main.cpp" line="213"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Avslutt abbonent på &lt;country&gt; datasett</translation>
     </message>
@@ -2579,7 +2579,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisering</translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>

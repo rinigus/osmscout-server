@@ -2336,12 +2336,12 @@
 <context>
     <name>SystemDService</name>
     <message>
-        <location filename="../src/systemdservice.cpp" line="98"/>
+        <location filename="../src/systemdservice.cpp" line="100"/>
         <source>Cannot create or change to directory: %1</source>
         <translation>Ei voitu luoda tai muuttaa hakemistoa: %1</translation>
     </message>
     <message>
-        <location filename="../src/systemdservice.cpp" line="108"/>
+        <location filename="../src/systemdservice.cpp" line="110"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
         <translation>Ei löydetty OSM Scout Serveriä PATH:sta</translation>
     </message>
@@ -2508,68 +2508,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="160"/>
+        <location filename="../src/main.cpp" line="164"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="165"/>
+        <location filename="../src/main.cpp" line="169"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Aja palvelin ilman käyttöliittymää konsoliohjelmana.</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="173"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Älä tulosta lokeja ajetaessa konsolitilassa.</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="174"/>
+        <location filename="../src/main.cpp" line="178"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Aja palvelin SystemD socket-aktivoidussa tilassa</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="180"/>
+        <location filename="../src/main.cpp" line="184"/>
         <source>Start download of the maps</source>
         <translation>Aloitta karttojen lataus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="184"/>
+        <location filename="../src/main.cpp" line="188"/>
         <source>Update list of available maps</source>
         <translation>Päivitä saatavilla olevien karttojen lista</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="188"/>
+        <location filename="../src/main.cpp" line="192"/>
         <source>List maps available on device</source>
         <translation>Listaa laitteessa olevat kartat</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="192"/>
+        <location filename="../src/main.cpp" line="196"/>
         <source>List subscribed maps</source>
         <translation>Listaa tilatut kartat</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="196"/>
+        <location filename="../src/main.cpp" line="200"/>
         <source>List maps provided for download</source>
         <translation>Listaa ladattavissa olevat kartat</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="200"/>
+        <location filename="../src/main.cpp" line="204"/>
         <source>List missing maps</source>
         <translation>Listaa puuttuvat kartat</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="204"/>
+        <location filename="../src/main.cpp" line="208"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Tilaa &lt;country&gt; datasetti</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="205"/>
-        <location filename="../src/main.cpp" line="210"/>
+        <location filename="../src/main.cpp" line="209"/>
+        <location filename="../src/main.cpp" line="214"/>
         <source>country-id</source>
         <translation>maa-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="209"/>
+        <location filename="../src/main.cpp" line="213"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Peruuta &lt;country&gt; datasetin tilaus</translation>
     </message>
