@@ -39,6 +39,18 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.15.0" date="2019-09-22">
+     <description>
+       <ul>
+         <li>Update Valhalla to 3.0.x</li>
+         <li>Support for DBus activation</li>
+         <li>Add root DBus API</li>
+         <li>Specify full path in systemd service invocation</li>
+         <li>Update translations</li>
+         <li>Bugfixes</li>
+       </ul>
+     </description>
+   </release>
    <release version="1.14.5" date="2019-05-22">
      <description>
        <ul>

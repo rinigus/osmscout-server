@@ -9,7 +9,7 @@
 - update Valhalla to 3.0.x
 - support for DBus activation
 - add root DBus API
-- specuify full path in systemd service invocation
+- specify full path in systemd service invocation
 - update translations
 - bugfixes
 - [silica] use gcc6 for Sailfish
