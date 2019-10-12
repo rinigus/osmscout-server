@@ -51,7 +51,9 @@ using namespace MapManager;
 
 Manager::Manager(QObject *parent) : QObject(parent)
 {
+#ifdef USE_OSMSCOUT
   m_features.append(new FeatureOsmScout(this));
+#endif
   m_features.append(new FeatureGeocoderNLP(this));
   m_features.append(new FeaturePostalGlobal(this));
   m_features.append(new FeaturePostalCountry(this));
@@ -59,10 +61,14 @@ Manager::Manager(QObject *parent) : QObject(parent)
   m_features.append(new FeatureMapboxGLGlyphs(this));
   m_features.append(new FeatureMapboxGLCountry(this));
   m_features.append(new FeatureMapnikGlobal(this));
+#ifdef USE_MAPNIK
   m_features.append(new FeatureMapnikCountry(this));
+#endif
 
   m_feature_valhalla = new FeatureValhalla(this);
+#ifdef USE_VALHALLA
   m_features.append(m_feature_valhalla);
+#endif
 
   for (Feature *p: m_features)
     if (p == nullptr)
