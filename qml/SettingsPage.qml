@@ -70,8 +70,9 @@ DialogPL {
         ///////////////////////////////////////
         /// systemd support
         Column {
-            width: parent.width
             spacing: styler.themePaddingMedium
+            visible: settings.hasBackendSystemD
+            width: parent.width
 
             TextSwitchPL {
                 id: systemdEnable
@@ -164,11 +165,13 @@ DialogPL {
 
             SectionHeaderPL {
                 text: qsTr("Rendering")
+                visible: cbMapnik.visible
             }
 
             ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Rendering backend is responsible for drawing the maps on raster tiles.")
+                visible: cbMapnik.visible
             }
 
             ComboBoxPL {
@@ -179,6 +182,7 @@ DialogPL {
                     qsTr("Mapnik (default)"),
                     qsTr("libosmscout")
                 ]
+                visible: settings.hasBackendMapnik && settings.hasBackendOsmScout
                 Component.onCompleted: {
                     if (settings.valueInt(settingsMapnikPrefix + "use_mapnik") > 0)
                         currentIndex = 0;
@@ -189,12 +193,14 @@ DialogPL {
 
             SectionHeaderPL {
                 text: qsTr("Geocoder")
+                visible: cbGeocoder.visible
             }
 
             ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Geocoder is responsible for resolving search requests. " +
                            "For that, it parses the search string and finds the corresponding objects on a map.")
+                visible: cbGeocoder.visible
             }
 
             ComboBoxPL {
@@ -205,6 +211,7 @@ DialogPL {
                     qsTr("Geocoder-NLP (default)"),
                     qsTr("libosmscout")
                 ]
+                visible: settings.hasBackendOsmScout
                 Component.onCompleted: {
                     if (settings.valueInt(settingsGeomasterPrefix + "use_geocoder_nlp") > 0)
                         currentIndex = 0;
@@ -217,16 +224,18 @@ DialogPL {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("NB! If you select <i>Geocoder-NLP</i>, please specify languages that should be used for " +
                            "address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.")
-                visible: cbGeocoder.currentIndex === 0
+                visible: cbGeocoder.currentIndex === 0 && cbGeocoder.visible
             }
 
             SectionHeaderPL {
                 text: qsTr("Routing Engine")
+                visible: cbRouter.visible
             }
 
             ListItemLabel {
                 font.pixelSize: styler.themeFontSizeSmall
                 text: qsTr("Routing engine is responsible for calculating routes between origin and destination.")
+                visible: cbRouter.visible
             }
 
             ComboBoxPL {
@@ -237,6 +246,7 @@ DialogPL {
                     qsTr("Valhalla (default)"),
                     qsTr("libosmscout")
                 ]
+                visible: settings.hasBackendMapnik && settings.hasBackendOsmScout
                 Component.onCompleted: {
                     if (settings.valueInt(settingsValhallaPrefix + "use_valhalla") > 0)
                         currentIndex = 0;
@@ -253,6 +263,7 @@ DialogPL {
         Column {
             width: parent.width
             spacing: styler.themePaddingMedium
+            visible: settings.hasBackendMapnik
 
             ButtonPL {
                 anchors.horizontalCenter: parent.horizontalCenter
@@ -293,6 +304,7 @@ DialogPL {
         Column {
             width: parent.width
             spacing: styler.themePaddingMedium
+            visible: settings.hasBackendValhalla
 
             Rectangle {
                 color: "transparent"
@@ -316,6 +328,7 @@ DialogPL {
         Column {
             width: parent.width
             spacing: styler.themePaddingMedium
+            visible: settings.hasBackendOsmScout
 
             Rectangle {
                 width: parent.width
@@ -389,15 +402,20 @@ DialogPL {
         settings.setValue(settingsGeneralPrefix + "language", preferredLanguageSelection.currentIndex)
 
         eMapsRoot.apply()
-        settings.setValue(settingsMapnikPrefix + "use_mapnik", cbMapnik.currentIndex ? 0 : 1)
-        settings.setValue(settingsGeomasterPrefix + "use_geocoder_nlp", cbGeocoder.currentIndex ? 0 : 1)
-        settings.setValue(settingsValhallaPrefix + "use_valhalla", cbRouter.currentIndex ? 0 : 1)
+        if (cbMapnik.visible)
+            settings.setValue(settingsMapnikPrefix + "use_mapnik", cbMapnik.currentIndex ? 0 : 1)
+        if (cbGeocoder.visible)
+            settings.setValue(settingsGeomasterPrefix + "use_geocoder_nlp", cbGeocoder.currentIndex ? 0 : 1)
+        if (cbRouter.visible)
+            settings.setValue(settingsValhallaPrefix + "use_valhalla", cbRouter.currentIndex ? 0 : 1)
 
         /// units are changed the last
         settings.setValue(settingsGeneralPrefix + "units", unitsBox.currentIndex)
 
-        systemd_service.enabled = systemdEnable.checked
-        idleTimeout.apply()
+        if (settings.hasBackendSystemD) {
+            systemd_service.enabled = systemdEnable.checked
+            idleTimeout.apply()
+        }
     }
 
     function checkState() {
