@@ -41,6 +41,18 @@ class AppSettings : public QSettings
   /// \brief application version that was run before
   Q_PROPERTY(int lastRunVersion READ lastRunVersion)
 
+  /// \brief build configuration: whether mapnik backend is available
+  Q_PROPERTY(bool hasBackendMapnik READ hasBackendMapnik NOTIFY hasBackendMapnikChanged)
+
+  /// \brief build configuration: whether libosmscout backend is available
+  Q_PROPERTY(bool hasBackendOsmScout READ hasBackendOsmScout NOTIFY hasBackendOsmScoutChanged)
+
+  /// \brief build configuration: whether systemd support is available
+  Q_PROPERTY(bool hasBackendSystemD READ hasBackendSystemD NOTIFY hasBackendSystemDChanged)
+
+  /// \brief build configuration: whether valhalla backend is available
+  Q_PROPERTY(bool hasBackendValhalla READ hasBackendValhalla NOTIFY hasBackendValhallaChanged)
+
 public:
   AppSettings();
   virtual ~AppSettings() {}
@@ -75,10 +87,50 @@ public:
   /// language or a language code
   QString preferredLanguage();
 
+  /// State of the backends
+
+  bool hasBackendMapnik() const {
+#ifdef USE_MAPNIK
+    return true;
+#else
+    return false;
+#endif
+  }
+
+  bool hasBackendOsmScout() const {
+#ifdef USE_OSMSCOUT
+    return true;
+#else
+    return false;
+#endif
+  }
+
+  bool hasBackendSystemD() const {
+#ifdef USE_SYSTEMD
+    return true;
+#else
+    return false;
+#endif
+  }
+
+  bool hasBackendValhalla() const {
+#ifdef USE_VALHALLA
+    return true;
+#else
+    return false;
+#endif
+  }
+
 signals:
   void osmScoutSettingsChanged();
   void profilesUsedChanged(bool used);
   void countrySelectionNeededChanged(bool selection);
+
+  // never used, but makes QML happy
+  void hasBackendMapnikChanged(bool);
+  void hasBackendOsmScoutChanged(bool);
+  void hasBackendSystemDChanged(bool);
+  void hasBackendValhallaChanged(bool);
 
 public slots:
   void fireOsmScoutSettingsChanged();
