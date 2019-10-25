@@ -59,17 +59,26 @@ public:
 
   Q_INVOKABLE void setValue(const QString &key, const QVariant &value);
 
-  Q_INVOKABLE int valueInt(const QString &key);
-  Q_INVOKABLE bool valueBool(const QString &key);
-  Q_INVOKABLE double valueFloat(const QString &key);
-  Q_INVOKABLE QString valueString(const QString &key);
+  Q_INVOKABLE int valueInt(const QString &key) const;
+  Q_INVOKABLE bool valueBool(const QString &key) const;
+  Q_INVOKABLE double valueFloat(const QString &key) const;
+  Q_INVOKABLE QString valueString(const QString &key) const;
 
   Q_INVOKABLE int unitIndex() const; ///< Index of selected units
   Q_INVOKABLE int unitDisplayDecimals() const;
-  Q_INVOKABLE double unitFactor() const; /// multiply by this factor when displaying distance or speed to the user
+  Q_INVOKABLE double unitFactor() const; ///< multiply by this factor when displaying distance or speed to the user
 
   Q_INVOKABLE bool hasUnits(const QString &key) const;
   Q_INVOKABLE QString unitName(const QString &key) const;
+
+  // Profile management and GUI interaction
+  // As not all profiles are available in all configurations, these
+  // functions hide the complexity of profile selection by
+  //  - presenting only available profiles
+  //  - indexing profiles according to that list
+  Q_INVOKABLE QStringList availableProfiles() const; ///< Profile available in this application install
+  Q_INVOKABLE int currentProfile() const;            ///< Current profile index of a profile as in availableProfiles
+  Q_INVOKABLE void setCurrentProfile(int profile);   ///< Set current profile using the index of a profile as in availableProfiles
 
   void initDefaults(); ///< Initialize settings for configurable parameters on the first start
 
@@ -138,6 +147,8 @@ public slots:
 protected:
   QString unitName(bool speed) const;
 
+  QList<int> availableProfilesIndex() const;
+  int defaultProfile() const;
   void setProfile();
 
   void checkCountrySelectionNeeded();
@@ -148,6 +159,7 @@ protected:
   bool m_country_selection_needed = true;
   bool m_first_time = false;
   int m_last_run_version{0};
+  QList<int> m_available_profile_index;
 };
 
 #endif // APPSETTINGS_H

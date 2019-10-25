@@ -45,16 +45,10 @@ DialogPL {
             id: profileSelection
             enabled: manager.ready
             label: qsTr("Profile")
-            model: [
-                qsTr("Default"),
-                qsTr("Recommended for raster tiles maps"),
-                qsTr("Recommended for vector and raster tiles maps"),
-                qsTr("<i>libosmscout</i> with <i>Geocoder-NLP</i>"),
-                qsTr("<i>libosmscout</i>"),
-                qsTr("Custom")
-            ]
-
-            Component.onCompleted: currentIndex = settings.valueInt(settingsGeneralPrefix + "profile")
+            model: settings.availableProfiles()
+            Component.onCompleted: {
+                currentIndex = settings.currentProfile();
+            }
         }
 
         ListItemLabel {
@@ -92,10 +86,15 @@ DialogPL {
                        "the user is responsible for adjusting the settings to make them consistent between requirements of " +
                        "the used backends and storage." )
         }
+
+        ListItemLabel {
+            font.pixelSize: styler.themeFontSizeMedium
+            text: qsTr("Please note that some profiles maybe missing due to the packaging of OSM Scout Server.")
+        }
     }
 
     onAccepted: {
         if (manager.ready)
-            settings.setValue(settingsGeneralPrefix + "profile", profileSelection.currentIndex)
+            settings.setCurrentProfile(profileSelection.currentIndex)
     }
 }

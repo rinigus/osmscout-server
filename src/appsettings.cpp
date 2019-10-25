@@ -1,18 +1,18 @@
 /*
  * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
- * 
+ *
  * This file is part of OSM Scout Server.
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
@@ -35,10 +35,11 @@
 AppSettings::AppSettings():
   QSettings()
 {
+  m_available_profile_index = availableProfilesIndex();
 }
 
-#define CHECK(s, d) if (!contains(s)) QSettings::setValue(s, d);
-#define CHECKF(s, d) if (!contains(s)) QSettings::setValue(s, (double)d);
+#define CHECK(s, d) if (!contains(s)) QSettings::setValue(s, d)
+#define CHECKF(s, d) if (!contains(s)) QSettings::setValue(s, (double)d)
 void AppSettings::initDefaults()
 {
   // defaults for server
@@ -49,7 +50,7 @@ void AppSettings::initDefaults()
   /// general settings
 
   CHECK(GENERAL_SETTINGS "units", 0);
-  CHECK(GENERAL_SETTINGS "profile", 0);
+  CHECK(GENERAL_SETTINGS "profile", defaultProfile());
   CHECK(GENERAL_SETTINGS "language", 0);
 
   CHECK(GENERAL_SETTINGS "rollingLoggerSize", 10);
@@ -88,7 +89,7 @@ void AppSettings::initDefaults()
   /// defaults for libosmscout
 
   /// used internally by MapManager to set the path - will be modified when support
-  /// for multi-map handling is be ready
+  /// for multi-map handling will be ready
   CHECK(OSM_SETTINGS "map", "");
 
   CHECK(OSM_SETTINGS "style", DATA_PREFIX "styles/osmscout/stylesheets/standard.oss");
@@ -135,7 +136,10 @@ void AppSettings::initDefaults()
       setValue(OSM_SETTINGS "icons", icons);
     }
 
-  CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 0);
+  /////////////////////////////////////////
+  /// geocoder-nlp settings
+
+  CHECK(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
   CHECK(GEOMASTER_SETTINGS "initialize_every_call", 0);
   CHECK(GEOMASTER_SETTINGS "use_postal", 1);
   CHECK(GEOMASTER_SETTINGS "use_primitive", 1);
@@ -200,21 +204,48 @@ void AppSettings::initDefaults()
 
   /// location of styles changed in version 3
   if (m_last_run_version < 3)
-  {
+    {
       setValue(OSM_SETTINGS "style", DATA_PREFIX "styles/osmscout/stylesheets/standard.oss");
       setValue(OSM_SETTINGS "icons", DATA_PREFIX "styles/osmscout/icons/28x28/standard");
       setValue(MAPNIKMASTER_SETTINGS "styles_dir", DATA_PREFIX "styles/mapnik");
-  }
+    }
 
   /// profiles changed from version 2 to version 4
   if (m_last_run_version < 4)
-  {
+    {
       int old_profile = valueInt(GENERAL_SETTINGS "profile");
       int new_profile = old_profile;
       if (old_profile == 0) new_profile = 1;
       else if (old_profile == 1) new_profile = 0;
       setValue(GENERAL_SETTINGS "profile", new_profile);
-  }
+    }
+
+  ///////////////////////////////////////////
+  /// check and update settings in accordance
+  /// with the available backends
+
+  if (!m_available_profile_index.contains(valueInt(GENERAL_SETTINGS "profile")))
+      setValue(GENERAL_SETTINGS "profile", defaultProfile());
+
+  if (!hasBackendOsmScout())
+    {
+      setValue(MAPMANAGER_SETTINGS "osmscout", 0);
+      setValue(GEOMASTER_SETTINGS "use_geocoder_nlp", 1);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
+    }
+
+  if (!hasBackendMapnik() && hasBackendOsmScout())
+    {
+      setValue(MAPMANAGER_SETTINGS "mapnik", 0);
+      setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
+    }
+
+  if (!hasBackendValhalla() && hasBackendOsmScout())
+    {
+      setValue(MAPMANAGER_SETTINGS "valhalla", 0);
+      setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
+    }
 
   /// set profile if specified (after all version checks)
   setProfile();
@@ -264,22 +295,22 @@ void AppSettings::fireOsmScoutSettingsChanged()
 }
 
 
-int AppSettings::valueInt(const QString &key)
+int AppSettings::valueInt(const QString &key) const
 {
   return value(key, 0).toInt();
 }
 
-bool AppSettings::valueBool(const QString &key)
+bool AppSettings::valueBool(const QString &key) const
 {
   return (value(key, 0).toInt() > 0);
 }
 
-double AppSettings::valueFloat(const QString &key)
+double AppSettings::valueFloat(const QString &key) const
 {
-  return value(key, 0).toFloat();
+  return value(key, 0).toDouble();
 }
 
-QString AppSettings::valueString(const QString &key)
+QString AppSettings::valueString(const QString &key) const
 {
   return value(key, QString()).toString();
 }
@@ -341,16 +372,69 @@ double AppSettings::unitFactor() const
 }
 
 ///////////////////////////////////////////////////////
-/// NB! Profiles have to be in sync here with the
-/// QML Profile page
+/// NB! Profiles have to be set using either local
+/// indexes (exposed methods) or internally via
+/// configuration settings (protected methods)
 ///////////////////////////////////////////////////////
+
+QStringList AppSettings::availableProfiles() const
+{
+  // compose list of locally available profile descriptions
+  QStringList l;
+  const QList<int> &prof = m_available_profile_index;
+  if (prof.contains(0)) l << tr("Default");
+  if (prof.contains(1)) l << tr("Recommended for raster tiles maps");
+  if (prof.contains(2)) l << tr("Recommended for vector and raster tiles maps");
+  if (prof.contains(3)) l << tr("<i>libosmscout</i> with <i>Geocoder-NLP</i>");
+  if (prof.contains(4)) l << tr("<i>libosmscout</i>");
+  if (prof.contains(5)) l << tr("Custom");
+  return l;
+}
+
+int AppSettings::currentProfile() const
+{
+  const QList<int> &prof = m_available_profile_index;
+  int index = valueInt(GENERAL_SETTINGS "profile");
+  return prof.indexOf(index);
+}
+
+void AppSettings::setCurrentProfile(int profile)
+{
+  if (profile > 0 && profile < m_available_profile_index.size())
+    setValue(GENERAL_SETTINGS "profile", m_available_profile_index[profile]);
+}
+
+QList<int> AppSettings::availableProfilesIndex() const
+{
+  // uses universal profile indexes
+  QList<int> prof;
+  if (hasBackendValhalla()) prof.append(0);
+  if (hasBackendMapnik() && hasBackendValhalla()) prof.append(1);
+  if (hasBackendMapnik() && hasBackendValhalla()) prof.append(2);
+  if (hasBackendOsmScout()) prof.append(3);
+  if (hasBackendOsmScout()) prof.append(4);
+  prof.append(5);
+
+  return prof;
+}
+
+int AppSettings::defaultProfile() const
+{
+  // uses universal profile indexes
+  const QList<int> &prof = m_available_profile_index;
+  if (prof.contains(0)) return 0;
+  if (prof.contains(1)) return 1;
+  return 5; // custom
+}
 
 void AppSettings::setProfile()
 {
+  // uses universal profile indexes
   int index = valueInt(GENERAL_SETTINGS "profile");
   bool profile_active = true;
+  const QList<int> &prof = m_available_profile_index;
 
-  if (index == 0) // default profile: Mapbox GL / GeocoderNLP / Valhalla
+  if (index == 0 && prof.contains(0)) // default profile: Mapbox GL / GeocoderNLP / Valhalla.
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 0);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
@@ -363,7 +447,7 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
     }
-  else if (index == 1) // Mapnik / GeocoderNLP / Valhalla
+  else if (index == 1 && prof.contains(1)) // Mapnik / GeocoderNLP / Valhalla
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 0);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
@@ -376,7 +460,7 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
     }
-  else if (index == 2) // Mapbox GL + Mapnik / GeocoderNLP / Valhalla
+  else if (index == 2 && prof.contains(2)) // Mapbox GL + Mapnik / GeocoderNLP / Valhalla
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 0);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
@@ -389,7 +473,7 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 1);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 1);
     }
-  else if (index == 3) // libosmscout + geocoder-nlp
+  else if (index == 3 && prof.contains(3)) // libosmscout + geocoder-nlp
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 1);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 1);
@@ -402,7 +486,7 @@ void AppSettings::setProfile()
       setValue(MAPNIKMASTER_SETTINGS "use_mapnik", 0);
       setValue(VALHALLA_MASTER_SETTINGS "use_valhalla", 0);
     }
-  else if (index == 4) // libosmscout
+  else if (index == 4 && prof.contains(4)) // libosmscout
     {
       setValue(MAPMANAGER_SETTINGS "osmscout", 1);
       setValue(MAPMANAGER_SETTINGS "geocoder_nlp", 0);
@@ -449,7 +533,7 @@ void AppSettings::checkCountrySelectionNeeded()
          (!valueBool(GEOMASTER_SETTINGS "use_geocoder_nlp") ||
           !valueBool(MAPNIKMASTER_SETTINGS "use_mapnik") ||
           !valueBool(VALHALLA_MASTER_SETTINGS "use_valhalla") )
-          ) )
+         ) )
     m_country_selection_needed = true;
   else
     m_country_selection_needed = false;
