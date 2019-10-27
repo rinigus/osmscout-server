@@ -11,17 +11,17 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="35"/>
         <source>Copyright:</source>
-        <translation>Copyright:</translation>
+        <translation>Autorská práva:</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="42"/>
         <source>Artwork</source>
-        <translation type="unfinished"></translation>
+        <translation>Kresba</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ikony od %1.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
@@ -97,24 +97,54 @@
 <context>
     <name>AppSettings</name>
     <message>
-        <location filename="../src/appsettings.cpp" line="317"/>
+        <location filename="../src/appsettings.cpp" line="348"/>
         <source>mph</source>
         <translation>mi/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="317"/>
+        <location filename="../src/appsettings.cpp" line="348"/>
         <source>mi.</source>
         <translation>mi</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="319"/>
+        <location filename="../src/appsettings.cpp" line="350"/>
         <source>km/h</source>
         <translation>km/h</translation>
     </message>
     <message>
-        <location filename="../src/appsettings.cpp" line="319"/>
+        <location filename="../src/appsettings.cpp" line="350"/>
         <source>km</source>
         <translation>km</translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="385"/>
+        <source>Default</source>
+        <translation type="unfinished">Výchozí</translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="386"/>
+        <source>Recommended for raster tiles maps</source>
+        <translation type="unfinished">Doporučeno pro mapování rastrových dlaždic</translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="387"/>
+        <source>Recommended for vector and raster tiles maps</source>
+        <translation type="unfinished">Doporučeno pro mapy vektorových a rastrových dlaždic.</translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="388"/>
+        <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;libosmscout&lt;/i&gt; s &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="389"/>
+        <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;libosmscout&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/appsettings.cpp" line="390"/>
+        <source>Custom</source>
+        <translation type="unfinished">Vlastní</translation>
     </message>
 </context>
 <context>
@@ -137,7 +167,7 @@
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="230"/>
         <source>Some or all datasets are incompatible with this version. You would have to update list of provided maps, the maps, and/or install the latest release of OSM Scout Server.</source>
-        <translation>Některé nebo všechny datové sady jsou s touto verzí nekompatibilní. Budete muset aktualizovat seznam poskytnutých map, mapy a / nebo nainstalovat nejnovější verzi serveru OSM Scout.</translation>
+        <translation>Některé nebo všechny datové sady jsou s touto verzí nekompatibilní. Budete muset aktualizovat seznam poskytnutých map, mapy a / nebo nainstalovat nejnovější verzi OSM Scout Serveru.</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="237"/>
@@ -694,217 +724,217 @@
 <context>
     <name>MapManager::Manager</name>
     <message>
-        <location filename="../src/mapmanager.cpp" line="70"/>
+        <location filename="../src/mapmanager.cpp" line="76"/>
         <source>Could not allocate Map Manager features</source>
         <translation>Nelze přidělit funkce Map Manageru</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="116"/>
+        <location filename="../src/mapmanager.cpp" line="122"/>
         <source>Storage folder changed to %1</source>
         <translation>Úložiště bylo změněno na %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="123"/>
+        <location filename="../src/mapmanager.cpp" line="129"/>
         <source>Maps storage folder does not exist: %1</source>
         <translation>Složka úložiště mapy neexistuje: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="126"/>
+        <location filename="../src/mapmanager.cpp" line="132"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
         <translation>Cesta složky pro ukládání map není odkazem na adresář: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="132"/>
+        <location filename="../src/mapmanager.cpp" line="138"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
         <translation>Složka pro ukládání map není zapisovatelná, upravte oprávnění pro %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="185"/>
-        <location filename="../src/mapmanager.cpp" line="187"/>
+        <location filename="../src/mapmanager.cpp" line="191"/>
+        <location filename="../src/mapmanager.cpp" line="193"/>
         <source>Failed to open the database for tracking downloaded files</source>
         <translation>Nepodařilo se otevřít databázi pro sledování stažených souborů</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="188"/>
+        <location filename="../src/mapmanager.cpp" line="194"/>
         <source>Map Manager functionality would be disturbed</source>
         <translation>Funkce Map Manageru může být narušena</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="250"/>
+        <location filename="../src/mapmanager.cpp" line="256"/>
         <source>Cannot create directory without any name</source>
         <translation>Adresář nelze vytvořit bez názvu</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="257"/>
+        <location filename="../src/mapmanager.cpp" line="263"/>
         <source>Error creating directory %1</source>
         <translation>Chyba při vytváření adresáře %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="304"/>
+        <location filename="../src/mapmanager.cpp" line="310"/>
         <source>Address parsing language support</source>
         <translation>Jazyková podpora analýzy adres</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="337"/>
-        <location filename="../src/mapmanager.cpp" line="808"/>
-        <location filename="../src/mapmanager.cpp" line="937"/>
+        <location filename="../src/mapmanager.cpp" line="343"/>
+        <location filename="../src/mapmanager.cpp" line="814"/>
+        <location filename="../src/mapmanager.cpp" line="943"/>
         <source>Maps storage folder does not exist: </source>
         <translation>Složka úložiště mapy neexistuje:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="346"/>
-        <location filename="../src/mapmanager.cpp" line="815"/>
+        <location filename="../src/mapmanager.cpp" line="352"/>
+        <location filename="../src/mapmanager.cpp" line="821"/>
         <source>No maps were requested</source>
         <translation>Nebyly vyžádány žádné mapy</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="367"/>
+        <location filename="../src/mapmanager.cpp" line="373"/>
         <source>No maps loaded: %1</source>
         <translation>Žádné načtené mapy: %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="842"/>
+        <location filename="../src/mapmanager.cpp" line="848"/>
         <source>%1: version of dataset for %2 is not supported</source>
         <translation>%1: verze datové sady pro %2 není podporována</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="393"/>
+        <location filename="../src/mapmanager.cpp" line="399"/>
         <source>Missing dataset for %1: %2</source>
         <translation>Chybějící dataset pro %1: %2</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="306"/>
+        <location filename="../src/mapmanager.cpp" line="312"/>
         <source>Mapnik World coastlines</source>
         <translation>Pobřeží světa z databáze Mapnik</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="308"/>
+        <location filename="../src/mapmanager.cpp" line="314"/>
         <source>Mapbox GL World overlay</source>
         <translation>Mapbox GL World overlay</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="310"/>
+        <location filename="../src/mapmanager.cpp" line="316"/>
         <source>Mapbox GL fonts</source>
         <translation>Mapbox GL písma</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="440"/>
+        <location filename="../src/mapmanager.cpp" line="446"/>
         <source>Available country or territory: </source>
         <translation>Dostupná země nebo území:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="641"/>
+        <location filename="../src/mapmanager.cpp" line="647"/>
         <source>World</source>
         <translation>Svět</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="705"/>
+        <location filename="../src/mapmanager.cpp" line="711"/>
         <source>Removing country from requested list: </source>
         <translation>Odstranění země z požadovaného seznamu:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="863"/>
+        <location filename="../src/mapmanager.cpp" line="869"/>
         <source>Missing data: </source>
         <translation>Chybějící data:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="943"/>
+        <location filename="../src/mapmanager.cpp" line="949"/>
         <source>No servers found to download the data from</source>
         <translation>Nebyly nalezeny žádné servery ke stažení dat</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="966"/>
+        <location filename="../src/mapmanager.cpp" line="972"/>
         <source>Error starting the download of</source>
         <translation>Chyba při spuštění stahování</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="983"/>
+        <location filename="../src/mapmanager.cpp" line="989"/>
         <source>File downloaded:</source>
         <translation>Stažený soubor:</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1011"/>
+        <location filename="../src/mapmanager.cpp" line="1017"/>
         <source>Could not register downloaded file in the tracking database</source>
         <translation>Nelze nahrát stažený soubor do sledovací databáze</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1012"/>
+        <location filename="../src/mapmanager.cpp" line="1018"/>
         <source>File registration error</source>
         <translation>Chyba registrace souboru</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1035"/>
-        <location filename="../src/mapmanager.cpp" line="1036"/>
+        <location filename="../src/mapmanager.cpp" line="1041"/>
+        <location filename="../src/mapmanager.cpp" line="1042"/>
         <source>Could not retrieve server URL</source>
         <translation>Nelze načíst adresu URL serveru</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1067"/>
+        <location filename="../src/mapmanager.cpp" line="1073"/>
         <source>Download failed from %1</source>
         <translation>Stažení se nezdařilo od %1</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1103"/>
+        <location filename="../src/mapmanager.cpp" line="1109"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
         <translation>Seznam zemí: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1044"/>
+        <location filename="../src/mapmanager.cpp" line="1050"/>
         <source>Downloading the list of countries</source>
         <translation>Stažení seznamu zemí</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1376"/>
+        <location filename="../src/mapmanager.cpp" line="1382"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
         <translation>Nelze zkontrolovat aktualizace kvůli chybějícímu seznamu poskytnutých zemí. Stáhněte si seznam před kontrolou aktualizací.</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1114"/>
+        <location filename="../src/mapmanager.cpp" line="1120"/>
         <source>%1: %L2 (D) / %L3 (W) MB</source>
         <translation>%1: %L2 (D) / %L3 (W) MB</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="678"/>
+        <location filename="../src/mapmanager.cpp" line="684"/>
         <source>Add country or feature to requested list</source>
         <translation>Přidat zemi nebo funkce do požadovaného seznamu</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1078"/>
+        <location filename="../src/mapmanager.cpp" line="1084"/>
         <source>Download failed, dropping all downloads</source>
         <translation>Stahování se nezdařilo, všechna stahování zrušena</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1107"/>
+        <location filename="../src/mapmanager.cpp" line="1113"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
         <translation>Seznam zemí: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1127"/>
+        <location filename="../src/mapmanager.cpp" line="1133"/>
         <source>Unpacking files</source>
         <translation>Rozbalení souborů</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1129"/>
+        <location filename="../src/mapmanager.cpp" line="1135"/>
         <source>%1; Unpacking files</source>
         <translation>%1; Rozbalování souborů</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1159"/>
+        <location filename="../src/mapmanager.cpp" line="1165"/>
         <source>Stopping downloads</source>
         <translation>Zastavování stahování</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1319"/>
+        <location filename="../src/mapmanager.cpp" line="1325"/>
         <source>Updating the distribution server URL</source>
         <translation>Aktualizace adresy URL distribučního serveru</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1372"/>
+        <location filename="../src/mapmanager.cpp" line="1378"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
         <translation>Nelze zkontrolovat aktualizace kvůli chybějící složce pro ukládání map</translation>
     </message>
     <message>
-        <location filename="../src/mapmanager.cpp" line="1374"/>
+        <location filename="../src/mapmanager.cpp" line="1380"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
         <translation>Nelze zkontrolovat aktualizace kvůli chybějícímu seznamu požadovaných zemí. Před kontrolou aktualizací vyberte země.</translation>
     </message>
@@ -1653,39 +1683,14 @@
         <translation>OSM Scout Server používá profily pro zjednodušení výběru backendů a souborů stažených databází. &lt;br&gt;&lt;br&gt;Zvolte prosím aktivní profil.</translation>
     </message>
     <message>
-        <location filename="../qml/ProfilesPage.qml" line="49"/>
-        <source>Default</source>
-        <translation>Výchozí</translation>
+        <location filename="../qml/ProfilesPage.qml" line="92"/>
+        <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/ProfilesPage.qml" line="50"/>
-        <source>Recommended for raster tiles maps</source>
-        <translation>Doporučeno pro mapování rastrových dlaždic</translation>
-    </message>
-    <message>
-        <location filename="../qml/ProfilesPage.qml" line="62"/>
+        <location filename="../qml/ProfilesPage.qml" line="56"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
         <translation>&lt;i&gt;Výchozí&lt;/i&gt; profil podporuje mapové aplikace pomocí pluginu &lt;i&gt;Mapbox GL&lt;/i&gt;, pomocí &lt;i&gt;Geocoder-NLP&lt;/i&gt; vyhledává místa a &lt;i&gt;Valhalla&lt;/i&gt; pro výpočet tras. Tento profil je doporučen pro nové klientské mapy mapových dlaždic. &lt;br&gt;&lt;br&gt;Pro uživatele s mapovými aplikacemi používajícími tradiční rastrové dlaždice doporučený profil pro mapy rastrových dlaždic obsahuje datové sady &lt;i&gt;Mapnik&lt;/i&gt; a používá stejné vyhledávací a směrovací pluginy jako &lt;i&gt;výchozí&lt;/i&gt; profil. &lt;br&gt;&lt;br&gt;Pro uživatele, kteří chtějí používat klienty na rastrové a vektorové dlaždice map, doporučený profil kombinující vektorové a rastrové dlaždice obsahuje datové množiny &lt;i&gt;Mapbox GL&lt;/i&gt;, podporuje mapování do rastrových dlaždic &lt;i&gt;Mapnikem&lt;/i&gt; a používá stejné vyhledávací a směrovací pluginy jako &lt;i&gt;výchozí&lt;/i&gt; profil. Vzhledem k tomu, že tento profil obsahuje data pro vícenásobné vykreslování backendů, má největší požadavky na ukládání dat. &lt;br&gt;&lt;br&gt;Profil s &lt;i&gt;libosmscout&lt;/i&gt; v kombinaci s &lt;i&gt;Geocoder-NLP&lt;/i&gt; má menší požadavky na ukládání než standardní. Vykreslování map a směrování by však bylo omezeno pouze na jedno území. Kvalita vykreslování je navíc horší a rychlost směrování je pomalejší ve srovnání s výchozím profilem. &lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; má nejmenší požadavky na ukládání mezi všemi profily. Vykreslování map, vyhledávání a směrování by však bylo omezeno pouze na jedno území. Kromě toho je kvalita vykreslování a vyhledávání špatná, stejně jako rychlost směrování je pomalejší v porovnání s výchozím profilem. &lt;br&gt;&lt;br&gt;Při použití &lt;i&gt;uživatelského&lt;/i&gt; profilu nejsou nastavení a nastavení Správce map nastaveny podle profilů a měly by být zadány uživatelem. Tento profil umožňuje samostatně vybírat komponenty pro vykreslování, vyhledávání a hledání trasy. Všimněte si, že uživatel je zodpovědný za úpravu nastavení tak, aby byly v souladu s požadavky použitých backendů a úložišť.</translation>
-    </message>
-    <message>
-        <location filename="../qml/ProfilesPage.qml" line="51"/>
-        <source>Recommended for vector and raster tiles maps</source>
-        <translation>Doporučeno pro mapy vektorových a rastrových dlaždic.</translation>
-    </message>
-    <message>
-        <location filename="../qml/ProfilesPage.qml" line="52"/>
-        <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation>&lt;i&gt;libosmscout&lt;/i&gt; s &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <location filename="../qml/ProfilesPage.qml" line="53"/>
-        <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <location filename="../qml/ProfilesPage.qml" line="54"/>
-        <source>Custom</source>
-        <translation>Vlastní</translation>
     </message>
 </context>
 <context>
@@ -1981,7 +1986,7 @@
         <translation>Preferovaný jazyk pro názvy míst zobrazených na vykreslených mapách nebo v vrácených výsledcích vyhledávání. Pokud je to možné, použije se tento jazyk. Pokud je nastavena možnost &lt;i&gt;Výchozí&lt;/i&gt;, bude použit název OpenStreetMap, který je obvykle výchozí pro místní jazyk zobrazené země.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="85"/>
+        <location filename="../qml/SettingsPage.qml" line="86"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
         <translation>Po aktivaci bude server OSM Scout automaticky aktivován jakýmkoli klientem, který k němu přistupuje. Automaticky spuštěný server bude pracovat na pozadí.</translation>
     </message>
@@ -1996,221 +2001,221 @@
         <translation>Složka pro ukládání map.&lt;br&gt; &lt;b&gt;Pozor!&lt;/b&gt; Tento adresář bude plně spravován serverem OSM Scout. Prosím &lt;b&gt;přiřaďte samostatnou prázdnou složku&lt;/b&gt;, kterou by mohl OSM Scout Server použít. To zahrnuje smazání všech souborů v dané složce, když o to požádáte během vyčištění nebo aktualizací map. &lt;br&gt;&lt;i&gt;Příklad:&lt;/i&gt; Mapy pod &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="79"/>
+        <location filename="../qml/SettingsPage.qml" line="80"/>
         <source>Automatic activation</source>
         <translation>Automatická aktivace</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="92"/>
+        <location filename="../qml/SettingsPage.qml" line="93"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
         <translation>Doporučuje se povolit automatickou aktivaci pro zjednodušení přístupu k serveru.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="97"/>
+        <location filename="../qml/SettingsPage.qml" line="98"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
         <translation>Technické informace, vytvořené soubory a způsob jejich odebrání v případě potřeby naleznete v příslušné části &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Uživatelské příručky&lt;/a&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="104"/>
+        <location filename="../qml/SettingsPage.qml" line="105"/>
         <source>Idle timeout</source>
         <translation>Časový limit nečinnosti</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="108"/>
+        <location filename="../qml/SettingsPage.qml" line="109"/>
         <source>15 minutes</source>
         <translation>15 minut</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="109"/>
+        <location filename="../qml/SettingsPage.qml" line="110"/>
         <source>30 minutes</source>
         <translation>30 minut</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="110"/>
+        <location filename="../qml/SettingsPage.qml" line="111"/>
         <source>1 hour</source>
         <translation>1 hodina</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="111"/>
+        <location filename="../qml/SettingsPage.qml" line="112"/>
         <source>2 hours</source>
         <translation>2 hodiny</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="112"/>
+        <location filename="../qml/SettingsPage.qml" line="113"/>
         <source>4 hours</source>
         <translation>4 hodiny</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="113"/>
+        <location filename="../qml/SettingsPage.qml" line="114"/>
         <source>8 hours</source>
         <translation>8 hodin</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="114"/>
+        <location filename="../qml/SettingsPage.qml" line="115"/>
         <source>24 hours</source>
         <translation>24 hodin</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="115"/>
+        <location filename="../qml/SettingsPage.qml" line="116"/>
         <source>No timeout</source>
         <translation>Žádný časový limit</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="154"/>
+        <location filename="../qml/SettingsPage.qml" line="155"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Aktivní pozadí jsou nastaveny podle profilu. Chcete-li změnit volbu pozadí, nastavte příslušný profil nebo nastavte profil na hodnotu &lt;i&gt;Vlastní&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="166"/>
+        <location filename="../qml/SettingsPage.qml" line="167"/>
         <source>Rendering</source>
         <translation>Vykreslování</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="191"/>
-        <location filename="../qml/SettingsPage.qml" line="203"/>
+        <location filename="../qml/SettingsPage.qml" line="195"/>
+        <location filename="../qml/SettingsPage.qml" line="209"/>
         <source>Geocoder</source>
         <translation>Geokodér</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="224"/>
-        <location filename="../qml/SettingsPage.qml" line="235"/>
+        <location filename="../qml/SettingsPage.qml" line="231"/>
+        <location filename="../qml/SettingsPage.qml" line="244"/>
         <source>Routing Engine</source>
         <translation>Engine hledání trasy</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="250"/>
+        <location filename="../qml/SettingsPage.qml" line="260"/>
         <source>Backend settings</source>
         <translation>Nastavení backendu</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="306"/>
+        <location filename="../qml/SettingsPage.qml" line="318"/>
         <source>Valhalla</source>
         <translation>Valhalla</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="312"/>
+        <location filename="../qml/SettingsPage.qml" line="324"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
         <translation>Nastavení engine pro hledání trasy pro backend &lt;i&gt;Valhalla&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="329"/>
+        <location filename="../qml/SettingsPage.qml" line="342"/>
         <source>OSM Scout library</source>
         <translation>Knihovna OSM Scout</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="283"/>
+        <location filename="../qml/SettingsPage.qml" line="294"/>
         <source>Geocoder-NLP</source>
         <translation>Geocoder-NLP</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="289"/>
+        <location filename="../qml/SettingsPage.qml" line="300"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
         <translation>Výběr jazyků používaných pro analýzu adres a další nastavení backendu &lt;i&gt;geocoder-nlp&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="260"/>
+        <location filename="../qml/SettingsPage.qml" line="271"/>
         <source>Mapnik</source>
         <translation>Mapnik</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="141"/>
+        <location filename="../qml/SettingsPage.qml" line="142"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
         <translation>Při automatickém spuštění se server sám vypne poté, co neobdrží žádnou žádost delší než časový limit nečinnosti</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="149"/>
+        <location filename="../qml/SettingsPage.qml" line="150"/>
         <source>Profiles</source>
         <translation>Profily</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="171"/>
+        <location filename="../qml/SettingsPage.qml" line="173"/>
         <source>Rendering backend is responsible for drawing the maps on raster tiles.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="177"/>
-        <source>Renderer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="179"/>
-        <source>Mapnik (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Rendering backend je zodpovědný za kreslení map na rastrových dlaždicích.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="180"/>
-        <location filename="../qml/SettingsPage.qml" line="206"/>
-        <location filename="../qml/SettingsPage.qml" line="238"/>
-        <source>libosmscout</source>
-        <translation type="unfinished"></translation>
+        <source>Renderer</source>
+        <translation>Renderer</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="196"/>
+        <location filename="../qml/SettingsPage.qml" line="182"/>
+        <source>Mapnik (default)</source>
+        <translation>Mapnik (default)</translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="183"/>
+        <location filename="../qml/SettingsPage.qml" line="212"/>
+        <location filename="../qml/SettingsPage.qml" line="247"/>
+        <source>libosmscout</source>
+        <translation>libosmscout</translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="201"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
         <translation>Geocoder je zodpovědný za vyřešení žádostí o vyhledávání. Za tímto účelem analyzuje vyhledávací řetězec a na mapě nalezne odpovídající objekty.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="205"/>
+        <location filename="../qml/SettingsPage.qml" line="211"/>
         <source>Geocoder-NLP (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP (výchozí)</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="218"/>
+        <location filename="../qml/SettingsPage.qml" line="225"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/SettingsPage.qml" line="229"/>
-        <source>Routing engine is responsible for calculating routes between origin and destination.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozn. Pokud vyberete &lt;i&gt;Geocoder-NLP&lt;/i&gt;, v níže uvedených nastaveních backendu určete jazyky, které mají být použity pro analýzu adres. Jinak by server mohl používat velké množství paměti RAM.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="237"/>
-        <source>Valhalla (default)</source>
-        <translation type="unfinished"></translation>
+        <source>Routing engine is responsible for calculating routes between origin and destination.</source>
+        <translation>Navigační software je zodpovědný za výpočet tras mezi počátkem a cílem.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="266"/>
+        <location filename="../qml/SettingsPage.qml" line="246"/>
+        <source>Valhalla (default)</source>
+        <translation>Valhalla (výchozí)</translation>
+    </message>
+    <message>
+        <location filename="../qml/SettingsPage.qml" line="277"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
         <translation>Nastavení vykreslování mapy pro backend &lt;i&gt;mapnik&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="335"/>
+        <location filename="../qml/SettingsPage.qml" line="348"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
         <translation>Nastavení knihovny OSM Scout (&lt;i&gt;libosmscout&lt;/i&gt;). Knihovnu lze použít pro kreslení map, vyhledávání a hledání trasy.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="341"/>
+        <location filename="../qml/SettingsPage.qml" line="354"/>
         <source>Miscellaneous</source>
         <translation>Různé</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="347"/>
+        <location filename="../qml/SettingsPage.qml" line="360"/>
         <source>Log info messages</source>
         <translation>Logovat informační zprávy</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="348"/>
+        <location filename="../qml/SettingsPage.qml" line="361"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
         <translation>Pokud je tato funkce deaktivována, zprávy INFO nebudou zaznamenány do protokolu událostí. Výjimkou je načítání databáze, která se zobrazuje vždy.</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="356"/>
+        <location filename="../qml/SettingsPage.qml" line="369"/>
         <source>Events log size</source>
         <translation>Velikost logu</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="357"/>
+        <location filename="../qml/SettingsPage.qml" line="370"/>
         <source>Number of events shown in the main page</source>
         <translation>Počet událostí viditelných na hlavní stránce</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="364"/>
+        <location filename="../qml/SettingsPage.qml" line="377"/>
         <source>Log messages into session log file</source>
         <translation>Logovat zprávy do logu sezení</translation>
     </message>
     <message>
-        <location filename="../qml/SettingsPage.qml" line="365"/>
+        <location filename="../qml/SettingsPage.qml" line="378"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
         <translation>Pokud je povoleno, zprávy jsou logovány do logu sezení. Log se nachází ve složce &quot;.cache/harbour-osmscout-server&quot;. Používejte toto nastavení pouze pro ladění. S tímto nastavením budou logovány i informativní zprávy nezávisle na nastavení výše. To umožňuje dočasně zapnout plné logování a vypnout jej v okamžiku kdy je potřebný log vygenerován.</translation>
     </message>
