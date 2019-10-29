@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Oct 29 2019 rinigus <rinigus.git@gmail.com> 1.15.5-1
+- adjust GUI to the backends enabled on packaging
+- update translations
+
 * Fri Sep 20 2019 rinigus <rinigus.git@gmail.com> 1.15.0-1
 - update Valhalla to 3.0.x
 - support for DBus activation
