@@ -119,32 +119,32 @@
     <message>
         <location filename="../src/appsettings.cpp" line="385"/>
         <source>Default</source>
-        <translation type="unfinished">Par défaut</translation>
+        <translation>Par défaut</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="386"/>
         <source>Recommended for raster tiles maps</source>
-        <translation type="unfinished">Recommandé pour des tuiles de cartes plus précises</translation>
+        <translation>Recommandé pour des tuiles de cartes plus précises</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="387"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation type="unfinished">Recommandé pour les tuiles de cartes vectorielles et matricielles</translation>
+        <translation>Recommandé pour les tuiles de cartes vectorielles et matricielles</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="388"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;libosmscout&lt;/i&gt; avec &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; avec &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="389"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;libosmscout&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="390"/>
         <source>Custom</source>
-        <translation type="unfinished">Personnalisé</translation>
+        <translation>Personnalisé</translation>
     </message>
 </context>
 <context>

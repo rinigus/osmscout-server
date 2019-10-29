@@ -26,7 +26,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 licanse).</source>
-        <translation type="unfinished"></translation>
+        <translation>Фото на баннере от %1 (лицензия %2).</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
@@ -119,32 +119,32 @@
     <message>
         <location filename="../src/appsettings.cpp" line="385"/>
         <source>Default</source>
-        <translation type="unfinished">По умолчанию</translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="386"/>
         <source>Recommended for raster tiles maps</source>
-        <translation type="unfinished">Рекомендовано для растровых карт</translation>
+        <translation>Рекомендовано для растровых карт</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="387"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation type="unfinished">Рекомендовано для карт с векторными и растровыми тайлами</translation>
+        <translation>Рекомендовано для карт с векторными и растровыми тайлами</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="388"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;libosmscout&lt;/i&gt; и &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; и &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="389"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;libosmscout&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="390"/>
         <source>Custom</source>
-        <translation type="unfinished">Пользовательский</translation>
+        <translation>Пользовательский</translation>
     </message>
 </context>
 <context>
@@ -1685,7 +1685,7 @@
     <message>
         <location filename="../qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Внимание! Некоторые профили могут отсутствовать в зависимости от пакета OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="56"/>

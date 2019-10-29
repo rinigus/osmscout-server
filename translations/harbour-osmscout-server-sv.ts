@@ -26,7 +26,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 licanse).</source>
-        <translation type="unfinished"></translation>
+        <translation>Banderollfoto av %1 (%2-licens).</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
@@ -119,32 +119,32 @@
     <message>
         <location filename="../src/appsettings.cpp" line="385"/>
         <source>Default</source>
-        <translation type="unfinished">Standard</translation>
+        <translation>Standard</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="386"/>
         <source>Recommended for raster tiles maps</source>
-        <translation type="unfinished">Rekommenderas för rasterkartor</translation>
+        <translation>Rekommenderas för rasterkartor</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="387"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation type="unfinished">Rekommenderas för vektor- och rasterbaserade kartrutor</translation>
+        <translation>Rekommenderas för vektor- och rasterbaserade kartrutor</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="388"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;libosmscout&lt;/i&gt; med &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; med &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="389"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt;</source>
-        <translation type="unfinished">&lt;i&gt;libosmscout&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="390"/>
         <source>Custom</source>
-        <translation type="unfinished">Anpassad</translation>
+        <translation>Anpassad</translation>
     </message>
 </context>
 <context>
@@ -1685,7 +1685,7 @@
     <message>
         <location filename="../qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Notera att vissa profiler kan saknas, på grund av paketeringen av OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="56"/>
