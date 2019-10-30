@@ -41,7 +41,7 @@ PagePL {
 
                               "<b>" + qsTr("Artwork") + "</b><br><br>" +
                               qsTr("Icons by %1.").arg("Fellfrosch") + "<br>" +
-                              qsTr("Banner photo by %1 (%2 licanse).").arg("Aksonsat Uanthoeng").arg("Pixels") + "<br><br>" +
+                              qsTr("Banner photo by %1 (%2 license).").arg("Aksonsat Uanthoeng").arg("Pixels") + "<br><br>" +
 
                               "<b>" + qsTr("Translations") + "</b><br><br>" +
                               "Carmen F. B. @carmenfdezb: Spanish<br>" +
