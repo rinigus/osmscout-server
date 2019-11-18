@@ -400,7 +400,7 @@ int AppSettings::currentProfile() const
 
 void AppSettings::setCurrentProfile(int profile)
 {
-  if (profile > 0 && profile < m_available_profile_index.size())
+  if (profile >= 0 && profile < m_available_profile_index.size())
     setValue(GENERAL_SETTINGS "profile", m_available_profile_index[profile]);
 }
 
