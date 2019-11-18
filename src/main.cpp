@@ -129,8 +129,10 @@ int main(int argc, char *argv[])
 
   app->setApplicationName(APP_NAME);
   app->setOrganizationName(APP_NAME);
+#ifdef IS_QTCONTROLS_QT
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
   app->setDesktopFileName(APP_NAME ".desktop");
+#endif
 #endif
   app->setApplicationVersion(APP_VERSION);
 
