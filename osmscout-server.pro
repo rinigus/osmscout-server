@@ -273,6 +273,7 @@ use_valhalla {
     DEFINES += USE_VALHALLA
     DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"$${PREFIX}/share/$${TARGET}/data/valhalla.json\\\"
     PKGCONFIG += libvalhalla
+    LIBS += -lboost_filesystem
 }
 
 use_curl {
