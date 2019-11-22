@@ -112,7 +112,7 @@ cp /usr/lib/libboost_date_time-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_chrono-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/libboost_thread-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 
-cp /usr/lib/libprotobuf.so.8  %{buildroot}%{_datadir}/%{name}/lib
+cp /usr/lib/libprotobuf.so*  %{buildroot}%{_datadir}/%{name}/lib
 
 cp /usr/lib/liblz4.so.1.8.1 %{buildroot}%{_datadir}/%{name}/lib
 cp /usr/lib/liblz4.so.1 %{buildroot}%{_datadir}/%{name}/lib
