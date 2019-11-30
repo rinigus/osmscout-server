@@ -11,7 +11,7 @@
 
 # set version
 isEmpty(VERSION) {
-    VERSION = 1.14.5
+    VERSION = 1.15.6
 }
 
 # Find out flavor and add it to CONFIG for simple testing

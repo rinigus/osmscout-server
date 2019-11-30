@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Nov 30 2019 rinigus <rinigus.git@gmail.com> 1.15.6-1
+- fix profile selection
+- small bugfixes
+
 * Tue Oct 29 2019 rinigus <rinigus.git@gmail.com> 1.15.5-1
 - adjust GUI to the backends enabled on packaging
 - update translations

@@ -1,7 +1,7 @@
 Name: harbour-osmscout-server
 Summary: OSM Scout Server
 # don't forget to set the version in osmscout-server.pro as well
-Version: 1.15.5
+Version: 1.15.6
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
