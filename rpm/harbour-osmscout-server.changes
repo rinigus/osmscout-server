@@ -8,6 +8,7 @@
 * Sat Nov 30 2019 rinigus <rinigus.git@gmail.com> 1.15.6-1
 - fix profile selection
 - small bugfixes
+- update translations
 
 * Tue Oct 29 2019 rinigus <rinigus.git@gmail.com> 1.15.5-1
 - adjust GUI to the backends enabled on packaging
