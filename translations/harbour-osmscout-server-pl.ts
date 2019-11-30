@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pl" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -26,7 +24,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 licanse).</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdjecie zrobione przez %1(%2 licencja).</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
@@ -1575,7 +1573,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="99"/>
         <source>motorway link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="107"/>
@@ -1595,7 +1593,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="131"/>
         <source>primary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="139"/>
@@ -1620,7 +1618,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="171"/>
         <source>secondary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="179"/>
@@ -1635,7 +1633,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="195"/>
         <source>tertiary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="203"/>
@@ -1645,7 +1643,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="211"/>
         <source>trunk link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="219"/>
@@ -1685,7 +1683,7 @@
     <message>
         <location filename="../qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Należy pamiętać, że niektórych profili może brakować z powodu paczkowania OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="56"/>

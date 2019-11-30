@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -26,7 +24,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 licanse).</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto de banner de %1 (licencia %2)</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
@@ -1685,7 +1683,7 @@
     <message>
         <location filename="../qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ten en cuenta que podrían faltar algunos perfiles al generar el paquete de OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="56"/>
