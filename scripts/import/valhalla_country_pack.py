@@ -6,7 +6,7 @@ from shapely.geometry import Polygon
 valhalla_meta_dir = 'valhalla/packages_meta'
 valhalla_packages_dir = 'valhalla/packages'
 valhalla_tiles_timestamp = "valhalla/tiles/timestamp"
-version = "1"
+version = "2"
 
 def getsize(sname):
     f = open(sname, 'r')
