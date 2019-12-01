@@ -39,6 +39,15 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.15.6" date="2019-11-30">
+     <description>
+       <ul>
+         <li>Fix profile selection</li>
+         <li>Update translations</li>
+         <li>Bugfixes</li>
+       </ul>
+     </description>
+   </release>
    <release version="1.15.0" date="2019-09-22">
      <description>
        <ul>
