@@ -57,7 +57,7 @@ PkgBR:
   - boost-regex >= 1.51
   - boost-system >= 1.51
   - lz4-devel
-  - opt-gcc6
+  - opt-gcc
 
 
 # Runtime dependencies which are not automatically detected
