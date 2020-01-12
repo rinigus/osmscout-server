@@ -1,0 +1,85 @@
+{
+  "clickable_minimum_required": "6.7.2",
+  "template": "qmake",
+  "build_args": [
+    "SCOUT_FLAVOR=qtcontrols"
+  ],
+  "scripts": {
+    "prepare-deps": "$ROOT/prepare-deps.sh",
+    "prepare-fonts": "git clone --recursive https://github.com/rinigus/osmscout-server-fonts.git $INSTALL_DIR/usr/local/share/osmscout-server-fonts"
+  },
+  "libraries": {
+    "libosmscout": {
+      "template": "cmake",
+      "build_args": [
+        "-DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_DIR/usr",
+        "-DBUILD_SHARED_LIBS=false",
+        "-DBUILD_WITH_OPENMP=OFF",
+        "-DOSMSCOUT_BUILD_MAP_OPENGL=OFF",
+        "-DOSMSCOUT_BUILD_IMPORT=OFF",
+        "-DOSMSCOUT_BUILD_MAP_AGG=OFF",
+        "-DOSMSCOUT_BUILD_MAP_CAIRO=OFF",
+        "-DOSMSCOUT_BUILD_MAP_SVG=OFF",
+        "-DOSMSCOUT_BUILD_MAP_IOSX=OFF",
+        "-DOSMSCOUT_BUILD_TESTS=OFF",
+        "-DOSMSCOUT_BUILD_DEMOS=OFF",
+        "-DOSMSCOUT_BUILD_BINDING_JAVA=OFF",
+        "-DOSMSCOUT_BUILD_BINDING_CSHARP=OFF",
+        "-DOSMSCOUT_BUILD_DOC_API=OFF",
+        "-DOSMSCOUT_BUILD_CLIENT_QT=ON",
+        "-DOSMSCOUT_BUILD_TOOL_OSMSCOUT2=OFF",
+        "-DOSMSCOUT_BUILD_TOOL_STYLEEDITOR=OFF",
+        "-DGPERFTOOLS_USAGE=OFF",
+        "-DOSMSCOUT_BUILD_TOOL_IMPORT=OFF",
+        "-DOSMSCOUT_BUILD_TOOL_DUMPDATA=OFF"
+      ],
+      "dependencies_target": [
+        "libxml2-dev",
+        "libmarisa-dev"
+      ]
+    },
+    "libpostal": {
+      "template": "custom",
+      "build": "$ROOT/build-libpostal.sh",
+      "dependencies_build": [
+        "libtool"
+      ]
+    },
+    "mapnik": {
+      "template": "custom",
+      "build": "$ROOT/build-mapnik.sh",
+      "dependencies_target": [
+        "libxml2-dev",
+        "libboost-dev",
+        "libboost-regex-dev",
+        "libboost-filesystem-dev",
+        "libboost-system-dev",
+        "libharfbuzz-dev",
+        "libicu-dev",
+        "zlib1g-dev",
+        "libjpeg-turbo8-dev",
+        "libpng-dev",
+        "libtiff-dev",
+        "libfreetype6-dev"
+      ]
+    },
+    "valhalla": {
+      "template": "cmake",
+      "src_dir": "libs/valhalla/valhalla",
+      "build_args": [
+        "-DENABLE_DATA_TOOLS=OFF",
+        "-DENABLE_PYTHON_BINDINGS=OFF",
+        "-DENABLE_NODE_BINDINGS=OFF",
+        "-DENABLE_SERVICES=OFF"
+      ],
+      "dependencies_target": [
+        "libprotobuf-dev",
+        "protobuf-compiler",
+        "libboost-filesystem-dev",
+        "libboost-system-dev",
+        "libboost-program-options-dev",
+        "libcurl4-openssl-dev"
+      ]
+    }
+  }
+}
