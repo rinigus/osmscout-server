@@ -2,10 +2,54 @@
   "clickable_minimum_required": "6.7.2",
   "template": "qmake",
   "build_args": [
-    "SCOUT_FLAVOR=qtcontrols"
+    "SCOUT_FLAVOR=qtcontrols",
+    "CONFIG+=disable_systemd",
+    "CONFIG+=disable_mapnik",
+    "LIBS+=-L$libosmscout_LIB_INSTALL_DIR/lib",
+    "INCLUDEPATH+=$libosmscout_LIB_INSTALL_DIR/include",
+    "LIBS+=-L$libpostal_LIB_INSTALL_DIR/usr/local/lib",
+    "INCLUDEPATH+=$libpostal_LIB_INSTALL_DIR/usr/local/include",
+    "LIBS+=-L$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET",
+    "INCLUDEPATH+=$valhalla_LIB_INSTALL_DIR/include"
+  ],
+  "env_vars": {
+    "PKG_CONFIG_PATH": "$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET/pkgconfig"
+  },
+  "dependencies_target": [
+    "libmicrohttpd-dev",
+    "libmarisa-dev",
+    "libicu-dev",
+    "zlib1g-dev",
+    "libcurl4-gnutls-dev",
+    "libkyotocabinet-dev",
+    "libprotobuf-dev",
+    "libboost-date-time-dev",
+    "libboost-filesystem-dev",
+    "libboost-iostreams-dev",
+    "libboost-regex-dev",
+    "libboost-system-dev",
+    "libboost-chrono-dev",
+    "liblz4-dev",
+    "qttools5-dev",
+    "libsqlite3-dev"
+  ],
+  "dependencies_build": [
+    "gcc-opt",
+    "desktop-file-utils"
+  ],
+  "postbuild": "mv $INSTALL_DIR/usr/local/bin/* $INSTALL_DIR",
+  "install_data": {
+    "$ROOT/ubports/osmscout-server.desktop": "$INSTALL_DIR",
+    "$ROOT/ubports/osmscout-server.apparmor": "$INSTALL_DIR",
+    "$ROOT/ubports/manifest.json": "$INSTALL_DIR"
+  },
+  "install_lib": [
+    "/usr/lib/$ARCH_TRIPLET/libmicrohttpd.so*",
+    "/usr/lib/$ARCH_TRIPLET/libkyotocabinet.so*",
+    "/usr/lib/$ARCH_TRIPLET/libmarisa.so*"
   ],
   "scripts": {
-    "prepare-deps": "$ROOT/prepare-deps.sh",
+    "prepare-deps": "git submodule update --recursive --init && $ROOT/prepare-deps.sh",
     "prepare-fonts": "git clone --recursive https://github.com/rinigus/osmscout-server-fonts.git $INSTALL_DIR/usr/local/share/osmscout-server-fonts"
   },
   "libraries": {
@@ -62,7 +106,7 @@
         "libpng-dev",
         "libtiff-dev",
         "libfreetype6-dev",
-	"libsqlite3-dev"
+        "libsqlite3-dev"
       ]
     },
     "valhalla": {
@@ -78,9 +122,9 @@
         "-DENABLE_SERVICES=OFF"
       ],
       "dependencies_target": [
-	"liblua5.3-dev",
+        "liblua5.3-dev",
         "libprotobuf-dev",
-	"libcurl4-gnutls-dev",
+        "libcurl4-gnutls-dev",
         "libboost-date-time-dev",
         "libboost-filesystem-dev",
         "libboost-iostreams-dev",
@@ -93,7 +137,7 @@
       "dependencies_build": [
         "libtool",
         "gcc-opt",
-	"jq",
+        "jq",
         "protobuf-compiler"
       ]
     }

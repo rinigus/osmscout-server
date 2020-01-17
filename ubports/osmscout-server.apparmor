@@ -1,0 +1,7 @@
+{
+    "policy_groups": [
+        "location",
+        "networking"
+    ],
+    "policy_version": 16.04
+}

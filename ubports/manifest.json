@@ -1,0 +1,15 @@
+{
+    "name": "osmscout-server.jonnius",
+    "description": "Offline Maps and Navigation Provider",
+    "architecture": "@CLICK_ARCH@",
+    "title": "OSM Scout Server",
+    "hooks": {
+        "osmscout-server": {
+            "apparmor": "osmscout-server.apparmor",
+            "desktop":  "osmscout-server.desktop"
+        }
+    },
+    "version": "1.15.6",
+    "maintainer": "Jonatan Hatakeyama Zeidler <jonatan_zeidler@gmx.de>",
+    "framework" : "ubuntu-sdk-16.04"
+}
