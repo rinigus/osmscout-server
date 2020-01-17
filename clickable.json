@@ -9,11 +9,12 @@
     "INCLUDEPATH+=$libosmscout_LIB_INSTALL_DIR/include",
     "LIBS+=-L$libpostal_LIB_INSTALL_DIR/usr/local/lib",
     "INCLUDEPATH+=$libpostal_LIB_INSTALL_DIR/usr/local/include",
+    "LIBS+=-L$valhalla_LIB_INSTALL_DIR/lib",
     "LIBS+=-L$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET",
     "INCLUDEPATH+=$valhalla_LIB_INSTALL_DIR/include"
   ],
   "env_vars": {
-    "PKG_CONFIG_PATH": "$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET/pkgconfig"
+    "PKG_CONFIG_PATH": "$valhalla_LIB_INSTALL_DIR/lib/pkgconfig:$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET/pkgconfig"
   },
   "dependencies_target": [
     "libmicrohttpd-dev",
