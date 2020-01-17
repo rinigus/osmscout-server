@@ -12,8 +12,8 @@ rm -rf "${LIBOSMSCOUT_SRC_DIR}" "${LIBPOSTAL_SRC_DIR}" "${MAPNIK_SRC_DIR}" "${VA
 # Download sources
 git clone --recursive --shallow-submodules --depth 1 https://github.com/rinigus/libosmscout.git "${LIBOSMSCOUT_SRC_DIR}"
 git clone --recursive --shallow-submodules -b devel https://github.com/rinigus/pkg-libpostal.git libs/libpostal "${LIBPOSTAL_SRC_DIR}"
-git clone --recursive --shallow-submodules -b master https://github.com/rinigus/pkg-mapnik "${MAPNIK_SRC_DIR}"
-git clone --recursive --shallow-submodules https://github.com/rinigus/pkg-valhalla-lite.git "${VALHALLA_SRC_DIR}"
+git clone --recursive -b master https://github.com/rinigus/pkg-mapnik "${MAPNIK_SRC_DIR}"
+git clone --recursive -b master --shallow-submodules https://github.com/rinigus/pkg-valhalla-lite.git "${VALHALLA_SRC_DIR}"
 
 # Patch Mapnik
 cd "${MAPNIK_SRC_DIR}/mapnik"

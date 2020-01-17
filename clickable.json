@@ -53,6 +53,7 @@
         "libboost-dev",
         "libboost-regex-dev",
         "libboost-filesystem-dev",
+        "libboost-program-options-dev",
         "libboost-system-dev",
         "libharfbuzz-dev",
         "libicu-dev",
@@ -60,25 +61,40 @@
         "libjpeg-turbo8-dev",
         "libpng-dev",
         "libtiff-dev",
-        "libfreetype6-dev"
+        "libfreetype6-dev",
+	"libsqlite3-dev"
       ]
     },
     "valhalla": {
       "template": "cmake",
       "src_dir": "libs/valhalla/valhalla",
       "build_args": [
+        "-DTHREADS_PTHREAD_ARG=0",
+        "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
+        "-DBUILD_SHARED_LIBS=OFF",
         "-DENABLE_DATA_TOOLS=OFF",
         "-DENABLE_PYTHON_BINDINGS=OFF",
         "-DENABLE_NODE_BINDINGS=OFF",
         "-DENABLE_SERVICES=OFF"
       ],
       "dependencies_target": [
+	"liblua5.3-dev",
         "libprotobuf-dev",
-        "protobuf-compiler",
+	"libcurl4-gnutls-dev",
+        "libboost-date-time-dev",
         "libboost-filesystem-dev",
+        "libboost-iostreams-dev",
+        "libboost-regex-dev",
         "libboost-system-dev",
         "libboost-program-options-dev",
-        "libcurl4-openssl-dev"
+        "liblz4-dev",
+        "zlib1g-dev"
+      ],
+      "dependencies_build": [
+        "libtool",
+        "gcc-opt",
+	"jq",
+        "protobuf-compiler"
       ]
     }
   }
