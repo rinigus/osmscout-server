@@ -1,7 +1,5 @@
 {
-    "policy_groups": [
-        "location",
-        "networking"
-    ],
+    "template": "unconfined",
+    "policy_groups": [],
     "policy_version": 16.04
 }
