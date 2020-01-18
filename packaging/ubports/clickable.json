@@ -1,5 +1,5 @@
 {
-  "clickable_minimum_required": "6.7.2",
+  "clickable_minimum_required": "6.8.2",
   "template": "qmake",
   "build_args": [
     "SCOUT_FLAVOR=qtcontrols",
@@ -40,9 +40,9 @@
   ],
   "postbuild": "mv $INSTALL_DIR/usr/local/bin/* $INSTALL_DIR",
   "install_data": {
-    "$ROOT/ubports/osmscout-server.desktop": "$INSTALL_DIR",
-    "$ROOT/ubports/osmscout-server.apparmor": "$INSTALL_DIR",
-    "$ROOT/ubports/manifest.json": "$INSTALL_DIR"
+    "$ROOT/packaging/ubports/osmscout-server.desktop": "$INSTALL_DIR",
+    "$ROOT/packaging/ubports/osmscout-server.apparmor": "$INSTALL_DIR",
+    "$ROOT/packaging/ubports/manifest.json": "$INSTALL_DIR"
   },
   "install_lib": [
     "/usr/lib/$ARCH_TRIPLET/libmicrohttpd.so*",
@@ -50,8 +50,7 @@
     "/usr/lib/$ARCH_TRIPLET/libmarisa.so*"
   ],
   "scripts": {
-    "prepare-deps": "git submodule update --recursive --init && $ROOT/prepare-deps.sh",
-    "prepare-fonts": "git clone --recursive https://github.com/rinigus/osmscout-server-fonts.git $INSTALL_DIR/usr/local/share/osmscout-server-fonts"
+    "prepare-deps": "git submodule update --recursive --init && $ROOT/packaging/ubports/prepare-deps.sh"
   },
   "libraries": {
     "libosmscout": {
@@ -85,29 +84,9 @@
     },
     "libpostal": {
       "template": "custom",
-      "build": "$ROOT/build-libpostal.sh",
+      "build": "$ROOT/packaging/ubports/build-libpostal.sh",
       "dependencies_build": [
         "libtool"
-      ]
-    },
-    "mapnik": {
-      "template": "custom",
-      "build": "$ROOT/build-mapnik.sh",
-      "dependencies_target": [
-        "libxml2-dev",
-        "libboost-dev",
-        "libboost-regex-dev",
-        "libboost-filesystem-dev",
-        "libboost-program-options-dev",
-        "libboost-system-dev",
-        "libharfbuzz-dev",
-        "libicu-dev",
-        "zlib1g-dev",
-        "libjpeg-turbo8-dev",
-        "libpng-dev",
-        "libtiff-dev",
-        "libfreetype6-dev",
-        "libsqlite3-dev"
       ]
     },
     "valhalla": {
