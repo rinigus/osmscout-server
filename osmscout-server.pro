@@ -21,6 +21,8 @@ equals(SCOUT_FLAVOR, "silica") {
     CONFIG += scout_kirigami
 } else:equals(SCOUT_FLAVOR, "qtcontrols") {
     CONFIG += scout_qtcontrols
+} else:equals(SCOUT_FLAVOR, "ubports") {
+    CONFIG += scout_ubports
 } else {
     CONFIG += scout_console
 }
@@ -68,7 +70,7 @@ QT += core network sql xml positioning dbus
 !scout_console|use_map_qt {
     QT += gui
 }
-scout_kirigami|scout_qtcontrols {
+scout_kirigami|scout_qtcontrols|scout_ubports {
     QT += quick qml widgets
 }
 
@@ -114,7 +116,7 @@ scout_silica {
     INSTALLS += extra_icons
 }
 
-scout_kirigami|scout_qtcontrols {
+scout_kirigami|scout_qtcontrols|scout_ubports {
     icons108.path = $$PREFIX/share/icons/hicolor/108x108/apps
     icons108.extra = cp $$PWD/icons/108x108/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/108x108/apps/$${TARGET}.png
     INSTALLS += icons108
@@ -138,7 +140,7 @@ DEFINES += APP_NAME=\\\"$$APP_NAME\\\"
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 scout_silica {
     DEFINES += IS_SAILFISH_OS
-} else:scout_qtcontrols|scout_kirigami {
+} else:scout_qtcontrols|scout_kirigami|scout_ubports {
     DEFINES += IS_QTCONTROLS_QT
 } else {
     DEFINES += IS_CONSOLE_QT
@@ -218,6 +220,7 @@ OTHER_FILES += rpm/osmscout-server.spec
 OTHER_FILES += qml/*.qml
 OTHER_FILES += qml/platform.qtcontrols/*.qml
 OTHER_FILES += qml/platform.kirigami/*.qml
+OTHER_FILES += qml/platform.ubports/*.qml
 OTHER_FILES += qml/platform.silica/*.qml
 
 # includes
@@ -317,13 +320,13 @@ scout_silica {
         rpm/$${TARGET}.spec
 }
 
-scout_kirigami|scout_qtcontrols {
+scout_kirigami|scout_qtcontrols|scout_ubports {
     RESOURCES += qml_main.qrc
     RESOURCES += icons.qrc
 }
 scout_kirigami: RESOURCES += qml_kirigami.qrc
 scout_qtcontrols: RESOURCES += qml_qtcontrols.qrc
-
+scout_ubports: RESOURCES += qml_ubports.qrc
 
 # misc options
 scout_silica {

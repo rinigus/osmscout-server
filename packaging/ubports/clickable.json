@@ -2,7 +2,7 @@
   "clickable_minimum_required": "6.8.2",
   "template": "qmake",
   "build_args": [
-    "SCOUT_FLAVOR=qtcontrols",
+    "SCOUT_FLAVOR=ubports",
     "CONFIG+=disable_systemd",
     "CONFIG+=disable_mapnik",
     "LIBS+=-L$libosmscout_LIB_INSTALL_DIR/lib",
