@@ -1,6 +1,6 @@
 /* -*- coding: utf-8-unix -*-
  *
- * Copyright (C) 2018 Rinigus
+ * Copyright (C) 2018-2019 Rinigus, 2019 Purism SPC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,15 +18,10 @@
 
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import Ubuntu.Components 1.3 as UC
 
-Label {
-    elide: {
-        if (truncMode === truncModes.elide) return Text.ElideRight;
-        if (truncMode === truncModes.fade) return Text.ElideRight;
-        return Text.ElideNone;
-    }
-    font.pixelSize: styler.themeFontSizeMedium
-    wrapMode: Text.NoWrap
-
-    property int truncMode: truncModes.none
+Item {
+    id: menu
+    property list<UC.Action> items
+    default property alias content: menu.items
 }

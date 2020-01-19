@@ -1,6 +1,6 @@
 /* -*- coding: utf-8-unix -*-
  *
- * Copyright (C) 2018 Rinigus
+ * Copyright (C) 2019 Rinigus, 2019 Purism SPC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,16 +17,12 @@
  */
 
 import QtQuick 2.9
-import QtQuick.Controls 2.2
+import "."
 
-Label {
-    elide: {
-        if (truncMode === truncModes.elide) return Text.ElideRight;
-        if (truncMode === truncModes.fade) return Text.ElideRight;
-        return Text.ElideNone;
-    }
-    font.pixelSize: styler.themeFontSizeMedium
-    wrapMode: Text.NoWrap
+DialogPL {
+    id: dialog
 
-    property int truncMode: truncModes.none
+    property var date
+
+    Component.onCompleted: console.log("DatePickerDialog is not implemented for UBPorts")
 }

@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="qml/platform/ApplicationWindowPL.qml">qml/platform.ubports/ApplicationWindowPL.qml</file>
+        <file alias="qml/platform/BusyIndicatorPL.qml">qml/platform.ubports/BusyIndicatorPL.qml</file>
+        <file alias="qml/platform/ButtonPL.qml">qml/platform.ubports/ButtonPL.qml</file>
+        <file alias="qml/platform/ComboBoxPL.qml">qml/platform.ubports/ComboBoxPL.qml</file>
+        <file alias="qml/platform/DialogPL.qml">qml/platform.ubports/DialogPL.qml</file>
+        <file alias="qml/platform/FileSelectorPL.qml">qml/platform.ubports/FileSelectorPL.qml</file>
+        <file alias="qml/platform/FormLayoutPL.qml">qml/platform.ubports/FormLayoutPL.qml</file>
+        <file alias="qml/platform/HeaderBarImpl.qml">qml/platform.ubports/HeaderBarImpl.qml</file>
+        <file alias="qml/platform/IconButtonPL.qml">qml/platform.ubports/IconButtonPL.qml</file>
+        <file alias="qml/platform/IconPL.qml">qml/platform.ubports/IconPL.qml</file>
+        <file alias="qml/platform/LabelPL.qml">qml/platform.ubports/LabelPL.qml</file>
+        <file alias="qml/platform/ListItemPL.qml">qml/platform.ubports/ListItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerItemPL.qml">qml/platform.ubports/MenuDrawerItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerPL.qml">qml/platform.ubports/MenuDrawerPL.qml</file>
+        <file alias="qml/platform/PageEmptyPL.qml">qml/platform.ubports/PageEmptyPL.qml</file>
+        <file alias="qml/platform/PageListPL.qml">qml/platform.ubports/PageListPL.qml</file>
+        <file alias="qml/platform/PagePL.qml">qml/platform.ubports/PagePL.qml</file>
+        <file alias="qml/platform/RemorsePopupPL.qml">qml/platform.ubports/RemorsePopupPL.qml</file>
+        <file alias="qml/platform/SectionHeaderPL.qml">qml/platform.ubports/SectionHeaderPL.qml</file>
+        <file alias="qml/platform/StackPL.qml">qml/platform.ubports/StackPL.qml</file>
+        <file alias="qml/platform/StylerPL.qml">qml/platform.ubports/StylerPL.qml</file>
+        <file alias="qml/platform/TextFieldPL.qml">qml/platform.ubports/TextFieldPL.qml</file>
+        <file alias="qml/platform/TextSwitchPL.qml">qml/platform.ubports/TextSwitchPL.qml</file>
+    </qresource>
+</RCC>

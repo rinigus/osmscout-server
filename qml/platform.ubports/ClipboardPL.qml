@@ -16,17 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.0
+import Ubuntu.Components 1.3
 
-Label {
-    elide: {
-        if (truncMode === truncModes.elide) return Text.ElideRight;
-        if (truncMode === truncModes.fade) return Text.ElideRight;
-        return Text.ElideNone;
+QtObject {
+    function copy(t) {
+        Clipboard.push(t);
     }
-    font.pixelSize: styler.themeFontSizeMedium
-    wrapMode: Text.NoWrap
-
-    property int truncMode: truncModes.none
 }

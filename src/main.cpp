@@ -157,8 +157,10 @@ int main(int argc, char *argv[])
   }
 
   // set fallback icons for platforms that need it
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
 #ifdef IS_QTCONTROLS_QT
   QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/icons/fallback");
+#endif
 #endif
 
   // deal with command line options

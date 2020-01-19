@@ -18,3 +18,8 @@
 /osmscout-server_qtcontrols.pro*
 
 *~
+
+# Clickable build, temporary source and config dirs
+/build/
+/libs/
+/.clickable/

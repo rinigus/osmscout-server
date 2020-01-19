@@ -1,6 +1,8 @@
-/* -*- coding: utf-8-unix -*-
+/*
+ * Copyright (C) 2016-2019 Rinigus https://github.com/rinigus
+ *                    2019 Purism SPC
  *
- * Copyright (C) 2018 Rinigus
+ * This file is part of Pure Maps.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,20 +15,20 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.0
 
-Label {
-    elide: {
-        if (truncMode === truncModes.elide) return Text.ElideRight;
-        if (truncMode === truncModes.fade) return Text.ElideRight;
-        return Text.ElideNone;
-    }
-    font.pixelSize: styler.themeFontSizeMedium
-    wrapMode: Text.NoWrap
+Item {
+    id: fs
 
-    property int truncMode: truncModes.none
+    property string selectedFilepath
+    property var nameFilters
+    signal selected
+
+    Component.onCompleted: console.log('UBPorts implementation is missing FileSelector')
+
+    // todo: if open function is not needed, drop special consideration of
+    // of FileSelectorPL in platform's StackPL
 }

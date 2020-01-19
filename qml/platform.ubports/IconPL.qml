@@ -1,6 +1,6 @@
 /* -*- coding: utf-8-unix -*-
  *
- * Copyright (C) 2018 Rinigus
+ * Copyright (C) 2018-2019 Rinigus, 2019 Purism SPC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,17 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick 2.0
+import Ubuntu.Components 1.3
 
-Label {
-    elide: {
-        if (truncMode === truncModes.elide) return Text.ElideRight;
-        if (truncMode === truncModes.fade) return Text.ElideRight;
-        return Text.ElideNone;
+Icon {
+    id: image
+    height: iconHeight ? iconHeight : undefined
+    source: iconName ? iconName : iconSource
+    width: iconWidth ? iconWidth : undefined
+
+    property var    fillMode // unused, kept for compatibility
+    property bool   iconColorize: true
+    property int    iconHeight: 0
+    property string iconName
+    property string iconSource
+    property int    iconWidth: 0
+
+    Component.onCompleted: {
+        if (iconColorize) color = styler.themeHighlightColor;
     }
-    font.pixelSize: styler.themeFontSizeMedium
-    wrapMode: Text.NoWrap
-
-    property int truncMode: truncModes.none
 }

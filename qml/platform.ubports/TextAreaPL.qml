@@ -17,16 +17,12 @@
  */
 
 import QtQuick 2.9
-import QtQuick.Controls 2.2
+import Ubuntu.Components 1.3 as UC
 
-Label {
-    elide: {
-        if (truncMode === truncModes.elide) return Text.ElideRight;
-        if (truncMode === truncModes.fade) return Text.ElideRight;
-        return Text.ElideNone;
-    }
-    font.pixelSize: styler.themeFontSizeMedium
-    wrapMode: Text.NoWrap
-
-    property int truncMode: truncModes.none
+UC.TextArea {
+    anchors.left: parent.left
+    anchors.leftMargin: styler.themeHorizontalPageMargin
+    anchors.right: parent.right
+    anchors.rightMargin: styler.themeHorizontalPageMargin
+    wrapMode: TextEdit.Wrap
 }

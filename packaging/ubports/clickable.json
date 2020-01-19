@@ -1,0 +1,128 @@
+{
+  "clickable_minimum_required": "6.8.2",
+  "template": "qmake",
+  "build_args": [
+    "SCOUT_FLAVOR=ubports",
+    "CONFIG+=disable_systemd",
+    "CONFIG+=disable_mapnik",
+    "LIBS+=-L$libosmscout_LIB_INSTALL_DIR/lib",
+    "INCLUDEPATH+=$libosmscout_LIB_INSTALL_DIR/include",
+    "LIBS+=-L$libpostal_LIB_INSTALL_DIR/usr/local/lib",
+    "INCLUDEPATH+=$libpostal_LIB_INSTALL_DIR/usr/local/include",
+    "LIBS+=-L$valhalla_LIB_INSTALL_DIR/lib",
+    "LIBS+=-L$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET",
+    "INCLUDEPATH+=$valhalla_LIB_INSTALL_DIR/include",
+    "PREFIX=/usr",
+    "PREFIX_RUNNING=usr"  
+  ],
+  "env_vars": {
+    "PKG_CONFIG_PATH": "$valhalla_LIB_INSTALL_DIR/lib/pkgconfig:$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET/pkgconfig"
+  },
+  "dependencies_target": [
+    "libmicrohttpd-dev",
+    "libmarisa-dev",
+    "libicu-dev",
+    "zlib1g-dev",
+    "libcurl4-gnutls-dev",
+    "libkyotocabinet-dev",
+    "libprotobuf-dev",
+    "libboost-date-time-dev",
+    "libboost-filesystem-dev",
+    "libboost-iostreams-dev",
+    "libboost-regex-dev",
+    "libboost-system-dev",
+    "libboost-chrono-dev",
+    "liblz4-dev",
+    "qttools5-dev",
+    "libsqlite3-dev"
+  ],
+  "dependencies_build": [
+    "gcc-opt",
+    "desktop-file-utils"
+  ],
+  "postbuild": "mv $INSTALL_DIR/usr/bin/* $INSTALL_DIR",
+  "install_data": {
+    "$ROOT/icons/osmscout-server.svg": "$INSTALL_DIR",
+    "$ROOT/packaging/ubports/osmscout-server.desktop": "$INSTALL_DIR",
+    "$ROOT/packaging/ubports/osmscout-server.apparmor": "$INSTALL_DIR",
+    "$ROOT/packaging/ubports/manifest.json": "$INSTALL_DIR"
+  },
+  "install_lib": [
+    "/usr/lib/$ARCH_TRIPLET/libmicrohttpd.so*",
+    "/usr/lib/$ARCH_TRIPLET/libkyotocabinet.so*",
+    "/usr/lib/$ARCH_TRIPLET/libmarisa.so*"
+  ],
+  "scripts": {
+    "prepare-deps": "git submodule update --recursive --init && $ROOT/packaging/ubports/prepare-deps.sh"
+  },
+  "libraries": {
+    "libosmscout": {
+      "template": "cmake",
+      "build_args": [
+        "-DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_DIR/usr",
+        "-DBUILD_SHARED_LIBS=false",
+        "-DBUILD_WITH_OPENMP=OFF",
+        "-DOSMSCOUT_BUILD_MAP_OPENGL=OFF",
+        "-DOSMSCOUT_BUILD_IMPORT=OFF",
+        "-DOSMSCOUT_BUILD_MAP_AGG=OFF",
+        "-DOSMSCOUT_BUILD_MAP_CAIRO=OFF",
+        "-DOSMSCOUT_BUILD_MAP_SVG=OFF",
+        "-DOSMSCOUT_BUILD_MAP_IOSX=OFF",
+        "-DOSMSCOUT_BUILD_TESTS=OFF",
+        "-DOSMSCOUT_BUILD_DEMOS=OFF",
+        "-DOSMSCOUT_BUILD_BINDING_JAVA=OFF",
+        "-DOSMSCOUT_BUILD_BINDING_CSHARP=OFF",
+        "-DOSMSCOUT_BUILD_DOC_API=OFF",
+        "-DOSMSCOUT_BUILD_CLIENT_QT=ON",
+        "-DOSMSCOUT_BUILD_TOOL_OSMSCOUT2=OFF",
+        "-DOSMSCOUT_BUILD_TOOL_STYLEEDITOR=OFF",
+        "-DGPERFTOOLS_USAGE=OFF",
+        "-DOSMSCOUT_BUILD_TOOL_IMPORT=OFF",
+        "-DOSMSCOUT_BUILD_TOOL_DUMPDATA=OFF"
+      ],
+      "dependencies_target": [
+        "libxml2-dev",
+        "libmarisa-dev"
+      ]
+    },
+    "libpostal": {
+      "template": "custom",
+      "build": "$ROOT/packaging/ubports/build-libpostal.sh",
+      "dependencies_build": [
+        "libtool"
+      ]
+    },
+    "valhalla": {
+      "template": "cmake",
+      "src_dir": "libs/valhalla/valhalla",
+      "build_args": [
+        "-DTHREADS_PTHREAD_ARG=0",
+        "-DCMAKE_INSTALL_PREFIX:PATH=/usr",
+        "-DBUILD_SHARED_LIBS=OFF",
+        "-DENABLE_DATA_TOOLS=OFF",
+        "-DENABLE_PYTHON_BINDINGS=OFF",
+        "-DENABLE_NODE_BINDINGS=OFF",
+        "-DENABLE_SERVICES=OFF"
+      ],
+      "dependencies_target": [
+        "liblua5.3-dev",
+        "libprotobuf-dev",
+        "libcurl4-gnutls-dev",
+        "libboost-date-time-dev",
+        "libboost-filesystem-dev",
+        "libboost-iostreams-dev",
+        "libboost-regex-dev",
+        "libboost-system-dev",
+        "libboost-program-options-dev",
+        "liblz4-dev",
+        "zlib1g-dev"
+      ],
+      "dependencies_build": [
+        "libtool",
+        "gcc-opt",
+        "jq",
+        "protobuf-compiler"
+      ]
+    }
+  }
+}
