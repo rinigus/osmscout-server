@@ -17,9 +17,11 @@
  */
 
 import QtQuick 2.9
+import QtQuick.Controls 2.2
 
-Text {
+Label {
     anchors.horizontalCenter: parent.horizontalCenter
+    color: styler.themeHighlightColor
     horizontalAlignment: Text.AlignLeft
     font.bold: true
     width: parent.width - 2*styler.themeHorizontalPageMargin
