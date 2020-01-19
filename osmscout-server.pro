@@ -90,6 +90,12 @@ isEmpty(PREFIX) {
     }
 }
 
+# PREFIX_RUNNING
+isEmpty(PREFIX_RUNNING) {
+    PREFIX_RUNNING = $$PREFIX
+}
+
+
 # installs
 styles.files = styles
 styles.path = $$PREFIX/share/$${TARGET}
@@ -118,16 +124,16 @@ scout_silica {
 
 scout_kirigami|scout_qtcontrols|scout_ubports {
     icons108.path = $$PREFIX/share/icons/hicolor/108x108/apps
-    icons108.extra = cp $$PWD/icons/108x108/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/108x108/apps/$${TARGET}.png
+    icons108.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/108x108/apps && cp $$PWD/icons/108x108/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/108x108/apps/$${TARGET}.png
     INSTALLS += icons108
     icons128.path = $$PREFIX/share/icons/hicolor/128x128/apps
-    icons128.extra = cp $$PWD/icons/128x128/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/128x128/apps/$${TARGET}.png
+    icons128.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/128x128/apps && cp $$PWD/icons/128x128/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/128x128/apps/$${TARGET}.png
     INSTALLS += icons128
     icons256.path = $$PREFIX/share/icons/hicolor/256x256/apps
-    icons256.extra = cp $$PWD/icons/256x256/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/256x256/apps/$${TARGET}.png
+    icons256.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/256x256/apps && cp $$PWD/icons/256x256/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/256x256/apps/$${TARGET}.png
     INSTALLS += icons256
     icons86.path = $$PREFIX/share/icons/hicolor/86x86/apps
-    icons86.extra = cp $$PWD/icons/86x86/harbour-osmscout-server.png $(INSTALL_ROOT)$$PREFIX/share/icons/hicolor/86x86/apps/$${TARGET}.png
+    icons86.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/86x86/apps && cp $$PWD/icons/86x86/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/86x86/apps/$${TARGET}.png
     INSTALLS += icons86
 
     appdata.path =$$PREFIX/share/metainfo
@@ -147,7 +153,7 @@ scout_silica {
 }
 
 # default prefix for data
-DEFINES += DEFAULT_DATA_PREFIX=\\\"$${PREFIX}/share/$${TARGET}/\\\"
+DEFINES += DEFAULT_DATA_PREFIX=\\\"$${PREFIX_RUNNING}/share/$${TARGET}/\\\"
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked deprecated (the exact warnings
@@ -254,10 +260,10 @@ use_osmscout {
 }
 
 # geocoder-nlp is enabled always
-DEFINES += GEOCODERNLP_ALIASFILE=\\\"$${PREFIX}/share/$${TARGET}/data/geocoder-npl-tag-aliases.json\\\"
+DEFINES += GEOCODERNLP_ALIASFILE=\\\"$${PREFIX_RUNNING}/share/$${TARGET}/data/geocoder-npl-tag-aliases.json\\\"
 
 # mapbox gl is enabled always
-DEFINES += MAPBOXGL_STYLEDIR=\\\"$${PREFIX}/share/$${TARGET}/styles/mapboxgl\\\"
+DEFINES += MAPBOXGL_STYLEDIR=\\\"$${PREFIX_RUNNING}/share/$${TARGET}/styles/mapboxgl\\\"
 
 use_mapnik {
     DEFINES += USE_MAPNIK
@@ -266,7 +272,7 @@ use_mapnik {
         DEFINES += MAPNIK_FONTS_DIR=\\\"/usr/share/harbour-osmscout-server-module-fonts/fonts\\\"
         DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"/usr/share/$${TARGET}/lib/mapnik/input\\\"
     } else {
-        DEFINES += MAPNIK_FONTS_DIR=\\\"$${PREFIX}/share/osmscout-server-fonts/fonts\\\"
+        DEFINES += MAPNIK_FONTS_DIR=\\\"$${PREFIX_RUNNING}/share/osmscout-server-fonts/fonts\\\"
         DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
     }
     LIBS += -lmapnik -licuuc
@@ -274,7 +280,7 @@ use_mapnik {
 
 use_valhalla {
     DEFINES += USE_VALHALLA
-    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"$${PREFIX}/share/$${TARGET}/data/valhalla.json\\\"
+    DEFINES += VALHALLA_CONFIG_TEMPLATE=\\\"$${PREFIX_RUNNING}/share/$${TARGET}/data/valhalla.json\\\"
     PKGCONFIG += libvalhalla
 }
 

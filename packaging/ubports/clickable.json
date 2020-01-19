@@ -11,7 +11,9 @@
     "INCLUDEPATH+=$libpostal_LIB_INSTALL_DIR/usr/local/include",
     "LIBS+=-L$valhalla_LIB_INSTALL_DIR/lib",
     "LIBS+=-L$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET",
-    "INCLUDEPATH+=$valhalla_LIB_INSTALL_DIR/include"
+    "INCLUDEPATH+=$valhalla_LIB_INSTALL_DIR/include",
+    "PREFIX=/usr",
+    "PREFIX_RUNNING=usr"  
   ],
   "env_vars": {
     "PKG_CONFIG_PATH": "$valhalla_LIB_INSTALL_DIR/lib/pkgconfig:$valhalla_LIB_INSTALL_DIR/lib/$ARCH_TRIPLET/pkgconfig"
@@ -38,7 +40,7 @@
     "gcc-opt",
     "desktop-file-utils"
   ],
-  "postbuild": "mv $INSTALL_DIR/usr/local/bin/* $INSTALL_DIR",
+  "postbuild": "mv $INSTALL_DIR/usr/bin/* $INSTALL_DIR",
   "install_data": {
     "$ROOT/packaging/ubports/osmscout-server.desktop": "$INSTALL_DIR",
     "$ROOT/packaging/ubports/osmscout-server.apparmor": "$INSTALL_DIR",
