@@ -42,6 +42,7 @@
   ],
   "postbuild": "mv $INSTALL_DIR/usr/bin/* $INSTALL_DIR",
   "install_data": {
+    "$ROOT/icons/osmscout-server.svg": "$INSTALL_DIR",
     "$ROOT/packaging/ubports/osmscout-server.desktop": "$INSTALL_DIR",
     "$ROOT/packaging/ubports/osmscout-server.apparmor": "$INSTALL_DIR",
     "$ROOT/packaging/ubports/manifest.json": "$INSTALL_DIR"
