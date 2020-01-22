@@ -2514,68 +2514,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="178"/>
+        <location filename="../src/main.cpp" line="188"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="183"/>
+        <location filename="../src/main.cpp" line="193"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Spusťte server bez GUI jako konzolovou aplikaci</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="187"/>
+        <location filename="../src/main.cpp" line="197"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Při spuštění v režimu konzoly nevypínejte protokoly</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="192"/>
+        <location filename="../src/main.cpp" line="202"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Spustit server v režimu aktivovaném socketem SystemD</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="198"/>
+        <location filename="../src/main.cpp" line="208"/>
         <source>Start download of the maps</source>
         <translation>Začít stahovat mapy</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="202"/>
+        <location filename="../src/main.cpp" line="212"/>
         <source>Update list of available maps</source>
         <translation>Aktualizovat seznam dostupných map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="206"/>
+        <location filename="../src/main.cpp" line="216"/>
         <source>List maps available on device</source>
         <translation>Zobrazit mapy dostupné na zařízení</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="210"/>
+        <location filename="../src/main.cpp" line="220"/>
         <source>List subscribed maps</source>
         <translation>Zobrazit odebírané mapy</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="214"/>
+        <location filename="../src/main.cpp" line="224"/>
         <source>List maps provided for download</source>
         <translation>Zobrazit mapy poskytované ke stažení</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="218"/>
+        <location filename="../src/main.cpp" line="228"/>
         <source>List missing maps</source>
         <translation>Zobrazit chybějící mapy</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="222"/>
+        <location filename="../src/main.cpp" line="232"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Přihlaste se k &lt;country&gt; datové sadě</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="223"/>
-        <location filename="../src/main.cpp" line="228"/>
+        <location filename="../src/main.cpp" line="233"/>
+        <location filename="../src/main.cpp" line="238"/>
         <source>country-id</source>
         <translation>country-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="227"/>
+        <location filename="../src/main.cpp" line="237"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Zrušit odběr &lt;country&gt; datové sady</translation>
     </message>
