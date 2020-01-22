@@ -8,7 +8,7 @@
 * Wed Jan 22 2020 rinigus <rinigus.git@gmail.com> 1.16.0-1
 - add Ubuntu Touch support [jonnius]
 - small bugfixes
-- fix translations for desktop and Ubuntu Touch
+- fix loading of translations for desktop and Ubuntu Touch
 - update translations
 
 * Sat Nov 30 2019 rinigus <rinigus.git@gmail.com> 1.15.6-1
