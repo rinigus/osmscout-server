@@ -39,6 +39,16 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.16.0" date="2020-01-22">
+     <description>
+       <ul>
+         <li>Add Ubuntu Touch support [jonnius]</li>
+         <li>Fix loading of translations for desktop and Ubuntu Touch</li>
+         <li>Update translations</li>
+         <li>Bugfixes</li>
+       </ul>
+     </description>
+   </release>
    <release version="1.15.6" date="2019-11-30">
      <description>
        <ul>
