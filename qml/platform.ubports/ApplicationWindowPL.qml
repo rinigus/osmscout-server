@@ -38,10 +38,6 @@ ApplicationWindow {
     property int    screenWidth: width
     property bool   keepAlive: false
 
-    ScreenSaver {
-        screenSaverEnabled: !(Qt.application.state === Qt.ApplicationActive && keepAlive)
-    }
-
     StackView {
         id: pageStack
         initialItem: appWindow.initialPage
