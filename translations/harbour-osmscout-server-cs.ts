@@ -1685,7 +1685,7 @@
     <message>
         <location filename="../qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vezměte prosím na vědomí, že kvůli balíčkování OSM Scout Serveru některé profily pravděpodobně chybí.</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="56"/>
