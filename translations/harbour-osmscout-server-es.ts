@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="es" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -20,11 +22,6 @@
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
         <translation>Iconos de %1.</translation>
-    </message>
-    <message>
-        <location filename="../qml/AboutPage.qml" line="44"/>
-        <source>Banner photo by %1 (%2 licanse).</source>
-        <translation>Foto de banner de %1 (licencia %2)</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
@@ -75,6 +72,11 @@
         <location filename="../qml/AboutPage.qml" line="36"/>
         <source>License: GPLv3</source>
         <translation>Licencia: GPLv3</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutPage.qml" line="44"/>
+        <source>Banner photo by %1 (%2 license).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>
@@ -2511,68 +2513,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="164"/>
+        <location filename="../src/main.cpp" line="178"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="183"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Ejecutar el servidor sin GUI como una aplicación de consola</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="173"/>
+        <location filename="../src/main.cpp" line="187"/>
         <source>Do not output logs when running in console mode</source>
         <translation>No generar registros cuando se está ejecutándo en modo consola</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="178"/>
+        <location filename="../src/main.cpp" line="192"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Ejecutar el servidor en modo SystemD socket-activado</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="184"/>
+        <location filename="../src/main.cpp" line="198"/>
         <source>Start download of the maps</source>
         <translation>Iniciar la descarga de mapas</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="188"/>
+        <location filename="../src/main.cpp" line="202"/>
         <source>Update list of available maps</source>
         <translation>Actualizar lista de mapas disponibles</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="192"/>
+        <location filename="../src/main.cpp" line="206"/>
         <source>List maps available on device</source>
         <translation>Lista de mapas disponibles en el dispositivo</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="196"/>
+        <location filename="../src/main.cpp" line="210"/>
         <source>List subscribed maps</source>
         <translation>Lista de mapas suscritos</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="200"/>
+        <location filename="../src/main.cpp" line="214"/>
         <source>List maps provided for download</source>
         <translation>Lista de mapas provistos para descargar</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="204"/>
+        <location filename="../src/main.cpp" line="218"/>
         <source>List missing maps</source>
         <translation>Lista de mapas que faltan</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="208"/>
+        <location filename="../src/main.cpp" line="222"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Suscribirse al conjunto de datos de &lt;country&gt;</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="209"/>
-        <location filename="../src/main.cpp" line="214"/>
+        <location filename="../src/main.cpp" line="223"/>
+        <location filename="../src/main.cpp" line="228"/>
         <source>country-id</source>
         <translation>id-pais</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="213"/>
+        <location filename="../src/main.cpp" line="227"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Anular suscripción del conjunto de datos de &lt;counrty&gt;</translation>
     </message>

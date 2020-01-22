@@ -24,11 +24,6 @@
         <translation>Ikoner ved %1.</translation>
     </message>
     <message>
-        <location filename="../qml/AboutPage.qml" line="44"/>
-        <source>Banner photo by %1 (%2 licanse).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
         <source>Translations</source>
         <translation>Oversettinger</translation>
@@ -77,6 +72,11 @@
         <location filename="../qml/AboutPage.qml" line="36"/>
         <source>License: GPLv3</source>
         <translation>Lisens: GPLv3</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutPage.qml" line="44"/>
+        <source>Banner photo by %1 (%2 license).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>
@@ -2513,68 +2513,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="164"/>
+        <location filename="../src/main.cpp" line="178"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="183"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Kjør serveren uten brukergrensesnitt som et konsollprogram</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="173"/>
+        <location filename="../src/main.cpp" line="187"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Ikke skriv ut logger når du kjører i konsollmodus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="178"/>
+        <location filename="../src/main.cpp" line="192"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Kjør serveren i SystemD socket-aktivert modus</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="184"/>
+        <location filename="../src/main.cpp" line="198"/>
         <source>Start download of the maps</source>
         <translation>Start nedlasting av kartene</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="188"/>
+        <location filename="../src/main.cpp" line="202"/>
         <source>Update list of available maps</source>
         <translation>Oppdater liste over tilgjengelige kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="192"/>
+        <location filename="../src/main.cpp" line="206"/>
         <source>List maps available on device</source>
         <translation>List kart som er tilgjengelig på enheten</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="196"/>
+        <location filename="../src/main.cpp" line="210"/>
         <source>List subscribed maps</source>
         <translation>List abbonerte kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="200"/>
+        <location filename="../src/main.cpp" line="214"/>
         <source>List maps provided for download</source>
         <translation>List kart som er klare for nedlasting</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="204"/>
+        <location filename="../src/main.cpp" line="218"/>
         <source>List missing maps</source>
         <translation>Liste manglende kart</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="208"/>
+        <location filename="../src/main.cpp" line="222"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Abboner på &lt;country&gt; datasett</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="209"/>
-        <location filename="../src/main.cpp" line="214"/>
+        <location filename="../src/main.cpp" line="223"/>
+        <location filename="../src/main.cpp" line="228"/>
         <source>country-id</source>
         <translation>land-id</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="213"/>
+        <location filename="../src/main.cpp" line="227"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Avslutt abbonent på &lt;country&gt; datasett</translation>
     </message>

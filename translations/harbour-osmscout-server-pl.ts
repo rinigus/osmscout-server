@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="pl" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -20,11 +22,6 @@
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
         <translation>Ikony stworzone przez %1.</translation>
-    </message>
-    <message>
-        <location filename="../qml/AboutPage.qml" line="44"/>
-        <source>Banner photo by %1 (%2 licanse).</source>
-        <translation>Zdjecie zrobione przez %1(%2 licencja).</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
@@ -75,6 +72,11 @@
         <location filename="../qml/AboutPage.qml" line="36"/>
         <source>License: GPLv3</source>
         <translation>Licencja: GPLv3</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutPage.qml" line="44"/>
+        <source>Banner photo by %1 (%2 license).</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>
@@ -1573,7 +1575,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="99"/>
         <source>motorway link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="107"/>
@@ -1593,7 +1595,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="131"/>
         <source>primary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="139"/>
@@ -1618,7 +1620,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="171"/>
         <source>secondary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="179"/>
@@ -1633,7 +1635,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="195"/>
         <source>tertiary link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="203"/>
@@ -1643,7 +1645,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="211"/>
         <source>trunk link</source>
-        <translation type="unfinished"/>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="219"/>
@@ -2512,68 +2514,68 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../src/main.cpp" line="164"/>
+        <location filename="../src/main.cpp" line="178"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="169"/>
+        <location filename="../src/main.cpp" line="183"/>
         <source>Run the server without GUI as a console application</source>
         <translation>Uruchom serwer bez GUI jako aplikację konsolową</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="173"/>
+        <location filename="../src/main.cpp" line="187"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Nie pokazuj logów kiedy uruchomione w trybie konsolowym</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="178"/>
+        <location filename="../src/main.cpp" line="192"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Uruchom serwer w trybie aktywacji gniazda SystemD</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="184"/>
+        <location filename="../src/main.cpp" line="198"/>
         <source>Start download of the maps</source>
         <translation>Uruchom ściąganie map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="188"/>
+        <location filename="../src/main.cpp" line="202"/>
         <source>Update list of available maps</source>
         <translation>Zaktualizuj listę dostępnych map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="192"/>
+        <location filename="../src/main.cpp" line="206"/>
         <source>List maps available on device</source>
         <translation>Lista map dostępnych na urządzeniu</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="196"/>
+        <location filename="../src/main.cpp" line="210"/>
         <source>List subscribed maps</source>
         <translation>Lista subskrybowanych map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="200"/>
+        <location filename="../src/main.cpp" line="214"/>
         <source>List maps provided for download</source>
         <translation>Lista map przeznaczonych do ściągnięcia</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="204"/>
+        <location filename="../src/main.cpp" line="218"/>
         <source>List missing maps</source>
         <translation>Lista brakujących map</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="208"/>
+        <location filename="../src/main.cpp" line="222"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
         <translation>Subskrybuj zbiór danych dla &lt;country&gt;</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="209"/>
-        <location filename="../src/main.cpp" line="214"/>
+        <location filename="../src/main.cpp" line="223"/>
+        <location filename="../src/main.cpp" line="228"/>
         <source>country-id</source>
         <translation>id-państwa</translation>
     </message>
     <message>
-        <location filename="../src/main.cpp" line="213"/>
+        <location filename="../src/main.cpp" line="227"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
         <translation>Wypisz zbiór danych dla &lt;country&gt; </translation>
     </message>
