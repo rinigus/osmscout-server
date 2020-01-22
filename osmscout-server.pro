@@ -71,7 +71,7 @@ QT += core network sql xml positioning dbus
     QT += gui
 }
 scout_kirigami|scout_qtcontrols|scout_ubports {
-    QT += quick qml widgets
+    QT += quick qml widgets quickcontrols2
 }
 
 # Overall CONFIG
@@ -150,6 +150,10 @@ scout_silica {
     DEFINES += IS_QTCONTROLS_QT
 } else {
     DEFINES += IS_CONSOLE_QT
+}
+
+scout_ubports {
+    DEFINES += DEFAULT_FALLBACK_STYLE=\\\"suru\\\"
 }
 
 # default prefix for data

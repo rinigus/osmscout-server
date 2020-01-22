@@ -74,6 +74,7 @@
 #include <QCommandLineParser>
 #include <QDBusConnection>
 #include <QTranslator>
+#include <QQuickStyle>
 
 #include <QDebug>
 
@@ -115,6 +116,11 @@ int main(int argc, char *argv[])
 #else
   QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
 #endif
+#endif
+
+#ifdef DEFAULT_FALLBACK_STYLE
+  if (QQuickStyle::name().isEmpty())
+    QQuickStyle::setStyle(DEFAULT_FALLBACK_STYLE);
 #endif
 
 #ifdef IS_SAILFISH_OS
