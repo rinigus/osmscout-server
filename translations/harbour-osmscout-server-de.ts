@@ -259,7 +259,7 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="103"/>
         <source>Opened OSM Scout database: %1</source>
-        <translation>Geöffnete OSM Scout Datenbank: %1</translation>
+        <translation>Geöffnete OSM Scout Datenbank:&#xa0;%1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="105"/>
@@ -357,6 +357,7 @@
     <message>
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
+        <location filename="../qml/platform.ubports/DialogPL.qml" line="33"/>
         <source>Accept</source>
         <translation>Akzeptieren</translation>
     </message>

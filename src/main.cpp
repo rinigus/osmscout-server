@@ -152,12 +152,22 @@ int main(int argc, char *argv[])
 #ifdef IS_SAILFISH_OS
     tr_path = SailfishApp::pathTo(QString("translations")).toLocalFile();
 #endif
+#ifdef IS_QTCONTROLS_QT
+    tr_path = ":/i18n";
+#endif
+
     if ( !tr_path.isEmpty() )
       {
         QString locale = QLocale::system().name();
         QTranslator *translator = new QTranslator();
 
-        if ( !translator->load(QLocale(), APP_NAME, "-",
+        if ( !translator->load(QLocale(),
+                       #ifdef IS_QTCONTROLS_QT
+                               "osmscout-server",
+                       #else
+                               APP_NAME,
+                       #endif
+                               "-",
                                tr_path) )
           qWarning() << "Failed to load translation for " << locale
                      << " " << tr_path;

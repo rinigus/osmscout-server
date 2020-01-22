@@ -319,7 +319,13 @@ TRANSLATIONS += \
     translations/$${TARGET}-ru.ts \
     translations/$${TARGET}-sv.ts \
     translations/$${TARGET}-nl_BE.ts \
-    translations/$${TARGET}-it_IT.ts
+    translations/$${TARGET}-it_IT.ts \
+    translations/$${TARGET}-pt_BR.ts
+
+scout_kirigami|scout_qtcontrols|scout_ubports {
+    CONFIG += lrelease embed_translations
+}
+
 
 DISTFILES += $${TARGET}.desktop
 

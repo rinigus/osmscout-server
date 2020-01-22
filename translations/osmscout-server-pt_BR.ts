@@ -1,0 +1,1 @@
+harbour-osmscout-server-pt_BR.ts

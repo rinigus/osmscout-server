@@ -357,6 +357,7 @@
     <message>
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
+        <location filename="../qml/platform.ubports/DialogPL.qml" line="33"/>
         <source>Accept</source>
         <translation>Accepteren</translation>
     </message>
@@ -2162,7 +2163,7 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="225"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation>Let op! Als je &lt;i&gt;Geocoder-NLP&lt;/i&gt; selecteert, specificeer dan hieronder in de back-endinstellingen de talen die moeten worden gebruikt voor het verwerken van adressen. Zo niet kan het zijn dat de server grote hoeveelheden RAM gebruikt. </translation>
+        <translation>Let op! Als je &lt;i&gt;Geocoder-NLP&lt;/i&gt; selecteert, specificeer dan hieronder in de back-endinstellingen de talen die moeten worden gebruikt voor het verwerken van adressen. Zo niet kan het zijn dat de server grote hoeveelheden RAM gebruikt.&#xa0;</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="237"/>

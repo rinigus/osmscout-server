@@ -357,6 +357,7 @@
     <message>
         <location filename="../qml/platform.kirigami/DialogPL.qml" line="26"/>
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
+        <location filename="../qml/platform.ubports/DialogPL.qml" line="33"/>
         <source>Accept</source>
         <translation type="unfinished"></translation>
     </message>
