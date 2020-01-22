@@ -74,7 +74,9 @@
 #include <QCommandLineParser>
 #include <QDBusConnection>
 #include <QTranslator>
+#ifdef IS_QTCONTROLS_QT
 #include <QQuickStyle>
+#endif
 
 #include <QDebug>
 
@@ -118,9 +120,11 @@ int main(int argc, char *argv[])
 #endif
 #endif
 
+#ifdef IS_QTCONTROLS_QT
 #ifdef DEFAULT_FALLBACK_STYLE
   if (QQuickStyle::name().isEmpty())
     QQuickStyle::setStyle(DEFAULT_FALLBACK_STYLE);
+#endif
 #endif
 
 #ifdef IS_SAILFISH_OS
