@@ -23,5 +23,8 @@
         <file alias="qml/platform/StylerPL.qml">qml/platform.ubports/StylerPL.qml</file>
         <file alias="qml/platform/TextFieldPL.qml">qml/platform.ubports/TextFieldPL.qml</file>
         <file alias="qml/platform/TextSwitchPL.qml">qml/platform.ubports/TextSwitchPL.qml</file>
+        <file>icons/ubports/country-available.svg</file>
+        <file>icons/ubports/country-download.svg</file>
+        <file>icons/ubports/country-on-device.svg</file>
     </qresource>
 </RCC>

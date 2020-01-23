@@ -57,13 +57,13 @@ QtObject {
     property real themeIconSizeSmall: units.gridUnit*4
 
     // used icons
-    property string iconCountryAvailable: "qrc:/icons/fallback/country-on-device.svg"
-    property string iconCountryRequested: "qrc:/icons/fallback/country-download.svg"
-    property string iconFolder: "qrc:/icons/fallback/folder-symbolic.svg"
-    property string iconIncompatibleVersion: "qrc:/icons/fallback/incompatible-version.svg"
-    property string iconMapnikGlobal: "qrc:/icons/fallback/globe.svg"
-    property string iconPostalGlobal: "qrc:/icons/fallback/language.svg"
-    property string iconRegion: "qrc:/icons/fallback/country-available.svg"
+    property string iconCountryAvailable: "qrc:/icons/ubports/country-on-device.svg"
+    property string iconCountryRequested: "qrc:/icons/ubports/country-download.svg"
+    property string iconFolder: "image://theme/folder-symbolic"
+    property string iconIncompatibleVersion: "image://theme/emblem-important-symbolic"
+    property string iconMapnikGlobal: "image://theme/network-workgroup-symbolic"
+    property string iconPostalGlobal: "image://theme/preferences-desktop-locale-symbolic"
+    property string iconRegion: "qrc:/icons/ubports/country-available.svg"
 
     // used icons
     property string iconBack: "image://theme/back" //Qt.resolvedUrl("../../icons/go-previous-symbolic.svg")
