@@ -13,7 +13,7 @@
     "LIBS+=-L${VALHALLA_LIB_INSTALL_DIR}/lib/${ARCH_TRIPLET}",
     "INCLUDEPATH+=${VALHALLA_LIB_INSTALL_DIR}/include",
     "PREFIX=/usr",
-    "PREFIX_RUNNING=usr"  
+    "PREFIX_RUNNING=usr"
   ],
   "env_vars": {
     "PKG_CONFIG_PATH": "${VALHALLA_LIB_INSTALL_DIR}/lib/pkgconfig:${VALHALLA_LIB_INSTALL_DIR}/lib/${ARCH_TRIPLET}/pkgconfig"
