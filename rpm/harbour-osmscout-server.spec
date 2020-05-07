@@ -54,7 +54,6 @@ BuildRequires:  boost-iostreams >= 1.51
 BuildRequires:  boost-regex >= 1.51
 BuildRequires:  boost-system >= 1.51
 BuildRequires:  lz4-devel
-BuildRequires:  opt-gcc
 BuildRequires:  desktop-file-utils
 
 %description
