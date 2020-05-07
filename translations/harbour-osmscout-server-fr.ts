@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -16,12 +14,12 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="42"/>
         <source>Artwork</source>
-        <translation type="unfinished"></translation>
+        <translation>Illustrations</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Icônes par %1.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
@@ -76,7 +74,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 license).</source>
-        <translation type="unfinished"></translation>
+        <translation>Photo de bannière par %1 (licence %2).</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>
@@ -359,7 +357,7 @@
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <location filename="../qml/platform.ubports/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Accepter</translation>
     </message>
 </context>
 <context>
@@ -607,7 +605,7 @@
     <message>
         <location filename="../qml/GeocoderPage.qml" line="60"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il s&apos;agit du principal analyseur d&apos;adresses du géocodeur. Il est recommandé d&apos;activer l&apos;analyseur &lt;i&gt;libpostal&lt;/i&gt;, à moins que le matériel ne permette pas de l&apos;utiliser et que les limitations de l&apos;analyseur primitif soient prises en compte. Notez qu&apos;au moins un analyseur doit être spécifié.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="68"/>
@@ -668,7 +666,7 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos d&apos;OSM Scout Server</translation>
     </message>
 </context>
 <context>
@@ -676,7 +674,7 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation type="unfinished"></translation>
+        <translation>À propos d&apos;OSM Scout Server</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
@@ -1211,17 +1209,17 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;ouvrir la base de données de Mapbox GL : %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;exécuter une requête dans la base de données de Mapbox GL : %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;exécuter la requête dans la base de données des polices Mapbox GL : %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
@@ -1659,7 +1657,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Accepter</translation>
     </message>
 </context>
 <context>
@@ -1667,7 +1665,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation>Accepter</translation>
     </message>
 </context>
 <context>
@@ -1686,12 +1684,12 @@
     <message>
         <location filename="../qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veuillez noter que certains profils peuvent manquer en raison de l&apos;empaquetage d&apos;OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="56"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le profil &lt;i&gt;par défaut&lt;/i&gt;prend en charge les applications cartographiques en utilisant le moteur &lt;i&gt;Mapbox GL&lt;/i&gt;, utilise &lt;i&gt;Geocoder-NLP&lt;/i&gt; pour chercher des emplacements et &lt;i&gt;Valhalla&lt;/i&gt; pour calculer les itinéraires. Ce profil est recommandé pour les nouveaux utilisateurs et nouvelles utilisatrices de cartes en tuiles vectorielles. &lt;br&gt;&lt;br&gt;Pour ceux et celles dont les applications cartographiques utilisent des trames de tuiles traditionnelles, le profil recommandé inclut les jeux de données &lt;i&gt;Mapnik&lt;/i&gt; et utilise les mêmes moteurs de recherche et de calcul d&apos;itinéraires que le profil &lt;i&gt;par défaut&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Pour les utilisateurs et les utilisatrices souhaitant utiliser à la fois des clients de cartographie à trame de tuiles et à tuiles vectorielles, le profil recommandé combine les jeux de données &lt;i&gt;Mapbox GL&lt;/i&gt;, prend en charge le rendu cartographique en trame de tuiles par &lt;i&gt;Mapnik&lt;/i&gt; et utilise les mêmes moteurs de recherche et de calculs d&apos;itinéraires que le profil &lt;i&gt;par défaut&lt;/i&gt;. Puisque ce profil inclut des données de plusieurs moteurs de rendu, ses besoins en terme de stockage sont plus grands.&lt;br&gt;&lt;br&gt;Le profil où &lt;i&gt;libosmscout&lt;/i&gt; est combiné avec &lt;i&gt;Geocoder-NLP&lt;/i&gt; requiert un stockage plus faible par rapport à celui par défaut. Néanmoins, le rendu des cartes et les calculs d&apos;itinéraires seront limités à un seul espace. De plus, la qualité du rendu est inférieure et la vitesse de calcul d&apos;itinéraires est plus lente comparé au profil par défaut. Le profil &lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; nécessite le plus petit stockage de tous les profils. Néanmoins, le rendu des cartes, la recherche et le calcul d&apos;itinéraires seront limités à un seul espace. De plus, la qualité du rendu et de la recherche est inférieure et la vitesse de calcul d&apos;itinéraires est plus lente comparé au profil par défaut.&lt;br&gt;&lt;br&gt;En utilisant des profils &lt;i&gt;personnalisés&lt;/i&gt;, les paramètres et le stockage du gestionnaire de cartes ne sont pas définis par les profils et doivent être spécifiés. Ce profil permet de sélectionner individuellement les composants de rendu, de recherche et de calcul d&apos;itinéraires. Notez que l&apos;utilisateur ou l&apos;utilisatrice est responsable de faire en sorte que l&apos;ajustement des paramètres soit cohérent entre les besoins des moteurs utilisés et le stockage.</translation>
     </message>
 </context>
 <context>
@@ -1704,43 +1702,43 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="74"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Activez le ou les moteur(s) correspondant(s) en utilisant le menu Profils</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chargement des données publiées pour la recherche %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La trame de tuiles n&apos;est pas disponible car Mapnik et libosmscout sont désactivés par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="502"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le moteur Mapbox GL est désactivé par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="670"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La recherche n&apos;est pas disponible car GeocoderNLP et libosmscout sont désactivés par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="717"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>La recherche de points d&apos;intérêt à proximité n&apos;est pas disponible car GeocoderNLP et libosmscout sont désactivés par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="866"/>
         <location filename="../src/requestmapper.cpp" line="1023"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le routage n&apos;est pas disponible car Valhalla et libosmscout sont désactivés par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="967"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Le routage et les autres services de Valhalla ne sont pas disponibles car Valhalla est désactivé par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
 </context>
 <context>
@@ -2131,24 +2129,24 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="173"/>
         <source>Rendering backend is responsible for drawing the maps on raster tiles.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le moteur de rendu est chargé de dessiner les cartes sur la trame de tuiles.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="180"/>
         <source>Renderer</source>
-        <translation type="unfinished"></translation>
+        <translation>Rendu</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="182"/>
         <source>Mapnik (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapnik (par défaut)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="183"/>
         <location filename="../qml/SettingsPage.qml" line="212"/>
         <location filename="../qml/SettingsPage.qml" line="247"/>
         <source>libosmscout</source>
-        <translation type="unfinished"></translation>
+        <translation>libosmscout</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="201"/>
@@ -2158,22 +2156,22 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="211"/>
         <source>Geocoder-NLP (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Geocoder-NLP (par défaut)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="225"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation type="unfinished"></translation>
+        <translation>Note : si vous sélectionnez &lt;i&gt;Geocoder-NLP&lt;/i&gt;, veuillez spécifier les langues qui devraient être utilisées pour l&apos;analyse des adresses dans les paramètres des moteurs ci-dessous. Dans le cas contraire, il se peut que le serveur utilise une grande quantité de mémoire vive.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="237"/>
         <source>Routing engine is responsible for calculating routes between origin and destination.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le moteur de routage est chargé de calculer les itinéraires entre les points d&apos;origine et de destination.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="246"/>
         <source>Valhalla (default)</source>
-        <translation type="unfinished"></translation>
+        <translation>Valhalla (par défaut)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="277"/>
@@ -2331,12 +2329,12 @@
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Veuillez installer les modules manquants. Après l&apos;installation du ou des module(s), veuillez redémarrer OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation type="unfinished"></translation>
+        <translation>Une fois le dossier de stockage sélectionné et disponible, l&apos;étape suivante consiste à obtenir des cartes. Pour cela, vous pouvez sélectionner et télécharger des cartes à l&apos;aide de &lt;i&gt;Map Manager&lt;/i&gt;  (voir le menu).</translation>
     </message>
 </context>
 <context>
@@ -2414,12 +2412,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation type="unfinished"></translation>
+        <translation>Correspondance cartographique demandée: mode=%1</translation>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation type="unfinished"></translation>
+        <translation>Le mode de correspondance cartographique %1 n&apos;est pas pris en charge</translation>
     </message>
 </context>
 <context>
@@ -2427,7 +2425,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fermeture du service de correspondance cartographique pour le client DBus %1</translation>
     </message>
 </context>
 <context>
@@ -2445,12 +2443,12 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de charger la configuration Valhalla : %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>
         <source>Exception in Valhalla: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Exception dans Valhalla : %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
@@ -2585,7 +2583,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialisation</translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>

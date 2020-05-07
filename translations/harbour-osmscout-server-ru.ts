@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="ru" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -46,7 +44,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="70"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation>Почтовые индексы Великобритании загружаются с &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Эти данные содержат: данные Государственной топографической службы ©&#xa0;копирайт государства и права на базу данных 2017; данные Royal Mail © копирайт Royal Mail и права на базу данных 2017; Национальные статистические данные ©&#xa0;копирайт государства и права на базу данных 2017.</translation>
+        <translation>Почтовые индексы Великобритании загружаются с &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Эти данные содержат: данные Государственной топографической службы © копирайт государства и права на базу данных 2017; данные Royal Mail © копирайт Royal Mail и права на базу данных 2017; Национальные статистические данные © копирайт государства и права на базу данных 2017.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="77"/>
@@ -76,7 +74,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 license).</source>
-        <translation type="unfinished"></translation>
+        <translation>Фото баннера %1 (лицензия %2).</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="es" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="es" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -76,7 +74,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 license).</source>
-        <translation type="unfinished"></translation>
+        <translation>Foto del banner de %1 (licencia %2).</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>

@@ -1,6 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="pl" sourcelanguage="en">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="pl" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
@@ -76,7 +74,7 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 license).</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdjecie na banerze wykonane przez %1 (%2 licencja)</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>
@@ -1576,7 +1574,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="99"/>
         <source>motorway link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="107"/>
@@ -1596,7 +1594,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="131"/>
         <source>primary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="139"/>
@@ -1621,7 +1619,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="171"/>
         <source>secondary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="179"/>
@@ -1636,7 +1634,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="195"/>
         <source>tertiary link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="203"/>
@@ -1646,7 +1644,7 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="211"/>
         <source>trunk link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="219"/>
