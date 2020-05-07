@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Thu May 7 2020 rinigus <rinigus.git@gmail.com> 1.16.1-1
+- update translations
+- [sailfish] update RPM spec to use system-provided gcc
+
 * Wed Jan 22 2020 rinigus <rinigus.git@gmail.com> 1.16.0-1
 - add Ubuntu Touch support [jonnius]
 - small bugfixes
