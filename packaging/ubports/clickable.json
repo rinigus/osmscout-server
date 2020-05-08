@@ -1,6 +1,6 @@
 {
-  "clickable_minimum_required": "6.9.1",
-  "template": "qmake",
+  "clickable_minimum_required": "6.13.0",
+  "builder": "qmake",
   "build_args": [
     "SCOUT_FLAVOR=ubports",
     "CONFIG+=disable_systemd",
@@ -57,7 +57,7 @@
   },
   "libraries": {
     "libosmscout": {
-      "template": "cmake",
+      "builder": "cmake",
       "build_args": [
         "-DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_DIR}/usr",
         "-DBUILD_SHARED_LIBS=false",
@@ -86,14 +86,14 @@
       ]
     },
     "libpostal": {
-      "template": "custom",
+      "builder": "custom",
       "build": "${ROOT}/packaging/ubports/build-libpostal.sh",
       "dependencies_host": [
         "libtool"
       ]
     },
     "valhalla": {
-      "template": "cmake",
+      "builder": "cmake",
       "src_dir": "libs/valhalla/valhalla",
       "build_args": [
         "-DTHREADS_PTHREAD_ARG=0",
