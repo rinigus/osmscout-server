@@ -1,9 +1,10 @@
 #!/bin/bash
 set -Eeuo pipefail
 
-LIBOSMSCOUT_SRC_DIR="${ROOT}/libs/libosmscout"
-LIBPOSTAL_SRC_DIR="${ROOT}/libs/libpostal"
-VALHALLA_SRC_DIR="${ROOT}/libs/valhalla"
+ROOT_DIR=$(git rev-parse --show-toplevel)
+LIBOSMSCOUT_SRC_DIR="${ROOT_DIR}/libs/libosmscout"
+LIBPOSTAL_SRC_DIR="${ROOT_DIR}/libs/libpostal"
+VALHALLA_SRC_DIR="${ROOT_DIR}/libs/valhalla"
 
 # Remove old downloads
 rm -rf "${LIBOSMSCOUT_SRC_DIR}" "${LIBPOSTAL_SRC_DIR}" "${VALHALLA_SRC_DIR}"
