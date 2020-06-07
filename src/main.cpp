@@ -149,11 +149,12 @@ int main(int argc, char *argv[])
   {
     QString tr_path;
 
-#ifdef IS_SAILFISH_OS
-    tr_path = SailfishApp::pathTo(QString("translations")).toLocalFile();
-#endif
-#ifdef IS_QTCONTROLS_QT
+#if defined(IS_UBPORTS)
+    tr_path = "./translations";
+#elif defined(IS_QTCONTROLS_QT)
     tr_path = ":/i18n";
+#elif defined(IS_SAILFISH_OS)
+    tr_path = SailfishApp::pathTo(QString("translations")).toLocalFile();
 #endif
 
     if ( !tr_path.isEmpty() )
