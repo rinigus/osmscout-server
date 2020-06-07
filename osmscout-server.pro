@@ -146,8 +146,10 @@ DEFINES += APP_NAME=\\\"$$APP_NAME\\\"
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 scout_silica {
     DEFINES += IS_SAILFISH_OS
-} else:scout_qtcontrols|scout_kirigami|scout_ubports {
+} else:scout_qtcontrols|scout_kirigami {
     DEFINES += IS_QTCONTROLS_QT
+} else:scout_ubports {
+    DEFINES += IS_QTCONTROLS_QT IS_UBPORTS
 } else {
     DEFINES += IS_CONSOLE_QT
 }
@@ -322,10 +324,24 @@ TRANSLATIONS += \
     translations/$${TARGET}-it_IT.ts \
     translations/$${TARGET}-pt_BR.ts
 
-scout_kirigami|scout_qtcontrols|scout_ubports {
+scout_kirigami|scout_qtcontrols {
     CONFIG += lrelease embed_translations
 }
 
+scout_ubports {
+    qtPrepareTool(LRELEASE, lrelease)
+    for(tsfile, TRANSLATIONS) {
+        qmfile = $$shadowed($$tsfile)
+        qmfile ~= s,.ts$,.qm,
+        qmdir = $$dirname(qmfile)
+        !exists($$qmdir) {
+            mkpath($$qmdir)|error("Aborting.")
+        }
+        command = $$LRELEASE -removeidentical $$tsfile -qm $$qmfile
+        system($$command)|error("Failed to run: $$command")
+        TRANSLATIONS_FILES += $$qmfile
+    }
+}
 
 DISTFILES += $${TARGET}.desktop
 
