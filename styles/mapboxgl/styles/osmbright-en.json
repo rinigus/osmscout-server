@@ -416,6 +416,39 @@
       }
     },
     {
+      "id": "building-outline",
+      "type": "line",
+      "source": "osmscout",
+      "source-layer": "building",
+      "paint": {
+        "line-width": 2,
+        "line-opacity": {
+          "stops": [
+            [
+              13,
+              0
+            ],
+            [
+              15,
+              1
+            ]
+          ]
+        },
+        "line-color": {
+          "stops": [
+            [
+              14,
+              "#e6dccf"
+            ],
+            [
+              16,
+              "#decfbe"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "id": "building",
       "type": "fill",
       "source": "osmscout",
@@ -431,18 +464,6 @@
             [
               15,
               1
-            ]
-          ]
-        },
-        "fill-outline-color": {
-          "stops": [
-            [
-              14,
-              "#e6dccf"
-            ],
-            [
-              16,
-              "#decfbe"
             ]
           ]
         },
