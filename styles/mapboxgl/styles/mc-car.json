@@ -3470,120 +3470,77 @@
       }
     },
     {
-      "id": "poi-level-3",
+      "id": "housename",
       "type": "symbol",
       "source": "osmscout",
-      "source-layer": "poi",
-      "minzoom": 16,
-      "filter": [
-        "all",
-        [
-          "==",
-          "$type",
-          "Point"
-        ],
-        [
-          ">=",
-          "rank",
-          25
-        ]
-      ],
-      "layout": {
-        "text-padding": 2,
-        "text-font": [
-          "Noto Sans Bold"
-        ],
-        "text-anchor": "top",
-        "icon-image": "{symbol}-11",
-        "text-field": "{name}",
-        "text-offset": [
-          0,
-          0.6
-        ],
-        "text-optional": true,
-        "text-size": 12,
-        "text-max-width": 9
-      },
-      "paint": {
-        "text-halo-blur": 0.5,
-        "text-color": "#fff",
-        "text-halo-width": 1,
-        "text-halo-color": "rgba(0, 0, 0, 0.66)"
-      }
-    },
-    {
-      "id": "poi-level-2",
-      "type": "symbol",
-      "source": "osmscout",
-      "source-layer": "poi",
+      "source-layer": "housename",
       "minzoom": 15,
-      "filter": [
-        "all",
-        [
-          "==",
-          "$type",
-          "Point"
-        ],
-        [
-          "all",
-          [
-            "<=",
-            "rank",
-            24
-          ],
-          [
-            ">=",
-            "rank",
-            15
-          ]
-        ]
-      ],
       "layout": {
-        "text-padding": 2,
+        "text-field": "{housename}",
         "text-font": [
-          "Noto Sans Bold"
+          "Noto Sans Italic"
         ],
-        "text-anchor": "top",
-        "icon-image": "{symbol}-11",
-        "text-field": "{name}",
-        "text-offset": [
-          0,
-          0.6
-        ],
-        "text-optional": true,
-        "text-size": 12,
-        "text-max-width": 9
+        "text-size": 10,
+        "icon-optional": true
       },
       "paint": {
-        "text-halo-blur": 0.5,
-        "text-color": "#fff",
-        "text-halo-width": 1,
-        "text-halo-color": "rgba(0, 0, 0, 0.66)"
+        "text-color": "rgba(255, 255, 255, 0.75)"
       }
     },
     {
-      "id": "poi-level-1",
+      "id": "housenumber",
+      "type": "symbol",
+      "source": "osmscout",
+      "source-layer": "housenumber",
+      "minzoom": 17,
+      "layout": {
+        "text-field": "{housenumber}",
+        "text-font": [
+          "Noto Sans Italic"
+        ],
+        "text-size": 10,
+        "icon-optional": true
+      },
+      "paint": {
+        "text-color": "rgba(255, 255, 255, 0.75)"
+      }
+    },
+    {
+      "id": "poi",
       "type": "symbol",
       "source": "osmscout",
       "source-layer": "poi",
-      "minzoom": 14,
+      "minzoom": 13,
       "filter": [
         "all",
         [
-          "==",
-          "$type",
-          "Point"
-        ],
-        [
-          "all",
+          "<",
           [
-            "<=",
-            "rank",
-            14
+            "number",
+            [
+              "get",
+              "local_rank"
+            ],
+            4000
           ],
           [
-            "has",
-            "name"
+            "*",
+            5,
+            [
+              "^",
+              4,
+              [
+                "max",
+                [
+                  "-",
+                  [
+                    "zoom"
+                  ],
+                  13
+                ],
+                1
+              ]
+            ]
           ]
         ]
       ],
@@ -4564,42 +4521,6 @@
         "text-color": "#fff",
         "text-halo-width": 1.2,
         "text-halo-color": "rgba(0, 0, 0, 0.66)"
-      }
-    },
-    {
-      "id": "housename",
-      "type": "symbol",
-      "source": "osmscout",
-      "source-layer": "housename",
-      "minzoom": 15,
-      "layout": {
-        "text-field": "{housename}",
-        "text-font": [
-          "Noto Sans Italic"
-        ],
-        "text-size": 10,
-        "icon-optional": true
-      },
-      "paint": {
-        "text-color": "rgba(255, 255, 255, 0.75)"
-      }
-    },
-    {
-      "id": "housenumber",
-      "type": "symbol",
-      "source": "osmscout",
-      "source-layer": "housenumber",
-      "minzoom": 18,
-      "layout": {
-        "text-field": "{housenumber}",
-        "text-font": [
-          "Noto Sans Italic"
-        ],
-        "text-size": 10,
-        "icon-optional": true
-      },
-      "paint": {
-        "text-color": "rgba(255, 255, 255, 0.75)"
       }
     }
   ]
