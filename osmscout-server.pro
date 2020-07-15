@@ -282,6 +282,10 @@ use_mapnik {
         DEFINES += MAPNIK_INPUT_PLUGINS_DIR=\\\"$$system(mapnik-config --input-plugins)\\\"
     }
     LIBS += -lmapnik -licuuc
+
+    scout_ubports {
+        LIBS += -lproj
+    }
 }
 
 use_valhalla {

@@ -5,13 +5,16 @@
 Install [Clickable](http://clickable.bhdouglass.com/en/latest/install.html)
 which is used to build and publish click packages.
 
-You may want to create a symlink to the config file to omit the `-c` flag in
-all clickable calls:
+Create a symlink to the config file to omit the `-c` flag in all clickable
+calls:
 
-    ln -s packaging/ubports/clickable.json clickable.json
+    ln -s packaging/ubports/full-build.json clickable.json
 
-Otherwise you'll have to append `-c packaging/ubports/clickable.json` to all
-clickable commands.
+for the full build including Mapnik, resulting in a 55 MB click package, or:
+
+    ln -s packaging/ubports/slim-build.json clickable.json
+
+for the slim build without Mapnik, resulting in a 5 MB click package.
 
 ## Dependencies
 
