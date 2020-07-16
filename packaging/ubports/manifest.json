@@ -1,10 +1,10 @@
 {
-    "name": "osmscout-server.jonnius",
+    "name": "@APP_NAME@.jonnius",
     "description": "Local server providing offline map tiles, search, and routing",
     "architecture": "@CLICK_ARCH@",
-    "title": "OSM Scout Server",
+    "title": "@APP_TITLE@",
     "hooks": {
-        "osmscout-server": {
+        "@APP_NAME@": {
             "apparmor": "osmscout-server.apparmor",
             "desktop":  "osmscout-server.desktop"
         }
