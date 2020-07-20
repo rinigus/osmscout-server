@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=OSM Scout Server
+Name=@APP_TITLE@
 Exec=osmscout-server %u
 Icon=osmscout-server.svg
 Type=Application
