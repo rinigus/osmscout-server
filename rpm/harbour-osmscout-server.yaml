@@ -1,7 +1,7 @@
 Name: harbour-osmscout-server
 Summary: OSM Scout Server
 # don't forget to set the version in osmscout-server.pro as well
-Version: 1.16.1
+Version: 1.17.0
 Release: 1
 # The contents of the Group field should be one of the groups listed here:
 # http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
@@ -57,7 +57,6 @@ PkgBR:
   - boost-regex >= 1.51
   - boost-system >= 1.51
   - lz4-devel
-  - opt-gcc
 
 
 # Runtime dependencies which are not automatically detected

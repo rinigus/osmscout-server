@@ -39,6 +39,17 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.17.0" date="2020-07-24">
+     <description>
+       <ul>
+         <li>Update Mapbox GL map tile styles and import scripts</li>
+         <li>[ubports] Fix translations [jonnius]</li>
+         <li>[ubports] Update packaging scripts [jonnius]</li>
+         <li>Valhalla import workaround</li>
+         <li>Update translations</li>
+       </ul>
+     </description>
+   </release>
    <release version="1.16.1" date="2020-05-07">
      <description>
        <ul>

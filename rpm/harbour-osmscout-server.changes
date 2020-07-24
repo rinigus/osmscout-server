@@ -5,6 +5,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Jul 24 2020 rinigus <rinigus.git@gmail.com> 1.17.0-1
+- update Mapbox GL map tile styles and import scripts
+- update translations
+- [ubports] fix translations [jonnius]
+- [ubports] update packaging scripts [jonnius]
+- Valhalla import workaround
+
 * Thu May 7 2020 rinigus <rinigus.git@gmail.com> 1.16.1-1
 - update translations
 - [sailfish] update RPM spec to use system-provided gcc
