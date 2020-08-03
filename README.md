@@ -210,18 +210,6 @@ libosmscout backend, `styles` parameter is ignored.
 The vector tiles, associated styles, fonts, and icons are provided
 via server.
 
-### Tiles
-
-For requesting tiles, use
-
-`http://localhost:8553/v1/mbgl/tile?z={z}&x={x}&y={y}`
-
-where
-
-`{z}`, `{x}`, and `{y}` are as in
-http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames .
-
-
 ### Styles, sprite
 
 For requesting styles, use
@@ -246,6 +234,18 @@ In the styles, corresponding setting for glyphs is
 The styles can use provided sprite with icons by specifying
 `http://localhost:8553/v1/mbgl/sprite` as a corresponding URL in style
 definition.
+
+### Tiles
+
+Tiles are usually assessed through styles. If you want to design a new
+style, for requesting tiles, use
+
+`http://localhost:8553/v1/mbgl/tile?z={z}&x={x}&y={y}`
+
+where
+
+`{z}`, `{x}`, and `{y}` are as in
+http://wiki.openstreetmap.org/wiki/Slippy_map_tilenames .
 
 
 
