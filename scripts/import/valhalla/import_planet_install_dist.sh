@@ -10,7 +10,8 @@ cd $PROGPATH
 rm -rf tiles *.bin
 mkdir tiles
 
-install-dist/valhalla_build_timezones valhalla.json > tiles/tz_world.sqlite
+tz_location=$(cat valhalla.json | jq -r .mjolnir.timezone)
+install-dist/valhalla_build_timezones > ${tz_location}
 
 ## should be set after timezones
 export LD_LIBRARY_PATH=$PROGPATH/install-dist:$LD_LIBRARY_PATH

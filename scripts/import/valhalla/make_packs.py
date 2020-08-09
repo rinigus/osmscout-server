@@ -7,7 +7,7 @@ tiles_timestamp = planet_tiles + "/timestamp"
 packages_dir = "valhalla/packages"
 dir_meta = "valhalla/packages_meta"
 tile_packages_conf = "valhalla/tiles_in_packages.json"
-version = "1"
+version = "2"
 acceptable_package_size = 30*1024*1024 # in bytes
 
 ##############################################
