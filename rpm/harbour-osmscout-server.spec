@@ -58,12 +58,13 @@ BuildRequires:  desktop-file-utils
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  libosmscout-qt-devel
-BuildRequires:  pkgconfig(mapnik)
+BuildRequires:  mapnik-devel
 BuildRequires:  pkgconfig(libsystemd-daemon)
 %else
 BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:  cmake(KF5Kirigami2)
 BuildRequires:  pkgconfig(Qt5QuickControls2)
+#BuildRequires:  pkgconfig(mapnik)
 %endif
 
 
