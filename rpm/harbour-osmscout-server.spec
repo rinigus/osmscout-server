@@ -80,7 +80,7 @@ Server providing map tiles, search, and routing
 %if 0%{?sailfishos}
 %qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
 %else
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=disable_mapnik CONFIG+=disable_osmscout CONFIG+=disable_valhalla
+%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=disable_mapnik CONFIG+=disable_osmscout
 %endif
 
 make %{?_smp_mflags}
