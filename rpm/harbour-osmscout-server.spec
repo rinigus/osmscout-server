@@ -143,7 +143,7 @@ chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%{_bindir}/%{name}
 %{_datadir}/%{name}
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
