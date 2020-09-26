@@ -351,8 +351,6 @@ DISTFILES += $${TARGET}.desktop
 
 scout_silica {
     DISTFILES += \
-        rpm/$${TARGET}.yaml \
-        rpm/$${TARGET}.changes \
         rpm/$${TARGET}.spec
 }
 
