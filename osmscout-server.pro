@@ -141,6 +141,12 @@ scout_kirigami|scout_qtcontrols|scout_ubports {
     INSTALLS += appdata
 }
 
+scout_kirigami|scout_qtcontrols {
+    desktopfile.path = $$PREFIX/share/applications
+    desktopfile.files = $${TARGET}.desktop
+    INSTALLS += desktopfile
+}
+
 # defines
 DEFINES += APP_NAME=\\\"$$APP_NAME\\\"
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
@@ -366,4 +372,3 @@ scout_ubports: RESOURCES += qml_ubports.qrc
 scout_silica {
     SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 }
-

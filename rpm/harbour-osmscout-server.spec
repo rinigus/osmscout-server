@@ -35,16 +35,14 @@ BuildRequires:  pkgconfig(Qt5Positioning)
 BuildRequires:  pkgconfig(Qt5DBus)
 BuildRequires:  pkgconfig(icu-uc)
 BuildRequires:  pkgconfig(sqlite3)
-BuildRequires:  pkgconfig(libsystemd-daemon)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(libcurl)
-BuildRequires:  libmarisa-devel
-BuildRequires:  libmicrohttpd-devel
-BuildRequires:  libpostal-devel >= 1.0.0
-BuildRequires:  libkyotocabinet-devel
-BuildRequires:  mapnik-devel
+BuildRequires:  pkgconfig(marisa)
+BuildRequires:  pkgconfig(libmicrohttpd)
+BuildRequires:  pkgconfig(kyotocabinet)
+BuildRequires:  pkgconfig(libpostal) >= 1.0.0
 BuildRequires:  qt5-qttools-linguist
-BuildRequires:  valhalla-lite-devel
+BuildRequires:  pkgconfig(libvalhalla)
 BuildRequires:  protobuf-devel
 BuildRequires:  boost-devel >= 1.51
 BuildRequires:  boost-date-time >= 1.51
@@ -54,12 +52,18 @@ BuildRequires:  boost-iostreams >= 1.51
 BuildRequires:  boost-regex >= 1.51
 BuildRequires:  boost-system >= 1.51
 BuildRequires:  lz4-devel
+BuildRequires:  desktop-file-utils
 
 %if 0%{?sailfishos}
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  libosmscout-qt-devel
-BuildRequires:  desktop-file-utils
+BuildRequires:  pkgconfig(mapnik)
+BuildRequires:  pkgconfig(libsystemd-daemon)
+%else
+BuildRequires:  pkgconfig(libsystemd)
+BuildRequires:  cmake(KF5Kirigami2)
+BuildRequires:  pkgconfig(Qt5QuickControls2)
 %endif
 
 
@@ -75,7 +79,7 @@ Server providing map tiles, search, and routing
 %if 0%{?sailfishos}
 %qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
 %else
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=disable_mapnik CONFIG+=disable_osmscout
+%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=disable_mapnik CONFIG+=disable_osmscout CONFIG+=disable_valhalla
 %endif
 
 make %{?_smp_mflags}
@@ -84,11 +88,13 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 make install INSTALL_ROOT=%{buildroot}
 
+
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
 
 %if 0%{?sailfishos}
+
 # ship all shared libraries not allowed in Harbour with the app
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 
@@ -130,12 +136,18 @@ strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.3.0
 # strip executable bit from all libraries
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 #chmod -x %{buildroot}%{_datadir}/%{name}/lib/mapnik/*/*
-%endif
+
+%endif # sailfishos
+
 
 %files
 %defattr(-,root,root,-)
 %{_bindir}
 %{_datadir}/%{name}
-%{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
+%{_datadir}/applications/%{name}.desktop
+%if 0%{?sailfishos}
 %{_datadir}/%{name}/translations
+%else
+%{_datadir}/metainfo/%{name}.appdata.xml
+%endif
