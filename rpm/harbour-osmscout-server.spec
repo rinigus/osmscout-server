@@ -64,7 +64,7 @@ BuildRequires:  pkgconfig(libsystemd-daemon)
 BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:  cmake(KF5Kirigami2)
 BuildRequires:  pkgconfig(Qt5QuickControls2)
-#BuildRequires:  pkgconfig(mapnik)
+BuildRequires:  pkgconfig(mapnik)
 %endif
 
 
@@ -80,7 +80,7 @@ Server providing map tiles, search, and routing
 %if 0%{?sailfishos}
 %qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
 %else
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=disable_mapnik CONFIG+=disable_osmscout
+%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=disable_osmscout
 %endif
 
 make %{?_smp_mflags}
