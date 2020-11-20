@@ -323,6 +323,7 @@ TRANSLATIONS += \
     translations/$${TARGET}-cs.ts \
     translations/$${TARGET}-de.ts \
     translations/$${TARGET}-es.ts \
+    translations/$${TARGET}-et.ts \
     translations/$${TARGET}-fi.ts \
     translations/$${TARGET}-fr.ts \
     translations/$${TARGET}-nb.ts \
