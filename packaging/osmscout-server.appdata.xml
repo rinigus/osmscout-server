@@ -39,6 +39,13 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="1.17.1" date="2020-11-20">
+     <description>
+       <ul>
+         <li>Update translations</li>
+       </ul>
+     </description>
+   </release>
    <release version="1.17.0" date="2020-07-24">
      <description>
        <ul>

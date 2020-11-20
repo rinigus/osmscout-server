@@ -24,7 +24,7 @@ git commit -m "update translations"
 Bump version and write changelog
 
 ```
-emacs rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.yaml rpm/harbour-osmscout-server.changes
+emacs rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.changes
 emacs osmscout-server.pro packaging/osmscout-server.appdata.xml packaging/ubports/manifest.json
 ```
 

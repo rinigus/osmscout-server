@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri 20 Nov 2020 rinigus <rinigus.git@gmail.com> 1.17.1-1
+- update translations
+- add support for Fedora
+
 * Fri Jul 24 2020 rinigus <rinigus.git@gmail.com> 1.17.0-1
 - update Mapbox GL map tile styles and import scripts
 - update translations
