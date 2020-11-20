@@ -1,50 +1,50 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="nl" sourcelanguage="en" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS language="et" sourcelanguage="en" version="2.1">
 <context>
     <name>AboutPage</name>
     <message>
         <location filename="../qml/AboutPage.qml" line="29"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>De server moet worden gebruikt met het cliëntprogramma dat kaarten kan weergeven, zoekopdrachten kan uitvoeren en geselecteerde routes kan weergeven. De server is een dunne laag die functionaliteit van &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; en &lt;i&gt;Mapbox GL&lt;/i&gt; blootstelt via webdiensten. Deze server kan worden gebruikt als een drop-in-vervanging voor online diensten die kaarten aanbieden.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="35"/>
         <source>Copyright:</source>
-        <translation>Auteursrecht:</translation>
+        <translation>Autoriõigused:</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="42"/>
         <source>Artwork</source>
-        <translation>Illustraties</translation>
+        <translation>Kujundus</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="43"/>
         <source>Icons by %1.</source>
-        <translation>Pictogrammen door %1.</translation>
+        <translation>Ikoonide autor on %1.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="46"/>
         <source>Translations</source>
-        <translation>Vertalingen</translation>
+        <translation>Tõlked</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="59"/>
         <source>Maps</source>
-        <translation>Kaarten</translation>
+        <translation>Kaardid</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="61"/>
         <source>Maps are hosted by Natural Language Processing Centre (Faculty of Informatics, Masaryk University, Brno, Czech Republic) through modRana.org data repository.</source>
-        <translation>Kaarten worden gehost door het Natural Language Processing Centre (Faculteit Informatica aan de Masarykuniversiteit, Brno, Tsjechië) via de modRana.org-gegevenspakketbron.</translation>
+        <translation>Kaardid asuvad Natural Language Processing Centre serveris (Faculty of Informatics, Masaryk University, Brno, Tšehhi Vabariik) modRana.org andmekogus.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="66"/>
         <source>Map data from OpenStreetMap, Open Database License 1.0. Maps are converted to a suitable format from downloaded extracts and/or using polygons as provided by Geofabrik GmbH.</source>
-        <translation>Kaartgegevens van OpenStreetMap, Open Database-licentie 1.0. Kaarten worden geconverteerd naar een geschikt formaat uit gedownloade fragmenten en/of met behulp van polygonen zoals aangeboden door Geofabrik GmbH.</translation>
+        <translation>Kasutame OpenStreetMap&apos;i kaardiandmed, mis on litsentsitud Open Database License 1.0 alusel. Allalaetud andmed konverteeritakse sobilikku vormingusse ning sealjuures võidakse kasutada Geofabrik GmbH pakutud hulknurkade andmeid.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="70"/>
         <source>UK postal codes downloaded from &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. These data contain: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</source>
-        <translation>Postcodes voor het VK gedownload van &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt;. Deze gegevens bevatten: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</translation>
+        <translation>Suurbritannia postiindeksid on alla laetud &lt;a href=&apos;https://www.freemaptools.com/download-uk-postcode-lat-lng.htm&apos;&gt;FreeMapTools&lt;/a&gt; andmekogust. Andmeallikad: Ordnance Survey data © Crown copyright and database right 2017; Royal Mail data © Royal Mail copyright and database right 2017; National Statistics data © Crown copyright and database right 2017.</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="77"/>
@@ -54,42 +54,42 @@
     <message>
         <location filename="../qml/AboutPage.qml" line="79"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Let op: &lt;i&gt;libpostal&lt;/i&gt; is ontwikkeld om gebruikt te worden met het verfijnde model dat de wereld omvat. De landspecifieke modellen zijn ontwikkeld voor het gebruik van &lt;i&gt;libpostal&lt;/i&gt; op mobiele apparaten en zijn niet specifiek afgestemd. Meld problemen met prestaties van libpostal mbt landspecifieke modellen op de GitHub-pagina’s van &lt;i&gt;OSM Scout Server&lt;/i&gt; of &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="86"/>
         <source>Acknowledgments</source>
-        <translation>Met dank aan</translation>
+        <translation>Täname võimaluse eest kasutada järgmiseid projekte</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="26"/>
         <source>About</source>
-        <translation>Over</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="36"/>
         <source>License: GPLv3</source>
-        <translation>Licentie: GPLv3</translation>
+        <translation>Litsents: GPLv3</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="44"/>
         <source>Banner photo by %1 (%2 license).</source>
-        <translation>Banierfoto door %1 (%2-licentie).</translation>
+        <translation>Päisefoto autor %1 (%2 litsents).</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="133"/>
         <source>version</source>
-        <translation>versie</translation>
+        <translation>versioon</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="139"/>
         <source>is a server that provides offline map services</source>
-        <translation>is een server die mapdiensten offline aanbiedt</translation>
+        <translation>on server, mis võimaldab kasutada võrguvabasid kaarditeenuseid</translation>
     </message>
     <message>
         <location filename="../qml/AboutPage.qml" line="143"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
-        <translation>Een gebruikershandleiding is &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt; beschikbaar</translation>
+        <translation>Kasutusjuhend on saadaval &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;veebis&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../src/appsettings.cpp" line="348"/>
         <source>mph</source>
-        <translation>mpu</translation>
+        <translation>mph</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="348"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../src/appsettings.cpp" line="350"/>
         <source>km/h</source>
-        <translation>km/u</translation>
+        <translation>km/h</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="350"/>
@@ -117,22 +117,22 @@
     <message>
         <location filename="../src/appsettings.cpp" line="385"/>
         <source>Default</source>
-        <translation>Standaard</translation>
+        <translation>Vaikimisi</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="386"/>
         <source>Recommended for raster tiles maps</source>
-        <translation>Aanbevolen voor kaarten op basis van rastertegels</translation>
+        <translation>Kaardipaanid rastervormingus</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="387"/>
         <source>Recommended for vector and raster tiles maps</source>
-        <translation>Aanbevolen voor kaarten op basis van vector- en rastertegels</translation>
+        <translation>Kaardipaanid vektor- ja rastervormingus</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="388"/>
         <source>&lt;i&gt;libosmscout&lt;/i&gt; with &lt;i&gt;Geocoder-NLP&lt;/i&gt;</source>
-        <translation>&lt;i&gt;libosmscout&lt;/i&gt; met &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;libosmscout&lt;/i&gt; ja &lt;i&gt;Geocoder-NLP&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../src/appsettings.cpp" line="389"/>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../src/appsettings.cpp" line="390"/>
         <source>Custom</source>
-        <translation>Aangepast</translation>
+        <translation>Kohandatud</translation>
     </message>
 </context>
 <context>
@@ -150,52 +150,52 @@
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="222"/>
         <source>Subscribed</source>
-        <translation>Geabonneerd</translation>
+        <translation>Tellitud</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="226"/>
         <source>All datasets covering selected features are available</source>
-        <translation>Alle gegevenssets die de geselecteerde functionaliteit aanbieden zijn beschikbaar</translation>
+        <translation>Kõik valitud funktsioone hõlmavad andmekogumid on saadaval</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="228"/>
         <source>Some datasets are missing. You would have to start downloads to get them.</source>
-        <translation>Sommige gegevenssets ontbreken. Je kan ze ophalen door de downloads te starten.</translation>
+        <translation>Mõned andmekogumid on puudu. Et saaksid andmeid kasutada, palun alusta nende allalaadimist.</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="230"/>
         <source>Some or all datasets are incompatible with this version. You would have to update list of provided maps, the maps, and/or install the latest release of OSM Scout Server.</source>
-        <translation>Sommige of alle gegevenssets zijn incompatibel met deze versie. Je kan ze bijwerken door de lijst van aangeboden kaarten of de kaarten bij te werken, en/of de laatste versie van OSM Scout Server te installeren.</translation>
+        <translation>Mõned või kõik andmekogumid ei ühildu selle rakenduse versiooniga. Sa peaksid uuendama kaartide loendi, kaardid ise  ja/või paigaldama viimase versiooni OSM Scout Server rakendusest.</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="237"/>
         <source>No subscription</source>
-        <translation>Geen abonnement</translation>
+        <translation>Tellimust pole</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="51"/>
         <source>Availability on device</source>
-        <translation>Beschikbaarheid op apparaat</translation>
+        <translation>Saadavus nutiseadmes</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="63"/>
         <source>Size</source>
-        <translation>Grootte</translation>
+        <translation>Suurus</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="72"/>
         <source>Selected datasets</source>
-        <translation>Geselecteerde gegevenssets</translation>
+        <translation>Valitud andmekogumid</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="94"/>
         <source>All datasets</source>
-        <translation>Alle gegevenssets</translation>
+        <translation>Kõik andmekogumid</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="138"/>
         <source>incompatible version</source>
-        <translation>incompatibele versie</translation>
+        <translation>Mitteühilduv versioon</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="159"/>
@@ -205,22 +205,22 @@
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="161"/>
         <source>disabled</source>
-        <translation>uitgeschakeld</translation>
+        <translation>välja lülitatud</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="170"/>
         <source>Subscription</source>
-        <translation>Abonnement</translation>
+        <translation>Tellimus</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="177"/>
         <source>Subscribe</source>
-        <translation>Abonneren</translation>
+        <translation>Telli</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="188"/>
         <source>Unsubscribe</source>
-        <translation>Abonnement opzeggen</translation>
+        <translation>Lõpeta tellimus</translation>
     </message>
     <message>
         <location filename="../qml/CountryDetailsPage.qml" line="251"/>
@@ -239,12 +239,12 @@
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="51"/>
         <source>Jobs</source>
-        <translation>Processen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/platform.silica/Cover.qml" line="52"/>
         <source>Idle</source>
-        <translation>Inactief</translation>
+        <translation>Jõude</translation>
     </message>
 </context>
 <context>
@@ -252,102 +252,102 @@
     <message>
         <location filename="../src/dbmaster.cpp" line="37"/>
         <source>Cannot create database object</source>
-        <translation>Kan databaseobject niet aanmaken</translation>
+        <translation>Andmebaasiobjekti loomine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="103"/>
         <source>Opened OSM Scout database: %1</source>
-        <translation>OSM Scout-database geopend: %1</translation>
+        <translation>Avasin OSM Scout&apos;i andmebaasi: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="105"/>
         <source>Cannot open OSM Scout database: %1</source>
-        <translation>Kan OSM Scout-database niet openen: %1</translation>
+        <translation>Ei õnnestu avada OSM Scout&apos;i andmebaasi: %1</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="130"/>
         <source>Cannot allocate Style config</source>
-        <translation>Kan stijlconfiguratie niet toewijzen</translation>
+        <translation>Stiili seadistusi ei õnnestu kasutuseks eraldada</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="138"/>
         <source>Cannot open style</source>
-        <translation>Kan stijl niet openen</translation>
+        <translation>Stiili avamine ei õnnestu</translation>
     </message>
     <message>
         <location filename="../src/dbmaster.cpp" line="144"/>
         <source>Loaded style</source>
-        <translation>Stijl geladen</translation>
+        <translation>Stiil on laetud</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_map.cpp" line="95"/>
         <source>Database is not open, cannot render a tile</source>
-        <translation>Database is niet open, kan geen tegels renderen</translation>
+        <translation>Andmebaasiühendus ei ole avatud ja paanide joonistamine ei toimi</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="101"/>
         <source>Database is not open, cannot route</source>
-        <translation>Database is niet open, routering is niet mogelijk</translation>
+        <translation>Andmebaasiühendus ei ole avatud ja teekondade koostamine ei toimi</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="121"/>
         <source>Cannot open routing database</source>
-        <translation>Kan routeringsdatabase niet openen</translation>
+        <translation>Ei õnnestu avada teekondade koostamiseks vajalikku andmebaasi</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="158"/>
         <source>There was an error while calculating the route!</source>
-        <translation>Er trad een fout op bij het berekenen van de route!</translation>
+        <translation>Teekonna koostamisel tekkis viga!</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="168"/>
         <source>Error during route conversion to points</source>
-        <translation>Fout tijdens omzetten van route naar punten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="217"/>
         <source>Start</source>
-        <translation>Beginpunt</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/dbmaster_route.cpp" line="218"/>
         <source>Target</source>
-        <translation>Bestemming</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="276"/>
         <source>Database is not open, cannot search</source>
-        <translation>Database is niet open, kan niet zoeken</translation>
+        <translation>Andmebaas ei ole avatud ja otsingut ei saa kasutada</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="294"/>
         <source>Error while parsing search string</source>
-        <translation>Fout bij verwerken van zoekopdracht</translation>
+        <translation>Viga otsingusõne töötlemisel</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="301"/>
         <source>Error while searching for location</source>
-        <translation>Fout bij zoeken naar locatie</translation>
+        <translation>Viga asukoha otsimisel</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="508"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>Zoeken naar referentiepunt mislukt: niet gevonden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="533"/>
         <source>Database is not open, cannot search for POI</source>
-        <translation>Database is niet open, kan niet zoeken naar NP</translation>
+        <translation>Andmebaas ei ole avatud ja huvipunkte ei saa otsida</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="594"/>
         <source>Cannot load data from database</source>
-        <translation>Kan gegevens niet laden uit database</translation>
+        <translation>Andmebaasist ei õnnestu teavet laadida</translation>
     </message>
     <message>
         <location filename="../src/dbmaster_search.cpp" line="694"/>
         <source>Database is not open, cannot list POI types</source>
-        <translation>Database is niet open, kan NP-types niet oplijsten</translation>
+        <translation>Andmebaas ei ole avatud ja ei õnnestu laadida huvipunktide loendit</translation>
     </message>
 </context>
 <context>
@@ -357,7 +357,7 @@
         <location filename="../qml/platform.qtcontrols/DialogPL.qml" line="33"/>
         <location filename="../qml/platform.ubports/DialogPL.qml" line="33"/>
         <source>Accept</source>
-        <translation>Accepteren</translation>
+        <translation>Nõustu</translation>
     </message>
 </context>
 <context>
@@ -365,7 +365,7 @@
     <message>
         <location filename="../qml/DownloadCountriesPage.qml" line="54"/>
         <source>Select country or territory</source>
-        <translation>Selecteer land of territorium</translation>
+        <translation>Vali riik või piirkond</translation>
     </message>
 </context>
 <context>
@@ -373,29 +373,29 @@
     <message>
         <location filename="../qml/ElementCountryListItem.qml" line="108"/>
         <source>%1 territories</source>
-        <translation>%1 territoria</translation>
+        <translation>%1 piirkonda</translation>
     </message>
     <message>
         <location filename="../qml/ElementCountryListItem.qml" line="115"/>
         <location filename="../qml/ElementCountryListItem.qml" line="119"/>
         <location filename="../qml/ElementCountryListItem.qml" line="123"/>
         <source>Available</source>
-        <translation>Beschikbaar</translation>
+        <translation>Olemas</translation>
     </message>
     <message>
         <location filename="../qml/ElementCountryListItem.qml" line="128"/>
         <source>Incompatible version</source>
-        <translation>Incompatibele versie</translation>
+        <translation>Mitteühilduv versioon</translation>
     </message>
     <message>
         <location filename="../qml/ElementCountryListItem.qml" line="132"/>
         <source>Subscribed</source>
-        <translation>Geabonneerd</translation>
+        <translation>Tellitud</translation>
     </message>
     <message>
         <location filename="../qml/ElementCountryListItem.qml" line="137"/>
         <source>Size: %1 MB</source>
-        <translation>Grootte: %1 MB</translation>
+        <translation>Maht: %1 MB</translation>
     </message>
 </context>
 <context>
@@ -403,12 +403,12 @@
     <message>
         <location filename="../qml/ElementDownloads.qml" line="48"/>
         <source>No downloads active</source>
-        <translation>Geen actieve downloads</translation>
+        <translation>Ainsamgi allalaadimine pole pooleli</translation>
     </message>
     <message>
         <location filename="../qml/ElementDownloads.qml" line="49"/>
         <source>Download active</source>
-        <translation>Download actief</translation>
+        <translation>Allalaadimine on pooleli</translation>
     </message>
 </context>
 <context>
@@ -416,27 +416,27 @@
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="32"/>
         <source>Languages</source>
-        <translation>Talen</translation>
+        <translation>Keeled</translation>
     </message>
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="33"/>
         <source>List of languages used for parsing addresses</source>
-        <translation>Lijst van talen in gebruik voor parseren van adressen</translation>
+        <translation>Aadresside töötlemiseks mõeldud keelte loend</translation>
     </message>
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="34"/>
         <source>Please select languages used for parsing addresses.</source>
-        <translation>Selecteer de talen die je wil gebruiken voor het parseren van adressen.</translation>
+        <translation>Palun vali keeled, milles soovid aadresse töödelda.</translation>
     </message>
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="35"/>
         <source>When none of the languages are selected in this form, it is assumed that all supported languages should be used for parsing.&lt;br&gt;Note that when all supported languages are used, RAM requirements could be large.</source>
-        <translation>Als je geen enkele taal selecteert, gaat OSM Scout Server ervan uit dat alle ondersteunde talen gebruikt moeten worden.&lt;br&gt;Let op: in dit geval kan RAM-gebruik snel oplopen.</translation>
+        <translation>Kui järgnevast loendist pole ühtegi keelt valitud, siis eeldame, et kasutame aadresside töötlemisel kõiki toetatud keeli. Kui aga kõik toetatud keeled on kasutusel, siis seadme mälukasutus on märgatav.</translation>
     </message>
     <message>
         <location filename="../qml/ElementLanguageSelector.qml" line="100"/>
         <source>All supported languages</source>
-        <translation>Alle ondersteunde talen</translation>
+        <translation>Kõik toetatud keeled</translation>
     </message>
 </context>
 <context>
@@ -444,7 +444,7 @@
     <message>
         <location filename="../qml/ElementSelector.qml" line="122"/>
         <source>&lt;Not selected&gt;</source>
-        <translation>&lt;Niet geselecteerd&gt;</translation>
+        <translation>&lt;Not selected&gt;</translation>
     </message>
 </context>
 <context>
@@ -453,33 +453,33 @@
         <location filename="../src/filedownloader.cpp" line="364"/>
         <location filename="../src/filedownloader.cpp" line="390"/>
         <source>Failed to download</source>
-        <translation>Downloaden mislukt</translation>
+        <translation>Allalaadimine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="365"/>
         <source>Error code: %1</source>
-        <translation>Foutcode: %1</translation>
+        <translation>Veakood: %1</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="372"/>
         <source>Note that if download fails due to the file missing on the server, please consider checking for updates in Map Manager. When new maps are uploaded, the URL for each database is changed that can lead to such error until the local list of available maps is updated by Map Manager.</source>
-        <translation>Let op: als een download mislukt omdat het bestand ontbreekt op de server, controleer dan op updates in de kaartbeheerder. Dit probleem kan zich voordoen wanneer nieuwe kaarten geüpload worden, waardoor de URL voor elke database gewijzigd wordt. Het probleem zou moeten verdwijnen wanneer de lokale lijst van beschikbare kaarten door de kaartbeheerder bijgewerkt wordt.</translation>
+        <translation>Palun pane tähele, et kui allalaadimisel tekib viga, mis viitab sellele, et faile serveris ei leidu, siis esmalt peaksid kaardihalduris käivitama üldise andmete uuenduse. Kui uusi kaarte laetakse üles, siis uute andmekogude aadressid muutuvad ja nii võivad tekkida sellised vead, mis ei parane enne, kui kaardihaldur on laadinud uued saadaolevate kaartide andmed.</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="391"/>
         <source>Timeout</source>
-        <translation>Time-out</translation>
+        <translation>Aegumine</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="425"/>
         <location filename="../src/filedownloader.cpp" line="445"/>
         <source>Error in processing downloaded data</source>
-        <translation>Fout bij verwerken van gedownloade gegevens</translation>
+        <translation>Viga allalaetud andmete töötlemisel</translation>
     </message>
     <message>
         <location filename="../src/filedownloader.cpp" line="455"/>
         <source>Error in processing downloaded data: could not start the program</source>
-        <translation>Fout bij verwerken van gedownloade gegevens: kon het programma niet starten</translation>
+        <translation>Viga allalaetud andmete töötlemisel: rakenduse käivitamine ei õnnestunud</translation>
     </message>
 </context>
 <context>
@@ -487,17 +487,17 @@
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="85"/>
         <source>To select a folder, press and hold the folder and choose &apos;Select&apos; in the context menu</source>
-        <translation>Hou ingedrukt op een map en kies ‘Selecteren’ in het contextmenu om de map te selecteren.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="220"/>
         <source>Select</source>
-        <translation>Selecteren</translation>
+        <translation>Vali</translation>
     </message>
     <message>
         <location filename="../qml/platform.silica/FileSelectorPL.qml" line="236"/>
         <source>Empty directory</source>
-        <translation>Lege map</translation>
+        <translation>Tühi kaust</translation>
     </message>
 </context>
 <context>
@@ -505,64 +505,64 @@
     <message>
         <location filename="../src/geomaster.cpp" line="106"/>
         <source>Cannot open geocoder database</source>
-        <translation>Kan geocoderdatabase niet openen</translation>
+        <translation>Ei õnnestu avada geokodeerija andmebaasi</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="110"/>
         <source>Opened geocoder database</source>
-        <translation>Geocoderdatabase geopend</translation>
+        <translation>Avasin geokodeerija andmebaasi</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="79"/>
         <source>Selected country not available for geocoder: %1</source>
-        <translation>Geselecteerd land niet beschikbaar voor geocoder: %1</translation>
+        <translation>Valitud riik pole saadaval geokodeerija jaoks: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="92"/>
         <source>Countries used in search: </source>
-        <translation>Landen gebruikt in zoekopdracht:</translation>
+        <translation>Otsingus kasutatavad riigid:</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="129"/>
         <source>libpostal using languages: %1</source>
-        <translation>libpostal in talen: %1</translation>
+        <translation>libpostal kasutab keeli: %1</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="134"/>
         <source>libpostal will use all covered languages</source>
-        <translation>libpostal zal alle ondersteunde talen gebruiken</translation>
+        <translation>libpostal kasutab kõiki saadaolevaid keeli</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="256"/>
         <source>Any</source>
-        <translation>Alle</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="303"/>
         <location filename="../src/geomaster.cpp" line="564"/>
         <source>Cannot open geocoding database: %1</source>
-        <translation>Kan geocoderingsdatabase niet openen: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="329"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
-        <translation>Fout bij verwerken door libpostal, misschien zijn de libpostal-databases niet beschikbaar</translation>
+        <translation>Viga andmete töötlemisel libpostal teegiga. Kas võib olla, et libpostal&apos;i andmebaasid on puudu</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="365"/>
         <source>Parsed query [%1]: %2</source>
-        <translation>Zoekopdracht verwerkt [%1]: %2</translation>
+        <translation>Töödeldud päring [%1]: %2</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="376"/>
         <location filename="../src/geomaster.cpp" line="611"/>
         <source>Error while searching with geocoder-nlp</source>
-        <translation>Fout bij zoeken met geocoder-nlp</translation>
+        <translation>Viga otsimisel geocoder-nlp abil</translation>
     </message>
     <message>
         <location filename="../src/geomaster.cpp" line="458"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>Zoeken naar referentiepunt mislukt: niet gevonden</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -570,7 +570,7 @@
     <message>
         <location filename="../qml/GeocoderPage.qml" line="39"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation>Let op: zie Over voor meer informatie over het melden van problemen bij de adresverwerking.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="26"/>
@@ -580,52 +580,52 @@
     <message>
         <location filename="../qml/GeocoderPage.qml" line="33"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
-        <translation>Geocoder is verantwoordelijk voor het verwerken van zoekopdrachten. Hiervoor verwerkt het de zoekopdracht en zoekt het naar de overeenkomende objecten op een kaart.</translation>
+        <translation>Geokodeerija tegeleb otsingutele vastuste leidmisega. Selleks ta töötleb otsingusõnet ja leiab kaardilt vastavad objektid.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="45"/>
         <source>List of languages used for parsing addresses. Note that when all supported languages are used, RAM requirements could be large</source>
-        <translation>Lijst van talen gebruikt voor het verwerken van adressen. Let op: wanneer alle ondersteunde talen in gebruik zijn kan het RAM-gebruik hoog oplopen</translation>
+        <translation>Keeled, mida arvestatakse aadresside töötlemisel. Kui kõik toetatud keeled on kasutusel, siis seadme mälukasutus on märgatav.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="52"/>
         <source>Search all available maps</source>
-        <translation>Alle beschikbare kaarten doorzoeken</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="53"/>
         <source>When enabled, each search will be performed using all available maps on the device</source>
-        <translation>Indien ingeschakeld wordt elke zoekopdracht uitgevoerd op alle kaarten beschikbaar op het apparaat</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="59"/>
         <source>Use libpostal parser</source>
-        <translation>libpostal-verwerker gebruiken</translation>
+        <translation>Kasuta päringu sisendi töötlejana libpostal&apos;it</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="60"/>
         <source>This is the main address parser of the geocoder. It is recommended to enable &lt;i&gt;libpostal&lt;/i&gt; parser, unless the hardware does not allow to use it and the limitations primitive parser are taken into account. Note that at least one parser has to be specified.</source>
-        <translation>Dit is de hoofdadresverwerker van de geocoder. Het is aanbevolen de &lt;i&gt;libpostal&lt;/i&gt;-verwerker in te schakelen, tenzij de hardware niet toestaat deze te gebruiken, en de beperkingen van de verwerker worden in acht genomen. Let op: minstens één verwerker moet worden opgegeven.</translation>
+        <translation>See on põhiline aadresside töötleja mida geokodeerija kasutab. Me soovitame, et kasutad &lt;i&gt;libpostal&apos;it&lt;/i&gt;. Erand võiks olla olukord, kus raudvara ei võimalda teda kasutada ning sa oskad arvestada lihtsa aadressitöötleja piirangutega. Aga igal juhul peab üks aadresside töötleja olema kasutusel.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="68"/>
         <source>Use primitive parser</source>
-        <translation>Gebruik primitieve verwerker</translation>
+        <translation>Kasuta lihtsat päringusisendi töötlejat</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="69"/>
         <source>In addition to &lt;i&gt;libpostal&lt;/i&gt;, primitive parser allows you to specify administrative hierarchy of a searched object by separating components with a comma. Sometimes, when libpostal fails to parse the request correctly, this parser allows you to overcome the issue.&lt;br&gt;Example: house_number, street, town.</source>
-        <translation>Bovenop &lt;i&gt;libpostal&lt;/i&gt; laat de primitieve verwerker je toe de administratieve hiërarchie van een gezocht object te specificeren door onderdelen van elkaar te scheiden met een komma. Soms laat deze verwerker je toe het probleem te verhelpen wanneer libpostal de zoekopdracht niet correct kan verwerken.&lt;br&gt;Bijvoorbeeld: huis_nummer, straat, dorp.</translation>
+        <translation>Nii nagu ka &lt;i&gt;libpostal&apos;i&lt;/i&gt; puhul võimaldab ka lihtne aadressitöötleja sul kirjeldada otsitava objekti aadressihierarhiat, eraldade osised komadega. Mõnel juhul võib lihtne aadressitöötleja leida vastuseid olukorras, kus libpostal seda teha ei suuda. &lt;br&gt;Näide: majanumber, tänav, linn.</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="78"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
-        <translation>Laad &lt;i&gt;libpostal&lt;/i&gt; bij elk verzoek</translation>
+        <translation>Lae &lt;i&gt;libpostal&lt;/i&gt; teek iga päringu puhul</translation>
     </message>
     <message>
         <location filename="../qml/GeocoderPage.qml" line="79"/>
         <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation>Indien ingeschakeld worden &lt;i&gt;libpostal&lt;/i&gt;-databases enkel naar het geheugen geladen tijdens het verwerken van de opdracht. Hierdoor duurt zoeken langer, maar is het passief geheugengebruik van libpostal klein.</translation>
+        <translation>Kui see valik on kasutusel, siis&lt;i&gt;libpostal&lt;/i&gt;&apos;i andmebaasid loetakse mällu vaid päringu töötlemise ajaks. Tulemuseks kulub päringute töötlemiseks rohkem aega, kuid jõudeolekus on mälukasutus väike.</translation>
     </message>
 </context>
 <context>
@@ -633,12 +633,12 @@
     <message>
         <location filename="../src/infohub.cpp" line="130"/>
         <source>ERROR: </source>
-        <translation>FOUT:</translation>
+        <translation>VIGA:</translation>
     </message>
     <message>
         <location filename="../src/infohub.cpp" line="136"/>
         <source>WARNING: </source>
-        <translation>WAARSCHUWING:</translation>
+        <translation>HOIATUS:</translation>
     </message>
     <message>
         <location filename="../src/infohub.cpp" line="145"/>
@@ -651,22 +651,22 @@
     <message>
         <location filename="../qml/MainMenu.qml" line="33"/>
         <source>Map Manager</source>
-        <translation>Kaartbeheerder</translation>
+        <translation>Kaardihaldur</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="39"/>
         <source>Profile</source>
-        <translation>Profiel</translation>
+        <translation>Profiil</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="44"/>
         <source>Settings</source>
-        <translation>Instellingen</translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../qml/MainMenu.qml" line="49"/>
         <source>About OSM Scout Server</source>
-        <translation>Over OSM Scout Server</translation>
+        <translation>Teave OSM Scout Serveri  kohta</translation>
     </message>
 </context>
 <context>
@@ -674,22 +674,22 @@
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="33"/>
         <source>About OSM Scout Server</source>
-        <translation>Over OSM Scout Server</translation>
+        <translation>Teave OSM Scout Serveri  kohta</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="38"/>
         <source>Settings</source>
-        <translation>Instellingen</translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="43"/>
         <source>Profile</source>
-        <translation>Profiel</translation>
+        <translation>Profiil</translation>
     </message>
     <message>
         <location filename="../qml/MainMenuReversed.qml" line="48"/>
         <source>Map Manager</source>
-        <translation>Kaartbeheerder</translation>
+        <translation>Kaardihaldur</translation>
     </message>
 </context>
 <context>
@@ -697,27 +697,27 @@
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="30"/>
         <source>Cleanup: %1 files to delete</source>
-        <translation>Opruimen: %1 bestanden te verwijderen</translation>
+        <translation>Suurpuhastus: %1 faili saame kustutada</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="36"/>
         <source>Error while deleting file:</source>
-        <translation>Fout bij verwijderen van bestand:</translation>
+        <translation>Viga faili kustutamisel:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="37"/>
         <source>Cancelling the removal of remaining files.</source>
-        <translation>Verwijderen van resterende bestanden wordt geannuleerd.</translation>
+        <translation>Tühistan ülejäänud failide kustutamise.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="46"/>
         <source>Files left to remove: %1</source>
-        <translation>Resterend aantal te verwijderen bestanden: %1</translation>
+        <translation>Kustutamise ootel faile: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager_deleterthread.cpp" line="51"/>
         <source>Cleanup finished</source>
-        <translation>Opruimen voltooid</translation>
+        <translation>Suurpuhastus on tehtud</translation>
     </message>
 </context>
 <context>
@@ -725,167 +725,167 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="76"/>
         <source>Could not allocate Map Manager features</source>
-        <translation>Kon kaartbeheerderfunctionaliteit niet toewijzen</translation>
+        <translation>Ei õnnestunud tööle panna mõningaid kaardihalduri funktsionaalsusi.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="122"/>
         <source>Storage folder changed to %1</source>
-        <translation>Opslagmap gewijzigd naar %1</translation>
+        <translation>Salvestamise uus kaust on nüüd %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="129"/>
         <source>Maps storage folder does not exist: %1</source>
-        <translation>Kaartopslagmap bestaat niet: %1</translation>
+        <translation>Kaartide salvestamise kaust on nüüd: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="132"/>
         <source>Maps storage folder path does not point to a directory: %1</source>
-        <translation>Pad voor kaartopslagmap verwijst niet naar een map: %1</translation>
+        <translation>Kaartide salvestamise kausta otsitee ei viita kataloogile: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="138"/>
         <source>Maps storage folder is not writable, please adjust permissions for %1</source>
-        <translation>Kaartopslagmap is alleen-lezen, pas de toegangsrechten voor %1 aan</translation>
+        <translation>Kaartide salvestamise kausta ei õnnestu kirjutada. Palun muuda %1 kausta õigusi.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="191"/>
         <location filename="../src/mapmanager.cpp" line="193"/>
         <source>Failed to open the database for tracking downloaded files</source>
-        <translation>Openen van database voor het volgen van gedownloade bestanden mislukt</translation>
+        <translation>Ei õnnestunud avada andmebaasi, kus hallatakse allalaetud faile</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="194"/>
         <source>Map Manager functionality would be disturbed</source>
-        <translation>Functionaliteit van Kaartbeheerder zou worden verstoord</translation>
+        <translation>Kaardihalduri töö võib olla häiritud</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="256"/>
         <source>Cannot create directory without any name</source>
-        <translation>Kan geen naamloze map aanmaken</translation>
+        <translation>Kui kaustanime pole antud, siis kausta ei saa luua</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="263"/>
         <source>Error creating directory %1</source>
-        <translation>Fout bij aanmaken van map %1</translation>
+        <translation>Viga %1 kausta loomisel</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="310"/>
         <source>Address parsing language support</source>
-        <translation>Adresverwerkingstaalondersteuning</translation>
+        <translation>Aadresside töötlemiseks vajalik keelekohane tugi</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="343"/>
         <location filename="../src/mapmanager.cpp" line="814"/>
         <location filename="../src/mapmanager.cpp" line="943"/>
         <source>Maps storage folder does not exist: </source>
-        <translation>Kaartopslagmap bestaat niet:</translation>
+        <translation>Kaartide salvestamise kaust ei ole olemas:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="352"/>
         <location filename="../src/mapmanager.cpp" line="821"/>
         <source>No maps were requested</source>
-        <translation>Geen kaarten opgevraagd</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="373"/>
         <source>No maps loaded: %1</source>
-        <translation>Geen kaarten geladen: %1</translation>
+        <translation>Kaarte pole laetud: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="848"/>
         <source>%1: version of dataset for %2 is not supported</source>
-        <translation>%1: versie van gegevensset voor %2 wordt niet ondersteund</translation>
+        <translation>%1: 2% andmekogumi versioon ei ole toetatud</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="399"/>
         <source>Missing dataset for %1: %2</source>
-        <translation>Ontbrekende gegevensset voor %1: %2</translation>
+        <translation>%1 - puuduv andmekogum: %2</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="312"/>
         <source>Mapnik World coastlines</source>
-        <translation>Mapnik-wereldkustlijnen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="314"/>
         <source>Mapbox GL World overlay</source>
-        <translation>Mapbox GL-wereldoverlay</translation>
+        <translation>Mapbox GL maailma ülekatte kaart</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="316"/>
         <source>Mapbox GL fonts</source>
-        <translation>Mapbox GL-lettertypen</translation>
+        <translation>Mapbox GL fondid</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="446"/>
         <source>Available country or territory: </source>
-        <translation>Beschikbaar land of territorium:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="647"/>
         <source>World</source>
-        <translation>Wereld</translation>
+        <translation>Maailm</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="711"/>
         <source>Removing country from requested list: </source>
-        <translation>Land wordt verwijderd van opgevraagde lijst:</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="869"/>
         <source>Missing data: </source>
-        <translation>Ontbrekende gegevens:</translation>
+        <translation>Andmed puuduvad:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="949"/>
         <source>No servers found to download the data from</source>
-        <translation>Geen server gevonden om gegevens van te downloaden</translation>
+        <translation>Ei leidnud servereid, kust andmeid alla laadida</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="972"/>
         <source>Error starting the download of</source>
-        <translation>Fout bij starten van download van</translation>
+        <translation>Järgmise allalaadimise alustamine ei õnnestunud - </translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="989"/>
         <source>File downloaded:</source>
-        <translation>Bestand gedownload:</translation>
+        <translation>Fail on alla laetud:</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1017"/>
         <source>Could not register downloaded file in the tracking database</source>
-        <translation>Kon gedownload bestand niet registreren in de volgdatabase</translation>
+        <translation>Allalaetud faili andmete salvestamine haldusbaasi ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1018"/>
         <source>File registration error</source>
-        <translation>Bestandsregistratiefout</translation>
+        <translation>Faili andmete salvestamise viga</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1041"/>
         <location filename="../src/mapmanager.cpp" line="1042"/>
         <source>Could not retrieve server URL</source>
-        <translation>Kon server-URL niet ophalen</translation>
+        <translation>Serveri aadressi laadimine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1073"/>
         <source>Download failed from %1</source>
-        <translation>Downloaden van %1 mislukt</translation>
+        <translation>%1&apos;st allalaadimine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1109"/>
         <source>List of countries: %L1 (D) / %L2 (W) MB</source>
-        <translation>Lijst van landen: %L1 (D) / %L2 (W) MB</translation>
+        <translation>Riikide loend: %L1 (D) / %L2 (W) MB</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1050"/>
         <source>Downloading the list of countries</source>
-        <translation>De lijst van landen wordt gedownload</translation>
+        <translation>Laen alla riikide loendit</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1382"/>
         <source>Cannot check for updates due to missing list of provided countries. Download the list before checking for updates.</source>
-        <translation>Kan niet controleren op updates omdat de lijst van aangeboden landen ontbreekt. Download deze lijst vooraleer je controleert op updates.</translation>
+        <translation>Ei saa kaartide uuendusi kontrollida, sest saadaval olevate maade loend on puudu. Enne uuenduste kontrollimist palun lae see loend alla.</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1120"/>
@@ -895,47 +895,47 @@
     <message>
         <location filename="../src/mapmanager.cpp" line="684"/>
         <source>Add country or feature to requested list</source>
-        <translation>Voeg land of functionaliteit toe aan opgevraagde lijst</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1084"/>
         <source>Download failed, dropping all downloads</source>
-        <translation>Download mislukt, alle downloads worden geannuleerd</translation>
+        <translation>Allalaadimine ei õnnestunud, lõpetan kõik muud allalaadimised</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1113"/>
         <source>List of countries: %L1 (D) / %L2 (W)</source>
-        <translation>Lijst van landen: %L1 (D) / %L2 (W)</translation>
+        <translation>Riikide loend: %L1 (D) / %L2 (W)</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1133"/>
         <source>Unpacking files</source>
-        <translation>Bestanden worden uitgepakt</translation>
+        <translation>Pakin faile lahti</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1135"/>
         <source>%1; Unpacking files</source>
-        <translation>%1; bestanden worden uitgepakt</translation>
+        <translation>%1; Pakin faile lahti</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1165"/>
         <source>Stopping downloads</source>
-        <translation>Downloads worden gestopt</translation>
+        <translation>Peatan allalaadimised</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1325"/>
         <source>Updating the distribution server URL</source>
-        <translation>Distributieserver-URL wordt bijgewerkt</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1378"/>
         <source>Cannot check for updates due to missing maps storage folder</source>
-        <translation>Kan niet controleren op updates omdat de kaartopslagmap ontbreekt</translation>
+        <translation>Ei saa kaartide uuendusi kontrollida, sest kaartide salvestamise kaust on määramata</translation>
     </message>
     <message>
         <location filename="../src/mapmanager.cpp" line="1380"/>
         <source>Cannot check for updates due to missing list of requested countries. Select countries before checking for updates.</source>
-        <translation>Kan niet controleren op updates omdat de lijst van opgevraagde landen ontbreekt. Kies landen vooraleer je controleert op updates.</translation>
+        <translation>Ei saa kaartide uuendusi kontrollida, sest soovitud riigid on valimata. Enne uuenduste kontrollimist palun vali soovitud riigid.</translation>
     </message>
 </context>
 <context>
@@ -943,32 +943,32 @@
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="36"/>
         <source>Error deleting Valhalla&apos;s tile directory %1</source>
-        <translation>Fout bij verwijderen van Valhalla-tegelmap %1</translation>
+        <translation>Viga Valhalla paanide kausta kustutamisel %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="52"/>
         <source>Error while starting unpacking program</source>
-        <translation>Fout bij starten van uitpakprogramma</translation>
+        <translation>Viga lahtipakkimistarviku käivitamisel</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="63"/>
         <source>Error during unpacking Valhalla&apos;s package</source>
-        <translation>Fout bij uitpakken van Valhalla-pakket</translation>
+        <translation>Viga Valhalla failide lahtipakkimisel</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="70"/>
         <source>Unpacked Valhalla&apos;s package: %1</source>
-        <translation>Valhalla-pakket uitgepakt: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature_packtaskworker.cpp" line="76"/>
         <source>Failed to remove unnecessary file: %1</source>
-        <translation>Verwijderen van onnodig bestand mislukt: %1</translation>
+        <translation>Mittevajaliku faili kustutamine ei õnnestunud: %1</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="236"/>
         <source>Missing libosmscout maps</source>
-        <translation>Ontbrekende libosmscout-kaarten</translation>
+        <translation>Puuduvad kaardid libosmscout&apos;i jaoks</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="247"/>
@@ -978,67 +978,67 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="255"/>
         <source>Missing geocoder-nlp dataset</source>
-        <translation>Ontbrekende geocoder-nlp-gegevensset</translation>
+        <translation>Puuduv andmekogum - geocoder-nlp</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="273"/>
         <source>Address parsing language support</source>
-        <translation>Adresverwerkingstaalondersteuning</translation>
+        <translation>Aadresside töötlemiseks vajalik keelekohane tugi</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="293"/>
         <source>Address parsing country-specific support</source>
-        <translation>Landspecifieke adresverwerkingsondersteuning</translation>
+        <translation>Aadresside töötlemiseks vajalik riigikohane tugi</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="326"/>
         <source>Mapnik World coastlines</source>
-        <translation>Mapnik-wereldkustlijnen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="334"/>
         <source>Missing Mapnik World coastlines</source>
-        <translation>Mapnik-wereldkustlijnen ontbreken</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="346"/>
         <source>Mapnik country-specific support</source>
-        <translation>Mapnik landspecifieke ondersteuning</translation>
+        <translation>Mapnik&apos;u riigikohane tugi</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="354"/>
         <source>Missing country-specific Mapnik dataset</source>
-        <translation>Landspecifieke Mapnik-gegevensset ontbreekt</translation>
+        <translation>Puuduv riigikohane andmekogum - Mapnik</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="373"/>
         <source>Mapbox GL World overlay</source>
-        <translation>Mapbox GL-wereldoverlay</translation>
+        <translation>Mapbox GL maailma ülekatte kaart</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="381"/>
         <source>Missing Mapbox GL World overlay</source>
-        <translation>Mapbox GL-wereldoverlay ontbreekt</translation>
+        <translation>Mapbox GL maailma ülekatte kaart puudub</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="398"/>
         <source>Mapbox GL fonts</source>
-        <translation>Mapbox GL-lettertypen</translation>
+        <translation>Mapbox GL fondid</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="406"/>
         <source>Missing Mapbox GL fonts</source>
-        <translation>Mapbox GL-lettertypen ontbreken</translation>
+        <translation>Puuduvad Mapbox GL fondid</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="419"/>
         <source>Mapbox GL country-specific support</source>
-        <translation>Mapbox GL landspecifieke ondersteuning</translation>
+        <translation>Mapbox GL riigikohane tugi</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="427"/>
         <source>Missing country-specific Mapbox GL dataset</source>
-        <translation>Landspecifieke Mapbox GL-gegevensset ontbreekt</translation>
+        <translation>Puuduv riigikohane andmekogum - Mapbox GL</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="472"/>
@@ -1048,22 +1048,22 @@
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="480"/>
         <source>Missing Valhalla tiles</source>
-        <translation>Ontbrekende Valhalla-tegels</translation>
+        <translation>Valhalla paanid puuduvad</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="281"/>
         <source>Missing address language parsing dataset</source>
-        <translation>Ontbrekende adrestaalverwerkingsgegevensset</translation>
+        <translation>Puuduv andmekogum - keelekohane aadressitöötleja</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="223"/>
         <source>OSM Scout library</source>
-        <translation>OSM Scout-bibliotheek</translation>
+        <translation>OSM Scout teek</translation>
     </message>
     <message>
         <location filename="../src/mapmanagerfeature.cpp" line="301"/>
         <source>Missing country-specific address parsing dataset</source>
-        <translation>Ontbrekende landsspecifieke adresverwerkingsgegevensset</translation>
+        <translation>Puuduv andmekogum - riigikohane aadressitöötleja</translation>
     </message>
 </context>
 <context>
@@ -1071,137 +1071,137 @@
     <message>
         <location filename="../qml/MapManagerPage.qml" line="27"/>
         <source>Map Manager</source>
-        <translation>Kaartbeheerder</translation>
+        <translation>Kaardihaldur</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="39"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
-        <translation>Kaartbeheerder beheert de opslag van offline kaarten en gerelateerde gegevenssets op het apparaat. Hier kan je de functionaliteit en landen selecteren die worden opgeslagen, bijgewerkt of verwijderd van het apparaat.</translation>
+        <translation>Kaardihaldur tegeleb võrguühenduseta kaartide ja seotud andmekogumite salvestamisega selles seadmes. Järgnevalt saad sa valida funktsionaalsusi ja riike, mille andmeid selles seadmes lisatakse, uuendatakse või kustutatakse.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="227"/>
         <source>Storage settings</source>
-        <translation>Opslaginstellingen</translation>
+        <translation>Andmeruumi seadistused</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="231"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation>Opslaginstellingen worden ingesteld door het profiel. Stel het overeenkomende profiel in, of stel het profiel in op &lt;i&gt;Aangepast&lt;/i&gt;, om de opslaginstellingen te wijzigen.</translation>
+        <translation>Andmeruumi seadistused määratakse kasutatava profiili alusel. Kui sa tahad neid muuta, siis palun vali mõni muu soovitud profiil või määra profiiliks &lt;i&gt;Kohandatud&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="264"/>
         <source>Store datasets for Mapbox GL</source>
-        <translation>Gegevenssets voor Mapbox GL opslaan</translation>
+        <translation>Salvesta andmekogumid Mapbox GL jaoks</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="274"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
-        <translation>Sla gegevenssets voor geocoder-nlp op met libpostal</translation>
+        <translation>Salvesta andmekogumid geocoder-nlp ja libpostal&apos;i jaoks</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="285"/>
         <source>Store datasets for Valhalla routing engine</source>
-        <translation>Gegevenssets voor Valhalla-routeringsdienst opslaan</translation>
+        <translation>Salvesta andmekogumid Valhalla teekonna koostamise mootori jaoks</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="286"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
-        <translation>Indien ingeschakeld worden Valhalla-gegevenssets opgeslagen op het apparaat na downloaden. Deze gegevenssets zijn vereist voor het gebruik van Valhalla als routeringsdienst.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="295"/>
         <source>Store datasets for libosmscout</source>
-        <translation>Gegevenssets voor libosmscout opslaan</translation>
+        <translation>Salvesta andmekogumid libosmscout&apos;i jaoks</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="296"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
-        <translation>Indien ingeschakeld worden libosmscout-gegevenssets opgeslagen op het apparaat na downloaden. Deze gegevenssets zijn vereist voor renderen, zoeken en routering door de libosmscout-back-end.</translation>
+        <translation>Kui see valik on sisse lülitatud, siis libosmscout&apos;i andmekogumid salvestatkse peala allalaadimist siia seadmesse. Libosmscout vajab neid kaartide joonistamiseks, otsingute tegemiseks ning teekonna koostamiseks.</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="45"/>
         <source>Subscribed</source>
-        <translation>Geabonneerd</translation>
+        <translation>Tellitud</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="90"/>
         <source>Downloads</source>
-        <translation>Downloads</translation>
+        <translation>Allalaadimised</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="114"/>
         <source>Missing data:&lt;br&gt;</source>
-        <translation>Ontbrekende gegevens:&lt;br&gt;</translation>
+        <translation>Andmed puuduvad: &lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="123"/>
         <source>Start download</source>
-        <translation>Download starten</translation>
+        <translation>Alusta allalaadimist</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="144"/>
         <source>Stop download</source>
-        <translation>Download stoppen</translation>
+        <translation>Peata allalaadimine</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="150"/>
         <source>Provided maps</source>
-        <translation>Aangeboden kaarten</translation>
+        <translation>Saadaval kaardid</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="189"/>
         <source>Check for updates</source>
-        <translation>Controleren op updates</translation>
+        <translation>Vaata, kas on uuendusi</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="195"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation>Werk de lijst met momenteel beschikbare kaarten en gegevenssets bij en controleer of geïnstalleerde kaarten bijgewerkt kunnen worden</translation>
+        <translation>Uuenda hetkel saadaval olevate kaartide ja andmekogude loendit ning kontrolli, kas allalaetud kaartidele leidub uuendusi</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="201"/>
         <source>Storage</source>
-        <translation>Opslag</translation>
+        <translation>Andmeruum</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="212"/>
         <source>Start cleanup</source>
-        <translation>Opruimen starten</translation>
+        <translation>Alusta suurpuhastust</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="221"/>
         <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
-        <translation>Controleer of er bestanden zijn uit vroegere abonnementen die niet meer in gebruik zijn</translation>
+        <translation>Kontrolli, kas varasematest tellimustest on jäänud alles faile, mida enam pole vaja</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="161"/>
         <source>Subscribe</source>
-        <translation>Abonneren</translation>
+        <translation>Telli</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="265"/>
         <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
-        <translation>Indien ingeschakeld worden gegevenssets met vectortegels in Mapbox GL formaat opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 12MB), lettertypen (ongeveer 12MB) en landspecifieke gegevenssets.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="275"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation>Indien ingeschakeld worden geocoder-gegevenssets gebaseerd op libpostal opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de taalverwerkingsgegevensset (ongeveer 700MB) en landspecifieke gegevenssets voor het verwerken en opzoeken van adressen.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="247"/>
         <source>Store datasets for Mapnik</source>
-        <translation>Gegevenssets voor Mapnik opslaan</translation>
+        <translation>Salvesta andmekogumid Mapnik&apos;u jaoks</translation>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="248"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
-        <translation>Indien ingeschakeld worden gegevenssets die kaarten laten renderen met Mapnik opgeslagen op het apparaat na downloaden. Deze gegevenssets bevatten de wereldkustlijnen (ongeveer 700MB) en landspecifieke gegevenssets voor het renderen.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MapManagerPage.qml" line="171"/>
         <source>Select the countries or territories that you want to keep on device</source>
-        <translation>Selecteer de landen of territoria die je op het apparaat wil houden</translation>
+        <translation>Vali riigid ja piirkonnad, mille kaarte soovid sellesse seadmesse salvestada</translation>
     </message>
 </context>
 <context>
@@ -1209,57 +1209,57 @@
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="112"/>
         <source>Failed to open Mapbox GL database: %1</source>
-        <translation>Openen van Mapbox GL-database mislukt: %1</translation>
+        <translation>Mapbox GL andmekogu avamine ei õnnestunud: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="161"/>
         <source>Failed to run query in Mapbox GL database: %1</source>
-        <translation>Uitvoeren van zoekopdracht in Mapbox GL-database mislukt: %1</translation>
+        <translation>Päringu tegemine Mapbox GL andmekogus ei õnnestunud: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="212"/>
         <source>Failed to run query in Mapbox GL fonts database: %1</source>
-        <translation>Uitvoeren van zoekopdracht in Mapbox GL-lettertypendatabase mislukt: %1</translation>
+        <translation>Ei õnnestunud teha päringut Mapbox GL fontide andmekogus: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="231"/>
         <source>Malformed Mapbox GL file request: %1/%2 [%3] [%4]</source>
-        <translation>Misvormd Mapbox GL-bestandsverzoek: %1/%2 [%3] [%4]</translation>
+        <translation>Vigane Mapbox GL faili päring: %1/%2 [%3] [%4]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="237"/>
         <source>Requested Mapbox GL file does not exist: %1 [%2]</source>
-        <translation>Gevraagd Mapbox GL-bestand bestaat niet: %1 [%2]</translation>
+        <translation>Vastavat Mapbox GL faili pole olemas: %1 [%2]</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="256"/>
         <source>Error opening Mapbox GL style template %1</source>
-        <translation>Fout bij openen van Mapbox GL-stijlsjabloon %1</translation>
+        <translation>Viga Mapbox GL malli avamisel: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="264"/>
         <source>Error reading Mapbox GL style template %1</source>
-        <translation>Fout bij lezen van Mapbox GL-stijlsjabloon %1</translation>
+        <translation>Viga Mapbox GL malli lugemisel: %1</translation>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="283"/>
         <source>Error opening Mapbox GL sprite JSON</source>
-        <translation>Fout bij openen van Mapbox GL-sprite-JSON</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="291"/>
         <source>Error reading Mapbox GL sprite JSON</source>
-        <translation>Fout bij lezen van Mapbox GL-sprite-JSON</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="309"/>
         <source>Error opening Mapbox GL sprite image</source>
-        <translation>Fout bij openen van Mapbox GL-sprite-afbeelding</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/mapboxglmaster.cpp" line="316"/>
         <source>Error reading Mapbox GL sprite image</source>
-        <translation>Fout bij lezen van Mapbox GL-sprite-afbeelding</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1267,42 +1267,42 @@
     <message>
         <location filename="../src/mapnikmaster.cpp" line="143"/>
         <source>Problems with removing configuration directory used by Mapnik</source>
-        <translation>Problemen bij verwijderen van configuratiemap voor Mapnik</translation>
+        <translation>Viga Mapnik&apos;u seadistuste kausta kustutamisel</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="149"/>
         <source>Cannot create configuration directory for Mapnik</source>
-        <translation>Kan geen configuratiemap voor Mapnik aanmaken</translation>
+        <translation>Mapnik&apos;u seadistuste kausta loomine ei õnnestu</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="168"/>
         <source>Failed to create symbolic link to Mapnik configuration (%1)</source>
-        <translation>Aanmaken van symbolische link naar Mapnik-configuratie mislukt (%1)</translation>
+        <translation>Mapnik&apos;u seadistuste faili viite loomine ei õnnestu (%1)</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="215"/>
         <source>Failed to load Mapnik configuration: %1</source>
-        <translation>Laden van Mapnik-configuratie mislukt: %1</translation>
+        <translation>Mapnik&apos;u seadistuste faili laadimine ei õnnestu: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="273"/>
         <source>Cannot write Mapnik configuration file: %1</source>
-        <translation>Kan geen Mapnik-configuratiebestand schrijven: %1</translation>
+        <translation>Mapnik&apos;u seadistuste faili kirjutamine ei õnnestu: %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="284"/>
         <source>Mapnik: adding %1</source>
-        <translation>Mapnik: %1 wordt toegevoegd</translation>
+        <translation>Mapnik: lisan %1</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="362"/>
         <source>Mapnik: failed to transform coordinates</source>
-        <translation>Mapnik: omzetten van coördinaten mislukt</translation>
+        <translation>Mapnik: koordinaatide teisendamine ei õnnestunud</translation>
     </message>
     <message>
         <location filename="../src/mapnikmaster.cpp" line="378"/>
         <source>Mapnik not available</source>
-        <translation>Mapnik niet beschikbaar</translation>
+        <translation>Mapnik ei ole saadaval</translation>
     </message>
 </context>
 <context>
@@ -1315,27 +1315,27 @@
     <message>
         <location filename="../qml/MapnikPage.qml" line="33"/>
         <source>Mapnik can be used as a rendering backend to provide map tiles to the client programs</source>
-        <translation>Mapnik kan gebruikt worden als renderback-end om kaarttegels aan te bieden aan de cliëntprogramma’s</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MapnikPage.qml" line="42"/>
         <source>Scale factor</source>
-        <translation>Schaalfactor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MapnikPage.qml" line="43"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
-        <translation>Schaalfactor wordt gebruikt om dingen op een kaart te tekenen. Op schermen met een hoge resolutie, zoals telefoons, is het een goed idee om schaalfactoren groter dan 1 te gebruiken. Een schaalfactor tussen 3 en 5 wordt voor de meeste mobiele toestellen aangeraden.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/MapnikPage.qml" line="53"/>
         <source>Buffer size in pixels</source>
-        <translation>Buffergrootte in pixels</translation>
+        <translation>Puhvri suurus pikslites</translation>
     </message>
     <message>
         <location filename="../qml/MapnikPage.qml" line="54"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation>Door het gebied dat gebruikt wordt om de gegevens te laden bij het renderen van een tegel te vergroten kan de renderer renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Als je te veel geknipte labels ziet, probeer dan de buffergrootte te vergroten. Let op: grote buffergroottes vertragen het renderproces. De buffergrootte wordt aangepast door de schaalfactor om de verhoogde labelgrootte in acht te houden.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1343,27 +1343,27 @@
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="26"/>
         <source>Unused files</source>
-        <translation>Niet-gebruikte bestanden</translation>
+        <translation>Kasutamata failid</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="86"/>
         <source>Delete files</source>
-        <translation>Bestanden verwijderen</translation>
+        <translation>Kustuta failid</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="88"/>
         <source>Deleting</source>
-        <translation>Wordt verwijderd</translation>
+        <translation>Kustutan</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="98"/>
         <source>Delete unused files and free the occupied space</source>
-        <translation>Verwijder ongebruikte bestanden en maak bezette ruimte vrij</translation>
+        <translation>Kustuta kasutamata failid ja vabasta nende andmemaht muuks kasutuseks</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="145"/>
         <source>All stored files are used by OSM Scout Server. There is nothing to delete.</source>
-        <translation>Alle opgeslagen bestanden worden gebruikt door OSM Scout Server. Er is niets te verwijderen.</translation>
+        <translation>Kõik failid on OSM Scout Serveri jaoks kasutusel. Mitte midagi ei ole võimalik kustutada.</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="138"/>
@@ -1373,27 +1373,27 @@
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="49"/>
         <source>Directories</source>
-        <translation>Mappen</translation>
+        <translation>Kaustad</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="54"/>
         <source>Directories containing files that will be deleted during cleanup:</source>
-        <translation>Mappen met bestanden die tijdens het opruimen verwijderd zullen worden:</translation>
+        <translation>Kausta, kust me suurpuhastuse ajal kustutame faile:</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="73"/>
         <source>Cleanup</source>
-        <translation>Opruimen</translation>
+        <translation>Suurpuhastus</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="138"/>
         <source>Occupied space</source>
-        <translation>Bezette ruimte</translation>
+        <translation>Kasutatud andmeruum</translation>
     </message>
     <message>
         <location filename="../qml/NonNeededFiles.qml" line="143"/>
         <source>Failed to check for non-needed files. This could be due to active downloads, for example</source>
-        <translation>Controleren op onnodige bestanden mislukt. Dit kan bijvoorbeeld zo zijn wegens actieve downloads</translation>
+        <translation>Mittevajalike failide tuvastamine ei õnnestunud. Näiteks võib see juhtuda, kui mõni allalaadimine on veel pooleli.</translation>
     </message>
 </context>
 <context>
@@ -1406,112 +1406,112 @@
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="33"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) can be used for drawing map, search, and routing</source>
-        <translation>OSM Scout-bibliotheek (&lt;i&gt;libosmscout&lt;/i&gt;) kan gebruikt worden voor het tekenen van kaarten, zoeken en routeren</translation>
+        <translation>OSM Scout teek (&lt;i&gt;libosmscout&lt;/i&gt;) on mõeldud kaartide joonistamiseks, otsingute tegemiseks ning teekonna koostamiseks</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="37"/>
         <source>Rendering</source>
-        <translation>Renderen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="43"/>
         <source>Font size</source>
-        <translation>Lettergrootte</translation>
+        <translation>Fondi suurus</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="51"/>
         <source>Style Sheet</source>
-        <translation>Stijlblad</translation>
+        <translation>Laadileht</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="52"/>
         <source>Style sheet used to render the map tiles</source>
-        <translation>Stijlblad om kaarttegels te renderen</translation>
+        <translation>Laadileht, mille alusel visualiseeritakse kaardipaanid </translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="58"/>
         <source>Icons</source>
-        <translation>Pictogrammen</translation>
+        <translation>Ikoonid</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="59"/>
         <source>Icons used to mark features on the map</source>
-        <translation>Pictogrammen om faciliteiten op de kaart aan te duiden</translation>
+        <translation>Ikoonid, mida kasutatakse objektide märgimiseks kaardil</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="67"/>
         <source>Render sea</source>
-        <translation>Zee renderen</translation>
+        <translation>Visualiseeri merd</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="73"/>
         <source>Draw background</source>
-        <translation>Achtergrond tekenen</translation>
+        <translation>Joonista taust</translation>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="77"/>
         <source>Routing</source>
-        <translation>Routering</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="82"/>
         <source>Routing is calculated among the possible routes that comply with the cost limitation</source>
-        <translation>Routering wordt berekend onder de mogelijke routes die aan de kostenbeperking voldoen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="91"/>
         <source>Cost factor</source>
-        <translation>Kostenfactor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="92"/>
         <source>Cost factor is a component of a cost limit that is proportional to the geodesic distance between the route origin and the target</source>
-        <translation>Kostenfactor is een onderdeel van een kostenlimiet die proportioneel is aan de geodetische afstand tussen beginpunt en bestemming</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="101"/>
         <source>Cost distance</source>
-        <translation>Kostenafstand</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="102"/>
         <source>Cost distance is an offset of a cost limit</source>
-        <translation>Kostenafstand is een compensatie van een kostenlimiet</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="121"/>
         <source>Routing speeds</source>
-        <translation>Routeringssnelheden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="127"/>
         <source>Speeds for different transportation modes (car, bicycle, walk) and at different road surfaces used when finding an optimal route</source>
-        <translation>Snelheden voor verschillenden modi van transport (auto, fiets, te voet) en op verschillende wegoppervlakken gebruikt bij het berekenen van de optimale route</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="133"/>
         <source>Advanced rendering settings</source>
-        <translation>Geavanceerde renderinstellingen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="142"/>
         <source>Loaded area factor</source>
-        <translation>Geladengebiedfactor</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="143"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. Factor value of 1.0 corresponds to loading data that originates from the rendered tile only. The large value of the factor would decrease the rendering speed and increase RAM footprint of the server. Due to its impact on RAM, depending on your tile size, factors as small as 2 it may lead to filling up RAM of the device.</source>
-        <translation>Door het gebied dat gebruikt wordt om de gegevens te laden bij het renderen van een tegel te vergroten kan de renderer renderen van labels verbeteren door rekening te houden met gegevens van naburige tegels. Factorwaarde 1.0 komt overeen met het laden van gegevens enkel van de gerenderde tegel. De grote waarde van de factor zou leiden tot vertraagd renderen en zou het RAM-gebruik van de server verhogen. Door de impact op het RAM-geheugen kunnen, afhankelijk van je tegelgrootte, zelfs kleine factoren als 2 leiden tot het opvullen van het RAM-geheugen van het apparaat.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="156"/>
         <source>Cutoff zoom level</source>
-        <translation>Zoomniveau-cutoff</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMScoutPage.qml" line="157"/>
         <source>At the specified zoom level, the map rendering algorithm will stop checking for labels in the neighboring tiles. Frequently, 14 is used as a cutoff zoom level. By setting it to a larger value, you could get more accurate label rendering at larger zoom levels. Note that the label rendering could significantly slow down the map rendering.</source>
-        <translation>Op het opgegeven zoomniveau zal het kaartrenderalgoritme ophouden met zoeken naar labels in de naburige tegels. 14 wordt vaak gebruikt als cutoff. Door een hogere waarde in te stellen kan je nauwkeuriger renderen op hogere zoomniveaus verkrijgen. Let op: het renderen van de labels kan een duidelijke vertraging van het renderen van de kaart veroorzaken.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1519,137 +1519,137 @@
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="26"/>
         <source>Routing speeds</source>
-        <translation>Routeringssnelheden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="33"/>
         <source>Transportation speeds used by OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) when calculating routes</source>
-        <translation>Transportsnelheden gebruikt door de OSM Scout-bibliotheek (&lt;i&gt;libosmscout&lt;/i&gt;) bij berekenen van routes</translation>
+        <translation>Liikumiskiirused, mida OSM Scout teek (&lt;i&gt;libosmscout&lt;/i&gt;) kasutab teekonna koostamisel</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="40"/>
         <source>Modes of transportation</source>
-        <translation>Vervoermiddelen</translation>
+        <translation>Transpordiliigid</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="46"/>
         <source>Maximal car speed</source>
-        <translation>Maximale snelheid voor auto’s</translation>
+        <translation>Suurim auto kiirus</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="47"/>
         <source>This is a speed that is assumed to be never exceeded during calculations of the route</source>
-        <translation>Dit is een snelheid die tijdens berekening van de route verondersteld wordt nooit overschreden te worden</translation>
+        <translation>Teekonna arvutamisel eeldame, et seda kiirust kunagi ei ületata</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="55"/>
         <source>Expected speed of a bicycle</source>
-        <translation>Verwachte snelheid voor een fiets</translation>
+        <translation>Eeldatav ratturi kiirus</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="63"/>
         <source>Expected speed while walking</source>
-        <translation>Verwachte snelheid voor lopen</translation>
+        <translation>Eeldatav jalakäija kiirus</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="69"/>
         <source>Car speed on different roads</source>
-        <translation>Autosnelheid op verschillende wegen</translation>
+        <translation>Auto kiirus erinevatel teedel</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="75"/>
         <source>living street</source>
-        <translation>woonstraat</translation>
+        <translation>õueala</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="83"/>
         <source>motorway</source>
-        <translation>autosnelweg</translation>
+        <translation>kiirtee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="91"/>
         <source>motorway junction</source>
-        <translation>knooppunt</translation>
+        <translation>kiirtee teedesõlm</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="99"/>
         <source>motorway link</source>
-        <translation>autosnelwegverbinding</translation>
+        <translation>kiirtee ühenduslõik</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="107"/>
         <source>motorway primary</source>
-        <translation>primaire autosnelweg</translation>
+        <translation>põhimaantee kiirtee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="115"/>
         <source>motorway trunk</source>
-        <translation>trunk road</translation>
+        <translation>esimese klassi kiirtee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="123"/>
         <source>primary</source>
-        <translation>primair</translation>
+        <translation>põhimaantee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="131"/>
         <source>primary link</source>
-        <translation>primaire verbinding</translation>
+        <translation>põhimaantee ühenduslõik</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="139"/>
         <source>residential</source>
-        <translation>woongebied</translation>
+        <translation>elamupiirkonna tänav</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="147"/>
         <source>road</source>
-        <translation>weg</translation>
+        <translation>tee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="155"/>
         <source>roundabout</source>
-        <translation>rotonde</translation>
+        <translation>ringtee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="163"/>
         <source>secondary</source>
-        <translation>secundair</translation>
+        <translation>tugimaantee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="171"/>
         <source>secondary link</source>
-        <translation>secundaire verbinding</translation>
+        <translation>tugimaantee ühenduslõik</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="179"/>
         <source>service</source>
-        <translation>dienst</translation>
+        <translation>juurdepääsutee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="187"/>
         <source>tertiary</source>
-        <translation>tertiair</translation>
+        <translation>kohalik maantee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="195"/>
         <source>tertiary link</source>
-        <translation>tertiaire verbinding</translation>
+        <translation>kohaliku maantee ühenduslõik</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="203"/>
         <source>trunk</source>
-        <translation>trunk</translation>
+        <translation>esimese klassi tee</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="211"/>
         <source>trunk link</source>
-        <translation>trunkverbinding</translation>
+        <translation>esimese klassi tee ühenduslõik</translation>
     </message>
     <message>
         <location filename="../qml/OSMSpeedPage.qml" line="219"/>
         <source>unclassified</source>
-        <translation>niet-geclassificeerd</translation>
+        <translation>klassifitseerimata tee</translation>
     </message>
 </context>
 <context>
@@ -1657,7 +1657,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PageListPL.qml" line="60"/>
         <source>Accept</source>
-        <translation>Accepteren</translation>
+        <translation>Nõustu</translation>
     </message>
 </context>
 <context>
@@ -1665,7 +1665,7 @@
     <message>
         <location filename="../qml/platform.kirigami/PagePL.qml" line="49"/>
         <source>Accept</source>
-        <translation>Accepteren</translation>
+        <translation>Nõustu</translation>
     </message>
 </context>
 <context>
@@ -1674,22 +1674,22 @@
         <location filename="../qml/ProfilesPage.qml" line="28"/>
         <location filename="../qml/ProfilesPage.qml" line="47"/>
         <source>Profile</source>
-        <translation>Profiel</translation>
+        <translation>Profiil</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="38"/>
         <source>OSM Scout Server uses profiles to simplify the selection of backends and the sets of downloaded databases.&lt;br&gt;&lt;br&gt;Please select active profile.</source>
-        <translation>OSM Scout Server maakt gebruik van profielen om de selectie van back-ends en de verzamelingen gedownloade databases te vereenvoudigen.&lt;br&gt;&lt;br&gt;Selecteer het actief profiel.</translation>
+        <translation>Et teha lihtsamaks taustarakenduste ja allalaetavate andmekogude valimise, kasutab OSM Scout Server profiile.&lt;br&gt;&lt;br&gt;Palun vali profiil, mida sa soovid kasutada.</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation>Let op: sommige profielen kunnen ontbreken door de manier waarop OSM Scout Server ingepakt is.</translation>
+        <translation>OSM Scout Serveri pakendamise tõttu võivad mõned profiilid puududa.</translation>
     </message>
     <message>
         <location filename="../qml/ProfilesPage.qml" line="56"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>Het profiel &lt;i&gt;Standaard&lt;/i&gt; ondersteunt kaarttoepassingen die gebruik maken van de &lt;i&gt;Mapbox GL&lt;/i&gt;-plug-in, en gebruikt &lt;i&gt;Geocoder-NLP&lt;/i&gt; om locaties te zoeken en &lt;i&gt;Valhalla&lt;/i&gt; om de routes te berekenen. Dit profiel wordt aanbevolen voor nieuwe vectortegelkaartcliënten.&lt;br&gt;&lt;br&gt;Voor gebruikers van kaarttoepassingen met traditionele rastertegels bevat het aanbevolen profiel voor rastertegelkaarten &lt;i&gt;Mapnik&lt;/i&gt;-gegevenssets en gebruikt het dezelfde zoek- en routeberekeningsplug-ins als het profiel &lt;i&gt;Standaard&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Voor gebruikers die raster- en vectortegelkaartcliënten willen gebruiken, bevat het aanbevolen profiel dat vector- en rastertegels combineert &lt;i&gt;Mapbox GL&lt;/i&gt;-gegevenssets, ondersteunt het het renderen van kaarten in rastertegels met &lt;i&gt;Mapnik&lt;/i&gt;, en gebruikt het dezelfde zoek- en routeberekeningsplug-ins als het profiel &lt;i&gt;Standaard&lt;/i&gt;. Gezien dit profiel gegevens bevat voor meerdere renderingsback-ends, heeft het ook de hoogste opslagvereisten.&lt;br&gt;&lt;br&gt;Het profiel waarbij &lt;i&gt;libosmscout&lt;/i&gt; gecombineerd wordt met &lt;i&gt;Geocoder-NLP&lt;/i&gt; heeft lagere opslagvereisten vergeleken met het standaardprofiel. Renderen van kaarten en routeberekening is in vergelijking met het standaardprofiel weliswaar beperkt tot één gebied, de kwaliteit van renderen is minder goed en de routeberekening is trager. &lt;br&gt;&lt;br&gt;Het &lt;i&gt;libosmscout&lt;/i&gt;-profiel heeft de laagste opslagvereisten van alle profielen, maar renderen van kaarten, zoeken en routeberekening zijn beperkt tot één gebied. Ook hier is de kwaliteit van renderen en zoeken, evenals de snelheid van de routeberekening, inferieur.&lt;br&gt;&lt;br&gt;Bij gebruik van het profiel &lt;i&gt;Aangepast&lt;/i&gt; worden de instellingen en kaartbeheeropslag niet ingesteld door profielen, en moeten ze door de gebruiker worden ingesteld. Dit profiel biedt de mogelijkheid de onderdelen voor renderen, zoeken en routeberekening apart te selecteren. Let op: de gebruiker is verantwoordelijk voor het aanpassen van de instellingen om ze consistent te houden tussen de vereisten van de gebruikte back-ends en de opslag.</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -1697,48 +1697,48 @@
     <message>
         <location filename="../src/requestmapper.cpp" line="69"/>
         <source>Number of parallel worker threads: %1</source>
-        <translation>Aantal parallelle werkthreads: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="74"/>
         <source>Enable corresponding backend(s) using Profiles.</source>
-        <translation>Schakel de overeenkomstige back-end(s) in via Profielen.</translation>
+        <translation>Profiilide abil saad kasutusele võtta vastava(d) taustaprogrammi(d).</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="409"/>
         <source>Loading posted data for request %1</source>
-        <translation>Geposte gegevens voor verzoek %1 laden</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="429"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation>Rastertegels zijn niet beschikbaar omdat Mapnik en libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld zijn. %1</translation>
+        <translation>Kuna Mapnik ja libosmscout on kas profiili alusel või seadistustest välja lülitatud, siis rasterpaane ei saa kuvada. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="502"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
-        <translation>Mapbox GL-back-end is uitgeschakeld door het geselecteerde profiel of de geselecteerde instellingen. %1</translation>
+        <translation>Mapbox GL taustateenus on kas profiili alusel või seadistustest välja lülitatud. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="670"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation>Zoeken is niet beschikbaar omdat GeocoderNLP en libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld zijn. %1</translation>
+        <translation>Kuna GeocoderNLP ja libosmscout on kas profiili alusel või seadistustest välja lülitatud, siis otsingu kasutamine ei ole võimalik. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="717"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation>Zoeken naar nabij NP’s is niet beschikbaar omdat GeocodeNLP en libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld zijn. %1</translation>
+        <translation>Kuna GeocoderNLP ja libosmscout on kas profiili alusel või seadistustest välja lülitatud, siis läheduses asuvate huvipunktide otsingu kasutamine ei ole võimalik. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="866"/>
         <location filename="../src/requestmapper.cpp" line="1023"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
-        <translation>Routeberekening is niet beschikbaar omdat Valhalla en libosmscout door het geselecteerde profiel of de geselecteerde instellingen uitgeschakeld zijn. %1</translation>
+        <translation>Kuna Valhalla ja libosmscout on kas profiili alusel või seadistustest välja lülitatud, siis teekonna koostamine ei ole võimalik. %1</translation>
     </message>
     <message>
         <location filename="../src/requestmapper.cpp" line="967"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
-        <translation>Routeberekening en andere diensten van Valhalla zijn niet beschikbaar, aangezien Valhalla uitgeschakeld is door het geselecteerde profiel of in de instellingen. %1</translation>
+        <translation>Kuna Valhalla on kas profiili alusel või seadistustest välja lülitatud, siis teekonna koostamine ja muude Valhalla teenuste kasutamine ei ole võimalik. %1</translation>
     </message>
 </context>
 <context>
@@ -1746,195 +1746,195 @@
     <message>
         <location filename="../src/routingforhuman.cpp" line="92"/>
         <source>Turn sharp left</source>
-        <translation>Sla scherp linksaf</translation>
+        <translation>Pööra järsult vasakule</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="94"/>
         <source>Turn left</source>
-        <translation>Sla linksaf</translation>
+        <translation>Pööra vasakule</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="96"/>
         <source>Turn slightly left</source>
-        <translation>Sla iets linksaf</translation>
+        <translation>Pööra veidi vasakule</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="98"/>
         <source>Straight on</source>
-        <translation>Rechtdoor</translation>
+        <translation>Otse edasi</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="100"/>
         <source>Turn slightly right</source>
-        <translation>Sla iets rechtsaf</translation>
+        <translation>Pööra veidi paremale</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="102"/>
         <source>Turn right</source>
-        <translation>Sla rechtsaf</translation>
+        <translation>Pööra paremale</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="104"/>
         <source>Turn sharp right</source>
-        <translation>Sla scherp rechtsaf</translation>
+        <translation>Pööra järsult paremale</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="119"/>
         <source>Drive along %along%</source>
-        <translation>Rij langs %along%</translation>
+        <translation>Sõida mööda teed %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="120"/>
         <source>Start at %start%. Drive along %along%</source>
-        <translation>Begin te %start%. Rij langs %along%</translation>
+        <translation>Alusta %start%. Sõida piki %along%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="127"/>
         <source>Start at %start%</source>
-        <translation>Begin te %start%</translation>
+        <translation>Alusta %start%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="175"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
-        <translation>%turncommand% bij kruispunt (%crossingway%)</translation>
+        <translation>(%crossingway%) teeristis %turncommand%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="244"/>
         <source>Enter motorway %motorway%</source>
-        <translation>Rijd de autosnelweg %motorway% op</translation>
+        <translation>Sõida %motorway% kiirteele</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="248"/>
         <source>At crossing %crossing%, enter motorway %motorway%</source>
-        <translation>Rijd de autosnelweg %motorway% op bij kruispunt %crossing%</translation>
+        <translation>%crossing% teeristis sõida %motorway% kiirteele</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="287"/>
         <source>Change motorway to %to%</source>
-        <translation>Verander van autosnelweg naar %to%</translation>
+        <translation>Sõida kiirteele %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="290"/>
         <source>Change motorway from %from%</source>
-        <translation>Verander van autosnelweg van %from%</translation>
+        <translation>%from% kiirteelt sõida teisele kiirteele</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="293"/>
         <source>Change motorway from %from% to %to%</source>
-        <translation>Verander van autosnelweg, van %from% naar %to%</translation>
+        <translation>%from% kiirteelt sõida %to% kiirteele</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="298"/>
         <location filename="../src/routingforhuman.cpp" line="384"/>
         <source>At %motoName% (exit %motoRef%), %command%</source>
-        <translation>%command% op %motoName% (afrit %motoRef%)</translation>
+        <translation>%motoName% (ärapööre %motoRef%), %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="304"/>
         <location filename="../src/routingforhuman.cpp" line="390"/>
         <source>At %motoName%, %command%</source>
-        <translation>%command% op %motoName%</translation>
+        <translation>%motoName%, %command%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="356"/>
         <source>Leave motorway into %into%</source>
-        <translation>Verlaat de autosnelweg naar %into%</translation>
+        <translation>Lahku kiirteelt %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="359"/>
         <source>Leave motorway. %move%</source>
-        <translation>Verlaat de autosnelweg. %move%</translation>
+        <translation>Lahku kiirteelt. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="362"/>
         <location filename="../src/routingforhuman.cpp" line="369"/>
         <source>Leave motorway %from%</source>
-        <translation>Verlaat de autosnelweg %from%</translation>
+        <translation>Lahku kiirteelt %from%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="365"/>
         <source>Leave motorway. %move% into %into%</source>
-        <translation>Verlaat de autosnelweg. %move% naar %into%</translation>
+        <translation>Lahku kiirteelt. %move% %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="373"/>
         <source>Leave motorway %from%. %move%</source>
-        <translation>Verlaat de autosnelweg %from%. %move%</translation>
+        <translation>Lahku kiirteelt %from%. %move%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="377"/>
         <source>Leave motorway %from%. %move% into %into%</source>
-        <translation>Verlaat de autosnelweg %from%. %move% naar %into%</translation>
+        <translation>Lahku kiirteelt %from%. %move% %into%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="405"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation>Weg verandert van naam, van %from% naar %to%</translation>
+        <translation>Tee uus nimi on %to% senise %from% asemel</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="409"/>
         <source>Way changes name to %to%</source>
-        <translation>Weg verandert van naam naar %to%</translation>
+        <translation>Tee uus nimi on %to%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="167"/>
         <source>Turn</source>
-        <translation>Sla af</translation>
+        <translation>Pööra</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="213"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
-        <translation>Verlaat rotonde (afrit %num%) naar straat %street%</translation>
+        <translation>Lahku ringteelt (%num% exit) %street% tänavale</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="217"/>
         <source>Leave roundabout (%num% exit)</source>
-        <translation>Verlaat rotonde (afrit %num%)</translation>
+        <translation>Lahku ringteelt (%num% exit)</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="188"/>
         <source>Enter roundabout</source>
-        <translation>Rijd de rotonde op</translation>
+        <translation>Sõida ringteele</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="139"/>
         <source>Target reached: %target%</source>
-        <translation>Bestemming bereikt: %target%</translation>
+        <translation>Jõudsid sihtkohta: %target%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="170"/>
         <source>%turncommand% into %where%</source>
-        <translation>%turncommand% naar %where%</translation>
+        <translation>%turncommand% %where%</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="192"/>
         <source>At crossing %crossway%, enter roundabout</source>
-        <translation>Rijd de rotonde op bij kruispunt %crossway%</translation>
+        <translation>%crossway% teeristis sõida ringteele</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="209"/>
         <source>Leave roundabout</source>
-        <translation>Verlaat de rotonde</translation>
+        <translation>Lahku ringteelt</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="209"/>
         <source>exit</source>
-        <translation>afrit</translation>
+        <translation>ärapööre</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="242"/>
         <source>Enter motorway</source>
-        <translation>Rijd de autosnelweg op</translation>
+        <translation>Sõida kiirteele</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="285"/>
         <source>Change motorway</source>
-        <translation>Verander van autosnelweg</translation>
+        <translation>Sõida teisele kiirteele</translation>
     </message>
     <message>
         <location filename="../src/routingforhuman.cpp" line="354"/>
         <source>Leave motorway</source>
-        <translation>Verlaat de autosnelweg</translation>
+        <translation>Lahku kiirteelt</translation>
     </message>
 </context>
 <context>
@@ -1942,149 +1942,149 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="27"/>
         <source>Settings</source>
-        <translation>Instellingen</translation>
+        <translation>Seadistused</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="41"/>
         <source>Units</source>
-        <translation>Eenheden</translation>
+        <translation>Ühikud</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="42"/>
         <source>Metric</source>
-        <translation>Metrisch</translation>
+        <translation>Meetermõõdustik</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="42"/>
         <source>Imperial</source>
-        <translation>Imperiaal</translation>
+        <translation>Mittemeetriline mõõdustik</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="40"/>
         <source>Units used in the graphical user interface of the server. The units will change only after you apply the settings.</source>
-        <translation>Eenheden gebruikt in de grafische gebruikersinterface van de server. De eenheden worden pas aangepast wanneer je de instellingen toepast.</translation>
+        <translation>Ühikud serveri graafilise liidese jaoks. Ühikute muutus jõustub peale nupu vajutamist.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="52"/>
         <source>Language</source>
-        <translation>Taal</translation>
+        <translation>Keel</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="53"/>
         <source>Default</source>
-        <translation>Standaard</translation>
+        <translation>Vaikimisi</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="53"/>
         <source>English</source>
-        <translation>Engels</translation>
+        <translation>inglise</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="48"/>
         <source>Preferred language for location names shown in rendered maps or in the returned search results. When possible, this language will be used. When set to &lt;i&gt;Default&lt;/i&gt;, OpenStreetMap name will be used which usually defaults to local language of the displayed country.</source>
-        <translation>Voorkeurstalen voor plaatsnamen op de kaart of in de zoekresultaten. Indien mogelijk wordt deze taal gebruikt. Indien ingesteld als &lt;i&gt;Standaard&lt;/i&gt;, zal de naam op OpenStreetMap gebruikt worden. Deze komt meestal overeen met de taal van het land.</translation>
+        <translation>Eelistatud keel kohanimede kuvamiseks kaardil ja otsingutulemustes. Kui vähegi võimalik, siis kasutatakse valitud keelt. Kui valikuks on &lt;i&gt;Vaikimisi&lt;/i&gt; väärtus, siis kasutame OpenStreetMap andmestikus leiduvad nimevälja ning sealne väärtus on üldjuhul antud maa põhilises keeles.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="86"/>
         <source>When enabled, OSM Scout Server will be activated automatically by any client accessing it. Automatically started server will work in the background.</source>
-        <translation>Indien ingeschakeld wordt OSM Scout Server automatisch opgestart wanneer een cliënt erom vraagt. Indien automatisch opgestart, wordt OSM Scout Server uitgevoerd als achtergrondproces.</translation>
+        <translation>Kui see valik on  kasutusel, siis OSM Scout Server pannakse tööle juhul, kui mõni klientrakendus seda vajab. Automaatselt käivitatud server töötab taustaprotsessina.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="62"/>
         <source>Maps storage</source>
-        <translation>Kaartopslag</translation>
+        <translation>Kaartide salvestamine</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="63"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
-        <translation>Map om kaarten op te slaan.&lt;br&gt;&lt;b&gt;Let op!&lt;/b&gt; Deze map wordt volledig beheerd door OSM Scout Server. &lt;b&gt;Wijs een aparte, lege map toe&lt;/b&gt; die OSM Scout Server kan gebruiken. Dit omvat het verwijderen van alle bestanden in de map wanneer daartoe gevraagd tijdens opruimen of kaartupdates.&lt;br&gt;&lt;i&gt;Bijvoorbeeld:&lt;/i&gt; Kaarten in &lt;i&gt;~nemo&lt;/i&gt;</translation>
+        <translation>Kaust, kuhu sa kaardifailid salvestad. &lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; Ainult OSM Scout Server vastutab selle kausta sisu haldamise eest. Palun &lt;b&gt;vali eraldi tühi kaust&lt;/b&gt;, mida OSM Scout Server saaks kasutada. Muuhulgas tähendab see ka vajadusel kõikide failide kustutamist või uuendamist. &lt;br&gt; &lt;i&gt;Näide:&lt;/i&gt;&lt;i&gt;~nemo&lt;/i&gt; alamkaust Maps</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="80"/>
         <source>Automatic activation</source>
-        <translation>Automatisch opstarten</translation>
+        <translation>Automaatne käivitus</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="93"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation>Het is aanbevolen automatische activering in te schakelen om de toegang tot de server te vereenvoudigen.</translation>
+        <translation>Et selle serveri kasutamine oleks lihtsam, siis meie soovitame, et kasutad serveri automaatset käivitust.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="98"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation>Voor technische details, aangemaakte bestanden en hoe ze te verwijderen, zie het overeenkomstige deel in de &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Gebruikershandleiding&lt;/a&gt;.</translation>
+        <translation>Täpsemat tehnilist teavet, sealhulgas loodud failide ja nende eemaldamise osas, leiad &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Kasutusjuhendi&lt;/a&gt; vastavast peatükist.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="105"/>
         <source>Idle timeout</source>
-        <translation>Inactiviteitstime-out</translation>
+        <translation>Jõudeaja viide</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="109"/>
         <source>15 minutes</source>
-        <translation>15 minuten</translation>
+        <translation>15 minutit</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="110"/>
         <source>30 minutes</source>
-        <translation>30 minuten</translation>
+        <translation>30 minutit</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="111"/>
         <source>1 hour</source>
-        <translation>1 uur</translation>
+        <translation>1 tund</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="112"/>
         <source>2 hours</source>
-        <translation>2 uur</translation>
+        <translation>2 tundi</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="113"/>
         <source>4 hours</source>
-        <translation>4 uur</translation>
+        <translation>4 tundi</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="114"/>
         <source>8 hours</source>
-        <translation>8 uur</translation>
+        <translation>8 tundi</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="115"/>
         <source>24 hours</source>
-        <translation>24 uur</translation>
+        <translation>24 tundi</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="116"/>
         <source>No timeout</source>
-        <translation>Geen time-out</translation>
+        <translation>Viiteaeg puudub</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="155"/>
         <source>Active backends are set by the profile. If you wish to change the backend selection, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
-        <translation>Actieve back-ends worden ingesteld door het profiel. Stel het overeenkomende profiel in, of stel het profiel in op &lt;i&gt;Aangepast&lt;/i&gt;, om de selectie van back-ends te wijzigen.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="167"/>
         <source>Rendering</source>
-        <translation>Renderen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="195"/>
         <location filename="../qml/SettingsPage.qml" line="209"/>
         <source>Geocoder</source>
-        <translation>Geocoder</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="231"/>
         <location filename="../qml/SettingsPage.qml" line="244"/>
         <source>Routing Engine</source>
-        <translation>Routeringsdienst</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="260"/>
         <source>Backend settings</source>
-        <translation>Backendinstellingen</translation>
+        <translation>Taustaprogrammi seadistused</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="318"/>
@@ -2094,12 +2094,12 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="324"/>
         <source>Routing engine settings for &lt;i&gt;Valhalla&lt;/i&gt; backend</source>
-        <translation>Routeringsdienstinstellingen voor &lt;i&gt;Valhalla&lt;/i&gt;-back-end</translation>
+        <translation>Teekonna koostamise seadistused &lt;i&gt;Valhalla&lt;/i&gt; taustateenuse jaoks</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="342"/>
         <source>OSM Scout library</source>
-        <translation>OSM Scout-bibliotheek</translation>
+        <translation>OSM Scout teek</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="294"/>
@@ -2109,7 +2109,7 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="300"/>
         <source>Selection of languages used for address parsing and other settings of &lt;i&gt;geocoder-nlp&lt;/i&gt; backend</source>
-        <translation>Selectie van talen voor adresverwerking en andere instellingen van de &lt;i&gt;geocoder-nlp&lt;/i&gt;-backend</translation>
+        <translation>Aadresside töötlemiseks ja muudeks toiminguteks vajalik keeltevalik &lt;i&gt;geocoder-nlp&lt;/i&gt; taustateenuse jaoks</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="271"/>
@@ -2119,27 +2119,27 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="142"/>
         <source>When started automatically, the server will shutdown itself after not receiving any requests for longer than the idle timeout</source>
-        <translation>Indien automatisch opgestart, zal OSM Scout Server zichzelf weer afsluiten indien er geen verzoeken worden ontvangen voor de inactiviteitstime-out</translation>
+        <translation>Kui serveri käivitamine toimub automaatselt, siis server lõpetab oma töö eespool näidatud jõudeaja ületamisel.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="150"/>
         <source>Profiles</source>
-        <translation>Profielen</translation>
+        <translation>Profiilid</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="173"/>
         <source>Rendering backend is responsible for drawing the maps on raster tiles.</source>
-        <translation>Renderback-end is verantwoordelijk voor het tekenen van de kaarten op rastertegels.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="180"/>
         <source>Renderer</source>
-        <translation>Renderer</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="182"/>
         <source>Mapnik (default)</source>
-        <translation>Mapnik (standaard)</translation>
+        <translation>Mapnik (vaikimisi)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="183"/>
@@ -2151,72 +2151,72 @@
     <message>
         <location filename="../qml/SettingsPage.qml" line="201"/>
         <source>Geocoder is responsible for resolving search requests. For that, it parses the search string and finds the corresponding objects on a map.</source>
-        <translation>Geocoder is verantwoordelijk voor het verwerken van zoekopdrachten. Hiervoor verwerkt het de zoekopdracht en zoekt het naar de overeenkomende objecten op een kaart.</translation>
+        <translation>Geokodeerija tegeleb otsingutele vastuste leidmisega. Selleks ta töötleb otsingusõnet ja leiab kaardilt vastavad objektid.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="211"/>
         <source>Geocoder-NLP (default)</source>
-        <translation>Geocoder-NLP (standaard)</translation>
+        <translation>Geocoder-NLP (vaikimisi)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="225"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation>Let op! Als je &lt;i&gt;Geocoder-NLP&lt;/i&gt; selecteert, specificeer dan hieronder in de back-endinstellingen de talen die moeten worden gebruikt voor het verwerken van adressen. Zo niet kan het zijn dat de server grote hoeveelheden RAM gebruikt. </translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="237"/>
         <source>Routing engine is responsible for calculating routes between origin and destination.</source>
-        <translation>De routeringsdienst is verantwoordelijk voor het berekenen van routes tussen begin- en eindpunt.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="246"/>
         <source>Valhalla (default)</source>
-        <translation>Valhalla (standaard)</translation>
+        <translation>Valhalla (vaikimisi)</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="277"/>
         <source>Map rendering settings for &lt;i&gt;mapnik&lt;/i&gt; backend</source>
-        <translation>Kaartrenderinstellingen voor &lt;i&gt;mapnik&lt;/i&gt;-back-end</translation>
+        <translation>Kaartide visualiseerimise seadistused &lt;i&gt;mapnik&lt;/i&gt;&apos;u taustateenuse jaoks</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="348"/>
         <source>OSM Scout library (&lt;i&gt;libosmscout&lt;/i&gt;) settings. The library can be used for drawing maps, search, and routing.</source>
-        <translation>Instellingen voor OSM Scout-bibliotheek (&lt;i&gt;libosmscout&lt;/i&gt;). De bibliotheek kan gebruikt worden voor het tekenen van kaarten, zoeken en routeren.</translation>
+        <translation>OSM Scout teegi (&lt;i&gt;libosmscout&lt;/i&gt;) seadistused. See teek on mõeldud kaartide joonistamiseks, otsingute tegemiseks ning teekonna koostamiseks</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="354"/>
         <source>Miscellaneous</source>
-        <translation>Diversen</translation>
+        <translation>Muud seadistused</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="360"/>
         <source>Log info messages</source>
-        <translation>Infoberichten opslaan in log</translation>
+        <translation>Logi info-taseme teated</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="361"/>
         <source>When disabled, INFO messages will not be logged in Events log. Exception is loading of the database which is shown always.</source>
-        <translation>Indien uitgeschakeld worden INFOberichten niet opgeslagen in het gebeurtenissenlog. Het laden van de database wordt echter altijd getoond.</translation>
+        <translation>Kui see seadistus on välja lülitatud, siis INFO-taseme teateid ei logita süsteemi logisse. Erand on andmebaaside laadimine, mis logitakse alati.</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="369"/>
         <source>Events log size</source>
-        <translation>Gebeurtenissenloggrootte</translation>
+        <translation>Sündmuste logi suurus</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="370"/>
         <source>Number of events shown in the main page</source>
-        <translation>Aantal gebeurtenissen weer te geven op de hoofdpagina</translation>
+        <translation>Avalehel näidatavate viimaste sündmuste arv</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="377"/>
         <source>Log messages into session log file</source>
-        <translation>Berichten opslaan in sessielogbestand</translation>
+        <translation>Logi sõnumid sessioonikohasesse logifaili</translation>
     </message>
     <message>
         <location filename="../qml/SettingsPage.qml" line="378"/>
         <source>When enabled, the messages are logged into a session log file. The log file is at .cache/harbour-osmscout-server directory. Use this setting only for debugging purposes. With this setting enabled, info messages will be logged and shown on events irrespective to the settings above. This allows you to temporary enable full logging and disable it when the required session log file was produced.</source>
-        <translation>Indien ingeschakeld worden de berichten opgeslagen in een sessielogbestand. Het logbestand is te vinden in de map .cache/harbour-osmscout-server. Gebruik deze instellingen enkel voor debuggen. Infoberichten zullen worden opgeslagen en weergegeven op gebeurtenissen onafhankelijk van de instellingen hierboven. Dit laar je toe tijdelijk volledig loggen in te schakelen en het uit te schakelen wanneer het vereiste sessielogbestand aangemaakt is.</translation>
+        <translation>Kui see valik on sisse lülitaud, siis rakenduse sõnumid logitakse sessioonikohasesse logifaili .cache/harbour-osmscout-server kaustas. Kasuta seda võimalust vaid rakenduse vigade otsimisel ja silumisel. Antud juhul logitakse ka INFO-taseme teated sõltumata muudest seadistustest. See võimaldab sul vajadusel kasutada ajutist täismahulist logimist.</translation>
     </message>
 </context>
 <context>
@@ -2229,22 +2229,22 @@
     <message>
         <location filename="../qml/StartPage.qml" line="53"/>
         <source>Missing modules</source>
-        <translation>Modules ontbreken</translation>
+        <translation>Puuduvad moodulid</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="76"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; uses several modules that have to be installed separately for full functionality.&lt;br&gt;&lt;br&gt;Your device is missing the following module(s) that are required by the current profile:&lt;ul&gt;</source>
-        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; gebruikt voor volledige functionaliteit verschillende modules die apart geïnstalleerd moeten worden.&lt;br&gt;&lt;br&gt;Volgende module(s), vereist door het huidige profiel, ontbreekt/ontbreken op je apparaat:&lt;ul&gt;</translation>
+        <translation>Tervikliku funktsionaalsuse saavtamiseks kasutab&lt;i&gt;OSM Scout Server&lt;/i&gt; mitmeid mooduleid, mida on vaja paigaldada eraldi.&lt;br&gt;&lt;br&gt;Sinu seadmes on puudu järgmised moodulid, mida hetkel kasutatav profiil vajab:&lt;ul&gt;</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="81"/>
         <source>&lt;li&gt;OSM Scout Server Module: Fonts&lt;/li&gt;</source>
-        <translation>&lt;li&gt;OSM Scout Server-module: lettertypen&lt;/li&gt;</translation>
+        <translation>&lt;li&gt;OSM Scout Serveri moodul: Fondid&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="83"/>
         <source>&lt;li&gt;OSM Scout Server Module: Route&lt;/li&gt;</source>
-        <translation>&lt;li&gt;OSM Scout Server-module: route&lt;/li&gt;</translation>
+        <translation>&lt;li&gt;OSM Scout Serveri moodul: Teekonnad&lt;/li&gt;</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="102"/>
@@ -2252,89 +2252,89 @@
         <location filename="../qml/StartPage.qml" line="191"/>
         <location filename="../qml/StartPage.qml" line="360"/>
         <source>Welcome</source>
-        <translation>Welkom</translation>
+        <translation>Tere tulemast</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="110"/>
         <source>Create default directory</source>
-        <translation>Standaardmap aanmaken</translation>
+        <translation>Loo vaikimisi määratud kaust</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="134"/>
         <source>Creates directory&lt;br&gt;%1&lt;br&gt;and configures it for storing maps</source>
-        <translation>Maakt map &lt;br&gt;%1&lt;br&gt; aan en configureert ze voor opslag van kaarten</translation>
+        <translation>Loob &lt;br&gt;%1&lt;br&gt; kausta ja seadistab ta kaartide salvestamiseks.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="136"/>
         <source>&lt;i&gt;OSM Scout Server&lt;/i&gt; is expected to be used with the downloaded maps. To manage the maps, the Server requires a separate folder. The files within that folder should be managed by the Server only. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;br&gt;Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; for OSM Scout Server. For that, create a new folder in a file manager or using command line and then select this folder in &lt;i&gt;Settings&lt;/i&gt; (pulley menu).&lt;br&gt;&lt;br&gt;Alternatively, the directory can be created and setup automatically at &lt;br&gt;%1&lt;br&gt;by pressing a button below</source>
-        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; wordt verwacht gebruikt te worden met de gedownloade kaarten. Om de kaarten te beheren vereist de server een aparte map. De bestanden in die map mogen enkel beheerd worden door de server. Dit omvat het verwijderen van alle bestanden binnen die map wanneer daartoe gevraagd tijdens opruimen of kaartupdates.&lt;br&gt;&lt;br&gt;&lt;b&gt;Wijs een aparte, lege map toe&lt;/b&gt; voor OSM Scout Server. Maak daarvoor een nieuwe map aan in een bestandsbeheerder of via de opdrachtregel en selecteer vervolgens deze map in &lt;i&gt;Instellingen&lt;/i&gt; (uittrekmenu).&lt;br&gt;&lt;br&gt;De map kan ook automatisch aangemaakt en ingesteld worden op &lt;br&gt;%1&lt;br&gt;door een knop hieronder.</translation>
+        <translation>&lt;i&gt;OSM Scout Server&lt;/i&gt; on mõeldud kasutama allalaetud kaarte. Kaartide haldamiseks eeldab server eraldi kausta olemasolu. Selles kaustas leiduvaid kaarte peaks haldama vaid OSM Scout Server. See sisaldab ka võimalust kaarte sellest kaustast kustutada, kui sa peaks uuendamise või suurpuhastuse ette võtma. &lt;br&gt;&lt;br&gt;Palun leia OSM Scout Serveri jaoks &lt;b&gt;muudeks tegevusteks mittekasutatud tühi kaust&lt;/b&gt;. Selle jaoks tee kas failihalduriga või käsurealt üks tühi kaust ning vali see &lt;i&gt;Seadistustest&lt;/i&gt; (tõmbmenüü).&lt;br&gt;&lt;br&gt;Lisaks on sul võimalik &lt;br&gt;%1&lt;br&gt; kaust luua ja kasutusele võtta, kui vajutad järgnevat nuppu.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="195"/>
         <source>There are no maps available yet. After subscribing them, you have to start downloads. Downloads can be started using &lt;i&gt;Map Manager&lt;/i&gt;  (pulley menu).</source>
-        <translation>Er zijn nog geen kaarten beschikbaar. Nadat je je op de kaarten abonneert, moet je de downloads starten. Dit kan via de &lt;i&gt;kaartbeheerder&lt;/i&gt; (uittrekmenu).</translation>
+        <translation>Ühtegi kaarti pole veel saadaval. Peale kaartide tellimist peaksid nad alla laadima. Ning selle saad käivitada kasutades &lt;i&gt;Kaardihaldurit&lt;/i&gt; (tõmbmenüüs).</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="242"/>
         <source>Warning</source>
-        <translation>Waarschuwing</translation>
+        <translation>Hoiatus</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="246"/>
         <source>You have not specified languages used for parsing addresses by Geocoder-NLP. As a result, all known languages are used and you could experience very large RAM consumption. Such large RAM usage could lead to the OSM Scout Server being killed by the kernel. &lt;br&gt;&lt;br&gt;To specify languages used for address parsing, either select languages below or go to &lt;i&gt;Settings&lt;/i&gt; (pulley menu) and select languages as a part of &lt;i&gt;Geocoder-NLP&lt;/i&gt; settings.</source>
-        <translation>Je hebt geen talen ingesteld voor het verwerken van adressen door Geocoder-NLP. Bijgevolg zullen alle gekende talen gebruikt worden en kan je RAM-verbruik de lucht in schieten. Dit hoge RAM-verbruik kan er dan weer toe leiden dat OSM Scout Server door de kernel wordt afgesloten. &lt;br&gt;&lt;br&gt;Om in te stellen welke talen gebruikt moeten worden voor adresverwerking selecteer je hieronder de talen, of ga je naar &lt;i&gt;Instellingen&lt;/i&gt; (uittrekmenu) en selecteer je de talen als onderdeel van de &lt;i&gt;Geocoder-NLP&lt;/i&gt;-instellingen.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="267"/>
         <source>Map</source>
-        <translation>Kaart</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="307"/>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation>Olek</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="326"/>
         <source>Jobs in a queue</source>
-        <translation>Processen in een wachtrij</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="327"/>
         <source>Idle</source>
-        <translation>Inactief</translation>
+        <translation>Jõude</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="336"/>
         <source>Events</source>
-        <translation>Gebeurtenissen</translation>
+        <translation>Sündmuste logi</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="420"/>
         <source>Error</source>
-        <translation>Fout</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="362"/>
         <location filename="../qml/StartPage.qml" line="388"/>
         <location filename="../qml/StartPage.qml" line="397"/>
         <source>Next</source>
-        <translation>Volgende</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="369"/>
         <source>OSM Scout Server is a part of the solution allowing you to have offline maps on device. With this server, you could download the maps to your device and use the downloaded data to locally render maps, search for addresses and POIs, and calculate the routes. Such operations requires server and an additional client accessing the server to run simultaneously on the device.&lt;br&gt;&lt;br&gt;This wizard will help you to select the backends used by the server and the specify languages for parsing your search requests.&lt;br&gt;&lt;br&gt;Please choose &apos;Next&apos; to start configuration.</source>
-        <translation>OSM Scout Server is een deel van de oplossing voor offline kaarten op je apparaat. Met deze server kan je kaarten downloaden en de gedownloade gegevens gebruiken om lokaal kaarten te renderen, te zoeken naar adressen en NP’s, en voor routeberekening. Deze handelingen vereisen dat de server en een cliënt ervan tegelijk worden uitgevoerd op het apparaat.&lt;br&gt;&lt;br&gt;Deze configuratiewizard zal je helpen bij het selecteren van de door de server gebruikte back-ends en de talen voor het parseren van je zoekopdrachten.&lt;br&gt;&lt;br&gt;Tik op ‘Volgende’ om te beginnen met de configuratie.</translation>
+        <translation>OSM Scout Server on osa terviklahendusest, mis võimaldab sul siin seadmes kasutada võrguvabu kaarte. See tähendab, et sa saad laadida kaardifailid siia seadmesse ning kasutada seda infot kaartide joonistamiseks, aadresside ja huvipunktide otsinguks ning teekondade koostamiseks. Niisugune tööpõhimõte eeldab, et server ning seda kasutav klientrakendus töötavad siin seadmes samaaegselt.&lt;br&gt;&lt;br&gt;Järgnevad valikvastused aitavad sul seadistada serveri kasutatavad taustarakendused ning määrata sinu päringute töötlemise keeled.&lt;br&gt;&lt;br&gt;Seadistamise alustamiseks palun vajuta „Jätka“ nuppu.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="85"/>
         <source>&lt;/ul&gt;&lt;br&gt;Please install missing modules. After installation of the module(s), please restart OSM Scout Server.</source>
-        <translation>&lt;/ul&gt;&lt;br&gt;Installeer ontbrekende module(s). Herstart vervolgens OSM Scout Server.</translation>
+        <translation>&lt;/ul&gt;&lt;br&gt;Palun paigalda puuduvad moodulid ning peale seda käivita OSM Scout Server uuesti.</translation>
     </message>
     <message>
         <location filename="../qml/StartPage.qml" line="160"/>
         <source>With the storage folder selected and available, the next step is to get some maps. For that, you can select and download maps using &lt;i&gt;Map Manager&lt;/i&gt;  (see menu).</source>
-        <translation>Nu de opslagmap geselecteerd en beschikbaar is, is de volgende stap het ophalen van kaarten. Je kan kaarten selecteren en downloaden via de &lt;i&gt;kaartbeheerder&lt;/i&gt; (zie menu).</translation>
+        <translation>Nüüd, kus andmete salvestamise kaust on määratud, peaksid sa järgnevalt mõned kaardid hankima. Kaarte saad sa valida ja alla laadida &lt;i&gt;Kaardihaldurist&lt;/i&gt; (mille leiad menüüst).</translation>
     </message>
 </context>
 <context>
@@ -2342,12 +2342,12 @@
     <message>
         <location filename="../src/systemdservice.cpp" line="100"/>
         <source>Cannot create or change to directory: %1</source>
-        <translation>Kan map niet aanmaken of bewerken: %1</translation>
+        <translation>Kausta loomine või muutmine ei õnnestunud: %1</translation>
     </message>
     <message>
         <location filename="../src/systemdservice.cpp" line="110"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
-        <translation>Kan OSM Scout server niet vinden in het PATH</translation>
+        <translation>Ei leia OTSITEELT OSM Scout Serverit</translation>
     </message>
 </context>
 <context>
@@ -2356,32 +2356,32 @@
         <location filename="../qml/SystemdActivationPage.qml" line="26"/>
         <location filename="../qml/SystemdActivationPage.qml" line="45"/>
         <source>Automatic activation</source>
-        <translation>Automatisch opstarten</translation>
+        <translation>Automaatne käivitus</translation>
     </message>
     <message>
         <location filename="../qml/SystemdActivationPage.qml" line="35"/>
         <source>OSM Scout Server can be activated automatically when the clients access it. When started automatically, it will be stopped if idle after given period of time.</source>
-        <translation>OSM Scout Server kan automatisch opgestart worden wanneer een cliënt erom vraagt. Indien automatisch opgestart, zal het zichzelf weer afsluiten na een bepaalde periode van inactiviteit.</translation>
+        <translation>OSM Scout Serverit on võimalik automaatselt tööle panna siis, kui klientrakendused seda vajavad. Sellisel juhul juhul lõpetab server taustal töötamise, kui teda mõnda aega enam vaja pole olnud.</translation>
     </message>
     <message>
         <location filename="../qml/SystemdActivationPage.qml" line="40"/>
         <source>Do you want to enable automatic activation?</source>
-        <translation>Wil je automatisch opstarten inschakelen?</translation>
+        <translation>Kas võtame automaatse käivituse kasutusele?</translation>
     </message>
     <message>
         <location filename="../qml/SystemdActivationPage.qml" line="53"/>
         <source>It is recommended to enable automatic activation to simplify the access to the server.</source>
-        <translation>Het is aanbevolen automatische activering in te schakelen om de toegang tot de server te vereenvoudigen.</translation>
+        <translation>Et selle serveri kasutamine oleks lihtsam, siis meie soovitame, et kasutad serveri automaatset käivitust.</translation>
     </message>
     <message>
         <location filename="../qml/SystemdActivationPage.qml" line="58"/>
         <source>Note that when automatically activated, the server runs without any user interface. Automatic activation and the corresponding idle timeout can be later configured in Settings.</source>
-        <translation>Let op: indien automatisch opgestart, wordt de server uitgevoerd zonder gebruikersinterface. Automatisch opstarten en de corresponderende inactiviteitstime-out kunnen later ingesteld worden.</translation>
+        <translation>Automaatse käivitamise puhul server töötab nii, et kasutajaliidest ei kuvata. Seadistuses saad sellise võimaluse lubada ning määrata tingimused kuidas server välja lülitatakse.</translation>
     </message>
     <message>
         <location filename="../qml/SystemdActivationPage.qml" line="64"/>
         <source>For technical details, created files, and how to remove them if needed, see corresponding section of the &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;User&apos;s Guide&lt;/a&gt;.</source>
-        <translation>Voor technische details, aangemaakte bestanden en hoe ze te verwijderen, zie het overeenkomstige deel in de &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Gebruikershandleiding&lt;/a&gt;.</translation>
+        <translation>Täpsemat tehnilist teavet, sealhulgas loodud failide ja nende eemaldamise osas, leiad &lt;a href=&apos;https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation&apos;&gt;Kasutusjuhendi&lt;/a&gt; vastavast peatükist.</translation>
     </message>
 </context>
 <context>
@@ -2389,22 +2389,22 @@
     <message>
         <location filename="../qml/UpdatesFound.qml" line="27"/>
         <source>Updates</source>
-        <translation>Updates</translation>
+        <translation>Uuendused</translation>
     </message>
     <message>
         <location filename="../qml/UpdatesFound.qml" line="39"/>
         <source>Do you want to start the update?</source>
-        <translation>Wil je de update beginnen?</translation>
+        <translation>Kas sa soovid alustada uuendust?</translation>
     </message>
     <message>
         <location filename="../qml/UpdatesFound.qml" line="44"/>
         <source>Please note that as soon as you start the updates, the maps will not be available until the update is finished</source>
-        <translation>Let op: van zodra je het updateproces begint zullen de kaarten niet beschikbaar zijn tot het proces voltooid is</translation>
+        <translation>Palun arvesta, et kaarte ei saa kasutada nende uuendamise ajal</translation>
     </message>
     <message>
         <location filename="../qml/UpdatesFound.qml" line="48"/>
         <source>List of countries and features with the found updates</source>
-        <translation>Lijst van landen en functionaliteit in gevonden updates</translation>
+        <translation>Uuendusi leidub nende riikide ja funktsionaalsuste jaoks</translation>
     </message>
 </context>
 <context>
@@ -2412,12 +2412,12 @@
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="62"/>
         <source>Map matching requested: mode=%1</source>
-        <translation>Bijpassende kaarten opgevraagd: modus=%1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/valhallamapmatcher.cpp" line="258"/>
         <source>Map matching mode %1 is not supported</source>
-        <translation>Bijpassendekaartenmodus %1 wordt niet ondersteund</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2425,7 +2425,7 @@
     <message>
         <location filename="../src/valhallamapmatcherdbus.cpp" line="83"/>
         <source>Closing map matching service for DBus client %1</source>
-        <translation>Bijpassendekaartendienst voor DBus-cliënt %1 wordt gesloten</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2433,27 +2433,27 @@
     <message>
         <location filename="../src/valhallamaster.cpp" line="158"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
-        <translation>Fout bij openen van Valhalla-configuratiesjabloon %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="166"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
-        <translation>Fout bij lezen van Valhalla-configuratiesjabloon</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="198"/>
         <source>Failed to load Valhalla configuration: %1</source>
-        <translation>Laden van Valhalla-configuratie mislukt: %1</translation>
+        <translation>Valhalla seadistuste faili laadimine ei õnnestu: %1</translation>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="236"/>
         <source>Exception in Valhalla: %1</source>
-        <translation>Uitzondering in Valhalla: %1</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/valhallamaster.cpp" line="203"/>
         <source>Valhalla routing engine started</source>
-        <translation>Valhalla-routeringsdienst gestart</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2466,47 +2466,47 @@
     <message>
         <location filename="../qml/ValhallaPage.qml" line="35"/>
         <source>Valhalla can be used as a routing engine to calculate routes and the routing instructions</source>
-        <translation>Valhalla kan gebruikt worden als routeringsdienst om routes en route-instructies te berekenen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="39"/>
         <source>Memory</source>
-        <translation>Geheugen</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="46"/>
         <source>Cache for storing tiles, MB</source>
-        <translation>Cache voor tegelopslag, MB</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="47"/>
         <source>Memory cache that is used to keep Valhalla&apos;s tiles in RAM.</source>
-        <translation>Geheugencache dat gebruikt wordt om Valhalla-tegels in RAM op te slaan.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="52"/>
         <source>Limits</source>
-        <translation>Limieten</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="57"/>
         <source>Distance limits for route calculations. Only routes with the distances between locations that are smaller than the given limits will be calculated. By limiting the maximal distances between locations, you can prevent accidental calculations that would lead to too large routes and would use excessive amounts of RAM on your device.</source>
-        <translation>Afstandslimieten voor routeberekeningen. Enkel routes waarbij de afstanden tussen locaties kleiner zijn dan de opgegeven limieten zullen worden berekend. Door de maximale afstanden tussen locaties te beperken, kan je accidentele berekeningen, die tot te lange routes en buitensporig RAM-gebruik op je apparaat zouden leiden, vermijden.</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="69"/>
         <source>Limit for route by car</source>
-        <translation>Limieten voor autoroute</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="77"/>
         <source>Limit for route by bicycle</source>
-        <translation>Limieten voor fietsroute</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../qml/ValhallaPage.qml" line="85"/>
         <source>Limit for route by foot</source>
-        <translation>Limieten voor looproute</translation>
+        <translation type="unfinished"/>
     </message>
 </context>
 <context>
@@ -2519,63 +2519,63 @@
     <message>
         <location filename="../src/main.cpp" line="194"/>
         <source>Run the server without GUI as a console application</source>
-        <translation>Server uitvoeren zonder gebruikersinterface, als consoletoepassing</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/main.cpp" line="198"/>
         <source>Do not output logs when running in console mode</source>
-        <translation>Logs niet aanmaken in consolemodus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/main.cpp" line="203"/>
         <source>Run the server in SystemD socket-activated mode</source>
-        <translation>Server uitvoeren in SystemD-socket-geactiveerde modus</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/main.cpp" line="209"/>
         <source>Start download of the maps</source>
-        <translation>Download van kaarten starten</translation>
+        <translation>Alusta kaartide allalaadimist</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="213"/>
         <source>Update list of available maps</source>
-        <translation>Lijst van beschikbare kaarten bijwerken</translation>
+        <translation>Uuenda saadavate kaartide loendit</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="217"/>
         <source>List maps available on device</source>
-        <translation>Lijst van op apparaat beschikbare kaarten</translation>
+        <translation>Näita nutiseadmesse laetud kaarte</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="221"/>
         <source>List subscribed maps</source>
-        <translation>Lijst van kaarten waarop je bent geabonneerd</translation>
+        <translation>Näita tellitud kaarte</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="225"/>
         <source>List maps provided for download</source>
-        <translation>Lijst van voor download aangeboden kaarten</translation>
+        <translation>Kuva allalaadimise ootel olevaid kaarte</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="229"/>
         <source>List missing maps</source>
-        <translation>Lijst van ontbrekende kaarten</translation>
+        <translation>Näita puuduvaid kaarte</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="233"/>
         <source>Subscribe to a &lt;country&gt; dataset</source>
-        <translation>Abonneren op een &lt;country&gt;-gegevensset</translation>
+        <translation>Telli &lt;country&gt;andmekogum</translation>
     </message>
     <message>
         <location filename="../src/main.cpp" line="234"/>
         <location filename="../src/main.cpp" line="239"/>
         <source>country-id</source>
-        <translation>land-id</translation>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../src/main.cpp" line="238"/>
         <source>Unsubscribe &lt;country&gt; dataset</source>
-        <translation>Abonnement op &lt;country&gt;-gegevensset opzeggen</translation>
+        <translation>Lõpeta &lt;country&gt;andmekogumi tellimus</translation>
     </message>
 </context>
 <context>
@@ -2583,7 +2583,7 @@
     <message>
         <location filename="../qml/osmscout-server.qml" line="40"/>
         <source>Initializing</source>
-        <translation>Bezig met initialiseren</translation>
+        <translation>Alustan tööd</translation>
     </message>
     <message>
         <location filename="../qml/osmscout-server.qml" line="46"/>
