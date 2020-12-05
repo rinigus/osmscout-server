@@ -72,7 +72,8 @@ void SystemDService::setEnabled(bool e)
               "[Unit]\n"
               "Description=OSM Scout Server Socket\n\n"
               "[Socket]\n"
-              "ListenStream=127.0.0.1:" + QString::number(settings.valueInt(HTTP_SERVER_SETTINGS "port")) + "\n\n"
+              "ListenStream=127.0.0.1:" + QString::number(settings.valueInt(HTTP_SERVER_SETTINGS "port")) + "\n"
+              "TriggerLimitIntervalSec=60s\nTriggerLimitBurst=1\n\n"
               "[Install]\n"
               "WantedBy=user-session.target\n";
 
