@@ -301,6 +301,13 @@ int main(int argc, char *argv[])
   if (rolling_logger) rolling_logger->onSettingsChanged();
 #endif
 
+  // ////////////////////////////
+  // QML setup
+
+  // disable new QML connection syntax debug messages for as long as
+  // older Qt versions (5.12 and older) are supported
+  QLoggingCategory::setFilterRules(QStringLiteral("qt.qml.connections=false"));
+
 #ifdef IS_SAILFISH_OS
   QScopedPointer<QQuickView> v;
   QQmlContext *rootContext = nullptr;
