@@ -1,8 +1,6 @@
-/*
- * Copyright (C) 2016-2019 Rinigus https://github.com/rinigus
- *                    2019 Purism SPC
+/* -*- coding: utf-8-unix -*-
  *
- * This file is part of Pure Maps.
+ * Copyright (C) 2019 Rinigus, 2019 Purism SPC
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,20 +13,16 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
+import QtQuick 2.9
+import "."
 
-Item {
-    id: fs
+DialogPL {
+    id: dialog
 
-    property string selectedFilepath
-    property var nameFilters
-    signal selected
+    property var date
 
-    Component.onCompleted: console.log('UBPorts implementation is missing FileSelector')
-
-    // todo: if open function is not needed, drop special consideration of
-    // of FileSelectorPL in platform's StackPL
+    Component.onCompleted: console.log("DatePickerDialog is not implemented for UUITK")
 }

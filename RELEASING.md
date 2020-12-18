@@ -25,12 +25,12 @@ Bump version and write changelog
 
 ```
 emacs rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.changes
-emacs osmscout-server.pro packaging/osmscout-server.appdata.xml packaging/ubports/manifest.json
+emacs osmscout-server.pro packaging/osmscout-server.appdata.xml packaging/click/manifest.json
 ```
 
 Commit version changes
 ```
-git add osmscout-server.pro packaging/osmscout-server.appdata.xml rpm/harbour-osmscout-server.changes rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.yaml packaging/ubports/manifest.json
+git add osmscout-server.pro packaging/osmscout-server.appdata.xml rpm/harbour-osmscout-server.changes rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.yaml packaging/click/manifest.json
 git status
 git commit -m "bump version"
 ```
