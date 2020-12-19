@@ -8,16 +8,16 @@ which is used to build and publish click packages.
 Create a symlink to the config file in order to omit the `-c` flag in all
 clickable calls:
 
-    ln -s packaging/ubports/clickable.json clickable.json
+    ln -s packaging/click/clickable.json clickable.json
 
 ## Shortcut
 To download and build dependencies as well as building click packages for all
 architectures, run:
 
-    packaging/ubports/build-all.sh
+    packaging/click/build-all.sh
 
 
-The click packages can be found in **ubports_release**.
+The click packages can be found in **click_release**.
 
 Otherwise, follow the instructions below.
 

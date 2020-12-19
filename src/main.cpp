@@ -149,7 +149,7 @@ int main(int argc, char *argv[])
   {
     QString tr_path;
 
-#if defined(IS_UBPORTS)
+#if defined(IS_UUITK)
     tr_path = "./translations";
 #elif defined(IS_QTCONTROLS_QT)
     tr_path = ":/i18n";

@@ -21,8 +21,8 @@ equals(SCOUT_FLAVOR, "silica") {
     CONFIG += scout_kirigami
 } else:equals(SCOUT_FLAVOR, "qtcontrols") {
     CONFIG += scout_qtcontrols
-} else:equals(SCOUT_FLAVOR, "ubports") {
-    CONFIG += scout_ubports
+} else:equals(SCOUT_FLAVOR, "uuitk") {
+    CONFIG += scout_uuitk
 } else {
     CONFIG += scout_console
 }
@@ -70,7 +70,7 @@ QT += core network sql xml positioning dbus
 !scout_console|use_map_qt {
     QT += gui
 }
-scout_kirigami|scout_qtcontrols|scout_ubports {
+scout_kirigami|scout_qtcontrols|scout_uuitk {
     QT += quick qml widgets quickcontrols2
 }
 
@@ -122,7 +122,7 @@ scout_silica {
     INSTALLS += extra_icons
 }
 
-scout_kirigami|scout_qtcontrols|scout_ubports {
+scout_kirigami|scout_qtcontrols|scout_uuitk {
     icons108.path = $$PREFIX/share/icons/hicolor/108x108/apps
     icons108.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/108x108/apps && cp $$PWD/icons/108x108/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/108x108/apps/$${TARGET}.png
     INSTALLS += icons108
@@ -154,13 +154,13 @@ scout_silica {
     DEFINES += IS_SAILFISH_OS
 } else:scout_qtcontrols|scout_kirigami {
     DEFINES += IS_QTCONTROLS_QT
-} else:scout_ubports {
-    DEFINES += IS_QTCONTROLS_QT IS_UBPORTS
+} else:scout_uuitk {
+    DEFINES += IS_QTCONTROLS_QT IS_UUITK
 } else {
     DEFINES += IS_CONSOLE_QT
 }
 
-scout_ubports {
+scout_uuitk {
     DEFINES += DEFAULT_FALLBACK_STYLE=\\\"suru\\\"
 }
 
@@ -238,7 +238,7 @@ OTHER_FILES += rpm/osmscout-server.spec
 OTHER_FILES += qml/*.qml
 OTHER_FILES += qml/platform.qtcontrols/*.qml
 OTHER_FILES += qml/platform.kirigami/*.qml
-OTHER_FILES += qml/platform.ubports/*.qml
+OTHER_FILES += qml/platform.click/*.qml
 OTHER_FILES += qml/platform.silica/*.qml
 
 # includes
@@ -289,7 +289,7 @@ use_mapnik {
     }
     LIBS += -lmapnik -licuuc
 
-    scout_ubports {
+    scout_uuitk {
         LIBS += -lproj
     }
 }
@@ -339,7 +339,7 @@ scout_kirigami|scout_qtcontrols {
     CONFIG += lrelease embed_translations
 }
 
-scout_ubports {
+scout_uuitk {
     qtPrepareTool(LRELEASE, lrelease)
     for(tsfile, TRANSLATIONS) {
         qmfile = $$shadowed($$tsfile)
@@ -361,13 +361,13 @@ scout_silica {
         rpm/$${TARGET}.spec
 }
 
-scout_kirigami|scout_qtcontrols|scout_ubports {
+scout_kirigami|scout_qtcontrols|scout_uuitk {
     RESOURCES += qml_main.qrc
     RESOURCES += icons.qrc
 }
 scout_kirigami: RESOURCES += qml_kirigami.qrc
 scout_qtcontrols: RESOURCES += qml_qtcontrols.qrc
-scout_ubports: RESOURCES += qml_ubports.qrc
+scout_uuitk: RESOURCES += qml_uuitk.qrc
 
 # misc options
 scout_silica {

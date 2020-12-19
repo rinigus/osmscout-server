@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="qml/platform/ApplicationWindowPL.qml">qml/platform.uuitk/ApplicationWindowPL.qml</file>
+        <file alias="qml/platform/BusyIndicatorPL.qml">qml/platform.uuitk/BusyIndicatorPL.qml</file>
+        <file alias="qml/platform/ButtonPL.qml">qml/platform.uuitk/ButtonPL.qml</file>
+        <file alias="qml/platform/ComboBoxPL.qml">qml/platform.uuitk/ComboBoxPL.qml</file>
+        <file alias="qml/platform/DialogPL.qml">qml/platform.uuitk/DialogPL.qml</file>
+        <file alias="qml/platform/FileSelectorPL.qml">qml/platform.uuitk/FileSelectorPL.qml</file>
+        <file alias="qml/platform/FormLayoutPL.qml">qml/platform.uuitk/FormLayoutPL.qml</file>
+        <file alias="qml/platform/HeaderBarImpl.qml">qml/platform.uuitk/HeaderBarImpl.qml</file>
+        <file alias="qml/platform/IconButtonPL.qml">qml/platform.uuitk/IconButtonPL.qml</file>
+        <file alias="qml/platform/IconPL.qml">qml/platform.uuitk/IconPL.qml</file>
+        <file alias="qml/platform/LabelPL.qml">qml/platform.uuitk/LabelPL.qml</file>
+        <file alias="qml/platform/ListItemPL.qml">qml/platform.uuitk/ListItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerItemPL.qml">qml/platform.uuitk/MenuDrawerItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerPL.qml">qml/platform.uuitk/MenuDrawerPL.qml</file>
+        <file alias="qml/platform/PageEmptyPL.qml">qml/platform.uuitk/PageEmptyPL.qml</file>
+        <file alias="qml/platform/PageListPL.qml">qml/platform.uuitk/PageListPL.qml</file>
+        <file alias="qml/platform/PagePL.qml">qml/platform.uuitk/PagePL.qml</file>
+        <file alias="qml/platform/RemorsePopupPL.qml">qml/platform.uuitk/RemorsePopupPL.qml</file>
+        <file alias="qml/platform/SectionHeaderPL.qml">qml/platform.uuitk/SectionHeaderPL.qml</file>
+        <file alias="qml/platform/StackPL.qml">qml/platform.uuitk/StackPL.qml</file>
+        <file alias="qml/platform/StylerPL.qml">qml/platform.uuitk/StylerPL.qml</file>
+        <file alias="qml/platform/TextFieldPL.qml">qml/platform.uuitk/TextFieldPL.qml</file>
+        <file alias="qml/platform/TextSwitchPL.qml">qml/platform.uuitk/TextSwitchPL.qml</file>
+        <file>icons/uuitk/country-available.svg</file>
+        <file>icons/uuitk/country-download.svg</file>
+        <file>icons/uuitk/country-on-device.svg</file>
+    </qresource>
+</RCC>

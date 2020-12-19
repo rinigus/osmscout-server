@@ -57,13 +57,13 @@ QtObject {
     property real themeIconSizeSmall: units.gridUnit*4
 
     // used icons
-    property string iconCountryAvailable: "qrc:/icons/ubports/country-on-device.svg"
-    property string iconCountryRequested: "qrc:/icons/ubports/country-download.svg"
+    property string iconCountryAvailable: "qrc:/icons/uuitk/country-on-device.svg"
+    property string iconCountryRequested: "qrc:/icons/uuitk/country-download.svg"
     property string iconFolder: "image://theme/folder-symbolic"
     property string iconIncompatibleVersion: "image://theme/emblem-important-symbolic"
     property string iconMapnikGlobal: "image://theme/network-workgroup-symbolic"
     property string iconPostalGlobal: "image://theme/preferences-desktop-locale-symbolic"
-    property string iconRegion: "qrc:/icons/ubports/country-available.svg"
+    property string iconRegion: "qrc:/icons/uuitk/country-available.svg"
 
     // used icons
     property string iconBack: "image://theme/back" //Qt.resolvedUrl("../../icons/go-previous-symbolic.svg")
@@ -80,22 +80,22 @@ QtObject {
 //    property string iconDown: "image://theme/down" //Qt.resolvedUrl("../../icons/go-down-symbolic.svg")
 //    property string iconEdit: "image://theme/edit" //Qt.resolvedUrl("../../icons/document-edit-symbolic.svg")
 //    property string iconEditClear: "image://theme/edit-clear" //Qt.resolvedUrl("../../icons/edit-clear-symbolic.svg")
-//    property string iconFavorite: Qt.resolvedUrl("../icons/ubports/bookmark-new-symbolic.svg")
-//    property string iconFavoriteSelected: Qt.resolvedUrl("../icons/ubports/user-bookmarks-symbolic.svg")
+//    property string iconFavorite: Qt.resolvedUrl("../icons/uuitk/bookmark-new-symbolic.svg")
+//    property string iconFavoriteSelected: Qt.resolvedUrl("../icons/uuitk/user-bookmarks-symbolic.svg")
 //    property string iconForward: "image://theme/next" //Qt.resolvedUrl("../../icons/go-next-symbolic.svg")
 //    property string iconManeuvers: "image://theme/media-playlist-shuffle" //Qt.resolvedUrl("../../icons/maneuvers-symbolic.svg")
-//    property string iconMaps: Qt.resolvedUrl("../icons/ubports/map-layers-symbolic.svg")
+//    property string iconMaps: Qt.resolvedUrl("../icons/uuitk/map-layers-symbolic.svg")
 //    property string iconMenu: "image://theme/navigation-menu" //Qt.resolvedUrl("../../icons/open-menu-symbolic.svg")
-//    property string iconNavigate: Qt.resolvedUrl("../icons/ubports/route-to.svg")
+//    property string iconNavigate: Qt.resolvedUrl("../icons/uuitk/route-to.svg")
 //    property string iconNavigateTo: iconNavigate
-//    property string iconNavigateFrom: Qt.resolvedUrl("../icons/ubports/route-from.svg")
-//    property string iconNearby: Qt.resolvedUrl("../icons/ubports/nearby-search.svg")
+//    property string iconNavigateFrom: Qt.resolvedUrl("../icons/uuitk/route-from.svg")
+//    property string iconNearby: Qt.resolvedUrl("../icons/uuitk/nearby-search.svg")
 //    property string iconPause: "image://theme/media-playback-pause" //Qt.resolvedUrl("../../icons/media-playback-pause-symbolic.svg")
 //    property string iconPhone: "image://theme/call-start" //Qt.resolvedUrl("../../icons/call-start-symbolic.svg")
 //    property string iconPreferences: "image://theme/settings" //Qt.resolvedUrl("../../icons/preferences-system-symbolic.svg")
-//    property string iconProfileMixed: Qt.resolvedUrl("../icons/ubports/profile-mixed.svg")
-//    property string iconProfileOffline: Qt.resolvedUrl("../icons/ubports/profile-offline.svg")
-//    property string iconProfileOnline: Qt.resolvedUrl("../icons/ubports/profile-online.svg")
+//    property string iconProfileMixed: Qt.resolvedUrl("../icons/uuitk/profile-mixed.svg")
+//    property string iconProfileOffline: Qt.resolvedUrl("../icons/uuitk/profile-offline.svg")
+//    property string iconProfileOnline: Qt.resolvedUrl("../icons/uuitk/profile-online.svg")
 //    property string iconRefresh: "image://theme/view-refresh" //Qt.resolvedUrl("../../icons/view-refresh-symbolic.svg")
 //    property string iconSave: "image://theme/save" //Qt.resolvedUrl("../../icons/document-save-symbolic.svg")
 //    property string iconSearch: "image://theme/find" //Qt.resolvedUrl("../../icons/edit-find-symbolic.svg")
