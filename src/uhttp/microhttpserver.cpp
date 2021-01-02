@@ -87,7 +87,7 @@ static ssize_t content_reader_callback (void *cls, uint64_t pos, char *buf, size
   return tosend;
 }
 
-static int answer_to_connection (void *cls, struct MHD_Connection *connection,
+static MHD_Result answer_to_connection (void *cls, struct MHD_Connection *connection,
                                  const char *url, const char *method,
                                  const char */*version*/, const char *upload_data,
                                  size_t *upload_data_size, void **con_cls)
@@ -139,7 +139,7 @@ static int answer_to_connection (void *cls, struct MHD_Connection *connection,
 
   struct MHD_Response *response;
 
-  int ret;
+  MHD_Result ret;
 
   response =
       MHD_create_response_from_callback(-1, 1024*1024,
