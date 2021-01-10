@@ -23,6 +23,12 @@ Each region could have the following files:
 POLY files are imported from Geofabrik. As an example additional
 region, Barcelona is demonstrated.
 
+If some POLY file is missing, it can be generated using
+http://polygons.openstreetmap.fr . Find corresponding OSM relationship
+for the border of interest and use the relationship ID to generate
+POLY file. It allows also to simply the polygon, use it to reduce
+processing on import.
+
 
 ## Scripts
 
