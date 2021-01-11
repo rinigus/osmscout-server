@@ -12,3 +12,5 @@ Name=OSM Scout Server
 # a different app name in German locale (de).
 #Name[de]=osmscout-server
 
+[X-HarbourBackup]
+BackupPathList=.config/harbour-osmscout-server
