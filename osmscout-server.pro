@@ -75,7 +75,7 @@ scout_kirigami|scout_qtcontrols|scout_uuitk {
 }
 
 # Overall CONFIG
-CONFIG += c++11 object_parallel_to_source
+CONFIG += c++14 object_parallel_to_source
 CONFIG += link_pkgconfig
 scout_silica {
     CONFIG += sailfishapp sailfishapp_no_deploy_qml sailfishapp_i18n
