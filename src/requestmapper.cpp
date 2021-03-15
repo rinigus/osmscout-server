@@ -254,7 +254,7 @@ static bool has(const QString &key, QJsonObject &options, MHD_Connection *q)
 //  return MHD_YES;
 //}
 
-static int query_json_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char *key, const char *value)
+static MHD_Result query_json_iterator(void *cls, enum MHD_ValueKind /*kind*/, const char *key, const char *value)
 {
   QString *s = (QString*)cls;
   if ( !s->isEmpty() ) (*s) += ",";
