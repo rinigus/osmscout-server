@@ -30,6 +30,13 @@
 #include <QObject> // to provide timers access
 #endif
 
+#if MHD_VERSION > 0x00097000
+#define MICROHTTP_Result MHD_Result
+#else
+#define MICROHTTP_Result int
+#endif
+
+
 namespace MicroHTTP {
 
 class ServiceBase;
