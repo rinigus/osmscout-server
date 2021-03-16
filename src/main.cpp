@@ -73,6 +73,7 @@
 
 #include <QCommandLineParser>
 #include <QDBusConnection>
+#include <QDBusConnectionInterface>
 #include <QTranslator>
 #ifdef IS_QTCONTROLS_QT
 #include <QQuickStyle>
@@ -204,6 +205,10 @@ int main(int argc, char *argv[])
   parser.addOption(optionSystemD);
 #endif
 
+  QCommandLineOption optionDBusActivated(QStringList() << "dbus-activated",
+                                         QCoreApplication::translate("main", "Run the server in DBus activated mode"));
+  parser.addOption(optionDBusActivated);
+
 #ifdef IS_CONSOLE_QT
   QCommandLineOption optionDownload(QStringList() << "d" << "download",
                                     QCoreApplication::translate("main", "Start download of the maps"));
@@ -272,24 +277,50 @@ int main(int argc, char *argv[])
 
   infoHub.onSettingsChanged();
 
+  // establish d-bus connection
+  QDBusConnection dbusconnection = QDBusConnection::sessionBus();
+
   // enable systemd interaction
   SystemDService systemd_service;
+
+  // Close other instance if it was started by systemd or DBus activation
+  bool wait_for_port = false;
+
+  if (!parser.isSet(optionDBusActivated) &&
+      dbusconnection.isConnected())
+    {
+      // Handling of DBus activation
+      auto pid = dbusconnection.interface()->servicePid(DBUS_SERVICE);
+      if (pid.isValid())
+        {
+          std::cout << "DBus service already registered by process " << pid.value() << ".\n";
+          std::cout << "Sending close signal.\n";
+          kill(pid.value(), SIGUSR1);
+          wait_for_port = true;
+        }
+    }
 
 #ifdef USE_SYSTEMD
   // stop systemD service and socket if running as a separate application
   if (!parser.isSet(optionSystemD))
-    systemd_service.stop();
+    {
+      systemd_service.stop();
+      wait_for_port = true;
+    }
+#endif
 
   // wait till the used ports are freed. here, the timeout is used internally in
   // the used wait function
-  if (!parser.isSet(optionSystemD))
+  if (wait_for_port)
     {
       int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
 
       if (!wait_till_port_is_free(http_port))
-        std::cerr << "Port " << http_port << " is occupied\n";
+        {
+          std::cerr << "Port " << http_port << " is occupied\n";
+          return -1;
+        }
     }
-#endif
 
   // check installed modules
   ModuleChecker modules;
@@ -536,6 +567,12 @@ int main(int argc, char *argv[])
   signal(SIGINT, [](int /*sig*/){ qApp->quit(); });
   signal(SIGHUP, [](int /*sig*/){ qApp->quit(); });
 
+  // quit application if receiving SIGUSR1 and was DBus activated
+  if ( parser.isSet(optionDBusActivated) )
+    signal(SIGUSR1, [](int /*sig*/){ qApp->quit(); });
+  else
+    signal(SIGUSR1, [](int /*sig*/){ std::cout << "Ignoring SIGUSR1" << std::flush; });
+
   int return_code = 0;
 
 #ifdef USE_VALHALLA
@@ -571,9 +608,12 @@ int main(int argc, char *argv[])
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                       &requests, &RequestMapper::onSettingsChanged );
 
-    // enable idle timeout shutdown if started by systemd
-#ifdef USE_SYSTEMD
-    if (parser.isSet(optionSystemD))
+    // enable idle timeout shutdown if started by systemd or DBus activation
+    if ( parser.isSet(optionDBusActivated)
+    #ifdef USE_SYSTEMD
+        || parser.isSet(optionSystemD)
+    #endif
+        )
       {
         QObject::connect(&infoHub, &InfoHub::activitySig,
                          &requests, &RequestMapper::updateLastCall,
@@ -581,10 +621,6 @@ int main(int argc, char *argv[])
         QObject::connect(&requests, &RequestMapper::idleTimeout,
                          app.data(), QCoreApplication::quit );
       }
-#endif
-
-    // establish d-bus connection
-    QDBusConnection dbusconnection = QDBusConnection::sessionBus();
 
     // add d-bus interface
 #ifdef USE_VALHALLA

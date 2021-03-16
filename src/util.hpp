@@ -20,6 +20,7 @@
 #ifndef UTIL_HPP
 #define UTIL_HPP
 
+bool port_free(int port);
 bool wait_till_port_is_free(int port);
 
 #endif // UTIL_HPP

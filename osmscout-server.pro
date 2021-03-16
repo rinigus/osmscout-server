@@ -108,6 +108,15 @@ INSTALLS += data
 target.path = $$PREFIX/bin
 INSTALLS += target
 
+# Installing dbus service, processing path
+use_dbusactivation {
+    dbusact.extra = install -v -m 644 $$PWD/org.osm.scout.server1.service \
+       ${INSTALL_ROOT}/usr/share/dbus-1/services/org.osm.scout.server1.service ;\
+       sed -i -e \'s|PREFIX|$${PREFIX}|g\' ${INSTALL_ROOT}/usr/share/dbus-1/services/org.osm.scout.server1.service;
+    dbusact.path = /usr/share/dbus-1/services
+    INSTALLS += dbusact
+}
+
 scout_silica {
     qml.files = qml/*.qml
     qml.path = /usr/share/$${TARGET}/qml
