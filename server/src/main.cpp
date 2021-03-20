@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * Copyright (C) 2016-2021 Rinigus https://github.com/rinigus
  * 
  * This file is part of OSM Scout Server.
  * 
@@ -20,34 +20,14 @@
 #include "appsettings.h"
 #include "config.h"
 
-#ifdef IS_CONSOLE_QT
-
 #if defined(USE_OSMSCOUT) && defined(USE_OSMSCOUT_MAP_QT)
 #include <QGuiApplication>
 #else
 #include <QCoreApplication>
 #endif
 
-#endif // of IS_CONSOLE_QT
-
-#ifdef IS_QTCONTROLS_QT
-#include <QApplication>
-#endif
-
 #include "consolelogger.h"
-
-#ifdef IS_SAILFISH_OS
-#include <sailfishapp.h>
-#endif // of IS_SAILFISH_OS
-
-#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
-#include <QtQuick>
-#include <QtQml>
-#include <QQmlApplicationEngine>
-
 #include "rollinglogger.h"
-#include "filemodel.h"
-#endif // of IS_SAILFISH_OS || IS_QTCONTROLS_QT
 
 // HTTP server
 #include "microhttpserver.h"
@@ -75,9 +55,6 @@
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QTranslator>
-#ifdef IS_QTCONTROLS_QT
-#include <QQuickStyle>
-#endif
 
 #include <QDebug>
 
@@ -95,15 +72,7 @@ extern InfoHub infoHub;
 
 int main(int argc, char *argv[])
 {
-  bool has_logger_console = false;
-
-#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
-  bool has_logger_rolling = true;
-#endif
-
-#ifdef IS_CONSOLE_QT
-  has_logger_console = true;
-#endif
+  bool has_logger_console = true;
 
 #ifdef USE_CURL
   if ( curl_global_init(CURL_GLOBAL_DEFAULT ) )
@@ -113,38 +82,14 @@ int main(int argc, char *argv[])
     }
 #endif
 
-#ifdef IS_CONSOLE_QT
 #if defined(USE_OSMSCOUT) && defined(USE_OSMSCOUT_MAP_QT)
   QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
 #else
   QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
 #endif
-#endif
-
-#ifdef IS_QTCONTROLS_QT
-#ifdef DEFAULT_FALLBACK_STYLE
-  if (QQuickStyle::name().isEmpty())
-    QQuickStyle::setStyle(DEFAULT_FALLBACK_STYLE);
-#endif
-#endif
-
-#ifdef IS_SAILFISH_OS
-  QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
-#endif
-#ifdef IS_QTCONTROLS_QT
-  QScopedPointer<QApplication> app(new QApplication(argc,argv));
-#endif
-#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
-  qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
-#endif
 
   app->setApplicationName(APP_NAME);
   app->setOrganizationName(APP_NAME);
-#ifdef IS_QTCONTROLS_QT
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
-  app->setDesktopFileName(APP_NAME ".desktop");
-#endif
-#endif
   app->setApplicationVersion(APP_VERSION);
 
   {
@@ -178,22 +123,11 @@ int main(int argc, char *argv[])
       }
   }
 
-  // set fallback icons for platforms that need it
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-#ifdef IS_QTCONTROLS_QT
-  QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/icons/fallback");
-#endif
-#endif
-
   // deal with command line options
   QCommandLineParser parser;
   parser.setApplicationDescription(QCoreApplication::translate("main", "OSM Scout Server"));
   parser.addHelpOption();
   parser.addVersionOption();
-
-  QCommandLineOption optionConsole(QStringList() << "console",
-                                   QCoreApplication::translate("main", "Run the server without GUI as a console application"));
-  parser.addOption(optionConsole);
 
   QCommandLineOption optionQuiet(QStringList() << "quiet",
                                  QCoreApplication::translate("main", "Do not output logs when running in console mode"));
@@ -209,67 +143,19 @@ int main(int argc, char *argv[])
                                          QCoreApplication::translate("main", "Run the server in DBus activated mode"));
   parser.addOption(optionDBusActivated);
 
-#ifdef IS_CONSOLE_QT
-  QCommandLineOption optionDownload(QStringList() << "d" << "download",
-                                    QCoreApplication::translate("main", "Start download of the maps"));
-  parser.addOption(optionDownload);
-
-  QCommandLineOption optionUpdate(QStringList() << "u" << "update",
-                                  QCoreApplication::translate("main", "Update list of available maps"));
-  parser.addOption(optionUpdate);
-
-  QCommandLineOption optionListAvailable("list-available",
-                                         QCoreApplication::translate("main", "List maps available on device"));
-  parser.addOption(optionListAvailable);
-
-  QCommandLineOption optionListSubscribed("list-subscribed",
-                                          QCoreApplication::translate("main", "List subscribed maps"));
-  parser.addOption(optionListSubscribed);
-
-  QCommandLineOption optionListProvided("list-provided",
-                                        QCoreApplication::translate("main", "List maps provided for download"));
-  parser.addOption(optionListProvided);
-
-  QCommandLineOption optionListMissing("list-missing",
-                                       QCoreApplication::translate("main", "List missing maps"));
-  parser.addOption(optionListMissing);
-
-  QCommandLineOption optionSubscribe("sub",
-                                     QCoreApplication::translate("main", "Subscribe to a <country> dataset"),
-                                     QCoreApplication::translate("main", "country-id"));
-  parser.addOption(optionSubscribe);
-
-  QCommandLineOption optionUnSubscribe("unsub",
-                                       QCoreApplication::translate("main", "Unsubscribe <country> dataset"),
-                                       QCoreApplication::translate("main", "country-id"));
-  parser.addOption(optionUnSubscribe);
-#endif
-
   // Process the actual command line arguments given by the user
   parser.process(*app);
 
   // check logger related options
-#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
-  if (parser.isSet(optionConsole)) // have to enable logger when running as GUI
-    has_logger_rolling = false;
-
-  if (parser.isSet(optionConsole))
-    has_logger_console = !parser.isSet(optionQuiet);
-#endif
-#ifdef IS_CONSOLE_QT
   has_logger_console = !parser.isSet(optionQuiet);
-#endif
 
   // setup loggers
   ConsoleLogger *console_logger = nullptr;
   if (has_logger_console)
     console_logger = new ConsoleLogger(app.data());
 
-#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
-  RollingLogger *rolling_logger = nullptr;
-  if (has_logger_rolling)
-    rolling_logger = new RollingLogger(app.data());
-#endif
+  // this logger always available for GUI
+  RollingLogger rolling_logger(app.data());
 
   // can use after the app name is defined
   AppSettings settings;
@@ -328,73 +214,8 @@ int main(int argc, char *argv[])
   // setup Map Manager
   MapManager::Manager manager(app.data());
 
-#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
-  if (rolling_logger) rolling_logger->onSettingsChanged();
-#endif
-
-  // ////////////////////////////
-  // QML setup
-
-  // disable new QML connection syntax debug messages for as long as
-  // older Qt versions (5.12 and older) are supported
-  QLoggingCategory::setFilterRules(QStringLiteral("qt.qml.connections=false"));
-
-#ifdef IS_SAILFISH_OS
-  QScopedPointer<QQuickView> v;
-  QQmlContext *rootContext = nullptr;
-  if (!parser.isSet(optionConsole))
-    {
-      v.reset(SailfishApp::createView());
-      rootContext = v->rootContext();
-    }
-#endif
-#ifdef IS_QTCONTROLS_QT
-  QQmlApplicationEngine engine;
-  QQmlContext *rootContext = nullptr;
-  if (!parser.isSet(optionConsole)) rootContext = engine.rootContext();
-#endif
-
-#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
-  if (rootContext)
-    {
-      rootContext->setContextProperty("programName", "OSM Scout Server");
-      rootContext->setContextProperty("programVersion", APP_VERSION);
-      rootContext->setContextProperty("settingsMapManagerPrefix", MAPMANAGER_SETTINGS);
-      rootContext->setContextProperty("settingsGeneralPrefix", GENERAL_SETTINGS);
-      rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
-      rootContext->setContextProperty("settingsSpeedPrefix", ROUTING_SPEED_SETTINGS);
-      rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
-      rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
-      rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
-      rootContext->setContextProperty("settingsRequestMapperPrefix", REQUEST_MAPPER_SETTINGS);
-
-      rootContext->setContextProperty("settings", &settings);
-      rootContext->setContextProperty("infohub", &infoHub);
-      if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
-      rootContext->setContextProperty("manager", &manager);
-      rootContext->setContextProperty("modules", &modules);
-      rootContext->setContextProperty("systemd_service", &systemd_service);
-
-#if defined(IS_SAILFISH_OS)
-      // hack to make main menu consistent with expectations
-      // at Sailfish OS.
-      rootContext->setContextProperty("reverseMainMenu", true);
-#else
-      rootContext->setContextProperty("reverseMainMenu", false);
-#endif
-    }
-#endif
-
-#ifdef USE_OSMSCOUT
-  // setup OSM Scout
-  osmScoutMaster = new DBMaster();
-
-  if (osmScoutMaster == nullptr)
-    {
-      std::cerr << "Failed to allocate DBMaster" << std::endl;
-      return -1;
-    }
-#endif
+  // init logger
+  rolling_logger.onSettingsChanged();
 
   // setup Geocoder-NLP
   geoMaster = new GeoMaster();
@@ -404,9 +225,6 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate GeoMaster" << std::endl;
       return -2;
     }
-#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
-  if (rootContext) rootContext->setContextProperty("geocoder", geoMaster);
-#endif
 
   // setup Mapbox GL
   mapboxglMaster = new MapboxGLMaster();
@@ -438,17 +256,6 @@ int main(int argc, char *argv[])
     }
 #endif
 
-#ifdef IS_SAILFISH_OS
-  if (v)
-    {
-      v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
-      v->show();
-    }
-#endif
-#ifdef IS_QTCONTROLS_QT
-  if (!parser.isSet(optionConsole)) engine.load(QUrl(QStringLiteral("qrc:/qml/osmscout-server.qml")));
-#endif
-
 #ifdef USE_OSMSCOUT
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     osmScoutMaster, &DBMaster::onSettingsChanged );
@@ -471,6 +278,8 @@ int main(int argc, char *argv[])
                     &manager, &MapManager::Manager::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &modules, &ModuleChecker::onSettingsChanged );
+  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                    &rolling_logger, &RollingLogger::onSettingsChanged );
 
 #ifdef USE_OSMSCOUT
   QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,
@@ -498,69 +307,8 @@ int main(int argc, char *argv[])
     QObject::connect( &manager, &MapManager::Manager::errorMessage,
                       console_logger, &ConsoleLogger::onErrorMessage);
 
-#ifdef IS_SAILFISH_OS
-  if (rolling_logger)
-    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                      rolling_logger, &RollingLogger::onSettingsChanged );
-#endif
-
   // all is connected, load map manager settings
   manager.onSettingsChanged();
-
-#ifdef IS_CONSOLE_QT
-  // check for sanity and perform the commands if requested
-  if (!manager.storageAvailable())
-    {
-      std::cerr << "ERROR: The storage folder is not allocated or not configured\n";
-      return -1;
-    }
-
-  if (parser.isSet(optionDownload))
-    manager.getCountries();
-
-  if (parser.isSet(optionUpdate))
-    manager.updateProvided();
-
-  if (parser.isSet(optionListAvailable))
-    {
-      std::cout << manager.getAvailableCountries().toStdString() << "\n";
-      return 0;
-    }
-
-  if (parser.isSet(optionListSubscribed))
-    {
-      std::cout << manager.getRequestedCountries().toStdString() << "\n";
-      return 0;
-    }
-
-  if (parser.isSet(optionListProvided))
-    {
-      std::cout << manager.getProvidedCountries().toStdString() << "\n";
-      return 0;
-    }
-
-  if (parser.isSet(optionListMissing))
-    {
-      std::cout << manager.missingInfo().toStdString() << "\n";
-      return 0;
-    }
-
-  if (!parser.value(optionSubscribe).isEmpty())
-    {
-      QString c = parser.value(optionSubscribe);
-      std::cout << "Subscribing to " << c.toStdString() << "\n";
-      manager.addCountry(c);
-      return 0;
-    }
-
-  if (!parser.value(optionUnSubscribe).isEmpty())
-    {
-      QString c = parser.value(optionUnSubscribe);
-      std::cout << "Unsubscribing from " << c.toStdString() << "\n";
-      manager.rmCountry(c);
-      return 0;
-    }
-#endif
 
   // register singlar handler
   signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });
@@ -634,10 +382,32 @@ int main(int argc, char *argv[])
     valhallaMapMatcherDBus.activate();
 #endif
 
+#define DBUSREG(path, objptr, prop) \
+  if (!dbusconnection.registerObject(path, objptr, prop )) \
+     InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(path));
+
+    DBUSREG(DBUS_PATH_INFOHUB, &infoHub,
+            QDBusConnection::ExportAllProperties);
+
+    DBUSREG(DBUS_PATH_LOGGER, &rolling_logger,
+            QDBusConnection::ExportAllProperties);
+
+    DBUSREG(DBUS_PATH_MANAGER, &manager,
+            QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties);
+
+    DBUSREG(DBUS_PATH_MODULES, &modules,
+            QDBusConnection::ExportAllProperties);
+
+    DBUSREG(DBUS_PATH_SETTINGS, &settings,
+            QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties |
+            QDBusConnection::ExportAllSignals);
+
+    DBUSREG(DBUS_PATH_SYSTEMD, &systemd_service,
+            QDBusConnection::ExportAllProperties);
+
     DBusRoot dbusRoot(host, port);
-    if (!dbusconnection.registerObject(DBUS_PATH_ROOT, &dbusRoot,
-                                       QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties))
-      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_ROOT));
+    DBUSREG(DBUS_PATH_ROOT, &dbusRoot,
+            QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties);
 
     // register dbus service
     if (!dbusconnection.registerService(DBUS_SERVICE))

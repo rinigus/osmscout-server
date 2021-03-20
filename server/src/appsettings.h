@@ -20,6 +20,9 @@
 #ifndef APPSETTINGS_H
 #define APPSETTINGS_H
 
+#include "config.h"
+
+#include <QDBusVariant>
 #include <QSettings>
 #include <QString>
 
@@ -28,6 +31,7 @@
 class AppSettings : public QSettings
 {
   Q_OBJECT
+  Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_SETTINGS)
 
   /// \brief true when profiles are used to select backends
   Q_PROPERTY(bool profilesUsed READ profilesUsed NOTIFY profilesUsedChanged)
@@ -57,7 +61,9 @@ public:
   AppSettings();
   virtual ~AppSettings() {}
 
-  Q_INVOKABLE void setValue(const QString &key, const QVariant &value);
+public slots:
+
+  void setValue(const QString key, QDBusVariant value) { setValue(key, value.variant()); }
 
   Q_INVOKABLE int valueInt(const QString &key) const;
   Q_INVOKABLE bool valueBool(const QString &key) const;
@@ -80,6 +86,8 @@ public:
   Q_INVOKABLE int currentProfile() const;            ///< Current profile index of a profile as in availableProfiles
   Q_INVOKABLE void setCurrentProfile(int profile);   ///< Set current profile using the index of a profile as in availableProfiles
 
+public:
+
   void initDefaults(); ///< Initialize settings for configurable parameters on the first start
 
   bool profilesUsed() const { return m_profiles_used; }
@@ -95,6 +103,8 @@ public:
   /// Returns empty string if the preference is in displayed/searhed local country
   /// language or a language code
   QString preferredLanguage();
+
+  void setValue(const QString &key, const QVariant &value);
 
   /// State of the backends
 
@@ -141,9 +151,6 @@ signals:
   void hasBackendSystemDChanged(bool);
   void hasBackendValhallaChanged(bool);
 
-public slots:
-  void fireOsmScoutSettingsChanged();
-
 protected:
   QString unitName(bool speed) const;
 
@@ -152,6 +159,7 @@ protected:
   void setProfile();
 
   void checkCountrySelectionNeeded();
+  void fireOsmScoutSettingsChanged();
 
 protected:
   bool m_signal_osm_scout_changed_waiting = false;

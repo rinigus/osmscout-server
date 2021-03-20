@@ -20,6 +20,8 @@
 #ifndef INFOHUB_H
 #define INFOHUB_H
 
+#include "config.h"
+
 #include <QObject>
 #include <QMutex>
 #include <QString>
@@ -28,6 +30,7 @@
 class InfoHub : public QObject
 {
   Q_OBJECT
+  Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_INFOHUB)
 
   //////////////////////////////////////////////////////////
   /// when true, an error has been detected that has to be fixed

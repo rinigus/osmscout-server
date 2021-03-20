@@ -20,6 +20,8 @@
 #ifndef MODULECHECKER_H
 #define MODULECHECKER_H
 
+#include "config.h"
+
 #include <QObject>
 
 /// \brief Checks availability of the installed modules
@@ -31,6 +33,7 @@
 class ModuleChecker : public QObject
 {
   Q_OBJECT
+  Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_MODULES)
 
   /// \brief Indicates whether fonts module has been installed
   Q_PROPERTY(bool fonts READ fonts)

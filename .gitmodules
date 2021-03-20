@@ -1,5 +1,5 @@
 [submodule "src/geocoder-nlp"]
-	path = src/geocoder-nlp
+	path = server/src/geocoder-nlp
 	url = https://github.com/rinigus/geocoder-nlp.git
 [submodule "scripts/languages/thirdparty/langcodes"]
 	path = scripts/languages/thirdparty/langcodes

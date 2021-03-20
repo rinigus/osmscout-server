@@ -50,8 +50,26 @@
 #define DBUS_PATH_ROOT "/org/osm/scout/server1"
 #define DBUS_INTERFACE_ROOT "org.osm.scout.server1"
 
+#define DBUS_PATH_INFOHUB DBUS_PATH_ROOT "/infohub"
+#define DBUS_INTERFACE_INFOHUB DBUS_INTERFACE_ROOT ".infohub"
+
+#define DBUS_PATH_LOGGER DBUS_PATH_ROOT "/logger"
+#define DBUS_INTERFACE_LOGGER DBUS_INTERFACE_ROOT ".logger"
+
+#define DBUS_PATH_MANAGER DBUS_PATH_ROOT "/manager"
+#define DBUS_INTERFACE_MANAGER DBUS_INTERFACE_ROOT ".manager"
+
+#define DBUS_PATH_MODULES DBUS_PATH_ROOT "/modules"
+#define DBUS_INTERFACE_MODULES DBUS_INTERFACE_ROOT ".modules"
+
 #define DBUS_PATH_MAPMATCHING DBUS_PATH_ROOT "/mapmatching1"
 #define DBUS_INTERFACE_MAPMATCHING DBUS_INTERFACE_ROOT ".mapmatching1"
+
+#define DBUS_PATH_SETTINGS DBUS_PATH_ROOT "/settings"
+#define DBUS_INTERFACE_SETTINGS DBUS_INTERFACE_ROOT ".settings"
+
+#define DBUS_PATH_SYSTEMD DBUS_PATH_ROOT "/systemd_service"
+#define DBUS_INTERFACE_SYSTEMD DBUS_INTERFACE_ROOT ".systemd_service"
 
 //////////////////////////////////////////////
 /// global variables

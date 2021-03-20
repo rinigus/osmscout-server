@@ -20,8 +20,9 @@
 #ifndef SYSTEMDSERVICE_H
 #define SYSTEMDSERVICE_H
 
-#include <QObject>
+#include "config.h"
 
+#include <QObject>
 #include <QString>
 
 /// \brief Interface with SystemD socket activation service
@@ -31,6 +32,7 @@
 class SystemDService : public QObject
 {
   Q_OBJECT
+  Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_SYSTEMD)
 
   Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged) ///< when true, socket activation of the service is enabled on boot
 
@@ -38,10 +40,10 @@ public:
 
   explicit SystemDService(QObject *parent = nullptr);
 
-  Q_INVOKABLE bool enabled() const { return m_enabled; }
-  Q_INVOKABLE void setEnabled(bool e); ///< Enable socket activation
+  bool enabled() const { return m_enabled; }
+  void setEnabled(bool e); ///< Enable socket activation
 
-  Q_INVOKABLE void update(); ///< Update state of the service
+  void update(); ///< Update state of the service
 
   void start();           ///< Start socket activation
   void stop();            ///< Stop socket activation and activated service

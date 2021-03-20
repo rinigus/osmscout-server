@@ -20,6 +20,7 @@
 #ifndef MAPMANAGER_H
 #define MAPMANAGER_H
 
+#include "config.h"
 #include "filedownloader.h"
 #include "mapmanagerfeature.h"
 #include "mapmanager_urlcollection.h"
@@ -48,6 +49,7 @@ namespace MapManager {
   class Manager : public QObject, public PathProvider
   {
     Q_OBJECT
+    Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_MANAGER)
 
     /// \brief true when Map's storage dir is available
     Q_PROPERTY(bool storageAvailable READ storageAvailable NOTIFY storageAvailableChanged)
@@ -70,6 +72,8 @@ namespace MapManager {
   public:
     explicit Manager(QObject *parent = 0);
     virtual ~Manager();
+
+  public slots:
 
     /// \brief Check if the storage directory is available
     Q_INVOKABLE void checkStorageAvailable();
@@ -177,6 +181,8 @@ namespace MapManager {
     /// files were deleted successfully.
     Q_INVOKABLE bool deleteNonNeededFiles(const QStringList files);
 
+  public:
+
     /// Properties exposed to QML
     bool storageAvailable();
     bool ready();
@@ -188,6 +194,8 @@ namespace MapManager {
     virtual QString fullPath(const QString &path) const; ///< Transform relative path to the full path
 
     virtual bool isRegistered(const QString &path, QString &version, QString &datetime);
+
+    void onSettingsChanged();
 
   signals:
     void databaseOsmScoutChanged(QString database);
@@ -215,9 +223,6 @@ namespace MapManager {
     void storageAvailableChanged(bool available);
 
     void selectedMapChanged(QString selected);
-
-  public slots:
-    void onSettingsChanged();
 
   protected:
     enum DownloadType { NoDownload=0, Countries=1, ServerUrl=2, ProvidedList=3 };
