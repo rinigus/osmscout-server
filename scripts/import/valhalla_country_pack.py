@@ -1,3 +1,4 @@
+
 import glob
 from poly import parse_poly
 from shapely.geometry import Polygon
@@ -47,4 +48,4 @@ def country_pack(country_poly_fname):
              "size-compressed": str(size_compressed) }
 
 if __name__ == '__main__':
-    print country_pack('hierarchy/europe/estonia/poly')
+    print(country_pack('hierarchy/europe/estonia/poly'))

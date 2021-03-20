@@ -2,7 +2,7 @@
 import sys, json, tabulate
 
 cutoff_less = 0.8
-cutoff_more = 1.5
+cutoff_more = 2.5
 
 json_reference_fname = "provided/countries_provided.reference.json"
 json_tocheck_fname = "provided/countries_provided.json"
@@ -18,7 +18,7 @@ for k in alldata:
         try:
             ref = reference[k]
         except:
-            print "Missing reference for", k
+            print("Missing reference for", k)
             continue
         for j in obj:
             if 'size' in obj[j]:
@@ -31,17 +31,17 @@ for k in alldata:
 missing.sort()
 
 if len(missing) > 0:
-    print tabulate.tabulate(missing, headers=header, floatfmt=".2f")
+    print(tabulate.tabulate(missing, headers=header, floatfmt=".2f"))
             
-    print "\nIssues found:"
-    print issues
-    print
+    print("\nIssues found:")
+    print(issues)
+    print()
 
-    print "Countries and territories only:"
-    for k in missing: print k[0]
-    print
+    print("Countries and territories only:")
+    for k in missing: print(k[0])
+    print()
 
     sys.exit(-10)
 
 else:
-    print "Coast is clear - no issues found\n"
+    print("Coast is clear - no issues found\n")

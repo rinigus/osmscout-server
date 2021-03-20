@@ -66,6 +66,6 @@ def world_pack():
     
 
 if __name__ == '__main__':
-    print country_pack('hierarchy/europe/poly')
-    print
-    print world_pack()
+    print(country_pack('hierarchy/europe/poly'))
+    print()
+    print(world_pack())

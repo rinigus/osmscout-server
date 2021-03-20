@@ -14,16 +14,16 @@ url_base = "http://data.modrana.org/osm_scout_server"
 url_specs = {
     "base": url_base,
     "type": "url",
-    "osmscout": "osmscout-17",
-    "geocoder_nlp": "geocoder-nlp-19",
+    "osmscout": "osmscout-27",
+    "geocoder_nlp": "geocoder-nlp-29",
     "postal_global": "postal-global-2",
     "postal_country": "postal-country-2",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-14",
-    "mapboxgl_country": "mapboxgl-6",
-    "mapboxgl_global": "mapboxgl-6",
-    "mapboxgl_glyphs": "mapboxgl-6",
-    "valhalla": "valhalla-11",
+    "mapnik_country": "mapnik-country-24",
+    "mapboxgl_country": "mapboxgl-16",
+    "mapboxgl_global": "mapboxgl-16",
+    "mapboxgl_glyphs": "mapboxgl-16",
+    "valhalla": "valhalla-24",
 }
 
 dist = json.loads( open("countries.json", "r").read() )
@@ -75,7 +75,7 @@ for d in dist:
             continue # this item is distributed via packages
         try:
             rpath = dist[d][sub]["path"]
-            print rpath
+            print(rpath)
         except:
             continue
 
@@ -122,7 +122,7 @@ fscript.close()
 st = os.stat('uploader.sh')
 os.chmod('uploader.sh', st.st_mode | stat.S_IEXEC)
 
-print "Check uploader script and run it"
+print("Check uploader script and run it")
 
 # generate public_html folder for testing
 

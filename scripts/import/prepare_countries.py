@@ -38,14 +38,14 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
     if "name" in files and not Hierarchy.ignore(root):
         name = Hierarchy.get_full_name(root)
         poly = root + "/poly"
-        print Hierarchy.get_id(root), name, Hierarchy.get_postal(root), Hierarchy.get_postcodes(root)
+        print(Hierarchy.get_id(root), name, Hierarchy.get_postal(root), Hierarchy.get_postcodes(root))
 
         cid = Hierarchy.get_id(root)
         provided_countries[cid] = { "id": cid,
                                     "type": "territory",
                                     "name": Hierarchy.get_full_name(root),
                                     "postal_country": { "path": "postal/countries-v1/" + Hierarchy.get_postal(root) },
-                                    "osmscout": { "path": "osmscout/" + spath(cid) },
+                                    #"osmscout": { "path": "osmscout/" + spath(cid) },
                                     "geocoder_nlp": { "path": "geocoder-nlp/" + spath(cid) },
                                     "mapnik_country": { "path": "mapnik/countries/" + spath(cid) },
                                     "mapboxgl_country": mapbox_pack(poly),
@@ -84,4 +84,4 @@ fmake.write("\n$(BASE_DIR)/all_countries_done: " + all_countries + "\n\techo > $
 fjson = open("countries.json", "w")
 fjson.write( json.dumps( provided_countries, sort_keys=True, indent=4, separators=(',', ': ')) )
 
-print "\nExamine generated Makefile.import and run make using it. See build.sh and adjust the used executables first\n"
+print("\nExamine generated Makefile.import and run make using it. See build.sh and adjust the used executables first\n")
