@@ -33,7 +33,7 @@
 #include "config-common.h"
 #include "filemodel.h"
 
-//#include "appsettings.h"
+#include "appsettings.h"
 //#include "geomaster.h"
 //#include "mapmanager.h"
 //#include "infohub.h"
@@ -41,6 +41,7 @@
 //#include "modulechecker.h"
 //#include "systemdservice.h"
 
+#include <QDBusConnection>
 #include <QCommandLineParser>
 #include <QTranslator>
 #ifdef IS_QTCONTROLS_QT
@@ -128,7 +129,11 @@ int main(int argc, char *argv[])
   // Process the actual command line arguments given by the user
   parser.process(*app);
 
+  // establish d-bus connection
+  QDBusConnection dbusconnection = QDBusConnection::sessionBus();
+
   // setup proxies
+  AppSettings settings(DBUS_SERVICE, DBUS_PATH_SETTINGS, dbusconnection);
 //  InfoHub infoHub;
 //  RollingLogger rolling_logger;
 //  SystemDService systemd_service;
@@ -166,7 +171,7 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
       rootContext->setContextProperty("settingsRequestMapperPrefix", REQUEST_MAPPER_SETTINGS);
 
-//      rootContext->setContextProperty("settings", &settings);
+      rootContext->setContextProperty("settings", &settings);
 //      rootContext->setContextProperty("infohub", &infoHub);
 //      if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
 //      rootContext->setContextProperty("manager", &manager);

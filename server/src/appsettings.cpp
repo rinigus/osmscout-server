@@ -256,6 +256,8 @@ void AppSettings::initDefaults()
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
 {
+  qDebug() << "Setting value: " << key << " " << value;
+
   QSettings::setValue(key, value);
 
   // http connection settings cannot be changed on fly

@@ -60,10 +60,12 @@ scout_kirigami|scout_qtcontrols {
 
 # sources
 SOURCES += \
-    src/main.cpp
+    src/main.cpp \
+    src/appsettings.cpp
 
 HEADERS += \
-    src/config-common.h
+    src/config-common.h \
+    src/appsettings.h
 
 OTHER_FILES += qml/*.qml
 OTHER_FILES += qml/platform.qtcontrols/*.qml

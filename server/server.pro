@@ -3,7 +3,7 @@ include(../common.pri)
 TARGET=$${APP_NAME}
 
 # Overall QT options
-QT += sql xml positioning dbus
+QT += sql xml positioning
 
 target.path = $$PREFIX/bin
 INSTALLS += target

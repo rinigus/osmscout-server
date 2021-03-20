@@ -13,7 +13,7 @@ isEmpty(APP_NAME) {
 }
 
 # Overall QT options
-QT += core network
+QT += core network dbus
 
 # Find out flavor and add it to CONFIG for simple testing
 equals(SCOUT_FLAVOR, "silica") {
