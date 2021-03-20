@@ -3,6 +3,18 @@ isEmpty(VERSION) {
     VERSION = 1.17.1
 }
 
+# The name of the application
+isEmpty(APP_NAME) {
+    scout_silica {
+        APP_NAME = harbour-osmscout-server
+    } else {
+        APP_NAME = osmscout-server
+    }
+}
+
+# Overall QT options
+QT += core network
+
 # Find out flavor and add it to CONFIG for simple testing
 equals(SCOUT_FLAVOR, "silica") {
     CONFIG += scout_silica
@@ -13,7 +25,7 @@ equals(SCOUT_FLAVOR, "silica") {
 } else:equals(SCOUT_FLAVOR, "uuitk") {
     CONFIG += scout_uuitk
 } else {
-    CONFIG += scout_console
+    error("Specify SCOUT_FLAVOR during configuration")
 }
 
 # selection of backends
@@ -80,4 +92,9 @@ scout_uuitk {
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+
+# debug options
+CONFIG(release, debug|release) {
+    DEFINES += QT_NO_WARNING_OUTPUT QT_NO_DEBUG_OUTPUT
+}
 

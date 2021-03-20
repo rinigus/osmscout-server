@@ -20,30 +20,11 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#include "config-common.h"
+
 #ifndef APP_NAME
 #define APP_NAME "osmscout-server"
 #endif
-
-// global configuration settings
-
-#define GENERAL_SETTINGS "server-general/"
-
-#define MAPMANAGER_SETTINGS "maps/"
-
-#define OSM_SETTINGS "libosmscout/"
-#define ROUTING_SPEED_SETTINGS "libosmscout-speed/"
-
-#define GEOMASTER_SETTINGS "geocoder-nlp/"
-
-#define MAPNIKMASTER_SETTINGS "mapnik/"
-
-#define VALHALLA_MASTER_SETTINGS "valhalla/"
-
-#define HTTP_SERVER_SETTINGS "http-listener/"
-
-#define REQUEST_MAPPER_SETTINGS "request-mapper/"
-
-#define GENERAL_APP_VERSION 4
 
 // d-bus access
 #define DBUS_SERVICE "org.osm.scout.server1"

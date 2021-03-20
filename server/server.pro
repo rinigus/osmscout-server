@@ -1,18 +1,9 @@
 include(../common.pri)
 
-# The name of the application
-isEmpty(APP_NAME) {
-    scout_silica {
-        APP_NAME = harbour-osmscout-server
-    } else {
-        APP_NAME = osmscout-server
-    }
-}
-
 TARGET=$${APP_NAME}
 
 # Overall QT options
-QT += core network sql xml positioning dbus
+QT += sql xml positioning dbus
 
 target.path = $$PREFIX/bin
 INSTALLS += target
@@ -29,8 +20,6 @@ use_dbusactivation {
 # defines
 DEFINES += APP_NAME=\\\"$$APP_NAME\\\"
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
-
-DEFINES += IS_CONSOLE_QT
 
 # default prefix for data
 DEFINES += DEFAULT_DATA_PREFIX=\\\"$${PREFIX_RUNNING}/share/$${TARGET}/\\\"
@@ -78,6 +67,7 @@ HEADERS += \
     src/dbmaster.h \
     src/requestmapper.h \
     src/appsettings.h \
+    src/config-common.h \
     src/config.h \
     src/searchresults.h \
     src/infohub.h \

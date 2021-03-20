@@ -17,4 +17,28 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
+#ifndef CONFIGCOMMON_H
+#define CONFIGCOMMON_H
+
+// global configuration settings
+
+#define GENERAL_SETTINGS "server-general/"
+
+#define MAPMANAGER_SETTINGS "maps/"
+
+#define OSM_SETTINGS "libosmscout/"
+#define ROUTING_SPEED_SETTINGS "libosmscout-speed/"
+
+#define GEOMASTER_SETTINGS "geocoder-nlp/"
+
+#define MAPNIKMASTER_SETTINGS "mapnik/"
+
+#define VALHALLA_MASTER_SETTINGS "valhalla/"
+
+#define HTTP_SERVER_SETTINGS "http-listener/"
+
+#define REQUEST_MAPPER_SETTINGS "request-mapper/"
+
+#define GENERAL_APP_VERSION 4
+
+#endif // CONFIGCOMMON_H

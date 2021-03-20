@@ -1139,10 +1139,6 @@ void Manager::onDownloadProgress()
     {
       last_message = txt;
       emit downloadProgress(txt);
-
-#ifdef IS_CONSOLE_QT
-      std::cout << "Download progress: " << txt.toStdString() << std::endl;
-#endif
     }
 }
 

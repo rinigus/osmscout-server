@@ -17,79 +17,68 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "appsettings.h"
-#include "config.h"
 
-#if defined(USE_OSMSCOUT) && defined(USE_OSMSCOUT_MAP_QT)
-#include <QGuiApplication>
-#else
-#include <QCoreApplication>
+#ifdef IS_QTCONTROLS_QT
+#include <QApplication>
 #endif
 
-#include "consolelogger.h"
-#include "rollinglogger.h"
+#ifdef IS_SAILFISH_OS
+#include <sailfishapp.h>
+#endif // of IS_SAILFISH_OS
 
-// HTTP server
-#include "microhttpserver.h"
-#include "requestmapper.h"
+#include <QtQuick>
+#include <QtQml>
+#include <QQmlApplicationEngine>
 
-// DBus interface
-#include "dbusroot.h"
-#include "valhallamapmatcherdbus.h"
-#include "valhallamapmatcherdbusadaptor.h"
+#include "config-common.h"
+#include "filemodel.h"
 
-// LIB OSM Scout interface
-#include "dbmaster.h"
-
-// Geocoder-NLP interface
-#include "geomaster.h"
-
-#include "mapmanager.h"
-#include "infohub.h"
-#include "modulechecker.h"
-
-#include "systemdservice.h"
-#include "util.hpp"
+//#include "appsettings.h"
+//#include "geomaster.h"
+//#include "mapmanager.h"
+//#include "infohub.h"
+//#include "rollinglogger.h"
+//#include "modulechecker.h"
+//#include "systemdservice.h"
 
 #include <QCommandLineParser>
-#include <QDBusConnection>
-#include <QDBusConnectionInterface>
 #include <QTranslator>
+#ifdef IS_QTCONTROLS_QT
+#include <QQuickStyle>
+#endif
 
 #include <QDebug>
 
 #include <iostream>
-#include <csignal>
-
-#ifdef USE_CURL
-#include <curl/curl.h>
-#endif
-
-// this is needed for connection with signals. Otherwise, access via static members
-extern InfoHub infoHub;
 
 ////////////////////////////////////////////////
 
 int main(int argc, char *argv[])
 {
-  bool has_logger_console = true;
-
-#ifdef USE_CURL
-  if ( curl_global_init(CURL_GLOBAL_DEFAULT ) )
-    {
-      std::cerr << "Error initializing libcurl\n";
-      return -10;
-    }
+#ifdef IS_QTCONTROLS_QT
+#ifdef DEFAULT_FALLBACK_STYLE
+  if (QQuickStyle::name().isEmpty())
+    QQuickStyle::setStyle(DEFAULT_FALLBACK_STYLE);
+#endif
 #endif
 
-#if defined(USE_OSMSCOUT) && defined(USE_OSMSCOUT_MAP_QT)
-  QScopedPointer<QGuiApplication> app(new QGuiApplication(argc,argv));
-#else
-  QScopedPointer<QCoreApplication> app(new QCoreApplication(argc,argv));
+#ifdef IS_SAILFISH_OS
+  QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+#endif
+#ifdef IS_QTCONTROLS_QT
+  QScopedPointer<QApplication> app(new QApplication(argc,argv));
+#endif
+#if defined(IS_SAILFISH_OS) || defined(IS_QTCONTROLS_QT)
+  qmlRegisterType<FileModel>("harbour.osmscout.server.FileManager", 1, 0, "FileModel");
 #endif
 
   app->setApplicationName(APP_NAME);
   app->setOrganizationName(APP_NAME);
+#ifdef IS_QTCONTROLS_QT
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
+  app->setDesktopFileName(APP_NAME ".desktop");
+#endif
+#endif
   app->setApplicationVersion(APP_VERSION);
 
   {
@@ -123,304 +112,87 @@ int main(int argc, char *argv[])
       }
   }
 
-  // deal with command line options
-  QCommandLineParser parser;
-  parser.setApplicationDescription(QCoreApplication::translate("main", "OSM Scout Server"));
-  parser.addHelpOption();
-  parser.addVersionOption();
-
-  QCommandLineOption optionQuiet(QStringList() << "quiet",
-                                 QCoreApplication::translate("main", "Do not output logs when running in console mode"));
-  parser.addOption(optionQuiet);
-
-#ifdef USE_SYSTEMD
-  QCommandLineOption optionSystemD(QStringList() << "systemd",
-                                   QCoreApplication::translate("main", "Run the server in SystemD socket-activated mode"));
-  parser.addOption(optionSystemD);
+  // set fallback icons for platforms that need it
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+#ifdef IS_QTCONTROLS_QT
+  QIcon::setFallbackSearchPaths(QIcon::fallbackSearchPaths() << ":/icons/fallback");
+#endif
 #endif
 
-  QCommandLineOption optionDBusActivated(QStringList() << "dbus-activated",
-                                         QCoreApplication::translate("main", "Run the server in DBus activated mode"));
-  parser.addOption(optionDBusActivated);
+  // deal with command line options
+  QCommandLineParser parser;
+  parser.setApplicationDescription(QCoreApplication::translate("main", "OSM Scout Server GUI"));
+  parser.addHelpOption();
+  parser.addVersionOption();
 
   // Process the actual command line arguments given by the user
   parser.process(*app);
 
-  // check logger related options
-  has_logger_console = !parser.isSet(optionQuiet);
+  // setup proxies
+//  InfoHub infoHub;
+//  RollingLogger rolling_logger;
+//  SystemDService systemd_service;
+//  ModuleChecker modules;
+//  MapManager::Manager manager;
+//  GeoMaster geoMaster;
 
-  // setup loggers
-  ConsoleLogger *console_logger = nullptr;
-  if (has_logger_console)
-    console_logger = new ConsoleLogger(app.data());
+  // ////////////////////////////
+  // QML setup
 
-  // this logger always available for GUI
-  RollingLogger rolling_logger(app.data());
+  // disable new QML connection syntax debug messages for as long as
+  // older Qt versions (5.12 and older) are supported
+  QLoggingCategory::setFilterRules(QStringLiteral("qt.qml.connections=false"));
 
-  // can use after the app name is defined
-  AppSettings settings;
-  settings.initDefaults();
+#ifdef IS_SAILFISH_OS
+  QScopedPointer<QQuickView> v;
+  v.reset(SailfishApp::createView());
+  QQmlContext *rootContext = v->rootContext();
+#endif
+#ifdef IS_QTCONTROLS_QT
+  QQmlApplicationEngine engine;
+  QQmlContext *rootContext = engine.rootContext();
+#endif
 
-  infoHub.onSettingsChanged();
-
-  // establish d-bus connection
-  QDBusConnection dbusconnection = QDBusConnection::sessionBus();
-
-  // enable systemd interaction
-  SystemDService systemd_service;
-
-  // Close other instance if it was started by systemd or DBus activation
-  bool wait_for_port = false;
-
-  if (!parser.isSet(optionDBusActivated) &&
-      dbusconnection.isConnected())
+  if (rootContext)
     {
-      // Handling of DBus activation
-      auto pid = dbusconnection.interface()->servicePid(DBUS_SERVICE);
-      if (pid.isValid())
-        {
-          std::cout << "DBus service already registered by process " << pid.value() << ".\n";
-          std::cout << "Sending close signal.\n";
-          kill(pid.value(), SIGUSR1);
-          wait_for_port = true;
-        }
-    }
+      rootContext->setContextProperty("programName", "OSM Scout Server");
+      rootContext->setContextProperty("programVersion", APP_VERSION);
+      rootContext->setContextProperty("settingsMapManagerPrefix", MAPMANAGER_SETTINGS);
+      rootContext->setContextProperty("settingsGeneralPrefix", GENERAL_SETTINGS);
+      rootContext->setContextProperty("settingsOsmPrefix", OSM_SETTINGS);
+      rootContext->setContextProperty("settingsSpeedPrefix", ROUTING_SPEED_SETTINGS);
+      rootContext->setContextProperty("settingsGeomasterPrefix", GEOMASTER_SETTINGS);
+      rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
+      rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
+      rootContext->setContextProperty("settingsRequestMapperPrefix", REQUEST_MAPPER_SETTINGS);
 
-#ifdef USE_SYSTEMD
-  // stop systemD service and socket if running as a separate application
-  if (!parser.isSet(optionSystemD))
-    {
-      systemd_service.stop();
-      wait_for_port = true;
-    }
-#endif
+//      rootContext->setContextProperty("settings", &settings);
+//      rootContext->setContextProperty("infohub", &infoHub);
+//      if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
+//      rootContext->setContextProperty("manager", &manager);
+//      rootContext->setContextProperty("modules", &modules);
+//      rootContext->setContextProperty("systemd_service", &systemd_service);
+//      rootContext->setContextProperty("geocoder", geoMaster);
 
-  // wait till the used ports are freed. here, the timeout is used internally in
-  // the used wait function
-  if (wait_for_port)
-    {
-      int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
-
-      if (!wait_till_port_is_free(http_port))
-        {
-          std::cerr << "Port " << http_port << " is occupied\n";
-          return -1;
-        }
-    }
-
-  // check installed modules
-  ModuleChecker modules;
-
-  // setup Map Manager
-  MapManager::Manager manager(app.data());
-
-  // init logger
-  rolling_logger.onSettingsChanged();
-
-  // setup Geocoder-NLP
-  geoMaster = new GeoMaster();
-
-  if (geoMaster == nullptr)
-    {
-      std::cerr << "Failed to allocate GeoMaster" << std::endl;
-      return -2;
-    }
-
-  // setup Mapbox GL
-  mapboxglMaster = new MapboxGLMaster();
-  if (mapboxglMaster == nullptr)
-    {
-      std::cerr << "Failed to allocate MapboxGLMaster" << std::endl;
-      return -3;
-    }
-
-#ifdef USE_MAPNIK
-  // setup Mapnik
-  mapnikMaster = new MapnikMaster();
-
-  if (mapnikMaster == nullptr)
-    {
-      std::cerr << "Failed to allocate MapnikMaster" << std::endl;
-      return -4;
-    }
-#endif
-
-#ifdef USE_VALHALLA
-  // setup for Valhalla
-  valhallaMaster = new ValhallaMaster(app.data());
-
-  if (valhallaMaster == nullptr)
-    {
-      std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
-      return -5;
-    }
-#endif
-
-#ifdef USE_OSMSCOUT
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    osmScoutMaster, &DBMaster::onSettingsChanged );
-#endif
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    geoMaster, &GeoMaster::onSettingsChanged );
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    mapboxglMaster, &MapboxGLMaster::onSettingsChanged );
-#ifdef USE_MAPNIK
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    mapnikMaster, &MapnikMaster::onSettingsChanged );
-#endif
-#ifdef USE_VALHALLA
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    valhallaMaster, &ValhallaMaster::onSettingsChanged );
-#endif
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    &infoHub, &InfoHub::onSettingsChanged );
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    &manager, &MapManager::Manager::onSettingsChanged );
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    &modules, &ModuleChecker::onSettingsChanged );
-  QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    &rolling_logger, &RollingLogger::onSettingsChanged );
-
-#ifdef USE_OSMSCOUT
-  QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,
-                    osmScoutMaster, &DBMaster::onDatabaseChanged );
-#endif
-
-  QObject::connect( &manager, &MapManager::Manager::databaseGeocoderNLPChanged,
-                    geoMaster, &GeoMaster::onGeocoderNLPChanged);
-  QObject::connect( &manager, &MapManager::Manager::databasePostalChanged,
-                    geoMaster, &GeoMaster::onPostalChanged);
-  QObject::connect( &manager, &MapManager::Manager::selectedMapChanged,
-                    geoMaster, &GeoMaster::onSelectedMapChanged);
-  QObject::connect( &manager, &MapManager::Manager::databaseMapboxGLChanged,
-                    mapboxglMaster, &MapboxGLMaster::onMapboxGLChanged );
-#ifdef USE_MAPNIK
-  QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
-                    mapnikMaster, &MapnikMaster::onMapnikChanged );
-#endif
-#ifdef USE_VALHALLA
-  QObject::connect( &manager, &MapManager::Manager::databaseValhallaChanged,
-                    valhallaMaster, &ValhallaMaster::onValhallaChanged );
-#endif
-
-  if (console_logger)
-    QObject::connect( &manager, &MapManager::Manager::errorMessage,
-                      console_logger, &ConsoleLogger::onErrorMessage);
-
-  // all is connected, load map manager settings
-  manager.onSettingsChanged();
-
-  // register singlar handler
-  signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });
-  signal(SIGINT, [](int /*sig*/){ qApp->quit(); });
-  signal(SIGHUP, [](int /*sig*/){ qApp->quit(); });
-
-  // quit application if receiving SIGUSR1 and was DBus activated
-  if ( parser.isSet(optionDBusActivated) )
-    signal(SIGUSR1, [](int /*sig*/){ qApp->quit(); });
-  else
-    signal(SIGUSR1, [](int /*sig*/){ std::cout << "Ignoring SIGUSR1" << std::flush; });
-
-  int return_code = 0;
-
-#ifdef USE_VALHALLA
-  valhallaMaster->start();
-#endif
-
-  // prepare server by processing all outstanding events
-  // that way, it will be ready immediately to process requests
-  app->processEvents();
-
-  {
-    // setup HTTP server
-    int port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
-    QString host = settings.valueString(HTTP_SERVER_SETTINGS "host");
-
-    // start HTTP server
-    RequestMapper requests;
-    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str(),
-#ifdef USE_SYSTEMD
-                                   parser.isSet(optionSystemD)
+#if defined(IS_SAILFISH_OS)
+      // hack to make main menu consistent with expectations
+      // at Sailfish OS.
+      rootContext->setContextProperty("reverseMainMenu", true);
 #else
-                                   false
+      rootContext->setContextProperty("reverseMainMenu", false);
 #endif
-                                   );
+    }
 
-    if ( !http_server )
-      {
-        std::cerr << "Failed to start HTTP server" << std::endl;
-        return -100;
-      }
-
-    // connect request mapper to the settings
-    QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                      &requests, &RequestMapper::onSettingsChanged );
-
-    // enable idle timeout shutdown if started by systemd or DBus activation
-    if ( parser.isSet(optionDBusActivated)
-    #ifdef USE_SYSTEMD
-        || parser.isSet(optionSystemD)
-    #endif
-        )
-      {
-        QObject::connect(&infoHub, &InfoHub::activitySig,
-                         &requests, &RequestMapper::updateLastCall,
-                         Qt::QueuedConnection);
-        QObject::connect(&requests, &RequestMapper::idleTimeout,
-                         app.data(), QCoreApplication::quit );
-      }
-
-    // add d-bus interface
-#ifdef USE_VALHALLA
-    ValhallaMapMatcherDBus valhallaMapMatcherDBus;
-    new ValhallaMapMatcherDBusAdaptor(&valhallaMapMatcherDBus);
-    if (!dbusconnection.registerObject(DBUS_PATH_MAPMATCHING, &valhallaMapMatcherDBus))
-      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
-    else
-      dbusconnection.connect(QString(), "/org/freedesktop/DBus", "org.freedesktop.DBus", "NameOwnerChanged",
-                             &valhallaMapMatcherDBus, SLOT(onNameOwnerChanged(QString,QString,QString)));
-    valhallaMapMatcherDBus.activate();
+#ifdef IS_SAILFISH_OS
+  if (v)
+    {
+      v->setSource(SailfishApp::pathTo("qml/osmscout-server.qml"));
+      v->show();
+    }
+#endif
+#ifdef IS_QTCONTROLS_QT
+  engine.load(QUrl(QStringLiteral("qrc:/qml/osmscout-server.qml")));
 #endif
 
-#define DBUSREG(path, objptr, prop) \
-  if (!dbusconnection.registerObject(path, objptr, prop )) \
-     InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(path));
-
-    DBUSREG(DBUS_PATH_INFOHUB, &infoHub,
-            QDBusConnection::ExportAllProperties);
-
-    DBUSREG(DBUS_PATH_LOGGER, &rolling_logger,
-            QDBusConnection::ExportAllProperties);
-
-    DBUSREG(DBUS_PATH_MANAGER, &manager,
-            QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties);
-
-    DBUSREG(DBUS_PATH_MODULES, &modules,
-            QDBusConnection::ExportAllProperties);
-
-    DBUSREG(DBUS_PATH_SETTINGS, &settings,
-            QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties |
-            QDBusConnection::ExportAllSignals);
-
-    DBUSREG(DBUS_PATH_SYSTEMD, &systemd_service,
-            QDBusConnection::ExportAllProperties);
-
-    DBusRoot dbusRoot(host, port);
-    DBUSREG(DBUS_PATH_ROOT, &dbusRoot,
-            QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties);
-
-    // register dbus service
-    if (!dbusconnection.registerService(DBUS_SERVICE))
-      InfoHub::logWarning(app->tr("Failed to register DBus service: %1").arg(DBUS_SERVICE));
-
-    return_code = app->exec();
-  }
-
-#ifdef USE_SYSTEMD
-  // if the service is enabled, start it after we leave the server
-  if (!parser.isSet(optionSystemD) && systemd_service.enabled())
-    systemd_service.start();
-#endif
-
-  return return_code;
+  return app->exec();
 }
