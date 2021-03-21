@@ -274,7 +274,7 @@ void AppSettings::setValue(const QString &key, const QVariant &value)
       if (!m_signal_osm_scout_changed_waiting)
         {
           m_signal_osm_scout_changed_waiting = true;
-          QTimer::singleShot(200, this, SLOT(fireOsmScoutSettingsChanged()));
+          QTimer::singleShot(200, this, &AppSettings::fireOsmScoutSettingsChanged);
         }
     }
 
