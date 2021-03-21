@@ -32,7 +32,7 @@ provided_countries = {}
 
 fmake.write("$(BASE_DIR)/geocoder-nlp/.directory:\n\tmkdir -p $(BASE_DIR)/geocoder-nlp/\n\ttouch $(BASE_DIR)/geocoder-nlp/.directory\n\n")
 fmake.write("$(BASE_DIR)/mapnik/countries/.directory:\n\tmkdir -p $(BASE_DIR)/mapnik/countries/\n\ttouch $(BASE_DIR)/mapnik/countries/.directory\n\n")
-fmake.write("$(BASE_DIR)/osmscout/.directory:\n\tmkdir -p $(BASE_DIR)/osmscout/\n\ttouch $(BASE_DIR)/osmscout/.directory\n\n")
+#fmake.write("$(BASE_DIR)/osmscout/.directory:\n\tmkdir -p $(BASE_DIR)/osmscout/\n\ttouch $(BASE_DIR)/osmscout/.directory\n\n")
 
 for root, folders, files in os.walk(Hierarchy.base_dir):
     if "name" in files and not Hierarchy.ignore(root):
@@ -70,13 +70,13 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
                     "\n\t$(BUILDER_MAPNIK) $(PBF_DIR)/" + pbfname(cid) + " $(BASE_DIR) " +
                     spath(cid) + "\n\n")
 
-        # osmscout
-        country_target = "$(BASE_DIR)/osmscout/" + spath(cid) + ".timestamp"
+        # # osmscout
+        # country_target = "$(BASE_DIR)/osmscout/" + spath(cid) + ".timestamp"
 
-        all_countries += country_target + " "
-        fmake.write(country_target + ": $(BASE_DIR)/osmscout/.directory " + pbf +
-                    "\n\t$(BUILDER_OSMSCOUT) $(PBF_DIR)/" + pbfname(cid) + " $(BASE_DIR) " +
-                    spath(cid) + " " + poly + "\n\n")
+        # all_countries += country_target + " "
+        # fmake.write(country_target + ": $(BASE_DIR)/osmscout/.directory " + pbf +
+        #             "\n\t$(BUILDER_OSMSCOUT) $(PBF_DIR)/" + pbfname(cid) + " $(BASE_DIR) " +
+        #             spath(cid) + " " + poly + "\n\n")
 
 fmake.write("\n$(BASE_DIR)/all_countries_done: " + all_countries + "\n\techo > $(BASE_DIR)/all_countries_done\n\n")
 

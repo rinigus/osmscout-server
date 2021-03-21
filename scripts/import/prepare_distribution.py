@@ -14,7 +14,7 @@ url_base = "http://data.modrana.org/osm_scout_server"
 url_specs = {
     "base": url_base,
     "type": "url",
-    "osmscout": "osmscout-27",
+    #"osmscout": "osmscout-27",
     "geocoder_nlp": "geocoder-nlp-29",
     "postal_global": "postal-global-2",
     "postal_country": "postal-country-2",
@@ -136,14 +136,14 @@ distlink = {  "geocoder_nlp": "geocoder-nlp",
               "mapboxgl_country": "mapboxgl",
               "mapnik_country": "mapnik",
               "mapnik_global": "mapnik",
-              "osmscout": "osmscout",
+              #"osmscout": "osmscout",
               "postal_country": "postal",
               "postal_global": "postal",
               "valhalla": "valhalla" }
 
 for t in ["geocoder_nlp", "mapboxgl_country",
           "mapnik_country", "mapnik_global",
-          "osmscout",
+          #"osmscout",
           "postal_country",  "postal_global", "valhalla" ]:
     d = os.path.join(testing_mirror, url_specs[t])
     os.mkdir(d)
