@@ -16,7 +16,7 @@ scout_kirigami|scout_qtcontrols|scout_uuitk {
     QT += quick qml widgets quickcontrols2
 }
 
-target.path = $$PREFIX/bin
+target.path = $$SERVER_PATH
 INSTALLS += target
 
 scout_silica {
@@ -84,6 +84,7 @@ OTHER_FILES += qml/platform.qtcontrols/*.qml
 OTHER_FILES += qml/platform.kirigami/*.qml
 OTHER_FILES += qml/platform.click/*.qml
 OTHER_FILES += qml/platform.silica/*.qml
+OTHER_FILES += osmscout-server.desktop harbour-osmscout-server.desktop
 
 include(src/fileselector/fileselector.pri)
 

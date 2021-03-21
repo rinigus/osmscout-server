@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Icon=osmscout-server
-Exec=osmscout-server
+Exec=osmscout-server-gui
 Name=OSM Scout Server
 
 # translation example:

@@ -5,14 +5,14 @@ TARGET=$${APP_NAME}
 # Overall QT options
 QT += sql xml positioning
 
-target.path = $$PREFIX/bin
+target.path = $$SERVER_PATH
 INSTALLS += target
 
 # Installing dbus service, processing path
 use_dbusactivation {
-    dbusact.extra = install -v -m 644 $$PWD/server/org.osm.scout.server1.service \
-       ${INSTALL_ROOT}/usr/share/dbus-1/services/org.osm.scout.server1.service ;\
-       sed -i -e \'s|PREFIX|$${PREFIX}|g\' ${INSTALL_ROOT}/usr/share/dbus-1/services/org.osm.scout.server1.service;
+    dbusact.extra = install -v -m 644 $$PWD/io.github.rinigus.OSMScoutServer.service \
+       ${INSTALL_ROOT}/usr/share/dbus-1/services/io.github.rinigus.OSMScoutServer.service ;\
+       sed -i -e \'s|PREFIX/osmscout-server|$${SERVER_EXE}|g\' ${INSTALL_ROOT}/usr/share/dbus-1/services/io.github.rinigus.OSMScoutServer.service;
     dbusact.path = /usr/share/dbus-1/services
     INSTALLS += dbusact
 }
@@ -96,12 +96,7 @@ HEADERS += \
     src/valhallamapmatcherdbusadaptor.h \
     src/dbusroot.h
 
-OTHER_FILES += rpm/osmscout-server.spec
-OTHER_FILES += qml/*.qml
-OTHER_FILES += qml/platform.qtcontrols/*.qml
-OTHER_FILES += qml/platform.kirigami/*.qml
-OTHER_FILES += qml/platform.click/*.qml
-OTHER_FILES += qml/platform.silica/*.qml
+OTHER_FILES += io.github.rinigus.OSMScoutServer.service
 
 # includes
 include(src/uhttp/uhttp.pri)

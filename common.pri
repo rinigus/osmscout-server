@@ -12,6 +12,9 @@ isEmpty(APP_NAME) {
     }
 }
 
+SERVER_PATH=$$PREFIX/bin
+SERVER_EXE=$${SERVER_PATH}/$${APP_NAME}
+
 # Overall QT options
 QT += core network dbus
 

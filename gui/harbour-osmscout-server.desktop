@@ -2,7 +2,7 @@
 Type=Application
 X-Nemo-Application-Type=no-invoker
 Icon=harbour-osmscout-server
-Exec=harbour-osmscout-server
+Exec=harbour-osmscout-server-gui
 Name=OSM Scout Server
 
 # translation example:
