@@ -1,4 +1,4 @@
-# Adding support for OSM Scout Server into map client
+# API and adding support for OSM Scout Server
 
 ## General notes for developers
 
