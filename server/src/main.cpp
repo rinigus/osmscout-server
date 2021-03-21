@@ -171,44 +171,44 @@ int main(int argc, char *argv[])
   // enable systemd interaction
   SystemDService systemd_service;
 
-  // Close other instance if it was started by systemd or DBus activation
-  bool wait_for_port = false;
+//  // Close other instance if it was started by systemd or DBus activation
+//  bool wait_for_port = false;
 
-  if (!parser.isSet(optionDBusActivated) &&
-      dbusconnection.isConnected())
-    {
-      // Handling of DBus activation
-      auto pid = dbusconnection.interface()->servicePid(DBUS_SERVICE);
-      if (pid.isValid())
-        {
-          std::cout << "DBus service already registered by process " << pid.value() << ".\n";
-          std::cout << "Sending close signal.\n";
-          kill(pid.value(), SIGUSR1);
-          wait_for_port = true;
-        }
-    }
+//  if (!parser.isSet(optionDBusActivated) &&
+//      dbusconnection.isConnected())
+//    {
+//      // Handling of DBus activation
+//      auto pid = dbusconnection.interface()->servicePid(DBUS_SERVICE);
+//      if (pid.isValid())
+//        {
+//          std::cout << "DBus service already registered by process " << pid.value() << ".\n";
+//          std::cout << "Sending close signal.\n";
+//          kill(pid.value(), SIGUSR1);
+//          wait_for_port = true;
+//        }
+//    }
 
-#ifdef USE_SYSTEMD
-  // stop systemD service and socket if running as a separate application
-  if (!parser.isSet(optionSystemD))
-    {
-      systemd_service.stop();
-      wait_for_port = true;
-    }
-#endif
+//#ifdef USE_SYSTEMD
+//  // stop systemD service and socket if running as a separate application
+//  if (!parser.isSet(optionSystemD))
+//    {
+//      systemd_service.stop();
+//      wait_for_port = true;
+//    }
+//#endif
 
-  // wait till the used ports are freed. here, the timeout is used internally in
-  // the used wait function
-  if (wait_for_port)
-    {
-      int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
+//  // wait till the used ports are freed. here, the timeout is used internally in
+//  // the used wait function
+//  if (wait_for_port)
+//    {
+//      int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
 
-      if (!wait_till_port_is_free(http_port))
-        {
-          std::cerr << "Port " << http_port << " is occupied\n";
-          return -1;
-        }
-    }
+//      if (!wait_till_port_is_free(http_port))
+//        {
+//          std::cerr << "Port " << http_port << " is occupied\n";
+//          return -1;
+//        }
+//    }
 
   // check installed modules
   ModuleChecker modules;
@@ -377,7 +377,9 @@ int main(int argc, char *argv[])
     ValhallaMapMatcherDBus valhallaMapMatcherDBus;
     new ValhallaMapMatcherDBusAdaptor(&valhallaMapMatcherDBus);
     if (!dbusconnection.registerObject(DBUS_PATH_MAPMATCHING, &valhallaMapMatcherDBus))
-      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
+      InfoHub::logWarning(
+            QCoreApplication::translate("main",
+                                        "Failed to register DBus object: %1").arg(DBUS_PATH_MAPMATCHING));
     else
       dbusconnection.connect(QString(), "/org/freedesktop/DBus", "org.freedesktop.DBus", "NameOwnerChanged",
                              &valhallaMapMatcherDBus, SLOT(onNameOwnerChanged(QString,QString,QString)));
@@ -386,15 +388,21 @@ int main(int argc, char *argv[])
 
     new InfoHubDBusAdaptor(&infoHub);
     if (!dbusconnection.registerObject(DBUS_PATH_INFOHUB, &infoHub))
-      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_INFOHUB));
+      InfoHub::logWarning(
+            QCoreApplication::translate("main",
+                                        "Failed to register DBus object: %1").arg(DBUS_PATH_INFOHUB));
 
     new MapManager::ManagerDBusAdaptor(&manager);
     if (!dbusconnection.registerObject(DBUS_PATH_MANAGER, &manager))
-      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MANAGER));
+      InfoHub::logWarning(
+            QCoreApplication::translate("main",
+                                        "Failed to register DBus object: %1").arg(DBUS_PATH_MANAGER));
 
 #define DBUSREG(path, objptr, prop) \
   if (!dbusconnection.registerObject(path, objptr, prop )) \
-     InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(path));
+     InfoHub::logWarning( \
+             QCoreApplication::translate("main", \
+             "Failed to register DBus object: %1").arg(path));
 
     DBUSREG(DBUS_PATH_GEOMASTER, geoMaster,
             QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
@@ -418,7 +426,9 @@ int main(int argc, char *argv[])
 
     // register dbus service
     if (!dbusconnection.registerService(DBUS_SERVICE))
-      InfoHub::logWarning(app->tr("Failed to register DBus service: %1").arg(DBUS_SERVICE));
+      InfoHub::logWarning(
+            QCoreApplication::translate("main",
+                                        "Failed to register DBus service: %1").arg(DBUS_SERVICE));
 
     return_code = app->exec();
   }
