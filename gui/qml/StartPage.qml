@@ -311,21 +311,16 @@ PagePL {
             ListItemLabel {
                 id: queueLength
                 font.pixelSize: styler.themeFontSizeSmall
+                text: {
+                    if (!service.available)
+                        return qsTr("OSM Scout Server not running");
+                    var q = infohub.queue;
+                    if (q > 0)
+                        return qsTr("Jobs in a queue") + ": " + q;
+                    return qsTr("Idle")
+                }
+
                 visible: manager.storageAvailable
-
-                Connections {
-                    target: infohub;
-                    onQueueChanged: {
-                        queueLength.setText(queue)
-                    }
-                }
-
-                Component.onCompleted: queueLength.setText(infohub.queue)
-
-                function setText(q) {
-                    if (q > 0) text = qsTr("Jobs in a queue") + ": " + q
-                    else text = qsTr("Idle")
-                }
             }
 
             ElementDownloads {

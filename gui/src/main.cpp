@@ -20,6 +20,7 @@
 
 #include "config-common.h"
 #include "filemodel.h"
+#include "trackdbusservice.h"
 
 #include "appsettings.h"
 #include "geomaster.h"
@@ -129,6 +130,8 @@ int main(int argc, char *argv[])
   MapManager manager(DBUS_SERVICE, DBUS_PATH_MANAGER, dbusconnection);
   ModuleChecker modules(DBUS_SERVICE, DBUS_PATH_MODULES, dbusconnection);
 
+  TrackDBusService service;
+
   // ////////////////////////////
   // QML setup
 
@@ -158,6 +161,8 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("settingsMapnikPrefix", MAPNIKMASTER_SETTINGS);
       rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
       rootContext->setContextProperty("settingsRequestMapperPrefix", REQUEST_MAPPER_SETTINGS);
+
+      rootContext->setContextProperty("service", &service);
 
       rootContext->setContextProperty("settings", &settings);
       rootContext->setContextProperty("infohub", &infoHub);

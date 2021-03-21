@@ -63,7 +63,8 @@ SOURCES += \
     src/appsettings.cpp \
     src/mapmanager.cpp \
     src/modulechecker.cpp \
-    src/systemdservice.cpp
+    src/systemdservice.cpp \
+    src/trackdbusservice.cpp
 
 HEADERS += \
     src/config-common.h \
@@ -73,7 +74,8 @@ HEADERS += \
     src/logger.h \
     src/mapmanager.h \
     src/modulechecker.h \
-    src/systemdservice.h
+    src/systemdservice.h \
+    src/trackdbusservice.h
 
 OTHER_FILES += qml/*.qml
 OTHER_FILES += qml/platform.qtcontrols/*.qml

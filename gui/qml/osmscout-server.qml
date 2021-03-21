@@ -37,7 +37,7 @@ ApplicationWindowPL {
                 color: styler.themeHighlightColor
                 font.pixelSize: styler.themeFontSizeLarge
                 horizontalAlignment: Text.AlignHCenter
-                text: qsTr("Initializing")
+                text: qsTr("Initializing and waiting for connection with server")
                 width: parent.width
             }
         }
@@ -45,7 +45,8 @@ ApplicationWindowPL {
     menuPageUrl: reverseMainMenu ? Qt.resolvedUrl("MainMenuReversed.qml") : Qt.resolvedUrl("MainMenu.qml")
     title: qsTr("OSM Scout Server")
 
-    property var rootPage
+    property bool started: false
+    property var  rootPage
 
     StylerPL {
         id: styler
@@ -55,8 +56,22 @@ ApplicationWindowPL {
         id: truncModes
     }
 
-    Component.onCompleted: {
-        app.pages.replace( Qt.resolvedUrl("StartPage.qml") )
+    Connections {
+        target: service
+        onAvailableChanged: checkService()
+    }
+
+    Component.onCompleted: checkService()
+
+    function checkService() {
+        if (service.available && !started) {
+            started = true;
+            app.pages.replace( Qt.resolvedUrl("StartPage.qml") );
+        } else if (!service.available && started) {
+            app.pushMain( Qt.resolvedUrl("MessagePage.qml"),
+                         {"title": qsTr("Server stopped"),
+                             "message": qsTr("OSM Scout Server is not reachable.")} )
+        }
     }
 
     function createObject(page, options) {
