@@ -31,6 +31,10 @@ equals(SCOUT_FLAVOR, "silica") {
     error("Specify SCOUT_FLAVOR during configuration")
 }
 
+isEmpty(VALHALLA_VERSION) {
+    VALHALLA_VERSION=3.1
+}
+
 # selection of backends
 !disable_mapnik {
     CONFIG += use_mapnik
