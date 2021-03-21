@@ -21,40 +21,22 @@ OTHER_FILES += rpm/osmscout-server.spec
 
 # translations
 TRANSLATIONS += \
-    translations/$${TARGET}-cs.ts \
-    translations/$${TARGET}-de.ts \
-    translations/$${TARGET}-es.ts \
-    translations/$${TARGET}-et.ts \
-    translations/$${TARGET}-fi.ts \
-    translations/$${TARGET}-fr.ts \
-    translations/$${TARGET}-nb.ts \
-    translations/$${TARGET}-nl.ts \
-    translations/$${TARGET}-pl.ts \
-    translations/$${TARGET}-ru.ts \
-    translations/$${TARGET}-sv.ts \
-    translations/$${TARGET}-nl_BE.ts \
-    translations/$${TARGET}-it_IT.ts \
-    translations/$${TARGET}-pt_BR.ts
+    translations/$${APP_NAME}-cs.ts \
+    translations/$${APP_NAME}-de.ts \
+    translations/$${APP_NAME}-es.ts \
+    translations/$${APP_NAME}-et.ts \
+    translations/$${APP_NAME}-fi.ts \
+    translations/$${APP_NAME}-fr.ts \
+    translations/$${APP_NAME}-nb.ts \
+    translations/$${APP_NAME}-nl.ts \
+    translations/$${APP_NAME}-pl.ts \
+    translations/$${APP_NAME}-ru.ts \
+    translations/$${APP_NAME}-sv.ts \
+    translations/$${APP_NAME}-nl_BE.ts \
+    translations/$${APP_NAME}-it_IT.ts \
+    translations/$${APP_NAME}-pt_BR.ts
 
-scout_kirigami|scout_qtcontrols {
-    CONFIG += lrelease embed_translations
-}
-
-scout_uuitk {
-    qtPrepareTool(LRELEASE, lrelease)
-    for(tsfile, TRANSLATIONS) {
-        qmfile = $$shadowed($$tsfile)
-        qmfile ~= s,.ts$,.qm,
-        qmdir = $$dirname(qmfile)
-        !exists($$qmdir) {
-            mkpath($$qmdir)|error("Aborting.")
-        }
-        command = $$LRELEASE -removeidentical $$tsfile -qm $$qmfile
-        system($$command)|error("Failed to run: $$command")
-        TRANSLATIONS_FILES += $$qmfile
-    }
-}
-
+# packaging
 scout_silica {
     DISTFILES += \
         rpm/$${TARGET}.spec

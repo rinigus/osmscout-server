@@ -165,3 +165,39 @@ use_systemd {
 }
 
 LIBS += -L$${PREFIX}/lib -lmarisa -lkyotocabinet -lz -lsqlite3
+
+# translations
+TRANSLATIONS += \
+    ../translations/$${TARGET}-cs.ts \
+    ../translations/$${TARGET}-de.ts \
+    ../translations/$${TARGET}-es.ts \
+    ../translations/$${TARGET}-et.ts \
+    ../translations/$${TARGET}-fi.ts \
+    ../translations/$${TARGET}-fr.ts \
+    ../translations/$${TARGET}-nb.ts \
+    ../translations/$${TARGET}-nl.ts \
+    ../translations/$${TARGET}-pl.ts \
+    ../translations/$${TARGET}-ru.ts \
+    ../translations/$${TARGET}-sv.ts \
+    ../translations/$${TARGET}-nl_BE.ts \
+    ../translations/$${TARGET}-it_IT.ts \
+    ../translations/$${TARGET}-pt_BR.ts
+
+scout_kirigami|scout_qtcontrols {
+    CONFIG += lrelease embed_translations
+}
+
+scout_uuitk {
+    qtPrepareTool(LRELEASE, lrelease)
+    for(tsfile, TRANSLATIONS) {
+        qmfile = $$shadowed($$tsfile)
+        qmfile ~= s,.ts$,.qm,
+        qmdir = $$dirname(qmfile)
+        !exists($$qmdir) {
+            mkpath($$qmdir)|error("Aborting.")
+        }
+        command = $$LRELEASE -removeidentical $$tsfile -qm $$qmfile
+        system($$command)|error("Failed to run: $$command")
+        TRANSLATIONS_FILES += $$qmfile
+    }
+}

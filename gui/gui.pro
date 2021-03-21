@@ -1,10 +1,6 @@
 include(../common.pri)
 
-DEFINES += SERVER_EXE=\\\"$${PREFIX_RUNNING}/bin/$${APP_NAME}\\\"
-
-APP_NAME=$${APP_NAME}-gui
-
-TARGET=$${APP_NAME}
+TARGET=$${APP_NAME}-gui
 
 # defines
 DEFINES += APP_NAME=\\\"$$APP_NAME\\\"
@@ -97,6 +93,42 @@ scout_kirigami|scout_qtcontrols|scout_uuitk {
 scout_kirigami: RESOURCES += qml_kirigami.qrc
 scout_qtcontrols: RESOURCES += qml_qtcontrols.qrc
 scout_uuitk: RESOURCES += qml_uuitk.qrc
+
+# translations
+TRANSLATIONS += \
+    ../translations/$${APP_NAME}-cs.ts \
+    ../translations/$${APP_NAME}-de.ts \
+    ../translations/$${APP_NAME}-es.ts \
+    ../translations/$${APP_NAME}-et.ts \
+    ../translations/$${APP_NAME}-fi.ts \
+    ../translations/$${APP_NAME}-fr.ts \
+    ../translations/$${APP_NAME}-nb.ts \
+    ../translations/$${APP_NAME}-nl.ts \
+    ../translations/$${APP_NAME}-pl.ts \
+    ../translations/$${APP_NAME}-ru.ts \
+    ../translations/$${APP_NAME}-sv.ts \
+    ../translations/$${APP_NAME}-nl_BE.ts \
+    ../translations/$${APP_NAME}-it_IT.ts \
+    ../translations/$${APP_NAME}-pt_BR.ts
+
+scout_kirigami|scout_qtcontrols {
+    CONFIG += lrelease embed_translations
+}
+
+scout_uuitk {
+    qtPrepareTool(LRELEASE, lrelease)
+    for(tsfile, TRANSLATIONS) {
+        qmfile = $$shadowed($$tsfile)
+        qmfile ~= s,.ts$,.qm,
+        qmdir = $$dirname(qmfile)
+        !exists($$qmdir) {
+            mkpath($$qmdir)|error("Aborting.")
+        }
+        command = $$LRELEASE -removeidentical $$tsfile -qm $$qmfile
+        system($$command)|error("Failed to run: $$command")
+        TRANSLATIONS_FILES += $$qmfile
+    }
+}
 
 # misc options
 scout_silica {

@@ -3,7 +3,7 @@
 Update translations on desktop:
 
 ```
-lupdate osmscout-server.pro -ts translations/osmscout-server.ts
+lupdate osmscout-server.pro server/server.pro gui/gui.pro -ts translations/osmscout-server.ts
 ```
 
 Push source changes to Transifex and pull new translations
@@ -25,7 +25,7 @@ Bump version and write changelog
 
 ```
 emacs rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.changes
-emacs osmscout-server.pro packaging/osmscout-server.appdata.xml packaging/click/manifest.json
+emacs common.pri packaging/osmscout-server.appdata.xml packaging/click/manifest.json
 ```
 
 Commit version changes
