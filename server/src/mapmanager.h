@@ -49,7 +49,6 @@ namespace MapManager {
   class Manager : public QObject, public PathProvider
   {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_MANAGER)
 
     /// \brief true when Map's storage dir is available
     Q_PROPERTY(bool storageAvailable READ storageAvailable NOTIFY storageAvailableChanged)

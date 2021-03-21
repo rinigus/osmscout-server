@@ -60,12 +60,24 @@ scout_kirigami|scout_qtcontrols {
 
 # sources
 SOURCES += \
+    src/geomaster.cpp \
+    src/infohub.cpp \
+    src/logger.cpp \
     src/main.cpp \
-    src/appsettings.cpp
+    src/appsettings.cpp \
+    src/mapmanager.cpp \
+    src/modulechecker.cpp \
+    src/systemdservice.cpp
 
 HEADERS += \
     src/config-common.h \
-    src/appsettings.h
+    src/appsettings.h \
+    src/geomaster.h \
+    src/infohub.h \
+    src/logger.h \
+    src/mapmanager.h \
+    src/modulechecker.h \
+    src/systemdservice.h
 
 OTHER_FILES += qml/*.qml
 OTHER_FILES += qml/platform.qtcontrols/*.qml

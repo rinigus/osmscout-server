@@ -35,6 +35,7 @@
 
 // DBus interface
 #include "dbusroot.h"
+#include "mapmanagerdbusadaptor.h"
 #include "valhallamapmatcherdbus.h"
 #include "valhallamapmatcherdbusadaptor.h"
 
@@ -382,18 +383,22 @@ int main(int argc, char *argv[])
     valhallaMapMatcherDBus.activate();
 #endif
 
+    new MapManager::ManagerDBusAdaptor(&manager);
+    if (!dbusconnection.registerObject(DBUS_PATH_MANAGER, &manager))
+      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MANAGER));
+
 #define DBUSREG(path, objptr, prop) \
   if (!dbusconnection.registerObject(path, objptr, prop )) \
      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(path));
 
+    DBUSREG(DBUS_PATH_GEOMASTER, geoMaster,
+            QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
+
     DBUSREG(DBUS_PATH_INFOHUB, &infoHub,
-            QDBusConnection::ExportAllProperties);
+            QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
 
     DBUSREG(DBUS_PATH_LOGGER, &rolling_logger,
-            QDBusConnection::ExportAllProperties);
-
-    DBUSREG(DBUS_PATH_MANAGER, &manager,
-            QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties);
+            QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
 
     DBUSREG(DBUS_PATH_MODULES, &modules,
             QDBusConnection::ExportAllProperties);
@@ -403,7 +408,7 @@ int main(int argc, char *argv[])
             QDBusConnection::ExportAllSignals);
 
     DBUSREG(DBUS_PATH_SYSTEMD, &systemd_service,
-            QDBusConnection::ExportAllProperties);
+            QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
 
     DBusRoot dbusRoot(host, port);
     DBUSREG(DBUS_PATH_ROOT, &dbusRoot,

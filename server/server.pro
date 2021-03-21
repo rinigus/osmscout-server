@@ -33,6 +33,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # sources
 SOURCES += src/dbmaster.cpp \
     src/main.cpp \
+    src/mapmanagerdbusadaptor.cpp \
     src/requestmapper.cpp \
     src/appsettings.cpp \
     src/dbmaster_route.cpp \
@@ -65,6 +66,7 @@ SOURCES += src/dbmaster.cpp \
 
 HEADERS += \
     src/dbmaster.h \
+    src/mapmanagerdbusadaptor.h \
     src/requestmapper.h \
     src/appsettings.h \
     src/config-common.h \

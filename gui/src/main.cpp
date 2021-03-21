@@ -1,20 +1,8 @@
 /*
- * Copyright (C) 2016-2021 Rinigus https://github.com/rinigus
- * 
  * This file is part of OSM Scout Server.
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ * SPDX-FileCopyrightText: 2021 Rinigus https://github.com/rinigus
+ * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
 
@@ -34,12 +22,12 @@
 #include "filemodel.h"
 
 #include "appsettings.h"
-//#include "geomaster.h"
-//#include "mapmanager.h"
-//#include "infohub.h"
-//#include "rollinglogger.h"
-//#include "modulechecker.h"
-//#include "systemdservice.h"
+#include "geomaster.h"
+#include "mapmanager.h"
+#include "infohub.h"
+#include "logger.h"
+#include "modulechecker.h"
+#include "systemdservice.h"
 
 #include <QDBusConnection>
 #include <QCommandLineParser>
@@ -134,12 +122,12 @@ int main(int argc, char *argv[])
 
   // setup proxies
   AppSettings settings(DBUS_SERVICE, DBUS_PATH_SETTINGS, dbusconnection);
-//  InfoHub infoHub;
-//  RollingLogger rolling_logger;
-//  SystemDService systemd_service;
-//  ModuleChecker modules;
-//  MapManager::Manager manager;
-//  GeoMaster geoMaster;
+  GeoMaster geoMaster(DBUS_SERVICE, DBUS_PATH_GEOMASTER, dbusconnection);
+  InfoHub infoHub(DBUS_SERVICE, DBUS_PATH_INFOHUB, dbusconnection);
+  Logger logger(DBUS_SERVICE, DBUS_PATH_LOGGER, dbusconnection);
+  SystemDService systemd_service(DBUS_SERVICE, DBUS_PATH_SYSTEMD, dbusconnection);
+  MapManager manager(DBUS_SERVICE, DBUS_PATH_MANAGER, dbusconnection);
+  ModuleChecker modules(DBUS_SERVICE, DBUS_PATH_MODULES, dbusconnection);
 
   // ////////////////////////////
   // QML setup
@@ -172,12 +160,12 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("settingsRequestMapperPrefix", REQUEST_MAPPER_SETTINGS);
 
       rootContext->setContextProperty("settings", &settings);
-//      rootContext->setContextProperty("infohub", &infoHub);
-//      if (rolling_logger) rootContext->setContextProperty("logger", rolling_logger);
-//      rootContext->setContextProperty("manager", &manager);
-//      rootContext->setContextProperty("modules", &modules);
-//      rootContext->setContextProperty("systemd_service", &systemd_service);
-//      rootContext->setContextProperty("geocoder", geoMaster);
+      rootContext->setContextProperty("infohub", &infoHub);
+      rootContext->setContextProperty("logger", &logger);
+      rootContext->setContextProperty("manager", &manager);
+      rootContext->setContextProperty("modules", &modules);
+      rootContext->setContextProperty("systemd_service", &systemd_service);
+      rootContext->setContextProperty("geocoder", &geoMaster);
 
 #if defined(IS_SAILFISH_OS)
       // hack to make main menu consistent with expectations

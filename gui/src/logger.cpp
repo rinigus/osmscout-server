@@ -5,18 +5,18 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-#include "appsettings.h"
+#include "logger.h"
 
 /*
- * Implementation of interface class AppSettings
+ * Implementation of interface class Logger
  */
 
-AppSettings::AppSettings(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent)
+Logger::Logger(const QString &service, const QString &path, const QDBusConnection &connection, QObject *parent)
     : QDBusAbstractInterface(service, path, staticInterfaceName(), connection, parent)
 {
 }
 
-AppSettings::~AppSettings()
+Logger::~Logger()
 {
 }
 

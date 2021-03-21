@@ -20,6 +20,7 @@
 #ifndef GEOMASTER_H
 #define GEOMASTER_H
 
+#include "config-common.h"
 #include "postal.h"
 #include "geocoder.h"
 
@@ -40,6 +41,7 @@
 class GeoMaster : public QObject
 {
   Q_OBJECT
+  Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_GEOMASTER)
 
   /////////////////////////////////////////////////////////
   /// true if memory usage can be large due to non-specified
