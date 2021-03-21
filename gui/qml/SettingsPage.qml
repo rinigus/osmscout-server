@@ -98,10 +98,16 @@ DialogPL {
                 text: qsTr("For technical details, created files, and how to remove them if needed, see corresponding section " +
                            "of the <a href='https://rinigus.github.io/osmscout-server/en/#implementation-of-automatic-activation'>User's Guide</a>.")
             }
+        }
+
+        Column {
+            spacing: styler.themePaddingMedium
+            visible: (!settings.hasBackendSystemD || systemdEnable.checked)
+            width: parent.width
 
             ComboBoxPL {
                 id: idleTimeout
-                enabled: manager.ready && systemdEnable.checked
+                enabled: manager.ready
                 label: qsTr("Idle timeout")
                 model: timeouts.map(function (t) { return t.desc; } )
 

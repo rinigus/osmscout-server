@@ -393,7 +393,7 @@ PagePL {
             id: thirdWelcomeWizardPage
 
             LanguageSelector {
-                acceptDestination: fourthWelcomeWizardPage
+                acceptDestination: settings.hasBackendSystemD ? fourthWelcomeWizardPage : rootPage
                 acceptText: qsTr("Next")
                 callback: eGeoLanguages.setValue
                 title: eGeoLanguages.mainLabel
@@ -434,7 +434,7 @@ PagePL {
 
     Component.onCompleted: {
         app.rootPage = rootPage
-        if (settings.firstTime)
+        if (settings.firstTime || true)
             rootPage.pageStatusActive.connect(openWelcomeWizard)
         else if (settings.lastRunVersion === 0)
             rootPage.pageStatusActive.connect(openSystemdActivation)
