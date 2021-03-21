@@ -434,7 +434,7 @@ PagePL {
 
     Component.onCompleted: {
         app.rootPage = rootPage
-        if (settings.firstTime || true)
+        if (settings.firstTime)
             rootPage.pageStatusActive.connect(openWelcomeWizard)
         else if (settings.lastRunVersion === 0)
             rootPage.pageStatusActive.connect(openSystemdActivation)
