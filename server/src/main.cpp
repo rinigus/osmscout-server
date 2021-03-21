@@ -35,6 +35,7 @@
 
 // DBus interface
 #include "dbusroot.h"
+#include "infohubdbusadaptor.h"
 #include "mapmanagerdbusadaptor.h"
 #include "valhallamapmatcherdbus.h"
 #include "valhallamapmatcherdbusadaptor.h"
@@ -383,6 +384,10 @@ int main(int argc, char *argv[])
     valhallaMapMatcherDBus.activate();
 #endif
 
+    new InfoHubDBusAdaptor(&infoHub);
+    if (!dbusconnection.registerObject(DBUS_PATH_INFOHUB, &infoHub))
+      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_INFOHUB));
+
     new MapManager::ManagerDBusAdaptor(&manager);
     if (!dbusconnection.registerObject(DBUS_PATH_MANAGER, &manager))
       InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(DBUS_PATH_MANAGER));
@@ -392,9 +397,6 @@ int main(int argc, char *argv[])
      InfoHub::logWarning(app->tr("Failed to register DBus object: %1").arg(path));
 
     DBUSREG(DBUS_PATH_GEOMASTER, geoMaster,
-            QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
-
-    DBUSREG(DBUS_PATH_INFOHUB, &infoHub,
             QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
 
     DBUSREG(DBUS_PATH_LOGGER, &rolling_logger,

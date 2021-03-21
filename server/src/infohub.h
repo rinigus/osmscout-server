@@ -30,7 +30,6 @@
 class InfoHub : public QObject
 {
   Q_OBJECT
-  Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_INFOHUB)
 
   //////////////////////////////////////////////////////////
   /// when true, an error has been detected that has to be fixed
