@@ -32,10 +32,6 @@ equals(SCOUT_FLAVOR, "silica") {
     CONFIG += use_mapnik
 }
 
-!disable_osmscout {
-    CONFIG += use_osmscout
-}
-
 !disable_valhalla {
     CONFIG += use_valhalla
 }
