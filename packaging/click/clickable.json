@@ -5,8 +5,6 @@
     "SCOUT_FLAVOR=uuitk",
     "CONFIG+=disable_systemd",
     "CONFIG+=disable_mapnik",
-    "LIBS+=-L${LIBOSMSCOUT_LIB_INSTALL_DIR}/lib",
-    "INCLUDEPATH+=${LIBOSMSCOUT_LIB_INSTALL_DIR}/include",
     "LIBS+=-L${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/lib",
     "INCLUDEPATH+=${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/include",
     "LIBS+=-L${VALHALLA_LIB_INSTALL_DIR}/lib",
@@ -57,35 +55,6 @@
     "prepare-deps": "git submodule update --recursive --init && ${ROOT}/packaging/click/prepare-deps.sh"
   },
   "libraries": {
-    "libosmscout": {
-      "builder": "cmake",
-      "build_args": [
-        "-DCMAKE_INSTALL_PREFIX:PATH=${INSTALL_DIR}/usr",
-        "-DBUILD_SHARED_LIBS=false",
-        "-DBUILD_WITH_OPENMP=OFF",
-        "-DOSMSCOUT_BUILD_MAP_OPENGL=OFF",
-        "-DOSMSCOUT_BUILD_IMPORT=OFF",
-        "-DOSMSCOUT_BUILD_MAP_AGG=OFF",
-        "-DOSMSCOUT_BUILD_MAP_CAIRO=OFF",
-        "-DOSMSCOUT_BUILD_MAP_SVG=OFF",
-        "-DOSMSCOUT_BUILD_MAP_IOSX=OFF",
-        "-DOSMSCOUT_BUILD_TESTS=OFF",
-        "-DOSMSCOUT_BUILD_DEMOS=OFF",
-        "-DOSMSCOUT_BUILD_BINDING_JAVA=OFF",
-        "-DOSMSCOUT_BUILD_BINDING_CSHARP=OFF",
-        "-DOSMSCOUT_BUILD_DOC_API=OFF",
-        "-DOSMSCOUT_BUILD_CLIENT_QT=ON",
-        "-DOSMSCOUT_BUILD_TOOL_OSMSCOUT2=OFF",
-        "-DOSMSCOUT_BUILD_TOOL_STYLEEDITOR=OFF",
-        "-DGPERFTOOLS_USAGE=OFF",
-        "-DOSMSCOUT_BUILD_TOOL_IMPORT=OFF",
-        "-DOSMSCOUT_BUILD_TOOL_DUMPDATA=OFF"
-      ],
-      "dependencies_target": [
-        "libxml2-dev",
-        "libmarisa-dev"
-      ]
-    },
     "libpostal": {
       "builder": "custom",
       "build": "${ROOT}/packaging/click/build-libpostal.sh",
