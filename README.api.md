@@ -378,13 +378,13 @@ response.
 
 ## D-Bus API
 
-D-Bus API is provided via service `org.osm.scout.server1`. At present,
+D-Bus API is provided via service `io.github.rinigus.OSMScoutServer`. At present,
 its used to provide map matching service for just in time navigation
 information. In future, D-Bus API can be extended on request.
 
 ### Root
 
-At path `/org/osm/scout/server1`, interface `org.osm.scout.server1`,
+At path `/io/github/rinigus/OSMScoutServer`, interface `io.github.rinigus.OSMScoutServer`,
 currently the following is supported:
 
 **`Url`** string property with the URL base that can be used to
@@ -406,9 +406,9 @@ type and can be easily incorporated into application without
 consulting OSM Scout Server API.
 
 Map matching is provided at path
-`/org/osm/scout/server1/mapmatching1`, interface
-`org.osm.scout.server1.mapmatching1`. On presence of the service,
-there is a boolean property `Active` which equals to `True`.
+`/io/github/rinigus/OSMScoutServer/mapmatching`, interface
+`io.github.rinigus.OSMScoutServer.mapmatching`. On presence of the
+service, there is a boolean property `Active` which equals to `True`.
 
 The main interaction with the server occurs via the following method:
 
