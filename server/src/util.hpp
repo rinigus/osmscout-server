@@ -20,6 +20,7 @@
 #ifndef UTIL_HPP
 #define UTIL_HPP
 
+bool activate_server_tcp();
 bool port_free(int port);
 bool wait_till_port_is_free(int port);
 

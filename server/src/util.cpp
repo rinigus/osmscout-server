@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016-2018 Rinigus https://github.com/rinigus
+ * Copyright (C) 2016-2021 Rinigus https://github.com/rinigus
  * 
  * This file is part of OSM Scout Server.
  * 
@@ -17,6 +17,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+#include "config-common.h"
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -25,6 +27,35 @@
 #include <unistd.h>
 
 #include <iostream>
+
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
+#include <QNetworkRequest>
+#include <QEventLoop>
+#include <QSettings>
+
+bool activate_server_tcp()
+{
+  QSettings settings;
+  QNetworkAccessManager nam;
+  QNetworkRequest request;
+
+  QString host = settings.value(HTTP_SERVER_SETTINGS "host").toString();
+  QString port = settings.value(HTTP_SERVER_SETTINGS "port").toString();
+  QUrl url = QStringLiteral("http://%1:%2/v1/activate").arg(host).arg(port);
+
+  request.setUrl(url);
+
+  QEventLoop loop;
+  loop.connect(&nam, SIGNAL(finished(QNetworkReply*)), &loop, SLOT(quit()));
+  QNetworkReply *reply = nam.get(request);
+  loop.exec();
+
+  bool res = (reply->isFinished() && reply->error() == QNetworkReply::NoError);
+  reply->deleteLater();
+  return res;
+}
+
 
 bool port_free(int port)
 {
