@@ -63,6 +63,7 @@ SOURCES += \
     src/appsettings.cpp \
     src/mapmanager.cpp \
     src/modulechecker.cpp \
+    src/servercontroller.cpp \
     src/systemdservice.cpp \
     src/trackdbusservice.cpp
 
@@ -74,6 +75,7 @@ HEADERS += \
     src/logger.h \
     src/mapmanager.h \
     src/modulechecker.h \
+    src/servercontroller.h \
     src/systemdservice.h \
     src/trackdbusservice.h
 

@@ -20,6 +20,7 @@
 
 #include "config-common.h"
 #include "filemodel.h"
+#include "servercontroller.h"
 #include "trackdbusservice.h"
 
 #include "appsettings.h"
@@ -130,7 +131,12 @@ int main(int argc, char *argv[])
   MapManager manager(DBUS_SERVICE, DBUS_PATH_MANAGER, dbusconnection);
   ModuleChecker modules(DBUS_SERVICE, DBUS_PATH_MODULES, dbusconnection);
 
+  ServerController serverController;
   TrackDBusService service;
+
+  // reconnect to server if it appears
+  QObject::connect(&service, &TrackDBusService::availableChanged,
+                   &serverController, &ServerController::connectToServer);
 
   // ////////////////////////////
   // QML setup
@@ -162,6 +168,7 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("settingsValhallaPrefix", VALHALLA_MASTER_SETTINGS);
       rootContext->setContextProperty("settingsRequestMapperPrefix", REQUEST_MAPPER_SETTINGS);
 
+      rootContext->setContextProperty("serverController", &serverController);
       rootContext->setContextProperty("service", &service);
 
       rootContext->setContextProperty("settings", &settings);

@@ -28,6 +28,7 @@ ApplicationWindowPL {
         WaitPage {
             title: "OSM Scout Server"
             message: qsTr("Initializing and waiting for connection with the server")
+            description: serverController.status
         }
     }
     menuPageUrl: reverseMainMenu ? Qt.resolvedUrl("MainMenuReversed.qml") : Qt.resolvedUrl("MainMenu.qml")
@@ -49,7 +50,10 @@ ApplicationWindowPL {
         onAvailableChanged: checkService()
     }
 
-    Component.onCompleted: checkService()
+    Component.onCompleted: {
+        serverController.activate();
+        checkService();
+    }
 
     function checkService() {
         if (service.available && !started) {
