@@ -25,21 +25,9 @@ import "platform"
 ApplicationWindowPL {
     id: app
     initialPage: Component {
-        PageEmptyPL {
+        WaitPage {
             title: "OSM Scout Server"
-            BusyIndicatorPL {
-                id: busy
-                running: true
-            }
-            LabelPL {
-                anchors.bottom: busy.top
-                anchors.bottomMargin: Math.round(busy.height/4)
-                color: styler.themeHighlightColor
-                font.pixelSize: styler.themeFontSizeLarge
-                horizontalAlignment: Text.AlignHCenter
-                text: qsTr("Initializing and waiting for connection with server")
-                width: parent.width
-            }
+            message: qsTr("Initializing and waiting for connection with the server")
         }
     }
     menuPageUrl: reverseMainMenu ? Qt.resolvedUrl("MainMenuReversed.qml") : Qt.resolvedUrl("MainMenu.qml")
@@ -68,9 +56,14 @@ ApplicationWindowPL {
             started = true;
             app.pages.replace( Qt.resolvedUrl("StartPage.qml") );
         } else if (!service.available && started) {
-            app.pushMain( Qt.resolvedUrl("MessagePage.qml"),
-                         {"title": qsTr("Server stopped"),
-                             "message": qsTr("OSM Scout Server is not reachable.")} )
+            app.pages.pop(app.rootPage);
+            app.rootPage = null;
+            app.pages.replace( Qt.resolvedUrl("WaitPage.qml"), {
+                                  "message": qsTr("Error"),
+                                  "description": qsTr("OSM Scout Server is not reachable. " +
+                                                      "Waiting for it to appear.")
+                              } )
+            started = false;
         }
     }
 

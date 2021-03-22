@@ -26,6 +26,7 @@ import "platform"
 
 MenuDrawerPL {
     banner: "../icons/banner.jpg"
+    enabled: service.available
     title: "OSM Scout Server"
     titleIcon: Qt.resolvedUrl("../icons/osmscout-server.svg")
 

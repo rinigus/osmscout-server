@@ -57,11 +57,6 @@ PagePL {
                     id: noModuleText
                 }
 
-                Connections {
-                    target: modules
-                    onModulesChanged: modulesNotAvailable.checkModules()
-                }
-
                 Rectangle { // just extra space to highlight the message
                     height: styler.themePaddingLarge*3
                     width: parent.width

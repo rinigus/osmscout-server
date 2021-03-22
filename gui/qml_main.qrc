@@ -28,5 +28,6 @@
         <file>qml/UpdatesFound.qml</file>
         <file>qml/SystemdActivationPage.qml</file>
         <file>qml/ListItemLabel.qml</file>
+        <file>qml/WaitPage.qml</file>
     </qresource>
 </RCC>
