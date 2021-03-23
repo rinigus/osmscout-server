@@ -3,6 +3,8 @@ SUBDIRS = server gui
 
 include(common.pri)
 
+TARGET=$${APP_NAME}
+
 # installs
 styles.files = styles
 styles.path = $$PREFIX/share/$${TARGET}

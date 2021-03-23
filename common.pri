@@ -1,3 +1,16 @@
+# Find out flavor and add it to CONFIG for simple testing
+equals(SCOUT_FLAVOR, "silica") {
+    CONFIG += scout_silica
+} else:equals(SCOUT_FLAVOR, "kirigami") {
+    CONFIG += scout_kirigami
+} else:equals(SCOUT_FLAVOR, "qtcontrols") {
+    CONFIG += scout_qtcontrols
+} else:equals(SCOUT_FLAVOR, "uuitk") {
+    CONFIG += scout_uuitk
+} else {
+    error("Specify SCOUT_FLAVOR during configuration")
+}
+
 # set version
 isEmpty(VERSION) {
     VERSION = 1.17.1
@@ -18,19 +31,6 @@ DEFINES += SERVER_EXE=\\\"$${SERVER_EXE}\\\"
 
 # Overall QT options
 QT += core network dbus
-
-# Find out flavor and add it to CONFIG for simple testing
-equals(SCOUT_FLAVOR, "silica") {
-    CONFIG += scout_silica
-} else:equals(SCOUT_FLAVOR, "kirigami") {
-    CONFIG += scout_kirigami
-} else:equals(SCOUT_FLAVOR, "qtcontrols") {
-    CONFIG += scout_qtcontrols
-} else:equals(SCOUT_FLAVOR, "uuitk") {
-    CONFIG += scout_uuitk
-} else {
-    error("Specify SCOUT_FLAVOR during configuration")
-}
 
 isEmpty(VALHALLA_VERSION) {
     VALHALLA_VERSION=3.1
@@ -96,6 +96,10 @@ scout_uuitk {
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
+
+scout_silica {
+    CONFIG += sailfishapp sailfishapp_no_deploy_qml sailfishapp_i18n
+}
 
 # debug options
 CONFIG(release, debug|release) {

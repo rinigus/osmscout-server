@@ -29,30 +29,28 @@ scout_silica {
     INSTALLS += extra_icons
 }
 
-scout_kirigami|scout_qtcontrols|scout_uuitk {
-    icons108.path = $$PREFIX/share/icons/hicolor/108x108/apps
-    icons108.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/108x108/apps && cp $$PWD/icons/108x108/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/108x108/apps/$${TARGET}.png
-    INSTALLS += icons108
-    icons128.path = $$PREFIX/share/icons/hicolor/128x128/apps
-    icons128.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/128x128/apps && cp $$PWD/icons/128x128/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/128x128/apps/$${TARGET}.png
-    INSTALLS += icons128
-    icons256.path = $$PREFIX/share/icons/hicolor/256x256/apps
-    icons256.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/256x256/apps && cp $$PWD/icons/256x256/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/256x256/apps/$${TARGET}.png
-    INSTALLS += icons256
-    icons86.path = $$PREFIX/share/icons/hicolor/86x86/apps
-    icons86.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/86x86/apps && cp $$PWD/icons/86x86/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/86x86/apps/$${TARGET}.png
-    INSTALLS += icons86
+icons108.path = $$PREFIX/share/icons/hicolor/108x108/apps
+icons108.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/108x108/apps && cp $$PWD/icons/108x108/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/108x108/apps/$${APP_NAME}.png
+INSTALLS += icons108
+icons128.path = $$PREFIX/share/icons/hicolor/128x128/apps
+icons128.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/128x128/apps && cp $$PWD/icons/128x128/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/128x128/apps/$${APP_NAME}.png
+INSTALLS += icons128
+icons256.path = $$PREFIX/share/icons/hicolor/256x256/apps
+icons256.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/256x256/apps && cp $$PWD/icons/256x256/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/256x256/apps/$${APP_NAME}.png
+INSTALLS += icons256
+icons86.path = $$PREFIX/share/icons/hicolor/86x86/apps
+icons86.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/86x86/apps && cp $$PWD/icons/86x86/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/86x86/apps/$${APP_NAME}.png
+INSTALLS += icons86
 
+scout_kirigami|scout_qtcontrols|scout_uuitk {
     appdata.path =$$PREFIX/share/metainfo
     appdata.files = packaging/osmscout-server.appdata.xml
     INSTALLS += appdata
 }
 
-scout_kirigami|scout_qtcontrols {
-    desktopfile.path = $$PREFIX/share/applications
-    desktopfile.files = $${TARGET}.desktop
-    INSTALLS += desktopfile
-}
+desktopfile.path = $$PREFIX/share/applications
+desktopfile.files = $${APP_NAME}.desktop
+INSTALLS += desktopfile
 
 # sources
 SOURCES += \
@@ -132,10 +130,5 @@ scout_uuitk {
         system($$command)|error("Failed to run: $$command")
         TRANSLATIONS_FILES += $$qmfile
     }
-}
-
-# misc options
-scout_silica {
-    SAILFISHAPP_ICONS = 86x86 108x108 128x128 256x256
 }
 

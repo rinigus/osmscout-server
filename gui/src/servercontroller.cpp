@@ -112,7 +112,8 @@ void ServerController::execute()
   setStatus(tr("Starting server"));
 
   m_process = new QProcess(this);
-  connect(m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished),
+  connect(m_process,
+          static_cast<void(QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
           this, &ServerController::executeCallback);
   connect(m_process, &QProcess::errorOccurred,
           this, &ServerController::executeCallbackForError);

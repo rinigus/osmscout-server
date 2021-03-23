@@ -58,7 +58,8 @@ BuildRequires:  desktop-file-utils
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:  mapnik-devel
-BuildRequires:  pkgconfig(libsystemd-daemon)
+#BuildRequires:  pkgconfig(libsystemd-daemon)
+BuildRequires:  pkgconfig(libsystemd)
 %else
 BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:  cmake(KF5Kirigami2)
@@ -77,9 +78,9 @@ Server providing map tiles, search, and routing
 %build
 
 %if 0%{?sailfishos}
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
+%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica' CONFIG+=use_dbusactivation
 %else
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami'
+%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=use_dbusactivation
 %endif
 
 make %{?_smp_mflags}
@@ -88,6 +89,7 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 make install INSTALL_ROOT=%{buildroot}
 
+ls -lR %{buildroot}
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
@@ -143,11 +145,13 @@ chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 %files
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
+%{_bindir}/%{name}-gui
 %{_datadir}/%{name}
+%{_datadir}/dbus-1/services/io.github.rinigus.OSMScoutServer.service
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
 %if 0%{?sailfishos}
-%{_datadir}/%{name}/translations
+%{_datadir}/%{name}-gui
 %else
 %{_datadir}/metainfo/%{name}.appdata.xml
 %endif

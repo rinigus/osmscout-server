@@ -26,6 +26,10 @@
 #include <QCoreApplication>
 #endif
 
+#ifdef IS_SAILFISH_OS
+#include <sailfishapp.h>
+#endif // of IS_SAILFISH_OS
+
 #include "consolelogger.h"
 #include "rollinglogger.h"
 
