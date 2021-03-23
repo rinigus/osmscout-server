@@ -49,7 +49,7 @@ scout_kirigami|scout_qtcontrols|scout_uuitk {
 }
 
 desktopfile.path = $$PREFIX/share/applications
-desktopfile.files = $${APP_NAME}.desktop
+desktopfile.files = $${TARGET}.desktop
 INSTALLS += desktopfile
 
 # sources

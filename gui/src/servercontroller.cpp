@@ -12,9 +12,10 @@
 
 #include <QDebug>
 
+
 ServerController::ServerController():
-  QDBusAbstractInterface(DBUS_INTERFACE_ROOT, DBUS_PATH_ROOT, DBUS_SERVICE,
-                         QDBusConnection::sessionBus(), nullptr)
+  m_dbus(DBUS_INTERFACE_ROOT, DBUS_PATH_ROOT, DBUS_SERVICE,
+         QDBusConnection::sessionBus(), nullptr)
 {
 }
 
@@ -39,8 +40,8 @@ void ServerController::activate()
 void ServerController::setStatus(const QString &status)
 {
   m_status = status;
-  emit statusChanged(m_status);
-  //qDebug() << status;
+  emit statusChanged();
+  qDebug() << m_status;
 }
 
 void ServerController::connectToServer()
@@ -81,7 +82,7 @@ void ServerController::networkCallback(QNetworkReply *reply)
 
 void ServerController::dbusActivate(bool full_activation)
 {
-  QDBusPendingCall pcall = asyncCall(QLatin1String("Connect"));
+  QDBusPendingCall pcall = m_dbus.asyncCall(QLatin1String("Connect"));
   if (full_activation)
     {
       setStatus(tr("Activating server via DBus"));

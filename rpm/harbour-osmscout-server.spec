@@ -89,8 +89,6 @@ make %{?_smp_mflags}
 rm -rf %{buildroot}
 make install INSTALL_ROOT=%{buildroot}
 
-ls -lR %{buildroot}
-
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
@@ -149,7 +147,7 @@ chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 %{_datadir}/%{name}
 %{_datadir}/dbus-1/services/io.github.rinigus.OSMScoutServer.service
 %{_datadir}/icons/hicolor/*/apps/%{name}.png
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{name}-gui.desktop
 %if 0%{?sailfishos}
 %{_datadir}/%{name}-gui
 %else

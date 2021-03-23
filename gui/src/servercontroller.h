@@ -3,13 +3,13 @@
 
 #include <QObject>
 
-#include <QDBusAbstractInterface>
+#include <QDBusInterface>
 #include <QDBusPendingCallWatcher>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QProcess>
 
-class ServerController: public QDBusAbstractInterface
+class ServerController: public QObject
 {
   Q_OBJECT
 
@@ -27,7 +27,7 @@ public slots:
   void connectToServer();
 
 signals:
-  void statusChanged(QString status);
+  void statusChanged();
 
 private:
   void networkActivate();
@@ -44,6 +44,7 @@ private:
 
 private:
   QNetworkAccessManager m_nam;
+  QDBusInterface m_dbus;
   QString m_status;
   QProcess *m_process{nullptr};
 };
