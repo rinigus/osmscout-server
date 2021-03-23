@@ -61,6 +61,7 @@ ApplicationWindowPL {
             app.pages.replace( Qt.resolvedUrl("StartPage.qml") );
         } else if (!service.available && started) {
             app.pages.pop(app.rootPage);
+            app.pages.completeAnimation();
             app.rootPage = null;
             app.pages.replace( Qt.resolvedUrl("WaitPage.qml"), {
                                   "message": qsTr("Error"),
