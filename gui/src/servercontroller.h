@@ -24,7 +24,7 @@ public:
   QString status() const { return m_status; }
 
 public slots:
-  void connectToServer();
+  void onAvailableChanged(bool available);
 
 signals:
   void statusChanged();

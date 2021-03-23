@@ -21,5 +21,5 @@ void TrackDBusService::serviceUpdate(const QString &/*service*/)
 {
   QDBusReply<QString> r = QDBusConnection::sessionBus().interface()->serviceOwner(DBUS_SERVICE);
   m_available = r.isValid();
-  emit availableChanged();
+  emit availableChanged(m_available);
 }

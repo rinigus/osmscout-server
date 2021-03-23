@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
 
   // reconnect to server if it appears
   QObject::connect(&service, &TrackDBusService::availableChanged,
-                   &serverController, &ServerController::connectToServer);
+                   &serverController, &ServerController::onAvailableChanged);
 
   // ////////////////////////////
   // QML setup

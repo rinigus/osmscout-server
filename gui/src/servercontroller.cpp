@@ -44,9 +44,9 @@ void ServerController::setStatus(const QString &status)
   qDebug() << m_status;
 }
 
-void ServerController::connectToServer()
+void ServerController::onAvailableChanged(bool available)
 {
-  dbusActivate(false); // just call method
+  if (available) dbusActivate(false); // just call method
 }
 
 void ServerController::networkActivate()

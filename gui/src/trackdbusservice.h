@@ -15,7 +15,7 @@ public:
   bool available() const { return m_available; }
 
 signals:
-  void availableChanged();
+  void availableChanged(bool available);
 
 private:
   void serviceUpdate(const QString &service);
