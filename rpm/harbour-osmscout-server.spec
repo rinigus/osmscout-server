@@ -57,7 +57,6 @@ BuildRequires:  desktop-file-utils
 %if 0%{?sailfishos}
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
-BuildRequires:  libosmscout-qt-devel
 BuildRequires:  mapnik-devel
 BuildRequires:  pkgconfig(libsystemd-daemon)
 %else
@@ -80,7 +79,7 @@ Server providing map tiles, search, and routing
 %if 0%{?sailfishos}
 %qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica'
 %else
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=disable_osmscout
+%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami'
 %endif
 
 make %{?_smp_mflags}
