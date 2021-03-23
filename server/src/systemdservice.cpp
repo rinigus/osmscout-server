@@ -81,7 +81,7 @@ void SystemDService::setEnabled(bool e)
               "[Unit]\n"
               "Description=OSM Scout Server\n\n"
               "[Service]\n"
-              "ExecStart=" + exe_path + " --console --systemd --quiet\n";
+              "ExecStart=" + exe_path + " --systemd --quiet\n";
 
           QDir dir;
           QString path = QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/.config/systemd/user";
