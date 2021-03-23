@@ -149,7 +149,11 @@ int main(int argc, char *argv[])
                                          QCoreApplication::translate("main", "Run the server in DBus activated mode"));
   parser.addOption(optionDBusActivated);
 
-  // Process the actual command line arguments given by the user
+  QCommandLineOption optionConsole(QStringList() << "console",
+                                   "Deprecated, not used anymore. Kept for compatibility with old systemd .service files");
+  parser.addOption(optionConsole);
+
+    // Process the actual command line arguments given by the user
   parser.process(*app);
 
   // check logger related options
