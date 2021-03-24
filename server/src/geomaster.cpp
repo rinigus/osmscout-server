@@ -32,11 +32,18 @@
 
 #include <map>
 
-GeoMaster::GeoMaster(QObject *parent) : QObject(parent)
+GeoMaster* GeoMaster::s_instance = nullptr;
+
+GeoMaster::GeoMaster()
 {
   onSettingsChanged();
 }
 
+GeoMaster* GeoMaster::instance()
+{
+  if (!s_instance) s_instance = new GeoMaster();
+  return s_instance;
+}
 
 void GeoMaster::onSettingsChanged()
 {

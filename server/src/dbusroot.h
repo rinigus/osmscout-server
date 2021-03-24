@@ -22,7 +22,9 @@
 
 #include "config.h"
 
+#include <QDBusMessage>
 #include <QMap>
+#include <QSet>
 #include <QString>
 #include <QStringList>
 #include <QVariant>
@@ -40,6 +42,8 @@ public slots:
   void Open(QStringList uris, QMap<QString, QVariant> platform_data);
   void ActivateAction(QString action_name, QVariantList parameter, QMap<QString, QVariant> platform_data);
 
+  void Connect(const QDBusMessage &message);
+
 public:
 
   DBusRoot(QString host, int port, QObject *parent = nullptr);
@@ -48,6 +52,7 @@ public:
 
 protected:
   QString m_url;
+  QSet<QString> m_clients;
 };
 
 #endif // DBUSROOT_H

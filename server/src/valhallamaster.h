@@ -40,8 +40,12 @@ class ValhallaMaster : public QObject
 public:
   enum ActorType { Height, Isochrone, Locate, Matrix, OptimizedRoute, Route, TraceAttributes, TraceRoute };
 
-public:
+protected:
   explicit ValhallaMaster(QObject *parent = 0);
+
+public:
+  static ValhallaMaster* instance();
+
   virtual ~ValhallaMaster();
 
   /// \brief Call Valhalla's action
@@ -85,6 +89,8 @@ protected:
   const QString const_tag_limit_max_distance_auto{"LIMIT_MAX_DISTANCE_AUTO"};
   const QString const_tag_limit_max_distance_bicycle{"LIMIT_MAX_DISTANCE_BICYCLE"};
   const QString const_tag_limit_max_distance_pedestrian{"LIMIT_MAX_DISTANCE_PEDESTRIAN"};
+
+  static ValhallaMaster* s_instance;
 };
 
 #endif // USE_VALHALLA

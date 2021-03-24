@@ -22,6 +22,7 @@
 #include "infohub.h"
 #include "appsettings.h"
 #include "config.h"
+#include "geocoder.h"
 
 #ifdef USE_OSMSCOUT
 // for libosmscout file version

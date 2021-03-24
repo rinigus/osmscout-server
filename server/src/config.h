@@ -29,29 +29,7 @@
 //////////////////////////////////////////////
 /// global variables
 
-#include "dbmaster.h"
-#include "geomaster.h"
-#include "mapboxglmaster.h"
-#include "mapnikmaster.h"
-#include "valhallamaster.h"
-
 #include <atomic>
-
-#ifdef USE_OSMSCOUT
-extern DBMaster *osmScoutMaster;
-#endif
-
-extern GeoMaster *geoMaster;
-
-extern MapboxGLMaster *mapboxglMaster;
-
-#ifdef USE_MAPNIK
-extern MapnikMaster *mapnikMaster;
-#endif
-
-#ifdef USE_VALHALLA
-extern ValhallaMaster *valhallaMaster;
-#endif
 
 extern std::atomic<bool> useGeocoderNLP;
 extern std::atomic<bool> useMapnik;

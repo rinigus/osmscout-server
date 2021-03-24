@@ -33,12 +33,14 @@
 #include <algorithm>
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
+#include <cmath>
 #include <exception>
 
 #include <valhalla/midgard/logging.h>
 
 #include <QDebug>
 
+ValhallaMaster* ValhallaMaster::s_instance = nullptr;
 
 // Logger class to send messages to InfoHub
 class ValhallaLogger: public valhalla::midgard::logging::Logger
@@ -88,6 +90,13 @@ ValhallaMaster::ValhallaMaster(QObject *parent) : QObject(parent)
 
   onSettingsChanged();
 }
+
+ValhallaMaster* ValhallaMaster::instance()
+{
+  if (!s_instance) s_instance = new ValhallaMaster();
+  return s_instance;
+}
+
 
 ValhallaMaster::~ValhallaMaster()
 {

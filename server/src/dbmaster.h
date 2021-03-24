@@ -45,8 +45,11 @@ class DBMaster: public QObject
 {
     Q_OBJECT
 
-public:
+protected:
     DBMaster();
+
+public:
+    static DBMaster* instance();
     virtual ~DBMaster();
 
     bool renderMap(bool daylight, double dpi, int zoom_level, int width, int height, double lat, double lon, QByteArray &result);
@@ -118,6 +121,8 @@ protected:
     osmscout::DatabaseRef m_database;
     osmscout::MapServiceRef m_map_service;
     osmscout::StyleConfigRef m_style_config;
+
+    static DBMaster* s_instance;
 };
 
 #endif // USE_OSMSCOUT

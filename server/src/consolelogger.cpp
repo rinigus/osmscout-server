@@ -23,11 +23,9 @@
 #include <QDebug>
 #include <iostream>
 
-extern InfoHub infoHub;
-
 ConsoleLogger::ConsoleLogger(QObject *parent) : QObject(parent)
 {
-  connect( &infoHub, &InfoHub::log,
+  connect( InfoHub::instance(), &InfoHub::log,
            this, &ConsoleLogger::log );
 }
 

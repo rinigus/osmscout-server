@@ -41,9 +41,11 @@ class InfoHub : public QObject
   /// number of jobs in running queue (running and waiting)
   Q_PROPERTY(int queue READ queue NOTIFY queueChanged)
 
-public:
+protected:
   explicit InfoHub(QObject *parent = 0);
 
+public:
+  static InfoHub* instance();
   static void setError(bool e);
   bool error();
 
@@ -90,6 +92,8 @@ protected:
   int m_queue = 0;
 
   QFile m_log_file;
+
+  static InfoHub *s_instance;
 };
 
 #endif // INFOHUB_H

@@ -33,8 +33,12 @@ class MapboxGLMaster : public QObject
 {
   Q_OBJECT
 
-public:
+protected:
   explicit MapboxGLMaster(QObject *parent = nullptr);
+
+public:
+  static MapboxGLMaster* instance();
+
   virtual ~MapboxGLMaster();
 
   bool getTile(int x, int y, int z, QByteArray &result, bool &compressed, bool &found);
@@ -71,6 +75,8 @@ protected:
   const QString const_conn_prefix{"mapboxgl: "};
 
   const QString const_tag_hostname_port{"HOSTNAMEPORT"};
+
+  static MapboxGLMaster *s_instance;
 };
 
 #endif // MAPBOXGLMASTER_H

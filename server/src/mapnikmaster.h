@@ -44,8 +44,11 @@ class MapnikMaster : public QObject
 {
   Q_OBJECT
 
-public:
+protected:
   explicit MapnikMaster(QObject *parent = 0);
+
+public:
+  static MapnikMaster* instance();
   virtual ~MapnikMaster();
 
   bool renderMap(const QString &style, bool daylight,
@@ -114,6 +117,8 @@ protected:
 
     const QString const_xml{"mapnik.xml"};
     const QString const_dir{"mapnik"};
+
+    static MapnikMaster *s_instance;
 };
 
 #endif // MAPNIKMASTER_H

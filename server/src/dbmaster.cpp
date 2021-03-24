@@ -27,6 +27,8 @@
 #include <QMutexLocker>
 #include <QDebug>
 
+DBMaster* DBMaster::s_instance = nullptr;
+
 DBMaster::DBMaster()
 {
   m_database = osmscout::DatabaseRef(new osmscout::Database(m_database_parameter));
@@ -43,6 +45,12 @@ DBMaster::DBMaster()
     }
 
   loadSettings();
+}
+
+DBMaster* DBMaster::instance()
+{
+  if (!s_instance) s_instance = new DBMaster();
+  return s_instance;
 }
 
 DBMaster::~DBMaster()

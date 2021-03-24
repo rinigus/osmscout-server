@@ -29,6 +29,8 @@
 
 #include <QDebug>
 
+MapboxGLMaster* MapboxGLMaster::s_instance = nullptr;
+
 MapboxGLMaster::MapboxGLMaster(QObject *parent) : QObject(parent)
 {
   AppSettings settings;
@@ -37,6 +39,12 @@ MapboxGLMaster::MapboxGLMaster(QObject *parent) : QObject(parent)
   int port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
 
   m_hostname_port = host + ":" + QString::number(port);
+}
+
+MapboxGLMaster* MapboxGLMaster::instance()
+{
+  if (!s_instance) s_instance = new MapboxGLMaster();
+  return s_instance;
 }
 
 MapboxGLMaster::~MapboxGLMaster()

@@ -18,8 +18,13 @@
  */
 
 #include "requestmapper.h"
+
 #include "dbmaster.h"
 #include "geomaster.h"
+#include "mapboxglmaster.h"
+#include "mapnikmaster.h"
+#include "valhallamaster.h"
+
 #include "infohub.h"
 #include "config.h"
 #include "appsettings.h"
@@ -465,7 +470,7 @@ unsigned int RequestMapper::service(const char *url_c,
 #endif
         {
           task = new Task(connection_id,
-                          std::bind(&MapnikMaster::renderMap, mapnikMaster,
+                          std::bind(&MapnikMaster::renderMap, MapnikMaster::instance(),
                                     style, daylight, 256*scale, 256*scale,
                                     tiley2lat(y, z), tilex2long(x, z),
                                     tiley2lat(y+1, z), tilex2long(x+1, z), std::placeholders::_1),
@@ -479,7 +484,7 @@ unsigned int RequestMapper::service(const char *url_c,
         {
           int ntiles = 1 << shift;
           task = new Task(connection_id,
-                          std::bind(&DBMaster::renderMap, osmScoutMaster,
+                          std::bind(&DBMaster::renderMap, DBMaster::instance(),
                                     daylight, 96*scale/ntiles, z + shift, 256*scale, 256*scale,
                                     (tiley2lat(y, z) + tiley2lat(y+1, z))/2.0,
                                     (tilex2long(x, z) + tilex2long(x+1, z))/2.0, std::placeholders::_1),
@@ -519,7 +524,7 @@ unsigned int RequestMapper::service(const char *url_c,
           bool found = true;
           QByteArray bytes;
 
-          if (!mapboxglMaster->getTile(x, y, z, bytes, compressed, found))
+          if (!MapboxGLMaster::instance()->getTile(x, y, z, bytes, compressed, found))
             {
               errorText(response, connection_id, "Error while getting Mapbox GL tile");
               return MHD_HTTP_INTERNAL_SERVER_ERROR;
@@ -560,7 +565,7 @@ unsigned int RequestMapper::service(const char *url_c,
       fname.replace("@2x", "");
       if (fname.endsWith(".png"))
         {
-          if (!mapboxglMaster->getSpriteImage(fname, bytes))
+          if (!MapboxGLMaster::instance()->getSpriteImage(fname, bytes))
             {
               errorText(response, connection_id, "Error while getting Mapbox GL sprite image file");
               return MHD_HTTP_NOT_FOUND;
@@ -571,7 +576,7 @@ unsigned int RequestMapper::service(const char *url_c,
         }
       else if (fname.endsWith(".json"))
         {
-          if (!mapboxglMaster->getSpriteJson(fname, bytes))
+          if (!MapboxGLMaster::instance()->getSpriteJson(fname, bytes))
             {
               errorText(response, connection_id, "Error while getting Mapbox GL sprite JSON file");
               return MHD_HTTP_NOT_FOUND;
@@ -605,7 +610,7 @@ unsigned int RequestMapper::service(const char *url_c,
           bool found = true;
           QByteArray bytes;
 
-          if (!mapboxglMaster->getGlyphs(stack, range, bytes, compressed, found))
+          if (!MapboxGLMaster::instance()->getGlyphs(stack, range, bytes, compressed, found))
             {
               errorText(response, connection_id, "Error while getting Mapbox GL glyphs");
               return MHD_HTTP_INTERNAL_SERVER_ERROR;
@@ -641,7 +646,7 @@ unsigned int RequestMapper::service(const char *url_c,
       if (ok)
         {
           QByteArray bytes;
-          if (!mapboxglMaster->getStyle(style, bytes))
+          if (!MapboxGLMaster::instance()->getStyle(style, bytes))
             {
               errorText(response, connection_id, "Error while getting Mapbox GL style");
               return MHD_HTTP_NOT_FOUND;
@@ -690,13 +695,13 @@ unsigned int RequestMapper::service(const char *url_c,
 #ifdef USE_OSMSCOUT
       if ( !useGeocoderNLP )
         task = new Task(connection_id,
-                        std::bind( &DBMaster::searchExposed, osmScoutMaster,
+                        std::bind( &DBMaster::searchExposed, DBMaster::instance(),
                                    search, std::placeholders::_1, limit),
                         "Error while searching");
       else
 #endif
         task = new Task(connection_id,
-                        std::bind( &GeoMaster::searchExposed, geoMaster,
+                        std::bind( &GeoMaster::searchExposed, GeoMaster::instance(),
                                    search, std::placeholders::_1, limit,
                                    extended_reply),
                         "Error while searching");
@@ -750,13 +755,13 @@ unsigned int RequestMapper::service(const char *url_c,
 #ifdef USE_OSMSCOUT
           if ( !useGeocoderNLP )
             task = new Task(connection_id,
-                            std::bind(&DBMaster::guide, osmScoutMaster,
+                            std::bind(&DBMaster::guide, DBMaster::instance(),
                                       poitype, lat, lon, radius, limit, std::placeholders::_1),
                             "Error while looking for POIs in guide");
           else
 #endif
             task = new Task(connection_id,
-                            std::bind(&GeoMaster::guide, geoMaster,
+                            std::bind(&GeoMaster::guide, GeoMaster::instance(),
                                       poitype, name_query, true, lat, lon, route_lat, route_lon, radius, limit, std::placeholders::_1),
                             "Error while looking for POIs in guide");
 
@@ -770,10 +775,10 @@ unsigned int RequestMapper::service(const char *url_c,
 #ifdef USE_OSMSCOUT
           if ( !useGeocoderNLP )
             {
-              if (osmScoutMaster->search(search, lat, lon, name))
+              if (DBMaster::instance()->search(search, lat, lon, name))
                 {
                   Task *task = new Task(connection_id,
-                                        std::bind(&DBMaster::guide, osmScoutMaster,
+                                        std::bind(&DBMaster::guide, DBMaster::instance(),
                                                   poitype, lat, lon, radius, limit, std::placeholders::_1),
                                         "Error while looking for POIs in guide");
                   m_pool.start(task);
@@ -788,10 +793,10 @@ unsigned int RequestMapper::service(const char *url_c,
           else
 #endif
             {
-              if (geoMaster->search(search, lat, lon, name))
+              if (GeoMaster::instance()->search(search, lat, lon, name))
                 {
                   Task *task = new Task(connection_id,
-                                        std::bind(&GeoMaster::guide, geoMaster,
+                                        std::bind(&GeoMaster::guide, GeoMaster::instance(),
                                                   poitype, name_query, true, lat, lon, route_lat, route_lon, radius, limit, std::placeholders::_1),
                                         "Error while looking for POIs in guide");
                   m_pool.start(task);
@@ -809,7 +814,7 @@ unsigned int RequestMapper::service(const char *url_c,
       else if (useGeocoderNLP && route_lat.size() > 0)
         {
           Task *task = new Task(connection_id,
-                                std::bind(&GeoMaster::guide, geoMaster,
+                                std::bind(&GeoMaster::guide, GeoMaster::instance(),
                                           poitype, name_query, false, lat, lon, route_lat, route_lon, radius, limit, std::placeholders::_1),
                                 "Error while looking for POIs in guide");
           m_pool.start(task);
@@ -834,7 +839,7 @@ unsigned int RequestMapper::service(const char *url_c,
 #ifdef USE_OSMSCOUT
       if ( !useGeocoderNLP )
         {
-          if (!osmScoutMaster->poiTypes(bytes))
+          if (!DBMaster::instance()->poiTypes(bytes))
             {
               errorText(response, connection_id, "Error while listing available POI types using libosmscout");
               return MHD_HTTP_INTERNAL_SERVER_ERROR;
@@ -843,7 +848,7 @@ unsigned int RequestMapper::service(const char *url_c,
       else
 #endif
         {
-          if (!geoMaster->poiTypes(bytes))
+          if (!GeoMaster::instance()->poiTypes(bytes))
             {
               errorText(response, connection_id, "Error while listing available POI types using geocoder-nlp");
               return MHD_HTTP_INTERNAL_SERVER_ERROR;
@@ -902,8 +907,8 @@ unsigned int RequestMapper::service(const char *url_c,
               double lat, lon;
               std::string name;
               bool unlp = useGeocoderNLP;
-              if ( (unlp && geoMaster->search(search, lat, lon, name)) ||
-                   (!unlp && osmScoutMaster->search(search, lat, lon, name)) )
+              if ( (unlp && GeoMaster::instance()->search(search, lat, lon, name)) ||
+                   (!unlp && DBMaster::instance()->search(search, lat, lon, name)) )
                 {
                   osmscout::GeoCoord c(lat,lon);
                   points.push_back(c);
@@ -933,7 +938,7 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       Task *task = new Task(connection_id,
-                            std::bind(&DBMaster::route, osmScoutMaster,
+                            std::bind(&DBMaster::route, DBMaster::instance(),
                                       vehicle, points, radius, names, gpx, std::placeholders::_1),
                             "Error while looking for route");
       m_pool.start(task);
@@ -1002,7 +1007,7 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       Task *task = new Task(connection_id,
-                            std::bind(&ValhallaMaster::callActor, valhallaMaster,
+                            std::bind(&ValhallaMaster::callActor, ValhallaMaster::instance(),
                                       actor, json.toLatin1(), std::placeholders::_1),
                             "Error while looking for route via Valhalla");
       m_pool.start(task);
@@ -1070,7 +1075,7 @@ unsigned int RequestMapper::service(const char *url_c,
         }
 
       Task *task = new Task(connection_id,
-                            std::bind(&DBMaster::route, osmScoutMaster,
+                            std::bind(&DBMaster::route, DBMaster::instance(),
                                       vehicle, points, radius, names, gpx, std::placeholders::_1),
                             "Error while looking for route");
       m_pool.start(task);

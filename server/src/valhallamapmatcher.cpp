@@ -20,12 +20,16 @@
 #ifdef USE_VALHALLA
 
 #include "valhallamapmatcher.h"
+
 #include "config.h"
 #include "infohub.h"
+#include "valhallamaster.h"
 
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+
+#include <cmath>
 
 #include <QDebug>
 
@@ -124,7 +128,7 @@ QString ValhallaMapMatcher::update(double lat, double lon, double accuracy)
   fillRequest(shape, accuracy, request);
 
   QByteArray res;
-  bool match = valhallaMaster->callActor(ValhallaMaster::TraceAttributes, request, res);
+  bool match = ValhallaMaster::instance()->callActor(ValhallaMaster::TraceAttributes, request, res);
   QJsonObject dres = QJsonDocument::fromJson(res).object();
   QJsonArray points = dres.value("matched_points").toArray();
   QJsonArray edges = dres.value("edges").toArray();

@@ -48,8 +48,11 @@ class GeoMaster : public QObject
   /// language selection
   Q_PROPERTY(bool warnLargeRamLangNotSpecified READ warnLargeRamLangNotSpecified NOTIFY warnLargeRamLangNotSpecifiedChanged)
 
+protected:
+  explicit GeoMaster();
+
 public:
-  explicit GeoMaster(QObject *parent = 0);
+  static GeoMaster* instance();
 
   ////////////////////////////////////////////////////////////////////////////
   /// \brief Search for a pattern and return results as a JSON array written to QByteString
@@ -131,6 +134,8 @@ protected:
   QHash<QString, QString> m_tag_to_alias;         ///< mapping from geocoder tags to preferred alias
   QHash<QString, QSet<QString> > m_alias_to_tag;  ///< mapping from alias to geocoder tags
   QStringList m_aliases;
+
+  static GeoMaster *s_instance;
 };
 
 #endif // GEOMASTER_H

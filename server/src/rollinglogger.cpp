@@ -22,11 +22,9 @@
 #include "appsettings.h"
 #include "config.h"
 
-extern InfoHub infoHub;
-
 RollingLogger::RollingLogger(QObject *parent) : QObject(parent)
 {
-    connect( &infoHub, &InfoHub::log,
+    connect( InfoHub::instance(), &InfoHub::log,
              this, &RollingLogger::logEntry );
 }
 

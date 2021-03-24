@@ -46,6 +46,7 @@
 
 #include <QDebug>
 
+MapnikMaster* MapnikMaster::s_instance = nullptr;
 
 MapnikMaster::MapnikMaster(QObject *parent) :
   QObject(parent),
@@ -72,6 +73,13 @@ MapnikMaster::MapnikMaster(QObject *parent) :
 
   onSettingsChanged();
 }
+
+MapnikMaster* MapnikMaster::instance()
+{
+  if (!s_instance) s_instance = new MapnikMaster();
+  return s_instance;
+}
+
 
 MapnikMaster::~MapnikMaster()
 {

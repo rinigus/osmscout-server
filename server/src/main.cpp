@@ -44,11 +44,11 @@
 #include "valhallamapmatcherdbus.h"
 #include "valhallamapmatcherdbusadaptor.h"
 
-// LIB OSM Scout interface
 #include "dbmaster.h"
-
-// Geocoder-NLP interface
 #include "geomaster.h"
+#include "mapboxglmaster.h"
+#include "mapnikmaster.h"
+#include "valhallamaster.h"
 
 #include "mapmanager.h"
 #include "infohub.h"
@@ -70,9 +70,6 @@
 #ifdef USE_CURL
 #include <curl/curl.h>
 #endif
-
-// this is needed for connection with signals. Otherwise, access via static members
-extern InfoHub infoHub;
 
 ////////////////////////////////////////////////
 
@@ -171,7 +168,7 @@ int main(int argc, char *argv[])
   AppSettings settings;
   settings.initDefaults();
 
-  infoHub.onSettingsChanged();
+  InfoHub::instance()->onSettingsChanged();
 
   // establish d-bus connection
   QDBusConnection dbusconnection = QDBusConnection::sessionBus();
@@ -228,27 +225,21 @@ int main(int argc, char *argv[])
   rolling_logger.onSettingsChanged();
 
   // setup Geocoder-NLP
-  geoMaster = new GeoMaster();
-
-  if (geoMaster == nullptr)
+  if (GeoMaster::instance() == nullptr)
     {
       std::cerr << "Failed to allocate GeoMaster" << std::endl;
       return -2;
     }
 
   // setup Mapbox GL
-  mapboxglMaster = new MapboxGLMaster();
-  if (mapboxglMaster == nullptr)
+  if (MapboxGLMaster::instance() == nullptr)
     {
       std::cerr << "Failed to allocate MapboxGLMaster" << std::endl;
       return -3;
     }
 
 #ifdef USE_MAPNIK
-  // setup Mapnik
-  mapnikMaster = new MapnikMaster();
-
-  if (mapnikMaster == nullptr)
+  if (MapnikMaster::instance() == nullptr)
     {
       std::cerr << "Failed to allocate MapnikMaster" << std::endl;
       return -4;
@@ -256,10 +247,7 @@ int main(int argc, char *argv[])
 #endif
 
 #ifdef USE_VALHALLA
-  // setup for Valhalla
-  valhallaMaster = new ValhallaMaster(app.data());
-
-  if (valhallaMaster == nullptr)
+  if (ValhallaMaster::instance() == nullptr)
     {
       std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
       return -5;
@@ -268,22 +256,22 @@ int main(int argc, char *argv[])
 
 #ifdef USE_OSMSCOUT
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    osmScoutMaster, &DBMaster::onSettingsChanged );
+                    DBMaster::instance(), &DBMaster::onSettingsChanged );
 #endif
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    geoMaster, &GeoMaster::onSettingsChanged );
+                    GeoMaster::instance(), &GeoMaster::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    mapboxglMaster, &MapboxGLMaster::onSettingsChanged );
+                    MapboxGLMaster::instance(), &MapboxGLMaster::onSettingsChanged );
 #ifdef USE_MAPNIK
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    mapnikMaster, &MapnikMaster::onSettingsChanged );
+                    MapnikMaster::instance(), &MapnikMaster::onSettingsChanged );
 #endif
 #ifdef USE_VALHALLA
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    valhallaMaster, &ValhallaMaster::onSettingsChanged );
+                    ValhallaMaster::instance(), &ValhallaMaster::onSettingsChanged );
 #endif
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    &infoHub, &InfoHub::onSettingsChanged );
+                    InfoHub::instance(), &InfoHub::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &manager, &MapManager::Manager::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -293,24 +281,24 @@ int main(int argc, char *argv[])
 
 #ifdef USE_OSMSCOUT
   QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,
-                    osmScoutMaster, &DBMaster::onDatabaseChanged );
+                    DBMaster::instance(), &DBMaster::onDatabaseChanged );
 #endif
 
   QObject::connect( &manager, &MapManager::Manager::databaseGeocoderNLPChanged,
-                    geoMaster, &GeoMaster::onGeocoderNLPChanged);
+                    GeoMaster::instance(), &GeoMaster::onGeocoderNLPChanged);
   QObject::connect( &manager, &MapManager::Manager::databasePostalChanged,
-                    geoMaster, &GeoMaster::onPostalChanged);
+                    GeoMaster::instance(), &GeoMaster::onPostalChanged);
   QObject::connect( &manager, &MapManager::Manager::selectedMapChanged,
-                    geoMaster, &GeoMaster::onSelectedMapChanged);
+                    GeoMaster::instance(), &GeoMaster::onSelectedMapChanged);
   QObject::connect( &manager, &MapManager::Manager::databaseMapboxGLChanged,
-                    mapboxglMaster, &MapboxGLMaster::onMapboxGLChanged );
+                    MapboxGLMaster::instance(), &MapboxGLMaster::onMapboxGLChanged );
 #ifdef USE_MAPNIK
   QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
-                    mapnikMaster, &MapnikMaster::onMapnikChanged );
+                    MapnikMaster::instance(), &MapnikMaster::onMapnikChanged );
 #endif
 #ifdef USE_VALHALLA
   QObject::connect( &manager, &MapManager::Manager::databaseValhallaChanged,
-                    valhallaMaster, &ValhallaMaster::onValhallaChanged );
+                    ValhallaMaster::instance(), &ValhallaMaster::onValhallaChanged );
 #endif
 
   if (console_logger)
@@ -334,7 +322,7 @@ int main(int argc, char *argv[])
   int return_code = 0;
 
 #ifdef USE_VALHALLA
-  valhallaMaster->start();
+  ValhallaMaster::instance()->start();
 #endif
 
   // prepare server by processing all outstanding events
@@ -373,7 +361,7 @@ int main(int argc, char *argv[])
     #endif
         )
       {
-        QObject::connect(&infoHub, &InfoHub::activitySig,
+        QObject::connect(InfoHub::instance(), &InfoHub::activitySig,
                          &requests, &RequestMapper::updateLastCall,
                          Qt::QueuedConnection);
         QObject::connect(&requests, &RequestMapper::idleTimeout,
@@ -394,8 +382,8 @@ int main(int argc, char *argv[])
     valhallaMapMatcherDBus.activate();
 #endif
 
-    new InfoHubDBusAdaptor(&infoHub);
-    if (!dbusconnection.registerObject(DBUS_PATH_INFOHUB, &infoHub))
+    new InfoHubDBusAdaptor(InfoHub::instance());
+    if (!dbusconnection.registerObject(DBUS_PATH_INFOHUB, InfoHub::instance()))
       InfoHub::logWarning(
             QCoreApplication::translate("main",
                                         "Failed to register DBus object: %1").arg(DBUS_PATH_INFOHUB));
@@ -412,7 +400,7 @@ int main(int argc, char *argv[])
              QCoreApplication::translate("main", \
              "Failed to register DBus object: %1").arg(path));
 
-    DBUSREG(DBUS_PATH_GEOMASTER, geoMaster,
+    DBUSREG(DBUS_PATH_GEOMASTER, GeoMaster::instance(),
             QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
 
     DBUSREG(DBUS_PATH_LOGGER, &rolling_logger,
