@@ -20,6 +20,8 @@
 #ifdef USE_VALHALLA
 
 #include "valhallamapmatcherdbus.h"
+
+#include "dbustracker.h"
 #include "infohub.h"
 
 #include <QDebug>
@@ -27,6 +29,8 @@
 ValhallaMapMatcherDBus::ValhallaMapMatcherDBus(QObject *parent):
   QObject(parent)
 {
+  connect(DBusTracker::instance(), &DBusTracker::serviceDisappeared,
+          this, &ValhallaMapMatcherDBus::dbusServiceDisappeared);
 }
 
 ValhallaMapMatcherDBus::~ValhallaMapMatcherDBus()
@@ -48,6 +52,8 @@ QString ValhallaMapMatcherDBus::update(int mode, double lat, double lon, double 
       if ( c.isNull() ||
           !c->start() )
         return "{\"error\": \"Failed to allocate or start Map Matcher\"}";
+
+      DBusTracker::instance()->track(caller);
     }
   return c->update(lat, lon, accuracy);
 }
@@ -75,10 +81,9 @@ bool ValhallaMapMatcherDBus::stop(const QDBusMessage &message)
   return true;
 }
 
-void ValhallaMapMatcherDBus::onNameOwnerChanged(QString name, QString /*old_owner*/, QString new_owner)
+void ValhallaMapMatcherDBus::dbusServiceDisappeared(QString name)
 {
-  if (new_owner.length() < 1 &&
-      m_matchers.contains(name))
+  if (m_matchers.contains(name))
     {
       InfoHub::logInfo(tr("Closing map matching service for DBus client %1").arg(name));
       m_matchers.remove(name);

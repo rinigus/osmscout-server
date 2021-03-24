@@ -40,6 +40,8 @@ public:
 
   void activate();
 
+  void dbusServiceDisappeared(QString service);
+
 public slots:
   //////////////////////////////////////////////////////////////////////////////////////////
   /// NB! when adding slots for DBus export, don't forget to add them in the adaptor as well
@@ -49,9 +51,6 @@ public slots:
   bool reset(int mode, const QDBusMessage &message);
   bool stop(int mode, const QDBusMessage &message);
   bool stop(const QDBusMessage &message);
-
-  // used to track lost clients - not for export on dbus
-  void onNameOwnerChanged(QString name, QString old_owner, QString new_owner);
 
 signals:
   void activeChanged(bool);
