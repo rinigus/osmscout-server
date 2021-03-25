@@ -10,6 +10,7 @@
 #include "appsettings.h"
 #include "dbustracker.h"
 #include "infohub.h"
+#include "mapmanager.h"
 
 #include <iostream>
 
@@ -30,6 +31,8 @@ IdleTracker::IdleTracker(bool dbusOnly, QObject *parent):
           this, &IdleTracker::registerCall, Qt::QueuedConnection);
   connect(DBusTracker::instance(), &DBusTracker::serviceDisappeared,
           this, &IdleTracker::onServiceDisappeared, Qt::QueuedConnection);
+  connect(MapManager::Manager::instance(), &MapManager::Manager::downloadingChanged,
+          this, &IdleTracker::checkIdle);
 }
 
 void IdleTracker::registerCall()
@@ -55,6 +58,7 @@ void IdleTracker::onServiceDisappeared(QString /*service*/)
 void IdleTracker::checkIdle()
 {
   if (DBusTracker::instance()->numberOfServices() > 0) return;
+  if (MapManager::Manager::instance()->downloading()) return;
 
   // no dbus clients anymore
   if (m_dbus_only)
