@@ -72,6 +72,7 @@ void ServerController::networkCallback(QNetworkReply *reply)
   if (success)
     {
       setStatus(tr("Server reached via network"));
+      onAvailableChanged(true);
       return;
     }
 
