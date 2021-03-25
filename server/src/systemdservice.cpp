@@ -34,9 +34,17 @@
 
 #define SCTL "systemctl"
 
+SystemDService* SystemDService::s_instance = nullptr;
+
 SystemDService::SystemDService(QObject *parent) : QObject(parent)
 {
   update();
+}
+
+SystemDService* SystemDService::instance()
+{
+  if (!s_instance) s_instance = new SystemDService();
+  return s_instance;
 }
 
 void SystemDService::update()

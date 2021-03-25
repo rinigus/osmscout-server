@@ -18,7 +18,7 @@ class IdleTracker : public QObject
   Q_OBJECT
 
 public:
-  explicit IdleTracker(bool dbusOnly, QObject *parent = nullptr);
+  explicit IdleTracker(QObject *parent = nullptr);
 
   void setDBusOnly();
 
@@ -34,8 +34,6 @@ protected:
   void checkIdle();
 
 private:
-  bool m_dbus_only;
-
   QTimer m_timer;
   struct timespec m_last_call;
   double m_idle_timeout;

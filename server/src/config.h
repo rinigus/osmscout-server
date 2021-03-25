@@ -31,6 +31,10 @@
 
 #include <atomic>
 
+extern bool startedByDaemon;
+extern bool startedByDBus;
+extern bool startedBySystemD;
+
 extern std::atomic<bool> useGeocoderNLP;
 extern std::atomic<bool> useMapnik;
 extern std::atomic<bool> useValhalla;

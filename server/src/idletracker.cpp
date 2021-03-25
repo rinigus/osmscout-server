@@ -8,15 +8,15 @@
 #include "idletracker.h"
 
 #include "appsettings.h"
+#include "config.h"
 #include "dbustracker.h"
 #include "infohub.h"
 #include "mapmanager.h"
+#include "systemdservice.h"
 
 #include <iostream>
 
-IdleTracker::IdleTracker(bool dbusOnly, QObject *parent):
-  QObject(parent),
-  m_dbus_only(dbusOnly)
+IdleTracker::IdleTracker(QObject *parent): QObject(parent)
 {
   onSettingsChanged();
 
@@ -32,6 +32,8 @@ IdleTracker::IdleTracker(bool dbusOnly, QObject *parent):
   connect(DBusTracker::instance(), &DBusTracker::serviceDisappeared,
           this, &IdleTracker::onServiceDisappeared, Qt::QueuedConnection);
   connect(MapManager::Manager::instance(), &MapManager::Manager::downloadingChanged,
+          this, &IdleTracker::checkIdle);
+  connect(SystemDService::instance(), &SystemDService::enabledChanged,
           this, &IdleTracker::checkIdle);
 }
 
@@ -57,17 +59,22 @@ void IdleTracker::onServiceDisappeared(QString /*service*/)
 
 void IdleTracker::checkIdle()
 {
+  // keep running if there are dbus clients
   if (DBusTracker::instance()->numberOfServices() > 0) return;
-  if (MapManager::Manager::instance()->downloading()) return;
 
-  // no dbus clients anymore
-  if (m_dbus_only)
+  // no dbus clients anymore: stop if started by dbus or systemd that got
+  // later disabled by user
+  if (startedByDBus || (startedBySystemD && !SystemDService::instance()->enabled()))
     {
       std::cout << "Idle: no more DBus clients" << std::endl;
       emit idleTimeout();
       return;
     }
 
+  // started by daemon mode or systemd: keep running if downloading
+  if (MapManager::Manager::instance()->downloading()) return;
+
+  // no idle timeout specified
   if (m_idle_timeout <= 0) return;
 
   struct timespec now;

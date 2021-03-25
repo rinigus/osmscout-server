@@ -152,8 +152,16 @@ int main(int argc, char *argv[])
                                    "Deprecated, not used anymore. Kept for compatibility with old systemd .service files");
   parser.addOption(optionConsole);
 
-    // Process the actual command line arguments given by the user
+  // Process the actual command line arguments given by the user
   parser.process(*app);
+
+  // set start flags
+  startedByDaemon = false;
+  startedByDBus = parser.isSet(optionDBusActivated);
+#ifdef USE_SYSTEMD
+  // set to false by default for version compiled without systemd support
+  startedBySystemD = parser.isSet(optionSystemD);
+#endif
 
   // check logger related options
   has_logger_console = !parser.isSet(optionQuiet);
@@ -171,51 +179,6 @@ int main(int argc, char *argv[])
   settings.initDefaults();
 
   InfoHub::instance()->onSettingsChanged();
-
-  // establish d-bus connection
-  QDBusConnection dbusconnection = QDBusConnection::sessionBus();
-
-  // enable systemd interaction
-  SystemDService systemd_service;
-
-//  // Close other instance if it was started by systemd or DBus activation
-//  bool wait_for_port = false;
-
-//  if (!parser.isSet(optionDBusActivated) &&
-//      dbusconnection.isConnected())
-//    {
-//      // Handling of DBus activation
-//      auto pid = dbusconnection.interface()->servicePid(DBUS_SERVICE);
-//      if (pid.isValid())
-//        {
-//          std::cout << "DBus service already registered by process " << pid.value() << ".\n";
-//          std::cout << "Sending close signal.\n";
-//          kill(pid.value(), SIGUSR1);
-//          wait_for_port = true;
-//        }
-//    }
-
-//#ifdef USE_SYSTEMD
-//  // stop systemD service and socket if running as a separate application
-//  if (!parser.isSet(optionSystemD))
-//    {
-//      systemd_service.stop();
-//      wait_for_port = true;
-//    }
-//#endif
-
-//  // wait till the used ports are freed. here, the timeout is used internally in
-//  // the used wait function
-//  if (wait_for_port)
-//    {
-//      int http_port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
-
-//      if (!wait_till_port_is_free(http_port))
-//        {
-//          std::cerr << "Port " << http_port << " is occupied\n";
-//          return -1;
-//        }
-//    }
 
   // check installed modules
   ModuleChecker modules;
@@ -266,6 +229,7 @@ int main(int argc, char *argv[])
 
   DBusTracker::instance()->setParent(app.data());
   InfoHub::instance()->setParent(app.data());
+  SystemDService::instance()->setParent(app.data());
 
 #ifdef USE_OSMSCOUT
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -326,12 +290,6 @@ int main(int argc, char *argv[])
   signal(SIGINT, [](int /*sig*/){ qApp->quit(); });
   signal(SIGHUP, [](int /*sig*/){ qApp->quit(); });
 
-  // quit application if receiving SIGUSR1 and was DBus activated
-  if ( parser.isSet(optionDBusActivated) )
-    signal(SIGUSR1, [](int /*sig*/){ qApp->quit(); });
-  else
-    signal(SIGUSR1, [](int /*sig*/){ std::cout << "Ignoring SIGUSR1" << std::flush; });
-
   int return_code = 0;
 
 #ifdef USE_VALHALLA
@@ -349,13 +307,7 @@ int main(int argc, char *argv[])
 
     // start HTTP server
     RequestMapper requests;
-    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str(),
-#ifdef USE_SYSTEMD
-                                   parser.isSet(optionSystemD)
-#else
-                                   false
-#endif
-                                   );
+    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str(), startedBySystemD );
 
     if ( !http_server )
       {
@@ -368,14 +320,9 @@ int main(int argc, char *argv[])
                       &requests, &RequestMapper::onSettingsChanged );
 
     // enable idle timeout shutdown if started by systemd or DBus activation
-    if ( parser.isSet(optionDBusActivated)
-    #ifdef USE_SYSTEMD
-        || parser.isSet(optionSystemD)
-    #endif
-        )
+    if ( startedByDaemon || startedByDBus || startedBySystemD )
       {
-        IdleTracker *idle = new IdleTracker( parser.isSet(optionDBusActivated),
-                                             app.data() );
+        IdleTracker *idle = new IdleTracker( app.data() );
 
         QObject::connect(idle, &IdleTracker::idleTimeout,
                          app.data(), QCoreApplication::quit, Qt::QueuedConnection );
@@ -383,6 +330,9 @@ int main(int argc, char *argv[])
         QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                           idle, &IdleTracker::onSettingsChanged );
       }
+
+    // establish d-bus connection
+    QDBusConnection dbusconnection = QDBusConnection::sessionBus();
 
     // add d-bus interface
 #ifdef USE_VALHALLA
@@ -426,7 +376,7 @@ int main(int argc, char *argv[])
             QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties |
             QDBusConnection::ExportAllSignals);
 
-    DBUSREG(DBUS_PATH_SYSTEMD, &systemd_service,
+    DBUSREG(DBUS_PATH_SYSTEMD, SystemDService::instance(),
             QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
 
     DBusRoot dbusRoot(host, port);
@@ -443,9 +393,17 @@ int main(int argc, char *argv[])
   }
 
 #ifdef USE_SYSTEMD
-  // if the service is enabled, start it after we leave the server
-  if (!parser.isSet(optionSystemD) && systemd_service.enabled())
-    systemd_service.start();
+  // only check systemd options if not started by alternative daemon
+  if (!startedByDaemon)
+    {
+      // enable if user switched automatic activation on
+      // in interactive of dbus activated session
+      if (!startedBySystemD && SystemDService::instance()->enabled())
+        SystemDService::instance()->start();
+      // if the service is disabled and was started by systemd
+      else if (startedBySystemD && !SystemDService::instance()->enabled())
+        SystemDService::instance()->stop();
+    }
 #endif
 
   return return_code;

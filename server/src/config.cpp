@@ -23,6 +23,10 @@
 /// GLOBAL VARIABLES: ALLOCATION
 ///
 
+bool startedByDaemon{false};
+bool startedByDBus{false};
+bool startedBySystemD{false};
+
 std::atomic<bool> useGeocoderNLP;
 std::atomic<bool> useMapnik;
 std::atomic<bool> useValhalla;

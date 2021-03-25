@@ -36,9 +36,12 @@ class SystemDService : public QObject
 
   Q_PROPERTY(bool enabled READ enabled WRITE setEnabled NOTIFY enabledChanged) ///< when true, socket activation of the service is enabled on boot
 
-public:
+protected:
 
   explicit SystemDService(QObject *parent = nullptr);
+
+public:
+  static SystemDService* instance();
 
   bool enabled() const { return m_enabled; }
   void setEnabled(bool e); ///< Enable socket activation
@@ -59,6 +62,8 @@ protected:
   QString m_extra{"--user"};  ///< additional command line argument to systemctl command
 
   const QString const_service_name{"osmscout-server"};
+
+  static SystemDService* s_instance;
 };
 
 #endif // SYSTEMDSERVICE_H
