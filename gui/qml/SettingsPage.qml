@@ -102,7 +102,7 @@ DialogPL {
 
         Column {
             spacing: styler.themePaddingMedium
-            visible: (!settings.hasBackendSystemD || systemdEnable.checked)
+            //visible: (!settings.hasBackendSystemD || systemdEnable.checked)
             width: parent.width
 
             ComboBoxPL {
