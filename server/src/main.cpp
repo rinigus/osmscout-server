@@ -53,6 +53,7 @@
 #include "mapmanager.h"
 #include "infohub.h"
 #include "modulechecker.h"
+#include "dbustracker.h"
 #include "idletracker.h"
 
 #include "systemdservice.h"
@@ -220,7 +221,7 @@ int main(int argc, char *argv[])
   ModuleChecker modules;
 
   // setup Map Manager
-  MapManager::Manager manager(app.data());
+  MapManager::Manager::instance()->setParent(app.data());
 
   // init logger
   rolling_logger.onSettingsChanged();
@@ -231,6 +232,7 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate GeoMaster" << std::endl;
       return -2;
     }
+  GeoMaster::instance()->setParent(app.data());
 
   // setup Mapbox GL
   if (MapboxGLMaster::instance() == nullptr)
@@ -238,6 +240,7 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate MapboxGLMaster" << std::endl;
       return -3;
     }
+  MapboxGLMaster::instance()->setParent(app.data());
 
 #ifdef USE_MAPNIK
   if (MapnikMaster::instance() == nullptr)
@@ -245,6 +248,7 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate MapnikMaster" << std::endl;
       return -4;
     }
+  MapnikMaster::instance()->setParent(app.data());
 #endif
 
 #ifdef USE_VALHALLA
@@ -253,7 +257,15 @@ int main(int argc, char *argv[])
       std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
       return -5;
     }
+  ValhallaMaster::instance()->setParent(app.data());
 #endif
+
+#ifdef USE_OSMSCOUT
+  DBMaster::instance()->setParent(app.data());
+#endif
+
+  DBusTracker::instance()->setParent(app.data());
+  InfoHub::instance()->setParent(app.data());
 
 #ifdef USE_OSMSCOUT
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -274,40 +286,40 @@ int main(int argc, char *argv[])
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     InfoHub::instance(), &InfoHub::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
-                    &manager, &MapManager::Manager::onSettingsChanged );
+                    MapManager::Manager::instance(), &MapManager::Manager::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &modules, &ModuleChecker::onSettingsChanged );
   QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
                     &rolling_logger, &RollingLogger::onSettingsChanged );
 
 #ifdef USE_OSMSCOUT
-  QObject::connect( &manager, &MapManager::Manager::databaseOsmScoutChanged,
+  QObject::connect( MapManager::Manager::instance(), &MapManager::Manager::databaseOsmScoutChanged,
                     DBMaster::instance(), &DBMaster::onDatabaseChanged );
 #endif
 
-  QObject::connect( &manager, &MapManager::Manager::databaseGeocoderNLPChanged,
+  QObject::connect( MapManager::Manager::instance(), &MapManager::Manager::databaseGeocoderNLPChanged,
                     GeoMaster::instance(), &GeoMaster::onGeocoderNLPChanged);
-  QObject::connect( &manager, &MapManager::Manager::databasePostalChanged,
+  QObject::connect( MapManager::Manager::instance(), &MapManager::Manager::databasePostalChanged,
                     GeoMaster::instance(), &GeoMaster::onPostalChanged);
-  QObject::connect( &manager, &MapManager::Manager::selectedMapChanged,
+  QObject::connect( MapManager::Manager::instance(), &MapManager::Manager::selectedMapChanged,
                     GeoMaster::instance(), &GeoMaster::onSelectedMapChanged);
-  QObject::connect( &manager, &MapManager::Manager::databaseMapboxGLChanged,
+  QObject::connect( MapManager::Manager::instance(), &MapManager::Manager::databaseMapboxGLChanged,
                     MapboxGLMaster::instance(), &MapboxGLMaster::onMapboxGLChanged );
 #ifdef USE_MAPNIK
-  QObject::connect( &manager, &MapManager::Manager::databaseMapnikChanged,
+  QObject::connect( MapManager::Manager::instance(), &MapManager::Manager::databaseMapnikChanged,
                     MapnikMaster::instance(), &MapnikMaster::onMapnikChanged );
 #endif
 #ifdef USE_VALHALLA
-  QObject::connect( &manager, &MapManager::Manager::databaseValhallaChanged,
+  QObject::connect( MapManager::Manager::instance(), &MapManager::Manager::databaseValhallaChanged,
                     ValhallaMaster::instance(), &ValhallaMaster::onValhallaChanged );
 #endif
 
   if (console_logger)
-    QObject::connect( &manager, &MapManager::Manager::errorMessage,
+    QObject::connect( MapManager::Manager::instance(), &MapManager::Manager::errorMessage,
                       console_logger, &ConsoleLogger::onErrorMessage);
 
   // all is connected, load map manager settings
-  manager.onSettingsChanged();
+  MapManager::Manager::instance()->onSettingsChanged();
 
   // register singlar handler
   signal(SIGTERM, [](int /*sig*/){ qApp->quit(); });
@@ -389,8 +401,8 @@ int main(int argc, char *argv[])
             QCoreApplication::translate("main",
                                         "Failed to register DBus object: %1").arg(DBUS_PATH_INFOHUB));
 
-    new MapManager::ManagerDBusAdaptor(&manager);
-    if (!dbusconnection.registerObject(DBUS_PATH_MANAGER, &manager))
+    new MapManager::ManagerDBusAdaptor(MapManager::Manager::instance());
+    if (!dbusconnection.registerObject(DBUS_PATH_MANAGER, MapManager::Manager::instance()))
       InfoHub::logWarning(
             QCoreApplication::translate("main",
                                         "Failed to register DBus object: %1").arg(DBUS_PATH_MANAGER));

@@ -49,6 +49,8 @@
 
 using namespace MapManager;
 
+Manager* Manager::s_instance = nullptr;
+
 Manager::Manager(QObject *parent) : QObject(parent)
 {
 #ifdef USE_OSMSCOUT
@@ -94,6 +96,11 @@ Manager::Manager(QObject *parent) : QObject(parent)
   checkIfReady();
 }
 
+Manager* Manager::instance()
+{
+  if (!s_instance) s_instance = new Manager();
+  return s_instance;
+}
 
 Manager::~Manager()
 {

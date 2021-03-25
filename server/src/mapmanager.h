@@ -68,8 +68,11 @@ namespace MapManager {
     /// \brief current selected map
     Q_PROPERTY(QString selectedMap READ selectedMap NOTIFY selectedMapChanged)
 
-  public:
+  protected:
     explicit Manager(QObject *parent = 0);
+
+  public:
+    static Manager* instance();
     virtual ~Manager();
 
   public slots:
@@ -342,6 +345,8 @@ namespace MapManager {
     const QString const_feature_id_mapboxgl_glyphs{"mapboxgl/glyphs"};
 
     const QString const_pretty_separator{" / "};
+
+    static Manager* s_instance;
   };
 
 }
