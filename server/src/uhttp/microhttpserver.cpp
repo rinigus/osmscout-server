@@ -32,9 +32,6 @@
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
-#ifdef USE_SYSTEMD
-#include <systemd/sd-daemon.h>
-#endif
 
 //#define DEBUG_CONNECTIONS
 
@@ -171,34 +168,18 @@ void* uri_logger(void * cls, const char * uri, struct MHD_Connection */*con*/)
 ///
 
 MicroHTTP::Server::Server(ServiceBase *service,
-                          unsigned int port, const char *addrstring, bool systemd) :
+                          struct sockaddr_in &server_address,
+                          int socket_fd) :
   #ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
   QObject(),
   #endif
   m_service(service)
 {
+  int port = 12345; // ignored in practice
+
   // Listen on specified address only
-#ifdef USE_SYSTEMD
-  if (!systemd)
-#endif
+  if (socket_fd < 0)
     { // regular application
-      struct sockaddr_in server_address;
-
-      memset (&server_address, 0, sizeof(server_address));
-      server_address.sin_family = AF_INET;
-      server_address.sin_port = htons(port);
-
-      if (addrstring == NULL) server_address.sin_addr.s_addr = htonl(INADDR_ANY);
-      else
-        {
-          if ( inet_aton(addrstring, &server_address.sin_addr ) == 0 )
-            {
-              std::cerr << "Wrong interface address: " << addrstring << std::endl;
-              m_state = false;
-              return;
-            }
-        }
-
       m_daemon = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY | MHD_USE_SUSPEND_RESUME,
                                    port /*ignored since its in SOCK_ADDR OPTION*/,
                                    NULL, NULL,
@@ -210,29 +191,19 @@ MicroHTTP::Server::Server(ServiceBase *service,
                                    MHD_OPTION_URI_LOG_CALLBACK, uri_logger, this,
                                    MHD_OPTION_END);
     }
-#ifdef USE_SYSTEMD
   else
     { // systemd service
-      if (sd_listen_fds(0) != 1)
-        {
-          std::cerr << "Number of SystemD-provided file descriptors is different from one\n";
-        }
-      else
-        {
-          int fd = SD_LISTEN_FDS_START + 0;
-
-          m_daemon = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY | MHD_USE_SUSPEND_RESUME | MHD_USE_ITC,
-                                       port /*ignored since its in SOCK_ADDR OPTION*/,
-                                       NULL, NULL,
-                                       answer_to_connection, this,
-                                       MHD_OPTION_LISTEN_SOCKET, fd,
-                                       MHD_OPTION_CONNECTION_LIMIT, 100,
-                                       MHD_OPTION_CONNECTION_TIMEOUT, 600, // seconds
-                                       MHD_OPTION_URI_LOG_CALLBACK, uri_logger, this,
-                                       MHD_OPTION_END);
-        }
+      m_daemon = MHD_start_daemon (MHD_USE_SELECT_INTERNALLY | MHD_USE_SUSPEND_RESUME | MHD_USE_ITC,
+                                   port /*ignored since its in SOCK_ADDR OPTION*/,
+                                   NULL, NULL,
+                                   answer_to_connection, this,
+                                   MHD_OPTION_LISTEN_SOCKET, socket_fd,
+                                   MHD_OPTION_CONNECTION_LIMIT, 100,
+                                   MHD_OPTION_CONNECTION_TIMEOUT, 600, // seconds
+                                   MHD_OPTION_URI_LOG_CALLBACK, uri_logger, this,
+                                   MHD_OPTION_END);
     }
-#endif
+
   if (m_daemon == NULL)
     {
       m_state = false;

@@ -34,6 +34,10 @@
 #include <QEventLoop>
 #include <QSettings>
 
+#include <sys/socket.h>
+
+// tries to activate server via http and
+// returns true if successful
 bool activate_server_tcp()
 {
   QSettings settings;
@@ -56,6 +60,32 @@ bool activate_server_tcp()
   return res;
 }
 
+// fills sockaddr_in for http server and returns
+// true if correct
+bool fill_sockaddr(struct sockaddr_in &server_address)
+{
+  QSettings settings;
+  QString host = settings.value(HTTP_SERVER_SETTINGS "host").toString();
+  int port = settings.value(HTTP_SERVER_SETTINGS "port").toInt();
+
+  memset (&server_address, 0, sizeof(server_address));
+  server_address.sin_family = AF_INET;
+  server_address.sin_port = htons(port);
+
+  if (host.isEmpty())
+    server_address.sin_addr.s_addr = htonl(INADDR_ANY);
+  else
+    {
+      if ( inet_aton(host.toStdString().c_str(),
+                     &server_address.sin_addr ) == 0 )
+        {
+          std::cerr << "Wrong interface address: " << host.toStdString() << std::endl;
+          return false;
+        }
+    }
+
+  return true;
+}
 
 bool port_free(int port)
 {

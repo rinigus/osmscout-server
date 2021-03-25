@@ -20,7 +20,10 @@
 #ifndef UTIL_HPP
 #define UTIL_HPP
 
+#include <netinet/in.h>
+
 bool activate_server_tcp();
+bool fill_sockaddr(struct sockaddr_in &server_address);
 bool port_free(int port);
 bool wait_till_port_is_free(int port);
 

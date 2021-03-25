@@ -66,8 +66,17 @@
 
 #include <QDebug>
 
+#ifdef USE_SYSTEMD
+#include <systemd/sd-daemon.h>
+#endif
+
 #include <iostream>
 #include <csignal>
+
+#include <poll.h>
+#include <string.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
 
 #ifdef USE_CURL
 #include <curl/curl.h>
@@ -148,6 +157,11 @@ int main(int argc, char *argv[])
                                          QCoreApplication::translate("main", "Run the server in DBus activated mode"));
   parser.addOption(optionDBusActivated);
 
+  QCommandLineOption optionListen(QStringList() << "listen",
+                                         QCoreApplication::translate("main",
+                                                                     "Listen for connection on configured port and start full server on activity"));
+  parser.addOption(optionListen);
+
   QCommandLineOption optionConsole(QStringList() << "console",
                                    "Deprecated, not used anymore. Kept for compatibility with old systemd .service files");
   parser.addOption(optionConsole);
@@ -163,6 +177,14 @@ int main(int argc, char *argv[])
   startedBySystemD = parser.isSet(optionSystemD);
 #endif
 
+  // check sanity of options
+  if (startedBySystemD && parser.isSet(optionListen))
+    {
+      std::cerr << "Error in specified options: cannot start with --listen and --systemd options"
+                << std::endl;
+      return -19;
+    }
+
   // handle DBus activation first
   if (startedByDBus && activate_server_tcp())
     {
@@ -170,6 +192,100 @@ int main(int argc, char *argv[])
       // closing this process as it's work is done
       return 0;
     }
+
+  // can use after the app name is defined
+  AppSettings settings;
+  settings.initDefaults();
+
+  // used to listen and, if in other modes, later in server creation
+  struct sockaddr_in server_address;
+  if (!fill_sockaddr(server_address))
+    return 5;
+
+  ////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////
+  /// Listen to activity on socket and fork full server when detected
+  ///
+  int socket_fd = -1;
+  if (parser.isSet(optionListen))
+    {
+      socket_fd = socket(AF_INET, SOCK_STREAM, 0);
+      if (socket_fd < 0)
+        {
+          std::cerr << "Cannot create socket file descriptor" << std::endl;
+          return 1;
+        }
+
+      int on = 1;
+      if (setsockopt(socket_fd, SOL_SOCKET,  SO_REUSEADDR,
+                     (char *)&on, sizeof(on)) < 0)
+        {
+          std::cerr << "Error: setsockopt()" << std::endl;
+          close(socket_fd);
+          return 1;
+        }
+
+      if (ioctl(socket_fd, FIONBIO, (char *)&on) < 0)
+        {
+          std::cerr << "Error: ioctl()" << std::endl;
+          close(socket_fd);
+          return 1;
+        }
+
+      if (bind(socket_fd, (struct sockaddr *)&server_address,
+               sizeof(server_address)) < 0)
+        {
+          std::cerr << "Error: bind()" << std::endl;
+          close(socket_fd);
+          return 1;
+        }
+
+      if (listen(socket_fd, 8) < 0) // 2nd argument: queue length for pending connections
+        {
+          std::cerr << "Error: listen()" << std::endl;
+          close(socket_fd);
+          return 1;
+        }
+
+      // init poll
+      struct pollfd fds[1];
+      nfds_t nfds = 1;
+
+      memset(fds, 0 , sizeof(fds));
+      fds[0].fd = socket_fd;
+      fds[0].events = POLLIN;
+      int pres = poll(fds, nfds, -1);
+
+      if (pres <= 0)
+        {
+          std::cerr << "Error: poll() returned " << pres << std::endl;
+          close(socket_fd);
+          return 1;
+        }
+
+      std::cout << "Forking server" << std::endl;
+      startedByDaemon = true;
+    }
+
+  ////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////
+  /// Start of the full server
+  ///
+
+#ifdef USE_SYSTEMD
+  // fill socket fd if started by systemd
+  if (startedBySystemD)
+    {
+      if (sd_listen_fds(0) != 1)
+        {
+          std::cerr << "Number of SystemD-provided file descriptors is different from one"
+                    << std::endl;
+          return -2;
+        }
+
+      socket_fd = SD_LISTEN_FDS_START + 0;
+    }
+#endif
 
   // check logger related options
   has_logger_console = !parser.isSet(optionQuiet);
@@ -181,10 +297,6 @@ int main(int argc, char *argv[])
 
   // this logger always available for GUI
   RollingLogger rolling_logger(app.data());
-
-  // can use after the app name is defined
-  AppSettings settings;
-  settings.initDefaults();
 
   InfoHub::instance()->onSettingsChanged();
 
@@ -309,13 +421,9 @@ int main(int argc, char *argv[])
   app->processEvents();
 
   {
-    // setup HTTP server
-    int port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
-    QString host = settings.valueString(HTTP_SERVER_SETTINGS "host");
-
     // start HTTP server
     RequestMapper requests;
-    MicroHTTP::Server http_server( &requests, port, host.toStdString().c_str(), startedBySystemD );
+    MicroHTTP::Server http_server( &requests, server_address, socket_fd );
 
     if ( !http_server )
       {
@@ -387,7 +495,10 @@ int main(int argc, char *argv[])
     DBUSREG(DBUS_PATH_SYSTEMD, SystemDService::instance(),
             QDBusConnection::ExportAllProperties | QDBusConnection::ExportAllSignals);
 
+    int port = settings.valueInt(HTTP_SERVER_SETTINGS "port");
+    QString host = settings.valueString(HTTP_SERVER_SETTINGS "host");
     DBusRoot dbusRoot(host, port);
+
     DBUSREG(DBUS_PATH_ROOT, &dbusRoot,
             QDBusConnection::ExportAllSlots | QDBusConnection::ExportAllProperties);
 

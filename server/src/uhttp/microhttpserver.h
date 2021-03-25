@@ -24,6 +24,8 @@
 #include <mutex>
 #include <set>
 
+#include <netinet/in.h>
+
 //#define HAS_MICRO_HTTP_CLEANUP_TIMER
 
 #ifdef HAS_MICRO_HTTP_CLEANUP_TIMER
@@ -60,8 +62,8 @@ public:
     /// \param systemd set to true if systemd socket is supposed to be used
     ///
     explicit Server(ServiceBase *service,
-                    unsigned int port,
-                    const char *address, bool systemd = false);
+                    struct sockaddr_in &server_address,
+                    int socket_fd);
     virtual ~Server();
 
     operator bool() const { return m_state; }
