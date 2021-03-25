@@ -30,7 +30,7 @@ ValhallaMapMatcherDBus::ValhallaMapMatcherDBus(QObject *parent):
   QObject(parent)
 {
   connect(DBusTracker::instance(), &DBusTracker::serviceDisappeared,
-          this, &ValhallaMapMatcherDBus::dbusServiceDisappeared);
+          this, &ValhallaMapMatcherDBus::onServiceDisappeared);
 }
 
 ValhallaMapMatcherDBus::~ValhallaMapMatcherDBus()
@@ -81,7 +81,7 @@ bool ValhallaMapMatcherDBus::stop(const QDBusMessage &message)
   return true;
 }
 
-void ValhallaMapMatcherDBus::dbusServiceDisappeared(QString name)
+void ValhallaMapMatcherDBus::onServiceDisappeared(QString name)
 {
   if (m_matchers.contains(name))
     {

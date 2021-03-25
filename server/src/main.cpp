@@ -53,6 +53,7 @@
 #include "mapmanager.h"
 #include "infohub.h"
 #include "modulechecker.h"
+#include "idletracker.h"
 
 #include "systemdservice.h"
 #include "util.hpp"
@@ -361,11 +362,14 @@ int main(int argc, char *argv[])
     #endif
         )
       {
-        QObject::connect(InfoHub::instance(), &InfoHub::activitySig,
-                         &requests, &RequestMapper::updateLastCall,
-                         Qt::QueuedConnection);
-        QObject::connect(&requests, &RequestMapper::idleTimeout,
-                         app.data(), QCoreApplication::quit );
+        IdleTracker *idle = new IdleTracker( parser.isSet(optionDBusActivated),
+                                             app.data() );
+
+        QObject::connect(idle, &IdleTracker::idleTimeout,
+                         app.data(), QCoreApplication::quit, Qt::QueuedConnection );
+
+        QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
+                          idle, &IdleTracker::onSettingsChanged );
       }
 
     // add d-bus interface

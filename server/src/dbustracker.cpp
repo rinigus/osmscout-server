@@ -1,6 +1,15 @@
+/*
+ * This file is part of OSM Scout Server.
+ *
+ * SPDX-FileCopyrightText: 2021 Rinigus https://github.com/rinigus
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 #include "dbustracker.h"
 
 #include <QDBusConnection>
+
+#include <QDebug>
 
 DBusTracker* DBusTracker::s_instance = nullptr;
 
@@ -18,10 +27,17 @@ DBusTracker* DBusTracker::instance()
   return s_instance;
 }
 
+int DBusTracker::numberOfServices()
+{
+  QMutexLocker lk(&m_mutex);
+  return m_tracked.size();
+}
+
 void DBusTracker::track(const QString &service)
 {
   QMutexLocker lk(&m_mutex);
   m_tracked.insert(service);
+  qDebug() << "Tracking " << service;
 }
 
 void DBusTracker::onNameOwnerChanged(QString name, QString /*old_owner*/, QString new_owner)
@@ -30,6 +46,7 @@ void DBusTracker::onNameOwnerChanged(QString name, QString /*old_owner*/, QStrin
   if (new_owner.length() < 1 && m_tracked.contains(name))
     {
       m_tracked.remove(name);
+      qDebug() << "Service disappeared " << name;
       emit serviceDisappeared(name);
     }
 }

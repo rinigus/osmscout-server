@@ -77,11 +77,6 @@ RequestMapper::RequestMapper(QObject *parent):
   onSettingsChanged();
 
   m_info_enable_backends = tr("Enable corresponding backend(s) using Profiles.");
-
-  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
-
-  connect(&m_timer, &QTimer::timeout,
-          this, &RequestMapper::checkIdle);
 }
 
 RequestMapper::~RequestMapper()
@@ -91,7 +86,6 @@ RequestMapper::~RequestMapper()
 void RequestMapper::onSettingsChanged()
 {
   AppSettings settings;
-  m_idle_timeout = settings.valueInt(REQUEST_MAPPER_SETTINGS "idle_timeout");
 
   // availibility
   m_available_geocodernlp = settings.valueBool(MAPMANAGER_SETTINGS "geocoder_nlp");
@@ -99,24 +93,6 @@ void RequestMapper::onSettingsChanged()
   m_available_mapnik = settings.valueBool(MAPMANAGER_SETTINGS "mapnik");
   m_available_osmscout = settings.valueBool(MAPMANAGER_SETTINGS "osmscout");
   m_available_valhalla = settings.valueBool(MAPMANAGER_SETTINGS "valhalla");
-
-  if (m_idle_timeout > 0)
-    m_timer.start( std::max(1000, (int)m_idle_timeout*1000/10));
-  else m_timer.stop();
-}
-
-void RequestMapper::checkIdle()
-{
-  if (m_idle_timeout <= 0) return;
-
-  struct timespec now;
-  clock_gettime(CLOCK_BOOTTIME, &now);
-  double dt = now.tv_sec - m_last_call.tv_sec;
-  if (dt > m_idle_timeout)
-    {
-      clock_gettime(CLOCK_BOOTTIME, &m_last_call);
-      emit idleTimeout();
-    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -391,11 +367,6 @@ protected:
   QString m_error_message;
 };
 
-/// Update last call
-void RequestMapper::updateLastCall()
-{
-  clock_gettime(CLOCK_BOOTTIME, &m_last_call);
-}
 
 /////////////////////////////////////////////////////////////////////////////
 /// Request mapper main service function
@@ -422,7 +393,7 @@ unsigned int RequestMapper::service(const char *url_c,
       options = doc.object();
     }
 
-  updateLastCall();
+  InfoHub::activity();
 
   //////////////////////////////////////////////////////////////////////
   /// TILES

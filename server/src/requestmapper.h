@@ -50,19 +50,11 @@ public:
                                MicroHTTP::Connection::keytype connection_id);
   virtual void loguri(const char *uri);
 
-signals:
-  void idleTimeout();
-
 public slots:
   void onSettingsChanged();
-  void checkIdle();
-  void updateLastCall();
 
 protected:
   QThreadPool m_pool;
-  QTimer m_timer;
-  struct timespec m_last_call;
-  double m_idle_timeout;
 
   // availibility of different backends
   bool m_available_geocodernlp{false};

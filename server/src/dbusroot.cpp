@@ -18,6 +18,8 @@
  */
 
 #include "dbusroot.h"
+
+#include "dbustracker.h"
 #include "infohub.h"
 
 #include <QDebug>
@@ -45,5 +47,5 @@ void DBusRoot::ActivateAction(QString /*action_name*/, QVariantList /*parameter*
 
 void DBusRoot::Connect(const QDBusMessage &message)
 {
-  qDebug() << "Connection from " << message.service();
+  DBusTracker::instance()->track(message.service());
 }

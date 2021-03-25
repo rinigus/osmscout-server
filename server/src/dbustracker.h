@@ -1,3 +1,10 @@
+/*
+ * This file is part of OSM Scout Server.
+ *
+ * SPDX-FileCopyrightText: 2021 Rinigus https://github.com/rinigus
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 #ifndef DBUSTRACKER_H
 #define DBUSTRACKER_H
 
@@ -17,6 +24,7 @@ protected:
 public:
   static DBusTracker* instance();
 
+  int numberOfServices();
   void track(const QString &service);
 
 signals:

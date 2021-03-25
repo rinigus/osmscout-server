@@ -40,7 +40,7 @@ public:
 
   void activate();
 
-  void dbusServiceDisappeared(QString service);
+  void onServiceDisappeared(QString service);
 
 public slots:
   //////////////////////////////////////////////////////////////////////////////////////////
