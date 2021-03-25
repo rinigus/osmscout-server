@@ -163,6 +163,14 @@ int main(int argc, char *argv[])
   startedBySystemD = parser.isSet(optionSystemD);
 #endif
 
+  // handle DBus activation first
+  if (startedByDBus && activate_server_tcp())
+    {
+      // server was activated through TCP connection
+      // closing this process as it's work is done
+      return 0;
+    }
+
   // check logger related options
   has_logger_console = !parser.isSet(optionQuiet);
 
