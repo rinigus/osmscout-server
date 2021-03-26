@@ -76,11 +76,23 @@
 #include <poll.h>
 #include <string.h>
 #include <sys/ioctl.h>
+#include <sys/prctl.h>
 #include <sys/socket.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
 
 #ifdef USE_CURL
 #include <curl/curl.h>
 #endif
+
+// use after socket_fd could have been allocated
+#define CHECK_FOR_ERROR(cond, message, retval) \
+  if (cond) { \
+    std::cerr << message << std::endl; \
+    if (socket_fd >= 0) close(socket_fd); \
+    return retval; \
+  }
 
 ////////////////////////////////////////////////
 
@@ -210,60 +222,69 @@ int main(int argc, char *argv[])
   if (parser.isSet(optionListen))
     {
       socket_fd = socket(AF_INET, SOCK_STREAM, 0);
-      if (socket_fd < 0)
-        {
-          std::cerr << "Cannot create socket file descriptor" << std::endl;
-          return 1;
-        }
+      CHECK_FOR_ERROR(socket_fd < 0,
+                      "Cannot create socket file descriptor", 1);
 
       int on = 1;
-      if (setsockopt(socket_fd, SOL_SOCKET,  SO_REUSEADDR,
-                     (char *)&on, sizeof(on)) < 0)
+      CHECK_FOR_ERROR(setsockopt(socket_fd, SOL_SOCKET,  SO_REUSEADDR,
+                                 (char *)&on, sizeof(on)) < 0,
+                      "Error: setsockopt()", 1);
+
+      CHECK_FOR_ERROR(ioctl(socket_fd, FIONBIO, (char *)&on) < 0,
+                      "Error: ioctl()", 1);
+
+      CHECK_FOR_ERROR(bind(socket_fd, (struct sockaddr *)&server_address,
+                           sizeof(server_address)) < 0,
+                      "Error: bind()", 1);
+
+      CHECK_FOR_ERROR(listen(socket_fd, 8) < 0, // 2nd argument: queue length for pending connections
+                      "Error: listen()", 1);
+
+      // poll loop for parent that is escaped by child
+      pid_t main_pid = getpid();
+      for (bool isparent = true; isparent; )
         {
-          std::cerr << "Error: setsockopt()" << std::endl;
-          close(socket_fd);
-          return 1;
+          // init poll
+          struct pollfd fds[1];
+          nfds_t nfds = 1;
+
+          memset(fds, 0 , sizeof(fds));
+          fds[0].fd = socket_fd;
+          fds[0].events = POLLIN;
+
+          int pres = poll(fds, nfds, -1);
+
+          CHECK_FOR_ERROR(pres <= 0,
+                          "Error: poll() returned " << pres, 1);
+
+          pid_t child = fork();
+          CHECK_FOR_ERROR(child < 0,
+                          "Error: fork()", -1);
+
+          isparent = (child > 0);
+
+          if (isparent)
+            {
+              int wstatus;
+              wait(&wstatus);
+              CHECK_FOR_ERROR( !WIFEXITED(wstatus),
+                               "Error: child process terminated abnormally", -2);
+              CHECK_FOR_ERROR( !WEXITSTATUS(wstatus),
+                               "Error: child process finished with error code " << WEXITSTATUS(wstatus), -3 );
+            }
+          else
+            startedByDaemon = true;
         }
 
-      if (ioctl(socket_fd, FIONBIO, (char *)&on) < 0)
-        {
-          std::cerr << "Error: ioctl()" << std::endl;
-          close(socket_fd);
-          return 1;
-        }
+      // set to die if the parent dies
+      // linux specific solution
+      CHECK_FOR_ERROR(prctl(PR_SET_PDEATHSIG, SIGTERM) == -1,
+                      "Error: prctl() in forked server", 10);
 
-      if (bind(socket_fd, (struct sockaddr *)&server_address,
-               sizeof(server_address)) < 0)
-        {
-          std::cerr << "Error: bind()" << std::endl;
-          close(socket_fd);
-          return 1;
-        }
+      CHECK_FOR_ERROR(getppid() != main_pid,
+                      "Closing as parent died while starting the forked process", 0);
 
-      if (listen(socket_fd, 8) < 0) // 2nd argument: queue length for pending connections
-        {
-          std::cerr << "Error: listen()" << std::endl;
-          close(socket_fd);
-          return 1;
-        }
-
-      // init poll
-      struct pollfd fds[1];
-      nfds_t nfds = 1;
-
-      memset(fds, 0 , sizeof(fds));
-      fds[0].fd = socket_fd;
-      fds[0].events = POLLIN;
-      int pres = poll(fds, nfds, -1);
-
-      if (pres <= 0)
-        {
-          std::cerr << "Error: poll() returned " << pres << std::endl;
-          close(socket_fd);
-          return 1;
-        }
-
-      std::cout << "Forking server" << std::endl;
+      std::cout << "Starting full server" << std::endl;
       startedByDaemon = true;
     }
 
@@ -310,36 +331,24 @@ int main(int argc, char *argv[])
   rolling_logger.onSettingsChanged();
 
   // setup Geocoder-NLP
-  if (GeoMaster::instance() == nullptr)
-    {
-      std::cerr << "Failed to allocate GeoMaster" << std::endl;
-      return -2;
-    }
+  CHECK_FOR_ERROR(GeoMaster::instance() == nullptr,
+                  "Failed to allocate GeoMaster", 2);
   GeoMaster::instance()->setParent(app.data());
 
   // setup Mapbox GL
-  if (MapboxGLMaster::instance() == nullptr)
-    {
-      std::cerr << "Failed to allocate MapboxGLMaster" << std::endl;
-      return -3;
-    }
+  CHECK_FOR_ERROR(MapboxGLMaster::instance() == nullptr,
+                  "Failed to allocate MapboxGLMaster", 3);
   MapboxGLMaster::instance()->setParent(app.data());
 
 #ifdef USE_MAPNIK
-  if (MapnikMaster::instance() == nullptr)
-    {
-      std::cerr << "Failed to allocate MapnikMaster" << std::endl;
-      return -4;
-    }
+  CHECK_FOR_ERROR(MapnikMaster::instance() == nullptr,
+                  "Failed to allocate MapnikMaster", 4);
   MapnikMaster::instance()->setParent(app.data());
 #endif
 
 #ifdef USE_VALHALLA
-  if (ValhallaMaster::instance() == nullptr)
-    {
-      std::cerr << "Failed to allocate ValhallaMaster" << std::endl;
-      return -5;
-    }
+  CHECK_FOR_ERROR(ValhallaMaster::instance() == nullptr,
+                  "Failed to allocate ValhallaMaster", 5);
   ValhallaMaster::instance()->setParent(app.data());
 #endif
 
@@ -425,11 +434,8 @@ int main(int argc, char *argv[])
     RequestMapper requests;
     MicroHTTP::Server http_server( &requests, server_address, socket_fd );
 
-    if ( !http_server )
-      {
-        std::cerr << "Failed to start HTTP server" << std::endl;
-        return -100;
-      }
+    CHECK_FOR_ERROR( !http_server,
+                     "Failed to start HTTP server", 100);
 
     // connect request mapper to the settings
     QObject::connect( &settings, &AppSettings::osmScoutSettingsChanged,
@@ -524,6 +530,9 @@ int main(int argc, char *argv[])
         SystemDService::instance()->stop();
     }
 #endif
+
+  // close open socket_fd
+  if (socket_fd >= 0) close(socket_fd);
 
   return return_code;
 }
