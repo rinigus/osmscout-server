@@ -269,7 +269,7 @@ int main(int argc, char *argv[])
               wait(&wstatus);
               CHECK_FOR_ERROR( !WIFEXITED(wstatus),
                                "Error: child process terminated abnormally", -2);
-              CHECK_FOR_ERROR( !WEXITSTATUS(wstatus),
+              CHECK_FOR_ERROR( WEXITSTATUS(wstatus),
                                "Error: child process finished with error code " << WEXITSTATUS(wstatus), -3 );
             }
           else
