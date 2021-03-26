@@ -38,11 +38,13 @@ DialogPL {
 
         ListItemLabel {
             text: qsTr("Do you want to enable automatic activation?")
+            visible: settings.hasBackendSystemD
         }
 
         TextSwitchPL {
             id: systemdEnable
             text: qsTr("Automatic activation")
+            visible: settings.hasBackendSystemD
             Component.onCompleted: {
                 checked = systemd_service.enabled
             }
@@ -57,6 +59,14 @@ DialogPL {
             font.pixelSize: styler.themeFontSizeSmall
             text: qsTr("Note that when automatically activated, the server runs without any user interface. " +
                        "Automatic activation and the corresponding idle timeout can be later configured in Settings.")
+            visible: settings.hasBackendSystemD
+        }
+
+        ListItemLabel {
+            font.pixelSize: styler.themeFontSizeSmall
+            text: qsTr("For installations without <i>systemd</i>, you can run the server as one of the automatically started programs on login. " +
+                       "See <a href='https://rinigus.github.io/osmscout-server/'>User's Guide</a> for details on how to start the server correctly in this case.")
+            visible: !settings.hasBackendSystemD
         }
 
         ListItemLabel {
@@ -67,6 +77,7 @@ DialogPL {
     }
 
     onAccepted: {
-        systemd_service.enabled = systemdEnable.checked
+        if (settings.hasBackendSystemD)
+            systemd_service.enabled = systemdEnable.checked
     }
 }

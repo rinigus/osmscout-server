@@ -383,7 +383,7 @@ PagePL {
             id: thirdWelcomeWizardPage
 
             LanguageSelector {
-                acceptDestination: settings.hasBackendSystemD ? fourthWelcomeWizardPage : rootPage
+                acceptDestination: fourthWelcomeWizardPage
                 acceptText: qsTr("Next")
                 callback: eGeoLanguages.setValue
                 title: eGeoLanguages.mainLabel
