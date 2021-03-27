@@ -79,9 +79,9 @@ Server providing map tiles, search, and routing
 %build
 
 %if 0%{?sailfishos}
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica' CONFIG+=use_dbusactivation VALHALLA_VERSION=3.0
+%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica' CONFIG+=use_dbusactivation VALHALLA_VERSION=3.1
 %else
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=use_dbusactivation VALHALLA_VERSION=3.0
+%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=use_dbusactivation VALHALLA_VERSION=3.1
 %endif
 
 make %{?_smp_mflags}
