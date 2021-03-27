@@ -1,5 +1,5 @@
 {
-    "name": "osmscout-server",
+    "name": "osmscout-server.jonnius",
     "description": "Local server providing offline map tiles, search, and routing",
     "architecture": "@CLICK_ARCH@",
     "title": "OSM Scout Server",
