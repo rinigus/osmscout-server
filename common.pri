@@ -25,10 +25,6 @@ isEmpty(APP_NAME) {
     }
 }
 
-SERVER_PATH=$$PREFIX/bin
-SERVER_EXE=$${SERVER_PATH}/$${APP_NAME}
-DEFINES += SERVER_EXE=\\\"$${SERVER_EXE}\\\"
-
 # Overall QT options
 QT += core network dbus
 
@@ -75,6 +71,10 @@ isEmpty(PREFIX) {
 isEmpty(PREFIX_RUNNING) {
     PREFIX_RUNNING = $$PREFIX
 }
+
+SERVER_PATH=$$PREFIX/bin
+SERVER_EXE=$${PREFIX_RUNNING}/bin/$${APP_NAME}
+DEFINES += SERVER_EXE=\\\"$${SERVER_EXE}\\\"
 
 # defines
 scout_silica {
