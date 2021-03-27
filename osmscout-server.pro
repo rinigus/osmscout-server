@@ -59,7 +59,7 @@ scout_silica {
     }
 
     translations_files.files = $${TRANSLATIONS_FILES}
-    translations_files.path = $${PREFIX}/share/$${TARGET}/translations
+    translations_files.path = $${PREFIX}/share/$${APP_NAME}/translations
     INSTALLS += translations_files
 }
 

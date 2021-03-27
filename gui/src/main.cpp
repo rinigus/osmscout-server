@@ -73,15 +73,7 @@ int main(int argc, char *argv[])
   app->setApplicationVersion(APP_VERSION);
 
   {
-    QString tr_path;
-
-#if defined(IS_UUITK)
-    tr_path = "./translations";
-#elif defined(IS_QTCONTROLS_QT)
-    tr_path = ":/i18n";
-#elif defined(IS_SAILFISH_OS)
-    tr_path = SailfishApp::pathTo(QString("translations")).toLocalFile();
-#endif
+    QString tr_path(TRANSLATION_FOLDER);
 
     if ( !tr_path.isEmpty() )
       {

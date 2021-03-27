@@ -190,3 +190,21 @@ TRANSLATIONS += \
 scout_kirigami|scout_qtcontrols {
     CONFIG += lrelease embed_translations
 }
+
+# set translation folder loaded by application
+scout_kirigami|scout_qtcontrols {
+    DEFINES += TRANSLATION_FOLDER=\\\":/i18n\\\"
+}
+
+scout_silica {
+    DEFINES += TRANSLATION_FOLDER=\\\"$${PREFIX}/share/$${APP_NAME}/translations\\\"
+}
+
+scout_uuitk {
+    DEFINES += TRANSLATION_FOLDER=\\\"./translations\\\"
+}
+
+# extra platform options
+scout_silica {
+    QMAKE_RPATHDIR += $${PREFIX}/share/$${APP_NAME}/lib
+}
