@@ -40,7 +40,7 @@
     "gcc-opt",
     "desktop-file-utils"
   ],
-  "postbuild": "mv ${INSTALL_DIR}/usr/bin/* ${INSTALL_DIR}",
+  "postbuild": "ln -s ../../usr/bin ${CLICK_PATH}",
   "install_data": {
     "${BUILD_DIR}/translations": "${INSTALL_DIR}",
     "${ROOT}/gui/icons/osmscout-server.svg": "${INSTALL_DIR}",
