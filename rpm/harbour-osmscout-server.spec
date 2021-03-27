@@ -43,6 +43,7 @@ BuildRequires:  pkgconfig(kyotocabinet)
 BuildRequires:  pkgconfig(libpostal) >= 1.0.0
 BuildRequires:  qt5-qttools-linguist
 BuildRequires:  pkgconfig(libvalhalla)
+BuildRequires:  pkgconfig(date)
 BuildRequires:  protobuf-devel
 BuildRequires:  boost-devel >= 1.51
 BuildRequires:  boost-date-time >= 1.51
