@@ -175,7 +175,7 @@ int main(int argc, char *argv[])
   parser.addOption(optionListen);
 
   QCommandLineOption optionConsole(QStringList() << "console",
-                                   "Deprecated, not used anymore. Kept for compatibility with old systemd .service files");
+                                   "Deprecated, not used anymore. Kept for compatibility with old systemd .service files and will be removed in future");
   parser.addOption(optionConsole);
 
   // Process the actual command line arguments given by the user
