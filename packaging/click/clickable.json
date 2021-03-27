@@ -40,13 +40,15 @@
     "gcc-opt",
     "desktop-file-utils"
   ],
-  "postbuild": "ln -s ../../usr/bin ${CLICK_PATH}",
+  "postbuild": "ln -s ../../usr/bin ${CLICK_PATH} && sed -i 's/@ARCH_TRIPLET@/${ARCH_TRIPLET}/g' ${INSTALL_DIR}/osmscout-server.conf",
   "install_data": {
     "${BUILD_DIR}/translations": "${INSTALL_DIR}",
     "${ROOT}/gui/icons/osmscout-server.svg": "${INSTALL_DIR}",
     "${ROOT}/packaging/click/osmscout-server.desktop": "${INSTALL_DIR}",
     "${ROOT}/packaging/click/osmscout-server.apparmor": "${INSTALL_DIR}",
-    "${ROOT}/packaging/click/manifest.json": "${INSTALL_DIR}"
+    "${ROOT}/packaging/click/manifest.json": "${INSTALL_DIR}",
+    "${ROOT}/packaging/click/osmscout-server.conf": "${INSTALL_DIR}",
+    "${ROOT}/packaging/click/launch.sh": "${INSTALL_DIR}"
   },
   "install_lib": [
     "/usr/lib/${ARCH_TRIPLET}/libmicrohttpd.so*",

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=OSM Scout Server
-Exec=osmscout-server-gui %u
+Exec=launch.sh %u
 Icon=osmscout-server.svg
 Type=Application
 X-Ubuntu-Touch=true
