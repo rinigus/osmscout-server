@@ -1,6 +1,7 @@
 {
   "clickable_minimum_required": "6.13.0",
   "builder": "qmake",
+  "prebuild": "sed -i 's/MHD_USE_ITC/MHD_USE_PIPE_FOR_SHUTDOWN/g' ${SRC_DIR}/server/src/uhttp/microhttpserver.cpp",
   "build_args": [
     "SCOUT_FLAVOR=uuitk",
     "CONFIG+=disable_systemd",
