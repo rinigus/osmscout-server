@@ -98,7 +98,7 @@ scout_uuitk {
 DEFINES += QT_DEPRECATED_WARNINGS
 
 scout_silica {
-    CONFIG += sailfishapp sailfishapp_no_deploy_qml sailfishapp_i18n
+    CONFIG += sailfishapp sailfishapp_no_deploy_qml
 }
 
 # debug options

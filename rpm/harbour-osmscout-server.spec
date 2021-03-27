@@ -95,6 +95,8 @@ desktop-file-install --delete-original       \
 
 %if 0%{?sailfishos}
 
+ln -s %{_datadir}/%{name}/translations %{buildroot}%{_datadir}/%{name}-gui/translations
+
 # ship all shared libraries not allowed in Harbour with the app
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 

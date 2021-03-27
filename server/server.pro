@@ -190,18 +190,3 @@ TRANSLATIONS += \
 scout_kirigami|scout_qtcontrols {
     CONFIG += lrelease embed_translations
 }
-
-scout_uuitk {
-    qtPrepareTool(LRELEASE, lrelease)
-    for(tsfile, TRANSLATIONS) {
-        qmfile = $$shadowed($$tsfile)
-        qmfile ~= s,.ts$,.qm,
-        qmdir = $$dirname(qmfile)
-        !exists($$qmdir) {
-            mkpath($$qmdir)|error("Aborting.")
-        }
-        command = $$LRELEASE -removeidentical $$tsfile -qm $$qmfile
-        system($$command)|error("Failed to run: $$command")
-        TRANSLATIONS_FILES += $$qmfile
-    }
-}
