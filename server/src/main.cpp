@@ -142,8 +142,8 @@ int main(int argc, char *argv[])
                        #endif
                                "-",
                                tr_path) )
-          qWarning() << "Failed to load translation for " << locale
-                     << " " << tr_path;
+          qDebug() << "Failed to load translation for " << locale
+                   << " " << tr_path;
 
         app->installTranslator(translator);
       }
