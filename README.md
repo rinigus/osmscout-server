@@ -118,20 +118,8 @@ Custom icons used by the application were contributed by Fellfrosch
 
 ## Translations
 
-The translations were contributed by
-
-- Carmen F. B. @carmenfdezb: Spanish
-- Lukáš Karas @Karry: Czech
-- Åke Engelbrektson @eson57: Swedish
-- Ricardo Breitkopf @monkeyisland: German
-- Nathan Follens @pljmn: Dutch (NL and BE)
-- @Sagittarii: French
-- Oleg Artobolevsky @XOleg: Russian
-- A @atlochowski: Polish
-- Peer-Atle Motland @Pam: Norwegian Bokmål
-- Matti Lehtimäki @mal: Finnish
-- @Watchmaker: Italian
-
+Up to date contribution of translations are given in the About page of
+the application for corresponding language.
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README.md
 

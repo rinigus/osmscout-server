@@ -25,6 +25,15 @@ PagePL {
     id: page
     title: qsTr("About") + " " + programName
 
+    //: This is a special message that shouldn't be translated literally.
+    //: It is used in the about page to give credits to the translators. Thus, you should
+    //: translate it to your name. You can also include other translators who have
+    //: contributed to this translation; in that case, please write them on separate
+    //: lines seperated by newlines (<br>).
+    property string translator: qsTr("insert here translator(s) of your language separated by <br>")
+    property string translate_text: translator && translator !== "insert here translator(s) of your language separated by <br>" ?
+                                    ("<b>" + qsTr("Translated by:") + "</b><br><br>" + translator + "<br>") : ""
+
     property string mainText: "<p>" +
                               qsTr("The server has to be used with the client program that is able to display maps, query for searches and " +
                                    "display selected routes. The server is a thin layer exposing functionality of <i>libosmscout</i>, " +
@@ -32,7 +41,7 @@ PagePL {
                                    "<i>Mapbox GL</i> through web service. " +
                                    "This server can be used as a drop-in replacement for " +
                                    "online services providing maps.") + "</p><br>" +
-                              "<p>" + qsTr("Copyright:") + " 2016-2019 <a href='https://github.com/rinigus'>Rinigus</a><br></p>" +
+                              "<p>" + qsTr("Copyright:") + " 2016-2021 <a href='https://github.com/rinigus'>Rinigus</a><br></p>" +
                               qsTr("License: GPLv3") + "<br><br>" +
 
                               "Donations: " +
@@ -43,18 +52,7 @@ PagePL {
                               qsTr("Icons by %1.").arg("Fellfrosch") + "<br>" +
                               qsTr("Banner photo by %1 (%2 license).").arg("Aksonsat Uanthoeng").arg("Pixels") + "<br><br>" +
 
-                              "<b>" + qsTr("Translations") + "</b><br><br>" +
-                              "Carmen F. B. @carmenfdezb: Spanish<br>" +
-                              "Lukáš Karas @Karry: Czech<br>" +
-                              "Åke Engelbrektson @eson57: Swedish<br>" +
-                              "Ricardo Breitkopf @monkeyisland: German<br>" +
-                              "Nathan Follens @pljmn: Dutch (NL and BE)<br>" +
-                              "@Sagittarii: French<br>" +
-                              "Oleg Artobolevsky @XOleg: Russian<br>" +
-                              "A @atlochowski: Polish<br>" +
-                              "Peer-Atle Motland @Pam: Norwegian Bokmål<br>" +
-                              "Matti Lehtimäki @mal: Finnish<br>" +
-                              "@Watchmaker: Italian<br>" +
+                              translate_text +
 
                               "<br><b>" + qsTr("Maps") + "</b><br>" +
                               "<p>" +
