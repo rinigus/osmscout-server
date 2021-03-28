@@ -35,16 +35,16 @@ QtObject {
     // colors
     // block background (navigation, poi panel, bubble)
     property color blockBg: Kirigami.Theme.backgroundColor
-    // variant of navigation icons
+    // variant of navigation icons: not used in OSM Scout Server
     property string navigationIconsVariant: "black"
     // descriptive items
     property color themeHighlightColor: Kirigami.Theme.textColor
-    // navigation items (to be clicked)
-    property color themePrimaryColor: Qt.darker(Kirigami.Theme.linkColor, 2.0)
+    // navigation items, primary
+    property color themePrimaryColor: Kirigami.Theme.linkColor
     // navigation items, secondary
-    property color themeSecondaryColor: Qt.darker(Kirigami.Theme.visitedLinkColor, 2.0)
+    property color themeSecondaryColor: Kirigami.Theme.visitedLinkColor
     // descriptive items, secondary
-    property color themeSecondaryHighlightColor: Qt.darker(Kirigami.Theme.disabledTextColor, 2.0)
+    property color themeSecondaryHighlightColor: Kirigami.Theme.disabledTextColor
 
     // button sizes
     property real themeButtonWidthLarge: 256
