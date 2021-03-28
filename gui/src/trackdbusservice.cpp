@@ -21,5 +21,9 @@ void TrackDBusService::serviceUpdate(const QString &/*service*/)
 {
   QDBusReply<QString> r = QDBusConnection::sessionBus().interface()->serviceOwner(DBUS_SERVICE);
   m_available = r.isValid();
+  // trigger signals to reload data before notification of
+  // availibility for QML
+  if (m_available)
+    emit serviceAppeared();
   emit availableChanged(m_available);
 }

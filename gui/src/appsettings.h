@@ -42,10 +42,10 @@ public:
   Q_PROPERTY(bool countrySelectionNeeded READ countrySelectionNeeded NOTIFY countrySelectionNeededChanged)
 
   /// \brief true if the application has been run the first time
-  Q_PROPERTY(bool firstTime READ firstTime)
+  Q_PROPERTY(bool firstTime READ firstTime NOTIFY reloadData)
 
   /// \brief application version that was run before
-  Q_PROPERTY(int lastRunVersion READ lastRunVersion)
+  Q_PROPERTY(int lastRunVersion READ lastRunVersion NOTIFY reloadData)
 
   /// \brief build configuration: whether mapnik backend is available
   Q_PROPERTY(bool hasBackendMapnik READ hasBackendMapnik NOTIFY hasBackendMapnikChanged)
@@ -194,13 +194,14 @@ public Q_SLOTS: // METHODS
   }
 
 Q_SIGNALS: // SIGNALS
-  void countrySelectionNeededChanged(bool selection);
-  void hasBackendMapnikChanged(bool in0);
-  void hasBackendOsmScoutChanged(bool in0);
-  void hasBackendSystemDChanged(bool in0);
-  void hasBackendValhallaChanged(bool in0);
+  void countrySelectionNeededChanged(); //bool selection);
+  void hasBackendMapnikChanged(); //bool in0);
+  void hasBackendOsmScoutChanged(); //bool in0);
+  void hasBackendSystemDChanged(); //bool in0);
+  void hasBackendValhallaChanged(); //bool in0);
   void osmScoutSettingsChanged();
-  void profilesUsedChanged(bool used);
+  void profilesUsedChanged(); //bool used);
+  void reloadData();
 };
 
 namespace org {

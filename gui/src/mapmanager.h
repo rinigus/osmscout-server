@@ -255,17 +255,18 @@ public Q_SLOTS: // METHODS
 
 Q_SIGNALS: // SIGNALS
   void availabilityChanged();
-  void deletingChanged(bool state);
+  void deletingChanged(); //bool state);
   void downloadProgress(const QString &info);
-  void downloadingChanged(bool state);
+  void downloadingChanged(); //bool state);
   void errorMessage(const QString &info);
-  void missingChanged(bool missing);
-  void missingInfoChanged(const QString &info);
-  void readyChanged(bool ready);
-  void selectedMapChanged(const QString &selected);
-  void storageAvailableChanged(bool available);
+  void missingChanged(); //bool missing);
+  void missingInfoChanged(); //const QString &info);
+  void readyChanged(); //bool ready);
+  void selectedMapChanged(); //const QString &selected);
+  void storageAvailableChanged(); //bool available);
   void subscriptionChanged();
   void updatesForDataFound(const QString &info);
+  void reloadData();
 };
 
 namespace org {

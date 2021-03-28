@@ -24,7 +24,7 @@ public:
   QString status() const { return m_status; }
 
 public slots:
-  void onAvailableChanged(bool available);
+  void onServiceAppeared();
 
 signals:
   void statusChanged();

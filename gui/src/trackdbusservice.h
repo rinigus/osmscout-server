@@ -16,6 +16,7 @@ public:
 
 signals:
   void availableChanged(bool available);
+  void serviceAppeared();
 
 private:
   void serviceUpdate(const QString &service);

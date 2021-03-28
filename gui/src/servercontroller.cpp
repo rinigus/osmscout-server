@@ -44,9 +44,9 @@ void ServerController::setStatus(const QString &status)
   qDebug() << m_status;
 }
 
-void ServerController::onAvailableChanged(bool available)
+void ServerController::onServiceAppeared()
 {
-  if (available) dbusActivate(false); // just call method
+  dbusActivate(false); // just call method
 }
 
 void ServerController::networkActivate()
@@ -72,7 +72,7 @@ void ServerController::networkCallback(QNetworkReply *reply)
   if (success)
     {
       setStatus(tr("Server reached via network"));
-      onAvailableChanged(true);
+      onServiceAppeared();
       return;
     }
 

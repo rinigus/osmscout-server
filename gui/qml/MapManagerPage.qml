@@ -101,14 +101,11 @@ PagePL {
 
             Connections {
                 target: manager
-                onMissingInfoChanged: {
-                    missingInfo.updateText(info)
-                }
+                onMissingInfoChanged: missingInfo.updateText(info)
+                onReloadData: updateText(manager.missingInfo())
             }
 
-            Component.onCompleted: {
-                updateText(manager.missingInfo())
-            }
+            Component.onCompleted: updateText(manager.missingInfo())
 
             function updateText(info) {
                 text = qsTr("Missing data:<br>") + info
@@ -121,20 +118,9 @@ PagePL {
             enabled: page.activeState
             preferredWidth: styler.themeButtonWidthLarge
             text: qsTr("Start download")
-            visible: manager.missing
+            visible: (manager.missing && !manager.downloading)
 
-            Connections {
-                target: manager
-                onDownloadingChanged: start_button.setVisibility()
-                onMissingChanged: start_button.setVisibility()
-            }
-
-            Component.onCompleted: setVisibility()
             onClicked: manager.getCountries()
-
-            function setVisibility() {
-                visible = (manager.missing && !manager.downloading)
-            }
         }
 
         ButtonPL {

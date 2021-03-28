@@ -40,7 +40,8 @@ public:
 
 public Q_SLOTS: // METHODS
 Q_SIGNALS: // SIGNALS
-    void logChanged(const QString &in0);
+    void logChanged(); //const QString &in0);
+    void reloadData();
 };
 
 namespace org {

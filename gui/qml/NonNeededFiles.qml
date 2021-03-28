@@ -112,7 +112,7 @@ PagePL {
     Connections {
         target: manager
         onDeletingChanged: {
-            if (!state)
+            if (!manager.deleting)
                 updatePage()
             checkState()
         }

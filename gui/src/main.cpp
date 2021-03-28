@@ -126,9 +126,23 @@ int main(int argc, char *argv[])
   ServerController serverController;
   TrackDBusService service;
 
-  // reconnect to server if it appears
-  QObject::connect(&service, &TrackDBusService::availableChanged,
-                   &serverController, &ServerController::onAvailableChanged);
+  // reconnect to server if it appears and reload all properties
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &serverController, &ServerController::onServiceAppeared);
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &settings, &AppSettings::reloadData);
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &geoMaster, &GeoMaster::reloadData);
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &infoHub, &InfoHub::reloadData);
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &logger, &Logger::reloadData);
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &systemd_service, &SystemDService::reloadData);
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &manager, &MapManager::reloadData);
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &modules, &ModuleChecker::reloadData);
 
   // ////////////////////////////
   // QML setup

@@ -34,16 +34,17 @@ public:
 
   ~ModuleChecker();
 
-  Q_PROPERTY(bool fonts READ fonts)
+  Q_PROPERTY(bool fonts READ fonts NOTIFY reloadData)
   inline bool fonts() const
   { return qvariant_cast< bool >(property("fonts")); }
 
-  Q_PROPERTY(bool valhallaRoute READ valhallaRoute)
+  Q_PROPERTY(bool valhallaRoute READ valhallaRoute NOTIFY reloadData)
   inline bool valhallaRoute() const
   { return qvariant_cast< bool >(property("valhallaRoute")); }
 
 public Q_SLOTS: // METHODS
 Q_SIGNALS: // SIGNALS
+  void reloadData();
 };
 
 namespace org {

@@ -41,7 +41,8 @@ public:
 
 public Q_SLOTS: // METHODS
 Q_SIGNALS: // SIGNALS
-    void warnLargeRamLangNotSpecifiedChanged(bool warning);
+    void warnLargeRamLangNotSpecifiedChanged(); //bool warning);
+    void reloadData();
 };
 
 namespace org {

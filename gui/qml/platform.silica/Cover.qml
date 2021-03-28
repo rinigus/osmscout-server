@@ -45,36 +45,12 @@ CoverBackground {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
         anchors.margins: Theme.paddingLarge
-        text: qsTr("OSM Scout Server")
-
-        function setText(q) {
-            if (q > 0) text = qsTr("Jobs") + ": " + q
-            else text = qsTr("Idle")
+        text: {
+            if (infohub.queue > 0)
+                return qsTr("Jobs") + ": " + infohub.queue
+            return qsTr("Idle")
         }
-
-        Connections {
-            target: infohub;
-            onQueueChanged: {
-                label.setText(queue)
-            }
-        }
-
-        Component.onCompleted: label.setText(infohub.queue)
-
     }
-
-
-    //    CoverActionList {
-    //        id: coverAction
-
-    //        CoverAction {
-    //            iconSource: "image://theme/icon-cover-next"
-    //        }
-
-    //        CoverAction {
-    //            iconSource: "image://theme/icon-cover-pause"
-    //        }
-    //    }
 }
 
 

@@ -44,8 +44,9 @@ public:
 
 public Q_SLOTS: // METHODS
 Q_SIGNALS: // SIGNALS
-    void errorChanged(bool error);
-    void queueChanged(int queue);
+    void errorChanged(); //bool error);
+    void queueChanged(); //int queue);
+    void reloadData();
 };
 
 namespace org {

@@ -38,7 +38,7 @@ LabelPL {
     Connections {
         target: manager
         onDownloadingChanged: {
-            if (!state) activeDownloadText.setText(state)
+            if (!manager.downloading) activeDownloadText.setText(manager.downloading)
         }
     }
 

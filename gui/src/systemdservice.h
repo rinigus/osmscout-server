@@ -43,6 +43,7 @@ public:
 public Q_SLOTS: // METHODS
 Q_SIGNALS: // SIGNALS
     void enabledChanged();
+    void reloadData();
 };
 
 namespace org {
