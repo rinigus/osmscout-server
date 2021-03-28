@@ -174,6 +174,11 @@ the server can be started in dedicated socket listening mode by
 osmscout-server --listen
 ```
 
+For Flatpak installation:
+```
+flatpak run io.github.rinigus.OSMScoutServer --listen
+```
+
 In this case, the server will open a socket and will fork full server
 process on request. After the session and expired idle timeout, the
 full server process will exit and only the parent socket listening
