@@ -1,5 +1,5 @@
 {
-    "name": "osmscout-server",
+    "name": "osmscout-server.jonnius",
     "description": "Local server providing offline map tiles, search, and routing",
     "architecture": "@CLICK_ARCH@",
     "title": "OSM Scout Server",
@@ -11,5 +11,5 @@
     },
     "version": "1.17.1",
     "maintainer": "Rinigus <rinigus.git@gmail.org>",
-    "framework" : "ubuntu-sdk-16.04"
+    "framework" : "@CLICK_FRAMEWORK@"
 }
