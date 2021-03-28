@@ -17,9 +17,9 @@ isEmpty(DBUS_SERVICE_PATH) {
 
 use_dbusactivation {
     dbusact.extra = install -v -m 644 $$PWD/io.github.rinigus.OSMScoutServer.service \
-       ${INSTALL_ROOT}${DBUS_SERVICE_PATH}/io.github.rinigus.OSMScoutServer.service ;\
-       sed -i -e \'s|PREFIX/osmscout-server|$${SERVER_EXE}|g\' ${INSTALL_ROOT}${DBUS_SERVICE_PATH}/io.github.rinigus.OSMScoutServer.service;
-    dbusact.path = /usr/share/dbus-1/services
+       ${INSTALL_ROOT}$${DBUS_SERVICE_PATH}/io.github.rinigus.OSMScoutServer.service ;\
+       sed -i -e \'s|PREFIX/osmscout-server|$${SERVER_EXE}|g\' ${INSTALL_ROOT}$${DBUS_SERVICE_PATH}/io.github.rinigus.OSMScoutServer.service;
+    dbusact.path = $${DBUS_SERVICE_PATH}
     INSTALLS += dbusact
 }
 
