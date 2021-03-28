@@ -9,10 +9,16 @@ target.path = $$SERVER_PATH
 INSTALLS += target
 
 # Installing dbus service, processing path
+
+# DBus path
+isEmpty(DBUS_SERVICE_PATH) {
+    DBUS_SERVICE_PATH = /usr/share/dbus-1/services
+}
+
 use_dbusactivation {
     dbusact.extra = install -v -m 644 $$PWD/io.github.rinigus.OSMScoutServer.service \
-       ${INSTALL_ROOT}/usr/share/dbus-1/services/io.github.rinigus.OSMScoutServer.service ;\
-       sed -i -e \'s|PREFIX/osmscout-server|$${SERVER_EXE}|g\' ${INSTALL_ROOT}/usr/share/dbus-1/services/io.github.rinigus.OSMScoutServer.service;
+       ${INSTALL_ROOT}${DBUS_SERVICE_PATH}/io.github.rinigus.OSMScoutServer.service ;\
+       sed -i -e \'s|PREFIX/osmscout-server|$${SERVER_EXE}|g\' ${INSTALL_ROOT}${DBUS_SERVICE_PATH}/io.github.rinigus.OSMScoutServer.service;
     dbusact.path = /usr/share/dbus-1/services
     INSTALLS += dbusact
 }
