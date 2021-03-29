@@ -5,6 +5,23 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Mar 29 2021 rinigus <rinigus.git@gmail.com> 2.0.0-1
+- separate server and GUI into two applications
+- add support for DBus activation
+- add support for internal socket activation
+- stop socket activation on failure to avoid restarts
+- rename ubports to uuitk or click [jonnius]
+- add Costa Rica and Panama to map imports
+- [silica] add support for My Backup [atlochowski]
+- require C++14 to match Valhalla
+- add support for newer microhttpd [Thra11]
+- drop libosmscout backend by default
+- change DBus service, path, and interface names
+- allow to specify Valhalla version during packaging
+- code improvements, bugfixes
+- update docs
+- update translations
+
 * Fri Nov 20 2020 rinigus <rinigus.git@gmail.com> 1.17.1-1
 - update translations
 - add support for Fedora

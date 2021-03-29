@@ -39,6 +39,27 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="2.0.0" date="2021-03-29">
+     <description>
+       <ul>
+         <li>Separate server and GUI into two applications</li>
+         <li>Add support for DBus activation</li>
+         <li>Add support for internal socket activation</li>
+         <li>Stop socket activation on failure to avoid restarts</li>
+         <li>Rename ubports to uuitk or click [jonnius]</li>
+         <li>Add Costa Rica and Panama to map imports</li>
+         <li>[silica] Add support for My Backup [atlochowski]</li>
+         <li>Require C++14 to match Valhalla</li>
+         <li>Add support for newer microhttpd [Thra11]</li>
+         <li>Drop libosmscout backend by default</li>
+         <li>Change DBus service, path, and interface names</li>
+         <li>Allow to specify Valhalla version during packaging</li>
+         <li>Code improvements, bugfixes</li>
+         <li>Update documentation</li>
+         <li>Update translations</li>
+       </ul>
+     </description>
+   </release>
    <release version="1.17.1" date="2020-11-20">
      <description>
        <ul>
