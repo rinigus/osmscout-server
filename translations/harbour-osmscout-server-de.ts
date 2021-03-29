@@ -238,17 +238,12 @@
 <context>
     <name>Cover</name>
     <message>
-        <location filename="../gui/qml/platform.silica/Cover.qml" line="48"/>
-        <source>OSM Scout Server</source>
-        <translation>OSM Scout Server</translation>
-    </message>
-    <message>
-        <location filename="../gui/qml/platform.silica/Cover.qml" line="51"/>
+        <location filename="../gui/qml/platform.silica/Cover.qml" line="50"/>
         <source>Jobs</source>
         <translation>Aufgaben</translation>
     </message>
     <message>
-        <location filename="../gui/qml/platform.silica/Cover.qml" line="52"/>
+        <location filename="../gui/qml/platform.silica/Cover.qml" line="51"/>
         <source>Idle</source>
         <translation>Inaktiv</translation>
     </message>
@@ -1086,42 +1081,42 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <translation>Die Kartenverwaltung verwaltet Offline-Karten und zugehörige Datensätze auf dem Gerät. Hier kannst du Karten herunterladen, aktualisieren oder löschen.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="227"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="213"/>
         <source>Storage settings</source>
         <translation>Speicher-Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="231"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="217"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Die Speichereinstellungen werden durch das aktive Profil festgelegt. Wenn du die Speichereinstellungen ändern möchtest, wähle bitte das entsprechende Profil oder &lt;i&gt;Benutzerdefiniert&lt;/i&gt;.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="264"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="250"/>
         <source>Store datasets for Mapbox GL</source>
         <translation>Speichern von Datensätzen für Mapbox GL</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="274"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="260"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
         <translation>Speichern von Datensätzen für geocoder-nlp mit libpostal</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="285"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="271"/>
         <source>Store datasets for Valhalla routing engine</source>
         <translation>Speichern von Datensätzen für die Valhalla-Routing-Engine</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="286"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="272"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
         <translation>Wenn ausgewählt, werden die Valhalla-Datensätze nach dem Herunterladen auf dem Gerät gespeichert. Diese Datensätze sind für die Verwendung von Valhalla als Navigation erforderlich.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="295"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="281"/>
         <source>Store datasets for libosmscout</source>
         <translation>Speichern von Datensätzen für libosmscout</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="296"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="282"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
         <translation>Wenn ausgewählt, werden libosmscout-Datensätze auf dem Gerät gespeichert, nachdem sie heruntergeladen wurden. Diese Datensätze sind für die Darstellung, die Suche oder das Navigieren mittels libosmscout-Backend erforderlich.</translation>
     </message>
@@ -1136,78 +1131,78 @@ Beachten Sie, dass bei fehlgeschlagenem Download aufgrund fehlender Dateien auf 
         <translation>Übertragungen</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="114"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="111"/>
         <source>Missing data:&lt;br&gt;</source>
         <translation>Fehlende Daten:&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="123"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="120"/>
         <source>Start download</source>
         <translation>Starte Herunterladen</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="144"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="130"/>
         <source>Stop download</source>
         <translation>Herunterladen anhalten</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="150"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="136"/>
         <source>Provided maps</source>
         <translation>Verfügbare Karten</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="189"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="175"/>
         <source>Check for updates</source>
         <translation>Nach Aktualisierungen suchen</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="195"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="181"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
         <translation>Aktualisiere die Liste der aktuell verfügbaren Karten und zugehöriger Datensätze und suche nach Aktualisierungen für installierte Karten.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="201"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="187"/>
         <source>Storage</source>
         <translation>Speicher</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="212"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="198"/>
         <source>Start cleanup</source>
         <translation>Starte Bereinigung</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="221"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="207"/>
         <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
         <translation>Auf nicht mehr benötigte Dateien aus alten Abonnements prüfen.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="161"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="147"/>
         <source>Subscribe</source>
         <translation>Abonnieren</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="265"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="251"/>
         <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
         <translation> 78% match
 Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format enthalten nach dem Herunterladen auf dem Gerät gespeichert. Diese Datensätze bestehen aus den Küstenlinien der Welt (ca. 12 MB), Schriftarten (ca. 80 MB) und länderspezifischen Datensätzen.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="275"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="261"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
         <translation>Wenn ausgewählt, werden libpostal-basierte Geocoder-Datensätze nach dem Herunterladen auf dem Gerät gespeichert. Diese Datensätze bestehen aus einem Sprachanalyse-Datensatz (ca. 700 MB) und länderspezifischen Datensätzen, die für die Adressanalyse und -suche verwendet werden.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="247"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="233"/>
         <source>Store datasets for Mapnik</source>
         <translation>Speichern von Datensätzen für Mapnik</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="248"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="234"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
         <translation>Wenn ausgewählt, werden Datensätze, die das Darstellen von Karten mit Mapnik ermöglichen, nach dem Herunterladen auf dem Gerät gespeichert. Diese Datensätze bestehen aus den Küstenlinien der Welt (ca. 700 MB) und länderspezifischen Datensätzen für das Rendering.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="171"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="157"/>
         <source>Select the countries or territories that you want to keep on device</source>
         <translation>Wähle Länder oder Gebiete aus, die du auf dem Gerät speichern möchtest</translation>
     </message>
@@ -2589,45 +2584,45 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
 <context>
     <name>main</name>
     <message>
-        <location filename="../server/src/main.cpp" line="154"/>
+        <location filename="../server/src/main.cpp" line="142"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="159"/>
+        <location filename="../server/src/main.cpp" line="147"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Kein Ausgabe Logs wenn der Server im Konsolenmodus läuft</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="164"/>
+        <location filename="../server/src/main.cpp" line="152"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Führen den Server im SystemD-Socket-aktivierten Modus aus</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="169"/>
+        <location filename="../server/src/main.cpp" line="157"/>
         <source>Run the server in DBus activated mode</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="173"/>
+        <location filename="../server/src/main.cpp" line="161"/>
         <source>Listen for connection on configured port and start full server on activity</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="465"/>
+        <location filename="../server/src/main.cpp" line="453"/>
+        <location filename="../server/src/main.cpp" line="461"/>
+        <location filename="../server/src/main.cpp" line="467"/>
         <location filename="../server/src/main.cpp" line="473"/>
-        <location filename="../server/src/main.cpp" line="479"/>
-        <location filename="../server/src/main.cpp" line="485"/>
         <source>Failed to register DBus object: %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="514"/>
+        <location filename="../server/src/main.cpp" line="502"/>
         <source>Failed to register DBus service: %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../gui/src/main.cpp" line="115"/>
+        <location filename="../gui/src/main.cpp" line="107"/>
         <source>OSM Scout Server GUI</source>
         <translation type="unfinished"/>
     </message>

@@ -10,12 +10,12 @@
         <location filename="../gui/qml/AboutPage.qml" line="33"/>
         <source>insert here translator(s) of your language separated by &lt;br&gt;</source>
         <extracomment>This is a special message that shouldn't be translated literally. It is used in the about page to give credits to the translators. Thus, you should translate it to your name. You can also include other translators who have contributed to this translation; in that case, please write them on separate lines seperated by newlines (&lt;br&gt;).</extracomment>
-        <translation type="unfinished"/>
+        <translation>Впишите сюда имена переводчиков на ваш язык, разделяя их &lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="35"/>
         <source>Translated by:</source>
-        <translation type="unfinished"/>
+        <translation>Переводчики:</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="38"/>
@@ -238,17 +238,12 @@
 <context>
     <name>Cover</name>
     <message>
-        <location filename="../gui/qml/platform.silica/Cover.qml" line="48"/>
-        <source>OSM Scout Server</source>
-        <translation>Сервер OSM Scout</translation>
-    </message>
-    <message>
-        <location filename="../gui/qml/platform.silica/Cover.qml" line="51"/>
+        <location filename="../gui/qml/platform.silica/Cover.qml" line="50"/>
         <source>Jobs</source>
         <translation>Задания</translation>
     </message>
     <message>
-        <location filename="../gui/qml/platform.silica/Cover.qml" line="52"/>
+        <location filename="../gui/qml/platform.silica/Cover.qml" line="51"/>
         <source>Idle</source>
         <translation>Неактивный</translation>
     </message>
@@ -1085,42 +1080,42 @@
         <translation>Диспетчер Карт управляет хранением оффлайновых карт и соответствующих наборов данных на устройстве. Здесь можно выбрать параметры и страны, которые будут сохранены, обновлены или удалены с устройства.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="227"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="213"/>
         <source>Storage settings</source>
         <translation>Параметры хранения</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="231"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="217"/>
         <source>Storage settings are set by the profile. If you wish to change storage settings, please set the corresponding profile or set profile to &lt;i&gt;Custom&lt;/i&gt;.</source>
         <translation>Настройки хранения определяются профилем. Если требуется изменить настройки хранения, то необходимо установить соответствующий профиль или указать профиль как &lt;i&gt;Пользовательский&lt;/i&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="264"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="250"/>
         <source>Store datasets for Mapbox GL</source>
         <translation>Сохранить наборы данных для Mapbox GL</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="274"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="260"/>
         <source>Store datasets for geocoder-nlp with libpostal</source>
         <translation>Сохранить наборы данных для geocoder-nlp с помощью libpostal</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="285"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="271"/>
         <source>Store datasets for Valhalla routing engine</source>
         <translation>Сохранить наборы данных для маршрутизатора Valhalla</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="286"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="272"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
         <translation>При выборе после загрузки наборы данных Valhalla будут сохранены на устройстве. Эти наборы данных необходимы маршрутизатору Valhalla.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="295"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="281"/>
         <source>Store datasets for libosmscout</source>
         <translation>Сохранить наборы данных для libosmscout</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="296"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="282"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
         <translation>При выборе после загрузки наборы данных libosmscout будут сохранены на устройстве. Эти наборы данных необходимы для отрисовки, поиска или прокладки маршрута бэкэнду libosmscout.</translation>
     </message>
@@ -1135,77 +1130,77 @@
         <translation>Загрузки</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="114"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="111"/>
         <source>Missing data:&lt;br&gt;</source>
         <translation>Отсутствующие данные:&lt;br&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="123"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="120"/>
         <source>Start download</source>
         <translation>Начать загрузку</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="144"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="130"/>
         <source>Stop download</source>
         <translation>Остановить загрузку</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="150"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="136"/>
         <source>Provided maps</source>
         <translation>Имеющиеся карты</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="189"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="175"/>
         <source>Check for updates</source>
         <translation>Проверить обновления</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="195"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="181"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
         <translation>Обновить список доступных карт и наборов данных, а также проверить возможность обновления установленных карт</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="201"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="187"/>
         <source>Storage</source>
         <translation>Объем памяти</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="212"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="198"/>
         <source>Start cleanup</source>
         <translation>Начать очистку</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="221"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="207"/>
         <source>Check whether there are files that are not used anymore from the earlier subscriptions</source>
         <translation>Проверить, имеются ли более неиспользуемые файлы из предыдущих запросов</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="161"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="147"/>
         <source>Subscribe</source>
         <translation>Выбрать</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="265"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="251"/>
         <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
         <translation>Выбранные наборы данных с векторными тайлами в формате Mapbox GL будут сохранены на устройстве после загрузки. Эти наборы данных состоят из береговых линий земного шара(около 12 МБ), шрифтов(около 80МБ) и зависящих от страны наборов данных.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="275"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="261"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
         <translation>После выбора наборы данных геокодера на базе libpostal будут сохранены на устройстве после загрузки. Эти наборы данных состоят из набора данных языкового анализа(около 700МБ) и наборов данных, специфических для стран, которые используются для анализа адресов и поиска.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="247"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="233"/>
         <source>Store datasets for Mapnik</source>
         <translation>Сохранить наборы данных для Mapnik</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="248"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="234"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
         <translation>После выбора наборы данных для отрисовки карт с помощью Mapnik будут сохранены на устройстве после загрузки. Эти наборы данных состоят из береговых линий Земли(около 700 МБ) и специфических для стран наборов данных, которые используются для отрисовки.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/MapManagerPage.qml" line="171"/>
+        <location filename="../gui/qml/MapManagerPage.qml" line="157"/>
         <source>Select the countries or territories that you want to keep on device</source>
         <translation>Выбрать страны или территории для сохранения на устройстве</translation>
     </message>
@@ -1948,47 +1943,47 @@
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="54"/>
         <source>Activating server via network</source>
-        <translation type="unfinished"/>
+        <translation>Активация сервера по сети</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="74"/>
         <source>Server reached via network</source>
-        <translation type="unfinished"/>
+        <translation>Связь с сервером по сети установлена</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="80"/>
         <source>Failed to reach server via network</source>
-        <translation type="unfinished"/>
+        <translation>Невозможно связаться с сервером по сети</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="89"/>
         <source>Activating server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Активация сервера по DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="103"/>
         <source>Server reached via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Связь с сервером по DBus установлена</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="108"/>
         <source>Failed to reach server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Невозможно связаться с сервером по DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="114"/>
         <source>Starting server</source>
-        <translation type="unfinished"/>
+        <translation>Сервер запускается</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="128"/>
         <source>Server stopped</source>
-        <translation type="unfinished"/>
+        <translation>Сервер остановлен</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="133"/>
         <source>Error starting server&lt;br&gt;Used path: %1</source>
-        <translation type="unfinished"/>
+        <translation>Ошибка при запуске сервера&lt;br&gt;Задан путь: %1</translation>
     </message>
 </context>
 <context>
@@ -2351,7 +2346,7 @@
     <message>
         <location filename="../gui/qml/StartPage.qml" line="311"/>
         <source>OSM Scout Server not running</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server не запущен</translation>
     </message>
     <message>
         <location filename="../gui/qml/StartPage.qml" line="314"/>
@@ -2440,7 +2435,7 @@
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="67"/>
         <source>For installations without &lt;i&gt;systemd&lt;/i&gt;, you can run the server as one of the automatically started programs on login. See &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;User&apos;s Guide&lt;/a&gt; for details on how to start the server correctly in this case.</source>
-        <translation type="unfinished"/>
+        <translation>В случае установки без &lt;i&gt;systemd&lt;/i&gt; сервер можно включить в число автоматически запускаемых программ при входе в систему. См. &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;Руководство пользователя&lt;/a&gt;, чтобы узнать, как правильно запускать сервер в этом случае.</translation>
     </message>
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="74"/>
@@ -2585,47 +2580,47 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../server/src/main.cpp" line="154"/>
+        <location filename="../server/src/main.cpp" line="142"/>
         <source>OSM Scout Server</source>
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="159"/>
+        <location filename="../server/src/main.cpp" line="147"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Не выводить логи при запуске в консольном режиме</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="164"/>
+        <location filename="../server/src/main.cpp" line="152"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Запустить сервер в SystemD socket активированном режиме</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="169"/>
+        <location filename="../server/src/main.cpp" line="157"/>
         <source>Run the server in DBus activated mode</source>
-        <translation type="unfinished"/>
+        <translation>Запустить сервер в режиме активации по DBus</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="173"/>
+        <location filename="../server/src/main.cpp" line="161"/>
         <source>Listen for connection on configured port and start full server on activity</source>
-        <translation type="unfinished"/>
+        <translation>Ожидать подключения к заданному порту и запускать сервер полностью при обнаружении сетевой активности</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="465"/>
+        <location filename="../server/src/main.cpp" line="453"/>
+        <location filename="../server/src/main.cpp" line="461"/>
+        <location filename="../server/src/main.cpp" line="467"/>
         <location filename="../server/src/main.cpp" line="473"/>
-        <location filename="../server/src/main.cpp" line="479"/>
-        <location filename="../server/src/main.cpp" line="485"/>
         <source>Failed to register DBus object: %1</source>
-        <translation type="unfinished"/>
+        <translation>Не удается зарегистрировать объект DBus: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="514"/>
+        <location filename="../server/src/main.cpp" line="502"/>
         <source>Failed to register DBus service: %1</source>
-        <translation type="unfinished"/>
+        <translation>Не удается зарегистрировать службу DBus: %1</translation>
     </message>
     <message>
-        <location filename="../gui/src/main.cpp" line="115"/>
+        <location filename="../gui/src/main.cpp" line="107"/>
         <source>OSM Scout Server GUI</source>
-        <translation type="unfinished"/>
+        <translation>Графический интерфейс OSM Scout Server</translation>
     </message>
 </context>
 <context>
@@ -2633,7 +2628,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="30"/>
         <source>Initializing and waiting for connection with the server</source>
-        <translation type="unfinished"/>
+        <translation>Сервер инициализируется и ожидает подключений</translation>
     </message>
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="35"/>
@@ -2648,7 +2643,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="68"/>
         <source>OSM Scout Server is not reachable. Waiting for it to appear.</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server недоступен. Ожидание связи с ним.</translation>
     </message>
 </context>
 </TS>
