@@ -10,12 +10,12 @@
         <location filename="../gui/qml/AboutPage.qml" line="33"/>
         <source>insert here translator(s) of your language separated by &lt;br&gt;</source>
         <extracomment>This is a special message that shouldn't be translated literally. It is used in the about page to give credits to the translators. Thus, you should translate it to your name. You can also include other translators who have contributed to this translation; in that case, please write them on separate lines seperated by newlines (&lt;br&gt;).</extracomment>
-        <translation type="unfinished"/>
+        <translation>Carmen Fdez. B.</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="35"/>
         <source>Translated by:</source>
-        <translation type="unfinished"/>
+        <translation>Traducido por:</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="38"/>
@@ -1943,47 +1943,47 @@
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="54"/>
         <source>Activating server via network</source>
-        <translation type="unfinished"/>
+        <translation>Activando servidor a través de la red</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="74"/>
         <source>Server reached via network</source>
-        <translation type="unfinished"/>
+        <translation>Servidor detectado a través de la red</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="80"/>
         <source>Failed to reach server via network</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo acceder al servidor a través de la red</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="89"/>
         <source>Activating server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Activando servidor vía DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="103"/>
         <source>Server reached via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Servidor detectado vía DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="108"/>
         <source>Failed to reach server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo acceder al servidor vía DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="114"/>
         <source>Starting server</source>
-        <translation type="unfinished"/>
+        <translation>Iniciando servidor</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="128"/>
         <source>Server stopped</source>
-        <translation type="unfinished"/>
+        <translation>Servidor detenido</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="133"/>
         <source>Error starting server&lt;br&gt;Used path: %1</source>
-        <translation type="unfinished"/>
+        <translation>Error al iniciar servidor&lt;br&gt;Ruta usada: %1</translation>
     </message>
 </context>
 <context>
@@ -2346,7 +2346,7 @@
     <message>
         <location filename="../gui/qml/StartPage.qml" line="311"/>
         <source>OSM Scout Server not running</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server no está ejecutándose</translation>
     </message>
     <message>
         <location filename="../gui/qml/StartPage.qml" line="314"/>
@@ -2435,7 +2435,7 @@
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="67"/>
         <source>For installations without &lt;i&gt;systemd&lt;/i&gt;, you can run the server as one of the automatically started programs on login. See &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;User&apos;s Guide&lt;/a&gt; for details on how to start the server correctly in this case.</source>
-        <translation type="unfinished"/>
+        <translation>Para instalaciones sin &lt;i&gt;systemd&lt;/i&gt;, puedes ejecutar el servidor como uno de los programas iniciados automáticamente al iniciar sesión. Consulta la &lt;a href=&apos;https://rinigus.github.io/osmscout-server/es&apos;&gt;Guía de usuario&lt;/a&gt; para ver los detalles sobre cómo iniciar el servidor correctamente en este caso.</translation>
     </message>
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="74"/>
@@ -2597,12 +2597,12 @@
     <message>
         <location filename="../server/src/main.cpp" line="157"/>
         <source>Run the server in DBus activated mode</source>
-        <translation type="unfinished"/>
+        <translation>Ejecutar el servidor en modo DBus activado</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="161"/>
         <source>Listen for connection on configured port and start full server on activity</source>
-        <translation type="unfinished"/>
+        <translation>Escucha la conexión en el puerto configurado e inicia el servidor durante la actividad</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="453"/>
@@ -2610,17 +2610,17 @@
         <location filename="../server/src/main.cpp" line="467"/>
         <location filename="../server/src/main.cpp" line="473"/>
         <source>Failed to register DBus object: %1</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo registrar objeto DBus: %1</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="502"/>
         <source>Failed to register DBus service: %1</source>
-        <translation type="unfinished"/>
+        <translation>No se pudo registrar servicio DBus: %1</translation>
     </message>
     <message>
         <location filename="../gui/src/main.cpp" line="107"/>
         <source>OSM Scout Server GUI</source>
-        <translation type="unfinished"/>
+        <translation>GUI de OSM Scout Server</translation>
     </message>
 </context>
 <context>
@@ -2628,7 +2628,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="30"/>
         <source>Initializing and waiting for connection with the server</source>
-        <translation type="unfinished"/>
+        <translation>Inicializando y esperando conexión con el servidor</translation>
     </message>
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="35"/>
@@ -2643,7 +2643,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="68"/>
         <source>OSM Scout Server is not reachable. Waiting for it to appear.</source>
-        <translation type="unfinished"/>
+        <translation>No se puede acceder a OSM Scout Server. Esperando a que aparezca</translation>
     </message>
 </context>
 </TS>

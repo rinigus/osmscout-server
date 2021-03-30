@@ -10,12 +10,12 @@
         <location filename="../gui/qml/AboutPage.qml" line="33"/>
         <source>insert here translator(s) of your language separated by &lt;br&gt;</source>
         <extracomment>This is a special message that shouldn't be translated literally. It is used in the about page to give credits to the translators. Thus, you should translate it to your name. You can also include other translators who have contributed to this translation; in that case, please write them on separate lines seperated by newlines (&lt;br&gt;).</extracomment>
-        <translation type="unfinished"/>
+        <translation>pljmn</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="35"/>
         <source>Translated by:</source>
-        <translation type="unfinished"/>
+        <translation>Vertaald door:</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="38"/>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="53"/>
         <source>Banner photo by %1 (%2 license).</source>
-        <translation type="unfinished"/>
+        <translation>Banierfoto door %1 (%2-licentie).</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="57"/>
@@ -75,7 +75,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="77"/>
         <source>Please note that &lt;i&gt;libpostal&lt;/i&gt; is developed to be used with the fine tuned model covering the World. The country-based models were developed to use &lt;i&gt;libpostal&lt;/i&gt; on mobile devices and have not been specifically tuned. Please submit the issues with libpostal performance on country-based models to &lt;i&gt;OSM Scout Server&lt;/i&gt; or &lt;i&gt;geocoder-nlp&lt;/i&gt; github projects.</source>
-        <translation>Let op: &lt;i&gt;libpostal&lt;/i&gt; is ontwikkeld voor gebruikt te worden met het verfijnde model dat de wereld omvat. De landspecifieke modellen zijn ontwikkeld voor het gebruik van &lt;i&gt;libpostal&lt;/i&gt; op mobiele apparaten en zijn niet specifiek afgestemd. Meldt problemen met prestaties van libpostal m.b.t. landspecifieke modellen op de GitHub-pagina’s van &lt;i&gt;OSM Scout Server&lt;/i&gt; of &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
+        <translation>Let op: &lt;i&gt;libpostal&lt;/i&gt; is ontwikkeld voor gebruikt te worden met het verfijnd model dat de wereld omvat. De landspecifieke modellen zijn ontwikkeld voor het gebruik van &lt;i&gt;libpostal&lt;/i&gt; op mobiele apparaten en zijn niet specifiek afgestemd. Meldt problemen met prestaties van libpostal m.b.t. landspecifieke modellen op de GitHub-pagina’s van &lt;i&gt;OSM Scout Server&lt;/i&gt; of &lt;i&gt;geocoder-nlp&lt;/i&gt;.</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="84"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="137"/>
         <source>is a server that provides offline map services</source>
-        <translation>is ne server die dat mapdiensten offline aanbiedt</translation>
+        <translation>is ne server dat kaartdiensten offline aanbiedt</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="141"/>
@@ -480,7 +480,7 @@
     <message>
         <location filename="../server/src/filedownloader.cpp" line="455"/>
         <source>Error in processing downloaded data: could not start the program</source>
-        <translation>Fout bij verwerken van gedownloade gegevens: kon het programma niet starten</translation>
+        <translation>Fout bij verwerken van gedownloade gegevens: kost het programma niet starten</translation>
     </message>
 </context>
 <context>
@@ -726,7 +726,7 @@
     <message>
         <location filename="../server/src/mapmanager.cpp" line="78"/>
         <source>Could not allocate Map Manager features</source>
-        <translation>Kon kaartbeheerderfunctionaliteit niet toewijzen</translation>
+        <translation>Kost kaartbeheerderfunctionaliteit niet toewijzen</translation>
     </message>
     <message>
         <location filename="../server/src/mapmanager.cpp" line="129"/>
@@ -855,7 +855,7 @@
     <message>
         <location filename="../server/src/mapmanager.cpp" line="1024"/>
         <source>Could not register downloaded file in the tracking database</source>
-        <translation>Kon gedownload bestand niet registreren in de volgdatabank</translation>
+        <translation>Kost het gedownload bestand niet registreren in de volgdatabank</translation>
     </message>
     <message>
         <location filename="../server/src/mapmanager.cpp" line="1025"/>
@@ -866,7 +866,7 @@
         <location filename="../server/src/mapmanager.cpp" line="1048"/>
         <location filename="../server/src/mapmanager.cpp" line="1049"/>
         <source>Could not retrieve server URL</source>
-        <translation>Kon server-URL niet ophalen</translation>
+        <translation>Kost de server-URL niet ophalen</translation>
     </message>
     <message>
         <location filename="../server/src/mapmanager.cpp" line="1080"/>
@@ -1685,7 +1685,7 @@
     <message>
         <location filename="../gui/qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation type="unfinished"/>
+        <translation>Afhankelijk van de manier waarop dat OSM Scout Server is ingepakt geweest kunnen der hier bepaalde profielen ontbreken.</translation>
     </message>
     <message>
         <location filename="../gui/qml/ProfilesPage.qml" line="56"/>
@@ -1943,47 +1943,47 @@
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="54"/>
         <source>Activating server via network</source>
-        <translation type="unfinished"/>
+        <translation>Server activeren via het netwerk</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="74"/>
         <source>Server reached via network</source>
-        <translation type="unfinished"/>
+        <translation>Server bereikt via het netwerk</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="80"/>
         <source>Failed to reach server via network</source>
-        <translation type="unfinished"/>
+        <translation>Kost de server niet bereiken via het netwerk</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="89"/>
         <source>Activating server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Server activeren via DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="103"/>
         <source>Server reached via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Server bereikt via DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="108"/>
         <source>Failed to reach server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Kost de server niet bereiken via DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="114"/>
         <source>Starting server</source>
-        <translation type="unfinished"/>
+        <translation>Server wordt gestart</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="128"/>
         <source>Server stopped</source>
-        <translation type="unfinished"/>
+        <translation>Server is gestopt</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="133"/>
         <source>Error starting server&lt;br&gt;Used path: %1</source>
-        <translation type="unfinished"/>
+        <translation>Fout bij starten van server&lt;br&gt;Pad gebruikt: %1</translation>
     </message>
 </context>
 <context>
@@ -2346,7 +2346,7 @@
     <message>
         <location filename="../gui/qml/StartPage.qml" line="311"/>
         <source>OSM Scout Server not running</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server is niet actief</translation>
     </message>
     <message>
         <location filename="../gui/qml/StartPage.qml" line="314"/>
@@ -2435,7 +2435,7 @@
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="67"/>
         <source>For installations without &lt;i&gt;systemd&lt;/i&gt;, you can run the server as one of the automatically started programs on login. See &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;User&apos;s Guide&lt;/a&gt; for details on how to start the server correctly in this case.</source>
-        <translation type="unfinished"/>
+        <translation>Op installaties zonder &lt;i&gt;systemd&lt;/i&gt; kunt ge de server automatisch laten opstarten bij het aanmelden. Bekijkt de &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;gebruikersgids&lt;/a&gt; voor meer informatie.</translation>
     </message>
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="74"/>
@@ -2597,12 +2597,12 @@
     <message>
         <location filename="../server/src/main.cpp" line="157"/>
         <source>Run the server in DBus activated mode</source>
-        <translation type="unfinished"/>
+        <translation>Server uitvoeren in DBus-geactiveerde modus</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="161"/>
         <source>Listen for connection on configured port and start full server on activity</source>
-        <translation type="unfinished"/>
+        <translation>Luister naar verbinding op geconfigureerde poort en start volledige server bij activiteit</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="453"/>
@@ -2610,17 +2610,17 @@
         <location filename="../server/src/main.cpp" line="467"/>
         <location filename="../server/src/main.cpp" line="473"/>
         <source>Failed to register DBus object: %1</source>
-        <translation type="unfinished"/>
+        <translation>Kost DBus-object niet registreren: %1</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="502"/>
         <source>Failed to register DBus service: %1</source>
-        <translation type="unfinished"/>
+        <translation>Kost DBus-dienst niet registreren: %1</translation>
     </message>
     <message>
         <location filename="../gui/src/main.cpp" line="107"/>
         <source>OSM Scout Server GUI</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server-gebruikersinterface</translation>
     </message>
 </context>
 <context>
@@ -2628,7 +2628,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="30"/>
         <source>Initializing and waiting for connection with the server</source>
-        <translation type="unfinished"/>
+        <translation>Initialiseren en wachten op verbinding met de server</translation>
     </message>
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="35"/>
@@ -2643,7 +2643,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="68"/>
         <source>OSM Scout Server is not reachable. Waiting for it to appear.</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server is niet bereikbaar. Wachten totdat hij verschijnt.</translation>
     </message>
 </context>
 </TS>
