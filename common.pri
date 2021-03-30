@@ -13,7 +13,7 @@ equals(SCOUT_FLAVOR, "silica") {
 
 # set version
 isEmpty(VERSION) {
-    VERSION = 1.17.1
+    VERSION = 2.0.0
 }
 
 # The name of the application
