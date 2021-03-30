@@ -82,6 +82,7 @@ OTHER_FILES += qml/platform.qtcontrols/*.qml
 OTHER_FILES += qml/platform.kirigami/*.qml
 OTHER_FILES += qml/platform.click/*.qml
 OTHER_FILES += qml/platform.silica/*.qml
+OTHER_FILES += qml/platform.uuitk/*.qml
 OTHER_FILES += osmscout-server.desktop harbour-osmscout-server.desktop
 
 include(src/fileselector/fileselector.pri)
