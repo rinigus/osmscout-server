@@ -41,3 +41,5 @@ Generate vendored release
 OSMSC_VERSION=2.0.1
 git-archive-all -v --prefix=osmscout-server-${OSMSC_VERSION} osmscout-server-${OSMSC_VERSION}.tar.gz
 ```
+
+Upload it to Gitlab after making a release.
