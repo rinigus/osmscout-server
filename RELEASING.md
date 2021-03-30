@@ -34,3 +34,10 @@ git add osmscout-server.pro packaging/osmscout-server.appdata.xml rpm/harbour-os
 git status
 git commit -m "bump version"
 ```
+
+Generate vendored release
+
+```
+OSMSC_VERSION=2.0.1
+git-archive-all -v --prefix=osmscout-server-${OSMSC_VERSION} osmscout-server-${OSMSC_VERSION}.tar.gz
+```
