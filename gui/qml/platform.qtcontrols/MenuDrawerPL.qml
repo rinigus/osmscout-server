@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
-import QtQuick.Controls 2.12
+import QtQuick 2.0
+import QtQuick.Controls 2.2
 
 Drawer {
     id: menu
@@ -31,6 +31,7 @@ Drawer {
 
     property string         banner // added for compatibility
     default property alias  content: column.data
+    property bool           enabled: true // https://github.com/rinigus/osmscout-server/issues/374
     property string         title // added for compatibility
     property string         titleIcon // added for compatibility
 
