@@ -30,7 +30,7 @@ emacs common.pri packaging/osmscout-server.appdata.xml packaging/click/manifest.
 
 Commit version changes
 ```
-git add osmscout-server.pro packaging/osmscout-server.appdata.xml rpm/harbour-osmscout-server.changes rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.spec packaging/click/manifest.json
+git add osmscout-server.pro packaging/osmscout-server.appdata.xml rpm/harbour-osmscout-server.changes rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.spec packaging/click/manifest.json common.pri
 git status
 git commit -m "bump version"
 ```
