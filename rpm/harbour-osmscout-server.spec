@@ -99,37 +99,37 @@ desktop-file-install --delete-original       \
 # ship all shared libraries not allowed in Harbour with the app
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 
-cp /usr/lib/libmapnik.so.3.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libproj.so.12 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libharfbuzz.so.0 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libjpeg.so.62 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libfreetype.so.6 %{buildroot}%{_datadir}/%{name}/lib
-#cp /usr/lib/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
-#cp /usr/lib/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
-#cp /usr/lib/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libmapnik.so.3.0 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libproj.so.12 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libharfbuzz.so.0 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libjpeg.so.62 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libfreetype.so.6 %{buildroot}%{_datadir}/%{name}/lib
+#cp %{_libdir}/libicui18n.so.52 %{buildroot}%{_datadir}/%{name}/lib
+#cp %{_libdir}/libicudata.so.52 %{buildroot}%{_datadir}/%{name}/lib
+#cp %{_libdir}/libicuuc.so.52 %{buildroot}%{_datadir}/%{name}/lib
 
-cp /usr/lib/libboost_filesystem-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_filesystem.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_regex-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_regex.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_system-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_system.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_iostreams-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_date_time-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_chrono-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/libboost_thread-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_filesystem-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_filesystem.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_regex-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_regex.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_system-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_system.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_iostreams-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_date_time-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_chrono-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libboost_thread-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 
-cp /usr/lib/libprotobuf.so*  %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libprotobuf.so*  %{buildroot}%{_datadir}/%{name}/lib
 
-cp /usr/lib/liblz4.so.1.8.1 %{buildroot}%{_datadir}/%{name}/lib
-cp /usr/lib/liblz4.so.1 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/liblz4.so.1.8.1 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/liblz4.so.1 %{buildroot}%{_datadir}/%{name}/lib
 
 # mapnik fonts and input plugins
 # not needed anymore since input plugins are linked
 # into main mapnik library and fonts are distributed with
 # the styles
-#cp -r /usr/lib/mapnik %{buildroot}%{_datadir}/%{name}/lib
+#cp -r %{_libdir}/mapnik %{buildroot}%{_datadir}/%{name}/lib
 
 strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.3.0
 #strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
