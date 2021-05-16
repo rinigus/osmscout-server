@@ -10,12 +10,12 @@
         <location filename="../gui/qml/AboutPage.qml" line="33"/>
         <source>insert here translator(s) of your language separated by &lt;br&gt;</source>
         <extracomment>This is a special message that shouldn't be translated literally. It is used in the about page to give credits to the translators. Thus, you should translate it to your name. You can also include other translators who have contributed to this translation; in that case, please write them on separate lines seperated by newlines (&lt;br&gt;).</extracomment>
-        <translation type="unfinished"/>
+        <translation>(Ladislav Hodas) &lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="35"/>
         <source>Translated by:</source>
-        <translation type="unfinished"/>
+        <translation>Ladislav Hodas</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="38"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../server/src/appsettings.cpp" line="385"/>
         <source>Default</source>
-        <translation>Východzíe</translation>
+        <translation>Východzie</translation>
     </message>
     <message>
         <location filename="../server/src/appsettings.cpp" line="386"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../server/src/dbmaster_search.cpp" line="533"/>
         <source>Database is not open, cannot search for POI</source>
-        <translation>Databáza nie je otvorená, nemožno nájsť zaujímavý bod (POI)</translation>
+        <translation>Databáza nie je otvorená, nemožno nájsť zaujímavý bod - POI</translation>
     </message>
     <message>
         <location filename="../server/src/dbmaster_search.cpp" line="594"/>
@@ -348,7 +348,7 @@
     <message>
         <location filename="../server/src/dbmaster_search.cpp" line="694"/>
         <source>Database is not open, cannot list POI types</source>
-        <translation>Databáza nie je otvorená, nemožno nájsť typy zaujímavých bodov (POI)</translation>
+        <translation>Databáza nie je otvorená, nemožno nájsť typy zaujímavých bodov - POI</translation>
     </message>
 </context>
 <context>
@@ -1575,7 +1575,7 @@
     <message>
         <location filename="../gui/qml/OSMSpeedPage.qml" line="99"/>
         <source>motorway link</source>
-        <translation>diaľničné prepojenie/nájezd</translation>
+        <translation>diaľničné prepojenie/nájazd</translation>
     </message>
     <message>
         <location filename="../gui/qml/OSMSpeedPage.qml" line="107"/>
@@ -1797,7 +1797,7 @@
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="175"/>
         <source>At crossing (%crossingway%), %turncommand%</source>
-        <translation>Na križovatke s %crossingway%, %turncommand%</translation>
+        <translation>Na križovatke s (%crossingway%), %turncommand%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="244"/>
@@ -1839,43 +1839,43 @@
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="356"/>
         <source>Leave motorway into %into%</source>
-        <translation>Opustite diaľnicu na %into%</translation>
+        <translation>Opustite cestu na %into%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="359"/>
         <source>Leave motorway. %move%</source>
-        <translation>Opustite diaľnicu. %move%</translation>
+        <translation>Opustite cestu. %move%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="362"/>
         <location filename="../server/src/routingforhuman.cpp" line="369"/>
         <source>Leave motorway %from%</source>
-        <translation>Opustite diaľnicu %from%</translation>
+        <translation>Opustite cestu %from%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="365"/>
         <source>Leave motorway. %move% into %into%</source>
-        <translation>Opustite diaľnicu. %move% na %into%</translation>
+        <translation>Opustite cestu. %move% na %into%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="373"/>
         <source>Leave motorway %from%. %move%</source>
-        <translation>Opustite diaľnicu %from%. %move%</translation>
+        <translation>Opustite cestu %from%. %move%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="377"/>
         <source>Leave motorway %from%. %move% into %into%</source>
-        <translation>Opustite diaľnicu %from%. %move% na %into%</translation>
+        <translation>Opustite cestu %from%. %move% na %into%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="405"/>
         <source>Way changes name from %from% to %to%</source>
-        <translation>Cesta se mení z %from% na %to%</translation>
+        <translation>Cesta sa mení z %from% na %to%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="409"/>
         <source>Way changes name to %to%</source>
-        <translation>Cesta se mení na %to%</translation>
+        <translation>Cesta sa mení na %to%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="167"/>
@@ -1885,12 +1885,12 @@
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="213"/>
         <source>Leave roundabout (%num% exit) into street %street%</source>
-        <translation>Opustite križovatku s kruhovým objazdom (%num% sjezd) na ulici %street%</translation>
+        <translation>Opustite križovatku s kruhovým objazdom (%num% výjazd) na ulicu %street%</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="217"/>
         <source>Leave roundabout (%num% exit)</source>
-        <translation>Opustite križovatku s kruhovým objazdom (%num% sjezd)</translation>
+        <translation>Opustite križovatku s kruhovým objazdom (%num% výjazd)</translation>
     </message>
     <message>
         <location filename="../server/src/routingforhuman.cpp" line="188"/>
@@ -1948,12 +1948,12 @@
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="74"/>
         <source>Server reached via network</source>
-        <translation>Server použitý po sieti</translation>
+        <translation>Bol získaný prístup na server po sieti</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="80"/>
         <source>Failed to reach server via network</source>
-        <translation>Použitie servera po sieti zlyhalo</translation>
+        <translation>Nepodarilo sa získať prístup na server prostredníctvom siete</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="89"/>
@@ -1963,12 +1963,12 @@
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="103"/>
         <source>Server reached via DBus</source>
-        <translation>Server použitý po DBus</translation>
+        <translation>Na server sa pristúpilo po DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="108"/>
         <source>Failed to reach server via DBus</source>
-        <translation>Použitie servera po DBus zlyhalo</translation>
+        <translation>Nepodarilo sa pripojiť na server cez DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="114"/>
@@ -1978,7 +1978,7 @@
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="128"/>
         <source>Server stopped</source>
-        <translation>Server zastavený</translation>
+        <translation>Server bol zastavený</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="133"/>
@@ -2046,7 +2046,7 @@
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="63"/>
         <source>Folder to store maps.&lt;br&gt;&lt;b&gt;NB!&lt;/b&gt; This folder will be fully managed by OSM Scout Server. Please &lt;b&gt;allocate separate, empty folder&lt;/b&gt; that OSM Scout Server could use. This includes deleting all files within that folder when requested by you during cleanup or map updates.&lt;br&gt;&lt;i&gt;Example:&lt;/i&gt; Maps under &lt;i&gt;~nemo&lt;/i&gt;</source>
-        <translation>Priečinok pre ukladanie máp.&lt;br&gt; &lt;b&gt;Pozor!&lt;/b&gt; Tento adresár bude úplne pod správou servera OSM Scout. Prosím &lt;b&gt;priraďte samostatnú prázdnu zložku&lt;/b&gt;, ktorú by mohol OSM Scout Server použiť. To zahŕňa zmazanie všetkých súborov v danej zložke, keď o to požiadate počas čistenia alebo aktualizácie máp. &lt;br&gt;&lt;i&gt;Príklad:&lt;/i&gt; Mapy pod &lt;i&gt;~nemo&lt;/i&gt;</translation>
+        <translation>Priečinok pre ukladanie máp.&lt;br&gt; &lt;b&gt;Pozor!&lt;/b&gt; Tento adresár bude úplne pod správou servera OSM Scout. Prosím, &lt;b&gt;priraďte samostatnú prázdnu zložku&lt;/b&gt;, ktorú by mohol OSM Scout Server použiť. To zahŕňa zmazanie všetkých súborov v danej zložke, keď o to požiadate počas čistenia alebo aktualizácie máp. &lt;br&gt;&lt;i&gt;Príklad:&lt;/i&gt; Mapy pod &lt;i&gt;~nemo&lt;/i&gt;</translation>
     </message>
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="80"/>
@@ -2183,7 +2183,7 @@
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="186"/>
         <source>Renderer</source>
-        <translation>Interpreter</translation>
+        <translation>Kreslič</translation>
     </message>
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="188"/>
@@ -2210,7 +2210,7 @@
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="231"/>
         <source>NB! If you select &lt;i&gt;Geocoder-NLP&lt;/i&gt;, please specify languages that should be used for address parsing in the backend settings below. Otherwise, the server could use large amounts of RAM.</source>
-        <translation>Pozor! Ak vyberiete &lt;i&gt;Geocoder-NLP&lt;/i&gt;, v nižšie uvedených nastaveniach poskytovateľa, tak určite jazyky, ktoré majú byť použité pre analýzu adries. Inak by server mohol používať veľké množstvo pamäte RAM.</translation>
+        <translation>Pozor! Ak vyberiete &lt;i&gt;Geocoder-NLP&lt;/i&gt; v nižšie uvedených nastaveniach poskytovateľa, tak určte jazyky, ktoré majú byť použité pre analýzu adries. Inak by server mohol používať veľké množstvo pamäte RAM.</translation>
     </message>
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="243"/>
@@ -2240,7 +2240,7 @@
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="366"/>
         <source>Log info messages</source>
-        <translation>Protokolovať informačné správy</translation>
+        <translation>Zaznamenávať do protokolu informačné správy</translation>
     </message>
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="367"/>
@@ -2534,7 +2534,7 @@
     <message>
         <location filename="../gui/qml/ValhallaPage.qml" line="35"/>
         <source>Valhalla can be used as a routing engine to calculate routes and the routing instructions</source>
-        <translation>Valhalla môže byť použitý ako modul trasovania pre výpočet trás a navigačných inštrukcíí</translation>
+        <translation>Valhalla môže byť použitý ako modul trasovania pre výpočet trás a navigačných inštrukcií</translation>
     </message>
     <message>
         <location filename="../gui/qml/ValhallaPage.qml" line="39"/>
@@ -2592,7 +2592,7 @@
     <message>
         <location filename="../server/src/main.cpp" line="152"/>
         <source>Run the server in SystemD socket-activated mode</source>
-        <translation>Spustiť server v režime aktivovanom soketom SystemD</translation>
+        <translation>Spustiť server v režime aktivovanom zásuvkou SystemD</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="157"/>
@@ -2602,7 +2602,7 @@
     <message>
         <location filename="../server/src/main.cpp" line="161"/>
         <source>Listen for connection on configured port and start full server on activity</source>
-        <translation>Počúvajte pripojenie na nakonfigurovanom porte a pri aktivácii spustite celý server</translation>
+        <translation>Počúvať pripojenie na nakonfigurovanom porte a pri aktivácii spustite celý server</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="453"/>
