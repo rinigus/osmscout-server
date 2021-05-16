@@ -621,7 +621,7 @@
     <message>
         <location filename="../gui/qml/GeocoderPage.qml" line="78"/>
         <source>Load &lt;i&gt;libpostal&lt;/i&gt; on every call</source>
-        <translation>Lae &lt;i&gt;libpostal&lt;/i&gt; teek iga päringu puhul</translation>
+        <translation>Laadi &lt;i&gt;libpostal&lt;/i&gt; teek iga päringu puhul</translation>
     </message>
     <message>
         <location filename="../gui/qml/GeocoderPage.qml" line="79"/>
