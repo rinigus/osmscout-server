@@ -571,7 +571,7 @@
     <message>
         <location filename="../gui/qml/GeocoderPage.qml" line="39"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation type="unfinished"/>
+        <translation>Oluline: Kui soovid teatada aadresside töötlemise vigadest, siis palun esmalt vaata rakenduse teabe lehte.</translation>
     </message>
     <message>
         <location filename="../gui/qml/GeocoderPage.qml" line="26"/>
@@ -626,7 +626,7 @@
     <message>
         <location filename="../gui/qml/GeocoderPage.qml" line="79"/>
         <source>When selected, &lt;i&gt;libpostal&lt;/i&gt; databases will be loaded to the memory only while parsing the request. As a result, while search would take longer time, the memory overhead of libpostal is small in idle.</source>
-        <translation>Kui see valik on kasutusel, siis&lt;i&gt;libpostal&lt;/i&gt;&apos;i andmebaasid loetakse mällu vaid päringu töötlemise ajaks. Tulemuseks kulub päringute töötlemiseks rohkem aega, kuid jõudeolekus on mälukasutus väike.</translation>
+        <translation>Kui see valik on kasutusel, siis &lt;i&gt;libpostal&lt;/i&gt;&apos;i andmebaasid loetakse mällu vaid päringu töötlemise ajaks. Seetõttu kulub päringute töötlemiseks rohkem aega, kuid jõudeolekus on mälukasutus väike.</translation>
     </message>
 </context>
 <context>
@@ -667,7 +667,7 @@
     <message>
         <location filename="../gui/qml/MainMenu.qml" line="50"/>
         <source>About OSM Scout Server</source>
-        <translation>Teave OSM Scout Serveri  kohta</translation>
+        <translation>OSM Scout Serveri teave</translation>
     </message>
 </context>
 <context>
@@ -675,7 +675,7 @@
     <message>
         <location filename="../gui/qml/MainMenuReversed.qml" line="34"/>
         <source>About OSM Scout Server</source>
-        <translation>Teave OSM Scout Serveri  kohta</translation>
+        <translation>OSM Scout Serveri teave</translation>
     </message>
     <message>
         <location filename="../gui/qml/MainMenuReversed.qml" line="39"/>
@@ -1321,12 +1321,12 @@
     <message>
         <location filename="../gui/qml/MapnikPage.qml" line="42"/>
         <source>Scale factor</source>
-        <translation type="unfinished"/>
+        <translation>Mõõtkava suhe</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapnikPage.qml" line="43"/>
         <source>Scale factor used to draw features on a map. On high resolution displays, such as phones, it is advantageous to use scale factors larger than 1. As a first estimate, it is suggested to use scale factor of 3-5 on mobile devices.</source>
-        <translation type="unfinished"/>
+        <translation>Mõõtkava suhte alusel joonistame objekte kaardile. Suure eraldusvõimega ekraanidel, nagu näiteks nutitelefonides, soovitame kasutada 1&apos;st suuremat mõõtkava suhet. Sobiva välimuse leidmisel alusta sinu seadme jaoks sobiliku suhte leidmist proovimist 3-5 juurest.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapnikPage.qml" line="53"/>
@@ -1336,7 +1336,7 @@
     <message>
         <location filename="../gui/qml/MapnikPage.qml" line="54"/>
         <source>By increasing the size of the area which is used to load the data while rendering a tile, the renderer can improve label rendering by taking into account data from neighboring tiles. If you see too many cut labels, try to increase the buffer size. Note that large buffer sizes would slow down the rendering. The buffer size is scaled by the scaling factor to adjust for the increase in labels size.</source>
-        <translation type="unfinished"/>
+        <translation>Suurendades konkreetse paani ala ja arvestades naaberpaane, mida joonistusmootor kasutab kaardi visualiseerimisel, on tulemuseks kvaliteetsemad sisu sildid. Kui kaardil kuvatakse liiga palju poolikuid silte, siis proovi suurendada puhvri mahtu. Aga samas palun arvesta, et visualiseerimine tervikuna muutub aeglasemaks. Lisaks mõjutab puhvri suurust ka mõõtkava suhe, mille alusel kohanduvad siltide suurused.</translation>
     </message>
 </context>
 <context>
@@ -1482,7 +1482,7 @@
     <message>
         <location filename="../gui/qml/OSMScoutPage.qml" line="121"/>
         <source>Routing speeds</source>
-        <translation type="unfinished"/>
+        <translation>Teekonna kiirused</translation>
     </message>
     <message>
         <location filename="../gui/qml/OSMScoutPage.qml" line="127"/>
@@ -1520,7 +1520,7 @@
     <message>
         <location filename="../gui/qml/OSMSpeedPage.qml" line="26"/>
         <source>Routing speeds</source>
-        <translation type="unfinished"/>
+        <translation>Teekonna kiirused</translation>
     </message>
     <message>
         <location filename="../gui/qml/OSMSpeedPage.qml" line="33"/>
@@ -2373,7 +2373,7 @@
         <location filename="../gui/qml/StartPage.qml" line="378"/>
         <location filename="../gui/qml/StartPage.qml" line="387"/>
         <source>Next</source>
-        <translation type="unfinished"/>
+        <translation>Jätka</translation>
     </message>
     <message>
         <location filename="../gui/qml/StartPage.qml" line="359"/>
