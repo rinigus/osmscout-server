@@ -16,7 +16,7 @@ Name:       osmscout-server
 %endif
 
 Summary:    OSM Scout Server
-Version:    2.0.3
+Version:    2.0.4
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
