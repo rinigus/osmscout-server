@@ -12,7 +12,7 @@ Name:       osmscout-server
 
 %if 0%{?sailfishos}
 %define __provides_exclude_from ^%{_datadir}/.*$
-%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libboost_iostreams|libboost_chrono|libboost_thread|libboost_date_time|libprotobuf|liblz4|libfreetype|libharfbuzz|libjpeg|libmapnik|libproj|libtiff.*$
+%define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libboost_iostreams|libboost_chrono|libboost_thread|libboost_date_time|libpostal|libprotobuf|liblz4|libfreetype|libharfbuzz|libjpeg|libmapnik|libproj|libtiff.*$
 %endif
 
 Summary:    OSM Scout Server
@@ -119,6 +119,8 @@ cp %{_libdir}/libboost_iostreams-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libboost_date_time-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libboost_chrono-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libboost_thread-mt.so.* %{buildroot}%{_datadir}/%{name}/lib
+
+cp %{_libdir}/libpostal.so*  %{buildroot}%{_datadir}/%{name}/lib
 
 cp %{_libdir}/libprotobuf.so*  %{buildroot}%{_datadir}/%{name}/lib
 
