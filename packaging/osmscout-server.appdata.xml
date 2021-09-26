@@ -39,7 +39,7 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
-   <release version="2.0.0" date="2021-03-29">
+   <release version="2.0.4" date="2021-03-29">
      <description>
        <ul>
          <li>Separate server and GUI into two applications</li>
