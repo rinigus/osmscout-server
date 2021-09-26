@@ -4,3 +4,4 @@ Exec=osmscout-server-gui
 Type=Application
 Icon=io.github.rinigus.OSMScoutServer
 Categories=Science;Maps;Qt;
+X-Purism-FormFactor=Workstation;Mobile;
