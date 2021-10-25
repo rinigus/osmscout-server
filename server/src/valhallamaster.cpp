@@ -56,6 +56,7 @@ public:
       return;
 
     QString m = "Valhalla: " + QString::fromStdString(message);
+#if VALHALLA_VERSION_CURRENT < VALHALLA_VERSION(3,1,4)
     if (level == valhalla::midgard::logging::LogLevel::ERROR)
       InfoHub::logError(m);
     else if (level == valhalla::midgard::logging::LogLevel::WARN)
@@ -64,6 +65,16 @@ public:
 //      InfoHub::logInfo(m);
 //    else
 //      qDebug() << "skipped in production: " << m;
+#else
+    if (level == valhalla::midgard::logging::LogLevel::LogError)
+      InfoHub::logError(m);
+    else if (level == valhalla::midgard::logging::LogLevel::LogWarn)
+      InfoHub::logWarning(m);
+//    else if (level == valhalla::midgard::logging::LogLevel::LogInfo)
+//      InfoHub::logInfo(m);
+//    else
+//      qDebug() << "skipped in production: " << m;
+#endif
   }
 
   virtual void Log(const std::string &message, const std::string& custom_directive)
