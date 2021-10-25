@@ -3,6 +3,7 @@ Type=Application
 Icon=osmscout-server
 Exec=osmscout-server-gui
 Name=OSM Scout Server
+X-Purism-FormFactor=Workstation;Mobile;
 
 # translation example:
 # your app name in German locale (de)
