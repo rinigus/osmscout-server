@@ -28,10 +28,6 @@ isEmpty(APP_NAME) {
 # Overall QT options
 QT += core network dbus
 
-isEmpty(VALHALLA_VERSION) {
-    VALHALLA_VERSION=3.1
-}
-
 # selection of backends
 !disable_mapnik {
     CONFIG += use_mapnik

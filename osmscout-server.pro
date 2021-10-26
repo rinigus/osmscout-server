@@ -14,8 +14,7 @@ geocoder_data.files = data/geocoder-npl-tag-aliases.json
 geocoder_data.path = $${PREFIX}/share/$${TARGET}/data
 INSTALLS += geocoder_data
 
-valhalla_data.extra = install -v -m 644 $$PWD/data/valhalla.json-$${VALHALLA_VERSION} \
-   ${INSTALL_ROOT}/$${PREFIX}/share/$${TARGET}/data/valhalla.json ;
+valhalla_data.files = data/valhalla.json-*
 valhalla_data.path = $${PREFIX}/share/$${TARGET}/data
 INSTALLS += valhalla_data
 

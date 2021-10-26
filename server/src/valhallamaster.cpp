@@ -172,7 +172,18 @@ void ValhallaMaster::onValhallaChanged(QString valhalla_directory, QStringList c
 
 void ValhallaMaster::generateConfig()
 {
-  QFile fin(VALHALLA_CONFIG_TEMPLATE);
+  QString fname = VALHALLA_CONFIG_TEMPLATE "-";
+#if VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,1,4)
+  fname += QStringLiteral("3.1.4");
+#elif VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,1,1)
+  fname += QStringLiteral("3.1.1");
+#elif VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,1,0)
+  fname += QStringLiteral("3.1");
+#else
+  fname += QStringLiteral("3.0");
+#endif
+
+  QFile fin(fname);
   if (!fin.open(QIODevice::ReadOnly | QIODevice::Text))
     {
       InfoHub::logWarning(tr("Error opening Valhalla's configuration template %1").arg(VALHALLA_CONFIG_TEMPLATE));
