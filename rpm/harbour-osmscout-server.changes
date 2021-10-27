@@ -8,6 +8,7 @@
 * Wed Oct 27 2021 rinigus <rinigus.git@gmail.com> 2.1.0-1
 - adjust Valhalla module to support for multiple Valhalla versions
 - add support for Valhalla 3.1.4
+- add X-Purism-FormFactor to desktop files (Ferenc-)
 - update translations
 
 * Mon Mar 29 2021 rinigus <rinigus.git@gmail.com> 2.0.0-1
