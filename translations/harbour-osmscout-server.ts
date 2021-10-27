@@ -2501,27 +2501,27 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="167"/>
+        <location filename="../server/src/valhallamaster.cpp" line="189"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="175"/>
+        <location filename="../server/src/valhallamaster.cpp" line="197"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="207"/>
+        <location filename="../server/src/valhallamaster.cpp" line="229"/>
         <source>Failed to load Valhalla configuration: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="245"/>
+        <location filename="../server/src/valhallamaster.cpp" line="267"/>
         <source>Exception in Valhalla: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="212"/>
+        <location filename="../server/src/valhallamaster.cpp" line="234"/>
         <source>Valhalla routing engine started</source>
         <translation type="unfinished"></translation>
     </message>

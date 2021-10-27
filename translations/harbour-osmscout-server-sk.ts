@@ -15,7 +15,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="35"/>
         <source>Translated by:</source>
-        <translation>Ladislav Hodas</translation>
+        <translation>Preložené:</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="38"/>
@@ -103,12 +103,12 @@
     <message>
         <location filename="../server/src/appsettings.cpp" line="348"/>
         <source>mph</source>
-        <translation>mi/h</translation>
+        <translation>míľ/h</translation>
     </message>
     <message>
         <location filename="../server/src/appsettings.cpp" line="348"/>
         <source>mi.</source>
-        <translation>mi</translation>
+        <translation>míľa</translation>
     </message>
     <message>
         <location filename="../server/src/appsettings.cpp" line="350"/>
@@ -521,7 +521,7 @@
     <message>
         <location filename="../server/src/geomaster.cpp" line="99"/>
         <source>Countries used in search: </source>
-        <translation>Krajiny zahrnuté vo vyhľadávaní:</translation>
+        <translation>Krajiny zahrnuté vo vyhľadávaní: </translation>
     </message>
     <message>
         <location filename="../server/src/geomaster.cpp" line="136"/>
@@ -571,7 +571,7 @@
     <message>
         <location filename="../gui/qml/GeocoderPage.qml" line="39"/>
         <source>Disclaimer: Please see About regarding reporting of the issues with the address parsing.</source>
-        <translation>Zrieknutie sa zodpovednosti: Prečítajte si informácie o hlásení problémov pri analýze adries v časti O aplikácii</translation>
+        <translation>Zrieknutie sa zodpovednosti: Prečítajte si informácie o hlásení problémov pri analýze adries v časti O aplikácii.</translation>
     </message>
     <message>
         <location filename="../gui/qml/GeocoderPage.qml" line="26"/>
@@ -779,7 +779,7 @@
         <location filename="../server/src/mapmanager.cpp" line="821"/>
         <location filename="../server/src/mapmanager.cpp" line="950"/>
         <source>Maps storage folder does not exist: </source>
-        <translation>Priečinok ukladacieho priestoru mapy neexistuje:</translation>
+        <translation>Priečinok ukladacieho priestoru mapy neexistuje: </translation>
     </message>
     <message>
         <location filename="../server/src/mapmanager.cpp" line="359"/>
@@ -2499,27 +2499,27 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="167"/>
+        <location filename="../server/src/valhallamaster.cpp" line="189"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Chyba otvorenia konfiguračnej šablóny Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="175"/>
+        <location filename="../server/src/valhallamaster.cpp" line="197"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Chyba čítania konfiguračnej šablóny Valhalla</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="207"/>
+        <location filename="../server/src/valhallamaster.cpp" line="229"/>
         <source>Failed to load Valhalla configuration: %1</source>
         <translation>Čítanie konfigurácie Valhalla zlyhalo: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="245"/>
+        <location filename="../server/src/valhallamaster.cpp" line="267"/>
         <source>Exception in Valhalla: %1</source>
         <translation>Výnimka vo Valhalla: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="212"/>
+        <location filename="../server/src/valhallamaster.cpp" line="234"/>
         <source>Valhalla routing engine started</source>
         <translation>Modul trasovania Valhalla bol spustený</translation>
     </message>
