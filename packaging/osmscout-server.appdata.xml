@@ -17,7 +17,7 @@
  <url type="bugtracker">https://github.com/rinigus/osmscout-server/issues</url>
  <url type="donation">https://rinigus.github.io/donate</url>
  <url type="translate">https://github.com/rinigus/osmscout-server/tree/master/translations</url>
- <launchable desktop-id="io.github.rinigus.OSMScoutServer"/>
+ <launchable type="desktop-id">io.github.rinigus.OSMScoutServer.desktop</launchable>
  <provides>
   <binary>osmscout-server</binary>
   <dbus type="user">org.osm.scout.server1</dbus>
@@ -42,129 +42,130 @@
    <release version="2.1.0" date="2021-10-27">
      <description>
        <ul>
-         <li>Adjust Valhalla module to support for multiple Valhalla versions</li>
-         <li>Add support for Valhalla 3.1.4</li>
-         <li>Update translations</li>
+	 <li>Adjust Valhalla module to support for multiple Valhalla versions</li>
+	 <li>Add support for Valhalla 3.1.4</li>
+	 <li>Add X-Purism-FormFactor to desktop files (Ferenc-)</li>
+	 <li>Update translations</li>
        </ul>
      </description>
    </release>
    <release version="2.0.0" date="2021-03-29">
      <description>
        <ul>
-         <li>Separate server and GUI into two applications</li>
-         <li>Add support for DBus activation</li>
-         <li>Add support for internal socket activation</li>
-         <li>Stop socket activation on failure to avoid restarts</li>
-         <li>Rename ubports to uuitk or click [jonnius]</li>
-         <li>Add Costa Rica and Panama to map imports</li>
-         <li>[silica] Add support for My Backup [atlochowski]</li>
-         <li>Require C++14 to match Valhalla</li>
-         <li>Add support for newer microhttpd [Thra11]</li>
-         <li>Drop libosmscout backend by default</li>
-         <li>Change DBus service, path, and interface names</li>
-         <li>Allow to specify Valhalla version during packaging</li>
-         <li>Code improvements, bugfixes</li>
-         <li>Update documentation</li>
-         <li>Update translations</li>
+	 <li>Separate server and GUI into two applications</li>
+	 <li>Add support for DBus activation</li>
+	 <li>Add support for internal socket activation</li>
+	 <li>Stop socket activation on failure to avoid restarts</li>
+	 <li>Rename ubports to uuitk or click [jonnius]</li>
+	 <li>Add Costa Rica and Panama to map imports</li>
+	 <li>[silica] Add support for My Backup [atlochowski]</li>
+	 <li>Require C++14 to match Valhalla</li>
+	 <li>Add support for newer microhttpd [Thra11]</li>
+	 <li>Drop libosmscout backend by default</li>
+	 <li>Change DBus service, path, and interface names</li>
+	 <li>Allow to specify Valhalla version during packaging</li>
+	 <li>Code improvements, bugfixes</li>
+	 <li>Update documentation</li>
+	 <li>Update translations</li>
        </ul>
      </description>
    </release>
    <release version="1.17.1" date="2020-11-20">
      <description>
        <ul>
-         <li>Update translations</li>
+	 <li>Update translations</li>
        </ul>
      </description>
    </release>
    <release version="1.17.0" date="2020-07-24">
      <description>
        <ul>
-         <li>Update Mapbox GL map tile styles and import scripts</li>
-         <li>[ubports] Fix translations [jonnius]</li>
-         <li>[ubports] Update packaging scripts [jonnius]</li>
-         <li>Valhalla import workaround</li>
-         <li>Update translations</li>
+	 <li>Update Mapbox GL map tile styles and import scripts</li>
+	 <li>[ubports] Fix translations [jonnius]</li>
+	 <li>[ubports] Update packaging scripts [jonnius]</li>
+	 <li>Valhalla import workaround</li>
+	 <li>Update translations</li>
        </ul>
      </description>
    </release>
    <release version="1.16.1" date="2020-05-07">
      <description>
        <ul>
-         <li>Update translations</li>
+	 <li>Update translations</li>
        </ul>
      </description>
    </release>
    <release version="1.16.0" date="2020-01-22">
      <description>
        <ul>
-         <li>Add Ubuntu Touch support [jonnius]</li>
-         <li>Fix loading of translations for desktop and Ubuntu Touch</li>
-         <li>Update translations</li>
-         <li>Bugfixes</li>
+	 <li>Add Ubuntu Touch support [jonnius]</li>
+	 <li>Fix loading of translations for desktop and Ubuntu Touch</li>
+	 <li>Update translations</li>
+	 <li>Bugfixes</li>
        </ul>
      </description>
    </release>
    <release version="1.15.6" date="2019-11-30">
      <description>
        <ul>
-         <li>Fix profile selection</li>
-         <li>Update translations</li>
-         <li>Bugfixes</li>
+	 <li>Fix profile selection</li>
+	 <li>Update translations</li>
+	 <li>Bugfixes</li>
        </ul>
      </description>
    </release>
    <release version="1.15.0" date="2019-09-22">
      <description>
        <ul>
-         <li>Update Valhalla to 3.0.x</li>
-         <li>Support for DBus activation</li>
-         <li>Add root DBus API</li>
-         <li>Specify full path in systemd service invocation</li>
-         <li>Update translations</li>
-         <li>Bugfixes</li>
+	 <li>Update Valhalla to 3.0.x</li>
+	 <li>Support for DBus activation</li>
+	 <li>Add root DBus API</li>
+	 <li>Specify full path in systemd service invocation</li>
+	 <li>Update translations</li>
+	 <li>Bugfixes</li>
        </ul>
      </description>
    </release>
    <release version="1.14.5" date="2019-05-22">
      <description>
        <ul>
-         <li>Update translations</li>
-         <li>Bugfix, smaller changes</li>
+	 <li>Update translations</li>
+	 <li>Bugfix, smaller changes</li>
        </ul>
      </description>
    </release>
    <release version="1.14.4" date="2019-05-18">
      <description>
        <ul>
-         <li>Update translations</li>
+	 <li>Update translations</li>
        </ul>
      </description>
    </release>
    <release version="1.14.2" date="2019-05-05">
      <description>
        <ul>
-         <li>[kirigami,qtcontrols] Add icons for Map Manager (Fellfrosch)</li>
-         <li>Update translations</li>
-         <li>Improve backend selection in custom mode</li>
+	 <li>[kirigami,qtcontrols] Add icons for Map Manager (Fellfrosch)</li>
+	 <li>Update translations</li>
+	 <li>Improve backend selection in custom mode</li>
        </ul>
      </description>
    </release>
    <release version="1.14.1" date="2019-04-27">
      <description>
        <ul>
-         <li>Rewrite of QML frontend in cross-platform manner</li>
-         <li>Add support for Kirigami</li>
-         <li>Update translations</li>
+	 <li>Rewrite of QML frontend in cross-platform manner</li>
+	 <li>Add support for Kirigami</li>
+	 <li>Update translations</li>
        </ul>
      </description>
    </release>
    <release version="1.13.0" date="2018-12-03">
      <description>
        <ul>
-         <li>Add postal code as a name for some search results</li>
-         <li>Docs: update Spanish User's manual</li>
-         <li>Docs: add Linux install instructions</li>
-         <li>MapboxGL backend: use sqlite3pp instead of Qt SQL</li>
+	 <li>Add postal code as a name for some search results</li>
+	 <li>Docs: update Spanish User's manual</li>
+	 <li>Docs: add Linux install instructions</li>
+	 <li>MapboxGL backend: use sqlite3pp instead of Qt SQL</li>
        </ul>
      </description>
    </release>
