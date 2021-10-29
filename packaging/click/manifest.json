@@ -9,7 +9,7 @@
             "desktop":  "osmscout-server.desktop"
         }
     },
-    "version": "2.1.0",
+    "version": "2.1.1",
     "maintainer": "Rinigus <rinigus.git@gmail.org>",
     "framework" : "@CLICK_FRAMEWORK@"
 }
