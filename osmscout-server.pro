@@ -28,14 +28,15 @@ TRANSLATIONS += \
     translations/$${APP_NAME}-et.ts \
     translations/$${APP_NAME}-fi.ts \
     translations/$${APP_NAME}-fr.ts \
+    translations/$${APP_NAME}-it_IT.ts \
     translations/$${APP_NAME}-nb.ts \
     translations/$${APP_NAME}-nl.ts \
-    translations/$${APP_NAME}-pl.ts \
-    translations/$${APP_NAME}-ru.ts \
-    translations/$${APP_NAME}-sv.ts \
     translations/$${APP_NAME}-nl_BE.ts \
-    translations/$${APP_NAME}-it_IT.ts \
-    translations/$${APP_NAME}-pt_BR.ts
+    translations/$${APP_NAME}-pl.ts \
+    translations/$${APP_NAME}-pt_BR.ts \
+    translations/$${APP_NAME}-ru.ts \
+    translations/$${APP_NAME}-sk.ts \
+    translations/$${APP_NAME}-sv.ts
 
 # packaging
 scout_silica {
