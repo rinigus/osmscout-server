@@ -15,12 +15,12 @@ Name:       osmscout-server
 %define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libboost_iostreams|libboost_chrono|libboost_thread|libboost_date_time|libpostal|libprotobuf|liblz4|libfreetype|libharfbuzz|libjpeg|libmapnik|libproj|libtiff.*$
 %endif
 
-Summary:    OSM Scout Server
-Version:    2.1.1
+Summary:    Offline maps, routing, and search
+Version:    2.1.2
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
-URL:        https://github.com/rinigus/osmscout-server
+URL:        https://rinigus.github.io/osmscout-server
 Source0:    %{name}-%{version}.tar.bz2
 %if 0%{?sailfishos}
 Source101:  harbour-osmscout-server-rpmlintrc
@@ -70,8 +70,31 @@ BuildRequires:  pkgconfig(mapnik)
 
 
 %description
-Server providing map tiles, search, and routing
+OSM Scout server can be used as a drop-in replacement for online map
+services providing map tiles, search, and routing. As a result, an
+offline operation is possible if the device has a server and map
+client programs installed and running.
 
+Among other services, the server can be used to provide: vector or
+raster tiles for other applications; search for locations and free
+text search; search for POIs next to a reference point or route;
+calculating routes between given sequence of points;
+
+PackageName: OSM Scout Server
+Type: desktop-application
+Categories:
+  - Maps
+  - Science
+Custom:
+  Repo: https://github.com/rinigus/osmscout-server
+Icon: https://raw.githubusercontent.com/rinigus/osmscout-server/master/gui/icons/osmscout-server.svg
+Screenshots:
+  - https://raw.githubusercontent.com/rinigus/osmscout-server/master/screenshots/main.png
+  - https://rinigus.github.io/osmscout-server/en/manager/manager_9.jpg
+  - https://rinigus.github.io/osmscout-server/en/manager/manager_5.jpg
+  - https://rinigus.github.io/osmscout-server/en/storage/storage_1.jpg
+Url:
+  Donation: https://rinigus.github.io/donate
 
 %prep
 %setup -q -n %{name}-%{version}
@@ -124,8 +147,7 @@ cp %{_libdir}/libpostal.so*  %{buildroot}%{_datadir}/%{name}/lib
 
 cp %{_libdir}/libprotobuf.so*  %{buildroot}%{_datadir}/%{name}/lib
 
-cp %{_libdir}/liblz4.so.1.8.1 %{buildroot}%{_datadir}/%{name}/lib
-cp %{_libdir}/liblz4.so.1 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/liblz4.so.1* %{buildroot}%{_datadir}/%{name}/lib
 
 # mapnik fonts and input plugins
 # not needed anymore since input plugins are linked
