@@ -10,17 +10,17 @@
         <location filename="../gui/qml/AboutPage.qml" line="33"/>
         <source>insert here translator(s) of your language separated by &lt;br&gt;</source>
         <extracomment>This is a special message that shouldn't be translated literally. It is used in the about page to give credits to the translators. Thus, you should translate it to your name. You can also include other translators who have contributed to this translation; in that case, please write them on separate lines seperated by newlines (&lt;br&gt;).</extracomment>
-        <translation>(Ladislav Hodas) &lt;br&gt;</translation>
+        <translation>Ladislav Hodas &lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="35"/>
         <source>Translated by:</source>
-        <translation>Preložené:</translation>
+        <translation>Preklad:</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="38"/>
         <source>The server has to be used with the client program that is able to display maps, query for searches and display selected routes. The server is a thin layer exposing functionality of &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; and providing data for &lt;i&gt;Mapbox GL&lt;/i&gt; through web service. This server can be used as a drop-in replacement for online services providing maps.</source>
-        <translation>Server musí byť použitý s klientskou aplikáciou, ktorá je schopná zobraziť mapy, dopytovať sa na vyhľadávanie a zobrazovať vybrané trasy. Server je tenká vrstva, ktorá poskytuje funkcie &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; a dáta pre &lt;i&gt;Mapbox GL&lt;/i&gt; prostredníctvom webovej služby. Tento server je možné použiť ako náhradu za online služby poskytujúcich mapy.</translation>
+        <translation>Server musí byť použitý s klientskou aplikáciou, ktorá je schopná zobraziť mapy, dopytovať sa na vyhľadávanie a zobrazovať vybrané trasy. Server je tenká vrstva, ktorá poskytuje funkčnosť &lt;i&gt;libosmscout&lt;/i&gt;, &lt;i&gt;Mapnik&lt;/i&gt;, &lt;i&gt;Valhalla&lt;/i&gt;, &lt;i&gt;libpostal&lt;/i&gt;, &lt;i&gt;Geocoder-NLP&lt;/i&gt; a dáta pre &lt;i&gt;Mapbox GL&lt;/i&gt; prostredníctvom webovej služby. Tento server je možné použiť ako náhradu za online služby poskytujúcich mapy.</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="44"/>
@@ -123,7 +123,7 @@
     <message>
         <location filename="../server/src/appsettings.cpp" line="385"/>
         <source>Default</source>
-        <translation>Východzie</translation>
+        <translation>Predvolené</translation>
     </message>
     <message>
         <location filename="../server/src/appsettings.cpp" line="386"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="226"/>
         <source>All datasets covering selected features are available</source>
-        <translation>K dispozícii sú všetky dátové sady zahŕňajúce vybrané funkcie</translation>
+        <translation>K dispozícii sú všetky dátové sady zahŕňajúce vybrané stránky</translation>
     </message>
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="228"/>
@@ -726,7 +726,7 @@
     <message>
         <location filename="../server/src/mapmanager.cpp" line="78"/>
         <source>Could not allocate Map Manager features</source>
-        <translation>Nepodarilo sa prideliť funkcie správcu mapy</translation>
+        <translation>Nepodarilo sa prideliť stránky Správcu máp</translation>
     </message>
     <message>
         <location filename="../server/src/mapmanager.cpp" line="129"/>
@@ -896,7 +896,7 @@
     <message>
         <location filename="../server/src/mapmanager.cpp" line="691"/>
         <source>Add country or feature to requested list</source>
-        <translation>Pridať krajinu alebo funkcie do požadovaného zoznamu</translation>
+        <translation>Pridať stránku alebo oblasť do požadovaného zoznamu</translation>
     </message>
     <message>
         <location filename="../server/src/mapmanager.cpp" line="1091"/>
@@ -1077,7 +1077,7 @@
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="39"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
-        <translation>Správca máp spracováva ukladanie máp a súvisiacich dátových sád v zariadení offline. Tu môžete vybrať funkcie a krajiny, ktoré budú do zariadenia uložené, aktualizované alebo odstránené.</translation>
+        <translation>Správca máp spracováva ukladanie máp a súvisiacich dátových sád v zariadení offline. Tu môžete vybrať stránky a krajiny, ktoré budú do zariadenia uložené, aktualizované alebo odstránené.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="213"/>
@@ -1690,7 +1690,7 @@
     <message>
         <location filename="../gui/qml/ProfilesPage.qml" line="56"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>&lt;i&gt;Východzie&lt;/i&gt; profil podporuje mapové aplikácie pomocou zásuvného modulu &lt;i&gt;Mapbox GL&lt;/i&gt;, pomocou &lt;i&gt;Geocoder-NLP&lt;/i&gt; vyhľadáva miesta a &lt;i&gt;Valhalla&lt;/i&gt; pre výpočet trás. Tento profil je odporúčaný pre nové klientské mapy mapových dlaždíc. &lt;br&gt;&lt;br&gt;Pre používateľov s mapovými aplikáciami používajúcimi tradičné rastrové dlaždice odporúčaný profil pre mapy rastrových dlaždíc obsahuje dátové sady &lt;i&gt;Mapnik&lt;/i&gt; a používa rovnaké vyhľadávacie a smerovacie zásuvné moduly ako &lt;i&gt;východzí&lt;/i&gt; profil. &lt;br&gt;&lt;br&gt;Pre používateľov, ktorí chcú používať klientov na rastrové a vektorové dlaždice máp, odporúčaný profil kombinujúci vektorové a rastrové dlaždice obsahuje dátové množiny &lt;i&gt;Mapbox GL&lt;/i&gt;, podporuje mapovanie do rastrových dlaždíc &lt;i&gt;Mapnikom&lt;/i&gt; a používa rovnaké vyhľadávacie a smerovacie zásuvné moduly ako &lt;i&gt;východzí&lt;/i&gt; profil. Vzhľadom k tomu, že tento profil obsahuje dáta pre viacnásobné vykresľovanie poskytovateľov, má najväčšie požiadavky na ukladanie dát. &lt;br&gt;&lt;br&gt;Profil s &lt;i&gt;libosmscout&lt;/i&gt; v kombinácii s &lt;i&gt;Geocoder-NLP&lt;/i&gt; má menšie požiadavky na ukladanie ako štandardný. Vykresľovanie máp a smerovanie by však bolo obmedzené iba na jedno územie. Kvalita vykresľovania je navyše horšia a rýchlosť smerovania je nižšia v porovnaní s východzím profilom. &lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; má najmenšie požiadavky na ukladanie spomedzi všetkých profilov. Vykresľovanie máp, vyhľadávanie a smerovanie by však bolo obmedzené iba na jedno územie. Okrem toho je kvalita vykresľovania a vyhľadávania nízka, rovnako aj rýchlosť smerovania je nižšia v porovnaní s východzím profilom. &lt;br&gt;&lt;br&gt;Pri použití &lt;i&gt;vlastného&lt;/i&gt; profilu nie sú nastavenia a ukladací priestor Správcu máp nastavené podľa profilu a mali by byť zadané používateľom. Tento profil umožňuje samostatne vyberať komponenty pre vykresľovanie, vyhľadávanie a smerovanie trasy. Všimnite si, že používateľ je zodpovedný za úpravu nastavení tak, aby boli v súlade s požiadavkami použitých poskytovateľov a ukladacích priestorov.</translation>
+        <translation>&lt;i&gt;Predvolený&lt;/i&gt; profil podporuje mapové aplikácie pomocou zásuvného modulu &lt;i&gt;Mapbox GL&lt;/i&gt;, pomocou &lt;i&gt;Geocoder-NLP&lt;/i&gt; vyhľadáva miesta a &lt;i&gt;Valhalla&lt;/i&gt; pre výpočet trás. Tento profil je odporúčaný pre nové klientské mapy mapových dlaždíc. &lt;br&gt;&lt;br&gt;Pre používateľov s mapovými aplikáciami používajúcimi tradičné rastrové dlaždice odporúčaný profil pre mapy rastrových dlaždíc obsahuje dátové sady &lt;i&gt;Mapnik&lt;/i&gt; a používa rovnaké vyhľadávacie a smerovacie zásuvné moduly ako &lt;i&gt;východzí&lt;/i&gt; profil. &lt;br&gt;&lt;br&gt;Pre používateľov, ktorí chcú používať klientov na rastrové a vektorové dlaždice máp, odporúčaný profil kombinujúci vektorové a rastrové dlaždice obsahuje dátové množiny &lt;i&gt;Mapbox GL&lt;/i&gt;, podporuje mapovanie do rastrových dlaždíc &lt;i&gt;Mapnikom&lt;/i&gt; a používa rovnaké vyhľadávacie a smerovacie zásuvné moduly ako &lt;i&gt;východzí&lt;/i&gt; profil. Vzhľadom k tomu, že tento profil obsahuje dáta pre viacnásobné vykresľovanie poskytovateľov, má najväčšie požiadavky na ukladanie dát. &lt;br&gt;&lt;br&gt;Profil s &lt;i&gt;libosmscout&lt;/i&gt; v kombinácii s &lt;i&gt;Geocoder-NLP&lt;/i&gt; má menšie požiadavky na ukladanie ako štandardný. Vykresľovanie máp a smerovanie by však bolo obmedzené iba na jedno územie. Kvalita vykresľovania je navyše horšia a rýchlosť smerovania je nižšia v porovnaní s východzím profilom. &lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; má najmenšie požiadavky na ukladanie spomedzi všetkých profilov. Vykresľovanie máp, vyhľadávanie a smerovanie by však bolo obmedzené iba na jedno územie. Okrem toho je kvalita vykresľovania a vyhľadávania nízka, rovnako aj rýchlosť smerovania je nižšia v porovnaní s východzím profilom. &lt;br&gt;&lt;br&gt;Pri použití &lt;i&gt;vlastného&lt;/i&gt; profilu nie sú nastavenia a ukladací priestor Správcu máp nastavené podľa profilu a mali by byť zadané používateľom. Tento profil umožňuje samostatne vyberať komponenty pre vykresľovanie, vyhľadávanie a smerovanie trasy. Všimnite si, že používateľ je zodpovedný za úpravu nastavení tak, aby boli v súlade s požiadavkami použitých poskytovateľov a ukladacích priestorov.</translation>
     </message>
 </context>
 <context>
@@ -2021,7 +2021,7 @@
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="53"/>
         <source>Default</source>
-        <translation>Východzie</translation>
+        <translation>Predvolené</translation>
     </message>
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="53"/>
@@ -2188,7 +2188,7 @@
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="188"/>
         <source>Mapnik (default)</source>
-        <translation>Mapnik (východzie)</translation>
+        <translation>Mapnik (predvolené)</translation>
     </message>
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="189"/>
@@ -2205,7 +2205,7 @@
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="217"/>
         <source>Geocoder-NLP (default)</source>
-        <translation>Geocoder-NLP (východzie)</translation>
+        <translation>Geocoder-NLP (predvolené)</translation>
     </message>
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="231"/>
@@ -2220,7 +2220,7 @@
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="252"/>
         <source>Valhalla (default)</source>
-        <translation>Valhalla (východzie)</translation>
+        <translation>Valhalla (predvolené)</translation>
     </message>
     <message>
         <location filename="../gui/qml/SettingsPage.qml" line="283"/>
