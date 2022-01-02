@@ -14,3 +14,6 @@ Name=OSM Scout Server
 
 [X-HarbourBackup]
 BackupPathList=.config/harbour-osmscout-server
+
+[X-Sailjail]
+Sandboxing=Disabled
