@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 
 import os, json
 
@@ -73,7 +73,7 @@ def makepacks(o):
             # packaging via children
             makepacks(curr['children'])
         else:
-            print counter, sz/1024./1024.
+            print(counter, sz/1024./1024.)
             sizes.append(sz/1024./1024.)
 
             totar = []
@@ -92,7 +92,7 @@ def makepacks(o):
             flist.close()
             cmd += " " + flist_name + " " + tiles_timestamp
             cmd += " && ./pack.sh " + tarname + " " + version
-            print cmd
+            print(cmd)
             os.system(cmd)
 
             fpoly = open(polyname, "w")
@@ -107,7 +107,7 @@ def makepacks(o):
 makepacks(packages)
 
 sizes.sort()
-print 'Size of all packages:', sum(sizes), ' Number of packages:', len(sizes)
+print('Size of all packages:', sum(sizes), ' Number of packages:', len(sizes))
 os.system("rm  %s/*.list" % packages_dir)
 
 # for pack in packages:
@@ -130,7 +130,7 @@ os.system("rm  %s/*.list" % packages_dir)
 #         flist.close()
 #         cmd += " " + flist_name + " " + tiles_timestamp
 #         cmd += " && ./pack.sh " + tarname + " " + version
-#         print cmd
+#         print(cmd)
 #         os.system(cmd)
 
 #         fpoly = open(polyname, "w")
@@ -142,5 +142,5 @@ os.system("rm  %s/*.list" % packages_dir)
         
 #         counter += 1
 
-# print "Made packages:", counter
+# print("Made packages:", counter)
 # os.system("rm  %s/*.list" % packages_dir)

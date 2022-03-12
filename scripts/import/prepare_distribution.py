@@ -15,15 +15,15 @@ url_specs = {
     "base": url_base,
     "type": "url",
     #"osmscout": "osmscout-27",
-    "geocoder_nlp": "geocoder-nlp-29",
+    "geocoder_nlp": "geocoder-nlp-30",
     "postal_global": "postal-global-2",
     "postal_country": "postal-country-2",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-24",
-    "mapboxgl_country": "mapboxgl-16",
-    "mapboxgl_global": "mapboxgl-16",
-    "mapboxgl_glyphs": "mapboxgl-16",
-    "valhalla": "valhalla-24",
+    "mapnik_country": "mapnik-country-25",
+    "mapboxgl_country": "mapboxgl-17",
+    "mapboxgl_global": "mapboxgl-17",
+    "mapboxgl_glyphs": "mapboxgl-17",
+    "valhalla": "valhalla-25",
 }
 
 dist = json.loads( open("countries.json", "r").read() )

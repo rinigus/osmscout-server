@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 
 import os, glob, shutil
 
@@ -21,7 +21,7 @@ for tile in glob.glob(planet_tiles + "/*sqlite"):
     shutil.copy(tile, packages_dir)
     if os.path.exists(bbox): shutil.copy(bbox, packages_meta)
     cmd = "./pack.sh " + os.path.join(packages_dir, bname) + " " + version
-    print cmd
+    print(cmd)
     os.system(cmd)
 
-print "Made Mapbox GL packages"
+print("Made Mapbox GL packages")
