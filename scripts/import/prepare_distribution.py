@@ -8,22 +8,22 @@ from mapbox_country_pack import world_pack as mapboxgl_world_pack
 
 root_dir = "distribution"
 bucket = open("bucket_name", "r").read().strip()
-url_base = "http://data.modrana.org/osm_scout_server"
+url_base = "https://data.modrana.org/osm_scout_server"
 #url_base = "https://kuqrhldx.e24files.com"
 
 url_specs = {
     "base": url_base,
     "type": "url",
     #"osmscout": "osmscout-27",
-    "geocoder_nlp": "geocoder-nlp-30",
+    "geocoder_nlp": "geocoder-nlp-31",
     "postal_global": "postal-global-2",
     "postal_country": "postal-country-2",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-25",
-    "mapboxgl_country": "mapboxgl-17",
-    "mapboxgl_global": "mapboxgl-17",
-    "mapboxgl_glyphs": "mapboxgl-17",
-    "valhalla": "valhalla-25",
+    "mapnik_country": "mapnik-country-26",
+    "mapboxgl_country": "mapboxgl-18",
+    "mapboxgl_global": "mapboxgl-18",
+    "mapboxgl_glyphs": "mapboxgl-18",
+    "valhalla": "valhalla-26",
 }
 
 dist = json.loads( open("countries.json", "r").read() )
