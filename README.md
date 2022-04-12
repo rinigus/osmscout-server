@@ -70,7 +70,7 @@ that map and use specific developer options.
 Maps are hosted by Natural Language Processing Centre
 (https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
 University, Brno, Czech Republic) through modRana (http://modrana.org)
-data repository.
+data repository. Maps are updated roughly every 2-3 months.
 
 Map data from OpenStreetMap, Open Database License 1.0. Maps are
 converted to a suitable format from downloaded extracts and/or using
@@ -81,7 +81,6 @@ data contain: Ordnance Survey data © Crown copyright and database
 right 2017; Royal Mail data © Royal Mail copyright and database right
 2017; National Statistics data © Crown copyright and database right
 2017.
-
 
 ## Settings
 
