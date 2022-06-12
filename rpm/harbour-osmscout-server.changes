@@ -5,6 +5,12 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Jun 12 2022 rinigus <rinigus.git@gmail.com> 2.2.0-1
+- update geocoder
+- update click build config [jonnius]
+- update translations
+- small bugfixes
+
 * Wed Oct 27 2021 rinigus <rinigus.git@gmail.com> 2.1.0-1
 - adjust Valhalla module to support for multiple Valhalla versions
 - add support for Valhalla 3.1.4

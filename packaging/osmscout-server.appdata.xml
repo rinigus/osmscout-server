@@ -39,6 +39,16 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="2.2.0" date="2022-06-12">
+     <description>
+       <ul>
+	 <li>Update geocoder</li>
+	 <li>Update click build config [jonnius]</li>
+	 <li>Update translations</li>
+	 <li>Small bugfixes</li>
+       </ul>
+     </description>
+   </release>
    <release version="2.1.1" date="2021-10-29">
      <description>
        <ul>
