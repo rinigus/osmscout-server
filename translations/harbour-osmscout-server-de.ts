@@ -10,12 +10,12 @@
         <location filename="../gui/qml/AboutPage.qml" line="33"/>
         <source>insert here translator(s) of your language separated by &lt;br&gt;</source>
         <extracomment>This is a special message that shouldn't be translated literally. It is used in the about page to give credits to the translators. Thus, you should translate it to your name. You can also include other translators who have contributed to this translation; in that case, please write them on separate lines seperated by newlines (&lt;br&gt;).</extracomment>
-        <translation type="unfinished"/>
+        <translation>hier den (die) Übersetzer Ihrer Sprache einfügen, getrennt durch &lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="35"/>
         <source>Translated by:</source>
-        <translation type="unfinished"/>
+        <translation>Übersetzet von:</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="38"/>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="53"/>
         <source>Banner photo by %1 (%2 license).</source>
-        <translation type="unfinished"/>
+        <translation>Banner Foto von %1(%2 Lizenz)</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="57"/>
@@ -1687,7 +1687,7 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../gui/qml/ProfilesPage.qml" line="92"/>
         <source>Please note that some profiles maybe missing due to the packaging of OSM Scout Server.</source>
-        <translation type="unfinished"/>
+        <translation>Bitte beachten Sie, dass aufgrund der Paketierung von OSM Scout Server einige Profile fehlen können.</translation>
     </message>
     <message>
         <location filename="../gui/qml/ProfilesPage.qml" line="56"/>
@@ -1945,47 +1945,47 @@ Wenn ausgewählt, werden Datensätze, die Vektor Kacheln im Mapbox GL format ent
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="54"/>
         <source>Activating server via network</source>
-        <translation type="unfinished"/>
+        <translation>Aktiviere den den Server über Netzwerk</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="74"/>
         <source>Server reached via network</source>
-        <translation type="unfinished"/>
+        <translation>Server über Netzwerk erreicht</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="80"/>
         <source>Failed to reach server via network</source>
-        <translation type="unfinished"/>
+        <translation> Server nicht über Netzwerk gefunden</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="89"/>
         <source>Activating server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Aktiviere den den Server über DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="103"/>
         <source>Server reached via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Server über DBus erreicht</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="108"/>
         <source>Failed to reach server via DBus</source>
-        <translation type="unfinished"/>
+        <translation> Server nicht über DBus gefunden</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="114"/>
         <source>Starting server</source>
-        <translation type="unfinished"/>
+        <translation>Starte Server</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="128"/>
         <source>Server stopped</source>
-        <translation type="unfinished"/>
+        <translation>Server angehalten</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="133"/>
         <source>Error starting server&lt;br&gt;Used path: %1</source>
-        <translation type="unfinished"/>
+        <translation>Fehler beim Starten des Servers&lt;br&gt;Benutzter Pfad: %1</translation>
     </message>
 </context>
 <context>
@@ -2350,7 +2350,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../gui/qml/StartPage.qml" line="311"/>
         <source>OSM Scout Server not running</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout server läuft nicht</translation>
     </message>
     <message>
         <location filename="../gui/qml/StartPage.qml" line="314"/>
@@ -2439,7 +2439,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="67"/>
         <source>For installations without &lt;i&gt;systemd&lt;/i&gt;, you can run the server as one of the automatically started programs on login. See &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;User&apos;s Guide&lt;/a&gt; for details on how to start the server correctly in this case.</source>
-        <translation type="unfinished"/>
+        <translation>Für Installationen ohne &lt;i&gt;systemd&lt;/i&gt;, kann der Server als automatisch gestartetes Programm bei der Anmeldung betrieben werden. Siehe &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;Anleitung &lt;/a&gt; um Details darüber zu erhalten, wie der Server in diesem Fall korrekt zu starten ist.</translation>
     </message>
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="74"/>
@@ -2503,27 +2503,27 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="167"/>
+        <location filename="../server/src/valhallamaster.cpp" line="189"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Fehler beim Öffnen der Konfigurations-Vorlage von Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="175"/>
+        <location filename="../server/src/valhallamaster.cpp" line="197"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Fehler beim Lesen von Valhallas Konfigurations-Vorlage</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="207"/>
+        <location filename="../server/src/valhallamaster.cpp" line="229"/>
         <source>Failed to load Valhalla configuration: %1</source>
         <translation>Laden der Konfiguration von Valhalla fehlgeschlagen: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="245"/>
+        <location filename="../server/src/valhallamaster.cpp" line="267"/>
         <source>Exception in Valhalla: %1</source>
         <translation>&quot;Exception&quot; in Valhalla: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="212"/>
+        <location filename="../server/src/valhallamaster.cpp" line="234"/>
         <source>Valhalla routing engine started</source>
         <translation>Valhalla Navigation gestartet</translation>
     </message>
@@ -2601,12 +2601,12 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../server/src/main.cpp" line="157"/>
         <source>Run the server in DBus activated mode</source>
-        <translation type="unfinished"/>
+        <translation>Server im DBus-aktivierten Modus betreiben</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="161"/>
         <source>Listen for connection on configured port and start full server on activity</source>
-        <translation type="unfinished"/>
+        <translation>Warten auf eine Verbindung am konfigurierten Port und Starten des kompletten Servers bei Aktivität</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="453"/>
@@ -2614,17 +2614,17 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
         <location filename="../server/src/main.cpp" line="467"/>
         <location filename="../server/src/main.cpp" line="473"/>
         <source>Failed to register DBus object: %1</source>
-        <translation type="unfinished"/>
+        <translation>DBus-Objekt konnte nicht registriert werden: %1</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="502"/>
         <source>Failed to register DBus service: %1</source>
-        <translation type="unfinished"/>
+        <translation>DBus-Service konnte nicht registriert werden: %1</translation>
     </message>
     <message>
         <location filename="../gui/src/main.cpp" line="107"/>
         <source>OSM Scout Server GUI</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server GUI</translation>
     </message>
 </context>
 <context>
@@ -2632,7 +2632,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="30"/>
         <source>Initializing and waiting for connection with the server</source>
-        <translation type="unfinished"/>
+        <translation>Initialisiere und warte auf Server</translation>
     </message>
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="35"/>
@@ -2647,7 +2647,7 @@ Richte bitte ein &lt;b&gt;separates, leeres Verzeichnis&lt;/b&gt; für OSM Scout
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="68"/>
         <source>OSM Scout Server is not reachable. Waiting for it to appear.</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout server nicht erreichbar. Warten auf Verfügbarkeit.</translation>
     </message>
 </context>
 </TS>

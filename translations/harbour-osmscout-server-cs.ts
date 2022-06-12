@@ -10,12 +10,12 @@
         <location filename="../gui/qml/AboutPage.qml" line="33"/>
         <source>insert here translator(s) of your language separated by &lt;br&gt;</source>
         <extracomment>This is a special message that shouldn't be translated literally. It is used in the about page to give credits to the translators. Thus, you should translate it to your name. You can also include other translators who have contributed to this translation; in that case, please write them on separate lines seperated by newlines (&lt;br&gt;).</extracomment>
-        <translation type="unfinished"/>
+        <translation>vložte zde překlad(y) vašeho jazyka oddělené &lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="35"/>
         <source>Translated by:</source>
-        <translation type="unfinished"/>
+        <translation>Přeložil:</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="38"/>
@@ -45,7 +45,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="53"/>
         <source>Banner photo by %1 (%2 license).</source>
-        <translation type="unfinished"/>
+        <translation>Bannerová fotografie od %1 (licence %2).</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="57"/>
@@ -1943,47 +1943,47 @@
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="54"/>
         <source>Activating server via network</source>
-        <translation type="unfinished"/>
+        <translation>Aktivace serveru přes síť</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="74"/>
         <source>Server reached via network</source>
-        <translation type="unfinished"/>
+        <translation>Server dosažitelný přes síť</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="80"/>
         <source>Failed to reach server via network</source>
-        <translation type="unfinished"/>
+        <translation>Nepodařilo se dosáhnout serveru přes síť</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="89"/>
         <source>Activating server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Aktivace serveru přes DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="103"/>
         <source>Server reached via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Server dosažitelný přes DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="108"/>
         <source>Failed to reach server via DBus</source>
-        <translation type="unfinished"/>
+        <translation>Nepodařilo se spojit se serverem přes DBus</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="114"/>
         <source>Starting server</source>
-        <translation type="unfinished"/>
+        <translation>Spouštění serveru</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="128"/>
         <source>Server stopped</source>
-        <translation type="unfinished"/>
+        <translation>Server zastaven</translation>
     </message>
     <message>
         <location filename="../gui/src/servercontroller.cpp" line="133"/>
         <source>Error starting server&lt;br&gt;Used path: %1</source>
-        <translation type="unfinished"/>
+        <translation>Chyba při spuštění serveru&lt;br&gt;Použitá cesta: %1</translation>
     </message>
 </context>
 <context>
@@ -2346,7 +2346,7 @@
     <message>
         <location filename="../gui/qml/StartPage.qml" line="311"/>
         <source>OSM Scout Server not running</source>
-        <translation type="unfinished"/>
+        <translation>Server OSM Scout není spuštěn</translation>
     </message>
     <message>
         <location filename="../gui/qml/StartPage.qml" line="314"/>
@@ -2435,7 +2435,7 @@
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="67"/>
         <source>For installations without &lt;i&gt;systemd&lt;/i&gt;, you can run the server as one of the automatically started programs on login. See &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;User&apos;s Guide&lt;/a&gt; for details on how to start the server correctly in this case.</source>
-        <translation type="unfinished"/>
+        <translation>U instalací bez &lt;i&gt;systemd&lt;/i&gt; můžete server spustit jako jeden z automaticky spouštěných programů při přihlášení. Podrobnosti o tom, jak v tomto případě správně spustit server, najdete v &lt;a href=&apos;https://rinigus.github.io/osmscout-server/&apos;&gt;Uživatelské příručce&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../gui/qml/SystemdActivationPage.qml" line="74"/>
@@ -2499,27 +2499,27 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="167"/>
+        <location filename="../server/src/valhallamaster.cpp" line="189"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Chyba otevření konfigurační šablony aplikace Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="175"/>
+        <location filename="../server/src/valhallamaster.cpp" line="197"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Chyba při čtení šablony konfigurace společnosti Valhalla</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="207"/>
+        <location filename="../server/src/valhallamaster.cpp" line="229"/>
         <source>Failed to load Valhalla configuration: %1</source>
         <translation>Nelze načíst konfiguraci Valhalla: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="245"/>
+        <location filename="../server/src/valhallamaster.cpp" line="267"/>
         <source>Exception in Valhalla: %1</source>
         <translation>Výjimka ve Valhalla: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="212"/>
+        <location filename="../server/src/valhallamaster.cpp" line="234"/>
         <source>Valhalla routing engine started</source>
         <translation>Spuštěn engine na hledání trasy Valhalla</translation>
     </message>
@@ -2597,12 +2597,12 @@
     <message>
         <location filename="../server/src/main.cpp" line="157"/>
         <source>Run the server in DBus activated mode</source>
-        <translation type="unfinished"/>
+        <translation>Spuštění serveru v režimu aktivace DBus</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="161"/>
         <source>Listen for connection on configured port and start full server on activity</source>
-        <translation type="unfinished"/>
+        <translation>Naslouchání připojení na nakonfigurovaném portu a spuštění plného serveru při aktivitě</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="453"/>
@@ -2610,17 +2610,17 @@
         <location filename="../server/src/main.cpp" line="467"/>
         <location filename="../server/src/main.cpp" line="473"/>
         <source>Failed to register DBus object: %1</source>
-        <translation type="unfinished"/>
+        <translation>Nepodařilo se zaregistrovat objekt DBus: %1</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="502"/>
         <source>Failed to register DBus service: %1</source>
-        <translation type="unfinished"/>
+        <translation>Nepodařilo se zaregistrovat službu DBus: %1</translation>
     </message>
     <message>
         <location filename="../gui/src/main.cpp" line="107"/>
         <source>OSM Scout Server GUI</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server GUI</translation>
     </message>
 </context>
 <context>
@@ -2628,7 +2628,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="30"/>
         <source>Initializing and waiting for connection with the server</source>
-        <translation type="unfinished"/>
+        <translation>Inicializace a čekání na spojení se serverem</translation>
     </message>
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="35"/>
@@ -2643,7 +2643,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="68"/>
         <source>OSM Scout Server is not reachable. Waiting for it to appear.</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server není dosažitelný. Čeká se na jeho zobrazení.</translation>
     </message>
 </context>
 </TS>
