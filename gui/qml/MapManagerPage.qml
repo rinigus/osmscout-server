@@ -101,7 +101,7 @@ PagePL {
 
             Connections {
                 target: manager
-                onMissingInfoChanged: missingInfo.updateText(info)
+                onMissingInfoChanged: missingInfo.updateText(manager.missingInfo())
                 onReloadData: updateText(manager.missingInfo())
             }
 
