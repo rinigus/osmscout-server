@@ -5,6 +5,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Jul 06 2022 rinigus <rinigus.git@gmail.com> 2.2.1-1
+- update click build config [jonnius]
+
 * Sun Jun 12 2022 rinigus <rinigus.git@gmail.com> 2.2.0-1
 - update geocoder
 - update click build config [jonnius]
