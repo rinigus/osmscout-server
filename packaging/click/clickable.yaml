@@ -1,6 +1,8 @@
 clickable_minimum_required: 7.0.1
+
 scripts:
   prepare-deps: git submodule update --recursive --init && ${ROOT}/packaging/click/prepare-deps.sh
+
 builder: qmake
 build_args:
 - SCOUT_FLAVOR=uuitk
@@ -20,6 +22,8 @@ prebuild:
 postbuild:
 - ln -s ../../usr/bin ${CLICK_PATH}
 - sed -i 's/@ARCH_TRIPLET@/${ARCH_TRIPLET}/g' ${INSTALL_DIR}/osmscout-server.conf
+ignore_review_errors: true
+
 dependencies_host:
 - gcc-opt
 - desktop-file-utils
@@ -40,6 +44,7 @@ dependencies_target:
 - liblz4-dev
 - qttools5-dev
 - libsqlite3-dev
+
 install_lib:
 - /usr/lib/${ARCH_TRIPLET}/libmicrohttpd.so*
 - /usr/lib/${ARCH_TRIPLET}/libkyotocabinet.so*
@@ -52,12 +57,14 @@ install_root_data:
 - packaging/click/osmscout-server.apparmor
 - packaging/click/osmscout-server.conf
 - packaging/click/osmscout-server.desktop
+
 libraries:
   libpostal:
     builder: custom
     build: ${ROOT}/packaging/click/build-libpostal.sh
     dependencies_host:
     - libtool
+
   valhalla:
     builder: cmake
     src_dir: libs/valhalla/valhalla
