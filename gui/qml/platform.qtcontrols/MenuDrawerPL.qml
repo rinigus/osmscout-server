@@ -31,7 +31,6 @@ Drawer {
 
     property string         banner // added for compatibility
     default property alias  content: column.data
-    property bool           enabled: true // https://github.com/rinigus/osmscout-server/issues/374
     property string         title // added for compatibility
     property string         titleIcon // added for compatibility
 
