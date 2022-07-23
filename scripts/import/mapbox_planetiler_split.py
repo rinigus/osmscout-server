@@ -141,3 +141,8 @@ for k, tiles in filtered.items():
         for t in tiles:
             cur_out.execute('INSERT INTO tiles_shallow(zoom_level, tile_column, tile_row, tile_data_id) ' +
                             'VALUES(?, ?, ?, ?)', t)
+
+    # record bbox
+    if f.find('world') < 0:
+        with open(f + ".bbox", "w") as fb:
+            fb.write(' '.join([str(b) for b in bnd]))
