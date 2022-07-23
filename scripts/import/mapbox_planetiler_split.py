@@ -22,18 +22,21 @@ def ti2mt(ti):
     y = (2 ** ti.zoom) - ti.row - 1
     return mercantile.Tile(x=ti.column, y=y, z=ti.zoom)
 
+def tri2mt(tri):
+    column, row, zoom = tri[0], tri[1], tri[2]
+    y = (2 ** zoom) - row - 1
+    return mercantile.Tile(x=column, y=y, z=zoom)
+
 def mt2bnd(mt):
     b = mercantile.bounds(mt)
     return [b.west, b.south, b.east, b.north]
 
-def splitter(ti) -> str:
+def splitter(ti):
     # determine into which file will the tile will go
-    mt = ti2mt(ti)
     if ti.zoom < SplitLevel:
-        return mercantile.Tile(0, 0, 0)
-    elif ti.zoom == SplitLevel:
-        return mt
-    return mercantile.parent(mt, zoom=SplitLevel)
+        return (0, 0, 0) #mercantile.Tile(0, 0, 0)
+    f = 2**(ti.zoom - SplitLevel)
+    return (ti.column//f, ti.row//f, SplitLevel)
 
 def fname(mt):
     if mt.z==0:
@@ -87,7 +90,8 @@ for row in cur.execute('select zoom_level, tile_column, tile_row, tile_data_id f
     tofile[splitter(ti)].append(ti)
 
 filtered = dict()
-for k,v in tofile.items():
+for tri,v in tofile.items():
+    k = tri2mt(tri)
     b = mt2bnd(k)
     if intersects(polys, b):
         f = fname(k)
