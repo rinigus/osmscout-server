@@ -4,10 +4,11 @@ import argparse
 import json
 import math
 import mercantile
+import numpy as np
 import os
 import sqlite3
 import sys
-#import shapely.geometry as sg
+import psutil
 
 from collections import namedtuple, defaultdict
 
@@ -17,6 +18,43 @@ from poly import parse_poly, intersects
 
 # Note that files are formed according to XYZ notation while tiles
 # inside MBTiles are stored in TMS
+
+TileInfo = namedtuple('TileInfo', 'zoom, column, row, data_id')
+
+class TileInfoArray:
+    minZ = 0
+    maxZ = 14
+
+    def __init__(self):
+        ntiles = 0
+        n = 1
+        for z in range(TileInfoArray.minZ, TileInfoArray.maxZ+1):
+            ntiles += n
+            n *= 4
+        self._data = np.empty((ntiles, 4), dtype=int)
+        self._n = 0
+
+    def __iter__(self):
+        self._iter_n = 0
+        return self
+
+    def __next__(self):
+        if self._iter_n >= self._n:
+            raise StopIteration
+        ti = TileInfo(*[int(i) for i in self._data[self._iter_n,:]])
+        self._iter_n += 1
+        return ti
+
+    def append(self, row):
+        self._data[self._n, :] = row #'zoom, column, row, data_id'
+        self._n += 1
+
+    def data_ids(self):
+        return self._data[:self._n, 3]
+
+    def zoom_range(self):
+        return int(min(self._data[:, 0])), int(max(self._data[:, 0]))
+
 
 def ti2mt(ti):
     y = (2 ** ti.zoom) - ti.row - 1
@@ -45,6 +83,14 @@ def fname(mt):
         f = f'tiles-section-{mt.z}-{mt.x}-{mt.y}'
     return os.path.join(OutputDir, f + '.sqlite')
 
+def process_memory():
+    process = psutil.Process(os.getpid())
+    mem_info = process.memory_info()
+    return mem_info.rss
+
+def mem_report(tag, mem_after, mem_before = 0):
+    delta = (mem_after - mem_before)/1024/1024
+    print(f"Consumed memory {tag}: {delta:.1f}MB")
 
 ## MAIN ##
 parser = argparse.ArgumentParser(description='Split MBTiles into smaller sub-packages.')
@@ -59,6 +105,8 @@ args = parser.parse_args()
 SplitLevel = args.split_level
 OutputDir = args.output
 
+tofile = defaultdict(TileInfoArray)
+
 # Load countries of interest
 polys = []
 for root, folders, files in os.walk(args.hierarchy):
@@ -68,10 +116,6 @@ for root, folders, files in os.walk(args.hierarchy):
         #print(Hierarchy.get_id(root), name)
         polys.append(parse_poly(poly))
 print('Loaded hierarchy with {n} POLY files'.format(n=len(polys)))
-
-# extra types and main dict
-TileInfo = namedtuple('TileInfo', 'zoom, column, row, data_id')
-tofile = defaultdict(list)
 
 # access to db
 print('Opening', args.mbtiles)
@@ -83,11 +127,21 @@ schema = []
 for row in cur.execute('select sql from sqlite_master'):
     schema.append(row[0])
 
-# Load tiles indexes
+r = cur.execute('select min(zoom_level) as minz, max(zoom_level) as maxz from tiles_shallow').fetchone()
+TileInfoArray.minZ, TileInfoArray.maxZ = SplitLevel, r[1]
+print(f'Tiles zoom range: {r[0]} - {r[1]}')
+
+# Load tiles indexes: holder for metadata
+mem_before = process_memory()
+t = TileInfoArray()
+mem_after = process_memory()
+mem_report("One array:", mem_after, mem_before)
 for row in cur.execute('select zoom_level, tile_column, tile_row, tile_data_id from tiles_shallow '+
                        'order by zoom_level,tile_column,tile_row'):
     ti = TileInfo._make(row)
     tofile[splitter(ti)].append(ti)
+mem_after = process_memory()
+mem_report("during loading stage:", mem_after, mem_before)
 
 filtered = dict()
 for tri,v in tofile.items():
@@ -122,22 +176,22 @@ for k, tiles in filtered.items():
                         ('bounds', ','.join([str(b) for b in bnd])))
         cur_out.execute('INSERT INTO metadata(name, value) VALUES(?, ?)',
                         ('center', ','.join([str(b) for b in center])))
-        zlevels = [t.zoom for t in tiles]
+        min_z, max_z = tiles.zoom_range()
         cur_out.execute('INSERT INTO metadata(name, value) VALUES(?, ?)',
-                        ('minzoom', min(zlevels)))
+                        ('minzoom', min_z))
         cur_out.execute('INSERT INTO metadata(name, value) VALUES(?, ?)',
-                        ('maxzoom', max(zlevels)))
+                        ('maxzoom', max_z))
         for r in cur.execute('SELECT name, value FROM metadata'):
             if r[0] not in ['bounds', 'center', 'minzoom', 'maxzoom']:
                 cur_out.execute('INSERT INTO metadata(name, value) VALUES(?, ?)',
                                 (r[0], r[1]))
 
         # copy tile data
-        data_ids = list(set([t.data_id for t in tiles]))
+        data_ids = list(set(tiles.data_ids()))
         data_ids.sort()
         for i in data_ids:
             r = cur.execute('SELECT tile_data_id, tile_data FROM tiles_data WHERE tile_data_id=:id',
-                            dict(id=i)).fetchone()
+                            dict(id=int(i))).fetchone()
             cur_out.execute('INSERT INTO tiles_data(tile_data_id, tile_data) VALUES(?, ?)',
                             (r[0], r[1]))
 
