@@ -19,8 +19,6 @@
 
 *~
 
-poly.json
-
 # Clickable build, temporary source and config dirs
 /build/
 /libs/
