@@ -53,13 +53,14 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
         }
 
         pbf = "$(PBF_DIR)/" + pbfname(cid)
+        polyjson = poly + ".json"
 
         # geocoder-nlp
         country_target = "$(BASE_DIR)/geocoder-nlp/" + spath(cid) + ".timestamp"
 
         all_countries += country_target + " "
         fmake.write(country_target + ": $(BASE_DIR)/geocoder-nlp/.directory " + pbf +
-                    "\n\t$(BUILDER_GEOCODER) $(PBF_DIR)/" + pbfname(cid) + " $(BASE_DIR) " +
+                    "\n\t$(BUILDER_GEOCODER) " + polyjson + " $(BASE_DIR) " +
                     spath(cid) + " " + Hierarchy.get_postal(root) + ' "' + Hierarchy.get_postcodes(root) + '"\n\n')
 
         # mapnik

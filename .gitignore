@@ -18,6 +18,7 @@
 /osmscout-server_qtcontrols.pro*
 
 *~
+*.pyc
 
 # Clickable build, temporary source and config dirs
 /build/

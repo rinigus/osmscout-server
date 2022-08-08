@@ -95,12 +95,14 @@ these scripts for instructions.
 
 ### Other scripts
 
-* build_{geocoder,osmscout}.sh - performs import for each PBF
+* build_{geocoder,osmscout}.sh - performs import for each region
 
 * get_base_from_geofabrik.py - used to build initial hierarchy
 
 * pack.sh - packs created libosmscout and geocoder-nlp datasets using
   bzip2 compression
+
+* poly2json-hierarchy.sh - generates poly.json from poly in hierarchy
   
 * prepare_countries.py, prepare_distribution.py, prepare_splitter.py - used by importer_master.sh
 
