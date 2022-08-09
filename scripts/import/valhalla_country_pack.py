@@ -41,6 +41,7 @@ def country_pack(country_poly_fname):
             size += getsize(pdata + '.size')
             ts = gettimestamp(pdata)
 
+    packs.sort()
     return { "packages": packs,
              "timestamp": ts,
              "version": version,

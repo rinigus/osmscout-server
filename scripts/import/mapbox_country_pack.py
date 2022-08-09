@@ -47,7 +47,8 @@ def country_pack(country_poly_fname):
             size += getsize(pdata + '.size')
             ts = gettimestamp(pdata)
             version = getversion(pdata)
-            
+
+    packs.sort()
     return { "path": "mapboxgl/packages", # generic path
              "packages": packs,
              "timestamp": ts,
