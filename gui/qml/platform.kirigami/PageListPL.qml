@@ -24,8 +24,6 @@ import "."
 
 Kirigami.ScrollablePage {
     id: page
-    flickable: listView
-    mainItem: listView
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
     property string acceptIconName: styler.iconForward
