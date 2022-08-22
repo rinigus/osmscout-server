@@ -1658,7 +1658,7 @@
 <context>
     <name>PageListPL</name>
     <message>
-        <location filename="../gui/qml/platform.kirigami/PageListPL.qml" line="60"/>
+        <location filename="../gui/qml/platform.kirigami/PageListPL.qml" line="58"/>
         <source>Accept</source>
         <translation type="unfinished"></translation>
     </message>
