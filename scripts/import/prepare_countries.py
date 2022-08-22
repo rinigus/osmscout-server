@@ -31,6 +31,7 @@ def pbfname(name):
 provided_countries = {}
 
 fmake.write("$(BASE_DIR)/geocoder-nlp/.directory:\n\tmkdir -p $(BASE_DIR)/geocoder-nlp/\n\ttouch $(BASE_DIR)/geocoder-nlp/.directory\n\n")
+fmake.write("$(BASE_DIR)/geocoder-nlp/errors/.directory:\n\tmkdir -p $(BASE_DIR)/geocoder-nlp/errors\n\ttouch $(BASE_DIR)/geocoder-nlp/errors/.directory\n\n")
 fmake.write("$(BASE_DIR)/mapnik/countries/.directory:\n\tmkdir -p $(BASE_DIR)/mapnik/countries/\n\ttouch $(BASE_DIR)/mapnik/countries/.directory\n\n")
 #fmake.write("$(BASE_DIR)/osmscout/.directory:\n\tmkdir -p $(BASE_DIR)/osmscout/\n\ttouch $(BASE_DIR)/osmscout/.directory\n\n")
 
@@ -59,7 +60,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
         country_target = "$(BASE_DIR)/geocoder-nlp/" + spath(cid) + ".timestamp"
 
         all_countries += country_target + " "
-        fmake.write(country_target + ": $(BASE_DIR)/geocoder-nlp/.directory " + pbf +
+        fmake.write(country_target + ": $(BASE_DIR)/geocoder-nlp/.directory $(BASE_DIR)/geocoder-nlp/errors/.directory" +
                     "\n\t$(BUILDER_GEOCODER) " + polyjson + " $(BASE_DIR) " +
                     spath(cid) + " " + Hierarchy.get_postal(root) + ' "' + Hierarchy.get_postcodes(root) + '"\n\n')
 

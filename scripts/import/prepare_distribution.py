@@ -15,7 +15,7 @@ url_specs = {
     "base": url_base,
     "type": "url",
     #"osmscout": "osmscout-27",
-    "geocoder_nlp": "geocoder-nlp-32",
+    "geocoder_nlp": "geocoder-nlp-33",
     "postal_global": "postal-global-2",
     "postal_country": "postal-country-2",
     "mapnik_global": "mapnik-global-1",

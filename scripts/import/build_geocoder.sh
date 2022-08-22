@@ -22,10 +22,11 @@ COUNTRY_CODE=$4
 POSTCODES=$5
 
 SQLDIR="$BASE_DIR/geocoder-nlp/$CONTINENT_COUNTRY"
+ERRORLOG="$BASE_DIR/geocoder-nlp/errors/$CONTINENT_COUNTRY"
 
 rm -rf "$SQLDIR"
 mkdir -p "$SQLDIR"
 
-"$IMPORTER" --poly "$POLYJSON" --priority "$PRIORITY" --postal-country "$COUNTRY_CODE" "$SQLDIR"
+"$IMPORTER" --poly "$POLYJSON" --priority "$PRIORITY" --postal-country "$COUNTRY_CODE" --log-errors-to-file="$ERRORLOG" "$SQLDIR"
 
 ./pack.sh "$SQLDIR" `backends-install/bin/geocoder-importer --version`
