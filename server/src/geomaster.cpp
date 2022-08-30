@@ -303,7 +303,7 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
 
   size_t levels_resolved = 0;
   std::map< std::string, PostalRes > postal_cache;
-  for(const QString country: m_countries)
+  for(const QString &country: m_countries)
     {
       if (!m_geocoder.load(m_geocoder_dirs.value(country).toStdString()))
         {
@@ -564,7 +564,7 @@ bool GeoMaster::guide(const QString &poitype, const QString &name,
         type_query.push_back(poitype.toStdString());
     }
 
-  for(const QString country: m_countries)
+  for(const QString &country: m_countries)
     {
       if (!m_geocoder.load(m_geocoder_dirs.value(country).toStdString()))
         {
@@ -671,7 +671,7 @@ bool GeoMaster::poiTypes(QByteArray &result)
   QMutexLocker lk(&m_mutex);
 
   QJsonArray arr;
-  for (const auto s: m_aliases)
+  for (const auto &s: m_aliases)
     arr.push_back(s);
 
   QJsonDocument document(arr);
