@@ -287,7 +287,8 @@ static std::string v2s(const std::vector<std::string> &v)
   return s;
 }
 
-bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t limit,
+bool GeoMaster::search(const QString &searchPattern, QJsonObject &result,
+                       const GeoNLP::Geocoder::GeoReference &reference, size_t limit,
                        double &lat, double &lon, std::string &name, size_t &number_of_results)
 {
   QMutexLocker lk(&m_mutex);
@@ -378,7 +379,7 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
       // search
       m_geocoder.set_max_results(limit);
       std::vector<GeoNLP::Geocoder::GeoResult> search_result_country;
-      if ( !m_geocoder.search(parsed_query, search_result_country, levels_resolved) )
+      if ( !m_geocoder.search(parsed_query, search_result_country, levels_resolved, reference) )
         {
           InfoHub::logError(tr("Error while searching with geocoder-nlp"));
           return false;
@@ -412,6 +413,7 @@ bool GeoMaster::search(const QString &searchPattern, QJsonObject &result, size_t
   result.insert("query", searchPattern);
   result.insert("parsed", parsed);
   result.insert("parsed_normalized", parsed_normalized);
+  result.insert("reference_used", reference.is_set() ? 1 : 0);
 
   {
     QJsonArray arr;
@@ -452,8 +454,9 @@ bool GeoMaster::search(const QString &searchPattern, double &lat, double &lon, s
 {
   QJsonObject obj;
   size_t number_of_results;
+  GeoNLP::Geocoder::GeoReference reference;
 
-  if ( !search(searchPattern, obj, 1, lat, lon, name, number_of_results ) )
+  if ( !search(searchPattern, obj, reference, 1, lat, lon, name, number_of_results ) )
     {
       InfoHub::logWarning("Search for reference point failed");
       return false;
@@ -466,14 +469,14 @@ bool GeoMaster::search(const QString &searchPattern, double &lat, double &lon, s
   return false;
 }
 
-bool GeoMaster::searchExposed(const QString &searchPattern, QByteArray &result, size_t limit, bool full_result)
+bool GeoMaster::searchExposed(const QString &searchPattern, QByteArray &result, GeoNLP::Geocoder::GeoReference reference, size_t limit, bool full_result)
 {
   QJsonObject sres;
   double lat, lon;
   std::string name;
   size_t number_of_results;
 
-  if ( !search(searchPattern, sres, limit, lat, lon, name, number_of_results ) )
+  if ( !search(searchPattern, sres, reference, limit, lat, lon, name, number_of_results ) )
     return false;
 
   if (!full_result)

@@ -638,6 +638,11 @@ unsigned int RequestMapper::service(const char *url_c,
       bool ok = true;
       size_t limit = q2value<size_t>("limit", 25, options, connection, ok);
       QString search = q2value<QString>("search", "", options, connection, ok);
+      double lon = q2value<double>("lng", 0, options, connection, ok);
+      double lat = q2value<double>("lat", 0, options, connection, ok);
+      size_t zoom = q2value<size_t>("zoom", 16, options, connection, ok);
+      double importance = q2value<double>("importance", 0.75, options, connection, ok);
+      GeoNLP::Geocoder::GeoReference reference;
 
       search = search.simplified();
 
@@ -646,6 +651,10 @@ unsigned int RequestMapper::service(const char *url_c,
           errorText(response, connection_id, "Error while reading search query parameters");
           return MHD_HTTP_BAD_REQUEST;
         }
+
+      if (has("lng", options, connection) &&
+          has("lat", options, connection))
+        reference.set(lat, lon, zoom, importance);
 
       Task *task;
       bool extended_reply = (path == "/v2/search");
@@ -660,7 +669,7 @@ unsigned int RequestMapper::service(const char *url_c,
 #endif
         task = new Task(connection_id,
                         std::bind( &GeoMaster::searchExposed, GeoMaster::instance(),
-                                   search, std::placeholders::_1, limit,
+                                   search, std::placeholders::_1, reference, limit,
                                    extended_reply),
                         "Error while searching");
 

@@ -63,7 +63,9 @@ public:
   /// \param result
   /// \param limit
   /// \return
-  bool searchExposed(const QString &searchPattern, QByteArray &result, size_t limit, bool full_result);
+  bool searchExposed(const QString &searchPattern, QByteArray &result,
+                     GeoNLP::Geocoder::GeoReference reference,
+                     size_t limit, bool full_result);
 
   /////////////////////////////////////////////////////////////
   /// \brief Search for a pattern and return the coordinates of the first found object
@@ -103,7 +105,8 @@ signals:
   void warnLargeRamLangNotSpecifiedChanged(bool warning);
 
 protected:
-  bool search(const QString &searchPattern, QJsonObject &result, size_t limit,
+  bool search(const QString &searchPattern, QJsonObject &result, const
+              GeoNLP::Geocoder::GeoReference &reference, size_t limit,
               double &lat, double &lon, std::string &name, size_t &number_of_results);
 
   void checkWarnings(bool lang_specified);

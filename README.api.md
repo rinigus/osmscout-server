@@ -193,6 +193,23 @@ where meaning of the query parameters is the same as for the version
 one. However, the result includes parsing feedback when geocoder-nlp
 is used, see [example](examples/search_v2.json).
 
+### Location bias, supported by versions 1 and 2
+
+Optional parameters can be used for location bias of geocoding:
+
+`lng={lng}` - longitude for reference location, must be specified for bias
+
+`lat={lat}` - latitude for reference location, must be specified for bias
+
+`zoom={zoom}` - zoom level of a map used as a basemap for showing
+search result. This level is used to calculate location bias reference
+distance. This is an optional integer parameter with the default value
+of 16.
+
+`importance={importance}` - importance of location bias (range from
+0.0-1.0, 1.0 corresponding to high location bias). This is an optional
+parameter with the default value of 0.75.
+
 
 ## List of available POI types
 
