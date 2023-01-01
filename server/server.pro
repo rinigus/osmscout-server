@@ -153,7 +153,7 @@ use_mapnik {
     }
     LIBS += -lmapnik -licuuc
 
-    scout_uuitk {
+    scout_uuitk|scout_lomiri {
         LIBS += -lproj
     }
 }
@@ -206,7 +206,7 @@ scout_silica {
     DEFINES += TRANSLATION_FOLDER=\\\"$${PREFIX}/share/$${APP_NAME}/translations\\\"
 }
 
-scout_uuitk {
+scout_uuitk|scout_lomiri {
     DEFINES += TRANSLATION_FOLDER=\\\"./translations\\\"
 }
 

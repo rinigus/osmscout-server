@@ -7,6 +7,8 @@ equals(SCOUT_FLAVOR, "silica") {
     CONFIG += scout_qtcontrols
 } else:equals(SCOUT_FLAVOR, "uuitk") {
     CONFIG += scout_uuitk
+} else:equals(SCOUT_FLAVOR, "lomiri") {
+    CONFIG += scout_lomiri
 } else {
     error("Specify SCOUT_FLAVOR during configuration")
 }
@@ -79,11 +81,13 @@ scout_silica {
     DEFINES += IS_QTCONTROLS_QT
 } else:scout_uuitk {
     DEFINES += IS_QTCONTROLS_QT IS_UUITK
+} else:scout_lomiri {
+    DEFINES += IS_QTCONTROLS_QT IS_LOMIRI
 } else {
     DEFINES += IS_CONSOLE_QT
 }
 
-scout_uuitk {
+scout_uuitk|scout_lomiri {
     DEFINES += DEFAULT_FALLBACK_STYLE=\\\"suru\\\"
 }
 

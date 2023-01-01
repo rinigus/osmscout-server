@@ -1,0 +1,30 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="qml/platform/ApplicationWindowPL.qml">qml/platform.lomiri/ApplicationWindowPL.qml</file>
+        <file alias="qml/platform/BusyIndicatorPL.qml">qml/platform.lomiri/BusyIndicatorPL.qml</file>
+        <file alias="qml/platform/ButtonPL.qml">qml/platform.lomiri/ButtonPL.qml</file>
+        <file alias="qml/platform/ComboBoxPL.qml">qml/platform.lomiri/ComboBoxPL.qml</file>
+        <file alias="qml/platform/DialogPL.qml">qml/platform.lomiri/DialogPL.qml</file>
+        <file alias="qml/platform/FileSelectorPL.qml">qml/platform.lomiri/FileSelectorPL.qml</file>
+        <file alias="qml/platform/FormLayoutPL.qml">qml/platform.lomiri/FormLayoutPL.qml</file>
+        <file alias="qml/platform/HeaderBarImpl.qml">qml/platform.lomiri/HeaderBarImpl.qml</file>
+        <file alias="qml/platform/IconButtonPL.qml">qml/platform.lomiri/IconButtonPL.qml</file>
+        <file alias="qml/platform/IconPL.qml">qml/platform.lomiri/IconPL.qml</file>
+        <file alias="qml/platform/LabelPL.qml">qml/platform.lomiri/LabelPL.qml</file>
+        <file alias="qml/platform/ListItemPL.qml">qml/platform.lomiri/ListItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerItemPL.qml">qml/platform.lomiri/MenuDrawerItemPL.qml</file>
+        <file alias="qml/platform/MenuDrawerPL.qml">qml/platform.lomiri/MenuDrawerPL.qml</file>
+        <file alias="qml/platform/PageEmptyPL.qml">qml/platform.lomiri/PageEmptyPL.qml</file>
+        <file alias="qml/platform/PageListPL.qml">qml/platform.lomiri/PageListPL.qml</file>
+        <file alias="qml/platform/PagePL.qml">qml/platform.lomiri/PagePL.qml</file>
+        <file alias="qml/platform/RemorsePopupPL.qml">qml/platform.lomiri/RemorsePopupPL.qml</file>
+        <file alias="qml/platform/SectionHeaderPL.qml">qml/platform.lomiri/SectionHeaderPL.qml</file>
+        <file alias="qml/platform/StackPL.qml">qml/platform.lomiri/StackPL.qml</file>
+        <file alias="qml/platform/StylerPL.qml">qml/platform.lomiri/StylerPL.qml</file>
+        <file alias="qml/platform/TextFieldPL.qml">qml/platform.lomiri/TextFieldPL.qml</file>
+        <file alias="qml/platform/TextSwitchPL.qml">qml/platform.lomiri/TextSwitchPL.qml</file>
+        <file>icons/lomiri/country-available.svg</file>
+        <file>icons/lomiri/country-download.svg</file>
+        <file>icons/lomiri/country-on-device.svg</file>
+    </qresource>
+</RCC>
