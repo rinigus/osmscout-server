@@ -373,7 +373,7 @@ FeatureMapboxGLGlobal::FeatureMapboxGLGlobal(PathProvider *path):
   Feature(path, "mapboxgl/global", "mapboxgl_global",
           QCoreApplication::translate("MapManagerFeature", "Mapbox GL World overlay"),
           mapboxgl_global_files,
-          2)
+          3)
 {
 }
 
@@ -419,7 +419,7 @@ FeatureMapboxGLCountry::FeatureMapboxGLCountry(PathProvider *path):
   Feature(path, "territory", "mapboxgl_country",
           QCoreApplication::translate("MapManagerFeature", "Mapbox GL country-specific support"),
           QStringList(),
-          2)
+          3)
 {
 }
 

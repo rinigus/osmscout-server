@@ -6,7 +6,7 @@ planet_tiles = "mapbox/tiles"
 packages_dir = "mapbox/packages"
 packages_meta = packages_dir + "_meta"
 packages_timestamp = packages_dir + "/timestamp"
-version = "2"
+version = "3"
 
 os.system("rm -rf %s %s" % (packages_dir, packages_meta))
 for d in [packages_dir, packages_meta]:
