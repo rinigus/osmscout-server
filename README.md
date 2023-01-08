@@ -132,23 +132,29 @@ projects.
 
 ## Acknowledgments
 
-libosmscout: http://libosmscout.sourceforge.net
-
 libpostal: https://github.com/openvenues/libpostal
-
-mapnik: https://github.com/mapnik/mapnik
 
 valhalla: https://github.com/valhalla/valhalla
 
 geocoder-nlp: https://github.com/rinigus/geocoder-nlp
 
-osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
+Nominatim, Geocoder data import: https://nominatim.org
 
 GNU Libmicrohttpd: https://www.gnu.org/software/libmicrohttpd
 
 langcodes: https://github.com/LuminosoInsight/langcodes
 
-Mapbox GL import scripts: https://github.com/rinigus/mapbox-gl-importer
+Mapbox GL styles: https://github.com/rinigus/mapbox-gl-styles
+
+Planetiler, vector tiles import: https://github.com/onthegomap/planetiler
+
+OpenMapTiles, vector tiles schema: https://github.com/openmaptiles/openmaptiles
+
+mapnik, rendering of raster tiles: https://github.com/mapnik/mapnik
+
+libosmscout, used in the earlier versions as a base library: http://libosmscout.sourceforge.net
+
+osmscout-sailfish: https://github.com/Karry/osmscout-sailfish
 
 Hosting of maps: Natural Language Processing Centre
 (https://nlp.fi.muni.cz/en/ , Faculty of Informatics, Masaryk
