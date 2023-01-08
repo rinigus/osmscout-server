@@ -1,7 +1,7 @@
 # OSM Scout Server
 
 [![Matrix](https://img.shields.io/badge/matrix.org-%23pure--maps-blue)](https://matrix.to/#/#pure-maps:matrix.org)
-[![TMO](https://img.shields.io/badge/forum-T.M.O-FB9200)](https://talk.maemo.org/showthread.php?t=100442)
+[![Discussions](https://img.shields.io/badge/forum-GitHub-FB9200)](https://github.com/rinigus/osmscout-server/discussions)
 
 OSM Scout server can be used as a drop-in replacement for online map
 services providing map tiles, search, and routing. As a result, an
@@ -37,18 +37,15 @@ QtQuick application. Installation instructions are given in
 
 ## User feedback
 
-There are three main communication channels with the users: GitHub,
-Matrix channel
-[#pure-maps:matrix.org](https://matrix.to/#/#pure-maps:matrix.org) and
-a thread at
-[TMO](http://talk.maemo.org/showthread.php?t=97823). Matrix channel is
+There are two main communication channels with the users:
+[GitHub discussions](https://github.com/rinigus/osmscout-server/discussions)
+and Matrix channel
+[#pure-maps:matrix.org](https://matrix.to/#/#pure-maps:matrix.org). Matrix channel is
 shared with Pure Maps.
 
 Please use Github issues to address specific problems and development
 requests. General discussion is expected either through corresponding
-issues, Matrix channel, or TMO thread. Please note that users from all
-platforms are welcome at TMO, not only current Sailfish OS users.
-
+issues, Matrix channel, or GitHub discussion thread. 
 
 ## Maps
 
