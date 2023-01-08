@@ -45,6 +45,15 @@ change imported regions.
 * If coastlines have to be updated, see corresponding instructions
   below and run them before the next instruction.
 
+* Set environment variable `GEOCODER_IMPORTER_POSTGRES` pointing to
+  Postgres database with Nominatim tables. For example,
+  "postgresql://nominatim:pwd@host:port/nominatim"
+
+* Remove `distribution/geocoder-nlp/.directory` to ensure that
+  Geocoder NLP files will be imported. This is needed as there is no
+  time-dependent file reflecting data time stamp:
+  `rm distribution/geocoder-nlp/.directory`
+
 * Run `./import_master.sh` 
 
 
