@@ -19,11 +19,14 @@ url_specs = {
     "postal_global": "postal-global-2",
     "postal_country": "postal-country-2",
     "mapnik_global": "mapnik-global-1",
-    "mapnik_country": "mapnik-country-27",
     "mapboxgl_country": "mapboxgl-19",
     "mapboxgl_global": "mapboxgl-19",
     "mapboxgl_glyphs": "mapboxgl-19",
     "valhalla": "valhalla-27",
+
+    # mapnik is not updated anymore as users are expected to use vector tiles
+    # keep this version just if someone needs raster tiles
+    "mapnik_country": "mapnik-country-27",
 }
 
 dist = json.loads( open("countries.json", "r").read() )

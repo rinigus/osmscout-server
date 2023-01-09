@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # This script generates Makefile that can be used to import countries
-# into libosmscout and generate geocoder-nlp database
 
 import os, json, codecs
 from hierarchy import Hierarchy

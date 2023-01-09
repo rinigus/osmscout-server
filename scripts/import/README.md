@@ -37,7 +37,7 @@ change imported regions.
 
 ### On every import
 
-* Increase URL id for libosmscout, geocoder-nlp, and others in
+* Increase URL id for geocoder-nlp, and others in
   `prepare_distribution.py`
   
 * Check that bucket_name is correct
@@ -59,13 +59,15 @@ change imported regions.
 
 ### On backend upgrade
 
-In case if there is a new liboscmscout or geocoder-nlp version:
+In case if there is a new backend version:
 
 * run ./prepare_backends.sh
 
 * update versions in the end of build_mapnik.sh script
 
-* update version for Valhalla in valhalla_country_pack.py module
+* update version for Valhalla in valhalla_country_pack.py
+
+* update version for vector tiles in mapbox/make_packs.py
 
 * check for compatibility in mapmanagerfeature.cpp of the main tree
 
@@ -96,15 +98,9 @@ In case if there is a new liboscmscout or geocoder-nlp version:
   version.
   
   
-### libpostal databases
-
-Libpostal databases are imported by geocoder-nlp import scripts. See
-these scripts for instructions.
-
-
 ### Other scripts
 
-* build_{geocoder,osmscout}.sh - performs import for each region
+* build_{geocoder,mapnik,osmscout}.sh - performs import for each region
 
 * get_base_from_geofabrik.py - used to build initial hierarchy
 
