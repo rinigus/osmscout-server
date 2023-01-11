@@ -7,7 +7,11 @@ cd planetiler
 
 # from https://github.com/onthegomap/planetiler/blob/main/PLANET.md
 
-echo java -Xmx110g \
+echo Remove old data
+rm output.mbtiles || echo No output.mbtiles found
+rm -rf data && mkdir data
+
+java -Xmx110g \
   `# return unused heap memory to the OS` \
   -XX:MaxHeapFreeRatio=40 \
   -jar planetiler.jar \

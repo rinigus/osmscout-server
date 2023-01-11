@@ -6,9 +6,7 @@ rm -f planet/planet-latest.osm.pbf planet/planet-latest.osm.pbf.md5
 (cd planet && wget http://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/pbf/planet-latest.osm{.pbf,.pbf.md5} && md5sum -c *.md5)
 
 # Mapbox GL import
-echo
-echo Import done separately, not incorporated into this script yet
-echo
+(cd mapbox && ./run_planetiler.sh)
 mapbox/make_packs.py
 rm -rf distribution/mapboxgl/packages
 mkdir -p distribution/mapboxgl/packages
