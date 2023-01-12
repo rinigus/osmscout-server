@@ -7,6 +7,8 @@ rm -f planet/planet-latest.osm.pbf planet/planet-latest.osm.pbf.md5
 
 # Mapbox GL import
 (cd mapbox && ./run_planetiler.sh)
+rm -rf mapbox/tiles
+./mapbox_planetiler_split.py mapbox/planetiler/output.mbtiles hierarchy mapbox/tiles
 mapbox/make_packs.py
 rm -rf distribution/mapboxgl/packages
 mkdir -p distribution/mapboxgl/packages
