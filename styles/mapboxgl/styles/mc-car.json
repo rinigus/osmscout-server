@@ -3250,142 +3250,39 @@
       }
     },
     {
-      "id": "poi-without-name",
+      "id": "poi",
       "type": "symbol",
       "source": "osmscout",
       "source-layer": "poi",
-      "min-zoom": 14,
+      "minzoom": 15,
       "filter": [
-        "all",
+        "any",
         [
-          "!",
+          ">",
           [
-            "has",
-            "name"
-          ]
+            "zoom"
+          ],
+          18
         ],
         [
-          "any",
+          "<=",
           [
-            ">",
+            "number",
             [
-              "zoom"
+              "get",
+              "rank"
             ],
-            17
+            100
           ],
           [
-            "<=",
+            "^",
+            4,
             [
-              "number",
+              "-",
               [
-                "get",
-                "rank"
+                "zoom"
               ],
-              100
-            ],
-            [
-              "^",
-              4,
-              [
-                "-",
-                [
-                  "zoom"
-                ],
-                14
-              ]
-            ]
-          ]
-        ]
-      ],
-      "layout": {
-        "icon-image": [
-          "coalesce",
-          [
-            "image",
-            [
-              "concat",
-              [
-                "get",
-                "class"
-              ],
-              "_",
-              [
-                "get",
-                "subclass"
-              ],
-              "-11"
-            ]
-          ],
-          [
-            "image",
-            [
-              "concat",
-              [
-                "get",
-                "subclass"
-              ],
-              "-11"
-            ]
-          ],
-          [
-            "image",
-            [
-              "concat",
-              [
-                "get",
-                "class"
-              ],
-              "-11"
-            ]
-          ],
-          [
-            "image",
-            "dot-11"
-          ]
-        ]
-      }
-    },
-    {
-      "id": "poi-with-name",
-      "type": "symbol",
-      "source": "osmscout",
-      "source-layer": "poi",
-      "min-zoom": 14,
-      "filter": [
-        "all",
-        [
-          "has",
-          "name"
-        ],
-        [
-          "any",
-          [
-            ">",
-            [
-              "zoom"
-            ],
-            17
-          ],
-          [
-            "<=",
-            [
-              "number",
-              [
-                "get",
-                "rank"
-              ],
-              100
-            ],
-            [
-              "^",
-              4,
-              [
-                "-",
-                [
-                  "zoom"
-                ],
-                14
-              ]
+              15
             ]
           ]
         ]
@@ -3500,28 +3397,17 @@
       }
     },
     {
-      "id": "car-parking",
+      "id": "car-poi-z16",
       "type": "symbol",
       "source": "osmscout",
       "source-layer": "poi",
-      "minzoom": 15,
+      "minzoom": 16,
       "filter": [
-        "all",
-        [
-          "==",
-          "$type",
-          "Point"
-        ],
-        [
-          "==",
-          "class",
-          "car"
-        ],
-        [
-          "==",
-          "symbol",
-          "parking"
-        ]
+        "in",
+        "subclass",
+        "parking",
+        "gate",
+        "lift_gate"
       ],
       "layout": {
         "text-padding": 2,
@@ -3529,12 +3415,57 @@
           "Noto Sans Bold"
         ],
         "text-anchor": "top",
-        "icon-image": "{symbol}-11",
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "class"
+              ],
+              "_",
+              [
+                "get",
+                "subclass"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "subclass"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "class"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            "dot-11"
+          ]
+        ],
         "text-field": "{name}",
         "text-offset": [
           0,
           0.6
         ],
+        "text-optional": true,
         "text-size": 12,
         "text-max-width": 9
       },
@@ -3546,28 +3477,21 @@
       }
     },
     {
-      "id": "car",
+      "id": "car-poi-z14",
       "type": "symbol",
       "source": "osmscout",
       "source-layer": "poi",
-      "minzoom": 12,
+      "minzoom": 14,
       "filter": [
-        "all",
-        [
-          "==",
-          "$type",
-          "Point"
-        ],
-        [
-          "==",
-          "class",
-          "car"
-        ],
-        [
-          "!=",
-          "symbol",
-          "parking"
-        ]
+        "in",
+        "subclass",
+        "fuel",
+        "charging_station",
+        "border_control",
+        "toll_booth",
+        "ferry_terminal",
+        "station",
+        "halt"
       ],
       "layout": {
         "text-padding": 2,
@@ -3575,13 +3499,57 @@
           "Noto Sans Bold"
         ],
         "text-anchor": "top",
-        "icon-image": "{symbol}-11",
-        "text-optional": true,
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "class"
+              ],
+              "_",
+              [
+                "get",
+                "subclass"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "subclass"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "class"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            "dot-11"
+          ]
+        ],
         "text-field": "{name}",
         "text-offset": [
           0,
           0.6
         ],
+        "text-optional": true,
         "text-size": 12,
         "text-max-width": 9
       },
