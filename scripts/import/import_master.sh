@@ -30,6 +30,7 @@ rm -rf splitted
 ./prepare_splitter.py
 nice -n 19 make -f Makefile.splitter
 
+rm -rf distribution/geocoder-nlp
 ./prepare_countries.py
 nice -n 19 make -f Makefile.import -j16
 
