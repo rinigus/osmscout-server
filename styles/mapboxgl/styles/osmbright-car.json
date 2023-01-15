@@ -3250,6 +3250,79 @@
       }
     },
     {
+      "id": "poi-low-zoom",
+      "type": "symbol",
+      "source": "osmscout",
+      "source-layer": "poi",
+      "maxzoom": 13,
+      "layout": {
+        "text-padding": 2,
+        "text-font": [
+          "Noto Sans Bold"
+        ],
+        "text-anchor": "top",
+        "icon-image": [
+          "coalesce",
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "class"
+              ],
+              "_",
+              [
+                "get",
+                "subclass"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "subclass"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            [
+              "concat",
+              [
+                "get",
+                "class"
+              ],
+              "-11"
+            ]
+          ],
+          [
+            "image",
+            "dot-11"
+          ]
+        ],
+        "text-field": "{name}",
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-optional": true,
+        "text-size": 12,
+        "text-max-width": 9
+      },
+      "paint": {
+        "text-halo-blur": 0.5,
+        "text-color": "#666",
+        "text-halo-width": 1,
+        "text-halo-color": "#ffffff"
+      }
+    },
+    {
       "id": "poi",
       "type": "symbol",
       "source": "osmscout",
@@ -3397,17 +3470,20 @@
       }
     },
     {
-      "id": "car-poi-z16",
+      "id": "car-poi-low-zoom",
       "type": "symbol",
       "source": "osmscout",
       "source-layer": "poi",
-      "minzoom": 16,
       "filter": [
         "in",
         "subclass",
-        "parking",
-        "gate",
-        "lift_gate"
+        "fuel",
+        "charging_station",
+        "border_control",
+        "toll_booth",
+        "ferry_terminal",
+        "station",
+        "halt"
       ],
       "layout": {
         "text-padding": 2,
@@ -3477,21 +3553,17 @@
       }
     },
     {
-      "id": "car-poi-z14",
+      "id": "car-poi-z16",
       "type": "symbol",
       "source": "osmscout",
       "source-layer": "poi",
-      "minzoom": 14,
+      "minzoom": 16,
       "filter": [
         "in",
         "subclass",
-        "fuel",
-        "charging_station",
-        "border_control",
-        "toll_booth",
-        "ferry_terminal",
-        "station",
-        "halt"
+        "parking",
+        "gate",
+        "lift_gate"
       ],
       "layout": {
         "text-padding": 2,
