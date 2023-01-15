@@ -4110,7 +4110,18 @@
         ],
         "text-anchor": "bottom",
         "icon-image": "airport-11",
-        "text-field": "{name}\n{iata}",
+        "text-field": [
+          "concat",
+          [
+            "get",
+            "name"
+          ],
+          "\n",
+          [
+            "get",
+            "iata"
+          ]
+        ],
         "text-offset": [
           0,
           -0.6
