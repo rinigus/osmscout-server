@@ -68,7 +68,7 @@ def makepacks(o):
         sz = getsize(curr)
         if sz == 0:
             continue
-        
+
         if 'children' in curr and sz > acceptable_package_size:
             # packaging via children
             makepacks(curr['children'])
@@ -79,18 +79,18 @@ def makepacks(o):
             totar = []
             for i in curr['files']:
                 if tiles[i] is not None:
-                    totar.append(tiles[i]['file']) 
+                    totar.append(tiles[i]['file'])
 
             tarname = os.path.join(packages_dir, "%d.tar" % counter)
             polyname = os.path.join(dir_meta, "%d.bbox" % counter)
             cmd = "tar cf " + tarname
             flist_name = tarname + ".list"
-            flist = open(flist_name, "w")        
+            flist = open(flist_name, "w")
             for i in totar:
-                cmd += " " + i
+                #cmd += " " + i
                 flist.write(i + "\n")
             flist.close()
-            cmd += " " + flist_name + " " + tiles_timestamp
+            cmd += " -T " + flist_name + " " + flist_name + " " + tiles_timestamp
             cmd += " && ./pack.sh " + tarname + " " + version
             print(cmd)
             os.system(cmd)
@@ -101,13 +101,13 @@ def makepacks(o):
                 fpoly.write(" ")
             fpoly.write("\n")
             fpoly.close()
-            
+
             counter += 1
 
 makepacks(packages)
 
 sizes.sort()
-print('Size of all packages:', sum(sizes), ' Number of packages:', len(sizes))
+print('Size of all packages:', sum(sizes), 'MB. Number of packages:', len(sizes))
 os.system("rm  %s/*.list" % packages_dir)
 
 # for pack in packages:
@@ -123,7 +123,7 @@ os.system("rm  %s/*.list" % packages_dir)
 #         polyname = os.path.join(dir_meta, "%d.bbox" % counter)
 #         cmd = "tar cf " + tarname
 #         flist_name = tarname + ".list"
-#         flist = open(flist_name, "w")        
+#         flist = open(flist_name, "w")
 #         for i in totar:
 #             cmd += " " + i
 #             flist.write(i + "\n")
@@ -139,7 +139,7 @@ os.system("rm  %s/*.list" % packages_dir)
 #             fpoly.write(" ")
 #         fpoly.write("\n")
 #         fpoly.close()
-        
+
 #         counter += 1
 
 # print("Made packages:", counter)
