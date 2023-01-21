@@ -541,29 +541,29 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="310"/>
-        <location filename="../server/src/geomaster.cpp" line="571"/>
+        <location filename="../server/src/geomaster.cpp" line="311"/>
+        <location filename="../server/src/geomaster.cpp" line="574"/>
         <source>Cannot open geocoding database: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="336"/>
+        <location filename="../server/src/geomaster.cpp" line="337"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="372"/>
+        <location filename="../server/src/geomaster.cpp" line="373"/>
         <source>Parsed query [%1]: %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="383"/>
-        <location filename="../server/src/geomaster.cpp" line="618"/>
+        <location filename="../server/src/geomaster.cpp" line="384"/>
+        <location filename="../server/src/geomaster.cpp" line="621"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="465"/>
+        <location filename="../server/src/geomaster.cpp" line="468"/>
         <source>Search for reference point failed: cannot find</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1708,38 +1708,38 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="385"/>
+        <location filename="../server/src/requestmapper.cpp" line="372"/>
         <source>Loading posted data for request %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="405"/>
+        <location filename="../server/src/requestmapper.cpp" line="392"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="478"/>
+        <location filename="../server/src/requestmapper.cpp" line="465"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="646"/>
+        <location filename="../server/src/requestmapper.cpp" line="633"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="693"/>
+        <location filename="../server/src/requestmapper.cpp" line="689"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="842"/>
-        <location filename="../server/src/requestmapper.cpp" line="999"/>
+        <location filename="../server/src/requestmapper.cpp" line="838"/>
+        <location filename="../server/src/requestmapper.cpp" line="995"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="943"/>
+        <location filename="../server/src/requestmapper.cpp" line="939"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
         <translation type="unfinished"></translation>
     </message>
