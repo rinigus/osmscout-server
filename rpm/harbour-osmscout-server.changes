@@ -5,6 +5,14 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sat Jan 21 2023 rinigus <rinigus.git@gmail.com> 3.0.0-1
+- Update in Geocoder NLP data format incorporating ranking information
+- Add location bias to geocoder results
+- Import vector tiles using Planetiler
+- Update vector map styles and icons
+- Activate Github discussions
+- Update translations
+
 * Mon Aug 22 2022 rinigus <rinigus.git@gmail.com> 2.2.2-1
 - [kirigami] adjust to new kirigami API
 

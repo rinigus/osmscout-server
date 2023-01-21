@@ -3,7 +3,7 @@
 Update translations on desktop:
 
 ```
-lupdate osmscout-server.pro server/server.pro gui/gui.pro -ts translations/osmscout-server.ts
+/usr/lib64/qt5/bin/lupdate osmscout-server.pro server/server.pro gui/gui.pro -ts translations/osmscout-server.ts
 ```
 
 Push source changes to Transifex and pull new translations

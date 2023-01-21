@@ -39,6 +39,18 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="3.0.0" date="2023-01-21">
+     <description>
+       <ul>
+	 <li>Update in Geocoder NLP data format incorporating ranking information</li>
+	 <li>Add location bias to geocoder results</li>
+	 <li>Import vector tiles using Planetiler</li>
+	 <li>Update vector map styles and icons</li>
+	 <li>Activate Github discussions</li>
+	 <li>Update translations</li>
+       </ul>
+     </description>
+   </release>
    <release version="2.2.2" date="2022-08-22">
      <description>
        <ul>
