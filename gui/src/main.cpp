@@ -29,6 +29,7 @@
 #include "infohub.h"
 #include "logger.h"
 #include "modulechecker.h"
+#include "serverdbusroot.h"
 #include "systemdservice.h"
 
 #include <QDBusConnection>
@@ -122,6 +123,7 @@ int main(int argc, char *argv[])
   SystemDService systemd_service(DBUS_SERVICE, DBUS_PATH_SYSTEMD, dbusconnection);
   MapManager manager(DBUS_SERVICE, DBUS_PATH_MANAGER, dbusconnection);
   ModuleChecker modules(DBUS_SERVICE, DBUS_PATH_MODULES, dbusconnection);
+  ServerDBusRoot serverDBusRoot(DBUS_SERVICE, DBUS_PATH_ROOT, dbusconnection);
 
   ServerController serverController;
   TrackDBusService service;
@@ -129,6 +131,8 @@ int main(int argc, char *argv[])
   // reconnect to server if it appears and reload all properties
   QObject::connect(&service, &TrackDBusService::serviceAppeared,
                    &serverController, &ServerController::onServiceAppeared);
+  QObject::connect(&service, &TrackDBusService::serviceAppeared,
+                   &serverDBusRoot, &ServerDBusRoot::reloadData);
   QObject::connect(&service, &TrackDBusService::serviceAppeared,
                    &settings, &AppSettings::reloadData);
   QObject::connect(&service, &TrackDBusService::serviceAppeared,
@@ -177,6 +181,7 @@ int main(int argc, char *argv[])
       rootContext->setContextProperty("serverController", &serverController);
       rootContext->setContextProperty("service", &service);
 
+      rootContext->setContextProperty("serverDBusRoot", &serverDBusRoot);
       rootContext->setContextProperty("settings", &settings);
       rootContext->setContextProperty("infohub", &infoHub);
       rootContext->setContextProperty("logger", &logger);

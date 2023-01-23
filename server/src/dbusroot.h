@@ -36,6 +36,7 @@ class DBusRoot : public QObject
   Q_OBJECT
   Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_ROOT)
   Q_PROPERTY(QString Url READ url)
+  Q_PROPERTY(QString Version READ version)
 
 public slots:
   void Activate(QMap<QString, QVariant> platform_data);
@@ -43,12 +44,14 @@ public slots:
   void ActivateAction(QString action_name, QVariantList parameter, QMap<QString, QVariant> platform_data);
 
   void Connect(const QDBusMessage &message);
+  void Quit();
 
 public:
 
   DBusRoot(QString host, int port, QObject *parent = nullptr);
 
   QString url() const { return m_url; }
+  QString version() const;
 
 protected:
   QString m_url;

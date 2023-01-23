@@ -22,6 +22,7 @@
 #include "dbustracker.h"
 #include "infohub.h"
 
+#include <QCoreApplication>
 #include <QDebug>
 
 DBusRoot::DBusRoot(QString host, int port, QObject *parent):
@@ -48,4 +49,14 @@ void DBusRoot::ActivateAction(QString /*action_name*/, QVariantList /*parameter*
 void DBusRoot::Connect(const QDBusMessage &message)
 {
   DBusTracker::instance()->track(message.service());
+}
+
+void DBusRoot::Quit()
+{
+  QCoreApplication::quit();
+}
+
+QString DBusRoot::version() const
+{
+  return APP_VERSION;
 }

@@ -56,6 +56,23 @@ ApplicationWindowPL {
     }
 
     function checkService() {
+        if (serverDBusRoot.Version && serverDBusRoot.Version !== programVersion) {
+            var v = serverDBusRoot.Version;
+            console.log("Mismatch between GUI and daemon version : " + v + ' vs ' + programVersion)
+            serverDBusRoot.quit();
+
+            app.pages.pop(app.rootPage);
+            app.pages.completeAnimation();
+            app.rootPage = null;
+            app.pages.replace( Qt.resolvedUrl("MessagePage.qml"), {
+                                  "title": qsTr("Error"),
+                                  "message": qsTr("Running OSM Scout Server had unexpected version (%1) and was stopped. " +
+                                                  "Please restart this user interface to try again.").arg(v)
+                              } )
+            started = false;
+            return;
+        }
+
         if (service.available && !started) {
             started = true;
             app.pages.replace( Qt.resolvedUrl("StartPage.qml") );

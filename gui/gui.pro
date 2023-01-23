@@ -62,6 +62,7 @@ SOURCES += \
     src/mapmanager.cpp \
     src/modulechecker.cpp \
     src/servercontroller.cpp \
+    src/serverdbusroot.cpp \
     src/systemdservice.cpp \
     src/trackdbusservice.cpp
 
@@ -74,6 +75,7 @@ HEADERS += \
     src/mapmanager.h \
     src/modulechecker.h \
     src/servercontroller.h \
+    src/serverdbusroot.h \
     src/systemdservice.h \
     src/trackdbusservice.h
 
