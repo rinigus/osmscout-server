@@ -3218,7 +3218,7 @@
       "type": "symbol",
       "source": "osmscout",
       "source-layer": "housename",
-      "minzoom": 15,
+      "minzoom": 17,
       "layout": {
         "text-field": "{housename}",
         "text-font": [
