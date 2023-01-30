@@ -15,6 +15,8 @@ configuration variable `SCOUT_FLAVOR` passed to `qmake` during a
 build. See beginning of `osmscout-server.pro` for currently supported
 flavors.
 
+When selecting a flavor for PC, it is recommended to use Kirigami instead of QtControls.
+
 ### Ubuntu 18.04
 
 To compile and install under /usr/local, proceed as follows.
@@ -81,7 +83,7 @@ OSM Scout Server:
 git clone --recursive https://github.com/rinigus/osmscout-server.git
 cd osmscout-server
 mkdir build && cd build
-qmake PREFIX=/usr/local SCOUT_FLAVOR=qtcontrols ../osmscout-server.pro
+qmake PREFIX=/usr/local SCOUT_FLAVOR=kirigami ../osmscout-server.pro
 make -j$(nproc)
 sudo make install
 ```
