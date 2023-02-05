@@ -3,6 +3,13 @@
 [![Matrix](https://img.shields.io/badge/matrix.org-%23pure--maps-blue)](https://matrix.to/#/#pure-maps:matrix.org)
 [![Discussions](https://img.shields.io/badge/forum-GitHub-FB9200)](https://github.com/rinigus/osmscout-server/discussions)
 
+[![Latest release](https://img.shields.io/github/v/release/rinigus/osmscout-server)](https://github.com/rinigus/osmscout-server/releases)
+[![SFOS](https://img.shields.io/badge/SailfishOS-Chum-1CA198)](https://build.sailfishos.org/package/show/sailfishos:chum/osmscout-server)
+[![Ubuntu Touch](https://img.shields.io/badge/Ubuntu%20Touch-OpenStore-292929)](https://open-store.io/app/osmscout-server.jonnius)
+[![Flatpak](https://img.shields.io/badge/Flatpak-Flathub-4A86CF)](https://github.com/flathub/io.github.rinigus.OSMScoutServer)
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/osmscout-server.svg)](https://repology.org/project/osmscout-server/versions)
+
 OSM Scout server can be used as a drop-in replacement for online map
 services providing map tiles, search, and routing. As a result, an
 offline operation is possible if the device has a server and map
