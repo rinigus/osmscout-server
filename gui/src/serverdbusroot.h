@@ -10,7 +10,12 @@
 
 #include "config-common.h"
 
-#include <QDBusAbstractInterface>
+#include <QtCore/QObject>
+#include <QtCore/QList>
+#include <QtCore/QString>
+#include <QtCore/QStringList>
+#include <QtCore/QVariant>
+#include <QtDBus/QtDBus>
 
 class ServerDBusRoot : public QDBusAbstractInterface
 {
