@@ -1,0 +1,15 @@
+{
+    "name": "osmscout-server.jonnius",
+    "description": "Local server providing offline map tiles, search, and routing",
+    "architecture": "@CLICK_ARCH@",
+    "title": "OSM Scout Server",
+    "hooks": {
+        "osmscout-server": {
+            "apparmor": "osmscout-server.apparmor",
+            "desktop":  "osmscout-server.desktop"
+        }
+    },
+    "version": "2.2.2",
+    "maintainer": "Rinigus <rinigus.git@gmail.org>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}

@@ -63,7 +63,7 @@ scout_silica {
     INSTALLS += translations_files
 }
 
-scout_uuitk {
+scout_uuitk|scout_lomiri {
     qtPrepareTool(LRELEASE, lrelease)
     for(tsfile, TRANSLATIONS) {
         qmfile = $$shadowed($$tsfile)

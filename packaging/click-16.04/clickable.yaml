@@ -1,14 +1,12 @@
-clickable_minimum_required: 7.8.0
+clickable_minimum_required: 7.0.1
 
 scripts:
-  prepare-deps: git submodule update --recursive --init && ${ROOT}/packaging/click/prepare-deps.sh
-
-framework: ubuntu-sdk-20.04
-ignore_review_errors: true
+  prepare-deps: git submodule update --recursive --init && ${ROOT}/packaging/click-16.04/prepare-deps.sh
 
 builder: qmake
 build_args:
-- SCOUT_FLAVOR=lomiri
+- SCOUT_FLAVOR=uuitk
+- CONFIG+=disable_systemd
 - CONFIG+=disable_mapnik
 - LIBS+=-L${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/lib
 - INCLUDEPATH+=${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/include
@@ -19,8 +17,12 @@ build_args:
 - PREFIX_RUNNING=usr
 env_vars:
   PKG_CONFIG_PATH: ${VALHALLA_LIB_INSTALL_DIR}/lib/pkgconfig:${VALHALLA_LIB_INSTALL_DIR}/lib/${ARCH_TRIPLET}/pkgconfig
+prebuild:
+- sed -i 's/MHD_USE_ITC/MHD_USE_PIPE_FOR_SHUTDOWN/g' ${SRC_DIR}/server/src/uhttp/microhttpserver.cpp
 postbuild:
 - ln -s ../../usr/bin ${CLICK_PATH}
+- sed -i 's/@ARCH_TRIPLET@/${ARCH_TRIPLET}/g' ${INSTALL_DIR}/osmscout-server.conf
+ignore_review_errors: true
 
 dependencies_host:
 - gcc-opt
@@ -42,7 +44,6 @@ dependencies_target:
 - liblz4-dev
 - qttools5-dev
 - libsqlite3-dev
-- libsystemd-dev
 
 install_lib:
 - /usr/lib/${ARCH_TRIPLET}/libmicrohttpd.so*
@@ -51,22 +52,22 @@ install_lib:
 install_root_data:
 - ${BUILD_DIR}/translations
 - gui/icons/osmscout-server.svg
-- packaging/click/manifest.json
-- packaging/click/osmscout-server.apparmor
-- packaging/click/osmscout-server.desktop
+- packaging/click-16.04/launch.sh
+- packaging/click-16.04/manifest.json
+- packaging/click-16.04/osmscout-server.apparmor
+- packaging/click-16.04/osmscout-server.conf
+- packaging/click-16.04/osmscout-server.desktop
 
 libraries:
   libpostal:
     builder: custom
-    build: ${ROOT}/packaging/click/build-libpostal.sh
-
+    build: ${ROOT}/packaging/click-16.04/build-libpostal.sh
     dependencies_host:
     - libtool
 
   valhalla:
-    src_dir: libs/valhalla/valhalla
-
     builder: cmake
+    src_dir: libs/valhalla/valhalla
     build_args:
     - -DTHREADS_PTHREAD_ARG=0
     - -DCMAKE_INSTALL_PREFIX:PATH=/usr
@@ -75,13 +76,10 @@ libraries:
     - -DENABLE_PYTHON_BINDINGS=OFF
     - -DENABLE_NODE_BINDINGS=OFF
     - -DENABLE_SERVICES=OFF
-
-    postbuild:
-    - sed -i 's/boost_filesystem[^ ]*/boost_filesystem/g' \
-        ${INSTALL_DIR}/lib/pkgconfig/libvalhalla.pc
-
     dependencies_host:
+    - libtool
     - gcc-opt
+    - jq
     - protobuf-compiler
     dependencies_target:
     - liblua5.3-dev

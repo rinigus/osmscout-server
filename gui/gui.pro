@@ -8,7 +8,7 @@ DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
 QT += gui
 
-scout_kirigami|scout_qtcontrols|scout_uuitk {
+scout_kirigami|scout_qtcontrols|scout_uuitk|scout_lomiri {
     QT += quick qml widgets quickcontrols2
 }
 
@@ -42,7 +42,7 @@ icons86.path = $$PREFIX/share/icons/hicolor/86x86/apps
 icons86.extra = mkdir -p $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/86x86/apps && cp $$PWD/icons/86x86/harbour-osmscout-server.png $(INSTALL_ROOT)/$$PREFIX/share/icons/hicolor/86x86/apps/$${APP_NAME}.png
 INSTALLS += icons86
 
-scout_kirigami|scout_qtcontrols|scout_uuitk {
+scout_kirigami|scout_qtcontrols|scout_uuitk|scout_lomiri {
     appdata.path =$$PREFIX/share/metainfo
     appdata.files = packaging/osmscout-server.appdata.xml
     INSTALLS += appdata
@@ -85,19 +85,21 @@ OTHER_FILES += qml/platform.kirigami/*.qml
 OTHER_FILES += qml/platform.click/*.qml
 OTHER_FILES += qml/platform.silica/*.qml
 OTHER_FILES += qml/platform.uuitk/*.qml
+OTHER_FILES += qml/platform.lomiri/*.qml
 OTHER_FILES += osmscout-server.desktop harbour-osmscout-server.desktop
 
 include(src/fileselector/fileselector.pri)
 
 DISTFILES += $${TARGET}.desktop
 
-scout_kirigami|scout_qtcontrols|scout_uuitk {
+scout_kirigami|scout_qtcontrols|scout_uuitk|scout_lomiri {
     RESOURCES += qml_main.qrc
     RESOURCES += icons.qrc
 }
 scout_kirigami: RESOURCES += qml_kirigami.qrc
 scout_qtcontrols: RESOURCES += qml_qtcontrols.qrc
 scout_uuitk: RESOURCES += qml_uuitk.qrc
+scout_lomiri: RESOURCES += qml_lomiri.qrc
 
 # translations
 TRANSLATIONS += \
@@ -129,7 +131,7 @@ scout_silica {
     DEFINES += TRANSLATION_FOLDER=\\\"$${PREFIX}/share/$${APP_NAME}/translations\\\"
 }
 
-scout_uuitk {
+scout_uuitk|scout_lomiri {
     DEFINES += TRANSLATION_FOLDER=\\\"./translations\\\"
 }
 

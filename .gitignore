@@ -24,4 +24,5 @@
 /build/
 /libs/
 /.clickable/
-/clickable.json
+/clickable.yaml
+/click_release/
