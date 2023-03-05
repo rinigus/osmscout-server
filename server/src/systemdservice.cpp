@@ -83,12 +83,20 @@ void SystemDService::setEnabled(bool e)
               "ListenStream=127.0.0.1:" + QString::number(settings.valueInt(HTTP_SERVER_SETTINGS "port")) + "\n"
               "TriggerLimitIntervalSec=60s\nTriggerLimitBurst=1\n\n"
               "[Install]\n"
+#ifdef IS_LOMIRI
+              "WantedBy=graphical-session.target\n";
+#else
               "WantedBy=user-session.target\n";
+#endif
 
           QString service =
               "[Unit]\n"
               "Description=OSM Scout Server\n\n"
               "[Service]\n"
+#ifdef IS_LOMIRI
+              "WorkingDirectory=/opt/click.ubuntu.com/osmscout-server.jonnius/current/\n"
+              "Environment=\"LD_LIBRARY_PATH=/opt/click.ubuntu.com/osmscout-server.jonnius/current/lib/aarch64-linux-gnu/\"\n"
+#endif
               "ExecStart=" + exe_path + " --systemd --quiet\n";
 
           QDir dir;
