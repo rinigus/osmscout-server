@@ -1,4 +1,4 @@
-clickable_minimum_required: 7.8.0
+clickable_minimum_required: 7.12.1
 
 scripts:
   prepare-deps: git submodule update --recursive --init && ${ROOT}/packaging/click/prepare-deps.sh
@@ -12,13 +12,12 @@ build_args:
 - CONFIG+=disable_mapnik
 - LIBS+=-L${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/lib
 - INCLUDEPATH+=${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/include
-- LIBS+=-L${VALHALLA_LIB_INSTALL_DIR}/lib
-- LIBS+=-L${VALHALLA_LIB_INSTALL_DIR}/lib/${ARCH_TRIPLET}
-- INCLUDEPATH+=${VALHALLA_LIB_INSTALL_DIR}/include
+- LIBS+=-L${VALHALLA_LIB_INSTALL_DIR}/usr/lib/${ARCH_TRIPLET}
+- INCLUDEPATH+=${VALHALLA_LIB_INSTALL_DIR}/usr/include
 - PREFIX=/usr
 - PREFIX_RUNNING=usr
 env_vars:
-  PKG_CONFIG_PATH: ${VALHALLA_LIB_INSTALL_DIR}/lib/pkgconfig:${VALHALLA_LIB_INSTALL_DIR}/lib/${ARCH_TRIPLET}/pkgconfig
+  PKG_CONFIG_PATH: ${VALHALLA_LIB_INSTALL_DIR}/usr/lib/${ARCH_TRIPLET}/pkgconfig
 postbuild:
 - ln -s ../../usr/bin ${CLICK_PATH}
 
@@ -78,7 +77,7 @@ libraries:
 
     postbuild:
     - sed -i 's/boost_filesystem[^ ]*/boost_filesystem/g' \
-        ${INSTALL_DIR}/lib/pkgconfig/libvalhalla.pc
+        ${INSTALL_DIR}/usr/lib/${ARCH_TRIPLET}/pkgconfig/libvalhalla.pc
 
     dependencies_host:
     - gcc-opt
