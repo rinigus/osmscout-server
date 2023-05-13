@@ -173,7 +173,9 @@ void ValhallaMaster::onValhallaChanged(QString valhalla_directory, QStringList c
 void ValhallaMaster::generateConfig()
 {
   QString fname = VALHALLA_CONFIG_TEMPLATE "-";
-#if VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,2,1)
+#if VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,4,0)
+  fname += QStringLiteral("3.4.0");
+#elif VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,2,1)
   fname += QStringLiteral("3.2.1");
 #elif VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,1,4)
   fname += QStringLiteral("3.1.4");
