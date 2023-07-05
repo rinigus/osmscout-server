@@ -37,13 +37,13 @@ chmod +x $BNDINSTALL/bin/poly2geojson
 # libosmscout version tool
 #(cd libosmscout-version-tool && make clean && make INCLUDE=-I$BNDINSTALL/include LIBRARIES=-I$BNDINSTALL/lib && ln -s `pwd`/liboscmscout-version $BNDINSTALL/bin)
 
-# mapnik-styles-sqlite
-git clone https://github.com/rinigus/mapnik-styles-sqlite.git $BNDSRC/mapnik-styles-sqlite
-ln -s $BNDSRC/mapnik-styles-sqlite $BNDINSTALL
-(cd $BNDSRC/mapnik-styles-sqlite/importer && ./install_twkb.sh)
+## mapnik-styles-sqlite
+#git clone https://github.com/rinigus/mapnik-styles-sqlite.git $BNDSRC/mapnik-styles-sqlite
+#ln -s $BNDSRC/mapnik-styles-sqlite $BNDINSTALL
+#(cd $BNDSRC/mapnik-styles-sqlite/importer && ./install_twkb.sh)
 
-# gdal - required for mapnik import (working version, 2.3.0, 2.3.1, 2.4.0 have led to missing buildings
-(cd $BNDSRC && rm gdal-*.tar.gz || echo No old gdal file)
-(cd $BNDSRC && wget http://download.osgeo.org/gdal/2.2.4/gdal-2.2.4.tar.gz && tar xvf gdal-2.2.4.tar.gz )
-(cd $BNDSRC/gdal-2.2.4 && ./configure --prefix=$BNDINSTALL --with-spatialite=yes && make -j16 && make install )
+## gdal - required for mapnik import (working version, 2.3.0, 2.3.1, 2.4.0 have led to missing buildings
+#(cd $BNDSRC && rm gdal-*.tar.gz || echo No old gdal file)
+#(cd $BNDSRC && wget http://download.osgeo.org/gdal/2.2.4/gdal-2.2.4.tar.gz && tar xvf gdal-2.2.4.tar.gz )
+#(cd $BNDSRC/gdal-2.2.4 && ./configure --prefix=$BNDINSTALL --with-spatialite=yes && make -j16 && make install )
 
