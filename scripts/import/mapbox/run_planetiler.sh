@@ -11,7 +11,7 @@ echo Remove old data
 rm output.mbtiles || echo No output.mbtiles found
 rm -rf data && mkdir data
 
-java -Xmx110g \
+java -Xmx130g \
   `# return unused heap memory to the OS` \
   -XX:MaxHeapFreeRatio=40 \
   -jar planetiler.jar \
@@ -21,6 +21,6 @@ java -Xmx110g \
   --download-threads=10 --download-chunk-size-mb=1000 \
   `# Also download name translations from wikidata` \
   --fetch-wikidata \
-  --mbtiles=output.mbtiles \
+  --output=output.mbtiles \
   `# Store temporary node locations in memory` \
   --nodemap-type=array --storage=ram
