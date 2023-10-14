@@ -1,7 +1,6 @@
-
 import glob
-from poly import parse_poly
 from shapely.geometry import Polygon
+from shapely.io import from_geojson
 
 # directories used for searching for packages
 valhalla_meta_dir = 'valhalla/packages_meta'
@@ -19,7 +18,7 @@ def gettimestamp(sname):
 
 # call with the name of POLY filename
 def country_pack(country_poly_fname):
-    country = parse_poly(country_poly_fname)
+    country = from_geojson(open(country_poly_fname, 'r').read())
     packs = []
     size_compressed = 0
     size = 0
@@ -49,4 +48,4 @@ def country_pack(country_poly_fname):
              "size-compressed": str(size_compressed) }
 
 if __name__ == '__main__':
-    print(country_pack('hierarchy/europe/estonia/poly'))
+    print(country_pack('hierarchy/north-america/us/pennsylvania/poly.json'))

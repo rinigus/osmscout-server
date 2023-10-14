@@ -37,7 +37,7 @@ fmake.write("$(BASE_DIR)/geocoder-nlp/errors/.directory:\n\tmkdir -p $(BASE_DIR)
 for root, folders, files in os.walk(Hierarchy.base_dir):
     if "name" in files and not Hierarchy.ignore(root):
         name = Hierarchy.get_full_name(root)
-        poly = root + "/poly"
+        polyjson = root + "/poly.json"
         print(Hierarchy.get_id(root), name, Hierarchy.get_postal(root), Hierarchy.get_postcodes(root))
 
         cid = Hierarchy.get_id(root)
@@ -48,12 +48,11 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
                                     #"osmscout": { "path": "osmscout/" + spath(cid) },
                                     "geocoder_nlp": { "path": "geocoder-nlp/" + spath(cid) },
                                     "mapnik_country": { "path": "mapnik/countries/" + spath(cid) },
-                                    "mapboxgl_country": mapbox_pack(poly),
-                                    "valhalla": valhalla_pack(poly),
+                                    "mapboxgl_country": mapbox_pack(polyjson),
+                                    "valhalla": valhalla_pack(polyjson),
         }
 
         pbf = "$(PBF_DIR)/" + pbfname(cid)
-        polyjson = poly + ".json"
 
         # geocoder-nlp
         country_target = "$(BASE_DIR)/geocoder-nlp/" + spath(cid) + ".timestamp"

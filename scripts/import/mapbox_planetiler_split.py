@@ -13,7 +13,8 @@ import psutil
 from collections import namedtuple, defaultdict
 
 from hierarchy import Hierarchy
-from poly import parse_poly, intersects
+from shapely.geometry import Polygon
+from shapely.io import from_geojson
 
 
 # Note that files are formed according to XYZ notation while tiles
@@ -67,7 +68,10 @@ def tri2mt(tri):
 
 def mt2bnd(mt):
     b = mercantile.bounds(mt)
-    return [b.west, b.south, b.east, b.north]
+    coors = [b.west, b.south, b.east, b.north]
+    poly = Polygon( ( (coors[0], coors[1]), (coors[0], coors[3]),
+                      (coors[2], coors[3]), (coors[2], coors[1]) ) )
+    return poly, [b.west, b.south, b.east, b.north]
 
 def splitter(ti):
     # determine into which file will the tile will go
@@ -92,6 +96,12 @@ def mem_report(tag, mem_after, mem_before = 0):
     delta = (mem_after - mem_before)/1024/1024
     print(f"Consumed memory {tag}: {delta:.1f}MB")
 
+def intersects(polys, b):
+    for p in polys:
+        if p.intersects(b):
+            return True
+    return False
+
 ## MAIN ##
 parser = argparse.ArgumentParser(description='Split MBTiles into smaller sub-packages.')
 
@@ -112,10 +122,11 @@ polys = []
 for root, folders, files in os.walk(args.hierarchy):
     if "name" in files and not Hierarchy.ignore(root):
         name = Hierarchy.get_full_name(root)
-        poly = root + "/poly"
+        poly = root + "/poly.json"
         #print(Hierarchy.get_id(root), name)
-        polys.append(parse_poly(poly))
-print('Loaded hierarchy with {n} POLY files'.format(n=len(polys)))
+        cp = from_geojson(open(poly, 'r').read())
+        polys.append(cp)
+print('Loaded hierarchy with {n} POLY.JSON files'.format(n=len(polys)))
 
 # access to db
 print('Opening', args.mbtiles)
@@ -146,7 +157,7 @@ mem_report("during loading stage:", mem_after, mem_before)
 filtered = dict()
 for tri,v in tofile.items():
     k = tri2mt(tri)
-    b = mt2bnd(k)
+    b, _ = mt2bnd(k)
     if intersects(polys, b):
         f = fname(k)
         print('Keeping', k, f)
@@ -161,7 +172,7 @@ os.makedirs(OutputDir, exist_ok=True)
 counter = 0
 for k, tiles in filtered.items():
     f = fname(k)
-    bnd = mt2bnd(k)
+    _, bnd = mt2bnd(k)
     center = [(bnd[0]+bnd[2])/2, (bnd[1]+bnd[3])/2]
     ready = 100.0*counter/len(filtered)
     counter += 1
