@@ -53,7 +53,7 @@ QT += core network dbus
 # of the options specified above
 
 # Overall CONFIG
-CONFIG += c++14 object_parallel_to_source
+CONFIG += object_parallel_to_source
 CONFIG += link_pkgconfig
 
 # PREFIX
