@@ -31,6 +31,10 @@
 
 #include <iostream>
 
+#ifdef USE_VALHALLA
+#include <valhalla/valhalla.h>
+#endif
+
 InfoHub* InfoHub::s_instance = nullptr;
 
 InfoHub::InfoHub(QObject *parent) : QObject(parent)
@@ -176,4 +180,23 @@ void InfoHub::sessionLog(const QString &txt)
 
   QTextStream out(&m_log_file);
   out << txt << "\n";
+}
+
+QString InfoHub::version()
+{
+  return APP_VERSION;
+}
+
+QString InfoHub::versionLibs()
+{
+  QString version;
+  QTextStream s(&version);
+#ifdef USE_VALHALLA
+  s << QStringLiteral("Valhalla: ")
+    << VALHALLA_VERSION_MAJOR << "."
+    << VALHALLA_VERSION_MINOR << "."
+    << VALHALLA_VERSION_PATCH << "\n";
+#endif
+
+  return version.trimmed();
 }

@@ -37,6 +37,7 @@ class DBusRoot : public QObject
   Q_CLASSINFO("D-Bus Interface", DBUS_INTERFACE_ROOT)
   Q_PROPERTY(QString Url READ url)
   Q_PROPERTY(QString Version READ version)
+  Q_PROPERTY(QString VersionLibs READ versionLibs)
 
 public slots:
   void Activate(QMap<QString, QVariant> platform_data);
@@ -52,6 +53,7 @@ public:
 
   QString url() const { return m_url; }
   QString version() const;
+  QString versionLibs() const;
 
 protected:
   QString m_url;

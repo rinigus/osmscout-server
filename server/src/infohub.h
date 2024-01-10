@@ -58,6 +58,9 @@ public:
 
   static void activity();
 
+  static QString version();
+  static QString versionLibs();
+
   int queue();
 
 signals:

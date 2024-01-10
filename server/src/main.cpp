@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
 
   app->setApplicationName(APP_NAME);
   app->setOrganizationName(APP_NAME);
-  app->setApplicationVersion(APP_VERSION);
+  app->setApplicationVersion(InfoHub::version());
 
   {
     QString tr_path(TRANSLATION_FOLDER);
@@ -143,6 +143,10 @@ int main(int argc, char *argv[])
   parser.addHelpOption();
   parser.addVersionOption();
 
+  QCommandLineOption optionVersionLibs(QStringList() << "version-libs",
+                                       QCoreApplication::translate("main", "Versions of the used libraries"));
+  parser.addOption(optionVersionLibs);
+
   QCommandLineOption optionQuiet(QStringList() << "quiet",
                                  QCoreApplication::translate("main", "Do not output logs when running in console mode"));
   parser.addOption(optionQuiet);
@@ -168,6 +172,13 @@ int main(int argc, char *argv[])
 
   // Process the actual command line arguments given by the user
   parser.process(*app);
+
+  // print version info for libs
+  if (parser.isSet(optionVersionLibs))
+    {
+      std::cout << InfoHub::versionLibs().toStdString() << "\n";
+      return 0;
+    }
 
   // set start flags
   startedByDaemon = false;

@@ -58,5 +58,10 @@ void DBusRoot::Quit()
 
 QString DBusRoot::version() const
 {
-  return APP_VERSION;
+  return InfoHub::version();
+}
+
+QString DBusRoot::versionLibs() const
+{
+  return InfoHub::versionLibs();
 }
