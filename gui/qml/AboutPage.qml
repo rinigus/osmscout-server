@@ -82,7 +82,7 @@ PagePL {
                               "</p>" +
 
                               "<br><b>" + qsTr("Versions of the used libraries") + "</b><br>" +
-                              "<p>" + serverDBusRoot.VersionLibs.replace("\n", "\n<br>") +
+                              "<p>" + serverDBusRoot.VersionLibs.replace(/\n/g, "<br>") +
                               "</p>" +
 
                               "<br><b>" + qsTr("Acknowledgments") + "</b><br><br>" +
