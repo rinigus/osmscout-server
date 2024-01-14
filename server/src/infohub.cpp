@@ -31,9 +31,13 @@
 
 #include <iostream>
 
+#ifdef USE_MAPNIK
+#include <mapnik/version.hpp>
+#endif
 #ifdef USE_VALHALLA
 #include <valhalla/valhalla.h>
 #endif
+#include "geocoder-nlp/src/version.h"
 
 InfoHub* InfoHub::s_instance = nullptr;
 
@@ -191,6 +195,13 @@ QString InfoHub::versionLibs()
 {
   QString version;
   QTextStream s(&version);
+  s << QStringLiteral("GeocoderNLP: ")
+    << GEOCODERNLP_VERSION_STRING << "\n";
+#ifdef USE_MAPNIK
+  s << QStringLiteral("Mapnik: ")
+    << MAPNIK_VERSION_STRING << "\n";
+
+#endif
 #ifdef USE_VALHALLA
   s << QStringLiteral("Valhalla: ")
     << VALHALLA_VERSION_MAJOR << "."
