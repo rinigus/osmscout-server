@@ -81,6 +81,10 @@ PagePL {
                                    "<i>geocoder-nlp</i> github projects.") +
                               "</p>" +
 
+                              "<br><b>" + qsTr("Versions of the used libraries") + "</b><br>" +
+                              "<p>" + serverDBusRoot.VersionLibs.replace("\n", "\n<br>") +
+                              "</p>" +
+
                               "<br><b>" + qsTr("Acknowledgments") + "</b><br><br>" +
                               "Used external projects:<br>" +
                               "<a href='http://libosmscout.sourceforge.net/'>libosmscout</a><br>" +
@@ -128,7 +132,7 @@ PagePL {
             }
 
             LabelPL {
-                text: qsTr("version") + ": " + programVersion
+                text: qsTr("Version") + ": " + programVersion
                 anchors.horizontalCenter: parent.horizontalCenter
                 color: styler.themeHighlightColor
             }

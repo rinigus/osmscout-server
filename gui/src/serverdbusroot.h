@@ -20,6 +20,7 @@
 class ServerDBusRoot : public QDBusAbstractInterface
 {
   Q_OBJECT
+
 public:
   static inline const char *staticInterfaceName()
   { return DBUS_INTERFACE_ROOT; }
@@ -31,8 +32,13 @@ public:
 
   Q_PROPERTY(QString Version READ version NOTIFY reloadData)
 
+  Q_PROPERTY(QString VersionLibs READ versionLibs NOTIFY reloadData)
+
   inline QString version() const
   { return qvariant_cast< QString >(property("Version")); }
+
+  inline QString versionLibs() const
+  { return qvariant_cast< QString >(property("VersionLibs")); }
 
 public Q_SLOTS:
   inline void quit()
