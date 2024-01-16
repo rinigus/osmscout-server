@@ -176,7 +176,7 @@ osmscout-server --listen
 
 For Flatpak installation:
 ```
-flatpak run io.github.rinigus.OSMScoutServer --listen
+flatpak run --command=osmscout-server io.github.rinigus.OSMScoutServer --listen
 ```
 
 In this case, the server will open a socket and will fork full server
