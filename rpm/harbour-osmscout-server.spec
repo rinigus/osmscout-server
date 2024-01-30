@@ -2,6 +2,7 @@
 %if !0%{?fedora}
 %define sailfishos 1
 %endif
+%bcond_with jollaharbour
 
 
 %if 0%{?sailfishos}
@@ -10,7 +11,7 @@ Name:       harbour-osmscout-server
 Name:       osmscout-server
 %endif
 
-%if 0%{?sailfishos}
+%if %{with jollaharbour}
 %define __provides_exclude_from ^%{_datadir}/.*$
 %define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libboost_iostreams|libboost_chrono|libboost_thread|libboost_date_time|libpostal|libprotobuf|liblz4|libfreetype|libharfbuzz|libjpeg|libmapnik|libproj|libtiff.*$
 %endif
@@ -119,9 +120,9 @@ desktop-file-install --delete-original       \
 
 %if 0%{?sailfishos}
 
+%if %{with jollaharbour}
 # ship all shared libraries not allowed in Harbour with the app
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
-
 cp %{_libdir}/libmapnik.so.3.0 %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libproj.so.12 %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
@@ -161,6 +162,7 @@ strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.3.0
 # strip executable bit from all libraries
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 #chmod -x %{buildroot}%{_datadir}/%{name}/lib/mapnik/*/*
+%endif
 
 %endif # sailfishos
 
