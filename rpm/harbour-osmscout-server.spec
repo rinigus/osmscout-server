@@ -122,7 +122,7 @@ desktop-file-install --delete-original       \
 # ship all shared libraries not allowed in Harbour with the app
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
 
-cp %{_libdir}/libmapnik.so.3.0 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libmapnik.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libproj.so.12 %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libharfbuzz.so.0 %{buildroot}%{_datadir}/%{name}/lib
