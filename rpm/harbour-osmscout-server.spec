@@ -155,7 +155,7 @@ cp %{_libdir}/liblz4.so.1* %{buildroot}%{_datadir}/%{name}/lib
 # the styles
 #cp -r %{_libdir}/mapnik %{buildroot}%{_datadir}/%{name}/lib
 
-strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.3.0
+strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.*
 #strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
 
 # strip executable bit from all libraries
