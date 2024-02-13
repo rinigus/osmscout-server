@@ -56,6 +56,7 @@ BuildRequires:  boost-system >= 1.51
 BuildRequires:  lz4-devel
 BuildRequires:  desktop-file-utils
 
+BuildRequires:  pkgconfig(libsystemd)
 %if 0%{?sailfishos}
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
@@ -63,7 +64,6 @@ BuildRequires:  mapnik-devel
 #BuildRequires:  pkgconfig(libsystemd-daemon)
 BuildRequires:  pkgconfig(libsystemd)
 %else
-BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:  cmake(KF5Kirigami2)
 BuildRequires:  pkgconfig(Qt5QuickControls2)
 BuildRequires:  pkgconfig(mapnik)
@@ -102,17 +102,18 @@ Url:
 
 %build
 
+%qmake5 VERSION='%{version}-%{release}' \
+    CONFIG+=use_dbusactivation \
 %if 0%{?sailfishos}
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica' CONFIG+=use_dbusactivation
+    SCOUT_FLAVOR='silica' \
 %else
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=use_dbusactivation
+    SCOUT_FLAVOR='kirigami' \ 
 %endif
-
-make %{?_smp_mflags}
+    %{nil}
+%make_build
 
 %install
-rm -rf %{buildroot}
-make install INSTALL_ROOT=%{buildroot}
+%qmake5_install
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
