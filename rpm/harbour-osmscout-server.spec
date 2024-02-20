@@ -2,6 +2,7 @@
 %if !0%{?fedora}
 %define sailfishos 1
 %endif
+%bcond_with jollaharbour
 
 
 %if 0%{?sailfishos}
@@ -10,7 +11,7 @@ Name:       harbour-osmscout-server
 Name:       osmscout-server
 %endif
 
-%if 0%{?sailfishos}
+%if %{with jollaharbour}
 %define __provides_exclude_from ^%{_datadir}/.*$
 %define __requires_exclude ^libboost_filesystem|libboost_regex|libboost_system|libboost_iostreams|libboost_chrono|libboost_thread|libboost_date_time|libpostal|libprotobuf|liblz4|libfreetype|libharfbuzz|libjpeg|libmapnik|libproj|libtiff.*$
 %endif
@@ -55,6 +56,7 @@ BuildRequires:  boost-system >= 1.51
 BuildRequires:  lz4-devel
 BuildRequires:  desktop-file-utils
 
+BuildRequires:  pkgconfig(libsystemd)
 %if 0%{?sailfishos}
 Requires:   sailfishsilica-qt5 >= 0.10.9
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.2
@@ -62,7 +64,6 @@ BuildRequires:  mapnik-devel
 #BuildRequires:  pkgconfig(libsystemd-daemon)
 BuildRequires:  pkgconfig(libsystemd)
 %else
-BuildRequires:  pkgconfig(libsystemd)
 BuildRequires:  cmake(KF5Kirigami2)
 BuildRequires:  pkgconfig(Qt5QuickControls2)
 BuildRequires:  pkgconfig(mapnik)
@@ -101,17 +102,18 @@ Url:
 
 %build
 
+%qmake5 VERSION='%{version}-%{release}' \
+    CONFIG+=use_dbusactivation \
 %if 0%{?sailfishos}
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='silica' CONFIG+=use_dbusactivation
+    SCOUT_FLAVOR='silica' \
 %else
-%qmake5 VERSION='%{version}-%{release}' SCOUT_FLAVOR='kirigami' CONFIG+=use_dbusactivation
+    SCOUT_FLAVOR='kirigami' \ 
 %endif
-
-make %{?_smp_mflags}
+    %{nil}
+%make_build
 
 %install
-rm -rf %{buildroot}
-make install INSTALL_ROOT=%{buildroot}
+%qmake5_install
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
@@ -119,9 +121,9 @@ desktop-file-install --delete-original       \
 
 %if 0%{?sailfishos}
 
+%if %{with jollaharbour}
 # ship all shared libraries not allowed in Harbour with the app
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
-
 cp %{_libdir}/libmapnik.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libproj.so.12 %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
@@ -161,6 +163,7 @@ strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.*
 # strip executable bit from all libraries
 chmod -x %{buildroot}%{_datadir}/%{name}/lib/*.so*
 #chmod -x %{buildroot}%{_datadir}/%{name}/lib/mapnik/*/*
+%endif
 
 %endif # sailfishos
 
