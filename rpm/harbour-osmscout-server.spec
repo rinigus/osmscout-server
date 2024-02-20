@@ -124,7 +124,7 @@ desktop-file-install --delete-original       \
 %if %{with jollaharbour}
 # ship all shared libraries not allowed in Harbour with the app
 mkdir -p %{buildroot}%{_datadir}/%{name}/lib
-cp %{_libdir}/libmapnik.so.3.0 %{buildroot}%{_datadir}/%{name}/lib
+cp %{_libdir}/libmapnik.so.* %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libproj.so.12 %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libtiff.so.5 %{buildroot}%{_datadir}/%{name}/lib
 cp %{_libdir}/libharfbuzz.so.0 %{buildroot}%{_datadir}/%{name}/lib
@@ -157,7 +157,7 @@ cp %{_libdir}/liblz4.so.1* %{buildroot}%{_datadir}/%{name}/lib
 # the styles
 #cp -r %{_libdir}/mapnik %{buildroot}%{_datadir}/%{name}/lib
 
-strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.3.0
+strip %{buildroot}%{_datadir}/%{name}/lib/libmapnik.so.*
 #strip %{buildroot}%{_datadir}/%{name}/lib/libicudata.so.52
 
 # strip executable bit from all libraries
