@@ -5,6 +5,19 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Feb 25 2023 rinigus <rinigus.git@gmail.com> 3.1.0-1
+- Update translations
+- Small adjustments in map style
+- Add support for Valhalla 3.4.0 [Thra11]
+- Stop updating Mapnik data on imports
+- Changes in OSM import scripts
+- Show versions of the used libraries in About
+- [ubuntu touch] Package click for Ubuntu Touch 20.04 [jonnius]
+- [ubuntu touch] Drop Ubuntu Touch 16.04 support [jonnius]
+- [sfos] Stop bundling libraries in Chum builds [Thaodan]
+- [sfos] Update packaging scripts [Thaodan]
+- [flatpak] Update Appdata
+
 * Sat Jan 21 2023 rinigus <rinigus.git@gmail.com> 3.0.0-1
 - Update in Geocoder NLP data format incorporating ranking information
 - Add location bias to geocoder results

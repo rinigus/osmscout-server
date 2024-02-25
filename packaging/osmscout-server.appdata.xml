@@ -40,6 +40,23 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="3.1.0" date="2024-02-25">
+     <description>
+       <ul>
+	 <li>Update translations</li>
+	 <li>Small adjustments in map style</li>
+	 <li>Add support for Valhalla 3.4.0 [Thra11]</li>
+	 <li>Stop updating Mapnik data on imports</li>
+	 <li>Changes in OSM import scripts</li>
+	 <li>Show versions of the used libraries in About</li>
+	 <li>[ubuntu touch] Package click for Ubuntu Touch 20.04 [jonnius]</li>
+	 <li>[ubuntu touch] Drop Ubuntu Touch 16.04 support [jonnius]</li>
+	 <li>[sfos] Stop bundling libraries in Chum builds [Thaodan]</li>
+	 <li>[sfos] Update packaging scripts [Thaodan]</li>
+	 <li>[flatpak] Update Appdata</li>
+       </ul>
+     </description>
+   </release>
    <release version="3.0.0" date="2023-01-21">
      <description>
        <ul>
