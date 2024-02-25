@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="fr" sourcelanguage="en" version="2.1">
+<?xml version="1.0" ?><!DOCTYPE TS><TS version="2.1" language="fr" sourcelanguage="en">
 <context>
     <name>AboutPage</name>
     <message>
@@ -79,21 +79,26 @@
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="84"/>
+        <source>Versions of the used libraries</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../gui/qml/AboutPage.qml" line="88"/>
         <source>Acknowledgments</source>
         <translation>Remerciements</translation>
     </message>
     <message>
-        <location filename="../gui/qml/AboutPage.qml" line="131"/>
-        <source>version</source>
-        <translation>version</translation>
+        <location filename="../gui/qml/AboutPage.qml" line="135"/>
+        <source>Version</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../gui/qml/AboutPage.qml" line="137"/>
+        <location filename="../gui/qml/AboutPage.qml" line="141"/>
         <source>is a server that provides offline map services</source>
         <translation>est un serveur fournissant un service de cartographie hors connexion. Accessible n&apos;importe où, n&apos;importe quand.</translation>
     </message>
     <message>
-        <location filename="../gui/qml/AboutPage.qml" line="141"/>
+        <location filename="../gui/qml/AboutPage.qml" line="145"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Manuel d&apos;utilisation disponible &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;ici&lt;/a&gt; !</translation>
     </message>
@@ -355,8 +360,8 @@
     <name>DialogPL</name>
     <message>
         <location filename="../gui/qml/platform.kirigami/DialogPL.qml" line="26"/>
+        <location filename="../gui/qml/platform.lomiri/DialogPL.qml" line="33"/>
         <location filename="../gui/qml/platform.qtcontrols/DialogPL.qml" line="33"/>
-        <location filename="../gui/qml/platform.uuitk/DialogPL.qml" line="33"/>
         <source>Accept</source>
         <translation>Accepter</translation>
     </message>
@@ -539,29 +544,29 @@
         <translation>N&apos;importe lequel</translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="310"/>
-        <location filename="../server/src/geomaster.cpp" line="571"/>
+        <location filename="../server/src/geomaster.cpp" line="311"/>
+        <location filename="../server/src/geomaster.cpp" line="574"/>
         <source>Cannot open geocoding database: %1</source>
         <translation>Impossible de charger la base de données geocoding : %1</translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="336"/>
+        <location filename="../server/src/geomaster.cpp" line="337"/>
         <source>Error parsing by libpostal, maybe libpostal databases are not available</source>
         <translation>Erreur de décodage par libpostal : les bases de données libpostal ne sont peut-être pas disponibles</translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="372"/>
+        <location filename="../server/src/geomaster.cpp" line="373"/>
         <source>Parsed query [%1]: %2</source>
         <translation>Requête analysée [%1]  : %2</translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="383"/>
-        <location filename="../server/src/geomaster.cpp" line="618"/>
+        <location filename="../server/src/geomaster.cpp" line="384"/>
+        <location filename="../server/src/geomaster.cpp" line="621"/>
         <source>Error while searching with geocoder-nlp</source>
         <translation>Erreur lors de la recherche avec geocoder-nlp</translation>
     </message>
     <message>
-        <location filename="../server/src/geomaster.cpp" line="465"/>
+        <location filename="../server/src/geomaster.cpp" line="468"/>
         <source>Search for reference point failed: cannot find</source>
         <translation>Point de référence impossible à trouver</translation>
     </message>
@@ -632,17 +637,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../server/src/infohub.cpp" line="136"/>
+        <location filename="../server/src/infohub.cpp" line="144"/>
         <source>ERROR: </source>
         <translation>ERREUR : </translation>
     </message>
     <message>
-        <location filename="../server/src/infohub.cpp" line="142"/>
+        <location filename="../server/src/infohub.cpp" line="150"/>
         <source>WARNING: </source>
         <translation>ATTENTION : </translation>
     </message>
     <message>
-        <location filename="../server/src/infohub.cpp" line="151"/>
+        <location filename="../server/src/infohub.cpp" line="159"/>
         <source>INFO: </source>
         <translation>INFO : </translation>
     </message>
@@ -1656,7 +1661,7 @@
 <context>
     <name>PageListPL</name>
     <message>
-        <location filename="../gui/qml/platform.kirigami/PageListPL.qml" line="60"/>
+        <location filename="../gui/qml/platform.kirigami/PageListPL.qml" line="58"/>
         <source>Accept</source>
         <translation>Accepter</translation>
     </message>
@@ -1706,38 +1711,38 @@
         <translation>Activez le ou les moteur(s) correspondant(s) en utilisant le menu Profils</translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="385"/>
+        <location filename="../server/src/requestmapper.cpp" line="372"/>
         <source>Loading posted data for request %1</source>
         <translation>Chargement des données publiées pour la recherche %1</translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="405"/>
+        <location filename="../server/src/requestmapper.cpp" line="392"/>
         <source>Raster tiles are not available since Mapnik and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>La trame de tuiles n&apos;est pas disponible car Mapnik et libosmscout sont désactivés par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="478"/>
+        <location filename="../server/src/requestmapper.cpp" line="465"/>
         <source>Mapbox GL backend is disabled by selected profile or settings. %1</source>
         <translation>Le moteur Mapbox GL est désactivé par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="646"/>
+        <location filename="../server/src/requestmapper.cpp" line="633"/>
         <source>Search is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>La recherche n&apos;est pas disponible car GeocoderNLP et libosmscout sont désactivés par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="693"/>
+        <location filename="../server/src/requestmapper.cpp" line="689"/>
         <source>Nearby POI lookup is not available since GeocoderNLP and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>La recherche de points d&apos;intérêt à proximité n&apos;est pas disponible car GeocoderNLP et libosmscout sont désactivés par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="842"/>
-        <location filename="../server/src/requestmapper.cpp" line="999"/>
+        <location filename="../server/src/requestmapper.cpp" line="838"/>
+        <location filename="../server/src/requestmapper.cpp" line="995"/>
         <source>Routing is not available since Valhalla and libosmscout are disabled by selected profile or settings. %1</source>
         <translation>Le routage n&apos;est pas disponible car Valhalla et libosmscout sont désactivés par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
     <message>
-        <location filename="../server/src/requestmapper.cpp" line="943"/>
+        <location filename="../server/src/requestmapper.cpp" line="939"/>
         <source>Routing and other Valhalla&apos;s services are not available since Valhalla is disabled by selected profile or settings. %1</source>
         <translation>Le routage et les autres services de Valhalla ne sont pas disponibles car Valhalla est désactivé par le profil ou les paramètres sélectionnés. %1</translation>
     </message>
@@ -2394,12 +2399,12 @@
 <context>
     <name>SystemDService</name>
     <message>
-        <location filename="../server/src/systemdservice.cpp" line="109"/>
+        <location filename="../server/src/systemdservice.cpp" line="117"/>
         <source>Cannot create or change to directory: %1</source>
         <translation>Impossible de créer ou de changer le répertoire : %1</translation>
     </message>
     <message>
-        <location filename="../server/src/systemdservice.cpp" line="119"/>
+        <location filename="../server/src/systemdservice.cpp" line="127"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
         <translation>Impossible de trouver OSM Scout Server dans le chemin d&apos;accès</translation>
     </message>
@@ -2499,27 +2504,27 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="167"/>
+        <location filename="../server/src/valhallamaster.cpp" line="193"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Erreur lors de l&apos;ouverture du modèle de configuration Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="175"/>
+        <location filename="../server/src/valhallamaster.cpp" line="201"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Erreur lors de la lecture du modèle de configuration Valhalla</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="207"/>
+        <location filename="../server/src/valhallamaster.cpp" line="233"/>
         <source>Failed to load Valhalla configuration: %1</source>
         <translation>Impossible de charger la configuration Valhalla : %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="245"/>
+        <location filename="../server/src/valhallamaster.cpp" line="271"/>
         <source>Exception in Valhalla: %1</source>
         <translation>Exception dans Valhalla : %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="212"/>
+        <location filename="../server/src/valhallamaster.cpp" line="238"/>
         <source>Valhalla routing engine started</source>
         <translation>Moteur de calcul d&apos;itinéraire Valhalla démarré</translation>
     </message>
@@ -2586,39 +2591,44 @@
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="147"/>
+        <source>Versions of the used libraries</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../server/src/main.cpp" line="151"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Ne pas afficher les logs en mode console</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="152"/>
+        <location filename="../server/src/main.cpp" line="156"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Exécuter le serveur en mode SystemD socket</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="157"/>
+        <location filename="../server/src/main.cpp" line="161"/>
         <source>Run the server in DBus activated mode</source>
         <translation>Exécuter le serveur en mode DBus activé</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="161"/>
+        <location filename="../server/src/main.cpp" line="165"/>
         <source>Listen for connection on configured port and start full server on activity</source>
         <translation>Écouter la connexion sur le port configuré et démarrer le serveur complet en cas d&apos;activité</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="453"/>
-        <location filename="../server/src/main.cpp" line="461"/>
-        <location filename="../server/src/main.cpp" line="467"/>
-        <location filename="../server/src/main.cpp" line="473"/>
+        <location filename="../server/src/main.cpp" line="464"/>
+        <location filename="../server/src/main.cpp" line="472"/>
+        <location filename="../server/src/main.cpp" line="478"/>
+        <location filename="../server/src/main.cpp" line="484"/>
         <source>Failed to register DBus object: %1</source>
         <translation>Échec de l&apos;enregistrement de l&apos;objet DBus : %1</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="502"/>
+        <location filename="../server/src/main.cpp" line="513"/>
         <source>Failed to register DBus service: %1</source>
         <translation>Échec de l&apos;enregistrement du service DBus : %1</translation>
     </message>
     <message>
-        <location filename="../gui/src/main.cpp" line="107"/>
+        <location filename="../gui/src/main.cpp" line="108"/>
         <source>OSM Scout Server GUI</source>
         <translation>Interface d&apos;OSM Scout Server</translation>
     </message>
@@ -2636,12 +2646,18 @@
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../gui/qml/osmscout-server.qml" line="67"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="68"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="84"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../gui/qml/osmscout-server.qml" line="68"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="69"/>
+        <source>Running OSM Scout Server had unexpected version (%1) and was stopped. Please restart this user interface to try again.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../gui/qml/osmscout-server.qml" line="85"/>
         <source>OSM Scout Server is not reachable. Waiting for it to appear.</source>
         <translation>OSM Scout Server est injoignable. Attente de l&apos;apparition de celui-ci.</translation>
     </message>

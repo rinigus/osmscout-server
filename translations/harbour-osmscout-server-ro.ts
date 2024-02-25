@@ -79,21 +79,26 @@
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="84"/>
+        <source>Versions of the used libraries</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../gui/qml/AboutPage.qml" line="88"/>
         <source>Acknowledgments</source>
         <translation>Mulțumiri</translation>
     </message>
     <message>
-        <location filename="../gui/qml/AboutPage.qml" line="131"/>
-        <source>version</source>
-        <translation>versiune</translation>
+        <location filename="../gui/qml/AboutPage.qml" line="135"/>
+        <source>Version</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../gui/qml/AboutPage.qml" line="137"/>
+        <location filename="../gui/qml/AboutPage.qml" line="141"/>
         <source>is a server that provides offline map services</source>
         <translation>este un server care furnizează servicii de hărți fără conectare la internet</translation>
     </message>
     <message>
-        <location filename="../gui/qml/AboutPage.qml" line="141"/>
+        <location filename="../gui/qml/AboutPage.qml" line="145"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation>Ghidul utilizatorului este disponibil &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</translation>
     </message>
@@ -161,17 +166,17 @@
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="226"/>
         <source>All datasets covering selected features are available</source>
-        <translation>Sunt disponibile toate seturile de date care acoperă caracteristicile alese</translation>
+        <translation>Sunt disponibile toate datele care acoperă caracteristicile alese</translation>
     </message>
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="228"/>
         <source>Some datasets are missing. You would have to start downloads to get them.</source>
-        <translation>Unele seturi de date lipsesc. Pentru a putea folosi datele trebuie să le descarci.</translation>
+        <translation>Unele date lipsesc. Pentru a putea folosi datele trebuie să le descarci.</translation>
     </message>
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="230"/>
         <source>Some or all datasets are incompatible with this version. You would have to update list of provided maps, the maps, and/or install the latest release of OSM Scout Server.</source>
-        <translation>Unele sau toate seturile de date sunt incompatibile cu această versiune. Trebuie actualizată lista hărților disponibile, hărțile și/sau instalată cea mai recentă versiune a OSM Scout Server.</translation>
+        <translation>Unele sau toate datele sunt incompatibile cu această versiune. Trebuie actualizată lista hărților disponibile, hărțile și/sau instalată cea mai recentă versiune a OSM Scout Server.</translation>
     </message>
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="237"/>
@@ -191,12 +196,12 @@
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="72"/>
         <source>Selected datasets</source>
-        <translation>Seturi de date alese</translation>
+        <translation>Datele alese</translation>
     </message>
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="94"/>
         <source>All datasets</source>
-        <translation>Toate seturile de date</translation>
+        <translation>Toate datele</translation>
     </message>
     <message>
         <location filename="../gui/qml/CountryDetailsPage.qml" line="138"/>
@@ -355,8 +360,8 @@
     <name>DialogPL</name>
     <message>
         <location filename="../gui/qml/platform.kirigami/DialogPL.qml" line="26"/>
+        <location filename="../gui/qml/platform.lomiri/DialogPL.qml" line="33"/>
         <location filename="../gui/qml/platform.qtcontrols/DialogPL.qml" line="33"/>
-        <location filename="../gui/qml/platform.uuitk/DialogPL.qml" line="33"/>
         <source>Accept</source>
         <translation>De acord</translation>
     </message>
@@ -632,17 +637,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../server/src/infohub.cpp" line="136"/>
+        <location filename="../server/src/infohub.cpp" line="144"/>
         <source>ERROR: </source>
         <translation>EROARE: </translation>
     </message>
     <message>
-        <location filename="../server/src/infohub.cpp" line="142"/>
+        <location filename="../server/src/infohub.cpp" line="150"/>
         <source>WARNING: </source>
         <translation>ATENȚIE: </translation>
     </message>
     <message>
-        <location filename="../server/src/infohub.cpp" line="151"/>
+        <location filename="../server/src/infohub.cpp" line="159"/>
         <source>INFO: </source>
         <translation>INFO: </translation>
     </message>
@@ -795,7 +800,7 @@
     <message>
         <location filename="../server/src/mapmanager.cpp" line="855"/>
         <source>%1: version of dataset for %2 is not supported</source>
-        <translation>%1: versiunea setului de date pentru %2 nu este acceptată</translation>
+        <translation>%1: versiunea datelor pentru %2 nu este acceptată</translation>
     </message>
     <message>
         <location filename="../server/src/mapmanager.cpp" line="406"/>
@@ -1054,7 +1059,7 @@
     <message>
         <location filename="../server/src/mapmanagerfeature.cpp" line="282"/>
         <source>Missing address language parsing dataset</source>
-        <translation>Lipsește setul de date pentru limba de căutare a adreselor</translation>
+        <translation>Lipsesc datele pentru limba de căutare a adreselor</translation>
     </message>
     <message>
         <location filename="../server/src/mapmanagerfeature.cpp" line="224"/>
@@ -1064,7 +1069,7 @@
     <message>
         <location filename="../server/src/mapmanagerfeature.cpp" line="302"/>
         <source>Missing country-specific address parsing dataset</source>
-        <translation>Lipsește setul de date pentru căutarea adreselor specifice țării</translation>
+        <translation>Lipsesc datele pentru căutarea adreselor specifice țării</translation>
     </message>
 </context>
 <context>
@@ -1077,7 +1082,7 @@
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="39"/>
         <source>Map Manager handles the storage of offline maps and related datasets on the device. Here you can select the features and countries that will be stored, updated or removed from the device.</source>
-        <translation>„Gestionare hărți” se ocupă de stocarea în acest aparat a hărților și a seturilor de date corespunzătoare. Aici poți alege caracteristicile și țările care vor fi salvate, actualizate sau eliminate din aparat.</translation>
+        <translation>„Gestionare hărți” se ocupă de stocarea în acest aparat a hărților și a datelor corespunzătoare. Aici poți alege caracteristicile și țările care vor fi salvate, actualizate sau eliminate din aparat.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="213"/>
@@ -1107,7 +1112,7 @@
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="272"/>
         <source>When selected, Valhalla datasets will be stored on device after downloading them. These datasets are required for using Valhalla as a routing engine.</source>
-        <translation>Dacă este activată, seturile de date Valhalla vor fi salvate în acest aparat după descărcare. Aceste date sunt necesare pentru a putea folosi Valhalla ca navigator.</translation>
+        <translation>Dacă este activată, datele Valhalla vor fi salvate în acest aparat după descărcare. Aceste date sunt necesare pentru a putea folosi Valhalla ca navigator.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="281"/>
@@ -1117,7 +1122,7 @@
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="282"/>
         <source>When selected, libosmscout datasets will be stored on device after downloading them. These datasets are required for rendering, search, or routing by libosmscout backend.</source>
-        <translation>Dacă este activată, seturile de date Libosmscout vor fi salvate în acest aparat după descărcare. Libosmscout are nevoie de ele pentru a afișa hărți, a căuta și a calcula trasee.</translation>
+        <translation>Dacă este activată, datele Libosmscout vor fi salvate în acest aparat după descărcare. Libosmscout are nevoie de ele pentru a afișa hărți, a căuta și a calcula trasee.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="45"/>
@@ -1157,7 +1162,7 @@
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="181"/>
         <source>Update the list of currently available maps and datasets and check if the installed maps can be updated</source>
-        <translation>Actualizează lista de hărți și seturi de date disponibile în prezent și verifică dacă există actualizări pentru hărțile descărcate.</translation>
+        <translation>Actualizează lista de hărți și datele disponibile în prezent și verifică dacă există actualizări pentru hărțile descărcate.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="187"/>
@@ -1182,12 +1187,12 @@
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="251"/>
         <source>When selected, datasets with vector tiles in Mapbox GL format will be stored on device after downloading them. These datasets consist of World coastlines (about 12 MB), fonts (about 80 MB) and country-specific datasets.</source>
-        <translation>Dacă este activată, imaginile vectoriale în format Mapbox GL vor fi salvate în acest aparat după descărcare. Aceste seturi de date includ litoralul lumii (aproximativ 12 Mo), caractere (aproximativ 80 Mo) și setul de date specifice fiecărei țări.</translation>
+        <translation>Dacă este activată, imaginile vectoriale în format Mapbox GL vor fi salvate în acest aparat după descărcare. Aceste date includ litoralul lumii (aproximativ 12 Mo), caractere (aproximativ 80 Mo) și datele specifice fiecărei țări.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="261"/>
         <source>When selected, libpostal-based geocoder datasets will be stored on device after downloading them. These datasets consist of language parsing dataset (about 700 MB) and country-specific datasets used for address parsing and lookup.</source>
-        <translation>Dacă este activată, seturile de date Geocoder bazate pe Libpostal vor fi salvate în acest aparat după descărcare. Aceste date includ informații de analiză lingvistică (aproximativ 700 Mo) și de procesare și căutare a adreselor fiecărei țări.</translation>
+        <translation>Dacă este activată, datele Geocoder bazate pe Libpostal vor fi salvate în acest aparat după descărcare. Aceste date includ informații de analiză lingvistică (aproximativ 700 Mo) și de procesare și căutare a adreselor fiecărei țări.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="233"/>
@@ -1197,7 +1202,7 @@
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="234"/>
         <source>When selected, datasets allowing rendering of maps with Mapnik will be stored on device after downloading them. These datasets consist of World coastlines (about 700 MB) and country-specific datasets used for rendering.</source>
-        <translation>Dacă este activată, seturile de date care permit vizualizarea hărților cu Mapnik vor fi salvate în acest aparat după descărcare. Aceste date includ litoralul lumii (aproximativ 700 Mo) și toate cele necesare fiecărei țări.</translation>
+        <translation>Dacă este activată, datele care permit vizualizarea hărților cu Mapnik vor fi salvate în acest aparat după descărcare. Aceste date includ litoralul lumii (aproximativ 700 Mo) și toate cele necesare fiecărei țări.</translation>
     </message>
     <message>
         <location filename="../gui/qml/MapManagerPage.qml" line="157"/>
@@ -1690,7 +1695,7 @@
     <message>
         <location filename="../gui/qml/ProfilesPage.qml" line="56"/>
         <source>&lt;i&gt;Default&lt;/i&gt; profile supports map applications using &lt;i&gt;Mapbox GL&lt;/i&gt; plugin, uses &lt;i&gt;Geocoder-NLP&lt;/i&gt; to search for locations, and &lt;i&gt;Valhalla&lt;/i&gt; to calculate the routes. This profile is a recommended one for new vector tile map clients.&lt;br&gt;&lt;br&gt;For users with map applications using traditional raster tiles, the recommended profile for raster tiles maps includes &lt;i&gt;Mapnik&lt;/i&gt; datasets and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile.&lt;br&gt;&lt;br&gt;For users wishing to use raster and vector tile map clients, the recommended profile combining vector and raster tiles includes &lt;i&gt;Mapbox GL&lt;/i&gt; datasets, supports map rendering into raster tiles by &lt;i&gt;Mapnik&lt;/i&gt;, and uses the same search and routing plugins as the &lt;i&gt;Default&lt;/i&gt; profile. Since this profile includes  data for multiple rendering backends, it has the largest storage requirements.&lt;br&gt;&lt;br&gt;The profile where &lt;i&gt;libosmscout&lt;/i&gt; is combined with &lt;i&gt;Geocoder-NLP&lt;/i&gt; has smaller storage requirements when compared to the default one. However, rendering of the maps and routing would be limited only to one territory. In addition, rendering quality is inferior and routing speed is slower when compared to the default profile.&lt;br&gt;&lt;br&gt;&lt;i&gt;libosmscout&lt;/i&gt; profile has the smallest storage requirements among all profiles. However, rendering of the maps, search, and routing would be limited only to one territory. In addition, rendering quality and search is inferior as well as routing speed is slower  when compared to the default profile.&lt;br&gt;&lt;br&gt;When using &lt;i&gt;Custom&lt;/i&gt; profile, Settings and Map Manager Storage are not set by profiles and should be specified by user. This profile allows to select rendering, search, and routing components individually. Note that the user is responsible for adjusting the settings to make them consistent between requirements of the used backends and storage.</source>
-        <translation>Profilul &lt;i&gt;Prestabilit&lt;/i&gt; acceptă programele de hărți care utilizează extensia &lt;i&gt;Mapbox GL&lt;/i&gt; folosește &lt;i&gt;Geocoder-NLP&lt;/i&gt; pentru a căuta locuri și &lt;i&gt;Valhalla&lt;/i&gt; pentru a calcula trasee. Acest profil este unul recomandat pentru noile programe de hărți cu imagini vectoriale.&lt;br&gt;&lt;br&gt;Pentru utilizatorii de programe pentru hărți raster tradiționale, profilul recomandat include seturile de date &lt;i&gt;Mapnik&lt;/i&gt; și utilizează aceleași extensii de calculat  trasee și pentru căutare ca profilul &lt;i&gt;Prestabilit&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Pentru utilizatorii care doresc să utilizeze programe pentru hărți raster și vectoriale, profilul recomandat care combină hărțile vectoriale și raster include seturile de date &lt;i&gt;Mapbox GL&lt;/i&gt;, acceptă afișarea hărților raster prin &lt;i&gt;Mapnik&lt;/i&gt;, și utilizează aceleași extensii de căutare și traseu ca profilul &lt;i&gt;Prestabilit&lt;/i&gt;. Deoarece acest profil include mai multe extensii pentru vizualizarea hărții, acesta are cele mai mari cerințe de stocare.&lt;br&gt;&lt;br&gt;Profilul în care &lt;i&gt;libosmscout&lt;/i&gt; este combinat cu &lt;i&gt;Geocoder-NLP&lt;/i&gt; are cerințe de stocare mai mici în comparație cu cel prestabilit. Cu toate acestea, afișarea hărților și calcularea traseelor ar fi limitată doar la o singură regiune. În plus, calitatea redării este inferioară și viteza de calculare a traseelor este mai mică în comparație cu profilul prestabilit.&lt;br&gt;&lt;br&gt;Profilul &lt;i&gt;libosmscout&lt;/i&gt; are cele mai mici cerințe de stocare dintre toate profilurile. Cu toate acestea, afișarea hărților, calcularea traseelor și căutarea ar fi limitate doar la o singură regiune. În plus, calitatea imaginii și căutarea sunt inferioare, iar viteza de calculare a traseelor este mai mică în comparație cu profilul prestabilit.&lt;br&gt;&lt;br&gt;Când se utilizează profilul &lt;i&gt;Personalizat&lt;/i&gt;, reglările și stocarea din „Gestionare hărți” nu sunt stabilite de profiluri și trebuie specificate de utilizator. Acest profil permite alegerea individuală a componentelor de vizualizare, calculare a traseelor și căutare. De reținut că utilizatorul este responsabil de modificarea reglărilor pentru ca acestea să fie compatibile cu cerințele extensiilor și ale stocării utilizate.</translation>
+        <translation>Profilul &lt;i&gt;Prestabilit&lt;/i&gt; acceptă programele de hărți care utilizează extensia &lt;i&gt;Mapbox GL&lt;/i&gt; folosește &lt;i&gt;Geocoder-NLP&lt;/i&gt; pentru a căuta locuri și &lt;i&gt;Valhalla&lt;/i&gt; pentru a calcula trasee. Acest profil este unul recomandat pentru noile programe de hărți cu imagini vectoriale.&lt;br&gt;&lt;br&gt;Pentru utilizatorii de programe pentru hărți raster tradiționale, profilul recomandat include datele &lt;i&gt;Mapnik&lt;/i&gt; și utilizează aceleași extensii de calculat  trasee și pentru căutare ca profilul &lt;i&gt;Prestabilit&lt;/i&gt;.&lt;br&gt;&lt;br&gt;Pentru utilizatorii care doresc să folosească programe pentru hărți raster și vectoriale, profilul recomandat care combină hărțile vectoriale și raster include datele &lt;i&gt;Mapbox GL&lt;/i&gt;, acceptă afișarea hărților raster prin &lt;i&gt;Mapnik&lt;/i&gt; și utilizează aceleași extensii de căutare și traseu ca profilul &lt;i&gt;Prestabilit&lt;/i&gt;. Deoarece acest profil include mai multe extensii pentru vizualizarea hărții, acesta are cele mai mari cerințe de stocare.&lt;br&gt;&lt;br&gt;Profilul în care &lt;i&gt;libosmscout&lt;/i&gt; este combinat cu &lt;i&gt;Geocoder-NLP&lt;/i&gt; are cerințe de stocare mai mici în comparație cu cel prestabilit. Cu toate acestea, afișarea hărților și calcularea traseelor ar fi limitată doar la o singură regiune. În plus, calitatea redării este inferioară și viteza de calculare a traseelor este mai mică în comparație cu profilul prestabilit.&lt;br&gt;&lt;br&gt;Profilul &lt;i&gt;libosmscout&lt;/i&gt; are cele mai mici cerințe de stocare dintre toate profilurile. Cu toate acestea, afișarea hărților, calcularea traseelor și căutarea ar fi limitate doar la o singură regiune. În plus, calitatea imaginii și căutarea sunt inferioare, iar viteza de calculare a traseelor este mai mică în comparație cu profilul prestabilit.&lt;br&gt;&lt;br&gt;Când se utilizează profilul &lt;i&gt;Personalizat&lt;/i&gt;, reglările și stocarea din „Gestionare hărți” nu sunt stabilite de profiluri și trebuie specificate de utilizator. Acest profil permite alegerea individuală a componentelor de vizualizare, calculare a traseelor și căutare. De reținut că utilizatorul este responsabil de modificarea reglărilor pentru ca acestea să fie compatibile cu cerințele extensiilor și ale stocării utilizate.</translation>
     </message>
 </context>
 <context>
@@ -2394,12 +2399,12 @@
 <context>
     <name>SystemDService</name>
     <message>
-        <location filename="../server/src/systemdservice.cpp" line="109"/>
+        <location filename="../server/src/systemdservice.cpp" line="117"/>
         <source>Cannot create or change to directory: %1</source>
         <translation>Nu s-a putut crea sau schimba dosarul: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/systemdservice.cpp" line="119"/>
+        <location filename="../server/src/systemdservice.cpp" line="127"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
         <translation>Nu s-a putut găsi OSM Scout Server pe calea specificată</translation>
     </message>
@@ -2499,27 +2504,27 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="189"/>
+        <location filename="../server/src/valhallamaster.cpp" line="193"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation>Eroare la deschiderea modelului cu reglări pentru Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="197"/>
+        <location filename="../server/src/valhallamaster.cpp" line="201"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation>Eroare la citirea modelului cu reglări pentru Valhalla %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="229"/>
+        <location filename="../server/src/valhallamaster.cpp" line="233"/>
         <source>Failed to load Valhalla configuration: %1</source>
         <translation>Nu s-au putut încărca reglările pentru Valhalla: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="267"/>
+        <location filename="../server/src/valhallamaster.cpp" line="271"/>
         <source>Exception in Valhalla: %1</source>
         <translation>Excepție în Valhalla: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="234"/>
+        <location filename="../server/src/valhallamaster.cpp" line="238"/>
         <source>Valhalla routing engine started</source>
         <translation>Navigatorul Valhalla a pornit</translation>
     </message>
@@ -2586,39 +2591,44 @@
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="147"/>
+        <source>Versions of the used libraries</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../server/src/main.cpp" line="151"/>
         <source>Do not output logs when running in console mode</source>
         <translation>Nu crea jurnale în modul terminal</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="152"/>
+        <location filename="../server/src/main.cpp" line="156"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation>Pornește serverul în modul SystemD socket activat</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="157"/>
+        <location filename="../server/src/main.cpp" line="161"/>
         <source>Run the server in DBus activated mode</source>
         <translation>Pornește serverul în modul DBus activat</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="161"/>
+        <location filename="../server/src/main.cpp" line="165"/>
         <source>Listen for connection on configured port and start full server on activity</source>
         <translation>Așteaptă o conexiune în portul configurat și pornește serverul dacă există activitate</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="453"/>
-        <location filename="../server/src/main.cpp" line="461"/>
-        <location filename="../server/src/main.cpp" line="467"/>
-        <location filename="../server/src/main.cpp" line="473"/>
+        <location filename="../server/src/main.cpp" line="464"/>
+        <location filename="../server/src/main.cpp" line="472"/>
+        <location filename="../server/src/main.cpp" line="478"/>
+        <location filename="../server/src/main.cpp" line="484"/>
         <source>Failed to register DBus object: %1</source>
         <translation>Nu s-a reușit înregistrarea obiectului DBus: %1</translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="502"/>
+        <location filename="../server/src/main.cpp" line="513"/>
         <source>Failed to register DBus service: %1</source>
         <translation>Nu s-a reușit înregistrarea serviciului DBus: %1</translation>
     </message>
     <message>
-        <location filename="../gui/src/main.cpp" line="107"/>
+        <location filename="../gui/src/main.cpp" line="108"/>
         <source>OSM Scout Server GUI</source>
         <translation>Interfață pentru OSM Scout Server</translation>
     </message>
@@ -2636,12 +2646,18 @@
         <translation>OSM Scout Server</translation>
     </message>
     <message>
-        <location filename="../gui/qml/osmscout-server.qml" line="67"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="68"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="84"/>
         <source>Error</source>
         <translation>Eroare</translation>
     </message>
     <message>
-        <location filename="../gui/qml/osmscout-server.qml" line="68"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="69"/>
+        <source>Running OSM Scout Server had unexpected version (%1) and was stopped. Please restart this user interface to try again.</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../gui/qml/osmscout-server.qml" line="85"/>
         <source>OSM Scout Server is not reachable. Waiting for it to appear.</source>
         <translation>OSM Scout Server nu este accesibil. Aștept să apară.</translation>
     </message>

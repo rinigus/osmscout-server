@@ -81,21 +81,26 @@
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="84"/>
+        <source>Versions of the used libraries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/qml/AboutPage.qml" line="88"/>
         <source>Acknowledgments</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/qml/AboutPage.qml" line="131"/>
-        <source>version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/qml/AboutPage.qml" line="137"/>
-        <source>is a server that provides offline map services</source>
+        <location filename="../gui/qml/AboutPage.qml" line="135"/>
+        <source>Version</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="141"/>
+        <source>is a server that provides offline map services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/qml/AboutPage.qml" line="145"/>
         <source>User&apos;s guide is available &lt;a href=&apos;https://rinigus.github.io/osmscout-server&apos;&gt;online&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -357,8 +362,8 @@
     <name>DialogPL</name>
     <message>
         <location filename="../gui/qml/platform.kirigami/DialogPL.qml" line="26"/>
+        <location filename="../gui/qml/platform.lomiri/DialogPL.qml" line="33"/>
         <location filename="../gui/qml/platform.qtcontrols/DialogPL.qml" line="33"/>
-        <location filename="../gui/qml/platform.uuitk/DialogPL.qml" line="33"/>
         <source>Accept</source>
         <translation type="unfinished"></translation>
     </message>
@@ -634,17 +639,17 @@
 <context>
     <name>InfoHub</name>
     <message>
-        <location filename="../server/src/infohub.cpp" line="136"/>
+        <location filename="../server/src/infohub.cpp" line="144"/>
         <source>ERROR: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/infohub.cpp" line="142"/>
+        <location filename="../server/src/infohub.cpp" line="150"/>
         <source>WARNING: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/infohub.cpp" line="151"/>
+        <location filename="../server/src/infohub.cpp" line="159"/>
         <source>INFO: </source>
         <translation type="unfinished"></translation>
     </message>
@@ -2396,12 +2401,12 @@
 <context>
     <name>SystemDService</name>
     <message>
-        <location filename="../server/src/systemdservice.cpp" line="109"/>
+        <location filename="../server/src/systemdservice.cpp" line="117"/>
         <source>Cannot create or change to directory: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/systemdservice.cpp" line="119"/>
+        <location filename="../server/src/systemdservice.cpp" line="127"/>
         <source>Cannot find OSM Scout Server in the PATH</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2501,27 +2506,27 @@
 <context>
     <name>ValhallaMaster</name>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="189"/>
+        <location filename="../server/src/valhallamaster.cpp" line="193"/>
         <source>Error opening Valhalla&apos;s configuration template %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="197"/>
+        <location filename="../server/src/valhallamaster.cpp" line="201"/>
         <source>Error reading Valhalla&apos;s configuration template</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="229"/>
+        <location filename="../server/src/valhallamaster.cpp" line="233"/>
         <source>Failed to load Valhalla configuration: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="267"/>
+        <location filename="../server/src/valhallamaster.cpp" line="271"/>
         <source>Exception in Valhalla: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/valhallamaster.cpp" line="234"/>
+        <location filename="../server/src/valhallamaster.cpp" line="238"/>
         <source>Valhalla routing engine started</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2588,39 +2593,44 @@
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="147"/>
+        <source>Versions of the used libraries</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../server/src/main.cpp" line="151"/>
         <source>Do not output logs when running in console mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="152"/>
+        <location filename="../server/src/main.cpp" line="156"/>
         <source>Run the server in SystemD socket-activated mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="157"/>
+        <location filename="../server/src/main.cpp" line="161"/>
         <source>Run the server in DBus activated mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="161"/>
+        <location filename="../server/src/main.cpp" line="165"/>
         <source>Listen for connection on configured port and start full server on activity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="453"/>
-        <location filename="../server/src/main.cpp" line="461"/>
-        <location filename="../server/src/main.cpp" line="467"/>
-        <location filename="../server/src/main.cpp" line="473"/>
+        <location filename="../server/src/main.cpp" line="464"/>
+        <location filename="../server/src/main.cpp" line="472"/>
+        <location filename="../server/src/main.cpp" line="478"/>
+        <location filename="../server/src/main.cpp" line="484"/>
         <source>Failed to register DBus object: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../server/src/main.cpp" line="502"/>
+        <location filename="../server/src/main.cpp" line="513"/>
         <source>Failed to register DBus service: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/src/main.cpp" line="107"/>
+        <location filename="../gui/src/main.cpp" line="108"/>
         <source>OSM Scout Server GUI</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2638,12 +2648,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/qml/osmscout-server.qml" line="67"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="68"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="84"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/qml/osmscout-server.qml" line="68"/>
+        <location filename="../gui/qml/osmscout-server.qml" line="69"/>
+        <source>Running OSM Scout Server had unexpected version (%1) and was stopped. Please restart this user interface to try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/qml/osmscout-server.qml" line="85"/>
         <source>OSM Scout Server is not reachable. Waiting for it to appear.</source>
         <translation type="unfinished"></translation>
     </message>
