@@ -1,4 +1,4 @@
-clickable_minimum_required: 7.12.1
+clickable_minimum_required: 8.0.1
 
 scripts:
   prepare-deps: git submodule update --recursive --init && ${ROOT}/packaging/click/prepare-deps.sh
@@ -67,17 +67,19 @@ libraries:
 
     builder: cmake
     build_args:
-    - -DTHREADS_PTHREAD_ARG=0
     - -DCMAKE_INSTALL_PREFIX:PATH=/usr
     - -DBUILD_SHARED_LIBS=OFF
     - -DENABLE_DATA_TOOLS=OFF
     - -DENABLE_PYTHON_BINDINGS=OFF
-    - -DENABLE_NODE_BINDINGS=OFF
     - -DENABLE_SERVICES=OFF
+    - -DENABLE_TESTS=OFF
+    - -DENABLE_WERROR=OFF
+    - -DENABLE_SINGLE_FILES_WERROR=OFF
 
     postbuild:
     - sed -i 's/boost_filesystem[^ ]*/boost_filesystem/g' \
         ${INSTALL_DIR}/usr/lib/${ARCH_TRIPLET}/pkgconfig/libvalhalla.pc
+    - cp -r ${SRC_DIR}/third_party/date/include/date ${INSTALL_DIR}/usr/include/
 
     dependencies_host:
     - gcc-opt

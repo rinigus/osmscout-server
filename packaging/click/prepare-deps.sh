@@ -11,4 +11,4 @@ rm -rf "${LIBPOSTAL_SRC_DIR}" "${VALHALLA_SRC_DIR}"
 
 # Download sources
 git clone -b 1.0.0 ${CLONE_ARGS} https://github.com/rinigus/pkg-libpostal.git "${LIBPOSTAL_SRC_DIR}"
-git clone -b 3.0.9 ${CLONE_ARGS} https://github.com/rinigus/pkg-valhalla-lite.git "${VALHALLA_SRC_DIR}"
+git clone -b 3.4.0 ${CLONE_ARGS} https://github.com/rinigus/pkg-valhalla-lite.git "${VALHALLA_SRC_DIR}"
