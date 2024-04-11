@@ -71,7 +71,13 @@ void SystemDService::setEnabled(bool e)
   if (e)
     {
       AppSettings settings;
+#ifdef IS_LOMIRI
+      // this hard-coded path is to keep the path stable using the 'current' version symlink
+      QString exe_path = "/opt/click.ubuntu.com/osmscout-server.jonnius/current/usr/bin/osmscout-server";
+#else
       QString exe_path = QCoreApplication::applicationFilePath();
+#endif
+
       if (exe_path.isEmpty()) exe_path = QStandardPaths::findExecutable(APP_NAME);
       if (!exe_path.isEmpty())
         {
