@@ -22,11 +22,42 @@ COPY ./run_postprocess.sh ./pack.sh /app
 
 COPY ./mapbox_planetiler_split.py ./hierarchy.py /app
 
-RUN mkdir mapbox
-COPY ./mapbox/make_packs.py /app/mapbox/
+RUN mkdir mapbox_scripts
+COPY ./mapbox/make_packs.py /app/mapbox_scripts/
 
-RUN mkdir valhalla
-COPY ./valhalla/make_packs.py /app/valhalla/
+RUN mkdir valhalla_scripts
+COPY ./valhalla/make_packs.py /app/valhalla_scripts/
+
+COPY \
+    ./prepare_countries.py \
+    ./mapbox_country_pack.py \
+    ./valhalla_country_pack.py \
+    /app
+
+# directories as used in the import scripts
+ENV IMPORT=/import
+
+ENV MBTILES_INPUT=/mapbox-planet/output.mbtiles
+ENV MBTILES_TILESDIR=/mapbox-planet/tiles
+ENV MBTILES_IMPORT_META=/mapbox-planet/packages_meta
+ENV MBTILES_IMPORT=$IMPORT/mapboxgl/packages
+
+ENV VALHALLA_TILESDIR=/valhalla/valhalla_tiles
+ENV VALHALLA_TILES_CONF=/valhalla/tiles_in_packages.json
+ENV VALHALLA_IMPORT_META=/valhalla/packages_meta
+ENV VALHALLA_IMPORT=$IMPORT/valhalla/packages
+
+# add links used by country packs
+RUN mkdir mapbox && mkdir valhalla
+
+RUN ln -s $MBTILES_TILESDIR mapbox/tiles
+RUN ln -s $MBTILES_IMPORT mapbox/packages
+RUN ln -s $MBTILES_IMPORT_META mapbox/packages_meta
+
+RUN ln -s $VALHALLA_TILESDIR valhalla/tiles
+RUN ln -s $VALHALLA_IMPORT valhalla/packages
+RUN ln -s $VALHALLA_IMPORT_META valhalla/packages_meta
+RUN ln -s $VALHALLA_TILES_CONF valhalla/tiles_in_packages.json
 
 # command
 CMD /app/run_postprocess.sh

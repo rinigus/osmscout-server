@@ -103,6 +103,7 @@ services:
       - ${STORE_MBTILES}:/mapbox-planet
       - ${STORE_VALHALLA}:/valhalla
       - ${STORE_IMPORTED}:/import
+      - ${STORE_MISC}:/osmscout
       - ./hierarchy:/app/hierarchy
     depends_on:
       valhalla_tiles2packs:
