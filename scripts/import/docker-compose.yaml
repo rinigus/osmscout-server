@@ -95,12 +95,13 @@ services:
 
   # postprocess mb and valhalla tiles
   # prepare for geocoder-nlp import
-  postprocess_valhalla_mbtiles:
+  postprocess:
     build:
       context: .
       dockerfile: Dockerfile.postprocess
     volumes:
       - ${STORE_MBTILES}:/mapbox-planet
+      - ${STORE_VALHALLA}:/valhalla
       - ${STORE_IMPORTED}:/import
       - ./hierarchy:/app/hierarchy
     depends_on:
