@@ -1,0 +1,73 @@
+# Build
+FROM debian:bookworm AS build
+
+ARG VALHALLA_VERSION
+
+RUN mkdir -p /app
+COPY ./tiles2packs /app/tiles2packs
+
+WORKDIR /app
+
+RUN apt-get update
+RUN apt-get install -y \
+    git
+
+# get sources
+RUN git clone -b $VALHALLA_VERSION --depth 1 \
+    --recursive https://github.com/valhalla/valhalla.git
+
+# install requirements
+RUN apt-get install -y \
+    cmake g++ \
+    libboost-all-dev \
+    libcurl4-openssl-dev \
+    libgeos++-dev \
+    libgeos-dev \
+    libluajit-5.1-dev \
+    liblz4-dev \
+    libprotobuf-dev \
+    libspatialite-dev \
+    libsqlite3-dev \
+    libsqlite3-mod-spatialite \
+    lld \
+    luajit \
+    make \
+    pkg-config \
+    protobuf-compiler
+
+# build valhalla
+WORKDIR /app/valhalla
+
+RUN cmake -B build \
+    -DENABLE_DATA_TOOLS=OFF \
+    -DENABLE_PYTHON_BINDINGS=OFF \
+    -DENABLE_SERVICES=OFF \
+    -DENABLE_TESTS=OFF && \
+    make -C build -j$(nproc) && \
+    make -C build install
+
+# build date
+WORKDIR /app/valhalla/third_party/date
+
+RUN cmake -B build -DENABLE_DATE_TESTING=OFF -DBUILD_TZ_LIB=ON
+RUN make -C build -j$(nproc) && make -C build install
+
+WORKDIR /app/tiles2packs
+RUN pkg-config --list-all | sort && \
+    g++ -O -o tiles2packs main.cpp \
+    `pkg-config --libs libvalhalla`
+
+# Runtime
+FROM debian:bookworm
+
+WORKDIR /app
+
+COPY --from=build /app/tiles2packs/tiles2packs .
+COPY --from=build /app/tiles2packs/run_tiles2packs.sh .
+
+RUN apt-get update
+RUN apt-get install -y libcurl4
+RUN rm -rf /var/lib/apt/lists/*
+
+ENV PATH="/app:${PATH}"
+CMD run_tiles2packs.sh

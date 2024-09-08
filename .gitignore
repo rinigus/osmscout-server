@@ -26,3 +26,6 @@
 /.clickable/
 /clickable.yaml
 /click_release/
+
+# imported data
+/scripts/import/data

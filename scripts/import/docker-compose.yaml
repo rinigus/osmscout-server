@@ -1,0 +1,119 @@
+
+services:
+
+  # # download maps
+  # get_pbf:
+  #   image: alpine/curl
+  #   volumes:
+  #     - ${STORE_PLANET}:/planet_pbf
+  #     - ./scripts:/scripts
+  #   command: /scripts/get_pbf.sh ${PBF_URL} /planet_pbf
+
+  # download PBF and import mbox tiles using planetiler 
+  planetiler:
+    image: ghcr.io/onthegomap/planetiler:0.8.2
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ${STORE_MBTILES}:/data
+      - ./mapbox:/scripts_mapbox
+    #user: ${UID}:${GID}
+    entrypoint: ""
+    environment:
+      - PLANETILER_STORAGE_TMP=${PLANETILER_STORAGE_TMP}
+    command: /scripts_mapbox/run_planetiler.sh /planet_pbf ${AREA}
+
+  # prepare import to valhalla
+  valhalla_prepare:
+    image: alpine
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ${STORE_VALHALLA}:/custom_files
+    command: /bin/sh -c "rm /custom_files/*.pbf; ln -s /planet_pbf/${PBF} /custom_files"
+    depends_on:
+      planetiler:
+        condition: service_completed_successfully
+
+  # import to valhalla
+  valhalla:
+    image: ghcr.io/gis-ops/docker-valhalla/valhalla:${VALHALLA_VERSION}
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ${STORE_VALHALLA}:/custom_files
+    environment:
+      - serve_tiles=False
+      - build_tar=False
+      - build_admins=True
+      - build_time_zones=True
+      - build_transit=True
+      #- build_elevation=True
+    depends_on:
+      valhalla_prepare:
+        condition: service_completed_successfully 
+
+  # # import pbf to nominatim
+  # nominatim:
+  #   image: mediagis/nominatim:4.4
+  #   volumes:
+  #     - ${STORE_PLANET}:/planet_pbf
+  #     - ${STORE_NOMINATIM_DB}:/var/lib/postgresql/14/main
+  #     - ${STORE_NOMINATIM_FLAT}:/nominatim/flatnode
+  #   environment:
+  #     - PBF_PATH=/planet_pbf/${PBF}
+  #     - REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
+  #     - IMPORT_WIKIPEDIA=/planet_pbf/wikimedia-importance.sql.gz
+  #     - IMPORT_US_POSTCODES=/planet_pbf/us_postcodes.csv.gz
+  #     - IMPORT_GB_POSTCODES=/planet_pbf/gb_postcodes.csv.gz
+  #     - POSTGRES_SHARED_BUFFERS=1GB
+  #     - POSTGRES_MAINTENANCE_WORK_MEM=5GB
+  #     - POSTGRES_AUTOVACUUM_WORK_MEM=1GB
+  #     - POSTGRES_EFFECTIVE_CACHE_SIZE=12GB
+  #   depends_on:
+  #     valhalla:
+  #       condition: service_completed_successfully
+
+  # # wait for nominatim import to finish
+  # wait_for_nominatim:
+  #   image: alpine
+  #   volumes:
+  #     - ./scripts:/scripts
+  #   command: /scripts/wait_for_port.sh nominatim 8080
+  #   depends_on:
+  #     - nominatim
+
+  # prepare valhalla tiles to postprocessing
+  valhalla_tiles2packs:
+    build:
+      context: valhalla
+      dockerfile: Dockerfile.tiles2packs
+      args:
+        VALHALLA_VERSION: ${VALHALLA_VERSION}
+    volumes:
+      - ${STORE_VALHALLA}:/custom_files
+    depends_on:
+      valhalla:
+        condition: service_completed_successfully
+
+  # postprocess mb and valhalla tiles
+  # prepare for geocoder-nlp import
+  postprocess_valhalla_mbtiles:
+    build:
+      context: .
+      dockerfile: Dockerfile.postprocess
+    volumes:
+      - ${STORE_MBTILES}:/mapbox-planet
+      - ${STORE_IMPORTED}:/import
+      - ./hierarchy:/app/hierarchy
+    depends_on:
+      valhalla_tiles2packs:
+        condition: service_completed_successfully
+      planetiler:
+        condition: service_completed_successfully
+
+
+  # geocoder-nlp:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.geocoder-nlp
+  #   depends_on:
+  #     wait_for_nominatim:
+  #       condition: service_completed_successfully

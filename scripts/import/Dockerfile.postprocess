@@ -1,0 +1,27 @@
+FROM debian:bookworm
+
+RUN apt-get update
+RUN apt-get install -y \
+    python3 python3-venv
+
+WORKDIR /app
+
+# create and activate venv
+RUN python3 -m venv venv
+ENV PATH=/app/venv/bin:$PATH
+
+RUN pip install \
+    numpy \
+    mercantile \
+    psutil \
+    shapely
+
+# copy used scripts
+COPY ./run_postprocess.sh ./pack.sh /app
+
+COPY ./mapbox_planetiler_split.py ./hierarchy.py /app
+
+COPY ./mapbox/make_packs.py /app/mapbox
+
+# command
+CMD /app/run_postprocess.sh
