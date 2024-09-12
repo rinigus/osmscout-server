@@ -48,37 +48,38 @@ services:
       #- build_elevation=True
     depends_on:
       valhalla_prepare:
-        condition: service_completed_successfully 
+        condition: service_completed_successfully
 
-  # # import pbf to nominatim
-  # nominatim:
-  #   image: mediagis/nominatim:4.4
-  #   volumes:
-  #     - ${STORE_PLANET}:/planet_pbf
-  #     - ${STORE_NOMINATIM_DB}:/var/lib/postgresql/14/main
-  #     - ${STORE_NOMINATIM_FLAT}:/nominatim/flatnode
-  #   environment:
-  #     - PBF_PATH=/planet_pbf/${PBF}
-  #     - REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
-  #     - IMPORT_WIKIPEDIA=/planet_pbf/wikimedia-importance.sql.gz
-  #     - IMPORT_US_POSTCODES=/planet_pbf/us_postcodes.csv.gz
-  #     - IMPORT_GB_POSTCODES=/planet_pbf/gb_postcodes.csv.gz
-  #     - POSTGRES_SHARED_BUFFERS=1GB
-  #     - POSTGRES_MAINTENANCE_WORK_MEM=5GB
-  #     - POSTGRES_AUTOVACUUM_WORK_MEM=1GB
-  #     - POSTGRES_EFFECTIVE_CACHE_SIZE=12GB
-  #   depends_on:
-  #     valhalla:
-  #       condition: service_completed_successfully
+  # import pbf to nominatim
+  nominatim:
+    image: mediagis/nominatim:4.4
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ${STORE_NOMINATIM_DB}:/var/lib/postgresql/14/main
+      - ${STORE_NOMINATIM_FLAT}:/nominatim/flatnode
+    environment:
+      - PBF_PATH=/planet_pbf/${PBF}
+      - REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
+      - IMPORT_WIKIPEDIA=/planet_pbf/wikimedia-importance.sql.gz
+      - IMPORT_US_POSTCODES=/planet_pbf/us_postcodes.csv.gz
+      - IMPORT_GB_POSTCODES=/planet_pbf/gb_postcodes.csv.gz
+      - POSTGRES_SHARED_BUFFERS=1GB
+      - POSTGRES_MAINTENANCE_WORK_MEM=5GB
+      - POSTGRES_AUTOVACUUM_WORK_MEM=1GB
+      - POSTGRES_EFFECTIVE_CACHE_SIZE=12GB
+      - NOMINATIM_PASSWORD=$NOMINATIM_PASSWORD
+    depends_on:
+      valhalla:
+        condition: service_completed_successfully
 
-  # # wait for nominatim import to finish
-  # wait_for_nominatim:
-  #   image: alpine
-  #   volumes:
-  #     - ./scripts:/scripts
-  #   command: /scripts/wait_for_port.sh nominatim 8080
-  #   depends_on:
-  #     - nominatim
+  # wait for nominatim import to finish
+  wait_for_nominatim:
+    image: alpine
+    volumes:
+      - ./scripts:/scripts
+    command: /scripts/wait_for_port.sh nominatim 8080
+    depends_on:
+      - nominatim
 
   # prepare valhalla tiles to postprocessing
   valhalla_tiles2packs:
@@ -100,15 +101,23 @@ services:
       context: .
       dockerfile: Dockerfile.postprocess
     volumes:
+      - ${STORE_PLANET}:/planet_pbf
       - ${STORE_MBTILES}:/mapbox-planet
       - ${STORE_VALHALLA}:/valhalla
       - ${STORE_IMPORTED}:/import
       - ${STORE_MISC}:/osmscout
       - ./hierarchy:/app/hierarchy
+      - ./provided:/app/provided
+      - ./prepare_distribution.py:/app/prepare_distribution.py
+    environment:
+      GEOCODER_IMPORTER_POSTGRES: postgresql://nominatim:$NOMINATIM_PASSWORD@nominatim:5432/nominatim
+      GEOCODER_JOBS: $GEOCODER_JOBS
     depends_on:
+      valhalla:
+        condition: service_completed_successfully
       valhalla_tiles2packs:
         condition: service_completed_successfully
-      planetiler:
+      wait_for_nominatim:
         condition: service_completed_successfully
 
 

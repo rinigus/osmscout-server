@@ -1,9 +1,67 @@
+# build
+FROM debian:bookworm AS build
+
+RUN apt-get update
+RUN apt-get install -y\
+    git make cmake \
+    g++ gcc \
+    autoconf libtool \
+    nlohmann-json3-dev \
+    libmarisa-dev libkyotocabinet-dev \
+    libsqlite3-dev libpqxx-dev \
+    libboost-program-options-dev
+
+WORKDIR /app
+
+# libpostal
+RUN git clone https://github.com/openvenues/libpostal.git
+WORKDIR /app/libpostal
+RUN git checkout 8f2066b1d30f4290adf59cacc429980f139b8545
+
+RUN ./bootstrap.sh
+RUN ./configure \
+    --prefix=/usr \
+    --datadir=/planet_pbf/libpostal \
+    --disable-data-download
+RUN make -j${nproc} && make install
+
+WORKDIR /app
+
+# geocoder-nlp
+RUN git clone https://github.com/rinigus/geocoder-nlp.git
+WORKDIR /app/geocoder-nlp
+RUN git checkout acbb8798aa9352a2cb57aa44a5b0bcadeb55d5d2
+RUN git submodule init && \
+    git submodule update
+
+RUN cmake -B build -DCMAKE_INSTALL_PREFIX:PATH=/usr
+RUN make -C build -j${nproc} && \
+    make -C build install
+
+WORKDIR /app
+
+#############
+# runtime
 FROM debian:bookworm
 
 RUN apt-get update
 RUN apt-get install -y \
     python3 python3-venv \
-    bzip2 gzip
+    bzip2 gzip \
+    curl
+
+# copy from build
+COPY --from=build /usr/bin/geocoder-importer /usr/bin/
+COPY --from=build /app/geocoder-nlp/importer/data /app/geocoder-nlp
+COPY --from=build /usr/bin/libpostal_data /usr/bin/
+COPY --from=build /usr/lib/libpostal.so* /usr/lib/
+
+RUN apt-get install -y \
+    make \
+    libmarisa0 \
+    libkyotocabinet16v5 \
+    libpqxx-6.4 \
+    libboost-program-options1.74.0
 
 WORKDIR /app
 
@@ -15,10 +73,12 @@ RUN pip install \
     numpy \
     mercantile \
     psutil \
-    shapely
+    shapely \
+    tabulate
 
 # copy used scripts
-COPY ./run_postprocess.sh ./pack.sh /app
+COPY ./run_postprocess.sh ./pack.sh ./check_import.py ./prepare_distribution.py /app
+COPY ./build_geocoder_docker.sh /app/build_geocoder.sh
 
 COPY ./mapbox_planetiler_split.py ./hierarchy.py /app
 
@@ -33,31 +93,6 @@ COPY \
     ./mapbox_country_pack.py \
     ./valhalla_country_pack.py \
     /app
-
-# directories as used in the import scripts
-ENV IMPORT=/import
-
-ENV MBTILES_INPUT=/mapbox-planet/output.mbtiles
-ENV MBTILES_TILESDIR=/mapbox-planet/tiles
-ENV MBTILES_IMPORT_META=/mapbox-planet/packages_meta
-ENV MBTILES_IMPORT=$IMPORT/mapboxgl/packages
-
-ENV VALHALLA_TILESDIR=/valhalla/valhalla_tiles
-ENV VALHALLA_TILES_CONF=/valhalla/tiles_in_packages.json
-ENV VALHALLA_IMPORT_META=/valhalla/packages_meta
-ENV VALHALLA_IMPORT=$IMPORT/valhalla/packages
-
-# add links used by country packs
-RUN mkdir mapbox && mkdir valhalla
-
-RUN ln -s $MBTILES_TILESDIR mapbox/tiles
-RUN ln -s $MBTILES_IMPORT mapbox/packages
-RUN ln -s $MBTILES_IMPORT_META mapbox/packages_meta
-
-RUN ln -s $VALHALLA_TILESDIR valhalla/tiles
-RUN ln -s $VALHALLA_IMPORT valhalla/packages
-RUN ln -s $VALHALLA_IMPORT_META valhalla/packages_meta
-RUN ln -s $VALHALLA_TILES_CONF valhalla/tiles_in_packages.json
 
 # command
 CMD /app/run_postprocess.sh

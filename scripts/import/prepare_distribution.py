@@ -9,7 +9,6 @@ from mapbox_country_pack import world_pack as mapboxgl_world_pack
 root_dir = "distribution"
 bucket = open("bucket_name", "r").read().strip()
 url_base = "https://data.modrana.org/osm_scout_server"
-#url_base = "https://kuqrhldx.e24files.com"
 
 url_specs = {
     "base": url_base,
