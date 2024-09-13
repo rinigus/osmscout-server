@@ -119,12 +119,3 @@ services:
         condition: service_completed_successfully
       wait_for_nominatim:
         condition: service_completed_successfully
-
-
-  # geocoder-nlp:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.geocoder-nlp
-  #   depends_on:
-  #     wait_for_nominatim:
-  #       condition: service_completed_successfully
