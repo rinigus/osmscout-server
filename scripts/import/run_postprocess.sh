@@ -105,17 +105,6 @@ fi
 echo Importing GeocoderNLP using $GEOCODER_JOBS jobs
 make -f $MISC_DIR/Makefile.import -j$GEOCODER_JOBS
 
-# prepare distribution
-python ./prepare_distribution.py
-
-# copy resulting scripts and files
-rm -rf $MISC/public_http || true 
-cp -r public_http $MISC
-cp uploader.sh \
-   digest.md5* $MISC
-
-python ./check_import.py
-
 # finished: remove tmp directory
 cd $SDIR
 rm -rf $RDIR

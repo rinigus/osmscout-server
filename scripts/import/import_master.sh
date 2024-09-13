@@ -24,11 +24,11 @@ rm -rf distribution/valhalla/packages
 mkdir -p distribution/valhalla/packages
 cp valhalla/packages/*tar.bz2 distribution/valhalla/packages/
 
-# Splitting is not needed anymore as we don't import anything from
-# splitted PBF
-rm -rf splitted
-./prepare_splitter.py
-nice -n 19 make -f Makefile.splitter
+# # Splitting is not needed anymore as we don't import anything from
+# # splitted PBF
+# rm -rf splitted
+# ./prepare_splitter.py
+# nice -n 19 make -f Makefile.splitter
 
 rm -rf distribution/geocoder-nlp
 ./prepare_countries.py

@@ -68,6 +68,7 @@ services:
       - POSTGRES_AUTOVACUUM_WORK_MEM=1GB
       - POSTGRES_EFFECTIVE_CACHE_SIZE=12GB
       - NOMINATIM_PASSWORD=$NOMINATIM_PASSWORD
+      - shm-size=2GB
     depends_on:
       valhalla:
         condition: service_completed_successfully
@@ -108,7 +109,6 @@ services:
       - ${STORE_MISC}:/osmscout
       - ./hierarchy:/app/hierarchy
       - ./provided:/app/provided
-      - ./prepare_distribution.py:/app/prepare_distribution.py
     environment:
       GEOCODER_IMPORTER_POSTGRES: postgresql://nominatim:$NOMINATIM_PASSWORD@nominatim:5432/nominatim
       GEOCODER_JOBS: $GEOCODER_JOBS

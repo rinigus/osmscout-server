@@ -52,7 +52,7 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
                                     "type": "territory",
                                     "name": Hierarchy.get_full_name(root),
                                     "postal_country": { "path": "postal/countries-v1/" + Hierarchy.get_postal(root) },
-                                    #"osmscout": { "path": "osmscout/" + spath(cid) },
+                                    # "osmscout": { "path": "osmscout/" + spath(cid) },
                                     "geocoder_nlp": { "path": "geocoder-nlp/" + spath(cid) },
                                     "mapnik_country": { "path": "mapnik/countries/" + spath(cid) },
                                     "mapboxgl_country": mapbox_pack(polyjson),
