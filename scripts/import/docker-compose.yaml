@@ -1,14 +1,6 @@
 
 services:
 
-  # # download maps
-  # get_pbf:
-  #   image: alpine/curl
-  #   volumes:
-  #     - ${STORE_PLANET}:/planet_pbf
-  #     - ./scripts:/scripts
-  #   command: /scripts/get_pbf.sh ${PBF_URL} /planet_pbf
-
   # download PBF and import mbox tiles using planetiler 
   planetiler:
     image: ghcr.io/onthegomap/planetiler:0.8.2
@@ -16,7 +8,7 @@ services:
       - ${STORE_PLANET}:/planet_pbf
       - ${STORE_MBTILES}:/data
       - ./mapbox:/scripts_mapbox
-    #user: ${UID}:${GID}
+    user: ${USER_ID}:${GROUP_ID}
     entrypoint: ""
     environment:
       - PLANETILER_STORAGE_TMP=${PLANETILER_STORAGE_TMP}
@@ -28,6 +20,7 @@ services:
     volumes:
       - ${STORE_PLANET}:/planet_pbf
       - ${STORE_VALHALLA}:/custom_files
+    user: ${USER_ID}:${GROUP_ID}
     command: /bin/sh -c "rm /custom_files/*.pbf; ln -s /planet_pbf/${PBF} /custom_files"
     depends_on:
       planetiler:
@@ -39,6 +32,7 @@ services:
     volumes:
       - ${STORE_PLANET}:/planet_pbf
       - ${STORE_VALHALLA}:/custom_files
+    user: ${USER_ID}:${GROUP_ID}
     environment:
       - serve_tiles=False
       - build_tar=False
@@ -50,6 +44,22 @@ services:
       valhalla_prepare:
         condition: service_completed_successfully
 
+  # download maps
+  get_nominatim_dumps:
+    build:
+      dockerfile: Dockerfile.wget
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ./scripts:/scripts
+    user: ${USER_ID}:${GROUP_ID}
+    command: /scripts/get_urls.sh /planet_pbf/nominatim \
+      https://nominatim.org/data/wikimedia-importance.sql.gz \
+      https://nominatim.org/data/gb_postcodes.csv.gz \
+      https://nominatim.org/data/us_postcodes.csv.gz
+    depends_on:
+      planetiler:
+        condition: service_completed_successfully
+
   # import pbf to nominatim
   nominatim:
     image: mediagis/nominatim:4.4
@@ -57,20 +67,24 @@ services:
       - ${STORE_PLANET}:/planet_pbf
       - ${STORE_NOMINATIM_DB}:/var/lib/postgresql/14/main
       - ${STORE_NOMINATIM_FLAT}:/nominatim/flatnode
+    # this image does not support setting user ID
+    shm_size: 1g
+    mem_limit: 32g
     environment:
       - PBF_PATH=/planet_pbf/${PBF}
       - REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
-      - IMPORT_WIKIPEDIA=/planet_pbf/wikimedia-importance.sql.gz
-      - IMPORT_US_POSTCODES=/planet_pbf/us_postcodes.csv.gz
-      - IMPORT_GB_POSTCODES=/planet_pbf/gb_postcodes.csv.gz
       - POSTGRES_SHARED_BUFFERS=1GB
       - POSTGRES_MAINTENANCE_WORK_MEM=5GB
       - POSTGRES_AUTOVACUUM_WORK_MEM=1GB
       - POSTGRES_EFFECTIVE_CACHE_SIZE=12GB
       - NOMINATIM_PASSWORD=$NOMINATIM_PASSWORD
-      - shm-size=2GB
+      - IMPORT_WIKIPEDIA=/planet_pbf/nominatim/wikimedia-importance.sql.gz
+      - IMPORT_US_POSTCODES=/planet_pbf/nominatim/us_postcodes.csv.gz
+      - IMPORT_GB_POSTCODES=/planet_pbf/nominatim/gb_postcodes.csv.gz
     depends_on:
       valhalla:
+        condition: service_completed_successfully
+      get_nominatim_dumps:
         condition: service_completed_successfully
 
   # wait for nominatim import to finish
@@ -78,6 +92,7 @@ services:
     image: alpine
     volumes:
       - ./scripts:/scripts
+    user: ${USER_ID}:${GROUP_ID}
     command: /scripts/wait_for_port.sh nominatim 8080
     depends_on:
       - nominatim
@@ -91,6 +106,7 @@ services:
         VALHALLA_VERSION: ${VALHALLA_VERSION}
     volumes:
       - ${STORE_VALHALLA}:/custom_files
+    user: ${USER_ID}:${GROUP_ID}
     depends_on:
       valhalla:
         condition: service_completed_successfully
@@ -109,6 +125,7 @@ services:
       - ${STORE_MISC}:/osmscout
       - ./hierarchy:/app/hierarchy
       - ./provided:/app/provided
+    user: ${USER_ID}:${GROUP_ID}
     environment:
       GEOCODER_IMPORTER_POSTGRES: postgresql://nominatim:$NOMINATIM_PASSWORD@nominatim:5432/nominatim
       GEOCODER_JOBS: $GEOCODER_JOBS
