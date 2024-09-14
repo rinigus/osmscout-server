@@ -9,6 +9,7 @@ services:
       - ${STORE_MBTILES}:/data
       - ./mapbox:/scripts_mapbox
     user: ${USER_ID}:${GROUP_ID}
+    mem_limit: ${RAM_PLANETILER_LIMIT}
     entrypoint: ""
     environment:
       - PLANETILER_STORAGE_TMP=${PLANETILER_STORAGE_TMP}
@@ -33,6 +34,7 @@ services:
       - ${STORE_PLANET}:/planet_pbf
       - ${STORE_VALHALLA}:/custom_files
     user: ${USER_ID}:${GROUP_ID}
+    mem_limit: ${RAM_VALHALLA_LIMIT}
     environment:
       - serve_tiles=False
       - build_tar=False
@@ -69,7 +71,7 @@ services:
       - ${STORE_NOMINATIM_FLAT}:/nominatim/flatnode
     # this image does not support setting user ID
     shm_size: 1g
-    mem_limit: 32g
+    mem_limit: ${RAM_NOMINATIM_LIMIT}
     environment:
       - PBF_PATH=/planet_pbf/${PBF}
       - REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
@@ -126,6 +128,7 @@ services:
       - ./hierarchy:/app/hierarchy
       - ./provided:/app/provided
     user: ${USER_ID}:${GROUP_ID}
+    mem_limit: ${RAM_DEFALT_LIMIT}
     environment:
       GEOCODER_IMPORTER_POSTGRES: postgresql://nominatim:$NOMINATIM_PASSWORD@nominatim:5432/nominatim
       GEOCODER_JOBS: $GEOCODER_JOBS
