@@ -13,6 +13,7 @@ services:
     entrypoint: ""
     environment:
       - PLANETILER_STORAGE_TMP=${PLANETILER_STORAGE_TMP}
+      - JAVA_TOOL_OPTIONS=${JAVA_TOOL_OPTIONS}
     command: /scripts_mapbox/run_planetiler.sh /planet_pbf ${AREA}
 
   # prepare import to valhalla
