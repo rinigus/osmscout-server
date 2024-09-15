@@ -15,14 +15,14 @@ url_specs = {
     "base": url_base,
     "type": "url",
     #"osmscout": "osmscout-27",
-    "geocoder_nlp": "geocoder-nlp-37",
+    "geocoder_nlp": "geocoder-nlp-38",
     "postal_global": "postal-global-2",
     "postal_country": "postal-country-2",
     "mapnik_global": "mapnik-global-1",
-    "mapboxgl_country": "mapboxgl-23",
-    "mapboxgl_global": "mapboxgl-23",
-    "mapboxgl_glyphs": "mapboxgl-23",
-    "valhalla": "valhalla-31",
+    "mapboxgl_country": "mapboxgl-24",
+    "mapboxgl_global": "mapboxgl-24",
+    "mapboxgl_glyphs": "mapboxgl-24",
+    "valhalla": "valhalla-32",
 
     # mapnik is not updated anymore as users are expected to use vector tiles
     # keep this version just if someone needs raster tiles
