@@ -140,9 +140,7 @@ services:
   # shutdown nominatim
   nominatim_shutdown:
     image: postgres:15-alpine
-    depends_on:
-      postprocess:
-        condition: service_completed_successfully
+    user: ${USER_ID}:${GROUP_ID}
     environment:
       PGHOST: nominatim
       PGUSER: postgres
@@ -155,3 +153,6 @@ services:
         psql -c 'SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = current_database() AND pid <> pg_backend_pid()';
         psql -c \"COPY (SELECT 1) TO PROGRAM 'pg_ctl stop -m smart --no-wait';\"
       "
+    depends_on:
+      postprocess:
+        condition: service_completed_successfully
