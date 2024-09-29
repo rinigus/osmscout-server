@@ -47,7 +47,7 @@ services:
       valhalla_prepare:
         condition: service_completed_successfully
 
-  # download maps
+  # download extra data for nominatim
   get_nominatim_dumps:
     build:
       dockerfile: Dockerfile.wget
@@ -55,7 +55,7 @@ services:
       - ${STORE_PLANET}:/planet_pbf
       - ./scripts:/scripts
     user: ${USER_ID}:${GROUP_ID}
-    command: /scripts/get_urls.sh /planet_pbf/nominatim \
+    command: /scripts/get_urls.sh /planet_pbf \
       https://nominatim.org/data/wikimedia-importance.sql.gz \
       https://nominatim.org/data/gb_postcodes.csv.gz \
       https://nominatim.org/data/us_postcodes.csv.gz
@@ -63,40 +63,36 @@ services:
       planetiler:
         condition: service_completed_successfully
 
-  # import pbf to nominatim
+  # nominatim database
   nominatim:
-    image: mediagis/nominatim:4.4
+    image: smithmicro/n7m-gis
     volumes:
-      - ${STORE_PLANET}:/planet_pbf
-      - ${STORE_NOMINATIM_DB}:/var/lib/postgresql/14/main
-      - ${STORE_NOMINATIM_FLAT}:/nominatim/flatnode
+      - ${STORE_NOMINATIM}:/var/lib/postgresql/data
     # this image does not support setting user ID
     shm_size: 1g
     mem_limit: ${RAM_NOMINATIM_LIMIT}
     environment:
-      - PBF_PATH=/planet_pbf/${PBF}
-      - REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
-      - POSTGRES_SHARED_BUFFERS=1GB
-      - POSTGRES_MAINTENANCE_WORK_MEM=5GB
-      - POSTGRES_AUTOVACUUM_WORK_MEM=1GB
-      - POSTGRES_EFFECTIVE_CACHE_SIZE=12GB
-      - NOMINATIM_PASSWORD=$NOMINATIM_PASSWORD
-      - IMPORT_WIKIPEDIA=/planet_pbf/nominatim/wikimedia-importance.sql.gz
-      - IMPORT_US_POSTCODES=/planet_pbf/nominatim/us_postcodes.csv.gz
-      - IMPORT_GB_POSTCODES=/planet_pbf/nominatim/gb_postcodes.csv.gz
+      - POSTGRES_PASSWORD=${NOMINATIM_PASSWORD}
     depends_on:
       valhalla:
         condition: service_completed_successfully
       get_nominatim_dumps:
         condition: service_completed_successfully
 
-  # wait for nominatim import to finish
-  wait_for_nominatim:
-    image: alpine
+  # import data into nominatim
+  nominatim_setup:
+    image: smithmicro/n7m-feed
     volumes:
-      - ./scripts:/scripts
+      - ${STORE_PLANET}:/data/
     user: ${USER_ID}:${GROUP_ID}
-    command: /scripts/wait_for_port.sh nominatim 8080
+    environment:
+      - PGHOST=nominatim
+      - PGPASSWORD=${NOMINATIM_PASSWORD}
+      - OSM_FILENAME=${PBF}
+      - NOMINATIM_REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
+      - NOMINATIM_REPLICATION_MAX_DIFF=3000
+      - NOMINATIM_REPLICATION_UPDATE_INTERVAL=86400
+    command: setup
     depends_on:
       - nominatim
 
@@ -131,12 +127,31 @@ services:
     user: ${USER_ID}:${GROUP_ID}
     mem_limit: ${RAM_DEFALT_LIMIT}
     environment:
-      GEOCODER_IMPORTER_POSTGRES: postgresql://nominatim:$NOMINATIM_PASSWORD@nominatim:5432/nominatim
+      GEOCODER_IMPORTER_POSTGRES: postgresql://postgres:${NOMINATIM_PASSWORD}@nominatim:5432/nominatim
       GEOCODER_JOBS: $GEOCODER_JOBS
     depends_on:
       valhalla:
         condition: service_completed_successfully
       valhalla_tiles2packs:
         condition: service_completed_successfully
-      wait_for_nominatim:
+      nominatim_setup:
         condition: service_completed_successfully
+
+  # shutdown nominatim
+  nominatim_shutdown:
+    image: postgres:15-alpine
+    depends_on:
+      postprocess:
+        condition: service_completed_successfully
+    environment:
+      PGHOST: nominatim
+      PGUSER: postgres
+      PGPASSWORD: ${NOMINATIM_PASSWORD}
+    command: >
+      sh -c "
+        echo 'Waiting for few seconds...';
+        sleep 1;
+        echo 'Shutting down Nominatim database...';
+        psql -c 'SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = current_database() AND pid <> pg_backend_pid()';
+        psql -c \"COPY (SELECT 1) TO PROGRAM 'pg_ctl stop -m smart --no-wait';\"
+      "
