@@ -23,7 +23,6 @@ def country_pack(country_poly_fname):
     size_compressed = 0
     size = 0
     ts = 0
-    version = 0
     for bbox in glob.glob(valhalla_meta_dir + "/*.bbox"):
         coors = []
         for i in open(bbox, 'r'):
