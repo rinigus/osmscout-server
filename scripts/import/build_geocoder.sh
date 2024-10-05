@@ -29,4 +29,4 @@ mkdir -p "$SQLDIR"
 
 "$IMPORTER" --poly "$POLYJSON" --priority "$PRIORITY" --postal-country "$COUNTRY_CODE" --log-errors-to-file="$ERRORLOG" "$SQLDIR"
 
-./pack.sh "$SQLDIR" `backends-install/bin/geocoder-importer --version`
+./pack.sh "$SQLDIR" `backends-install/bin/geocoder-importer --version-data`

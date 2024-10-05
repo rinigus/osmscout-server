@@ -30,7 +30,7 @@ WORKDIR /app
 # geocoder-nlp
 RUN git clone https://github.com/rinigus/geocoder-nlp.git
 WORKDIR /app/geocoder-nlp
-RUN git checkout acbb8798aa9352a2cb57aa44a5b0bcadeb55d5d2
+RUN git checkout 2c9fc2bd2f51ca2c36b1266bf5b58db593b5dd4d
 RUN git submodule init && \
     git submodule update
 

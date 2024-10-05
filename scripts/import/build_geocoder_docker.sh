@@ -24,4 +24,4 @@ mkdir -p "$SQLDIR"
 
 "$IMPORTER" --poly "$POLYJSON" --priority "$PRIORITY" --postal-country "$COUNTRY_CODE" --log-errors-to-file="$ERRORLOG" "$SQLDIR"
 
-./pack.sh "$SQLDIR" `$IMPORTER --version`
+./pack.sh "$SQLDIR" `$IMPORTER --version-data`
