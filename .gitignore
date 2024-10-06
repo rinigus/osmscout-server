@@ -26,3 +26,7 @@
 /.clickable/
 /clickable.yaml
 /click_release/
+
+# import
+/scripts/import/data
+/scripts/import/.env

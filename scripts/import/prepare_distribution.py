@@ -9,7 +9,9 @@ from mapbox_country_pack import world_pack as mapboxgl_world_pack
 root_dir = "distribution"
 bucket = open("bucket_name", "r").read().strip()
 url_base = "https://data.modrana.org/osm_scout_server"
-#url_base = "https://kuqrhldx.e24files.com"
+
+# check if it is located here
+countries_json = "data/output/misc/countries.json"
 
 url_specs = {
     "base": url_base,
@@ -29,7 +31,7 @@ url_specs = {
     "mapnik_country": "mapnik-country-28",
 }
 
-dist = json.loads( open("countries.json", "r").read() )
+dist = json.loads( open(countries_json, "r").read() )
 
 dist["postal/global"] = {
     "id": "postal/global",

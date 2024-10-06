@@ -1,0 +1,158 @@
+
+services:
+
+  # download PBF and import mbox tiles using planetiler 
+  planetiler:
+    image: ghcr.io/onthegomap/planetiler:0.8.2
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ${STORE_MBTILES}:/data
+      - ./mapbox:/scripts_mapbox
+    user: ${USER_ID}:${GROUP_ID}
+    mem_limit: ${RAM_PLANETILER_LIMIT}
+    entrypoint: ""
+    environment:
+      - PLANETILER_STORAGE_TMP=${PLANETILER_STORAGE_TMP}
+      - JAVA_TOOL_OPTIONS=${JAVA_TOOL_OPTIONS}
+    command: /scripts_mapbox/run_planetiler.sh /planet_pbf ${AREA}
+
+  # prepare import to valhalla
+  valhalla_prepare:
+    image: alpine
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ${STORE_VALHALLA}:/custom_files
+    user: ${USER_ID}:${GROUP_ID}
+    command: /bin/sh -c "rm /custom_files/*.pbf; ln -s /planet_pbf/${PBF} /custom_files"
+    depends_on:
+      planetiler:
+        condition: service_completed_successfully
+
+  # import to valhalla
+  valhalla:
+    image: ghcr.io/gis-ops/docker-valhalla/valhalla:${VALHALLA_VERSION}
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ${STORE_VALHALLA}:/custom_files
+    user: ${USER_ID}:${GROUP_ID}
+    mem_limit: ${RAM_VALHALLA_LIMIT}
+    environment:
+      - serve_tiles=False
+      - build_tar=False
+      - build_admins=True
+      - build_time_zones=True
+      - build_transit=True
+      #- build_elevation=True
+    depends_on:
+      valhalla_prepare:
+        condition: service_completed_successfully
+
+  # download extra data for nominatim
+  get_nominatim_dumps:
+    build:
+      dockerfile: Dockerfile.wget
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ./scripts:/scripts
+    user: ${USER_ID}:${GROUP_ID}
+    command: /scripts/get_urls.sh /planet_pbf \
+      https://nominatim.org/data/wikimedia-importance.sql.gz \
+      https://nominatim.org/data/gb_postcodes.csv.gz \
+      https://nominatim.org/data/us_postcodes.csv.gz
+    depends_on:
+      planetiler:
+        condition: service_completed_successfully
+
+  # nominatim database
+  nominatim:
+    image: smithmicro/n7m-gis
+    volumes:
+      - ${STORE_NOMINATIM}:/var/lib/postgresql/data
+    # this image does not support setting user ID
+    shm_size: 1g
+    mem_limit: ${RAM_NOMINATIM_LIMIT}
+    environment:
+      - POSTGRES_PASSWORD=${NOMINATIM_PASSWORD}
+    depends_on:
+      valhalla:
+        condition: service_completed_successfully
+      get_nominatim_dumps:
+        condition: service_completed_successfully
+
+  # import data into nominatim
+  nominatim_setup:
+    image: smithmicro/n7m-feed
+    volumes:
+      - ${STORE_PLANET}:/data/
+    user: ${USER_ID}:${GROUP_ID}
+    environment:
+      - PGHOST=nominatim
+      - PGPASSWORD=${NOMINATIM_PASSWORD}
+      - OSM_FILENAME=${PBF}
+      - NOMINATIM_REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
+      - NOMINATIM_REPLICATION_MAX_DIFF=3000
+      - NOMINATIM_REPLICATION_UPDATE_INTERVAL=86400
+    command: setup
+    depends_on:
+      - nominatim
+
+  # prepare valhalla tiles to postprocessing
+  valhalla_tiles2packs:
+    build:
+      context: valhalla
+      dockerfile: Dockerfile.tiles2packs
+      args:
+        VALHALLA_VERSION: ${VALHALLA_VERSION}
+    volumes:
+      - ${STORE_VALHALLA}:/custom_files
+    user: ${USER_ID}:${GROUP_ID}
+    depends_on:
+      valhalla:
+        condition: service_completed_successfully
+
+  # postprocess mb and valhalla tiles
+  # prepare for geocoder-nlp import
+  postprocess:
+    build:
+      context: .
+      dockerfile: Dockerfile.postprocess
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ${STORE_MBTILES}:/mapbox-planet
+      - ${STORE_VALHALLA}:/valhalla
+      - ${STORE_IMPORTED}:/import
+      - ${STORE_MISC}:/osmscout
+      - ./hierarchy:/app/hierarchy
+      - ./provided:/app/provided
+    user: ${USER_ID}:${GROUP_ID}
+    mem_limit: ${RAM_DEFALT_LIMIT}
+    environment:
+      GEOCODER_IMPORTER_POSTGRES: postgresql://postgres:${NOMINATIM_PASSWORD}@nominatim:5432/nominatim
+      GEOCODER_JOBS: $GEOCODER_JOBS
+    depends_on:
+      valhalla:
+        condition: service_completed_successfully
+      valhalla_tiles2packs:
+        condition: service_completed_successfully
+      nominatim_setup:
+        condition: service_completed_successfully
+
+  # shutdown nominatim
+  nominatim_shutdown:
+    image: postgres:15-alpine
+    user: ${USER_ID}:${GROUP_ID}
+    environment:
+      PGHOST: nominatim
+      PGUSER: postgres
+      PGPASSWORD: ${NOMINATIM_PASSWORD}
+    command: >
+      sh -c "
+        echo 'Waiting for few seconds...';
+        sleep 1;
+        echo 'Shutting down Nominatim database...';
+        psql -c 'SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = current_database() AND pid <> pg_backend_pid()';
+        psql -c \"COPY (SELECT 1) TO PROGRAM 'pg_ctl stop -m smart --no-wait';\"
+      "
+    depends_on:
+      postprocess:
+        condition: service_completed_successfully

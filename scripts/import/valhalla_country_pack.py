@@ -22,7 +22,7 @@ def country_pack(country_poly_fname):
     packs = []
     size_compressed = 0
     size = 0
-    ts = None
+    ts = 0
     for bbox in glob.glob(valhalla_meta_dir + "/*.bbox"):
         coors = []
         for i in open(bbox, 'r'):
@@ -41,6 +41,8 @@ def country_pack(country_poly_fname):
             ts = gettimestamp(pdata)
 
     packs.sort()
+    if len(packs) < 1:
+        print(f"WARNING: could not find any Valhalla packages for {country_poly_fname}")
     return { "packages": packs,
              "timestamp": ts,
              "version": version,

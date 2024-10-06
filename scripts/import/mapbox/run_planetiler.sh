@@ -2,25 +2,30 @@
 
 set -e
 
-cd "$(dirname "$(readlink -f "$0")")"
-cd planetiler
+# Check options
+if [ "$#" -ne 2 ]; then
+  echo "Usage: $0 <pbf_folder> <area>"
+  exit 1
+fi
 
-# from https://github.com/onthegomap/planetiler/blob/main/PLANET.md
+PBF_FOLDER=$1
+AREA=$2
 
-echo Remove old data
-rm output.mbtiles || echo No output.mbtiles found
-rm -rf data && mkdir data
+OUTPUT=/data/output.mbtiles
+PLANETILER_STORAGE_TMP=${PLANETILER_STORAGE_TMP:-ram}
 
-java -Xmx130g \
-  `# return unused heap memory to the OS` \
-  -XX:MaxHeapFreeRatio=40 \
-  -jar planetiler.jar \
-  `# Download the latest planet.osm.pbf from s3://osm-pds bucket` \
-  --area=planet --bounds=planet --download \
-  `# Accelerate the download by fetching the 10 1GB chunks at a time in parallel` \
+if [ -f $OUTPUT ]; then
+  echo "Planet MBTiles are available already: skipping download and import"
+  exit 0
+fi
+
+# determined from entrypoint of the docker image using docker inspect
+java $JAVA_TOOL_OPTIONS -cp @/app/jib-classpath-file com.onthegomap.planetiler.Main \
+  --bounds=planet \
+  --download \
+  --download_dir=${PBF_FOLDER} \
   --download-threads=10 --download-chunk-size-mb=1000 \
-  `# Also download name translations from wikidata` \
   --fetch-wikidata \
-  --output=output.mbtiles \
-  `# Store temporary node locations in memory` \
-  --nodemap-type=array --storage=ram
+  --area=${AREA} \
+  --output=${OUTPUT} \
+  --nodemap-type=array --storage=${PLANETILER_STORAGE_TMP}

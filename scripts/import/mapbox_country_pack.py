@@ -29,7 +29,8 @@ def country_pack(country_poly_fname):
     packs = []
     size_compressed = 0
     size = 0
-    ts = None
+    ts = 0
+    version = 0
     for bbox in glob.glob(mapbox_meta_dir + "/*.bbox"):
         coors = []
         for i in open(bbox, 'r'):
@@ -49,6 +50,9 @@ def country_pack(country_poly_fname):
             version = getversion(pdata)
 
     packs.sort()
+    if len(packs) < 1:
+        print(f"WARNING: could not find any MBTiles packages for {country_poly_fname}")
+
     return { "path": "mapboxgl/packages", # generic path
              "packages": packs,
              "timestamp": ts,

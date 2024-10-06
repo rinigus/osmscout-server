@@ -8,10 +8,6 @@ packages_meta = packages_dir + "_meta"
 packages_timestamp = packages_dir + "/timestamp"
 version = "3"
 
-os.system("rm -rf %s %s" % (packages_dir, packages_meta))
-for d in [packages_dir, packages_meta]:
-    os.makedirs(d, exist_ok=True)
-
 os.system("date +'%%Y-%%m-%%d_%%H:%%M' > %s" % packages_timestamp)
 
 for tile in glob.glob(planet_tiles + "/*sqlite"):
