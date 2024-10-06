@@ -1,9 +1,9 @@
 
 # Importing maps and their distribution
 
-These scripts are used to download PBF files, split them into regions
-and import into the formats recognized by OSM Scout Server.
-
+Import is implemented using Docker containers. Containers are used to download 
+PBF files, split them into regions and import into the formats recognized 
+by OSM Scout Server.
 
 ## Hierarchy
 
@@ -30,73 +30,66 @@ POLY file. It allows also to simply the polygon, use it to reduce
 processing on import.
 
 
-## Scripts
+## Import
 
-Information below is for developers and is not required to add or
-change imported regions.
+### Prepare containers
 
-### On every import
+Configure the containers by making a file `.env` by using `.env.template` as a
+template. Among other settings, set your User ID, directories where to
+store the data, and whether to import full planet or a region.
+
+Next, build the containers:
+```
+docker compose build
+```
+
+### Import
+
+Import the maps by running:
+```
+docker compose up
+```
+
+This will start containers defined in the 
+[docker compose file](docker-compose.yaml) and trigger the import into the
+different formats used by the server. To reduce the stress on the server, the
+imports are performed one after another. Expect that the process will take
+few days.
+
+If import is finished successfully, the last container will shutdown Nominatim
+database used at one of the phases of the import.
+
+Note that requiered storage during import is about:
+
+- 1.5 TB for Nominatim
+- 150 GB for MBTiles
+- 80 GB for Planet.pbf
+- 35 GB for Valhalla
+- For distribution, about 110 GB
+
+### Distribution
+
+To distribute maps:
 
 * Increase URL id for geocoder-nlp, and others in
   `prepare_distribution.py`
   
 * Check that bucket_name is correct
 
-* If coastlines have to be updated, see corresponding instructions
-  below and run them before the next instruction.
+* Run preparation scripts:
+```
+./prepare_distribution.py
+./check_import.py
+```
 
-* Set environment variable `GEOCODER_IMPORTER_POSTGRES` pointing to
-  Postgres database with Nominatim tables. For example,
-  "postgresql://nominatim:pwd@host:port/nominatim"
+* Test the maps by serving them using Python:
+```
+(cd public_http && python -m http.server 8231)
+```
+and downloading them by OSM Scout Server (you would have to adjust server URL used by
+application in file `url.json` of your maps directory and setting `development_disable_url_update=1` in the application configuration file). 
 
-* Remove `distribution/geocoder-nlp/.directory` to ensure that
-  Geocoder NLP files will be imported. This is needed as there is no
-  time-dependent file reflecting data time stamp:
-  `rm distribution/geocoder-nlp/.directory`
-
-* Run `./import_master.sh` 
-
-
-### On backend upgrade
-
-In case if there is a new backend version:
-
-* run ./prepare_backends.sh
-
-* update versions in the end of build_mapnik.sh script
-
-* update version for Valhalla in valhalla_country_pack.py
-
-* update version for vector tiles in mapbox/make_packs.py
-
-* check for compatibility in mapmanagerfeature.cpp of the main tree
-
-
-### On coastline update
-
-* Download data covering coastlines from http://openstreetmapdata.com/data/land-polygons :
-  http://data.openstreetmapdata.com/simplified-land-polygons-complete-3857.zip
-  and http://data.openstreetmapdata.com/land-polygons-split-3857.zip
-  
-* Unzip the data:
-  ```
-    unzip simplified-land-polygons-complete-3857.zip
-    unzip land-polygons-split-3857.zip
-  ```
-  
-* Index the polygons by using `shapeindex` to create `.index` files:
-    ```
-    shapeindex simplified-land-polygons-complete-3857/simplified_land_polygons.shp
-    shapeindex land-polygons-split-3857/land_polygons.shp
-    ```
-
-* Place the directories `simplified-land-polygons-complete-3857` and
-  `land-polygons-split-3857` under `mapnik/global` of the distribution.
-  
-* Package the `mapnik/global` distribution by running `./pack.sh
-  distribution/mapnik/global 1` . Here, `1` stands for database
-  version.
-  
+* If all is good, upload it using `./uploader.sh`
   
 ### Other scripts
 
