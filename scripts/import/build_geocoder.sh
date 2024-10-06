@@ -2,13 +2,8 @@
 
 set -e
 
-BNDSRC=`pwd`/backends-source
-BNDINSTALL=`pwd`/backends-install
-
-PRIORITY=$BNDINSTALL/share/geocoder-nlp/data/priority.list
-IMPORTER=$BNDINSTALL/bin/geocoder-importer
-
-export LD_LIBRARY_PATH=$BNDINSTALL/lib
+PRIORITY=/app/geocoder-nlp/priority.list
+IMPORTER=geocoder-importer
 
 if [ $# -lt 5 ] ; then
 	echo "Usage: $0 poly.json base_dir continent_country country_2_letter_code external_postcodes"
@@ -29,4 +24,4 @@ mkdir -p "$SQLDIR"
 
 "$IMPORTER" --poly "$POLYJSON" --priority "$PRIORITY" --postal-country "$COUNTRY_CODE" --log-errors-to-file="$ERRORLOG" "$SQLDIR"
 
-./pack.sh "$SQLDIR" `backends-install/bin/geocoder-importer --version-data`
+./pack.sh "$SQLDIR" `$IMPORTER --version-data`

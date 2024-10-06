@@ -78,7 +78,7 @@ RUN pip install \
 
 # copy used scripts
 COPY ./run_postprocess.sh ./pack.sh ./check_import.py ./prepare_distribution.py /app
-COPY ./build_geocoder_docker.sh /app/build_geocoder.sh
+COPY ./build_geocoder.sh /app/build_geocoder.sh
 
 COPY ./mapbox_planetiler_split.py ./hierarchy.py /app
 
