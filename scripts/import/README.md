@@ -32,6 +32,10 @@ processing on import.
 
 ## Import
 
+At the moment of writing, all datasets used by OSM Scout Server are imported as described
+in this README. Exceptions are libpostal (old training datasets are used) and Mapnik (not
+imported actively anymore, but old data is distributed).
+
 ### Prepare containers
 
 Configure the containers by making a file `.env` by using `.env.template` as a
