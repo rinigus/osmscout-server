@@ -113,7 +113,7 @@ application in file `url.json` of your maps directory and setting `development_d
 
 * poly2json-hierarchy.sh - generates poly.json from poly in hierarchy
   
-* prepare_countries.py, prepare_distribution.py, prepare_splitter.py - used by importer_master.sh
+* prepare_countries.py - used by one of the containers
 
 * prepare_postal.sh - rsyncs postal global and postal country datasets
   into distribution. Split into countries for geocoder-nlp is done in
@@ -122,9 +122,6 @@ application in file `url.json` of your maps directory and setting `development_d
 * prepare_postal_tags.py - used for distribution of initial
   postal_country files in hierarchy
 
-* prepare_osmium.sh - installs new version of osmium and libosmium
-  used to split planet into regions
-  
 * update_distribution.py - used on the distribution server to update
   maps distribution from S3 cloud / HTTP server. See note on the top
   of the script on how to specify mirror path and URL
