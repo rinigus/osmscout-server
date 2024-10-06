@@ -35,8 +35,14 @@ processing on import.
 ### Prepare containers
 
 Configure the containers by making a file `.env` by using `.env.template` as a
-template. Among other settings, set your User ID, directories where to
-store the data, and whether to import full planet or a region.
+template. Among other settings, directories where to store the data, and whether
+to import full planet or a region.
+
+When directories are determined in `.env`, run a script that will create them
+for you and will set user IDs in `.env` to the current user:
+```
+./prepare_docker.sh
+```
 
 Next, build the containers:
 ```
