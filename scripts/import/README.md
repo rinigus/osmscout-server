@@ -77,8 +77,9 @@ Note that requiered storage during import is about:
 
 To distribute maps:
 
-* Increase URL id for geocoder-nlp, and others in
-  `prepare_distribution.py`
+* Increase URL id for geocoder-nlp, and others in `prepare_distribution.py`
+
+* Check that `countries_json` in `prepare_distribution.py` points to correct location
   
 * Check that bucket_name is correct
 
