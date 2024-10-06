@@ -62,10 +62,10 @@ database used at one of the phases of the import.
 Note that requiered storage during import is about:
 
 - 1.5 TB for Nominatim
-- 150 GB for MBTiles
+- 170 GB for MBTiles
 - 80 GB for Planet.pbf
 - 35 GB for Valhalla
-- For distribution, about 110 GB
+- For distribution, about 200 GB
 
 ### Distribution
 
