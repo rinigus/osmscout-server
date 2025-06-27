@@ -21,9 +21,14 @@ The click packages can be found in **click_release**.
 
 Otherwise, follow the instructions below.
 
-## Dependencies
+## Ubuntu Touch Focal
 
-**WARNING**: Dependencies may take hours to build.
+To target an older Ubuntu Touch system, set the `CLICKABLE_FRAMEWORK` env var,
+Ex:
+
+    export CLICKABLE_FRAMEWORK=ubuntu-sdk-20.04
+
+## Dependencies
 
 Run the following command to download and compile the app dependencies:
 

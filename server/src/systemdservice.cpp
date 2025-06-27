@@ -102,6 +102,8 @@ void SystemDService::setEnabled(bool e)
 #ifdef IS_LOMIRI
               "WorkingDirectory=/opt/click.ubuntu.com/osmscout-server.jonnius/current/\n"
               "Environment=\"LD_LIBRARY_PATH=/opt/click.ubuntu.com/osmscout-server.jonnius/current/lib/aarch64-linux-gnu/\"\n"
+              "Environment=\"PATH=/opt/click.ubuntu.com/osmscout-server.jonnius/current/lib/aarch64-linux-gnu/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"\n"
+
 #endif
               "ExecStart=" + exe_path + " --systemd --quiet\n";
 
