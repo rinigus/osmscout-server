@@ -1,9 +1,9 @@
-clickable_minimum_required: 8.0.1
+clickable_minimum_required: 8.6.0
 
 scripts:
   prepare-deps: git submodule update --recursive --init && ${ROOT}/packaging/click/prepare-deps.sh
 
-framework: ubuntu-sdk-20.04
+framework: ubuntu-touch-24.04-1.x
 ignore_review_errors: true
 
 builder: qmake
@@ -19,7 +19,7 @@ build_args:
 env_vars:
   PKG_CONFIG_PATH: ${VALHALLA_LIB_INSTALL_DIR}/usr/lib/${ARCH_TRIPLET}/pkgconfig
 postbuild:
-- ln -s ../../usr/bin ${CLICK_PATH}
+- ln -s ../../../usr/bin/osmscout-server{,-gui} ${CLICK_PATH}/
 
 dependencies_host:
 - gcc-opt
@@ -42,7 +42,10 @@ dependencies_target:
 - qttools5-dev
 - libsqlite3-dev
 - libsystemd-dev
+- bzip2
 
+install_bin:
+- bunzip2
 install_lib:
 - /usr/lib/${ARCH_TRIPLET}/libmicrohttpd.so*
 - /usr/lib/${ARCH_TRIPLET}/libkyotocabinet.so*
