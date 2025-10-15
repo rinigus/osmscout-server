@@ -80,7 +80,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="84"/>
         <source>Versions of the used libraries</source>
-        <translation type="unfinished"/>
+        <translation>Kasutatud teekide versioonid</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="88"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="135"/>
         <source>Version</source>
-        <translation type="unfinished"/>
+        <translation>Versioon</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="141"/>
@@ -2592,7 +2592,7 @@
     <message>
         <location filename="../server/src/main.cpp" line="147"/>
         <source>Versions of the used libraries</source>
-        <translation type="unfinished"/>
+        <translation>Kasutatud teekide versioonid</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="151"/>
@@ -2654,7 +2654,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="69"/>
         <source>Running OSM Scout Server had unexpected version (%1) and was stopped. Please restart this user interface to try again.</source>
-        <translation type="unfinished"/>
+        <translation>Käivitatud OSM Scout Serveri versioon (%1) oli ootamatu ja serveri töö peatus. Uuesti proovimiseks palun käivita see kasutajaliides uuesti.</translation>
     </message>
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="85"/>

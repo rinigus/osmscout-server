@@ -80,7 +80,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="84"/>
         <source>Versions of the used libraries</source>
-        <translation type="unfinished"/>
+        <translation>Versiuni ale bibliotecilor utilizate</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="88"/>
@@ -90,7 +90,7 @@
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="135"/>
         <source>Version</source>
-        <translation type="unfinished"/>
+        <translation>Versiunea</translation>
     </message>
     <message>
         <location filename="../gui/qml/AboutPage.qml" line="141"/>
@@ -308,7 +308,7 @@
     <message>
         <location filename="../server/src/dbmaster_route.cpp" line="168"/>
         <source>Error during route conversion to points</source>
-        <translation>Eroare la transformarea traseului în puncte</translation>
+        <translation>Eroare la transformarea traseului în locuri</translation>
     </message>
     <message>
         <location filename="../server/src/dbmaster_route.cpp" line="217"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../server/src/dbmaster_search.cpp" line="508"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>Punctul de referință nu a fost găsit</translation>
+        <translation>Locul de referință nu a fost găsit</translation>
     </message>
     <message>
         <location filename="../server/src/dbmaster_search.cpp" line="533"/>
@@ -568,7 +568,7 @@
     <message>
         <location filename="../server/src/geomaster.cpp" line="468"/>
         <source>Search for reference point failed: cannot find</source>
-        <translation>Punctul de referință nu a fost găsit</translation>
+        <translation>Locul de referință nu a fost găsit</translation>
     </message>
 </context>
 <context>
@@ -2592,7 +2592,7 @@
     <message>
         <location filename="../server/src/main.cpp" line="147"/>
         <source>Versions of the used libraries</source>
-        <translation type="unfinished"/>
+        <translation>Versiuni ale bibliotecilor utilizate</translation>
     </message>
     <message>
         <location filename="../server/src/main.cpp" line="151"/>
@@ -2654,7 +2654,7 @@
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="69"/>
         <source>Running OSM Scout Server had unexpected version (%1) and was stopped. Please restart this user interface to try again.</source>
-        <translation type="unfinished"/>
+        <translation>OSM Scout Server avea o versiune neașteptată (%1) și a fost oprit. Repornește această interfață pentru a încerca din nou.</translation>
     </message>
     <message>
         <location filename="../gui/qml/osmscout-server.qml" line="85"/>
