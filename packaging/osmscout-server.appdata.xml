@@ -40,6 +40,14 @@
  </screenshots>
  <metadata_license>CC-BY-SA-3.0</metadata_license>
  <releases>
+   <release version="3.1.6" date="2025-10-15">
+     <description>
+       <ul>
+	 <li>Update translations</li>
+	 <li>[ubuntu touch] Package for Ubuntu Touch 24.04 [jonnius]</li>
+       </ul>
+     </description>
+   </release>
    <release version="3.1.0" date="2024-02-25">
      <description>
        <ul>

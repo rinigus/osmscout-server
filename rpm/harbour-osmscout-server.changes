@@ -5,6 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Wed Oct 15 2025 rinigus <rinigus.git@gmail.com> 3.1.6-1
+- [ubuntu touch] Package for Ubuntu Touch 24.04 [jonnius]
+- Update translations
+
 * Sun Feb 25 2023 rinigus <rinigus.git@gmail.com> 3.1.0-1
 - Update translations
 - Small adjustments in map style

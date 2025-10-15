@@ -17,7 +17,7 @@ Name:       osmscout-server
 %endif
 
 Summary:    Offline maps, routing, and search
-Version:    3.1.0
+Version:    3.1.6
 Release:    1
 Group:      Qt/Qt
 License:    GPLv3
