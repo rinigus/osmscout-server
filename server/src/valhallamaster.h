@@ -31,7 +31,9 @@
 #include <mutex>
 #include <atomic>
 
+#ifndef Q_MOC_RUN // workaround - avoid errors by old Qt
 #include <valhalla/tyr/actor.h>
+#endif
 
 #define VALHALLA_VERSION(a, b, c) (a*10000 + b*100 + c)
 #define VALHALLA_VERSION_CURRENT VALHALLA_VERSION(VALHALLA_VERSION_MAJOR, VALHALLA_VERSION_MINOR, VALHALLA_VERSION_PATCH)
