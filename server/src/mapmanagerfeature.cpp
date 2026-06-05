@@ -555,7 +555,7 @@ FeatureValhalla::PackStateType FeatureValhalla::getPackState(QString pack, QStri
     {
       QStringList tiles = getPackTileNames(listname);
       if (tiles.isEmpty()) return PackNotAvailable; // either list is empty or there was error opening it
-      for (const QString tilename: tiles)
+      for (const QString &tilename: tiles)
         if (!dir.exists(m_path_provider->fullPath(tilename)))
           {
             return PackNotAvailable;
@@ -653,7 +653,7 @@ void FeatureValhalla::fillWantedFiles(const QJsonObject &request,
       wanted.insert( listname );
 
       QStringList tiles = getPackTileNames(listname);
-      for (const QString tilename: tiles)
+      for (const QString &tilename: tiles)
         wanted.insert( m_path_provider->fullPath(tilename) );
     }
 }
