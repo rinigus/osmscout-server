@@ -1,0 +1,68 @@
+
+services:
+
+  # download extra data for nominatim
+  get_nominatim_dumps:
+    build:
+      dockerfile: Dockerfile.wget
+    volumes:
+      - ${STORE_PLANET}:/planet_pbf
+      - ./scripts:/scripts
+    user: ${USER_ID}:${GROUP_ID}
+    command: /scripts/get_urls.sh /planet_pbf \
+      https://nominatim.org/data/wikimedia-importance.sql.gz \
+      https://nominatim.org/data/gb_postcodes.csv.gz \
+      https://nominatim.org/data/us_postcodes.csv.gz
+
+  # nominatim database
+  nominatim:
+    image: ${NOMINATIM_GIS_IMAGE}
+    volumes:
+      - ${STORE_NOMINATIM}:/var/lib/postgresql/data
+    # this image does not support setting user ID
+    shm_size: 1g
+    mem_limit: ${RAM_NOMINATIM_LIMIT}
+    ports:
+      - "15432:5432"
+    environment:
+      - POSTGRES_PASSWORD=${NOMINATIM_PASSWORD}
+    depends_on:
+      get_nominatim_dumps:
+        condition: service_completed_successfully
+
+  # import data into nominatim
+  nominatim_setup:
+    image: ${NOMINATIM_FEED_IMAGE}
+    volumes:
+      - ${STORE_PLANET}:/data/
+    user: ${USER_ID}:${GROUP_ID}
+    environment:
+      - PGHOST=nominatim
+      - PGPASSWORD=${NOMINATIM_PASSWORD}
+      - OSM_FILENAME=${PBF}
+      - NOMINATIM_REPLICATION_URL=https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/
+      - NOMINATIM_REPLICATION_MAX_DIFF=3000
+      - NOMINATIM_REPLICATION_UPDATE_INTERVAL=86400
+    command: setup
+    depends_on:
+      - nominatim
+
+  # # shutdown nominatim
+  # nominatim_shutdown:
+  #   image: ${POSTGRES_IMAGE}
+  #   user: ${USER_ID}:${GROUP_ID}
+  #   environment:
+  #     PGHOST: nominatim
+  #     PGUSER: postgres
+  #     PGPASSWORD: ${NOMINATIM_PASSWORD}
+  #   command: >
+  #     sh -c "
+  #       echo 'Waiting for few seconds...';
+  #       sleep 1;
+  #       echo 'Shutting down Nominatim database...';
+  #       psql -c 'SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = current_database() AND pid <> pg_backend_pid()';
+  #       psql -c \"COPY (SELECT 1) TO PROGRAM 'pg_ctl stop -m smart --no-wait';\"
+  #     "
+  #   depends_on:
+  #     nominatim_setup:
+  #       condition: service_completed_successfully
