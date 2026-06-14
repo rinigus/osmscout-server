@@ -78,7 +78,7 @@ cleanup() {
   if [ "$status" -eq 0 ]; then
     message "Closing import"
   else
-    message "Closing import with error. Read the messages above for details."
+    message "ERROR: Closing import with error. Read the messages above for details."
   fi
   exit "$status"
 }
@@ -155,10 +155,13 @@ build_image_if_missing "$POSTPROCESS_IMAGE" \
 
 ####################################
 # init
-message "Creating Podman pod..."
+message "Creating Podman pod: $POD_NAME"
 podman pod create \
   --shm-size="${SHM_SIZE_DEFAULT}" \
   --name "$POD_NAME"
+
+message "Setup required directories"
+${SCRIPT_DIR}/prepare_docker.sh
 
 ####################################
 # imports
