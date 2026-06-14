@@ -12,6 +12,9 @@ if [ -f .env ]; then
   set +a
 fi
 
+# shellcheck disable=SC1091
+source "${SCRIPT_DIR}/podman-import-common.sh"
+
 : "${AREA:?AREA is required}"
 : "${PBF:?PBF is required}"
 : "${STORE_PLANET:?STORE_PLANET is required}"
@@ -32,8 +35,6 @@ fi
 : "${PLANETILER_IMAGE:?PLANETILER_IMAGE is required}"
 : "${HELPER_IMAGE:?HELPER_IMAGE is required}"
 : "${VALHALLA_IMAGE:?VALHALLA_IMAGE is required}"
-: "${NOMINATIM_GIS_IMAGE:?NOMINATIM_GIS_IMAGE is required}"
-: "${NOMINATIM_FEED_IMAGE:?NOMINATIM_FEED_IMAGE is required}"
 : "${POSTGRES_IMAGE:?POSTGRES_IMAGE is required}"
 
 PLANETILER_STORAGE_TMP="${PLANETILER_STORAGE_TMP:-}"
@@ -41,10 +42,7 @@ NOMINATIM_IMPORT_SEPARATE="${NOMINATIM_IMPORT_SEPARATE:-false}"
 NOMINATIM_DATABASE_SERVER="${NOMINATIM_DATABASE_SERVER:-127.0.0.1:5432}"
 
 POD_NAME="${POD_NAME:-osmscout-import}"
-DB_CONTAINER="${DB_CONTAINER:-${POD_NAME}-nominatim}"
-WGET_IMAGE="${WGET_IMAGE:-osmscout-wget}"
-VALHALLA_TILES2PACKS_IMAGE="${VALHALLA_TILES2PACKS_IMAGE:-osmscout-valhalla-tiles2packs}"
-POSTPROCESS_IMAGE="${POSTPROCESS_IMAGE:-osmscout-postprocess}"
+DB_CONTAINER="${POD_NAME}-nominatim"
 NOMINATIM_SHUTDOWN_TIMEOUT="${NOMINATIM_SHUTDOWN_TIMEOUT:-300}"
 
 case "${NOMINATIM_IMPORT_SEPARATE,,}" in
@@ -57,11 +55,6 @@ case "${NOMINATIM_IMPORT_SEPARATE,,}" in
 esac
 
 ####################################
-# helper functions
-message() {
-  printf '\n%s\n\n' "$*"
-}
-
 cleanup() {
   local status=$?
 
@@ -84,14 +77,6 @@ cleanup() {
 }
 
 trap cleanup EXIT
-
-wait_for_postgres() {
-  message "Waiting for PostgreSQL..."
-
-  until podman exec "$DB_CONTAINER" pg_isready -U postgres >/dev/null 2>&1; do
-    sleep 2
-  done
-}
 
 wait_for_nominatim_shutdown() {
   local timeout="$1"
@@ -117,19 +102,6 @@ wait_for_nominatim_shutdown() {
   message "Timed out waiting for Nominatim container to stop; cleanup will remove the pod."
 }
 
-build_image_if_missing() {
-  local image="$1"
-  shift
-
-  if podman image exists "$image"; then
-    message "Image $image already exists, skipping build."
-    return
-  fi
-
-  message "Building image $image..."
-  podman build -t "$image" "$@"
-}
-
 ####################################
 # check if already started
 if podman pod exists "$POD_NAME"; then
@@ -140,9 +112,7 @@ fi
 ####################################
 # building images
 message "Preparing helper images..."
-build_image_if_missing "$WGET_IMAGE" \
-  -f Dockerfile.wget \
-  .
+build_wget_image_if_missing
 
 build_image_if_missing "$VALHALLA_TILES2PACKS_IMAGE" \
   --build-arg "VALHALLA_VERSION=${VALHALLA_VERSION}" \
@@ -152,6 +122,10 @@ build_image_if_missing "$VALHALLA_TILES2PACKS_IMAGE" \
 build_image_if_missing "$POSTPROCESS_IMAGE" \
   -f Dockerfile.postprocess \
   .
+
+if [ "$NOMINATIM_IMPORT_SEPARATE" != true ]; then
+  build_nominatim_images_if_missing
+fi
 
 ####################################
 # init
@@ -223,10 +197,10 @@ else
     --name "$DB_CONTAINER" \
     --memory="${RAM_NOMINATIM_LIMIT}" \
     -e POSTGRES_PASSWORD="${NOMINATIM_PASSWORD}" \
-    -v "${STORE_NOMINATIM}:/var/lib/postgresql/data:Z" \
+    -v "${STORE_NOMINATIM_DB}:/var/lib/postgresql/data:Z" \
     "$NOMINATIM_GIS_IMAGE"
 
-  wait_for_postgres
+  wait_for_postgres "$DB_CONTAINER"
 
   message "Running Nominatim setup/import..."
   podman run --rm \
