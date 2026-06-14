@@ -5,37 +5,33 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "$SCRIPT_DIR"
 
-if [ -f .env ]; then
-  set -a
-  # shellcheck disable=SC1091
-  source .env
-  set +a
-fi
-
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/podman-import-common.sh"
 
-: "${AREA:?AREA is required}"
-: "${PBF:?PBF is required}"
-: "${STORE_PLANET:?STORE_PLANET is required}"
-: "${STORE_MBTILES:?STORE_MBTILES is required}"
-: "${STORE_VALHALLA:?STORE_VALHALLA is required}"
-: "${STORE_NOMINATIM:?STORE_NOMINATIM is required}"
-: "${STORE_IMPORTED:?STORE_IMPORTED is required}"
-: "${STORE_MISC:?STORE_MISC is required}"
-: "${RAM_DEFALT_LIMIT:?RAM_DEFALT_LIMIT is required}"
-: "${RAM_NOMINATIM_LIMIT:?RAM_NOMINATIM_LIMIT is required}"
-: "${RAM_PLANETILER_LIMIT:?RAM_PLANETILER_LIMIT is required}"
-: "${RAM_VALHALLA_LIMIT:?RAM_VALHALLA_LIMIT is required}"
-: "${SHM_SIZE_DEFAULT:?SHM_SIZE_DEFAULT is required}"
-: "${NOMINATIM_PASSWORD:?NOMINATIM_PASSWORD is required}"
-: "${JAVA_TOOL_OPTIONS:?JAVA_TOOL_OPTIONS is required}"
-: "${VALHALLA_VERSION:?VALHALLA_VERSION is required}"
-: "${GEOCODER_JOBS:?GEOCODER_JOBS is required}"
-: "${PLANETILER_IMAGE:?PLANETILER_IMAGE is required}"
-: "${HELPER_IMAGE:?HELPER_IMAGE is required}"
-: "${VALHALLA_IMAGE:?VALHALLA_IMAGE is required}"
-: "${POSTGRES_IMAGE:?POSTGRES_IMAGE is required}"
+load_import_env .env
+
+require_import_vars \
+  AREA \
+  PBF \
+  STORE_PLANET \
+  STORE_MBTILES \
+  STORE_VALHALLA \
+  STORE_NOMINATIM \
+  STORE_IMPORTED \
+  STORE_MISC \
+  RAM_DEFALT_LIMIT \
+  RAM_NOMINATIM_LIMIT \
+  RAM_PLANETILER_LIMIT \
+  RAM_VALHALLA_LIMIT \
+  SHM_SIZE_DEFAULT \
+  NOMINATIM_PASSWORD \
+  JAVA_TOOL_OPTIONS \
+  VALHALLA_VERSION \
+  GEOCODER_JOBS \
+  PLANETILER_IMAGE \
+  HELPER_IMAGE \
+  VALHALLA_IMAGE \
+  POSTGRES_IMAGE
 
 PLANETILER_STORAGE_TMP="${PLANETILER_STORAGE_TMP:-}"
 NOMINATIM_IMPORT_SEPARATE="${NOMINATIM_IMPORT_SEPARATE:-false}"
@@ -45,14 +41,7 @@ POD_NAME="${POD_NAME:-osmscout-import}"
 DB_CONTAINER="${POD_NAME}-nominatim"
 NOMINATIM_SHUTDOWN_TIMEOUT="${NOMINATIM_SHUTDOWN_TIMEOUT:-300}"
 
-case "${NOMINATIM_IMPORT_SEPARATE,,}" in
-  true | 1 | yes | on)
-    NOMINATIM_IMPORT_SEPARATE=true
-    ;;
-  *)
-    NOMINATIM_IMPORT_SEPARATE=false
-    ;;
-esac
+NOMINATIM_IMPORT_SEPARATE="$(normalize_bool "$NOMINATIM_IMPORT_SEPARATE")"
 
 ####################################
 cleanup() {
@@ -69,7 +58,7 @@ cleanup() {
   fi
 
   if [ "$status" -eq 0 ]; then
-    message "Closing import"
+    message "Success: Closing import"
   else
     message "ERROR: Closing import with error. Read the messages above for details."
   fi
@@ -78,36 +67,9 @@ cleanup() {
 
 trap cleanup EXIT
 
-wait_for_nominatim_shutdown() {
-  local timeout="$1"
-  local elapsed=0
-
-  message "Waiting up to ${timeout}s for Nominatim container to stop cleanly..."
-
-  while [ "$elapsed" -lt "$timeout" ]; do
-    if ! podman container exists "$DB_CONTAINER"; then
-      message "Nominatim container removed."
-      return 0
-    fi
-
-    if [ "$(podman inspect -f '{{.State.Running}}' "$DB_CONTAINER")" != "true" ]; then
-      message "Nominatim container stopped."
-      return 0
-    fi
-
-    sleep 2
-    elapsed=$((elapsed + 2))
-  done
-
-  message "Timed out waiting for Nominatim container to stop; cleanup will remove the pod."
-}
-
 ####################################
 # check if already started
-if podman pod exists "$POD_NAME"; then
-  message "Pod $POD_NAME already exists. Stop and remove it before starting a new import."
-  exit 1
-fi
+ensure_pod_absent
 
 ####################################
 # building images
@@ -129,10 +91,7 @@ fi
 
 ####################################
 # init
-message "Creating Podman pod: $POD_NAME"
-podman pod create \
-  --shm-size="${SHM_SIZE_DEFAULT}" \
-  --name "$POD_NAME"
+create_import_pod
 
 message "Setup required directories"
 ${SCRIPT_DIR}/prepare_docker.sh
@@ -179,42 +138,9 @@ podman run --rm \
 if [ "$NOMINATIM_IMPORT_SEPARATE" = true ]; then
   message "Skipping Nominatim auxiliary data download and import; using external database at ${NOMINATIM_DATABASE_SERVER}."
 else
-  message "Downloading Nominatim auxiliary data..."
-  podman run --rm \
-    --pod "$POD_NAME" \
-    --name "${POD_NAME}-wget" \
-    -v "${STORE_PLANET}:/planet_pbf:z" \
-    -v "${SCRIPT_DIR}/scripts:/scripts:z" \
-    "$WGET_IMAGE" \
-    /scripts/get_urls.sh /planet_pbf \
-      https://nominatim.org/data/wikimedia-importance.sql.gz \
-      https://nominatim.org/data/gb_postcodes.csv.gz \
-      https://nominatim.org/data/us_postcodes.csv.gz
-
-  message "Starting Nominatim database..."
-  podman run -d \
-    --pod "$POD_NAME" \
-    --name "$DB_CONTAINER" \
-    --memory="${RAM_NOMINATIM_LIMIT}" \
-    -e POSTGRES_PASSWORD="${NOMINATIM_PASSWORD}" \
-    -v "${STORE_NOMINATIM_DB}:/var/lib/postgresql/data:Z" \
-    "$NOMINATIM_GIS_IMAGE"
-
-  wait_for_postgres "$DB_CONTAINER"
-
-  message "Running Nominatim setup/import..."
-  podman run --rm \
-    --pod "$POD_NAME" \
-    --name "${POD_NAME}-nominatim-setup" \
-    -v "${STORE_PLANET}:/data:z" \
-    -e PGHOST=127.0.0.1 \
-    -e PGPASSWORD="${NOMINATIM_PASSWORD}" \
-    -e OSM_FILENAME="${PBF}" \
-    -e NOMINATIM_REPLICATION_URL="https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/" \
-    -e NOMINATIM_REPLICATION_MAX_DIFF=3000 \
-    -e NOMINATIM_REPLICATION_UPDATE_INTERVAL=86400 \
-    "$NOMINATIM_FEED_IMAGE" \
-    setup
+    POD_NAME="$POD_NAME" \
+    DB_CONTAINER="$DB_CONTAINER" \
+    bash "${SCRIPT_DIR}/podman-nominatim-import.sh" --subtask
 fi
 
 message "Preparing Valhalla packs for postprocessing..."
@@ -260,7 +186,7 @@ if [ "$NOMINATIM_IMPORT_SEPARATE" != true ]; then
       psql -c \"COPY (SELECT 1) TO PROGRAM 'pg_ctl stop -m smart --no-wait';\"
     "
 
-  wait_for_nominatim_shutdown "$NOMINATIM_SHUTDOWN_TIMEOUT"
+  wait_for_container_shutdown "$DB_CONTAINER" "$NOMINATIM_SHUTDOWN_TIMEOUT"
 fi
 
 message "OSM Scout import completed."

@@ -5,78 +5,57 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "$SCRIPT_DIR"
 
-if [ -f .env ]; then
-  set -a
-  # shellcheck disable=SC1091
-  source .env
-  set +a
-fi
-
 # shellcheck disable=SC1091
 source "${SCRIPT_DIR}/podman-import-common.sh"
 
-: "${STORE_PLANET:?STORE_PLANET is required}"
-: "${STORE_NOMINATIM_DB:?STORE_NOMINATIM_DB is required}"
-: "${STORE_NOMINATIM_FLAT:?STORE_NOMINATIM_FLAT is required}"
-: "${RAM_NOMINATIM_LIMIT:?RAM_NOMINATIM_LIMIT is required}"
-: "${SHM_SIZE_DEFAULT:?SHM_SIZE_DEFAULT is required}"
-: "${NOMINATIM_PASSWORD:?NOMINATIM_PASSWORD is required}"
-: "${PBF:?PBF is required}"
+SUBTASK=false
 
-POD_NAME="${POD_NAME:-nominatim-import}"
-DB_CONTAINER="${POD_NAME}-nominatim"
-POSTGRES_PORT="${POSTGRES_PORT:-15432}"
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --subtask)
+      SUBTASK=true
+      ;;
+    *)
+      message "Unknown option: $1"
+      exit 1
+      ;;
+  esac
+  shift
+done
 
-if podman pod exists "$POD_NAME"; then
-  message "Pod $POD_NAME already exists. Stop and remove it before starting a new import."
-  exit 1
+if [ "$SUBTASK" != true ]; then
+  load_import_env .env
 fi
 
-message "Preparing helper images..."
-build_wget_image_if_missing
-build_nominatim_images_if_missing
+POD_NAME="${POD_NAME:-nominatim-import}"
+DB_CONTAINER="${DB_CONTAINER:-${POD_NAME}-nominatim}"
+POSTGRES_PORT="${POSTGRES_PORT:-15432}"
+NOMINATIM_IMPORT_FLATNODE="$(normalize_bool "${NOMINATIM_IMPORT_FLATNODE:-true}")"
 
-message "Downloading Nominatim auxiliary data..."
-podman run --rm \
-  --name "${POD_NAME}-wget" \
-  -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${SCRIPT_DIR}/scripts:/scripts:z" \
-  "$WGET_IMAGE" \
-  /scripts/get_urls.sh /planet_pbf \
-    https://nominatim.org/data/wikimedia-importance.sql.gz \
-    https://nominatim.org/data/gb_postcodes.csv.gz \
-    https://nominatim.org/data/us_postcodes.csv.gz
+required_vars=(
+  STORE_PLANET
+  STORE_NOMINATIM_DB
+  STORE_NOMINATIM_FLAT
+  RAM_NOMINATIM_LIMIT
+  SHM_SIZE_DEFAULT
+  NOMINATIM_PASSWORD
+  PBF
+)
 
-message "Creating Podman pod..."
-podman pod create \
-  --shm-size="${SHM_SIZE_DEFAULT}" \
-  --name "$POD_NAME" \
-  -p "${POSTGRES_PORT}:5432"
+require_import_vars "${required_vars[@]}"
 
-message "Starting Nominatim database..."
-podman run -d \
-  --pod "$POD_NAME" \
-  --name "$DB_CONTAINER" \
-  --memory="${RAM_NOMINATIM_LIMIT}" \
-  -e POSTGRES_PASSWORD="${NOMINATIM_PASSWORD}" \
-  -v "${STORE_NOMINATIM_DB}:/var/lib/postgresql/data:Z" \
-  "$NOMINATIM_GIS_IMAGE"
+if [ "$SUBTASK" = true ]; then
+  ensure_pod_exists
+else
+  ensure_pod_absent
+  message "Preparing helper images..."
+  build_wget_image_if_missing
+  build_nominatim_images_if_missing
 
-wait_for_postgres "$DB_CONTAINER"
+  create_import_pod -p "${POSTGRES_PORT}:5432"
+fi
 
-message "Running Nominatim setup/import..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-nominatim-setup" \
-  -v "${STORE_PLANET}:/data:z" \
-  -v "${STORE_NOMINATIM_FLAT}:/flatnode" \
-  -e PGHOST=127.0.0.1 \
-  -e PGPASSWORD="${NOMINATIM_PASSWORD}" \
-  -e OSM_FILENAME="${PBF}" \
-  -e NOMINATIM_FLATNODE_FILE=/flatnode/flat.node \
-  "$NOMINATIM_FEED_IMAGE" \
-  setup
+run_nominatim_import
 
 message "Nominatim import completed."
 message "Database container remains running in pod: $POD_NAME"
-message "PostgreSQL is available on localhost:${POSTGRES_PORT}"
