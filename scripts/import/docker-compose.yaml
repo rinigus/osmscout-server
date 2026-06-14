@@ -3,7 +3,7 @@ services:
 
   # download PBF and import mbox tiles using planetiler 
   planetiler:
-    image: ghcr.io/onthegomap/planetiler:0.8.2
+    image: ${PLANETILER_IMAGE}
     volumes:
       - ${STORE_PLANET}:/planet_pbf
       - ${STORE_MBTILES}:/data
@@ -18,7 +18,7 @@ services:
 
   # prepare import to valhalla
   valhalla_prepare:
-    image: alpine
+    image: ${HELPER_IMAGE}
     volumes:
       - ${STORE_PLANET}:/planet_pbf
       - ${STORE_VALHALLA}:/custom_files
@@ -30,7 +30,7 @@ services:
 
   # import to valhalla
   valhalla:
-    image: ghcr.io/gis-ops/docker-valhalla/valhalla:${VALHALLA_VERSION}
+    image: ${VALHALLA_IMAGE}
     volumes:
       - ${STORE_PLANET}:/planet_pbf
       - ${STORE_VALHALLA}:/custom_files
@@ -65,7 +65,7 @@ services:
 
   # nominatim database
   nominatim:
-    image: smithmicro/n7m-gis
+    image: ${NOMINATIM_GIS_IMAGE}
     volumes:
       - ${STORE_NOMINATIM}:/var/lib/postgresql/data
     # this image does not support setting user ID
@@ -81,7 +81,7 @@ services:
 
   # import data into nominatim
   nominatim_setup:
-    image: smithmicro/n7m-feed
+    image: ${NOMINATIM_FEED_IMAGE}
     volumes:
       - ${STORE_PLANET}:/data/
     user: ${USER_ID}:${GROUP_ID}
@@ -139,7 +139,7 @@ services:
 
   # shutdown nominatim
   nominatim_shutdown:
-    image: postgres:15-alpine
+    image: ${POSTGRES_IMAGE}
     user: ${USER_ID}:${GROUP_ID}
     environment:
       PGHOST: nominatim

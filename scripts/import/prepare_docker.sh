@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Prepare directories for Docker-based import"
+echo "Prepare directories for Docker or Podman based import"
 
 source .env
 
