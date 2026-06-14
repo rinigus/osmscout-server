@@ -37,6 +37,8 @@ fi
 : "${POSTGRES_IMAGE:?POSTGRES_IMAGE is required}"
 
 PLANETILER_STORAGE_TMP="${PLANETILER_STORAGE_TMP:-}"
+NOMINATIM_IMPORT_SEPARATE="${NOMINATIM_IMPORT_SEPARATE:-false}"
+NOMINATIM_DATABASE_SERVER="${NOMINATIM_DATABASE_SERVER:-127.0.0.1:5432}"
 
 POD_NAME="${POD_NAME:-osmscout-import}"
 DB_CONTAINER="${DB_CONTAINER:-${POD_NAME}-nominatim}"
@@ -44,6 +46,15 @@ WGET_IMAGE="${WGET_IMAGE:-osmscout-wget}"
 VALHALLA_TILES2PACKS_IMAGE="${VALHALLA_TILES2PACKS_IMAGE:-osmscout-valhalla-tiles2packs}"
 POSTPROCESS_IMAGE="${POSTPROCESS_IMAGE:-osmscout-postprocess}"
 NOMINATIM_SHUTDOWN_TIMEOUT="${NOMINATIM_SHUTDOWN_TIMEOUT:-300}"
+
+case "${NOMINATIM_IMPORT_SEPARATE,,}" in
+  true | 1 | yes | on)
+    NOMINATIM_IMPORT_SEPARATE=true
+    ;;
+  *)
+    NOMINATIM_IMPORT_SEPARATE=false
+    ;;
+esac
 
 ####################################
 # helper functions
@@ -55,6 +66,7 @@ cleanup() {
   local status=$?
 
   if podman pod exists "$POD_NAME"; then
+    echo
     echo "Remaining running containers in pod $POD_NAME:"
     podman ps --filter "pod=${POD_NAME}"
 
@@ -63,7 +75,11 @@ cleanup() {
     podman pod rm -f "$POD_NAME"
   fi
 
-  message "Closing import"  
+  if [ "$status" -eq 0 ]; then
+    message "Closing import"
+  else
+    message "Closing import with error. Read the messages above for details."
+  fi
   exit "$status"
 }
 
@@ -183,42 +199,46 @@ podman run --rm \
   -e build_transit=True \
   "$VALHALLA_IMAGE"
 
-message "Downloading Nominatim auxiliary data..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-wget" \
-  -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${SCRIPT_DIR}/scripts:/scripts:z" \
-  "$WGET_IMAGE" \
-  /scripts/get_urls.sh /planet_pbf \
-    https://nominatim.org/data/wikimedia-importance.sql.gz \
-    https://nominatim.org/data/gb_postcodes.csv.gz \
-    https://nominatim.org/data/us_postcodes.csv.gz
+if [ "$NOMINATIM_IMPORT_SEPARATE" = true ]; then
+  message "Skipping Nominatim auxiliary data download and import; using external database at ${NOMINATIM_DATABASE_SERVER}."
+else
+  message "Downloading Nominatim auxiliary data..."
+  podman run --rm \
+    --pod "$POD_NAME" \
+    --name "${POD_NAME}-wget" \
+    -v "${STORE_PLANET}:/planet_pbf:z" \
+    -v "${SCRIPT_DIR}/scripts:/scripts:z" \
+    "$WGET_IMAGE" \
+    /scripts/get_urls.sh /planet_pbf \
+      https://nominatim.org/data/wikimedia-importance.sql.gz \
+      https://nominatim.org/data/gb_postcodes.csv.gz \
+      https://nominatim.org/data/us_postcodes.csv.gz
 
-message "Starting Nominatim database..."
-podman run -d \
-  --pod "$POD_NAME" \
-  --name "$DB_CONTAINER" \
-  --memory="${RAM_NOMINATIM_LIMIT}" \
-  -e POSTGRES_PASSWORD="${NOMINATIM_PASSWORD}" \
-  -v "${STORE_NOMINATIM}:/var/lib/postgresql/data:Z" \
-  "$NOMINATIM_GIS_IMAGE"
+  message "Starting Nominatim database..."
+  podman run -d \
+    --pod "$POD_NAME" \
+    --name "$DB_CONTAINER" \
+    --memory="${RAM_NOMINATIM_LIMIT}" \
+    -e POSTGRES_PASSWORD="${NOMINATIM_PASSWORD}" \
+    -v "${STORE_NOMINATIM}:/var/lib/postgresql/data:Z" \
+    "$NOMINATIM_GIS_IMAGE"
 
-wait_for_postgres
+  wait_for_postgres
 
-message "Running Nominatim setup/import..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-nominatim-setup" \
-  -v "${STORE_PLANET}:/data:z" \
-  -e PGHOST=127.0.0.1 \
-  -e PGPASSWORD="${NOMINATIM_PASSWORD}" \
-  -e OSM_FILENAME="${PBF}" \
-  -e NOMINATIM_REPLICATION_URL="https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/" \
-  -e NOMINATIM_REPLICATION_MAX_DIFF=3000 \
-  -e NOMINATIM_REPLICATION_UPDATE_INTERVAL=86400 \
-  "$NOMINATIM_FEED_IMAGE" \
-  setup
+  message "Running Nominatim setup/import..."
+  podman run --rm \
+    --pod "$POD_NAME" \
+    --name "${POD_NAME}-nominatim-setup" \
+    -v "${STORE_PLANET}:/data:z" \
+    -e PGHOST=127.0.0.1 \
+    -e PGPASSWORD="${NOMINATIM_PASSWORD}" \
+    -e OSM_FILENAME="${PBF}" \
+    -e NOMINATIM_REPLICATION_URL="https://ftp5.gwdg.de/pub/misc/openstreetmap/planet.openstreetmap.org/replication/hour/" \
+    -e NOMINATIM_REPLICATION_MAX_DIFF=3000 \
+    -e NOMINATIM_REPLICATION_UPDATE_INTERVAL=86400 \
+    "$NOMINATIM_FEED_IMAGE" \
+    setup
+fi
 
 message "Preparing Valhalla packs for postprocessing..."
 podman run --rm \
@@ -232,6 +252,7 @@ podman run --rm \
   --pod "$POD_NAME" \
   --name "${POD_NAME}-postprocess" \
   --memory="${RAM_DEFALT_LIMIT}" \
+  ${PODMAN_EXTRA_OPTIONS_POSTPROCESS:-} \
   -v "${STORE_PLANET}:/planet_pbf:z" \
   -v "${STORE_MBTILES}:/mapbox-planet:z" \
   -v "${STORE_VALHALLA}:/valhalla:z" \
@@ -239,28 +260,30 @@ podman run --rm \
   -v "${STORE_MISC}:/osmscout:z" \
   -v "${SCRIPT_DIR}/hierarchy:/app/hierarchy:z" \
   -v "${SCRIPT_DIR}/provided:/app/provided:z" \
-  -e GEOCODER_IMPORTER_POSTGRES="postgresql://postgres:${NOMINATIM_PASSWORD}@127.0.0.1:5432/nominatim" \
+  -e GEOCODER_IMPORTER_POSTGRES="postgresql://postgres:${NOMINATIM_PASSWORD}@${NOMINATIM_DATABASE_SERVER}/nominatim" \
   -e GEOCODER_JOBS="${GEOCODER_JOBS}" \
   "$POSTPROCESS_IMAGE"
 
 ####################################
 # cleanup
-message "Shutting down Nominatim database..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-postgres-shutdown" \
-  -e PGHOST=127.0.0.1 \
-  -e PGUSER=postgres \
-  -e PGPASSWORD="${NOMINATIM_PASSWORD}" \
-  "$POSTGRES_IMAGE" \
-  sh -c "
-    echo 'Waiting for few seconds...';
-    sleep 1;
-    echo 'Shutting down Nominatim database...';
-    psql -c 'SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = current_database() AND pid <> pg_backend_pid()';
-    psql -c \"COPY (SELECT 1) TO PROGRAM 'pg_ctl stop -m smart --no-wait';\"
-  "
+if [ "$NOMINATIM_IMPORT_SEPARATE" != true ]; then
+  message "Shutting down Nominatim database..."
+  podman run --rm \
+    --pod "$POD_NAME" \
+    --name "${POD_NAME}-postgres-shutdown" \
+    -e PGHOST=127.0.0.1 \
+    -e PGUSER=postgres \
+    -e PGPASSWORD="${NOMINATIM_PASSWORD}" \
+    "$POSTGRES_IMAGE" \
+    sh -c "
+      echo 'Waiting for few seconds...';
+      sleep 1;
+      echo 'Shutting down Nominatim database...';
+      psql -c 'SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = current_database() AND pid <> pg_backend_pid()';
+      psql -c \"COPY (SELECT 1) TO PROGRAM 'pg_ctl stop -m smart --no-wait';\"
+    "
 
-wait_for_nominatim_shutdown "$NOMINATIM_SHUTDOWN_TIMEOUT"
+  wait_for_nominatim_shutdown "$NOMINATIM_SHUTDOWN_TIMEOUT"
+fi
 
 message "OSM Scout import completed."
