@@ -59,22 +59,6 @@ build_image_if_missing() {
   podman build -t "$image" "$@"
 }
 
-build_wget_image_if_missing() {
-  build_image_if_missing "$WGET_IMAGE" \
-    -f Dockerfile.wget \
-    .
-}
-
-build_nominatim_images_if_missing() {
-  build_image_if_missing "$NOMINATIM_GIS_IMAGE" \
-    -f nominatim/gis/Dockerfile \
-    nominatim/gis
-
-  build_image_if_missing "$NOMINATIM_FEED_IMAGE" \
-    -f nominatim/feed/Dockerfile \
-    nominatim/feed
-}
-
 wait_for_postgres() {
   local container="$1"
   message "Waiting for PostgreSQL..."

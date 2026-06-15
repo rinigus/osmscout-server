@@ -72,29 +72,8 @@ trap cleanup EXIT
 ensure_pod_absent
 
 ####################################
-# building images
-message "Preparing helper images..."
-build_wget_image_if_missing
-
-build_image_if_missing "$VALHALLA_TILES2PACKS_IMAGE" \
-  --build-arg "VALHALLA_VERSION=${VALHALLA_VERSION}" \
-  -f valhalla/Dockerfile.tiles2packs \
-  valhalla
-
-build_image_if_missing "$POSTPROCESS_IMAGE" \
-  -f Dockerfile.postprocess \
-  .
-
-if [ "$NOMINATIM_IMPORT_SEPARATE" != true ]; then
-  build_nominatim_images_if_missing
-fi
-
-####################################
 # init
 create_import_pod
-
-message "Setup required directories"
-${SCRIPT_DIR}/prepare_docker.sh
 
 ####################################
 # imports

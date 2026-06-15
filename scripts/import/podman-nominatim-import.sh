@@ -48,10 +48,6 @@ if [ "$SUBTASK" = true ]; then
   ensure_pod_exists
 else
   ensure_pod_absent
-  message "Preparing helper images..."
-  build_wget_image_if_missing
-  build_nominatim_images_if_missing
-
   create_import_pod -p "${POSTGRES_PORT}:5432"
 fi
 
