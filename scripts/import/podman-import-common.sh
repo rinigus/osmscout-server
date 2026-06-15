@@ -46,19 +46,6 @@ normalize_bool() {
   esac
 }
 
-build_image_if_missing() {
-  local image="$1"
-  shift
-
-  if podman image exists "$image"; then
-    message "Image $image already exists, skipping build."
-    return
-  fi
-
-  message "Building image $image..."
-  podman build -t "$image" "$@"
-}
-
 wait_for_postgres() {
   local container="$1"
   message "Waiting for PostgreSQL..."
