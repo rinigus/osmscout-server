@@ -51,7 +51,41 @@ else
   create_import_pod -p "${POSTGRES_PORT}:5432"
 fi
 
-run_nominatim_import
+message "Downloading Nominatim auxiliary data..."
+podman run --rm \
+  --pod "$POD_NAME" \
+  --name "${POD_NAME}-wget" \
+  -v "${STORE_PLANET}:/planet_pbf:z" \
+  -v "${SCRIPT_DIR}/scripts:/scripts:z" \
+  "$WGET_IMAGE" \
+  /scripts/get_urls.sh /planet_pbf \
+    https://nominatim.org/data/wikimedia-importance.sql.gz \
+    https://nominatim.org/data/gb_postcodes.csv.gz \
+    https://nominatim.org/data/us_postcodes.csv.gz
+
+message "Starting Nominatim database..."
+podman run -d \
+  --pod "$POD_NAME" \
+  --name "$DB_CONTAINER" \
+  --memory="${RAM_NOMINATIM_LIMIT}" \
+  -e POSTGRES_PASSWORD="${NOMINATIM_PASSWORD}" \
+  -v "${STORE_NOMINATIM_DB}:/var/lib/postgresql/data:Z" \
+  "$NOMINATIM_GIS_IMAGE"
+
+wait_for_postgres "$DB_CONTAINER"
+
+message "Running Nominatim setup/import..."
+podman run --rm \
+  --pod "$POD_NAME" \
+  --name "${POD_NAME}-nominatim-setup" \
+  -v "${STORE_PLANET}:/data:z" \
+  -v "${STORE_NOMINATIM_FLAT}:/flatnode" \
+  -e PGHOST=127.0.0.1 \
+  -e PGPASSWORD="${NOMINATIM_PASSWORD}" \
+  -e OSM_FILENAME="${PBF}" \
+  -e NOMINATIM_FLATNODE_FILE=/flatnode/flat.node \
+  "$NOMINATIM_FEED_IMAGE" \
+  setup
 
 message "Nominatim import completed."
 message "Database container remains running in pod: $POD_NAME"
