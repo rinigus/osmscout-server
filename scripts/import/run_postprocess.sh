@@ -71,7 +71,7 @@ echo Mapbox GL glyphs imported and already packed, skipping in this script
 
 # gzip all uncompressed tiles
 echo Compress all tiles after import by Valhalla if needed
-find $VALHALLA_TILESDIR/? -type f ! -name "*.gz" -exec gzip {} \;
+find $VALHALLA_TILESDIR/? -type f ! -name "*.gz" -print0 | xargs -0 -P "$(nproc)" -n 1 gzip
 
 if [ ! -d "$VALHALLA_IMPORT" ]; then
     echo Valhalla: packaging for OSM Scout Server
