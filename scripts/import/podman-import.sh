@@ -76,8 +76,12 @@ ensure_pod_absent
 create_import_pod
 
 ####################################
+# get data
+"${SCRIPT_DIR}/podman-get-data.sh"
+
+####################################
 # imports
-message "Downloading area and Running Planetiler import..."
+message "Downloading some specific datasets and Running Planetiler import..."
 podman run --rm \
   --pod "$POD_NAME" \
   --name "${POD_NAME}-planetiler" \
@@ -89,7 +93,10 @@ podman run --rm \
   -e PLANETILER_STORAGE_TMP="${PLANETILER_STORAGE_TMP}" \
   -e JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS}" \
   "$PLANETILER_IMAGE" \
-  /scripts_mapbox/run_planetiler.sh /planet_pbf "${AREA}"
+  /scripts_mapbox/run_planetiler.sh \
+  --osm-path="/planet_pbf/${PBF}" \
+  --download \
+  --download_dir=/planet_pbf
 
 message "Preparing Valhalla import..."
 podman run --rm \

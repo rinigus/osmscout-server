@@ -51,18 +51,6 @@ else
   create_import_pod -p "${POSTGRES_PORT}:5432"
 fi
 
-message "Downloading Nominatim auxiliary data..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-wget" \
-  -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${SCRIPT_DIR}/scripts:/scripts:z" \
-  "$WGET_IMAGE" \
-  /scripts/get_urls.sh /planet_pbf \
-    https://nominatim.org/data/wikimedia-importance.sql.gz \
-    https://nominatim.org/data/gb_postcodes.csv.gz \
-    https://nominatim.org/data/us_postcodes.csv.gz
-
 message "Starting Nominatim database..."
 podman run -d \
   --pod "$POD_NAME" \
