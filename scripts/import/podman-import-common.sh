@@ -9,6 +9,17 @@ POSTPROCESS_IMAGE="${POSTPROCESS_IMAGE:-osmscout-postprocess}"
 NOMINATIM_GIS_IMAGE="${NOMINATIM_GIS_IMAGE:-osmscout-nominatim-gis}"
 NOMINATIM_FEED_IMAGE="${NOMINATIM_FEED_IMAGE:-osmscout-nominatim-feed}"
 
+# versions
+VALHALLA_VERSION=3.4.0
+
+# external images
+OSMDOWNLOAD_IMAGE=openmaptiles/openmaptiles-tools
+PLANETILER_IMAGE=ghcr.io/onthegomap/planetiler:0.10.2
+POSTGRES_IMAGE=postgres:15-alpine
+VALHALLA_IMAGE=ghcr.io/gis-ops/docker-valhalla/valhalla:${VALHALLA_VERSION}
+HELPER_IMAGE=alpine
+
+# helper functions
 message() {
   printf '\n%s\n\n' "$*"
 }

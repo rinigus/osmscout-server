@@ -75,5 +75,19 @@ podman run --rm \
   "$NOMINATIM_FEED_IMAGE" \
   setup
 
+message "Freezing Nominatim database..."
+podman run --rm \
+  --pod "$POD_NAME" \
+  --name "${POD_NAME}-nominatim-freeze" \
+  -e PGHOST=127.0.0.1 \
+  -e PGPASSWORD="${NOMINATIM_PASSWORD}" \
+  "$NOMINATIM_FEED_IMAGE" \
+  nominatim freeze
+
+if [ -f "${STORE_NOMINATIM_FLAT}/flat.node" ]; then
+  message "Dropping flatnode left after import"
+  rm "${STORE_NOMINATIM_FLAT}/flat.node"
+fi
+
 message "Nominatim import completed."
 message "Database container remains running in pod: $POD_NAME"

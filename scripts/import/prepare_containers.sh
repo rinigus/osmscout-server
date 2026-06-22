@@ -139,3 +139,15 @@ build_image "$VALHALLA_TILES2PACKS_IMAGE" \
 build_image "$POSTPROCESS_IMAGE" \
   -f Dockerfile.postprocess \
   .
+
+# pull containers
+for d in \
+    $OSMDOWNLOAD_IMAGE \
+    $PLANETILER_IMAGE \
+    $POSTGRES_IMAGE \
+    $VALHALLA_IMAGE \
+    $HELPER_IMAGE
+do
+    message Pulling $d
+    podman pull $d
+done
