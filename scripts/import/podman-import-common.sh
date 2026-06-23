@@ -5,6 +5,7 @@
 # custom images
 WGET_IMAGE="${WGET_IMAGE:-osmscout-wget}"
 VALHALLA_TILES2PACKS_IMAGE="${VALHALLA_TILES2PACKS_IMAGE:-osmscout-valhalla-tiles2packs}"
+GEOCODER_IMAGE="${GEOCODER_IMAGE:-osmscout-geocoder}"
 POSTPROCESS_IMAGE="${POSTPROCESS_IMAGE:-osmscout-postprocess}"
 NOMINATIM_GIS_IMAGE="${NOMINATIM_GIS_IMAGE:-osmscout-nominatim-gis}"
 NOMINATIM_FEED_IMAGE="${NOMINATIM_FEED_IMAGE:-osmscout-nominatim-feed}"

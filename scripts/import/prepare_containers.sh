@@ -136,6 +136,10 @@ build_image "$VALHALLA_TILES2PACKS_IMAGE" \
   -f valhalla/Dockerfile.tiles2packs \
   valhalla
 
+build_image "$GEOCODER_IMAGE" \
+  -f geocoder/Dockerfile \
+  .
+
 build_image "$POSTPROCESS_IMAGE" \
   -f Dockerfile.postprocess \
   .

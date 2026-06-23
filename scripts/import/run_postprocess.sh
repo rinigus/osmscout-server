@@ -19,10 +19,6 @@ VALHALLA_TILES_CONF=/valhalla/tiles_in_packages.json
 VALHALLA_IMPORT_META=/valhalla/packages-meta
 VALHALLA_IMPORT=$IMPORT/valhalla/packages
 
-LIBPOSTAL_DATA=/planet_pbf/libpostal
-
-GEOCODER_JOBS="${GEOCODER_JOBS:-4}"
-
 MISC_DIR=/osmscout
 
 # prepare temporary directory with the expected structure
@@ -44,12 +40,13 @@ ln -s $VALHALLA_TILES_CONF valhalla/tiles_in_packages.json
 ln -s $IMPORT distribution
 
 ln -s $SDIR/* .
+export PYTHONPATH=$PYTHONPATH:`pwd`
 
 # MBTILES
 if [ ! -d "$MBTILES_TILESDIR" ]; then
     echo MBTILES: splitting planet into smaller databases
     echo Target folder: $MBTILES_TILESDIR
-    python ./mapbox_planetiler_split.py \
+    python ./mapbox_scripts/mapbox_planetiler_split.py \
         $MBTILES_INPUT hierarchy $MBTILES_TILESDIR
 else
     echo MBTILES directory exists. Skipping split tiles generation.
@@ -60,7 +57,7 @@ if [ ! -d "$MBTILES_IMPORT" ]; then
     echo Target folder: $MBTILES_IMPORT
     mkdir -p $MBTILES_IMPORT
     mkdir -p $MBTILES_IMPORT_META
-    python ./mapbox_scripts/make_packs.py
+    ./mapbox_scripts/make_packs.sh
 else
     echo MBTILES packaged for OSM Scout Server already in $MBTILES_IMPORT
 fi
@@ -84,26 +81,13 @@ else
 fi
 
 # prepare countries
-if [ ! -f "$MISC_DIR/Makefile.import" ]; then
-    echo "Generate Makefile for GeocoderNLP import and collect other data for finalizing import"
+if [ ! -f "$MISC_DIR/countries.json" ]; then
+    echo "Generate data for finalizing import"
     python ./prepare_countries.py --output $MISC_DIR
 else
-    echo "Makefile for GeocoderNLP import found: $MISC_DIR/Makefile.import"
-    echo "Skipping Makefile generation"
+    echo "countries.json found: $MISC_DIR/countries.json"
+    echo "Skipping data generation"
 fi
-
-# download libpostal datasets
-if [ ! -d "$LIBPOSTAL_DATA" ]; then
-    echo Libpostal: downloading datasets
-    echo Target folder: $LIBPOSTAL_DATA
-    mkdir -p $LIBPOSTAL_DATA
-    libpostal_data download all $LIBPOSTAL_DATA/libpostal
-else
-    echo Libpostal datasets directory $LIBPOSTAL_DATA exists, skipping downloads
-fi
-
-echo Importing GeocoderNLP using $GEOCODER_JOBS jobs
-make -f $MISC_DIR/Makefile.import -j$GEOCODER_JOBS
 
 # finished: remove tmp directory
 cd $SDIR

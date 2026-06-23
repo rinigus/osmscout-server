@@ -27,7 +27,6 @@ require_import_vars \
   NOMINATIM_PASSWORD \
   JAVA_TOOL_OPTIONS \
   VALHALLA_VERSION \
-  GEOCODER_JOBS \
   PLANETILER_IMAGE \
   HELPER_IMAGE \
   VALHALLA_IMAGE \
@@ -129,32 +128,20 @@ else
     bash "${SCRIPT_DIR}/podman-nominatim-import.sh" --subtask
 fi
 
-message "Preparing Valhalla packs for postprocessing..."
+message "Running GeocoderNLP import..."
 podman run --rm \
   --pod "$POD_NAME" \
-  --name "${POD_NAME}-valhalla-packs" \
-  -v "${STORE_VALHALLA}:/custom_files:z" \
-  "$VALHALLA_TILES2PACKS_IMAGE"
-
-message "Running postprocess import..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-postprocess" \
+  --name "${POD_NAME}-geocoder" \
   --memory="${RAM_DEFALT_LIMIT}" \
-  ${PODMAN_EXTRA_OPTIONS_POSTPROCESS:-} \
+  ${PODMAN_EXTRA_OPTIONS_GEOCODER:-} \
   -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${STORE_MBTILES}:/mapbox-planet:z" \
-  -v "${STORE_VALHALLA}:/valhalla:z" \
   -v "${STORE_IMPORTED}:/import:z" \
-  -v "${STORE_MISC}:/osmscout:z" \
   -v "${SCRIPT_DIR}/hierarchy:/app/hierarchy:z" \
-  -v "${SCRIPT_DIR}/provided:/app/provided:z" \
   -e GEOCODER_IMPORTER_POSTGRES="postgresql://postgres:${NOMINATIM_PASSWORD}@${NOMINATIM_DATABASE_SERVER}/nominatim" \
   -e GEOCODER_JOBS="${GEOCODER_JOBS}" \
-  "$POSTPROCESS_IMAGE"
+  "$GEOCODER_IMAGE"
 
-####################################
-# cleanup
+# nominatim not needed anymore
 if [ "$NOMINATIM_IMPORT_SEPARATE" != true ]; then
   message "Shutting down Nominatim database..."
   podman run --rm \
@@ -174,5 +161,27 @@ if [ "$NOMINATIM_IMPORT_SEPARATE" != true ]; then
 
   wait_for_container_shutdown "$DB_CONTAINER" "$NOMINATIM_SHUTDOWN_TIMEOUT"
 fi
+
+message "Preparing Valhalla packs for postprocessing..."
+podman run --rm \
+  --pod "$POD_NAME" \
+  --name "${POD_NAME}-valhalla-packs" \
+  -v "${STORE_VALHALLA}:/custom_files:z" \
+  "$VALHALLA_TILES2PACKS_IMAGE"
+
+message "Running postprocess import..."
+podman run --rm \
+  --pod "$POD_NAME" \
+  --name "${POD_NAME}-postprocess" \
+  --memory="${RAM_DEFALT_LIMIT}" \
+  ${PODMAN_EXTRA_OPTIONS_GEOCODER:-} \
+  -v "${STORE_PLANET}:/planet_pbf:z" \
+  -v "${STORE_MBTILES}:/mapbox-planet:z" \
+  -v "${STORE_VALHALLA}:/valhalla:z" \
+  -v "${STORE_IMPORTED}:/import:z" \
+  -v "${STORE_MISC}:/osmscout:z" \
+  -v "${SCRIPT_DIR}/hierarchy:/app/hierarchy:z" \
+  -v "${SCRIPT_DIR}/provided:/app/provided:z" \
+  "$POSTPROCESS_IMAGE"
 
 message "OSM Scout import completed."

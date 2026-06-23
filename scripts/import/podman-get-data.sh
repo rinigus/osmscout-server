@@ -34,3 +34,12 @@ podman run --rm \
     https://nominatim.org/data/wikimedia-importance.sql.gz \
     https://nominatim.org/data/gb_postcodes.csv.gz \
     https://nominatim.org/data/us_postcodes.csv.gz
+
+# download data for libpostal
+message "Downloading Libpostal data..."
+podman run --rm \
+  --name "${NAMEBASE}-geocoder" \
+  -v "${STORE_PLANET}:/planet_pbf:z" \
+  -v "${SCRIPT_DIR}/scripts:/scripts:z" \
+  "$GEOCODER_IMAGE" \
+  /app/entrypoint.sh --download
