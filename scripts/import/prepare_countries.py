@@ -5,6 +5,7 @@ import argparse
 import os, json
 from hierarchy import Hierarchy
 from mapbox_country_pack import country_pack as mapbox_pack
+from mapbox_country_pack import world_pack as mapboxgl_world_pack
 from valhalla_country_pack import country_pack as valhalla_pack
 
 parser = argparse.ArgumentParser(description='Collect data for finalizing')
@@ -37,6 +38,12 @@ for root, folders, files in os.walk(Hierarchy.base_dir):
                                     "mapboxgl_country": mapbox_pack(polyjson),
                                     "valhalla": valhalla_pack(polyjson),
         }
+
+provided_countries["mapboxgl/global"] = {
+    "id": "mapboxgl/global",
+    "type": "mapboxgl/global",
+    "mapboxgl_global": mapboxgl_world_pack()
+}
 
 # save provided countries
 fjson = open(os.path.join(output_folder, "countries.json"), "w")

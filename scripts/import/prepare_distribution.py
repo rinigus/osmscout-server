@@ -3,33 +3,23 @@
 # This script prepares files before uploading them for distribution
 # This has to be run after all imports are finished
 
-import json, pickle, os, stat, shutil
-from mapbox_country_pack import world_pack as mapboxgl_world_pack
+import argparse, json, pickle, os, stat, shutil
 
-root_dir = "distribution"
-bucket = open("bucket_name", "r").read().strip()
-url_base = "https://data.modrana.org/osm_scout_server"
+parser = argparse.ArgumentParser(description='Prepare files before uploading them for distribution')
+parser.add_argument('--root', default="distribution", help='Root folder with distribution files')
+parser.add_argument('--bucket', default="bucket_name", help='File containing S3 bucket name')
+parser.add_argument('--url', default="https://data.modrana.org/osm_scout_server", help='Base URL for generated URL specs')
+parser.add_argument('--countries', default="data/output/misc/countries.json", help='Generated countries JSON file')
+parser.add_argument('--distribution', default="distribution.json", help='JSON file with distribution URL version specs')
+args = parser.parse_args()
 
-# check if it is located here
-countries_json = "data/output/misc/countries.json"
+root_dir = args.root
+bucket = open(args.bucket, "r").read().strip()
+url_base = args.url
+countries_json = args.countries
 
-url_specs = {
-    "base": url_base,
-    "type": "url",
-    #"osmscout": "osmscout-27",
-    "geocoder_nlp": "geocoder-nlp-38",
-    "postal_global": "postal-global-2",
-    "postal_country": "postal-country-2",
-    "mapnik_global": "mapnik-global-1",
-    "mapboxgl_country": "mapboxgl-24",
-    "mapboxgl_global": "mapboxgl-24",
-    "mapboxgl_glyphs": "mapboxgl-24",
-    "valhalla": "valhalla-32",
-
-    # mapnik is not updated anymore as users are expected to use vector tiles
-    # keep this version just if someone needs raster tiles
-    "mapnik_country": "mapnik-country-28",
-}
+url_specs = json.loads(open(args.distribution, "r").read())
+url_specs["base"] = url_base
 
 dist = json.loads( open(countries_json, "r").read() )
 
@@ -92,13 +82,6 @@ for d in dist:
 
 uploader(root_dir + "/valhalla", url_specs["valhalla"] + "/valhalla")
 uploader(root_dir + "/mapboxgl/packages", url_specs["mapboxgl_country"] + "/mapboxgl/packages")
-
-# add mapbox global object after uploader commands are ready
-dist["mapboxgl/global"] = {
-    "id": "mapboxgl/global",
-    "type": "mapboxgl/global",
-    "mapboxgl_global": mapboxgl_world_pack()
-    }
 
 # save provided countries
 fjson = open("provided/countries_provided.json", "w")
