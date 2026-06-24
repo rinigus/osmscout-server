@@ -80,46 +80,8 @@ create_import_pod
 
 ####################################
 # imports
-message "Downloading some specific datasets and Running Planetiler import..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-planetiler" \
-  --memory="${RAM_PLANETILER_LIMIT}" \
-  --entrypoint "" \
-  -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${STORE_MBTILES}:/data:z" \
-  -v "${SCRIPT_DIR}/mapbox:/scripts_mapbox:z" \
-  -e PLANETILER_STORAGE_TMP="${PLANETILER_STORAGE_TMP}" \
-  -e JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS}" \
-  "$PLANETILER_IMAGE" \
-  /scripts_mapbox/run_planetiler.sh \
-  --osm-path="/planet_pbf/${PBF}" \
-  --download \
-  --download_dir=/planet_pbf
 
-message "Preparing Valhalla import..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-valhalla-prepare" \
-  -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${STORE_VALHALLA}:/custom_files:z" \
-  "$HELPER_IMAGE" \
-  /bin/sh -c "rm /custom_files/*.pbf; ln -s /planet_pbf/${PBF} /custom_files"
-
-message "Running Valhalla import..."
-podman run --rm \
-  --pod "$POD_NAME" \
-  --name "${POD_NAME}-valhalla" \
-  --memory="${RAM_VALHALLA_LIMIT}" \
-  -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${STORE_VALHALLA}:/custom_files:z" \
-  -e serve_tiles=False \
-  -e build_tar=False \
-  -e build_admins=True \
-  -e build_time_zones=True \
-  -e build_transit=True \
-  "$VALHALLA_IMAGE"
-
+# start with Nominatim as it requires largest storage
 if [ "$NOMINATIM_IMPORT_SEPARATE" = true ]; then
   message "Skipping Nominatim auxiliary data download and import; using external database at ${NOMINATIM_DATABASE_SERVER}."
 else
@@ -161,6 +123,46 @@ if [ "$NOMINATIM_IMPORT_SEPARATE" != true ]; then
 
   wait_for_container_shutdown "$DB_CONTAINER" "$NOMINATIM_SHUTDOWN_TIMEOUT"
 fi
+
+message "Planetiler import..."
+podman run --rm \
+  --pod "$POD_NAME" \
+  --name "${POD_NAME}-planetiler" \
+  --memory="${RAM_PLANETILER_LIMIT}" \
+  --entrypoint "" \
+  -v "${STORE_PLANET}:/planet_pbf:z" \
+  -v "${STORE_MBTILES}:/data:z" \
+  -v "${SCRIPT_DIR}/mapbox:/scripts_mapbox:z" \
+  -e PLANETILER_STORAGE_TMP="${PLANETILER_STORAGE_TMP}" \
+  -e JAVA_TOOL_OPTIONS="${JAVA_TOOL_OPTIONS}" \
+  "$PLANETILER_IMAGE" \
+  /scripts_mapbox/run_planetiler.sh \
+  --osm-path="/planet_pbf/${PBF}" \
+  --download \
+  --download_dir=/planet_pbf
+
+message "Preparing Valhalla import..."
+podman run --rm \
+  --pod "$POD_NAME" \
+  --name "${POD_NAME}-valhalla-prepare" \
+  -v "${STORE_PLANET}:/planet_pbf:z" \
+  -v "${STORE_VALHALLA}:/custom_files:z" \
+  "$HELPER_IMAGE" \
+  /bin/sh -c "rm /custom_files/*.pbf; ln -s /planet_pbf/${PBF} /custom_files"
+
+message "Running Valhalla import..."
+podman run --rm \
+  --pod "$POD_NAME" \
+  --name "${POD_NAME}-valhalla" \
+  --memory="${RAM_VALHALLA_LIMIT}" \
+  -v "${STORE_PLANET}:/planet_pbf:z" \
+  -v "${STORE_VALHALLA}:/custom_files:z" \
+  -e serve_tiles=False \
+  -e build_tar=False \
+  -e build_admins=True \
+  -e build_time_zones=True \
+  -e build_transit=True \
+  "$VALHALLA_IMAGE"
 
 message "Preparing Valhalla packs for postprocessing..."
 podman run --rm \
