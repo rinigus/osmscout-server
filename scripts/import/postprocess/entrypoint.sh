@@ -52,17 +52,15 @@ else
     echo MBTILES directory exists. Skipping split tiles generation.
 fi
 
-if [ ! -d "$MBTILES_IMPORT" ]; then
-    echo MBTILES: packaging for OSM Scout Server
-    echo Target folder: $MBTILES_IMPORT
-    mkdir -p $MBTILES_IMPORT
-    mkdir -p $MBTILES_IMPORT_META
-    ./mapbox_packs.sh
-else
-    echo MBTILES packaged for OSM Scout Server already in $MBTILES_IMPORT
-fi
+echo MBTILES: packaging for OSM Scout Server
+echo Target folder: $MBTILES_IMPORT
+mkdir -p $MBTILES_IMPORT
+mkdir -p $MBTILES_IMPORT_META
+doit --reporter executed-only -f ./mapbox_packs.py --db-file $MBTILES_IMPORT/.doit-db -n "$(nproc)"
 
+echo
 echo Mapbox GL glyphs imported and already packed, skipping in this script
+echo
 
 # Valhalla
 
@@ -70,15 +68,19 @@ echo Mapbox GL glyphs imported and already packed, skipping in this script
 echo Compress all tiles after import by Valhalla if needed
 find $VALHALLA_TILESDIR/? -type f ! -name "*.gz" -print0 | xargs -0 -P "$(nproc)" -n 1 gzip
 
+# start importing Valhalla only if absent. It takes a while
+# to generate tasks using valhalla_packs.py (too many files to check)
 if [ ! -d "$VALHALLA_IMPORT" ]; then
     echo Valhalla: packaging for OSM Scout Server
     echo Target folder: $VALHALLA_IMPORT
     mkdir -p $VALHALLA_IMPORT
     mkdir -p $VALHALLA_IMPORT_META
-    python ./valhalla_packs.py
+    doit --reporter executed-only -f ./valhalla_packs.py --db-file $VALHALLA_IMPORT/.doit-db -n "$(nproc)"
 else
     echo Valhalla tiles packaged for OSM Scout Server already in $VALHALLA_IMPORT
 fi
+
+echo
 
 # prepare countries
 if [ ! -f "$MISC_DIR/countries.json" ]; then

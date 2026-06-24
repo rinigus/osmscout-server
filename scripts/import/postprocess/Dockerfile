@@ -13,6 +13,7 @@ RUN python3 -m venv venv
 ENV PATH=/app/venv/bin:$PATH
 
 RUN pip install \
+    doit \
     numpy \
     mercantile \
     psutil \
@@ -22,7 +23,7 @@ RUN pip install \
 # copy used scripts
 COPY \
     ./postprocess/entrypoint.sh \
-    ./postprocess/mapbox_packs.sh \
+    ./postprocess/mapbox_packs.py \
     ./postprocess/mapbox_planetiler_split.py \
     ./postprocess/valhalla_packs.py \
     ./pack.sh \
