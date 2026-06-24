@@ -19,6 +19,7 @@
 
 *~
 *.pyc
+__pycache__/
 
 # Clickable build, temporary source and config dirs
 /build/
