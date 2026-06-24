@@ -6,7 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 # shellcheck disable=SC1091
-source "${SCRIPT_DIR}/podman-import-common.sh"
+source "${SCRIPT_DIR}/import-common.sh"
 
 load_import_env .env
 
@@ -125,7 +125,7 @@ if [ "$NOMINATIM_IMPORT_SEPARATE" = true ]; then
 else
     POD_NAME="$POD_NAME" \
     DB_CONTAINER="$DB_CONTAINER" \
-    bash "${SCRIPT_DIR}/podman-nominatim-import.sh" --subtask
+    bash "${SCRIPT_DIR}/import-nominatim.sh" --subtask
 fi
 
 message "Running GeocoderNLP import..."

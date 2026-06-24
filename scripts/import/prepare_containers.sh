@@ -9,7 +9,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 # shellcheck disable=SC1091
-source "${SCRIPT_DIR}/podman-import-common.sh"
+source "${SCRIPT_DIR}/import-common.sh"
 
 usage() {
   cat <<EOF
