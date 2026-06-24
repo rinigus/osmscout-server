@@ -35,5 +35,4 @@ COPY \
     ./postprocess/valhalla_country_pack.py \
     /app
 
-# command
-CMD /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]

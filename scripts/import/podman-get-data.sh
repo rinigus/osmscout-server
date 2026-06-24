@@ -39,6 +39,5 @@ message "Downloading Libpostal data..."
 podman run --rm \
   --name "${NAMEBASE}-geocoder" \
   -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${SCRIPT_DIR}/scripts:/scripts:z" \
   "$GEOCODER_IMAGE" \
-  /app/entrypoint.sh --download
+  --download

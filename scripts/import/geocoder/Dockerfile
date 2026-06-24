@@ -72,5 +72,4 @@ COPY ./geocoder/build_geocoder.sh /app/build_geocoder.sh
 COPY ./hierarchy.py /app
 COPY ./geocoder/prepare_import.py /app
 
-# command
-CMD /app/entrypoint.sh
+ENTRYPOINT ["/app/entrypoint.sh"]

@@ -63,11 +63,11 @@ FROM debian:bookworm
 WORKDIR /app
 
 COPY --from=build /app/tiles2packs/tiles2packs .
-COPY --from=build /app/tiles2packs/run_tiles2packs.sh .
+COPY --from=build /app/tiles2packs/entrypoint.sh .
 
 RUN apt-get update
 RUN apt-get install -y libcurl4
 RUN rm -rf /var/lib/apt/lists/*
 
 ENV PATH="/app:${PATH}"
-CMD run_tiles2packs.sh
+ENTRYPOINT ["/app/entrypoint.sh"]

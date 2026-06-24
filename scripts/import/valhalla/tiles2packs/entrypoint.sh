@@ -11,4 +11,4 @@ if [ -f "$OUTPUT" ]; then
 fi
 
 echo "Generate Valhalla tiles2packs"
-tiles2packs > $OUTPUT
+tiles2packs > "$OUTPUT"
