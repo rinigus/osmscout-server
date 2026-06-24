@@ -20,6 +20,7 @@ countries_json = args.countries
 
 url_specs = json.loads(open(args.distribution, "r").read())
 url_specs["base"] = url_base
+url_specs["type"] = "url"
 
 dist = json.loads( open(countries_json, "r").read() )
 
@@ -51,8 +52,8 @@ def uploader(dirname, targetname, extra="/"):
     global toupload, upload_commands
     toupload.append([dirname, targetname])
     upload_commands += "echo\necho " + dirname + "\n"
-    sd = dirname.replace("/", "\/")
-    st = targetname.replace("/", "\/")
+    sd = dirname.replace("/", r"\/")
+    st = targetname.replace("/", r"\/")
     upload_commands += "md5deep -t -l -r " + dirname + " | sed 's/%s/%s/g' >> digest.md5\n" % (sd,st)
     upload_commands += "s3cmd --config=.s3cfg sync " + dirname + extra + " s3://" + bucket + "/" + targetname + extra + " --acl-public --signature-v2 " + "\n"
 
