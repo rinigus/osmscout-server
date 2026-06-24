@@ -122,11 +122,11 @@ application in file `url.json` of your maps directory and setting `development_d
 * prepare_postal_tags.py - used for distribution of initial
   postal_country files in hierarchy
 
-* update_distribution.py - used on the distribution server to update
+* update_distribution/update_distribution.py - used on the distribution server to update
   maps distribution from S3 cloud / HTTP server. See note on the top
   of the script on how to specify mirror path and URL
   
-* update_distribution_wrapper.sh - used on the distribution server to
+* update_distribution/update_distribution_wrapper.sh - used on the distribution server to
   update distribution from S3 cloud / HTTP server. See the script for
   configuration options. This is a wrapper that is expected to be used
   in cron script to run update_distribution.py
