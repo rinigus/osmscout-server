@@ -76,7 +76,7 @@ create_import_pod
 
 ####################################
 # get data
-"${SCRIPT_DIR}/podman-get-data.sh"
+"${SCRIPT_DIR}/get-data.sh"
 
 ####################################
 # imports
