@@ -169,7 +169,7 @@ podman run --rm \
   -v "${STORE_VALHALLA}:/custom_files:z" \
   "$VALHALLA_TILES2PACKS_IMAGE"
 
-message "Running postprocess import..."
+message "Running import postprocessing..."
 podman run --rm \
   --pod "$POD_NAME" \
   --name "${POD_NAME}-postprocess" \

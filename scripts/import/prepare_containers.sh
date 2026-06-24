@@ -141,7 +141,7 @@ build_image "$GEOCODER_IMAGE" \
   .
 
 build_image "$POSTPROCESS_IMAGE" \
-  -f Dockerfile.postprocess \
+  -f postprocess/Dockerfile \
   .
 
 # pull containers

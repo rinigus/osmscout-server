@@ -46,7 +46,7 @@ export PYTHONPATH=$PYTHONPATH:`pwd`
 if [ ! -d "$MBTILES_TILESDIR" ]; then
     echo MBTILES: splitting planet into smaller databases
     echo Target folder: $MBTILES_TILESDIR
-    python ./mapbox_scripts/mapbox_planetiler_split.py \
+    python ./mapbox_planetiler_split.py \
         $MBTILES_INPUT hierarchy $MBTILES_TILESDIR
 else
     echo MBTILES directory exists. Skipping split tiles generation.
@@ -57,7 +57,7 @@ if [ ! -d "$MBTILES_IMPORT" ]; then
     echo Target folder: $MBTILES_IMPORT
     mkdir -p $MBTILES_IMPORT
     mkdir -p $MBTILES_IMPORT_META
-    ./mapbox_scripts/make_packs.sh
+    ./mapbox_packs.sh
 else
     echo MBTILES packaged for OSM Scout Server already in $MBTILES_IMPORT
 fi
@@ -75,7 +75,7 @@ if [ ! -d "$VALHALLA_IMPORT" ]; then
     echo Target folder: $VALHALLA_IMPORT
     mkdir -p $VALHALLA_IMPORT
     mkdir -p $VALHALLA_IMPORT_META
-    python ./valhalla_scripts/make_packs.py
+    python ./valhalla_packs.py
 else
     echo Valhalla tiles packaged for OSM Scout Server already in $VALHALLA_IMPORT
 fi

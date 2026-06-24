@@ -20,20 +20,20 @@ RUN pip install \
     tabulate
 
 # copy used scripts
-COPY ./run_postprocess.sh ./pack.sh /app
+COPY \
+    ./postprocess/entrypoint.sh \
+    ./postprocess/mapbox_packs.sh \
+    ./postprocess/mapbox_planetiler_split.py \
+    ./postprocess/valhalla_packs.py \
+    ./pack.sh \
+    /app
 COPY ./hierarchy.py /app
 
-RUN mkdir mapbox_scripts
-COPY ./mapbox/make_packs.sh ./mapbox/mapbox_planetiler_split.py /app/mapbox_scripts/
-
-RUN mkdir valhalla_scripts
-COPY ./valhalla/make_packs.py /app/valhalla_scripts/
-
 COPY \
-    ./prepare_countries.py \
-    ./mapbox_country_pack.py \
-    ./valhalla_country_pack.py \
+    ./postprocess/prepare_countries.py \
+    ./postprocess/mapbox_country_pack.py \
+    ./postprocess/valhalla_country_pack.py \
     /app
 
 # command
-CMD /app/run_postprocess.sh
+CMD /app/entrypoint.sh
