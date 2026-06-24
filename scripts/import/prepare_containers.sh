@@ -120,8 +120,8 @@ build_image() {
 }
 
 build_image "$WGET_IMAGE" \
-  -f Dockerfile.wget \
-  .
+  -f wget/Dockerfile \
+  wget
 
 build_image "$NOMINATIM_GIS_IMAGE" \
   -f nominatim/gis/Dockerfile \

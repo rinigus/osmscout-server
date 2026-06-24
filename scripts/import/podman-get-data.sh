@@ -28,9 +28,8 @@ message "Downloading Nominatim auxiliary data..."
 podman run --rm \
   --name "${NAMEBASE}-nominatim" \
   -v "${STORE_PLANET}:/planet_pbf:z" \
-  -v "${SCRIPT_DIR}/scripts:/scripts:z" \
   "$WGET_IMAGE" \
-  /scripts/get_urls.sh /planet_pbf \
+  /planet_pbf \
     https://nominatim.org/data/wikimedia-importance.sql.gz \
     https://nominatim.org/data/gb_postcodes.csv.gz \
     https://nominatim.org/data/us_postcodes.csv.gz

@@ -11,8 +11,8 @@ fi
 TARGET_DIR=$1
 shift
 
-mkdir -p $TARGET_DIR
-cd $TARGET_DIR
+mkdir -p "$TARGET_DIR"
+cd "$TARGET_DIR"
 
 for URL in "$@"; do
   echo "Processing URL: $URL"
@@ -23,9 +23,8 @@ for URL in "$@"; do
   # Check if the file already exists in the target directory
   if [ ! -f "$TARGET_DIR/$FILENAME" ]; then
     echo "Downloading $URL to $TARGET_DIR/$FILENAME"
-    wget $URL
+    wget "$URL"
   else
     echo "File already exists: $TARGET_DIR/$FILENAME"
   fi
 done
-
