@@ -12,11 +12,6 @@
 *.la
 *.a
 
-/*.pro.user
-/*.pro.user.*
-/osmscout-server_console.pro*
-/osmscout-server_qtcontrols.pro*
-
 *~
 *.pyc
 __pycache__/

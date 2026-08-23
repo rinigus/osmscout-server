@@ -25,7 +25,6 @@ RUN apt-get update \
         libtool \
         ninja-build \
         pkg-config \
-        qt5-qmake \
         qtbase5-dev \
         qtdeclarative5-dev \
         qtpositioning5-dev \

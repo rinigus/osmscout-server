@@ -32,12 +32,12 @@ Bump version and write changelog
 
 ```
 emacs rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.changes
-emacs CMakeLists.txt common.pri packaging/osmscout-server.appdata.xml packaging/click/manifest.json
+emacs CMakeLists.txt packaging/osmscout-server.appdata.xml packaging/click/manifest.json
 ```
 
 Commit version changes
 ```
-git add CMakeLists.txt osmscout-server.pro packaging/osmscout-server.appdata.xml rpm/harbour-osmscout-server.changes rpm/harbour-osmscout-server.spec packaging/click/manifest.json common.pri
+git add CMakeLists.txt packaging/osmscout-server.appdata.xml rpm/harbour-osmscout-server.changes rpm/harbour-osmscout-server.spec packaging/click/manifest.json
 git status
 git commit -m "bump version"
 ```
