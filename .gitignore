@@ -27,6 +27,7 @@ __pycache__/
 /.clickable/
 /clickable.yaml
 /click_release/
+/.devcontainer/state/
 
 # import
 /scripts/import/data
