@@ -19,7 +19,7 @@ target_include_directories(${GUI_TARGET} PRIVATE
 target_compile_definitions(${GUI_TARGET} PRIVATE
   APP_NAME=\"${APP_NAME}\"
   APP_VERSION=\"${APP_VERSION}\"
-  SERVER_EXE=\"${PREFIX_RUNNING}/${CMAKE_INSTALL_BINDIR}/${APP_NAME}\"
+  SERVER_EXE=\"${SCOUT_RUNTIME_BINDIR}/${APP_NAME}\"
   ${SCOUT_COMMON_COMPILE_DEFINITIONS})
 
 target_link_libraries(${GUI_TARGET} PRIVATE
@@ -36,7 +36,7 @@ if(FLAVOR STREQUAL "silica")
   target_include_directories(${GUI_TARGET} PRIVATE ${SAILFISH_INCLUDE_DIRS})
   target_compile_definitions(${GUI_TARGET} PRIVATE
     IS_SAILFISH_OS
-    TRANSLATION_FOLDER=\"${PREFIX}/${CMAKE_INSTALL_DATAROOTDIR}/${APP_NAME}/translations\")
+    TRANSLATION_FOLDER=\"${CMAKE_INSTALL_FULL_DATAROOTDIR}/${APP_NAME}/translations\")
   target_link_libraries(${GUI_TARGET} PRIVATE ${SAILFISH_LDFLAGS})
 else()
   target_compile_definitions(${GUI_TARGET} PRIVATE IS_QTCONTROLS_QT)

@@ -11,8 +11,6 @@ endif()
 set(VERSION "${PROJECT_VERSION}" CACHE STRING "Application version")
 set(FLAVOR "kirigami" CACHE STRING "Platform flavor: silica, kirigami, qtcontrols, uuitk, or lomiri")
 set(APP_NAME "" CACHE STRING "Application name")
-set(PREFIX "" CACHE PATH "Installation prefix")
-set(PREFIX_RUNNING "" CACHE PATH "Runtime installation prefix")
 set(DBUS_SERVICE_PATH "/usr/share/dbus-1/services" CACHE PATH
   "D-Bus activation service directory")
 
@@ -28,17 +26,6 @@ if(NOT APP_NAME)
   else()
     set(APP_NAME "osmscout-server" CACHE STRING "Application name" FORCE)
   endif()
-endif()
-
-if(PREFIX)
-  set(CMAKE_INSTALL_PREFIX "${PREFIX}" CACHE PATH "Install path prefix" FORCE)
-elseif(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT AND FLAVOR STREQUAL "silica")
-  set(CMAKE_INSTALL_PREFIX "/usr" CACHE PATH "Install path prefix" FORCE)
-endif()
-set(PREFIX "${CMAKE_INSTALL_PREFIX}" CACHE PATH "Installation prefix" FORCE)
-
-if(NOT PREFIX_RUNNING)
-  set(PREFIX_RUNNING "${CMAKE_INSTALL_PREFIX}" CACHE PATH "Runtime installation prefix" FORCE)
 endif()
 
 option(WITH_OSMSCOUT "Build libosmscout support" OFF)
@@ -65,6 +52,15 @@ set(CMAKE_AUTORCC ON)
 
 include(GNUInstallDirs)
 
+if(FLAVOR STREQUAL "uuitk" OR FLAVOR STREQUAL "lomiri")
+  # Click apps run from their package root, where binaries and data are local.
+  set(SCOUT_RUNTIME_BINDIR ".")
+  set(SCOUT_RUNTIME_DATADIR "./${CMAKE_INSTALL_DATAROOTDIR}/${APP_NAME}")
+else()
+  set(SCOUT_RUNTIME_BINDIR "${CMAKE_INSTALL_FULL_BINDIR}")
+  set(SCOUT_RUNTIME_DATADIR "${CMAKE_INSTALL_FULL_DATAROOTDIR}/${APP_NAME}")
+endif()
+
 # Discover only production sources. Target CMake files consume these lists so a
 # source addition does not also require build-system maintenance.
 file(GLOB SERVER_SOURCES server/src/*.cpp)
@@ -79,8 +75,25 @@ file(GLOB FILESELECTOR_SOURCES gui/src/fileselector/*.cpp)
 file(GLOB FILESELECTOR_HEADERS gui/src/fileselector/*.h)
 file(GLOB GUI_QML gui/qml/*.qml)
 file(GLOB GUI_SILICA_QML gui/qml/platform.silica/*.qml)
+file(GLOB GUI_PLATFORM_QML gui/qml/platform.*/*.qml)
 file(GLOB VALHALLA_TEMPLATES data/valhalla.json-*)
 find_package(Qt5 5.6 REQUIRED COMPONENTS Core LinguistTools)
+
+add_custom_target(osmscout-update-translations
+  COMMAND $<TARGET_FILE:Qt5::lupdate>
+    ${SERVER_SOURCES}
+    ${SERVER_HEADERS}
+    ${UHTTP_SOURCES}
+    ${UHTTP_HEADERS}
+    ${GUI_SOURCES}
+    ${GUI_HEADERS}
+    ${FILESELECTOR_SOURCES}
+    ${FILESELECTOR_HEADERS}
+    ${GUI_QML}
+    ${GUI_PLATFORM_QML}
+    -ts ${PROJECT_SOURCE_DIR}/translations/harbour-osmscout-server.ts
+  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+  COMMENT "Updating the Transifex source translation catalog")
 
 function(add_osmscout_translations target)
   get_property(translation_outputs GLOBAL PROPERTY OSMSCOUT_TRANSLATION_OUTPUTS)
@@ -136,8 +149,8 @@ endfunction()
 message(STATUS "OSM Scout Server ${PROJECT_VERSION}")
 message(STATUS "  Flavor: ${FLAVOR}")
 message(STATUS "  App name: ${APP_NAME}")
-message(STATUS "  Install prefix: ${PREFIX}")
-message(STATUS "  Runtime prefix: ${PREFIX_RUNNING}")
+message(STATUS "  Install prefix: ${CMAKE_INSTALL_PREFIX}")
+message(STATUS "  Runtime data directory: ${SCOUT_RUNTIME_DATADIR}")
 message(STATUS "  libosmscout: ${WITH_OSMSCOUT}")
 message(STATUS "  Mapnik: ${WITH_MAPNIK}")
 message(STATUS "  Valhalla: ${WITH_VALHALLA}")

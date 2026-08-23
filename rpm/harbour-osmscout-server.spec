@@ -55,6 +55,7 @@ BuildRequires:  boost-regex >= 1.51
 BuildRequires:  boost-system >= 1.51
 BuildRequires:  lz4-devel
 BuildRequires:  desktop-file-utils
+BuildRequires:  cmake
 
 BuildRequires:  pkgconfig(libsystemd)
 %if 0%{?sailfishos}
@@ -102,18 +103,33 @@ Url:
 
 %build
 
-%qmake5 VERSION='%{version}-%{release}' \
-    CONFIG+=use_dbusactivation \
+mkdir build-rpm
+cd build-rpm
+
 %if 0%{?sailfishos}
-    SCOUT_FLAVOR='silica' \
+cmake \
+    -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_RPATH=%{_datadir}/%{name}/lib: \
+    -DVERSION='%{version}-%{release}' \
+    -DFLAVOR=silica \
+    -DWITH_DBUS_ACTIVATION=ON \
+    ..
 %else
-    SCOUT_FLAVOR='kirigami' \ 
+%cmake \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DVERSION='%{version}-%{release}' \
+    -DFLAVOR=kirigami \
+    -DWITH_DBUS_ACTIVATION=ON \
+    ..
 %endif
-    %{nil}
+
 %make_build
 
 %install
-%qmake5_install
+cd build-rpm
+rm -rf %{buildroot}
+make DESTDIR=%{buildroot} install
 
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \

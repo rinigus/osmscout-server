@@ -5,8 +5,8 @@ based on Debian 12 and is intended for Podman and VS Code Dev Containers.
 
 Open this repository in VS Code and select **Dev Containers: Reopen in
 Container**. CMake Tools selects the `debug-kirigami-qt5` preset, which writes
-its build directory to `build/` and uses the Mapnik, Valhalla, and systemd backends.
-It disables libcurl, D-Bus activation, and the deprecated libosmscout backend.
+its build directory to `build/`, installs to `install/`, and uses the Mapnik,
+Valhalla, and systemd backends.
 
 Build the image directly with:
 
