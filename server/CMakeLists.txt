@@ -143,6 +143,7 @@ endif()
 
 if(WITH_VALHALLA)
   pkg_check_modules(VALHALLA REQUIRED IMPORTED_TARGET libvalhalla)
+  target_compile_features(${APP_NAME} PRIVATE cxx_std_20)
   target_compile_definitions(${APP_NAME} PRIVATE
     USE_VALHALLA
     VALHALLA_CONFIG_TEMPLATE=\"${SCOUT_RUNTIME_DATADIR}/data/valhalla.json\")

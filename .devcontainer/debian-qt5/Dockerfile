@@ -1,4 +1,4 @@
-FROM debian:12
+FROM debian:13
 
 ARG USERNAME=dev
 ARG USER_UID=1000
@@ -32,6 +32,7 @@ RUN apt-get update \
         qttools5-dev \
         qttools5-dev-tools \
         qtwayland5 \
+        rapidjson-dev \
         qml-module-org-kde-kirigami2 \
         qml-module-qt-labs-settings \
         qml-module-qtquick-controls2 \
@@ -45,12 +46,11 @@ RUN apt-get update \
         libcurl4-gnutls-dev \
         liblua5.3-dev \
         liblz4-dev \
-        libmapnik-dev \
+        libtiff-dev \
         locales \
         libprotobuf-dev \
         libsqlite3-dev \
         libsystemd-dev \
-        mapnik-utils \
         protobuf-compiler \
         zlib1g-dev \
         sudo \
@@ -58,18 +58,19 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Compile libpostal from source
-RUN git clone --branch 1.0.0 --depth 1 --recurse-submodules --shallow-submodules https://github.com/rinigus/pkg-libpostal.git /tmp/pkg-libpostal \
-    && cd /tmp/pkg-libpostal/libpostal \
+RUN git clone --branch v1.1.4 --depth 1 https://github.com/openvenues/libpostal.git /tmp/libpostal \
+    && cd /tmp/libpostal \
     && ./bootstrap.sh \
     && ./configure --datadir=/usr/local/share/libpostal --disable-data-download \
-    && make -j"$(nproc)" \
-    && make install \
+    && make -C src -j"$(nproc)" libpostal.la \
+    && make -C src install-libLTLIBRARIES install-pkgincludeHEADERS \
+    && make install-pkgconfigDATA \
     && ldconfig \
-    && rm -rf /tmp/pkg-libpostal
+    && rm -rf /tmp/libpostal
 
-# Compile Valhalla from source
-RUN git clone --branch 3.4.0.5 --depth 1 --recurse-submodules --shallow-submodules https://github.com/rinigus/pkg-valhalla-lite.git /tmp/pkg-valhalla-lite \
-    && cd /tmp/pkg-valhalla-lite/valhalla \
+# Compile Valhalla from upstream source
+RUN git clone --branch 3.8.3 --depth 1 --recurse-submodules --shallow-submodules https://github.com/valhalla/valhalla.git /tmp/valhalla \
+    && cd /tmp/valhalla \
     && cmake -S . -B build -G "Unix Makefiles" \
         -DBUILD_SHARED_LIBS=ON \
         -DCMAKE_BUILD_TYPE=Release \
@@ -84,9 +85,8 @@ RUN git clone --branch 3.4.0.5 --depth 1 --recurse-submodules --shallow-submodul
     && cmake --build build --parallel "$(nproc)" \
     && cd build \
     && cmake --install . \
-    && cp -r ../third_party/date/include/date /usr/local/include/ \
     && ldconfig \
-    && rm -rf /tmp/pkg-valhalla-lite
+    && rm -rf /tmp/valhalla
 
 RUN groupadd --gid "${USER_GID}" "${USERNAME}" \
     && useradd --uid "${USER_UID}" --gid "${USER_GID}" -m -s /bin/bash "${USERNAME}" \

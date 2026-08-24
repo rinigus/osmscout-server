@@ -1,5 +1,5 @@
 {
-  "name": "Qt5 Latest (Debian 12)",
+  "name": "Qt5 Latest (Debian 13)",
   "build": {
     "dockerfile": "Dockerfile",
     "context": ".."
