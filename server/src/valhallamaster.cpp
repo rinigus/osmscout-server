@@ -173,7 +173,11 @@ void ValhallaMaster::onValhallaChanged(QString valhalla_directory, QStringList c
 void ValhallaMaster::generateConfig()
 {
   QString fname = VALHALLA_CONFIG_TEMPLATE "-";
-#if VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,4,0)
+#if VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,8,0)
+  fname += QStringLiteral("3.8.3");
+#elif VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,6,0)
+  fname += QStringLiteral("3.6.3");
+#elif VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,4,0)
   fname += QStringLiteral("3.4.0");
 #elif VALHALLA_VERSION_CURRENT >= VALHALLA_VERSION(3,2,1)
   fname += QStringLiteral("3.2.1");
@@ -218,7 +222,7 @@ void ValhallaMaster::start()
   if (!useValhalla) return;
 
   m_idle_mode = false;
-  m_actor.release();
+  m_actor.reset();
 
   std::stringstream ss;
   ss << m_config_json;
@@ -240,7 +244,7 @@ void ValhallaMaster::start()
 
 void ValhallaMaster::stop()
 {
-  m_actor.release();
+  m_actor.reset();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
