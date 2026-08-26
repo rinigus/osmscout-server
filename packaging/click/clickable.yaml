@@ -6,20 +6,16 @@ scripts:
 framework: ubuntu-touch-24.04-1.x
 ignore_review_errors: true
 
-builder: qmake
+builder: cmake
 build_args:
-- SCOUT_FLAVOR=lomiri
-- CONFIG+=disable_mapnik
-- LIBS+=-L${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/lib
-- INCLUDEPATH+=${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/include
-- LIBS+=-L${VALHALLA_LIB_INSTALL_DIR}/usr/lib/${ARCH_TRIPLET}
-- INCLUDEPATH+=${VALHALLA_LIB_INSTALL_DIR}/usr/include
-- PREFIX=/usr
-- PREFIX_RUNNING=usr
+- -DFLAVOR=lomiri
+- -DWITH_MAPNIK=OFF
+- -DCMAKE_PREFIX_PATH=${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local;${VALHALLA_LIB_INSTALL_DIR}/usr
 env_vars:
-  PKG_CONFIG_PATH: ${VALHALLA_LIB_INSTALL_DIR}/usr/lib/${ARCH_TRIPLET}/pkgconfig
+  PKG_CONFIG_PATH: ${LIBPOSTAL_LIB_INSTALL_DIR}/usr/local/lib/pkgconfig:${VALHALLA_LIB_INSTALL_DIR}/usr/lib/${ARCH_TRIPLET}/pkgconfig
 postbuild:
-- ln -s ../../../usr/bin/osmscout-server{,-gui} ${CLICK_PATH}/
+- mv ${INSTALL_DIR}/bin/osmscout-server ${CLICK_PATH}/
+- mv ${INSTALL_DIR}/bin/osmscout-server-gui ${CLICK_PATH}/
 
 dependencies_host:
 - gcc-opt

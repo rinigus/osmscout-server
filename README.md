@@ -41,7 +41,6 @@ separate GUI application for Sailfish, Kirigami, Ubuntu Touch, or a
 QtQuick application. Installation instructions are given in
 [INSTALL](INSTALL.md).
 
-
 ## User feedback
 
 There are two main communication channels with the users:
@@ -125,6 +124,14 @@ Up to date contribution of translations are given in the About page of
 the application for corresponding language.
 
 For translations, please see https://github.com/rinigus/osmscout-server/blob/master/translations/README.md
+
+
+## Development
+
+Desktop development uses CMake with Qt 5. The supported host-independent
+environment is the Podman development container; see
+[`.devcontainer/README.md`](.devcontainer/README.md) for VS Code and direct
+Podman workflows. The `debug-kirigami-qt5` preset configures the desktop build.
 
 
 ## Libpostal

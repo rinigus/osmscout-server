@@ -12,11 +12,6 @@
 *.la
 *.a
 
-/*.pro.user
-/*.pro.user.*
-/osmscout-server_console.pro*
-/osmscout-server_qtcontrols.pro*
-
 *~
 *.pyc
 __pycache__/
@@ -27,6 +22,7 @@ __pycache__/
 /.clickable/
 /clickable.yaml
 /click_release/
+/.devcontainer/state/
 
 # import
 /scripts/import/data

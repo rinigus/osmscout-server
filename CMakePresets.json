@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "debug-kirigami-qt5",
+      "displayName": "Debug Kirigami Qt 5",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/install",
+        "FLAVOR": "kirigami",
+        "WITH_MAPNIK": "OFF",
+        "WITH_OSMSCOUT": "OFF",
+        "WITH_CURL": "OFF",
+        "WITH_DBUS_ACTIVATION": "OFF"
+      }
+    }
+  ]
+}

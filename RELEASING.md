@@ -1,9 +1,10 @@
 # Releasing new version
 
-Update translations on desktop:
+Update the Transifex source translation catalog on desktop:
 
 ```
-/usr/lib64/qt5/bin/lupdate osmscout-server.pro server/server.pro gui/gui.pro -ts translations/osmscout-server.ts
+cmake -S . -B build-release -G Ninja -DFLAVOR=kirigami -DCMAKE_BUILD_TYPE=Release
+cmake --build build-release --target osmscout-update-translations
 ```
 
 Push source changes to Transifex and pull new translations
@@ -11,6 +12,12 @@ Push source changes to Transifex and pull new translations
 ```
 tx push -s
 tx pull -a --minimum-perc=60
+```
+
+Compile the pulled catalogs:
+
+```
+cmake --build build-release --target osmscout-translations
 ```
 
 Commit all translations
@@ -25,12 +32,12 @@ Bump version and write changelog
 
 ```
 emacs rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.changes
-emacs common.pri packaging/osmscout-server.appdata.xml packaging/click/manifest.json
+emacs CMakeLists.txt packaging/osmscout-server.appdata.xml packaging/click/manifest.json
 ```
 
 Commit version changes
 ```
-git add osmscout-server.pro packaging/osmscout-server.appdata.xml rpm/harbour-osmscout-server.changes rpm/harbour-osmscout-server.spec rpm/harbour-osmscout-server.spec packaging/click/manifest.json common.pri
+git add CMakeLists.txt packaging/osmscout-server.appdata.xml rpm/harbour-osmscout-server.changes rpm/harbour-osmscout-server.spec packaging/click/manifest.json
 git status
 git commit -m "bump version"
 ```
