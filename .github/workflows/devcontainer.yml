@@ -34,6 +34,8 @@ jobs:
       TEST_IMAGE: osmscout-server-devcontainer-test:${{ matrix.image_suffix }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - uses: docker/setup-buildx-action@v3
 
