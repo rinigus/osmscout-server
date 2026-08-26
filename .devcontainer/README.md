@@ -1,17 +1,25 @@
 # Dev Container
 
 `.devcontainer/debian-qt5` is the Qt 5 desktop development environment. It is
-based on Debian 13 and is intended for Podman and VS Code Dev Containers.
+based on Debian 13 and is intended for Podman and VS Code Dev Containers. The
+Dev Containers configuration pulls the published image from GitHub Container
+Registry instead of building it locally.
 
 Open this repository in VS Code and select **Dev Containers: Reopen in
 Container**. CMake Tools selects the `debug-kirigami-qt5` preset, which writes
 its build directory to `build/`, installs to `install/`, and uses the Valhalla
 and systemd backends.
 
-Build the image directly with:
+To build the image recipe locally instead:
 
 ```sh
-podman build -f .devcontainer/debian-qt5/Dockerfile -t osmscout-server-qt5 .
+set -a
+. .devcontainer/versions.env
+set +a
+podman build --target devcontainer \
+  --build-arg LIBPOSTAL_VERSION \
+  --build-arg VALHALLA_VERSION \
+  -f .devcontainer/debian-qt5/Containerfile -t osmscout-server-qt5 .
 ```
 
 The Dev Containers setup uses `--userns=keep-id`, `remoteUser`, and

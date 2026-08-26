@@ -1,9 +1,6 @@
 {
   "name": "Qt5 Latest (Debian 13)",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
+  "image": "ghcr.io/rinigus/osmscout-server-devcontainer-qt5:latest",
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "initializeCommand": "mkdir -p ${localWorkspaceFolder}/.devcontainer/state/config ${localWorkspaceFolder}/.devcontainer/state/debian-qt5/local ${localWorkspaceFolder}/.devcontainer/state/debian-qt5/cache",

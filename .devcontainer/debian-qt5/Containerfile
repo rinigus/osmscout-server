@@ -1,0 +1,133 @@
+FROM debian:13 AS dependencies
+
+ARG LIBPOSTAL_VERSION
+ARG VALHALLA_VERSION
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# These packages are needed only to compile libpostal and Valhalla.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        autoconf \
+        automake \
+        build-essential \
+        ca-certificates \
+        cmake \
+        curl \
+        git \
+        libboost-date-time-dev \
+        libboost-filesystem-dev \
+        libboost-iostreams-dev \
+        libboost-program-options-dev \
+        libboost-regex-dev \
+        libboost-system-dev \
+        libcurl4-gnutls-dev \
+        liblz4-dev \
+        libprotobuf-dev \
+        libtool \
+        pkg-config \
+        protobuf-compiler \
+        zlib1g-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Compile libpostal from source.
+RUN git clone --branch "${LIBPOSTAL_VERSION}" --depth 1 https://github.com/openvenues/libpostal.git /tmp/libpostal \
+    && cd /tmp/libpostal \
+    && ./bootstrap.sh \
+    && ./configure --datadir=/usr/local/share/libpostal --disable-data-download \
+    && make -C src -j"$(nproc)" libpostal.la \
+    && make -C src install-libLTLIBRARIES install-pkgincludeHEADERS \
+    && make install-pkgconfigDATA \
+    && rm -f /usr/local/lib/libpostal.a /usr/local/lib/libpostal.la \
+    && rm -rf /tmp/libpostal
+
+# Compile Valhalla from upstream source without its data tools or services.
+RUN git clone --branch "${VALHALLA_VERSION}" --depth 1 --recurse-submodules --shallow-submodules https://github.com/valhalla/valhalla.git /tmp/valhalla \
+    && cd /tmp/valhalla \
+    && cmake -S . -B build -G "Unix Makefiles" \
+        -DBUILD_SHARED_LIBS=ON \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr/local \
+        -DENABLE_DATA_TOOLS=OFF \
+        -DENABLE_PYTHON_BINDINGS=OFF \
+        -DENABLE_SERVICES=OFF \
+        -DENABLE_TESTS=OFF \
+        -DENABLE_TOOLS=OFF \
+        -DENABLE_WERROR=OFF \
+        -DENABLE_SINGLE_FILES_WERROR=OFF \
+    && cmake --build build --parallel "$(nproc)" \
+    && cmake --install build \
+    && rm -rf /tmp/valhalla
+
+FROM debian:13 AS devcontainer
+
+ARG USERNAME=dev
+ARG USER_UID=1000
+ARG USER_GID=${USER_UID}
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Keep only dependency libraries, headers, and pkg-config metadata.
+COPY --from=dependencies /usr/local/lib /usr/local/lib
+COPY --from=dependencies /usr/local/include /usr/local/include
+
+# System documentation and translations are not needed to build or run the project.
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        ca-certificates \
+        cmake \
+        curl \
+        dbus-x11 \
+        git \
+        libboost-dev \
+        libboost-date-time-dev \
+        libboost-filesystem-dev \
+        libboost-iostreams-dev \
+        libboost-program-options-dev \
+        libboost-regex-dev \
+        libboost-system-dev \
+        libcurl4-gnutls-dev \
+        libgl1-mesa-dri \
+        libkyotocabinet-dev \
+        liblz4-dev \
+        libmarisa-dev \
+        libmicrohttpd-dev \
+        libprotobuf-dev \
+        libsqlite3-dev \
+        libsystemd-dev \
+        libtiff-dev \
+        locales \
+        ninja-build \
+        pkg-config \
+        qtbase5-dev \
+        qtdeclarative5-dev \
+        qtpositioning5-dev \
+        qtquickcontrols2-5-dev \
+        qttools5-dev \
+        qttools5-dev-tools \
+        qtwayland5 \
+        qml-module-org-kde-kirigami2 \
+        qml-module-qt-labs-settings \
+        qml-module-qtquick-controls2 \
+        qml-module-qtquick-dialogs \
+        qml-module-qtquick-layouts \
+        sudo \
+        zlib1g-dev \
+    && ldconfig \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN groupadd --gid "${USER_GID}" "${USERNAME}" \
+    && useradd --uid "${USER_UID}" --gid "${USER_GID}" -m -s /bin/bash "${USERNAME}" \
+    && echo "${USERNAME} ALL=(root) NOPASSWD:ALL" > "/etc/sudoers.d/${USERNAME}" \
+    && chmod 0440 "/etc/sudoers.d/${USERNAME}" \
+    && mkdir -p "/tmp/runtime-${USERNAME}" \
+    && chown "${USERNAME}:${USERNAME}" "/tmp/runtime-${USERNAME}" \
+    && chmod 0700 "/tmp/runtime-${USERNAME}"
+
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    QT_X11_NO_MITSHM=1
+
+USER ${USERNAME}
+WORKDIR /workspace
